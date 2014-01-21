@@ -19,9 +19,9 @@ public class IfStatementWrongUnreachable_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeErrorCheck1239365278901() throws Throwable {
+  public void test_NodeRuleCheck1239365278901() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test$TestBody", "test_NodeErrorCheck1239365278901", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test$TestBody", "test_NodeRuleCheck1239365278901", true);
   }
 
   @Test
@@ -37,7 +37,7 @@ public class IfStatementWrongUnreachable_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1217861284985")});
     }
 
-    public void test_NodeErrorCheck1239365278901() throws Exception {
+    public void test_NodeRuleCheck1239365278901() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1239365278901"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228077")});
     }

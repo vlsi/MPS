@@ -25,11 +25,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.BootstrapActionReference").super_("jetbrains.mps.lang.test.structure.ActionReference").parents("jetbrains.mps.lang.test.structure.ActionReference").properties("actionId").alias("by id:", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckDataFlowOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("check dataflow messages", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckDataFlowOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("for dataflow messages", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckNodeDataflow").super_("jetbrains.mps.lang.test.structure.AbstractNodeAssert").parents("jetbrains.mps.lang.test.structure.AbstractNodeAssert").alias("check node dataflow", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").properties("allowErrors", "allowWarnings").alias("check error messages", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").properties("allowErrors", "allowWarnings").alias("for error messages", "").create();
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckNodeForErrors").super_("jetbrains.mps.lang.test.structure.AbstractNodeAssert").parents("jetbrains.mps.lang.test.structure.AbstractNodeAssert").alias("check nodes error messages", "").staticScope(StaticScope.NONE).create();
       case 9:

@@ -168,7 +168,7 @@
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="CheckNodeForErrorMessagesOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="check error messages" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="for error messages" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="852155438140865197" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="allowErrors" />
@@ -184,7 +184,7 @@
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="CheckDataFlowOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="check dataflow messages" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="for dataflow messages" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215612918969" nodeInfo="ig">

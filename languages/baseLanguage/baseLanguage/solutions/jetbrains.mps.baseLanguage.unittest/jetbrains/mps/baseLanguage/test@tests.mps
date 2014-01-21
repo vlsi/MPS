@@ -512,7 +512,7 @@
                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3951985765451230829" nodeInfo="sn">
                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="3951985765451230832" nodeInfo="ng">
                             <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="4307182653745276439" nodeInfo="ng">
-                              <node role="ruleRef" roleId="tp5g.4307182653741890940" type="tpd4.MessageStatementReference" typeId="tpd4.3148295837107465606" id="4098794966557596030" nodeInfo="ng">
+                              <node role="ruleRef" roleId="tp5g.4307182653741890940" type="tpd4.MessageStatementReference" typeId="tpd4.3148295837107465606" id="4098794966558650119" nodeInfo="ng">
                                 <link role="declaration" roleId="tpd4.3148295837107465727" targetNodeId="tpeh.4307182653739743080" resolveInfo="ReturnExpectedError" />
                               </node>
                             </node>
@@ -739,7 +739,11 @@
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6090235207266878331" nodeInfo="nn">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444376219" resolveInfo="t" />
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6090235207266878334" nodeInfo="ng">
-                                  <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeWarningCheckOperation" typeId="tp5g.1215511704609" id="963887337804206807" nodeInfo="ng" />
+                                  <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeWarningCheckOperation" typeId="tp5g.1215511704609" id="963887337804206807" nodeInfo="ng">
+                                    <node role="ruleRef" roleId="tp5g.4307182653741890940" type="tpd4.MessageStatementReference" typeId="tpd4.3148295837107465606" id="4098794966558827731" nodeInfo="ng">
+                                      <link role="declaration" roleId="tpd4.3148295837107465727" targetNodeId="tpeh.4098794966558670560" resolveInfo="InitializerIsRedundantWarning" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -751,7 +755,11 @@
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6090235207266878711" nodeInfo="nn">
                                 <property name="value" nameId="tpee.1068580320021" value="5" />
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6090235207266878819" nodeInfo="ng">
-                                  <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeWarningCheckOperation" typeId="tp5g.1215511704609" id="6090235207266878835" nodeInfo="ng" />
+                                  <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeWarningCheckOperation" typeId="tp5g.1215511704609" id="6090235207266878835" nodeInfo="ng">
+                                    <node role="ruleRef" roleId="tp5g.4307182653741890940" type="tpd4.MessageStatementReference" typeId="tpd4.3148295837107465606" id="4098794966558827848" nodeInfo="ng">
+                                      <link role="declaration" roleId="tpd4.3148295837107465727" targetNodeId="tpeh.4098794966558670560" resolveInfo="InitializerIsRedundantWarning" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -3850,9 +3858,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3951985765451229352" nodeInfo="nn" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3951985765451229353" nodeInfo="in" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="3951985765451229356" nodeInfo="ng">
-            <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="843236768048178275" nodeInfo="ng">
-              <link role="ruleRef" roleId="tp5g.4307182653741890940" targetNodeId="tpeh.843236768047680817" />
-            </node>
+            <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="4098794966561661809" nodeInfo="ng" />
           </node>
         </node>
         <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="843236768048178276" nodeInfo="igu">

@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class MigrateNodeCheckOperationsContainer_MigrationScript extends BaseMigrationScript {
   public MigrateNodeCheckOperationsContainer_MigrationScript(IOperationContext operationContext) {
-    super("Migrate NodeCheckOperationsContainer");
+    super("Migrate NodeCheckOperationsContainer to NodeOperationsContainer");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Migrate NodeCheckOperationsContainer to NodeOperationsContainer";

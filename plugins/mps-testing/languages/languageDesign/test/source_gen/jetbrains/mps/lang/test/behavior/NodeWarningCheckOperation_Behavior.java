@@ -16,8 +16,4 @@ public class NodeWarningCheckOperation_Behavior {
       ex.printStackTrace();
     }
   }
-
-  public static String virtual_getName_1217435265700(SNode thisNode) {
-    return "NodeWarningCheck";
-  }
 }

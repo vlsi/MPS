@@ -20,9 +20,9 @@ public class UnusedAssignment_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck963887337804206804() throws Throwable {
+  public void test_NodeRuleCheck963887337804206804() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_NodeWarningCheck963887337804206804", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_NodeRuleCheck963887337804206804", true);
   }
 
   @MPSLaunch
@@ -32,7 +32,7 @@ public class UnusedAssignment_Test extends BaseTransformationTest4 {
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444198388"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
 
-    public void test_NodeWarningCheck963887337804206804() throws Exception {
+    public void test_NodeRuleCheck963887337804206804() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804206804"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228055")});
     }

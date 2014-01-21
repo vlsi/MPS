@@ -13,45 +13,45 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeErrorCheck2176128700705776683() throws Throwable {
+  public void test_NodeRuleCheck2176128700705776683() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700705776683", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700705776683", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2176128700705781852() throws Throwable {
+  public void test_NodeRuleCheck2176128700705781852() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700705781852", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700705781852", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2176128700705751702() throws Throwable {
+  public void test_NodeRuleCheck2176128700705751702() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700705751702", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700705751702", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2176128700705757175() throws Throwable {
+  public void test_NodeRuleCheck2176128700705757175() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700705757175", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700705757175", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2176128700705880057() throws Throwable {
+  public void test_NodeRuleCheck2176128700705880057() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700705880057", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700705880057", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2176128700705892288() throws Throwable {
+  public void test_NodeRuleCheck2176128700705892288() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700705892288", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700705892288", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2176128700707365987() throws Throwable {
+  public void test_NodeRuleCheck2176128700707365987() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeErrorCheck2176128700707365987", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeRuleCheck2176128700707365987", true);
   }
 
   @Test
@@ -62,37 +62,37 @@ public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest4 
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeErrorCheck2176128700705776683() throws Exception {
+    public void test_NodeRuleCheck2176128700705776683() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700705776683"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230386")});
     }
 
-    public void test_NodeErrorCheck2176128700705781852() throws Exception {
+    public void test_NodeRuleCheck2176128700705781852() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700705781852"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230975")});
     }
 
-    public void test_NodeErrorCheck2176128700705751702() throws Exception {
+    public void test_NodeRuleCheck2176128700705751702() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700705751702"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231672")});
     }
 
-    public void test_NodeErrorCheck2176128700705757175() throws Exception {
+    public void test_NodeRuleCheck2176128700705757175() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700705757175"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451227709")});
     }
 
-    public void test_NodeErrorCheck2176128700705880057() throws Exception {
+    public void test_NodeRuleCheck2176128700705880057() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700705880057"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230395")});
     }
 
-    public void test_NodeErrorCheck2176128700705892288() throws Exception {
+    public void test_NodeRuleCheck2176128700705892288() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700705892288"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230429")});
     }
 
-    public void test_NodeErrorCheck2176128700707365987() throws Exception {
+    public void test_NodeRuleCheck2176128700707365987() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2176128700707365987"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231385")});
     }

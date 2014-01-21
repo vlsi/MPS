@@ -8,10 +8,6 @@ public class NodeWarningCheckOperation_BehaviorDescriptor extends NodeRuleCheckO
   public NodeWarningCheckOperation_BehaviorDescriptor() {
   }
 
-  public String virtual_getName_1217435265700(SNode thisNode) {
-    return NodeWarningCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
-  }
-
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     NodeWarningCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }

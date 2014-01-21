@@ -23,15 +23,15 @@
   <unitInfo fileName="ModelExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ModelExpression_BehaviorDescriptor" />
   <unitInfo fileName="NodeCheckOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeCheckOperationsContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperationsContainer_BehaviorDescriptor" />
-  <unitInfo fileName="NodeErrorCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_BehaviorDescriptor" />
+  <unitInfo fileName="NodeErrorCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeExpectedTypeCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeOperationsContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_BehaviorDescriptor" />
   <unitInfo fileName="NodeReachable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeReachable_BehaviorDescriptor" />
-  <unitInfo fileName="NodeRuleCheckOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_BehaviorDescriptor" />
+  <unitInfo fileName="NodeRuleCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeTypeCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeTypeCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeTypeSetCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeUnreachable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeUnreachable_BehaviorDescriptor" />
-  <unitInfo fileName="NodeWarningCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWarningCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodesTestCase_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
   <unitInfo fileName="NodesTestMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestMethod_BehaviorDescriptor" />
   <unitInfo fileName="PressKeyStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.PressKeyStatement_BehaviorDescriptor" />
@@ -446,9 +446,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389421795">
     <nodeInfo nodeId="2754172450389888128" fileName="NodeErrorCheckOperation_Behavior.java" startLine="13" startPosition="9" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2754172450389888155" fileName="NodeErrorCheckOperation_Behavior.java" startLine="15" startPosition="28" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2133390315206434868" fileName="NodeErrorCheckOperation_Behavior.java" startLine="20" startPosition="70" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getName_1217435265700#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="2754172450389888124" fileName="NodeErrorCheckOperation_Behavior.java" startLine="12" startPosition="85" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2754172450389421797" fileName="NodeErrorCheckOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -457,11 +455,7 @@
       <varInfo nodeId="2754172450389888152" varName="ex" />
     </scopeInfo>
     <scopeInfo nodeId="2754172450389888154" fileName="NodeErrorCheckOperation_Behavior.java" startLine="15" startPosition="28" endLine="16" endPosition="27" />
-    <scopeInfo nodeId="2133390315206434867" fileName="NodeErrorCheckOperation_Behavior.java" startLine="20" startPosition="70" endLine="21" endPosition="28" />
     <scopeInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="2754172450389421795" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="2754172450389421795" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2754172450389888123" fileName="NodeErrorCheckOperation_Behavior.java" startLine="12" startPosition="85" endLine="17" endPosition="5" />
@@ -469,7 +463,7 @@
       <varInfo nodeId="245688835340926424" varName="node" />
       <varInfo nodeId="2754172450389421795" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_Behavior" />
+    <unitInfo nodeId="2754172450389421795" fileName="NodeErrorCheckOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389427103">
     <nodeInfo nodeId="2702384151998373452" fileName="NodeReachable_Behavior.java" startLine="16" startPosition="9" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -616,9 +610,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389430646">
     <nodeInfo nodeId="5487427970772898287" fileName="NodeWarningCheckOperation_Behavior.java" startLine="13" startPosition="9" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487427970772898322" fileName="NodeWarningCheckOperation_Behavior.java" startLine="15" startPosition="28" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2754172450389430669" fileName="NodeWarningCheckOperation_Behavior.java" startLine="20" startPosition="70" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getName_1217435265700#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5487427970772898283" fileName="NodeWarningCheckOperation_Behavior.java" startLine="12" startPosition="85" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2754172450389430648" fileName="NodeWarningCheckOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -627,11 +619,7 @@
       <varInfo nodeId="5487427970772898319" varName="ex" />
     </scopeInfo>
     <scopeInfo nodeId="5487427970772898321" fileName="NodeWarningCheckOperation_Behavior.java" startLine="15" startPosition="28" endLine="16" endPosition="27" />
-    <scopeInfo nodeId="2754172450389430668" fileName="NodeWarningCheckOperation_Behavior.java" startLine="20" startPosition="70" endLine="21" endPosition="30" />
     <scopeInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="2754172450389430646" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="2754172450389430646" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="5487427970772898282" fileName="NodeWarningCheckOperation_Behavior.java" startLine="12" startPosition="85" endLine="17" endPosition="5" />
@@ -639,7 +627,7 @@
       <varInfo nodeId="245688835340931748" varName="node" />
       <varInfo nodeId="2754172450389430646" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_Behavior" />
+    <unitInfo nodeId="2754172450389430646" fileName="NodeWarningCheckOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389432063">
     <nodeInfo nodeId="5487427970773089164" fileName="VariableInitialized_Behavior.java" startLine="16" startPosition="9" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -711,6 +699,23 @@
       <varInfo nodeId="2754172450389650566" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2754172450389650566" fileName="VariableAlive_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.VariableAlive_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4098794966562281137">
+    <nodeInfo nodeId="987736645928000607" fileName="NodeRuleCheckOperation_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2133390315206434868" fileName="NodeRuleCheckOperation_Behavior.java" startLine="13" startPosition="163" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4098794966562281137" fileName="NodeRuleCheckOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4098794966562281137" fileName="NodeRuleCheckOperation_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getName_1217435265700#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="4098794966562281139" fileName="NodeRuleCheckOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="4098794966562281137" fileName="NodeRuleCheckOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="4098794966562281137" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2133390315206434867" fileName="NodeRuleCheckOperation_Behavior.java" startLine="12" startPosition="70" endLine="14" endPosition="40">
+      <varInfo nodeId="987736645928000610" varName="errorName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4098794966562281137" fileName="NodeRuleCheckOperation_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="4098794966562281137" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4098794966562281137" fileName="NodeRuleCheckOperation_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4239542196496960972">
     <nodeInfo nodeId="1211716198725168800" fileName="MPSActionReference_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
