@@ -116,14 +116,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.ArrayCreatorWithInitializerAndMultipleDimensions_TextGen" file="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.ArrayCreatorWithInitializer_TextGen" file="ArrayCreatorWithInitializer_TextGen.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -132,13 +124,6 @@
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.ArrayCreator_TextGen" file="ArrayCreator_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.ArrayInitializers_TextGen" file="ArrayInitializers_TextGen.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />

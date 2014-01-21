@@ -37,6 +37,9 @@ public class ArrayLiteral_Constraints extends BaseConstraintsDescriptor {
       SNode variableDeclaration = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType") && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer");
     }
+    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ArrayLiteral") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer")) {
+      return true;
+    }
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")) {
       return true;
     }

@@ -2732,10 +2732,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1235059530927(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ArrayCreator")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"));
-  }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ClassifierType_1177505734540(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType"), _context.getSourceNode()) {
@@ -3090,26 +3086,26 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         int numOfDimensions = ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "dimensionExpression", true)).count();
-        if (numOfDimensions > 1) {
-          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions");
-          SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
-          SPropertyOperations.set(newNode, "dimensionCount", "" + (numOfDimensions));
-          SNode currentInitializer = SLinkOperations.getTarget(newNode, "arrayInitializers", true);
-          while (numOfDimensions > 1) {
-            SNode newInitializer = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayInitializers", null);
-            ListSequence.fromList(SLinkOperations.getTargets(currentInitializer, "initValue", true)).addElement(newInitializer);
-            currentInitializer = newInitializer;
-            numOfDimensions--;
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
+        SNode componentType = SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true);
+        SNode init = null;
+        while (numOfDimensions > 1) {
+          componentType = _quotation_createNode_waf1l5_a0a0e0a0a0(componentType);
+          SNode newArrayLiteral = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
+          if ((init != null)) {
+            ListSequence.fromList(SLinkOperations.getTargets(newArrayLiteral, "item", true)).addElement(init);
           }
-
-          SelectionUtil.selectNode(editorContext, newNode);
-          return newNode;
-        } else {
-          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
-          SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
-          SelectionUtil.selectCell(editorContext, newNode, "init");
-          return newNode;
+          init = newArrayLiteral;
+          numOfDimensions--;
         }
+
+        SLinkOperations.setTarget(newNode, "componentType", componentType, true);
+        if ((init != null)) {
+          ListSequence.fromList(SLinkOperations.getTargets(newNode, "initValue", true)).addElement(init);
+        }
+
+        SelectionUtil.selectNode(editorContext, newNode);
+        return newNode;
       }
 
       public String getMatchingText(String pattern) {
@@ -5811,7 +5807,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a342(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a242(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -5891,48 +5887,18 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_ArrayCreatorWithInitializer_8820682311103172168(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ArrayCreatorWithInitializer_8259790178088785384(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode replacing = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions");
-        SPropertyOperations.set(replacing, "dimensionCount", "" + (2));
-        SLinkOperations.setTarget(replacing, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(replacing, "arrayInitializers", true), "initValue", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)));
-        editorContext.selectWRTFocusPolicy(SLinkOperations.getTarget(replacing, "arrayInitializers", true));
-        return replacing;
-      }
-
-      public String getMatchingText(String pattern) {
-        return "[]";
-      }
-
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), null));
-      }
-    });
-    return result;
-  }
-
-  public static List<SubstituteAction> sideTransform_ActionsFactory_ArrayCreatorWithInitializerAndMultipleDimensions_2260576595929060118(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), "dimensionCount", "" + (SPropertyOperations.getInteger(_context.getSourceNode(), "dimensionCount") + 1));
-        editorContext.selectWRTFocusPolicy(_context.getSourceNode());
+        SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayType", null);
+        SLinkOperations.setTarget(result, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true)), true);
+        SNodeOperations.replaceWithAnother(SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), result);
         return _context.getSourceNode();
       }
 
       public String getMatchingText(String pattern) {
-        return "[]";
+        return "[";
       }
 
       public String getVisibleMatchingText(String pattern) {
@@ -5944,7 +5910,7 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), null));
       }
     });
     return result;
@@ -6084,6 +6050,18 @@ __switch__:
     return quotedNode_3;
   }
 
+  private static SNode _quotation_createNode_waf1l5_a0a0e0a0a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
+    }
+    return quotedNode_2;
+  }
+
   private static SNode _quotation_createNode_q3xziz_b0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -6142,7 +6120,7 @@ __switch__:
     return str == null || str.length() == 0;
   }
 
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a342(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a242(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
