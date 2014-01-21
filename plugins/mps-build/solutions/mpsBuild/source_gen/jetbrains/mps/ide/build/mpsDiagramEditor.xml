@@ -77,10 +77,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram#1094405431463447766" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-languages-jetbrains.mps.lang.editor.diagram-generator-template">
-      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-languages-jetbrains.mps.lang.editor.diagram-languageModels">
-      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.diagram-src.jar">
       <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/generator/source_gen" includes="**/*.java" />
@@ -110,7 +110,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.diagram.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-runtime-models">
-      <fileset dir="${mps_home}/plugins/diagramEditor/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/diagramEditor/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.runtime-src.jar">
       <fileset dir="${mps_home}/plugins/diagramEditor/runtime/source_gen" includes="**/*.java" />
@@ -146,10 +146,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures#785823818609016954" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-languages-jetbrains.mps.lang.editor.figures-generator-template">
-      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-languages-jetbrains.mps.lang.editor.figures-languageModels">
-      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.figures-src.jar">
       <fileset dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/source_gen" includes="**/*.java" />
