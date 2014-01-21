@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -61,12 +62,21 @@ public class MatchingUtil {
       // as we are checking for structural equality. If there's e.g. a 'derived' property
       // == getName() + getNodeId(), its values from SNodeAccessUtil would differ and nodes would not match
       // (assuming NodeId is different and nodes otherwise match).
-      String propertyValue1 = node1.getProperty(propertyName);
-      String propertyValue2 = node2.getProperty(propertyName);
+      String stringValue1 = node1.getProperty(propertyName);
+      String stringValue2 = node2.getProperty(propertyName);
+      Object propertyValue1 = stringValue1;
+      Object propertyValue2 = stringValue2;
       if (propertyDeclaration == null) {
-        SNode diagnosticsNode = propertyValue1 != null ? node1 : node2;
+        SNode diagnosticsNode = stringValue1 != null ? node1 : node2;
         LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + diagnosticsNode.getConcept().getQualifiedName(), diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
+      }
+      else {
+        SDataType dataType = propertyDeclaration.getType();
+        if (dataType != null) {
+          propertyValue1 = dataType.fromString(stringValue1);
+          propertyValue2 = dataType.fromString(stringValue2);
+        }
       }
       if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
     }

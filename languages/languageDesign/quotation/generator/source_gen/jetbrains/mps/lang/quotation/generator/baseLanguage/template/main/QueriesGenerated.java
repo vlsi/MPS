@@ -407,20 +407,12 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._0(), "modelToCreate", true) != null);
   }
 
-  public static SNode sourceNodeQuery_1025590056396691788(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_767161977424634934(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
   }
 
   public static SNode sourceNodeQuery_429601079676882526(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
-  }
-
-  public static SNode sourceNodeQuery_429601079676709537(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_429601079676786028(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

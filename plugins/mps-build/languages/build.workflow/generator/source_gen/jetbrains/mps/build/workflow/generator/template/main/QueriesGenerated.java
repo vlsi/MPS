@@ -307,10 +307,6 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_8654221991637436548(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_6647099934207260081(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_pathvalue"));
   }
@@ -452,7 +448,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_6647099934207260021(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a58();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a48();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -460,7 +456,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_8654221991637509675(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a68();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a58();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -468,7 +464,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_7926701909975860432(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a78();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a68();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -476,7 +472,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_7926701909975928828(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a88();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a78();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -512,6 +508,95 @@ public class QueriesGenerated {
     return parts;
   }
 
+  public static class Pattern_x583g4_a0a0a48 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode patternVar_pathvalue;
+
+    public Pattern_x583g4_a0a0a48() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_x583g4_a0a0a48 = nodeToMatch;
+        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a48.getConcept().getQualifiedName()))) {
+          return false;
+        }
+        if (!("src".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a48, "tagName")))) {
+          return false;
+        }
+        {
+          String childRole_x583g4_ = "content";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a48, childRole_x583g4_, 1))) {
+            return false;
+          }
+          {
+            SNode childVar_x583g4_a0a0a0gd = IterableUtil.get(nodeToMatch_x583g4_a0a0a48.getChildren(childRole_x583g4_), 0);
+            {
+              SNode nodeToMatch_x583g4_a0a0a0gd = childVar_x583g4_a0a0a0gd;
+              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a0gd.getConcept().getQualifiedName()))) {
+                return false;
+              }
+              if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0gd, "shortEmptyNotation")))) {
+                return false;
+              }
+              if (!("pathelement".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0gd, "tagName")))) {
+                return false;
+              }
+              {
+                String childRole_x583g4__0 = "attributes";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0gd, childRole_x583g4__0, 1))) {
+                  return false;
+                }
+                {
+                  SNode childVar_x583g4_a0a0a0a48 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0gd.getChildren(childRole_x583g4__0), 0);
+                  {
+                    SNode nodeToMatch_x583g4_a0a0a0a48 = childVar_x583g4_a0a0a0a48;
+                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_x583g4_a0a0a0a48.getConcept().getQualifiedName()))) {
+                      return false;
+                    }
+                    if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a48, "attrName")))) {
+                      return false;
+                    }
+                    {
+                      String childRole_x583g4__1 = "value";
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a48, childRole_x583g4__1, 1))) {
+                        return false;
+                      }
+                      {
+                        SNode childVar_x583g4_a0a0a0a0gd = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a48.getChildren(childRole_x583g4__1), 0);
+                        this.patternVar_pathvalue = childVar_x583g4_a0a0a0a0gd;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        patternVar_pathvalue = (SNode) pattern.getFieldValue("patternVar_pathvalue");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("patternVar_pathvalue".equals(fieldName)) {
+        return patternVar_pathvalue;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
   public static class Pattern_x583g4_a0a0a58 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_pathvalue;
 
@@ -524,16 +609,16 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a58.getConcept().getQualifiedName()))) {
           return false;
         }
-        if (!("src".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a58, "tagName")))) {
+        if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a58, "tagName")))) {
           return false;
         }
         {
-          String childRole_x583g4_ = "content";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a58, childRole_x583g4_, 1))) {
+          String childRole_x583g4__2 = "content";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a58, childRole_x583g4__2, 1))) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0hd = IterableUtil.get(nodeToMatch_x583g4_a0a0a58.getChildren(childRole_x583g4_), 0);
+            SNode childVar_x583g4_a0a0a0hd = IterableUtil.get(nodeToMatch_x583g4_a0a0a58.getChildren(childRole_x583g4__2), 0);
             {
               SNode nodeToMatch_x583g4_a0a0a0hd = childVar_x583g4_a0a0a0hd;
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a0hd.getConcept().getQualifiedName()))) {
@@ -546,27 +631,27 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__0 = "attributes";
-                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0hd, childRole_x583g4__0, 1))) {
+                String childRole_x583g4__3 = "attributes";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0hd, childRole_x583g4__3, 1))) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a58 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0hd.getChildren(childRole_x583g4__0), 0);
+                  SNode childVar_x583g4_a0a0a0a58 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0hd.getChildren(childRole_x583g4__3), 0);
                   {
                     SNode nodeToMatch_x583g4_a0a0a0a58 = childVar_x583g4_a0a0a0a58;
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_x583g4_a0a0a0a58.getConcept().getQualifiedName()))) {
                       return false;
                     }
-                    if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a58, "attrName")))) {
+                    if (!("location".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a58, "attrName")))) {
                       return false;
                     }
                     {
-                      String childRole_x583g4__1 = "value";
-                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a58, childRole_x583g4__1, 1))) {
+                      String childRole_x583g4__4 = "value";
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a58, childRole_x583g4__4, 1))) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0hd = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a58.getChildren(childRole_x583g4__1), 0);
+                        SNode childVar_x583g4_a0a0a0a0hd = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a58.getChildren(childRole_x583g4__4), 0);
                         this.patternVar_pathvalue = childVar_x583g4_a0a0a0a0hd;
                       }
                     }
@@ -613,16 +698,16 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a68.getConcept().getQualifiedName()))) {
           return false;
         }
-        if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a68, "tagName")))) {
+        if (!("classpath".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a68, "tagName")))) {
           return false;
         }
         {
-          String childRole_x583g4__2 = "content";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a68, childRole_x583g4__2, 1))) {
+          String childRole_x583g4__5 = "content";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a68, childRole_x583g4__5, 1))) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0id = IterableUtil.get(nodeToMatch_x583g4_a0a0a68.getChildren(childRole_x583g4__2), 0);
+            SNode childVar_x583g4_a0a0a0id = IterableUtil.get(nodeToMatch_x583g4_a0a0a68.getChildren(childRole_x583g4__5), 0);
             {
               SNode nodeToMatch_x583g4_a0a0a0id = childVar_x583g4_a0a0a0id;
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a0id.getConcept().getQualifiedName()))) {
@@ -635,27 +720,27 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__3 = "attributes";
-                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0id, childRole_x583g4__3, 1))) {
+                String childRole_x583g4__6 = "attributes";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0id, childRole_x583g4__6, 1))) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a68 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0id.getChildren(childRole_x583g4__3), 0);
+                  SNode childVar_x583g4_a0a0a0a68 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0id.getChildren(childRole_x583g4__6), 0);
                   {
                     SNode nodeToMatch_x583g4_a0a0a0a68 = childVar_x583g4_a0a0a0a68;
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_x583g4_a0a0a0a68.getConcept().getQualifiedName()))) {
                       return false;
                     }
-                    if (!("location".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a68, "attrName")))) {
+                    if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a68, "attrName")))) {
                       return false;
                     }
                     {
-                      String childRole_x583g4__4 = "value";
-                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a68, childRole_x583g4__4, 1))) {
+                      String childRole_x583g4__7 = "value";
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a68, childRole_x583g4__7, 1))) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0id = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a68.getChildren(childRole_x583g4__4), 0);
+                        SNode childVar_x583g4_a0a0a0a0id = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a68.getChildren(childRole_x583g4__7), 0);
                         this.patternVar_pathvalue = childVar_x583g4_a0a0a0a0id;
                       }
                     }
@@ -691,7 +776,7 @@ public class QueriesGenerated {
   }
 
   public static class Pattern_x583g4_a0a0a78 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode patternVar_pathvalue;
+    /*package*/ SNode patternVar_idvalue;
 
     public Pattern_x583g4_a0a0a78() {
     }
@@ -706,12 +791,12 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__5 = "content";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a78, childRole_x583g4__5, 1))) {
+          String childRole_x583g4__8 = "content";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a78, childRole_x583g4__8, 1))) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0jd = IterableUtil.get(nodeToMatch_x583g4_a0a0a78.getChildren(childRole_x583g4__5), 0);
+            SNode childVar_x583g4_a0a0a0jd = IterableUtil.get(nodeToMatch_x583g4_a0a0a78.getChildren(childRole_x583g4__8), 0);
             {
               SNode nodeToMatch_x583g4_a0a0a0jd = childVar_x583g4_a0a0a0jd;
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a0jd.getConcept().getQualifiedName()))) {
@@ -720,121 +805,32 @@ public class QueriesGenerated {
               if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0jd, "shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0jd, "tagName")))) {
+              if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0jd, "tagName")))) {
                 return false;
               }
               {
-                String childRole_x583g4__6 = "attributes";
-                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0jd, childRole_x583g4__6, 1))) {
+                String childRole_x583g4__9 = "attributes";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0jd, childRole_x583g4__9, 1))) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a78 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0jd.getChildren(childRole_x583g4__6), 0);
+                  SNode childVar_x583g4_a0a0a0a78 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0jd.getChildren(childRole_x583g4__9), 0);
                   {
                     SNode nodeToMatch_x583g4_a0a0a0a78 = childVar_x583g4_a0a0a0a78;
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_x583g4_a0a0a0a78.getConcept().getQualifiedName()))) {
                       return false;
                     }
-                    if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a78, "attrName")))) {
-                      return false;
-                    }
-                    {
-                      String childRole_x583g4__7 = "value";
-                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a78, childRole_x583g4__7, 1))) {
-                        return false;
-                      }
-                      {
-                        SNode childVar_x583g4_a0a0a0a0jd = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a78.getChildren(childRole_x583g4__7), 0);
-                        this.patternVar_pathvalue = childVar_x583g4_a0a0a0a0jd;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      return true;
-    }
-
-    public boolean hasAntiquotations() {
-      return false;
-    }
-
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_pathvalue = (SNode) pattern.getFieldValue("patternVar_pathvalue");
-      }
-    }
-
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_pathvalue".equals(fieldName)) {
-        return patternVar_pathvalue;
-      }
-      return null;
-    }
-
-    public void performActions(Object o) {
-    }
-  }
-
-  public static class Pattern_x583g4_a0a0a88 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode patternVar_idvalue;
-
-    public Pattern_x583g4_a0a0a88() {
-    }
-
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_x583g4_a0a0a88 = nodeToMatch;
-        if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a88.getConcept().getQualifiedName()))) {
-          return false;
-        }
-        if (!("classpath".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a88, "tagName")))) {
-          return false;
-        }
-        {
-          String childRole_x583g4__8 = "content";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a88, childRole_x583g4__8, 1))) {
-            return false;
-          }
-          {
-            SNode childVar_x583g4_a0a0a0kd = IterableUtil.get(nodeToMatch_x583g4_a0a0a88.getChildren(childRole_x583g4__8), 0);
-            {
-              SNode nodeToMatch_x583g4_a0a0a0kd = childVar_x583g4_a0a0a0kd;
-              if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_x583g4_a0a0a0kd.getConcept().getQualifiedName()))) {
-                return false;
-              }
-              if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0kd, "shortEmptyNotation")))) {
-                return false;
-              }
-              if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0kd, "tagName")))) {
-                return false;
-              }
-              {
-                String childRole_x583g4__9 = "attributes";
-                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0kd, childRole_x583g4__9, 1))) {
-                  return false;
-                }
-                {
-                  SNode childVar_x583g4_a0a0a0a88 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0kd.getChildren(childRole_x583g4__9), 0);
-                  {
-                    SNode nodeToMatch_x583g4_a0a0a0a88 = childVar_x583g4_a0a0a0a88;
-                    if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_x583g4_a0a0a0a88.getConcept().getQualifiedName()))) {
-                      return false;
-                    }
-                    if (!("refid".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a88, "attrName")))) {
+                    if (!("refid".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a0a78, "attrName")))) {
                       return false;
                     }
                     {
                       String childRole_x583g4__10 = "value";
-                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a88, childRole_x583g4__10, 1))) {
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a78, childRole_x583g4__10, 1))) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0kd = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a88.getChildren(childRole_x583g4__10), 0);
-                        this.patternVar_idvalue = childVar_x583g4_a0a0a0a0kd;
+                        SNode childVar_x583g4_a0a0a0a0jd = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a78.getChildren(childRole_x583g4__10), 0);
+                        this.patternVar_idvalue = childVar_x583g4_a0a0a0a0jd;
                       }
                     }
                   }

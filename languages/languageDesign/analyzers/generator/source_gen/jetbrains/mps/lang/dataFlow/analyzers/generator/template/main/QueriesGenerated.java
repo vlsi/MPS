@@ -255,10 +255,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
-  public static SNode sourceNodeQuery_1420906503568700586(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_178770917832626066(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);
   }
@@ -287,10 +283,6 @@ public class QueriesGenerated {
     SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
     SLinkOperations.setTarget(reference, "applicableNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", false, false), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), false);
     return reference;
-  }
-
-  public static SNode sourceNodeQuery_7962250936070467994(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_7962250936070468016(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -31,6 +31,7 @@ import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch.SearchParameters;
@@ -41,6 +42,7 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
@@ -89,6 +91,8 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
 
     final PsiElement psiTarget = queryParameters.getElementToSearch();
+    if (psiTarget instanceof MPSPsiNodeBase) return;
+
     final Project project = psiTarget.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
 
@@ -98,6 +102,13 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       public void run() {
 
         if (DumbService.getInstance(project).isDumb()) {
+          return;
+        }
+
+        if (psiTarget instanceof LightElement) {
+          // we don't handle light psi elements we don't know about
+          // we may not be able to compute their node id and their Java meaning can be represented in baseLanguage
+          // in a special way
           return;
         }
 

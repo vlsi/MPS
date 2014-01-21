@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.DevKit").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("plugin", "devkitPath").children(new String[]{"exportedLanguages", "exportedSolutions", "extendedDevkits"}, new boolean[]{true, true, true}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Generator").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("generatorUID", "generateTemplates").children(new String[]{"priorityRules", "depGenerators"}, new boolean[]{true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Generator").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("generatorUID", "generateTemplates", "reflectiveQueries", "needOperationContext").children(new String[]{"priorityRules", "depGenerators"}, new boolean[]{true, true}).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Language").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("genPath", "languagePath").children(new String[]{"generator", "accessoryModels", "extendedLanguages", "runtimeModules", "runtimeStubModels", "stubSolutions"}, new boolean[]{true, true, true, true, true, true}).create();
       case 3:

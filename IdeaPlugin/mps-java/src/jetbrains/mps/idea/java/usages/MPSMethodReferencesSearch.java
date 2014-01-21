@@ -7,6 +7,7 @@ import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.impl.light.LightMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.MethodReferencesSearch.SearchParameters;
 import com.intellij.util.Processor;
@@ -17,6 +18,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
@@ -51,6 +53,8 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
     final PsiMethod method = queryParameters.getMethod();
 
+    if (method instanceof MPSPsiNodeBase) return;
+
     final GeneratedFinder finder = method.isConstructor() ?
       FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
       FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
@@ -65,6 +69,15 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
       public void run() {
 
         if (DumbService.getInstance(method.getProject()).isDumb()) {
+          return;
+        }
+
+        if (method instanceof LightMethod) {
+          if (method.getContainingClass().isEnum()
+            && ("values".equals(method.getName()) || "valueOf".equals(method.getName()))) {
+            // TODO find usages of EnumValuesExpression and EnumValueOfExpression
+          }
+          // we don't handle light elements we don't know about
           return;
         }
 

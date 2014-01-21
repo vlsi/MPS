@@ -323,7 +323,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                 final List<SNode> tlist21 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_a7jb2i_a0a0a1a3a1a7a1a7a1a2);
-                  final Iterable<SNode> loopList21 = QueriesGenerated.sourceNodesQuery_7991477654791670241(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_a7jb2i_a0a0a1a3a1a7a1a7a1a2, environment.getGenerator()));
+                  final Iterable<SNode> loopList21 = QueriesGenerated.sourceNodesQuery_7991477654791670241(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_a7jb2i_a0a0a1a3a1a7a1a7a1a2, environment.getGenerator()));
                   for (SNode itnode21 : loopList21) {
                     if (itnode21 == null) {
                       continue;

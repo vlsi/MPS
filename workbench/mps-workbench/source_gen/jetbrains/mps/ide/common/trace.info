@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/1203601634745" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/1203601659817" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/144575100359734006">
     <nodeInfo nodeId="8549696200078009601" fileName="JavaConsoleCreator.java" startLine="24" startPosition="68" endLine="25" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8549696200078009587" fileName="JavaConsoleCreator.java" startLine="26" startPosition="92" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -27,7 +25,6 @@
     </scopeInfo>
     <unitInfo nodeId="144575100359734006" fileName="JavaConsoleCreator.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.common.JavaConsoleCreator" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/1482618131069177615" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/4221956679901042757">
     <nodeInfo nodeId="4221956679901042772" fileName="FileOpenUtil.java" startLine="28" startPosition="101" endLine="29" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4221956679901042782" fileName="FileOpenUtil.java" startLine="30" startPosition="41" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

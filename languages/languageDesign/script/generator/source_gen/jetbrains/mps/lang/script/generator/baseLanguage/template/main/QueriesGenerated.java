@@ -433,10 +433,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).isEmpty();
   }
 
-  public static SNode sourceNodeQuery_2598676492883202973(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_2598676492883187133(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "affectedInstancePredicate", true), "body", true);
   }

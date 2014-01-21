@@ -65,7 +65,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unittest.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.unittest-jetbrains">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.baseLanguage.unittest-src.jar">
       <zipfileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" prefix="module" />
@@ -95,7 +95,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.unittest.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-closures-solutions-jetbrains.mps.baseLanguage.closures.unittest-jetbrains">
-      <fileset dir="${basedir}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.baseLanguage.closures.unittest-src.jar">
       <zipfileset file="${basedir}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" prefix="module" />

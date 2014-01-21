@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -33,15 +32,13 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class RoleValidation {
   private final boolean myShowBadChildWarning;
-  private final IGeneratorLogger myLog;
   private final RoleValidator successValidatorOne = new RoleValidator(false);
   private final RoleValidator successValidatorMany = new RoleValidator(true);
   // the code might need refactoring to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
   private final Map<String, Map<String, RoleValidator>> validators = new ConcurrentHashMap<String, Map<String, RoleValidator>>();
 
-  public RoleValidation(IGeneratorLogger log, boolean showBadChildWarning) {
+  public RoleValidation(boolean showBadChildWarning) {
     myShowBadChildWarning = showBadChildWarning;
-    myLog = log;
   }
   
   RoleValidator getValidator(SNode sourceNode, String role, boolean child) {
@@ -68,14 +65,14 @@ public class RoleValidation {
       } else {
         msg = String.format("%s '%s' in concept '%s' doesn't match declared kind:%s", relationKind, role, concept.getQualifiedName(), link.isReference() ? "referent" : "child");
       }
-      Status s = new Status(myLog, msg);
+      Status s = new Status(msg);
       validator = new RoleValidator(s);
     } else {
       if (!myShowBadChildWarning) {
         // ignore
         validator = link.isMultiple() ? successValidatorMany : successValidatorOne;
       } else {
-        validator = new AcceptableTargetValidator(myLog, link);
+        validator = new AcceptableTargetValidator(link);
       }
     }
     vmap.put(role, validator);
@@ -113,13 +110,11 @@ public class RoleValidation {
   }
 
   private static class AcceptableTargetValidator extends RoleValidator {
-    private final IGeneratorLogger myLog;
     private final SAbstractLink myLink;
     private final SAbstractConcept myLinkTarget;
 
-    AcceptableTargetValidator(@NotNull IGeneratorLogger logger, @NotNull SAbstractLink link) {
+    AcceptableTargetValidator(@NotNull SAbstractLink link) {
       super(link.isMultiple());
-      myLog = logger;
       myLink = link;
       myLinkTarget = link.getTargetConcept();
     }
@@ -137,27 +132,25 @@ public class RoleValidation {
       String was = targetNode.getConcept().getQualifiedName();
       String relationKind = myLink.isReference() ? "referent" : "child";
       String msg = String.format("%s '%s' is expected for role '%s' but was '%s'", relationKind, expected, myLink.getRole(), was);
-      return new Status(myLog, msg, GeneratorUtil.describe(targetNode, relationKind));
+      return new Status(msg, GeneratorUtil.describe(targetNode, relationKind));
     }
   }
 
   public static class Status {
-    private final IGeneratorLogger myLogger;
     private final String message;
     private final ProblemDescription[] descriptions;
 
-    public Status(@NotNull IGeneratorLogger logger, String message, ProblemDescription... descriptions) {
-      myLogger = logger;
+    public Status(String message, ProblemDescription... descriptions) {
       this.message = message;
       this.descriptions = descriptions;
     }
 
-    public void reportProblem(boolean isError, SNode sourceNode, String prefix, ProblemDescription... descriptions) {
-      if (isError) {
-        myLogger.error(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));
-      } else {
-        myLogger.warning(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));
-      }
+    public String getMessage(String prefix) {
+      return String.format("%s: %s", prefix, message);
+    }
+
+    public ProblemDescription[] describe(ProblemDescription... extras) {
+      return GeneratorUtil.concat(this.descriptions, extras);
     }
   }
 }

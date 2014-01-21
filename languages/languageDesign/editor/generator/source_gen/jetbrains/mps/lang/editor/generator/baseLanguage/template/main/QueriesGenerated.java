@@ -1931,10 +1931,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "editorContext", true);
   }
 
-  public static SNode sourceNodeQuery_1204308047624(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_3297276508416497773(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false), "virtual_toBaseLanguageType_1213877229718", new Object[]{});
   }
@@ -1949,10 +1945,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1225901798862(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAccessor", true), "getter", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1229342979273(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1236442846529(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2045,10 +2037,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_2548761562338721582(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "focusPolicyApplicable", true);
-  }
-
-  public static SNode sourceNodeQuery_4666785434458820399(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_2548761562342108871(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

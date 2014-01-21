@@ -42,7 +42,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
         final List<SNode> tlist2 = new ArrayList<SNode>();
         try {
           environment.getTracer().pushMacro(loopMacroRef_wjpymb_a0a0a1a3a1a2);
-          final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_400642802550422240(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_wjpymb_a0a0a1a3a1a2, environment.getGenerator()));
+          final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_400642802550422240(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_wjpymb_a0a0a1a3a1a2, environment.getGenerator()));
           for (SNode itnode2 : loopList2) {
             if (itnode2 == null) {
               continue;
@@ -170,7 +170,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
                         Collection<SNode> tlist15 = null;
                         try {
                           environment.getTracer().pushMacro(copySrcListMacro_wjpymb_a0a0a1a4a1a3a1a5a1a5a1a5a1a2);
-                          final Iterable<SNode> copyListInput15 = QueriesGenerated.sourceNodesQuery_3708576844065083881(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, copySrcListMacro_wjpymb_a0a0a1a4a1a3a1a5a1a5a1a5a1a2, environment.getGenerator()));
+                          final Iterable<SNode> copyListInput15 = QueriesGenerated.sourceNodesQuery_3708576844065083881(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, copySrcListMacro_wjpymb_a0a0a1a4a1a3a1a5a1a5a1a5a1a2, environment.getGenerator()));
                           tlist15 = environment.copyNodes(copyListInput15, copySrcListMacro_wjpymb_a0a0a1a4a1a3a1a5a1a5a1a5a1a2, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083863", null, context);
                         } finally {
                           environment.getTracer().closeMacro(copySrcListMacro_wjpymb_a0a0a1a4a1a3a1a5a1a5a1a5a1a2);

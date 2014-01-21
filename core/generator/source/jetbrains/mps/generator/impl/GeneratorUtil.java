@@ -160,17 +160,23 @@ public class GeneratorUtil {
       nr = node.getReference();
       msg = SNodeUtil.getDebugText(node);
     }
-    return new ProblemDescription(nr, String.format("-- was %s: %s", nodeRole, msg));
+    return new ProblemDescription(nr, String.format("was %s: %s", nodeRole, msg));
   }
 
   public static ProblemDescription describe(@Nullable SNodeReference node, String nodeRole) {
     String msg;
     if (node == null) {
-      msg = String.format("-- was %s: <unknown node reference>", nodeRole);
+      msg = String.format("was %s: <unknown node reference>", nodeRole);
     } else {
-      msg = String.format("-- was %s: %s", nodeRole, node.toString());
+      msg = String.format("was %s: %s", nodeRole, node.toString());
     }
     return new ProblemDescription(node, msg);
+  }
+  public static ProblemDescription describeIfExists(@Nullable SNodeReference node, String nodeRole) {
+    if (node == null) {
+      return null;
+    }
+    return describe(node, nodeRole);
   }
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {

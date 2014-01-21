@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -120,7 +121,7 @@ public class DelayedChanges {
           return;
         }
         ChildAdopter ca = new ChildAdopter(generator);
-        ca.checkIsExpectedLanguage(child, getMapSrcMacro(), myContext);
+        ca.checkIsExpectedLanguage(Collections.singletonList(child), getMapSrcMacro(), myContext);
         child = ca.adopt(child, myContext);
 
         generator.replacePlaceholderNode(myChildToReplace, child, myContext, getMapSrcMacro());

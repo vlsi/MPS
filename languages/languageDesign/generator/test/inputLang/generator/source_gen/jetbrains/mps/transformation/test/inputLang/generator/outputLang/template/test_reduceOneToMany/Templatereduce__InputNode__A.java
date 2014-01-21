@@ -32,7 +32,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     final List<SNode> tlist1 = new ArrayList<SNode>();
     try {
       environment.getTracer().pushMacro(loopMacroRef_b8tv7e_a0a0a1a2);
-      final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_b8tv7e_a0a0a1a2, environment.getGenerator()));
+      final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(new SourceSubstituteMacroNodesContext(context, loopMacroRef_b8tv7e_a0a0a1a2, environment.getGenerator()));
       for (SNode itnode1 : loopList1) {
         if (itnode1 == null) {
           continue;

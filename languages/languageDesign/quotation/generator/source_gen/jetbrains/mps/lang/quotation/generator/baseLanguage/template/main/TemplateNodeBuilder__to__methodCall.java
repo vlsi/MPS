@@ -59,7 +59,7 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
               final List<SNode> tlist4 = new ArrayList<SNode>();
               try {
                 environment.getTracer().pushMacro(loopMacroRef_7ucwoc_a0a0a4a1a4a1a3a1a2);
-                final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_429601079676965955(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context3, null, loopMacroRef_7ucwoc_a0a0a4a1a4a1a3a1a2, environment.getGenerator()));
+                final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_429601079676965955(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context3, loopMacroRef_7ucwoc_a0a0a4a1a4a1a3a1a2, environment.getGenerator()));
                 for (SNode itnode4 : loopList4) {
                   if (itnode4 == null) {
                     continue;
@@ -375,7 +375,7 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
             final List<SNode> tlist26 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_7ucwoc_a0a0a1a4a1a4a1a2);
-              final Iterable<SNode> loopList26 = QueriesGenerated.sourceNodesQuery_429601079676709496(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_7ucwoc_a0a0a1a4a1a4a1a2, environment.getGenerator()));
+              final Iterable<SNode> loopList26 = QueriesGenerated.sourceNodesQuery_429601079676709496(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_7ucwoc_a0a0a1a4a1a4a1a2, environment.getGenerator()));
               for (SNode itnode26 : loopList26) {
                 if (itnode26 == null) {
                   continue;
@@ -389,7 +389,7 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
                   Collection<SNode> tlist27 = null;
                   try {
                     environment.getTracer().pushMacro(copySrcMacro_7ucwoc_a0a0a3a2a2a1a4a1a4a1a2);
-                    final SNode copySrcInput27 = QueriesGenerated.sourceNodeQuery_429601079676709537(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context26, copySrcMacro_7ucwoc_a0a0a3a2a2a1a4a1a4a1a2, environment.getGenerator()));
+                    final SNode copySrcInput27 = context26.getInput();
                     tlist27 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput27), copySrcMacro_7ucwoc_a0a0a3a2a2a1a4a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709487", null, context26);
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_7ucwoc_a0a0a3a2a2a1a4a1a4a1a2);

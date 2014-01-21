@@ -409,7 +409,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final List<SNode> tlist30 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a4a1a3a4a1a1a1a4a1a2);
-                        final Iterable<SNode> loopList30 = QueriesGenerated.sourceNodesQuery_1196351886802(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, null, loopMacroRef_swz52f_a0a0a1a4a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
+                        final Iterable<SNode> loopList30 = QueriesGenerated.sourceNodesQuery_1196351886802(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, loopMacroRef_swz52f_a0a0a1a4a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
                         for (SNode itnode30 : loopList30) {
                           if (itnode30 == null) {
                             continue;
@@ -542,7 +542,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final List<SNode> tlist38 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a5a1a3a4a1a1a1a4a1a2);
-                        final Iterable<SNode> loopList38 = QueriesGenerated.sourceNodesQuery_1196871487533(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, null, loopMacroRef_swz52f_a0a0a1a5a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
+                        final Iterable<SNode> loopList38 = QueriesGenerated.sourceNodesQuery_1196871487533(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, loopMacroRef_swz52f_a0a0a1a5a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
                         for (SNode itnode38 : loopList38) {
                           if (itnode38 == null) {
                             continue;
@@ -717,7 +717,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final List<SNode> tlist48 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a6a1a3a4a1a1a1a4a1a2);
-                        final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1196351886876(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, null, loopMacroRef_swz52f_a0a0a1a6a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
+                        final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1196351886876(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, loopMacroRef_swz52f_a0a0a1a6a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
                         for (SNode itnode48 : loopList48) {
                           if (itnode48 == null) {
                             continue;
@@ -1050,7 +1050,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final List<SNode> tlist68 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a7a1a3a4a1a1a1a4a1a2);
-                        final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1196351886984(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, null, loopMacroRef_swz52f_a0a0a1a7a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
+                        final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1196351886984(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, loopMacroRef_swz52f_a0a0a1a7a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
                         for (SNode itnode68 : loopList68) {
                           if (itnode68 == null) {
                             continue;
@@ -1225,7 +1225,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final List<SNode> tlist78 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a8a1a3a4a1a1a1a4a1a2);
-                        final Iterable<SNode> loopList78 = QueriesGenerated.sourceNodesQuery_1196351887023(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, null, loopMacroRef_swz52f_a0a0a1a8a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
+                        final Iterable<SNode> loopList78 = QueriesGenerated.sourceNodesQuery_1196351887023(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8, loopMacroRef_swz52f_a0a0a1a8a1a3a4a1a1a1a4a1a2, environment.getGenerator()));
                         for (SNode itnode78 : loopList78) {
                           if (itnode78 == null) {
                             continue;
