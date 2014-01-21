@@ -1172,10 +1172,10 @@
     <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="235" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiagramCellImpl_tb7paq_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="144" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
     <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="266" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="54" endLine="177" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="54" endLine="299" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="64" endLine="177" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="64" endLine="299" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
     <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="182" startPosition="34" endLine="182" endPosition="34" />
     <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="304" startPosition="34" endLine="304" endPosition="34" />
     <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="46" startPosition="47" endLine="47" endPosition="26" />
@@ -1423,10 +1423,14 @@
     <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="266" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="6306886970791123511" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="54" endLine="177" endPosition="8" />
-    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="54" endLine="299" endPosition="8" />
-    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="0" endLine="301" endPosition="0" />
+    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="64" endLine="177" endPosition="8" />
+    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="64" endLine="299" endPosition="8" />
+    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="142" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="6306886970791123511" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="264" startPosition="0" endLine="301" endPosition="0">
+      <varInfo nodeId="6306886970791123511" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="173" startPosition="25" endLine="173" endPosition="82" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagramGenerated_Editor$6" />
     <unitInfo nodeId="6306886970791123511" fileName="Diagram_diagramGenerated_Editor.java" startLine="295" startPosition="25" endLine="295" endPosition="82" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagramGenerated_Editor$6" />
     <unitInfo nodeId="7801692200918031065" fileName="Diagram_diagramGenerated_Editor.java" startLine="128" startPosition="259" endLine="132" endPosition="7" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagramGenerated_Editor$2" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3nseja5er1jug8kp9m2zixp2cgp011q">
+<dependencies version="2" modelHash="-3g9w674w9htzf2kw1vp79qkcn7hawp4">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -19,8 +19,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-720g43fkgw2x9i7cjnegnczcizwe3c" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9w55c48vk485rs349fzpe325xrq4cz2" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="ijgbwu4rjplrnb3m32nhcx5nf12sw9" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="73i4kh54xsgdn4e49nimc20rbpbjghx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-2iankjihbdr41ov8cj5pmkacx0cy97j" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-bhga2yo3yhg4765hg6nvkqbu26lnsqr" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-d906yq1giy8xeckxoosi4u69ty5jgah" />
@@ -38,7 +38,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-5do77owlyobkx5qjefflyvdt22gudut" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="-8pplm0f7tckikgxtsti698lmhfn0h4j" dependsOnNodes="true">
+  <common hash="59d3hyoueqwnq74ibygy0b21v0f0bbi" dependsOnNodes="true">
     <dep root="1094405431463447767" />
     <dep root="2201645942109536141" />
     <dep root="2732397419124502392" />
@@ -101,32 +101,32 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="5422656561933061909" name="PlaceholderView" hash="ay3supyurls445lg324inkngjhqkzit">
+  <source id="5422656561933061909" name="PlaceholderView" hash="-8h141aze22bp2hmefsilg13quzkk88d">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5422656561934728908" name="ViewFactoryMethod" hash="-90r9qi3vo9495lqpnym653aelhliuzs">
+  <source id="5422656561934728908" name="ViewFactoryMethod" hash="-dre588fcmrtgb6vopzlqu6wchtdgpb6">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5422656561934854579" name="ViewParameterAccessor" hash="-4vzl2bl5uwakr27xkth6sogp96aunaq">
+  <source id="5422656561934854579" name="ViewParameterAccessor" hash="8eqnu7gqnhqeaji9w5sss093cs98baq">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1094405431463447767" name="main" hash="-171rkbegzhvzzohgev6w4yb8708dpql">
+  <source id="1094405431463447767" name="main" hash="3i4ztx06nt8mtn4s3tri2yhqij6lyxh">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-6gcuk2qi7hfr89pqi085rc9i96g68ax">
+  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="97oqxw15uunu07v4jdp8zufrxefuels">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="67rlrmyeaf8ajyaa7wofrb78mvq22o7">
+  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="-bq2vk41dp7onbkg97xlr6p6hq063no3">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="9cy96fzmqjqdz8t5y98h93477be7vjg">
+  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="781pz6u1i9lmsmscisaisx37mwqegr5">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
@@ -138,19 +138,19 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="285670992205237838" name="FigureConstructor" hash="-9t301obb2nrdqek58x6tgbz2cpdyx3">
+  <source id="285670992205237838" name="FigureConstructor" hash="-d2youb0kjkg0wnpgopw3x0t0o0z1cza">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="285670992206060904" name="reduce_CellModel_DiagramPort" hash="c686n4tc90xsuqkck3w0mh0bf3knfph">
+  <source id="285670992206060904" name="reduce_CellModel_DiagramPort" hash="-6h3ia9aal3382ot6ofp2070ructbjk9">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="285670992223213068" name="SwitchDiagramNodePositionSetup" hash="-1e8uflwzmy4cvtqpbmq9d1bet25qwf8">
+  <source id="285670992223213068" name="SwitchDiagramNodePositionSetup" hash="-193t3uxcduvrbwafwumbuvz5q2lsswn">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7171441290057803824" name="template_CreatePortMapper" hash="36mkzhtmp94243fu99uilxfxij579su">
+  <source id="7171441290057803824" name="template_CreatePortMapper" hash="bd26xee8tkgcros0b5kb5ssrvmzm1ku">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
@@ -162,28 +162,28 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2732397419124488366" name="BlockCellAdapter" hash="87zgacw43ejyg3isuoixo6rcdly2fxa">
+  <source id="2732397419124488366" name="BlockCellAdapter" hash="-3ovo9xtwa59i0kio288sp7ya00dvokm">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2732397419124502392" name="BlockParameterField" hash="c9o7rj6q7neq7dlqfra1ptfip2h5ydg">
+  <source id="2732397419124502392" name="BlockParameterField" hash="36zicyjtg6ib8vgqwawkazp2ng2se08">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2732397419127377131" name="BlockParameterInitializer" hash="3zw84gyx1tqnjqn7s09prctyd1bxr1j">
+  <source id="2732397419127377131" name="BlockParameterInitializer" hash="ao9fcq680uqyki3h7jfhvt73v73rdnq">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2732397419132147303" name="BlockPositionPropertyType" hash="-3367yfrbp4lipech0xukijat62fnpqm">
+  <source id="2732397419132147303" name="BlockPositionPropertyType" hash="7kh1hv9jkiy5q3mdj15ahbgcfwe1qa">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7100765728701529902" name="BlockPositionPropertyInitializer" hash="dz70cq0rbeo1hahg2f0k2asqirt1wfh">
+  <source id="7100765728701529902" name="BlockPositionPropertyInitializer" hash="13thl5kth27fd3xvyrynvv7clvtqop8">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7755191110378225555" name="BlockPortInitializer" hash="cxx1vyeve9ltd33dv341dmvc2iww975">
+  <source id="7755191110378225555" name="BlockPortInitializer" hash="2eqcekavmozqvx515cgdycdpihhtg5d">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
@@ -191,15 +191,15 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7755191110395269246" name="BlockPortMapperFactory" hash="-bbu68ezkn2koak2rg05am0w7806rf5o">
+  <source id="7755191110395269246" name="BlockPortMapperFactory" hash="-fv6jhz5t5dbus2j2gp49lzzh8vvb3k">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7755191110397886411" name="BlockParameterSynchronizer" hash="-4r2nzvqxti6m6vg2txa59jjvfnq6zhj">
+  <source id="7755191110397886411" name="BlockParameterSynchronizer" hash="-ad771qgtvt2iv03jgdownynhbxfe0v1">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="9028489334867564747" name="DiagramCellAdapter" hash="-34qxqcdtyjz571xd9loyffdotyz2kjh">
+  <source id="9028489334867564747" name="DiagramCellAdapter" hash="2fzazsopwz5suhttw838m7ujqp8da7m">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
@@ -208,7 +208,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="9028489334872426262" name="ConnectionSynchronizer" hash="-19wydqdgxm6qeiui9m1cka95kbr0zkn">
+  <source id="9028489334872426262" name="ConnectionSynchronizer" hash="bgzxwvq3fjshh6fowjrfxxoi7mpmkzh">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
@@ -216,7 +216,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="9028489334874334453" name="ConnectorCellAdapter" hash="-6mq73qmsi9lfbw1vkil23zl6njb595e">
+  <source id="9028489334874334453" name="ConnectorCellAdapter" hash="6xgn2629414u5605czz8a8tmb3amt21">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />

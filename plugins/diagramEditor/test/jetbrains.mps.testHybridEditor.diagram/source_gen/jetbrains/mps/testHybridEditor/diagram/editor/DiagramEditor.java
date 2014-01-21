@@ -25,8 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
-import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -40,14 +38,14 @@ public class DiagramEditor extends AbstractJetpadEditor {
       protected void init() {
       }
 
-      public Mapper<SNode, DiagramView> createMapper() {
-        return new Mapper<SNode, DiagramView>(diagramNode, new ConnectionRoutingView(new OrthogonalRouter())) {
+      public Mapper<SNode, DiagramView> createMapper(final SNode node) {
+        return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
 
 
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, SLinkOperations.getTargets(diagramNode, "blocks", true), getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, SLinkOperations.getTargets(node, "blocks", true), getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
               public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
                 EditorCell blockCell = editorContext.createNodeCell(node);
                 if (blockCell instanceof BlockCell) {
@@ -57,7 +55,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
                 return null;
               }
             }));
-            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, SLinkOperations.getTargets(diagramNode, "connectors", true), getTarget().connections, new MapperFactory<SNode, Connection>() {
+            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, SLinkOperations.getTargets(node, "connectors", true), getTarget().connections, new MapperFactory<SNode, Connection>() {
               public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
                 EditorCell connectorCell = editorContext.createNodeCell(node);
                 if (connectorCell instanceof ConnectorCell) {
@@ -79,9 +77,6 @@ public class DiagramEditor extends AbstractJetpadEditor {
         SPropertyOperations.set(block, "y", "" + (y));
       }
     })}));
-
-    RootMapper mapper = new RootMapper(diagramNode, diagramCell.createMapper(), ((ViewContainerComponent) diagramCell.getComponent()).container());
-    mapper.attachRoot();
 
     return diagramCell;
   }

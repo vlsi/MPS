@@ -83,6 +83,7 @@
     <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableSingleItemList" />
@@ -105,7 +106,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />
@@ -115,6 +115,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>

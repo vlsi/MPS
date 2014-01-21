@@ -139,8 +139,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-    public Mapper<SNode, DiagramView> createMapper() {
-      return new Mapper<SNode, DiagramView>(getSNode(), createDiagramView()) {
+    public Mapper<SNode, DiagramView> createMapper(SNode node) {
+      return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -261,8 +261,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-    public Mapper<SNode, DiagramView> createMapper() {
-      return new Mapper<SNode, DiagramView>(getSNode(), createDiagramView()) {
+    public Mapper<SNode, DiagramView> createMapper(SNode node) {
+      return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
