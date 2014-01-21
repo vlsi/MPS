@@ -104,7 +104,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1209150617830(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_417xrn_a0a3q, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1209150617830(new ReductionRuleQueryContext(context, reductionRule_417xrn_a0a3q, environment.getGenerator())))) {
         return null;
       }
 
@@ -171,7 +171,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1209150502311(environment.getOperationContext(), new BaseMappingRuleContext(context, rootMappingRule_417xrn_b0b0a0a5r, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1209150502311(new BaseMappingRuleContext(context, rootMappingRule_417xrn_b0a0a0a5r, environment.getGenerator())))) {
         return false;
       }
       return true;
@@ -188,5 +188,5 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templateNode_417xrn_a0a0a2a5q = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150725887");
   private static SNodePointer templateNode_417xrn_a0a0a1a3a2a5q = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150737045");
   private static SNodePointer rootMappingRule_417xrn_a0a1r = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150078117");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a0a5r = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150078117");
+  private static SNodePointer rootMappingRule_417xrn_b0a0a0a5r = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150078117");
 }
