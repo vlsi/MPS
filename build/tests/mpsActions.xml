@@ -65,7 +65,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.testActions.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testActions-models">
-      <fileset dir="${basedir}/testbench/modules/testActions/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/testbench/modules/testActions/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.testActions-src.jar">
       <fileset dir="${basedir}/testbench/modules/testActions/source_gen" includes="**/*.java" />

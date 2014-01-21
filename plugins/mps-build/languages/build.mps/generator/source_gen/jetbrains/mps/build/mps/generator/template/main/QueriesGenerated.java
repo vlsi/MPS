@@ -441,16 +441,16 @@ public class QueriesGenerated {
     return _context.getTemplateValue();
   }
 
+  public static Object propertyMacro_GetPropertyValue_4297162197629738843(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Boolean.toString(SPropertyOperations.getBoolean(((SNode) _context.getVariable("var:genOptions")), "strict"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_978600701690073083(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
   public static Object propertyMacro_GetPropertyValue_5970181360960745173(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "path");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4297162197629738843(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Boolean.toString(SPropertyOperations.getBoolean(((SNode) _context.getVariable("var:genOptions")), "strict"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4297162197629596072(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1592,6 +1592,25 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("mpsBootstrapCore") && SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).equals("jetbrains.mps.ide.build");
   }
 
+  public static Object insertMacro_varValue_4297162197626782015(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    SNode firstGenOpts = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions");
+      }
+    }).first();
+    if (firstGenOpts != null) {
+      return SNodeOperations.cast(firstGenOpts, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions");
+    } else {
+      SNode defaults = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", null);
+      SPropertyOperations.set(defaults, "parallel", "" + (true));
+      // 8 is the value BaseGenerationWorker uses when parallel is true 
+      SPropertyOperations.set(defaults, "parallelThreads", "" + (8));
+      SPropertyOperations.set(defaults, "strict", "" + (true));
+      SPropertyOperations.set(defaults, "inplace", "" + (false));
+      return defaults;
+    }
+  }
+
   public static Object insertMacro_varValue_8301447434615581218(final IOperationContext operationContext, final TemplateQueryContext _context) {
     final DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     return Sequence.fromIterable(new RequiredPlugins(_context.getNode(), _context).getDependency()).select(new ISelector<SNode, String>() {
@@ -1621,25 +1640,6 @@ public class QueriesGenerated {
 
   public static Object insertMacro_varValue_5970181360960164993(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return (MPSModulesPartitioner.Chunk) _context.getNode().getUserObject("chunk");
-  }
-
-  public static Object insertMacro_varValue_4297162197626782015(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    SNode firstGenOpts = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions");
-      }
-    }).first();
-    if (firstGenOpts != null) {
-      return SNodeOperations.cast(firstGenOpts, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions");
-    } else {
-      SNode defaults = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", null);
-      SPropertyOperations.set(defaults, "parallel", "" + (true));
-      // 8 is the value BaseGenerationWorker uses when parallel is true 
-      SPropertyOperations.set(defaults, "parallelThreads", "" + (8));
-      SPropertyOperations.set(defaults, "strict", "" + (true));
-      SPropertyOperations.set(defaults, "inplace", "" + (false));
-      return defaults;
-    }
   }
 
   public static Object insertMacro_varValue_3239569521490197769(final IOperationContext operationContext, final TemplateQueryContext _context) {
