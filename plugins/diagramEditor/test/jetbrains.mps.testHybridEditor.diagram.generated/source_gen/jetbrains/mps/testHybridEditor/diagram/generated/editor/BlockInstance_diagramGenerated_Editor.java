@@ -121,9 +121,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-    protected void initPorts() {
-    }
-
     protected void synchronize() {
       boolean inputPortDiffFound = false;
       ListIterator<SNode> inputPortsIterator = myInputPorts.listIterator();

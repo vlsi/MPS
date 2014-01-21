@@ -19,12 +19,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-
-    String commandId = getCellId() + "_" + node.getNodeId().toString();
-    initPorts();
   }
-
-  protected abstract void initPorts();
 
   public abstract ReadableProperty<Integer> getXProperty();
 

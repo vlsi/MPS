@@ -69,9 +69,6 @@ public class BlockEditor extends AbstractJetpadEditor {
         return myYPropery;
       }
 
-      protected void initPorts() {
-      }
-
       public Mapper<SNode, DiagramNodeView> createMapper() {
         final BlockCell bc = this;
         final Mapper<SNode, DiagramNodeView> mapper = new Mapper<SNode, DiagramNodeView>(node, new BlockView()) {
