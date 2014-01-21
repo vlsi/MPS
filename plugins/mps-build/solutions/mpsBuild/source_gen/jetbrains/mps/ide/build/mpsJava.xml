@@ -37,10 +37,10 @@
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models">
-      <fileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models">
-      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/lib/mps-java-common.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-common" />

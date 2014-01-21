@@ -65,7 +65,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-solutions-jetbrains.mps.build.tests-models">
-      <fileset dir="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.build.tests-src.jar">
       <zipfileset file="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" prefix="module" />
