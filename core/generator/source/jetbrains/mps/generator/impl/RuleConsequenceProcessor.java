@@ -162,7 +162,9 @@ public class RuleConsequenceProcessor {
       SNode message = RuleUtil.getDismissTopRule_message(ruleConsequence);
       DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);
       String text = GeneratorUtilEx.getGeneratorMessage_text(message);
-      GeneratorUtil.log(getLog(),ruleConsequence.getReference(), messageType, text, GeneratorUtil.describeIfExists(myTemplateContext.getInput(), "input node"));
+      if (message != null) {
+        GeneratorUtil.log(getLog(),ruleConsequence.getReference(), messageType, text, GeneratorUtil.describeIfExists(myTemplateContext.getInput(), "input node"));
+      }
       myDismissRuleException = new DismissTopMappingRuleException(messageType, text);
     }
 

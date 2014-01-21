@@ -20,11 +20,13 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -43,6 +45,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   private final String conditionMethod;
   private final String ruleMappingName;
   private final SNode templateNode;
+  private final ReductionRuleCondition myCondition;
 
   public TemplateRootMappingRuleInterpreted(SNode rule) {
     ruleNode = rule;
@@ -53,6 +56,11 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
     ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
     templateNode = RuleUtil.getRootRuleTemplateNode(ruleNode);
+    if (conditionMethod != null) {
+      myCondition = TemplateReductionRuleInterpreted.tryConditionFactory(ruleNode, conditionMethod);
+    } else {
+      myCondition = null;
+    }
   }
 
   @Override
@@ -80,6 +88,9 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
     try {
       if(conditionMethod == null) {
         return true;
+      }
+      if (myCondition != null) {
+        return myCondition.check(new ReductionRuleQueryContext(context, ruleNode, environment.getGenerator()));
       }
 
       return (Boolean) QueryMethodGenerated.invoke(

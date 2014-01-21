@@ -127,7 +127,7 @@
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="39" startPosition="111" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="41" startPosition="7" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="43" startPosition="13" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="44" startPosition="78" endLine="45" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="44" startPosition="78" endLine="45" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="47" startPosition="34" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="49" startPosition="13" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="52" startPosition="34" endLine="53" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -196,8 +196,8 @@
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="166" startPosition="25" endLine="167" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="169" startPosition="23" endLine="170" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="171" startPosition="29" endLine="172" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="172" startPosition="114" endLine="173" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="173" startPosition="291" endLine="174" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="172" startPosition="114" endLine="173" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="173" startPosition="285" endLine="174" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="175" startPosition="35" endLine="176" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="178" startPosition="79" endLine="179" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="180" startPosition="25" endLine="181" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -283,7 +283,7 @@
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="147" startPosition="0" endLine="191" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="50" startPosition="66" endLine="102" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="143" startPosition="128" endLine="195" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="45" startPosition="248" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="45" startPosition="242" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="141" startPosition="0" endLine="200" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="42" startPosition="58" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="135" startPosition="139" endLine="204" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -411,7 +411,7 @@
     <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="142" startPosition="15" endLine="199" endPosition="39">
       <varInfo nodeId="400642802550420129" varName="tnode12" />
     </scopeInfo>
-    <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="45" startPosition="248" endLine="103" endPosition="11">
+    <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="45" startPosition="242" endLine="103" endPosition="11">
       <varInfo nodeId="400642802550420129" varName="itnode2" />
     </scopeInfo>
     <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="43" startPosition="13" endLine="103" endPosition="11">

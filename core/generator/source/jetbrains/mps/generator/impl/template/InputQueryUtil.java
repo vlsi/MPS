@@ -41,7 +41,6 @@ public class InputQueryUtil {
     res.add(RuleUtil.concept_LoopMacro);
     res.add(RuleUtil.concept_MapSrcListMacro);
     res.add(RuleUtil.concept_CopySrcListMacro);
-    res.add(RuleUtil.concept_CopySrcNodeMacro);
     return res;
   }
 

@@ -56,7 +56,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models">
-      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox-src.jar">
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/*.java" />

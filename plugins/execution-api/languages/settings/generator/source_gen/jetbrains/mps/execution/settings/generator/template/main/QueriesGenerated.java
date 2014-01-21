@@ -709,27 +709,27 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675922984(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675922984(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675922993(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675922993(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675923002(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675923002(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToEditorClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675923011(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675923011(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToEditorClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675923020(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675923020(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_3131153648913173888(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_3131153648913173888(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 

@@ -197,7 +197,7 @@ public class QueriesGenerated {
     final SNode ipacls = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a14(), "classifier", false);
     final SNode jobcls = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a1a14(), "classifier", false);
     final SNode cfgcls = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a2a14(), "classifier", false);
-    SNode imd = ListSequence.fromList(SNodeOperations.getAncestors(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false)).findFirst(new IWhereFilter<SNode>() {
+    SNode imd = ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode imd) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{jobcls}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{cfgcls});
       }

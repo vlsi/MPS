@@ -170,6 +170,8 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
+    SPropertyOperations.set(generator, "needOperationContext", "" + (source.needsOperationContext()));
+    SPropertyOperations.set(generator, "reflectiveQueries", "" + (source.isReflectiveQueries()));
     SPropertyOperations.set(generator, "namespace", (isNotEmptyString(source.getNamespace()) ? source.getNamespace() : null));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
       SLinkOperations.getTargets(generator, "priorityRules", true).add(convert(rule));

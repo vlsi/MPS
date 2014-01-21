@@ -63,7 +63,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809088659(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3h, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809088659(new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3h, environment.getGenerator())))) {
         return null;
       }
 
@@ -110,7 +110,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809090605(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3i, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809090605(new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3i, environment.getGenerator())))) {
         return null;
       }
 

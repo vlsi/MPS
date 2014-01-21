@@ -387,7 +387,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final List<SNode> tlist13 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a8a2a5v);
-            final Iterable<SNode> loopList13 = QueriesGenerated.sourceNodesQuery_4192433084863763935(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_417xrn_a0a0a1a8a2a5v, environment.getGenerator()));
+            final Iterable<SNode> loopList13 = QueriesGenerated.sourceNodesQuery_4192433084863763935(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a8a2a5v, environment.getGenerator()));
             for (SNode itnode13 : loopList13) {
               if (itnode13 == null) {
                 continue;
@@ -475,7 +475,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a5a2a5w);
-            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_6366407517031517860(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_417xrn_a0a0a1a5a2a5w, environment.getGenerator()));
+            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_6366407517031517860(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a5a2a5w, environment.getGenerator()));
             for (SNode itnode2 : loopList2) {
               if (itnode2 == null) {
                 continue;

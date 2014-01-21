@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" file="ClosureLiteraltargetFunType_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
@@ -24,7 +23,6 @@
   </dependency>
   <dependency className="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" file="ClosureLiteraltargetIface_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />

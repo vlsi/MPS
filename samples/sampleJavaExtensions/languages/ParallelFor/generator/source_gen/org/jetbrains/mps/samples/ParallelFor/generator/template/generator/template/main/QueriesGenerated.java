@@ -105,14 +105,6 @@ public class QueriesGenerated {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
   }
 
-  public static SNode sourceNodeQuery_7865129668867016139(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
-  public static SNode sourceNodeQuery_7865129668867016163(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static Iterable sourceNodesQuery_633195941006921760(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,6 @@ import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
@@ -37,7 +35,6 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final TextAttributes WARNING_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_WARNING_OUTPUT_KEY);
   private static final TextAttributes EXPIRED_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_EXPIRED_ENTRY);
   private static final Color CONSOLE_BACKGROUND = EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
-
 
   @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -56,14 +53,10 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
 
 
     NavStatus ns = canNavigate(message);
-    if (ns == NavStatus.NO) {
-      component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
-      component.setText(text);
-    } else if (ns == NavStatus.OUTDATED) {
+    if (ns == NavStatus.OUTDATED) {
       component.setForeground(EXPIRED_ATTRIBUTES.getForegroundColor());
       component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
-    } else if (ns == NavStatus.YES) {
-      component.setForeground(Color.BLUE);
+    } else {
       switch (message.getKind()) {
         case WARNING:
           component.setForeground(WARNING_ATTRIBUTES.getForegroundColor());
@@ -89,7 +82,6 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
         component.setIcon(Icons.ERROR_ICON);
         break;
     }
-
     return component;
   }
 

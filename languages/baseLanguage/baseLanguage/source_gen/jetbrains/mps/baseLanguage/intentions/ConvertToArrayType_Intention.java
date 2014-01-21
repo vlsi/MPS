@@ -54,7 +54,7 @@ public class ConvertToArrayType_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter"));
+    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ArrayCreator", "componentType")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "componentType")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions", "componentType"));
   }
 
   public SNodeReference getIntentionNodeReference() {

@@ -173,7 +173,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                     final List<SNode> tlist12 = new ArrayList<SNode>();
                     try {
                       environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a4a1a3a1a5a1a7a1a2);
-                      final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_2229091780083588954(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_gw04jt_a0a0a1a4a1a3a1a5a1a7a1a2, environment.getGenerator()));
+                      final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_2229091780083588954(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_gw04jt_a0a0a1a4a1a3a1a5a1a7a1a2, environment.getGenerator()));
                       for (SNode itnode12 : loopList12) {
                         if (itnode12 == null) {
                           continue;
@@ -287,7 +287,7 @@ public class TemplateLanguage implements TemplateDeclaration {
         final List<SNode> tlist18 = new ArrayList<SNode>();
         try {
           environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a8a1a2);
-          final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_1570228009930646079(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_gw04jt_a0a0a1a8a1a2, environment.getGenerator()));
+          final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_1570228009930646079(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_gw04jt_a0a0a1a8a1a2, environment.getGenerator()));
           for (SNode itnode18 : loopList18) {
             if (itnode18 == null) {
               continue;
@@ -1070,7 +1070,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                             final List<SNode> tlist74 = new ArrayList<SNode>();
                             try {
                               environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a5a1a1a1a3a1a3a1a6a1a41a1a2);
-                              final Iterable<SNode> loopList74 = QueriesGenerated.sourceNodesQuery_5554116809065233223(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_gw04jt_a0a0a1a5a1a1a1a3a1a3a1a6a1a41a1a2, environment.getGenerator()));
+                              final Iterable<SNode> loopList74 = QueriesGenerated.sourceNodesQuery_5554116809065233223(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_gw04jt_a0a0a1a5a1a1a1a3a1a3a1a6a1a41a1a2, environment.getGenerator()));
                               for (SNode itnode74 : loopList74) {
                                 if (itnode74 == null) {
                                   continue;
@@ -1375,7 +1375,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                 final List<SNode> tlist93 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a3a1a9a1a51a1a2);
-                  final Iterable<SNode> loopList93 = QueriesGenerated.sourceNodesQuery_8131497994928406547(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_gw04jt_a0a0a1a3a1a9a1a51a1a2, environment.getGenerator()));
+                  final Iterable<SNode> loopList93 = QueriesGenerated.sourceNodesQuery_8131497994928406547(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_gw04jt_a0a0a1a3a1a9a1a51a1a2, environment.getGenerator()));
                   for (SNode itnode93 : loopList93) {
                     if (itnode93 == null) {
                       continue;

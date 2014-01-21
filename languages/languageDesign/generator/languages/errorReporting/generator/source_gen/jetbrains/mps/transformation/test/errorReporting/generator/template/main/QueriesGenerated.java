@@ -15,11 +15,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getInteger(_context.getNode(), "intval") == 42;
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_7287346816896128676(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_7287346816896128676(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return null;
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_6145560071556216092(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_6145560071556216092(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("aaa");
   }
 }

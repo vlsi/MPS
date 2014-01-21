@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -57,21 +56,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return createStaticReference(myOutputTargetNode);
     }
     if (myResolveInfoForDynamicResolve != null) {
-      return createDynamicReference(myResolveInfoForDynamicResolve, getMacroNodeRef());
+      // It's not quite obvious whether dynamic references require null or non null - from DR cons it seems non-null
+      // is relevant for links to Classifiers.
+      // null is here as it the way it was prior to refactoring.
+      return createDynamicReference(myResolveInfoForDynamicResolve, null, getMacroNodeRef());
     }
     if (isRequired(generator.getLogger())) {
       return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
     }
-    return null;
-  }
-
-  @Nullable
-  @Override
-  protected SModelReference getTargetModelReference() {
-    // getTargetModelReference is there for dynamic references. It's not quite obvious
-    // whether dynamic references require null or non null - from DR cons it seems non-null
-    // is relevant for links to Classifiers. It's odd to keep it non-null in base ReferenceInfo, then?
-    // For now, keep it the way it was prior to refactoring.
     return null;
   }
 
@@ -100,6 +92,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
     // check referent because it's manual and thus error prone mapping
     if (myOutputTargetNode.getModel() == generator.getInputModel()) {
+      // There are RM that return input node from getReferent (e.g. in closures). The code below handles these cases, although I'm not
+      // quite confident it's a nice idea in the first place (getReferent shall not return input nodes, imo)
       // try to find copy in output model and replace target
       SNode outputTargetNode_output = generator.findCopiedOutputNodeForInputNode(myOutputTargetNode);
       if (outputTargetNode_output != null) {

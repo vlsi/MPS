@@ -368,15 +368,15 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187043830800(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043830800(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187043918082(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043918082(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187043927698(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043927698(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
 
