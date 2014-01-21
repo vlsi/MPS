@@ -26,6 +26,7 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -39,6 +40,7 @@ public class QueryMethodGenerated implements CoreComponent {
 
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
+  private static ConcurrentMap<Class<?>, Boolean> ourNeedOpContext = new ConcurrentHashMap<Class<?>, Boolean>();
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     @Override
@@ -66,6 +68,7 @@ public class QueryMethodGenerated implements CoreComponent {
   public static void clearCaches() {
     ourMethods.clear();
     ourClassesReportedAsNotFound.clear();
+    ourNeedOpContext.clear();
   }
 
   public static boolean needReport(String className) {
@@ -146,10 +149,15 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Object[] arguments = new Object[]{context, contextObject};
     Object result;
     Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
     try {
+      Object[] arguments;
+      if (needsOpContext(method.getDeclaringClass())) {
+        arguments = new Object[] { context, contextObject };
+      } else {
+        arguments = new Object[] { contextObject };
+      }
       result = method.invoke(null, arguments);
     } catch (IllegalArgumentException e) {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
@@ -163,6 +171,22 @@ public class QueryMethodGenerated implements CoreComponent {
       LOG.error(message, e.getCause());
       throw new RuntimeException(message, e.getCause());
     }
+    return result;
+  }
+  private static boolean needsOpContext(Class<?> cls) {
+    Boolean rv = ourNeedOpContext.get(cls);
+    if (rv != null) {
+      return rv;
+    }
+    boolean result = true;
+    for (Field f : cls.getDeclaredFields()) {
+      if ("NEEDS_OPCONTEXT".equals(f.getName())) {
+        result = false;
+        break;
+      }
+    }
+    ourNeedOpContext.putIfAbsent(cls, result);
+    // highly unlikely for another thread (if any) do get different result, ignore race condition chance
     return result;
   }
 }
