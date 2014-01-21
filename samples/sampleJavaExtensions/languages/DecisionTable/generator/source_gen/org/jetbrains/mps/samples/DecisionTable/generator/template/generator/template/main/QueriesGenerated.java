@@ -98,7 +98,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "colHeaders", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_3863300516938090623(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_3863300516938090623(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 }

@@ -88,11 +88,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(method, "body", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_3771754276238991338(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_3771754276238991338(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", false, false), "main-class");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_3771754276239012919(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_3771754276239012919(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", false, false), "main-class");
   }
 }

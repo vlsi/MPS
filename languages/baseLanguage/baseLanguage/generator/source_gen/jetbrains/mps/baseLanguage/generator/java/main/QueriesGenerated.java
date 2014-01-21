@@ -328,7 +328,7 @@ public class QueriesGenerated {
     return Property_Behavior.call_getCustomSetterStatements_2622108313339491118(_context.getNode());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1201570605396(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1201570605396(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 

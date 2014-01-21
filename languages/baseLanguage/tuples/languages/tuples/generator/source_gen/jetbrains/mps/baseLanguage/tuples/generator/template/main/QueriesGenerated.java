@@ -1354,17 +1354,17 @@ public class QueriesGenerated {
     return ic;
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238927241809(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238927241809(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_IMPL_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238931738394(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238931738394(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_FROM_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238950442297(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238950442297(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_EMPTY_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }

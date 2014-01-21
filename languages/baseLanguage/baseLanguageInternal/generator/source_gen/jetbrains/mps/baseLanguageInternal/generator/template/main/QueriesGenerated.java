@@ -216,19 +216,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "implementedInterface", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5822086619725756049(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5822086619725756049(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return ContextUtil.getContextForInnerClass(_context, _context.getNode(), false);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_7805405506192340587(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_7805405506192340587(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return ContextUtil.getContextForInnerClass(_context, _context.getNode(), false);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_8881995820265482161(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_8881995820265482161(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return ContextUtil.getContextForMethod(_context, _context.getNode(), false);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238251595165(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238251595165(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return ContextUtil.getContextForConstant(_context, _context.getNode(), true);
   }
 
