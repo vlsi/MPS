@@ -27,7 +27,6 @@
   </common>
   <source id="1143148725345" name="reduce_ConceptFunctionParameter_default" hash="-bddfwjjpc3ldh5ne2h96auo686z36kw">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
 
