@@ -31,7 +31,12 @@ public class ArrayCreator_Delete {
       SNode creator = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", true, false);
       if ((creator != null)) {
         SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, "jetbrains.mps.baseLanguage.structure.ArrayCreator");
-        SLinkOperations.setTarget(replacingCreator, "componentType", SLinkOperations.getTarget(creator, "componentType", true), true);
+        SNode componentType = SLinkOperations.getTarget(creator, "componentType", true);
+        while (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+          componentType = SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
+          SNodeFactoryOperations.addNewChild(replacingCreator, "dimensionExpression", "jetbrains.mps.baseLanguage.structure.DimensionExpression");
+        }
+        SLinkOperations.setTarget(replacingCreator, "componentType", componentType, true);
       }
     }
   }
