@@ -337,6 +337,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1213104859540">
     <nodeInfo nodeId="1213104859540" fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints.java" startLine="8" startPosition="67" endLine="9" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1213104859540" fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints.java" startLine="8" startPosition="67" endLine="9" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104859540" fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints#()V" />
     <scopeInfo nodeId="1213104859540" fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints.java" startLine="8" startPosition="67" endLine="9" endPosition="92" />
     <scopeInfo nodeId="1213104859540" fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />

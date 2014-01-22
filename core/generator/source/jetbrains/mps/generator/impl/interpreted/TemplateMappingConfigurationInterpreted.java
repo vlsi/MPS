@@ -100,7 +100,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
     return checkCondition(condition, generator);
   }
 
-  public boolean checkCondition(SNode condition, ITemplateGenerator generator) throws GenerationFailureException {
+  private boolean checkCondition(SNode condition, ITemplateGenerator generator) throws GenerationFailureException {
     String methodName = TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
     try {
       return (Boolean) QueryMethodGenerated.invoke(

@@ -45,6 +45,7 @@
   </root>
   <root nodeRef="r:d2131fa8-9bff-49c9-a7e2-6972f9544c0a(jetbrains.mps.core.query.constraints)/2268293679705627797">
     <nodeInfo nodeId="2268293679705627797" fileName="MqlAssignment_Constraints.java" startLine="8" startPosition="38" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2268293679705627797" fileName="MqlAssignment_Constraints.java" startLine="8" startPosition="38" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2268293679705627797" fileName="MqlAssignment_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MqlAssignment_Constraints#()V" />
     <scopeInfo nodeId="2268293679705627797" fileName="MqlAssignment_Constraints.java" startLine="8" startPosition="38" endLine="9" endPosition="62" />
     <scopeInfo nodeId="2268293679705627797" fileName="MqlAssignment_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,16 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
-import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
+import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.Collection;
 
@@ -41,31 +39,28 @@ import java.util.Collection;
 public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRule {
 
   private final SNode ruleNode;
+  private final SNodeReference myRuleRef;
   private final String applicableConcept;
   private final String conditionMethod;
   private final String ruleMappingName;
   private final SNode templateNode;
-  private final ReductionRuleCondition myCondition;
+  private MapRootRuleCondition myCondition;
 
   public TemplateRootMappingRuleInterpreted(SNode rule) {
     ruleNode = rule;
     applicableConcept = NameUtil.nodeFQName(RuleUtil.getBaseRuleApplicableConcept(rule));
+    myRuleRef = new jetbrains.mps.smodel.SNodePointer(ruleNode);
 
     SNode condition = RuleUtil.getBaseRuleCondition(ruleNode);
     conditionMethod = condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
 
     ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
     templateNode = RuleUtil.getRootRuleTemplateNode(ruleNode);
-    if (conditionMethod != null) {
-      myCondition = TemplateReductionRuleInterpreted.tryConditionFactory(ruleNode, conditionMethod);
-    } else {
-      myCondition = null;
-    }
   }
 
   @Override
   public SNodeReference getRuleNode() {
-    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
+    return myRuleRef;
   }
 
   @Override
@@ -85,30 +80,19 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    try {
       if(conditionMethod == null) {
         return true;
       }
-      if (myCondition != null) {
-        return myCondition.check(new ReductionRuleQueryContext(context, ruleNode, environment.getGenerator()));
+    try {
+      if (myCondition == null) {
+        myCondition = environment.getQueryProvider(getRuleNode()).getMapRootRuleCondition(conditionMethod);
       }
-
-      return (Boolean) QueryMethodGenerated.invoke(
-        conditionMethod,
-        environment.getGenerator().getGeneratorSessionContext(),
-        new BaseMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
-    } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
+      return myCondition.check(new MapRootRuleContext(context, getRuleNode(), environment.getGenerator()));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(getRuleNode(), "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", conditionMethod));
       throw new GenerationFailureException(t);
     }
-    return false;
   }
 
   @Override

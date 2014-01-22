@@ -37,6 +37,8 @@
   </root>
   <root nodeRef="r:8fbd7fea-612f-4754-863d-ec6ec2c11cbb(jetbrains.mps.core.structure.constraints)/2223786200032642316">
     <nodeInfo nodeId="2223786200032642316" fileName="SConstraintsPart_Constraints.java" startLine="8" startPosition="41" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2223786200032642316" fileName="SConstraintsPart_Constraints.java" startLine="8" startPosition="41" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2223786200032642316" fileName="SConstraintsPart_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2223786200032642316" fileName="SConstraintsPart_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2223786200032642316" fileName="SConstraintsPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SConstraintsPart_Constraints#()V" />
     <nodeInfo nodeId="2223786200032642316" fileName="SConstraintsPart_Constraints.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultConcreteConceptFqName#()Ljava/lang/String;" />
@@ -48,6 +50,8 @@
   </root>
   <root nodeRef="r:8fbd7fea-612f-4754-863d-ec6ec2c11cbb(jetbrains.mps.core.structure.constraints)/6195190339581962053">
     <nodeInfo nodeId="6195190339581962053" fileName="SStructurePart_Constraints.java" startLine="8" startPosition="39" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6195190339581962053" fileName="SStructurePart_Constraints.java" startLine="8" startPosition="39" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6195190339581962053" fileName="SStructurePart_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6195190339581962053" fileName="SStructurePart_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6195190339581962053" fileName="SStructurePart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SStructurePart_Constraints#()V" />
     <nodeInfo nodeId="6195190339581962053" fileName="SStructurePart_Constraints.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultConcreteConceptFqName#()Ljava/lang/String;" />
@@ -60,6 +64,8 @@
   <root nodeRef="r:8fbd7fea-612f-4754-863d-ec6ec2c11cbb(jetbrains.mps.core.structure.constraints)/6195190339581979662" />
   <root nodeRef="r:8fbd7fea-612f-4754-863d-ec6ec2c11cbb(jetbrains.mps.core.structure.constraints)/7581772527307844357">
     <nodeInfo nodeId="7581772527307844357" fileName="SConceptMember_Constraints.java" startLine="8" startPosition="39" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7581772527307844357" fileName="SConceptMember_Constraints.java" startLine="8" startPosition="39" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7581772527307844357" fileName="SConceptMember_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7581772527307844357" fileName="SConceptMember_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7581772527307844357" fileName="SConceptMember_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SConceptMember_Constraints#()V" />
     <nodeInfo nodeId="7581772527307844357" fileName="SConceptMember_Constraints.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultConcreteConceptFqName#()Ljava/lang/String;" />

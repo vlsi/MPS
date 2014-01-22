@@ -17,7 +17,9 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
+import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -184,6 +186,37 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return getModule().getScope();
   }
 
+  public GeneratorQueryProvider getQueryProvider(SNodeReference ruleNode) {
+    ReflectiveQueryProvider nv = new ReflectiveQueryProvider(ruleNode);
+    return nv; // there's no reason to cache RQP as they are unlikely to be used more than once -
+    // there's at most 1 condition per rule, and Condition objects are expected to be cached.
+    // The cache would come into play once there are non-reflective providers, where QG instances shall be reused
+    // Perhaps, cache of QG instances shall happen even further, e.g. not per model generation, but for
+    // complete generation phase (once per GenerationController?)
+//    GeneratorQueryProvider rv = myQueryProviders.putIfAbsent(ruleNode, nv);
+//    return rv == null ? nv : rv;
+  }
+/*
+  public static ReductionRuleCondition tryConditionFactory(SNode ruleNode, String conditionMethodName) {
+    try {
+      Class<?> qg = QueryMethodGenerated.getQueriesGeneratedClassFor(ruleNode.getModel().getReference(), false);
+      if (qg != null && ReductionRuleCondition.Factory.class.isAssignableFrom(qg)) {
+        ReductionRuleCondition.Factory f = ((Class<ReductionRuleCondition.Factory>) qg).newInstance();
+        return f.getReductionRuleCondition(conditionMethodName);
+      }
+    } catch (ClassNotFoundException ex) {
+      // ignore, the error has been reported
+    } catch (InstantiationException e) {
+      // FIXME ignore now, shall report
+    } catch (IllegalAccessException e) {
+      // FIXME ignore now, shall report
+    }
+    return null;
+  }
+*/
+
+  // FIXME revisit is there need for external classes to know my delegate or they
+  // could have piped all queries through me? lang.plugin.generator might be unsatisfied with this#getModule()
   public IOperationContext getInvocationContext() {
     return myInvocationContext;
   }

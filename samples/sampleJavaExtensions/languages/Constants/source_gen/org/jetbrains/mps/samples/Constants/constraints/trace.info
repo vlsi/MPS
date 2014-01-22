@@ -3,6 +3,7 @@
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)/2001769927721048297">
     <nodeInfo nodeId="2001769927721048297" fileName="Constant_Constraints.java" startLine="8" startPosition="33" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2001769927721048297" fileName="Constant_Constraints.java" startLine="8" startPosition="33" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2001769927721048297" fileName="Constant_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Constant_Constraints#()V" />
     <scopeInfo nodeId="2001769927721048297" fileName="Constant_Constraints.java" startLine="8" startPosition="33" endLine="9" endPosition="68" />
     <scopeInfo nodeId="2001769927721048297" fileName="Constant_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />

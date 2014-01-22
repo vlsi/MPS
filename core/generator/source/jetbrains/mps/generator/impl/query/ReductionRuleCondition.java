@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.generator.impl.query;
 
-import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Artem Tikhomirov
  */
 public interface ReductionRuleCondition extends Query {
-  boolean check(ReductionRuleQueryContext ctx);
+  boolean check(@NotNull ReductionRuleQueryContext ctx);
   interface Factory {
     ReductionRuleCondition getReductionRuleCondition(String methodName);
   }
