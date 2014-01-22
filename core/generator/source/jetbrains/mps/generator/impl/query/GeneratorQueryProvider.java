@@ -23,20 +23,13 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface GeneratorQueryProvider {
-  @NotNull
   CreateRootCondition getCreateRootRuleCondition(@NotNull String methodName);
-  @NotNull
   MapRootRuleCondition getMapRootRuleCondition(@NotNull String methodName);
-  @NotNull
   ReductionRuleCondition getReductionRuleCondition(@NotNull String methodName);
-  @NotNull
   PatternRuleQuery getPatternRuleCondition(@NotNull String methodName);
-  @NotNull
   DropRuleCondition getDropRuleCondition(@NotNull String methodName);
-  @NotNull
   WeaveRuleCondition getWeaveRuleCondition(@NotNull String methodName);
-  @NotNull
   WeaveRuleQuery getWeaveRuleQuery(@NotNull String methodName);
-  @NotNull
   ScriptCodeBlock getScriptCodeBlock(@NotNull String methodName);
+  MapConfigurationCondition getMapConfigurationCondition(@NotNull String methodName);
 }

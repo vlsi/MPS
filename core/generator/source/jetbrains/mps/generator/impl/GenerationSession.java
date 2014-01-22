@@ -676,6 +676,7 @@ class GenerationSession {
     if (myDiscardTransients) {
       mySessionContext.clearTransientModels();
     }
+    mySessionContext.disposeQueryProvider();
     myLogger.setOperationContext(null);
     mySessionContext = null;
   }

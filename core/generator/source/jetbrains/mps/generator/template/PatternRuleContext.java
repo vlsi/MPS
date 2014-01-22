@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Evgeny Gryaznov, May 17, 2010
  */
-public class PatternRuleContext extends BaseMappingRuleContext {
+public class PatternRuleContext extends TemplateQueryContextWithRule {
 
   public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);

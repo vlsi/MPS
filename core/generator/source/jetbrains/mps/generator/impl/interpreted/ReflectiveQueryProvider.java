@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
@@ -77,7 +78,7 @@ public class ReflectiveQueryProvider implements GeneratorQueryProvider {
   @NotNull
   @Override
   public DropRuleCondition getDropRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+    return new Impl(myRuleNode, methodName, true);
   }
 
   @NotNull
@@ -98,28 +99,40 @@ public class ReflectiveQueryProvider implements GeneratorQueryProvider {
     return new Impl(myRuleNode, methodName);
   }
 
+  @NotNull
+  @Override
+  public MapConfigurationCondition getMapConfigurationCondition(@NotNull String methodName) {
+    return new Impl(myRuleNode, methodName, true);
+  }
+
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition {
 
     @NotNull
     private final String myMethodName;
+    private final boolean myDefValue;
     @NotNull
     private final SNodeReference myRuleNode;
 
     Impl(@NotNull SNodeReference ruleNode, @NotNull String methodName) {
+      this(ruleNode, methodName, false);
+    }
+
+    Impl(@NotNull SNodeReference ruleNode, @NotNull String methodName, boolean defValue) {
       myRuleNode = ruleNode;
       myMethodName = methodName;
+      myDefValue = defValue;
     }
 
     private boolean invokeBoolean(TemplateQueryContext ctx) {
       try {
         return (Boolean) QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to FALSE", myMethodName));
+        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to FALSE", myMethodName));
+        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
       }
-      return false;
+      return myDefValue;
     }
 
     @Override
@@ -180,6 +193,11 @@ public class ReflectiveQueryProvider implements GeneratorQueryProvider {
       } catch (NoSuchMethodException e) {
         ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
       }
+    }
+
+    @Override
+    public boolean check(TemplateQueryContext ctx) {
+      return invokeBoolean(ctx);
     }
   }
 }
