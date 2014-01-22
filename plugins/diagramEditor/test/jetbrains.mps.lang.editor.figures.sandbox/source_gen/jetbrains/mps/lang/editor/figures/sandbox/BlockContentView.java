@@ -9,7 +9,6 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.cell.view.CellView;
-import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.cell.text.TextEditing;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
@@ -29,7 +28,7 @@ public class BlockContentView extends CenterVerticalLayoutView {
     super(false);
     background().set(Color.LIGHT_BLUE);
 
-    CellView cellView = new CellView(new GroupView());
+    CellView cellView = new CellView();
     cellView.background().set(Color.LIGHT_BLUE);
     myCell.addTrait(TextEditing.textEditing());
     cellView.cell.set(myCell);

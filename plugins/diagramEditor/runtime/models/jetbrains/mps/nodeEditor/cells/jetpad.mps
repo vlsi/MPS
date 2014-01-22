@@ -1325,7 +1325,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7494254745216541295" resolveInfo="event" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7494254745216569970" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ro4y.~MouseEvent%dconsume()%cvoid" resolveInfo="consume" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ro4x.~Event%dconsume()%cvoid" resolveInfo="consume" />
                             </node>
                           </node>
                         </node>
