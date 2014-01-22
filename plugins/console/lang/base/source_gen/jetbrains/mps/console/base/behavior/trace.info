@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CommandHolder_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
   <unitInfo fileName="Command_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleHelpProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleHelpProvider_BehaviorDescriptor" />
@@ -20,6 +20,7 @@
   <unitInfo fileName="NodeReferenceString_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeReferenceString_BehaviorDescriptor" />
   <unitInfo fileName="NodeResponseItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeResponseItem_BehaviorDescriptor" />
   <unitInfo fileName="NodeWithClosure_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" />
+  <unitInfo fileName="OutputConsoleRoot_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.base.behavior.OutputConsoleRoot_BehaviorDescriptor" />
   <unitInfo fileName="PastedNodeReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.console.base.behavior.PastedNodeReference_BehaviorDescriptor" />
   <unitInfo fileName="ResponseItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" />
   <unitInfo fileName="Response_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" />

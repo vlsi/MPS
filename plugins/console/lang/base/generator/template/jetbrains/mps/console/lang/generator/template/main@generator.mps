@@ -15,6 +15,7 @@
     <property name="name" nameId="tpck.1169194664001" value="main" />
     <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5336086527852743314" nodeInfo="ng">
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="eynw.1583916890557930028" resolveInfo="ConsoleRoot" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="5336086527852743855" resolveInfo="Main" />
     </node>

@@ -14,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeReferenceString_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.OutputConsoleRoot_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.PastedNodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.TextResponseItem_BehaviorDescriptor" />
@@ -340,6 +341,12 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.base.behavior.OutputConsoleRoot_BehaviorDescriptor" file="OutputConsoleRoot_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ConsoleRoot_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.behavior.PastedNodeReference_Behavior" file="PastedNodeReference_Behavior.java">
