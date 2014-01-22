@@ -126,6 +126,9 @@ public class GenerationController implements ITaskPoolProvider {
     } catch (Exception t) {
       myLogger.handleException(t);
       return false;
+    } catch (AssertionError e) {
+      myLogger.handleException(e);
+      throw e;
     } finally {
       monitor.done();
       myGenerationHandler.finishGeneration();

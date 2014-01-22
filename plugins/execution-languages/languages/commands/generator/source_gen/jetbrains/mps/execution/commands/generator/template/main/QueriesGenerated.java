@@ -317,10 +317,6 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_8980950851470008459(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_8980950851470008737(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "workingDirectory", true);
   }
@@ -394,17 +390,17 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_865001690840233348(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = _quotation_createNode_x583g4_a0a0ed(BehaviorReflection.invokeVirtual(String.class, ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(_context.getNode(), "commandPart", false)), "virtual_getFullName_946964771156905503", new Object[]{}));
+    SNode expression = _quotation_createNode_x583g4_a0a0dd(BehaviorReflection.invokeVirtual(String.class, ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(_context.getNode(), "commandPart", false)), "virtual_getFullName_946964771156905503", new Object[]{}));
     for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, "parameterDeclaration", false), "virtual_generateField_8478830098674441876", new Object[]{});
       }
     })) {
-      SNode ref = _quotation_createNode_x583g4_a0a0b0ed(_context.getOutputNodeByInputNodeAndMappingLabel(argument, "CommandParameterAssignmentToLocalVariable"));
+      SNode ref = _quotation_createNode_x583g4_a0a0b0dd(_context.getOutputNodeByInputNodeAndMappingLabel(argument, "CommandParameterAssignmentToLocalVariable"));
       AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderParameter"), "jetbrains.mps.execution.commands.structure.BuilderParameter");
 
       String name = CommandParameterDeclaration_Behavior.call_getSetterLongName_3754131050835964459(SLinkOperations.getTarget(argument, "parameterDeclaration", false));
-      expression = _quotation_createNode_x583g4_a0e0b0ed(expression, ref, name);
+      expression = _quotation_createNode_x583g4_a0e0b0dd(expression, ref, name);
     }
     // todo resolve a problem the other way 
     // <node> 
@@ -412,11 +408,11 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_8980950851470008605(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = _quotation_createNode_x583g4_a0a0fd();
+    SNode expression = _quotation_createNode_x583g4_a0a0ed();
     for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "commandPart", true))) {
-      SNode ref = _quotation_createNode_x583g4_a0a0b0fd(_context.getOutputNodeByInputNodeAndMappingLabel(part, "CommandPartToLocalVariableDeclaration"));
+      SNode ref = _quotation_createNode_x583g4_a0a0b0ed(_context.getOutputNodeByInputNodeAndMappingLabel(part, "CommandPartToLocalVariableDeclaration"));
       AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderParameter"), "jetbrains.mps.execution.commands.structure.BuilderParameter");
-      expression = _quotation_createNode_x583g4_a0c0b0fd(expression, ref);
+      expression = _quotation_createNode_x583g4_a0c0b0ed(expression, ref);
     }
     return expression;
   }
@@ -495,12 +491,12 @@ public class QueriesGenerated {
               final SNode calledDebuggerParameter = SLinkOperations.getTarget(calledDeclaration, "debuggerParameter", true);
               if (ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).findFirst(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a98(SLinkOperations.getTarget(it, "parameterDeclaration", false), calledDebuggerParameter);
+                  return eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a88(SLinkOperations.getTarget(it, "parameterDeclaration", false), calledDebuggerParameter);
                 }
               }) == null) {
                 SNode reference = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandParameterReference", null);
                 SLinkOperations.setTarget(reference, "parameter", SLinkOperations.getTarget(declaration, "debuggerParameter", true), false);
-                ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).addElement(_quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a98(calledDebuggerParameter, reference));
+                ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).addElement(_quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a88(calledDebuggerParameter, reference));
               }
             }
           }
@@ -516,7 +512,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0ed(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0dd(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", null, null, GlobalScope.getInstance(), false);
@@ -524,7 +520,7 @@ public class QueriesGenerated {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0b0ed(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0b0dd(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
@@ -532,7 +528,7 @@ public class QueriesGenerated {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0e0b0ed(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_x583g4_a0e0b0dd(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -558,7 +554,7 @@ public class QueriesGenerated {
     return quotedNode_4;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a2a0a3a28(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_x583g4_a0a0a2a0a3a18(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -571,7 +567,7 @@ public class QueriesGenerated {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a2a0c0a0d0ed(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_x583g4_a0a2a0c0a0d0dd(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -592,7 +588,7 @@ public class QueriesGenerated {
     return quotedNode_5;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0fd() {
+  private static SNode _quotation_createNode_x583g4_a0a0ed() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -603,7 +599,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0b0fd(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0b0ed(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
@@ -611,7 +607,7 @@ public class QueriesGenerated {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0c0b0fd(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_x583g4_a0c0b0ed(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -633,7 +629,7 @@ public class QueriesGenerated {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a98(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a88(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -650,7 +646,7 @@ public class QueriesGenerated {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a98(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a88(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -60,14 +60,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(t, "resultValues", true)).getElement(SNodeOperations.getIndexInParent(rowHeader) * ListSequence.fromList(SLinkOperations.getTargets(t, "colHeaders", true)).count() + SNodeOperations.getIndexInParent(colHeader));
   }
 
-  public static SNode sourceNodeQuery_3863300516938186028(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
-  public static SNode sourceNodeQuery_3863300516938171011(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_3863300516938155197(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "defaultValue", true);
   }
@@ -106,7 +98,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "colHeaders", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_3863300516938090623(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_3863300516938090623(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 }

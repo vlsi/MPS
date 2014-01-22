@@ -210,14 +210,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "function", true);
   }
 
-  public static SNode sourceNodeQuery_199058371937626111(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_199058371937625985(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      return _quotation_createNode_x583g4_a0a1a74();
+      return _quotation_createNode_x583g4_a0a1a64();
     } else {
       return type;
     }
@@ -238,7 +234,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_7347119454575546785(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      return _quotation_createNode_x583g4_a0a1a15();
+      return _quotation_createNode_x583g4_a0a1a05();
     } else {
       return type;
     }
@@ -251,7 +247,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2985097847315908623(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      return _quotation_createNode_x583g4_a0a1a35();
+      return _quotation_createNode_x583g4_a0a1a25();
     } else {
       return type;
     }
@@ -260,7 +256,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2985097847315908664(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      return _quotation_createNode_x583g4_a0a1a45();
+      return _quotation_createNode_x583g4_a0a1a35();
     } else {
       return type;
     }
@@ -269,7 +265,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2985097847315916634(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      return _quotation_createNode_x583g4_a0a1a55();
+      return _quotation_createNode_x583g4_a0a1a45();
     } else {
       return type;
     }
@@ -278,7 +274,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2985097847315916658(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      return _quotation_createNode_x583g4_a0a1a65();
+      return _quotation_createNode_x583g4_a0a1a55();
     } else {
       return type;
     }
@@ -306,10 +302,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_816130369292752650(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return LambdaAbstraction_Behavior.call_getInnerBody_5066394162984540354(LambdaApplication_Behavior.call_getLambdaAbstraction_4976946798230781575(_context.getNode()));
-  }
-
-  public static SNode sourceNodeQuery_816130369292752680(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static Iterable sourceNodesQuery_199058371937626104(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -360,7 +352,7 @@ public class QueriesGenerated {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a1a74() {
+  private static SNode _quotation_createNode_x583g4_a0a1a64() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -368,7 +360,15 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a1a15() {
+  private static SNode _quotation_createNode_x583g4_a0a1a05() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_x583g4_a0a1a25() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -393,14 +393,6 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a1a55() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_x583g4_a0a1a65() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

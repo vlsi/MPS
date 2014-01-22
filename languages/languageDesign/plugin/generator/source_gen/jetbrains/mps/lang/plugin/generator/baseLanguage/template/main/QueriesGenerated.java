@@ -1644,11 +1644,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "modifier", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_5508914264443147579(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_5508914264443147579(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_BaseToolClass");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1217678861866(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1217678861866(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "map_CreatePages");
   }
 

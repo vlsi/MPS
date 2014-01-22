@@ -441,10 +441,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(PatternExpression_Behavior.call_getUniqueVariables_4855904478357073018(_context.getNode())).isNotEmpty();
   }
 
-  public static SNode sourceNodeQuery_4855904478357020833(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_5960292722835958212(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode mainNode = SLinkOperations.getTarget(_context.getNode(), "mainNode", false);
     String role = SPropertyOperations.getString(_context.getNode(), "role");
@@ -453,10 +449,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6803895172776061265(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "patternNode", true);
-  }
-
-  public static SNode sourceNodeQuery_412500033819230383(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_6803895172776092899(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

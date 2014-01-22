@@ -268,12 +268,13 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_s4priq_a2c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_s4priq_b2c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_s4priq_b2c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_s4priq_c2c0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_s4priq_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input node:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input node");
     editorCell.setCellId("Constant_s4priq_a2c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
@@ -282,7 +283,17 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_s4priq_b2c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_s4priq_b2c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_s4priq_b2c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_s4priq_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodeQuery");
     provider.setNoTargetText("<no sourceNodeQuery>");

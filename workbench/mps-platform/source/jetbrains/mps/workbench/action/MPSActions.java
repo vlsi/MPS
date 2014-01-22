@@ -68,7 +68,7 @@ public class MPSActions {
     //remove mps groups from IDEA groups
     for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);
-      if (action instanceof ActionGroup && (!(action instanceof BaseGroup))) {
+      if (action instanceof ActionGroup) {
         ActionGroup staticGroup = (ActionGroup) action;
         removeGroupsFromGroup(staticGroup, mpsGroups);
       }

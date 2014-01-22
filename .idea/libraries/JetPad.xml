@@ -2,7 +2,6 @@
   <library name="JetPad">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar!/" />
@@ -17,11 +16,15 @@
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar!/" />
@@ -36,6 +39,11 @@
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar!/" />
     </SOURCES>
   </library>
 </component>

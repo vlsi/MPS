@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="8583a8ezmkjbf5cy5reglxhkyohhvry">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="ekvrykzi36widkyyu5gpy2e9okbzvlk" />
   <common hash="m4t53998586cbraxtsst8axt4jndlm" dependsOnNodes="true" />
   <source id="6896005762093561042" name="PropEscapeUtil" hash="-7t248f7t1kkcludkti5dahr7ipgv0y1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

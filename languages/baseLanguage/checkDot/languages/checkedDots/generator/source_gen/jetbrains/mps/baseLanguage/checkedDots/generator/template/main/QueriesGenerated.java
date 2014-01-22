@@ -102,12 +102,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
-  public static SNode sourceNodeQuery_3391577739833596065(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_3674434577577160632(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _quotation_createNode_x583g4_a0a91();
+    return _quotation_createNode_x583g4_a0a81();
   }
 
   public static Iterable sourceNodesQuery_3391577739833431906(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -137,7 +133,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a91() {
+  private static SNode _quotation_createNode_x583g4_a0a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);

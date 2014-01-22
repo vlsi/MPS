@@ -97,7 +97,7 @@ public class QueriesGenerated {
     return LoggingGenerationUtil.toPlus(SLinkOperations.getTargets(_context.getNode(), "textExpression", true));
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187224198430(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187224198430(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     SNode logStatement = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).first();
     SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(logStatement, "logFieldUsage");
     SNode ancestor = SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, true);

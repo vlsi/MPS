@@ -56,6 +56,6 @@ public class VirtualFileUtils {
    * @return true - event is from IdeaFile processing, false - event from refresh or any other VirtualFile changes
    */
   public static boolean isFileEventFromMPS(VFileEvent event) {
-    return event.getRequestor() == IdeaFileSystemProvider.class;
+    return event.getRequestor() instanceof IdeaFileSystemProvider;
   }
 }

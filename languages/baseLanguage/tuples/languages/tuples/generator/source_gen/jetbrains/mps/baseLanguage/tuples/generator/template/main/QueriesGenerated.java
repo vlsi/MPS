@@ -727,10 +727,6 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true));
   }
 
-  public static SNode sourceNodeQuery_1241263972229(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1239723591680(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
@@ -745,10 +741,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1239724391711(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1238950163800(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_2682363017137795893(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -781,10 +773,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7781156898616421330(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation"), "component", false), "type", true));
-  }
-
-  public static SNode sourceNodeQuery_1241018440878(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1239640537589(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -845,10 +833,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4237952634722647531(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_6392574240232860445(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static Iterable sourceNodesQuery_1238939241168(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1370,17 +1354,17 @@ public class QueriesGenerated {
     return ic;
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238927241809(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238927241809(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_IMPL_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238931738394(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238931738394(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_FROM_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1238950442297(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1238950442297(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_EMPTY_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }

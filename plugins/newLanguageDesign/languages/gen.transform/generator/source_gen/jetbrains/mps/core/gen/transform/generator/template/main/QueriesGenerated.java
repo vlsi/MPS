@@ -743,10 +743,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
   }
 
-  public static SNode sourceNodeQuery_4562783364556447351(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_9087630951858901616(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
   }
@@ -879,10 +875,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "endIndex", true);
   }
 
-  public static SNode sourceNodeQuery_9173039802031610623(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_5400632665800855854(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return MqlVariable_Behavior.call_getType_3435983127247055576(SLinkOperations.getTarget(_context.getNode(), "var", true));
   }
@@ -965,10 +957,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3003531278886538316(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "result", true);
-  }
-
-  public static SNode sourceNodeQuery_7488639813762827297(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_7488639813929047528(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

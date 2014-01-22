@@ -3,7 +3,6 @@
   <models>
     <modelRoot contentPath="${mps_home}/plugins/jetpad/lib" type="java_classes">
       <sourceRoot location="base-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="core-1.0-SNAPSHOT.jar" />
       <sourceRoot location="dataflow-1.0-SNAPSHOT.jar" />
       <sourceRoot location="diagram-1.0-SNAPSHOT.jar" />
       <sourceRoot location="domUtil-1.0-SNAPSHOT.jar" />
@@ -18,6 +17,11 @@
       <sourceRoot location="values-1.0-SNAPSHOT.jar" />
       <sourceRoot location="view-1.0-SNAPSHOT.jar" />
       <sourceRoot location="otmodel-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="cell-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="completion-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="persistence-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="websocket-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="gwt-framework-1.0-SNAPSHOT.jar" />
     </modelRoot>
   </models>
   <facets>
@@ -26,7 +30,6 @@
   </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
@@ -41,6 +44,11 @@
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

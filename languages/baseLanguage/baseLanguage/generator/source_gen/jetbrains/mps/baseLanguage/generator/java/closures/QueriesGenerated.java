@@ -186,7 +186,7 @@ public class QueriesGenerated {
     return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(final IOperationContext operationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "closure_adapterClass");
   }
 
