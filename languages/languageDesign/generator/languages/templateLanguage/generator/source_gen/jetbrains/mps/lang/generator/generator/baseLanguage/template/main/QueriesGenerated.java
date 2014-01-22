@@ -2894,8 +2894,6 @@ public class QueriesGenerated {
     return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
   }
 
-
-
   public static SNode sourceNodeQuery_1071051212913897962(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
