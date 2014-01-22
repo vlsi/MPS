@@ -29,14 +29,16 @@ import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.ListIterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -144,26 +146,12 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
           super.registerSynchronizers(configuration);
           configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
-              // TODO: use more effitient way of getting port cell (by ID) 
-              for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
-                if (childCell.getSNode() == node) {
-                  return ((BlockCell) childCell).createMapper();
-                }
-              }
-              assert false : "No port cell found for: " + node;
-              return null;
+              return ((BlockCell) getDirectChildCell(node)).createMapper();
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
             public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
-              // TODO: use more effitient way of getting port cell (by ID) 
-              for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
-                if (childCell.getSNode() == node) {
-                  return ((ConnectorCell) childCell).createMapper();
-                }
-              }
-              assert false : "No port cell found for: " + node;
-              return null;
+              return ((ConnectorCell) getDirectChildCell(node)).createMapper();
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myConnectionSingleList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
@@ -175,39 +163,58 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
     protected void synchronize() {
+      Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
+      ListIterator<SNode> blocksIterator = myBlocks.listIterator();
+      Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
+      ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
+      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "blocks", true))) {
+        if (existingBlocks.contains(nextElement)) {
+          syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          continue;
+        } else if (existingConnectors.contains(nextElement)) {
+          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          continue;
+        }
+
+        EditorCell cell = getContext().createNodeCell(nextElement);
+        if (cell instanceof BlockCell) {
+          blocksIterator.add(nextElement);
+          existingBlocks.add(nextElement);
+          addEditorCell(cell);
+        } else if (cell instanceof ConnectorCell) {
+          connectorsIterator.add(nextElement);
+          existingConnectors.add(nextElement);
+          addEditorCell(cell);
+        }
+      }
+      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "connectors", true))) {
+        if (existingBlocks.contains(nextElement)) {
+          syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          continue;
+        } else if (existingConnectors.contains(nextElement)) {
+          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          continue;
+        }
+
+        EditorCell cell = getContext().createNodeCell(nextElement);
+        if (cell instanceof BlockCell) {
+          blocksIterator.add(nextElement);
+          existingBlocks.add(nextElement);
+          addEditorCell(cell);
+        } else if (cell instanceof ConnectorCell) {
+          connectorsIterator.add(nextElement);
+          existingConnectors.add(nextElement);
+          addEditorCell(cell);
+        }
+      }
+      purgeTailNodes(blocksIterator);
+      purgeTailNodes(connectorsIterator);
     }
-
-
 
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
-    }
-
-    protected void init() {
-      for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "blocks", true))) {
-        EditorCell cell = getContext().createNodeCell(diagramElement);
-        if (cell instanceof BlockCell) {
-          myBlocks.add(diagramElement);
-          addEditorCell(cell);
-        } else if (cell instanceof ConnectorCell) {
-          myConnectors.add(diagramElement);
-          addEditorCell(cell);
-        }
-      }
-      for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "connectors", true))) {
-        EditorCell cell = getContext().createNodeCell(diagramElement);
-        if (cell instanceof BlockCell) {
-          myBlocks.add(diagramElement);
-          addEditorCell(cell);
-        } else if (cell instanceof ConnectorCell) {
-          myConnectors.add(diagramElement);
-          addEditorCell(cell);
-        }
-      }
     }
   }
 
@@ -264,26 +271,12 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
           super.registerSynchronizers(configuration);
           configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
-              // TODO: use more effitient way of getting port cell (by ID) 
-              for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
-                if (childCell.getSNode() == node) {
-                  return ((BlockCell) childCell).createMapper();
-                }
-              }
-              assert false : "No port cell found for: " + node;
-              return null;
+              return ((BlockCell) getDirectChildCell(node)).createMapper();
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
             public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
-              // TODO: use more effitient way of getting port cell (by ID) 
-              for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
-                if (childCell.getSNode() == node) {
-                  return ((ConnectorCell) childCell).createMapper();
-                }
-              }
-              assert false : "No port cell found for: " + node;
-              return null;
+              return ((ConnectorCell) getDirectChildCell(node)).createMapper();
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myConnectionSingleList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
@@ -295,39 +288,58 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
     protected void synchronize() {
+      Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
+      ListIterator<SNode> blocksIterator = myBlocks.listIterator();
+      Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
+      ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
+      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newBlocks", true))) {
+        if (existingBlocks.contains(nextElement)) {
+          syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          continue;
+        } else if (existingConnectors.contains(nextElement)) {
+          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          continue;
+        }
+
+        EditorCell cell = getContext().createNodeCell(nextElement);
+        if (cell instanceof BlockCell) {
+          blocksIterator.add(nextElement);
+          existingBlocks.add(nextElement);
+          addEditorCell(cell);
+        } else if (cell instanceof ConnectorCell) {
+          connectorsIterator.add(nextElement);
+          existingConnectors.add(nextElement);
+          addEditorCell(cell);
+        }
+      }
+      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newConnectors", true))) {
+        if (existingBlocks.contains(nextElement)) {
+          syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          continue;
+        } else if (existingConnectors.contains(nextElement)) {
+          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          continue;
+        }
+
+        EditorCell cell = getContext().createNodeCell(nextElement);
+        if (cell instanceof BlockCell) {
+          blocksIterator.add(nextElement);
+          existingBlocks.add(nextElement);
+          addEditorCell(cell);
+        } else if (cell instanceof ConnectorCell) {
+          connectorsIterator.add(nextElement);
+          existingConnectors.add(nextElement);
+          addEditorCell(cell);
+        }
+      }
+      purgeTailNodes(blocksIterator);
+      purgeTailNodes(connectorsIterator);
     }
-
-
 
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
-    }
-
-    protected void init() {
-      for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newBlocks", true))) {
-        EditorCell cell = getContext().createNodeCell(diagramElement);
-        if (cell instanceof BlockCell) {
-          myBlocks.add(diagramElement);
-          addEditorCell(cell);
-        } else if (cell instanceof ConnectorCell) {
-          myConnectors.add(diagramElement);
-          addEditorCell(cell);
-        }
-      }
-      for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newConnectors", true))) {
-        EditorCell cell = getContext().createNodeCell(diagramElement);
-        if (cell instanceof BlockCell) {
-          myBlocks.add(diagramElement);
-          addEditorCell(cell);
-        } else if (cell instanceof ConnectorCell) {
-          myConnectors.add(diagramElement);
-          addEditorCell(cell);
-        }
-      }
     }
   }
 

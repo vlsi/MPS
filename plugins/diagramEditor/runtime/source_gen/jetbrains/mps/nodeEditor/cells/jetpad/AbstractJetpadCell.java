@@ -10,8 +10,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import java.util.LinkedList;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.ListIterator;
+import java.util.Set;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
@@ -60,7 +63,55 @@ public class AbstractJetpadCell extends EditorCell_Collection {
     }
   }
 
+  protected EditorCell getDirectChildCell(SNode node) {
+    // TODO: use more effitient way of getting port cell (by ID) 
+    for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
+      if (nextCell.getSNode() == node) {
+        return nextCell;
+      }
+    }
+    return null;
+  }
 
+  protected void syncToNextObject(ListIterator listIterator, Set elementsSet, Object next) {
+    while (listIterator.hasNext()) {
+      Object nextFromList = listIterator.next();
+      if (nextFromList == next) {
+        return;
+      }
+      listIterator.remove();
+      elementsSet.remove(nextFromList);
+    }
+    assert false : "Next element was not found in passed listIterator";
+  }
+
+  protected void syncToNextNode(ListIterator<SNode> listIterator, Set<SNode> elementsSet, SNode nextNode) {
+    while (listIterator.hasNext()) {
+      SNode nextFromList = listIterator.next();
+      if (nextFromList == nextNode) {
+        return;
+      }
+      listIterator.remove();
+      elementsSet.remove(nextFromList);
+      removeCell(((jetbrains.mps.nodeEditor.cells.EditorCell) getDirectChildCell(nextFromList)));
+    }
+    assert false : "Next element was not found in passed listIterator";
+  }
+
+  protected void purgeTailNodes(ListIterator<SNode> listIterator) {
+    while (listIterator.hasNext()) {
+      SNode nextFromList = listIterator.next();
+      listIterator.remove();
+      removeCell(((jetbrains.mps.nodeEditor.cells.EditorCell) getDirectChildCell(nextFromList)));
+    }
+  }
+
+  protected void purgeTailObject(ListIterator listIterator) {
+    while (listIterator.hasNext()) {
+      listIterator.next();
+      listIterator.remove();
+    }
+  }
 
   protected static void configureView(final View view, final EditorCell editorCell, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
     view.focusable().set(true);

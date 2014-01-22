@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -122,30 +124,28 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     }
 
     protected void synchronize() {
-      boolean inputPortDiffFound = false;
-      ListIterator<SNode> inputPortsIterator = myInputPorts.listIterator();
+      Set<SNode> existingPorts_gju6mh_a0 = new HashSet<SNode>(myInputPorts);
+      ListIterator<SNode> portsIterator_gju6mh_a0 = myInputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "inMetaPorts", true))) {
-        inputPortDiffFound = inputPortDiffFound || !(BlockCell.skipNextIfSame(inputPortsIterator, port));
-        if (inputPortDiffFound) {
-          inputPortsIterator.add(port);
+        if (existingPorts_gju6mh_a0.contains(port)) {
+          syncToNextObject(portsIterator_gju6mh_a0, existingPorts_gju6mh_a0, port);
+        } else {
+          portsIterator_gju6mh_a0.add(port);
+          existingPorts_gju6mh_a0.add(port);
         }
       }
-      while (inputPortsIterator.hasNext()) {
-        inputPortsIterator.next();
-        inputPortsIterator.remove();
-      }
-      boolean outputPortDiffFound = false;
-      ListIterator<SNode> outputPortsIterator = myOutputPorts.listIterator();
+      purgeTailObject(portsIterator_gju6mh_a0);
+      Set<SNode> existingPorts_gju6mh_a0_0 = new HashSet<SNode>(myOutputPorts);
+      ListIterator<SNode> portsIterator_gju6mh_a0_0 = myOutputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "outMetaPorts", true))) {
-        outputPortDiffFound = outputPortDiffFound || !(BlockCell.skipNextIfSame(outputPortsIterator, port));
-        if (outputPortDiffFound) {
-          outputPortsIterator.add(port);
+        if (existingPorts_gju6mh_a0_0.contains(port)) {
+          syncToNextObject(portsIterator_gju6mh_a0_0, existingPorts_gju6mh_a0_0, port);
+        } else {
+          portsIterator_gju6mh_a0_0.add(port);
+          existingPorts_gju6mh_a0_0.add(port);
         }
       }
-      while (outputPortsIterator.hasNext()) {
-        outputPortsIterator.next();
-        outputPortsIterator.remove();
-      }
+      purgeTailObject(portsIterator_gju6mh_a0_0);
     }
 
     public ReadableProperty<Integer> getXProperty() {

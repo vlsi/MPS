@@ -2,15 +2,20 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" file="AbstractJetpadCell.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.ListIterator" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DeleteHandler" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -43,11 +48,9 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.ReadableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />

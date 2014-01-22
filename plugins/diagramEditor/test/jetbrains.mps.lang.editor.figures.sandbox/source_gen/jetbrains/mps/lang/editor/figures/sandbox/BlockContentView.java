@@ -44,6 +44,11 @@ public class BlockContentView extends CenterVerticalLayoutView {
         isClicked.set(!(isClicked.get()));
       }
     }).build());
+
+    RectView bottomRect = new RectView();
+    bottomRect.background().set(Color.GRAY);
+    bottomRect.dimension().set(new Vector(100, 30));
+    children().add(bottomRect);
     initSynchronizers();
   }
 

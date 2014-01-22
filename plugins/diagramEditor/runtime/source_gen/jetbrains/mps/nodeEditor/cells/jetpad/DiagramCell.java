@@ -62,10 +62,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    init();
   }
-
-  protected abstract void init();
 
   public JComponent getComponent() {
     if (myComponent == null) {

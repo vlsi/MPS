@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -120,40 +122,38 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     }
 
     protected void synchronize() {
-      boolean inputPortDiffFound = false;
-      ListIterator<SNode> inputPortsIterator = myInputPorts.listIterator();
+      Set<SNode> existingPorts_70mnj_a0 = new HashSet<SNode>(myInputPorts);
+      ListIterator<SNode> portsIterator_70mnj_a0 = myInputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "inputPorts", true))) {
-        inputPortDiffFound = inputPortDiffFound || !(BlockCell.skipNextIfSame(inputPortsIterator, port));
-        if (inputPortDiffFound) {
-          EditorCell portCell = getContext().createNodeCell(port);
-          if (portCell instanceof PortCell) {
-            addEditorCell(portCell);
-            inputPortsIterator.add(port);
-          }
+        if (existingPorts_70mnj_a0.contains(port)) {
+          syncToNextNode(portsIterator_70mnj_a0, existingPorts_70mnj_a0, port);
+          continue;
+        }
+
+        EditorCell portCell = getContext().createNodeCell(port);
+        if (portCell instanceof PortCell) {
+          portsIterator_70mnj_a0.add(port);
+          existingPorts_70mnj_a0.add(port);
+          addEditorCell(portCell);
         }
       }
-      while (inputPortsIterator.hasNext()) {
-        SNode portToRemove = inputPortsIterator.next();
-        removeCell((jetbrains.mps.nodeEditor.cells.EditorCell) getDirectChildCell(portToRemove));
-        inputPortsIterator.remove();
-      }
-      boolean outputPortDiffFound = false;
-      ListIterator<SNode> outputPortsIterator = myOutputPorts.listIterator();
+      purgeTailNodes(portsIterator_70mnj_a0);
+      Set<SNode> existingPorts_70mnj_a0_0 = new HashSet<SNode>(myOutputPorts);
+      ListIterator<SNode> portsIterator_70mnj_a0_0 = myOutputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "outputPorts", true))) {
-        outputPortDiffFound = outputPortDiffFound || !(BlockCell.skipNextIfSame(outputPortsIterator, port));
-        if (outputPortDiffFound) {
-          EditorCell portCell = getContext().createNodeCell(port);
-          if (portCell instanceof PortCell) {
-            addEditorCell(portCell);
-            outputPortsIterator.add(port);
-          }
+        if (existingPorts_70mnj_a0_0.contains(port)) {
+          syncToNextNode(portsIterator_70mnj_a0_0, existingPorts_70mnj_a0_0, port);
+          continue;
+        }
+
+        EditorCell portCell = getContext().createNodeCell(port);
+        if (portCell instanceof PortCell) {
+          portsIterator_70mnj_a0_0.add(port);
+          existingPorts_70mnj_a0_0.add(port);
+          addEditorCell(portCell);
         }
       }
-      while (outputPortsIterator.hasNext()) {
-        SNode portToRemove = outputPortsIterator.next();
-        removeCell((jetbrains.mps.nodeEditor.cells.EditorCell) getDirectChildCell(portToRemove));
-        outputPortsIterator.remove();
-      }
+      purgeTailNodes(portsIterator_70mnj_a0_0);
     }
 
     public ReadableProperty<Integer> getXProperty() {

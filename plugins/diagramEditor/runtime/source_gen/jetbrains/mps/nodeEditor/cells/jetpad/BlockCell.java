@@ -13,8 +13,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
 import java.util.ListIterator;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
@@ -55,15 +53,5 @@ public abstract class BlockCell extends AbstractJetpadCell {
       listIterator.previous();
     }
     return false;
-  }
-
-  protected EditorCell getDirectChildCell(SNode node) {
-    // TODO: use more effitient way of getting port cell (by ID) 
-    for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
-      if (nextCell.getSNode() == node) {
-        return nextCell;
-      }
-    }
-    return null;
   }
 }

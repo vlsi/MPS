@@ -91,20 +91,20 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "property", false), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_7755191110386267612(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (((Boolean) _context.getVariable("isInput")) ? "inputPortDiffFound" : "outputPortDiffFound");
+  public static Object propertyMacro_GetPropertyValue_615329258671320383(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("existingPorts", _context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7755191110385676892(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (((Boolean) _context.getVariable("isInput")) ? "inputPortsIterator" : "outputPortsIterator");
+  public static Object propertyMacro_GetPropertyValue_615329258671320411(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("portsIterator", _context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7755191110386294774(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (((Boolean) _context.getVariable("isInput")) ? "inputPortDiffFound" : "outputPortDiffFound");
+  public static Object propertyMacro_GetPropertyValue_615329258672688605(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("existingPorts", _context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7755191110386294802(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (((Boolean) _context.getVariable("isInput")) ? "inputPortsIterator" : "outputPortsIterator");
+  public static Object propertyMacro_GetPropertyValue_615329258672688632(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("portsIterator", _context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_285670992205201019(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -243,15 +243,23 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_7755191110385607597(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_615329258671320371(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (((Boolean) _context.getVariable("isInput")) ? "myInputPorts" : "myOutputPorts");
   }
 
-  public static Object referenceMacro_GetReferent_7755191110385453953(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_615329258671320400(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (((Boolean) _context.getVariable("isInput")) ? "myInputPorts" : "myOutputPorts");
+  }
+
+  public static Object referenceMacro_GetReferent_615329258671422147(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "link", false);
   }
 
-  public static Object referenceMacro_GetReferent_7755191110386294791(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_615329258672688594(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (((Boolean) _context.getVariable("isInput")) ? "myInputPorts" : "myOutputPorts");
+  }
+
+  public static Object referenceMacro_GetReferent_615329258672688621(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (((Boolean) _context.getVariable("isInput")) ? "myInputPorts" : "myOutputPorts");
   }
 
@@ -501,10 +509,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7755191110383324368(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      GeneratedMatchingPattern pattern_x583g4_a0me = new QueriesGenerated.Pattern_x583g4_a0a0a0a611();
-      SNode coercedNode_x583g4_a0me = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), pattern_x583g4_a0me);
-      if (coercedNode_x583g4_a0me != null) {
-        return ListSequence.fromList(SLinkOperations.getTargets(coercedNode_x583g4_a0me, "parameter", true)).first();
+      GeneratedMatchingPattern pattern_x583g4_a0oe = new QueriesGenerated.Pattern_x583g4_a0a0a0a811();
+      SNode coercedNode_x583g4_a0oe = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), pattern_x583g4_a0oe);
+      if (coercedNode_x583g4_a0oe != null) {
+        return ListSequence.fromList(SLinkOperations.getTargets(coercedNode_x583g4_a0oe, "parameter", true)).first();
       } else {
         _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "query", true), "Query type should be subtype of Iterable");
         return null;
@@ -552,7 +560,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "connectorCreation", true);
   }
 
-  public static Iterable sourceNodesQuery_9028489334865962959(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_615329258662741510(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "diagramElements", true);
   }
 
@@ -592,29 +600,29 @@ public class QueriesGenerated {
     });
   }
 
-  public static class Pattern_x583g4_a0a0a0a611 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_x583g4_a0a0a0a611() {
+  public static class Pattern_x583g4_a0a0a0a811 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_x583g4_a0a0a0a811() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a611 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a611.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_x583g4_a0a0a811 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a811.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0a0a0a0me;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a611.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0a0a0a0oe;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a811.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
           String childRole_x583g4_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a611, childRole_x583g4_, 1))) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a811, childRole_x583g4_, 1))) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0me = IterableUtil.get(nodeToMatch_x583g4_a0a0a611.getChildren(childRole_x583g4_), 0);
+            SNode childVar_x583g4_a0a0a0oe = IterableUtil.get(nodeToMatch_x583g4_a0a0a811.getChildren(childRole_x583g4_), 0);
           }
         }
       }
@@ -636,5 +644,5 @@ public class QueriesGenerated {
     }
   }
 
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0a0a0a0me = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0a0a0a0oe = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }
