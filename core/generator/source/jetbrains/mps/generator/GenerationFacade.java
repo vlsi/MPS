@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -110,7 +110,7 @@ public class GenerationFacade {
   }
 
   public static boolean canGenerate(SModel sm) {
-    return sm instanceof GeneratableSModel && ((GeneratableSModel) sm).isGeneratable();
+    return SNodeOperations.isGeneratable(sm);
   }
 
   public static boolean generateModels(final Project p,

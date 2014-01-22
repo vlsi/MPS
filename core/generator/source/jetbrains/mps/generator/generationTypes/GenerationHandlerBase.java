@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.IGeneratorLogger;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -43,6 +44,11 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
 
   @Override
   public void startModule(SModule module, List<SModel> inputModels, IOperationContext operationContext) {
+  }
+
+  @Override
+  public boolean canHandle(SModel inputModel) {
+    return GenerationFacade.canGenerate(inputModel);
   }
 
   @Override

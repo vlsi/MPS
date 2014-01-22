@@ -145,7 +145,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate() && !getSource().isReadOnly();
   }
 
   @Override
