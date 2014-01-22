@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2zvxv4ocrnlkhvg5j5a2ncxdzt4gyit">
+<dependencies version="2" modelHash="bn2skfigec3i9hwz1jlbe5ibgpiu2l2">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -42,26 +42,13 @@
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
   <common hash="-61xwl99ehb0sm35evqar3ce8qw43q1m" dependsOnNodes="true">
     <dep root="1147906725605225569" />
-    <dep root="1167163214015" />
     <dep root="1167163229003" />
     <dep root="1167163238171" />
-    <dep root="1167172794967" />
-    <dep root="1167763406918" />
-    <dep root="1167770891041" />
-    <dep root="1167946761267" />
-    <dep root="1167952935363" />
-    <dep root="1168025033008" />
-    <dep root="1170727064412" />
     <dep root="1184374857687" />
-    <dep root="1184617630748" />
-    <dep root="1195504684801" />
     <dep root="1199965771119" />
     <dep root="1217270660170" />
-    <dep root="1219959145090" />
-    <dep root="1225233707631" />
     <dep root="1229548601006611633" />
     <dep root="1368513600865827826" />
-    <dep root="1434091819680826103" />
     <dep root="1940510396026561969" />
     <dep root="2000056068063315985" />
     <dep root="2000056068065324264" />
@@ -90,10 +77,8 @@
     <dep root="344761564571002709" />
     <dep root="344761564571002720" />
     <dep root="3462145372628093810" />
-    <dep root="3666777440507052026" />
     <dep root="4429320018138031253" />
     <dep root="5015072279636784093" />
-    <dep root="5015072279636896906" />
     <dep root="5301578252490218394" />
     <dep root="5412006700504152615" />
     <dep root="5412006700504199285" />
@@ -112,8 +97,6 @@
     <dep root="747214206848656631" />
     <dep root="7602140671021265421" />
     <dep root="7664108699562496427" />
-    <dep root="7830515785164762760" />
-    <dep root="787641416589771627" />
     <dep root="787641416589878668" />
     <dep root="8285036680620207023" />
     <dep root="8285036680620300245" />
@@ -168,44 +151,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1167163214015" name="insert_CreateRootRule_Condition" hash="dqyxy14cbwtwzbtrluhwxqh4mdoobd3">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1167163229003" name="QueriesGenerated" hash="12898bpmz7ycf7b8xjatrgnlyple66f">
+  <source id="1167163229003" name="QueriesGenerated" hash="-3819wo5pecl5gsh2oln01izcf4ryej7">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
-  <source id="1167163238171" name="TLB_main" hash="-ad4cg8hvi2dzhkois07sl0uj4us77j4">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1167172794967" name="insert_BaseMappingRule_Condition" hash="bt47edy0c8fq0y2xt6t9nbnjeaendq0">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1167763406918" name="insert_PropertyMacro_GetPropertyValue" hash="dw5kk505b6p62eufhtnpcuzufwp4ria">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1167770891041" name="insert_ReferenceMacro_GetReferent" hash="-2fssupa8lj8jy4jqyxgc7118t1erdfy">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1167946761267" name="insert_IfMacro_Condition" hash="4wpa7qf4z9z0ffj6zadqpiur7rnbxx8">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1167952935363" name="insert_SourceSubstituteMacro_SourceNodesQuery" hash="dptb0bl5bt7y5oa643ol5quv3lun10u">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1168025033008" name="insert_SourceSubstituteMacro_SourceNodeQuery" hash="-azpp0ce7w97mfngvmkx5zvc46kn5lzw">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1170727064412" name="insert_MapSrcMacro_MapperFunction" hash="-9cn6q9eutp2sgu6w34kk9nt95w5fd7k">
+  <source id="1167163238171" name="TLB_main" hash="7xyg9u5hxe02kzm9lwdyg2fd6clm5s7">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery" hash="-d3ys3y5s0ok61pazocybfgxdho42bhv">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1184617630748" name="insert_Weaving_MappingRule_ContextNodeQuery" hash="-76jl4h9no9qh4hg61740bjxaboyxpk0">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1195504684801" name="insert_MappingScript_CodeBlock" hash="-855usj02tc1ll9o9vk5tyud1lp96h5c">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="1199965771119" name="AddTypeHints" hash="-a284o0xd0pw4u4q4agn5gvixjh1zka3">
@@ -215,18 +168,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="1217270660170" name="ReduceReferenceToText" hash="uir510tqrl0uqmjbcg6oarrz0oi4ae">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1219959145090" name="insert_DropRootRule_Condition" hash="-ahscljr45xjmjnmv5ixh5dezixjszt">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1225233707631" name="insert_MapSrcMacro_PostMapperFunction" hash="7aoargcf2v003tlh1uzc5dy1vi1t5fq">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="3666777440507052026" name="insert_TemplateArgumentQuery" hash="9ixkvvi77pbuj1ahd3a1aypdx5hqiaf">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="1434091819680826103" name="insert_PatternReduction_Condition" hash="abjgpf6oun4r546zzqacc2i7rheiaq7">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="6342833957791858285" name="checkGenerator" hash="-e0v6zwblur8u5h9pfz3uemepquqgpom">
@@ -388,19 +329,10 @@
   <source id="2760176984813718844" name="reduce_NodeMacro" hash="-eu6r5ffwb4qltsz0w4cfgt6pbgan5di">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="7830515785164762760" name="insert_MappingConfiguration_Condition" hash="clgj2uyertrefyeuqup3tdnz3r0vh9v">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="787641416589771627" name="insert_InsertMacro_CreateNodeQuery" hash="-8p8e23gtav8geth9y9jiwgtevws0yhg">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
   <source id="787641416589878668" name="reduce_InsertMacro" hash="3nf21dc1b6t6e9wh4w0w73uzcntcuft">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="3462145372628093810" name="reduce_Weave" hash="-3ubowfl7f5jhaslivtw9q7o7w2s32p1">
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-  </source>
-  <source id="5015072279636896906" name="insert_VarMacro_Value" hash="-ag61yq9xfebd9frejxvdhdqxpi7c4rl">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="5015072279636784093" name="reduce_VarMacro" hash="-413z6m2uczmnldhvoe1uejfu18xf0x0">
@@ -421,7 +353,7 @@
   <source id="6254388211303458592" name="reduce_MappingLabel" hash="-408sfvtxjd70sj4crc562u0pl0sqy76">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="7602140671021265421" name="inject_DirectMethodAccess" hash="-ddetex8q81a4facijg903rabqtwlss7">
+  <source id="7602140671021265421" name="inject_DirectMethodAccess" hash="-8cy44imhsdw0ltukm36fo8mkkxtgyjw">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="1229548601006611633" name="insert_OpContextParam" hash="-i3skzg22erwfr3ui1widhz1utfmbb2">
@@ -433,7 +365,7 @@
   <source id="2000056068065324264" name="insert_OpContextFromGenerator" hash="dodgazicvqnze5txkegrn2sehl8sp02">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="8402574204323591876" name="insert_OpContextFromTQC" hash="cjqw3mjde83xj36qem4xdroz3knwp57">
+  <source id="8402574204323591876" name="insert_OpContextFromTQC" hash="dzjtit3rqe95nhjjslg7fzmifg4qxkc">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
 </dependencies>
