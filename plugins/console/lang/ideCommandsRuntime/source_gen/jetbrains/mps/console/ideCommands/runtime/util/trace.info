@@ -17,7 +17,7 @@
     <nodeInfo nodeId="2849748491601983714" fileName="IdeCommandUtil.java" startLine="85" startPosition="24" endLine="86" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2849748491601982473" fileName="IdeCommandUtil.java" startLine="88" startPosition="46" endLine="89" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6899521598743459464" fileName="IdeCommandUtil.java" startLine="94" startPosition="44" endLine="95" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2849748491602050846" fileName="IdeCommandUtil.java" startLine="99" startPosition="7" endLine="100" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2849748491602050846" fileName="IdeCommandUtil.java" startLine="99" startPosition="7" endLine="100" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9149301274758038214" fileName="IdeCommandUtil.java" startLine="105" startPosition="103" endLine="106" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9149301274758053821" fileName="IdeCommandUtil.java" startLine="107" startPosition="83" endLine="108" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9149301274758122324" fileName="IdeCommandUtil.java" startLine="109" startPosition="5" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -123,7 +123,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2849748491601986332" fileName="IdeCommandUtil.java" startLine="54" startPosition="25" endLine="97" endPosition="28" />
     <scopeInfo nodeId="2849748491601986330" fileName="IdeCommandUtil.java" startLine="54" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="2849748491601155729" fileName="IdeCommandUtil.java" startLine="39" startPosition="269" endLine="100" endPosition="136">
+    <scopeInfo nodeId="2849748491601155729" fileName="IdeCommandUtil.java" startLine="39" startPosition="269" endLine="100" endPosition="132">
       <varInfo nodeId="2849748491601373932" varName="context" />
       <varInfo nodeId="2849748491601777485" varName="models" />
       <varInfo nodeId="2849748491601927319" varName="modelsToGenerate" />

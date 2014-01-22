@@ -4,8 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Make_Behavior {
@@ -17,7 +16,7 @@ public class Make_Behavior {
   }
 
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.RequiredOnly"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.WithDependencies"));
+    return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.WithDependencies"));
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
@@ -25,6 +24,6 @@ public class Make_Behavior {
   }
 
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return "Without option requiredOnly acts like \"Make\" action,\nwith option requiredOnly - like \"Rebuild Required Models\" internal action";
+    return "Makes models given as arguments.\nAccepts arguments of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments given, makes whole project.\nAffects only `generation required` models.\nWith option <withDependencies> makes not only models given as parameters, but also their dependencies.";
   }
 }

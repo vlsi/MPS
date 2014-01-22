@@ -97,7 +97,7 @@ public class IdeCommandUtil {
         }).toListSequence();
       }
     });
-    new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), dirtyOnly).executeAction();
+    new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
   }
 
 

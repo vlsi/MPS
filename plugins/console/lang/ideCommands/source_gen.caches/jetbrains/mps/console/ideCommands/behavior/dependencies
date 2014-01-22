@@ -59,7 +59,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RequiredOnly_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
@@ -199,8 +198,7 @@
   <dependency className="jetbrains.mps.console.ideCommands.behavior.Make_Behavior" file="Make_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -342,12 +340,6 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.RequiredOnly_BehaviorDescriptor" file="RequiredOnly_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.QueryParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior" file="ShowBrokenReferences_Behavior.java">

@@ -264,12 +264,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5582028874771853093" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="RequiredOnly" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="requiredOnly" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544565" resolveInfo="QueryParameter" />
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="587413522925199793" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
     <property name="name" nameId="tpck.1169194664001" value="WithDependencies" />
