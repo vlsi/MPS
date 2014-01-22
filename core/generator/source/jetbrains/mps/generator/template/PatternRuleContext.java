@@ -23,7 +23,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Evgeny Gryaznov, May 17, 2010
  */
-public class PatternRuleContext extends TemplateQueryContextWithRule {
+public class PatternRuleContext extends BaseMappingRuleContext {
+  // this class extends BaseMappingRuleContext because same context instance is
+  // used both for GeneratedMatchingPattern query and condition (which is BaseMappingRule_Condition).
 
   public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
