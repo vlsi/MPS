@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
 import jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,12 +33,12 @@ import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior;
 import jetbrains.mps.lang.plugin.behavior.Order_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
 import jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -310,11 +310,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7446179200425733250(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule().getModuleName();
+    return PluginNameUtils.getOriginalModule(_context).getModuleName();
   }
 
   public static Object propertyMacro_GetPropertyValue_7446179200425733268(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule().getModuleReference().getModuleId().toString();
+    return PluginNameUtils.getOriginalModule(_context).getModuleReference().getModuleId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_6331861638741615659(final IOperationContext operationContext, final PropertyMacroContext _context) {
