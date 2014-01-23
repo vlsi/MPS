@@ -59,7 +59,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").children(new String[]{"nodeCheckOperations"}, new boolean[]{true}).create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").alias("has error", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").children(new String[]{"errorRef"}, new boolean[]{false}).alias("has error", "").create();
       case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeTypeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeTypeCheckOperation").alias("has expected type", "").create();
       case 24:
@@ -67,7 +67,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeReachable").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("reachable", "").create();
       case 26:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"ruleRef"}, new boolean[]{false}).abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").abstract_().create();
       case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"type"}, new boolean[]{false}).alias("has type", "").create();
       case 28:
@@ -75,7 +75,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeUnreachable").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("unreachable", "").create();
       case 30:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").alias("has warning", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation").children(new String[]{"warningRef"}, new boolean[]{false}).alias("has warning", "").create();
       case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodesTestCase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").children(new String[]{"nodesToCheck", "testMethods", "methods"}, new boolean[]{true, true, true}).create();
       case 32:

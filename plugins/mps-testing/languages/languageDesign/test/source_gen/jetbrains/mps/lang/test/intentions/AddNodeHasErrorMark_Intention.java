@@ -18,6 +18,8 @@ import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -88,8 +90,9 @@ public class AddNodeHasErrorMark_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
-      SNodeFactoryOperations.addNewChild(newAnnotation, "nodeOperations", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation");
-      SelectionUtil.selectNode(editorContext, newAnnotation);
+      SNode errorCheck = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);
+      ListSequence.fromList(SLinkOperations.getTargets(newAnnotation, "nodeOperations", true)).addElement(errorCheck);
+      SelectionUtil.selectNode(editorContext, errorCheck);
     }
 
     public IntentionDescriptor getDescriptor() {

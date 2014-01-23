@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -82,9 +82,8 @@ public class AddMessageAnnotation_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation", null);
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"), newAnnotation);
-      SelectionUtil.selectNode(editorContext, newAnnotation);
+      BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachNewMessageAnnotation_8489045168661849665", new Object[]{});
+      SelectionUtil.selectNode(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")));
     }
 
     public IntentionDescriptor getDescriptor() {

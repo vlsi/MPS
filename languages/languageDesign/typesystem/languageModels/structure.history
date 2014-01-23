@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
+    </dependencies>
+    <rename id="tpd4.8489045168659469741" type="REFERENCE" from="declaraion" to="declaration" />
+  </StructureModification>
+</history>
+

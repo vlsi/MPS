@@ -8,6 +8,18 @@ public class NodeErrorCheckOperation_BehaviorDescriptor extends NodeRuleCheckOpe
   public NodeErrorCheckOperation_BehaviorDescriptor() {
   }
 
+  public void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation) {
+    NodeErrorCheckOperation_Behavior.virtual_attachDeclaration_8489045168660953479(thisNode, annotation);
+  }
+
+  public SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode) {
+    return NodeErrorCheckOperation_Behavior.virtual_getMessageAnnotation_5872607264946106205(thisNode);
+  }
+
+  public String virtual_getName_1217435265700(SNode thisNode) {
+    return NodeErrorCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
+  }
+
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     NodeErrorCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }

@@ -49,12 +49,12 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_kzyi6r_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("ruleRef");
-    provider.setNoTargetText("<no ruleRef>");
+    provider.setRole("errorRef");
+    provider.setNoTargetText("<no errorRef>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("ruleRef");
+      editorCell.setRole("errorRef");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

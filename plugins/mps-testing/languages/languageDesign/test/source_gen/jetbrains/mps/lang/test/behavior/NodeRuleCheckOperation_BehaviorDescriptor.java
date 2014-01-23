@@ -8,12 +8,12 @@ public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends NodeChec
   public NodeRuleCheckOperation_BehaviorDescriptor() {
   }
 
-  public String virtual_getName_1217435265700(SNode thisNode) {
-    return NodeRuleCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
-  }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation";
   }
+
+  public abstract void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation);
+
+  public abstract SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode);
 }

@@ -4,6 +4,9 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NodeErrorCheckOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -15,5 +18,25 @@ public class NodeErrorCheckOperation_Behavior {
     } catch (Exception ex) {
       ex.printStackTrace();
     }
+  }
+
+  public static String virtual_getName_1217435265700(SNode thisNode) {
+    String errorName = ((SLinkOperations.getTarget(thisNode, "errorRef", true) == null) ? "Error" : SLinkOperations.getTarget(thisNode, "errorRef", true).toString());
+    return "Node" + errorName + "Check";
+  }
+
+  public static void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation) {
+    if (!(SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"))) {
+      return;
+    }
+    SLinkOperations.setTarget(thisNode, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ReportErrorStatementReference", null), true);
+    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "errorRef", true), "declaration", SNodeOperations.cast(annotation, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"), false);
+  }
+
+  public static SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "errorRef", true) == null)) {
+      return null;
+    }
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "errorRef", true), "declaration", false);
   }
 }

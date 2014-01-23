@@ -15,30 +15,30 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet;
+import jetbrains.mps.lang.structure.editor.structure_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
-public class MessageStatementReference_Editor extends DefaultNodeEditor {
+public class ReportErrorStatementReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_cawmr8_a(editorContext, node);
+    return this.createCollection_ycncvi_a(editorContext, node);
   }
 
-  private EditorCell createCollection_cawmr8_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ycncvi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cawmr8_a");
+    editorCell.setCellId("Collection_ycncvi_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefCell_cawmr8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_ycncvi_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_cawmr8_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_ycncvi_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MessageStatementReference_Editor._Inline_cawmr8_a0a());
+    provider.setAuxiliaryCellProvider(new ReportErrorStatementReference_Editor._Inline_ycncvi_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,8 +51,8 @@ public class MessageStatementReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_cawmr8_a0a extends InlineCellProvider {
-    public _Inline_cawmr8_a0a() {
+  public static class _Inline_ycncvi_a0a extends InlineCellProvider {
+    public _Inline_ycncvi_a0a() {
       super();
     }
 
@@ -61,10 +61,10 @@ public class MessageStatementReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_cawmr8_a0a0(editorContext, node);
+      return this.createProperty_ycncvi_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_cawmr8_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_ycncvi_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -77,7 +77,7 @@ public class MessageStatementReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("declaration");
       }
       Style style = new StyleImpl();
-      transformationTest_StyleSheet.applyNodeAnnotation(style, editorCell);
+      structure_StyleSheet.applyAnnotationNode(style, editorCell);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);

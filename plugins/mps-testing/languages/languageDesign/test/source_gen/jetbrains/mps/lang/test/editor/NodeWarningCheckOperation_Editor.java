@@ -49,12 +49,12 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_sh9o09_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("ruleRef");
-    provider.setNoTargetText("<no ruleRef>");
+    provider.setRole("warningRef");
+    provider.setNoTargetText("<no warningRef>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("ruleRef");
+      editorCell.setRole("warningRef");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

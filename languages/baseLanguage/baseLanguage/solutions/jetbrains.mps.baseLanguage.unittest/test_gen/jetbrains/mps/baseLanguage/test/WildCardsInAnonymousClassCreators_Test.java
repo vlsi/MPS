@@ -19,9 +19,9 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
   }
 
   @Test
-  public void test_NodeRuleCheck8187342170694476943() throws Throwable {
+  public void test_NodeErrorCheck8187342170694476943() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeRuleCheck8187342170694476943", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeErrorCheck8187342170694476943", true);
   }
 
   @Test
@@ -43,7 +43,7 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8187342170694472081")});
     }
 
-    public void test_NodeRuleCheck8187342170694476943() throws Exception {
+    public void test_NodeErrorCheck8187342170694476943() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170694476943"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228371")});
     }

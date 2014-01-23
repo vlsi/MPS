@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="89zzwe5j5g1lal9i9ywano5nv9vub2b">
+<dependencies version="2" modelHash="-5ke5vfrqp4q1lr7ligtnv82qo4o0lcs">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
   <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-5kctb7b7jnlp1h0duovrvgm0c42ily4" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-ae7o2tfvslxloea9gqqb4il0usz73bq" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="13kqsy3d6o6790lacsl9jkbzj30hut9" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="d0jejaxcf3zw3hpjhm0dml4ix700c9q" dependsOnNodes="true">
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-a6mld5c0slts6jtbqfiwqd0p6j6sw1z" />
+  <common hash="ja5wm9yj1x2kok1ziji8ifoufwlgkx" dependsOnNodes="true">
     <dep root="1101347953350122484" />
     <dep root="1101347953350122758" />
     <dep root="1210673684636" />
@@ -71,8 +71,8 @@
   <source id="1214846310980" name="AbstractNodeAssert" hash="2jnhylo1w15uew5j7ubj0xg0o8eptw3" />
   <source id="1215075719096" name="CheckNodeForErrors" hash="-5omux3vpv5hm8v1gst6709bmaap23r0" />
   <source id="1215507532627" name="NodeCheckOperationsContainer" hash="5jl9l2uyffvj4ubcyxtsfykok1pkrev" />
-  <source id="1215507671101" name="NodeErrorCheckOperation" hash="h64o59n5q5x6mtxki23nb5f6w2v3yw" />
-  <source id="1215511704609" name="NodeWarningCheckOperation" hash="-8s0kpw7ge56yeyehyi0rn3pe0zll4pf" />
+  <source id="1215507671101" name="NodeErrorCheckOperation" hash="-8kitpzaz34pw7ex52cs6i6af9mv2y68" />
+  <source id="1215511704609" name="NodeWarningCheckOperation" hash="6saye3uotd8wpn0blxbk5w3c9yw7doz" />
   <source id="1215525678776" name="NodeReachable" hash="cstpjr3qvzdbr5thu8q7l4g4rq81ssf" />
   <source id="1215526290564" name="NodeTypeCheckOperation" hash="-4069p22tvrsejd4s7dln6n9c2nac6sj" />
   <source id="1215601147424" name="NodeCheckOperation" hash="bpkwvn6kj34f4w7bkedxuzuvywwkkye" />
@@ -110,6 +110,6 @@
   <source id="4395293866213195846" name="NodeExpectedTypeCheckOperation" hash="-4h233pwkp2wluijzqxbco33ov32uvly" />
   <source id="511191073233700873" name="ScopesTest" hash="-dklbfqj7k8xr6eavrxlvt7veql9rc15" />
   <source id="3655334166513314291" name="ScopesExpectedNode" hash="8ynnf1k92us5xfyqiul988a1c1kbcdz" />
-  <source id="4307182653741890820" name="NodeRuleCheckOperation" hash="e5ugms3sqsad4u2g9woh8ilrpwf44yq" />
+  <source id="4307182653741890820" name="NodeRuleCheckOperation" hash="-d7qfk7ffc2iff25jc7r21p3dy0xxdzc" />
 </dependencies>
 

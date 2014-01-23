@@ -12,9 +12,11 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -63,26 +65,51 @@ public class NodeCheckerUtil {
     checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(node) {
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
-          Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected error message", context.getTypeMessageDontCheck(node) != null);
-          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has warning instead of error", context.getTypeMessageDontCheck(node).getMessageStatus() == MessageStatus.WARNING);
+          MessageStatus status = context.getTypeMessageDontCheck(node).getMessageStatus();
+          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has warning instead of error", status == MessageStatus.WARNING);
+
+          Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected error message", status == MessageStatus.ERROR && NodeCheckerUtil.nodeHasExpectedRuleMessage(node, context, operation));
         }
       }
     });
   }
+
 
 
 
   public static void checkNodeWarningForErrors(final SNode node) {
     checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(node) {
-
-
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation")) {
-          Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected warning", context.getTypeMessageDontCheck(node).getMessageStatus() == MessageStatus.WARNING);
+          MessageStatus status = context.getTypeMessageDontCheck(node).getMessageStatus();
+          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has error instead of warning", status == MessageStatus.ERROR);
+
+          Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected warning message", status == MessageStatus.WARNING && NodeCheckerUtil.nodeHasExpectedRuleMessage(node, context, operation));
         }
       }
     });
   }
+
+
+
+  private static boolean nodeHasExpectedRuleMessage(SNode node, TypeCheckingContext context, SNode operation) {
+    assert context.getTypeMessageDontCheck(node) != null;
+    SNode messageAnnotation = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), operation, "virtual_getMessageAnnotation_5872607264946106205", new Object[]{});
+    if ((messageAnnotation == null)) {
+      return true;
+    }
+    SNode messageStatement = SNodeOperations.cast(SNodeOperations.getParent(messageAnnotation), "jetbrains.mps.lang.typesystem.structure.MessageStatement");
+    String ruleModel = SNodeOperations.getModel(messageStatement).getReference().toString();
+    String ruleNodeId = messageStatement.getNodeId().toString();
+    List<IErrorReporter> errorReports = context.getTypeMessagesDontCheck(node);
+    for (IErrorReporter errorReport : errorReports) {
+      if (errorReport.getRuleId().equals(ruleNodeId) && errorReport.getRuleModel().equals(ruleModel)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 
 
 
