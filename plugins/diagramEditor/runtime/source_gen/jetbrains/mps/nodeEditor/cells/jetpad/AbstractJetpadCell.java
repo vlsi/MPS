@@ -22,7 +22,7 @@ import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizedEditorCell {
-  private List<WritableModelProperty> myModelProperties;
+  private List<ReadableModelProperty> myModelProperties;
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
     super(editorContext, node, new CellLayout_Horizontal(), null);
@@ -41,12 +41,11 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     });
   }
 
-  protected void addModelProperty(WritableModelProperty modelProperty) {
+  protected void addModelProperty(ReadableModelProperty modelProperty) {
     if (myModelProperties == null) {
-      myModelProperties = new LinkedList<WritableModelProperty>();
+      myModelProperties = new LinkedList<ReadableModelProperty>();
     }
     myModelProperties.add(modelProperty);
-    modelProperty.get();
   }
 
   @Override
@@ -57,8 +56,8 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
   @Override
   public void synchronizeViewWithModel() {
     if (myModelProperties != null) {
-      for (WritableModelProperty nextModelProperty : myModelProperties) {
-        nextModelProperty.firePropertyChangedEvent();
+      for (ReadableModelProperty nextModelProperty : myModelProperties) {
+        nextModelProperty.synchronizeViewWithModel();
       }
       requestRelayout();
     }

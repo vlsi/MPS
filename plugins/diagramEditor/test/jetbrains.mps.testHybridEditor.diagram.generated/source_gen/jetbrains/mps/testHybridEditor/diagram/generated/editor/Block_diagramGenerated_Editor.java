@@ -10,16 +10,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
-import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.jetpad.model.property.Property;
+import jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
 import java.util.Set;
@@ -43,6 +40,7 @@ import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -72,8 +70,8 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private class BlockCellImpl_70mnj_a extends BlockCell {
     private final PropertyMapperCell<String> myPropertyCell_70mnj_a0a;
     private final PropertyMapperCell<Boolean> myPropertyCell_70mnj_a1a;
-    private final ReadableProperty<Integer> myXProperty;
-    private final Property<Integer> myYProperty;
+    private final ReadableModelProperty<Integer> myXProperty;
+    private final ReadableModelProperty<Integer> myYProperty;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
     private final ObservableList<SNode> myOutputPorts = new ObservableArrayList<SNode>();
 
@@ -101,12 +99,11 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       };
       addEditorCell(myPropertyCell_70mnj_a1a);
       myPropertyCell_70mnj_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_70mnj_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
-      myXProperty = JetpadUtils.modelProperty(new Computable<Integer>() {
-        public Integer compute() {
+      myXProperty = new ReadableModelProperty<Integer>() {
+        protected Integer getModelPropertyValue() {
           return SNodeOperations.getIndexInParent(getSNode()) / 2 * 150 + 10;
         }
-      });
-      myXProperty.get();
+      };
       myYProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
         protected Integer getModelPropertyValue() {
           return SPropertyOperations.getInteger(node, "y");
@@ -116,18 +113,21 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           SPropertyOperations.set(node, "y", "" + (value));
         }
       };
-      myYProperty.get();
       getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      registerPositionProperties(myXProperty, myYProperty);
       synchronize();
     }
 
     public void synchronize() {
       super.synchronizeViewWithModel();
+      myPropertyCell_70mnj_a0a.synchronize();
+      myPropertyCell_70mnj_a1a.synchronize();
       Set<SNode> existingPorts_70mnj_a0 = new HashSet<SNode>(myInputPorts);
       ListIterator<SNode> portsIterator_70mnj_a0 = myInputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "inputPorts", true))) {
         if (existingPorts_70mnj_a0.contains(port)) {
           syncToNextNode(portsIterator_70mnj_a0, existingPorts_70mnj_a0, port);
+          getDirectChildCell(port).synchronize();
           continue;
         }
 
@@ -144,6 +144,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "outputPorts", true))) {
         if (existingPorts_70mnj_a0_0.contains(port)) {
           syncToNextNode(portsIterator_70mnj_a0_0, existingPorts_70mnj_a0_0, port);
+          getDirectChildCell(port).synchronize();
           continue;
         }
 
@@ -155,14 +156,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       }
       purgeTailNodes(portsIterator_70mnj_a0_0);
-    }
-
-    public ReadableProperty<Integer> getXProperty() {
-      return myXProperty;
-    }
-
-    public ReadableProperty<Integer> getYProperty() {
-      return myYProperty;
     }
 
     public Mapper<SNode, DiagramNodeView> createMapper() {

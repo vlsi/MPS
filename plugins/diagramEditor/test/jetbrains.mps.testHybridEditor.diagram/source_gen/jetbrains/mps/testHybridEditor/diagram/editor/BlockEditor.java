@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
@@ -61,11 +61,11 @@ public class BlockEditor extends AbstractJetpadEditor {
         }
       };
 
-      public ReadableProperty<Integer> getXProperty() {
+      public ReadableModelProperty<Integer> getXProperty() {
         return myXPropery;
       }
 
-      public ReadableProperty<Integer> getYProperty() {
+      public ReadableModelProperty<Integer> getYProperty() {
         return myYPropery;
       }
 
@@ -75,15 +75,15 @@ public class BlockEditor extends AbstractJetpadEditor {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forProperty(bc.getXProperty(), new Runnable() {
+            configuration.add(Synchronizers.forProperty(myXPropery, new Runnable() {
               public void run() {
-                getTarget().moveTo(new Vector(bc.getXProperty().get(), bc.getYProperty().get()));
+                getTarget().moveTo(new Vector(myXPropery.get(), myYPropery.get()));
                 getTarget().invalidate();
               }
             }));
-            configuration.add(Synchronizers.forProperty(bc.getYProperty(), new Runnable() {
+            configuration.add(Synchronizers.forProperty(myYPropery, new Runnable() {
               public void run() {
-                getTarget().moveTo(new Vector(bc.getXProperty().get(), bc.getYProperty().get()));
+                getTarget().moveTo(new Vector(myXPropery.get(), myYPropery.get()));
                 getTarget().invalidate();
               }
             }));

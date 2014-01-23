@@ -72,14 +72,14 @@
     <nodeInfo nodeId="1488348993280409937" fileName="BlockEditor.java" startLine="50" startPosition="57" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1488348993280495178" fileName="BlockEditor.java" startLine="55" startPosition="51" endLine="56" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1488348993280524359" fileName="BlockEditor.java" startLine="59" startPosition="57" endLine="60" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488348993280634782" fileName="BlockEditor.java" startLine="64" startPosition="55" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488348993280694154" fileName="BlockEditor.java" startLine="68" startPosition="55" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1488348993280634782" fileName="BlockEditor.java" startLine="64" startPosition="60" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1488348993280694154" fileName="BlockEditor.java" startLine="68" startPosition="60" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3472602786147217682" fileName="BlockEditor.java" startLine="72" startPosition="60" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7594581796304114032" fileName="BlockEditor.java" startLine="76" startPosition="97" endLine="77" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304114071" fileName="BlockEditor.java" startLine="79" startPosition="33" endLine="80" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304114083" fileName="BlockEditor.java" startLine="80" startPosition="97" endLine="81" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304114101" fileName="BlockEditor.java" startLine="85" startPosition="33" endLine="86" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304114113" fileName="BlockEditor.java" startLine="86" startPosition="97" endLine="87" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304114071" fileName="BlockEditor.java" startLine="79" startPosition="33" endLine="80" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304114083" fileName="BlockEditor.java" startLine="80" startPosition="83" endLine="81" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304114101" fileName="BlockEditor.java" startLine="85" startPosition="33" endLine="86" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304114113" fileName="BlockEditor.java" startLine="86" startPosition="83" endLine="87" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7594581796304114143" fileName="BlockEditor.java" startLine="91" startPosition="93" endLine="92" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7594581796304114152" fileName="BlockEditor.java" startLine="93" startPosition="56" endLine="94" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7594581796304114155" fileName="BlockEditor.java" startLine="94" startPosition="42" endLine="95" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -119,8 +119,8 @@
     <nodeInfo nodeId="1488348993277044742" fileName="BlockEditor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(Ljava/lang/Integer;)V" />
     <nodeInfo nodeId="1488348993277118399" fileName="BlockEditor.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelPropertyValue#()Ljava/lang/Integer;" />
     <nodeInfo nodeId="1488348993277118403" fileName="BlockEditor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(Ljava/lang/Integer;)V" />
-    <nodeInfo nodeId="1488348993280578771" fileName="BlockEditor.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getXProperty#()Ljetbrains/jetpad/model/property/ReadableProperty;" />
-    <nodeInfo nodeId="1488348993280578780" fileName="BlockEditor.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getYProperty#()Ljetbrains/jetpad/model/property/ReadableProperty;" />
+    <nodeInfo nodeId="1488348993280578771" fileName="BlockEditor.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getXProperty#()Ljetbrains/mps/nodeEditor/cells/jetpad/ReadableModelProperty;" />
+    <nodeInfo nodeId="1488348993280578780" fileName="BlockEditor.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getYProperty#()Ljetbrains/mps/nodeEditor/cells/jetpad/ReadableModelProperty;" />
     <nodeInfo nodeId="1357648881827673445" fileName="BlockEditor.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
     <nodeInfo nodeId="6365639112242153272" fileName="BlockEditor.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContentMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="221487594584023612" fileName="BlockEditor.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
@@ -154,8 +154,8 @@
     <scopeInfo nodeId="1488348993277044748" fileName="BlockEditor.java" startLine="50" startPosition="57" endLine="51" endPosition="55" />
     <scopeInfo nodeId="1488348993277118402" fileName="BlockEditor.java" startLine="55" startPosition="51" endLine="56" endPosition="59" />
     <scopeInfo nodeId="1488348993277118408" fileName="BlockEditor.java" startLine="59" startPosition="57" endLine="60" endPosition="55" />
-    <scopeInfo nodeId="1488348993280578777" fileName="BlockEditor.java" startLine="64" startPosition="55" endLine="65" endPosition="26" />
-    <scopeInfo nodeId="1488348993280578786" fileName="BlockEditor.java" startLine="68" startPosition="55" endLine="69" endPosition="26" />
+    <scopeInfo nodeId="1488348993280578777" fileName="BlockEditor.java" startLine="64" startPosition="60" endLine="65" endPosition="26" />
+    <scopeInfo nodeId="1488348993280578786" fileName="BlockEditor.java" startLine="68" startPosition="60" endLine="69" endPosition="26" />
     <scopeInfo nodeId="1357648881827673454" fileName="BlockEditor.java" startLine="112" startPosition="88" endLine="113" endPosition="60" />
     <scopeInfo nodeId="6365639112242153276" fileName="BlockEditor.java" startLine="149" startPosition="40" endLine="150" endPosition="50" />
     <scopeInfo nodeId="7594581796304114070" fileName="BlockEditor.java" startLine="79" startPosition="33" endLine="81" endPosition="41" />
@@ -224,8 +224,8 @@
       <varInfo nodeId="221487594584023602" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1357648881827673443" fileName="BlockEditor.java" startLine="111" startPosition="119" endLine="115" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$3" />
-    <unitInfo nodeId="7594581796304114065" fileName="BlockEditor.java" startLine="78" startPosition="79" endLine="83" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$3" />
-    <unitInfo nodeId="7594581796304114095" fileName="BlockEditor.java" startLine="84" startPosition="79" endLine="89" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$3" />
+    <unitInfo nodeId="7594581796304114065" fileName="BlockEditor.java" startLine="78" startPosition="72" endLine="83" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$3" />
+    <unitInfo nodeId="7594581796304114095" fileName="BlockEditor.java" startLine="84" startPosition="72" endLine="89" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$3" />
     <unitInfo nodeId="2084788800264158216" fileName="BlockEditor.java" startLine="123" startPosition="63" endLine="128" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$3" />
     <unitInfo nodeId="1488348993277044734" fileName="BlockEditor.java" startLine="45" startPosition="68" endLine="53" endPosition="7" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$2" />
     <unitInfo nodeId="1488348993277118397" fileName="BlockEditor.java" startLine="54" startPosition="68" endLine="62" endPosition="7" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor$2" />

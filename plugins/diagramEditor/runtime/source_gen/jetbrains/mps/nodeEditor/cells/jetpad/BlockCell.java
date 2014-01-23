@@ -4,54 +4,43 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.jetpad.model.event.EventHandler;
+import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
-import java.util.ListIterator;
 
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
 
-  public abstract ReadableProperty<Integer> getXProperty();
+  protected void registerPositionProperties(final ReadableModelProperty<Integer> xProperty, final ReadableModelProperty<Integer> yProperty) {
+    addModelProperty(xProperty);
+    addModelProperty(yProperty);
 
-  public abstract ReadableProperty<Integer> getYProperty();
+    EventHandler<PropertyChangeEvent<Integer>> handler = new EventHandler<PropertyChangeEvent<Integer>>() {
+      public void onEvent(PropertyChangeEvent<Integer> p0) {
+        moveView(xProperty, yProperty);
+      }
+    };
+    xProperty.addHandler(handler);
+    yProperty.addHandler(handler);
+  }
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
 
-  @Override
-  public void synchronizeViewWithModel() {
-    super.synchronizeViewWithModel();
-    // TODO: if we can use synchronizers to move target View then this code can e replaced with just calling super.. 
-    DiagramCell cell = ((DiagramCell) CellFinderUtil.findParent(this, new Condition<EditorCell_Collection>() {
-      public boolean met(EditorCell_Collection parent) {
-        return parent instanceof DiagramCell;
-      }
-    }));
+  private void moveView(ReadableModelProperty<Integer> xProperty, ReadableModelProperty<Integer> yProperty) {
+    DiagramCell cell = getDiagramCell();
     if (cell == null) {
       return;
     }
     Mapper<? super SNode, ?> descendantMapper = cell.getRootMapper().getDescendantMapper(getSNode());
     if (descendantMapper != null) {
-      ((View) descendantMapper.getTarget()).moveTo(new Vector(getXProperty().get(), getYProperty().get()));
+      ((View) descendantMapper.getTarget()).moveTo(new Vector(xProperty.get(), yProperty.get()));
       ((View) descendantMapper.getTarget()).invalidate();
       requestRelayout();
     }
-  }
-
-  protected static boolean skipNextIfSame(ListIterator listIterator, Object nextElement) {
-    if (listIterator.hasNext()) {
-      if (listIterator.next() == nextElement) {
-        return true;
-      }
-      listIterator.previous();
-    }
-    return false;
   }
 }
