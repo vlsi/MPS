@@ -1130,10 +1130,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946085(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_99767819676237591(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
@@ -1154,10 +1150,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.propertyMacro_GetPropertyValue(SLinkOperations.getTarget(_context.getNode(), "propertyValueFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_6497389703574369059(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_4155486055398184091(final ReferenceMacroContext _context) {
     SNode function = SLinkOperations.getTarget(_context.getNode(), "referentFunction", true);
     if ((function == null)) {
@@ -1165,10 +1157,6 @@ public class QueriesGenerated {
       return null;
     }
     return TemplateFunctionMethodName.referenceMacro_GetReferent(function);
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946956(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_1246578104714226075(final ReferenceMacroContext _context) {
@@ -1190,16 +1178,8 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059945975(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_4155486055398088737(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059945897(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_9196441569928526463(final ReferenceMacroContext _context) {
@@ -1214,16 +1194,8 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.mappingConfiguration_Condition(SLinkOperations.getTarget(_context.getNode(), "condition", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059945811(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_4155486055398089009(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059945873(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_99767819676502879(final ReferenceMacroContext _context) {
@@ -1240,10 +1212,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_99767819676502983(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.ifMacro_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059945952(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_99767819676503072(final ReferenceMacroContext _context) {
@@ -1265,40 +1233,20 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946109(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_99767819676502177(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059945843(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_99767819676503662(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946138(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_99767819676503832(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_MapperFunction(SLinkOperations.getTarget(_context.getNode(), "mapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946199(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_99767819676503854(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946260(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_99767819676503944(final ReferenceMacroContext _context) {
@@ -1317,20 +1265,12 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946321(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_99767819676504092(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
   public static Object referenceMacro_GetReferent_99767819676504164(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946382(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_99767819676504187(final ReferenceMacroContext _context) {
@@ -1343,10 +1283,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_99767819676504307(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946622(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_6992377099006889725(final ReferenceMacroContext _context) {
@@ -1420,10 +1356,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(firstCase, "conditionFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946012(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_3846207671016008880(final ReferenceMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).first(), "caseConsequence", true));
     return name;
@@ -1436,10 +1368,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1147906725605332201(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946036(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_6210299652024764744(final ReferenceMacroContext _context) {
@@ -1476,16 +1404,8 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059947188(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_1751251480823453085(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946568(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_9191117361655049641(final ReferenceMacroContext _context) {
@@ -1497,16 +1417,8 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.templateArgumentQuery(SLinkOperations.getTarget(_context.getNode(), "query", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946795(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_59720043761728339(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946602(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_8626372016104475444(final ReferenceMacroContext _context) {
@@ -1525,16 +1437,8 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.mapSrcMacro_MapperFunction(SLinkOperations.getTarget(_context.getNode(), "mapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946457(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_2321430363679348261(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946483(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_2321430363679349185(final ReferenceMacroContext _context) {
@@ -1561,20 +1465,12 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946509(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_2321430363679348441(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
   public static Object referenceMacro_GetReferent_2321430363679348513(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946525(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_2321430363679348536(final ReferenceMacroContext _context) {
@@ -1589,32 +1485,16 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.createRootRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059945920(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_59720043761735653(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.dropRootRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059945932(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_59720043761737764(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059947227(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_59720043761737798(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(SLinkOperations.getTarget(_context.getNode(), "contextNodeQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059947250(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_9191117361655150438(final ReferenceMacroContext _context) {
@@ -1639,10 +1519,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_8371596541809104755(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.patternRule_Condition(_context.getNode());
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059946547(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_9191117361655049707(final ReferenceMacroContext _context) {
@@ -1706,10 +1582,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.templateFragment_ContextNodeQuery(SLinkOperations.getTarget(_context.getNode(), "contextNodeQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059947034(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_5577795813925668091(final ReferenceMacroContext _context) {
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("template")), "templDeclarationClass"))).first();
   }
@@ -1734,14 +1606,6 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("outputContextVar"));
   }
 
-  public static Object referenceMacro_GetReferent_7541765787360305649(final ReferenceMacroContext _context) {
-    return TemplateFunctionMethodName.mappingScript_CodeBlock(SLinkOperations.getTarget(_context.getNode(), "codeBlock", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059945821(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_6389702176794341089(final ReferenceMacroContext _context) {
     return ((String) _context.getVariable("methName"));
   }
@@ -1762,10 +1626,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.insertMacro_Query(SLinkOperations.getTarget(_context.getNode(), "createNodeQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059946065(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_3462145372628093990(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
@@ -1782,16 +1642,8 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "nodesToWeaveQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5891355986059947102(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_6156996919798915825(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.varValue_Query(SLinkOperations.getTarget(_context.getNode(), "value", true));
-  }
-
-  public static Object referenceMacro_GetReferent_5891355986059947088(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_5015072279636784265(final ReferenceMacroContext _context) {
@@ -1810,10 +1662,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_5433312185282565708(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
-  }
-
   public static Object referenceMacro_GetReferent_5510169400914809445(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
@@ -1828,10 +1676,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_6254388211301138970(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_6254388211301138978(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
   public static Object referenceMacro_GetReferent_6254388211301139227(final ReferenceMacroContext _context) {
@@ -1979,7 +1823,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IfMacroContext _context) {
-    return eq_x583g4_a0a0vq(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0ip(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IfMacroContext _context) {
@@ -3157,6 +3001,10 @@ public class QueriesGenerated {
     return ((SNode) _context.getVariable("template"));
   }
 
+  public static SNode sourceNodeQuery_5062476545255813817(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "codeBlock", true);
+  }
+
   public static SNode sourceNodeQuery_2760176984813719443(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
@@ -4281,7 +4129,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0vq(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0ip(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
