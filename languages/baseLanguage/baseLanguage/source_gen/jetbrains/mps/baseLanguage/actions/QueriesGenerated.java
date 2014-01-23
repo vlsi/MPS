@@ -5916,6 +5916,39 @@ __switch__:
     return result;
   }
 
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ClassifierClassExpression_1587149463196837917(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode replacing = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
+        SNode typeNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
+        SNode classifierType = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), false);
+        SLinkOperations.setTarget(typeNode, "componentType", classifierType, true);
+        SLinkOperations.setTarget(replacing, "arrayType", typeNode, true);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), replacing);
+        return replacing;
+      }
+
+      public String getMatchingText(String pattern) {
+        return "[";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), null));
+      }
+    });
+    return result;
+  }
+
   private static SNode _quotation_createNode_ns07og_a0a0a0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
