@@ -123,7 +123,8 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-    protected void synchronize() {
+    public void synchronize() {
+      super.synchronizeViewWithModel();
       Set<SNode> existingPorts_gju6mh_a0 = new HashSet<SNode>(myInputPorts);
       ListIterator<SNode> portsIterator_gju6mh_a0 = myInputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "inMetaPorts", true))) {

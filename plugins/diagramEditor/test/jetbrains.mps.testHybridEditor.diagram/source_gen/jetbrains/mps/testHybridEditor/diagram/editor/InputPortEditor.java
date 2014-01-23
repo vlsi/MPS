@@ -32,6 +32,9 @@ public class InputPortEditor extends AbstractJetpadEditor {
         view.dimension().set(new Vector(10, 10));
         return mapper;
       }
+
+      public void synchronize() {
+      }
     };
     inputPortCell.setBig(true);
     return inputPortCell;

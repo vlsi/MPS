@@ -163,7 +163,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    protected void synchronize() {
+    public void synchronize() {
       Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
@@ -171,9 +171,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "blocks", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         }
 
@@ -191,9 +193,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "connectors", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         }
 
@@ -288,7 +292,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    protected void synchronize() {
+    public void synchronize() {
       Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
@@ -296,9 +300,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newBlocks", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         }
 
@@ -316,9 +322,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newConnectors", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
+          getDirectChildCell(nextElement).synchronizeViewWithModel();
           continue;
         }
 

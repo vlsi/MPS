@@ -15,7 +15,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -25,6 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.SynchronizedEditorCell" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadEditor" file="AbstractJetpadEditor.java">
     <classNode dependClassName="java.lang.String" />

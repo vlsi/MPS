@@ -95,12 +95,10 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    protected void synchronize() {
+    public void synchronize() {
       myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "inputPort", false)));
       myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "outputPort", false)));
     }
-
-
 
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();

@@ -90,10 +90,8 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    protected void synchronize() {
+    public void synchronize() {
     }
-
-
 
     private RectView createPortView() {
       RectView portView = new RectView();

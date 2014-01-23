@@ -22,9 +22,6 @@ public class ConnectorEditor extends AbstractJetpadEditor {
   @Override
   public EditorCell createEditorCell(EditorContext context, final SNode node) {
     final ConnectorCell cell = new ConnectorCell(context, node) {
-
-
-
       public Mapper<SNode, PolyLineConnection> createMapper() {
         return new Mapper<SNode, PolyLineConnection>(node, new PolyLineConnection()) {
           @Override
@@ -53,6 +50,9 @@ public class ConnectorEditor extends AbstractJetpadEditor {
             }));
           }
         };
+      }
+
+      public void synchronize() {
       }
     };
     cell.setBig(true);

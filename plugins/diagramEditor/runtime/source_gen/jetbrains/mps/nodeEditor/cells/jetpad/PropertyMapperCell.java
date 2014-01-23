@@ -30,6 +30,10 @@ public abstract class PropertyMapperCell<T> extends AbstractJetpadCell {
     configuration.add(Synchronizers.forProperty(viewProperty, myModelProperty));
   }
 
+  public void synchronize() {
+    synchronizeViewWithModel();
+  }
+
   protected abstract T getModelPropertyValueImpl();
 
   protected abstract void setModelPropertyValueImpl(T value);

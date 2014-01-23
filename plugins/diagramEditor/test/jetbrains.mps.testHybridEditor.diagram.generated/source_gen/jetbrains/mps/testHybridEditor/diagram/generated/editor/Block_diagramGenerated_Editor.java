@@ -121,7 +121,8 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-    protected void synchronize() {
+    public void synchronize() {
+      super.synchronizeViewWithModel();
       Set<SNode> existingPorts_70mnj_a0 = new HashSet<SNode>(myInputPorts);
       ListIterator<SNode> portsIterator_70mnj_a0 = myInputPorts.listIterator();
       for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "inputPorts", true))) {

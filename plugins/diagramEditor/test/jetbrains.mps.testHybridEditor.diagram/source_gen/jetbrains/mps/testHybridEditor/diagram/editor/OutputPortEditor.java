@@ -33,6 +33,9 @@ public class OutputPortEditor extends AbstractJetpadEditor {
 
         return mapper;
       }
+
+      public void synchronize() {
+      }
     };
     outputPortCell.setBig(true);
     return outputPortCell;
