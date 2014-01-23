@@ -20,7 +20,7 @@
   <description>Allows importing sources from Java into MPS</description>
   <version>3.0.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="129.1" until-build="130.1"/>
+  <idea-version since-build="129.1" until-build="134.1"/>
 
   <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
