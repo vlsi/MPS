@@ -21,12 +21,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddNodeHasErrorMark_Intention implements IntentionFactory {
+public class AddNodeHasErrorAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public AddNodeHasErrorMark_Intention() {
+  public AddNodeHasErrorAnnotation_Intention() {
   }
 
   public String getConcept() {
@@ -34,11 +35,11 @@ public class AddNodeHasErrorMark_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "AddNodeHasErrorMark";
+    return "AddNodeHasErrorAnnotation";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention";
+    return "jetbrains.mps.lang.test.intentions.AddNodeHasErrorAnnotation_Intention";
   }
 
   public String getLanguageFqName() {
@@ -74,7 +75,7 @@ public class AddNodeHasErrorMark_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddNodeHasErrorMark_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddNodeHasErrorAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -92,11 +93,11 @@ public class AddNodeHasErrorMark_Intention implements IntentionFactory {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
       SNode errorCheck = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);
       ListSequence.fromList(SLinkOperations.getTargets(newAnnotation, "nodeOperations", true)).addElement(errorCheck);
-      SelectionUtil.selectNode(editorContext, errorCheck);
+      SelectionUtil.selectCell(editorContext, errorCheck, SelectionManager.LAST_EDITABLE_CELL);
     }
 
     public IntentionDescriptor getDescriptor() {
-      return AddNodeHasErrorMark_Intention.this;
+      return AddNodeHasErrorAnnotation_Intention.this;
     }
   }
 }

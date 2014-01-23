@@ -21,10 +21,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddOperationsMark_Intention implements IntentionFactory {
+public class AddOperationsAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public AddOperationsMark_Intention() {
+  public AddOperationsAnnotation_Intention() {
   }
 
   public String getConcept() {
@@ -32,11 +32,11 @@ public class AddOperationsMark_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "AddOperationsMark";
+    return "AddOperationsAnnotation";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention";
+    return "jetbrains.mps.lang.test.intentions.AddOperationsAnnotation_Intention";
   }
 
   public String getLanguageFqName() {
@@ -72,7 +72,7 @@ public class AddOperationsMark_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOperationsMark_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOperationsAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -82,17 +82,17 @@ public class AddOperationsMark_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Test Operations Annotation";
+      return "Add Node Operations Test Annotation";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnottation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnottation);
-      SelectionUtil.selectNode(editorContext, newAnottation);
+      SelectionUtil.selectCell(editorContext, newAnottation, "operationCell");
     }
 
     public IntentionDescriptor getDescriptor() {
-      return AddOperationsMark_Intention.this;
+      return AddOperationsAnnotation_Intention.this;
     }
   }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4hsxorohnfs50ujxbivg3e4kc0ozsux">
+<dependencies version="2" modelHash="dz00ytznvwf7o1dfgededj84lg2vse4">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -70,18 +70,18 @@
   <source id="1211979288880" name="AssertMatch" hash="8dapivr4bhuhmnlfunyikh3905cc38c" />
   <source id="1214846310980" name="AbstractNodeAssert" hash="2jnhylo1w15uew5j7ubj0xg0o8eptw3" />
   <source id="1215075719096" name="CheckNodeForErrors" hash="-5omux3vpv5hm8v1gst6709bmaap23r0" />
-  <source id="1215507532627" name="NodeCheckOperationsContainer" hash="5jl9l2uyffvj4ubcyxtsfykok1pkrev" />
-  <source id="1215507671101" name="NodeErrorCheckOperation" hash="-8kitpzaz34pw7ex52cs6i6af9mv2y68" />
-  <source id="1215511704609" name="NodeWarningCheckOperation" hash="6saye3uotd8wpn0blxbk5w3c9yw7doz" />
-  <source id="1215525678776" name="NodeReachable" hash="cstpjr3qvzdbr5thu8q7l4g4rq81ssf" />
-  <source id="1215526290564" name="NodeTypeCheckOperation" hash="-4069p22tvrsejd4s7dln6n9c2nac6sj" />
+  <source id="1215507532627" name="NodeCheckOperationsContainer" hash="-7fn19vnpe4njox4d5dyphplkvwx87vv" />
+  <source id="1215507671101" name="NodeErrorCheckOperation" hash="csss703okghzx0fabcrw82qvj8cy8ut" />
+  <source id="1215511704609" name="NodeWarningCheckOperation" hash="8ege1kntqrws4fjx4dezl62hhf0wrdm" />
+  <source id="1215525678776" name="NodeReachable" hash="5347f2wdqsd6thvqbedrf7h2z0kvlz6" />
+  <source id="1215526290564" name="NodeTypeCheckOperation" hash="cafpppvegz2cz7ynsz7ldxzzbnspqs9" />
   <source id="1215601147424" name="NodeCheckOperation" hash="bpkwvn6kj34f4w7bkedxuzuvywwkkye" />
   <source id="1215603922101" name="NodeOperationsContainer" hash="-umomxkjw0cwrwe058ol5pldwxiiiua" />
   <source id="1215607067978" name="CheckNodeForErrorMessagesOperation" hash="-9k0yv5bev5xszsailw8nlksfeulw34d" />
-  <source id="1215611834554" name="CheckDataFlowOperation" hash="-6umxw2n8vf3w8jwc90uqgybhp06tmhs" />
-  <source id="1215612918969" name="NodeUnreachable" hash="-9l3buv1nbu38vbjpzi8xmry32ff59ir" />
-  <source id="1215614394933" name="VariableInitialized" hash="-8f8bzthqiaaczwafdmcdbg24w5t483j" />
-  <source id="1215616993394" name="VariableAlive" hash="3xf04aw54sno750s2z4v66gjqorw6vi" />
+  <source id="1215611834554" name="CheckDataFlowOperation" hash="-end46pagzqqxbfrxnv3jvwnfmgyf3eo" />
+  <source id="1215612918969" name="NodeUnreachable" hash="ahrfbzaon5e75i07arsxsstnvi6jvwo" />
+  <source id="1215614394933" name="VariableInitialized" hash="-6dg6uev573gwds3ubr1gjfn9l2iozcc" />
+  <source id="1215616993394" name="VariableAlive" hash="-1k2ft90j0pkkj3pn0fdi387dezb6315" />
   <source id="1216913645126" name="NodesTestCase" hash="-9u70500ebgizbppb2alr30wj6etlp39" />
   <source id="1216913689992" name="NodesTestMethod" hash="-23yu79nktdt9ltv7o5t3hvoswks7xe2" />
   <source id="1216989428737" name="TestNode" hash="7xn7s70t8lbnf43610mmblensxh15a7" />
@@ -98,7 +98,7 @@
   <source id="1229187653856" name="EditorTestCase" hash="-3fwv5uqgno2ke6dfh0uxye7897fh2z2" />
   <source id="1229194968594" name="AnonymousCellAnnotation" hash="-eduowg70y7i3wgjaeyoecso4i2scbjl" />
   <source id="1230224281548" name="MockAnnotation" hash="-10ukw8c5x4uhwzvebhigtxal3a1c39x" />
-  <source id="95706764259116183" name="NodeTypeSetCheckOperation" hash="-znn3tvwwbxgzxgg5828uih2z15jktg" />
+  <source id="95706764259116183" name="NodeTypeSetCheckOperation" hash="7jsjou5nmstmitq57pgh50qy2z0xxf6" />
   <source id="2685915532175039858" name="ExpressionContainer" hash="-anorsldzsdpc766cfeslo5atkxiew8b" />
   <source id="5773579205429617809" name="SwitchToInspector" hash="8z5891ui6af73bjjpafhkqytbtab48q" />
   <source id="5773579205429866751" name="EditorComponentExpression" hash="7t1vow25z61n8u9n1x169jw2yhylb9" />
@@ -107,7 +107,7 @@
   <source id="1101347953350122484" name="ActionReference" hash="-6no833eml06d8v5snko4aefqodp8ukt" />
   <source id="1101347953350122758" name="BootstrapActionReference" hash="-ay0a61sf7kcvmbi79chg120q1vy5ul3" />
   <source id="4239542196496927193" name="MPSActionReference" hash="abu7jbt6rfeforkc4uep3gx7gdkzkkf" />
-  <source id="4395293866213195846" name="NodeExpectedTypeCheckOperation" hash="-4h233pwkp2wluijzqxbco33ov32uvly" />
+  <source id="4395293866213195846" name="NodeExpectedTypeCheckOperation" hash="-2sw41678i0w8pt7260ltj4ykjutg6ta" />
   <source id="511191073233700873" name="ScopesTest" hash="-dklbfqj7k8xr6eavrxlvt7veql9rc15" />
   <source id="3655334166513314291" name="ScopesExpectedNode" hash="8ynnf1k92us5xfyqiul988a1c1kbcdz" />
   <source id="4307182653741890820" name="NodeRuleCheckOperation" hash="-d7qfk7ffc2iff25jc7r21p3dy0xxdzc" />

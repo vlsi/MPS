@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="55oqv3s0bfdfzi3v484f3m8set315ys">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="anb3n8m07jklsuhdoasrbmvyzybjfsj" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
+  <common hash="anb3n8m07jklsuhdoasrbmvyzybjfsj" dependsOnNodes="true" />
   <source id="7358309956614999744" name="XmlModelPersistence" hash="-9lfv0vgs0ns4d064w41rnvx9h9etehc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="XmlModelPersistence.java" />

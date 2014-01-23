@@ -511,7 +511,11 @@
                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215444400374" nodeInfo="nn" />
                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3951985765451230829" nodeInfo="sn">
                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="3951985765451230832" nodeInfo="ng">
-                            <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="5872607264944541567" nodeInfo="ng" />
+                            <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="5872607264944541567" nodeInfo="ng">
+                              <node role="errorRef" roleId="tp5g.8489045168660938517" type="tpd4.ReportErrorStatementReference" typeId="tpd4.8489045168659469278" id="5705984887680546032" nodeInfo="ng">
+                                <link role="declaration" roleId="tpd4.8489045168660924158" targetNodeId="tpeh.5872607264933664559" resolveInfo="ReturnExpectedError" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>

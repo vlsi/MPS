@@ -65,10 +65,14 @@ public class NodeCheckerUtil {
     checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(node) {
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
-          MessageStatus status = context.getTypeMessageDontCheck(node).getMessageStatus();
-          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has warning instead of error", status == MessageStatus.WARNING);
+          String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has warning instead of error";
+          Assert.assertTrue(errorString, context.getTypeMessageDontCheck(node) != null);
 
-          Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected error message", status == MessageStatus.ERROR && NodeCheckerUtil.nodeHasExpectedRuleMessage(node, context, operation));
+          MessageStatus status = context.getTypeMessageDontCheck(node).getMessageStatus();
+          Assert.assertFalse(errorString, status == MessageStatus.WARNING);
+
+          errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected error message";
+          Assert.assertTrue(errorString, status == MessageStatus.ERROR && NodeCheckerUtil.nodeHasExpectedRuleMessage(node, context, operation));
         }
       }
     });
@@ -81,10 +85,14 @@ public class NodeCheckerUtil {
     checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(node) {
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation")) {
-          MessageStatus status = context.getTypeMessageDontCheck(node).getMessageStatus();
-          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has error instead of warning", status == MessageStatus.ERROR);
+          String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has error instead of warning";
+          Assert.assertTrue(errorString, context.getTypeMessageDontCheck(node) != null);
 
-          Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected warning message", status == MessageStatus.WARNING && NodeCheckerUtil.nodeHasExpectedRuleMessage(node, context, operation));
+          MessageStatus status = context.getTypeMessageDontCheck(node).getMessageStatus();
+          Assert.assertFalse(errorString, status == MessageStatus.ERROR);
+
+          errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected warning message";
+          Assert.assertTrue(errorString, status == MessageStatus.WARNING && NodeCheckerUtil.nodeHasExpectedRuleMessage(node, context, operation));
         }
       }
     });
@@ -172,7 +180,7 @@ public class NodeCheckerUtil {
           if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
             IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
             if (reporter != null) {
-              String reportError = reporter.reportError() + ". Node " + NodeCheckerUtil.nodeWithIdToString(node);
+              String reportError = reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(node) + "'";
               if (!(allowErrors)) {
                 Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
               }

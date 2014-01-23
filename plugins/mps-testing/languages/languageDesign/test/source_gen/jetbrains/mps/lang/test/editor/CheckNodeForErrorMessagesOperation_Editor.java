@@ -8,14 +8,14 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -30,20 +30,20 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_djd04t_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_djd04t_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_djd04t_a0(editorContext, node));
     if (SNodeAccessUtil.hasProperty(node, "name")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_djd04t_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_djd04t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for error messages");
-    editorCell.setCellId("Constant_djd04t_a0");
+  private EditorCell createComponent_djd04t_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
+    Annotation_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
@@ -73,7 +73,7 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_djd04t_a_0");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_djd04t_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_djd04t_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_djd04t_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_djd04t_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_djd04t_d0(editorContext, node));
@@ -82,9 +82,9 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_djd04t_a0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_djd04t_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
-    editorCell.setCellId("Constant_djd04t_a0_0");
+    editorCell.setCellId("Constant_djd04t_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
