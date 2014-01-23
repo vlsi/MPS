@@ -500,7 +500,7 @@
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="NodeTypeSetCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="type in" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has type in" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="95706764259116184" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

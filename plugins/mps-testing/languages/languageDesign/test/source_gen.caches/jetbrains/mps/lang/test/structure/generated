@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5ke5vfrqp4q1lr7ligtnv82qo4o0lcs">
+<dependencies version="2" modelHash="4hsxorohnfs50ujxbivg3e4kc0ozsux">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -98,7 +98,7 @@
   <source id="1229187653856" name="EditorTestCase" hash="-3fwv5uqgno2ke6dfh0uxye7897fh2z2" />
   <source id="1229194968594" name="AnonymousCellAnnotation" hash="-eduowg70y7i3wgjaeyoecso4i2scbjl" />
   <source id="1230224281548" name="MockAnnotation" hash="-10ukw8c5x4uhwzvebhigtxal3a1c39x" />
-  <source id="95706764259116183" name="NodeTypeSetCheckOperation" hash="1nsfsvbppp0wrsjffjkzv9i0ac5klx8" />
+  <source id="95706764259116183" name="NodeTypeSetCheckOperation" hash="-znn3tvwwbxgzxgg5828uih2z15jktg" />
   <source id="2685915532175039858" name="ExpressionContainer" hash="-anorsldzsdpc766cfeslo5atkxiew8b" />
   <source id="5773579205429617809" name="SwitchToInspector" hash="8z5891ui6af73bjjpafhkqytbtab48q" />
   <source id="5773579205429866751" name="EditorComponentExpression" hash="7t1vow25z61n8u9n1x169jw2yhylb9" />

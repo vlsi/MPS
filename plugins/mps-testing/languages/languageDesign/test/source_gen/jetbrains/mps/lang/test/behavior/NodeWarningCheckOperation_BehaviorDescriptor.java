@@ -12,6 +12,10 @@ public class NodeWarningCheckOperation_BehaviorDescriptor extends NodeRuleCheckO
     NodeWarningCheckOperation_Behavior.virtual_attachDeclaration_8489045168660953479(thisNode, annotation);
   }
 
+  public boolean virtual_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation) {
+    return NodeWarningCheckOperation_Behavior.virtual_canAttachDeclaration_1334460907022490922(thisNode, annotation);
+  }
+
   public SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode) {
     return NodeWarningCheckOperation_Behavior.virtual_getMessageAnnotation_5872607264946106205(thisNode);
   }

@@ -4188,6 +4188,9 @@
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="8489045168661229389" nodeInfo="nn">
             <property name="color" nameId="tpc2.1186403713874" value="magenta" />
           </node>
+          <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="1334460907024748548" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="refName" />
+          </node>
         </node>
       </node>
     </node>

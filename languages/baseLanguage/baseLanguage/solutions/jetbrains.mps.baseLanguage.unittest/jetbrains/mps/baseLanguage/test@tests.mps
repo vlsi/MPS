@@ -750,8 +750,12 @@
                               <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6090235207266878435" nodeInfo="in" />
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6090235207266878711" nodeInfo="nn">
                                 <property name="value" nameId="tpee.1068580320021" value="5" />
-                                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6090235207266878819" nodeInfo="ng">
-                                  <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeWarningCheckOperation" typeId="tp5g.1215511704609" id="5872607264932408204" nodeInfo="ng" />
+                                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1334460907022123161" nodeInfo="ng">
+                                  <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeWarningCheckOperation" typeId="tp5g.1215511704609" id="5705984887678218865" nodeInfo="ng">
+                                    <node role="warningRef" roleId="tp5g.8489045168660938635" type="tpd4.WarningStatementReference" typeId="tpd4.8489045168659469334" id="5705984887678218969" nodeInfo="ng">
+                                      <link role="declaration" roleId="tpd4.8489045168659469741" targetNodeId="tpeh.5872607264932454729" resolveInfo="VariableInitializerIsRedundantWarning" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -3849,10 +3853,10 @@
           <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3951985765451229352" nodeInfo="nn" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3951985765451229353" nodeInfo="in" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="5872607264962276578" nodeInfo="ng">
-            <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="5872607264962542606" nodeInfo="ng">
-              <node role="errorRef" roleId="tp5g.8489045168660938517" type="tpd4.ReportErrorStatementReference" typeId="tpd4.8489045168659469278" id="5872607264962542736" nodeInfo="ng">
-                <link role="declaration" roleId="tpd4.8489045168660924158" targetNodeId="tpeh.5872607264930617899" resolveInfo="VariableHasNotBeenInitialized" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1334460907025368425" nodeInfo="ng">
+            <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="1334460907025368426" nodeInfo="ng">
+              <node role="errorRef" roleId="tp5g.8489045168660938517" type="tpd4.ReportErrorStatementReference" typeId="tpd4.8489045168659469278" id="5705984887676908585" nodeInfo="ng">
+                <link role="declaration" roleId="tpd4.8489045168660924158" targetNodeId="tpeh.5705984887676908584" resolveInfo="VariableHasNotBeenInitialized" />
               </node>
             </node>
           </node>

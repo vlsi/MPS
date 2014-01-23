@@ -12,6 +12,11 @@ public class NodeRuleCheckOperation_Behavior {
   }
 
   @Deprecated
+  public static boolean call_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canAttachDeclaration_1334460907022490922", new Object[]{annotation});
+  }
+
+  @Deprecated
   public static void call_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_attachDeclaration_8489045168660953479", new Object[]{annotation});
   }
@@ -19,6 +24,11 @@ public class NodeRuleCheckOperation_Behavior {
   @Deprecated
   public static SNode call_getMessageAnnotation_5872607264946106205(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getMessageAnnotation_5872607264946106205", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_canAttachDeclaration_1334460907022490922(SNode thisNode, String callerConceptFqName, SNode annotation) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"), callerConceptFqName, "virtual_canAttachDeclaration_1334460907022490922", new Class[]{SNode.class, SNode.class}, new Object[]{annotation});
   }
 
   @Deprecated

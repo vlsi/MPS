@@ -13,6 +13,8 @@ public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends NodeChec
     return "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation";
   }
 
+  public abstract boolean virtual_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation);
+
   public abstract void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation);
 
   public abstract SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode);

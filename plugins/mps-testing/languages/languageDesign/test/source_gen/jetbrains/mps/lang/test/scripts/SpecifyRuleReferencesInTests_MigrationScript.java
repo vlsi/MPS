@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 
@@ -45,7 +46,7 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
         ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
         SNode root = SNodeOperations.getContainingRoot(node);
         final SNode nodeToCheck = SNodeOperations.getParent(SNodeOperations.getParent(node));
-        final SNode nodeFinalCopy = node;
+        final SNode myNode = node;
         TypeContextManager.getInstance().runTypeCheckingAction(owner, root, new ITypechecking.Action() {
           public void run(TypeCheckingContext p0) {
             p0.checkIfNotChecked(nodeToCheck, true);
@@ -56,9 +57,14 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
               BehaviorReflection.invokeVirtual(Void.class, message, "virtual_attachNewMessageAnnotation_8489045168661849665", new Object[]{});
             }
             SNode msgStatementAnnotation = AttributeOperations.getAttribute(message, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"));
-            BehaviorReflection.invokeVirtual(Void.class, nodeFinalCopy, "virtual_attachDeclaration_8489045168660953479", new Object[]{msgStatementAnnotation});
-            ((SModelBase) SNodeOperations.getModel(nodeFinalCopy)).addModelImport(SNodeOperations.getModel(msgStatementAnnotation).getReference(), false);
-            MissingDependenciesFixer.fixDependencies(SNodeOperations.getModel(nodeFinalCopy), true);
+            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, myNode, "virtual_canAttachDeclaration_1334460907022490922", new Object[]{msgStatementAnnotation})) {
+              BehaviorReflection.invokeVirtual(Void.class, myNode, "virtual_attachDeclaration_8489045168660953479", new Object[]{msgStatementAnnotation});
+            } else {
+              Messages.showErrorDialog("The types of annotation and actual error/warning message do not match", "Could no apply intention");
+              return;
+            }
+            ((SModelBase) SNodeOperations.getModel(myNode)).addModelImport(SNodeOperations.getModel(msgStatementAnnotation).getReference(), false);
+            MissingDependenciesFixer.fixDependencies(SNodeOperations.getModel(myNode), true);
           }
         });
       }

@@ -25,10 +25,12 @@ public class NodeWarningCheckOperation_Behavior {
     }
   }
 
+  public static boolean virtual_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation) {
+    return SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation");
+  }
+
   public static void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation) {
-    if (!(SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation"))) {
-      return;
-    }
+    assert SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation");
     SLinkOperations.setTarget(thisNode, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.WarningStatementReference", null), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "warningRef", true), "declaration", SNodeOperations.cast(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation"), false);
   }

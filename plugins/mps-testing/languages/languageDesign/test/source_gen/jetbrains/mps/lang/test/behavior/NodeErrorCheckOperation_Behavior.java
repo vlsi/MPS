@@ -25,10 +25,12 @@ public class NodeErrorCheckOperation_Behavior {
     return "Node" + errorName + "Check";
   }
 
+  public static boolean virtual_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation) {
+    return SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation");
+  }
+
   public static void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation) {
-    if (!(SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"))) {
-      return;
-    }
+    assert SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation");
     SLinkOperations.setTarget(thisNode, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ReportErrorStatementReference", null), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "errorRef", true), "declaration", SNodeOperations.cast(annotation, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"), false);
   }

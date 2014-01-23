@@ -71,7 +71,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"type"}, new boolean[]{false}).alias("has type", "").create();
       case 28:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"type"}, new boolean[]{true}).alias("type in", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"type"}, new boolean[]{true}).alias("has type in", "").create();
       case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeUnreachable").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("unreachable", "").create();
       case 30:
