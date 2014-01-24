@@ -42,8 +42,8 @@
              url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+3.0+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="0">
-      <build number="129.438" version="3.0.2">
-        <message>JetBrains MPS 3.0.2 is available.</message>
+      <build number="129.473" version="3.0.3">
+        <message>JetBrains MPS 3.0.3 is available.</message>
       </build>
     </channel>
 
@@ -51,8 +51,8 @@
              url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+3.0+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="0">
-      <build number="129.438" version="3.0.2">
-        <message>JetBrains MPS 3.0.2 is available.</message>
+      <build number="129.473" version="3.0.3">
+        <message>JetBrains MPS 3.0.3 is available.</message>
       </build>
     </channel>
 

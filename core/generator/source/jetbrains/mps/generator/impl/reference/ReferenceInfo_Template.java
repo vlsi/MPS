@@ -96,9 +96,15 @@ public class ReferenceInfo_Template extends ReferenceInfo {
 
 
   private void checkCrossRootTemplateReference(@NotNull SNode outputTarget, TemplateGenerator generator) {
-    if (!generator.isStrict()/* || !generator.isIncremental()*/) return;
+    if (!generator.isStrict() || !generator.isIncremental()) {
+      return;
+    }
 
     // Additional check - reference target should be generated from the same root (required for incremental generation)
+    // I believe origin of this error is the chance next incremental generation may proceed target as unchanged, and there would be no
+    // output mapping for the given templateNodeId, and to prevent this case the error is reported.
+    // There are, however, legitimate references like this when target is known to be regenerated regardless of incremental
+    // mode (e.g. QueriesGenerated in generator) - target being a "common" dependency, the one that is affected by any model change.
     SNode outputTargetRoot = outputTarget.getContainingRoot();
     SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
     SModel model = outputTargetRoot.getModel();
@@ -106,16 +112,12 @@ public class ReferenceInfo_Template extends ReferenceInfo {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {
-        generator.getLogger().error(getTemplateNode(), "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
+        generator.getLogger().warning(myTemplateSourceNode, "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
             "source root: " + (inputSourceRoot == null ? "<conditional root>" : SNodeUtil.getDebugText(inputSourceRoot)) +
             ", target root: " + (inputTargetRoot == null ? "<conditional root>" : SNodeUtil.getDebugText(inputTargetRoot)),
             GeneratorUtil.describeIfExists(getOutputSourceNode(), "source"),
             GeneratorUtil.describeIfExists(outputTarget, "target"));
       }
     }
-  }
-
-  private SNode getTemplateNode() {
-    return myTemplateSourceNode != null ? myTemplateSourceNode.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

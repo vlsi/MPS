@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
-import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
+import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
@@ -51,7 +51,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
 
-  private static final Object COPYED_ROOTS = new Object();
+  private static final Object COPIED_ROOTS = new Object();
 
   private final SModel myOriginalInputModel;
 
@@ -63,6 +63,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final GenerationOptions myGenerationOptions;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
+  private final QueryProviderCache myQueryProviders;
   /*
    * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
    * but there's no more global context available right now.
@@ -104,6 +105,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
     myLogger = logger;
+    myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
     myParameters = null;
     myValidation = new RoleValidation(generationOptions.isShowBadChildWarning());
@@ -127,6 +129,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
+    myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
     myParameters = parameters;
     // the moment this copy cons is used, nothing happened, reuse
@@ -151,6 +154,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myParameters = prevContext.myParameters;
+    myQueryProviders = prevContext.myQueryProviders;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -186,34 +190,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return getModule().getScope();
   }
 
-  public GeneratorQueryProvider getQueryProvider(SNodeReference ruleNode) {
-    ReflectiveQueryProvider nv = new ReflectiveQueryProvider(ruleNode);
-    return nv; // there's no reason to cache RQP as they are unlikely to be used more than once -
-    // there's at most 1 condition per rule, and Condition objects are expected to be cached.
-    // The cache would come into play once there are non-reflective providers, where QG instances shall be reused
-    // Perhaps, cache of QG instances shall happen even further, e.g. not per model generation, but for
-    // complete generation phase (once per GenerationController?)
-//    GeneratorQueryProvider rv = myQueryProviders.putIfAbsent(ruleNode, nv);
-//    return rv == null ? nv : rv;
+  public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
+    return myQueryProviders.getQueryProvider(ruleNode);
   }
-/*
-  public static ReductionRuleCondition tryConditionFactory(SNode ruleNode, String conditionMethodName) {
-    try {
-      Class<?> qg = QueryMethodGenerated.getQueriesGeneratedClassFor(ruleNode.getModel().getReference(), false);
-      if (qg != null && ReductionRuleCondition.Factory.class.isAssignableFrom(qg)) {
-        ReductionRuleCondition.Factory f = ((Class<ReductionRuleCondition.Factory>) qg).newInstance();
-        return f.getReductionRuleCondition(conditionMethodName);
-      }
-    } catch (ClassNotFoundException ex) {
-      // ignore, the error has been reported
-    } catch (InstantiationException e) {
-      // FIXME ignore now, shall report
-    } catch (IllegalAccessException e) {
-      // FIXME ignore now, shall report
-    }
-    return null;
-  }
-*/
 
   // FIXME revisit is there need for external classes to know my delegate or they
   // could have piped all queries through me? lang.plugin.generator might be unsatisfied with this#getModule()
@@ -415,9 +394,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private Set<SNode> getCopiedRoots(boolean create) {
     @SuppressWarnings("unchecked")
-    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
+    Set<SNode> set = (Set<SNode>) getStepObject(COPIED_ROOTS);
     if (set == null && create) {
-      putStepObject(COPYED_ROOTS, set = new HashSet<SNode>());
+      putStepObject(COPIED_ROOTS, set = new HashSet<SNode>());
     }
     return set;
   }
@@ -446,6 +425,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void clearTransientModels() {
     getModule().clearUnused();
+  }
+
+  public void disposeQueryProvider() {
+    myQueryProviders.dispose();
   }
 
   public Object getGenerationParameter(String name) {

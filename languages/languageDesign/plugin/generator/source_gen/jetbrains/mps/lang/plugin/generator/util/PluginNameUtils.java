@@ -21,7 +21,7 @@ public class PluginNameUtils {
   }
 
   public static SModule getOriginalModule(TemplateQueryContext context) {
-    SModule originalModule = ((TemplateQueryContext) context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    SModule originalModule = context.getOriginalInputModel().getModule();
     assert originalModule != null;
     if (originalModule instanceof Generator) {
       originalModule = ((Generator) originalModule).getSourceLanguage();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,14 +21,12 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.List;
@@ -37,10 +35,6 @@ import java.util.List;
  * Evgeny Gryaznov, Jan 26, 2010
  */
 public class TextGenerationHandler extends GenerationHandlerBase {
-  @Override
-  public boolean canHandle(SModel inputModel) {
-    return SModelStereotype.isUserModel(inputModel);
-  }
 
   @Override
   public void startGeneration(IGeneratorLogger logger) {

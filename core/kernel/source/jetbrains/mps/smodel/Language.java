@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -48,8 +47,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -69,7 +66,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Language extends AbstractModule implements MPSModuleOwner {
-  private static final Logger LOG = LogManager.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
 
@@ -290,14 +286,18 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return ((jetbrains.mps.smodel.SModelInternal) structureModel).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
-  public List<EditableSModelDescriptor> getUtilModels() {
-    List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
+  public List<SModel> getUtilModels() {
+    List<SModel> result = new ArrayList<SModel>();
     for (SModel md : getModels()) {
-      if (SModelStereotype.getStereotype(md).equals(SModelStereotype.NONE)
-          && getAspectForModel(md) == null
-          && !isAccessoryModel(md.getReference())) {
-        result.add(((EditableSModelDescriptor) md));
+      if (getAspectForModel(md) != null || isAccessoryModel(md.getReference())) {
+        continue;
       }
+      String st = SModelStereotype.getStereotype(md);
+      if (SModelStereotype.isStubModelStereotype(st) || SModelStereotype.isDescriptorModelStereotype(st)) {
+        // perhaps, we need more generic isPredefinedStereotypeMPS()
+        continue;
+      }
+      result.add((md));
     }
     return result;
   }
