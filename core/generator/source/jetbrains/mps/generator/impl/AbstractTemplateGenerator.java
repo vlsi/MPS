@@ -80,14 +80,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myProgressMonitor.isCanceled();
   }
 
-  public void showErrorIfStrict(SNode node, String message) {
-    if (isStrict()) {
-      getLogger().error(node, message);
-    } else {
-      getLogger().warning(node, message);
-    }
-  }
-
   @Override
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
     showErrorMessage(inputNode, templateNode, null, message);
