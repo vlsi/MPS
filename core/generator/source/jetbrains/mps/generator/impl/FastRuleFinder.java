@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,12 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Igor Alshannikov
@@ -31,17 +35,17 @@ public class FastRuleFinder {
   private Map<String, TemplateReductionRule[]> myApplicableRules = new HashMap<String, TemplateReductionRule[]>();
 
   public FastRuleFinder(Iterable<TemplateReductionRule> reductionRules) {
-    Map<String, List<TemplateReductionRule>> applicableRules = new HashMap<String, List<TemplateReductionRule>>();
+    Map<String, LinkedList<TemplateReductionRule>> applicableRules = new HashMap<String, LinkedList<TemplateReductionRule>>();
 
     for (TemplateReductionRule rule : reductionRules) {
       String applicableConceptFqName = rule.getApplicableConcept();
 
-      List<TemplateReductionRule> rules = applicableRules.get(applicableConceptFqName);
+      LinkedList<TemplateReductionRule> rules = applicableRules.get(applicableConceptFqName);
       if (rules == null) {
         rules = new LinkedList<TemplateReductionRule>();
         applicableRules.put(applicableConceptFqName, rules);
       }
-      rules.add(rule);
+      rules.addFirst(rule); // rule most specific to the concept goes first
 
       if (rule.applyToInheritors()) {
         for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
@@ -55,7 +59,7 @@ public class FastRuleFinder {
       }
     }
 
-    for (Entry<String, List<TemplateReductionRule>> entry : applicableRules.entrySet()) {
+    for (Entry<String, LinkedList<TemplateReductionRule>> entry : applicableRules.entrySet()) {
       List<TemplateReductionRule> rules = entry.getValue();
       myApplicableRules.put(entry.getKey(), rules.toArray(new TemplateReductionRule[rules.size()]));
     }
@@ -93,7 +97,7 @@ public class FastRuleFinder {
         o = myCurrentReductionData.get(inputNode);
       }
       if (o == null) return;
-      synchronized (myNextReductionData) {
+      synchronized (this) {
         myNextReductionData.put(outputNode, o);
       }
     }
