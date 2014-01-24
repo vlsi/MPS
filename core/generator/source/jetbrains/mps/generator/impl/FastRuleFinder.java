@@ -45,7 +45,7 @@ public class FastRuleFinder {
         rules = new LinkedList<TemplateReductionRule>();
         applicableRules.put(applicableConceptFqName, rules);
       }
-      rules.addFirst(rule); // rule most specific to the concept goes first
+      rules.add(rule);
 
       if (rule.applyToInheritors()) {
         for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
