@@ -4,6 +4,11 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import junit.framework.Assert;
 
 public class NodeTypeSetCheckOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,13 +16,29 @@ public class NodeTypeSetCheckOperation_Behavior {
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     try {
-      NodeCheckerUtil.checkNodeTypeSetForErrors(node);
+      final SNode operation = thisNode;
+      NodeCheckerUtil.checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(operation) {
+        public void checkOperation(TypeCheckingContext context) {
+          if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation")) {
+            SNode type1 = context.getTypeDontCheck(getNodeToCheck());
+            boolean hasType = false;
+            for (SNode type2 : (SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"), "type", true))) {
+              if (MatchingUtil.matchNodes(type1, type2)) {
+                hasType = true;
+                break;
+              }
+            }
+            Assert.assertTrue("node type <" + NodeCheckerUtil.nodeWithIdToString(type1) + "> is not in <" + SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"), "type", true) + ">", hasType);
+          }
+        }
+      });
+
     } catch (Exception ex) {
       ex.printStackTrace();
     }
   }
 
-  public static String virtual_getName_1217435265700(SNode thisNode) {
+  public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeTypeSetCheck";
   }
 }

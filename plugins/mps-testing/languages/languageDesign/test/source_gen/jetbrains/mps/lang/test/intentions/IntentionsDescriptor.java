@@ -14,6 +14,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddCellAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMessageAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMockAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasErrorAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasWarningAnnotation_Intention());

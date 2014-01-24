@@ -59,37 +59,45 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 21:
         return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
       case 22:
-        return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
       case 23:
-        return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
       case 24:
-        return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
       case 25:
-        return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
       case 26:
-        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
       case 27:
-        return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
+        return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
       case 28:
-        return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
+        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
       case 29:
-        return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReportErrorStatementReference_Editor());
       case 30:
-        return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
+        return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
       case 31:
-        return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
+        return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
       case 32:
-        return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
       case 33:
-        return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
       case 34:
-        return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
       case 35:
-        return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
       case 36:
-        return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
       case 37:
+        return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
+      case 40:
         return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new WarningStatementReference_Editor());
       default:
     }
     return Collections.emptyList();
@@ -106,5 +114,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ReportErrorStatementReference", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized", "jetbrains.mps.lang.test.structure.WarningStatementReference"};
 }

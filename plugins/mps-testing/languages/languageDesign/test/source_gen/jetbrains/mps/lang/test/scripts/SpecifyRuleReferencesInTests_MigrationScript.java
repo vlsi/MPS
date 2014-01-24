@@ -6,19 +6,17 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 
@@ -35,35 +33,28 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation";
+        return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return true;
+        return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null);
       }
 
       public void doUpdateInstanceNode(SNode node) {
         ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
         SNode root = SNodeOperations.getContainingRoot(node);
-        final SNode nodeToCheck = SNodeOperations.getParent(SNodeOperations.getParent(node));
-        final SNode myNode = node;
+        final SNode nodeToCheck = node;
+        final SNode myNode = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+        NodeOperationsContainer_Behavior.call_detachAllErrorOperations_5587533744543326483(myNode);
         TypeContextManager.getInstance().runTypeCheckingAction(owner, root, new ITypechecking.Action() {
+          @Override
           public void run(TypeCheckingContext p0) {
             p0.checkIfNotChecked(nodeToCheck, true);
-            IErrorReporter reporter = p0.getTypeMessageDontCheck(nodeToCheck);
-            SNodePointer ref = new SNodePointer(reporter.getRuleModel(), reporter.getRuleId());
-            SNode message = SNodeOperations.cast(ref.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.typesystem.structure.MessageStatement");
-            if ((AttributeOperations.getAttribute(message, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) == null)) {
-              BehaviorReflection.invokeVirtual(Void.class, message, "virtual_attachNewMessageAnnotation_8489045168661849665", new Object[]{});
+            for (IErrorReporter reporter : p0.getTypeMessagesDontCheck(nodeToCheck)) {
+              SNode ruleNode = NodeCheckerUtil.getRuleNode(reporter);
+              NodeOperationsContainer_Behavior.call_attachReference_428590876657265140(myNode, ruleNode, reporter);
+              ((SModelBase) SNodeOperations.getModel(myNode)).addModelImport(SNodeOperations.getModel(ruleNode).getReference(), false);
             }
-            SNode msgStatementAnnotation = AttributeOperations.getAttribute(message, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"));
-            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, myNode, "virtual_canAttachDeclaration_1334460907022490922", new Object[]{msgStatementAnnotation})) {
-              BehaviorReflection.invokeVirtual(Void.class, myNode, "virtual_attachDeclaration_8489045168660953479", new Object[]{msgStatementAnnotation});
-            } else {
-              Messages.showErrorDialog("The types of annotation and actual error/warning message do not match", "Could no apply intention");
-              return;
-            }
-            ((SModelBase) SNodeOperations.getModel(myNode)).addModelImport(SNodeOperations.getModel(msgStatementAnnotation).getReference(), false);
             MissingDependenciesFixer.fixDependencies(SNodeOperations.getModel(myNode), true);
           }
         });

@@ -5,37 +5,69 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.errors.MessageStatus;
+import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NodeWarningCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getName_1217435265700(SNode thisNode) {
-    String warningName = ((SLinkOperations.getTarget(thisNode, "warningRef", true) == null) ? "Warning" : SLinkOperations.getTarget(thisNode, "warningRef", true).toString());
+  public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
+    String warningName;
+    if ((SLinkOperations.getTarget(thisNode, "warningRef", true) == null)) {
+      warningName = "Warning";
+    } else {
+      warningName = WarningStatementReference_Behavior.call_getName_2912288420879009652(SLinkOperations.getTarget(thisNode, "warningRef", true));
+    }
     return "Node" + warningName + "Check";
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     try {
-      NodeCheckerUtil.checkNodeWarningForErrors(node);
+      final SNode operation = thisNode;
+      NodeCheckerUtil.checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(operation) {
+        public void checkOperation(TypeCheckingContext context) {
+          assert SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation");
+          List<IErrorReporter> errorReports = ListSequence.fromList(((List<IErrorReporter>) context.getTypeMessagesDontCheck(getNodeToCheck()))).where(new IWhereFilter<IErrorReporter>() {
+            public boolean accept(IErrorReporter it) {
+              return it.getMessageStatus() == MessageStatus.WARNING;
+            }
+          }).toListSequence();
+
+          final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected warning message";
+
+          Assert.assertTrue(errorString, NodeCheckerUtil.nodeHasExpectedRuleMessage(errorReports, operation));
+        }
+      });
     } catch (Exception ex) {
       ex.printStackTrace();
     }
   }
 
-  public static boolean virtual_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation) {
-    return SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation");
+  public static boolean virtual_canAttachReference_1334460907022490922(SNode thisNode, SNode reference) {
+    if (SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.WarningStatement")) {
+      return true;
+    }
+    if (!(SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.MessageStatement"))) {
+      return true;
+    }
+    return false;
   }
 
-  public static void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation) {
-    assert SNodeOperations.isInstanceOf(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation");
-    SLinkOperations.setTarget(thisNode, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.WarningStatementReference", null), true);
-    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "warningRef", true), "declaration", SNodeOperations.cast(annotation, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation"), false);
+  public static void virtual_attachReference_8489045168660953479(SNode thisNode, SNode reference) {
+    assert NodeRuleCheckOperation_Behavior.call_canAttachReference_1334460907022490922(thisNode, reference);
+    SLinkOperations.setTarget(thisNode, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null), true);
+    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "warningRef", true), "declaration", reference, false);
   }
 
-  public static SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode) {
+  public static SNode virtual_getReferencedRuleNode_5872607264946106205(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "warningRef", true) == null)) {
       return null;
     }

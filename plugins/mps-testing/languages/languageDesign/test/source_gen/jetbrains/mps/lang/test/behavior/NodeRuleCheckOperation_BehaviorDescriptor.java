@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
+public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor implements IAllowsErrors_BehaviorDescriptor {
   public NodeRuleCheckOperation_BehaviorDescriptor() {
   }
 
@@ -13,9 +13,9 @@ public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends NodeChec
     return "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation";
   }
 
-  public abstract boolean virtual_canAttachDeclaration_1334460907022490922(SNode thisNode, SNode annotation);
+  public abstract boolean virtual_canAttachReference_1334460907022490922(SNode thisNode, SNode reference);
 
-  public abstract void virtual_attachDeclaration_8489045168660953479(SNode thisNode, SNode annotation);
+  public abstract void virtual_attachReference_8489045168660953479(SNode thisNode, SNode reference);
 
-  public abstract SNode virtual_getMessageAnnotation_5872607264946106205(SNode thisNode);
+  public abstract SNode virtual_getReferencedRuleNode_5872607264946106205(SNode thisNode);
 }

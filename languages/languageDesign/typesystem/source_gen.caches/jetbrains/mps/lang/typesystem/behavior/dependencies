@@ -218,7 +218,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.ReferenceRoleTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.ReplacementRuleReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatementAnnotation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatementReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.RightOperandType_parameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.RuntimeErrorType_BehaviorDescriptor" />
@@ -239,7 +238,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ConvertBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.VariableConvertersContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.WarningStatementAnnotation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.WarningStatementReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.WarningStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.WasSelectedNodeOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteStatement_BehaviorDescriptor" />
@@ -1206,12 +1204,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.MessageStatementAnnotation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatementReference_BehaviorDescriptor" file="ReportErrorStatementReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatement_Behavior" file="ReportErrorStatement_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -1429,12 +1421,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.MessageStatementAnnotation_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.WarningStatementReference_BehaviorDescriptor" file="WarningStatementReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WarningStatement_Behavior" file="WarningStatement_Behavior.java">

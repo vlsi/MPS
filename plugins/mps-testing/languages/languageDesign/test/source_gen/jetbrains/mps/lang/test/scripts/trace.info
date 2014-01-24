@@ -1,82 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/4098794966557888877">
-    <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="26" startPosition="91" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="29" startPosition="31" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="33" startPosition="41" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="41" startPosition="59" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2581682347019367217" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="45" startPosition="52" endLine="46" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7344575040117237169" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="46" startPosition="72" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7344575040117469781" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="47" startPosition="61" endLine="48" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1334460907022745824" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="48" startPosition="93" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="24" startPosition="91" endLine="25" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="31" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="41" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="428590876658647017" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="39" startPosition="59" endLine="40" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2581682347019367217" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="43" startPosition="52" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7344575040117237169" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="44" startPosition="72" endLine="45" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7344575040117469781" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="45" startPosition="61" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1334460907022745824" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="46" startPosition="39" endLine="47" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5587533744543826748" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="47" startPosition="169" endLine="48" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7344575040116577418" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="51" startPosition="51" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344575040115402940" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="52" startPosition="52" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6778526491244542335" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="78" endLine="54" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5872607264944947187" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="54" startPosition="95" endLine="55" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8489045168661886598" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="56" startPosition="180" endLine="57" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307182653745024284" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="58" startPosition="13" endLine="59" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8489045168661097485" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="60" startPosition="163" endLine="61" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1334460907022630141" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="62" startPosition="20" endLine="63" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1334460907022981646" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="63" startPosition="140" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4098794966557418407" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="65" startPosition="13" endLine="66" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307182653745433029" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="66" startPosition="147" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="72" startPosition="42" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5872607264944951595" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="55" startPosition="157" endLine="58" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1334460907022627514" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="62" startPosition="18" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="1334460907022613074" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="59" startPosition="195" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7344575040115359141" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="51" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
-    <nodeInfo nodeId="7344575040115219734" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="49" startPosition="34" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="45" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="85" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="85" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="26" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SpecifyRuleReferencesInTests_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="29" startPosition="31" endLine="30" endPosition="41" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="33" startPosition="41" endLine="34" endPosition="41" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="74" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="41" startPosition="59" endLine="42" endPosition="20" />
-    <scopeInfo nodeId="5872607264944951598" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="56" startPosition="180" endLine="57" endPosition="142" />
-    <scopeInfo nodeId="1334460907022613077" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="60" startPosition="163" endLine="61" endPosition="154" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="72" startPosition="42" endLine="73" endPosition="20" />
-    <scopeInfo nodeId="1334460907022627515" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="62" startPosition="20" endLine="64" endPosition="21" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+    <nodeInfo nodeId="9057440207251506154" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="86" endLine="54" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="428590876657250630" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="54" startPosition="69" endLine="55" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4098794966557418407" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="55" startPosition="115" endLine="56" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307182653745433029" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="57" startPosition="13" endLine="58" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="63" startPosition="42" endLine="64" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="5587533744543837495" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="52" startPosition="52" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7344575040115359141" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="50" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
+    <nodeInfo nodeId="7344575040115219734" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="48" startPosition="99" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="43" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="25" startPosition="85" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="25" startPosition="85" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="24" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SpecifyRuleReferencesInTests_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="31" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="41" endLine="32" endPosition="41" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="63" />
+    <scopeInfo nodeId="428590876658645093" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="39" startPosition="59" endLine="40" endPosition="165" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="63" startPosition="42" endLine="64" endPosition="20" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4098794966557889127" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="7344575040115402689" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="51" startPosition="51" endLine="67" endPosition="93">
-      <varInfo nodeId="5872607264944947190" varName="message" />
-      <varInfo nodeId="4307182653745024287" varName="msgStatementAnnotation" />
-      <varInfo nodeId="6778526491244542336" varName="ref" />
-      <varInfo nodeId="7344575040115402941" varName="reporter" />
+    <scopeInfo nodeId="5587533744543837498" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="86" endLine="56" endPosition="135">
+      <varInfo nodeId="9057440207251506157" varName="ruleNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7344575040115359141" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="51" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="5587533744543837495" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="52" startPosition="52" endLine="57" endPosition="13">
+      <varInfo nodeId="5587533744543837501" varName="reporter" />
+    </scopeInfo>
+    <scopeInfo nodeId="7344575040115402689" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="51" startPosition="51" endLine="58" endPosition="93" />
+    <scopeInfo nodeId="7344575040115359141" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="50" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="7344575040115359145" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="4098794966557889131" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="45" startPosition="52" endLine="69" endPosition="11">
+    <scopeInfo nodeId="4098794966557889131" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="43" startPosition="52" endLine="60" endPosition="11">
       <varInfo nodeId="1334460907022745822" varName="myNode" />
       <varInfo nodeId="7344575040117469784" varName="nodeToCheck" />
       <varInfo nodeId="2581682347019367218" varName="owner" />
       <varInfo nodeId="7344575040117237172" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="45" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="43" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4098794966557889127" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="85" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="26" startPosition="91" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="26" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="25" startPosition="85" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="24" startPosition="91" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="24" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="4098794966557888877" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="7344575040115359139" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="50" startPosition="80" endLine="69" endPosition="9" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript$2" />
-    <unitInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="28" startPosition="28" endLine="75" endPosition="5" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript$1" />
-    <unitInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript" />
+    <unitInfo nodeId="7344575040115359139" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="49" startPosition="80" endLine="60" endPosition="9" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript$2" />
+    <unitInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="26" startPosition="28" endLine="66" endPosition="5" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript$1" />
+    <unitInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="23" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/6090235207264650098">
     <nodeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="17" startPosition="98" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

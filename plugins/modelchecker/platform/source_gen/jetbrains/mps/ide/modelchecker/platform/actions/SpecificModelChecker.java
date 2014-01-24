@@ -80,7 +80,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
                   }
                 };
               }
-              addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
+              SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
             }
           }
         });

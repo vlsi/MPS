@@ -8,16 +8,12 @@ public class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends NodeC
   public CheckNodeForErrorMessagesOperation_BehaviorDescriptor() {
   }
 
-  public String virtual_getName_1217435265700(SNode thisNode) {
-    return CheckNodeForErrorMessagesOperation_Behavior.virtual_getName_1217435265700(thisNode);
+  public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
+    return CheckNodeForErrorMessagesOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return CheckNodeForErrorMessagesOperation_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public String virtual_getTestName_1216136419751(SNode thisNode) {
-    return CheckNodeForErrorMessagesOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
 
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {

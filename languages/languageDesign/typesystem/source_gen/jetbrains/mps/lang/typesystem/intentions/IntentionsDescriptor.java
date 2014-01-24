@@ -13,7 +13,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddMessageAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertInferenceRuleToNonTypesystemRule_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateTypesystemIntention_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new FlipInequality_Intention());

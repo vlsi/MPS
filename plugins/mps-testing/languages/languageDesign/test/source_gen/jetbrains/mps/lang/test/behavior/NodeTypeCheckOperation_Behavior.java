@@ -4,6 +4,9 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeTypeCheckOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,13 +14,22 @@ public class NodeTypeCheckOperation_Behavior {
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     try {
-      NodeCheckerUtil.checkNodeTypeForErrors(node);
+      final SNode operation = thisNode;
+      NodeCheckerUtil.checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(operation) {
+        public void checkOperation(TypeCheckingContext context) {
+          if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation")) {
+            SNode type1 = context.getTypeDontCheck(getNodeToCheck());
+            SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation"), "type", true);
+            NodeCheckerUtil.assertTypesAreTheSame(getNodeToCheck(), type1, type2);
+          }
+        }
+      });
     } catch (Exception ex) {
       ex.printStackTrace();
     }
   }
 
-  public static String virtual_getName_1217435265700(SNode thisNode) {
+  public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeTypeCheck";
   }
 }

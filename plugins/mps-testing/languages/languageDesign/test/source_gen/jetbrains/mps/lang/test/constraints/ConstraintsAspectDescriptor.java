@@ -12,17 +12,21 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 2:
+      case 3:
         return new TestNodeReference_Constraints();
-      case 0:
-        return new ScopesExpectedNode_Constraints();
       case 1:
+        return new ScopesExpectedNode_Constraints();
+      case 2:
         return new ScopesTest_Constraints();
+      case 4:
+        return new WarningStatementReference_Constraints();
+      case 0:
+        return new ReportErrorStatementReference_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.TestNodeReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.ReportErrorStatementReference", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.WarningStatementReference"};
 }

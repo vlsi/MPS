@@ -6,7 +6,7 @@
   <language namespace="d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="4" />
+  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="7" />
   <import index="tpeh" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
@@ -2380,7 +2380,7 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1210674410580" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="4307182653739459512" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4307182653739459513" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.8489045168661912131" resolveInfo="InfoStatementAnnotation" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.7992060018732187441" resolveInfo="InfoStatementAnnotation" />
                 </node>
               </node>
             </node>
@@ -2426,7 +2426,7 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8489045168661924681" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="8489045168661924682" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8489045168661924683" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.8489045168659421896" resolveInfo="ReportErrorStatementAnnotation" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.7992060018732187438" resolveInfo="ReportErrorStatementAnnotation" />
                 </node>
               </node>
             </node>
@@ -2472,7 +2472,7 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8489045168661926355" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="8489045168661926356" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8489045168661926357" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.8489045168659423103" resolveInfo="WarningStatementAnnotation" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.7992060018732187444" resolveInfo="WarningStatementAnnotation" />
                 </node>
               </node>
             </node>

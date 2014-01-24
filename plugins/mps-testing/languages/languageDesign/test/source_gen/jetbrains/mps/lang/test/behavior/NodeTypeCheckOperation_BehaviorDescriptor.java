@@ -8,8 +8,8 @@ public class NodeTypeCheckOperation_BehaviorDescriptor extends NodeCheckOperatio
   public NodeTypeCheckOperation_BehaviorDescriptor() {
   }
 
-  public String virtual_getName_1217435265700(SNode thisNode) {
-    return NodeTypeCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
+  public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
+    return NodeTypeCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
 
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {

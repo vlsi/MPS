@@ -128,7 +128,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status, TypeCheckingContext typeCheckingContext) {
     try {
-      rule.applyRule(node, typeCheckingContext, status);
+      rule. applyRule(node, typeCheckingContext, status);
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }

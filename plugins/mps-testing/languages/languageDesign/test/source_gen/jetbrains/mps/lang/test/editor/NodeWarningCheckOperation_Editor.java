@@ -13,8 +13,26 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -58,7 +76,7 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("warningRef");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new NodeWarningCheckOperation_Editor.NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -67,6 +85,41 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0 extends AbstractCellMenuPart_Generic_Group {
+    public NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.typesystem.structure.WarningStatement");
+      return Sequence.fromIterable(Sequence.fromArray(FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(concept), true, new EmptyProgressMonitor()).toArray(new SNode[1]))).toListSequence();
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SLinkOperations.setTarget(node, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(node, "warningRef", true), "declaration", parameterObject, false);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((SNode) parameterObject);
+    }
+
+    public String getMatchingText_internal(SNode parameterObject) {
+      SNode myWarning = SNodeOperations.cast(parameterObject, "jetbrains.mps.lang.typesystem.structure.WarningStatement");
+      if ((AttributeOperations.getAttribute(myWarning, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) != null)) {
+        return SPropertyOperations.getString(AttributeOperations.getAttribute(myWarning, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), "name");
+      }
+      return "_Unknown";
+    }
   }
 
   private EditorCell createNonEmptyProperty_sh9o09_c0(EditorContext editorContext, SNode node) {

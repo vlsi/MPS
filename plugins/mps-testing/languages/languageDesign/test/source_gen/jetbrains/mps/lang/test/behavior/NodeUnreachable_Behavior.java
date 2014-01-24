@@ -20,7 +20,7 @@ public class NodeUnreachable_Behavior {
     }
   }
 
-  public static String virtual_getName_1217435265700(SNode thisNode) {
+  public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeUnreachableCheck";
   }
 

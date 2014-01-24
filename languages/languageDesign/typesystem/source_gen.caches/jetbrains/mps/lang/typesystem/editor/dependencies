@@ -512,7 +512,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ReferenceMessageTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ReferenceRoleTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ReplacementRuleReference_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ReportErrorStatementReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ReportErrorStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.RuntimeErrorType_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.RuntimeTypeVariable_Editor" />
@@ -528,7 +527,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.VariableConverterItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.VariableConvertersContainer_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.WarningStatementReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.WarningStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.WasSelectedNodeOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.WhenConcreteStatement_Editor" />
@@ -1381,26 +1379,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editor.ReportErrorStatementReference_Editor" file="ReportErrorStatementReference_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.editor.ReportErrorStatement_Editor" file="ReportErrorStatement_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
@@ -1682,26 +1660,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editor.WarningStatementReference_Editor" file="WarningStatementReference_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.editor.WarningStatement_Editor" file="WarningStatement_Editor.java">
     <classNode dependClassName="java.lang.Class" />

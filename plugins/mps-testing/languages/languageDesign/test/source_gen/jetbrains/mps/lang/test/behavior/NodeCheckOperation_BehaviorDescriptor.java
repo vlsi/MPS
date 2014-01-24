@@ -4,14 +4,16 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public abstract class NodeCheckOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestMethod_BehaviorDescriptor {
+public abstract class NodeCheckOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestMethod_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public NodeCheckOperation_BehaviorDescriptor() {
   }
 
-  public String virtual_getName_1217435265700(SNode thisNode) {
-    return NodeCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {
@@ -34,4 +36,6 @@ public abstract class NodeCheckOperation_BehaviorDescriptor extends BaseConcept_
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeCheckOperation";
   }
+
+  public abstract String virtual_getDefaultName_8578280453511146306(SNode thisNode);
 }

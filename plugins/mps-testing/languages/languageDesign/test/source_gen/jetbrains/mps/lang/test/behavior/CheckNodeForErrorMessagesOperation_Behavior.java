@@ -4,11 +4,16 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import junit.framework.Assert;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CheckNodeForErrorMessagesOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -16,22 +21,36 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     try {
-      NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(thisNode, "allowErrors"), SPropertyOperations.getBoolean(thisNode, "allowWarnings"));
+
+      final SNode nodeToCheck = node;
+      final SNode operation = thisNode;
+      NodeCheckerUtil.checkNodeWithCheckingAction(node, new ITypechecking.Action() {
+        @Override
+        public void run(TypeCheckingContext typeCheckingContext) {
+          typeCheckingContext.checkIfNotChecked(nodeToCheck, true);
+          for (SNode child : SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+            if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
+              IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
+              if (reporter != null) {
+                String reportError = reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(child) + "'";
+                if (!(SPropertyOperations.getBoolean(operation, "allowErrors"))) {
+                  Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
+                }
+                if (!(SPropertyOperations.getBoolean(operation, "allowWarnings"))) {
+                  Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
+                }
+              }
+            }
+          }
+        }
+      });
     } catch (Exception ex) {
       ex.printStackTrace();
     }
   }
 
-  public static String virtual_getName_1217435265700(SNode thisNode) {
+  public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "ErrorMessagesCheck";
-  }
-
-  public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, "name") == null || SPropertyOperations.getString(thisNode, "name").length() == 0) {
-      return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", "virtual_getTestName_1216136419751", new Object[]{});
-    } else {
-      return SPropertyOperations.getString(thisNode, "name");
-    }
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
