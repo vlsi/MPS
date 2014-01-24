@@ -194,12 +194,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myQueryProviders.getQueryProvider(ruleNode);
   }
 
-  // FIXME revisit is there need for external classes to know my delegate or they
-  // could have piped all queries through me? lang.plugin.generator might be unsatisfied with this#getModule()
-  public IOperationContext getInvocationContext() {
-    return myInvocationContext;
-  }
-
   public String toString() {
     return getClass().getName() + "-> " + "<auto-plan>" + "\ninvoked from: " + myInvocationContext;
   }

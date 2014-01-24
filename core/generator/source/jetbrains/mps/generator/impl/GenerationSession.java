@@ -79,6 +79,7 @@ import java.util.Map;
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
+  private final IOperationContext myInvokeContext; // initial context the session was initiated within
   private GenerationPlan myGenerationPlan;
 
   private final boolean myDiscardTransients;
@@ -106,6 +107,7 @@ class GenerationSession {
     myLogger = logger;
     ttrace = tracer;
     myGenerationOptions = generationOptions;
+    myInvokeContext = invocationContext;
     mySessionContext = new GenerationSessionContext(invocationContext, generationOptions, logger, transientModelsModule, myOriginalInputModel, tracer);
   }
 
@@ -141,7 +143,7 @@ class GenerationSession {
         generationParameters = null;
       }
 
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, mySessionContext.getInvocationContext(),
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvokeContext,
           myGenerationOptions, myGenerationPlan.getSignature(), generationParameters, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
@@ -154,7 +156,7 @@ class GenerationSession {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
           return new GenerationStatus(myOriginalInputModel, null,
-              myDependenciesBuilder.getResult(mySessionContext.getInvocationContext(), myGenerationOptions.getIncrementalStrategy()), false, false, false);
+              myDependenciesBuilder.getResult(myInvokeContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
@@ -246,7 +248,7 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(mySessionContext.getInvocationContext(), myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+            myDependenciesBuilder.getResult(myInvokeContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
         return generationStatus;
