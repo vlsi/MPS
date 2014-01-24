@@ -54,7 +54,9 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
           getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
-              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              if (getTarget().focused().get()) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
             }
           }));
         }

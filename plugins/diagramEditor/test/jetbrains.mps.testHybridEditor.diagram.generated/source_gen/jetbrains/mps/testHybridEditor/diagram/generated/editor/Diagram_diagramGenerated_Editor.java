@@ -181,13 +181,13 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
         EditorCell cell = getContext().createNodeCell(nextElement);
         if (cell instanceof BlockCell) {
+          addEditorCell(cell);
           blocksIterator.add(nextElement);
           existingBlocks.add(nextElement);
-          addEditorCell(cell);
         } else if (cell instanceof ConnectorCell) {
+          addEditorCell(cell);
           connectorsIterator.add(nextElement);
           existingConnectors.add(nextElement);
-          addEditorCell(cell);
         }
       }
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "connectors", true))) {
@@ -203,13 +203,13 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
         EditorCell cell = getContext().createNodeCell(nextElement);
         if (cell instanceof BlockCell) {
+          addEditorCell(cell);
           blocksIterator.add(nextElement);
           existingBlocks.add(nextElement);
-          addEditorCell(cell);
         } else if (cell instanceof ConnectorCell) {
+          addEditorCell(cell);
           connectorsIterator.add(nextElement);
           existingConnectors.add(nextElement);
-          addEditorCell(cell);
         }
       }
       purgeTailNodes(blocksIterator);
@@ -310,13 +310,13 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
         EditorCell cell = getContext().createNodeCell(nextElement);
         if (cell instanceof BlockCell) {
+          addEditorCell(cell);
           blocksIterator.add(nextElement);
           existingBlocks.add(nextElement);
-          addEditorCell(cell);
         } else if (cell instanceof ConnectorCell) {
+          addEditorCell(cell);
           connectorsIterator.add(nextElement);
           existingConnectors.add(nextElement);
-          addEditorCell(cell);
         }
       }
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newConnectors", true))) {
@@ -332,13 +332,13 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
         EditorCell cell = getContext().createNodeCell(nextElement);
         if (cell instanceof BlockCell) {
+          addEditorCell(cell);
           blocksIterator.add(nextElement);
           existingBlocks.add(nextElement);
-          addEditorCell(cell);
         } else if (cell instanceof ConnectorCell) {
+          addEditorCell(cell);
           connectorsIterator.add(nextElement);
           existingConnectors.add(nextElement);
-          addEditorCell(cell);
         }
       }
       purgeTailNodes(blocksIterator);

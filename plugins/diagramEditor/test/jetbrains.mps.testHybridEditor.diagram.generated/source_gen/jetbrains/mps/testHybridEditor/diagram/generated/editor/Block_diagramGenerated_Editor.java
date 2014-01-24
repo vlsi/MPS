@@ -133,9 +133,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
         EditorCell portCell = getContext().createNodeCell(port);
         if (portCell instanceof PortCell) {
+          addEditorCell(portCell);
           portsIterator_70mnj_a0.add(port);
           existingPorts_70mnj_a0.add(port);
-          addEditorCell(portCell);
         }
       }
       purgeTailNodes(portsIterator_70mnj_a0);
@@ -150,9 +150,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
         EditorCell portCell = getContext().createNodeCell(port);
         if (portCell instanceof PortCell) {
+          addEditorCell(portCell);
           portsIterator_70mnj_a0_0.add(port);
           existingPorts_70mnj_a0_0.add(port);
-          addEditorCell(portCell);
         }
       }
       purgeTailNodes(portsIterator_70mnj_a0_0);
@@ -189,7 +189,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
-              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              if (getTarget().focused().get()) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
             }
           }));
         }
