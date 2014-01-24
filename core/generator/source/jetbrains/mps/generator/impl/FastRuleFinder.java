@@ -19,6 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -35,33 +36,51 @@ public class FastRuleFinder {
   private Map<String, TemplateReductionRule[]> myApplicableRules = new HashMap<String, TemplateReductionRule[]>();
 
   public FastRuleFinder(Iterable<TemplateReductionRule> reductionRules) {
-    Map<String, LinkedList<TemplateReductionRule>> applicableRules = new HashMap<String, LinkedList<TemplateReductionRule>>();
+    // rules exactly for the given concept, in the order they come from MC
+    Map<String, List<TemplateReductionRule>> specificRules = new HashMap<String, List<TemplateReductionRule>>();
+    // rules applicable based on concept hierarchy - has lower priority than more specific rules
+    // map concept to rules that come from ancestors of the given concept.
+    Map<String, List<TemplateReductionRule>> inheritedRules = new HashMap<String, List<TemplateReductionRule>>();
 
     for (TemplateReductionRule rule : reductionRules) {
       String applicableConceptFqName = rule.getApplicableConcept();
 
-      LinkedList<TemplateReductionRule> rules = applicableRules.get(applicableConceptFqName);
+      List<TemplateReductionRule> rules = specificRules.get(applicableConceptFqName);
       if (rules == null) {
         rules = new LinkedList<TemplateReductionRule>();
-        applicableRules.put(applicableConceptFqName, rules);
+        specificRules.put(applicableConceptFqName, rules);
       }
       rules.add(rule);
 
       if (rule.applyToInheritors()) {
         for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
-          rules = applicableRules.get(conceptFqName);
+          rules = inheritedRules.get(conceptFqName);
           if (rules == null) {
             rules = new LinkedList<TemplateReductionRule>();
-            applicableRules.put(conceptFqName, rules);
+            inheritedRules.put(conceptFqName, rules);
           }
           rules.add(rule);
         }
       }
     }
 
-    for (Entry<String, LinkedList<TemplateReductionRule>> entry : applicableRules.entrySet()) {
-      List<TemplateReductionRule> rules = entry.getValue();
+    for (Entry<String, List<TemplateReductionRule>> entry : specificRules.entrySet()) {
+      List<TemplateReductionRule> exact = entry.getValue();
+      List<TemplateReductionRule> inherited = inheritedRules.remove(entry.getKey());
+      List<TemplateReductionRule> rules;
+      if (inherited == null) {
+        rules = exact;
+      } else {
+        ArrayList<TemplateReductionRule> l = new ArrayList<TemplateReductionRule>(exact.size() + inherited.size());
+        l.addAll(exact);
+        l.addAll(inherited);
+        rules = l;
+      }
       myApplicableRules.put(entry.getKey(), rules.toArray(new TemplateReductionRule[rules.size()]));
+    }
+    for (Entry<String, List<TemplateReductionRule>> entry : inheritedRules.entrySet()) {
+      List<TemplateReductionRule> inherited = entry.getValue();
+      myApplicableRules.put(entry.getKey(), inherited.toArray(new TemplateReductionRule[inherited.size()]));
     }
   }
 
