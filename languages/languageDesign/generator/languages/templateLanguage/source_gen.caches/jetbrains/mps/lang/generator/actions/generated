@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2yfbzvjm3g4lab18ixta4noarsvpn0q">
+<dependencies version="2" modelHash="-ahcgynis4wgd889paqchjodug0fachj">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -45,7 +45,7 @@
     <file name="QueriesGenerated.java" />
   </common>
   <source id="1169570915271" name="NodeSubstituteActions" hash="23m343erayloprsfi0ivaoh1777tgtm" />
-  <source id="1198265022560" name="NodeFactories" hash="-lbbe6z85x2tvzq3rc12u1ewn5206qn" />
+  <source id="1198265022560" name="NodeFactories" hash="d4u4tblabvcnz4gdff169l547ircprc" />
   <source id="8421689336187916450" name="templateCallArguments" hash="-dfkr29j1c48l8vw8hwp524gmlf2w3t8" />
 </dependencies>
 
