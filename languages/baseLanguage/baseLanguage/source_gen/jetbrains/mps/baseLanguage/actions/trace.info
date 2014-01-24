@@ -5670,6 +5670,9 @@
     </scopeInfo>
     <unitInfo nodeId="8233876857981991890" fileName="QueriesGenerated.java" startLine="5111" startPosition="126" endLine="5115" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.QueriesGenerated$176" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/3962508643479442217" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/3962508643482508667" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/3962508643482522426" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/4246727699194754942">
     <nodeInfo nodeId="4246727699194877939" fileName="QueriesGenerated.java" startLine="4878" startPosition="94" endLine="4879" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4246727699194877921" fileName="QueriesGenerated.java" startLine="4879" startPosition="143" endLine="4880" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
