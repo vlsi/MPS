@@ -471,7 +471,7 @@
     <nodeInfo nodeId="7494254745216958562" fileName="DiagramCell.java" startLine="319" startPosition="5" endLine="320" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="615329258651318314" fileName="DiagramCell.java" startLine="327" startPosition="95" endLine="328" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="615329258651574666" fileName="DiagramCell.java" startLine="328" startPosition="53" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="615329258651575300" fileName="DiagramCell.java" startLine="329" startPosition="0" endLine="330" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258651575300" fileName="DiagramCell.java" startLine="329" startPosition="0" endLine="330" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2682505046531973922" fileName="DiagramCell.java" startLine="333" startPosition="5" endLine="334" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="615329258653716137" fileName="DiagramCell.java" startLine="337" startPosition="47" endLine="338" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6981942132922170973" fileName="DiagramCell.java" startLine="338" startPosition="47" endLine="339" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -659,7 +659,7 @@
       <varInfo nodeId="320213057866729603" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7494254745217434875" fileName="DiagramCell.java" startLine="263" startPosition="26" endLine="266" endPosition="42" />
-    <scopeInfo nodeId="615329258651318310" fileName="DiagramCell.java" startLine="327" startPosition="95" endLine="330" endPosition="127" />
+    <scopeInfo nodeId="615329258651318310" fileName="DiagramCell.java" startLine="327" startPosition="95" endLine="330" endPosition="134" />
     <scopeInfo nodeId="6981942132922975924" fileName="DiagramCell.java" startLine="341" startPosition="65" endLine="344" endPosition="9" />
     <scopeInfo nodeId="6981942132928876494" fileName="DiagramCell.java" startLine="352" startPosition="0" endLine="355" endPosition="0" />
     <scopeInfo nodeId="6981942132929532931" fileName="DiagramCell.java" startLine="377" startPosition="0" endLine="380" endPosition="0" />

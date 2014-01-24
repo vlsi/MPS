@@ -327,7 +327,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
 
-          configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().root().children(), DiagramCell.this));
+          configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().contentRoot().children(), DiagramCell.this));
         }
       };
     }

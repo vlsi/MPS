@@ -3667,7 +3667,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1755573558910910319" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8jsd.5374841768510633276" resolveInfo="synchronizeViewWithModel" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~SynchronizedEditorCell%dsynchronize()%cvoid" resolveInfo="synchronize" />
                       </node>
                     </node>
                   </node>
@@ -3720,7 +3720,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1755573558910928440" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8jsd.5374841768510633276" resolveInfo="synchronizeViewWithModel" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~SynchronizedEditorCell%dsynchronize()%cvoid" resolveInfo="synchronize" />
                         </node>
                       </node>
                     </node>

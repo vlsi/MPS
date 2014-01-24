@@ -171,11 +171,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "blocks", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         }
 
@@ -193,11 +193,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "connectors", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         }
 
@@ -300,11 +300,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newBlocks", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         }
 
@@ -322,11 +322,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newConnectors", true))) {
         if (existingBlocks.contains(nextElement)) {
           syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         } else if (existingConnectors.contains(nextElement)) {
           syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronizeViewWithModel();
+          getDirectChildCell(nextElement).synchronize();
           continue;
         }
 
