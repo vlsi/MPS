@@ -4916,7 +4916,7 @@ __switch__:
       }
 
       public String getDescriptionText(String pattern) {
-        return "cpnvert to array";
+        return "convert to array";
       }
 
       @Override
@@ -5947,6 +5947,41 @@ __switch__:
       }
     });
     return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ArrayType_5695707814672713613(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode arrayClassExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
+        SLinkOperations.setTarget(arrayClassExpression, "arrayType", SNodeOperations.copyNode(_context.getSourceNode()), true);
+        SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+        SNode newStatement = SNodeFactoryOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+        SLinkOperations.setTarget(newStatement, "expression", arrayClassExpression, true);
+        return arrayClassExpression;
+      }
+
+      public String getMatchingText(String pattern) {
+        return ".class";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), null));
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ArrayType_5695707814672713643(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
   private static SNode _quotation_createNode_ns07og_a0a0a0x() {
