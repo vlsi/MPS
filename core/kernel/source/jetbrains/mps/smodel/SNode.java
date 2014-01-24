@@ -447,7 +447,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      String msg = String.format("ERROR: %d referents for role '%s' in %s", count, role, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      LOG.error(msg, new Throwable(msg), getReference());
     }
 
     fireNodeReferentReadAccess(role, null);
