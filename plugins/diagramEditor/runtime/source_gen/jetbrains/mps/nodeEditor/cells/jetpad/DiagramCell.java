@@ -19,9 +19,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.model.event.EventHandler;
-import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -342,7 +339,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
 
-          configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().root().children(), DiagramCell.this));
+          configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().contentRoot().children(), DiagramCell.this));
         }
       };
     }

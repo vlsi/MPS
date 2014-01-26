@@ -34,11 +34,15 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.jetpad.projectional.view.PolyLineView;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import java.util.ArrayList;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
@@ -119,7 +123,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       myYProperty.get();
       getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
-      myError.set(true);
     }
 
     protected void synchronize() {
@@ -193,9 +196,25 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
-          // <node> 
+          configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getDiagramCell().getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Boolean, View>() {
+            public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
+              final ReadableProperty<Rectangle> bounds = getTarget().rect.bounds();
+              PolyLineView errorView = createErrorView(bounds.get());
+              return new Mapper<Boolean, View>(source, errorView) {
+                @Override
+                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                  super.registerSynchronizers(configuration);
+                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+                    public void set(Rectangle bounds) {
+                      getTarget().moveTo(new Vector(bounds.origin.x, bounds.origin.y));
+                      getTarget().invalidate();
+                    }
+                  }));
+                }
+              };
+            }
+          }));
           configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
-          Color background = getTarget().background().get();
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
               SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
@@ -203,6 +222,14 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           }));
         }
       };
+    }
+
+    private PolyLineView createErrorView(Rectangle bounds) {
+      PolyLineView errorView = new PolyLineView();
+      errorView.color().set(Color.RED);
+      errorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(0, 0), new Vector(bounds.dimension.x, 0), new Vector(bounds.dimension.x, bounds.dimension.y), new Vector(0, bounds.dimension.y), new Vector(0, 0)));
+
+      return errorView;
     }
 
     private DiagramNodeView createDiagramNodeView() {
@@ -239,6 +266,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       }).build());
       return blockView;
+
     }
+
+
   }
 }

@@ -7,12 +7,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
+import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
 import java.util.ListIterator;
+import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.List;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.errors.MessageStatus;
 
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
@@ -24,6 +32,9 @@ public abstract class BlockCell extends AbstractJetpadCell {
   public abstract ReadableProperty<Integer> getYProperty();
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
+
+  protected ObservableSingleItemList<Boolean> myErrorItem = new ObservableSingleItemList<Boolean>(null);
+
 
   @Override
   public void synchronizeViewWithModel() {
@@ -55,6 +66,32 @@ public abstract class BlockCell extends AbstractJetpadCell {
     return false;
   }
 
+  @Override
+  public void paint(Graphics graphics, ParentSettings settings) {
+    for (EditorCell child : Sequence.fromIterable(this)) {
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(graphics, settings);
+    }
+    List<EditorMessage> messages = getMessages(EditorMessage.class);
+    boolean errorFound = false;
+    for (EditorMessage message : messages) {
+      if (message != null) {
+        if (!(message.isBackground())) {
+          message.paint(graphics, getEditor(), this);
+        }
+        if (eq_ns4b7b_a0b0a0d0i(message.getStatus(), MessageStatus.ERROR)) {
+          errorFound = true;
+        }
+      }
+    }
+    if (errorFound && myErrorItem.getItem() == null) {
+      myErrorItem.setItem(true);
+    }
+    if (!(errorFound) && myErrorItem.getItem() != null) {
+      myErrorItem.setItem(null);
+    }
+
+  }
+
 
 
 
@@ -76,5 +113,9 @@ public abstract class BlockCell extends AbstractJetpadCell {
       }
     }
     return null;
+  }
+
+  private static boolean eq_ns4b7b_a0b0a0d0i(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

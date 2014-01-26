@@ -16,8 +16,8 @@ public abstract class ConnectorCell extends AbstractJetpadCell {
 
   public abstract Mapper<SNode, PolyLineConnection> createMapper();
 
-  public Property<Integer> myX = new ValueProperty<Integer>();
-  public Property<Integer> myY = new ValueProperty<Integer>();
+  public Property<Integer> myX = new ValueProperty<Integer>(0);
+  public Property<Integer> myY = new ValueProperty<Integer>(0);
 
 
   @Override

@@ -4,8 +4,6 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.util.List;
-import jetbrains.jetpad.model.property.Property;
-import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -17,11 +15,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.LinkedList;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ListIterator;
 import java.util.Set;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
@@ -34,13 +29,9 @@ import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.jetpad.event.Key;
 import jetbrains.jetpad.event.ModifierKey;
-import jetbrains.jetpad.event.MouseEvent;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class AbstractJetpadCell extends EditorCell_Collection {
   private List<WritableModelProperty> myModelProperties;
-  protected Property<Boolean> myError = new ValueProperty<Boolean>(Boolean.FALSE);
-  protected Property<Boolean> myWarning = new ValueProperty<Boolean>(Boolean.FALSE);
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
     super(editorContext, node, new CellLayout_Horizontal(), null);
@@ -57,16 +48,6 @@ public class AbstractJetpadCell extends EditorCell_Collection {
         return parent instanceof DiagramCell;
       }
     });
-  }
-
-
-
-  public void setError(boolean isError) {
-    myError.set(isError);
-  }
-
-  public void setWarning(boolean isWarning) {
-    myWarning.set(isWarning);
   }
 
   @Override
@@ -177,14 +158,6 @@ public class AbstractJetpadCell extends EditorCell_Collection {
         if (e.is(Key.F1, ModifierKey.CONTROL)) {
           editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.SHOW_MESSAGE);
         }
-      }
-    }).on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
-      public void handle(View view, MouseEvent event) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            editorCell.getEditor().showPopupMenu(editorCell.getX(), editorCell.getY());
-          }
-        });
       }
     }).build());
 
