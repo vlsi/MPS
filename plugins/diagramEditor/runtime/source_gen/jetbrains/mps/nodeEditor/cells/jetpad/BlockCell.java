@@ -4,102 +4,43 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.jetpad.model.event.EventHandler;
+import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
-import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
-import java.util.ListIterator;
-import java.awt.Graphics;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.errors.MessageStatus;
 
-public abstract class BlockCell extends JetpadCellWithPosition {
+public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
 
-  public abstract ReadableProperty<Integer> getXProperty();
+  protected void registerPositionProperties(final ReadableModelProperty<Integer> xProperty, final ReadableModelProperty<Integer> yProperty) {
+    addModelProperty(xProperty);
+    addModelProperty(yProperty);
 
-  public abstract ReadableProperty<Integer> getYProperty();
+    EventHandler<PropertyChangeEvent<Integer>> handler = new EventHandler<PropertyChangeEvent<Integer>>() {
+      public void onEvent(PropertyChangeEvent<Integer> p0) {
+        moveView(xProperty, yProperty);
+      }
+    };
+    xProperty.addHandler(handler);
+    yProperty.addHandler(handler);
+  }
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
 
-  protected ObservableSingleItemList<Boolean> myErrorItem = new ObservableSingleItemList<Boolean>(null);
-
-
-  @Override
-  public void synchronizeViewWithModel() {
-    super.synchronizeViewWithModel();
-    // TODO: if we can use synchronizers to move target View then this code can e replaced with just calling super.. 
-    DiagramCell cell = ((DiagramCell) CellFinderUtil.findParent(this, new Condition<EditorCell_Collection>() {
-      public boolean met(EditorCell_Collection parent) {
-        return parent instanceof DiagramCell;
-      }
-    }));
+  private void moveView(ReadableModelProperty<Integer> xProperty, ReadableModelProperty<Integer> yProperty) {
+    DiagramCell cell = getDiagramCell();
     if (cell == null) {
       return;
     }
     Mapper<? super SNode, ?> descendantMapper = cell.getRootMapper().getDescendantMapper(getSNode());
     if (descendantMapper != null) {
-      ((View) descendantMapper.getTarget()).moveTo(new Vector(getXProperty().get(), getYProperty().get()));
+      ((View) descendantMapper.getTarget()).moveTo(new Vector(xProperty.get(), yProperty.get()));
       ((View) descendantMapper.getTarget()).invalidate();
       requestRelayout();
     }
-  }
-
-  protected static boolean skipNextIfSame(ListIterator listIterator, Object nextElement) {
-    if (listIterator.hasNext()) {
-      if (listIterator.next() == nextElement) {
-        return true;
-      }
-      listIterator.previous();
-    }
-    return false;
-  }
-
-  @Override
-  public void paint(Graphics graphics, ParentSettings settings) {
-    for (EditorCell child : Sequence.fromIterable(this)) {
-      ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(graphics, settings);
-    }
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
-    boolean errorFound = false;
-    for (EditorMessage message : messages) {
-      if (message != null) {
-        if (eq_ns4b7b_a0a0a0d0i(message.getStatus(), MessageStatus.ERROR)) {
-          errorFound = true;
-        }
-      }
-    }
-    if (errorFound && myErrorItem.getItem() == null) {
-      myErrorItem.setItem(true);
-    }
-    if (!(errorFound) && myErrorItem.getItem() != null) {
-      myErrorItem.setItem(null);
-    }
-
-  }
-
-  protected EditorCell getDirectChildCell(SNode node) {
-    // TODO: use more effitient way of getting port cell (by ID) 
-    for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
-      if (nextCell.getSNode() == node) {
-        return nextCell;
-      }
-    }
-    return null;
-  }
-
-  private static boolean eq_ns4b7b_a0a0a0d0i(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

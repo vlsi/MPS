@@ -5,14 +5,6 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
-import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.mps.util.Computable;
-import jetbrains.jetpad.model.property.BaseReadableProperty;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.jetpad.model.event.Registration;
-import jetbrains.jetpad.model.event.EventHandler;
-import jetbrains.jetpad.model.property.PropertyChangeEvent;
 
 /**
  * User: shatalin
@@ -26,30 +18,4 @@ public class JetpadUtils {
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {
     return new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
   }
-
-  public static ReadableProperty<String> stringProperty(final SNode node, final String propertyName) {
-    return modelProperty(new Computable<String>() {
-      public String compute() {
-        return node.getProperty(propertyName);
-      }
-    });
-  }
-
-  public static <ValueT> ReadableProperty<ValueT> modelProperty(final Computable<ValueT> propertyGetter) {
-    return new BaseReadableProperty<ValueT>() {
-      public ValueT get() {
-        return ModelAccess.instance().runReadAction(new Computable<ValueT>() {
-          public ValueT compute() {
-            return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(propertyGetter);
-          }
-        });
-      }
-
-      public Registration addHandler(EventHandler<? super PropertyChangeEvent<ValueT>> handler) {
-        return Registration.EMPTY;
-      }
-    };
-  }
-
-
 }

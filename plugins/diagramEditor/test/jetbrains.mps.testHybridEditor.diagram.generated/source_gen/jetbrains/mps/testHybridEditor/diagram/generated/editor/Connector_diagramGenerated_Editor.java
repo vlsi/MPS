@@ -59,7 +59,9 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
           super.registerSynchronizers(configuration);
           configuration.add(Synchronizers.forProperty(getTarget().view().focused(), new Runnable() {
             public void run() {
-              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              if (getTarget().view().focused().get()) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
             }
           }));
           configuration.add(Synchronizers.forProperty(myInputPort, new WritableProperty<Tuples._1<SNode>>() {
@@ -105,12 +107,10 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    protected void synchronize() {
+    public void synchronize() {
       myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "inputPort", false)));
       myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "outputPort", false)));
     }
-
-
 
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();
