@@ -32,13 +32,14 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.model.property.WritableProperty;
+import java.util.ArrayList;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import java.util.ArrayList;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
@@ -195,18 +196,29 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
-          configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getDiagramCell().getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Boolean, View>() {
-            public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
+          configuration.add(Synchronizers.forConstantRole(this, new Object(), getDiagramCell().getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Object, View>() {
+            public Mapper<? extends Object, ? extends View> createMapper(Object source) {
               final ReadableProperty<Rectangle> bounds = getTarget().rect.bounds();
-              PolyLineView errorView = createErrorView(getTarget().rect.dimension().get());
-              return new Mapper<Boolean, View>(source, errorView) {
+              return new Mapper<Object, View>(source, new GroupView()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
-                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-                    public void set(Rectangle bounds) {
-                      getTarget().moveTo(new Vector(bounds.origin.x, bounds.origin.y));
-                      getTarget().invalidate();
+                  configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getTarget().children(), new MapperFactory<Boolean, View>() {
+                    public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
+                      PolyLineView errorView = createErrorView(bounds.get());
+                      return new Mapper<Boolean, PolyLineView>(source, errorView) {
+                        @Override
+                        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                          super.registerSynchronizers(configuration);
+                          configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+                            public void set(Rectangle bounds) {
+                              getTarget().points.clear();
+                              getTarget().points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y)));
+                              getTarget().invalidate();
+                            }
+                          }));
+                        }
+                      };
                     }
                   }));
                 }
@@ -234,11 +246,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    private PolyLineView createErrorView(Vector dimension) {
+    private PolyLineView createErrorView(Rectangle bounds) {
       PolyLineView errorView = new PolyLineView();
       errorView.color().set(Color.RED);
-      errorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(0, 0), new Vector(dimension.x, 0), new Vector(dimension.x, dimension.y), new Vector(0, dimension.y), new Vector(0, 0)));
-
       return errorView;
     }
 
