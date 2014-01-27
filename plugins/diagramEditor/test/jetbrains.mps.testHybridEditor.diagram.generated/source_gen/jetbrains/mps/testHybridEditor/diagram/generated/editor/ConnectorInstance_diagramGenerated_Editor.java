@@ -20,6 +20,7 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -101,12 +102,15 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               return (View) descendantMapper.getTarget();
             }
           }));
-          configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new Runnable() {
-            public void run() {
-              myX.set(getTarget().view().bounds().get().origin.x);
-              myY.set(getTarget().view().bounds().get().origin.y);
+          configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new WritableProperty<Rectangle>() {
+            public void set(Rectangle rect) {
+              myXValueProperty = rect.origin.x;
+              myYValueProperty = rect.origin.y;
+              myWidthValueProperty = rect.dimension.x;
+              myHeightValueProperty = rect.dimension.y;
             }
           }));
+
         }
       };
     }

@@ -18,6 +18,7 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
@@ -91,12 +92,15 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
               return (View) descendantMapper.getTarget();
             }
           }));
-          configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new Runnable() {
-            public void run() {
-              myX.set(getTarget().view().bounds().get().origin.x);
-              myY.set(getTarget().view().bounds().get().origin.y);
+          configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new WritableProperty<Rectangle>() {
+            public void set(Rectangle rect) {
+              myXValueProperty = rect.origin.x;
+              myYValueProperty = rect.origin.y;
+              myWidthValueProperty = rect.dimension.x;
+              myHeightValueProperty = rect.dimension.y;
             }
           }));
+
         }
       };
     }

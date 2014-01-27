@@ -22,7 +22,7 @@ import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.errors.MessageStatus;
 
-public abstract class BlockCell extends AbstractJetpadCell {
+public abstract class BlockCell extends JetpadCellWithPosition {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
@@ -75,10 +75,7 @@ public abstract class BlockCell extends AbstractJetpadCell {
     boolean errorFound = false;
     for (EditorMessage message : messages) {
       if (message != null) {
-        if (!(message.isBackground())) {
-          message.paint(graphics, getEditor(), this);
-        }
-        if (eq_ns4b7b_a0b0a0d0i(message.getStatus(), MessageStatus.ERROR)) {
+        if (eq_ns4b7b_a0a0a0d0i(message.getStatus(), MessageStatus.ERROR)) {
           errorFound = true;
         }
       }
@@ -92,19 +89,6 @@ public abstract class BlockCell extends AbstractJetpadCell {
 
   }
 
-
-
-
-  @Override
-  public int getX() {
-    return getDiagramCell().getX() + getXProperty().get();
-  }
-
-  @Override
-  public int getY() {
-    return getDiagramCell().getY() + getYProperty().get();
-  }
-
   protected EditorCell getDirectChildCell(SNode node) {
     // TODO: use more effitient way of getting port cell (by ID) 
     for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
@@ -115,7 +99,7 @@ public abstract class BlockCell extends AbstractJetpadCell {
     return null;
   }
 
-  private static boolean eq_ns4b7b_a0b0a0d0i(Object a, Object b) {
+  private static boolean eq_ns4b7b_a0a0a0d0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

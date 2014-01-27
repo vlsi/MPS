@@ -16,9 +16,6 @@ import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -122,13 +119,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
 
-
-  @Override
-  public void paint(Graphics graphics, ParentSettings settings) {
-    for (EditorCell child : this) {
-      ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(graphics, settings);
-    }
-  }
 
   private ViewTrait getEventHandlingTrate() {
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {

@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.RectView;
 
-public abstract class PortCell extends AbstractJetpadCell {
+public abstract class PortCell extends JetpadCellWithPosition {
   public PortCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }

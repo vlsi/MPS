@@ -236,7 +236,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getDiagramCell().getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Boolean, View>() {
             public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
               final ReadableProperty<Rectangle> bounds = getTarget().rect.bounds();
-              PolyLineView errorView = createErrorView(bounds.get());
+              PolyLineView errorView = createErrorView(getTarget().rect.dimension().get());
               return new Mapper<Boolean, View>(source, errorView) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
@@ -251,6 +251,15 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
+          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+            public void set(Rectangle rect) {
+              myXValueProperty = rect.origin.x;
+              myYValueProperty = rect.origin.y;
+              myWidthValueProperty = rect.dimension.x;
+              myHeightValueProperty = rect.dimension.y;
+            }
+          }));
+
           configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
@@ -261,10 +270,10 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-    private PolyLineView createErrorView(Rectangle bounds) {
+    private PolyLineView createErrorView(Vector dimension) {
       PolyLineView errorView = new PolyLineView();
       errorView.color().set(Color.RED);
-      errorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(0, 0), new Vector(bounds.dimension.x, 0), new Vector(bounds.dimension.x, bounds.dimension.y), new Vector(0, bounds.dimension.y), new Vector(0, 0)));
+      errorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(0, 0), new Vector(dimension.x, 0), new Vector(dimension.x, dimension.y), new Vector(0, dimension.y), new Vector(0, 0)));
 
       return errorView;
     }

@@ -24,6 +24,9 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1793245865110344037" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="adck.725186580883451800" resolveInfo="Block" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramNode" typeId="gbdf.1094405431463454433" id="1094405431463941876" nodeInfo="ng">
+      <node role="x" roleId="gbdf.285670992220009949" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="4883444763025644506" nodeInfo="ng">
+        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.6279035160242221415" resolveInfo="x" />
+      </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="285670992218478522" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="text" />
         <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="7171441290056343304" nodeInfo="ng">
@@ -47,27 +50,6 @@
       </node>
       <node role="y" roleId="gbdf.285670992220009955" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="2373394573196812674" nodeInfo="ng">
         <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.6279035160242221911" resolveInfo="y" />
-      </node>
-      <node role="x" roleId="gbdf.285670992220009949" type="gbdf.ParameterBLQuery" typeId="gbdf.285670992213637367" id="7171441290056714733" nodeInfo="ng">
-        <node role="query" roleId="gbdf.285670992213637368" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7171441290056742106" nodeInfo="nn">
-          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7171441290056742109" nodeInfo="nn">
-            <property name="value" nameId="tpee.1068580320021" value="10" />
-          </node>
-          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.MulExpression" typeId="tpee.1092119917967" id="7171441290056714763" nodeInfo="nn">
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="7171441290056714765" nodeInfo="nn">
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7171441290056714766" nodeInfo="nn">
-                <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="7171441290056714767" nodeInfo="ng" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetIndexInParentOperation" typeId="tp25.1179168000618" id="7171441290056714768" nodeInfo="nn" />
-              </node>
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7171441290056714769" nodeInfo="nn">
-                <property name="value" nameId="tpee.1068580320021" value="2" />
-              </node>
-            </node>
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7171441290056714764" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="150" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1793245865110344842" nodeInfo="ig">

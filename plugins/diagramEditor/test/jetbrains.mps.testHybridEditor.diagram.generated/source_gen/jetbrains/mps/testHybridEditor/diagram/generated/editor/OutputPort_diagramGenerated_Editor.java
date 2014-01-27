@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -86,6 +88,15 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
               SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
             }
           }));
+          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+            public void set(Rectangle rect) {
+              myXValueProperty = rect.origin.x;
+              myYValueProperty = rect.origin.y;
+              myWidthValueProperty = rect.dimension.x;
+              myHeightValueProperty = rect.dimension.y;
+            }
+          }));
+
         }
       };
     }

@@ -74,22 +74,17 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadCellWithPosition" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" file="ConnectorCell.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadCellWithPosition" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" file="DiagramCell.java">
     <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Window" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
@@ -132,11 +127,8 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CellContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
@@ -152,6 +144,12 @@
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.InputPortCell" file="InputPortCell.java">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.JetpadCellWithPosition" file="JetpadCellWithPosition.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
@@ -185,7 +183,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadCellWithPosition" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" file="PropertyMapperCell.java">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
