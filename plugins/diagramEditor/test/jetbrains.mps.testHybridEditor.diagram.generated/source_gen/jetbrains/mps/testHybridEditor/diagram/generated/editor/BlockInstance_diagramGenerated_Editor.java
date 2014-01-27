@@ -38,6 +38,7 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.model.property.WritableProperty;

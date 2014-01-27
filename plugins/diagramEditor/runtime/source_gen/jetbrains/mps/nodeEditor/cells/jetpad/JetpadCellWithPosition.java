@@ -5,7 +5,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class JetpadCellWithPosition extends AbstractJetpadCell {
+public abstract class JetpadCellWithPosition extends AbstractJetpadCell {
   public JetpadCellWithPosition(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }

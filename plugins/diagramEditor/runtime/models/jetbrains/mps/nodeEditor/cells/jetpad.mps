@@ -6030,6 +6030,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4479527973884446773" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="JetpadCellWithPosition" />
+    <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4479527973884509604" nodeInfo="igu">
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4479527973884509605" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="editorContext" />

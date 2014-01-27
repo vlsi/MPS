@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
 import java.util.Set;
 import java.util.HashSet;
@@ -31,11 +30,16 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.jetpad.projectional.view.PolyLineView;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import java.util.ArrayList;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
@@ -99,11 +103,16 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       };
       addEditorCell(myPropertyCell_70mnj_a1a);
       myPropertyCell_70mnj_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_70mnj_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
-      myXProperty = new ReadableModelProperty<Integer>() {
+      myXProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
         protected Integer getModelPropertyValue() {
-          return SNodeOperations.getIndexInParent(getSNode()) / 2 * 150 + 10;
+          return SPropertyOperations.getInteger(node, "x");
+        }
+
+        protected void setModelPropertyValue(Integer value) {
+          SPropertyOperations.set(node, "x", "" + (value));
         }
       };
+      getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myYProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
         protected Integer getModelPropertyValue() {
           return SPropertyOperations.getInteger(node, "y");
@@ -186,6 +195,33 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
+          configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getDiagramCell().getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Boolean, View>() {
+            public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
+              final ReadableProperty<Rectangle> bounds = getTarget().rect.bounds();
+              PolyLineView errorView = createErrorView(getTarget().rect.dimension().get());
+              return new Mapper<Boolean, View>(source, errorView) {
+                @Override
+                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                  super.registerSynchronizers(configuration);
+                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+                    public void set(Rectangle bounds) {
+                      getTarget().moveTo(new Vector(bounds.origin.x, bounds.origin.y));
+                      getTarget().invalidate();
+                    }
+                  }));
+                }
+              };
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+            public void set(Rectangle rect) {
+              myXValueProperty = rect.origin.x;
+              myYValueProperty = rect.origin.y;
+              myWidthValueProperty = rect.dimension.x;
+              myHeightValueProperty = rect.dimension.y;
+            }
+          }));
+
           configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
@@ -198,6 +234,14 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
+    private PolyLineView createErrorView(Vector dimension) {
+      PolyLineView errorView = new PolyLineView();
+      errorView.color().set(Color.RED);
+      errorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(0, 0), new Vector(dimension.x, 0), new Vector(dimension.x, dimension.y), new Vector(0, dimension.y), new Vector(0, 0)));
+
+      return errorView;
+    }
+
     private DiagramNodeView createDiagramNodeView() {
       final BlockView blockView = new BlockView();
       blockView.minimalSize().set(new Vector(10, 10));
@@ -207,6 +251,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       blockView.moveTo(new Vector(myXProperty.get(), myYProperty.get()));
       blockView.contentView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
         public void move(Vector delta) {
+          myXProperty.set(myXProperty.get() + delta.x);
           myYProperty.set(myYProperty.get() + delta.y);
         }
       });
@@ -231,8 +276,10 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           }
         }
       }).build());
-
       return blockView;
+
     }
+
+
   }
 }

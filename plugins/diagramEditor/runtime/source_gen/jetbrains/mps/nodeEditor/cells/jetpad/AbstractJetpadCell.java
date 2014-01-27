@@ -10,9 +10,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
-import java.util.LinkedList;
+import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Set;
 import jetbrains.jetpad.projectional.view.View;
@@ -20,6 +23,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.KeyEvent;
+import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.jetpad.event.Key;
+import jetbrains.jetpad.event.ModifierKey;
 
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizedEditorCell {
   private List<ReadableModelProperty> myModelProperties;
@@ -39,6 +49,20 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
         return parent instanceof DiagramCell;
       }
     });
+  }
+
+  @Override
+  public void paint(Graphics graphics, ParentSettings settings) {
+    for (EditorCell child : Sequence.fromIterable(this)) {
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(graphics, settings);
+    }
+    List<EditorMessage> messages = getMessages(EditorMessage.class);
+    for (EditorMessage message : messages) {
+      if (message != null && !(message.isBackground())) {
+        message.paint(graphics, getEditor(), this);
+      }
+    }
+
   }
 
   protected void addModelProperty(ReadableModelProperty modelProperty) {
@@ -113,7 +137,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }
   }
 
-  protected static void configureView(final View view, final EditorCell editorCell, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
+  protected static void configureView(final View view, final AbstractJetpadCell editorCell, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
     view.focusable().set(true);
     view.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
       public boolean canDelete() {
@@ -124,5 +148,18 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
         editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
       }
     });
+    view.addTrait(new ViewTraitBuilder().on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
+      @Override
+      public void handle(View view, KeyEvent e) {
+        if (!(view.focused().get())) {
+          return;
+        }
+        MPSToolTipManager.getInstance().hideToolTip();
+        if (e.is(Key.F1, ModifierKey.CONTROL)) {
+          editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.SHOW_MESSAGE);
+        }
+      }
+    }).build());
+
   }
 }
