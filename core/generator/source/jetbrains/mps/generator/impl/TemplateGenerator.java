@@ -810,11 +810,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       myTracer.pushRule(rule.getRuleNode());
       myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
-
       //
-      myDeltaBuilder.enterInputRoot(inputRootNode);
       myDeltaBuilder.deleteInputRoot(inputRootNode);
-      myDeltaBuilder.leaveInputRoot(inputRootNode);
     }
 
     @Override
