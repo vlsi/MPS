@@ -107,7 +107,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       if (myCondition == null) {
         myCondition = env.getQueryProvider(getRuleNode()).getReductionRuleCondition(myConditionMethodName);
       }
-      return myCondition.check(new ReductionRuleQueryContext(context, ruleNode, env.getGenerator()));
+      return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     } catch (Throwable t) {
       env.getLogger().handleException(t);
       String msg = String.format("error executing condition '%s', see exception", myConditionMethodName);

@@ -641,7 +641,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /**
    * prevents applying of reduction rules which have already been applied to the input node.
    */
-  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionContext reductionContext) {
+  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, @NotNull ReductionContext reductionContext) {
     getBlockedReductionsData().blockReductionsForCopiedNode(inputNode, outputNode, reductionContext);
   }
 

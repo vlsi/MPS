@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Igor Alshannikov
@@ -90,8 +92,10 @@ public class FastRuleFinder {
 
   public static class BlockedReductionsData {
     public static final Object KEY = new Object();
-    private Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
-    private Map<SNode, Object> myNextReductionData = new HashMap<SNode, Object>();
+    // reduction data for this micro step is read-only
+    private final Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
+    // can be modified by several threads FIXME we can block rules on a per-root (i.e. per thread) basis, so no synchronization is really needed here
+    private final Map<SNode, Object> myNextReductionData = new ConcurrentHashMap<SNode, Object>();
 
     public boolean isReductionBlocked(SNode node, TemplateReductionRule rule, ReductionContext reductionContext) {
       return isReductionBlocked(node, rule)
@@ -108,22 +112,18 @@ public class FastRuleFinder {
       return false;
     }
 
-    public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionContext reductionContext) {
-      Object o;
-      if (reductionContext != null) {
-        o = ReductionContext.combineRuleSets(myCurrentReductionData.get(inputNode), reductionContext.getBlockedRules(inputNode));
-      } else {
-        o = myCurrentReductionData.get(inputNode);
+    public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, @NotNull ReductionContext reductionContext) {
+      Object o = ReductionContext.combineRuleSets(myCurrentReductionData.get(inputNode), reductionContext.getBlockedRules(inputNode));
+      if (o == null) {
+        return;
       }
-      if (o == null) return;
-      synchronized (this) {
-        myNextReductionData.put(outputNode, o);
-      }
+      myNextReductionData.put(outputNode, o);
     }
 
     public void advanceStep() {
-      myCurrentReductionData = myNextReductionData;
-      myNextReductionData = new HashMap<SNode, Object>();
+      myCurrentReductionData.clear();
+      myCurrentReductionData.putAll(myNextReductionData);
+      myNextReductionData.clear();
     }
   }
 }
