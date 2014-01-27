@@ -21,7 +21,7 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-41zcj4srfxst432ncw70viq3i78t8jl" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-3lya7xjjw0m6x9nvndipycec17m6hr2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-boe6alnpmni5qeljavj3kpaz7azhski" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
   <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" hash="-8gmav9nvwmt122mozuzojdsea4bh1gi" />
@@ -39,7 +39,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="euue9nf2dfvmaaw7p51ae5d5ok9xgnc" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="98890s9g1x0hvuvs00x0vvc202v78uo" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
-  <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" hash="-bzcdh89ajl9nxvfe1mo4ceu9vopzmu1" />
+  <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" hash="1cr6dxa5bvcefa05maeta1zarkl2xk" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
   <common hash="-8nuhe39c8wwww5h7mhlq81dg8atp1qy" dependsOnNodes="true">

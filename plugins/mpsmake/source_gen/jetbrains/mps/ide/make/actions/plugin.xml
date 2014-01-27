@@ -4,7 +4,7 @@
   <id>jebrains.mps.ide.make</id>
   <name>MPS Generation support</name>
   <description>Allows to transform models</description>
-  <version>3.0.3</version>
+  <version>3.0.4</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="129.1" />
   

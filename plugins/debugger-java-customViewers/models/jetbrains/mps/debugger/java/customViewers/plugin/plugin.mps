@@ -31,7 +31,7 @@
     <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     <property name="name" nameId="tpck.1169194664001" value="BaseLanguage Debugger Support" />
     <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="129.1" />
-    <property name="version" nameId="tp4k.5023285075122009369" value="3.0.3" />
+    <property name="version" nameId="tp4k.5023285075122009369" value="3.0.4" />
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="6713139039265405449" nodeInfo="ng">
       <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger.java" />
     </node>

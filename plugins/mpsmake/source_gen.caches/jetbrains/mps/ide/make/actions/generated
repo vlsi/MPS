@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2zri18tien11w9rr92hozfajijkqv2y">
+<dependencies version="2" modelHash="6scj1wm2h4cxzgrak5cktaehtmf37ap">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.notification(MPS.IDEA/com.intellij.notification@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.notification.impl(MPS.IDEA/com.intellij.notification.impl@java_stub)" />
@@ -58,8 +58,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="9sw0yiprustsb9spasemk0j3udhnvlx" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-7c144kqc2jnjr4hoi06x3ow7i4x04cl" />
   <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="iad34v0paaaaokkadywwcqcja7n96u" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-3w41bqzr3rkr1qgod92ucvie6ym1zz8" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" hash="bodpe43b65d6p79qjet99n2dkfeh88g" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-aa8wxx66jh0iss6neqg12v6a8dz65yq" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" hash="3zii37b0ri2jiklhey83wbu8qjon6vz" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="dyg43t30is9w08tjvcbay58rympar4z" />
   <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="a5h93nuoh92rfbvnb4w9h69ckv1nm2" />
@@ -130,7 +130,7 @@
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="5882989260841555164" name="MPS Generation support" hash="30wxyhz0661a5nr21z875acsxg3d85o" dependsOnCreated="true">
+  <source id="5882989260841555164" name="MPS Generation support" hash="cinv9cybtebdhjkuv2e5id2vohdfwje" dependsOnCreated="true">
     <dep root="1815980786159353546" />
     <dep root="2017614408232613001" />
     <dep root="2017614408232613007" />
