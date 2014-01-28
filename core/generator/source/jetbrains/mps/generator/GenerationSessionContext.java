@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,9 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
+import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -49,7 +51,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
 
-  private static final Object COPYED_ROOTS = new Object();
+  private static final Object COPIED_ROOTS = new Object();
 
   private final SModel myOriginalInputModel;
 
@@ -61,6 +63,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final GenerationOptions myGenerationOptions;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
+  private final QueryProviderCache myQueryProviders;
   /*
    * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
    * but there's no more global context available right now.
@@ -102,6 +105,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
     myLogger = logger;
+    myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
     myParameters = null;
     myValidation = new RoleValidation(generationOptions.isShowBadChildWarning());
@@ -125,6 +129,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
+    myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
     myParameters = parameters;
     // the moment this copy cons is used, nothing happened, reuse
@@ -149,6 +154,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myParameters = prevContext.myParameters;
+    myQueryProviders = prevContext.myQueryProviders;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -184,8 +190,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return getModule().getScope();
   }
 
-  public IOperationContext getInvocationContext() {
-    return myInvocationContext;
+  public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
+    return myQueryProviders.getQueryProvider(ruleNode);
   }
 
   public String toString() {
@@ -382,9 +388,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private Set<SNode> getCopiedRoots(boolean create) {
     @SuppressWarnings("unchecked")
-    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
+    Set<SNode> set = (Set<SNode>) getStepObject(COPIED_ROOTS);
     if (set == null && create) {
-      putStepObject(COPYED_ROOTS, set = new HashSet<SNode>());
+      putStepObject(COPIED_ROOTS, set = new HashSet<SNode>());
     }
     return set;
   }
@@ -413,6 +419,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void clearTransientModels() {
     getModule().clearUnused();
+  }
+
+  public void disposeQueryProvider() {
+    myQueryProviders.dispose();
   }
 
   public Object getGenerationParameter(String name) {

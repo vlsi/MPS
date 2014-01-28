@@ -179,7 +179,7 @@ public class TemplateQueryContext {
   }
 
   public IOperationContext getInvocationContext() {
-    return myGenerator.getGeneratorSessionContext().getInvocationContext();
+    return myGenerator.getGeneratorSessionContext();
   }
 
   // user objects

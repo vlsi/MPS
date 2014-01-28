@@ -10,7 +10,7 @@ import java.util.Iterator;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Collections;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -74,7 +74,7 @@ public class SLinkOperations {
     if (node != null && role != null) {
       return (child ? new AbstractSNodeList.AggregatedSNodesList(node, role) : new AbstractSNodeList.LinkedSNodesList(node, role));
     }
-    return new ArrayList<SNode>();
+    return Collections.emptyList();
   }
 
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
@@ -131,7 +131,7 @@ public class SLinkOperations {
 
   public static List removeAllChildren(SNode parent, String role) {
     if (parent == null) {
-      return new ArrayList<SNode>(1);
+      return Collections.emptyList();
     }
     Iterable<? extends SNode> children = parent.getChildren(role);
     for (SNode child : children) {
@@ -142,7 +142,7 @@ public class SLinkOperations {
 
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {
     if (node == null) {
-      return new ArrayList<SNode>();
+      return Collections.emptyList();
     }
     return jetbrains.mps.smodel.SNodeOperations.getConceptLinkTargets(node, linkName, true);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.LazyEditableSModelBase;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -134,7 +133,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate() && !getSource().isReadOnly();
   }
 
   @Override

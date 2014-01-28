@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.SModelStereotype;
 
 public class MakeGenerationHandler extends GenerationHandlerBase {
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource> resourceHandler;
@@ -33,6 +32,6 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean canHandle(SModel descriptor) {
-    return descriptor != null && (TemporaryModels.isTemporary(descriptor) || SModelStereotype.isUserModel(descriptor));
+    return super.canHandle(descriptor) || TemporaryModels.isTemporary(descriptor);
   }
 }

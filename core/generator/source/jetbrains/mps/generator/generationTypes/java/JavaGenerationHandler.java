@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
@@ -54,11 +53,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   private FileProcessor myProcessor;
 
   public JavaGenerationHandler() {
-  }
-
-  @Override
-  public boolean canHandle(SModel inputModel) {
-    return SModelStereotype.isUserModel(inputModel);
   }
 
   @Override

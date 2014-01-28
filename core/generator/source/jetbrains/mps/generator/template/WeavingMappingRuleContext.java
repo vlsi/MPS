@@ -15,16 +15,20 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
-public class WeavingMappingRuleContext extends TemplateQueryContextWithRule {
+public class WeavingMappingRuleContext extends BaseMappingRuleContext {
   public WeavingMappingRuleContext(SNode node, SNode ruleNode, ITemplateGenerator generator) {
     super(node, ruleNode, generator);
   }
 
   public WeavingMappingRuleContext(SNode node, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super(node, ruleNode, generator);
+  }
+  public WeavingMappingRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
+    super(ctx, ruleNode, generator);
   }
 }

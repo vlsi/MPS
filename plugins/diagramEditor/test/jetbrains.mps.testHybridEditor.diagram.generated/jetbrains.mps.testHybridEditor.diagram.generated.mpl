@@ -31,8 +31,8 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">961e4f4d-48cb-4bb7-8176-73dd2ac5c8a5(jetbrains.mps.lang.editor.figures.sandbox)</dependency>
     <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)</dependency>
+    <dependency reexport="false">961e4f4d-48cb-4bb7-8176-73dd2ac5c8a5(jetbrains.mps.lang.editor.figures.sandbox)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>

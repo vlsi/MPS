@@ -63,7 +63,7 @@ public class Templatereduce__NodeStatement implements TemplateDeclarationWeaving
                 Collection<SNode> tlist5 = null;
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_rm6jd2_a0a0a1a3a1a4a1a3a1a2);
-                  final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1206533809816(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context, copySrcMacro_rm6jd2_a0a0a1a3a1a4a1a3a1a2, environment.getGenerator()));
+                  final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1206533809816(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rm6jd2_a0a0a1a3a1a4a1a3a1a2, environment.getGenerator()));
                   tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_rm6jd2_a0a0a1a3a1a4a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533809814", null, context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_rm6jd2_a0a0a1a3a1a4a1a3a1a2);

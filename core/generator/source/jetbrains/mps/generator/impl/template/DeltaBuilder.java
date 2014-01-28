@@ -51,6 +51,7 @@ public abstract class DeltaBuilder {
   private final List<ReplacedRoot> myReplacedRoots = new ArrayList<ReplacedRoot>(); // view: myDelta.select(ReplacedRoot)
   private final List<NewRoot> myNewRoots = new ArrayList<NewRoot>(); // view: myDelta.select(NewRoot)
   private final List<CopyRoot> myCopyRoots; // view: myDelta.select(CopyRoot)
+  private final List<DeletedRoot> myDeletedRoots = new ArrayList<DeletedRoot>(); // view: myDelta.select(DeletedRoot)
   private final UniversalOptimizedNodeIdMap myNewNodes = new UniversalOptimizedNodeIdMap();
 
   protected DeltaBuilder(List<CopyRoot> rootsStorage) {
@@ -153,16 +154,10 @@ public abstract class DeltaBuilder {
   }
 
   public void deleteInputRoot(@NotNull SNode node) {
-    CopyRoot currentRoot = getCurrentRoot();
-    assert currentRoot != null;
-    assert getCurrentFragments().isEmpty();
-    if (currentRoot.myRoot != node || !getCurrentFragments().isEmpty()) {
-      throw new IllegalStateException();
-    }
-    currentRoot.deleted = true;
+    DeletedRoot r = new DeletedRoot(node);
     synchronized (myDelta) { // XXX synchronize here is just quick-n-dirty guard, revisit multi-threading and use of ThreadLocals
-      // we don't care about order of deletions
-      myDelta.add(currentRoot);
+      myDeletedRoots.add(r);
+      myDelta.add(r); // we don't care about order of deletions
     }
   }
 
@@ -281,9 +276,6 @@ public abstract class DeltaBuilder {
       }
       // mapper func in MAP-SRC for top node of in-place change
       for (CopyRoot r : myCopyRoots) {
-        if (r.deleted) {
-          continue;
-        }
         for (SubTree t : r.mySubTrees) {
           if (t.isSourceCopy()) {
             continue;
@@ -333,12 +325,11 @@ public abstract class DeltaBuilder {
   public void prepareReferences(SModel inputModel, TemplateGenerator generator) {
     HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
     for (CopyRoot root : myCopyRoots) {
-      if (root.deleted) {
-        // reference target under deleted root needs update, too
-        allReplacedNodes.add(root.myRoot);
-      } else {
-        allReplacedNodes.addAll(root.getReplacedNodes());
-      }
+      allReplacedNodes.addAll(root.getReplacedNodes());
+    }
+    // reference target under deleted root needs update, too
+    for (DeletedRoot root : myDeletedRoots) {
+      allReplacedNodes.add(root.myRoot);
     }
     for (ReplacedRoot rr : myReplacedRoots) {
       allReplacedNodes.add(rr.myReplacedRoot);
@@ -354,9 +345,6 @@ public abstract class DeltaBuilder {
     // update references between changed model elements
     for (CopyRoot root : myCopyRoots) {
       final Set<SNode> replacedNodes;
-      if (root.deleted) {
-        continue;
-      }
       replacedNodes = root.getReplacedNodes();
       TreeIterator<SNode> it = root.iterateOrigin();
       while (it.hasNext()) {
@@ -416,18 +404,17 @@ public abstract class DeltaBuilder {
         for (SNode replacement : rr.myReplacements) {
           inputModel.addRootNode(replacement);
         }
+      } else if (dr instanceof DeletedRoot) {
+        DeletedRoot root = (DeletedRoot) dr;
+        SModel rootModel = root.myRoot.getModel();
+        if (rootModel != null) {
+          // it's possible for the root to be deleted already, e.g. when there are rootMapRules with keepSourceRoot==true and
+          // a drop rule to clear origin root once all desired targets have been created.
+          assert root.myRoot.getModel() == inputModel;
+          inputModel.removeRootNode(root.myRoot);
+        }
       } else {
         CopyRoot root = (CopyRoot) dr;
-        if (root.deleted) {
-          SModel rootModel = root.myRoot.getModel();
-          if (rootModel != null) {
-            // it's possible for the root to be deleted already, e.g. when there are rootMapRules with keepSourceRoot==true and
-            // a drop rule to clear origin root once all desired targets have been created.
-            assert root.myRoot.getModel() == inputModel;
-            inputModel.removeRootNode(root.myRoot);
-          }
-          continue;
-        }
         // replace nodes
         for (SubTree tree : root.mySubTrees) {
           if (tree.isSourceCopy()) {
@@ -453,9 +440,11 @@ public abstract class DeltaBuilder {
       } else if (dr instanceof ReplacedRoot) {
         ReplacedRoot rr = (ReplacedRoot) dr;
         System.out.printf("R%s - %d\n", SNodeUtil.getDebugText(rr.myReplacedRoot), rr.myReplacements.size());
+      } else if (dr instanceof DeletedRoot) {
+        System.out.printf("-%s\n", SNodeUtil.getDebugText(((DeletedRoot) dr).myRoot));
       } else {
         CopyRoot root = (CopyRoot) dr;
-        char c = root.deleted ? '-' : (root.mySubTrees.length > 0 ? '*' : '~');
+        char c = root.mySubTrees.length > 0 ? '*' : '~';
         System.out.printf("%c%s\n", c, SNodeUtil.getDebugText(root.myRoot));
         for (SubTree tree : root.mySubTrees) {
           if (tree.isSourceCopy()) {
@@ -490,6 +479,12 @@ public abstract class DeltaBuilder {
       myRoot = newRoot;
     }
   }
+  private static class DeletedRoot implements DeltaRoot {
+    public final SNode myRoot;
+    public DeletedRoot(@NotNull SNode root) {
+      myRoot = root;
+    }
+  }
   private static class ReplacedRoot implements DeltaRoot {
     public final SNode myReplacedRoot;
     public final List<SNode> myReplacements;
@@ -501,7 +496,6 @@ public abstract class DeltaBuilder {
   }
   private static class CopyRoot implements DeltaRoot {
     public final SNode myRoot;
-    public boolean deleted = false; // FIXME make it full-fledged DropRoot
     private SubTree[] mySubTrees;
 
     CopyRoot(SNode root) {
@@ -509,9 +503,6 @@ public abstract class DeltaBuilder {
     }
 
     public boolean bringsChanges() {
-      if (deleted) {
-        return true;
-      }
       for (SubTree tree : mySubTrees) {
         if (!tree.isSourceCopy()) {
           return true;
