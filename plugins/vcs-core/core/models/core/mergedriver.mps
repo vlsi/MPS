@@ -4454,7 +4454,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dMODEL_ROOT" resolveInfo="MODEL_ROOT" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735079660073" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?root\&quot;?.*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;model\\s[^&gt;]*content=\&quot;?root\&quot;?.*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="8704175735079661311" nodeInfo="ig">
@@ -4465,7 +4465,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dMODEL_HEADER" resolveInfo="MODEL_HEADER" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735079699791" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?header\&quot;?.*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;model\\s[^&gt;]*content=\&quot;?header\&quot;?.*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725608" nodeInfo="ig">
@@ -4476,7 +4476,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dMODEL" resolveInfo="MODEL" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088652134" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;model[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725611" nodeInfo="ig">
@@ -4487,7 +4487,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dLANGUAGE" resolveInfo="LANGUAGE" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088712006" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;language[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;language[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725614" nodeInfo="ig">
@@ -4498,7 +4498,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dSOLUTION" resolveInfo="SOLUTION" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088734887" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;solution[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;solution[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725617" nodeInfo="ig">
@@ -4509,7 +4509,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dDEVKIT" resolveInfo="DEVKIT" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088757768" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;dev-kit[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;dev-kit[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725620" nodeInfo="ig">
@@ -4520,7 +4520,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dIDEA_PROJECT" resolveInfo="IDEA_PROJECT" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088786287" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;project[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;project[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725623" nodeInfo="ig">
@@ -4530,7 +4530,7 @@
         <property name="value" nameId="tpee.1070475926801" value="trace.info" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088809170" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;debugInfo[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;debugInfo[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725626" nodeInfo="ig">
@@ -4540,7 +4540,7 @@
         <property name="value" nameId="tpee.1070475926801" value="generated" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088832056" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;dependencies[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;dependencies[&gt;\\s].*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725629" nodeInfo="ig">
@@ -4550,7 +4550,7 @@
         <property name="value" nameId="tpee.1070475926801" value="dependencies" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735088854941" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;dependenciesRoot[&gt;\\s].*" />
+        <property name="value" nameId="tpee.1070475926801" value="(&lt;\\?.*\\?&gt;)?[^&lt;]*&lt;dependenciesRoot[&gt;\\s].*" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3342666646761725632" nodeInfo="nn" />

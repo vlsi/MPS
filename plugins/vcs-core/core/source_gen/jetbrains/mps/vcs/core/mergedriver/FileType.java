@@ -17,16 +17,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public enum FileType {
-  MODEL_ROOT(MPSExtentions.MODEL_ROOT, ".*<model\\s[^>]*content=\"?root\"?.*"),
-  MODEL_HEADER(MPSExtentions.MODEL_HEADER, ".*<model\\s[^>]*content=\"?header\"?.*"),
-  MODEL(MPSExtentions.MODEL, ".*<model[>\\s].*"),
-  LANGUAGE(MPSExtentions.LANGUAGE, ".*<language[>\\s].*"),
-  SOLUTION(MPSExtentions.SOLUTION, ".*<solution[>\\s].*"),
-  DEVKIT(MPSExtentions.DEVKIT, ".*<dev-kit[>\\s].*"),
-  PROJECT(MPSExtentions.IDEA_PROJECT, ".*<project[>\\s].*"),
-  TRACE_CACHE("trace.info", ".*<debugInfo[>\\s].*"),
-  GENERATOR_DEPENDENCIES("generated", ".*<dependencies[>\\s].*"),
-  JAVA_DEPENDENCIES("dependencies", ".*<dependenciesRoot[>\\s].*");
+  MODEL_ROOT(MPSExtentions.MODEL_ROOT, "(<\\?.*\\?>)?[^<]*<model\\s[^>]*content=\"?root\"?.*"),
+  MODEL_HEADER(MPSExtentions.MODEL_HEADER, "(<\\?.*\\?>)?[^<]*<model\\s[^>]*content=\"?header\"?.*"),
+  MODEL(MPSExtentions.MODEL, "(<\\?.*\\?>)?[^<]*<model[>\\s].*"),
+  LANGUAGE(MPSExtentions.LANGUAGE, "(<\\?.*\\?>)?[^<]*<language[>\\s].*"),
+  SOLUTION(MPSExtentions.SOLUTION, "(<\\?.*\\?>)?[^<]*<solution[>\\s].*"),
+  DEVKIT(MPSExtentions.DEVKIT, "(<\\?.*\\?>)?[^<]*<dev-kit[>\\s].*"),
+  PROJECT(MPSExtentions.IDEA_PROJECT, "(<\\?.*\\?>)?[^<]*<project[>\\s].*"),
+  TRACE_CACHE("trace.info", "(<\\?.*\\?>)?[^<]*<debugInfo[>\\s].*"),
+  GENERATOR_DEPENDENCIES("generated", "(<\\?.*\\?>)?[^<]*<dependencies[>\\s].*"),
+  JAVA_DEPENDENCIES("dependencies", "(<\\?.*\\?>)?[^<]*<dependenciesRoot[>\\s].*");
 
 
   public static final FileType[] BY_NAME = {FileType.TRACE_CACHE, FileType.GENERATOR_DEPENDENCIES, FileType.JAVA_DEPENDENCIES};
