@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.GraphUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -58,8 +59,7 @@ public class ConnectedComponentPartitioner {
     for (int index = 0; index < count; index++) {
       SNode root = myRoots[index];
       Arrays.fill(dependsOn, 0);
-      buildNodeDependencies(root, dependsOn, rootIndex);
-      for (SNode node : ((List<SNode>) (List) SNodeOperations.getDescendants(root, null))) {
+      for (SNode node : SNodeUtil.getDescendants(root, null, true)) {
         buildNodeDependencies(node, dependsOn, rootIndex);
       }
       dependsOn[index] = 0;

@@ -14,6 +14,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class TemplateModelScanner {
   private SModel myTemplateModel;
@@ -110,7 +111,7 @@ public class TemplateModelScanner {
     if ((node == null)) {
       return;
     }
-    for (SNode n : jetbrains.mps.util.SNodeOperations.getDescendants(node, null, true)) {
+    for (SNode n : SNodeUtil.getDescendants(node, null, true)) {
       SetSequence.fromSet(myQueryLanguages).addElement(n.getConcept().getLanguage().getQualifiedName());
     }
   }
