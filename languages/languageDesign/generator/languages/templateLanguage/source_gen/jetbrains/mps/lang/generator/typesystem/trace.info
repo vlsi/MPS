@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/1178562976720">
     <nodeInfo nodeId="1206286434318" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="16" startPosition="123" endLine="17" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="20" startPosition="46" endLine="21" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1314,6 +1314,50 @@
       <varInfo nodeId="1805153994417064767" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="1805153994417064767" fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="23" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_PatternReduction_MappingRule_InferenceRule" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/3381764287260998040">
+    <nodeInfo nodeId="3381764287261029635" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="22" startPosition="146" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381764287261048628" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3381764287261048628" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="357" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="39" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="39" startPosition="130" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_BaseMappingRule_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="3381764287261006564" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="3381764287261048628" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="25" startPosition="113" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3381764287261029775" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="18" startPosition="52" endLine="18" endPosition="52" />
+    <scopeInfo nodeId="3381764287261006565" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="22" startPosition="146" endLine="23" endPosition="13" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="34" endPosition="68" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="3381764287261048628" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="28" endPosition="357">
+      <varInfo nodeId="3381764287261048628" varName="_reporter_2309309498" />
+      <varInfo nodeId="3381764287261048628" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="3381764287260998040" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3381764287261029778" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="25" startPosition="113" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="3381764287260998040" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="3381764287260998640" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3381764287260998040" varName="bmr" />
+      <varInfo nodeId="3381764287260998040" varName="status" />
+      <varInfo nodeId="3381764287260998040" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_BaseMappingRule_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/4665309944889434858">
     <nodeInfo nodeId="4665309944889434861" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

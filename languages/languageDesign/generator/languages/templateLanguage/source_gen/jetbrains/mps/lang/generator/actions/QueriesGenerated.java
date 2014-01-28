@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -47,6 +48,12 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_CopySrcListMacro_7834938100936651351(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.LoopMacro")) {
       SLinkOperations.setTarget(_context.getNewNode(), "sourceNodesQuery", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Reduction_MappingRule_224926278906344519(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
+      SPropertyOperations.set(_context.getNewNode(), "applyToConceptInheritors", "" + (true));
     }
   }
 

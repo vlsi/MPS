@@ -266,8 +266,8 @@ public class QueriesGenerated implements GeneratorQueryProvider {
   }
 
   public static boolean baseMappingRule_Condition_1232140845413(final BaseMappingRuleContext _context) {
-    List<SNode> statements = SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true);
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral") && ListSequence.fromList(statements).last() == _context.getNode();
+    SNode parent = SNodeOperations.getParent(_context.getNode());
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(parent), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(parent, "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).last() == _context.getNode();
   }
 
   public static boolean baseMappingRule_Condition_1231495827362(final BaseMappingRuleContext _context) {
