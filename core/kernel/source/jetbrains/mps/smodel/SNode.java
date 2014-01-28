@@ -40,7 +40,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.util.Condition;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -118,44 +117,32 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   protected void assertCanRead() {
-    if (myRepository == null) return;
-    if (myRepository instanceof DisposedRepository) {
+    final SRepository repo = myRepository;
+    if (repo == null) return;
+    if (repo instanceof DisposedRepository) {
       showDisposedMessage();
       return;
     }
-
-    synchronized (REPO_LOCK) {
-      if (myRepository == null) return;
-      if (myRepository instanceof DisposedRepository) {
-        showDisposedMessage();
-        return;
-      }
-      myRepository.getModelAccess().checkReadAccess();
-    }
+    repo.getModelAccess().checkReadAccess();
   }
 
   private void assertCanChange() {
-    if (myRepository == null) return;
-    if (myRepository instanceof DisposedRepository) {
+    final SRepository repo = myRepository;
+    final SModel model = myModel;
+    if (repo == null) return;
+    if (repo instanceof DisposedRepository) {
       showDisposedMessage();
       return;
     }
-
-    synchronized (REPO_LOCK) {
-      if (myRepository == null) return;
-      if (myRepository instanceof DisposedRepository) {
-        showDisposedMessage();
-        return;
-      }
-      myRepository.getModelAccess().checkReadAccess();
-      if (myModel != null && myModel.isUpdateMode()) return;
-      myRepository.getModelAccess().checkWriteAccess();
-      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-        throw new IllegalModelChangeError(
-            "registered node can only be modified inside undoable command or in 'loading' model " +
-                org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
-        );
-      }
+    org.jetbrains.mps.openapi.module.ModelAccess modelAccess = repo.getModelAccess();
+    modelAccess.checkReadAccess();
+    if (model != null && model.isUpdateMode()) return;
+    modelAccess.checkWriteAccess();
+    if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+      throw new IllegalModelChangeError(
+          "registered node can only be modified inside undoable command or in 'loading' model " +
+              org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+      );
     }
   }
 
