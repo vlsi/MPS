@@ -131,7 +131,7 @@ public class ConsoleTab extends BaseConsoleTab {
               // todo: this is a hack - activate is not required there because command can activate some other component 
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                  myTool.getProject().getComponent(ConsoleTool.class).getToolWindow().activate(new Runnable() {
+                  myTool.getToolWindow().activate(new Runnable() {
                     public void run() {
                       setSelection();
                     }
@@ -251,6 +251,12 @@ public class ConsoleTab extends BaseConsoleTab {
         TemporaryModels.getInstance().addMissingImports(myModel);
       }
     });
+  }
+
+
+
+  public void insertCommand(SNode command) {
+    SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", command, true);
   }
 
 

@@ -55,7 +55,7 @@ public class ScriptsUtil {
 
 
 
-  public static void refactor(Project mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> closure) {
+  public static void refactor(Project mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
     com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(mpsProject);
     SearchResults sr = nodesToRefactoringResult(nodes);
     RefactoringAccess.getInstance().showRefactoringView(project, new RefactoringViewAction() {
@@ -76,7 +76,7 @@ public class ScriptsUtil {
             }
             for (SNode resultNode : Sequence.fromIterable(includedNodes)) {
               if (resultNode != null) {
-                closure.invoke(resultNode);
+                toExecuteWithEachNode.invoke(resultNode);
               }
             }
           }

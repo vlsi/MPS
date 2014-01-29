@@ -387,7 +387,7 @@
                                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3267115895197545355" resolveInfo="resultNode" />
                                           </node>
                                           <node role="function" roleId="tp2c.1235746996653" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3267115895197589376" nodeInfo="nn">
-                                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2377091791517286140" resolveInfo="closure" />
+                                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2377091791517286140" resolveInfo="toExecuteWithEachNode" />
                                           </node>
                                         </node>
                                       </node>
@@ -441,7 +441,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2377091791517286140" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="closure" />
+        <property name="name" nameId="tpck.1169194664001" value="toExecuteWithEachNode" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="2377091791517287303" nodeInfo="in">
           <node role="resultType" roleId="tp2c.1199542457201" type="tpee.VoidType" typeId="tpee.1068581517677" id="2377091791517287375" nodeInfo="in" />
