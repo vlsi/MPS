@@ -15,18 +15,24 @@ import java.io.Reader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import jetbrains.mps.util.JDOMUtil;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import jetbrains.mps.util.xml.BreakParseSAXException;
 
 public enum FileType {
-  MODEL_ROOT(MPSExtentions.MODEL_ROOT, "(<\\?.*\\?>)?[^<]*<model\\s[^>]*content=\"?root\"?.*"),
-  MODEL_HEADER(MPSExtentions.MODEL_HEADER, "(<\\?.*\\?>)?[^<]*<model\\s[^>]*content=\"?header\"?.*"),
-  MODEL(MPSExtentions.MODEL, "(<\\?.*\\?>)?[^<]*<model[>\\s].*"),
-  LANGUAGE(MPSExtentions.LANGUAGE, "(<\\?.*\\?>)?[^<]*<language[>\\s].*"),
-  SOLUTION(MPSExtentions.SOLUTION, "(<\\?.*\\?>)?[^<]*<solution[>\\s].*"),
-  DEVKIT(MPSExtentions.DEVKIT, "(<\\?.*\\?>)?[^<]*<dev-kit[>\\s].*"),
-  PROJECT(MPSExtentions.IDEA_PROJECT, "(<\\?.*\\?>)?[^<]*<project[>\\s].*"),
-  TRACE_CACHE("trace.info", "(<\\?.*\\?>)?[^<]*<debugInfo[>\\s].*"),
-  GENERATOR_DEPENDENCIES("generated", "(<\\?.*\\?>)?[^<]*<dependencies[>\\s].*"),
-  JAVA_DEPENDENCIES("dependencies", "(<\\?.*\\?>)?[^<]*<dependenciesRoot[>\\s].*");
+  MODEL(MPSExtentions.MODEL, "model"),
+  MODEL_ROOT(MPSExtentions.MODEL_ROOT, "model", "(<\\?.*\\?>)?[^<]*<model\\s[^>]*content=\"?root\"?.*"),
+  MODEL_HEADER(MPSExtentions.MODEL_HEADER, "model", "(<\\?.*\\?>)?[^<]*<model\\s[^>]*content=\"?header\"?.*"),
+  LANGUAGE(MPSExtentions.LANGUAGE, "language"),
+  SOLUTION(MPSExtentions.SOLUTION, "solution"),
+  DEVKIT(MPSExtentions.DEVKIT, "dev-kit"),
+  PROJECT(MPSExtentions.IDEA_PROJECT, "project"),
+  TRACE_CACHE("trace.info", "debugInfo"),
+  GENERATOR_DEPENDENCIES("generated", "dependencies"),
+  JAVA_DEPENDENCIES("dependencies", "dependenciesRoot");
 
 
   public static final FileType[] BY_NAME = {FileType.TRACE_CACHE, FileType.GENERATOR_DEPENDENCIES, FileType.JAVA_DEPENDENCIES};
@@ -34,11 +40,17 @@ public enum FileType {
   private static final String SVN_BASE = ".svn-base";
 
   private String mySuffix;
+  private String myXmlRoot;
   private Pattern myPattern;
 
-  FileType(String suffix, String pattern) {
+  FileType(String suffix, String xmlRoot, String pattern) {
     mySuffix = suffix;
+    myXmlRoot = xmlRoot;
     myPattern = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
+  }
+
+  FileType(String suffix, String xmlRoot) {
+    this(suffix, xmlRoot, "(<\\?.*\\?>)?[^<]*<" + xmlRoot + "[>\\s].*");
   }
 
 
@@ -61,7 +73,7 @@ public enum FileType {
         return FileType.MODEL;
       }
     }
-    // try get file type from SVN filename 
+    // try to get file type from SVN filename 
     final Wrappers._T<String> fileName = new Wrappers._T<String>(file.getName());
     if (fileName.value.endsWith(SVN_BASE)) {
       fileName.value = fileName.value.substring(0, fileName.value.length() - FileType.SVN_BASE.length());
@@ -77,25 +89,68 @@ public enum FileType {
         return FileType.MODEL;
       }
     }
-    // try to get file type by the beginning of content 
-    char[] buf = new char[1000];
-    Reader reader = null;
-    try {
-      reader = new InputStreamReader(new FileInputStream(file), FileUtil.DEFAULT_CHARSET);
-      int read = reader.read(buf);
-      if (read == -1) {
-        return null;
-      }
-      final String str = new String(buf, 0, read);
-      return Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
-        public boolean accept(FileType t) {
-          return t.myPattern.matcher(str).matches();
+    return getTypeByXmlRoot(file);
+    /*
+      // try to get file type by the beginning of content 
+      char[] buf = new char[1000];
+      Reader reader = null;
+      try {
+        reader = new InputStreamReader(new FileInputStream(file), FileUtil.DEFAULT_CHARSET);
+        int read = reader.read(buf);
+        if (read == -1) {
+          return null;
         }
-      });
-    } catch (IOException ioe) {
-      return null;
+        final String str = new String(buf, 0, read);
+        return Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
+          public boolean accept(FileType t) {
+            return t.myPattern.matcher(str).matches();
+          }
+        });
+      } catch (IOException ioe) {
+        return null;
+      } finally {
+        FileUtil.closeFileSafe(reader);
+      }
+    */
+  }
+
+  @Nullable
+  private static FileType getTypeByXmlRoot(File file) {
+    final FileType.XMLRootHandler handler = new FileType.XMLRootHandler();
+    InputStream is = null;
+    try {
+      is = new FileInputStream(file);
+      JDOMUtil.createSAXParser().parse(is, handler);
+    } catch (Exception e) {
     } finally {
-      FileUtil.closeFileSafe(reader);
+      FileUtil.closeFileSafe(is);
+    }
+    FileType res = Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
+      public boolean accept(FileType t) {
+        return t.myXmlRoot.equals(handler.rootName);
+      }
+    });
+    // manually check per-root persistence 
+    if (res == FileType.MODEL) {
+      if ("root".equals(handler.contentAttr)) {
+        res = FileType.MODEL_ROOT;
+      }
+      if ("header".equals(handler.contentAttr)) {
+        res = FileType.MODEL_HEADER;
+      }
+    }
+    return res;
+  }
+
+  private static class XMLRootHandler extends DefaultHandler {
+    public String rootName;
+    public String contentAttr;
+
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+      rootName = qName;
+      contentAttr = attributes.getValue("content");
+      throw new BreakParseSAXException();
     }
   }
 }

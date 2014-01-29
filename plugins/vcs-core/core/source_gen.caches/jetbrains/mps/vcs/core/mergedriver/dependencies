@@ -50,8 +50,11 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.io.Reader" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -59,8 +62,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.util.xml.BreakParseSAXException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.xml.sax.Attributes" />
+    <classNode dependClassName="org.xml.sax.SAXException" />
+    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" file="JavaDependenciesMerger.java">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
