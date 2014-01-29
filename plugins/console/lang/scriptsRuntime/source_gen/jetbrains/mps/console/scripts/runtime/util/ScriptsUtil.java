@@ -81,6 +81,7 @@ public class ScriptsUtil {
           }
         });
         refactoringViewItem.close();
+        context.getConsoleTab().getConsoleTool().getToolWindow().activate(null);
         context.getConsoleTab().getConsoleTool().selectTab(context.getConsoleTab());
       }
     }, sr, false, "refactor");
