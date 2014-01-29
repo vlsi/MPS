@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -56,11 +57,8 @@ public class ModelContentUtil {
     for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleName());
     }
-    for (SNode root : model.getRootNodes()) {
-      namespaces.add(root.getConcept().getLanguage().getQualifiedName());
-      for (SNode child : jetbrains.mps.util.SNodeOperations.getDescendants(root, null)) {
-        namespaces.add(child.getConcept().getLanguage().getQualifiedName());
-      }
+    for (SNode child : SNodeUtil.getDescendants(model)) {
+      namespaces.add(child.getConcept().getLanguage().getQualifiedName());
     }
     // empty behavior model should have it's behavior aspect descriptor generated
     if (model.getModule() instanceof Language && LanguageAspect.BEHAVIOR.is(model)) {
