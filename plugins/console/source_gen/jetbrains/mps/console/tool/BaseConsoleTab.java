@@ -86,6 +86,7 @@ public abstract class BaseConsoleTab extends JPanel {
   protected Highlighter myHighlighter;
   protected String myTabTitle;
 
+
   public String getTitle() {
     return myTabTitle;
   }
@@ -146,7 +147,7 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
   protected void createEditor() {
-    this.myEditor = new UIEditorComponent(check_6q36mf_a0a0a0a91(ProjectHelper.toMPSProject(myTool.getProject())), null) {
+    this.myEditor = new UIEditorComponent(check_6q36mf_a0a0a0a02(ProjectHelper.toMPSProject(myTool.getProject())), null) {
       @Nullable
       @Override
       public Object getData(@NonNls String key) {
@@ -154,7 +155,8 @@ public abstract class BaseConsoleTab extends JPanel {
           return myFileEditor;
         }
         if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
-          return new BaseConsoleTab.MyPasteProvider((PasteProvider) super.getData(key));
+          PasteProvider parentPasteProvider = as_6q36mf_a0a0a1a0a0a0a0u(super.getData(key), PasteProvider.class);
+          return (myTool.getPasteAsRef() ? new BaseConsoleTab.MyPasteProvider(parentPasteProvider) : parentPasteProvider);
         }
         return super.getData(key);
       }
@@ -167,7 +169,7 @@ public abstract class BaseConsoleTab extends JPanel {
           public void run() {
             if (selectedNode != null) {
               EditorCell selectedCell = getSelectedCell();
-              if (eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0t(check_6q36mf_a0a1a0a0c0b0a0a0a91(selectedCell), SLinkOperations.getTarget(myRoot, "commandHolder", true)) && check_6q36mf_a0b0a0a2a1a0a0a0t(selectedCell)) {
+              if (eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0u(check_6q36mf_a0a1a0a0c0b0a0a0a02(selectedCell), SLinkOperations.getTarget(myRoot, "commandHolder", true)) && check_6q36mf_a0b0a0a2a1a0a0a0u(selectedCell)) {
                 editable.value = false;
               } else {
                 editable.value = SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.console.base.structure.CommandHolder", true, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
@@ -231,7 +233,7 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
 
-  protected class MyPasteProvider implements PasteProvider {
+  public class MyPasteProvider implements PasteProvider {
 
     private PasteProvider myDefaultPasteProvider;
 
@@ -257,8 +259,8 @@ public abstract class BaseConsoleTab extends JPanel {
           } catch (IOException ignored) {
           }
           EditorCell currentCell = myEditor.getSelectedCell();
-          SNode referenceTarget = check_6q36mf_a0d0a0a5cb(pastingNodeReference);
-          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a4a0a0f82(check_6q36mf_a0a0e0a0a5cb(pastingNodeReference), myModel))) {
+          SNode referenceTarget = check_6q36mf_a0d0a0a5db(pastingNodeReference);
+          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a4a0a0f92(check_6q36mf_a0a0e0a0a5db(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
             SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
@@ -269,7 +271,7 @@ public abstract class BaseConsoleTab extends JPanel {
             }
             TemporaryModels.getInstance().addMissingImports(myModel);
           } else {
-            myDefaultPasteProvider.performPaste(context);
+            check_6q36mf_a0a0e0a0a5db_0(myDefaultPasteProvider, context);
           }
         }
       });
@@ -359,7 +361,7 @@ public abstract class BaseConsoleTab extends JPanel {
         while (scanner.hasNextLine()) {
           String line = scanner.nextLine();
           if ((line != null && line.length() > 0)) {
-            ListSequence.fromList(SLinkOperations.getTargets(getLastReponse(), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a1a1a0a0a0a04(line));
+            ListSequence.fromList(SLinkOperations.getTargets(getLastReponse(), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a1a1a0a0a0a14(line));
           }
           if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
             SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NewLineResponseItem");
@@ -426,7 +428,7 @@ public abstract class BaseConsoleTab extends JPanel {
     this.add(scrollPane, BorderLayout.CENTER);
     this.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
 
-    myHighlighter = check_6q36mf_a0t0vb(myTool.getProject());
+    myHighlighter = check_6q36mf_a0t0wb(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -437,12 +439,12 @@ public abstract class BaseConsoleTab extends JPanel {
     SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
     BehaviorReflection.invokeVirtual(Void.class, command, "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
       public void run() {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a0a0c0a2a94(command));
-        check_6q36mf_a1a0a0c0a2a94(executeBefore);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a0a0c0a2a05(command));
+        check_6q36mf_a1a0a0c0a2a05(executeBefore);
       }
     }, new Runnable() {
       public void run() {
-        check_6q36mf_a0a0a0d0a2a94(executeAfter);
+        check_6q36mf_a0a0a0d0a2a05(executeAfter);
       }
     }});
   }
@@ -450,49 +452,56 @@ public abstract class BaseConsoleTab extends JPanel {
 
   protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
 
-  private static SRepository check_6q36mf_a0a0a0a91(Project checkedDotOperand) {
+  private static SRepository check_6q36mf_a0a0a0a02(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRepository();
     }
     return null;
   }
 
-  private static boolean check_6q36mf_a0b0a0a2a1a0a0a0t(EditorCell checkedDotOperand) {
+  private static boolean check_6q36mf_a0b0a0a2a1a0a0a0u(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isBig();
     }
     return false;
   }
 
-  private static SNode check_6q36mf_a0a1a0a0c0b0a0a0a91(EditorCell checkedDotOperand) {
+  private static SNode check_6q36mf_a0a1a0a0c0b0a0a0a02(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static SNode check_6q36mf_a0d0a0a5cb(SNodeReference checkedDotOperand) {
+  private static SNode check_6q36mf_a0d0a0a5db(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
 
-  private static boolean check_6q36mf_a0a4a0a0f82(SModelReference checkedDotOperand, SModel myModel) {
+  private static boolean check_6q36mf_a0a4a0a0f92(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(myModel.getReference());
     }
     return false;
   }
 
-  private static SModelReference check_6q36mf_a0a0e0a0a5cb(SNodeReference checkedDotOperand) {
+  private static SModelReference check_6q36mf_a0a0e0a0a5db(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelReference();
     }
     return null;
   }
 
-  private static SNode _quotation_createNode_6q36mf_a0a0a1a1a0a0a0a04(Object parameter_1) {
+  private static void check_6q36mf_a0a0e0a0a5db_0(PasteProvider checkedDotOperand, DataContext context) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.performPaste(context);
+    }
+
+  }
+
+  private static SNode _quotation_createNode_6q36mf_a0a0a1a1a0a0a0a14(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResponseItem", null, null, GlobalScope.getInstance(), false);
@@ -500,14 +509,14 @@ public abstract class BaseConsoleTab extends JPanel {
     return quotedNode_2;
   }
 
-  private static Highlighter check_6q36mf_a0t0vb(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0t0wb(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
     return null;
   }
 
-  private static SNode _quotation_createNode_6q36mf_a0a0a0a0c0a2a94(Object parameter_1) {
+  private static SNode _quotation_createNode_6q36mf_a0a0a0a0c0a2a05(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -519,21 +528,25 @@ public abstract class BaseConsoleTab extends JPanel {
     return quotedNode_2;
   }
 
-  private static void check_6q36mf_a1a0a0c0a2a94(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a1a0a0c0a2a05(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
 
-  private static void check_6q36mf_a0a0a0d0a2a94(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a0a0a0d0a2a05(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
 
-  private static boolean eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0t(Object a, Object b) {
+  private static <T> T as_6q36mf_a0a0a1a0a0a0a0u(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+
+  private static boolean eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0u(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
