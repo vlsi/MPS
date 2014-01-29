@@ -256,6 +256,7 @@ public class ConsoleTab extends BaseConsoleTab {
 
 
   public void insertCommand(SNode command) {
+    addNodeImports(command);
     SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", command, true);
   }
 

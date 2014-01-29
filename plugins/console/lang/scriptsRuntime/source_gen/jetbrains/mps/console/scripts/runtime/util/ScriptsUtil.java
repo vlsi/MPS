@@ -10,8 +10,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
@@ -55,17 +55,16 @@ public class ScriptsUtil {
 
 
 
-  public static void refactor(Project mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
-    com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(mpsProject);
+  public static void refactor(final ConsoleContext context, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
+    Project project = ProjectHelper.toIdeaProject(context.getProject());
     SearchResults sr = nodesToRefactoringResult(nodes);
     RefactoringAccess.getInstance().showRefactoringView(project, new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
-        refactoringViewItem.close();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             Iterable<SNode> includedNodes;
             if (refactoringViewItem instanceof RefactoringViewItemImpl) {
-              List<SNodeReference> nodeRefs = as_bb8vid_a0a0a0a1a0a0a0a1a0a0b0a2a5(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
+              List<SNodeReference> nodeRefs = as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
               includedNodes = ListSequence.fromList(nodeRefs).select(new ISelector<SNodeReference, SNode>() {
                 public SNode select(SNodeReference it) {
                   return it.resolve(MPSModuleRepository.getInstance());
@@ -81,6 +80,8 @@ public class ScriptsUtil {
             }
           }
         });
+        refactoringViewItem.close();
+        context.getConsoleTab().getConsoleTool().selectTab(context.getConsoleTab());
       }
     }, sr, false, "refactor");
   }
@@ -100,7 +101,7 @@ public class ScriptsUtil {
 
 
 
-  private static <T> T as_bb8vid_a0a0a0a1a0a0a0a1a0a0b0a2a5(Object o, Class<T> type) {
+  private static <T> T as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
