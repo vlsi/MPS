@@ -51,6 +51,7 @@ import jetbrains.jetpad.geometry.Vector;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
+  private Mapper<SNode, ViewContainer> myDecorationRootMapper;
   private ViewContainerComponent myComponent;
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
@@ -69,6 +70,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       myComponent = new ViewContainerComponent();
       getRootMapper().attachRoot();
       myComponent.container(getRootMapper().getTarget());
+      getDecorationRootMapper().attachRoot();
     }
     return myComponent;
   }
@@ -335,6 +337,31 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     return myRootMapper;
   }
+
+
+
+  public Mapper<SNode, ViewContainer> getDecorationRootMapper() {
+    if (myDecorationRootMapper == null) {
+      myDecorationRootMapper = new Mapper<SNode, ViewContainer>(getSNode(), getRootMapper().getTarget()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().decorationRoot().children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode source) {
+              return createDecorationMapper(source);
+            }
+          }));
+        }
+      };
+    }
+    return myDecorationRootMapper;
+  }
+
+
+
+  public abstract Mapper<SNode, View> createDecorationMapper(SNode node);
+
+
 
   private ViewContainer createViewContainer() {
     ViewContainer result = new ViewContainer();

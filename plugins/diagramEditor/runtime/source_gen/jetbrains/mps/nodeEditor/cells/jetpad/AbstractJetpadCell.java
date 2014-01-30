@@ -5,6 +5,8 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.SynchronizedEditorCell;
 import java.util.List;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -15,6 +17,7 @@ import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.errors.MessageStatus;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Set;
@@ -30,9 +33,14 @@ import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.jetpad.event.Key;
 import jetbrains.jetpad.event.ModifierKey;
+import jetbrains.jetpad.projectional.view.RectView;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.values.Color;
 
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizedEditorCell {
+  protected static final int SELECTION_SQUARE_WIDTH = 6;
   private List<ReadableModelProperty> myModelProperties;
+  protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(true);
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
     super(editorContext, node, new CellLayout_Horizontal(), null);
@@ -58,11 +66,14 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }
     List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
-      if (message != null && !(message.isBackground())) {
-        message.paint(graphics, getEditor(), this);
+      if (message != null) {
+        if (eq_815jvj_a0a0a0c0g(message.getStatus(), MessageStatus.ERROR)) {
+          myErrorItem.set(true);
+          return;
+        }
       }
     }
-
+    myErrorItem.set(false);
   }
 
   protected void addModelProperty(ReadableModelProperty modelProperty) {
@@ -161,5 +172,17 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
       }
     }).build());
 
+  }
+
+  protected static RectView createBlackSelectionRect(Vector origin) {
+    RectView view = new RectView();
+    view.background().set(Color.BLACK);
+    view.dimension().set(new Vector(SELECTION_SQUARE_WIDTH, SELECTION_SQUARE_WIDTH));
+    view.moveTo(new Vector(origin.x - SELECTION_SQUARE_WIDTH / 2, origin.y - SELECTION_SQUARE_WIDTH / 2));
+    return view;
+  }
+
+  private static boolean eq_815jvj_a0a0a0c0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

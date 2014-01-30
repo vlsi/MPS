@@ -66,6 +66,12 @@ public class DiagramEditor extends AbstractJetpadEditor {
 
       public void synchronize() {
       }
+
+
+
+      public Mapper<SNode, View> createDecorationMapper(SNode node) {
+        return null;
+      }
     };
     diagramCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(diagramNode), new SubstituteInfoPartExt[]{diagramCell.createNewDiagramNodeActions(diagramNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
       public void invoke(SNode node, Integer x, Integer y) {

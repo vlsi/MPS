@@ -6,6 +6,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.RectView;
+import jetbrains.jetpad.projectional.view.View;
 
 public abstract class PortCell extends JetpadCellWithPosition {
   public PortCell(EditorContext editorContext, SNode node) {
@@ -13,4 +14,6 @@ public abstract class PortCell extends JetpadCellWithPosition {
   }
 
   public abstract Mapper<SNode, RectView> createMapper();
+
+  public abstract Mapper<SNode, View> createDecorationMapper();
 }

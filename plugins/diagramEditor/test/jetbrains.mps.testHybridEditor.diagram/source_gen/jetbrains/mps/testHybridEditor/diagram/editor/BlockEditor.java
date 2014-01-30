@@ -134,6 +134,12 @@ public class BlockEditor extends AbstractJetpadEditor {
 
       public void synchronize() {
       }
+
+
+
+      public Mapper<SNode, View> createDecorationMapper() {
+        return null;
+      }
     };
     blockCell.setBig(true);
     blockCell.getEditor().addCellDependentOnNodeProperty(blockCell, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));

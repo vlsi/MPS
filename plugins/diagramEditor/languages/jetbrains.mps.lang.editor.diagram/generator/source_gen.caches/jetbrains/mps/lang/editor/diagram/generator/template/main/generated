@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4aq9hviy5ljucwnzbdzew5ktwuv5jup">
+<dependencies version="2" modelHash="apnyg982fj9qzu7yp5llee8n5spu7ai">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -38,7 +38,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="4z0xew25to9gtntekbqz02ae82z02j4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="59pr0zqvvch64pct7bvafm2u190hwlu" dependsOnNodes="true">
+  <common hash="-apk1wcvry50igsljkxwpamcoxmo23ex" dependsOnNodes="true">
     <dep root="1094405431463447767" />
     <dep root="2201645942109536141" />
     <dep root="2732397419124502392" />
@@ -114,13 +114,13 @@
   <source id="1094405431463447767" name="main" hash="3i4ztx06nt8mtn4s3tri2yhqij6lyxh">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-83ukb2hn9e56e3dygnwnvjtbvvfh9zh">
+  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-kfwxqsd4kiusz6ld7uoad8uakai7j6">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="501v69fd2u3vaylukl2i3nth72owpw6">
+  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="fg0nz01kh1iheh4bs3xdyns861az56">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="asjthn1t7fvqrv06ffgq7r4nmfx7z6v">
+  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="-a20yd2hohjqq5ikq3ixj2u8328za25w">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="2201645942109536141" name="reduce_DiagramElementBLQuery" hash="m4f83hwvbwr1egscz7wryljauicuqo">
@@ -132,13 +132,13 @@
   <source id="285670992205237838" name="FigureConstructor" hash="-d2youb0kjkg0wnpgopw3x0t0o0z1cza">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="285670992206060904" name="reduce_CellModel_DiagramPort" hash="6jby477qpgtmihiewuggbnmu5oc8f0m">
+  <source id="285670992206060904" name="reduce_CellModel_DiagramPort" hash="9ycbjpf61ztmd6fghboa9e2ueu5dc9k">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="285670992223213068" name="SwitchDiagramNodePositionSetup" hash="-193t3uxcduvrbwafwumbuvz5q2lsswn">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="7171441290057803824" name="template_CreatePortMapper" hash="-4xqc8q9gx07zjve46o750gnw585mwog">
+  <source id="7171441290057803824" name="template_CreatePortMapper" hash="3mf74l4foutww0gfuzr8lsxtkztqj3z">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
   <source id="8570854907291873537" name="reduce_DiagramElementsCreation" hash="-56l6nsb9atdo96f183jcehqk69dxaqy">
@@ -147,7 +147,7 @@
   <source id="939897302412891640" name="reduce_DiagramConnectorCreation" hash="-ah7mrt7tb0ybzazfjoszz0v7srk6ifh">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="2732397419124488366" name="BlockCellAdapter" hash="bmt2s74xlnofs7odccfmmty9if98pg6">
+  <source id="2732397419124488366" name="BlockCellAdapter" hash="-a0pgwgo525rv5vahmippbseu3h49rwb">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
@@ -172,7 +172,7 @@
   <source id="7755191110397886411" name="BlockParameterRegisterSynchronizers" hash="a3gyxsgdlc33dginfopp6zutc01fa0p">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="9028489334867564747" name="DiagramCellAdapter" hash="25ta8u0uel7vuots73znnpa8u0v9e4u">
+  <source id="9028489334867564747" name="DiagramCellAdapter" hash="-9s2pfvucgkp1y8wc9p9q0lgu8suuc0j">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
@@ -185,7 +185,7 @@
   <source id="9028489334872670708" name="ConnectionEndType" hash="5pm5ddq1px23ml5to405aasvx3ueknz">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="9028489334874334453" name="ConnectorCellAdapter" hash="ch9p6hev4kakd4c419wzf4ol9eslwq4">
+  <source id="9028489334874334453" name="ConnectorCellAdapter" hash="2f5u6ce0azz7zieotx7tfv7k3cpj8zu">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>

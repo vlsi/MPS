@@ -117,5 +117,11 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
 
       return portView;
     }
+
+
+
+    public Mapper<SNode, View> createDecorationMapper() {
+      return null;
+    }
   }
 }

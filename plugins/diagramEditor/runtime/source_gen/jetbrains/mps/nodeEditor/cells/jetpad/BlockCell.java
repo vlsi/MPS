@@ -4,27 +4,18 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
-import java.awt.Graphics;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.errors.MessageStatus;
 
 public abstract class BlockCell extends JetpadCellWithPosition {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
 
-  protected ObservableSingleItemList<Boolean> myErrorItem = new ObservableSingleItemList<Boolean>(null);
 
 
   protected void registerPositionProperties(final ReadableModelProperty<Integer> xProperty, final ReadableModelProperty<Integer> yProperty) {
@@ -42,6 +33,8 @@ public abstract class BlockCell extends JetpadCellWithPosition {
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
 
+  public abstract Mapper<SNode, View> createDecorationMapper();
+
   private void moveView(ReadableModelProperty<Integer> xProperty, ReadableModelProperty<Integer> yProperty) {
     DiagramCell cell = getDiagramCell();
     if (cell == null) {
@@ -55,32 +48,5 @@ public abstract class BlockCell extends JetpadCellWithPosition {
     }
   }
 
-  @Override
-  public void paint(Graphics graphics, ParentSettings settings) {
-    for (EditorCell child : Sequence.fromIterable(this)) {
-      ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(graphics, settings);
-    }
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
-    boolean errorFound = false;
-    for (EditorMessage message : messages) {
-      if (message != null) {
-        if (eq_ns4b7b_a0a0a0d0g(message.getStatus(), MessageStatus.ERROR)) {
-          errorFound = true;
-        }
-      }
-    }
-    if (errorFound && myErrorItem.getItem() == null) {
-      myErrorItem.setItem(true);
-    }
-    if (!(errorFound) && myErrorItem.getItem() != null) {
-      myErrorItem.setItem(null);
-    }
 
-  }
-
-
-
-  private static boolean eq_ns4b7b_a0a0a0d0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

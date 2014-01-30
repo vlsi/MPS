@@ -20,6 +20,7 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.jetpad.projectional.view.View;
 
 public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -87,6 +88,12 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
       portView.prop(JetpadUtils.SOURCE).set(getSNode());
 
       return portView;
+    }
+
+
+
+    public Mapper<SNode, View> createDecorationMapper() {
+      return null;
     }
   }
 }

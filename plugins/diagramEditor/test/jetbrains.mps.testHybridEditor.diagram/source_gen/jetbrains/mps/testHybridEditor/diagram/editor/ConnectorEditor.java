@@ -54,6 +54,12 @@ public class ConnectorEditor extends AbstractJetpadEditor {
 
       public void synchronize() {
       }
+
+
+
+      public Mapper<SNode, View> createDecorationMapper() {
+        return null;
+      }
     };
     cell.setBig(true);
 
