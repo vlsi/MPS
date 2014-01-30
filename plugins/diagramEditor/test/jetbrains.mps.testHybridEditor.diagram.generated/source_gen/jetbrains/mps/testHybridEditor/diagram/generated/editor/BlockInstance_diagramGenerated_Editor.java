@@ -17,12 +17,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -37,7 +37,7 @@ import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.projectional.view.GroupView;
@@ -77,7 +77,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private class BlockCellImpl_gju6mh_a extends BlockCell {
     private final PropertyMapperCell<String> myPropertyCell_gju6mh_a0a;
-    private final ReadableModelProperty<Boolean> myProperty_gju6mh_a1a;
+    private final ReadableModelProperty<String> myProperty_gju6mh_a1a;
     private final ReadableModelProperty<Integer> myXProperty;
     private final ReadableModelProperty<Integer> myYProperty;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
@@ -96,9 +96,9 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       };
       addEditorCell(myPropertyCell_gju6mh_a0a);
       myPropertyCell_gju6mh_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_gju6mh_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
-      myProperty_gju6mh_a1a = new ReadableModelProperty<Boolean>() {
-        protected Boolean getModelPropertyValue() {
-          return true;
+      myProperty_gju6mh_a1a = new ReadableModelProperty<String>() {
+        protected String getModelPropertyValue() {
+          return SPropertyOperations.getString(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "name");
         }
       };
       addModelProperty(myProperty_gju6mh_a1a);
@@ -214,14 +214,14 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             }
           }));
 
-          configuration.add(Synchronizers.forConstantRole(this, getSource().getNodeId().toString(), getTarget().contentView.children(), new MapperFactory<String, BlockContentView>() {
-            public Mapper<? extends String, ? extends BlockContentView> createMapper(String block) {
-              return new Mapper<String, BlockContentView>(block, new BlockContentView()) {
+          configuration.add(Synchronizers.forConstantRole(this, getSource().getNodeId().toString(), getTarget().contentView.children(), new MapperFactory<String, PolygonContentView>() {
+            public Mapper<? extends String, ? extends PolygonContentView> createMapper(String block) {
+              return new Mapper<String, PolygonContentView>(block, new PolygonContentView()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
                   myPropertyCell_gju6mh_a0a.registerSynchronizers(configuration, getTarget().text());
-                  configuration.add(Synchronizers.forProperty(myProperty_gju6mh_a1a, getTarget().isClicked));
+                  configuration.add(Synchronizers.forProperty(myProperty_gju6mh_a1a, getTarget().metaText()));
                 }
               };
             }
