@@ -62,7 +62,7 @@ public class SConceptNotationSelector_Constraints extends BaseConstraintsDescrip
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               // todo: ? 
-              Iterable<SNode> visibleNotations = new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.core.notation.structure.SNotation").getAvailableElements(null);
+              Iterable<SNode> visibleNotations = new ModelPlusImportedScope(_context.getModel(), false, "jetbrains.mps.core.notation.structure.SNotation").getAvailableElements(null);
               return new NamedElementsScope(Sequence.fromIterable(visibleNotations).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode it) {
                   return SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.core.notation.structure.SNotation"), "context", true), "jetbrains.mps.core.notation.structure.SNotationConceptContext"), "element", false);

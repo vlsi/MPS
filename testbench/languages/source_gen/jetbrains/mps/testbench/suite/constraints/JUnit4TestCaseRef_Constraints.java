@@ -12,21 +12,17 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,29 +50,24 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            IScope ms = ModuleSuite_Behavior.call_scope_1280144168199518341(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
-            return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.CLASS, (ms != null ? ms : operationContext.getScope())) {
-              @NotNull
-              @Override
-              public List<SNode> getClassifiers() {
-                final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_qd3c0x_a0a0a0a0a1a0a(), "annotation", false);
-                List<SNode> res = super.getClassifiers();
-                for (Iterator<SNode> it = ListSequence.fromList(res).iterator(); it.hasNext();) {
-                  if (!(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(it.next())).translate(new ITranslator2<SNode, SNode>() {
-                    public Iterable<SNode> translate(SNode m) {
-                      return SLinkOperations.getTargets(m, "annotation", true);
-                    }
-                  }).any(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode ann) {
-                      return SLinkOperations.getTarget(ann, "annotation", false) == testAnn;
-                    }
-                  }))) {
-                    it.remove();
+            SNode module = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(module)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel it) {
+                return ListSequence.fromList(SModelOperations.getRoots(((SModel) it), "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(it)).translate(new ITranslator2<SNode, SNode>() {
+                      public Iterable<SNode> translate(SNode m) {
+                        return SLinkOperations.getTargets(m, "annotation", true);
+                      }
+                    }).any(new IWhereFilter<SNode>() {
+                      public boolean accept(SNode ann) {
+                        return SLinkOperations.getTarget(ann, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_qd3c0x_a0a0a0a0a0a0a0a0a0b0a0(), "annotation", false);
+                      }
+                    });
                   }
-                }
-                return res;
+                });
               }
-            };
+            });
           }
 
           @Override
@@ -89,7 +80,7 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNode _quotation_createNode_qd3c0x_a0a0a0a0a1a0a() {
+  private static SNode _quotation_createNode_qd3c0x_a0a0a0a0a0a0a0a0a0b0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);

@@ -34,17 +34,19 @@ public class ModuleSuite_Behavior {
   }
 
   public static Iterable<SModel> call_models_1280144168199531863(SNode thisNode) {
+    SModule m = ModuleSuite_Behavior.call_module_8756160028287537335(thisNode);
+    if (m == null) {
+      return null;
+    }
+    return m.getModels();
+  }
+
+  public static SModule call_module_8756160028287537335(SNode thisNode) {
     SModuleReference moduleReference = BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(thisNode, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
     if (moduleReference == null) {
       return null;
     }
-
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    if (module == null) {
-      return null;
-    }
-
-    return module.getModels();
+    return moduleReference.resolve(MPSModuleRepository.getInstance());
   }
 
   public static Iterable<SNode> call_getNotMutedTests_8605005254686521789(SNode thisNode) {

@@ -6,12 +6,12 @@ import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.AbstractModule;
 
 public class ClassifiersScope extends FilteringScope {
   private boolean myInlcudeAncestors;
@@ -19,7 +19,7 @@ public class ClassifiersScope extends FilteringScope {
   private SModel myModel;
 
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
-    super(new ModelPlusImportedScope(model, false, ((AbstractModule) model.getModule()).getScope(), conceptFqName));
+    super(new ModelPlusImportedScope(model, false, conceptFqName));
     myModel = model;
     myInlcudeAncestors = includeAncestors;
     myClassifier = clas;

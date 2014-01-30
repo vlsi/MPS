@@ -565,7 +565,7 @@
     <nodeInfo nodeId="5610619299013068362" fileName="BuildLayout_ImportContent_Constraints.java" startLine="66" startPosition="63" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299013068427" fileName="BuildLayout_ImportContent_Constraints.java" startLine="72" startPosition="13" endLine="73" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5610619299013225669" fileName="BuildLayout_ImportContent_Constraints.java" startLine="77" startPosition="57" endLine="78" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299013214135" fileName="BuildLayout_ImportContent_Constraints.java" startLine="81" startPosition="15" endLine="82" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299013214135" fileName="BuildLayout_ImportContent_Constraints.java" startLine="81" startPosition="15" endLine="82" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299013068362" fileName="BuildLayout_ImportContent_Constraints.java" startLine="87" startPosition="7" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299013068362" fileName="BuildLayout_ImportContent_Constraints.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_cl5pbm_a0a2a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="5610619299013068362" fileName="BuildLayout_ImportContent_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_ImportContent_Constraints#()V" />
@@ -603,7 +603,7 @@
       <varInfo nodeId="5610619299013225661" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5610619299013068437" fileName="BuildLayout_ImportContent_Constraints.java" startLine="74" startPosition="45" endLine="80" endPosition="18" />
-    <scopeInfo nodeId="5610619299013068426" fileName="BuildLayout_ImportContent_Constraints.java" startLine="72" startPosition="13" endLine="82" endPosition="155">
+    <scopeInfo nodeId="5610619299013068426" fileName="BuildLayout_ImportContent_Constraints.java" startLine="72" startPosition="13" endLine="82" endPosition="126">
       <varInfo nodeId="5610619299013068428" varName="contextProject" />
     </scopeInfo>
     <scopeInfo nodeId="5610619299013068365" fileName="BuildLayout_ImportContent_Constraints.java" startLine="50" startPosition="128" endLine="62" endPosition="80">
@@ -644,7 +644,7 @@
     <nodeInfo nodeId="5610619299014309454" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="66" startPosition="63" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014309458" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="72" startPosition="13" endLine="73" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5610619299014309469" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="74" startPosition="45" endLine="75" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014309475" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="76" startPosition="15" endLine="77" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014309475" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="76" startPosition="15" endLine="77" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014309454" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="82" startPosition="7" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014309454" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="86" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_u5rckp_a0a2a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="5610619299014309454" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildSource_JavaExternalJarRef_Constraints#()V" />
@@ -676,7 +676,7 @@
       <varInfo nodeId="5610619299014309500" varName="importedArtifactsScope" />
     </scopeInfo>
     <scopeInfo nodeId="5610619299014309454" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5610619299014309457" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="72" startPosition="13" endLine="77" endPosition="161">
+    <scopeInfo nodeId="5610619299014309457" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="72" startPosition="13" endLine="77" endPosition="132">
       <varInfo nodeId="5610619299014309459" varName="contextProject" />
     </scopeInfo>
     <scopeInfo nodeId="5610619299014309454" fileName="BuildSource_JavaExternalJarRef_Constraints.java" startLine="71" startPosition="122" endLine="78" endPosition="13" />
@@ -716,7 +716,7 @@
     <nodeInfo nodeId="5610619299014531655" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="66" startPosition="63" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014531659" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="72" startPosition="13" endLine="73" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5610619299014531670" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="74" startPosition="45" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014531676" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="76" startPosition="15" endLine="77" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5610619299014531676" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="76" startPosition="15" endLine="77" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014531655" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="82" startPosition="7" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014531655" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="86" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_aht4xu_a0a2a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="5610619299014531655" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildSource_JavaExternalJarFolderRef_Constraints#()V" />
@@ -748,7 +748,7 @@
       <varInfo nodeId="5610619299014531701" varName="importedArtifactsScope" />
     </scopeInfo>
     <scopeInfo nodeId="5610619299014531655" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5610619299014531658" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="72" startPosition="13" endLine="77" endPosition="163">
+    <scopeInfo nodeId="5610619299014531658" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="72" startPosition="13" endLine="77" endPosition="134">
       <varInfo nodeId="5610619299014531660" varName="contextProject" />
     </scopeInfo>
     <scopeInfo nodeId="5610619299014531655" fileName="BuildSource_JavaExternalJarFolderRef_Constraints.java" startLine="71" startPosition="122" endLine="78" endPosition="13" />

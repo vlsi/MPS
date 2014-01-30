@@ -164,7 +164,7 @@ public class AbstractConceptDeclaration_Behavior {
     return methods;
   }
 
-  public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode, IScope scope) {
+  public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(thisNode, false)) {
       SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");

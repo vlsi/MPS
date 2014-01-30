@@ -64,7 +64,7 @@ public class ClassCreator_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassConstructorsScope(_context.getContextNode(), operationContext.getScope());
+            return new VisibleClassConstructorsScope(_context.getContextNode());
           }
         };
       }

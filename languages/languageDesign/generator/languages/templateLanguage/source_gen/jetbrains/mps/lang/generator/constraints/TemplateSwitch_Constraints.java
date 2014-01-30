@@ -49,7 +49,7 @@ public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, operationContext.getScope(), "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
+            return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
               @Override
               public boolean isExcluded(SNode node) {
                 if (node == _context.getContextNode()) {

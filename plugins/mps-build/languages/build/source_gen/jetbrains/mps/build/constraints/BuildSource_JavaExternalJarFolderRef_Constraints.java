@@ -74,7 +74,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
               if ((contextProject != null)) {
                 return ScopeUtil.getVisibleJarFoldersScope(contextProject);
               }
-              return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+              return new ModelPlusImportedScope(_context.getModel(), false, "jetbrains.mps.build.structure.BuildSource_SingleFolder");
             }
           }
         };
