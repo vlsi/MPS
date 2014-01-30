@@ -18,7 +18,7 @@ public class CommandLineGenerator {
       javaExecutable = adaptPathForMsysGit(javaExecutable + ".exe");
     }
     String escapedLogPath = (PathManager.getLogPath() + File.separator + "mergedriver.log").replace("\\", "\\\\");
-    return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
+    return String.format("\"%s\" -ea -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
   }
 
   /*package*/ static String adaptPathForMsysGit(String path) {
