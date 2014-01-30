@@ -84,6 +84,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.EditorCell_URL;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
@@ -2735,6 +2736,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myNodePropertiesAccessedCleanlyToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
+  }
+
+  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeReference, String> pair) {
+    addCellDependentOnNodeProperty(((EditorCell) cell), pair);
   }
 
   public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
