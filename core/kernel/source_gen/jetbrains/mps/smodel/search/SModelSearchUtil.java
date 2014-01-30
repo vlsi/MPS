@@ -21,7 +21,7 @@ public class SModelSearchUtil {
   public SModelSearchUtil() {
   }
 
-  public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
+  public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly) {
     return new ModelAndImportedModelsScope(model, rootsOnly);
   }
 

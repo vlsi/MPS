@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.scope.ModelPlusImportedScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
@@ -122,7 +123,7 @@ public abstract class ReferenceDescriptor {
               }
             }
             // global search scope
-            return new jetbrains.mps.scope.DefaultScope(getModel(), getModuleScope(getModule()), NameUtil.nodeFQName(linkTarget));
+            return new ModelPlusImportedScope(getModel(), false, NameUtil.nodeFQName(linkTarget));
           } catch (Exception t) {
             LOG.error(t, getContextNode());
             return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
