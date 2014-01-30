@@ -49,7 +49,9 @@ public enum FileType {
     return mySuffix;
   }
 
+  @Nullable
   public static FileType get(@Nullable final String filetype, File file) {
+    // try to recognize by filetype 
     if (filetype != null) {
       FileType type = Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
         public boolean accept(FileType t) {
@@ -94,6 +96,11 @@ public enum FileType {
     } finally {
       FileUtil.closeFileSafe(is);
     }
+    // return null if no XML root was found by parser 
+    if (handler.rootName == null) {
+      return null;
+    }
+
     FileType res = Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
       public boolean accept(FileType t) {
         return t.myXmlRoot.equals(handler.rootName);
