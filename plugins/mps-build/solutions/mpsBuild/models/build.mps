@@ -26645,7 +26645,7 @@
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_IdeaPlugin" typeId="kdzh.6592112598314498932" id="2405506926871158422" nodeInfo="ng">
-      <property name="id" nameId="kdzh.6592112598314498927" value="jetbrains.mps.jetpad" />
+      <property name="id" nameId="kdzh.6592112598314498927" value="jetbrains.jetpad" />
       <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="7679680630084911704" nodeInfo="ng">
         <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="2405506926871158270" resolveInfo="jetpad" />
       </node>
