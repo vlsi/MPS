@@ -135,7 +135,10 @@ public class LanguageErrorsComponent {
   }
 
   private void invalidate(SNode errorNode) {
-    SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
+    // avoid searching for _already_removed_ node later in check() 
+    if (SNodeOperations.getModel(errorNode) != null) {
+      SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
+    }
     MapSequence.fromMap(myNodesToErrors).removeKey(errorNode);
     Set<SNode> additionals = MapSequence.fromMap(myNodesToDependecies).removeKey(errorNode);
     if (additionals != null) {
@@ -184,6 +187,8 @@ public class LanguageErrorsComponent {
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>(1);
     }
+    // traversed the whole root, should have been removed all invalid nodes 
+    SetSequence.fromSet(myInvalidNodes).clear();
     myCheckedRoot = true;
     return true;
   }
