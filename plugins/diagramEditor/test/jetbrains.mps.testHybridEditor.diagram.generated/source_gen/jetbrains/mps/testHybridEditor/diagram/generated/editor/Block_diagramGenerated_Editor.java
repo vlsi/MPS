@@ -30,6 +30,7 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.projectional.view.GroupView;
@@ -196,35 +197,38 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
-          configuration.add(Synchronizers.forConstantRole(this, new Object(), getDiagramCell().getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Object, View>() {
-            public Mapper<? extends Object, ? extends View> createMapper(Object source) {
-              final ReadableProperty<Rectangle> bounds = getTarget().rect.bounds();
-              return new Mapper<Object, View>(source, new GroupView()) {
-                @Override
-                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                  super.registerSynchronizers(configuration);
-                  configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getTarget().children(), new MapperFactory<Boolean, View>() {
-                    public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
-                      PolyLineView errorView = createErrorView(bounds.get());
-                      return new Mapper<Boolean, PolyLineView>(source, errorView) {
-                        @Override
-                        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                          super.registerSynchronizers(configuration);
-                          configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-                            public void set(Rectangle bounds) {
-                              getTarget().points.clear();
-                              getTarget().points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y)));
-                              getTarget().invalidate();
-                            }
-                          }));
-                        }
-                      };
-                    }
-                  }));
-                }
-              };
-            }
-          }));
+          DiagramCell diagramCell = getDiagramCell();
+          if (diagramCell != null) {
+            configuration.add(Synchronizers.forConstantRole(this, new Object(), diagramCell.getRootMapper().getTarget().decorationRoot().children(), new MapperFactory<Object, View>() {
+              public Mapper<? extends Object, ? extends View> createMapper(Object source) {
+                final ReadableProperty<Rectangle> bounds = getTarget().rect.bounds();
+                return new Mapper<Object, View>(source, new GroupView()) {
+                  @Override
+                  protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                    super.registerSynchronizers(configuration);
+                    configuration.add(Synchronizers.forObservableRole(this, myErrorItem, getTarget().children(), new MapperFactory<Boolean, View>() {
+                      public Mapper<? extends Boolean, ? extends View> createMapper(Boolean source) {
+                        PolyLineView errorView = createErrorView(bounds.get());
+                        return new Mapper<Boolean, PolyLineView>(source, errorView) {
+                          @Override
+                          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                            super.registerSynchronizers(configuration);
+                            configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+                              public void set(Rectangle bounds) {
+                                getTarget().points.clear();
+                                getTarget().points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y)));
+                                getTarget().invalidate();
+                              }
+                            }));
+                          }
+                        };
+                      }
+                    }));
+                  }
+                };
+              }
+            }));
+          }
           configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
             public void set(Rectangle rect) {
               myXValueProperty = rect.origin.x;

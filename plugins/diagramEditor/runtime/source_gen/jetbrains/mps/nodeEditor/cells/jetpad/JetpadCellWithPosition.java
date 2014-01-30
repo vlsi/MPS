@@ -19,14 +19,22 @@ public abstract class JetpadCellWithPosition extends AbstractJetpadCell {
 
   @Override
   public int getX() {
-    return getDiagramCell().getX() + myXValueProperty;
+    DiagramCell diagramCell = getDiagramCell();
+    if (diagramCell == null) {
+      return myX;
+    }
+    return diagramCell.getX() + myXValueProperty;
   }
 
 
 
   @Override
   public int getY() {
-    return getDiagramCell().getY() + myYValueProperty;
+    DiagramCell diagramCell = getDiagramCell();
+    if (diagramCell == null) {
+      return myY;
+    }
+    return diagramCell.getY() + myYValueProperty;
   }
 
 
