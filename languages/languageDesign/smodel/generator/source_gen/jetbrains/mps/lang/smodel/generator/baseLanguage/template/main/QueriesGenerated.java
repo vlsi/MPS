@@ -1719,6 +1719,14 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation")).isNotEmpty();
   }
 
+  public static boolean mappingConfiguration_Condition_4887314812989233620(final TemplateQueryContext _context) {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.SEnumOperation")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation")).isNotEmpty();
+  }
+
+  public static boolean mappingConfiguration_Condition_4887314812989200094(final TemplateQueryContext _context) {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.SEnumMemberType")).isNotEmpty();
+  }
+
   public static boolean mappingConfiguration_Condition_3624172675691267240(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect")).isNotEmpty();
   }
@@ -1733,6 +1741,10 @@ public class QueriesGenerated {
 
   public static boolean mappingConfiguration_Condition_3624172675691123852(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall")).isNotEmpty();
+  }
+
+  public static boolean mappingConfiguration_Condition_4887314812989114152(final TemplateQueryContext _context) {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement")).isNotEmpty();
   }
 
   public static boolean mappingConfiguration_Condition_3624172675690776407(final TemplateQueryContext _context) {
