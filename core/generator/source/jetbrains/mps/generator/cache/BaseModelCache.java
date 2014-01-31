@@ -52,7 +52,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   public abstract String getCacheFileName();
 
   @Nullable
-  protected abstract IFile getCacheFile(SModel modelDescriptor);
+  public abstract IFile getCacheFile(SModel modelDescriptor);
 
   protected BaseModelCache(SModelRepository modelRepository) {
     myModelRepository = modelRepository;

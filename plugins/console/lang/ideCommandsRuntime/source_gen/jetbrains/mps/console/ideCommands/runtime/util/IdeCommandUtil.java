@@ -21,6 +21,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -98,6 +101,45 @@ public class IdeCommandUtil {
       }
     });
     new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
+  }
+
+
+
+  public static void clean(Iterable<SModel> models_, Iterable<? extends Iterable<SModel>> models__, Iterable<SModule> modules_, Iterable<? extends Iterable<SModule>> modules__) {
+    Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
+      public Iterable<SModel> translate(Iterable<SModel> it) {
+        return it;
+      }
+    }));
+    Iterable<SModule> modules = Sequence.fromIterable(modules_).concat(Sequence.fromIterable(modules__).translate(new ITranslator2<Iterable<SModule>, SModule>() {
+      public Iterable<SModule> translate(Iterable<SModule> it) {
+        return it;
+      }
+    }));
+    final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
+    if (Sequence.fromIterable(models_).isEmpty() && Sequence.fromIterable(models__).isEmpty() && Sequence.fromIterable(modules_).isEmpty() && Sequence.fromIterable(modules__).isEmpty()) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          modelsToClean.value = SModelRepository.getInstance().getModelDescriptors();
+        }
+      });
+    } else {
+      modelsToClean.value = Sequence.fromIterable(models).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
+          return it.getModels();
+        }
+      })).toListSequence();
+    }
+    ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return SNodeOperations.isGeneratable(it);
+      }
+    }).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        IFile generatedFile = GenerationDependenciesCache.getInstance().getCacheFile(it);
+        generatedFile.delete();
+      }
+    });
   }
 
 

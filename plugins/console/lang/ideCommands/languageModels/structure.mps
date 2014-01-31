@@ -270,5 +270,17 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="withDependencies" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544565" resolveInfo="QueryParameter" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2840424593938220297" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#clean" />
+    <property name="name" nameId="tpck.1169194664001" value="Clean" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544317" resolveInfo="QueryExpression" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2840424593938228788" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="argument" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
 </model>
 

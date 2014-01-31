@@ -3,8 +3,9 @@
   <unitInfo fileName="ActionCallDeclaredParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter_BehaviorDescriptor" />
   <unitInfo fileName="ActionCallGlobalParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter_BehaviorDescriptor" />
   <unitInfo fileName="ActionCallParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CallActionExpression_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
+  <unitInfo fileName="Clean_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Clean_BehaviorDescriptor" />
   <unitInfo fileName="ClickableGenerator_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_BehaviorDescriptor" />
   <unitInfo fileName="GlobalStatisticTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
   <unitInfo fileName="INodeSetReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_BehaviorDescriptor" />
@@ -128,6 +129,32 @@
       <varInfo nodeId="2087237500458473183" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_Behavior" />
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593938231406">
+    <nodeInfo nodeId="2840424593938232579" fileName="Clean_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2840424593938254634" fileName="Clean_Behavior.java" startLine="16" startPosition="114" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2840424593938232596" fileName="Clean_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="2840424593938231559" fileName="Clean_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="2840424593938232578" fileName="Clean_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="2840424593938232585" fileName="Clean_Behavior.java" startLine="16" startPosition="114" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="2840424593938232595" fileName="Clean_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="37" />
+    <scopeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="2840424593938231406" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="2840424593938231406" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="2840424593938231406" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="2840424593938231406" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Clean_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/3894227536041893272">
     <nodeInfo nodeId="3894227536043377005" fileName="ClickableGenerator_Behavior.java" startLine="64" startPosition="27" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

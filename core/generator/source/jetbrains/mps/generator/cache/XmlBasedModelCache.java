@@ -102,7 +102,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
 
   @Override
   @Nullable
-  protected IFile getCacheFile(SModel modelDescriptor) {
+  public IFile getCacheFile(SModel modelDescriptor) {
     SModule m = modelDescriptor.getModule();
     IFile cachesModuleDir = getCachesDirInternal(m, SModuleOperations.getOutputPathFor(modelDescriptor));
     if (cachesModuleDir == null) return null;

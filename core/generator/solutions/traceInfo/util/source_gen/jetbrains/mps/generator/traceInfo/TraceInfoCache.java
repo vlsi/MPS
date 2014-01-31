@@ -167,7 +167,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   @Nullable
-  protected IFile getCacheFile(@NotNull SModel modelDescriptor) {
+  public IFile getCacheFile(@NotNull SModel modelDescriptor) {
     URL cacheUrl = getCacheUrl(modelDescriptor, modelDescriptor.getModule());
     if (cacheUrl == null) {
       return null;
