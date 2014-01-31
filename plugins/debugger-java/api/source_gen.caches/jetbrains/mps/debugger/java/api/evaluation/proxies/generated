@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-cb6rcxojypjcxyc1g9l65nm6ohxvtim">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-6598y2a2o1k8vz2t30av4gcxx37chgv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <common hash="-6598y2a2o1k8vz2t30av4gcxx37chgv" dependsOnNodes="true" />
   <source id="4727801710070560812" name="IValueProxy" hash="-3tbmz6fjqacikh32ep7553va21hoq8u">
     <file name="IValueProxy.java" />
   </source>

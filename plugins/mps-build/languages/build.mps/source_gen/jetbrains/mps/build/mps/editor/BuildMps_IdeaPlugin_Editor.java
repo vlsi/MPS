@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -39,7 +38,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_dvtb4y_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dvtb4y_b0(editorContext, node));
-    if (renderingCondition_dvtb4y_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_dvtb4y_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_dvtb4y_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_dvtb4y_d0(editorContext, node));
@@ -87,7 +86,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_dvtb4y_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_dvtb4y_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "pluginXml", true) != null);
   }
 

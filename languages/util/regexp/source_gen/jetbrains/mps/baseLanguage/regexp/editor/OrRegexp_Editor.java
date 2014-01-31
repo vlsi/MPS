@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -27,13 +26,13 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_36u1b4_a");
     editorCell.setBig(true);
-    if (renderingCondition_36u1b4_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_36u1b4_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_36u1b4_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_36u1b4_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_36u1b4_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_36u1b4_d0(editorContext, node));
-    if (renderingCondition_36u1b4_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_36u1b4_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_36u1b4_e0(editorContext, node));
     }
     return editorCell;
@@ -49,7 +48,7 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext) {
     return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 
@@ -114,7 +113,7 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext) {
     return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 }

@@ -18,7 +18,6 @@ package jetbrains.mps.ide.ui.dialogs.properties.renders;
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.SimpleColoredRenderer;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import javax.swing.JTable;
@@ -29,9 +28,9 @@ public class DependencyTableCellRender extends SimpleColoredRenderer implements 
   private ModuleTableCellRender myModuleTableCellRender = null;
   private ModelTableCellRender myModelTableCellRender = null;
 
-  public DependencyTableCellRender(IScope scope) {
+  public DependencyTableCellRender() {
     myModuleTableCellRender = getModuleTableCellRender();
-    myModelTableCellRender = getModelTableCellRender(scope);
+    myModelTableCellRender = getModelTableCellRender();
   }
 
   @Override
@@ -47,20 +46,11 @@ public class DependencyTableCellRender extends SimpleColoredRenderer implements 
     return render.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
   }
 
-  protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-    if(value instanceof SModuleReference) {
-      myModuleTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
-    }
-    else if(value instanceof SModelReference) {
-      myModelTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
-    }
-  }
-
   protected ModuleTableCellRender getModuleTableCellRender() {
     return new ModuleTableCellRender();
   }
 
-  protected ModelTableCellRender getModelTableCellRender(IScope scope) {
-    return new ModelTableCellRender(scope);
+  protected ModelTableCellRender getModelTableCellRender() {
+    return new ModelTableCellRender();
   }
 }

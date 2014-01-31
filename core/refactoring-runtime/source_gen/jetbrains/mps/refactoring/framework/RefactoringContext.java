@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.StructureModificationData;
@@ -64,7 +64,7 @@ public class RefactoringContext {
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
-  private IScope myCurrentScope;
+  private SearchScope myCurrentScope;
   private final Project myProject;
   private SModule mySelectedModule;
   private List<SModel> mySelectedModels;
@@ -542,7 +542,7 @@ public class RefactoringContext {
     mySelectedModules = modules;
   }
 
-  public void setCurrentScope(IScope currentScope) {
+  public void setCurrentScope(SearchScope currentScope) {
     myCurrentScope = currentScope;
   }
 
@@ -554,7 +554,7 @@ public class RefactoringContext {
     return myProject;
   }
 
-  public IScope getCurrentScope() {
+  public SearchScope getCurrentScope() {
     return myCurrentScope;
   }
 

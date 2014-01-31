@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -49,7 +48,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_u66lwb_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_u66lwb_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u66lwb_e0(editorContext, node));
-    if (renderingCondition_u66lwb_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_u66lwb_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_u66lwb_f0(editorContext, node));
     }
     return editorCell;
@@ -188,7 +187,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_u66lwb_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_u66lwb_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
   }
 

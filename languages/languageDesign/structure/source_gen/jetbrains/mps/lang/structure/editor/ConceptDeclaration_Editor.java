@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -81,10 +80,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_ueqr71_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ueqr71_a0a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ueqr71_a0a(editorContext, node));
     }
-    if (renderingCondition_ueqr71_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ueqr71_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ueqr71_b0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ueqr71_c0a(editorContext, node));
@@ -105,7 +104,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a0a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "abstract") == true;
   }
 
@@ -120,7 +119,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a1a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "final") == true;
   }
 
@@ -392,7 +391,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ueqr71_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ueqr71_b1c0(editorContext, node));
-    if (renderingCondition_ueqr71_a2b2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ueqr71_a2b2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ueqr71_c1c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ueqr71_d1c0(editorContext, node));
@@ -453,7 +452,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a2b2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a2b2a(SNode node, EditorContext editorContext) {
     // todo: temporary disabled, see MPS-18470 
     return false;
   }
@@ -703,7 +702,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public boolean filter(SNode childNode, IScope scope) {
+    public boolean filter(SNode childNode) {
       return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
     }
   }
@@ -712,7 +711,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public ConceptDeclaration_generic_cellMenu_ueqr71_a0m1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -797,7 +796,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public boolean filter(SNode childNode, IScope scope) {
+    public boolean filter(SNode childNode) {
       return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
     }
   }
@@ -806,7 +805,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public ConceptDeclaration_generic_cellMenu_ueqr71_a0p1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -869,7 +868,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_ueqr71_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ConceptDeclaration_Editor.renderingCondition_ueqr71_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ConceptDeclaration_Editor.renderingCondition_ueqr71_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createImage_ueqr71_a1a(editorContext, node);
@@ -879,7 +878,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a1a(SNode node, EditorContext editorContext) {
     Language l = SModelUtil.getDeclaringLanguage(node);
     if (l == null) {
       return false;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-610j9hrmghkwqv2mdm15elld8uvt04a">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
   <dep model="r:c6505a4e-e114-47ba-aea6-f577e907f241(jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main@generator)" hash="61e8iljm4p3ka6naoyc0ixit1n18u52" />
-  <common hash="-8oblhfhrdnu0cie5e3myuthjmztvhfk">
+  <common hash="-8oblhfhrdnu0cie5e3myuthjmztvhfk" dependsOnNodes="true">
     <dep root="1228679850889" />
     <dep root="1228679850893" />
     <dep root="1228679864085" />

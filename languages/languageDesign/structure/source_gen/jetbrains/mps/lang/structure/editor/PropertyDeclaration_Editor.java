@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.smodel.IScope;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -47,7 +46,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTransactionalProperty_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lnae77_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_lnae77_c0(editorContext, node));
-    if (renderingCondition_lnae77_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lnae77_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_lnae77_d0(editorContext, node));
     }
     return editorCell;
@@ -172,7 +171,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lnae77_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lnae77_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
 

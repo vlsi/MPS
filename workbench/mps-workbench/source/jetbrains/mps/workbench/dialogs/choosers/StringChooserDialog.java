@@ -23,13 +23,13 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.string.BaseStringItem;
 import jetbrains.mps.workbench.choose.string.BaseStringModel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import javax.swing.JComponent;
 import java.awt.Dialog;
@@ -80,7 +80,7 @@ class StringChooserDialog extends BaseDialog {
       }
 
       @Override
-      public String[] find(IScope scope) {
+      public String[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 

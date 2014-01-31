@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -50,7 +49,7 @@ public class MtlForeachMacro_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_xhx8xu_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = MtlForeachMacro_Editor.renderingCondition_xhx8xu_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = MtlForeachMacro_Editor.renderingCondition_xhx8xu_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_xhx8xu_a0a(editorContext, node);
@@ -60,7 +59,7 @@ public class MtlForeachMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xhx8xu_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xhx8xu_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "multiline");
   }
 

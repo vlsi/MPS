@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -42,7 +41,7 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_hdw7mg_a0(editorContext, node));
-    if (renderingCondition_hdw7mg_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_hdw7mg_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_hdw7mg_b0(editorContext, node));
     }
     return editorCell;
@@ -116,7 +115,7 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_hdw7mg_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_hdw7mg_a1a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
   }
 }

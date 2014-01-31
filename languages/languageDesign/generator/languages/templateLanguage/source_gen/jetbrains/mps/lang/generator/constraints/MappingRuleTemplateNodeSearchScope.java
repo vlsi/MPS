@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.constraints;
 
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -18,12 +17,10 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 
 public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
   private SModel myModel;
-  private IScope myScope;
   private List<SNode> myOwnNodes;
 
-  public MappingRuleTemplateNodeSearchScope(SModel model, IScope scope) {
+  public MappingRuleTemplateNodeSearchScope(SModel model) {
     myModel = model;
-    myScope = scope;
   }
 
   @NotNull
@@ -47,7 +44,7 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
 
   private void ensureInitialized() {
     if (myOwnNodes == null) {
-      ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(myModel, true, myScope);
+      ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(myModel, true);
       Condition<SNode> condition = new Condition<SNode>() {
         @Override
         public boolean met(SNode object) {

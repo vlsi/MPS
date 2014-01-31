@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -45,13 +44,13 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ths2vx_a");
     editorCell.setBig(true);
-    if (renderingCondition_ths2vx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ths2vx_a0(editorContext, node));
     }
-    if (renderingCondition_ths2vx_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ths2vx_b0(editorContext, node));
     }
-    if (renderingCondition_ths2vx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ths2vx_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ths2vx_d0(editorContext, node));
@@ -64,7 +63,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ths2vx_k0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ths2vx_l0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ths2vx_m0(editorContext, node));
-    if (renderingCondition_ths2vx_a31a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a31a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ths2vx_n0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ths2vx_o0(editorContext, node));
@@ -85,7 +84,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "root");
   }
 
@@ -99,7 +98,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "leaf");
   }
 
@@ -113,7 +112,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
   }
 
@@ -361,7 +360,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a31a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a31a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "isAbstract")) || (SLinkOperations.getTarget(node, "creator", true) != null);
   }
 

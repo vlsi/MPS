@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -102,7 +101,7 @@ public class ReplacementRuleReference_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_lotkev_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lotkev_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_lotkev_a0(editorContext, node));
     }
     return editorCell;
@@ -126,7 +125,7 @@ public class ReplacementRuleReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lotkev_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lotkev_a0a(SNode node, EditorContext editorContext) {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
 }

@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -67,7 +66,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_arlg9k_a1a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_arlg9k_a1a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -140,7 +139,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     }
   }
 
-  private static boolean renderingCondition_arlg9k_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_arlg9k_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
   }
 
@@ -153,14 +152,14 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_arlg9k_a2a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_arlg9k_a2a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_arlg9k_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_arlg9k_a2a(SNode node, EditorContext editorContext) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }

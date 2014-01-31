@@ -4,11 +4,10 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 
 public abstract class AbstractConstraintsChecker {
   public AbstractConstraintsChecker() {
   }
 
-  public abstract void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope);
+  public abstract void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext);
 }

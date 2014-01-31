@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalPropertyConstraintsDescriptor implements PropertyConstraintsDescriptor {
   private final String name;
@@ -40,18 +39,18 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
   }
 
   @Override
-  public Object getValue(SNode node, IScope scope) {
+  public Object getValue(SNode node) {
     return node.getProperty(name);
   }
 
   @Override
-  public void setValue(SNode node, String value, IScope scope) {
+  public void setValue(SNode node, String value) {
 //    throw new UnsupportedOperationException("Unsupported set value for " + container.getConcept().getId() + "." + getName() + " property");
     node.setProperty(name, value);
   }
 
   @Override
-  public boolean validateValue(SNode node, String value, IScope scope) {
+  public boolean validateValue(SNode node, String value) {
     return false;
   }
 

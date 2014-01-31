@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -40,10 +39,10 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_xk0l2m_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xk0l2m_a0(editorContext, node));
-    if (renderingCondition_xk0l2m_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xk0l2m_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xk0l2m_b0(editorContext, node));
     }
-    if (renderingCondition_xk0l2m_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xk0l2m_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xk0l2m_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_xk0l2m_d0(editorContext, node));
@@ -71,7 +70,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xk0l2m_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xk0l2m_a1a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -103,7 +102,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     public BreakStatement_generic_cellMenu_xk0l2m_a0a1a() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
           return new Iterable<String>() {
@@ -149,11 +148,11 @@ __switch__:
       }).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "label", parameterObject);
     }
 
@@ -172,7 +171,7 @@ __switch__:
     return editorCell;
   }
 
-  private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabelReference", true) != null);
   }
 

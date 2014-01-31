@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -61,13 +60,13 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_a");
     editorCell.setBig(true);
-    if (renderingCondition_2ojjgh_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ojjgh_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2ojjgh_a0(editorContext, node));
     }
-    if (renderingCondition_2ojjgh_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ojjgh_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2ojjgh_b0(editorContext, node));
     }
-    if (renderingCondition_2ojjgh_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ojjgh_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2ojjgh_c0(editorContext, node));
     }
     return editorCell;
@@ -85,7 +84,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ojjgh_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ojjgh_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
   }
 
@@ -209,7 +208,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ojjgh_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ojjgh_a1a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
   }
 
@@ -254,7 +253,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
@@ -466,7 +465,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, false);
       editorCell.getStyle().putAll(style);
-      if (renderingCondition_2ojjgh_a0a0c0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      if (renderingCondition_2ojjgh_a0a0c0a(node, editorContext)) {
         editorCell.addEditorCell(this.createComponent_2ojjgh_a0a2a0(editorContext, node));
       }
       return editorCell;
@@ -481,7 +480,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
+    private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext) {
       return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
     }
   }

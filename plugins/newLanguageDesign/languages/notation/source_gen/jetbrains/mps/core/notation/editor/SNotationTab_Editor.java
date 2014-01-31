@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.notation.behavior.SNotationPart_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -33,7 +32,7 @@ public class SNotationTab_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_i2cn6u_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SNotationTab_Editor.renderingCondition_i2cn6u_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SNotationTab_Editor.renderingCondition_i2cn6u_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createIndentCell_i2cn6u_a0a(editorContext, node);
@@ -43,7 +42,7 @@ public class SNotationTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_i2cn6u_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_i2cn6u_a0a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(node), "jetbrains.mps.core.notation.structure.SNotationNewLine") && SNotationPart_Behavior.call_inMultilineContext_7465902928068905821(node);
   }
 

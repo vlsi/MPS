@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -37,10 +36,10 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j22tlf_a");
     editorCell.setBig(true);
-    if (renderingCondition_j22tlf_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j22tlf_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_j22tlf_a0(editorContext, node));
     }
-    if (renderingCondition_j22tlf_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j22tlf_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_j22tlf_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_j22tlf_c0(editorContext, node));
@@ -66,7 +65,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_j22tlf_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j22tlf_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -114,7 +113,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_j22tlf_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j22tlf_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
 

@@ -44,7 +44,6 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.core.notation.behavior.SNotationParentheses_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_SNotationParentheses_5362811550739117351(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -121,7 +120,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final Tuples._2<String, NotationContext> item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode call = SModelOperations.createNewNode(model, null, "jetbrains.mps.core.notation.structure.SNotationCall");
                 SPropertyOperations.set(call, "id", (item)._0());
@@ -159,7 +158,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return createSNotationStyleColor_r28yhp_a0a0a0a(SEnumOperations.getEnumMemberValue((item)));
               }
@@ -184,7 +183,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return createSNotationStyleContent_r28yhp_a0a0a0b(SEnumOperations.getEnumMemberValue((item)));
               }
@@ -700,17 +699,17 @@ public class QueriesGenerated {
 
   private static SNode createSNotationStyleColor_r28yhp_a0a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationStyleColor", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationStyleColor", null, false);
     n1.setProperty("kind", (String) p0);
     return n1;
   }
 
   private static SNode createSNotationStyleContent_r28yhp_a0a0a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationStyleContent", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationStyleContent", null, false);
     {
       n1.setProperty("kind", (String) p0);
-      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationPart", null, GlobalScope.getInstance(), false);
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationPart", null, false);
       n1.addChild("content", n2);
     }
     return n1;

@@ -56,7 +56,6 @@ import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelsOnlyScope;
@@ -72,6 +71,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -178,10 +178,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       init();
     }
 
-    protected IScope getScope() {
-      return ((AbstractModule) myModelDescriptor.getModule()).getScope();
-    }
-
     protected boolean confirmRemove(final Object value) {
       if (value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference) value;
@@ -217,13 +213,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setModel(myImportedModels);
 
       importedModelsTable.setDefaultRenderer(SModelReference.class,
-          new ModelTableCellRender(getScope()) {
+          new ModelTableCellRender() {
             @Override
             protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
               if (!StateUtil.isAvailable(modelReference)) {
                 return DependencyCellState.NOT_AVALIABLE;
               }
-              if (!StateUtil.isInScope(myScope, modelReference)) {
+              if (!StateUtil.isInScope(((AbstractModule) myModelDescriptor.getModule()).getScope(), modelReference)) {
                 return DependencyCellState.NOT_IN_SCOPE;
               }
               if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
@@ -263,7 +259,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+          final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -386,7 +382,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected void findUsages(final Object value) {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+      final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -408,7 +404,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+          final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {

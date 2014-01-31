@@ -54,7 +54,7 @@ public class DefaultClassCreator_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(_context.getContextNode(), operationContext.getScope());
+            return ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(_context.getContextNode());
           }
         };
       }

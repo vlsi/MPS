@@ -51,7 +51,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -276,7 +275,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     protected abstract DependTableModel getDependTableModel();
     protected abstract TableCellEditor getTableCellEditor();
-    protected abstract IScope getScope();
 
     @Override
     public void init() {
@@ -398,7 +396,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected TableCellRenderer getTableCellRender() {
-      return new DependencyTableCellRender(getScope());
+      return new DependencyTableCellRender();
     }
 
     protected boolean confirmRemove(final Object value) {

@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -570,7 +569,7 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null || conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 || role == null || role.length() == 0) {
       return false;
     }
-    SNode expectedConcept = SModelUtil.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
+    SNode expectedConcept = SModelUtil.findConceptDeclaration(conceptOfParentFqName);
     if (expectedConcept == null) {
       return false;
     }
@@ -584,7 +583,7 @@ public class SNodeOperations {
   }
 
   public static SNode getConceptDeclaration(SNode node) {
-    return (node == null ? null : SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance()));
+    return (node == null ? null : SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()));
   }
 
   public static int getIndexInParent(SNode node) {

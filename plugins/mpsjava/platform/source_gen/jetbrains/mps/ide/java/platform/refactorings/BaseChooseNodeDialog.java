@@ -16,6 +16,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -63,9 +65,9 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     }
     SModel model = modelDescriptor;
     for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {
-      SModel importedModelDescriptor = myContext.getScope().getModelDescriptor(sm);
-      if (importedModelDescriptor != null) {
-        SetSequence.fromSet(myVisibleModels).addElement(importedModelDescriptor);
+      SModel m = sm.resolve(MPSModuleRepository.getInstance());
+      if (VisibilityUtil.isVisible(myContext.getModule(), m)) {
+        SetSequence.fromSet(myVisibleModels).addElement(m);
       }
     }
   }

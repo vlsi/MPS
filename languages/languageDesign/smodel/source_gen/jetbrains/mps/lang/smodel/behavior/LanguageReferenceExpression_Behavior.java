@@ -6,11 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ScopeOperations;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 
 public class LanguageReferenceExpression_Behavior {
@@ -18,9 +18,9 @@ public class LanguageReferenceExpression_Behavior {
   }
 
   @NotNull
-  public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
+  public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(ScopeOperations.getModules(scope, Language.class)));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(ScopeOperations.getModules(GlobalScope.getInstance(), Language.class)));
     return result;
   }
 }

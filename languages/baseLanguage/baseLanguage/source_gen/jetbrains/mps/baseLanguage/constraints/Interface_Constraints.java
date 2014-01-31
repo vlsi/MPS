@@ -39,7 +39,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
 
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return ClassifierScopes.getVisibleInterfacesScope(_context.getContextNode(), operationContext.getScope());
+        return ClassifierScopes.getVisibleInterfacesScope(_context.getContextNode());
       }
     };
   }

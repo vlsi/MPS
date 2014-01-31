@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class SConceptQuery_Behavior {
   public static void init(SNode thisNode) {
@@ -81,7 +80,7 @@ public class SConceptQuery_Behavior {
 
   private static SNode createMqlNodeType_m9cidb_a0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, false);
     n1.setReferenceTarget("concept", (SNode) p0);
     return n1;
   }

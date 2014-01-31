@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -36,7 +35,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_qhskw8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qhskw8_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qhskw8_c0(editorContext, node));
-    if (renderingCondition_qhskw8_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qhskw8_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_qhskw8_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_qhskw8_e0(editorContext, node));
@@ -97,7 +96,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qhskw8_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qhskw8_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger(node, "rows") > 0 || SPropertyOperations.getInteger(node, "columns") > 0;
   }
 

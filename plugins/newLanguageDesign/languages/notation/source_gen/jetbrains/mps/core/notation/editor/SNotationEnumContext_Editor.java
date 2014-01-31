@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
@@ -33,7 +32,7 @@ public class SNotationEnumContext_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1x48o9_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_1x48o9_a0(editorContext, node));
-    if (renderingCondition_1x48o9_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1x48o9_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1x48o9_b0(editorContext, node));
     }
     return editorCell;
@@ -111,7 +110,7 @@ public class SNotationEnumContext_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1x48o9_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1x48o9_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "id") != null;
   }
 

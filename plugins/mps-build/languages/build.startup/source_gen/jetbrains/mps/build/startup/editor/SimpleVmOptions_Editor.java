@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -28,7 +27,7 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6n3yp7_a");
     editorCell.setBig(true);
-    if (renderingCondition_6n3yp7_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6n3yp7_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_6n3yp7_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createProperty_6n3yp7_b0(editorContext, node));
@@ -42,7 +41,7 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6n3yp7_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6n3yp7_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "commented");
   }
 

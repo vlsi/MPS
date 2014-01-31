@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -39,10 +38,10 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_a");
     editorCell.setBig(true);
-    if (renderingCondition_q3zjs1_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q3zjs1_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_q3zjs1_a0(editorContext, node));
     }
-    if (renderingCondition_q3zjs1_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q3zjs1_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_q3zjs1_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_q3zjs1_c0(editorContext, node));
@@ -68,7 +67,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_q3zjs1_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q3zjs1_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -116,7 +115,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_q3zjs1_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q3zjs1_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
 

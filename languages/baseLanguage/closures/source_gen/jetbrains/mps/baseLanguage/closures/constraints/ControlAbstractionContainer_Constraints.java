@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ControlAbstractionContainer_Constraints extends BaseConstraintsDescriptor {
@@ -24,18 +24,18 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
 
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
+    return new BaseScopeProvider() {
       @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new VisibleClassifiersScope((_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode()), IClassifiersSearchScope.CLASS, operationContext.getScope());
+      public SNodeReference getSearchScopeValidatorNode() {
+        return breakingNode_vhsk47_a0a0a0a0a2;
       }
 
       @Override
-      public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_vhsk47_a0a1a0a0a2;
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        return ClassifierScopes.getVisibleClassifiersScope((_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode()), false);
       }
     };
   }
 
-  private static SNodePointer breakingNode_vhsk47_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "1229600983430");
+  private static SNodePointer breakingNode_vhsk47_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "8756160028285599728");
 }

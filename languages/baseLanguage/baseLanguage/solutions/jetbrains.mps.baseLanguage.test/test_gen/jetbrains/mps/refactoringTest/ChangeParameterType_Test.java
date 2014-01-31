@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 @MPSLaunch
 public class ChangeParameterType_Test extends BaseTransformationTest4 {
@@ -42,7 +41,7 @@ public class ChangeParameterType_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_iyo2tl_a0b0a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
       return quotedNode_1;
     }
   }

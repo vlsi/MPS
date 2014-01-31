@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_Behavior;
 
 public class RunConfigurationProducer_Constraints extends BaseConstraintsDescriptor {
@@ -26,7 +25,7 @@ public class RunConfigurationProducer_Constraints extends BaseConstraintsDescrip
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return RunConfigurationProducer_Behavior.call_getDisplayedName_4366236229294143331(node);
       }

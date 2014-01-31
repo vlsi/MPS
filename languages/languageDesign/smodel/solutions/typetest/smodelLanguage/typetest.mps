@@ -3094,7 +3094,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_GetAllSubConcepts" typeId="tp25.1181952871644" id="1207683814169" nodeInfo="nn">
               <node role="smodel" roleId="tp25.1182506816063" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1207684239964" nodeInfo="nn" />
-              <node role="scope" roleId="tp25.1182506966389" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1207684242950" nodeInfo="nn" />
             </node>
           </node>
         </node>
@@ -3105,7 +3104,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_GetAllSubConcepts" typeId="tp25.1181952871644" id="1207685603189" nodeInfo="nn">
               <node role="smodel" roleId="tp25.1182506816063" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1207686012996" nodeInfo="nn" />
-              <node role="scope" roleId="tp25.1182506966389" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1207686015778" nodeInfo="nn" />
             </node>
           </node>
         </node>
@@ -3240,9 +3238,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_GetAllSubConcepts" typeId="tp25.1181952871644" id="1207684164099" nodeInfo="nn">
               <node role="smodel" roleId="tp25.1182506816063" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1207685999416" nodeInfo="nn">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-              <node role="scope" roleId="tp25.1182506966389" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1207686001917" nodeInfo="nn">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
               </node>
             </node>

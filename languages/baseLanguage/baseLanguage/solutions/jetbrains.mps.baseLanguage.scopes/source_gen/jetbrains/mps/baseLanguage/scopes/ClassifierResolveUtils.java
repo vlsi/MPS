@@ -8,14 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -23,12 +22,13 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
@@ -39,7 +39,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ClassifierResolveUtils {
@@ -72,7 +71,8 @@ public class ClassifierResolveUtils {
       return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
     }
 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a8a2(((AbstractModule) check_8z6r2b_a0a0a0i0c(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    SModule module = check_8z6r2b_a0i0c(SNodeOperations.getModel(contextNode));
+    Iterable<SModule> visibleModules = new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
 
     // try to resolve as nested name in current scope 
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
@@ -215,20 +215,20 @@ public class ClassifierResolveUtils {
     });
   }
 
-  public static SNode resolveAndCache(final String refText, final SNode contextNode, final IScope moduleScope, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
+  public static SNode resolveAndCache(final String refText, final SNode contextNode, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
 
     SNode claz = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     Pair<SNode, String> key = new Pair(claz, refText);
     ResolveResult result = RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<ResolveResult>() {
       public ResolveResult invoke() {
-        return new ResolveResult(resolve(refText, contextNode, moduleScope, modelPlusImported, includeAncestors));
+        return new ResolveResult(resolve(refText, contextNode, modelPlusImported, includeAncestors));
       }
     });
 
     return SNodeOperations.cast(result.getResult(), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
-  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
+  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
     // The algorithm: 
     // - split refText into tokens A.B.C (separated by dot) 
     // - look for the first token A among the following classifiers and models, in this order: 
@@ -299,6 +299,8 @@ public class ClassifierResolveUtils {
       return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
 
     } else {
+      SearchScope moduleScope = ((AbstractModule) SNodeOperations.getModel(contextNode).getModule()).getScope();
+
       // walk through single-type imports 
       // TODO static imports are not handled yet 
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
@@ -311,13 +313,8 @@ public class ClassifierResolveUtils {
         }
 
         String fqName = SPropertyOperations.getString(imp, "tokens");
-        // was 
-        // <node> 
-        // <node> 
-        // <node> 
-        // <node> 
 
-        // needed to uses nonStubPriority here because: 
+        // needed to use nonStubPriority here because: 
         // during java import in idea plugin we can stumble upon a psi stub model (the one being imported 
         // and about to be deleted) before the newly created model (which is the right one) 
 
@@ -350,8 +347,6 @@ public class ClassifierResolveUtils {
         String pkgName = SPropertyOperations.getString(imp, "tokens");
         ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, pkgName)));
       }
-      // adding our MPS module scope after java imports as backup 
-      // <node> 
 
 
       // go through models which correspond to java imported packages 
@@ -640,14 +635,7 @@ public class ClassifierResolveUtils {
     return false;
   }
 
-  private static IScope check_8z6r2b_a0a8a2(AbstractModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getScope();
-    }
-    return null;
-  }
-
-  private static SModule check_8z6r2b_a0a0a0i0c(SModel checkedDotOperand) {
+  private static SModule check_8z6r2b_a0i0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

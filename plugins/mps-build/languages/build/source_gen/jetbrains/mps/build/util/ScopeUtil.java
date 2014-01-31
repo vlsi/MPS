@@ -20,7 +20,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -84,7 +83,7 @@ public class ScopeUtil {
   public static Scope getVisibleArtifactsScope(SNode project, boolean includeLayoutRoots) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
-      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, ((AbstractModule) transientModule).getScope(), "jetbrains.mps.build.structure.BuildLayout_Node");
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, "jetbrains.mps.build.structure.BuildLayout_Node");
     }
     return new ScopeUtil.VisibleArtifactsScope(VisibleArtifacts.createFor(project), includeLayoutRoots);
   }
@@ -92,7 +91,7 @@ public class ScopeUtil {
   public static Scope getVisibleJarsScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
-      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, ((AbstractModule) transientModule).getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, "jetbrains.mps.build.structure.BuildSource_SingleFile");
     }
     return new ScopeUtil.VisibleJarsScope(VisibleArtifacts.createFor(project));
   }
@@ -100,7 +99,7 @@ public class ScopeUtil {
   public static Scope getVisibleJarFoldersScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
-      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, ((AbstractModule) transientModule).getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, "jetbrains.mps.build.structure.BuildSource_SingleFolder");
     }
     return new ScopeUtil.VisibleJarFoldersScope(VisibleArtifacts.createFor(project));
   }

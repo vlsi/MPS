@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
@@ -47,7 +46,7 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }
@@ -59,7 +58,7 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "nestedName";
         return SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "nestedName");
       }
@@ -71,7 +70,7 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "resolveInfo";
         return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.IResolveInfo"), "resolveInfo");
       }

@@ -28,7 +28,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -51,6 +50,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
@@ -73,7 +73,7 @@ public class ImportHelper {
       }
 
       @Override
-      public SModelReference[] find(IScope scope) {
+      public SModelReference[] find(SearchScope scope) {
         Condition<SModel> cond = new Condition<SModel>() {
           @Override
           public boolean met(SModel modelDescriptor) {
@@ -83,7 +83,7 @@ public class ImportHelper {
             return rightStereotype && hasModule;
           }
         };
-        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
         List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
         for (SModel md : iter) {
           filteredModelRefs.add(md.getReference());
@@ -121,10 +121,11 @@ public class ImportHelper {
       }
 
       @Override
-      public SModuleReference[] find(IScope scope) {
+      public SModuleReference[] find(SearchScope scope) {
         ArrayList<SModuleReference> res = new ArrayList<SModuleReference>();
-        for (Language l : scope.getVisibleLanguages()) {
-          res.add(l.getModuleReference());
+        for (SModule m : scope.getModules()) {
+          if (!(m instanceof Language)) continue;
+          res.add(m.getModuleReference());
         }
         return res.toArray(new SModuleReference[res.size()]);
       }

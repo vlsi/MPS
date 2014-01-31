@@ -26,7 +26,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -59,16 +58,16 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_a");
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_jky4mt_a0(editorContext, node));
-    if (renderingCondition_jky4mt_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jky4mt_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_jky4mt_b0(editorContext, node));
     }
-    if (renderingCondition_jky4mt_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jky4mt_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_jky4mt_c0(editorContext, node));
     }
-    if (renderingCondition_jky4mt_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jky4mt_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_jky4mt_d0(editorContext, node));
     }
-    if (renderingCondition_jky4mt_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jky4mt_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_jky4mt_e0(editorContext, node));
     }
     return editorCell;
@@ -119,7 +118,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
 
-  private static boolean renderingCondition_jky4mt_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jky4mt_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "elementType", true) != null);
   }
 
@@ -181,7 +180,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
 
-  private static boolean renderingCondition_jky4mt_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jky4mt_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isNotEmpty();
   }
 
@@ -298,7 +297,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
 
-  private static boolean renderingCondition_jky4mt_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jky4mt_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "copyFrom", true) != null);
   }
 
@@ -364,7 +363,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
 
-  private static boolean renderingCondition_jky4mt_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jky4mt_a4a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 

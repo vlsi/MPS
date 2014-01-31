@@ -8,12 +8,13 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +32,7 @@ public class FacetsScope extends SimpleScope {
     SModule contextModule = contextNode.getModel().getModule();
 
     Set<SModule> contextModules = SetSequence.fromSet(new HashSet<SModule>());
-    for (SModule module : Sequence.fromIterable(((AbstractModule) contextModule).getScope().getModules())) {
+    for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
       if (ClassLoaderManager.getInstance().canLoad(module)) {
         SetSequence.fromSet(contextModules).addElement(module);
       }

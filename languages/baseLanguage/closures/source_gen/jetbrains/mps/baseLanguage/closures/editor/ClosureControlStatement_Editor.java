@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -42,7 +41,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2saq3j_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_2saq3j_a0(editorContext, node));
-    if (renderingCondition_2saq3j_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2saq3j_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2saq3j_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_2saq3j_c0(editorContext, node));
@@ -122,14 +121,14 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_2saq3j_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2saq3j_b1a(editorContext, node));
-    if (renderingCondition_2saq3j_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2saq3j_a2b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2saq3j_c1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_2saq3j_d1a(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_2saq3j_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2saq3j_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).isNotEmpty();
   }
 
@@ -273,14 +272,14 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_2saq3j_a0c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2saq3j_a0c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2saq3j_a2b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNodeList_2saq3j_b2b0(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_2saq3j_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2saq3j_a2b0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).isNotEmpty();
   }
 
@@ -294,7 +293,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2saq3j_a0c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2saq3j_a0c1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).isNotEmpty();
   }
 

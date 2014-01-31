@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -30,7 +29,7 @@ public class Model {
     SPropertyOperations.set(named, "name", "a");
   }
 
-  public void roots_access_1(SModel model, IScope scope) {
+  public void roots_access_1(SModel model) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
     SModelOperations.getRootsIncludingImported(model, null);
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -41,7 +40,7 @@ public class Model {
     });
   }
 
-  public void roots_access_2(SModel model, IScope scope) {
+  public void roots_access_2(SModel model) {
     SModelOperations.getRootsIncludingImported(model, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
 

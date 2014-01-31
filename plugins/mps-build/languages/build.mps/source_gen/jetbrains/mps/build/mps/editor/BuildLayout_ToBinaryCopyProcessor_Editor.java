@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -32,7 +31,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     editorCell.setCellId("Collection_3hb8bt_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_3hb8bt_a0(editorContext, node));
-    if (renderingCondition_3hb8bt_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_3hb8bt_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_3hb8bt_b0(editorContext, node));
     }
     return editorCell;
@@ -56,7 +55,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private static boolean renderingCondition_3hb8bt_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_3hb8bt_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "stripImplementation");
   }
 

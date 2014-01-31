@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -30,7 +29,7 @@ public class Option_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nr3cqj_a");
     editorCell.setBig(true);
-    if (renderingCondition_nr3cqj_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nr3cqj_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_nr3cqj_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createProperty_nr3cqj_b0(editorContext, node));
@@ -50,7 +49,7 @@ public class Option_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nr3cqj_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nr3cqj_a0a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getIndexInParent(node) == SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption");
   }
 

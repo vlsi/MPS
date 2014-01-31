@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -31,7 +30,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_qyzwn3_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_qyzwn3_a0(editorContext, node));
-    if (renderingCondition_qyzwn3_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qyzwn3_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_qyzwn3_b0(editorContext, node));
     }
     return editorCell;
@@ -39,7 +38,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_qyzwn3_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlTextValue_Editor.renderingCondition_qyzwn3_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlTextValue_Editor.renderingCondition_qyzwn3_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_qyzwn3_a0a(editorContext, node);
@@ -49,7 +48,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_3080189811177340422", new Object[]{});
   }
 
@@ -129,7 +128,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qyzwn3_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qyzwn3_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{});
   }
 }

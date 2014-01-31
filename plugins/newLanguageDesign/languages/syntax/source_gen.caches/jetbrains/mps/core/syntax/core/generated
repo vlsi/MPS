@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-atfy7shhdmfg6lmyzb0td8uf8xeqn5r">
-  <common hash="6sxtxem7tn5ow8048gbu1unyvmps0lg" />
-  <source id="2024350793560675963" name="jetbrains.mps.core.syntax" hash="4dzp6kfzphw19psplkz2vlpk6p6vlbo">
-    <file name="jetbrains.mps.core.syntax" />
-  </source>
-</dependencies>
-

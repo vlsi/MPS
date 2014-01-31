@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends DefaultNodeEditor {
@@ -35,7 +34,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     editorCell.addEditorCell(this.createProperty_a8ta5y_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a8ta5y_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a8ta5y_d0(editorContext, node));
-    if (renderingCondition_a8ta5y_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_a8ta5y_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_a8ta5y_e0(editorContext, node));
     }
     return editorCell;
@@ -110,7 +109,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     return editorCell;
   }
 
-  private static boolean renderingCondition_a8ta5y_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_a8ta5y_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "reexport");
   }
 

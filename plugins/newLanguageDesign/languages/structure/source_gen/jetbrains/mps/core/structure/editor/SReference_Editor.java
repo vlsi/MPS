@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -33,13 +32,13 @@ public class SReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_iir456_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_iir456_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_iir456_c0(editorContext, node));
-    if (renderingCondition_iir456_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_iir456_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_iir456_d0(editorContext, node));
     }
-    if (renderingCondition_iir456_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_iir456_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_iir456_e0(editorContext, node));
     }
-    if (renderingCondition_iir456_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_iir456_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_iir456_f0(editorContext, node));
     }
     return editorCell;
@@ -141,7 +140,7 @@ public class SReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_iir456_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_iir456_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "cardinality", true) != null);
   }
 
@@ -165,7 +164,7 @@ public class SReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_iir456_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_iir456_a4a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "constraints", true) != null);
   }
 
@@ -180,7 +179,7 @@ public class SReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_iir456_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_iir456_a5a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "constraints", true) == null);
   }
 }

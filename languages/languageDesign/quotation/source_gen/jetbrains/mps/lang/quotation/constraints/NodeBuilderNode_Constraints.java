@@ -23,7 +23,11 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.Collection;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
@@ -83,14 +87,17 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
                 SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "target", false);
                 List<SNode> result = new ArrayList<SNode>();
                 for (String cname : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(BehaviorReflection.invokeVirtual(String.class, target, "virtual_getFqName_1213877404258", new Object[]{}))) {
-                  SNode cc = SModelUtil.findConceptDeclaration(cname, GlobalScope.getInstance());
-                  if ((cc != null) && operationContext.getScope().getModelDescriptor(SNodeOperations.getModel(cc).getReference()) != null) {
+                  SNode cc = SModelUtil.findConceptDeclaration(cname);
+                  SModel model = SNodeOperations.getModel(cc).getReference().resolve(MPSModuleRepository.getInstance());
+                  SModule currentModule = SNodeOperations.getModel(_context.getContextNode()).getModule();
+                  Collection<SModule> visModules = new GlobalModuleDependenciesManager(currentModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+                  if ((cc != null) && visModules.contains(model.getModule())) {
                     ListSequence.fromList(result).addElement(cc);
                   }
                 }
                 return ListScope.forNamedElements(result);
               } else {
-                return new ModelPlusImportedScope(_context.getModel(), true, operationContext.getScope(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+                return new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
               }
             }
           }

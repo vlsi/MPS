@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -71,7 +70,7 @@ public class Script_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_udqu28_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Script_Editor.renderingCondition_udqu28_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = Script_Editor.renderingCondition_udqu28_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_udqu28_a2a(editorContext, node);
@@ -81,7 +80,7 @@ public class Script_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_udqu28_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_udqu28_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
   }
 

@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -69,11 +68,11 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_msf9u8_a0a(editorContext, node));
-    if (renderingCondition_msf9u8_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_msf9u8_b0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_msf9u8_c0a(editorContext, node));
-    if (renderingCondition_msf9u8_a3a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a3a0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_msf9u8_d0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNodeList_msf9u8_e0a(editorContext, node));
@@ -91,7 +90,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_msf9u8_a0a0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_msf9u8_a0a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -129,7 +128,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_msf9u8_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a0a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
   }
 
@@ -145,7 +144,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a1a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }
 
@@ -313,7 +312,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_msf9u8_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a3a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
@@ -410,7 +409,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setFoldedCell(this.createComponent_msf9u8_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_msf9u8_a1a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_msf9u8_b1a(editorContext, node));
-    if (renderingCondition_msf9u8_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a2b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_msf9u8_c1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_msf9u8_d1a(editorContext, node));
@@ -442,28 +441,28 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_msf9u8_a2b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_msf9u8_b2b0(editorContext, node));
-    if (renderingCondition_msf9u8_a2c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a2c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_msf9u8_c2b0(editorContext, node));
     }
-    if (renderingCondition_msf9u8_a3c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a3c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_msf9u8_d2b0(editorContext, node));
     }
-    if (renderingCondition_msf9u8_a4c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a4c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_msf9u8_e2b0(editorContext, node));
     }
-    if (renderingCondition_msf9u8_a5c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a5c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_msf9u8_f2b0(editorContext, node));
     }
-    if (renderingCondition_msf9u8_a6c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a6c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_msf9u8_g2b0(editorContext, node));
     }
-    if (renderingCondition_msf9u8_a7c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_msf9u8_a7c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_msf9u8_h2b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a2b0(SNode node, EditorContext editorContext) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))).isNotEmpty();
   }
 
@@ -501,7 +500,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a2c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a2c1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
   }
 
@@ -536,7 +535,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a3c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a3c1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
   }
 
@@ -552,7 +551,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a4c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a4c1a(SNode node, EditorContext editorContext) {
     return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
   }
 
@@ -629,7 +628,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a5c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a5c1a(SNode node, EditorContext editorContext) {
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
   }
 
@@ -645,7 +644,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a6c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a6c1a(SNode node, EditorContext editorContext) {
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty();
   }
 
@@ -723,7 +722,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_msf9u8_a7c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_msf9u8_a7c1a(SNode node, EditorContext editorContext) {
     return !(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 
@@ -739,7 +738,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
 
@@ -752,7 +751,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     }
 
@@ -765,7 +764,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
     }
 

@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.core.notation.behavior.SNotationCall_Behavior;
-import jetbrains.mps.smodel.IScope;
 
 public class SNotationCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,7 +32,7 @@ public class SNotationCall_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_401fjg_a");
     editorCell.setBig(true);
-    if (renderingCondition_401fjg_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_401fjg_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_401fjg_a0(editorContext, node));
     }
     return editorCell;
@@ -68,7 +67,7 @@ public class SNotationCall_Editor extends DefaultNodeEditor {
     return SNotationCall_Behavior.call_resolve_5566195403253919806(node);
   }
 
-  private static boolean renderingCondition_401fjg_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_401fjg_a0a(SNode node, EditorContext editorContext) {
     SNotationCall_Behavior.call_resolve_5566195403253919806(node);
     return true;
   }

@@ -16,12 +16,12 @@
 package jetbrains.mps.ide.components;
 
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IScope;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
@@ -48,7 +48,7 @@ public class ComponentsUtil {
 
   //do not remove it. we need it for cell info
 
-  public static SNode nodeFromElement(Element nodeElement, IScope scope) {
+  public static SNode nodeFromElement(Element nodeElement, SearchScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
     SModel modelDescriptor = scope.resolve(PersistenceFacade.getInstance().createModelReference(modelUID));

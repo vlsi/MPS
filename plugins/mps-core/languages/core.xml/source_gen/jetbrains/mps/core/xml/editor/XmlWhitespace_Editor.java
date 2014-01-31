@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -32,7 +31,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_2bpkx8_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createAlternation_2bpkx8_a0a(editorContext, node);
@@ -42,13 +41,13 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2bpkx8_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2bpkx8_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
   }
 
   private EditorCell createAlternation_2bpkx8_a0a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_2bpkx8_a0a0(editorContext, node);
@@ -58,7 +57,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2bpkx8_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2bpkx8_a0a0(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 
@@ -109,7 +108,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_2bpkx8_a0a_0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a0_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlWhitespace_Editor.renderingCondition_2bpkx8_a0a0_0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_2bpkx8_a0a0_1(editorContext, node);
@@ -122,7 +121,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2bpkx8_a0a0_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2bpkx8_a0a0_0(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 

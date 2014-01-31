@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -49,7 +48,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_vc3gub_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vc3gub_b0(editorContext, node));
-    if (renderingCondition_vc3gub_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vc3gub_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_vc3gub_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createAlternation_vc3gub_d0(editorContext, node));
@@ -103,7 +102,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vc3gub_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vc3gub_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty();
   }
 
@@ -153,7 +152,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_vc3gub_d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlElement_Editor.renderingCondition_vc3gub_a3a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlElement_Editor.renderingCondition_vc3gub_a3a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_vc3gub_a3a(editorContext, node);
@@ -163,7 +162,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vc3gub_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vc3gub_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isEmpty() && SPropertyOperations.getBoolean(node, "shortEmptyNotation");
   }
 
@@ -213,7 +212,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_vc3gub_a0d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlElement_Editor.renderingCondition_vc3gub_a0a3a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlElement_Editor.renderingCondition_vc3gub_a0a3a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_vc3gub_a0a3a(editorContext, node);
@@ -223,7 +222,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext) {
     return XmlElement_Behavior.call_isMultiline_8886258982030574875(node);
   }
 
