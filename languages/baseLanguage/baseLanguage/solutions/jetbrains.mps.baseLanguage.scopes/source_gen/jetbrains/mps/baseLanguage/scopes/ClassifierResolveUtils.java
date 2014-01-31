@@ -29,6 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
@@ -40,6 +41,7 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.IScope;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -299,7 +301,10 @@ public class ClassifierResolveUtils {
       return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
 
     } else {
-      SearchScope moduleScope = ((AbstractModule) SNodeOperations.getModel(contextNode).getModule()).getScope();
+      SearchScope moduleScope = check_8z6r2b_a0a0a23a21(((AbstractModule) check_8z6r2b_a0a0a0a0gb0m(SNodeOperations.getModel(contextNode))));
+      if (moduleScope == null) {
+        moduleScope = GlobalScope.getInstance();
+      }
 
       // walk through single-type imports 
       // TODO static imports are not handled yet 
@@ -643,6 +648,20 @@ public class ClassifierResolveUtils {
   }
 
   private static SModule check_8z6r2b_a0d0d(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static IScope check_8z6r2b_a0a0a23a21(AbstractModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getScope();
+    }
+    return null;
+  }
+
+  private static SModule check_8z6r2b_a0a0a0a0gb0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
