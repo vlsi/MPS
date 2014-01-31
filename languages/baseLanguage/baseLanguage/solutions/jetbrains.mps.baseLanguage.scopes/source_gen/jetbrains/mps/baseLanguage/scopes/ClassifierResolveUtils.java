@@ -15,14 +15,15 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
@@ -97,34 +98,31 @@ public class ClassifierResolveUtils {
       return (Sequence.fromIterable(sameModelResult).count() == 1 ? Sequence.fromIterable(sameModelResult).first() : null);
     }
 
-    IScope modelScope = check_8z6r2b_a0d0d(((AbstractModule) check_8z6r2b_a0a0a3a3(sourceModel)));
+    SModule module = check_8z6r2b_a0d0d(sourceModel);
 
-    if (modelScope != null) {
-      Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, modelScope);
-      if (Sequence.fromIterable(result).isNotEmpty()) {
-        return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
+    if (module != null) {
+      Iterable<SNode> resolved = resolveInScope(targetModelName, classifierFqName, new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
+      if (Sequence.fromIterable(resolved).isNotEmpty()) {
+        return (Sequence.fromIterable(resolved).count() == 1 ? Sequence.fromIterable(resolved).first() : null);
       }
     }
 
-    Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, GlobalScope.getInstance());
-    return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
+    Iterable<SNode> resolved = resolveInScope(targetModelName, classifierFqName, MPSModuleRepository.getInstance().getModules());
+    return (Sequence.fromIterable(resolved).count() == 1 ? Sequence.fromIterable(resolved).first() : null);
   }
 
-  private static Iterable<SNode> resolveInScope(@NotNull String targetModelName, @NotNull String classifierFqName, @NotNull IScope scope) {
-    return resolveClassifierByFqNameWithNonStubPriority(getModelsWithNameInScope(scope, targetModelName), classifierFqName);
-  }
-
-  private static Iterable<SModel> getModelsWithNameInScope(@NotNull IScope scope, @NotNull String modelLongName) {
+  private static Iterable<SNode> resolveInScope(@NotNull final String targetModelName, @NotNull String classifierFqName, Iterable<SModule> modules) {
     // todo: go through all stereotypes and resolve by long name and stereotype 
-    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModule module : Sequence.fromIterable(scope.getVisibleModules())) {
-      for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
-        if (eq_8z6r2b_a0a0a0c0f(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), modelLongName)) {
-          ListSequence.fromList(result).addElement(modelDescriptor);
-        }
+    List<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
       }
-    }
-    return result;
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return eq_8z6r2b_a0a0a0a0a0a0b0e(jetbrains.mps.util.SNodeOperations.getModelLongName(it), targetModelName);
+      }
+    }).toListSequence();
+    return resolveClassifierByFqNameWithNonStubPriority(models, classifierFqName);
   }
 
   private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModel> models, String classifierFqName) {
@@ -139,7 +137,7 @@ public class ClassifierResolveUtils {
     // resolve without stubs 
     Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return neq_8z6r2b_a0a0a0a0a0a0f0g(SModelStereotype.getStereotype(it), stubStereoType);
+        return neq_8z6r2b_a0a0a0a0a0a0f0f(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -149,7 +147,7 @@ public class ClassifierResolveUtils {
     // resolve with stubs 
     return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return eq_8z6r2b_a0a0a0a0a0a9a6(SModelStereotype.getStereotype(it), stubStereoType);
+        return eq_8z6r2b_a0a0a0a0a0a9a5(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
   }
@@ -565,7 +563,14 @@ public class ClassifierResolveUtils {
    */
   public static Iterable<SNode> staticImportedThings(final SNode neededConcept, SNode imports) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    IScope moduleScope = ((AbstractModule) SNodeOperations.getModel(imports).getModule()).getScope();
+    SModule module = SNodeOperations.getModel(imports).getModule();
+    GlobalModuleDependenciesManager gmdm = new GlobalModuleDependenciesManager(module);
+    Iterable<SModule> modules = gmdm.getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+    Iterable<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    });
     for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "static");
@@ -574,7 +579,7 @@ public class ClassifierResolveUtils {
 
       if (SPropertyOperations.getBoolean(imp, "onDemand")) {
         String className = SPropertyOperations.getString(imp, "tokens");
-        Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
+        Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(models, className);
         SNode containingClas = (Sequence.fromIterable(classes).count() == 1 ? Sequence.fromIterable(classes).first() : null);
         if ((containingClas == null)) {
           continue;
@@ -592,7 +597,7 @@ public class ClassifierResolveUtils {
         final String memberName = Tokens_Behavior.call_lastToken_1296023605440030462(imp);
         String className = Tokens_Behavior.call_withoutLastToken_6148840541591441572(imp);
 
-        Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
+        Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(models, className);
 
         SNode containingClas = (Sequence.fromIterable(classes).count() == 1 ? Sequence.fromIterable(classes).first() : null);
         if ((containingClas == null)) {
@@ -649,29 +654,22 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0d0d(AbstractModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getScope();
-    }
-    return null;
-  }
-
-  private static SModule check_8z6r2b_a0a0a3a3(SModel checkedDotOperand) {
+  private static SModule check_8z6r2b_a0d0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static boolean eq_8z6r2b_a0a0a0c0f(Object a, Object b) {
+  private static boolean eq_8z6r2b_a0a0a0a0a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean neq_8z6r2b_a0a0a0a0a0a0f0g(Object a, Object b) {
+  private static boolean neq_8z6r2b_a0a0a0a0a0a0f0f(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
 
-  private static boolean eq_8z6r2b_a0a0a0a0a0a9a6(Object a, Object b) {
+  private static boolean eq_8z6r2b_a0a0a0a0a0a9a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

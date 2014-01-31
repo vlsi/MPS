@@ -48,13 +48,13 @@ public class NodeCheckOperation_Behavior {
   }
 
   @Deprecated
-  public static void call_perform_245688835340859348(SNode thisNode, SNode node) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
+  public static String callSuper_getDefaultName_8578280453511146306(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation"), callerConceptFqName, "virtual_getDefaultName_8578280453511146306", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getDefaultName_8578280453511146306(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation"), callerConceptFqName, "virtual_getDefaultName_8578280453511146306", new Class[]{SNode.class}, new Object[]{});
+  public static void call_perform_245688835340859348(SNode thisNode, SNode node) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
   }
 
   @Deprecated

@@ -6,10 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -22,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -62,11 +60,10 @@ public class AddNodeMacroParam_ifMacro_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node);
-    if (sm == null || !(sm.getModule() instanceof Generator)) {
+    if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
-    return QueriesUtil.isNodeMacroApplicable(node);
+    return EditingUtil.isNodeMacroApplicable(node);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -112,7 +109,7 @@ public class AddNodeMacroParam_ifMacro_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode nodeMacro = QueriesUtil.addNodeMacro(node);
+      SNode nodeMacro = EditingUtil.addNodeMacro(node);
       SNode ifMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.IfMacro", null);
       SNodeOperations.replaceWithAnother(nodeMacro, ifMacro);
       SNode ifMacro_Condition = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.IfMacro_Condition", null);

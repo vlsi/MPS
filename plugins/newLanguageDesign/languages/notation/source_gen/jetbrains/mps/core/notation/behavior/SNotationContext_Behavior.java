@@ -26,13 +26,13 @@ public class SNotationContext_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isApplicable_5566195403253848024(SNode thisNode, NotationContext context) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_5566195403253848024", new Object[]{context});
+  public static SNode callSuper_getContextElement_8632884680339331864(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.notation.structure.SNotationContext"), callerConceptFqName, "virtual_getContextElement_8632884680339331864", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getContextElement_8632884680339331864(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.notation.structure.SNotationContext"), callerConceptFqName, "virtual_getContextElement_8632884680339331864", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_isApplicable_5566195403253848024(SNode thisNode, NotationContext context) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_5566195403253848024", new Object[]{context});
   }
 
   @Deprecated

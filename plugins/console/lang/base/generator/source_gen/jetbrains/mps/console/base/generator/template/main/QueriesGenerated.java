@@ -4,13 +4,14 @@ package jetbrains.mps.console.base.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 @Generated
 public class QueriesGenerated {
-  public static SNode sourceNodeQuery_1583916890562946186(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public final boolean NEEDS_OPCONTEXT = false;
+
+  public static SNode sourceNodeQuery_1583916890562946186(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commandHolder", true), "command", true);
   }
 }

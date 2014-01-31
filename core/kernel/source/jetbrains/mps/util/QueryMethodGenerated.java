@@ -26,6 +26,7 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -39,6 +40,7 @@ public class QueryMethodGenerated implements CoreComponent {
 
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
+  private static ConcurrentMap<Class<?>, Boolean> ourNeedOpContext = new ConcurrentHashMap<Class<?>, Boolean>();
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     @Override
@@ -66,6 +68,7 @@ public class QueryMethodGenerated implements CoreComponent {
   public static void clearCaches() {
     ourMethods.clear();
     ourClassesReportedAsNotFound.clear();
+    ourNeedOpContext.clear();
   }
 
   public static boolean needReport(String className) {
@@ -82,15 +85,17 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   @NotNull
-  public static Class getQueriesGeneratedClassFor(@NotNull SModel sm, boolean suppressErrorLogging) throws ClassNotFoundException {
+  public static Class getQueriesGeneratedClassFor(@NotNull SModelReference sm, boolean suppressErrorLogging) throws ClassNotFoundException {
     String packageName = SModelStereotype.withoutStereotype(sm.getModelName());
     String queriesClassName = packageName + ".QueriesGenerated";
 
-    SModule module = sm.getModule();
+    SModel m = sm.resolve(MPSModuleRepository.getInstance());
+
+    SModule module = m == null ? null : m.getModule();
     if (module == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated': no module for model '" + sm.getReference() + "'");
+        "couldn't find class 'QueriesGenerated': no module for model '" + sm + "'");
     }
     if (!ClassLoaderManager.getInstance().canLoad(module)) {
       reportErrorWhileClassLoading(
@@ -102,20 +107,20 @@ public class QueryMethodGenerated implements CoreComponent {
     if (queriesClass == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated' for model '" + sm.getReference() + "' : TRY TO GENERATE"
+        "couldn't find class 'QueriesGenerated' for model '" + sm + "' : TRY TO GENERATE"
       );
     }
 
     return queriesClass;
   }
 
-  private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Map<String, Method> methods = ourMethods.get(sourceModel.getReference());
+  private static Method getQueryMethod(SModelReference sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
+    Map<String, Method> methods = ourMethods.get(sourceModel);
 
     if (methods == null) {
       Class queriesClass = getQueriesGeneratedClassFor(sourceModel, suppressErrorLogging);
 
-      methods = ourMethods.get(sourceModel.getReference());
+      methods = ourMethods.get(sourceModel);
       if (methods == null) {
         methods = new HashMap<String, Method>();
         Method[] declaredMethods = queriesClass.getDeclaredMethods();
@@ -125,16 +130,16 @@ public class QueryMethodGenerated implements CoreComponent {
           methods.put(name, declaredMethod);
         }
 
-        ourMethods.putIfAbsent(sourceModel.getReference(), methods);
+        ourMethods.putIfAbsent(sourceModel, methods);
       }
     }
 
 
     Method method = methods.get(methodName);
     if (method == null) {
-      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getReference()) + ".QueriesGenerated";
+      String className = JavaNameUtil.packageNameForModelUID(sourceModel) + ".QueriesGenerated";
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getReference() + "'");
+        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel + "'");
       }
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + className + "'");
     }
@@ -144,12 +149,20 @@ public class QueryMethodGenerated implements CoreComponent {
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
     return invoke(methodName, context, contextObject, sourceModel, false);
   }
-
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Object[] arguments = new Object[]{context, contextObject};
+    return invoke(methodName, context, contextObject, sourceModel.getReference(), suppressErrorLogging);
+  }
+
+  public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModelReference sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
     Object result;
     Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
     try {
+      Object[] arguments;
+      if (needsOpContext(method.getDeclaringClass())) {
+        arguments = new Object[] { context, contextObject };
+      } else {
+        arguments = new Object[] { contextObject };
+      }
       result = method.invoke(null, arguments);
     } catch (IllegalArgumentException e) {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
@@ -163,6 +176,22 @@ public class QueryMethodGenerated implements CoreComponent {
       LOG.error(message, e.getCause());
       throw new RuntimeException(message, e.getCause());
     }
+    return result;
+  }
+  private static boolean needsOpContext(Class<?> cls) {
+    Boolean rv = ourNeedOpContext.get(cls);
+    if (rv != null) {
+      return rv;
+    }
+    boolean result = true;
+    for (Field f : cls.getDeclaredFields()) {
+      if ("NEEDS_OPCONTEXT".equals(f.getName())) {
+        result = false;
+        break;
+      }
+    }
+    ourNeedOpContext.putIfAbsent(cls, result);
+    // highly unlikely for another thread (if any) do get different result, ignore race condition chance
     return result;
   }
 }

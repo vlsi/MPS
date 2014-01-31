@@ -317,48 +317,13 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDataFlowChecked_1227714048980", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isReturnsVoid_1234359555698(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isAbstract_1232982539764(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAbstract_1232982539764", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_jniSignature_8847328628797656446(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797656446", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getTraceableProperty_2496361171403550883(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getScopeVariables_2496361171403550901(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-  }
-
-  @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633081786(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDataFlowChecked_1227714048980", new Object[]{});
   }
 
   @Deprecated
@@ -367,8 +332,18 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   @Deprecated
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isReturnsVoid_1234359555698(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{});
   }
 
   @Deprecated
@@ -377,8 +352,18 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getNearestOverriddenMethod_5358895268254685434(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isAbstract_1232982539764(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAbstract_1232982539764", new Object[]{});
   }
 
   @Deprecated
@@ -387,13 +372,28 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   @Deprecated
+  public static String call_jniSignature_8847328628797656446(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797656446", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_jniSignature_8847328628797656446(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_jniSignature_8847328628797656446", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static String call_getTraceableProperty_2496361171403550883(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getTraceableProperty_2496361171403550883(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> call_getScopeVariables_2496361171403550901(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
   }
 
   @Deprecated

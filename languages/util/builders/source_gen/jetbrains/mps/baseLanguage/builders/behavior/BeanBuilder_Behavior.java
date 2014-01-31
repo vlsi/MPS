@@ -32,13 +32,13 @@ public class BeanBuilder_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getResultType_6666322667909649864(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
+  public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
   }
 
   @Deprecated
-  public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
+  public static SNode call_getResultType_6666322667909649864(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 
   @Deprecated

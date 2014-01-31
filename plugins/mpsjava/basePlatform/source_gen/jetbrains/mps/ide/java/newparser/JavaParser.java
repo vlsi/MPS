@@ -168,6 +168,9 @@ public class JavaParser {
       if (comment[1] > 0) {
         // javadoc 
         SNode doc = MapSequence.fromMap(javadocs).get(comment[0]);
+        if (doc == null) {
+          continue;
+        }
 
         List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1]));
         for (String text : lines) {

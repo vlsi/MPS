@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -65,7 +65,7 @@ public class NewTemplateFragment_Intention implements IntentionFactory {
     }).isNotEmpty()) {
       return false;
     }
-    if (QueriesUtil.isInsideTemplateFragment(node)) {
+    if (EditingUtil.isInsideTemplateFragment(node)) {
       return false;
     }
     return true;
@@ -100,7 +100,7 @@ public class NewTemplateFragment_Intention implements IntentionFactory {
           return !(SNodeOperations.isAttribute(it));
         }
       }).first();
-      QueriesUtil.createTemplateFragment(applyToNode);
+      EditingUtil.createTemplateFragment(applyToNode);
     }
 
     public IntentionDescriptor getDescriptor() {

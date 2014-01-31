@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,41 +15,45 @@
  */
 package jetbrains.mps.util;
 
+import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
-* Created with IntelliJ IDEA.
 * User: fyodor
 * Date: 8/27/12
-* Time: 5:34 PM
-* To change this template use File | Settings | File Templates.
 */
 public class SimpleLRUCache<K> {
 
   private static final int DEFAULT_MAX_SIZE = 20000;
   private static final double FIRST_LEVEL_RATIO = 0.6;
+  private static final double CLEANUP_Q1_RATIO = 0.06;
 
-  private AtomicInteger roomLeftFirstLevel;
-  private AtomicInteger roomLeftSecondLevel;
+  private final AtomicInteger roomLeftFirstLevel;
+  private final AtomicInteger roomLeftSecondLevel;
 
-  private ConcurrentHashMap<K, K> firstLevelCache;
-  private ConcurrentLinkedQueue<K> firstLevelQueue = new ConcurrentLinkedQueue<K>();
+  private final ConcurrentHashMap<K, K> firstLevelCache; // aka L1
+  private final ConcurrentLinkedQueue<K> firstLevelQueue = new ConcurrentLinkedQueue<K>(); // aka Q1
 
-  private ConcurrentHashMap<K, K> secondLevelCache;
-  private ConcurrentLinkedQueue<K> secondLevelQueue = new ConcurrentLinkedQueue<K>();
+  private final ConcurrentHashMap<K, K> secondLevelCache; // aka L2
+  private final ConcurrentLinkedQueue<K> secondLevelQueue = new ConcurrentLinkedQueue<K>(); // aka Q2
 
-  private ConcurrentHashMap<K, K> transitionalCache = new ConcurrentHashMap<K, K>();
+  private final ConcurrentHashMap<K, K> transitionalCache = new ConcurrentHashMap<K, K>();
 
-  private int myMaxSize;
+  private int promotesBeforeCleanupInitialValue;
+  private final AtomicInteger promotesBeforeCleanup;
 
   public SimpleLRUCache(int maxSize) {
-    myMaxSize = maxSize;
-    roomLeftFirstLevel = new AtomicInteger((int)(myMaxSize*FIRST_LEVEL_RATIO));
-    roomLeftSecondLevel = new AtomicInteger((int)(myMaxSize*(1.-FIRST_LEVEL_RATIO)));
-    firstLevelCache = new ConcurrentHashMap<K, K>((int)(myMaxSize*FIRST_LEVEL_RATIO));
-    secondLevelCache = new ConcurrentHashMap<K, K>((int)(myMaxSize*(1.-FIRST_LEVEL_RATIO)));
+    final int sizeL1 = (int) (maxSize * FIRST_LEVEL_RATIO);
+    final int sizeL2 = (int) (maxSize * (1. - FIRST_LEVEL_RATIO));
+    roomLeftFirstLevel = new AtomicInteger(sizeL1);
+    roomLeftSecondLevel = new AtomicInteger(sizeL2);
+    // compensate HashMap size for default load factor of 0.75
+    firstLevelCache = new ConcurrentHashMap<K, K>(sizeL1 * 4 / 3);
+    secondLevelCache = new ConcurrentHashMap<K, K>(sizeL2 * 4 / 3);
+    promotesBeforeCleanupInitialValue = (int) (maxSize * CLEANUP_Q1_RATIO);
+    promotesBeforeCleanup = new AtomicInteger(promotesBeforeCleanupInitialValue);
   }
 
   public SimpleLRUCache() {
@@ -79,7 +83,7 @@ public class SimpleLRUCache<K> {
 
     cached = firstLevelCache.get(toCache);
     if (cached != null) {
-      return primPromote(toCache, cached);
+      return primPromote(cached);
     }
 
     cached = transitionalCache.get(toCache);
@@ -87,62 +91,59 @@ public class SimpleLRUCache<K> {
       return cached;
     }
 
-    return primCacheObject(canonic(toCache), toCache);
+    return primCacheObject(canonic(toCache));
   }
 
-  private K primPromote(K toCache, K cached) {
-    K transit = transitionalCache.putIfAbsent(cached, cached);
-    if (transit != null) {
-      return transit;
-    }
+  private K primPromote(K cached) {
+    if (lock(cached)) {
+      // current thread has a mutex on 'cached'
 
-    // current thread has a mutex on 'cached'
-    K alreadyPromoted = secondLevelCache.putIfAbsent(cached, cached);
-    if (alreadyPromoted != null) {
-      boolean removed = transitionalCache.remove(cached, toCache);
-      assert removed;
+      K alreadyPromoted = secondLevelCache.putIfAbsent(cached, cached);
+      if (alreadyPromoted != null) {
+        unlock(cached);
+        return alreadyPromoted;
+      }
+      secondLevelQueue.add(cached);
 
-      return alreadyPromoted;
-    }
-    secondLevelQueue.add(cached);
-
-    if (firstLevelCache.remove(cached, toCache)) {
-      roomLeftFirstLevel.incrementAndGet();
-    }
-
-    if (roomLeftSecondLevel.decrementAndGet() <= 0) {
-      K toDemote = secondLevelQueue.poll();
-      assert toDemote != null;
-
-      primCacheObject(toDemote, toDemote);
-
-      if (transitionalCache.putIfAbsent(toDemote, toDemote) == null) {
-        if (secondLevelCache.remove(toDemote, toDemote)) {
-          roomLeftSecondLevel.incrementAndGet();
+      if (firstLevelCache.remove(cached, cached)) {
+        roomLeftFirstLevel.incrementAndGet();
+        if (promotesBeforeCleanup.decrementAndGet() <= 0) {
+          cleanupQ1();
         }
-        transitionalCache.remove(toDemote, toDemote);
       }
-      else {
-        secondLevelQueue.add(toDemote);
-      }
-    }
 
-    transitionalCache.remove(cached, toCache);
+      if (roomLeftSecondLevel.decrementAndGet() <= 0) {
+        K toDemote = secondLevelQueue.poll();
+        assert toDemote != null;
+
+        primCacheObject(toDemote);
+
+        if (lock(toDemote)) {
+          if (secondLevelCache.remove(toDemote, toDemote)) {
+            roomLeftSecondLevel.incrementAndGet();
+          }
+          unlock(toDemote);
+        } else {
+          secondLevelQueue.add(toDemote);
+        }
+      }
+
+      unlock(cached);
+    }
     return cached;
   }
 
-  private K primCacheObject(K canonic, K toCache) {
-    if (transitionalCache.putIfAbsent(canonic, canonic) == null) {
+  private K primCacheObject(K canonic) {
+    if (lock(canonic)) {
+      // current thread has a mutex on 'canonic'
+
       K alreadyCached = firstLevelCache.putIfAbsent(canonic, canonic);
 
       if (alreadyCached != null) {
-        boolean removed = transitionalCache.remove(canonic, toCache);
-        assert removed;
-
+        unlock(canonic);
         return alreadyCached;
       }
 
-      // current thread has a mutex on 'canonic'
       firstLevelQueue.add(canonic);
 
       if (roomLeftFirstLevel.decrementAndGet() <= 0) {
@@ -152,22 +153,43 @@ public class SimpleLRUCache<K> {
           assert toRemove != null;
         } while (!firstLevelCache.containsKey(toRemove));
 
-        if (transitionalCache.putIfAbsent(toRemove, toRemove) == null) {
+        if (lock(toRemove)) {
           if (firstLevelCache.remove(toRemove, toRemove)) {
             roomLeftFirstLevel.incrementAndGet();
             purged(toRemove);
           }
-          transitionalCache.remove(toRemove, toRemove);
-        }
-        else {
+          unlock(toRemove);
+        } else {
           firstLevelQueue.add(toRemove);
         }
       }
 
-      transitionalCache.remove(canonic, canonic);
+      unlock(canonic);
     }
 
     return canonic;
   }
 
+  private boolean lock(K cached) {
+    return transitionalCache.putIfAbsent(cached, cached) == null;
+  }
+
+  private void unlock(K cached) {
+    boolean removed = transitionalCache.remove(cached, cached);
+    assert removed;
+  }
+
+  /**
+   * Unlike L2 and Q2, L1 elements can be removed independently from elements in Q1, when promoting L1 element to L2.
+   * Afterwards, when L2 elements 'demoted' back to L1 get added to Q1, there are duplicating queue elements.
+   * The Q1 is cleaned up after the number o promotes hits the threshold.
+   */
+  private void cleanupQ1() {
+    promotesBeforeCleanup.set(promotesBeforeCleanupInitialValue);
+    for (Iterator<K> it = firstLevelQueue.iterator(); it.hasNext();) {
+      if (!firstLevelCache.containsKey(it.next())) {
+        it.remove();
+      }
+    }
+  }
 }

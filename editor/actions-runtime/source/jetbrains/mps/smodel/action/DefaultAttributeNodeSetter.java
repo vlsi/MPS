@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -27,7 +26,7 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
   }
 
   @Override
-  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
+  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
     if (oldChild != null) {
       SNodeUtil.replaceWithAnother(oldChild, newChild);
       oldChild.delete();

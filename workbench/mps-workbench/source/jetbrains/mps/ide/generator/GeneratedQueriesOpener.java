@@ -18,9 +18,9 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -32,7 +32,7 @@ public class GeneratedQueriesOpener {
 
     Class cls;
     try {
-      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel(), true);
+      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel().getReference(), true);
     } catch (ClassNotFoundException e) {
       return false;
     }

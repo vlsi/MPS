@@ -96,38 +96,13 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isStatic_8986964027630472415(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
-  }
-
-  @Deprecated
-  public static Icon call_getAdditionalIcon_8884554759541381553(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getSuffix_3012473318495506818(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
-  }
-
-  @Deprecated
-  public static String call_getPrefix_3012473318495506812(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPrefix_3012473318495495520", new Object[]{project});
-  }
-
-  @Deprecated
-  public static String call_getTraceableProperty_2496361171403550872(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
-  }
-
-  @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633082276(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
   }
 
   @Deprecated
@@ -136,8 +111,18 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isStatic_8986964027630472415(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isStatic_8986964027630472415(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static Icon call_getAdditionalIcon_8884554759541381553(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
   }
 
   @Deprecated
@@ -146,13 +131,28 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   @Deprecated
+  public static String call_getSuffix_3012473318495506818(SNode thisNode, Project project) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
+  }
+
+  @Deprecated
   public static String callSuper_getSuffix_3012473318495506818(SNode thisNode, String callerConceptFqName, Project project) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, new Object[]{project});
   }
 
   @Deprecated
+  public static String call_getPrefix_3012473318495506812(SNode thisNode, Project project) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPrefix_3012473318495495520", new Object[]{project});
+  }
+
+  @Deprecated
   public static String callSuper_getPrefix_3012473318495506812(SNode thisNode, String callerConceptFqName, Project project) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, new Object[]{project});
+  }
+
+  @Deprecated
+  public static String call_getTraceableProperty_2496361171403550872(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
   }
 
   @Deprecated

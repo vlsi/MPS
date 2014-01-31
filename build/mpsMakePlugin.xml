@@ -41,7 +41,7 @@
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake">
-      <fileset dir="${mps_home}/plugins/mpsmake" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/mpsmake" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-make.jar">
       <fileset dir="${build.tmp}/java/out/mps-make" />

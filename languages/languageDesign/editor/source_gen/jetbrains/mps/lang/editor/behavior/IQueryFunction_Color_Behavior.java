@@ -25,13 +25,13 @@ public class IQueryFunction_Color_Behavior {
   }
 
   @Deprecated
-  public static String call_getRGBValue_1225468086082(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRGBValue_1225468086082", new Object[]{});
+  public static boolean callSuper_isFunction_1225463329531(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_isFunction_1225463329531", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_isFunction_1225463329531(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_isFunction_1225463329531", new Class[]{SNode.class}, new Object[]{});
+  public static String call_getRGBValue_1225468086082(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRGBValue_1225468086082", new Object[]{});
   }
 
   @Deprecated

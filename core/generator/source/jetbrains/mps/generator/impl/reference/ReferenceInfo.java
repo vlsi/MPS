@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.DynamicReference;
@@ -57,12 +57,12 @@ public abstract class ReferenceInfo {
   }
 
   @Nullable
-  protected SModelReference getTargetModelReference() {
+  protected final SModelReference getTargetModelReference(ITemplateGenerator generator) {
     // local references only
     if (myOutputSourceNode != null && myOutputSourceNode.getModel() != null) {
       return myOutputSourceNode.getModel().getReference();
     }
-    return null;
+    return generator.getOutputModel().getReference();
   }
 
   public String getReferenceRole() {
@@ -88,9 +88,9 @@ public abstract class ReferenceInfo {
   }
 
   @NotNull
-  protected final SReference createDynamicReference(@NotNull String resolveInfo, @Nullable SNodeReference templateNode) {
+  protected final SReference createDynamicReference(@NotNull String resolveInfo, @Nullable SModelReference targetModelRef, @Nullable SNodeReference templateNode) {
     final DynamicReference dr =
-        new DynamicReference(getReferenceRole(), getOutputSourceNode(), getTargetModelReference(), resolveInfo);
+        new DynamicReference(getReferenceRole(), getOutputSourceNode(), targetModelRef, resolveInfo);
     final SNodeReference inputRef = getInputNodeReference();
     if (templateNode != null || inputRef != null) {
       // origin is merely an indication where the reference comes from
@@ -109,9 +109,9 @@ public abstract class ReferenceInfo {
 
   // XXX in fact, the only use is in ReferenceInfo_CopiedInputNode, might be worth moving there
   protected final boolean checkResolvedTarget(AbstractTemplateGenerator generator, SNode outputTargetNode) {
-    RoleValidationStatus status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
+    Status status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
     if (status != null) {
-      status.reportProblem(true, myOutputSourceNode, "bad reference: ", getErrorDescriptions());
+      generator.getLogger().error(myOutputSourceNode.getReference(), status.getMessage(getClass().getSimpleName()), getErrorDescriptions());
       return false;
     }
 

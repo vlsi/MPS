@@ -22,9 +22,6 @@ import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
-import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -33,15 +30,15 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GenerationController implements ITaskPoolProvider {
-  protected static Logger LOG = Logger.wrap(LogManager.getLogger(GenerationController.class));
 
   private final TransientModelsProvider myTransientModelsProvider;
   private List<? extends SModel> myInputModels;
@@ -126,21 +123,19 @@ public class GenerationController implements ITaskPoolProvider {
     } catch (GenerationCanceledException gce) {
       myLogger.warning("generation canceled");
       return false;
-    } catch (GenerationFailureException e) {
-      if (e.getMessage() != null && e.getCause() == null) {
-        myLogger.error(e.getMessage());
-      }
-      return false;
     } catch (Exception t) {
       myLogger.handleException(t);
       return false;
+    } catch (AssertionError e) {
+      myLogger.handleException(e);
+      throw e;
     } finally {
       monitor.done();
       myGenerationHandler.finishGeneration();
     }
   }
 
-  protected boolean generateModelsInModule(SModule module, List<SModel> inputModels, ProgressMonitor monitor) throws Exception {
+  protected boolean generateModelsInModule(SModule module, List<SModel> inputModels, ProgressMonitor monitor) throws GenerationCanceledException {
     boolean currentGenerationOK = true;
     monitor.start(module.getModuleName(), inputModels.size());
 
@@ -149,20 +144,9 @@ public class GenerationController implements ITaskPoolProvider {
     myGenerationHandler.startModule(module, inputModels, myOperationContext);
 
     //++ generation
-    String wasLoggingThreshold = null;
-    try {
-      if (myOptions.isShowErrorsOnly()) {
-        wasLoggingThreshold = Logger.setThreshold("ERROR");
-      }
-
-      for (SModel inputModel : inputModels) {
-        currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, monitor.subTask(1, SubProgressKind.REPLACING));
-        monitor.advance(0);
-      }
-    } finally {
-      if (wasLoggingThreshold != null) {
-        Logger.setThreshold(wasLoggingThreshold);
-      }
+    for (SModel inputModel : inputModels) {
+      currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, monitor.subTask(1, SubProgressKind.REPLACING));
+      monitor.advance(0);
     }
 
     checkMonitorCanceled(monitor);
@@ -189,42 +173,26 @@ public class GenerationController implements ITaskPoolProvider {
     try {
       generationSession.getLoggingHandler().register();
       if (!myGenerationHandler.canHandle(inputModel)) {
-        LOG.error("Can't generate " + inputModel.getModelName());
+        myLogger.error("Can't generate " + inputModel.getModelName());
         return true;
       }
 
       if (myLogger.needsInfo()) {
         myLogger.info("");
-        myLogger.info("[model " + inputModel.getModelName() +
-          (myOptions.isRebuildAll()
-            ? ", rebuilding"
-            : "") +
-          (myOptions.isGenerateInParallel()
-            ? ", using " + myOptions.getNumberOfThreads() + " threads]"
-            : "]"));
+        myLogger.info("[model " + inputModel.getModelName() + (myOptions.isRebuildAll() ? ", rebuilding" : "") +
+          (myOptions.isGenerateInParallel() ? ", using " + myOptions.getNumberOfThreads() + " threads]"  : "]"));
       }
 
 
-      try {
-        currentGenerationOK = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
-          @Override
-          public Boolean compute() throws GenerationCanceledException {
-            GenerationStatus status = generationSession.generateModel(monitor.subTask(9));
-            monitor.advance(0);
-            status.setOriginalInputModel(inputModel);
-            boolean currentGenerationOK = status.isOk();
+      GenerationStatus status = generationSession.generateModel(monitor.subTask(9));
+      monitor.advance(0);
+      status.setOriginalInputModel(inputModel);
+      currentGenerationOK = status.isOk();
 
-            checkMonitorCanceled(monitor);
+      checkMonitorCanceled(monitor);
 
-            currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, monitor.subTask(1));
-            monitor.advance(0);
-
-            return currentGenerationOK;
-          }
-        });
-      } catch (GenerationFailureException e) {
-        // never happens
-      }
+      currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, monitor.subTask(1));
+      monitor.advance(0);
     } finally {
       generationSession.getLoggingHandler().unregister();
       generationSession.discardTransients();

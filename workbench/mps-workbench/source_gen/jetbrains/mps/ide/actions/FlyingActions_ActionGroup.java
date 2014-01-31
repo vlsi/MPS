@@ -20,7 +20,6 @@ public class FlyingActions_ActionGroup extends GeneratedActionGroup {
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDependenciesInViewer_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action");
-      FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PrintIScopeAndIModuleMethodsUsages_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetPluginIdToCompileInIdeaModules_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

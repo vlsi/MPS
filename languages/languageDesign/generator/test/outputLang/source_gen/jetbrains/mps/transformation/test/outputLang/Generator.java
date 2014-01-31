@@ -62,10 +62,15 @@ public class Generator implements TemplateModule {
 
   private TemplateModel getTemplateModel(String modelName) {
     Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
+    if (clazz == null) {
+      throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
+    }
     try {
       return clazz.getConstructor(TemplateModule.class).newInstance(this);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
+    } catch (RuntimeException ex) {
+      throw ex;
+    } catch (Exception ex) {
+      throw new RuntimeException(ex);
     }
   }
 }

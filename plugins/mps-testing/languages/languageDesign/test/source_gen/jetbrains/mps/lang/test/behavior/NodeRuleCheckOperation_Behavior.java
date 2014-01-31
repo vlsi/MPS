@@ -22,23 +22,23 @@ public class NodeRuleCheckOperation_Behavior {
   }
 
   @Deprecated
-  public static void call_attachReference_8489045168660953479(SNode thisNode, SNode reference) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_attachReference_8489045168660953479", new Object[]{reference});
-  }
-
-  @Deprecated
-  public static SNode call_getReferencedRuleNode_5872607264946106205(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReferencedRuleNode_5872607264946106205", new Object[]{});
-  }
-
-  @Deprecated
   public static boolean callSuper_canAttachReference_1334460907022490922(SNode thisNode, String callerConceptFqName, SNode reference) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"), callerConceptFqName, "virtual_canAttachReference_1334460907022490922", new Class[]{SNode.class, SNode.class}, new Object[]{reference});
   }
 
   @Deprecated
+  public static void call_attachReference_8489045168660953479(SNode thisNode, SNode reference) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_attachReference_8489045168660953479", new Object[]{reference});
+  }
+
+  @Deprecated
   public static void callSuper_attachReference_8489045168660953479(SNode thisNode, String callerConceptFqName, SNode reference) {
     BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"), callerConceptFqName, "virtual_attachReference_8489045168660953479", new Class[]{SNode.class, SNode.class}, new Object[]{reference});
+  }
+
+  @Deprecated
+  public static SNode call_getReferencedRuleNode_5872607264946106205(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReferencedRuleNode_5872607264946106205", new Object[]{});
   }
 
   @Deprecated

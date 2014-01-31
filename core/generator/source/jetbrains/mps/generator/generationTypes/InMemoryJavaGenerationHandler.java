@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,6 @@ import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -73,11 +72,6 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
   public InMemoryJavaGenerationHandler(boolean reloadClasses) {
     this(reloadClasses, false);
-  }
-
-  @Override
-  public boolean canHandle(SModel inputModel) {
-    return SModelStereotype.isUserModel(inputModel);
   }
 
   @Override

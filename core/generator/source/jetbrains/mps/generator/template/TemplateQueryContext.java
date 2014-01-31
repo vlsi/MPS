@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,7 @@ public class TemplateQueryContext {
   }
 
   public IOperationContext getInvocationContext() {
-    return myGenerator.getGeneratorSessionContext().getInvocationContext();
+    return myGenerator.getGeneratorSessionContext();
   }
 
   // user objects
@@ -239,6 +239,10 @@ public class TemplateQueryContext {
     myGenerator.showErrorMessage(inputNode, tn, rn, message);
   }
 
+  /**
+   * Node in template model most close to the query being evaluated. For macro nodes, however
+   * shall point to macro's parent node (genContext.templateNode op contract)
+   */
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();
     return tnr == null ? null : tnr.resolve(MPSModuleRepository.getInstance());

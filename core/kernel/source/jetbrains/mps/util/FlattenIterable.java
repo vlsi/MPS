@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,15 @@ public class FlattenIterable<T> implements Iterable<T> {
   private Collection<Iterable<T>> myContent;
 
   public FlattenIterable() {
-    this(new ArrayList<Iterable<T>>());
+    myContent = new ArrayList<Iterable<T>>();
   }
 
-  public FlattenIterable(Collection<Iterable<T>> content) {
-    myContent = content;
+  public FlattenIterable(int initialCapacity) {
+    myContent = new ArrayList<Iterable<T>>(initialCapacity);
+  }
+
+  public FlattenIterable(Collection<? extends Iterable<T>> content) {
+    myContent = new ArrayList<Iterable<T>>(content);
   }
 
   public void add(Iterable<T> e) {

@@ -38,13 +38,13 @@ public class SNotationPart_Behavior {
   }
 
   @Deprecated
-  public static boolean call_hasNewLineBefore_3647933405694801750(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineBefore_3647933405694801750", new Object[]{});
+  public static boolean callSuper_hasNewLineAfter_3647933405694801735(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.notation.structure.SNotationPart"), callerConceptFqName, "virtual_hasNewLineAfter_3647933405694801735", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_hasNewLineAfter_3647933405694801735(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.notation.structure.SNotationPart"), callerConceptFqName, "virtual_hasNewLineAfter_3647933405694801735", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_hasNewLineBefore_3647933405694801750(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineBefore_3647933405694801750", new Object[]{});
   }
 
   @Deprecated

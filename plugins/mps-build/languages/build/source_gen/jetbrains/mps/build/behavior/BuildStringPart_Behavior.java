@@ -37,23 +37,13 @@ public class BuildStringPart_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isLastPositionAllowed_624440001685490925(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_624440001685490925", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getText_4380385936562037054", new Object[]{helper});
-  }
-
-  @Deprecated
   public static boolean callSuper_punctuationLeft_5096397858823356723(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_punctuationLeft_5096397858823356723", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{});
   }
 
   @Deprecated
@@ -62,8 +52,18 @@ public class BuildStringPart_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isLastPositionAllowed_624440001685490925(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_624440001685490925", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLastPositionAllowed_624440001685490925(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isLastPositionAllowed_624440001685490925", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static String call_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getText_4380385936562037054", new Object[]{helper});
   }
 
   @Deprecated

@@ -99,7 +99,6 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
   }
 
   public void dispose() {
-    getTypecheckingComponent().dispose();
   }
 
   public void computeTypes(boolean refreshTypes) {

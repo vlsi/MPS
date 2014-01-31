@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,28 +15,25 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.*;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
+import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.PatternRuleQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/23/10
@@ -44,9 +41,13 @@ import java.util.List;
 public class TemplateReductionPatternRuleInterpreted implements TemplateReductionRule {
 
   private final SNode ruleNode;
+  private final String myMethodName;
+  private PatternRuleQuery myQuery;
 
   public TemplateReductionPatternRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
+    myMethodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
+
   }
 
   @Override
@@ -67,7 +68,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    GeneratedMatchingPattern pattern = checkIfApplicable(context.getInput(), environment.getGenerator());
+    GeneratedMatchingPattern pattern = checkIfApplicable(environment, context);
     if (pattern == null) {
       return null;
     }
@@ -84,30 +85,22 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   }
 
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, ITemplateGenerator generator) throws GenerationFailureException {
-    String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
+  public GeneratedMatchingPattern checkIfApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
+    if (myQuery == null) {
+      myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(myMethodName);
+    }
     try {
-      return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new PatternRuleContext(inputNode, ruleNode, generator),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(ruleNode, "cannot find condition method '" + methodName + "' : not applied");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(ruleNode, "cannot find condition method '" + methodName + "' : not applied");
+      return myQuery.pattern(new PatternRuleContext(context.getInput(), ruleNode, env.getGenerator()));
     } catch (Throwable t) {
-      generator.getLogger().handleException(t);
-      generator.getLogger().error(ruleNode, "error executing pattern/condition " + methodName + " (see exception)");
+      env.getLogger().handleException(t);
+      env.getLogger().error(getRuleNode(), String.format("error executing pattern/condition %s (see exception)", myMethodName));
       throw new GenerationFailureException(t);
     }
-    return null;
   }
 
   @Nullable
   private Collection<SNode> apply(TemplateContext templateContext, @NotNull GeneratedMatchingPattern pattern, @NotNull TemplateExecutionEnvironment environment)
-    throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
+    throws GenerationException {
 
     final SNode inputNode = templateContext.getInput();
     String ruleMappingName = RuleUtil.getPatternReductionRuleLabel(ruleNode);
@@ -118,11 +111,9 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
     }
 
     RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
-    if (!rcp.prepare(ruleConsequence, ruleNode, templateContext.subContext(pattern))) {
-      environment.getGenerator().showErrorMessage(inputNode, null, ruleConsequence, "error processing reduction rule consequence");
-      return null;
-    }
-    List<SNode> result = rcp.processRuleConsequence(ruleMappingName);
-    return result;
+    // the order is important - subContext(Pattern) drops mapping name
+    templateContext = templateContext.subContext(pattern).subContext(ruleMappingName);
+    rcp.prepare(ruleConsequence, templateContext);
+    return rcp.processRuleConsequence();
   }
 }

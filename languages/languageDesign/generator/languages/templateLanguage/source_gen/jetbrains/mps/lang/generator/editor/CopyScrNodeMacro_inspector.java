@@ -250,7 +250,7 @@ public class CopyScrNodeMacro_inspector implements ConceptEditorComponent {
   private EditorCell createRefNode_m1raju_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodeQuery");
-    provider.setNoTargetText("<none>");
+    provider.setNoTargetText("<current source node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

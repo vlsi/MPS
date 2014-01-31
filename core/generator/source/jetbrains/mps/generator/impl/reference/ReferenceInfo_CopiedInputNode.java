@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       }
       String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(myInputTargetNode);
       if (resolveInfo != null) {
-        return createDynamicReference(resolveInfo, null);
+        return createDynamicReference(resolveInfo, getTargetModelReference(generator), null);
       }
       // if input was copied - return one of its copies
       // this can easy produce incorrect references

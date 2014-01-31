@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl;
+package jetbrains.mps.generator.impl.query;
 
-import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.template.MappingScriptContext;
 
 /**
- * Evgeny Gryaznov, Mar 12, 2010
+ * @author Artem Tikhomirov
  */
-public interface GenerationComputable<T> {
-  T compute() throws GenerationCanceledException, GenerationFailureException;
+public interface ScriptCodeBlock extends Query {
+  void invoke(MappingScriptContext ctx);
 }

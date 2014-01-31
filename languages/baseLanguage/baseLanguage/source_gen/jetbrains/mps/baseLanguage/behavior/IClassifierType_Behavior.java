@@ -82,13 +82,13 @@ public class IClassifierType_Behavior {
   }
 
   @Deprecated
-  public static Iterable<SNode> call_getTypeParameters_7405920559687237518(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeParameters_7405920559687237518", new Object[]{});
+  public static SNode callSuper_getClassifier_7405920559687237513(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getClassifier_7405920559687237513(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class}, new Object[]{});
+  public static Iterable<SNode> call_getTypeParameters_7405920559687237518(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeParameters_7405920559687237518", new Object[]{});
   }
 
   @Deprecated

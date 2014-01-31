@@ -72,6 +72,7 @@ public class SModelOperations {
       importedModels.add(sm.getReference());
     }
 
+    final SModelReference sourceModelRef = model.getReference();
     for (SNode node : SNodeUtil.getDescendants(model)) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) {
@@ -91,21 +92,21 @@ public class SModelOperations {
       }
 
       for (SReference reference : node.getReferences()) {
-        boolean internal = model.getReference().equals(reference.getTargetSModelReference());
-        if (internal) continue;
-
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-          if (respectModulesScopes && module != null) {
-            SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-            SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-            if (targetModule != null && !declaredDependencies.contains(targetModule)) {
-              ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
-            }
-          }
-          ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(targetModelReference, firstVersion);
-          importedModels.add(targetModelReference);
+        final SModelReference targetModelReference = reference.getTargetSModelReference();
+        boolean internal = sourceModelRef.equals(targetModelReference);
+        if (internal || targetModelReference == null || importedModels.contains(targetModelReference)) {
+          continue;
         }
+
+        if (respectModulesScopes && module != null) {
+          SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+          SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
+          if (targetModule != null && !declaredDependencies.contains(targetModule)) {
+            ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
+          }
+        }
+        ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(targetModelReference, firstVersion);
+        importedModels.add(targetModelReference);
       }
     }
     importedModels.clear();
@@ -176,8 +177,11 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static List<SModel> allImportedModels(SModel model) {
     Set<SModel> result = new LinkedHashSet<SModel>();
+    LinkedHashSet<SModel> allAccessoryModels = new LinkedHashSet<SModel>(); // linked merely to keep order the way it used to be
     for (Language language : getLanguages(model)) {
-      for (SModel am : language.getAccessoryModels()) {
+      List<SModel> accessoryModels = language.getAccessoryModels();
+      allAccessoryModels.addAll(accessoryModels);
+      for (SModel am : accessoryModels) {
         if (am != model) {
           SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
           if (scopeModelDescriptor != null) {
@@ -187,7 +191,7 @@ public class SModelOperations {
       }
     }
 
-    for (SModel importedModel : importedModels(model)) {
+    for (SModel importedModel : importedModels(model, allAccessoryModels)) {
       if (importedModel != model) {
         result.add(importedModel);
       }
@@ -255,19 +259,17 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   @NotNull
-  private static List<SModel> importedModels(SModel model) {
+  private static List<SModel> importedModels(final SModel model, Iterable<SModel> accessoryModelsFromUsedLanguages) {
     List<SModel> modelsList = new ArrayList<SModel>();
     for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
       SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
 
       if (modelDescriptor == null) {
-        for (Language l : getLanguages(model)) {
-          for (SModel accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getReference())) {
-              modelDescriptor = accessory;
-              break;
-            }
+        for (SModel accessory : accessoryModelsFromUsedLanguages) {
+          if (modelReference.equals(accessory.getReference())) {
+            modelDescriptor = accessory;
+            break;
           }
         }
       }

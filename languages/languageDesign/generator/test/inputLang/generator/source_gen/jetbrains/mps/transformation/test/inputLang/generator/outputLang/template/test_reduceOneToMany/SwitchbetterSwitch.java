@@ -64,7 +64,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809066879(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_duaj4c_a0a3h, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, reductionRule_duaj4c_a0a3h, environment.getGenerator())))) {
         return null;
       }
 

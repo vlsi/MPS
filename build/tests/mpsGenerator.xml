@@ -65,7 +65,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.generator.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-tests-models">
-      <fileset dir="${basedir}/languages/languageDesign/generator-tests/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/generator-tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/generator/jetbrains.mps.generator.tests-src.jar">
       <zipfileset file="${basedir}/languages/languageDesign/generator-tests/jetbrains.mps.generator.tests.msd" prefix="module" />
@@ -87,7 +87,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-overloadedOperators-solutions-jetbrains.mps.baseLanguage.overloadedOperators.sandbox-jetbrains">
-      <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/generator/jetbrains.mps.baseLanguage.overloadedOperators.sandbox-src.jar">
       <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" includes="**/*.java" />
@@ -119,7 +119,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeaving.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-jetbrains.mps.traceInfo.testWeaving-models">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeaving-src.jar">
       <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" includes="**/*.java" />
@@ -155,10 +155,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingGenerated.data-generator-template">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingGenerated.data-languageModels">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingGenerated.data-src.jar">
       <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" includes="**/*.java" />
@@ -196,10 +196,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingInterpreted.data#2819311507031176971" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingInterpreted.data-generator-template">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingInterpreted.data-languageModels">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data-src.jar">
       <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/source_gen" includes="**/*.java" />

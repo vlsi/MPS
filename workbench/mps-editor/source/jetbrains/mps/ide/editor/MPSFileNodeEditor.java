@@ -72,7 +72,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   public MPSFileNodeEditor(final Project project, final VirtualFile file) {
     this(project, null);
-    final SRepositoryContentAdapter adapter = new SRepositoryContentAdapter(){
+    // FIXME seems like if this ctor is called after model has been loaded, myFile will never get proper value
+    // because startListening() will not be called.
+    final SRepositoryContentAdapter adapter = new SRepositoryContentAdapter() {
       @Override
       protected void startListening(final SModel model) {
         MPSNodeVirtualFile mpsNodeVirtualFile = ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
@@ -89,7 +91,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
             return null;
           }
         });
-        if(mpsNodeVirtualFile != null) {
+        if (mpsNodeVirtualFile != null) {
           myFile = mpsNodeVirtualFile;
           MPSFileNodeEditor.this.recreateEditor();
           SRepositoryRegistry.getInstance().removeGlobalListener(this);
@@ -122,7 +124,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     });
   }
 
-  @NotNull
+  @Nullable
   public MPSNodeVirtualFile getFile() {
     return myFile;
   }
@@ -142,9 +144,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   public JComponent getPreferredFocusedComponent() {
     JPanel panel = new JPanel(new BorderLayout());
     JLabel label = new JLabel("Loading...");
-    label.setFont(label.getFont().deriveFont(label.getFont().getSize()*2));
+    label.setFont(label.getFont().deriveFont(label.getFont().getSize() * 2));
     panel.add(label, BorderLayout.CENTER);
-    return isDisposed() ? null : ( myNodeEditor == null ? panel : (JComponent) myNodeEditor.getCurrentEditorComponent() );
+    return isDisposed() ? null : (myNodeEditor == null ? panel : (JComponent) myNodeEditor.getCurrentEditorComponent());
   }
 
   @Override
@@ -154,7 +156,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return myFile.getNode().getName();
+        return !waitingForNodeFile() ? myFile.getNode().getName() : "Editor waiting for node";
       }
     });
   }
@@ -163,7 +165,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @NotNull
   public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
-    if (!isDisposed() && myNodeEditor!= null) {
+    if (!isDisposed() && myNodeEditor != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -178,6 +180,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @Override
   public void setState(final @NotNull FileEditorState state) {
     if (!(state instanceof MPSEditorStateWrapper)) return;
+    if (myNodeEditor == null) return;
     final MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
 
     if (wrapper.getLevel() == FileEditorStateLevel.UNDO) {
@@ -195,6 +198,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public boolean isModified() {
+    if (waitingForNodeFile()) return false;
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
@@ -206,7 +210,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public boolean isValid() {
-    return myFile!= null && myFile.isValid() && myIsValid && !myDisposed;
+    // allowing myFile==null as it currently designates delayed editor: waiting for the model to become ready
+    // in the repo and then becoming a normal fully-fledged editor
+    return (waitingForNodeFile() || myFile.isValid()) && myIsValid && !myDisposed;
   }
 
   @Override
@@ -240,6 +246,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @Override
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
+    if (waitingForNodeFile()) return null;
     return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
       @Override
       public StructureViewBuilder compute() {
@@ -266,7 +273,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   }
 
   public void recreateEditor() {
-    if (myProject.isDisposed() || !isValid()) return;
+    if (myProject.isDisposed() || !isValid() || waitingForNodeFile()) return;
     IOperationContext context = createOperationContext();
     if (context == null) return;
 
@@ -308,11 +315,15 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public Document[] getDocuments() {
-    if (!isDisposed()) {
+    if (!isDisposed() && myNodeEditor != null) {
       List<Document> result = ((BaseNodeEditor) myNodeEditor).getAllEditedDocuments();
       return result.toArray(new Document[result.size()]);
     }
     return new Document[0];
+  }
+
+  private boolean waitingForNodeFile() {
+    return myFile == null;
   }
 
   private class MPSFileNodeEditorComponent extends JPanel implements DataProvider {
@@ -330,7 +341,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
           return myProject;
         }
       } else {
-        if (!myProject.isDisposed()) {
+        if (!myProject.isDisposed() && !waitingForNodeFile()) {
           final Object data = FileEditorDataProviderManager.getInstance(myProject).getData(dataId, MPSFileNodeEditor.this, myFile);
           if (data != null) return data;
         }

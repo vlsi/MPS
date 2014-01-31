@@ -16,8 +16,6 @@ import java.util.Collections;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -99,7 +97,7 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
       SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
       SPropertyOperations.set(t, "name", name);
       SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
-      SNodeAccessUtil.setProperty(t, SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
+      MacroIntentionsUtil.copyVirtualPackage(t, node);
       //  initialize 'content node' 
       SNode ownerRule = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule", false, false);
       SNode contextNodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ownerRule, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "contextNodeQuery", true));

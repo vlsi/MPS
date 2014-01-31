@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-1f5zxj2ksvbj2xj40gn3yuw06b9ibej">
   <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="d95vkhfywysgqfioqgjercroixtnfhe" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="-5604hxtgmenc0tr06jzmz22vhb31gwx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="doawy7pp0t3xykfoqa5s5b5jnf1cy65" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="-una5x7tl2ddg7c82jwzw2wf10ctk4d" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="eiagtcy396ghtpxjsxz5iqo7fmtgrc6" />
   <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" hash="6g0x97xtvpdsfky1p0fzv5jsg7m2vex" />
   <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" hash="-2ak129k9cxr3slqxs0iazuxm9c6b7ow" />
@@ -23,7 +23,7 @@
   <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" hash="-bwbrq3rj18afomb3h93pba6x0binopy" />
   <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="-204lc1mozakfy7b6kd9agjc0ohqro8p" />
   <dep model="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)" hash="2vph27va2chi7erx6i1g90hh70aekur" />
-  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="bf3248to39b774kurcnh6z43bl9tjq4" />
+  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="-58sndlddemhjqvhas1z8m1370frip2i" />
   <dep model="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)" hash="ckki18lg79m9cdixit9m4ygo3kksp1i" />
   <dep model="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)" hash="alush4hw1einc79lrmqq0ckhttzer11" />
   <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" hash="7vp3kqetut8pp5gt0huof91i0bpldrc" />

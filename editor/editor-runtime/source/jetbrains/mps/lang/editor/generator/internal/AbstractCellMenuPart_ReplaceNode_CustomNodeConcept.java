@@ -25,7 +25,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -100,7 +99,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
    * implements IChildNodeSetter
    */
   @Override
-  public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope, @Nullable EditorContext editorContext) {
+  public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, @Nullable EditorContext editorContext) {
     SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
   }

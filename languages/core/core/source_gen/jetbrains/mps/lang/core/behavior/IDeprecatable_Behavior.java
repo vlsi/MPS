@@ -25,13 +25,13 @@ public class IDeprecatable_Behavior {
   }
 
   @Deprecated
-  public static String call_getMessage_1225207468592(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getMessage_1225207468592", new Object[]{});
+  public static boolean callSuper_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_isDeprecated_1224609060727", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_isDeprecated_1224609060727", new Class[]{SNode.class}, new Object[]{});
+  public static String call_getMessage_1225207468592(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getMessage_1225207468592", new Object[]{});
   }
 
   @Deprecated

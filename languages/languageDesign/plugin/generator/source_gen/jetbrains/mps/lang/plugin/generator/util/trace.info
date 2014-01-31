@@ -4,8 +4,8 @@
     <nodeInfo nodeId="5755638771828834290" fileName="PluginNameUtils.java" startLine="11" startPosition="54" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5755638771828834301" fileName="PluginNameUtils.java" startLine="15" startPosition="65" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5755638771828834312" fileName="PluginNameUtils.java" startLine="19" startPosition="65" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5755638771828834323" fileName="PluginNameUtils.java" startLine="23" startPosition="73" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5755638771828834338" fileName="PluginNameUtils.java" startLine="24" startPosition="141" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5062476545251734891" fileName="PluginNameUtils.java" startLine="23" startPosition="73" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5755638771828834338" fileName="PluginNameUtils.java" startLine="24" startPosition="73" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="5755638771828834344" fileName="PluginNameUtils.java" startLine="26" startPosition="46" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5755638771828834356" fileName="PluginNameUtils.java" startLine="28" startPosition="5" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5755638771828834286" fileName="PluginNameUtils.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginName#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
@@ -27,7 +27,7 @@
       <varInfo nodeId="5755638771828834317" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="5755638771828834322" fileName="PluginNameUtils.java" startLine="23" startPosition="73" endLine="29" endPosition="26">
-      <varInfo nodeId="5755638771828834324" varName="originalModule" />
+      <varInfo nodeId="5062476545251734892" varName="originalModule" />
     </scopeInfo>
     <scopeInfo nodeId="5755638771828834319" fileName="PluginNameUtils.java" startLine="23" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5755638771828834358" varName="context" />

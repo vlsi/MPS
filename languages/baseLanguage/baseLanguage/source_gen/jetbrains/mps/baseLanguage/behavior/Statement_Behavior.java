@@ -52,13 +52,13 @@ public class Statement_Behavior {
   }
 
   @Deprecated
-  public static void call_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
+  public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", new Class[]{SNode.class}, new Object[]{});
+  public static void call_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
   }
 
   @Deprecated

@@ -296,7 +296,7 @@ public class CopySrcListMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_vmyx7q_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodesQuery");
-    provider.setNoTargetText("<none>");
+    provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

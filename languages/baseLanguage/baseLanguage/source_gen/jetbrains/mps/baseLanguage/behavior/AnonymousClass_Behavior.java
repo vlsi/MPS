@@ -135,23 +135,23 @@ public class AnonymousClass_Behavior {
   }
 
   @Deprecated
-  public static String call_getNestedName_2193927380279967693(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getNestedName_8540045600162184125", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getFqName_7523932196475787022(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
-  }
-
-  @Deprecated
   public static String callSuper_getUnitName_2496361171403550994(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static String call_getNestedName_2193927380279967693(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getNestedName_8540045600162184125", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getNestedName_2193927380279967693(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static String call_getFqName_7523932196475787022(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   @Deprecated
