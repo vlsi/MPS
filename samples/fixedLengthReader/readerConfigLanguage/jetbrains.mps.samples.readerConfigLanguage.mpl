@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="readerConfigLanguage#1129923280150" uuid="5b79f56d-c904-49ad-93b5-e535ce9a83fc">
+    <generator name="" generatorUID="readerConfigLanguage#1129923280150" uuid="5b79f56d-c904-49ad-93b5-e535ce9a83fc" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/baseLanguage" />
@@ -28,7 +28,7 @@
       </usedDevKits>
       <mapping-priorities />
     </generator>
-    <generator generatorUID="readerConfigLanguage#1129923281152" uuid="ffb71f3a-317f-4241-a93c-321d713ebf82">
+    <generator name="" generatorUID="readerConfigLanguage#1129923281152" uuid="ffb71f3a-317f-4241-a93c-321d713ebf82" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/xml" />

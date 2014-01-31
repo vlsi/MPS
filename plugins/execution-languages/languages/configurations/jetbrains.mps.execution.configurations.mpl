@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.execution.configurations#3754890006475631525" uuid="d84d74f3-ca7f-48ba-ab57-d22a60cad837">
+    <generator name="" generatorUID="jetbrains.mps.execution.configurations#3754890006475631525" uuid="d84d74f3-ca7f-48ba-ab57-d22a60cad837" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -15,10 +15,10 @@
       </models>
       <external-templates>
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
-        <generator generatorUID="c31fc437-4bfb-4447-bafe-2aa77860610e(jetbrains.mps.execution.commands#856705193941426438)" />
+        <generator generatorUID="d05c4356-e6a8-4dcf-a81a-3adf36be3c35(jetbrains.mps.execution.settings#946964771156035778)" />
         <generator generatorUID="0e7466c6-bdd9-48a0-921b-a0f4bac08259(jetbrains.mps.baseLanguage.classifiers#1205839057922)" />
         <generator generatorUID="d4ef9816-d167-4e4e-a083-91ffd61b4c5c(jetbrains.mps.lang.plugin.standalone#481983775135098857)" />
-        <generator generatorUID="d05c4356-e6a8-4dcf-a81a-3adf36be3c35(jetbrains.mps.execution.settings#946964771156035778)" />
+        <generator generatorUID="c31fc437-4bfb-4447-bafe-2aa77860610e(jetbrains.mps.execution.commands#856705193941426438)" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
