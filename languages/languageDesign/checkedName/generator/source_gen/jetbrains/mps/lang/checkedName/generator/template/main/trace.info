@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="13" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.checkedName.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.checkedName.generator.template.main.QueriesGenerated" />
   <root nodeRef="r:d4a54057-bfb5-417b-b29a-fd853f994035(jetbrains.mps.lang.checkedName.generator.template.main@generator)/5003188907304823207">
-    <nodeInfo nodeId="5003188907304823224" fileName="QueriesGenerated.java" startLine="15" startPosition="154" endLine="16" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5003188907304823216" fileName="QueriesGenerated.java" startLine="19" startPosition="150" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5003188907304823223" fileName="QueriesGenerated.java" startLine="15" startPosition="154" endLine="16" endPosition="126" />
-    <scopeInfo nodeId="5003188907304823215" fileName="QueriesGenerated.java" startLine="19" startPosition="150" endLine="20" endPosition="75" />
+    <nodeInfo nodeId="5003188907304823224" fileName="QueriesGenerated.java" startLine="16" startPosition="112" endLine="17" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5003188907304823216" fileName="QueriesGenerated.java" startLine="20" startPosition="108" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5003188907304823223" fileName="QueriesGenerated.java" startLine="16" startPosition="112" endLine="17" endPosition="126" />
+    <scopeInfo nodeId="5003188907304823215" fileName="QueriesGenerated.java" startLine="20" startPosition="108" endLine="21" endPosition="75" />
   </root>
 </debugInfo>
 
