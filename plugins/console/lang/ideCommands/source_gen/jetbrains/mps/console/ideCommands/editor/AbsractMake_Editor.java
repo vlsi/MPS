@@ -22,40 +22,40 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class Make_Editor extends DefaultNodeEditor {
+public class AbsractMake_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ep32wf_a(editorContext, node);
+    return this.createCollection_uaz3qu_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ep32wf_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_uaz3qu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ep32wf_a");
+    editorCell.setCellId("Collection_uaz3qu_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_ep32wf_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ep32wf_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_uaz3qu_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_uaz3qu_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_ep32wf_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_uaz3qu_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryExpression_EditorComponent");
     return editorCell;
   }
 
-  private EditorCell createCollection_ep32wf_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_uaz3qu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ep32wf_b0");
+    editorCell.setCellId("Collection_uaz3qu_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_ep32wf_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ep32wf_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ep32wf_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uaz3qu_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_uaz3qu_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uaz3qu_c1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ep32wf_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_uaz3qu_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_ep32wf_a1a");
+    editorCell.setCellId("Constant_uaz3qu_a1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -63,16 +63,16 @@ public class Make_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ep32wf_b1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Make_Editor.argumentListHandler_ep32wf_b1a(node, "argument", editorContext);
+  private EditorCell createRefNodeList_uaz3qu_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AbsractMake_Editor.argumentListHandler_uaz3qu_b1a(node, "argument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_argument");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class argumentListHandler_ep32wf_b1a extends RefNodeListHandler {
-    public argumentListHandler_ep32wf_b1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class argumentListHandler_uaz3qu_b1a extends RefNodeListHandler {
+    public argumentListHandler_uaz3qu_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -95,7 +95,7 @@ public class Make_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ep32wf_a1b0(editorContext, node);
+      return this.createConstant_uaz3qu_a1b0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -124,17 +124,17 @@ public class Make_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private EditorCell createConstant_ep32wf_a1b0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_uaz3qu_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ep32wf_a1b0");
+      editorCell.setCellId("Constant_uaz3qu_a1b0");
       editorCell.setDefaultText("<all>");
       return editorCell;
     }
   }
 
-  private EditorCell createConstant_ep32wf_c1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_uaz3qu_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_ep32wf_c1a");
+    editorCell.setCellId("Constant_uaz3qu_c1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     editorCell.getStyle().putAll(style);

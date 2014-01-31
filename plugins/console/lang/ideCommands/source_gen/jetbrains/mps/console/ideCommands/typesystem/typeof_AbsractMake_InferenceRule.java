@@ -15,27 +15,27 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
-public class typeof_Clean_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-  public typeof_Clean_InferenceRule() {
+public class typeof_AbsractMake_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+  public typeof_AbsractMake_InferenceRule() {
   }
 
-  public void applyRule(final SNode clean, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode absractMake, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = clean;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593938255695", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593938255700", true), (SNode) _quotation_createNode_2e1wdk_a0a0b(), _info_12389875345);
+      SNode _nodeToCheck_1029348928467 = absractMake;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891845", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891850", true), (SNode) _quotation_createNode_m0ryz8_a0a0b(), _info_12389875345);
     }
-    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(clean, "argument", true))) {
+    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(absractMake, "argument", true))) {
       {
         SNode _nodeToCheck_1029348928467 = param;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593938255708", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593938255710", true), (SNode) _quotation_createNode_2e1wdk_a0a0b0b(), false, true, _info_12389875345);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891858", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891860", true), (SNode) _quotation_createNode_m0ryz8_a0a0b0b(), false, true, _info_12389875345);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.ideCommands.structure.Clean";
+    return "jetbrains.mps.console.ideCommands.structure.AbsractMake";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -49,14 +49,14 @@ public class typeof_Clean_InferenceRule extends AbstractInferenceRule_Runtime im
     return false;
   }
 
-  private static SNode _quotation_createNode_2e1wdk_a0a0b() {
+  private static SNode _quotation_createNode_m0ryz8_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_2e1wdk_a0a0b0b() {
+  private static SNode _quotation_createNode_m0ryz8_a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

@@ -24,6 +24,10 @@ import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -105,7 +109,7 @@ public class IdeCommandUtil {
 
 
 
-  public static void clean(Iterable<SModel> models_, Iterable<? extends Iterable<SModel>> models__, Iterable<SModule> modules_, Iterable<? extends Iterable<SModule>> modules__) {
+  public static void cleanCaches(Iterable<SModel> models_, Iterable<? extends Iterable<SModel>> models__, Iterable<SModule> modules_, Iterable<? extends Iterable<SModule>> modules__) {
     Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
       public Iterable<SModel> translate(Iterable<SModel> it) {
         return it;
@@ -138,6 +142,52 @@ public class IdeCommandUtil {
       public void visit(SModel it) {
         IFile generatedFile = GenerationDependenciesCache.getInstance().getCacheFile(it);
         generatedFile.delete();
+      }
+    });
+  }
+
+
+
+  public static void cleanSourcesGen(final Project project, Iterable<SModel> models_, Iterable<? extends Iterable<SModel>> models__, Iterable<SModule> modules_, Iterable<? extends Iterable<SModule>> modules__) {
+    Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
+      public Iterable<SModel> translate(Iterable<SModel> it) {
+        return it;
+      }
+    }));
+    final Wrappers._T<Iterable<? extends SModule>> modules = new Wrappers._T<Iterable<? extends SModule>>(Sequence.fromIterable(modules_).concat(Sequence.fromIterable(modules__).translate(new ITranslator2<Iterable<SModule>, SModule>() {
+      public Iterable<SModule> translate(Iterable<SModule> it) {
+        return it;
+      }
+    })));
+    if (Sequence.fromIterable(models_).isEmpty() && Sequence.fromIterable(models__).isEmpty() && Sequence.fromIterable(modules_).isEmpty() && Sequence.fromIterable(modules__).isEmpty()) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          modules.value = project.getModulesWithGenerators();
+        }
+      });
+    }
+    Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return SNodeOperations.isGeneratable(it);
+      }
+    }).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        String outputPath = SModuleOperations.getOutputPathFor(it);
+        String cachePath = FileGenerationUtil.getCachesPath(outputPath);
+        IFile ouputDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(outputPath));
+        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(cachePath));
+        ouputDir.delete();
+        cachesDir.delete();
+      }
+    });
+    Sequence.fromIterable(modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+      public void visit(AbstractModule it) {
+        IFile outputDir = it.getOutputPath();
+        if (outputDir != null) {
+          IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
+          outputDir.delete();
+          cacheDir.delete();
+        }
       }
     });
   }
