@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
@@ -190,7 +189,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
     }
   }

@@ -1718,6 +1718,11 @@ public class QueriesGenerated {
     return _context.getOutputNodeByMappingLabel("QueriesGenerated");
   }
 
+  public static boolean ifMacro_Condition_7602140671021077467(final IfMacroContext _context) {
+    SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
+    return (generator != null) && !(SPropertyOperations.getBoolean(generator, "reflectiveQueries"));
+  }
+
   public static boolean ifMacro_Condition_8538186968695460829(final IfMacroContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
     return (generator != null) && !(SPropertyOperations.getBoolean(generator, "needOperationContext"));
@@ -1741,11 +1746,6 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7602140671021486924(final IfMacroContext _context) {
-    SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
-    return (generator != null) && !(SPropertyOperations.getBoolean(generator, "reflectiveQueries"));
-  }
-
-  public static boolean ifMacro_Condition_7602140671021077467(final IfMacroContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
     return (generator != null) && !(SPropertyOperations.getBoolean(generator, "reflectiveQueries"));
   }
@@ -2718,22 +2718,22 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
   }
 
-  public static boolean ifMacro_Condition_1229548601006644768(final IfMacroContext _context) {
-    SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
-    return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
-  }
-
-  public static boolean ifMacro_Condition_2000056068063318338(final IfMacroContext _context) {
-    SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
-    return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
-  }
-
   public static boolean ifMacro_Condition_2000056068065324283(final IfMacroContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
     return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
   }
 
+  public static boolean ifMacro_Condition_1229548601006644768(final IfMacroContext _context) {
+    SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
+    return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
+  }
+
   public static boolean ifMacro_Condition_8402574204323609282(final IfMacroContext _context) {
+    SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
+    return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
+  }
+
+  public static boolean ifMacro_Condition_2000056068063318338(final IfMacroContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
     return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
   }
