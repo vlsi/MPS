@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main.QueriesGenerated" />
   <root nodeRef="r:a1c78a62-ebdd-4de6-ad38-920fd4804e20(jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main@generator)/3978102045101855019">
-    <nodeInfo nodeId="3978102045101880185" fileName="QueriesGenerated.java" startLine="12" startPosition="154" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3978102045101880680" fileName="QueriesGenerated.java" startLine="16" startPosition="154" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3978102045101880179" fileName="QueriesGenerated.java" startLine="12" startPosition="154" endLine="13" endPosition="69" />
-    <scopeInfo nodeId="3978102045101880674" fileName="QueriesGenerated.java" startLine="16" startPosition="154" endLine="17" endPosition="69" />
+    <nodeInfo nodeId="3978102045101880185" fileName="QueriesGenerated.java" startLine="13" startPosition="112" endLine="14" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3978102045101880680" fileName="QueriesGenerated.java" startLine="17" startPosition="112" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3978102045101880179" fileName="QueriesGenerated.java" startLine="13" startPosition="112" endLine="14" endPosition="69" />
+    <scopeInfo nodeId="3978102045101880674" fileName="QueriesGenerated.java" startLine="17" startPosition="112" endLine="18" endPosition="69" />
   </root>
 </debugInfo>
 

@@ -28,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.TestInfo_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />

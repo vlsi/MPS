@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import java.util.HashSet;
+import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,6 +28,7 @@ public class SimpleLRUCache<K> {
 
   private static final int DEFAULT_MAX_SIZE = 20000;
   private static final double FIRST_LEVEL_RATIO = 0.6;
+  private static final double CLEANUP_Q1_RATIO = 0.06;
 
   private final AtomicInteger roomLeftFirstLevel;
   private final AtomicInteger roomLeftSecondLevel;
@@ -40,8 +41,8 @@ public class SimpleLRUCache<K> {
 
   private final ConcurrentHashMap<K, K> transitionalCache = new ConcurrentHashMap<K, K>();
 
-  private final int myPromoteRemovalsThreshold;
-  private final ConcurrentHashMap<K, K> myPromoteRemovals;
+  private int promotesBeforeCleanupInitialValue;
+  private final AtomicInteger promotesBeforeCleanup;
 
   public SimpleLRUCache(int maxSize) {
     final int sizeL1 = (int) (maxSize * FIRST_LEVEL_RATIO);
@@ -51,8 +52,8 @@ public class SimpleLRUCache<K> {
     // compensate HashMap size for default load factor of 0.75
     firstLevelCache = new ConcurrentHashMap<K, K>(sizeL1 * 4 / 3);
     secondLevelCache = new ConcurrentHashMap<K, K>(sizeL2 * 4 / 3);
-    myPromoteRemovalsThreshold = sizeL1 / 10;
-    myPromoteRemovals = new ConcurrentHashMap<K, K>(myPromoteRemovalsThreshold * 4 / 3);
+    promotesBeforeCleanupInitialValue = (int) (maxSize * CLEANUP_Q1_RATIO);
+    promotesBeforeCleanup = new AtomicInteger(promotesBeforeCleanupInitialValue);
   }
 
   public SimpleLRUCache() {
@@ -106,8 +107,9 @@ public class SimpleLRUCache<K> {
 
       if (firstLevelCache.remove(cached, cached)) {
         roomLeftFirstLevel.incrementAndGet();
-        myPromoteRemovals.put(cached, cached);
-        dropStaleInQ1();
+        if (promotesBeforeCleanup.decrementAndGet() <= 0) {
+          cleanupQ1();
+        }
       }
 
       if (roomLeftSecondLevel.decrementAndGet() <= 0) {
@@ -171,6 +173,7 @@ public class SimpleLRUCache<K> {
   private boolean lock(K cached) {
     return transitionalCache.putIfAbsent(cached, cached) == null;
   }
+
   private void unlock(K cached) {
     boolean removed = transitionalCache.remove(cached, cached);
     assert removed;
@@ -179,15 +182,13 @@ public class SimpleLRUCache<K> {
   /**
    * Unlike L2 and Q2, L1 elements can be removed independently from elements in Q1, when promoting L1 element to L2.
    * Afterwards, when L2 elements 'demoted' back to L1 get added to Q1, there are duplicating queue elements.
-   * I don't want to walk Q1 on each 'promote', hence collect L1/Q1 elements promoted, and remove them from Q1 in a batch
+   * The Q1 is cleaned up after the number o promotes hits the threshold.
    */
-  private void dropStaleInQ1() {
-    if (myPromoteRemovals.size() > myPromoteRemovalsThreshold) {
-      // list.removeAll is long-running. Minimize the chance to do it more than once (from different threads)
-      HashSet<K> removed = new HashSet<K>(myPromoteRemovals.keySet());
-      myPromoteRemovals.clear();
-      if (!removed.isEmpty()) {
-        firstLevelQueue.removeAll(removed);
+  private void cleanupQ1() {
+    promotesBeforeCleanup.set(promotesBeforeCleanupInitialValue);
+    for (Iterator<K> it = firstLevelQueue.iterator(); it.hasNext();) {
+      if (!firstLevelCache.containsKey(it.next())) {
+        it.remove();
       }
     }
   }

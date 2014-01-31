@@ -7,10 +7,10 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.console.scripts#1734392475490224704" uuid="b372f31d-dc58-46b6-ad0b-2e1b2e187b9d">
+    <generator name="" generatorUID="jetbrains.mps.console.scripts#1734392475490224704" uuid="b372f31d-dc58-46b6-ad0b-2e1b2e187b9d" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
-          <sourceRoot path="${module}/generator/template" />
+          <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
       <external-templates />
