@@ -30,11 +30,11 @@ import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.scope.FilteringByNameScope;
@@ -322,10 +322,7 @@ public class Classifier_Behavior {
     while (SNodeOperations.getParent(child) != thisNode && child != null) {
       child = SNodeOperations.getParent(child);
     }
-    if (child == null) {
-      return ScopeUtils.lazyParentScope(thisNode, kind);
-    }
-    final boolean isStaticContext = (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{})) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isStatic_7405920559687241224", new Object[]{})) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
+    final boolean isStaticContext = !(child == null) && ((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{})) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isStatic_7405920559687241224", new Object[]{})) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer"));
 
     // todo: remove this logic from Classifier 
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
@@ -368,19 +365,19 @@ public class Classifier_Behavior {
     }
 
     {
-      SNode concept_j0bb;
-      concept_j0bb = kind;
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
+      SNode concept_i0bb;
+      concept_i0bb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
         return CompositeWithParentScope.from(thisNode, thisNode, kind);
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         if (!(isStaticContext)) {
           return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
         } else {
           return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         {
           // add instance fields + static fields 
           Iterable<SNode> staticMethods = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
@@ -423,14 +420,18 @@ public class Classifier_Behavior {
 
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (child == null) {
+          return ScopeUtils.lazyParentScope(thisNode, kind);
+        }
+
         if (SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
           return ClassifierScopes.getVisibleClassifiersScope(child, false);
         }
         return ClassifierScopes.getVisibleClassifiersScope(child, true);
 
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {
           // in other cases - hide everything by name... 
           // todo: change! 
@@ -447,7 +448,7 @@ public class Classifier_Behavior {
             });
             addition = new NamedElementsScope(members);
           } else {
-            if (!(isStaticContext)) {
+            if (!(isStaticContext) && child != null) {
               addition = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
             }
           }

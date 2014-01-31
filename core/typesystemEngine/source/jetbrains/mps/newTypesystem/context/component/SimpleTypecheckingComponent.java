@@ -130,10 +130,6 @@ import java.util.Set;
     return myTypechecking;
   }
 
-  public void dispose() {
-
-  }
-
   public void solveInequalitiesAndExpandTypes(boolean finalExpansion) {
     myState.solveInequalities();
     myState.expandAll(myNodes, finalExpansion);
