@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="8n6rt4lag74xv5k3hrqd1wdjsuqlwx7">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="4rsoylyh3x02ovgqti9qee6f3j6m3sg" dependsOnNodes="true" />
   <source id="7314351270975463225" name="DiskMemoryConflictsTest" hash="-2bxqie9qr2qth7lkylzcuysm7chf7ws">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

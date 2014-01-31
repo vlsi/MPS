@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-8l6dpb8lznx4fqjfg3y1xiwwxgvvjho">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-e1hg7esqipe0o6gwk19t6gay9s4gvpf" dependsOnNodes="true" />
   <source id="3531370237489972135" name="MergeDriverBackupUtil" hash="-75uu1hv92x8efla4yujqacs8wskt629">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

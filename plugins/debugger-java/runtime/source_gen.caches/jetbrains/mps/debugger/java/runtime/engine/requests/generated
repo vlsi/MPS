@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-15tvz0jtunc1rbb3k7djngg5q3z45sz">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="3t3ercrodeom7lxm836up4nu7l2eaic" dependsOnNodes="true" />
   <source id="2891782949125146377" name="Requestor" hash="7crc13wc4m90w463drpi8o6xii9efgx">
     <file name="Requestor.java" />

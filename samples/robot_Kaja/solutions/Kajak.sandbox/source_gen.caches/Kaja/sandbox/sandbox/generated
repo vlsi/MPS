@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="a12wkes0fhqiy057s327kury4d5cc2b">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)" hash="-85l6x5is104p9mz7a3qg0a1mkkbj5pk" />
-  <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" hash="-6tx6cpc86d0e4an9lej63lstuw5glkq" />
+  <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" hash="-3ajlis33sqj29aq4y243ixy558mfszc" />
   <common hash="4x2ud07zb7ohtg2qq4ofh9v7orbfzxc" dependsOnNodes="true" />
   <source id="3308300503039980203" name="Karel" hash="9t5de7qho3lm1j47fko497jueswgw3l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

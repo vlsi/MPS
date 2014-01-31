@@ -4,10 +4,9 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.descriptors;
 
 import jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter;
-import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer;
-
 import javax.swing.table.TableCellRenderer;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter;
 
 public class DepDescriptor extends VoidColumnDescriptor {
   private final IBindedDialog myOwner;
