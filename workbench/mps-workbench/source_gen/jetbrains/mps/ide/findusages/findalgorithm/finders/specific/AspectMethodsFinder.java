@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
@@ -42,23 +43,16 @@ public class AspectMethodsFinder implements IFinder {
     });
     SearchResults<SNode> res = new SearchResults<SNode>();
     for (SModel model : applicableModelDescriptors) {
-      for (SNode root : model.getRootNodes()) {
-        findNodes(res, root, data.myMethodName);
+      for (SNode node : SNodeUtil.getDescendants(model)) {
+        for (String value : SNodeOperations.getProperties(node).values()) {
+          if (data.myMethodName.endsWith(value)) {
+            res.getSearchResults().add(new SearchResult<SNode>(node, "Aspect methods"));
+            break;
+          }
+        }
       }
     }
     return res;
-  }
-
-  private void findNodes(SearchResults<SNode> res, SNode node, String methodName) {
-    for (String value : SNodeOperations.getProperties(node).values()) {
-      if (methodName.endsWith(value)) {
-        res.getSearchResults().add(new SearchResult<SNode>(node, "Aspect methods"));
-        break;
-      }
-    }
-    for (SNode child : SNodeOperations.getChildren(node)) {
-      findNodes(res, child, methodName);
-    }
   }
 
   public String getDescription() {
