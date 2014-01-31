@@ -203,7 +203,7 @@
     <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="31" startPosition="47" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="32" startPosition="54" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="33" startPosition="35" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="46" startPosition="45" endLine="47" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -339,7 +339,7 @@
     <nodeInfo nodeId="3362819150777211506" fileName="ReplaceInstancesByCondition_Action.java" startLine="110" startPosition="31" endLine="151" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3362819150777211506" fileName="ReplaceInstancesByCondition_Action.java" startLine="110" startPosition="31" endLine="151" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3362819150777211506" fileName="ReplaceInstancesByCondition_Action.java" startLine="91" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_pi123x_a0b0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="17" />
     <scopeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" />
     <scopeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="46" startPosition="45" endLine="47" endPosition="102" />
     <scopeInfo nodeId="3362819150777199432" fileName="ReplaceInstancesByCondition_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />

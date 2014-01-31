@@ -385,8 +385,11 @@
   </root>
   <root type="tp4k.NonDumbAwareActions" typeId="tp4k.1512255007353869532" id="3355341743769417702" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Default" />
-    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3355341743769417703" nodeInfo="nn">
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="7840163421835605599" nodeInfo="nn">
       <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3355341743769121285" resolveInfo="FindInstancesByCondition" />
+    </node>
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="7840163421835605817" nodeInfo="nn">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3362819150777199432" resolveInfo="ReplaceInstancesByCondition" />
     </node>
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3362819150777199432" nodeInfo="ng">

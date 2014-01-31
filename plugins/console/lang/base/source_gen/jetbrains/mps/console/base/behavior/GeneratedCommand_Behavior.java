@@ -7,11 +7,10 @@ import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils;
+import jetbrains.mps.console.tool.ConsoleUtil;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.console.tool.ConsoleUtil;
 import java.lang.reflect.Method;
 import org.apache.log4j.Priority;
 import java.lang.reflect.InvocationTargetException;
@@ -28,7 +27,7 @@ public class GeneratedCommand_Behavior {
       public void run() {
         final SModel model = context.getConsoleTab().getConsoleModel();
 
-        boolean result = QuickQueryUtils.make(context.getProject(), model);
+        boolean result = ConsoleUtil.make(context.getProject(), model);
         if (!(result)) {
           return;
         }
