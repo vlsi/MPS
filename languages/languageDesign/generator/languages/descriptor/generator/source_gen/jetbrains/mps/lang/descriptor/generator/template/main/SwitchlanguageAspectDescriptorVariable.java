@@ -68,7 +68,7 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_4565427742314546853(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_mjol5z_a0a3h, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_4565427742314546853(new ReductionRuleQueryContext(context, reductionRule_mjol5z_a0a3h, environment.getGenerator())))) {
         return null;
       }
 
@@ -115,7 +115,7 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
             try {
               environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a5a3a2a5h);
               environment.nodeCopied(context1, tnode4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314907605");
-              SNodeAccessUtil.setProperty(tnode4, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742314939782(environment.getOperationContext(), new PropertyMacroContext(context1, "EditorAspectDescriptor", propertyMacro_mjol5z_c0b0c0c0b0f0d0c0f7, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode4, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742314939782(new PropertyMacroContext(context1, "EditorAspectDescriptor", propertyMacro_mjol5z_c0a0c0c0b0f0d0c0f7, environment.getGenerator()))));
               tnode4.setReference("classifier", SReference.create("classifier", tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
 
             } finally {
@@ -147,5 +147,5 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
   private static SNodePointer templateNode_mjol5z_a0a0a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314559519");
   private static SNodePointer templateNode_mjol5z_a0a0a1a4a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314559520");
   private static SNodePointer templateNode_mjol5z_a0a0a1a5a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314907605");
-  private static SNodePointer propertyMacro_mjol5z_c0b0c0c0b0f0d0c0f7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314939781");
+  private static SNodePointer propertyMacro_mjol5z_c0a0c0c0b0f0d0c0f7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314939781");
 }

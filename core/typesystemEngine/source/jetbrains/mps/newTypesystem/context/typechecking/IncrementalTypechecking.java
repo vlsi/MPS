@@ -18,6 +18,9 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.checkers.ErrorReportUtil;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
@@ -41,6 +44,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.lang.ref.ReferenceQueue;
@@ -54,6 +58,13 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private List<SModel> myReplacedModels = new ArrayList<SModel>();
+
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter(){
+    @Override
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+      myNonTypeSystemComponent.clear();
+    }
+  };
 
   private Map<SModel, Set<SNode>> mySModelNodes = new THashMap<SModel, Set<SNode>>();
 
@@ -77,6 +88,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     super(node, state);
     myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), state, this);
     myModelListenerManager.track(myRootNode);
+    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
   @Override
@@ -148,13 +160,13 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   @Override
   public void dispose() {
+    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     if (myModelListenerManager != null) {
       myModelListenerManager.dispose();
       myModelListenerManager = null;
     }
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
     if (myNonTypeSystemComponent != null) {
-      myNonTypeSystemComponent.dispose();
       myNonTypeSystemComponent = null;
     }
     if (mySModelListener != null) {
