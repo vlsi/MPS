@@ -13619,8 +13619,8 @@
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="966837649719085553" nodeInfo="nn">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="966837649719086733" nodeInfo="nn">
               <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="966837649712369425" resolveInfo="WrapperClass.Inner" />
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="966837649722300442" nodeInfo="ng">
-                <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722300443" nodeInfo="ng" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="549051458242632396" nodeInfo="ng">
+                <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722300443" nodeInfo="ng" />
               </node>
             </node>
           </node>
@@ -13667,8 +13667,8 @@
                       <link role="classifier" roleId="tpee.1170346070688" targetNodeId="966837649712369425" resolveInfo="WrapperClass.Inner" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="966837649720650720" nodeInfo="nn" />
                     </node>
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="966837649722324639" nodeInfo="ng">
-                      <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722324640" nodeInfo="ng" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="549051458242632387" nodeInfo="ng">
+                      <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722324640" nodeInfo="ng" />
                     </node>
                   </node>
                 </node>
@@ -13683,8 +13683,8 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="966837649722344895" nodeInfo="nn">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="966837649722354537" nodeInfo="nn">
                     <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="966837649712369425" resolveInfo="WrapperClass.Inner" />
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="966837649722354584" nodeInfo="ng">
-                      <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722354585" nodeInfo="ng" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="549051458242632390" nodeInfo="ng">
+                      <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722354585" nodeInfo="ng" />
                     </node>
                   </node>
                 </node>
@@ -13696,8 +13696,8 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="966837649722370741" nodeInfo="nn">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="966837649722379841" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="966837649722359878" resolveInfo="WrapperClass.InnerWithConstructor" />
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="966837649722380487" nodeInfo="ng">
-                      <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722380488" nodeInfo="ng" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="549051458242632384" nodeInfo="ng">
+                      <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722380488" nodeInfo="ng" />
                     </node>
                   </node>
                 </node>
@@ -13742,8 +13742,8 @@
                                     <link role="classifier" roleId="tpee.1170346070688" targetNodeId="966837649712369425" resolveInfo="WrapperClass.Inner" />
                                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="966837649720836441" nodeInfo="nn" />
                                   </node>
-                                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="966837649722408956" nodeInfo="ng">
-                                    <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722408957" nodeInfo="ng" />
+                                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="549051458242632393" nodeInfo="ng">
+                                    <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="966837649722408957" nodeInfo="ng" />
                                   </node>
                                 </node>
                               </node>
