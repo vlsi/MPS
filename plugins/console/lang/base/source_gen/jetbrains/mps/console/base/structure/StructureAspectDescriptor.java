@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.ConsoleHelpProvider").abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.HistoryItem").children(new String[]{"command"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"command"}, new boolean[]{false}).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ConsoleHelpProvider").interface_().create();
       case 3:

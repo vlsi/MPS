@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CommandHolder_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
+  <unitInfo fileName="CommandHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
   <unitInfo fileName="Command_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleHelpProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleHelpProvider_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleRoot_BehaviorDescriptor" />
@@ -147,31 +147,32 @@
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/2699636778861079397" />
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3002373989556540709">
-    <nodeInfo nodeId="691634242167797091" fileName="CommandHolder_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="25" startPosition="113" endLine="26" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3002373989556541083" fileName="CommandHolder_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="691634242167796946" fileName="CommandHolder_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="64" />
-    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="156" />
-    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="25" startPosition="113" endLine="26" endPosition="288" />
-    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="7455880135461190242" fileName="CommandHolder_Behavior.java" startLine="13" startPosition="43" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="691634242167797091" fileName="CommandHolder_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="27" startPosition="113" endLine="28" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="3002373989556541083" fileName="CommandHolder_Behavior.java" startLine="13" startPosition="43" endLine="14" endPosition="63" />
+    <scopeInfo nodeId="691634242167796946" fileName="CommandHolder_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="64" />
+    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="156" />
+    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="27" startPosition="113" endLine="28" endPosition="288" />
+    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="3002373989556540709" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="3002373989556540709" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3002373989556540709" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="3002373989556540709" varName="callerConceptFqName" />
       <varInfo nodeId="3002373989556540709" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_Behavior" />
+    <unitInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_Behavior" />
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3257040239265539407" />
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3257040239265789190" />
