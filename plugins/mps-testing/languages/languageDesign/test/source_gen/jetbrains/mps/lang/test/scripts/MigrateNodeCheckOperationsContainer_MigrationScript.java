@@ -15,14 +15,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class MigrateNodeCheckOperationsContainer_MigrationScript extends BaseMigrationScript {
   public MigrateNodeCheckOperationsContainer_MigrationScript(IOperationContext operationContext) {
-    super("Migrate NodeCheckOperationsContainer to NodeOperationsContainer");
+    super("Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "Migrate NodeCheckOperationsContainer to NodeOperationsContainer";
+        return "Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer";
       }
 
       public String getAdditionalInfo() {
-        return "Migrate NodeCheckOperationsContainer to NodeOperationsContainer";
+        return "Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer";
       }
 
       public String getFqNameOfConceptToSearchInstances() {

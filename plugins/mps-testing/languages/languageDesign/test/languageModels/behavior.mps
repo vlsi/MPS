@@ -2166,7 +2166,7 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="428590876657621858" nodeInfo="nn">
                     <node role="argument" roleId="tp2q.1160612519549" type="1i04.LocalBehaviorMethodCall" typeId="1i04.6496299201655527393" id="428590876658074605" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="428590876657656318" resolveInfo="createRuleCheck" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="428590876657656318" resolveInfo="createRuleCheckOperation" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="428590876658075467" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="428590876657268093" resolveInfo="reference" />
                       </node>
@@ -2195,7 +2195,7 @@
       </node>
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="428590876657656318" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="createRuleCheck" />
+      <property name="name" nameId="tpck.1169194664001" value="createRuleCheckOperation" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="428590876657656319" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="428590876657656938" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp5g.4307182653741890820" resolveInfo="NodeRuleCheckOperation" />

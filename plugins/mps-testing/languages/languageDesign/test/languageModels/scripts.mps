@@ -27,9 +27,9 @@
     <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     <property name="name" nameId="tpck.1169194664001" value="MigrateNodeCheckOperationsContainer" />
     <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.5" />
-    <property name="title" nameId="tp33.1177457669450" value="Migrate NodeCheckOperationsContainer to NodeOperationsContainer" />
+    <property name="title" nameId="tp33.1177457669450" value="Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer" />
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="6090235207264821223" nodeInfo="ng">
-      <property name="description" nameId="tp33.1177457972041" value="Migrate NodeCheckOperationsContainer to NodeOperationsContainer" />
+      <property name="description" nameId="tp33.1177457972041" value="Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer" />
       <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp5g.1215507532627" resolveInfo="NodeCheckOperationsContainer" />
       <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="6090235207264821224" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6090235207264821225" nodeInfo="sn">
@@ -177,7 +177,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1334460907022745822" resolveInfo="myNode" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5587533744543833273" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp5o.5587533744543326483" resolveInfo="detachAllRuleOperations" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp5o.5587533744543326483" resolveInfo="detachAllErrorOperations" />
               </node>
             </node>
           </node>

@@ -32,11 +32,11 @@ public class NodeOperationsContainer_Behavior {
         ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", null));
       }
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(NodeOperationsContainer_Behavior.call_createRuleCheck_428590876657656318(thisNode, reference, reporter));
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(NodeOperationsContainer_Behavior.call_createRuleCheckOperation_428590876657656318(thisNode, reference, reporter));
     }
   }
 
-  public static SNode call_createRuleCheck_428590876657656318(SNode thisNode, SNode reference, IErrorReporter reporter) {
+  public static SNode call_createRuleCheckOperation_428590876657656318(SNode thisNode, SNode reference, IErrorReporter reporter) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);

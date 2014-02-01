@@ -70,9 +70,9 @@
     <unitInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="23" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/6090235207264650098">
-    <nodeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="17" startPosition="98" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="17" startPosition="98" endLine="18" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1613202924905800343" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="36" startPosition="52" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -87,11 +87,11 @@
     <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
     <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="18" startPosition="77" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="18" startPosition="77" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="18" startPosition="90" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="18" startPosition="90" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="17" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateNodeCheckOperationsContainer_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="81" />
-    <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="81" />
+    <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="94" />
+    <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="94" />
     <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="80" />
     <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="20" />
     <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="44" startPosition="42" endLine="45" endPosition="21" />
@@ -109,7 +109,7 @@
     <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="6090235207264821223" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="18" startPosition="77" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="6090235207264821223" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="18" startPosition="90" endLine="47" endPosition="7" />
     <scopeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="17" startPosition="98" endLine="47" endPosition="7" />
     <scopeInfo nodeId="6090235207264650098" fileName="MigrateNodeCheckOperationsContainer_MigrationScript.java" startLine="17" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="6090235207264650098" varName="operationContext" />
