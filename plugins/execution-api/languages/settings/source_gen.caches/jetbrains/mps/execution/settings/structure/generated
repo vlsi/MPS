@@ -81,7 +81,6 @@
   <source id="2722628536111969416" name="GridBagConstraints" hash="brefuzdupgdzjtjlljdmcfruizsbztk" />
   <source id="2722628536111969417" name="GridBagConstraintsKind" hash="1o1w0qmxm374jgne62hd3pxwfhof22k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="GridBagConstraintsKind_PropertySupport.java" />
   </source>

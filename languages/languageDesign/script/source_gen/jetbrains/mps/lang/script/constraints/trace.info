@@ -64,8 +64,6 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)/6970965131508596231">
     <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationScriptPart_Constraints#()V" />
     <scopeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" />
     <scopeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
