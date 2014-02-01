@@ -35,6 +35,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -1368,6 +1370,16 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1238950442297(final WeavingMappingRuleContext _context) {
     _context.putSessionObject(Keys.RUNTIME_EMPTY_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
+  }
+
+  public static boolean mappingConfiguration_Condition_767246027814545909(final TemplateQueryContext _context) {
+    SModel m = _context.getInputModel();
+    return ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType")).isNotEmpty();
+  }
+
+  public static boolean mappingConfiguration_Condition_767246027815265753(final TemplateQueryContext _context) {
+    SModel m = _context.getInputModel();
+    return ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")).isNotEmpty();
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a75() {
