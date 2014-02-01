@@ -4,10 +4,10 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -32,6 +32,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class SNodeOperations {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
   private static boolean ourCastsEnabled = !(("true".equals(System.getProperty("mps.disableNodeCastExceptions"))));
+  /**
+   * Empty list of nodes that can't be modified helps to detect otherwise hard to catch
+   * errors when role of non-existent parent is modified.
+   * For example, if there's NodeA.nodeB [0..1] and NodeB.nodeC[0..*], the query
+   * <code>myA.nodeB.nodeC.add(new NodeC)</code> used to pass silently even if nodeB was not set.
+   */
+  /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to unexistent parent or role. Node: %s");
 
   public SNodeOperations() {
   }
@@ -164,10 +171,10 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getAncestors(SNode node, String ancestorConceptFqName, boolean inclusion) {
-    List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
-      return result;
+      return EMPTY_LIST;
     }
+    List<SNode> result = new ArrayList<SNode>();
     if (!(inclusion)) {
       node = node.getParent();
     }
@@ -182,7 +189,7 @@ public class SNodeOperations {
 
   public static List<SNode> getAncestorsWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion) {
     if (node == null) {
-      new ArrayList<SNode>();
+      return EMPTY_LIST;
     }
     List<SNode> result = new ArrayList<SNode>();
     if (!(inclusion) && node != null) {
@@ -202,10 +209,10 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
-    List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
-      return result;
+      return EMPTY_LIST;
     }
+    List<SNode> result = new ArrayList<SNode>();
 
     if (childConceptFqName == null) {
       result = (List<SNode>) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
@@ -240,11 +247,11 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion, final String[] stopConceptFqNames) {
-    List<SNode> result = new ArrayList<SNode>();
     if (node == null || descendantConceptFqNames.length == 0) {
-      return result;
+      return EMPTY_LIST;
     }
 
+    List<SNode> result = new ArrayList<SNode>();
     if (inclusion) {
       if (SNodeOperations._isInstanceOf(node, descendantConceptFqNames)) {
         result.add(node);
@@ -297,14 +304,14 @@ public class SNodeOperations {
 
   public static List<SNode> getChildren(SNode node) {
     if (node == null) {
-      return new ArrayList<SNode>();
+      return EMPTY_LIST;
     }
     return jetbrains.mps.util.SNodeOperations.getChildren(node);
   }
 
   public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {
     if (node == null || linkDeclaration == null) {
-      return new ArrayList<SNode>(0);
+      return EMPTY_LIST;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return SLinkOperations.getTargets(node, SPropertyOperations.getString(linkDeclaration, "role"), true);
@@ -363,10 +370,10 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getPrevSiblings(SNode node, boolean inclusion) {
-    List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
-      return result;
+      return EMPTY_LIST;
     }
+    List<SNode> result = new ArrayList<SNode>();
     SNode parent = node.getParent();
     if (parent == null) {
       return result;
@@ -386,10 +393,10 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getNextSiblings(SNode node, boolean inclusion) {
-    List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
-      return result;
+      return EMPTY_LIST;
     }
+    List<SNode> result = new ArrayList<SNode>();
     SNode parent = node.getParent();
     if (parent == null) {
       return result;
@@ -412,10 +419,10 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getAllSiblings(SNode node, boolean inclusion) {
-    List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
-      return result;
+      return EMPTY_LIST;
     }
+    List<SNode> result = new ArrayList<SNode>();
     SNode parent = node.getParent();
     if (parent == null) {
       return result;
@@ -698,7 +705,7 @@ public class SNodeOperations {
 
   public static List<SReference> getReferences(SNode node) {
     if (node == null) {
-      return new ArrayList<SReference>(0);
+      return new EmptyList<SReference>("Attempt to add reference to unexistent parent. Reference: %s");
     }
     return ((List) IterableUtil.asList(node.getReferences()));
   }
