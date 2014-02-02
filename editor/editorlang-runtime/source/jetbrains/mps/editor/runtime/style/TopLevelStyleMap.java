@@ -1,0 +1,89 @@
+/*
+ * Copyright 2003-2014 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.editor.runtime.style;
+
+import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
+
+public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
+
+  public class StyleMapIntMapPointer implements StyleMap.IntMapPointer<StyleAttributeMap<T>> {
+
+    private StyleMap.IntMapPointer<StyleAttributeMap<T>> myOrigin;
+
+    public StyleMapIntMapPointer(StyleMap.IntMapPointer<StyleAttributeMap<T>> origin) {
+      myOrigin = origin;
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return myOrigin.isEmpty();
+    }
+
+    @Override
+    public StyleAttributeMap<T> get() {
+      if (isEmpty()) {
+        return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<T>) myOrigin);
+      }
+      Object result = myOrigin.get();
+      if (!(result instanceof StyleAttributeMapImpl)) {
+        return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<T>) myOrigin);
+      } else {
+        return (StyleAttributeMap<T>) result;
+      }
+    }
+
+    @Override
+    public void set(StyleAttributeMap<T> value) {
+      myOrigin.set(value);
+    }
+  }
+
+  @Override
+  public StyleMap.IntMapPointer<StyleAttributeMap<T>> search(int index) {
+    StyleMap.IntMapPointer<StyleAttributeMap<T>> result = super.search(index);
+    return new StyleMapIntMapPointer(result);
+  }
+
+  public int getSize() {
+    return values.length;
+  }
+
+  public static void main(String[] args) {
+    StyleMap<StyleAttributeMap<Object>> topMap = new TopLevelStyleMap<Object>();
+    StyleMap.IntMapPointer<StyleAttributeMap<Object>> pnt1 = topMap.search(1);
+    assert pnt1.isEmpty();
+    assert pnt1.get().getAll().isEmpty();
+    pnt1.get().search(0).set("bcd0");
+    assert topMap.search(1).get().getTopPair().value.equals("bcd0");
+    pnt1.get().setValue("abc0");
+    assert topMap.search(1).get().getTopPair().value.equals("abc0");
+    assert topMap.search(1).get() instanceof SingleElemStyleAttributeMap;
+    pnt1.get().search(1).set("abc1");
+    assert topMap.search(1).get().getTopPair().value.equals("abc1");
+    assert topMap.search(1).get().search(1).get().equals("abc1");
+    assert topMap.search(1).get().search(0).get().equals("abc0");
+    assert topMap.search(1).get() instanceof StyleAttributeMapImpl;
+    pnt1.get().search(0).set(null);
+    assert topMap.search(1).get().search(0).isEmpty();
+    topMap.search(1).get().setValue(1, DiscardValue.getInstance());
+    topMap.search(1).get().getTopPair();
+
+    topMap.search(2).get().search(1).set(DiscardValue.getInstance());
+    assert topMap.search(2).get().search(1).get().equals(DiscardValue.getInstance());
+
+  }
+
+}

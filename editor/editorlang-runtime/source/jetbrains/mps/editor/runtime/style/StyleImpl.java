@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.DiscardValue;
-import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.IntMapPointer;
+import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
+import jetbrains.mps.editor.runtime.style.StyleMap.IntMapPointer;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
@@ -47,18 +47,18 @@ public class StyleImpl implements Style {
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
 
-  private IntObjectSortedListMap<IntObjectSortedListMap<Object>> myAttributes = new IntObjectSortedListMap<IntObjectSortedListMap<Object>>();
-  private IntObjectSortedListMap<IntObjectSortedListMap<Object>> myCachedAttributes = new IntObjectSortedListMap<IntObjectSortedListMap<Object>>();
+  private TopLevelStyleMap<Object> myAttributes = new TopLevelStyleMap<Object>();
+  private TopLevelStyleMap<Object> myCachedAttributes = new TopLevelStyleMap<Object>();
 
   @NotNull
-  private <T> IntMapPointer<IntObjectSortedListMap<T>> getAttribute(StyleAttribute<T> attribute) {
-    return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myAttributes.search(attribute.getIndex());
+  private <T> IntMapPointer<StyleAttributeMap<T>> getAttribute(StyleAttribute<T> attribute) {
+    return (IntMapPointer<StyleAttributeMap<T>>) (IntMapPointer) myAttributes.search(attribute.getIndex());
   }
 
   @NotNull
-  private <T> IntMapPointer<IntObjectSortedListMap<T>> getCachedAttribute(StyleAttribute<T> attribute) {
+  private <T> IntMapPointer<StyleAttributeMap<T>> getCachedAttribute(StyleAttribute<T> attribute) {
     assert !StyleAttributes.isSimple(attribute);
-    return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myCachedAttributes.search(attribute.getIndex());
+    return (IntMapPointer<StyleAttributeMap<T>>) (IntMapPointer) myCachedAttributes.search(attribute.getIndex());
   }
 
   @Override
@@ -73,10 +73,7 @@ public class StyleImpl implements Style {
     for (StyleAttribute<Object> attribute : style.getSpecifiedAttributes()) {
       Collection<IntPair<Object>> putAttributes = style.getAll(attribute);
       if (putAttributes != null) {
-        IntMapPointer<IntObjectSortedListMap<Object>> attributeValues = getAttribute(attribute);
-        if (attributeValues.isEmpty()) {
-          attributeValues.set(new IntObjectSortedListMap<Object>());
-        }
+        IntMapPointer<? extends StyleAttributeMap<Object>> attributeValues = getAttribute(attribute);
         for (IntPair<Object> value : putAttributes) {
           attributeValues.get().setValue(Math.max(value.index, selfPriority), value.value == null ? DiscardValue.getInstance() : value.value);
         }
@@ -98,10 +95,7 @@ public class StyleImpl implements Style {
     for (StyleAttribute<Object> attribute : style.getSpecifiedAttributes()) {
       Collection<IntPair<Object>> putAttributes = style.getAll(attribute);
       if (putAttributes != null) {
-        IntMapPointer<IntObjectSortedListMap<Object>> attributeValues = getAttribute(attribute);
-        if (attributeValues.isEmpty()) {
-          attributeValues.set(new IntObjectSortedListMap<Object>());
-        }
+        IntMapPointer<? extends StyleAttributeMap<Object>> attributeValues = getAttribute(attribute);
         for (IntPair<Object> value : putAttributes) {
           attributeValues.get().setValue(value.index, DiscardValue.getInstance());
         }
@@ -116,7 +110,7 @@ public class StyleImpl implements Style {
     fireStyleChanged(new StyleChangeEvent(this, addedSimple));
   }
 
-  private <T> void setValue(IntMapPointer<IntObjectSortedListMap<T>> attributeValues, int priority, T value) {
+  private <T> void setValue(IntMapPointer<? extends StyleAttributeMap<T>> attributeValues, int priority, T value) {
     if (value == null) {
       if (! attributeValues.isEmpty()) {
         if (attributeValues.get().search(priority) != null) {
@@ -127,16 +121,13 @@ public class StyleImpl implements Style {
         }
       }
     } else {
-      if (attributeValues.isEmpty()) {
-        attributeValues.set(new IntObjectSortedListMap<T>());
-      }
       attributeValues.get().setValue(priority, value);
     }
   }
 
   @Override
   public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getAttribute(attribute);
+    IntMapPointer<? extends StyleAttributeMap<T>> attributeValues = getAttribute(attribute);
     setValue(attributeValues, priority, value);
     Set<StyleAttribute> attributeSet = Collections.<StyleAttribute>singleton(attribute);
     if (StyleAttributes.isSimple(attribute)) {
@@ -149,7 +140,7 @@ public class StyleImpl implements Style {
   private <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
     assert !StyleAttributes.isSimple(attribute);
     assert ! (value instanceof DiscardValue);
-    IntMapPointer<IntObjectSortedListMap<T>> cachedAttributeValues = getCachedAttribute(attribute);
+    IntMapPointer<? extends StyleAttributeMap<T>> cachedAttributeValues = getCachedAttribute(attribute);
     setValue(cachedAttributeValues, priority, value);
   }
 
@@ -160,7 +151,7 @@ public class StyleImpl implements Style {
 
   private <T> T getCached(StyleAttribute<T> attribute, int priority) {
     assert !StyleAttributes.isSimple(attribute);
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getCachedAttribute(attribute);
+    IntMapPointer<? extends StyleAttributeMap<T>> attributeValues = getCachedAttribute(attribute);
     if (attributeValues.isEmpty()) {
       return null;
     } else {
@@ -170,7 +161,7 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> int getHighestPriority(StyleAttribute<T> attribute) {
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getCachedAttribute(attribute);
+    IntMapPointer<? extends StyleAttributeMap<T>> attributeValues = getCachedAttribute(attribute);
     if (attributeValues.isEmpty()) {
       return -1;
     } else {
@@ -181,18 +172,18 @@ public class StyleImpl implements Style {
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
     if (StyleAttributes.isSimple(attribute)) {
-      IntObjectSortedListMap<T> attributeValues = getAttribute(attribute).get();
-      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTopPair().value;
+      StyleAttributeMap<T> attributeValues = getAttribute(attribute).get();
+      return attributeValues.getTopPair() == null ? attribute.combine(null, null) : attributeValues.getTopPair().value;
     } else {
-      IntObjectSortedListMap<T> attributeValues = getCachedAttribute(attribute).get();
-      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTopPair().value;
+      StyleAttributeMap<T> attributeValues = getCachedAttribute(attribute).get();
+      return attributeValues.getTopPair() == null ? attribute.combine(null, null) : attributeValues.getTopPair().value;
     }
   }
 
   @Override
   @Nullable
   public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
+    IntMapPointer<? extends StyleAttributeMap<T>> attributeValue = getAttribute(attribute);
     return attributeValue.isEmpty() ? null : attributeValue.get().getDiscardNullReplaced();
   }
 
@@ -200,10 +191,10 @@ public class StyleImpl implements Style {
   @Nullable
   public <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute) {
     if (StyleAttributes.isSimple(attribute)) {
-      IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
+      IntMapPointer<? extends StyleAttributeMap<T>> attributeValue = getAttribute(attribute);
       return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
     } else {
-      IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getCachedAttribute(attribute);
+      IntMapPointer<? extends StyleAttributeMap<T>> attributeValue = getCachedAttribute(attribute);
       return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
     }
   }
@@ -215,7 +206,7 @@ public class StyleImpl implements Style {
 
   @Override
   public Iterable<StyleAttribute> getSpecifiedAttributes() {
-    int maxSize = myAttributes.getAll().size();
+    int maxSize = myAttributes.getSize();
     ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(maxSize);
     for (int i = 0; i < StyleAttributes.getAttributesCount(); i++) {
       if (! isSpecified(StyleAttributes.getAttribute(i))) {
@@ -305,8 +296,8 @@ public class StyleImpl implements Style {
     for (StyleAttribute<Object> attribute : attributes) {
       assert !StyleAttributes.isSimple(attribute);
 
-      IntMapPointer<IntObjectSortedListMap<Object>> attributeValues = getAttribute(attribute);
-      IntMapPointer<IntObjectSortedListMap<Object>> cachedAttributeValues = getCachedAttribute(attribute);
+      IntMapPointer<StyleAttributeMap<Object>> attributeValues = getAttribute(attribute);
+      IntMapPointer<StyleAttributeMap<Object>> cachedAttributeValues = getCachedAttribute(attribute);
 
       Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAllCached(attribute);
       Collection<IntPair<Object>> currentValues = attributeValues.isEmpty() ? null : attributeValues.get().getAll();
@@ -321,7 +312,7 @@ public class StyleImpl implements Style {
       parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
       currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
 
-      IntObjectSortedListMap<Object> newValues = new IntObjectSortedListMap<Object>();
+      StyleAttributeMap<Object> newValues = new StyleAttributeMapImpl<Object>();
       while (parentValue != null || currentValue != null ) {
 
         if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index)) {
@@ -356,9 +347,9 @@ public class StyleImpl implements Style {
         }
       }
       if (newValues.getAll().isEmpty()) {
-        myCachedAttributes.search(attribute.getIndex()).set(null);
+        getCachedAttribute(attribute).set(null);
       } else {
-        myCachedAttributes.search(attribute.getIndex()).set(newValues);
+        getCachedAttribute(attribute).set(newValues);
       }
     }
 
