@@ -287,33 +287,6 @@ public class SModelOperations {
    * Todo this is a duplication occured because of the fact we don't have model dependencies API. Should be removed ASAP
    */
 
-  //todo rewrite using iterators
-  @Deprecated
-  @NotNull
-  private static List<SModel> importedModels(jetbrains.mps.smodel.SModel model, @NotNull IScope scope) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    for (ImportElement importElement : (model).importedModels()) {
-      SModelReference modelReference = importElement.getModelReference();
-      SModel modelDescriptor = scope.getModelDescriptor(modelReference);
-
-      if (modelDescriptor == null) {
-        for (Language l : getLanguages(model, scope)) {
-          for (SModel accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getReference())) {
-              modelDescriptor = accessory;
-              break;
-            }
-          }
-        }
-      }
-
-      if (modelDescriptor != null) {
-        modelsList.add(modelDescriptor);
-      }
-    }
-    return modelsList;
-  }
-
   @Nullable
   public static ImportElement getAdditionalModelElement(jetbrains.mps.smodel.SModel sModel,
       @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
@@ -439,34 +412,4 @@ public class SModelOperations {
     }
     importedModels.clear();
   }
-
-  //todo rewrite using iterators
-  @Deprecated
-  @NotNull
-  public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model, @NotNull IScope scope) {
-    Set<Language> languages = new LinkedHashSet<Language>();
-
-    for (SModuleReference lang : model.importedLanguages()) {
-      Language language = scope.getLanguage(lang);
-
-      if (language != null) {
-        languages.add(language);
-        languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
-      }
-    }
-
-    for (SModuleReference dk : model.importedDevkits()) {
-      DevKit devKit = scope.getDevKit(dk);
-      if (devKit != null) {
-        for (Language l : devKit.getAllExportedLanguages()) {
-          if (languages.add(l)) {
-            languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(l));
-          }
-        }
-      }
-    }
-
-    return new ArrayList<Language>(languages);
-  }
-
 }
