@@ -353,31 +353,6 @@ public class SModelOperations {
     return Collections.unmodifiableList(references);
   }
 
-
-  //todo rewrite using iterators
-  @Deprecated
-  public static List<SModel> allImportedModels(jetbrains.mps.smodel.SModel model, IScope scope) {
-    Set<SModel> result = new LinkedHashSet<SModel>();
-    for (Language language : getLanguages(model, scope)) {
-      for (SModel am : language.getAccessoryModels()) {
-        if (am != model) {
-          SModel scopeModelDescriptor = scope.getModelDescriptor(am.getReference());
-          if (scopeModelDescriptor != null) {
-            result.add(scopeModelDescriptor);
-          }
-        }
-      }
-    }
-
-    for (SModel importedModel : importedModels(model, scope)) {
-      if (!importedModel.getReference().equals(model.getReference())) {
-        result.add(importedModel);
-      }
-    }
-
-    return new ArrayList<SModel>(result);
-  }
-
   @Nullable
   public static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     for (ImportElement importElement : model.importedModels()) {
@@ -414,14 +389,13 @@ public class SModelOperations {
       ModelChange.assertLegalChange(realDescriptor);
     }
 
-    GlobalScope scope = GlobalScope.getInstance();
     final SModule module = realDescriptor == null ? null : realDescriptor.getModule();
     final Collection<SModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
     Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModel sm : allImportedModels(model, scope)) {
+    for (SModel sm : allImportedModels(model.getModelDescriptor())) {
       importedModels.add(sm.getReference());
     }
 
