@@ -102,6 +102,7 @@
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7807451582400147461" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1217004708011" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />

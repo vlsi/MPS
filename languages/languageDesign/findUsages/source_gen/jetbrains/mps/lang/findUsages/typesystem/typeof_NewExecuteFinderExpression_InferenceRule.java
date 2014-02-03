@@ -71,7 +71,7 @@ public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInf
   private static SNode createClassifierType_4xpah7_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
-    n1.setReference("classifier", SReference.create("classifier", n1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), facade.createNodeId("~IScope")));
+    n1.setReference("classifier", SReference.create("classifier", n1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SearchScope")));
     return n1;
   }
 
