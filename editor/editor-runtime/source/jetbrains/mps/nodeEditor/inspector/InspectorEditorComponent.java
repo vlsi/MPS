@@ -48,7 +48,7 @@ public class InspectorEditorComponent extends EditorComponent {
     if (myNode == node) {
       return;
     }
-    myContainingRoot = node.getContainingRoot();
+    myContainingRoot = node == null ? null : node.getContainingRoot();
     super.editNode(node);
   }
 
