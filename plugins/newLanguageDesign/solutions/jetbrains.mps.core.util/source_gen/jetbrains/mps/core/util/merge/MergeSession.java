@@ -13,6 +13,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -54,12 +55,13 @@ public class MergeSession {
 
     final jetbrains.mps.smodel.SModel newmodel = existing.createEmptyCopy();
     existing.copyPropertiesTo(newmodel);
-    Sequence.fromIterable(mergeLists((Iterable<SNode>) model.getRootNodes(), roots, newmodel.getModelDescriptor())).visitAll(new IVisitor<SNode>() {
+    SModel newsmodel = newmodel.getReference().resolve(MPSModuleRepository.getInstance());
+    Sequence.fromIterable(mergeLists((Iterable<SNode>) model.getRootNodes(), roots, newsmodel)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         newmodel.addRootNode(it);
       }
     });
-    MapSequence.fromMap(newContent).put(model, newmodel.getModelDescriptor());
+    MapSequence.fromMap(newContent).put(model, newsmodel);
   }
 
   public void restoreRefs() {
