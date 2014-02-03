@@ -287,6 +287,30 @@ public class SModelOperations {
    * Todo this is a duplication occured because of the fact we don't have model dependencies API. Should be removed ASAP
    */
 
+  //todo rewrite using iterators
+  @NotNull
+  private static List<SModel> importedModels(final jetbrains.mps.smodel.SModel model, Iterable<SModel> accessoryModelsFromUsedLanguages) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    for (ImportElement importElement : (model).importedModels()) {
+      SModelReference modelReference = importElement.getModelReference();
+      SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
+
+      if (modelDescriptor == null) {
+        for (SModel accessory : accessoryModelsFromUsedLanguages) {
+          if (modelReference.equals(accessory.getReference())) {
+            modelDescriptor = accessory;
+            break;
+          }
+        }
+      }
+
+      if (modelDescriptor != null) {
+        modelsList.add(modelDescriptor);
+      }
+    }
+    return modelsList;
+  }
+
   @Nullable
   public static ImportElement getAdditionalModelElement(jetbrains.mps.smodel.SModel sModel,
       @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
@@ -368,7 +392,7 @@ public class SModelOperations {
     Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModel sm : allImportedModels(model.getModelDescriptor())) {
+    for (SModel sm : allImportedModels(model)) {
       importedModels.add(sm.getReference());
     }
 
@@ -412,4 +436,61 @@ public class SModelOperations {
     }
     importedModels.clear();
   }
+
+  @Deprecated
+  //todo rewrite using iterators
+  public static List<SModel> allImportedModels(jetbrains.mps.smodel.SModel model) {
+    Set<SModel> result = new LinkedHashSet<SModel>();
+    LinkedHashSet<SModel> allAccessoryModels = new LinkedHashSet<SModel>(); // linked merely to keep order the way it used to be
+    for (Language language : getLanguages(model)) {
+      List<SModel> accessoryModels = language.getAccessoryModels();
+      allAccessoryModels.addAll(accessoryModels);
+      for (SModel am : accessoryModels) {
+        if (am != model) {
+          SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
+          if (scopeModelDescriptor != null) {
+            result.add(scopeModelDescriptor);
+          }
+        }
+      }
+    }
+
+    for (SModel importedModel : importedModels(model, allAccessoryModels)) {
+      if (importedModel != model) {
+        result.add(importedModel);
+      }
+    }
+
+    return new ArrayList<SModel>(result);
+  }
+
+  @Deprecated
+  //todo rewrite using iterators
+  @NotNull
+  public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model) {
+    Set<Language> languages = new LinkedHashSet<Language>();
+
+    for (SModuleReference lang : ( model).importedLanguages()) {
+      Language language = (Language) lang.resolve(MPSModuleRepository.getInstance());
+
+      if (language != null) {
+        languages.add(language);
+        languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
+      }
+    }
+
+    for (SModuleReference dk : ( model).importedDevkits()) {
+      DevKit devKit = (DevKit) dk.resolve(MPSModuleRepository.getInstance());
+      if (devKit != null) {
+        for (Language l : devKit.getAllExportedLanguages()) {
+          if (languages.add(l)) {
+            languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(l));
+          }
+        }
+      }
+    }
+
+    return new ArrayList<Language>(languages);
+  }
+
 }

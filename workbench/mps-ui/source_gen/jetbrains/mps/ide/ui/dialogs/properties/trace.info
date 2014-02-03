@@ -1,95 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458686420">
-    <nodeInfo nodeId="3995997045458686421" fileName="StateUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="normal" />
-    <nodeInfo nodeId="3995997045458686429" fileName="StateUtil.java" startLine="22" startPosition="75" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686442" fileName="StateUtil.java" startLine="26" startPosition="71" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686455" fileName="StateUtil.java" startLine="30" startPosition="50" endLine="31" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458686470" fileName="StateUtil.java" startLine="32" startPosition="43" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686472" fileName="StateUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686480" fileName="StateUtil.java" startLine="38" startPosition="93" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458686502" fileName="StateUtil.java" startLine="43" startPosition="33" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686507" fileName="StateUtil.java" startLine="46" startPosition="9" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686511" fileName="StateUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686523" fileName="StateUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686531" fileName="StateUtil.java" startLine="56" startPosition="28" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686537" fileName="StateUtil.java" startLine="58" startPosition="5" endLine="59" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686553" fileName="StateUtil.java" startLine="62" startPosition="105" endLine="63" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458686563" fileName="StateUtil.java" startLine="64" startPosition="22" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686568" fileName="StateUtil.java" startLine="66" startPosition="5" endLine="67" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686584" fileName="StateUtil.java" startLine="70" startPosition="87" endLine="71" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686594" fileName="StateUtil.java" startLine="74" startPosition="57" endLine="75" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458686605" fileName="StateUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StateUtil#()V" />
-    <nodeInfo nodeId="3995997045458686425" fileName="StateUtil.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAvailable#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Z" />
-    <nodeInfo nodeId="3995997045458686438" fileName="StateUtil.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAvailable#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Z" />
-    <nodeInfo nodeId="3995997045458686460" fileName="StateUtil.java" startLine="31" startPosition="61" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458686521" fileName="StateUtil.java" startLine="52" startPosition="59" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458686529" fileName="StateUtil.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458686561" fileName="StateUtil.java" startLine="63" startPosition="63" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458686576" fileName="StateUtil.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)I" />
-    <nodeInfo nodeId="3995997045458686590" fileName="StateUtil.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(Ljava/lang/String;Ljava/lang/String;)I" />
-    <nodeInfo nodeId="3995997045458686498" fileName="StateUtil.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="3995997045458686488" fileName="StateUtil.java" startLine="40" startPosition="24" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458686451" fileName="StateUtil.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAvailable#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3995997045458686543" fileName="StateUtil.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljetbrains/mps/smodel/IScope;)I" />
-    <nodeInfo nodeId="3995997045458686483" fileName="StateUtil.java" startLine="39" startPosition="17" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458686517" fileName="StateUtil.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(ZZ)I" />
-    <nodeInfo nodeId="3995997045458686476" fileName="StateUtil.java" startLine="38" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/IScope;Lorg/jetbrains/mps/openapi/model/SModelReference;)Z" />
-    <scopeInfo nodeId="3995997045458686608" fileName="StateUtil.java" startLine="19" startPosition="22" endLine="19" endPosition="22" />
-    <scopeInfo nodeId="3995997045458686428" fileName="StateUtil.java" startLine="22" startPosition="75" endLine="23" endPosition="85" />
-    <scopeInfo nodeId="3995997045458686441" fileName="StateUtil.java" startLine="26" startPosition="71" endLine="27" endPosition="80" />
-    <scopeInfo nodeId="3995997045458686469" fileName="StateUtil.java" startLine="32" startPosition="43" endLine="33" endPosition="19" />
-    <scopeInfo nodeId="3995997045458686501" fileName="StateUtil.java" startLine="43" startPosition="33" endLine="44" endPosition="58" />
-    <scopeInfo nodeId="3995997045458686522" fileName="StateUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="15" />
-    <scopeInfo nodeId="3995997045458686530" fileName="StateUtil.java" startLine="56" startPosition="28" endLine="57" endPosition="16" />
-    <scopeInfo nodeId="3995997045458686562" fileName="StateUtil.java" startLine="64" startPosition="22" endLine="65" endPosition="20" />
-    <scopeInfo nodeId="3995997045458686583" fileName="StateUtil.java" startLine="70" startPosition="87" endLine="71" endPosition="69" />
-    <scopeInfo nodeId="3995997045458686593" fileName="StateUtil.java" startLine="74" startPosition="57" endLine="75" endPosition="59" />
-    <scopeInfo nodeId="3995997045458686605" fileName="StateUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3995997045458686425" fileName="StateUtil.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <nodeInfo nodeId="3995997045458686421" fileName="StateUtil.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="normal" />
+    <nodeInfo nodeId="3995997045458686429" fileName="StateUtil.java" startLine="18" startPosition="75" endLine="19" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686442" fileName="StateUtil.java" startLine="22" startPosition="71" endLine="23" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686455" fileName="StateUtil.java" startLine="26" startPosition="50" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3995997045458686470" fileName="StateUtil.java" startLine="28" startPosition="43" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686472" fileName="StateUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686523" fileName="StateUtil.java" startLine="35" startPosition="28" endLine="36" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686531" fileName="StateUtil.java" startLine="38" startPosition="28" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686537" fileName="StateUtil.java" startLine="40" startPosition="5" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686584" fileName="StateUtil.java" startLine="44" startPosition="87" endLine="45" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686594" fileName="StateUtil.java" startLine="48" startPosition="57" endLine="49" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458686605" fileName="StateUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StateUtil#()V" />
+    <nodeInfo nodeId="3995997045458686425" fileName="StateUtil.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAvailable#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Z" />
+    <nodeInfo nodeId="3995997045458686438" fileName="StateUtil.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAvailable#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Z" />
+    <nodeInfo nodeId="3995997045458686460" fileName="StateUtil.java" startLine="27" startPosition="61" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3995997045458686521" fileName="StateUtil.java" startLine="34" startPosition="59" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3995997045458686529" fileName="StateUtil.java" startLine="37" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3995997045458686576" fileName="StateUtil.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)I" />
+    <nodeInfo nodeId="3995997045458686590" fileName="StateUtil.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(Ljava/lang/String;Ljava/lang/String;)I" />
+    <nodeInfo nodeId="3995997045458686451" fileName="StateUtil.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAvailable#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3995997045458686517" fileName="StateUtil.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compare#(ZZ)I" />
+    <scopeInfo nodeId="3995997045458686608" fileName="StateUtil.java" startLine="15" startPosition="22" endLine="15" endPosition="22" />
+    <scopeInfo nodeId="3995997045458686428" fileName="StateUtil.java" startLine="18" startPosition="75" endLine="19" endPosition="85" />
+    <scopeInfo nodeId="3995997045458686441" fileName="StateUtil.java" startLine="22" startPosition="71" endLine="23" endPosition="80" />
+    <scopeInfo nodeId="3995997045458686469" fileName="StateUtil.java" startLine="28" startPosition="43" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="3995997045458686522" fileName="StateUtil.java" startLine="35" startPosition="28" endLine="36" endPosition="15" />
+    <scopeInfo nodeId="3995997045458686530" fileName="StateUtil.java" startLine="38" startPosition="28" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="3995997045458686583" fileName="StateUtil.java" startLine="44" startPosition="87" endLine="45" endPosition="69" />
+    <scopeInfo nodeId="3995997045458686593" fileName="StateUtil.java" startLine="48" startPosition="57" endLine="49" endPosition="59" />
+    <scopeInfo nodeId="3995997045458686605" fileName="StateUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="3995997045458686425" fileName="StateUtil.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3995997045458686436" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686438" fileName="StateUtil.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="3995997045458686438" fileName="StateUtil.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3995997045458686449" varName="moduleReference" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686576" fileName="StateUtil.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="3995997045458686576" fileName="StateUtil.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3995997045458686577" varName="moduleRef1" />
       <varInfo nodeId="3995997045458686579" varName="moduleRef2" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686590" fileName="StateUtil.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="3995997045458686590" fileName="StateUtil.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3995997045458686600" varName="path1" />
       <varInfo nodeId="3995997045458686602" varName="path2" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686498" fileName="StateUtil.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3995997045458686454" fileName="StateUtil.java" startLine="30" startPosition="50" endLine="35" endPosition="16">
+    <scopeInfo nodeId="3995997045458686454" fileName="StateUtil.java" startLine="26" startPosition="50" endLine="31" endPosition="16">
       <varInfo nodeId="3995997045458686456" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686552" fileName="StateUtil.java" startLine="62" startPosition="105" endLine="67" endPosition="67">
-      <varInfo nodeId="3995997045458686554" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458686451" fileName="StateUtil.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="3995997045458686451" fileName="StateUtil.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="3995997045458686474" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686487" fileName="StateUtil.java" startLine="40" startPosition="24" endLine="47" endPosition="27" />
-    <scopeInfo nodeId="3995997045458686520" fileName="StateUtil.java" startLine="52" startPosition="59" endLine="59" endPosition="13" />
-    <scopeInfo nodeId="3995997045458686543" fileName="StateUtil.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="3995997045458686544" varName="ref1" />
-      <varInfo nodeId="3995997045458686546" varName="ref2" />
-      <varInfo nodeId="3995997045458686548" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458686517" fileName="StateUtil.java" startLine="52" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="3995997045458686520" fileName="StateUtil.java" startLine="34" startPosition="59" endLine="41" endPosition="13" />
+    <scopeInfo nodeId="3995997045458686517" fileName="StateUtil.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="3995997045458686539" varName="isOk1" />
       <varInfo nodeId="3995997045458686541" varName="isOk2" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458686479" fileName="StateUtil.java" startLine="38" startPosition="93" endLine="49" endPosition="16">
-      <varInfo nodeId="3995997045458686481" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458686476" fileName="StateUtil.java" startLine="38" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="3995997045458686515" varName="modelReference" />
-      <varInfo nodeId="3995997045458686513" varName="scope" />
-    </scopeInfo>
-    <unitInfo nodeId="3995997045458686496" fileName="StateUtil.java" startLine="41" startPosition="55" endLine="46" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil$1" />
-    <unitInfo nodeId="3995997045458686420" fileName="StateUtil.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
+    <unitInfo nodeId="3995997045458686420" fileName="StateUtil.java" startLine="12" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
   </root>
   <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458695685">
     <nodeInfo nodeId="2613030424380742001" fileName="ModelProperties.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USE_MODEL_FOLDER_FOR_GENERATION" />
