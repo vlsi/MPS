@@ -22,14 +22,17 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -93,7 +96,13 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.typesystem.structure.WarningStatement");
-      return Sequence.fromIterable(Sequence.fromArray(FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(concept), true, new EmptyProgressMonitor()).toArray(new SNode[1]))).toListSequence();
+      AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
+      Set<SNode> warningInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
+      return SetSequence.fromSet(warningInstances).toListSequence().select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.lang.typesystem.structure.WarningStatement");
+        }
+      }).toListSequence();
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -118,7 +127,7 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
       if ((AttributeOperations.getAttribute(myWarning, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) != null)) {
         return SPropertyOperations.getString(AttributeOperations.getAttribute(myWarning, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), "name");
       }
-      return "_Unknown";
+      return "_NoName";
     }
   }
 
