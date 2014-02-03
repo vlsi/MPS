@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="dm75q7vc5em4qh6zjrvka04g9q7s08c">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-bteyyzk18sucr028nxrmyrynbx0b7gj" />
   <common hash="-4lyzera2rs9lxiro8vl1t7uqfyxbank" dependsOnNodes="true">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="_UnrestrictedClosures.java" />
   </common>
@@ -17,18 +15,15 @@
     <file name="Nothing.java" />
   </source>
   <source id="3812443517665722615" name="Wrappers" hash="bfwnqqadurgjh8lav8abm3bhuudp5e6">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Wrappers.java" />
   </source>
   <source id="3812443517665722868" name="DelayedException" hash="40c1w3awapoagibm017erla3i41gwu0">
     <file name="DelayedException.java" />
   </source>
   <source id="3812443517665722916" name="YieldingIterator" hash="85xc6fylxjupm5tvtu3rk9m4am5brej">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="YieldingIterator.java" />
   </source>
   <source id="4914003190800642467" name="Result" hash="7qceq1s5hc6oenpu6lenv5iib4e4s1l">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Result.java" />
   </source>
   <source id="5571879668402581510" name="_FunctionTypes" hash="-rf62m0rz4cxwkj82w3iwc2qg8t2jml">

@@ -31,7 +31,6 @@
     <file name="ModuleOutputPaths.java" />
   </source>
   <source id="1343659934891487707" name="OutputPathRedirects" hash="-c9o0iy0quayaexsch2loiabwg7em42q">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="OutputPathRedirects.java" />
   </source>

@@ -102,6 +102,11 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     myTransferHandler = transferHandler;
   }
 
+  public void setObjectValidator(Validator objectValidator) {
+    assertNotInitialized();
+    myObjectValidator = objectValidator;
+  }
+
   public void setCanRemoveCondition(Condition<T> canRemoveCondition) {
     assertNotInitialized();
     myCanRemoveCondition = (canRemoveCondition != null ? canRemoveCondition : Condition.TRUE_CONDITION);

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-ecy99sg3wrte0mokpzkvrbeorzm12hm">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="devgbfmoftl59c0mgaxjb0h90jtg4n" dependsOnNodes="true" />
   <source id="7783830406851712418" name="PatternUtil" hash="4r0ijff46tcz5c3d1aiq88bdbtkuv2z">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PatternUtil.java" />
   </source>
 </dependencies>
