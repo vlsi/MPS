@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="61holt1kjqfhl6v470t3dr12yq1mi3w">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-c7egspq9zo68a0wres7qwfabo5j926o" dependsOnNodes="true" />
   <source id="8984393347190225578" name="DifferanceItem" hash="-e093yadshxqybe2xh5ouv0ux7szaoym">
     <file name="DifferanceItem.java" />
   </source>
   <source id="8984393347190225584" name="NodeDifference" hash="-8xt3fabe4mdwyrpj65uwsv6lt41tyl6">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodeDifference.java" />
   </source>
   <source id="8984393347190227556" name="NodesMatcher" hash="1stbern5l7no84jeznb0vuj7lmdxfc4">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodesMatcher.java" />
   </source>
   <source id="8984393347190228267" name="PropertyDifferense" hash="9f1ae8eiltmh8jmyo7j5vcvqhm8tu99">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PropertyDifferense.java" />
   </source>
   <source id="8984393347190228335" name="ReferenceDifferense" hash="-1cxm1t9wvtqozv5ucujj5qo74o3dxn">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ReferenceDifferense.java" />
   </source>
   <source id="8984393347190228418" name="ConceptDifference" hash="987ay4h2elssbkyljen5kf2rgcjild2">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConceptDifference.java" />
   </source>
   <source id="8984393347190228497" name="ChildrenCountDifference" hash="4b49fnxzdwfe7avy49ltzxp2lr0hslx">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ChildrenCountDifference.java" />
   </source>
 </dependencies>

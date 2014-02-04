@@ -55,7 +55,6 @@ import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -220,7 +219,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               if (!StateUtil.isAvailable(modelReference)) {
                 return DependencyCellState.NOT_AVALIABLE;
               }
-              if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
+              if (!StateUtil.isInScope(((AbstractModule) myModelDescriptor.getModule()).getScope(), modelReference)) {
                 return DependencyCellState.NOT_IN_SCOPE;
               }
               if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {

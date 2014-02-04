@@ -822,11 +822,11 @@
     <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="31" startPosition="60" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="32" startPosition="63" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="34" startPosition="138" endLine="35" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="35" startPosition="298" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="34" startPosition="138" endLine="35" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="35" startPosition="266" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="35" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="35" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="35" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="35" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_7012097027058652452#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_createType_7012097027058652550#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_createType_7012097027058652550#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -838,7 +838,7 @@
     <scopeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="7012097027058652547" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="35" endPosition="298" />
+    <scopeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="33" startPosition="30" endLine="35" endPosition="266" />
     <scopeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="7012097027058652547" varName="thisNode" />
     </scopeInfo>

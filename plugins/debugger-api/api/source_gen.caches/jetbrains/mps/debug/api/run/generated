@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="cj4xcjxaq7cnpr44q34luudpyi0yhkx">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="ary5rq69p19krke0xa62u1rxcnt8eu2" dependsOnNodes="true" />
   <source id="4474271214082913232" name="IDebuggerConfiguration" hash="6e3l0um88iv5wofxsfq58oty7du9ky1">
     <file name="IDebuggerConfiguration.java" />
   </source>
   <source id="4474271214082913266" name="DebuggerRunProfileState" hash="9grwx12jnkl01flqyu71dsk63pujdwo">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DebuggerRunProfileState.java" />
   </source>
 </dependencies>

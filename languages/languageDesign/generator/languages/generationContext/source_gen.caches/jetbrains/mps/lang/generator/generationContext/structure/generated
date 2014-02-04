@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5u2pje8mdeyg7u8zwqpvu3lq9rht1bp">
+<dependencies version="2" modelHash="79yoa6ffmm03dmutbm8ke44rrgc7ufx">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -53,7 +53,7 @@
   <source id="1216860049627" name="GenerationContextOp_GetOutputByLabelAndInput" hash="4j7m7q2ogt5tjgirbn86ldqrcgkd88v" />
   <source id="1216860049633" name="GenerationContextType" hash="-e23dqye8rszx284vgxqi57rv7vmhzdu" />
   <source id="1216860049635" name="TemplateFunctionParameter_generationContext" hash="-1c9dtf7sypah4ys2hexxu4xy9rsoqy1" />
-  <source id="1216945228272" name="GenerationContextOp_GetScope" hash="-19jjktsw2bxj9gsivw229p6t6pwprsd" />
+  <source id="1216945228272" name="GenerationContextOp_GetScope" hash="-de63b0nzyl9f6iesn8pofr2h0ytx8td" />
   <source id="1217004708011" name="GenerationContextOp_GetInputModel" hash="asslgdpe9z30k2km6nu1acwjt6s0byi" />
   <source id="1217026863835" name="GenerationContextOp_GetOriginalInputModel" hash="jl7o4muf8nbo3o8f63yeim4wtw470l" />
   <source id="1217282130234" name="GenerationContextOp_GetOutputModel" hash="-7zawjil2k1ely1ldst4stvsnpf4abg4" />

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="87wiw3tbn9qp6dwg34cey2glnwtlhzx">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-7v8zk7kwvub37oyc9ukqw4az3d5lzi4" dependsOnNodes="true" />
   <source id="4474271214083126640" name="MPSDebugRunner" hash="-57g2mak0jesmrztp7wb6eav83mqz0xr">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MPSDebugRunner.java" />
   </source>
 </dependencies>

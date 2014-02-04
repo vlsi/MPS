@@ -42,9 +42,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
@@ -64,7 +62,6 @@ import javax.lang.model.SourceVersion;
 import javax.swing.Icon;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class NewModelAction extends AnAction {
@@ -231,7 +228,7 @@ public class NewModelAction extends AnAction {
     VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
     boolean isUnderSourceRoot = false;
     for (VirtualFile root : sourceRoots) {
-      isUnderSourceRoot = isUnderSourceRoot
+      isUnderSourceRoot =  isUnderSourceRoot
         || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
     }
 
@@ -266,11 +263,8 @@ public class NewModelAction extends AnAction {
     }
 
     public void preConfigure(SModel smodel, SModule module) {
-      Collection<Language> languages = new GlobalModuleDependenciesManager(module).getUsedLanguages();
       for (SModuleReference languageReference : myLanguagesToImport) {
-        Language l = ((Language) languageReference.resolve(MPSModuleRepository.getInstance()));
-        if (l == null) continue;
-        if (languages.contains(l)) {
+        if (((AbstractModule) module).getScope().getLanguage(languageReference) == null) {
           ((AbstractModule) module).addUsedLanguage(languageReference);
         }
         ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(languageReference);

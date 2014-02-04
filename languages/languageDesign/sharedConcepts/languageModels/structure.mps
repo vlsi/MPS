@@ -49,7 +49,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1161622878565" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="context (SearchScope)" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="context (IScope)" />
     <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_scope" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="scope" />

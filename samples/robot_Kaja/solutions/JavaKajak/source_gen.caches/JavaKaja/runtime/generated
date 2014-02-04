@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="9ym0xa0s30rpdhpx3nia67uwx2x30gh">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="ejggumus109hxbctcdwujstsuz8i68x" dependsOnNodes="true" />
   <source id="3308300503039473785" name="KajaFrame" hash="-2sej4g6pecgwritbv46dfh7tf4pes8i">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="KajaFrame.java" />
   </source>
   <source id="3308300503039569134" name="Direction" hash="-qvf3jgyy1kd3q78pdvcrrzrfk44ky9">
     <file name="Direction.java" />
   </source>
   <source id="3308300503039569160" name="Cell" hash="euujjjnwravwx8dfg3kh9r2ap5v100p">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Cell.java" />
   </source>
   <source id="1904811872814056520" name="VisualCell" hash="-1y13oes70o0cgcxfqp2y32861114ueq">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="VisualCell.java" />
   </source>
 </dependencies>

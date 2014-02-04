@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-5k2l8b3kgsrokp3b83f3d2h5np9xnku">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="z04pzt8tv3v4yy45xi3058dkql2b4m" dependsOnNodes="true" />
   <source id="2392684134639614907" name="DebugActionsUtil" hash="-e72dh55zbw36letsb86u25h2yocyqy0">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DebugActionsUtil.java" />
   </source>
 </dependencies>

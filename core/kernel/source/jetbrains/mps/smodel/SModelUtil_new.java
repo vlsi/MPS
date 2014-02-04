@@ -148,6 +148,10 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId,
+     IScope scope, boolean fullNodeStructure) {
+      return instantiateConceptDeclaration(conceptFqName, model, nodeId, fullNodeStructure);
+}
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId,
       boolean fullNodeStructure) {
     boolean isNotProjectModel = model==null || !TemporaryModels.isTemporary(model);
     if (isNotProjectModel) {

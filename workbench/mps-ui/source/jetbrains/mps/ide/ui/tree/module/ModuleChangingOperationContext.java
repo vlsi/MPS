@@ -16,9 +16,11 @@
 
 package jetbrains.mps.ide.ui.tree.module;
 
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.NotNull;
 
 public class ModuleChangingOperationContext implements IOperationContext {
   private final SModule myModule;

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-5k1y18oiznh9rci6zrv3wqr504yazxn">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ungqs4bw4iarv5x0w54gskv8zva7o4" />
   <dep model="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)" hash="-ai5gwrtkl4t1zda81q5rjlhepcz5v0w" />
   <common hash="a9leq8q5a1w2pn0o8ffwq462vufphcg" dependsOnNodes="true" />
   <source id="1197150020790" name="MrsH State Machine" hash="3ziweupzntrraz19dlhqtiz4t7ij6i">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)" />
     <file name="MrsH_StateMachineFactory.java" />
   </source>
   <source id="1197247437082" name="MrsH State Machine Test" hash="36802sq2ezs00lww2b30edhhywhznbt">
     <dep root="1197150020790" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)" />
     <file name="MrsH_StateMachine_Test.java" />

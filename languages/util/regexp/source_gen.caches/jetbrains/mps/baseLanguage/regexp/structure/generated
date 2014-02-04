@@ -131,6 +131,7 @@
   <source id="1203415418648" name="UnicodeCharacterRegexp" hash="2ia541zt7rppb7a7r9od4pakkhpicgn" />
   <source id="1203415512996" name="FourHex" hash="9ziyd59ykyvkc7nx479s4vdkmem37w7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="FourHex_PropertySupport.java" />
   </source>
@@ -141,6 +142,7 @@
   <source id="1222260556146" name="ReplaceWithRegexpOperation" hash="6n0lu4fmhalzheafruejx3w6fs0h554" />
   <source id="7473568212391781030" name="_StringRegexp" hash="8dbevf9rnjlr63mfnvu2thb0c15r71b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="_StringRegexp_PropertySupport.java" />
   </source>

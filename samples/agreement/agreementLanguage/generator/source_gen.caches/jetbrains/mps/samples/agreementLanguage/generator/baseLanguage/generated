@@ -7,14 +7,16 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="85t8gj3oyc0p2yn3v3ynr03iyidt85k" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="96lei8ezpygv3e9ji04p0zwkgpvy6m6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="d59v43me062a7xomxy3hyt0d5pqpug4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-eq1we54g2s7z0pfhemeye8py91i8aql" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-8dmt74s7dnwm24sz3bnghrz0ritvylv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-cqfao8skcm1ppbxo742xf2x49edxwq4" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-bteyyzk18sucr028nxrmyrynbx0b7gj" />
   <dep model="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" hash="-4lb9gmvoqfjeoiazsba2i6msyptbcwu" />
   <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" hash="y2q5cddsqs5syau1vemum1w6ertem9" />
   <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" hash="4yqiqln5nbta7sx61zcktkksepbc585" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="17maq611wyvomzssdqighkikteqypig" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-93h02qd3mfz4hhspvng20fqnxkp0qxy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
@@ -44,6 +46,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
@@ -56,28 +59,69 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1112303804151" name="MAPPING_Agreement_BaseLanguage" hash="89vkffmiisbgt4mwj3cit0cw27xmkxf" />
+  <source id="1112303804151" name="MAPPING_Agreement_BaseLanguage" hash="89vkffmiisbgt4mwj3cit0cw27xmkxf">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
   <source id="1112304135028" name="_registryBuilder_" hash="-t5y2k0t342pyhjhfrkui7hb0fsa79o">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
-  <source id="1112733851363" name="SWITCH_AgreementExpression_NewFunction_Default" hash="-55fq0yskx4ow47aurk77w7oyccos0e" />
-  <source id="1112804414269" name="new_FeeMoneyFunction" hash="-2se62zecbwypba41fh4roy7mfvkwzde" />
-  <source id="1112804501366" name="new_MoneyAddOperationFunction" hash="byxp2yq443p572tdvt9g9vjb9npw8y8" />
-  <source id="1112804588435" name="new_MoneyConstantFunction_fromQuantity" hash="-a1mazv7jyjqh4gkeu7tg5uz8hxrph77" />
-  <source id="1112894086969" name="new_MoneyMultiplyOperation" hash="-c0anux275gn82g3lptjq69y6miovy94" />
-  <source id="1112894400496" name="new_QuantityConstantFunction_fromQuantity" hash="-1n7vfrldrpdzt3fxgjrgzcf765vcnd8" />
-  <source id="1112902379896" name="new_QuantityGreaterThanOperation" hash="7ntgj6xai4wvu1jkiczwqj5b2in3kyc" />
-  <source id="1112902887922" name="new_UsageQuantityFunction" hash="-d8qwsjj4ea6ueq2cj5fyf4ehyyshwyo" />
-  <source id="1112902927238" name="new_UsageDoubleFunction" hash="eqgng7hhjj4yiuj4e8cooldp1py6jol" />
-  <source id="1112907559237" name="new_ValueQuantityFunction_fromValueReference" hash="-1zzlflvz5kvf8usf2fravgzwyrxyaiw" />
-  <source id="1112915076342" name="SWITCH_AgreementExpression_NewFunction_Double" hash="qcxmooqrmkdl8hpb5lkd0qh1d44m10" />
-  <source id="1112916267895" name="SWITCH_AgreementExpression_NewFunction_Quantity" hash="-6gxxxj1qzu93e0spw1owvqfnguvasuc" />
-  <source id="1112980575784" name="new_ValueDoubleFunction_fromValueReference" hash="-8imhv5jogdnlmdg7k0qis9q7472spnt" />
-  <source id="1112980998637" name="new_DoubleConstantFunction_fromQuantity" hash="-e2odule7vsyw78nolujlysksu51omwz" />
-  <source id="1112985235375" name="SWITCH_AgreementExpression_NewFunction_Money" hash="-1z68uq6t2rlfgbiu7zpo48nvpykxyjw" />
-  <source id="1112985504268" name="IfFunctionFunction_Money" hash="5uxsujs2nwjtcjlk627zlt1d2gjq3os" />
-  <source id="1112988394879" name="new_MoneyAdapterFunction" hash="-g4l5396jssveazlah1usyhpb7nppmp" />
-  <source id="1116448085084" name="SWITCH_Date" hash="1a6bk2vr55eswdm8hp2duqu9pcgb0ai" />
-  <source id="1116526421328" name="SWITCH_RegisterValue" hash="-3frq8d19pjattt018oxgd33ojfeftlk" />
+  <source id="1112733851363" name="SWITCH_AgreementExpression_NewFunction_Default" hash="-55fq0yskx4ow47aurk77w7oyccos0e">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112804414269" name="new_FeeMoneyFunction" hash="-2se62zecbwypba41fh4roy7mfvkwzde">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112804501366" name="new_MoneyAddOperationFunction" hash="byxp2yq443p572tdvt9g9vjb9npw8y8">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112804588435" name="new_MoneyConstantFunction_fromQuantity" hash="-a1mazv7jyjqh4gkeu7tg5uz8hxrph77">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112894086969" name="new_MoneyMultiplyOperation" hash="-c0anux275gn82g3lptjq69y6miovy94">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112894400496" name="new_QuantityConstantFunction_fromQuantity" hash="-1n7vfrldrpdzt3fxgjrgzcf765vcnd8">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112902379896" name="new_QuantityGreaterThanOperation" hash="7ntgj6xai4wvu1jkiczwqj5b2in3kyc">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112902887922" name="new_UsageQuantityFunction" hash="-d8qwsjj4ea6ueq2cj5fyf4ehyyshwyo">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112902927238" name="new_UsageDoubleFunction" hash="eqgng7hhjj4yiuj4e8cooldp1py6jol">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112907559237" name="new_ValueQuantityFunction_fromValueReference" hash="-1zzlflvz5kvf8usf2fravgzwyrxyaiw">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112915076342" name="SWITCH_AgreementExpression_NewFunction_Double" hash="qcxmooqrmkdl8hpb5lkd0qh1d44m10">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112916267895" name="SWITCH_AgreementExpression_NewFunction_Quantity" hash="-6gxxxj1qzu93e0spw1owvqfnguvasuc">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112980575784" name="new_ValueDoubleFunction_fromValueReference" hash="-8imhv5jogdnlmdg7k0qis9q7472spnt">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112980998637" name="new_DoubleConstantFunction_fromQuantity" hash="-e2odule7vsyw78nolujlysksu51omwz">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112985235375" name="SWITCH_AgreementExpression_NewFunction_Money" hash="-1z68uq6t2rlfgbiu7zpo48nvpykxyjw">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112985504268" name="IfFunctionFunction_Money" hash="5uxsujs2nwjtcjlk627zlt1d2gjq3os">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1112988394879" name="new_MoneyAdapterFunction" hash="-g4l5396jssveazlah1usyhpb7nppmp">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1116448085084" name="SWITCH_Date" hash="1a6bk2vr55eswdm8hp2duqu9pcgb0ai">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
+  <source id="1116526421328" name="SWITCH_RegisterValue" hash="-3frq8d19pjattt018oxgd33ojfeftlk">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+  </source>
 </dependencies>
 

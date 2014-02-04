@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-1fb5gsy83ffw5e7del5310abtw75w7r">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-6r3k7ptfy1wn7sb300c2sjsqcchyub6" dependsOnNodes="true" />
   <source id="1560298786499489453" name="EditableStringDescriptor" hash="-5svhq7ikh8k5b1ul0ehollxkjhrnjfy">
     <file name="EditableStringDescriptor.java" />
@@ -17,6 +18,7 @@
     <file name="ManagerDescriptor.java" />
   </source>
   <source id="1560298786499495292" name="DepDescriptor" hash="bfn6niz80j618vozsdho97wpzhup3fq">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DepDescriptor.java" />
   </source>
   <source id="1560298786499497407" name="ModelDescriptor" hash="aqpb13uz17seo4w58ws7dn0t64sbqm2">

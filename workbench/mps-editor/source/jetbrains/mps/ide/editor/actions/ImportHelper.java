@@ -26,12 +26,9 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
@@ -183,7 +180,7 @@ public class ImportHelper {
           langs.remove(BootstrapLanguages.coreLanguage());
 
           for (Language l : langs) {
-            if (myModel != null) {
+            if(myModel != null) {
               Collection<SModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
               if (impLangs.contains(l.getModuleReference())) continue;
             }
@@ -208,20 +205,15 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
-            if (myContextModule instanceof DevKit) {
+            if(myContextModule instanceof DevKit) {
               ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
-            } else {
-              Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-              if (lang == null) continue;
-              if (!new GlobalModuleDependenciesManager(myContextModule).getUsedLanguages().contains(lang)) {
-                ((AbstractModule) myContextModule).addUsedLanguage(ref);
-                reload = true;
-              }
+            } else if (((AbstractModule) myContextModule).getScope().getLanguage(ref) == null) {
+              ((AbstractModule) myContextModule).addUsedLanguage((SModuleReference) ref);
+              reload = true;
             }
-            if (myModel != null) {
-              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(ref);
-            }
+            if(myModel != null)
+              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((SModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myContextModule), new EmptyProgressMonitor());
@@ -316,7 +308,7 @@ public class ImportHelper {
             dependency[0] = false;
           }
 
-          if (!VisibilityUtil.isVisible(myModule, myModel)) {
+          if (((AbstractModule) myModule).getScope().getModelDescriptor(mrefToImport) == null) {
             module[0] = moduleToImport.getModuleReference();
           }
         }
