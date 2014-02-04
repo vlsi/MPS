@@ -41,7 +41,11 @@ public class ChangeParametersOrder_Test extends BaseTransformationTest4 {
       ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052943965"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
       ref.setUsages(ussages);
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943948"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943972"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943948"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943972"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

@@ -13,16 +13,16 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class ListWithConceptFunction_Test extends BaseTransformationTest4 {
   @Test
-  public void test_TypesCheck1222443330005() throws Throwable {
+  public void test_ErrorMessagesCheck1222443330005() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test$TestBody", "test_TypesCheck1222443330005", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test$TestBody", "test_ErrorMessagesCheck1222443330005", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_TypesCheck1222443330005() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1222443330005"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1222443280871")});
+    public void test_ErrorMessagesCheck1222443330005() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1222443330005"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1222443280871")});
     }
   }
 }

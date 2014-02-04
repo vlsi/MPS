@@ -6,8 +6,10 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.SubtreeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
 public class UnusedAssignment_Test extends BaseTransformationTest4 {
@@ -17,11 +19,22 @@ public class UnusedAssignment_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_UnusedAssignment", true);
   }
 
+  @Test
+  public void test_NodeWarningCheck963887337804206804() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_NodeWarningCheck963887337804206804", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_UnusedAssignment() throws Exception {
       this.addNodeById("1217271585694");
-      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444198388"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444198388"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
+    }
+
+    public void test_NodeWarningCheck963887337804206804() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804206804"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228055")});
     }
   }
 }

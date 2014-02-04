@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3">
+<model modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="7">
   <persistence version="8" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -12,7 +12,7 @@
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
-  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
+  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="7" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174642743670" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
@@ -1923,6 +1923,48 @@
       <property name="role" nameId="tpce.1071599776563" value="message" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3148295837107269752" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MessageStatementAnnotation" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3148295837107399426" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="3148295837107399428" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="messageAnnotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="4307182653739483184" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1227096774658" resolveInfo="MessageStatement" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7992060018732187438" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ReportErrorStatementAnnotation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3148295837107269752" resolveInfo="MessageStatementAnnotation" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7992060018732187439" nodeInfo="ng">
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="7992060018732187440" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1175517767210" resolveInfo="ReportErrorStatement" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7992060018732187441" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="InfoStatementAnnotation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3148295837107269752" resolveInfo="MessageStatementAnnotation" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7992060018732187442" nodeInfo="ng">
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="7992060018732187443" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1224760201579" resolveInfo="InfoStatement" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7992060018732187444" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="WarningStatementAnnotation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3148295837107269752" resolveInfo="MessageStatementAnnotation" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7992060018732187445" nodeInfo="ng">
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="7992060018732187446" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1207055528241" resolveInfo="WarningStatement" />
+      </node>
     </node>
   </root>
 </model>

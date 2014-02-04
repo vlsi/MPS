@@ -6,8 +6,10 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.SubtreeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
 public class AnonymousClass_Test extends BaseTransformationTest4 {
@@ -17,11 +19,33 @@ public class AnonymousClass_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_AnonymousClass", true);
   }
 
+  @Test
+  public void test_NodeVariableInitializerIsRedundantWarningCheck3055767090687739238() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck3055767090687739238", true);
+  }
+
+  @Test
+  public void test_NodeVariableInitializerIsRedundantWarningCheck7992060018738313734() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck7992060018738313734", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_AnonymousClass() throws Exception {
       this.addNodeById("1217271587076");
-      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444376214"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444376214"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
+    }
+
+    public void test_NodeVariableInitializerIsRedundantWarningCheck3055767090687739238() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("3055767090687739238"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6090235207266878331")});
+    }
+
+    public void test_NodeVariableInitializerIsRedundantWarningCheck7992060018738313734() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("7992060018738313734"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6090235207266878711")});
     }
   }
 }

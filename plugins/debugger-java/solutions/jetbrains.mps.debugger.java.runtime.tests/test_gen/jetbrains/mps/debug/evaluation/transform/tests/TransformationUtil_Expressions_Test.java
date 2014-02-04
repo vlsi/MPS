@@ -8,14 +8,14 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -261,7 +261,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550174"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550174"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550180"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550174"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550180"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -322,7 +326,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("1454920206667908426"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908426"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908411"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908426"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908411"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -383,7 +391,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550220"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550220"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550227"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550220"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550227"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -444,7 +456,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("1454920206667900340"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900340"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900331"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900340"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900331"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -505,7 +521,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550246"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550246"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -566,7 +586,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("1454920206667900364"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900364"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900349"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900364"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900349"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -631,7 +655,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       SLinkOperations.setTarget(instanceFieldReference, "variableDeclaration", fieldDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), instanceFieldReference);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550246"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550246"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -692,7 +720,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550270"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550270"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -753,7 +785,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("1454920206667900394"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900394"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900378"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900394"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900378"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -819,7 +855,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), staticFieldReference);
 
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550270"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550270"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -880,7 +920,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550297"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550297"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -941,7 +985,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("1454920206667908301"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908301"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908282"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908301"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908282"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1007,7 +1055,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       SLinkOperations.setTarget(localInstanceMethodCall, "baseMethodDeclaration", instanceMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), localInstanceMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550297"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550297"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1068,7 +1120,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675025"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675025"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1129,7 +1185,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("1454920206667908338"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908338"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908319"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908338"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908319"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1195,7 +1255,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", staticMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), localStaticMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675025"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675025"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1256,7 +1320,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("607759879653679934"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679934"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679962"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679934"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679962"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1317,7 +1385,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("607759879653679948"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679948"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653680038"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679948"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653680038"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1378,7 +1450,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("2932187755699707955"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699707955"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699710927"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699707955"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699710927"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1439,7 +1515,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("2932187755699923977"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699923977"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699923961"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699923977"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699923961"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1500,7 +1580,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("2932187755699930364"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699930364"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699930349"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699930364"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699930349"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1561,7 +1645,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("8441349676536412414"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536412414"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536412401"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536412414"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536412401"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1622,7 +1710,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("2932187755699941130"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941130"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941140"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941130"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941140"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1683,7 +1775,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("3278243436493715618"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3278243436493715618"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3278243436493715571"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3278243436493715618"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3278243436493715571"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1744,7 +1840,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("6721540366799618945"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799618945"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799618958"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799618945"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799618958"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1805,7 +1905,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("6721540366799622804"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799622804"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799622778"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799622804"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799622778"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1866,7 +1970,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("6721540366799627030"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799627030"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799627003"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799627030"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799627003"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1927,7 +2035,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("4693929676428713100"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4693929676428713100"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4693929676428713079"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4693929676428713100"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4693929676428713079"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -1988,7 +2100,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("8441349676536441173"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441173"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441160"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441173"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441160"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       this.dispose();
     }
 
@@ -2050,7 +2166,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.init();
 
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("3619281710184383931"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3619281710184383931"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3619281710184383916"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3619281710184383931"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3619281710184383916"), "jetbrains.mps.baseLanguage.structure.StatementList"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
 
       this.dispose();
     }

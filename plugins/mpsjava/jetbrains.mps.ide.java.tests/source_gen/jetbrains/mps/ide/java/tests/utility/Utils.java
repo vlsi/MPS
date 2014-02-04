@@ -125,7 +125,11 @@ public class Utils {
     // <node> 
     // <node> 
 
-    Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
+    {
+      List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), expected);
+      List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), result);
+      Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+    }
 
   }
 
