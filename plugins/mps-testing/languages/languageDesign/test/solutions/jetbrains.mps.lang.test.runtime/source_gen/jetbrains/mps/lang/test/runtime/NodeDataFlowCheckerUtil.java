@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class NodeDataFlowCheckerUtil {
 
@@ -69,20 +68,6 @@ public class NodeDataFlowCheckerUtil {
           Set<Object> vars = (Set<Object>) live.get(instruction);
           SNode var = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.VariableInitialized"), "var", true);
           Assert.assertTrue("variable <" + var + "> is not alive", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
-        }
-      }
-    }
-  }
-
-
-
-  public static void performOperations(SNode node) {
-    for (SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-      if (nodeToCheck != null) {
-        if (AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null) {
-          for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")), "nodeOperations", true)) {
-            BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{nodeToCheck});
-          }
         }
       }
     }

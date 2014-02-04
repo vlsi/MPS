@@ -4,7 +4,11 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.List;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeRuleCheckOperation_Behavior {
@@ -14,6 +18,24 @@ public class NodeRuleCheckOperation_Behavior {
   public static boolean call_doesReferToMessageStatement_8202121391118629381(SNode thisNode) {
     assert (NodeRuleCheckOperation_Behavior.call_getReferencedRuleNode_5872607264946106205(thisNode) != null);
     return SNodeOperations.isInstanceOf(NodeRuleCheckOperation_Behavior.call_getReferencedRuleNode_5872607264946106205(thisNode), "jetbrains.mps.lang.typesystem.structure.MessageStatement");
+  }
+
+  public static boolean call_NodeHasExpectedRuleMessage_1302453276764459617(SAbstractConcept thisConcept, List<IErrorReporter> errorReports, SNode operation) {
+    SNode ruleNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), operation, "virtual_getReferencedRuleNode_5872607264946106205", new Object[]{});
+    if (ListSequence.fromList(errorReports).isEmpty()) {
+      return false;
+    }
+    if ((ruleNode == null)) {
+      return true;
+    }
+    String ruleModel = SNodeOperations.getModel(ruleNode).getReference().toString();
+    String ruleNodeId = ruleNode.getNodeId().toString();
+    for (IErrorReporter errorReport : errorReports) {
+      if (errorReport.getRuleId().equals(ruleNodeId) && errorReport.getRuleModel().equals(ruleModel)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Deprecated
