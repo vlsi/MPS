@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="6wajqhjcwhd09bny98is26v4x70w9vv">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-dbiaw8tn8w6h3jsnoee3deweamx6cps" dependsOnNodes="true" />
   <source id="6877931680625740132" name="Controller" hash="-2aftt0cn1vyrhpsfdqu5c8djwa97qqk">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Controller.java" />
   </source>
   <source id="6877931680625740198" name="CommandChannel" hash="-2v4dvgws45f3iqpv3n27wo2vqw7j65v">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CommandChannel.java" />
   </source>
   <source id="6877931680625740260" name="AbstractEvent" hash="cjwqhvgkc8jxprfrsac71useaa7f05o">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractEvent.java" />
   </source>
   <source id="6877931680625740350" name="Event" hash="e4ndt6jjfre1yl11ake1nz1m27sokmu">
     <file name="Event.java" />
   </source>
   <source id="6877931680625740406" name="State" hash="-2x65efj8nckdcrtcuxxwg4yxn6l1qnl">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="State.java" />
   </source>
   <source id="6877931680625740838" name="StateMachine" hash="-4xv7868wcav40mbj548s6f7b7rgumtk">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StateMachine.java" />
   </source>
   <source id="6877931680625741136" name="Command" hash="5vjajjrfinm29cstwdwv07592o7av78">
     <file name="Command.java" />
   </source>
   <source id="6877931680625741150" name="StateMachineTest" hash="-7aa5u9b8tvwsghrjj5p1jrs28xqd1i2">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StateMachineTest.java" />
   </source>
   <source id="6877931680625741186" name="Notification" hash="-39esv7ztxev4gmyjv8l2pzfm89lm5i9">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Notification.java" />
   </source>
   <source id="6877931680625741402" name="StateMachineFactory" hash="-4f9096vtghjssh2pfuxj8ret4ut3wm6">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StateMachineFactory.java" />
   </source>
 </dependencies>

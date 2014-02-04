@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="67sof523gobh4b2jbrcqzzj9thho473">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-upmcsm0b3dh3ohgto05df9fltktzm4" dependsOnNodes="true" />
   <source id="1218034168005181764" name="CommentRecorderParser" hash="-2vzrbaqg2o912k697x24vng0c66gvo0">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CommentRecorderParser.java" />
   </source>
   <source id="1218034168005183012" name="RecordedParsingInformation" hash="2fun4t880vnr9blewvhigfevhvroxz">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RecordedParsingInformation.java" />
   </source>
   <source id="1218034168005183146" name="CodeSnippetParsingUtil" hash="3ww2fvt85a37hxkbyta3htpby72udqy">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CodeSnippetParsingUtil.java" />
   </source>
 </dependencies>

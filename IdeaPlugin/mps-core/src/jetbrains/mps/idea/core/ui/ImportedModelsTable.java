@@ -60,7 +60,7 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
 
         List<SModelReference> result = new ArrayList<SModelReference>();
         SModule module = myModelDescriptor.getModule();
-        for (SModel modelDescriptor : ((AbstractModule) module).getScope().getModelDescriptors()) {
+        for (SModel modelDescriptor : ((AbstractModule) module).getScope().getModels()) {
             if (modelsToHide.contains(modelDescriptor.getReference())) {
                 continue;
             }
