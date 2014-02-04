@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -36,7 +35,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_b50r53_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b50r53_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b50r53_c0(editorContext, node));
-    if (renderingCondition_b50r53_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_b50r53_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_b50r53_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_b50r53_e0(editorContext, node));
@@ -95,7 +94,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_b50r53_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_b50r53_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger(node, "height") > 0;
   }
 

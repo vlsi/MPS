@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -45,18 +44,18 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_t6d1qn_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t6d1qn_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t6d1qn_d0(editorContext, node));
-    if (renderingCondition_t6d1qn_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_t6d1qn_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_t6d1qn_e0(editorContext, node));
     }
-    if (renderingCondition_t6d1qn_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_t6d1qn_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_t6d1qn_f0(editorContext, node));
     }
-    if (renderingCondition_t6d1qn_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_t6d1qn_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_t6d1qn_g0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_t6d1qn_h0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t6d1qn_i0(editorContext, node));
-    if (renderingCondition_t6d1qn_a9a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_t6d1qn_a9a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_t6d1qn_j0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_t6d1qn_k0(editorContext, node));
@@ -103,7 +102,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t6d1qn_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t6d1qn_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
@@ -118,7 +117,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t6d1qn_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t6d1qn_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
@@ -133,7 +132,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t6d1qn_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t6d1qn_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
@@ -176,7 +175,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t6d1qn_a9a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t6d1qn_a9a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 

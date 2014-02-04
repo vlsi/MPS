@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends DefaultNodeEditor {
@@ -129,7 +128,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     editorCell.addEditorCell(this.createCollection_5v10so_c5a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_d5a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_e5a(editorContext, node));
-    if (renderingCondition_5v10so_a5f0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_5v10so_a5f0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_5v10so_f5a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_5v10so_g5a(editorContext, node));
@@ -293,7 +292,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     return editorCell;
   }
 
-  private static boolean renderingCondition_5v10so_a5f0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_5v10so_a5f0(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation");
   }
 

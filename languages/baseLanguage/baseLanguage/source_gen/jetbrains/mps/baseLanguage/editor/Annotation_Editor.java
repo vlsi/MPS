@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -91,7 +90,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_mr1gse_a4a(node, editorContext, editorContext.getOperationContext().getScope()));
+    editorCell.setCanBeFolded(renderingCondition_mr1gse_a4a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_mr1gse_a4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mr1gse_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_mr1gse_b4a(editorContext, node));
@@ -99,7 +98,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_mr1gse_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_mr1gse_a4a(SNode node, EditorContext editorContext) {
     return (SNodeOperations.getParent(node) != null);
   }
 

@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -33,7 +32,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_xaaxob_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ThisExpression_Editor.renderingCondition_xaaxob_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ThisExpression_Editor.renderingCondition_xaaxob_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_xaaxob_a0(editorContext, node);
@@ -44,7 +43,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xaaxob_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xaaxob_a0(SNode node, EditorContext editorContext) {
     return SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null;
   }
 

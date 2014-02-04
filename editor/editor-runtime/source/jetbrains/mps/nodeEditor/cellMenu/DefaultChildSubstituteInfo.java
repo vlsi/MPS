@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.project.GlobalScope;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.*;
@@ -100,7 +99,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     SNode hole = null;
     SNode parent = mapping.get(myParentNode);
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-    hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", null, GlobalScope.getInstance());
+    hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", null);
     if (myCurrentChild != null) {
       SNode child = mapping.get(myCurrentChild);
       parent.insertChildBefore(role, hole, child);

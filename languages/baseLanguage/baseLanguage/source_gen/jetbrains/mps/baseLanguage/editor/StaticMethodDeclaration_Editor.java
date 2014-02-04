@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -51,17 +50,17 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_j4vm40_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_j4vm40_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_j4vm40_c0(editorContext, node));
-    if (renderingCondition_j4vm40_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j4vm40_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_j4vm40_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_j4vm40_e0(editorContext, node));
-    if (renderingCondition_j4vm40_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j4vm40_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_j4vm40_f0(editorContext, node));
     }
-    if (renderingCondition_j4vm40_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j4vm40_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_j4vm40_g0(editorContext, node));
     }
-    if (renderingCondition_j4vm40_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j4vm40_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_j4vm40_h0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_j4vm40_i0(editorContext, node));
@@ -69,7 +68,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_j4vm40_k0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_j4vm40_l0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_j4vm40_m0(editorContext, node));
-    if (renderingCondition_j4vm40_a31a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_j4vm40_a31a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_j4vm40_n0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_j4vm40_o0(editorContext, node));
@@ -105,7 +104,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_j4vm40_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j4vm40_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
@@ -131,7 +130,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_j4vm40_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j4vm40_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isSynchronized");
   }
 
@@ -179,7 +178,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_j4vm40_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j4vm40_a6a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "modifiers", true)).isNotEmpty();
   }
 
@@ -188,7 +187,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_j4vm40_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j4vm40_a7a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
@@ -326,7 +325,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_j4vm40_a31a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j4vm40_a31a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty();
   }
 

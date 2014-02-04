@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -125,7 +124,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_3jn7ig_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = NodeBuilderNode_Editor.renderingCondition_3jn7ig_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = NodeBuilderNode_Editor.renderingCondition_3jn7ig_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_3jn7ig_a1a(editorContext, node);
@@ -135,7 +134,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_3jn7ig_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_3jn7ig_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "values", true)).count() > 1;
   }
 

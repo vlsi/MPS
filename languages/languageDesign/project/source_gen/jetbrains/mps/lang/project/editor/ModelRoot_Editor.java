@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -28,7 +27,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_gn5t9c_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_gn5t9c_a0(editorContext, node));
-    if (renderingCondition_gn5t9c_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gn5t9c_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gn5t9c_b0(editorContext, node));
     }
     return editorCell;
@@ -64,7 +63,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gn5t9c_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gn5t9c_a1a(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "path"));
   }
 

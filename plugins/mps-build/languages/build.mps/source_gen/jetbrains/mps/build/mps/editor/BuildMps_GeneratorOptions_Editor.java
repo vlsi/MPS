@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
@@ -78,7 +77,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_aauy4y_b2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aauy4y_c2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_aauy4y_d2a(editorContext, node));
-    if (renderingCondition_aauy4y_a4c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_aauy4y_a4c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_aauy4y_e2a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_aauy4y_f2a(editorContext, node));
@@ -159,7 +158,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "parallel");
   }
 

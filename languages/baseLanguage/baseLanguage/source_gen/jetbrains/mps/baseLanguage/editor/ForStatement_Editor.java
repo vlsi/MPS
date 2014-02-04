@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -47,16 +46,16 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l9yc2b_a");
     editorCell.setBig(true);
-    if (renderingCondition_l9yc2b_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_l9yc2b_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_l9yc2b_a0(editorContext, node));
     }
-    if (renderingCondition_l9yc2b_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_l9yc2b_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_l9yc2b_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_l9yc2b_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_l9yc2b_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_l9yc2b_e0(editorContext, node));
-    if (renderingCondition_l9yc2b_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_l9yc2b_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_l9yc2b_f0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_l9yc2b_g0(editorContext, node));
@@ -81,7 +80,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_l9yc2b_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_l9yc2b_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -129,7 +128,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_l9yc2b_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_l9yc2b_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
 
@@ -259,7 +258,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_l9yc2b_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_l9yc2b_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isNotEmpty();
   }
 

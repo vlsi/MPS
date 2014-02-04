@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MqlStringIndexOp_Editor extends DefaultNodeEditor {
@@ -34,7 +33,7 @@ public class MqlStringIndexOp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ghkh95_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ghkh95_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ghkh95_c0(editorContext, node));
-    if (renderingCondition_ghkh95_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ghkh95_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ghkh95_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ghkh95_e0(editorContext, node));
@@ -114,7 +113,7 @@ public class MqlStringIndexOp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ghkh95_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ghkh95_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "index", true) != null);
   }
 

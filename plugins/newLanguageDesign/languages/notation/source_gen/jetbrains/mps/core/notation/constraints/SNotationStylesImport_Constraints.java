@@ -45,7 +45,7 @@ public class SNotationStylesImport_Constraints extends BaseConstraintsDescriptor
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, operationContext.getScope(), "jetbrains.mps.core.structure.structure.SStructureContainer")) {
+            return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.core.structure.structure.SStructureContainer")) {
               @Override
               public boolean isExcluded(SNode node) {
                 // todo: exclude already imported 

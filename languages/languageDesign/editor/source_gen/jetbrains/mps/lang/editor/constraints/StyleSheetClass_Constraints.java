@@ -13,7 +13,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -22,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -43,7 +45,7 @@ public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
         AbstractModule contextModule = (AbstractModule) _context.getModel().getModule();
 
         Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
-        for (SModule module : Sequence.fromIterable(contextModule.getScope().getModules())) {
+        for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
           if (module instanceof Language) {
             SetSequence.fromSet(contextLanguages).addElement((Language) module);
           }

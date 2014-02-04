@@ -4,7 +4,6 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -27,7 +26,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
   }
 
   @Override
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
+  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
     if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
       return;
     }

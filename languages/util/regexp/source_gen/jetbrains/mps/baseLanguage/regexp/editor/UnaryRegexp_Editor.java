@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -34,11 +33,11 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_xoe8gq_a");
     editorCell.setBig(true);
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
-    if (renderingCondition_xoe8gq_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xoe8gq_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_xoe8gq_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_xoe8gq_b0(editorContext, node));
-    if (renderingCondition_xoe8gq_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xoe8gq_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_xoe8gq_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_xoe8gq_d0(editorContext, node));
@@ -55,7 +54,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
@@ -89,7 +88,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 

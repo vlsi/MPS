@@ -24,7 +24,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Collections;
 
@@ -367,7 +366,7 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
     protected void createInnerCells(SNode node, EditorContext editorContext) {
       try {
         editorContext.getCellFactory().pushCellContext();
-        editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a9c0(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
+        editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a9c0(node, editorContext)).toGenericArray(String.class));
         editorContext.getCellFactory().removeCellContextHints();
         super.createInnerCells(node, editorContext);
       } finally {
@@ -375,11 +374,7 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
       }
     }
 
-    private Iterable<String> getEditorHints_or70v3_a9c0(SNode node, EditorContext editorContext, IScope scope) {
-      boolean checkParametersAvailability = editorContext != null;
-      checkParametersAvailability &= scope != null;
-      checkParametersAvailability &= node != null;
-
+    private Iterable<String> getEditorHints_or70v3_a9c0(SNode node, EditorContext editorContext) {
       if (SPropertyOperations.hasValue(node, "projectionType", "rich", null)) {
         return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
       } else if (SPropertyOperations.hasValue(node, "projectionType", "compact", null)) {
@@ -516,23 +511,19 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
     protected void createInnerCells(SNode node, EditorContext editorContext) {
       try {
         editorContext.getCellFactory().pushCellContext();
-        editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a3m2a(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
-        editorContext.getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a3m2a_0(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
+        editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a3m2a(node, editorContext)).toGenericArray(String.class));
+        editorContext.getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a3m2a_0(node, editorContext)).toGenericArray(String.class));
         super.createInnerCells(node, editorContext);
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
     }
 
-    private Iterable<String> getEditorHints_or70v3_a3m2a(SNode node, EditorContext editorContext, IScope scope) {
+    private Iterable<String> getEditorHints_or70v3_a3m2a(SNode node, EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
     }
 
-    private Iterable<String> getEditorHints_or70v3_a3m2a_0(SNode node, EditorContext editorContext, IScope scope) {
-      boolean checkParametersAvailability = editorContext != null;
-      checkParametersAvailability &= scope != null;
-      checkParametersAvailability &= node != null;
-
+    private Iterable<String> getEditorHints_or70v3_a3m2a_0(SNode node, EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
     }
   }

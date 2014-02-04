@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -56,7 +55,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_cvgoyj_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CellModel_Collection_Editor.renderingCondition_cvgoyj_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = CellModel_Collection_Editor.renderingCondition_cvgoyj_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_cvgoyj_a0(editorContext, node);
@@ -67,7 +66,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a0(SNode node, EditorContext editorContext) {
     return !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
   }
 
@@ -77,10 +76,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_cvgoyj_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cvgoyj_a0a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_cvgoyj_a0a(editorContext, node));
     }
-    if (renderingCondition_cvgoyj_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cvgoyj_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_cvgoyj_b0a(editorContext, node));
     }
     return editorCell;
@@ -95,14 +94,14 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_cvgoyj_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cvgoyj_b0a0(editorContext, node));
-    if (renderingCondition_cvgoyj_a2a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cvgoyj_a2a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_cvgoyj_c0a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_cvgoyj_d0a0(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVertical_1237380214915(node);
   }
 
@@ -208,7 +207,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
@@ -259,14 +258,14 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_cvgoyj_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cvgoyj_b1a0(editorContext, node));
-    if (renderingCondition_cvgoyj_a2b0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cvgoyj_a2b0a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_cvgoyj_c1a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_cvgoyj_d1a0(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext) {
     return !(CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) && !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
   }
 
@@ -332,7 +331,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
@@ -354,7 +353,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{}));
     editorCell.addEditorCell(this.createComponent_cvgoyj_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cvgoyj_b0a(editorContext, node));
-    if (renderingCondition_cvgoyj_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cvgoyj_a2a0(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_cvgoyj_c0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_cvgoyj_d0a(editorContext, node));
@@ -424,7 +423,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
@@ -608,7 +607,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_cvgoyj_b2d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CellModel_Collection_Editor.renderingCondition_cvgoyj_a1c3a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = CellModel_Collection_Editor.renderingCondition_cvgoyj_a1c3a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_cvgoyj_a1c3a(editorContext, node);
@@ -618,7 +617,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
   }
 
@@ -644,7 +643,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public CellModel_Collection_usesFolding_cellMenu_cvgoyj_a0a1c3a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
@@ -653,7 +652,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
     }
 

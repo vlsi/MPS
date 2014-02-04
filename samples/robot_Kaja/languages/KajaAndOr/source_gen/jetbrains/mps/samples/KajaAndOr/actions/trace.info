@@ -304,8 +304,8 @@
     </scopeInfo>
     <unitInfo nodeId="1904811872814253599" fileName="QueriesGenerated.java" startLine="85" startPosition="46" endLine="89" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$3" />
     <unitInfo nodeId="1904811872814296399" fileName="QueriesGenerated.java" startLine="131" startPosition="46" endLine="135" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$5" />
-    <unitInfo nodeId="642541832612112346" fileName="QueriesGenerated.java" startLine="181" startPosition="241" endLine="185" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$8" />
-    <unitInfo nodeId="7060824959894576675" fileName="QueriesGenerated.java" startLine="229" startPosition="241" endLine="233" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$10" />
+    <unitInfo nodeId="642541832612112346" fileName="QueriesGenerated.java" startLine="181" startPosition="212" endLine="185" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$8" />
+    <unitInfo nodeId="7060824959894576675" fileName="QueriesGenerated.java" startLine="229" startPosition="212" endLine="233" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$10" />
     <unitInfo nodeId="642541832611943584" fileName="QueriesGenerated.java" startLine="179" startPosition="45" endLine="187" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$7" />
     <unitInfo nodeId="7060824959894576633" fileName="QueriesGenerated.java" startLine="227" startPosition="45" endLine="235" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$9" />
     <unitInfo nodeId="642541832611943584" fileName="QueriesGenerated.java" startLine="190" startPosition="55" endLine="217" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$8" />
@@ -387,7 +387,7 @@
       <varInfo nodeId="1904811872814312765" varName="_context" />
       <varInfo nodeId="1904811872814312765" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="642541832611218652" fileName="QueriesGenerated.java" startLine="46" startPosition="243" endLine="50" endPosition="13" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$2" />
+    <unitInfo nodeId="642541832611218652" fileName="QueriesGenerated.java" startLine="46" startPosition="214" endLine="50" endPosition="13" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$2" />
     <unitInfo nodeId="1904811872814312765" fileName="QueriesGenerated.java" startLine="44" startPosition="42" endLine="52" endPosition="9" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$1" />
     <unitInfo nodeId="1904811872814312765" fileName="QueriesGenerated.java" startLine="55" startPosition="57" endLine="74" endPosition="13" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$2" />
   </root>

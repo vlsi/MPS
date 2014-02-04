@@ -15,8 +15,11 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Collection;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ScopeOperations;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -49,7 +52,9 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
 
-            for (Language language : ScopeOperations.getModules(operationContext.getScope(), Language.class)) {
+            SModule sourceModule = SNodeOperations.getModel(_context.getEnclosingNode()).getModule();
+            Collection<Language> langs = new GlobalModuleDependenciesManager(sourceModule).getUsedLanguages();
+            for (Language language : langs) {
               SModel strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
               SModel strucModel = strucModelDescriptor;
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(strucModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {

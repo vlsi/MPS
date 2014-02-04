@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
@@ -44,7 +43,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1i2int_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1i2int_a0(editorContext, node));
-    if (renderingCondition_1i2int_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1i2int_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_1i2int_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_1i2int_c0(editorContext, node));
@@ -52,10 +51,10 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1i2int_e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1i2int_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1i2int_g0(editorContext, node));
-    if (renderingCondition_1i2int_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1i2int_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1i2int_h0(editorContext, node));
     }
-    if (renderingCondition_1i2int_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1i2int_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1i2int_i0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_1i2int_j0(editorContext, node));
@@ -92,7 +91,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1i2int_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1i2int_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
@@ -219,7 +218,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_1i2int_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1i2int_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
@@ -234,7 +233,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1i2int_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1i2int_a6a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 
@@ -249,7 +248,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1i2int_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1i2int_a7a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty();
   }
 
@@ -332,7 +331,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1i2int_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1i2int_a8a(SNode node, EditorContext editorContext) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", false, false) != null);
   }
 

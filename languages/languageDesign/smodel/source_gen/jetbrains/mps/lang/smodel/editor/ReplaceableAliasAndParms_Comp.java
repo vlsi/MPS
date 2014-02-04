@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -47,7 +46,7 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n84rmm_a");
     editorCell.addEditorCell(this.createComponent_n84rmm_a0(editorContext, node));
-    if (renderingCondition_n84rmm_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_n84rmm_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_n84rmm_b0(editorContext, node));
     }
     return editorCell;
@@ -84,7 +83,7 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 

@@ -25,7 +25,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -136,7 +135,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     editorCell.addEditorCell(this.createRefNode_38fsuu_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_38fsuu_c1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_38fsuu_d1a(editorContext, node));
-    if (renderingCondition_38fsuu_a4b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_38fsuu_a4b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_38fsuu_e1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_38fsuu_f1a(editorContext, node));
@@ -206,7 +205,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private static boolean renderingCondition_38fsuu_a4b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_38fsuu_a4b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "isExact"));
   }
 

@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem.state;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -41,7 +40,7 @@ public class HoleState extends State {
   public void initHole(SNode hole) {
     SNode holeVar = typeOf(hole, null);
     SNode holeType = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType",
-      null, GlobalScope.getInstance(), false);
+      null, false);
     getNodeMaps().addNodeToType(hole, holeVar, null);
     getEquations().addEquation(holeVar, holeType, null);
     myHole = hole;

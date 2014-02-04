@@ -52,12 +52,6 @@ public class ModuleChangingOperationContext implements IOperationContext {
   }
 
   @Override
-  @NotNull
-  public IScope getScope() {
-    return myOperationContext.getScope();
-  }
-
-  @Override
   public boolean isTestMode() {
     return myOperationContext.isTestMode();
   }

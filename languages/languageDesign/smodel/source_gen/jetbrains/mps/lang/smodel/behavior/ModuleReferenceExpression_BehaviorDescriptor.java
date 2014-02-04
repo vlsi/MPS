@@ -7,15 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 
 public class ModuleReferenceExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ModuleReferenceExpression_BehaviorDescriptor() {
   }
 
   @NotNull
-  public List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    return ModuleReferenceExpression_Behavior.virtual_getVisibleModules_4040588429969394404(thisNode, scope);
+  public List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
+    return ModuleReferenceExpression_Behavior.virtual_getVisibleModules_4040588429969394404(thisNode);
   }
 
   @Override

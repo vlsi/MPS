@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalOperationContext;
-import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /* package */ class ModelConstraintsUtils {
   // helper class
@@ -33,11 +31,6 @@ import org.jetbrains.annotations.Nullable;
   public static IOperationContext getOperationContext(@Nullable SModule module) {
     // TODO: remove usages of this method as much as can!
     return module != null ? new ConstraintsOperationContext(module) : new GlobalOperationContext();
-  }
-
-  @NotNull
-  public static IScope getModuleScope(@Nullable SModule module) {
-    return module != null ? ((AbstractModule)module).getScope() : GlobalScope.getInstance();
   }
 
   @Nullable

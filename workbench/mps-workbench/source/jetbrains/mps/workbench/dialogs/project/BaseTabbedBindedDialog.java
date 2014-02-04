@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.dialogs.project;
 
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -36,8 +36,8 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
   private Map<String, JComponent> myComponents;
   private List<String> myTabOrder;
 
-  protected BaseTabbedBindedDialog(String text, Project project) throws HeadlessException {
-    super(text, project);
+  protected BaseTabbedBindedDialog(String text, Project project, SModule module) throws HeadlessException {
+    super(text, project,module);
     myComponents = new HashMap<String, JComponent>();
     myTabOrder = new ArrayList<String>();
   }

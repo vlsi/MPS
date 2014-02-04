@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,7 +43,7 @@ public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteI
       return Collections.emptyList();
     }
     IOperationContext context = editorContext.getOperationContext();
-    List<String> values = getPropertyValues(node, context.getScope(), context, editorContext);
+    List<String> values = getPropertyValues(node, context, editorContext);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>(values.size());
     for (String value : values) {
       actions.add(new PropertySubstituteAction(node, property.getName(), value));
@@ -57,19 +56,5 @@ public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteI
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>getPropertyValues(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-    return getPropertyValues(node, scope, operationContext);
-  }
+  protected abstract List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext);
 }

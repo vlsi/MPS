@@ -23,7 +23,6 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -182,12 +181,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   @Override
   public Project getProject() {
     return myInvocationContext.getProject();
-  }
-
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return getModule().getScope();
   }
 
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {

@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -86,7 +85,7 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_qm6fq6_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = BuildLayout_Files_Editor.renderingCondition_qm6fq6_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = BuildLayout_Files_Editor.renderingCondition_qm6fq6_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNodeList_qm6fq6_a2a(editorContext, node);
@@ -96,7 +95,7 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qm6fq6_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qm6fq6_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true)).isEmpty();
   }
 

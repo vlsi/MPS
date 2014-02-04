@@ -58,7 +58,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     try {
       PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(
           name);
-      Object getterValue = descriptor.getValue(node, GlobalScope.getInstance());
+      Object getterValue = descriptor.getValue(node);
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
       LOG.error(null, t);
@@ -83,7 +83,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
         propertyName);
     threadSet.add(pair);
     try {
-      descriptor.setValue(node, propertyValue, GlobalScope.getInstance());
+      descriptor.setValue(node, propertyValue);
     } catch (Exception t) {
       LOG.error(null, t);
     } finally {
@@ -113,9 +113,9 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
     try {
       org.jetbrains.mps.openapi.model.SNode oldReferent = node.getReferenceTarget(role);
-      if (descriptor.validate(node, oldReferent, target, GlobalScope.getInstance())) {
+      if (descriptor.validate(node, oldReferent, target)) {
         node.setReferenceTarget(role, target);
-        descriptor.onReferenceSet(node, oldReferent, target, GlobalScope.getInstance());
+        descriptor.onReferenceSet(node, oldReferent, target);
       }
     } finally {
       threadSet.remove(pair);

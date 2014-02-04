@@ -58,7 +58,7 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ClassifierScopes.getWithClassExpressionClassifiers(_context.getContextNode(), operationContext.getScope());
+            return ClassifierScopes.getWithClassExpressionClassifiers(_context.getContextNode());
           }
         };
       }

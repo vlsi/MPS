@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
@@ -49,9 +50,9 @@ public class GoToClassMPSContributor implements GotoClassContributor {
   private BaseNodePointerModel createModel(final Project project) {
     return new BaseNodePointerModel(project, "root") {
       @Override
-      public SNodeReference[] find(IScope scope) {
+      public SNodeReference[] find(SearchScope scope) {
         final List<SNodeReference> nodes = new ArrayList<SNodeReference>();
-        Iterable<SModel> modelDescriptors = scope.getModelDescriptors();
+        Iterable<SModel> modelDescriptors = scope.getModels();
 
         Condition<SNode> cond = new Condition<SNode>() {
           @Override

@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -116,7 +117,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
         referentNode = reference.getTargetNode();
-        if (referentNode == null || referentNode.getModel() == null || context.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
+        if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(context.getModel(),referentNode.getModel())) {
           String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
           myErrorText = rinfo != null ? rinfo : "?" + myRole + "?";
           return createErrorCell(myErrorText, node, context);

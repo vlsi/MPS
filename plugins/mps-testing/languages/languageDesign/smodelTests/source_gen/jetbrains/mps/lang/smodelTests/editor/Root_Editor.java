@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -44,7 +43,7 @@ public class Root_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_30aiet_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_30aiet_b0(editorContext, node));
-    if (renderingCondition_30aiet_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_30aiet_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_30aiet_c0(editorContext, node));
     }
     return editorCell;
@@ -57,7 +56,7 @@ public class Root_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_30aiet_a0a(editorContext, node));
-    if (renderingCondition_30aiet_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_30aiet_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_30aiet_b0a(editorContext, node));
     }
     return editorCell;
@@ -108,7 +107,7 @@ public class Root_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_30aiet_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_30aiet_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -393,7 +392,7 @@ public class Root_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_30aiet_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_30aiet_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

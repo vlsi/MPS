@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.project.AbstractModule;
@@ -94,7 +93,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     public NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
       AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
       Set<SNode> errorInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
@@ -105,11 +104,11 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       }).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setTarget(node, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null), true);
       SLinkOperations.setTarget(SLinkOperations.getTarget(node, "errorRef", true), "declaration", parameterObject, false);
     }

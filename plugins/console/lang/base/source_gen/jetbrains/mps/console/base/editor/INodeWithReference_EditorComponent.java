@@ -8,7 +8,6 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -38,7 +37,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
 
   private EditorCell createAlternation_clzyhh_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = INodeWithReference_EditorComponent.renderingCondition_clzyhh_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = INodeWithReference_EditorComponent.renderingCondition_clzyhh_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefCell_clzyhh_a0(editorContext, node);
@@ -48,7 +47,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     return editorCell;
   }
 
-  private static boolean renderingCondition_clzyhh_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_clzyhh_a0(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
   }
 

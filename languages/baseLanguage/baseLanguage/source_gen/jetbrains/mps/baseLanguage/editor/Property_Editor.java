@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -27,7 +26,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_d21pjf_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Property_Editor.renderingCondition_d21pjf_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = Property_Editor.renderingCondition_d21pjf_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_d21pjf_a0(editorContext, node);
@@ -38,7 +37,7 @@ public class Property_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_d21pjf_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_d21pjf_a0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
   }
 

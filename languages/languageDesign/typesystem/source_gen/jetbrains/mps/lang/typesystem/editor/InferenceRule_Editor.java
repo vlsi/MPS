@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -103,7 +102,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     public InferenceRule_name_cellMenu_robprv_a0b0a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
         SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
@@ -348,10 +347,10 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_robprv_a_0");
     editorCell.setBig(true);
-    if (renderingCondition_robprv_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_robprv_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_robprv_a0_0(editorContext, node));
     }
-    if (renderingCondition_robprv_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_robprv_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_robprv_b0(editorContext, node));
     }
     return editorCell;
@@ -364,7 +363,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
   }
 
@@ -420,7 +419,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
   }
 }

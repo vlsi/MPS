@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -46,7 +45,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_79r3b6_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_79r3b6_a0(editorContext, node));
-    if (renderingCondition_79r3b6_a1a_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_79r3b6_a1a_0(node, editorContext)) {
       editorCell.addEditorCell(this.createAlternation_79r3b6_b0(editorContext, node));
     }
     return editorCell;
@@ -54,7 +53,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_79r3b6_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_79r3b6_a0a(editorContext, node);
@@ -64,7 +63,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "iconExpression", true) == null);
   }
 
@@ -78,7 +77,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_79r3b6_a0a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_79r3b6_a0a0a(editorContext, node);
@@ -88,7 +87,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_79r3b6_a0a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_79r3b6_a0a0a(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
 
@@ -104,7 +103,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_79r3b6_a0a0a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_79r3b6_a0a0a0(editorContext, node);
@@ -114,7 +113,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext) {
     return IconResource_Behavior.call_isValid_8974276187400030063(node);
   }
 
@@ -169,7 +168,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_79r3b6_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNode_79r3b6_a1a(editorContext, node);
@@ -179,11 +178,11 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_79r3b6_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_79r3b6_a1a(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
 
-  private static boolean renderingCondition_79r3b6_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_79r3b6_a1a_0(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
 

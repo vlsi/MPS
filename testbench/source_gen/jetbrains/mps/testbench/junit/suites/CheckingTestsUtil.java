@@ -31,7 +31,6 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 
 public class CheckingTestsUtil {
@@ -50,7 +49,7 @@ public class CheckingTestsUtil {
             continue;
           }
           ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
-          for (SNode root : SModelOperations.getRoots(sm, null)) {
+          for (SNode root : SModelOperations.getRoots(((SModel) sm), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, operationContext);
@@ -256,7 +255,7 @@ public class CheckingTestsUtil {
     }
     for (SNode node : SNodeUtil.getDescendants(sm)) {
       // Testbench.LOG.debug("Checking node " + node); 
-      if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()) == null) {
         errorMessages.append("Unknown concept ");
         errorMessages.append(node.getConcept().getQualifiedName());
         errorMessages.append("\n");

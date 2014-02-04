@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -146,14 +145,14 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
     Iterator<SNode> it = resultList.iterator();
     while (it.hasNext()) {
-      if (!filter(it.next(), getEditorContext().getScope())) {
+      if (!filter(it.next())) {
         it.remove();
       }
     }
     return resultList;
   }
 
-  protected boolean filter(SNode childNode, IScope scope) {
+  protected boolean filter(SNode childNode) {
     return true;
   }
 }

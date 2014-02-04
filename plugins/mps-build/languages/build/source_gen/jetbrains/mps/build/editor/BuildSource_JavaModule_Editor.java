@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -103,7 +102,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setCanBeFolded(true);
     editorCell.addEditorCell(this.createConstant_kr3er8_a2a(editorContext, node));
-    if (renderingCondition_kr3er8_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kr3er8_a1c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_kr3er8_b2a(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNodeList_kr3er8_c2a(editorContext, node));
@@ -146,7 +145,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kr3er8_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kr3er8_a1c0(SNode node, EditorContext editorContext) {
     if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule || (SLinkOperations.getTarget(node, "options", true) != null)) {
       return true;
     }

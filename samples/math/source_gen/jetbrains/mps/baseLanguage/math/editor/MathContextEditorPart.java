@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MathContextEditorPart implements ConceptEditorComponent {
@@ -33,10 +32,10 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_a");
     editorCell.addEditorCell(this.createCollection_qri1nn_a0(editorContext, node));
-    if (renderingCondition_qri1nn_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qri1nn_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_qri1nn_b0(editorContext, node));
     }
-    if (renderingCondition_qri1nn_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qri1nn_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_qri1nn_c0(editorContext, node));
     }
     return editorCell;
@@ -91,7 +90,7 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
   }
 
@@ -132,7 +131,7 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
   }
 

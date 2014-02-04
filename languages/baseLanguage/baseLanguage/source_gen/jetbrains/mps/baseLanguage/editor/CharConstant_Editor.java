@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -45,7 +44,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_d77dl_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CharConstant_Editor.renderingCondition_d77dl_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = CharConstant_Editor.renderingCondition_d77dl_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_d77dl_a1a(editorContext, node);
@@ -58,7 +57,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
 

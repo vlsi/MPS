@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="5r5j2tnfqtq82p0s95iotx052nxpmgh">
-  <common hash="-1vukp3k6xikkn23pwbobmk6gjo7czi" />
+  <common hash="-1vukp3k6xikkn23pwbobmk6gjo7czi" dependsOnNodes="true" />
   <source id="2073504467208336329" name="Main" hash="vdvngjluhsf8o54gn50tguvyq9sirh">
     <file name="Main.java" />
   </source>

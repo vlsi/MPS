@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -33,7 +32,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gw6hs4_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gw6hs4_b0(editorContext, node));
-    if (renderingCondition_gw6hs4_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gw6hs4_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gw6hs4_c0(editorContext, node));
     }
     return editorCell;
@@ -88,7 +87,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gw6hs4_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gw6hs4_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customLocation", true) != null);
   }
 

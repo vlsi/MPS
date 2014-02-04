@@ -15,7 +15,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -30,7 +29,7 @@ public class EditorPropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ey0oay_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ey0oay_b0(editorContext, node));
-    if (renderingCondition_ey0oay_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ey0oay_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ey0oay_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ey0oay_d0(editorContext, node));
@@ -76,7 +75,7 @@ public class EditorPropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ey0oay_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ey0oay_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 

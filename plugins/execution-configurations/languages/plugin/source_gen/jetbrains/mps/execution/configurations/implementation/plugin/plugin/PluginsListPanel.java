@@ -31,7 +31,7 @@ import com.intellij.navigation.ItemPresentation;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class PluginsListPanel extends ListPanel<SNodeReference> {
 
@@ -117,7 +117,7 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
       }
 
       @Override
-      public SNodeReference[] find(IScope scope) {
+      public SNodeReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 

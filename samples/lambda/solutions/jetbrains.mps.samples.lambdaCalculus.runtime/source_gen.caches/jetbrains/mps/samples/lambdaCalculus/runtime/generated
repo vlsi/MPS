@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="5y7p9mwopks52gv2qk8gwg3yecql4ez">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-c1i5mdx2e5wchkyylljdmywg6ug1yjh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
+  <common hash="-c1i5mdx2e5wchkyylljdmywg6ug1yjh" dependsOnNodes="true" />
   <source id="1308935328408154909" name="Function" hash="-9e0qs9u65c6e1s6squcqiukp2iho6mb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Function.java" />

@@ -17,7 +17,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -94,7 +93,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_2ntrw4_a3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2ntrw4_b3a(editorContext, node));
-    if (renderingCondition_2ntrw4_a2d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ntrw4_a2d0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2ntrw4_c3a(editorContext, node));
     }
     return editorCell;
@@ -106,7 +105,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_2ntrw4_a0a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ntrw4_a0a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2ntrw4_a0d0(editorContext, node));
     }
     return editorCell;
@@ -124,7 +123,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ntrw4_a0a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ntrw4_a0a3a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -300,7 +299,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ntrw4_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ntrw4_a2d0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

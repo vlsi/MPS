@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -40,7 +39,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_h096ql_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = HTMLElement_Editor.renderingCondition_h096ql_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = HTMLElement_Editor.renderingCondition_h096ql_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_h096ql_a0(editorContext, node);
@@ -51,7 +50,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
   }
 
@@ -102,7 +101,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     public HTMLElement_name_cellMenu_h096ql_a0b0a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
@@ -170,7 +169,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     public HTMLElement_name_cellMenu_h096ql_a0b0a_0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }

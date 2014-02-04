@@ -8,7 +8,6 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -36,7 +35,7 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
 
   private EditorCell createAlternation_85xxz0_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = HasAnnotation_AnnotationComponent.renderingCondition_85xxz0_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = HasAnnotation_AnnotationComponent.renderingCondition_85xxz0_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNodeList_85xxz0_a0(editorContext, node);
@@ -46,7 +45,7 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
     return editorCell;
   }
 
-  private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 

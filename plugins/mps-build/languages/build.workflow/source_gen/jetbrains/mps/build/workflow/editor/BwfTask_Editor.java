@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -40,11 +39,11 @@ public class BwfTask_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_plbod7_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_plbod7_b0(editorContext, node));
-    if (renderingCondition_plbod7_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_plbod7_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_plbod7_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNodeList_plbod7_d0(editorContext, node));
-    if (renderingCondition_plbod7_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_plbod7_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_plbod7_e0(editorContext, node));
     }
     return editorCell;
@@ -92,7 +91,7 @@ public class BwfTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_plbod7_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_plbod7_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "dependencies", true)).isNotEmpty();
   }
 
@@ -220,7 +219,7 @@ public class BwfTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_plbod7_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_plbod7_a4a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "subTasks", true)).isEmpty() || (SNodeOperations.getNextSibling(node) == null);
   }
 }

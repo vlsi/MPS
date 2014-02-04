@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
@@ -30,7 +29,7 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_jy8kcg_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_jy8kcg_a0(editorContext, node));
-    if (renderingCondition_jy8kcg_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jy8kcg_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_jy8kcg_b0(editorContext, node));
     }
     return editorCell;
@@ -75,7 +74,7 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_jy8kcg_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jy8kcg_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "variableReference", true) != null);
   }
 }

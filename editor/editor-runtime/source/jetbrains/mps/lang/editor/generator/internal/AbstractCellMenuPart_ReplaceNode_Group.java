@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -49,7 +48,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
     }
 
     final IOperationContext context = editorContext.getOperationContext();
-    List parameterObjects = createParameterObjects(node, context.getScope(), context, editorContext);
+    List parameterObjects = createParameterObjects(node, context, editorContext);
     if (parameterObjects == null) {
       return Collections.emptyList();
     }
@@ -70,7 +69,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
         @Override
         public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context.getScope(), context, editorContext);
+          SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context, editorContext);
           if (newNode != node) {
             SNodeUtil.replaceWithAnother(node, newNode);
             node.delete();
@@ -104,38 +103,10 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
     return "";
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createParameterObjects(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
-  }
+  protected abstract List createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext);
 
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-    return createParameterObjects(node, scope, operationContext);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createReplacementNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext,
-      EditorContext editorContext) {
-    return createReplacementNode(parameterObject, node, model, scope, operationContext);
-  }
+  protected abstract SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext,
+      EditorContext editorContext);
 
   protected abstract boolean isReferentPresentation();
 }

@@ -37,6 +37,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -216,7 +217,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     String myErrorText;
     if (reference != null) {
       referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || myEditorContext.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
+      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(),referentNode.getModel())) {
         String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         myErrorText = rinfo != null ? rinfo : "?" + role + "?";
         addErrorCell(myErrorText);

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -48,13 +47,13 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ucemm3_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ucemm3_b0(editorContext, node));
-    if (renderingCondition_ucemm3_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ucemm3_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ucemm3_c0(editorContext, node));
     }
-    if (renderingCondition_ucemm3_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ucemm3_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ucemm3_d0(editorContext, node));
     }
-    if (renderingCondition_ucemm3_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ucemm3_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ucemm3_e0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ucemm3_f0(editorContext, node));
@@ -110,7 +109,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ucemm3_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ucemm3_a2a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{}));
   }
 
@@ -167,7 +166,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ucemm3_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ucemm3_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "path", true) != null);
   }
 
@@ -219,7 +218,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ucemm3_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ucemm3_a4a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{}));
   }
 
@@ -457,7 +456,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ucemm3_a_0");
     editorCell.setBig(true);
-    if (renderingCondition_ucemm3_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ucemm3_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ucemm3_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ucemm3_b0(editorContext, node));
@@ -473,7 +472,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ucemm3_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ucemm3_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{});
   }
 

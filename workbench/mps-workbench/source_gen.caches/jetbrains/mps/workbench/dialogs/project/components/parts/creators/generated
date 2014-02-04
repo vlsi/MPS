@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-7jwzqfi1mp1wbs04h45xyjriysbnx69">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="3l27db4eq8rb8j3xc1tv7ekyuzhkym5" dependsOnNodes="true" />
   <source id="1560298786499497434" name="ModulePathChooser" hash="cgp2w9w9mj3bdtcpu8cu787baeyyuvw">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
