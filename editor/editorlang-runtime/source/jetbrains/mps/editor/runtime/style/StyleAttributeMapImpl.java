@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
 import jetbrains.mps.openapi.editor.style.Style.IntPair;
 
 import java.util.ArrayList;
@@ -25,6 +26,27 @@ import java.util.Collection;
  * Date: 11/28/13
  */
 class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttributeMap<T> {
+
+  public class StyleAttributeIntMapPointer extends IntMapPointerImpl {
+
+    StyleMap.IntMapPointer myParentPointer;
+
+    public StyleAttributeIntMapPointer(IntMapPointerImpl origin, IntMapPointer<StyleAttributeMap<T>> parentPointer) {
+      super(origin.myPointer, origin.myEmpty, origin.myIndex);
+      myParentPointer = parentPointer;
+    }
+
+    @Override
+    protected void delete() {
+      super.delete();
+      if (indexes.length == 1 && indexes[0] == 0) {
+        myParentPointer.set(values[0]);
+      }
+      if (indexes.length == 0) {
+        myParentPointer.set(null);
+      }
+    }
+  }
 
   public Collection<IntPair<T>> getAll() {
     ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(indexes.length);
@@ -46,6 +68,11 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     return result;
   }
 
+  public StyleMap.IntMapPointer<T> search(int index, IntMapPointer<StyleAttributeMap<T>> parentPointer) {
+    IntMapPointerImpl result = super.searchInternal(index);
+    return new StyleAttributeIntMapPointer(result, parentPointer);
+  }
+
   public void setValue(T value) {
     setValue(0, value);
   }
@@ -58,4 +85,44 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     }
     return null;
   }
+
+  public static class StyleAttributeMapWrapper<T> implements StyleAttributeMap<T> {
+    StyleAttributeMapImpl<T> myOrigin;
+    IntMapPointer<StyleAttributeMap<T>> myParentPointer;
+    public StyleAttributeMapWrapper(StyleAttributeMapImpl<T> origin, IntMapPointer<StyleAttributeMap<T>> parentPointer) {
+      myOrigin = origin;
+      myParentPointer = parentPointer;
+    }
+
+    @Override
+    public Collection<IntPair<T>> getAll() {
+      return myOrigin.getAll();
+    }
+
+    @Override
+    public Collection<IntPair<T>> getDiscardNullReplaced() {
+      return myOrigin.getDiscardNullReplaced();
+    }
+
+    @Override
+    public void setValue(T value) {
+      myOrigin.setValue(value);
+    }
+
+    @Override
+    public IntPair<T> getTopPair() {
+      return myOrigin.getTopPair();
+    }
+
+    @Override
+    public IntMapPointer<T> search(int index) {
+      return myOrigin.search(index, myParentPointer);
+    }
+
+    @Override
+    public void setValue(int index, T value) {
+      myOrigin.setValue(index, value);
+    }
+  }
+
 }

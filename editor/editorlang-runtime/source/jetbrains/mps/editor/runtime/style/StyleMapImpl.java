@@ -22,11 +22,11 @@ public class StyleMapImpl<T> implements StyleMap<T> {
   protected int[] indexes = new int[0];
   protected Object[] values = new Object[0];
 
-  public class IntMapPointer implements StyleMap.IntMapPointer<T> {
+  public class IntMapPointerImpl implements StyleMap.IntMapPointer<T> {
     protected boolean myEmpty;
     protected int myIndex;
     protected int myPointer;
-    public IntMapPointer(int pointer, boolean empty, int index) {
+    public IntMapPointerImpl(int pointer, boolean empty, int index) {
       myPointer = pointer;
       myEmpty = empty;
       myIndex = index;
@@ -84,15 +84,19 @@ public class StyleMapImpl<T> implements StyleMap<T> {
     }
   }
 
-  public StyleMap.IntMapPointer<T> search(int index) {
+  protected IntMapPointerImpl searchInternal(int index) {
     int pointer = Arrays.binarySearch(indexes, index);
-    IntMapPointer result;
+    IntMapPointerImpl result;
     if (pointer >= 0) {
-      result = new IntMapPointer(pointer, false, index);
+      result = new IntMapPointerImpl(pointer, false, index);
     } else {
-      result = new IntMapPointer(- pointer - 1, true, index);
+      result = new IntMapPointerImpl(- pointer - 1, true, index);
     }
     return result;
+  }
+
+  public StyleMap.IntMapPointer<T> search(int index) {
+    return searchInternal(index);
   }
 
   public void setValue(int index, T value) {

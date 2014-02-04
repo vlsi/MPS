@@ -96,7 +96,7 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
   public Collection<IntPair<T>> getDiscardNullReplaced() {
     ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(1);
     if (myValuePointer != null) {
-      result.add(new IntPair<T>(0, myValuePointer.get() instanceof StyleAttributeMapImpl.DiscardValue ? null : myValuePointer.get()));
+      result.add(new IntPair<T>(0, myValuePointer.get() instanceof StyleAttributeMap.DiscardValue ? null : myValuePointer.get()));
     }
     return result;
   }
@@ -119,7 +119,7 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
 
   @Override
   public IntPair<T> getTopPair() {
-    if (myValuePointer.get() == null || myValuePointer.get() instanceof StyleAttributeMapImpl.DiscardValue) {
+    if (myValuePointer.get() == null || myValuePointer.get() instanceof StyleAttributeMap.DiscardValue) {
       return null;
     } else {
       return new IntPair<T>(0, myValuePointer.get());

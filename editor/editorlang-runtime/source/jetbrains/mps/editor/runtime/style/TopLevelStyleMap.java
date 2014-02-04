@@ -16,6 +16,7 @@
 package jetbrains.mps.editor.runtime.style;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
+import jetbrains.mps.editor.runtime.style.StyleAttributeMapImpl.StyleAttributeMapWrapper;
 
 public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
 
@@ -41,7 +42,7 @@ public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
       if (!(result instanceof StyleAttributeMapImpl)) {
         return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<T>) myOrigin);
       } else {
-        return (StyleAttributeMap<T>) result;
+        return new StyleAttributeMapWrapper<T>((StyleAttributeMapImpl<T>) result, myOrigin);
       }
     }
 
@@ -75,7 +76,7 @@ public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
     assert topMap.search(1).get().getTopPair().value.equals("abc1");
     assert topMap.search(1).get().search(1).get().equals("abc1");
     assert topMap.search(1).get().search(0).get().equals("abc0");
-    assert topMap.search(1).get() instanceof StyleAttributeMapImpl;
+    assert topMap.search(1).get() instanceof StyleAttributeMapWrapper;
     pnt1.get().search(0).set(null);
     assert topMap.search(1).get().search(0).isEmpty();
     topMap.search(1).get().setValue(1, DiscardValue.getInstance());
@@ -83,6 +84,12 @@ public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
 
     topMap.search(2).get().search(1).set(DiscardValue.getInstance());
     assert topMap.search(2).get().search(1).get().equals(DiscardValue.getInstance());
+
+    topMap.search(3).get().search(0).set("123abc");
+    topMap.search(3).get().search(1).set("123bcd");
+    topMap.search(3).get().search(2).set(null);
+    topMap.search(3).get().search(1).set(null);
+    assert topMap.search(3).get() instanceof SingleElemStyleAttributeMap;
 
   }
 

@@ -312,7 +312,7 @@ public class StyleImpl implements Style {
       parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
       currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
 
-      StyleAttributeMap<Object> newValues = new StyleAttributeMapImpl<Object>();
+      StyleAttributeMapImpl<Object> newValues = new StyleAttributeMapImpl<Object>();
       while (parentValue != null || currentValue != null ) {
 
         if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index)) {
@@ -346,10 +346,9 @@ public class StyleImpl implements Style {
           break;
         }
       }
-      if (newValues.getAll().isEmpty()) {
-        getCachedAttribute(attribute).set(null);
-      } else {
-        getCachedAttribute(attribute).set(newValues);
+      getCachedAttribute(attribute).set(null);
+      for (IntPair<Object> newValue : newValues.getAll()) {
+        getCachedAttribute(attribute).get().setValue(newValue.index, newValue.value);
       }
     }
 
