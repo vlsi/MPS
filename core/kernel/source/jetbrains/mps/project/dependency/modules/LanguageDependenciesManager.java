@@ -34,22 +34,20 @@ import java.util.concurrent.ConcurrentMap;
 public class LanguageDependenciesManager {
   private final Language myLanguage;
   private final Set<Language> myExtendedLanguages;
+  private final Set<SModuleReference> myExtendedLanguageRefs;
 
   public LanguageDependenciesManager(Language language) {
     myLanguage = language;
-    myExtendedLanguages = getAllExtendedLanguagesInternal(language);
+    myExtendedLanguages = Collections.unmodifiableSet(getAllExtendedLanguagesInternal(language));
+    myExtendedLanguageRefs = Collections.unmodifiableSet(getAllExtendedLanguageReferencesInternal(myExtendedLanguages));
   }
 
   public static Set<Language> getAllExtendedLanguages(Language language) {
-    return Collections.unmodifiableSet(getLanguageDependenciesManager(language).myExtendedLanguages);
+    return getLanguageDependenciesManager(language).myExtendedLanguages;
   }
 
   public static Set<SModuleReference> getAllExtendedLanguageReferences(Language language) {
-    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    for (Language lang : getAllExtendedLanguages(language)) {
-      result.add(lang.getModuleReference());
-    }
-    return result;
+    return getLanguageDependenciesManager(language).myExtendedLanguageRefs;
   }
 
   private static LanguageDependenciesManager getLanguageDependenciesManager(Language language) {
@@ -64,6 +62,14 @@ public class LanguageDependenciesManager {
   }
 
   // main logic
+  private static Set<SModuleReference> getAllExtendedLanguageReferencesInternal(Iterable<? extends Language> languages) {
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+    for (Language lang : languages) {
+      result.add(lang.getModuleReference());
+    }
+    return result;
+  }
+
   private static Set<Language> getAllExtendedLanguagesInternal(Language language) {
     THashSet<Language> langs = new THashSet<Language>();
 
