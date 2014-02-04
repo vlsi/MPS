@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,7 @@ public class ModuleMaker {
 
       ttrace.push("modules to compile", false);
       monitor.step("Calculating modules to compile");
-      Set<SModule> toCompile = (Set) getModulesToCompile((Set) candidates);
+      Set<SModule> toCompile = getModulesToCompile(candidates);
       ttrace.pop();
       monitor.advance(1);
 
@@ -153,7 +153,7 @@ public class ModuleMaker {
 
           inner.step("compiling " + cycle);
           ttrace.push("processing cycle", false);
-          MPSCompilationResult result = compile((Set) cycle);
+          MPSCompilationResult result = compile(cycle);
           inner.advance(cycle.size());
           ttrace.pop();
           errorCount += result.getErrors();
@@ -191,7 +191,7 @@ public class ModuleMaker {
 
   private MPSCompilationResult compile(Set<SModule> modules) {
     boolean hasAnythingToCompile = false;
-    List<MyMessage> messages = new ArrayList<MyMessage>();
+    List<IMessage> messages = new ArrayList<IMessage>();
 
     for (SModule m : modules) {
       if (isExcluded(m)) continue;
@@ -214,7 +214,7 @@ public class ModuleMaker {
 
       if (!getJavaFacet(m).isCompileInMps()) {
         String text = "Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleName();
-        messages.add(new MyMessage(MessageKind.WARNING, text, m));
+        messages.add(createMessage(MessageKind.WARNING, text, m));
         LOG.debug(text, m);
         continue;
       }
@@ -419,10 +419,10 @@ public class ModuleMaker {
     private int myOutputtedErrors = 0;
     private final Set<SModule> myModules;
     private IClassPathItem myClassPathItems;
-    private List<MyMessage> myMessages;
+    private List<IMessage> myMessages;
     private Set<SModule> myChangedModules = new HashSet<SModule>();
 
-    public MyCompilationResultAdapter(Set<SModule> modules, IClassPathItem classPathItems, List<MyMessage> messages) {
+    public MyCompilationResultAdapter(Set<SModule> modules, IClassPathItem classPathItems, List<IMessage> messages) {
       myModules = modules;
       myClassPathItems = classPathItems;
       myMessages = messages;
@@ -430,7 +430,7 @@ public class ModuleMaker {
 
     @Override
     public void onFatalError(String error) {
-      myMessages.add(new MyMessage(MessageKind.ERROR, "Fatal error. " + error, null));
+      myMessages.add(createMessage(MessageKind.ERROR, "Fatal error. " + error, null));
       LOG.debug("Fatal error. " + error);
       LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
       myErrorCount += 1;
@@ -458,17 +458,17 @@ public class ModuleMaker {
 
           String errMsg = messageStirng + " (line: " + cp.getSourceLineNumber() + ")";
           if (cp.isWarning()) {
-            myMessages.add(new MyMessage(MessageKind.WARNING, errMsg, hintObject));
+            myMessages.add(createMessage(MessageKind.WARNING, errMsg, hintObject));
             LOG.debug(errMsg, hintObject);
           } else {
             if (myOutputtedErrors == 0) {
-              myMessages.add(new MyMessage(MessageKind.ERROR, "Compilation problems", null));
+              myMessages.add(createMessage(MessageKind.ERROR, "Compilation problems", null));
               LOG.debug("Errors encountered");
               LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
             }
             if (myOutputtedErrors < MAX_ERRORS) {
               myOutputtedErrors++;
-              myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, hintObject));
+              myMessages.add(createMessage(MessageKind.ERROR, errMsg, hintObject));
               LOG.debug(errMsg, hintObject);
             }
           }
@@ -506,7 +506,7 @@ public class ModuleMaker {
               os.write(cf.getBytes());
             } catch (IOException e) {
               String errMsg = "Can't write to " + output.getAbsolutePath();
-              myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, null));
+              myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
               LOG.debug(errMsg);
             } finally {
               if (os != null) {
@@ -520,13 +520,13 @@ public class ModuleMaker {
           } else {
             if (output.exists() && !(output.delete())) {
               String errMsg = "Can't delete " + output.getPath();
-              myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, null));
+              myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
               LOG.error(errMsg);
             }
           }
         } else {
           String errMsg = "I don't know in which module's output path I should place class file for " + fqName;
-          myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, null));
+          myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
           LOG.error(errMsg);
         }
       }
@@ -538,51 +538,9 @@ public class ModuleMaker {
     }
   }
 
-  private static class MyMessage implements IMessage {
-
-    private MessageKind myKind;
-    private String myText;
-    private Object myHintObject;
-
-    public MyMessage(MessageKind kind, String text, Object hintObject) {
-      myKind = kind;
-      myText = text;
-      myHintObject = hintObject;
-    }
-
-    @Override
-    public MessageKind getKind() {
-      return myKind;
-    }
-
-    @Override
-    public Throwable getException() {
-      return null;
-    }
-
-    @Override
-    public String getText() {
-      return myText;
-    }
-
-    @Override
-    public String getSender() {
-      return null;
-    }
-
-    @Override
-    public long getCreationTime() {
-      return 0;
-    }
-
-    @Override
-    public Object getHintObject() {
-      return myHintObject;
-    }
-
-    @Override
-    public String getHelpUrl() {
-      return null;
-    }
+  private static IMessage createMessage(@NotNull MessageKind kind, @NotNull String text, @Nullable Object hint) {
+    Message m = new Message(kind, ModuleMaker.class, text);
+    m.setHintObject(hint);
+    return m;
   }
 }
