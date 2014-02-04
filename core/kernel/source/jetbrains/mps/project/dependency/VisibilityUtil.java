@@ -1,19 +1,22 @@
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class VisibilityUtil {
+  //here all hacks made for accessories models are stored until accessories models are reviewed
+
   public static boolean isVisible(SModule from, SModule what) {
-    return new GlobalModuleDependenciesManager(from).getModules(Deptype.VISIBLE).contains(what);
+    return ((AbstractModule) from).getScope().resolve(what.getModuleReference()) != null;
   }
 
   public static boolean isVisible(SModule from, SModel what) {
     SModule module = what.getModule();
     if (module == null) return false;
-    return isVisible(from, module);
+    return ((AbstractModule) from).getScope().resolve(what.getReference()) != null;
   }
 
   public static boolean isVisible(SModel from, SModel what) {
@@ -23,8 +26,6 @@ public class VisibilityUtil {
   }
 
   public static boolean isVisibleLanguage(SModule from, SLanguage lang) {
-    return new GlobalModuleDependenciesManager(from).getUsedLanguages().contains(lang.getSourceModule());
+    return new GlobalModuleDependenciesManager(from).getUsedLanguages().contains(((Language) lang.getSourceModule()));
   }
-
-
 }

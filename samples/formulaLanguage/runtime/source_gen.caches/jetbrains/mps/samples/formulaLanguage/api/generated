@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-9wnstioahkouc78a3wbg3nl8ly6czf">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="3y4y4rpghxhnrmyb2n88lmih77iuyr7" dependsOnNodes="true" />
   <source id="8307544070813664740" name="MultiplyOperation" hash="dwqsdba6n2irlhwfxzv7ux320vlgqhl">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MultiplyOperation.java" />
   </source>
   <source id="8307544070813664794" name="IfFunction" hash="ewto2bofct3cjlyhdztx01u37hezv9s">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IfFunction.java" />
   </source>
   <source id="8307544070813664858" name="Function" hash="-45u094gq5qvtrmcrdcef7delqom6cbz">

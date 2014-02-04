@@ -24,7 +24,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -165,11 +164,11 @@ public class TestCollector {
   }
 
   protected List<SNode> allClassifiers(SModel context) {
-    return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.CLASS, GlobalScope.getInstance()).getClassifiers();
+    return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.CLASS).getClassifiers();
   }
 
   protected List<SNode> allAnnotations(SModel context) {
-    return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.ANNOTATION, GlobalScope.getInstance()).getClassifiers();
+    return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.ANNOTATION).getClassifiers();
   }
 
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a31() {

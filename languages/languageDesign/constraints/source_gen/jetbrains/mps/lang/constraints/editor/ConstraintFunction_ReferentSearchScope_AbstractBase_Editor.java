@@ -137,7 +137,6 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     editorCell.addEditorCell(this.createCollection_5v10so_j5a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_k5a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_l5a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5v10so_m5a(editorContext, node));
     return editorCell;
   }
 
@@ -357,12 +356,12 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a8f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5v10so_b8f0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5v10so_b8f0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_a8f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scope");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode");
     editorCell.setCellId("Constant_5v10so_a8f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -371,11 +370,33 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     return editorCell;
   }
 
-  private EditorCell createConstant_5v10so_b8f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context (jetbrains.mps.smodel.IScope)");
-    editorCell.setCellId("Constant_5v10so_b8f0");
+  private EditorCell createCollection_5v10so_b8f0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_5v10so_b8f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_5v10so_a1i5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5v10so_b1i5a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5v10so_a1i5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node that contains reference link");
+    editorCell.setCellId("Constant_5v10so_a1i5a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5v10so_b1i5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(optional - may not exist yet)");
+    editorCell.setCellId("Constant_5v10so_b1i5a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -388,12 +409,12 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a9f0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5v10so_b9f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5v10so_b9f0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_a9f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkTarget");
     editorCell.setCellId("Constant_5v10so_a9f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -402,33 +423,11 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     return editorCell;
   }
 
-  private EditorCell createCollection_5v10so_b9f0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5v10so_b9f0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_5v10so_a1j5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5v10so_b1j5a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5v10so_a1j5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node that contains reference link");
-    editorCell.setCellId("Constant_5v10so_a1j5a");
+  private EditorCell createConstant_5v10so_b9f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept where link can refer to (for specialized links)");
+    editorCell.setCellId("Constant_5v10so_b9f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5v10so_b1j5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(optional - may not exist yet)");
-    editorCell.setCellId("Constant_5v10so_b1j5a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -441,12 +440,12 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a01f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5v10so_b01f0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5v10so_b01f0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_a01f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkTarget");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode");
     editorCell.setCellId("Constant_5v10so_a01f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -455,9 +454,30 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     return editorCell;
   }
 
-  private EditorCell createConstant_5v10so_b01f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept where link can refer to (for specialized links)");
-    editorCell.setCellId("Constant_5v10so_b01f0");
+  private EditorCell createCollection_5v10so_b01f0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_5v10so_b01f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_5v10so_a1k5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5v10so_b1k5a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5v10so_a1k5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent of referenceNode, null for root nodes");
+    editorCell.setCellId("Constant_5v10so_a1k5a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5v10so_b1k5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode and ecnlosingNode cannot be null both at the same time");
+    editorCell.setCellId("Constant_5v10so_b1k5a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
@@ -477,7 +497,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a11f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containingLink");
     editorCell.setCellId("Constant_5v10so_a11f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -498,7 +518,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a1l5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent of referenceNode, null for root nodes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "LinkDeclaration describing parent-child relationship between");
     editorCell.setCellId("Constant_5v10so_a1l5a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -508,60 +528,8 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b1l5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode and ecnlosingNode cannot be null both at the same time");
-    editorCell.setCellId("Constant_5v10so_b1l5a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createCollection_5v10so_m5a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5v10so_m5a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_5v10so_a21f0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5v10so_b21f0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5v10so_a21f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containingLink");
-    editorCell.setCellId("Constant_5v10so_a21f0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createCollection_5v10so_b21f0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5v10so_b21f0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_5v10so_a1m5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5v10so_b1m5a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5v10so_a1m5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "LinkDeclaration describing parent-child relationship between");
-    editorCell.setCellId("Constant_5v10so_a1m5a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5v10so_b1m5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode and referenceNode");
-    editorCell.setCellId("Constant_5v10so_b1m5a");
+    editorCell.setCellId("Constant_5v10so_b1l5a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-ancp2mqdfopz3ys3ib0zx8pk38itscu">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-b6ayzkr0vwo76b8q8jl8obdajjirwy3" dependsOnNodes="true" />
   <source id="3978024352671960228" name="NewSolutionSettings" hash="3us8u79vykxrl0xdaem2xh5mc0eoqz2">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewSolutionSettings.java" />
   </source>
   <source id="8412685000764658714" name="NewLanguageSettings" hash="-6x00k01rz5fnk66bfz920bc2eyxpyj3">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewLanguageSettings.java" />
   </source>
   <source id="8412685000764838330" name="Util" hash="-1c64v5p83ooaxt3lnnrs5dto6k2m0yg">
