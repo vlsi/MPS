@@ -19,16 +19,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new DayOfWeek_Editor());
-      case 3:
         return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
-      case 4:
+      case 3:
         return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
-      case 5:
+      case 4:
         return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
-      case 6:
+      case 5:
         return Collections.<ConceptEditor>singletonList(new PlanItem_Editor());
-      case 7:
+      case 6:
         return Collections.<ConceptEditor>singletonList(new SpecificDay_Editor());
       default:
     }
@@ -46,5 +44,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayOfWeek", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.SpecificDay"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.SpecificDay"};
 }

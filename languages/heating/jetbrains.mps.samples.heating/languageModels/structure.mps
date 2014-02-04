@@ -84,14 +84,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="7" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5063359128233346741" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="DayOfWeek" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5063359128233346744" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="day" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="5063359128233346660" resolveInfo="DayDataType" />
-    </node>
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4664795093170414652" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Applicability" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />

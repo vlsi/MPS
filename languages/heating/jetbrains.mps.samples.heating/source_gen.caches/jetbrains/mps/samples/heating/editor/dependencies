@@ -42,17 +42,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.heating.editor.DayOfWeek_Editor" file="DayOfWeek_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
   <dependency className="jetbrains.mps.samples.heating.editor.DayRange_Editor" file="DayRange_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -76,7 +65,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.Applicability_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.DailyPlan_Editor" />
-    <classNode dependClassName="jetbrains.mps.samples.heating.editor.DayOfWeek_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.DayRange_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.NotSpecified_Editor" />

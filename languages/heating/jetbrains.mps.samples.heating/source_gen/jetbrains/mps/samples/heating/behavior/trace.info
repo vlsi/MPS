@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Applicability_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.Applicability_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="DailyPlan_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DailyPlan_BehaviorDescriptor" />
-  <unitInfo fileName="DayOfWeek_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DayOfWeek_BehaviorDescriptor" />
   <unitInfo fileName="DayRange_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DayRange_BehaviorDescriptor" />
   <unitInfo fileName="HeatingPlan_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_BehaviorDescriptor" />
   <unitInfo fileName="NotSpecified_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.NotSpecified_BehaviorDescriptor" />
