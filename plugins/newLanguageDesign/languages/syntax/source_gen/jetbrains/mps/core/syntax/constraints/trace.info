@@ -38,7 +38,6 @@
   </root>
   <root nodeRef="r:492895b6-0912-4c1e-b676-7cca90b75632(jetbrains.mps.core.syntax.constraints)/2481283025450046201">
     <nodeInfo nodeId="2481283025450046201" fileName="SLexerPart_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2481283025450046201" fileName="SLexerPart_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2481283025450046201" fileName="SLexerPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SLexerPart_Constraints#()V" />
     <scopeInfo nodeId="2481283025450046201" fileName="SLexerPart_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="60" />
     <scopeInfo nodeId="2481283025450046201" fileName="SLexerPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
@@ -119,7 +118,6 @@
     <unitInfo nodeId="5073985075243251709" fileName="SRegex_Constraints.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.core.syntax.constraints.SRegex_Constraints" />
   </root>
   <root nodeRef="r:492895b6-0912-4c1e-b676-7cca90b75632(jetbrains.mps.core.syntax.constraints)/5073985075243262172">
-    <nodeInfo nodeId="5073985075243262172" fileName="SNonTerm_Constraints.java" startLine="8" startPosition="33" endLine="9" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5073985075243262172" fileName="SNonTerm_Constraints.java" startLine="8" startPosition="33" endLine="9" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5073985075243262172" fileName="SNonTerm_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNonTerm_Constraints#()V" />
     <scopeInfo nodeId="5073985075243262172" fileName="SNonTerm_Constraints.java" startLine="8" startPosition="33" endLine="9" endPosition="58" />
