@@ -92,7 +92,10 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/8923434991440662525">
     <nodeInfo nodeId="8923434991440664338" fileName="SimpleRunner.java" startLine="11" startPosition="63" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8923434991440664338" fileName="SimpleRunner.java" startLine="11" startPosition="63" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8923434991440664359" fileName="SimpleRunner.java" startLine="16" startPosition="73" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923434991440664359" fileName="SimpleRunner.java" startLine="16" startPosition="73" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923434991440664354" fileName="SimpleRunner.java" startLine="17" startPosition="44" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8923434991440664354" fileName="SimpleRunner.java" startLine="17" startPosition="44" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8923434991440662527" fileName="SimpleRunner.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleRunner#(Ljava/lang/Class;)V" />
     <nodeInfo nodeId="8923434991440664345" fileName="SimpleRunner.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V" />

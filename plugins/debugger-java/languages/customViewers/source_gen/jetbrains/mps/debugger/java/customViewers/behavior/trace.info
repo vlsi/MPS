@@ -114,7 +114,10 @@
   </root>
   <root nodeRef="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)/43370322128260019">
     <nodeInfo nodeId="43370322128270482" fileName="HighLevelCustomViewer_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128270482" fileName="HighLevelCustomViewer_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7570572250661284606" fileName="HighLevelCustomViewer_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7570572250661284606" fileName="HighLevelCustomViewer_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7570572250661287368" fileName="HighLevelCustomViewer_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7570572250661287368" fileName="HighLevelCustomViewer_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128260019" fileName="HighLevelCustomViewer_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="43370322128260019" fileName="HighLevelCustomViewer_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getValueTypeCopy_43370322128260022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

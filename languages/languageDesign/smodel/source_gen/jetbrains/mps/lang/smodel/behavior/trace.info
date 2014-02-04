@@ -144,6 +144,7 @@
   <unitInfo fileName="SemanticDowncastExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SemanticDowncastExpression_BehaviorDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1213877264086">
     <nodeInfo nodeId="1213877264089" fileName="SModelType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877264089" fileName="SModelType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877264086" fileName="SModelType_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877264086" fileName="SModelType_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877264093" fileName="SModelType_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -966,6 +967,7 @@
     <unitInfo nodeId="1240334100559" fileName="SEnumMemberType_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SEnumMemberType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1240931315602">
+    <nodeInfo nodeId="1240931343819" fileName="SEnumOperation_Behavior.java" startLine="13" startPosition="66" endLine="14" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240931343819" fileName="SEnumOperation_Behavior.java" startLine="13" startPosition="66" endLine="14" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240931315602" fileName="SEnumOperation_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1240931315602" fileName="SEnumOperation_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEnum_1240931322043#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -2090,6 +2092,7 @@
     <unitInfo nodeId="1262430001741720179" fileName="Node_GetParentOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.Node_GetParentOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1883223317721302910">
+    <nodeInfo nodeId="1883223317721302913" fileName="IfInstanceOfVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1883223317721302913" fileName="IfInstanceOfVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1883223317721302910" fileName="IfInstanceOfVariable_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1883223317721302912" fileName="IfInstanceOfVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />

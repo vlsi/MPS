@@ -12,12 +12,12 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="96lei8ezpygv3e9ji04p0zwkgpvy6m6" />
   <dep model="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" hash="-62izvc5x4wpn0xbaqpps9np85umaxdl" />
   <dep model="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" hash="-dx8ztse5affra22wfpjt6unyp6bsu52" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
   <dep model="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" hash="-5wdv9bpyjzuw6k6w31hjme5qyqtqtk1" />
   <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="c506lymfniq22phmqdo1bbowr4xa68r" />
   <dep model="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)" hash="-9abgmrtw3ezdvyvb7vo2jyzhqzxo8qc" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <dep model="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" hash="-eoieyo0tiwc0wracvhshxu4dgullzgy" />
   <common hash="-73iprqf5ecp22ji156grct32rxas6hr" dependsOnNodes="true">
     <dep root="1992172484410364111" />

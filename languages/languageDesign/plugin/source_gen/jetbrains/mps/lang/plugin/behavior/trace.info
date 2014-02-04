@@ -1460,8 +1460,12 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/4015626213814045641">
     <nodeInfo nodeId="4015626213814118731" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4015626213814118731" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4015626213814118722" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4015626213814118722" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4015626213814118729" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="20" startPosition="91" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4015626213814118729" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="20" startPosition="91" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7967031338862798709" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7967031338862798709" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4015626213814045641" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4015626213814045641" fileName="IdeaInitializerDescriptor_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedFileName_4015626213814045644#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -1527,6 +1531,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/6277721878946468937">
     <nodeInfo nodeId="6277721878946468946" fileName="KeymapChangesDeclaration_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6277721878946468946" fileName="KeymapChangesDeclaration_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6277721878946468957" fileName="KeymapChangesDeclaration_Behavior.java" startLine="18" startPosition="89" endLine="19" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6277721878946468957" fileName="KeymapChangesDeclaration_Behavior.java" startLine="18" startPosition="89" endLine="19" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6277721878946468937" fileName="KeymapChangesDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6277721878946468937" fileName="KeymapChangesDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_6277721878946468943#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

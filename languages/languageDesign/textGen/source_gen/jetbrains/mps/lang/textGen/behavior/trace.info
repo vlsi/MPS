@@ -399,6 +399,7 @@
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1236188786888">
     <nodeInfo nodeId="1236188788772" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236188788772" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236188786888" fileName="WithIndentOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1236188786888" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_inLangConcept_1236188788769#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1236188786890" fileName="WithIndentOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />

@@ -185,8 +185,11 @@
   </root>
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/7934151313360408012">
     <nodeInfo nodeId="261388556849377702" fileName="MtlBuilder_Behavior.java" startLine="16" startPosition="111" endLine="17" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="261388556849377702" fileName="MtlBuilder_Behavior.java" startLine="16" startPosition="111" endLine="17" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7934151313360408010" fileName="MtlBuilder_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7934151313360408010" fileName="MtlBuilder_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7934151313360408012" fileName="MtlBuilder_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7934151313360407991" fileName="MtlBuilder_Behavior.java" startLine="15" startPosition="101" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7934151313360407991" fileName="MtlBuilder_Behavior.java" startLine="15" startPosition="101" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7934151313360408012" fileName="MtlBuilder_Behavior.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="7934151313360408014" fileName="MtlBuilder_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
