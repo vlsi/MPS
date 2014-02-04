@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -333,9 +333,8 @@ public class GenerationTracer implements IGenerationTracer {
     if (mappingScripts == null) return null;
     SModelReference reference = myModelsProcessedByScripts.getOutputForInput(node.getModel());
     if (reference == null) return null;
-    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
-    if (descriptor == null) return null;
-    SModel outputModel = descriptor;
+    SModel outputModel = SModelRepository.getInstance().getModelDescriptor(reference);
+    if (outputModel == null) return null;
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
@@ -398,9 +397,8 @@ public class GenerationTracer implements IGenerationTracer {
     if (mappingScripts == null) return null;
     SModelReference reference = myModelsProcessedByScripts.getInputForOutput(node.getModel());
     if (reference == null) return null;
-    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
-    if (descriptor == null) return null;
-    SModel inputModel = descriptor;
+    SModel inputModel = SModelRepository.getInstance().getModelDescriptor(reference);
+    if (inputModel == null) return null;
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
@@ -489,22 +487,21 @@ public class GenerationTracer implements IGenerationTracer {
    * util
    */
   @Override
-  public List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference) {
+  public List<Pair<SNodeReference, SNodeReference>> getAllAppliedRulesWithInputNodes(SModelReference outputModelReference) {
     List<TracerNode> list = myTracingDataByOutputModel.get(outputModelReference.toString());
     List<TracerNode> ruleNodes = new ArrayList<TracerNode>();
     for (TracerNode tracerNode : list) {
       tracerNode.findAll(Kind.RULE, ruleNodes);
     }
 
-    List<Pair<SNode, SNode>> result = new ArrayList<Pair<SNode, SNode>>();
+    List<Pair<SNodeReference, SNodeReference>> result = new ArrayList<Pair<SNodeReference, SNodeReference>>();
     for (TracerNode ruleNode : ruleNodes) {
       // find input for rule
       TracerNode inputNode = ruleNode.getParent();
       while (inputNode != null && inputNode.getKind() != Kind.INPUT) {
         inputNode = inputNode.getParent();
       }
-      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().resolve(MPSModuleRepository.getInstance()),
-          inputNode != null ? inputNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) : null));
+      result.add(new Pair<SNodeReference, SNodeReference>(ruleNode.getNodePointer(), inputNode != null ? inputNode.getNodePointer() : null));
     }
 
     return result;
