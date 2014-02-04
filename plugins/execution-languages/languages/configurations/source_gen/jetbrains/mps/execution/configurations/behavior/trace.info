@@ -208,7 +208,6 @@
   </root>
   <root nodeRef="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)/3754890006475720277">
     <nodeInfo nodeId="2309921853483609845" fileName="RunConfigurationKind_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2309921853483609845" fileName="RunConfigurationKind_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSuffix_946964771156905483#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="3754890006475720279" fileName="RunConfigurationKind_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -381,7 +380,6 @@
   </root>
   <root nodeRef="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)/7037083547576032051">
     <nodeInfo nodeId="7037083547576036551" fileName="BeforeTask_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7037083547576036551" fileName="BeforeTask_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSuffix_946964771156905483#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="7037083547576032053" fileName="BeforeTask_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -453,7 +451,6 @@
     <unitInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior" />
   </root>
   <root nodeRef="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)/7806358006983757881">
-    <nodeInfo nodeId="7806358006983757902" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983757902" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExecutor_7806358006983757897#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
