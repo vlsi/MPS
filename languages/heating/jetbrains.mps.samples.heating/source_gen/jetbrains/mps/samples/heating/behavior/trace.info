@@ -11,9 +11,9 @@
   <unitInfo fileName="WeekDays_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekDays_BehaviorDescriptor" />
   <unitInfo fileName="WeekendDay_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekendDay_BehaviorDescriptor" />
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/4664795093170895833">
-    <nodeInfo nodeId="4664795093170896039" fileName="DayRange_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4664795093170896039" fileName="DayRange_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4664795093170895986" fileName="DayRange_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="63" />
+    <scopeInfo nodeId="4664795093170895986" fileName="DayRange_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" />
     <scopeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="4664795093170895833" varName="thisNode" />
     </scopeInfo>

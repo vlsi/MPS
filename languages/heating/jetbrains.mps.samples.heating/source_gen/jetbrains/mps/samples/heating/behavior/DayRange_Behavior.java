@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DayRange_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.getString_def(thisNode, "start", null);
+    SPropertyOperations.getString_def(thisNode, "start", "monday");
   }
 }

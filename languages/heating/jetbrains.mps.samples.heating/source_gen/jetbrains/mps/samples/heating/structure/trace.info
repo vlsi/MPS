@@ -14,7 +14,7 @@
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="34" startPosition="63" endLine="35" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="35" startPosition="65" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="36" startPosition="63" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="40" startPosition="42" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="40" startPosition="42" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="45" startPosition="24" endLine="46" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="48" startPosition="62" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="51" startPosition="63" endLine="52" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -68,7 +68,7 @@
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="20" startPosition="27" endLine="21" endPosition="23" />
     <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="24" startPosition="36" endLine="25" endPosition="24" />
-    <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="40" startPosition="42" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="40" startPosition="42" endLine="41" endPosition="30" />
     <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="45" startPosition="24" endLine="46" endPosition="38" />
     <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="48" startPosition="62" endLine="49" endPosition="32" />
     <scopeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="51" startPosition="63" endLine="52" endPosition="33" />

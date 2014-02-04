@@ -8,17 +8,14 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class SpecificDay_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -38,7 +35,17 @@ public class SpecificDay_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on");
     editorCell.setCellId("Constant_g4jrcx_a0");
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SpecificDay_Editor.ReplaceWith_Applicability_cellMenu_g4jrcx_a0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_Applicability_cellMenu_g4jrcx_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_Applicability_cellMenu_g4jrcx_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.samples.heating.structure.Applicability";
+    }
   }
 
   private EditorCell createProperty_g4jrcx_b0(EditorContext editorContext, SNode node) {
@@ -48,7 +55,7 @@ public class SpecificDay_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_day");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SpecificDay_Editor.SpecificDay_day_cellMenu_g4jrcx_a0b0(), new SpecificDay_Editor.ReplaceWith_Applicability_cellMenu_g4jrcx_b0b0()}));
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -57,23 +64,5 @@ public class SpecificDay_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class SpecificDay_day_cellMenu_g4jrcx_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public SpecificDay_day_cellMenu_g4jrcx_a0b0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3", "4", "5", "6", "7");
-    }
-  }
-
-  public static class ReplaceWith_Applicability_cellMenu_g4jrcx_b0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_Applicability_cellMenu_g4jrcx_b0b0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.heating.structure.Applicability";
-    }
   }
 }

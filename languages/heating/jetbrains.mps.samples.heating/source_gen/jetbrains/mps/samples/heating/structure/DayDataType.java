@@ -7,13 +7,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum DayDataType {
-  Monday("Monday", "1"),
-  Tuesday("Tuesday", "2"),
-  Wednesday("Wednesday", "3"),
-  Thursday("Thursday", "4"),
-  Friday("Friday", "5"),
-  Saturday("Saturday", "6"),
-  Sunday("Sunday", "7");
+  Monday("Monday", "monday"),
+  Tuesday("Tuesday", "tuesday"),
+  Wednesday("Wednesday", "wednesday"),
+  Thursday("Thursday", "thursday"),
+  Friday("Friday", "friday"),
+  Saturday("Saturday", "saturday"),
+  Sunday("Sunday", "sunday");
 
   private String myName;
 
@@ -38,7 +38,7 @@ public enum DayDataType {
   }
 
   public static DayDataType getDefault() {
-    return null;
+    return DayDataType.Monday;
   }
 
   public static DayDataType parseValue(String value) {

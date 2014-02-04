@@ -53,35 +53,36 @@
   </root>
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5063359128233346660" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="DayDataType" />
-    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
+    <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_presentation" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346661" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Monday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="monday" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346662" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Tuesday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="tuesday" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346665" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Wednesday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="3" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="wednesday" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346669" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Thursday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="4" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="thursday" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346674" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Friday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="5" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="friday" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346680" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Saturday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="6" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="saturday" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5063359128233346687" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="Sunday" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="7" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="sunday" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4664795093170414652" nodeInfo="ig">

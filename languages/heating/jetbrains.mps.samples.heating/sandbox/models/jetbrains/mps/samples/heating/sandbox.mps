@@ -103,5 +103,11 @@
       <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekendDay" typeId="vw7d.4664795093170436346" id="9003042571524478483" nodeInfo="ng" />
     </node>
   </root>
+  <root type="vw7d.HeatingPlan" typeId="vw7d.5063359128232698866" id="9003042571524945939" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="BathRoom" />
+    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="9003042571524945970" nodeInfo="ng">
+      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.SpecificDay" typeId="vw7d.4664795093170605734" id="4001397103658746187" nodeInfo="ng" />
+    </node>
+  </root>
 </model>
 
