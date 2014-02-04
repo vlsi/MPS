@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="vw7d" modelUID="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)" version="-1" />
+    </dependencies>
+    <rename id="vw7d.4664795093170436280" type="CONCEPT" from="NotActive" to="NotSpecified" />
+  </StructureModification>
+</history>
+

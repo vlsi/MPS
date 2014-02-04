@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-elvl0s2dulsmhk9ojaugl0vfekjjwcl">
+  <common hash="-dpan62sci449t8vgabernssi2diwjn6" />
+  <source id="5063359128233115067" name="LivingRoom" hash="ciemvtnx4licpwopa6roie1npghnmph">
+    <file name="LivingRoom" />
+  </source>
+  <source id="5063359128233397225" name="Kitchen" hash="bg26w8bcshr87o0bdvtz1s2833h46wi">
+    <file name="Kitchen" />
+  </source>
+</dependencies>
+
