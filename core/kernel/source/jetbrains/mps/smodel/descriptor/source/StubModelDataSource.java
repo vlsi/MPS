@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 @Deprecated //use openapi. this does not work

@@ -39,7 +39,6 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;

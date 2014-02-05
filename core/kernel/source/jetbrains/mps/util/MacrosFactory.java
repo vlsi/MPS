@@ -22,7 +22,6 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.PathMacros;
-import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;

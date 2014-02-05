@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 
 import java.awt.Frame;
 import java.awt.Point;

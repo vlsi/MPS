@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Graphics;

@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.GraphUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;

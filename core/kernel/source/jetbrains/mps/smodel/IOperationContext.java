@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface IOperationContext {

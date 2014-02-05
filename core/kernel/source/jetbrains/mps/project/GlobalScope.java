@@ -17,9 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.BaseScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;

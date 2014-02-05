@@ -56,7 +56,6 @@ import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
-import java.util.List;
 
 
 public class GroupedNodesChooser extends DialogWrapper {
