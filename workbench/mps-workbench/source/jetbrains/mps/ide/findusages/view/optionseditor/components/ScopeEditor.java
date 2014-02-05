@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import com.intellij.ui.IdeBorderFactory;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions.ScopeType;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;

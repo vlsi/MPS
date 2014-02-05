@@ -32,6 +32,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;

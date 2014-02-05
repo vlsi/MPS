@@ -17,6 +17,7 @@
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jdom.JDOMException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 

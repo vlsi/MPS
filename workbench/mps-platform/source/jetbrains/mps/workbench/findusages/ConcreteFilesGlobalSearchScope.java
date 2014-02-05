@@ -21,6 +21,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.Set;
 
 public class ConcreteFilesGlobalSearchScope extends GlobalSearchScope {
   private final Collection<VirtualFile> myScopeFiles;

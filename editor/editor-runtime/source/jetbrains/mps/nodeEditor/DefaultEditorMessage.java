@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;

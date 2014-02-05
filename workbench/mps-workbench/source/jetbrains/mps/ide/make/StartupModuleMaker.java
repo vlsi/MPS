@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;

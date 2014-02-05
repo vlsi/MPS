@@ -15,6 +15,7 @@
  */
 package com.intellij.openapi.fileEditor;
 
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.Nullable;

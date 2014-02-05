@@ -16,7 +16,9 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.util.NameUtil;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;

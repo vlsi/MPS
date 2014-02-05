@@ -29,6 +29,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
+import jetbrains.mps.project.MPSProjectMigrationListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;

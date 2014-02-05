@@ -19,6 +19,7 @@ import com.intellij.icons.AllIcons.Actions;
 import jetbrains.mps.icons.MPSIcons;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class Icons {
   public static final Icon INTENTION = Actions.IntentionBulb;

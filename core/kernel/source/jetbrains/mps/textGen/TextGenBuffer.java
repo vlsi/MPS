@@ -21,6 +21,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;

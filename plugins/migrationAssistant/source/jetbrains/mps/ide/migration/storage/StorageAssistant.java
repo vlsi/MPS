@@ -34,6 +34,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.migration.storage.StorageAssistant.MyState;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.Version;
 

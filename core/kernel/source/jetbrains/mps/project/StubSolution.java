@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;

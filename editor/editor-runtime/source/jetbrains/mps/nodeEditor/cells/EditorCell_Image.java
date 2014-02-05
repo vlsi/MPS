@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;

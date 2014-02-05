@@ -23,6 +23,7 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.dialogs.project.newproject.CreateProjectWizard;
+import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 
 import javax.swing.Icon;
 import java.util.Map;

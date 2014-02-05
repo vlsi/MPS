@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.fileTypes;
 
+import com.intellij.lang.Language;
+import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;

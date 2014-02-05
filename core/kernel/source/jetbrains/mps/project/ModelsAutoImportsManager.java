@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import org.jetbrains.mps.openapi.module.SModule;
+
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;

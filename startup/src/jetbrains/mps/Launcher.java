@@ -16,6 +16,7 @@
 package jetbrains.mps;
 
 import com.intellij.ide.Bootstrap;
+import com.intellij.ide.BootstrapClassLoaderUtil;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.util.SystemInfo;
 

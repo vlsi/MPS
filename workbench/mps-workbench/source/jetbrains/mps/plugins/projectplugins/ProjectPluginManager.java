@@ -46,6 +46,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import sun.swing.SwingUtilities2;
 
 import java.util.*;
 

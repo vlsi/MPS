@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import java.util.Collections;
+
 public interface  ExtensionDescriptor {
 
   Iterable<? extends ExtensionPoint> getExtensionPoints();

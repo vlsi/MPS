@@ -24,6 +24,7 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 
 public class ScriptSerializationTest extends TestCase {

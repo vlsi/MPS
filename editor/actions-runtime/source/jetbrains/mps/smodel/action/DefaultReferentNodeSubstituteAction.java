@@ -22,11 +22,13 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
+import javax.swing.Icon;
 import java.util.Arrays;
 import java.util.HashMap;
 

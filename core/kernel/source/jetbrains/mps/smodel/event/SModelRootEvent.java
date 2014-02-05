@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.event;
 
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;

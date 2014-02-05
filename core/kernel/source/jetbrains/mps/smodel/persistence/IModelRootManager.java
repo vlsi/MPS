@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 

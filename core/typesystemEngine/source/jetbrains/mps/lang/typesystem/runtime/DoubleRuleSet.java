@@ -15,18 +15,20 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import gnu.trove.THashSet;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.newTypesystem.rules.DoubleTermRules;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 

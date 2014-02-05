@@ -17,6 +17,8 @@ package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.*;
 import java.util.Map.Entry;

@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;

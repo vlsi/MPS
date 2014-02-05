@@ -9,6 +9,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;

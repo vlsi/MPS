@@ -17,6 +17,8 @@ package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.SimpleTextAttributes;
 
+import java.awt.Color;
+
 public enum DependencyCellState {
   NORMAL(SimpleTextAttributes.SIMPLE_CELL_ATTRIBUTES),
   NOT_AVALIABLE(SimpleTextAttributes.ERROR_ATTRIBUTES),

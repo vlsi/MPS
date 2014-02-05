@@ -16,8 +16,10 @@
 package jetbrains.mps.fileTypes;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
+import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

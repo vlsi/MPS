@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;

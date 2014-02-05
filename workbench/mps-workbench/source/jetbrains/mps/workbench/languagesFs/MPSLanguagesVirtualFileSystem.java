@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;

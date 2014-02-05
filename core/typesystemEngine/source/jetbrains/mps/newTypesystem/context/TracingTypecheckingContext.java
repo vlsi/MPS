@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
+import jetbrains.mps.newTypesystem.state.State;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 

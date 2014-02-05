@@ -32,6 +32,7 @@ import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;

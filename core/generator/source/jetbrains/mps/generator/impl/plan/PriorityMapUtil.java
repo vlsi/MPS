@@ -18,6 +18,8 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 

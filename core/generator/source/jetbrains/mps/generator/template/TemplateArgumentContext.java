@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;

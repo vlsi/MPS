@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
+
 public class ReadInstruction extends Instruction {
   private Object myVar;
   private int myIndex;

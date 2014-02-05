@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.rules;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 
 public class LanguageScopeExecutor {

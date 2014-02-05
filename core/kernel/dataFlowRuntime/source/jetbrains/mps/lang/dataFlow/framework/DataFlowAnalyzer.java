@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
+import java.util.Set;
 import java.util.List;
 
 public interface DataFlowAnalyzer<E> {

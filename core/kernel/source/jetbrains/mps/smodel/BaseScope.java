@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;

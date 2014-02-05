@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 

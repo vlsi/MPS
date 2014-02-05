@@ -21,12 +21,17 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import javax.swing.SwingUtilities;
 import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Frame;
+import java.awt.Window;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.analyzers;
 
+import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.*;
 
 import java.util.List;

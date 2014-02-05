@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class UndoHelper {
   private static final UndoHandler DEFAULT = new DefaultUndoHandler();

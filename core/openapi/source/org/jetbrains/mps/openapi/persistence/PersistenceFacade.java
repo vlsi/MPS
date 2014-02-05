@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;

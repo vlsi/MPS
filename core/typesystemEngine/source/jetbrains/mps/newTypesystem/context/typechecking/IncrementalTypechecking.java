@@ -32,6 +32,7 @@ import jetbrains.mps.newTypesystem.context.component.IncrementalTypecheckingComp
 import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
 import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.*;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.*;

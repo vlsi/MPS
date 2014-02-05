@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;

@@ -18,6 +18,7 @@ package jetbrains.mps.library;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;

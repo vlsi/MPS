@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.TargetState;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 

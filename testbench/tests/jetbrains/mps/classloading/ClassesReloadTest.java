@@ -20,6 +20,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
+import org.junit.Test;
 
 import java.io.File;
 

@@ -18,6 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Status;
 import org.jetbrains.annotations.Nullable;

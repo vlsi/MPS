@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.runtime;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface BehaviorDescriptor {
   // remove prefixes to some other place? or rename?

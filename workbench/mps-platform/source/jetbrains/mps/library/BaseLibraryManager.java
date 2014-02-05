@@ -25,6 +25,7 @@ import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

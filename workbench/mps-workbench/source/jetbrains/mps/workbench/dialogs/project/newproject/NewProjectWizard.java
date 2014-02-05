@@ -25,6 +25,8 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 

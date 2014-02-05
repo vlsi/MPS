@@ -25,6 +25,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import org.jetbrains.mps.openapi.model.SModel;

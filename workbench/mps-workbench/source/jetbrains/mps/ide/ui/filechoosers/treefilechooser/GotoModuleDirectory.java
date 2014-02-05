@@ -24,6 +24,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public final class GotoModuleDirectory extends FileChooserAction {
