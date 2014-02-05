@@ -31,7 +31,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
@@ -109,11 +108,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
       return ((EditorCell_Label) selectedCell).getRenderedText();
     }
     return null;
-  }
-
-  @Override
-  public IScope getScope() {
-    return getOperationContext().getScope();
   }
 
   @NotNull
@@ -268,32 +262,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     getNodeEditorComponent().selectNode(node, cellId);
   }
 
-  @Override
-  public void selectBefore(final SNode node) {
-    flushEvents();
-
-    getNodeEditorComponent().selectNode(node);
-    EditorCell cell = getNodeEditorComponent().getSelectedCell();
-
-    if (cell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label) cell;
-      label.home();
-    }
-  }
-
-  @Override
-  public void selectAfter(final SNode node) {
-    flushEvents();
-
-    getNodeEditorComponent().selectNode(node);
-    EditorCell cell = getNodeEditorComponent().getSelectedCell();
-
-    if (cell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label) cell;
-      label.end();
-    }
-
-  }
 
   @Override
   public void selectWRTFocusPolicy(final SNode node) {

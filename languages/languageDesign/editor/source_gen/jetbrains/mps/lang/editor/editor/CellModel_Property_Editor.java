@@ -21,7 +21,6 @@ import java.awt.Color;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -203,14 +202,14 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_adk1cf_a3a(editorContext, node));
-    if (renderingCondition_adk1cf_a1d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_adk1cf_a1d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_adk1cf_b3a(editorContext, node));
     }
-    if (renderingCondition_adk1cf_a2d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_adk1cf_a2d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_adk1cf_c3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_adk1cf_d3a(editorContext, node));
-    if (renderingCondition_adk1cf_a4d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_adk1cf_a4d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_adk1cf_e3a(editorContext, node));
     }
     return editorCell;
@@ -311,7 +310,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_adk1cf_a1d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_adk1cf_a1d0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
   }
 
@@ -361,7 +360,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_adk1cf_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_adk1cf_a2d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
@@ -454,7 +453,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_adk1cf_a4d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_adk1cf_a4d0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
   }
 

@@ -43,7 +43,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final String item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode debuggerReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.api.lang.structure.DebuggerReference", null);
                 SPropertyOperations.set(debuggerReference, "debuggerName", (item));
@@ -89,7 +89,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final IBreakpointKind item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode createBreakpointOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", null);
                 SPropertyOperations.set(createBreakpointOperation, "kindName", (item).getName());

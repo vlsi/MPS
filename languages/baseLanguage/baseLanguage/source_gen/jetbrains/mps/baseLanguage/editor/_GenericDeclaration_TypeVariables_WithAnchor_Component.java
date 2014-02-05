@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.IScope;
 
 public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -30,7 +29,7 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_525l3g_a");
     editorCell.addEditorCell(this.createConstant_525l3g_a0(editorContext, node));
-    if (renderingCondition_525l3g_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_525l3g_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_525l3g_b0(editorContext, node));
     }
     return editorCell;
@@ -58,7 +57,7 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     return editorCell;
   }
 
-  private static boolean renderingCondition_525l3g_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_525l3g_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 }

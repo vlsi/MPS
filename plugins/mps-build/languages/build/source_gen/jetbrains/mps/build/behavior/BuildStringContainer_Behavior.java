@@ -25,13 +25,13 @@ public class BuildStringContainer_Behavior {
   }
 
   @Deprecated
-  public static Color call_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
-    return BehaviorReflection.invokeVirtual(Color.class, thisNode, "virtual_getColorForTextPart_6083230236994422116", new Object[]{role});
+  public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", new Class[]{SNode.class, String.class, String.class}, new Object[]{propertyValue, role});
   }
 
   @Deprecated
-  public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", new Class[]{SNode.class, String.class, String.class}, new Object[]{propertyValue, role});
+  public static Color call_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
+    return BehaviorReflection.invokeVirtual(Color.class, thisNode, "virtual_getColorForTextPart_6083230236994422116", new Object[]{role});
   }
 
   @Deprecated

@@ -17,8 +17,8 @@ package jetbrains.mps.workbench.dialogs.project;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import org.jdesktop.beansbinding.AutoBinding;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 
@@ -29,9 +29,7 @@ public interface IBindedDialog {
 
   Project getProject();
 
-  IScope getModuleScope();
-
-  IScope getProjectScope();
+  SModule getModule();
 
   void addBinding(AutoBinding binding);
 }

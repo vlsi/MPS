@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import org.textmapper.lapg.regex.RegexFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.textmapper.lapg.api.regex.RegexParseException;
@@ -28,7 +27,7 @@ public class SRegex_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "regexp";
         try {
           RegexFacade.parse("input", (SPropertyOperations.getString(propertyValue)));

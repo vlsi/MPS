@@ -5,7 +5,7 @@
     <nodeInfo nodeId="7745158536326881946" fileName="CommandLineGenerator.java" startLine="15" startPosition="94" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="80916483499265393" fileName="CommandLineGenerator.java" startLine="17" startPosition="31" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4971460776563927970" fileName="CommandLineGenerator.java" startLine="19" startPosition="5" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4971460776563927951" fileName="CommandLineGenerator.java" startLine="20" startPosition="114" endLine="21" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4971460776563927951" fileName="CommandLineGenerator.java" startLine="20" startPosition="114" endLine="21" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="80916483499265421" fileName="CommandLineGenerator.java" startLine="24" startPosition="62" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1016968294606525393" fileName="CommandLineGenerator.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommandLineGenerator#()V" />
     <nodeInfo nodeId="80916483499265388" fileName="CommandLineGenerator.java" startLine="16" startPosition="111" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -18,7 +18,7 @@
     <scopeInfo nodeId="80916483499265399" fileName="CommandLineGenerator.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="80916483499265405" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1016968294606525401" fileName="CommandLineGenerator.java" startLine="14" startPosition="48" endLine="21" endPosition="173">
+    <scopeInfo nodeId="1016968294606525401" fileName="CommandLineGenerator.java" startLine="14" startPosition="48" endLine="21" endPosition="177">
       <varInfo nodeId="3042807695808133886" varName="classpathString" />
       <varInfo nodeId="4971460776563927971" varName="escapedLogPath" />
       <varInfo nodeId="7745158536326881947" varName="javaExecutable" />

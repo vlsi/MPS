@@ -22,7 +22,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import java.awt.Color;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellModel_URL_Editor extends DefaultNodeEditor {
@@ -213,10 +212,10 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_wgj6gq_a3a(editorContext, node));
-    if (renderingCondition_wgj6gq_a1d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_wgj6gq_a1d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_wgj6gq_b3a(editorContext, node));
     }
-    if (renderingCondition_wgj6gq_a2d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_wgj6gq_a2d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_wgj6gq_c3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_wgj6gq_d3a(editorContext, node));
@@ -318,7 +317,7 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_wgj6gq_a1d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_wgj6gq_a1d0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
   }
 
@@ -368,7 +367,7 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_wgj6gq_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_wgj6gq_a2d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 

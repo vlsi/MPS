@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -39,13 +38,13 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_p0t1np_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_p0t1np_e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_p0t1np_f0(editorContext, node));
-    if (renderingCondition_p0t1np_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_p0t1np_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_p0t1np_g0(editorContext, node));
     }
-    if (renderingCondition_p0t1np_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_p0t1np_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_p0t1np_h0(editorContext, node));
     }
-    if (renderingCondition_p0t1np_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_p0t1np_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_p0t1np_i0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_p0t1np_j0(editorContext, node));
@@ -146,7 +145,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_p0t1np_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_p0t1np_a6a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "threadPool", true) != null;
   }
 
@@ -173,7 +172,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_p0t1np_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_p0t1np_a7a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "threadPool", true) != null;
   }
 
@@ -189,7 +188,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_p0t1np_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_p0t1np_a8a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "nowait");
   }
 

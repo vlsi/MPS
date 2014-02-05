@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -85,117 +85,71 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   }
 
   private void addModelAccess(SModel model) {
-    if (model == null || model .getModule() instanceof TransientModelsModule || model == myBuilder.currentInputModel || model == myBuilder.originalInputModel) {
+    if (model == null || model .getModule() instanceof TransientModelsModule) {
       return;
     }
-    final SModel modelDescriptor = model;
-    if (modelDescriptor != null) {
-      dependsOnModels.add(modelDescriptor);
-      myBuilder.reportModelAccess(modelDescriptor, myOriginalRoot);
-    }
+    assert model != myBuilder.currentInputModel && model != myBuilder.originalInputModel;
+    dependsOnModels.add(model);
+    myBuilder.reportModelAccess(model, myOriginalRoot);
   }
 
   @Override
   public void readNode(SNode node) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
+    SModel model = node.getModel();
+    if (model != null) {
+      if (model == myBuilder.currentInputModel) {
         addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
+      } else if (model == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
+      } else if (model == myBuilder.originalInputModel) {
         addOriginalNodeAccess(node.getContainingRoot());
       } else {
-        addModelAccess(node.getModel());
+        addModelAccess(model);
       }
     }
   }
 
   @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
-        addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
-        addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
-        addOriginalNodeAccess(node.getContainingRoot());
-      } else {
-        addModelAccess(node.getModel());
-      }
-    }
+    assert false : "SNode doesn't send nodeChildReadAccess any more";
   }
 
   @Override
   public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
-        addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
-        addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
-        addOriginalNodeAccess(node.getContainingRoot());
-      } else {
-        addModelAccess(node.getModel());
-      }
-    }
+    // no-op
+    // properties read after node accessed give no additional information,
+    // properties read without access to owning node are likely to come from
+    // template (e.g. reading PropertyMacro.propertyName during expandPropertyMacro)
+    // or structure models (e.g. NameUtil.nodeFQName(node.concept))
   }
 
   @Override
   public void propertyExistenceAccess(SNode node, String propertyName) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
-        addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
-        addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
-        addOriginalNodeAccess(node.getContainingRoot());
-      } else {
-        addModelAccess(node.getModel());
-      }
-    }
+    assert false : "Dispatched only from NodeReadAccessCasterInEditor";
   }
 
   @Override
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
-        addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
-        addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
-        addOriginalNodeAccess(node.getContainingRoot());
-      } else {
-        addModelAccess(node.getModel());
-      }
-    }
+    assert false : "Dispatched only from NodeReadAccessCasterInEditor";
   }
 
   @Override
   public void propertyCleanReadAccess(SNode node, String propertyName) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
-        addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
-        addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
-        addOriginalNodeAccess(node.getContainingRoot());
-      } else {
-        addModelAccess(node.getModel());
-      }
-    }
+    assert false : "Dispatched only from NodeReadAccessCasterInEditor";
   }
 
   @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
+    SModel model = node.getModel();
+    if (model != null) {
+      if (model == myBuilder.currentInputModel) {
         addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
+      } else if (model == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
+      } else if (model == myBuilder.originalInputModel) {
         addOriginalNodeAccess(node.getContainingRoot());
       } else {
-        addModelAccess(node.getModel());
+        addModelAccess(model);
       }
     }
 
@@ -204,15 +158,16 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void nodeUnclassifiedReadAccess(SNode node) {
-    if (node.getModel() != null) {
-      if (node.getModel() == myBuilder.currentInputModel) {
+    SModel model = node.getModel();
+    if (model != null) {
+      if (model == myBuilder.currentInputModel) {
         addNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.currentOutputModel) {
+      } else if (model == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getContainingRoot());
-      } else if (node.getModel() == myBuilder.originalInputModel) {
+      } else if (model == myBuilder.originalInputModel) {
         addOriginalNodeAccess(node.getContainingRoot());
       } else {
-        addModelAccess(node.getModel());
+        addModelAccess(model);
       }
     }
   }
@@ -220,8 +175,6 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   @Override
   public void modelNodesReadAccess(SModel model) {
     if (model == myBuilder.currentInputModel || model == myBuilder.currentOutputModel || model == myBuilder.originalInputModel) {
-      dependsOnModelNodes = true;
-    } else if (model == myBuilder.currentOutputModel) {
       dependsOnModelNodes = true;
     } else {
       addModelAccess(model);

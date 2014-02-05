@@ -61,13 +61,13 @@ public class ILocalDeclaration_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Object[]{});
+  public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Object[]{});
   }
 
   @Deprecated

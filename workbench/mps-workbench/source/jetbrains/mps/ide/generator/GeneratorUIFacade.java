@@ -267,7 +267,7 @@ public class GeneratorUIFacade {
       if (g == null) continue;
 
       for (SModel sm : g.getModels()) {
-        if (SModelStereotype.isUserModel(sm)) {
+        if (GenerationFacade.canGenerate(sm)) {
           result.add(sm);
         }
       }

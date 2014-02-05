@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
@@ -51,10 +52,12 @@ public interface TemplateExecutionEnvironment {
   IGeneratorLogger getLogger();
 
   @NotNull
+  GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode);
+  @NotNull
   QueryExecutionContext getQueryExecutor();
 
   /**
-   * ReductuionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
+   * ReductionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
    */
   @Deprecated
   @NotNull
@@ -66,6 +69,7 @@ public interface TemplateExecutionEnvironment {
 
   /**
    * Copies nodes from input model, trying to apply reduction rules
+   *
    * @param inputNodes nodes to copy
    * @param templateNode element of output template model (e.g. one with attached COPY-SRC macro), or null if none
    * @param templateNodeId same as previous, as a string representation of a reference
@@ -73,7 +77,7 @@ public interface TemplateExecutionEnvironment {
    * @param templateContext
    * @return copied nodes, or empty list if none copied
    */
-  Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodeReference templateNode, String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+  Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="4m4p3ivk9ec63a9xyz25ddxiva68m30">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
   <dep model="r:1e092ddd-f221-460c-81e8-c2c8578d9fa9(jetbrains.mps.samples.generator_demo.demoLang1.generator.template.main@generator)" hash="bs4vqrs98xi97is9wpr9pz96crxsiw0" />
-  <common hash="-dygtv9kf67cspne4ekq5hwub6z1vcp8" />
+  <common hash="-dygtv9kf67cspne4ekq5hwub6z1vcp8" dependsOnNodes="true" />
   <source id="1228437239252" name="Button" hash="bp7u3itxc68wswdu9mjqxxo05i8qypt">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e092ddd-f221-460c-81e8-c2c8578d9fa9(jetbrains.mps.samples.generator_demo.demoLang1.generator.template.main@generator)" />
     <file name="Button.java" />
   </source>
   <source id="1228437250754" name="Label" hash="-es44et7lx4bg74pqfvu7vyx6zjj2yw7">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e092ddd-f221-460c-81e8-c2c8578d9fa9(jetbrains.mps.samples.generator_demo.demoLang1.generator.template.main@generator)" />
     <file name="Label.java" />
   </source>

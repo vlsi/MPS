@@ -18,7 +18,7 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
@@ -83,7 +83,7 @@ public class GoToModel_Action extends BaseAction {
         }
 
         @Override
-        public SModelReference[] find(IScope scope) {
+        public SModelReference[] find(SearchScope scope) {
           Condition<SModel> cond = new Condition<SModel>() {
             @Override
             public boolean met(SModel modelDescriptor) {
@@ -92,7 +92,7 @@ public class GoToModel_Action extends BaseAction {
               return rightStereotype && hasModule;
             }
           };
-          ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
+          ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
           List<SModelReference> result = new ArrayList<SModelReference>();
           for (SModel md : iter) {
             result.add(md.getReference());

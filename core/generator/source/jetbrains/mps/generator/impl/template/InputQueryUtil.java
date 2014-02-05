@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ public class InputQueryUtil {
     res.add(RuleUtil.concept_LoopMacro);
     res.add(RuleUtil.concept_MapSrcListMacro);
     res.add(RuleUtil.concept_CopySrcListMacro);
-    res.add(RuleUtil.concept_CopySrcNodeMacro);
     return res;
   }
 
@@ -53,7 +52,7 @@ public class InputQueryUtil {
       }
 
       env.getGenerator().showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert");
-      throw new GenerationFailureException();
+      throw new GenerationFailureException("couldn't get nodes to insert");
     } catch (Throwable t) {
       env.getLogger().handleException(t);
       env.getGenerator().showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert (see exception)");
@@ -76,7 +75,7 @@ public class InputQueryUtil {
 
       if (requiredSourceNodesQuery.contains(nodeMacro.getConcept().getQualifiedName())) {
         env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get input nodes");
-        throw new GenerationFailureException();
+        throw new GenerationFailureException("couldn't get input nodes");
       }
 
       // <default> : propagate  current input node

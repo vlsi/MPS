@@ -17,13 +17,13 @@ public class ITestMethod_Behavior {
   }
 
   @Deprecated
-  public static String call_getTestName_1216136419751(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
+  public static SNode callSuper_getTestCase_1216134500045(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestCase_1216134500045", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getTestCase_1216134500045(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestCase_1216134500045", new Class[]{SNode.class}, new Object[]{});
+  public static String call_getTestName_1216136419751(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
   }
 
   @Deprecated

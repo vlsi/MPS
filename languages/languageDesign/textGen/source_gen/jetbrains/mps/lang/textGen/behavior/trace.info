@@ -162,8 +162,8 @@
     <nodeInfo nodeId="8952337903384725612" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="32" startPosition="82" endLine="33" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6261424444345979614" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="36" startPosition="100" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="41" startPosition="79" endLine="42" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="46" startPosition="97" endLine="47" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="51" startPosition="112" endLine="52" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="46" startPosition="112" endLine="47" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="51" startPosition="97" endLine="52" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="56" startPosition="130" endLine="57" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1234781956544" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="21" startPosition="153" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -171,8 +171,8 @@
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBaseConcept_8952337903384725606#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setBaseConcept_6261424444345979603#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBaseConcept_8952337903384725606#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBaseConcept_8952337903384725606#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setBaseConcept_6261424444345979603#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setBaseConcept_6261424444345979603#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableOperations_1234781444746#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1234272591438" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
@@ -181,8 +181,8 @@
     <scopeInfo nodeId="8952337903384725608" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="32" startPosition="82" endLine="33" endPosition="76" />
     <scopeInfo nodeId="6261424444345979605" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="36" startPosition="100" endLine="37" endPosition="82" />
     <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="41" startPosition="79" endLine="42" endPosition="155" />
-    <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="46" startPosition="97" endLine="47" endPosition="132" />
-    <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="51" startPosition="112" endLine="52" endPosition="299" />
+    <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="46" startPosition="112" endLine="47" endPosition="299" />
+    <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="51" startPosition="97" endLine="52" endPosition="132" />
     <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="56" startPosition="130" endLine="57" endPosition="289" />
     <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1234272591436" varName="thisNode" />
@@ -204,11 +204,11 @@
       <varInfo nodeId="1234272591436" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="6261424444345979606" varName="baseConcept" />
+      <varInfo nodeId="1234272591436" varName="callerConceptFqName" />
       <varInfo nodeId="1234272591436" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="1234272591436" varName="callerConceptFqName" />
+      <varInfo nodeId="6261424444345979606" varName="baseConcept" />
       <varInfo nodeId="1234272591436" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234272591436" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
@@ -229,22 +229,22 @@
     <nodeInfo nodeId="1234784593196" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234781461974" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTextGenNode_1234784577703#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableOperations_1234781444746#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTextGenNode_1234784577703#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAvailableOperations_1234781444746#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTextGenNode_1234784577703#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTextGenNode_1234784577703#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAvailableOperations_1234781444746#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAvailableOperations_1234781444746#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <scopeInfo nodeId="1234282173080" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1234784577705" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="16" />
     <scopeInfo nodeId="1234781444748" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="16" />
     <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="124" />
-    <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="163" />
-    <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="269" />
+    <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="269" />
+    <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="163" />
     <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" />
     <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1234282173078" varName="thisNode" />
@@ -259,10 +259,10 @@
       <varInfo nodeId="1234282173078" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1234282173078" varName="callerConceptFqName" />
       <varInfo nodeId="1234282173078" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1234282173078" varName="callerConceptFqName" />
       <varInfo nodeId="1234282173078" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">

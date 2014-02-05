@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
 
@@ -99,7 +98,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_koy33t_a2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_koy33t_b2a(editorContext, node));
-    if (renderingCondition_koy33t_a2c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_koy33t_a2c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_koy33t_c2a(editorContext, node));
     }
     return editorCell;
@@ -144,7 +143,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_koy33t_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_koy33t_a2c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "testGeneration");
   }
 

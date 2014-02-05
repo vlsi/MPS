@@ -15,7 +15,6 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -39,7 +38,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_n52m2z_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_n52m2z_a0(editorContext, node));
-    if (renderingCondition_n52m2z_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_n52m2z_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_n52m2z_b0(editorContext, node));
     }
     return editorCell;
@@ -68,7 +67,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_n52m2z_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_n52m2z_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "superConcept", false) != null);
   }
 

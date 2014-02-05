@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.messages.NodeWithContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -93,8 +92,7 @@ public class GenerationSessionLogger extends GeneratorLoggerAdapter implements I
       if (node != null && myOperationContext != null) {
         if (keepModel(node.getModelReference(), kind != MessageKind.ERROR)) {
           Message message = new Message(kind, text);
-          NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
-          message.setHintObject(context);
+          message.setHintObject(node);
           return message;
         }
       }

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class IWillBeClassifier_Behavior {
@@ -40,23 +39,23 @@ public class IWillBeClassifier_Behavior {
   }
 
   @Deprecated
-  public static SNode call_baseClassifier_4125795553993767872(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_baseClassifier_4125795553993767872", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_resolve_4609636120081469956", new Object[]{targetModel});
-  }
-
-  @Deprecated
   public static String callSuper_classifierName_4609636120081351397(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), callerConceptFqName, "virtual_classifierName_4609636120081351397", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static SNode call_baseClassifier_4125795553993767872(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_baseClassifier_4125795553993767872", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_baseClassifier_4125795553993767872(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), callerConceptFqName, "virtual_baseClassifier_4125795553993767872", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_resolve_4609636120081469956", new Object[]{targetModel});
   }
 
   @Deprecated
@@ -67,7 +66,7 @@ public class IWillBeClassifier_Behavior {
   private static SNode _quotation_createNode_937vih_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }

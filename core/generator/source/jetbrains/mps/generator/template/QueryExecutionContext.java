@@ -26,11 +26,17 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * XXX this is not a context, rather QueryExecutionFacility/QueryExecutor, utility to provide extra indirection
+ * when invoking conditions/rules. It doesn't keep any 'context' information.
  * FIXME get rid of inputNode where templateContext is available
  * Evgeny Gryaznov, Feb 24, 2010
  */
 public interface QueryExecutionContext {
 
+  /**
+   * @return true if nodes using this context can be generated in parallel. When false, all nodes that use this context
+   * will be generated from the same thread.
+   */
   boolean isMultithreaded();
 
   boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;

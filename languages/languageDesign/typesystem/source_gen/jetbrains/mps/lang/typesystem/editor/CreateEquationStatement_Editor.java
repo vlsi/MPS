@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -39,10 +38,10 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mi4qyq_a");
     editorCell.setBig(true);
-    if (renderingCondition_mi4qyq_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_mi4qyq_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_mi4qyq_a0(editorContext, node));
     }
-    if (renderingCondition_mi4qyq_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_mi4qyq_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_mi4qyq_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_mi4qyq_c0(editorContext, node));
@@ -64,7 +63,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_mi4qyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_mi4qyq_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "checkOnly");
   }
 
@@ -182,7 +181,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_mi4qyq_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_mi4qyq_a1a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "checkOnly"));
   }
 

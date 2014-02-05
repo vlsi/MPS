@@ -12,12 +12,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
@@ -44,7 +41,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_1xd1xh_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1xd1xh_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1xd1xh_a0(editorContext, node));
     }
     return editorCell;
@@ -62,7 +59,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1xd1xh_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1xd1xh_a0a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "template", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "template", false), "parameter", true)).isNotEmpty();
   }
 
@@ -70,8 +67,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1xd1xh_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    Styles_StyleSheet.applyLeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -84,7 +80,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new TemplateDeclarationParameterInformationQuery());
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_1xd1xh_a1a0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_1xd1xh_a1a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -157,7 +153,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     }
   }
 
-  private static boolean renderingCondition_1xd1xh_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1xd1xh_a1a0(SNode node, EditorContext editorContext) {
     return true;
   }
 
@@ -165,19 +161,18 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1xd1xh_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    Styles_StyleSheet.applyRightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_1xd1xh_a2a0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_1xd1xh_a2a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_1xd1xh_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1xd1xh_a2a0(SNode node, EditorContext editorContext) {
     return true;
   }
 }

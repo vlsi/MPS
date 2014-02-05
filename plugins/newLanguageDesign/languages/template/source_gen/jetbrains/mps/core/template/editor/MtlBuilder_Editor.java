@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -38,7 +37,7 @@ public class MtlBuilder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vcqcp7_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vcqcp7_a0(editorContext, node));
-    if (renderingCondition_vcqcp7_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vcqcp7_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_vcqcp7_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createProperty_vcqcp7_c0(editorContext, node));
@@ -73,7 +72,7 @@ public class MtlBuilder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vcqcp7_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vcqcp7_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "contextNode", true) != null);
   }
 

@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -30,7 +29,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.Icon;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,7 +42,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
-    List parameterObjects = createParameterObjects(node, context.getScope(), context, editorContext);
+    List parameterObjects = createParameterObjects(node, context, editorContext);
     if (parameterObjects == null) {
       return Collections.emptyList();
     }
@@ -70,7 +68,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
 
         @Override
         public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          handleAction(parameterObject, node, node.getModel(), context.getScope(), context, editorContext);
+          handleAction(parameterObject, node, node.getModel(), context, editorContext);
           return null;
         }
       });
@@ -100,36 +98,11 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
   }
 
   /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createParameterObjects(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
    * should become abstract after MPS 3.0
    */
-  protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-    return createParameterObjects(node, scope, operationContext);
-  }
+  protected abstract List createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext);
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>handleAction(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-    handleAction(parameterObject, node, model, scope, operationContext, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
-  }
+  protected abstract void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext);
 
   protected abstract boolean isReferentPresentation();
 }

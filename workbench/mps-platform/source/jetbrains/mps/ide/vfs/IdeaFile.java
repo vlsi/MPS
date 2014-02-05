@@ -22,7 +22,7 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.*;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -150,7 +150,7 @@ class IdeaFile implements IFileEx {
         VirtualFile directory = VfsUtil.createDirectories(truncDirPath(myPath));
         String fileName = truncFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
-        myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, fileName);
+        myVirtualFile = directory.createChildData(ourRequestor(), fileName);
         myPath = null;
         return true;
       } catch (IOException e) {
@@ -185,7 +185,7 @@ class IdeaFile implements IFileEx {
   public boolean delete() {
     if (findVirtualFile()) {
       try {
-        myVirtualFile.delete(IdeaFileSystemProvider.class);
+        myVirtualFile.delete(ourRequestor());
         myPath = myVirtualFile.getPath();
         myVirtualFile = null;
         return true;
@@ -201,7 +201,7 @@ class IdeaFile implements IFileEx {
   @Override
   public boolean rename(String newName) {
     try {
-      myVirtualFile.rename(IdeaFileSystemProvider.class, newName);
+      myVirtualFile.rename(ourRequestor(), newName);
       return true;
     } catch (IOException e) {
       IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
@@ -213,7 +213,7 @@ class IdeaFile implements IFileEx {
   public boolean move(IFile newParent) {
     if (newParent instanceof IdeaFile && ((IdeaFile) newParent).findVirtualFile()) {
       try {
-        myVirtualFile.move(IdeaFileSystemProvider.class, ((IdeaFile) newParent).myVirtualFile);
+        myVirtualFile.move(ourRequestor(), ((IdeaFile) newParent).myVirtualFile);
         return true;
       } catch (IOException e) {
         IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
@@ -240,7 +240,7 @@ class IdeaFile implements IFileEx {
       if (myVirtualFile.getFileSystem() instanceof JarFileSystem) {
         throw new UnsupportedOperationException("Cannot write to Jar files");
       } else {
-        return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
+        return myVirtualFile.getOutputStream(ourRequestor());
       }
     } else {
       throw new IOException("Could not create file: " + myPath);
@@ -412,6 +412,12 @@ class IdeaFile implements IFileEx {
     } else {
       return "IdeaFile{path: " + myPath + "}";
     }
+  }
+
+  public static IdeaFileSystemProvider ourRequestor() {
+    FileSystemProvider provider = FileSystem.getInstance().getFileSystemProvider();
+    assert provider instanceof IdeaFileSystemProvider;
+    return (IdeaFileSystemProvider) provider;
   }
 
 }

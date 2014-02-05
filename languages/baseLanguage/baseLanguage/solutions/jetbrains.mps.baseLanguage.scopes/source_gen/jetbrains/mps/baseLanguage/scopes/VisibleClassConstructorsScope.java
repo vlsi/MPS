@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -24,7 +23,7 @@ import java.util.HashMap;
 public class VisibleClassConstructorsScope extends Scope {
   private final Scope classifiers;
 
-  public VisibleClassConstructorsScope(@NotNull SNode contextNode, IScope scope) {
+  public VisibleClassConstructorsScope(@NotNull SNode contextNode) {
     // todo: find not all classifiers, only class concept! 
     classifiers = new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, true)) {
       @Override

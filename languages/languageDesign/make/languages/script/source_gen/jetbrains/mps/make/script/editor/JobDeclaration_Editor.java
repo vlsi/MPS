@@ -13,7 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -39,18 +38,18 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_e0yr07_a");
     editorCell.setBig(true);
-    if (renderingCondition_e0yr07_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e0yr07_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_e0yr07_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_e0yr07_b0(editorContext, node));
-    if (renderingCondition_e0yr07_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e0yr07_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_e0yr07_c0(editorContext, node));
     }
-    if (renderingCondition_e0yr07_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e0yr07_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_e0yr07_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_e0yr07_e0(editorContext, node));
-    if (renderingCondition_e0yr07_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e0yr07_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_e0yr07_f0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_e0yr07_g0(editorContext, node));
@@ -69,7 +68,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e0yr07_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e0yr07_a0a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
   }
 
@@ -79,7 +78,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_e0yr07_a0b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e0yr07_a0b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_e0yr07_a1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNodeList_e0yr07_b1a(editorContext, node));
@@ -96,7 +95,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e0yr07_a0b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e0yr07_a0b0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
   }
 
@@ -174,7 +173,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e0yr07_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e0yr07_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
   }
 
@@ -190,7 +189,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e0yr07_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e0yr07_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "config", true) != null);
   }
 
@@ -200,7 +199,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_e0yr07_a0e0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e0yr07_a0e0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_e0yr07_a4a(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_e0yr07_b4a(editorContext, node));
@@ -217,7 +216,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e0yr07_a0e0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e0yr07_a0e0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "config", true) != null);
   }
 
@@ -257,7 +256,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e0yr07_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e0yr07_a5a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "config", true) != null);
   }
 

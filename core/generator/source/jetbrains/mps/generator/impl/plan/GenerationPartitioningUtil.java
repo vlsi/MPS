@@ -81,7 +81,7 @@ public class GenerationPartitioningUtil {
       String next = queue.remove();
       LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(next);
       if (language == null) {
-        LOG.error("couldn't find language for namespace `" + next + "'");
+        LOG.error(String.format("Model %s uses language %s which is missing (likely is not yet generated or is a bootstrap dependency)", inputModel.getModelName(), next));
         continue;
       }
 

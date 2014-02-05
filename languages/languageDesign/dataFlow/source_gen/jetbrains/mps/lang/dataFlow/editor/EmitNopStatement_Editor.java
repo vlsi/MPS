@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -26,11 +25,11 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s9jju4_a");
     editorCell.setBig(true);
-    if (renderingCondition_s9jju4_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_s9jju4_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_s9jju4_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_s9jju4_b0(editorContext, node));
-    if (renderingCondition_s9jju4_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_s9jju4_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_s9jju4_c0(editorContext, node));
     }
     return editorCell;
@@ -46,7 +45,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s9jju4_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_s9jju4_a0a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "position", true) != null;
   }
 
@@ -80,7 +79,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s9jju4_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_s9jju4_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "position", true) != null;
   }
 }

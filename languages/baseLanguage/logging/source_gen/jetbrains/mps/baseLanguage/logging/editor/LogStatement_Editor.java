@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -38,7 +37,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_xuwwk0_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xuwwk0_b0(editorContext, node));
-    if (renderingCondition_xuwwk0_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xuwwk0_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xuwwk0_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_xuwwk0_d0(editorContext, node));
@@ -98,7 +97,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xuwwk0_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xuwwk0_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "hasException");
   }
 

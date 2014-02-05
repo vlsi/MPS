@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 
 public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -67,7 +66,7 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new InvokeFunctionOperation_Editor.parameterListHandler_9wclje_c0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_9wclje_a2a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_9wclje_a2a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -139,7 +138,7 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext) {
     return false;
   }
 
@@ -149,14 +148,14 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_9wclje_a3a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_9wclje_a3a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext) {
     return false;
   }
 }

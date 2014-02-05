@@ -86,7 +86,6 @@ import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -1093,7 +1092,7 @@ public class FullASTConverter extends ASTConverter {
 
     if ((call != null)) {
       addCallArgs(call, x.arguments);
-      // TODO add type arguments 
+      addTypeArgs(x.typeArguments, SLinkOperations.getTargets(call, "typeArgument", true));
     }
     return result;
   }
@@ -1211,15 +1210,24 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertExpression(ClassLiteralAccess x) throws JavaParseException {
 
     SNode argType = convertTypeReference(x.type);
-    if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+    if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ArrayType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       throw new JavaParseException("Type in class literal access is expected to be classifier");
     }
+    if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+      SNode node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
+      SLinkOperations.setTarget(node, "arrayType", SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ArrayType"), true);
+      return node;
+    } else if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      SNode node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
+      SLinkOperations.setTarget(node, "primitiveType", SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType"), true);
+      return node;
+    } else {
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
 
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
-
-    SReference sref = adjustClassReference(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), result, "classifier");
-    result.setReference(sref.getRole(), sref);
-    return result;
+      SReference sref = adjustClassReference(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), result, "classifier");
+      result.setReference(sref.getRole(), sref);
+      return result;
+    }
   }
 
   /*package*/ SNode convertExpression(UnaryExpression x) throws JavaParseException {
@@ -1421,10 +1429,10 @@ public class FullASTConverter extends ASTConverter {
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", null, null, false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, null, false);
+    quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_8, "text", "converted:  for ( expr; ...) {}  ->  { expr; for ( ; ...) {} }");
     quotedNode_5.addChild("commentPart", quotedNode_8);
     quotedNode_4.addChild("statement", quotedNode_5);

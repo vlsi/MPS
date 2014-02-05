@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -109,7 +108,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e7cx8x_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_e7cx8x_c0");
-    if (renderingCondition_e7cx8x_a0c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_e7cx8x_a0c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_e7cx8x_a2a(editorContext, node));
     }
     return editorCell;
@@ -127,7 +126,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_e7cx8x_a0c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_e7cx8x_a0c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
   }
 

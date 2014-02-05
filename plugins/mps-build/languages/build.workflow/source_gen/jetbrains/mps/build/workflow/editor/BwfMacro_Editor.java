@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -31,13 +30,13 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kawrig_a");
     editorCell.setBig(true);
-    if (renderingCondition_kawrig_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kawrig_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_kawrig_a0(editorContext, node));
     }
-    if (renderingCondition_kawrig_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kawrig_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_kawrig_b0(editorContext, node));
     }
-    if (renderingCondition_kawrig_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kawrig_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_kawrig_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_kawrig_d0(editorContext, node));
@@ -58,7 +57,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "exportToProperiesFile");
   }
 
@@ -72,7 +71,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isLocation");
   }
 
@@ -86,7 +85,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "uninitialized");
   }
 

@@ -8,6 +8,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class transformationTest_StyleSheet {
   @Deprecated
@@ -26,9 +27,19 @@ public class transformationTest_StyleSheet {
   }
 
   @Deprecated
-  public static Style getNodeProperty(final EditorCell editorCell) {
+  public static Style getNodeOperation(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
+  }
+
+  @Deprecated
+  public static Style getTestLabel(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     return style;
   }
 
@@ -48,8 +59,15 @@ public class transformationTest_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyNodeProperty(Style style, EditorCell editorCell) {
+  public static void applyNodeOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+  }
+
+  public static void applyTestLabel(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
   }
 
   public static void applyEditorOperation(Style style, EditorCell editorCell) {

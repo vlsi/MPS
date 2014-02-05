@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -38,7 +37,7 @@ public class Rule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_z0m96w_e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z0m96w_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_z0m96w_g0(editorContext, node));
-    if (renderingCondition_z0m96w_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_z0m96w_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_z0m96w_h0(editorContext, node));
     }
     return editorCell;
@@ -197,7 +196,7 @@ public class Rule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_z0m96w_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_z0m96w_a7a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition");
   }
 }

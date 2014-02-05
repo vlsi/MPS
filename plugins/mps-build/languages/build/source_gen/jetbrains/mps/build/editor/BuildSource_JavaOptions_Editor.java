@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -96,7 +95,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nphvgz_h2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nphvgz_i2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_nphvgz_j2a(editorContext, node));
-    if (renderingCondition_nphvgz_a01c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nphvgz_a01c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_nphvgz_k2a(editorContext, node));
     }
     return editorCell;
@@ -232,7 +231,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     public BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
     }
   }
@@ -279,7 +278,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "copyResources");
   }
 

@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-cb6rcxojypjcxyc1g9l65nm6ohxvtim">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-6598y2a2o1k8vz2t30av4gcxx37chgv" />
+  <common hash="-6598y2a2o1k8vz2t30av4gcxx37chgv" dependsOnNodes="true" />
   <source id="4727801710070560812" name="IValueProxy" hash="-3tbmz6fjqacikh32ep7553va21hoq8u">
     <file name="IValueProxy.java" />
   </source>
   <source id="4727801710070560831" name="IterableProxy" hash="-aa4sc3nkxxzvrb3lpk1orva316wfqif">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IterableProxy.java" />
   </source>
   <source id="4727801710070560969" name="IterableArrayProxy" hash="-1bhq65oesdge1l575gy02nd4meus3v5">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IterableArrayProxy.java" />
   </source>
   <source id="4727801710070562884" name="IArrayValueProxy" hash="-apr2ylb2clp5928o3i0kjf53lblmo3d">
     <file name="IArrayValueProxy.java" />
   </source>
   <source id="4727801710070562907" name="ProxyEqualsUtil" hash="5ujz38bv949irnl98jallr9kw072z51">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProxyEqualsUtil.java" />
   </source>
   <source id="4727801710070563570" name="IObjectValueProxy" hash="-4i0rusvgsbrlfefqsn2ne8xxitsjmk2">
     <file name="IObjectValueProxy.java" />
   </source>
   <source id="4727801710070563612" name="ValueProxy" hash="-boe44akw3d209vp1fzsl4fcwjjozdta">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValueProxy.java" />
   </source>
   <source id="4727801710070563864" name="INullValueProxy" hash="-7puirmffsie8qvbrmunrnw1aoq50f9f">
@@ -34,7 +29,6 @@
     <file name="VoidValueProxy.java" />
   </source>
   <source id="4727801710070563929" name="PrimitiveValueProxy" hash="4rad5vlh1c1ltp29z96n0qxfg1rc77y">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PrimitiveValueProxy.java" />
   </source>
   <source id="7157912897227220271" name="MirrorUtil" hash="7qdgn1ph3bhqj9vqg18e0y5oh7jea7c">

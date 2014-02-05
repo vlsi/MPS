@@ -54,7 +54,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
 
     String replacementConceptFqName = getReplacementConceptName();
     IOperationContext context = editorContext.getOperationContext();
-    SNode replacementConcept = SModelUtil.findConceptDeclaration(replacementConceptFqName, context.getScope());
+    SNode replacementConcept = SModelUtil.findConceptDeclaration(replacementConceptFqName);
 
 
     List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, replacementConcept, this, context);

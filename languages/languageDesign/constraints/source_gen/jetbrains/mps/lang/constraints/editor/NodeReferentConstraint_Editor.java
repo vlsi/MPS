@@ -24,7 +24,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -150,13 +149,13 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_y1wtxd_a4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y1wtxd_b4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_y1wtxd_c4a(editorContext, node));
-    if (renderingCondition_y1wtxd_a3e0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_y1wtxd_a3e0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_y1wtxd_d4a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_y1wtxd_e4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y1wtxd_f4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_y1wtxd_g4a(editorContext, node));
-    if (renderingCondition_y1wtxd_a7e0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_y1wtxd_a7e0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_y1wtxd_h4a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_y1wtxd_i4a(editorContext, node));
@@ -224,7 +223,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_y1wtxd_a3e0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_y1wtxd_a3e0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "referentSetHandler", true) != null);
   }
 
@@ -341,7 +340,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_y1wtxd_a7e0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_y1wtxd_a7e0(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "searchScopeFactory", true), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory");
   }
 

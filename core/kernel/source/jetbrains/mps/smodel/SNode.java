@@ -21,7 +21,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -40,7 +39,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.util.Condition;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -70,7 +68,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private SNodeId myId;
 
-  private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
+  private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
 
   @NotNull
   private String myConceptFqName;
@@ -118,44 +116,32 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   protected void assertCanRead() {
-    if (myRepository == null) return;
-    if (myRepository instanceof DisposedRepository) {
+    final SRepository repo = myRepository;
+    if (repo == null) return;
+    if (repo instanceof DisposedRepository) {
       showDisposedMessage();
       return;
     }
-
-    synchronized (REPO_LOCK) {
-      if (myRepository == null) return;
-      if (myRepository instanceof DisposedRepository) {
-        showDisposedMessage();
-        return;
-      }
-      myRepository.getModelAccess().checkReadAccess();
-    }
+    repo.getModelAccess().checkReadAccess();
   }
 
   private void assertCanChange() {
-    if (myRepository == null) return;
-    if (myRepository instanceof DisposedRepository) {
+    final SRepository repo = myRepository;
+    final SModel model = myModel;
+    if (repo == null) return;
+    if (repo instanceof DisposedRepository) {
       showDisposedMessage();
       return;
     }
-
-    synchronized (REPO_LOCK) {
-      if (myRepository == null) return;
-      if (myRepository instanceof DisposedRepository) {
-        showDisposedMessage();
-        return;
-      }
-      myRepository.getModelAccess().checkReadAccess();
-      if (myModel != null && myModel.isUpdateMode()) return;
-      myRepository.getModelAccess().checkWriteAccess();
-      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-        throw new IllegalModelChangeError(
-            "registered node can only be modified inside undoable command or in 'loading' model " +
-                org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
-        );
-      }
+    org.jetbrains.mps.openapi.module.ModelAccess modelAccess = repo.getModelAccess();
+    modelAccess.checkReadAccess();
+    if (model != null && model.isUpdateMode()) return;
+    modelAccess.checkWriteAccess();
+    if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+      throw new IllegalModelChangeError(
+          "registered node can only be modified inside undoable command or in 'loading' model " +
+              org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+      );
     }
   }
 
@@ -447,7 +433,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      String msg = String.format("ERROR: %d referents for role '%s' in %s", count, role, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      LOG.error(msg, new Throwable(msg), getReference());
     }
 
     fireNodeReferentReadAccess(role, null);
@@ -603,15 +590,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public Object getUserObject(Object key) {
-    synchronized (USER_OBJECT_LOCK) {
-      if (myUserObjects == null) return null;
-      for (int i = 0; i < myUserObjects.length; i += 2) {
-        if (myUserObjects[i].equals(key)) {
-          return myUserObjects[i + 1];
-        }
+    final Object[] userObjects = myUserObjects;
+    if (userObjects == null) return null;
+    for (int i = 0; i < userObjects.length; i += 2) {
+      if (userObjects[i].equals(key)) {
+        return userObjects[i + 1];
       }
-      return null;
     }
+    return null;
   }
 
   @Override
@@ -645,8 +631,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
       for (int i = 0; i < myUserObjects.length; i += 2) {
         if (myUserObjects[i].equals(key)) {
-          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
-          myUserObjects[i + 1] = value;
+          Object[] newarr = new Object[myUserObjects.length];
+          System.arraycopy(myUserObjects, 0, newarr, 0, myUserObjects.length);
+          newarr[i+1] = value;
+          myUserObjects = newarr;
           return;
         }
       }
@@ -745,22 +733,23 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public Iterable<Object> getUserObjectKeys() {
     assertCanRead();
 
-    if (myUserObjects == null || myUserObjects.length == 0) return EmptyIterable.getInstance();
+    final Object[] userObjects = myUserObjects;
+    if (userObjects == null || userObjects.length == 0) return EmptyIterable.getInstance();
     return new Iterable<Object>() {
       @Override
       public Iterator<Object> iterator() {
         return new Iterator<Object>() {
-          int myIndex = 0;
+          private int myIndex = 0;
 
           @Override
           public boolean hasNext() {
-            return myIndex < myUserObjects.length;
+            return myIndex < userObjects.length;
           }
 
           @Override
           public Object next() {
             myIndex += 2;
-            return myUserObjects[myIndex - 2];
+            return userObjects[myIndex - 2];
           }
 
           @Override
@@ -931,7 +920,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    return (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+    return (SNode) SModelUtil.findConceptDeclaration(myConceptFqName);
   }
 
   public SNode getPropertyDeclaration(String propertyName) {

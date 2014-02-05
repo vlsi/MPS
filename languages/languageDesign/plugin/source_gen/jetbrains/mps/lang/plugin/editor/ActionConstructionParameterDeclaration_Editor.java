@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -91,7 +90,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_grmouy_a_0");
     editorCell.setBig(true);
-    if (renderingCondition_grmouy_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_grmouy_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_grmouy_a0_0(editorContext, node));
     }
     return editorCell;
@@ -117,7 +116,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  private static boolean renderingCondition_grmouy_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_grmouy_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
   }
 }

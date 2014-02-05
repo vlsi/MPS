@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,4 +39,9 @@ public interface SAbstractLink {
    * This link may contain no elements.
    */
   boolean isOptional();
+
+  /**
+   * Instance nodes can contain more than one target element.
+   */
+  boolean isMultiple();
 }

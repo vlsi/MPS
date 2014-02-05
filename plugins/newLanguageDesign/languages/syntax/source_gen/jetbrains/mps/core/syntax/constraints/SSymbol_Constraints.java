@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 
@@ -27,7 +26,7 @@ public class SSymbol_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
         return REGEXP_ef4amp_a0a0a0b0b0a1a0b0b.matcher((SPropertyOperations.getString(propertyValue))).matches() || REGEXP_ef4amp_a0a0a0a1a1a0b0a1a1.matcher((SPropertyOperations.getString(propertyValue))).matches() && !((SPropertyOperations.getString(propertyValue)).endsWith("opt"));
       }

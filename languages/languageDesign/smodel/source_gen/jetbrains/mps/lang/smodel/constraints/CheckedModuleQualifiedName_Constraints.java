@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -30,7 +29,7 @@ public class CheckedModuleQualifiedName_Constraints extends BaseConstraintsDescr
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "moduleId";
         {
           String original = SPropertyOperations.getString(node, "moduleId");
@@ -49,7 +48,7 @@ public class CheckedModuleQualifiedName_Constraints extends BaseConstraintsDescr
       }
 
       @Override
-      public void setValue(SNode node, String propertyValue, IScope scope) {
+      public void setValue(SNode node, String propertyValue) {
         String propertyName = "moduleId";
         {
           SModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
@@ -63,7 +62,7 @@ public class CheckedModuleQualifiedName_Constraints extends BaseConstraintsDescr
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "moduleId";
         {
           SModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));

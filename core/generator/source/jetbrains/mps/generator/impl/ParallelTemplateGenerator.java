@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -28,9 +26,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -38,7 +34,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -58,13 +53,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode, SNodeReference>, RootGenerationTask> myInputToTask;
   private Map<SNode, DefaultQueryExecutionContext> myRootContext;
-  private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
+  private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-                                   IGeneratorLogger logger, RuleManager ruleManager,
-                                   SModel inputModel, SModel outputModel, GenerationOptions options,
-                                   DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
-    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, options, dependenciesBuilder, performanceTracer);
+      RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder) {
+    super(operationContext, progressMonitor, ruleManager, inputModel, outputModel, dependenciesBuilder);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();
@@ -76,7 +69,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     super.applyReductions(isPrimary);
 
     myPool.waitForCompletion();
-    contextToTask = null;
+    contextToTask.clear();
     myRootContext = null;
     for (RootGenerationTask task : myTasks) {
       task.registerGeneratedRoot();
@@ -168,26 +161,10 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
-    // ParallelTemplateGenerator shall handle this similar to #registerRoot to ensure order is preserved
-    if (!myInplaceChangeEnabled) {
-      return;
-    }
-    if (myNewAddedRoots == null) {
-      synchronized (this) {
-        if (myNewAddedRoots == null) {
-          myNewAddedRoots = Collections.synchronizedList(new ArrayList<SNode>());
-        }
-      }
-    }
-    myNewAddedRoots.addAll(newRoots);
-  }
-
-  @Override
   protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
     RootGenerationTask task = myInputToTask.get(new Pair<SNode, SNodeReference>(inputNode, templateNode));
     if (task == null) {
-      showErrorMessage(inputNode, templateNode.resolve(MPSModuleRepository.getInstance()), "internal: cannot find task for generated root");
+      getLogger().error(templateNode, "internal: cannot find task for generated root", GeneratorUtil.describe(inputNode, "input node"));
     } else {
       task.addGeneratedRoot(new GeneratedRootDescriptor(outputRoot, inputNode, templateNode, isCopied));
     }

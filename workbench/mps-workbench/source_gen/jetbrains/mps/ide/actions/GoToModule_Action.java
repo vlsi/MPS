@@ -18,7 +18,7 @@ import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.Solution;
@@ -83,9 +83,9 @@ public class GoToModule_Action extends BaseAction {
         }
 
         @Override
-        public SModuleReference[] find(IScope scope) {
+        public SModuleReference[] find(SearchScope scope) {
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
-          for (SModule module : scope.getVisibleModules()) {
+          for (SModule module : scope.getModules()) {
             if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
               continue;
             }

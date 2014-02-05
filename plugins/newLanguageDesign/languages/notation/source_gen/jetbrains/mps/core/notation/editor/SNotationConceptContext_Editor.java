@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
@@ -47,7 +46,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_tvsk60_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_tvsk60_a0(editorContext, node));
-    if (renderingCondition_tvsk60_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tvsk60_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_tvsk60_b0(editorContext, node));
     }
     return editorCell;
@@ -125,7 +124,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_tvsk60_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tvsk60_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "id") != null;
   }
 
@@ -170,7 +169,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     public SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a() {
     }
 
-    public List<?> createParameterObjects(final SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(final SNode node, IOperationContext operationContext, EditorContext editorContext) {
       if (SLinkOperations.getTarget(node, "element", false) == null) {
         return null;
       }
@@ -196,11 +195,11 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
       return Sequence.fromIterable(result).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "id", parameterObject);
     }
 

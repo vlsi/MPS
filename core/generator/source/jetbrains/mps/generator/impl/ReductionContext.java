@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.template.QueryExecutionContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -54,13 +54,17 @@ public class ReductionContext {
   }
 
   Object getBlockedRules(SNode inputNode) {
-    Object currentSet = null;
+    ArrayList<TemplateReductionRule> matchingRules = new ArrayList<TemplateReductionRule>();
     for (ReductionContext current = this; current != null; current = current.myParent) {
-      if (current.myInputNode == inputNode) {
-        currentSet = combineRuleSets(currentSet, current.myReductionRule);
+      if (current.myInputNode == inputNode && current.myReductionRule != null) {
+        matchingRules.add(current.myReductionRule);
       }
     }
-    return currentSet;
+    if (matchingRules.isEmpty()) {
+      return null;
+    } else {
+      return new HashSet<TemplateReductionRule>(matchingRules);
+    }
   }
 
   static Object combineRuleSets(Object set1, Object set2) {

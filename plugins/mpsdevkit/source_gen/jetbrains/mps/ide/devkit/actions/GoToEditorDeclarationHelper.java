@@ -4,7 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
@@ -20,7 +19,7 @@ public class GoToEditorDeclarationHelper {
   public GoToEditorDeclarationHelper() {
   }
 
-  public static SNode getOrCreateEditorForConcept(final SModel languageEditor, final SNode concept, final SNode node, final IScope scope) {
+  public static SNode getOrCreateEditorForConcept(final SModel languageEditor, final SNode concept, final SNode node) {
     SNode editorDeclaration = ModelAccess.instance().runReadAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
@@ -43,12 +42,12 @@ public class GoToEditorDeclarationHelper {
     return ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return GoToEditorDeclarationHelper.createEditorDeclaration(concept, languageEditor, scope);
+        return GoToEditorDeclarationHelper.createEditorDeclaration(concept, languageEditor);
       }
     }, null);
   }
 
-  public static SModel getOrCreateEditorAspect(final Language language, final SNode concept, final IScope scope) {
+  public static SModel getOrCreateEditorAspect(final Language language, final SNode concept) {
     final SModel languageEditor = LanguageAspect.EDITOR.get(language);
     if (languageEditor != null) {
       return languageEditor;
@@ -62,7 +61,7 @@ public class GoToEditorDeclarationHelper {
       @Override
       public void run() {
         LanguageAspect.EDITOR.createNew(language);
-        GoToEditorDeclarationHelper.createEditorDeclaration(concept, LanguageAspect.EDITOR.get(language), scope);
+        GoToEditorDeclarationHelper.createEditorDeclaration(concept, LanguageAspect.EDITOR.get(language));
       }
     });
     return LanguageAspect.EDITOR.get(language);
@@ -76,7 +75,7 @@ public class GoToEditorDeclarationHelper {
     });
   }
 
-  public static SNode createEditorDeclaration(SNode conceptDeclaration, SModel editorModelDescriptor, IScope scope) {
+  public static SNode createEditorDeclaration(SNode conceptDeclaration, SModel editorModelDescriptor) {
     SModel editorModel = editorModelDescriptor;
     SNode result = SNodeFactoryOperations.createNewNode(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SLinkOperations.setTarget(result, "conceptDeclaration", conceptDeclaration, false);

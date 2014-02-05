@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,28 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.QueryMethodGenerated;
 
-/**
- * Evgeny Gryaznov, Nov 30, 2010
- */
 public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
   private final SNode ruleNode;
   private final SNode applicableConcept;
+  private final String myConditionMethod;
+  private DropRuleCondition myCondition;
 
   public TemplateDropRuleInterpreted(SNode child) {
     this.ruleNode = child;
     this.applicableConcept = RuleUtil.getDropRuleApplicableConcept(ruleNode);
+    SNode condition = RuleUtil.getDropRuleCondition(ruleNode);
+    myConditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
   }
 
   @Override
@@ -52,30 +53,19 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    SNode condition = RuleUtil.getDropRuleCondition(ruleNode);
-    if (condition == null) {
+    if (myConditionMethod == null) {
       // condition is not required
       return true;
     }
-
-    String methodName = TemplateFunctionMethodName.dropRootRule_Condition(condition);
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        environment.getGenerator().getGeneratorSessionContext(),
-        new DropRootRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
-    } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+      if (myCondition == null) {
+        myCondition = environment.getQueryProvider(getRuleNode()).getDropRuleCondition(myConditionMethod);
+      }
+      return myCondition.check(new DropRootRuleContext(context.getInput(), ruleNode, environment.getGenerator()));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", myConditionMethod));
       throw new GenerationFailureException(t);
     }
-    // in this case 'true' is better default
-    return true;
   }
 }

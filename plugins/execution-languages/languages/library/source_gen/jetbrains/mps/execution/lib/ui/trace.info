@@ -607,7 +607,7 @@
     <nodeInfo nodeId="399680683148975803" fileName="NodeByConceptChooser.java" startLine="53" startPosition="7" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8278380780105768581" fileName="NodeByConceptChooser.java" startLine="54" startPosition="0" endLine="55" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8278380780105768616" fileName="NodeByConceptChooser.java" startLine="58" startPosition="36" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8278380780105780685" fileName="NodeByConceptChooser.java" startLine="62" startPosition="39" endLine="63" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8278380780105780685" fileName="NodeByConceptChooser.java" startLine="62" startPosition="39" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8278380780105768622" fileName="NodeByConceptChooser.java" startLine="66" startPosition="54" endLine="67" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8278380780105780640" fileName="NodeByConceptChooser.java" startLine="70" startPosition="53" endLine="71" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8278380780105768634" fileName="NodeByConceptChooser.java" startLine="74" startPosition="87" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -647,7 +647,7 @@
     <scopeInfo nodeId="8278380780105768521" fileName="NodeByConceptChooser.java" startLine="39" startPosition="33" endLine="40" endPosition="64" />
     <scopeInfo nodeId="4465376900255659627" fileName="NodeByConceptChooser.java" startLine="50" startPosition="33" endLine="51" endPosition="72" />
     <scopeInfo nodeId="8278380780105768615" fileName="NodeByConceptChooser.java" startLine="58" startPosition="36" endLine="59" endPosition="27" />
-    <scopeInfo nodeId="8278380780105780678" fileName="NodeByConceptChooser.java" startLine="62" startPosition="39" endLine="63" endPosition="97" />
+    <scopeInfo nodeId="8278380780105780678" fileName="NodeByConceptChooser.java" startLine="62" startPosition="39" endLine="63" endPosition="70" />
     <scopeInfo nodeId="8278380780105768621" fileName="NodeByConceptChooser.java" startLine="66" startPosition="54" endLine="67" endPosition="36" />
     <scopeInfo nodeId="8278380780105780639" fileName="NodeByConceptChooser.java" startLine="70" startPosition="53" endLine="71" endPosition="135" />
     <scopeInfo nodeId="8278380780105768633" fileName="NodeByConceptChooser.java" startLine="74" startPosition="87" endLine="75" endPosition="22" />
@@ -713,7 +713,7 @@
     <nodeInfo nodeId="8278380780105899552" fileName="NodeBySeveralConceptChooser.java" startLine="39" startPosition="132" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="8278380780105899578" fileName="NodeBySeveralConceptChooser.java" startLine="45" startPosition="189" endLine="46" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8278380780105899595" fileName="NodeBySeveralConceptChooser.java" startLine="48" startPosition="8" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4465376900255986426" fileName="NodeBySeveralConceptChooser.java" startLine="53" startPosition="37" endLine="54" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4465376900255986426" fileName="NodeBySeveralConceptChooser.java" startLine="53" startPosition="37" endLine="54" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4465376900256838684" fileName="NodeBySeveralConceptChooser.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8278380780105899628" fileName="NodeBySeveralConceptChooser.java" startLine="59" startPosition="0" endLine="60" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8278380780105899665" fileName="NodeBySeveralConceptChooser.java" startLine="66" startPosition="126" endLine="67" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -755,7 +755,7 @@
     <nodeInfo nodeId="8278380780105899736" fileName="NodeBySeveralConceptChooser.java" startLine="89" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findNodes#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="8278380780105899551" fileName="NodeBySeveralConceptChooser.java" startLine="39" startPosition="132" endLine="40" endPosition="78" />
     <scopeInfo nodeId="8278380780105899577" fileName="NodeBySeveralConceptChooser.java" startLine="45" startPosition="189" endLine="46" endPosition="190" />
-    <scopeInfo nodeId="4465376900255959158" fileName="NodeBySeveralConceptChooser.java" startLine="53" startPosition="37" endLine="54" endPosition="123" />
+    <scopeInfo nodeId="4465376900255959158" fileName="NodeBySeveralConceptChooser.java" startLine="53" startPosition="37" endLine="54" endPosition="96" />
     <scopeInfo nodeId="8278380780105899692" fileName="NodeBySeveralConceptChooser.java" startLine="71" startPosition="31" endLine="72" endPosition="27" />
     <scopeInfo nodeId="8278380780105899712" fileName="NodeBySeveralConceptChooser.java" startLine="75" startPosition="45" endLine="76" endPosition="41" />
     <scopeInfo nodeId="8278380780105899730" fileName="NodeBySeveralConceptChooser.java" startLine="85" startPosition="54" endLine="86" endPosition="59" />

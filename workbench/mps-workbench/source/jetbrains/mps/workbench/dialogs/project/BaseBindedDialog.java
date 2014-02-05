@@ -26,13 +26,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
@@ -44,12 +44,14 @@ import java.util.List;
 public abstract class BaseBindedDialog extends DialogWrapper implements IBindedDialog {
   private static final Logger LOG = LogManager.getLogger(BaseBindedDialog.class);
   private final Project myProject;
+  private SModule myModule;
 
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
-  protected BaseBindedDialog(String text, Project project) throws HeadlessException {
+  protected BaseBindedDialog(String text, Project project, SModule module) throws HeadlessException {
     super(ProjectHelper.toIdeaProject(project));
     myProject = project;
+    myModule = module;
     setTitle(text);
   }
 
@@ -67,13 +69,8 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
   }
 
   @Override
-  public IScope getModuleScope() {
-    return getOperationContext().getScope();
-  }
-
-  @Override
-  public IScope getProjectScope() {
-    return getProject().getScope();
+  public SModule getModule() {
+    return myModule;
   }
 
   @Override

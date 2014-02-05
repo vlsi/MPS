@@ -17,13 +17,13 @@ public class OrderConstraints_Behavior {
   }
 
   @Deprecated
-  public static boolean call_presents_1499919975383879508(SNode thisNode, SNode tab) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_presents_1499919975383879508", new Object[]{tab});
+  public static SNode callSuper_getOrder_3038738109029048953(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getOrder_3038738109029048953(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_presents_1499919975383879508(SNode thisNode, SNode tab) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_presents_1499919975383879508", new Object[]{tab});
   }
 
   @Deprecated

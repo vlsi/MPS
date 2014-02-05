@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="b6f59t293haekb6irskuqs1h67va1v0">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
   <common hash="-dnz827tuql5lrvfuvj89m7ljy6bjqn1" dependsOnNodes="true" />
   <source id="4474271214082913243" name="IThread" hash="-17do2ndujk5d44g3p1n3wea8l4yfma9">
     <file name="IThread.java" />
@@ -9,7 +8,6 @@
     <file name="NullLocation.java" />
   </source>
   <source id="4474271214082913394" name="WatchablesCategory" hash="4menku82ys5kvhs3cfwhbmb20ixrps8">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="WatchablesCategory.java" />
   </source>
   <source id="4474271214082914121" name="IStackFrame" hash="-7mjck65nia74m0bq0jo148cr6bywns">

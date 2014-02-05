@@ -25,7 +25,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -55,16 +54,16 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ldr481_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ldr481_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ldr481_e0(editorContext, node));
-    if (renderingCondition_ldr481_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ldr481_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ldr481_f0(editorContext, node));
     }
-    if (renderingCondition_ldr481_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ldr481_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ldr481_g0(editorContext, node));
     }
-    if (renderingCondition_ldr481_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ldr481_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ldr481_h0(editorContext, node));
     }
-    if (renderingCondition_ldr481_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ldr481_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ldr481_i0(editorContext, node));
     }
     return editorCell;
@@ -191,7 +190,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ldr481_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ldr481_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "globalReplace");
   }
 
@@ -207,7 +206,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ldr481_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ldr481_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "multiLine");
   }
 
@@ -223,7 +222,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ldr481_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ldr481_a7a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "dotAll");
   }
 
@@ -239,7 +238,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ldr481_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ldr481_a8a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "caseInsensitive");
   }
 

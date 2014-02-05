@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
@@ -88,10 +87,10 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ngl4rk_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ngl4rk_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ngl4rk_c1b0(editorContext, node));
-    if (renderingCondition_ngl4rk_a3b1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ngl4rk_a3b1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ngl4rk_d1b0(editorContext, node));
     }
-    if (renderingCondition_ngl4rk_a4b1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ngl4rk_a4b1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ngl4rk_e1b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_ngl4rk_f1b0(editorContext, node));
@@ -255,7 +254,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ngl4rk_a3b1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ngl4rk_a3b1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
@@ -308,7 +307,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ngl4rk_a4b1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ngl4rk_a4b1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 

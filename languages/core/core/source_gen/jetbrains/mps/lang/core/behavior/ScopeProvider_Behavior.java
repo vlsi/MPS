@@ -26,13 +26,13 @@ public class ScopeProvider_Behavior {
   }
 
   @Deprecated
-  public static Scope call_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
+  public static Scope callSuper_getScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind, SNode child) {
+    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{kind, child});
   }
 
   @Deprecated
-  public static Scope callSuper_getScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind, SNode child) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{kind, child});
+  public static Scope call_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
   }
 
   @Deprecated

@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -38,7 +37,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_q2jz9e_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_q2jz9e_b0(editorContext, node));
-    if (renderingCondition_q2jz9e_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q2jz9e_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_q2jz9e_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_q2jz9e_d0(editorContext, node));
@@ -134,25 +133,25 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_q2jz9e_a2a(editorContext, node));
-    if (renderingCondition_q2jz9e_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q2jz9e_a1c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_b2a(editorContext, node));
     }
-    if (renderingCondition_q2jz9e_a2c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q2jz9e_a2c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_c2a(editorContext, node));
     }
-    if (renderingCondition_q2jz9e_a3c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q2jz9e_a3c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_d2a(editorContext, node));
     }
-    if (renderingCondition_q2jz9e_a4c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q2jz9e_a4c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_e2a(editorContext, node));
     }
-    if (renderingCondition_q2jz9e_a5c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q2jz9e_a5c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_f2a(editorContext, node));
     }
     return editorCell;
   }
 
-  private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
   }
 
@@ -216,7 +215,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_q2jz9e_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q2jz9e_a1c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
   }
 
@@ -269,7 +268,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_q2jz9e_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q2jz9e_a2c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
   }
 
@@ -322,7 +321,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_q2jz9e_a3c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q2jz9e_a3c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
   }
 
@@ -375,7 +374,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_q2jz9e_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q2jz9e_a4c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
   }
 
@@ -428,7 +427,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_q2jz9e_a5c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q2jz9e_a5c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
   }
 

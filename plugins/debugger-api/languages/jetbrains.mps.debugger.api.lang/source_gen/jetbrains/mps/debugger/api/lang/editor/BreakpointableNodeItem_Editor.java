@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -36,10 +35,10 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_a");
     editorCell.setBig(true);
-    if (renderingCondition_4n0rw6_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4n0rw6_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_4n0rw6_a0(editorContext, node));
     }
-    if (renderingCondition_4n0rw6_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4n0rw6_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_4n0rw6_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_4n0rw6_c0(editorContext, node));
@@ -55,7 +54,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4n0rw6_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4n0rw6_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "isComplex"));
   }
 
@@ -137,7 +136,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4n0rw6_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4n0rw6_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isComplex");
   }
 

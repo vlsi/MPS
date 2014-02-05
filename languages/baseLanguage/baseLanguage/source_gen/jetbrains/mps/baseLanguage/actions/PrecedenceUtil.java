@@ -96,6 +96,21 @@ public class PrecedenceUtil {
 
 
 
+  public static SNode findDesiredInstanceOfExpressionRoot(SNode instanceOfExpression) {
+
+    if ((SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true) == null) || (SNodeOperations.getParent(instanceOfExpression) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) || !(SNodeOperations.hasRole(instanceOfExpression, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) || !(PrecedenceUtil.isHigherPriority(SNodeOperations.cast(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.Expression"), instanceOfExpression))) {
+      return null;
+    }
+    SNode currentParent = SNodeOperations.cast(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.Expression");
+
+    while ((SNodeOperations.getParent(currentParent) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(currentParent), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SNodeOperations.hasRole(currentParent, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression") && PrecedenceUtil.isHigherPriority(SNodeOperations.cast(SNodeOperations.getParent(currentParent), "jetbrains.mps.baseLanguage.structure.Expression"), instanceOfExpression)) {
+      currentParent = SNodeOperations.cast(SNodeOperations.getParent(currentParent), "jetbrains.mps.baseLanguage.structure.Expression");
+    }
+    return currentParent;
+  }
+
+
+
   private static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
     return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() < getPriority(SNodeOperations.getConceptDeclaration(secondExpression)).ordinal();
   }

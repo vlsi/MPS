@@ -12,7 +12,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   </accessoryModels>
   <generators>
-    <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
+    <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="java_classes">
           <sourceRoot location="classes_gen" />

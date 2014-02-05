@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-2xpp8dlqhv99dt3j1es95ngpbjriw2y">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
   <dep model="r:bba4962c-57c8-41f9-9b1a-72e2cebf0fba(jetbrains.mps.samples.generator_demo.demoLang7.generator.template.main@generator)" hash="-a3mxytv1ujhcet773vn5wsze61j5u8n" />
-  <common hash="-an8uqnjet2yr4zumale2r79mxo6h33v" />
+  <common hash="-an8uqnjet2yr4zumale2r79mxo6h33v" dependsOnNodes="true" />
   <source id="3618324829955935393" hash="-5wnrrsp1xpscd95l9fr5phpw3ia4jwx">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:bba4962c-57c8-41f9-9b1a-72e2cebf0fba(jetbrains.mps.samples.generator_demo.demoLang7.generator.template.main@generator)" />
     <file name="DemoApp.java" />
   </source>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-d125vm8wwsf3paiduoq7m26lxfhtzcd">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-c1pqhpg4d7p2zicaehfxsu86pk9fxmk" />
+  <common hash="-c1pqhpg4d7p2zicaehfxsu86pk9fxmk" dependsOnNodes="true" />
   <source id="1575175756409680350" name="FlyingActionsFinder" hash="-bhwlqped8rs1la2afdatcpbnhf95y18">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FlyingActionsFinder.java" />
   </source>
 </dependencies>

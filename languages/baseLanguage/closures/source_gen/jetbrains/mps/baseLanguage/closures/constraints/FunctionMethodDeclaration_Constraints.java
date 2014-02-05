@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 
 public class FunctionMethodDeclaration_Constraints extends BaseConstraintsDescriptor {
   public FunctionMethodDeclaration_Constraints() {
@@ -25,7 +24,7 @@ public class FunctionMethodDeclaration_Constraints extends BaseConstraintsDescri
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return "invoke";
       }
@@ -37,7 +36,7 @@ public class FunctionMethodDeclaration_Constraints extends BaseConstraintsDescri
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "isAbstract";
         return false;
       }

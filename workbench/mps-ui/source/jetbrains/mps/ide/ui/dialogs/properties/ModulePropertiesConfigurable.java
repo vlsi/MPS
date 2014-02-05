@@ -100,12 +100,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -117,6 +115,7 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
@@ -144,6 +143,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.ItemEvent;
@@ -396,11 +396,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     @Override
-    protected IScope getScope() {
-      return ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope();
-    }
-
-    @Override
     protected TableCellRenderer getTableCellRender() {
       return new ModuleTableCellRender() {
         @Override
@@ -421,7 +416,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = myModule.getScope();
+          final SearchScope scope = myModule.getScope();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -627,9 +622,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myAccessoriesModelsTableModel = new AccessoriesModelsTableModel();
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
 
-      accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(
-        ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope()
-      ));
+      accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender());
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);
       decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {
@@ -934,7 +927,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   public class GeneratorAdvancesTab extends BaseTab {
 
     private GenPrioritiesTableModel myPrioritiesTableModel;
-    private JBCheckBox myCheckBox;
+    private JBCheckBox myGenerateTemplates;
+    private JBCheckBox myReflectiveQueries;
+    private JBCheckBox myNeedOpContext;
     private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings =
       new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
     private JBTable myTable;
@@ -949,7 +944,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     public void apply() {
       if (myTable.isEditing())
         myTable.getCellEditor().stopCellEditing();
-      ((GeneratorDescriptor) myModuleDescriptor).setGenerateTemplates(myCheckBox.isSelected());
+      final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModuleDescriptor;
+      genDescr.setGenerateTemplates(myGenerateTemplates.isSelected());
+      genDescr.setReflectiveQueries(myReflectiveQueries.isSelected());
+      genDescr.setNeedOperationContext(myNeedOpContext.isSelected());
       myPrioritiesTableModel.apply();
     }
 
@@ -1172,9 +1170,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
-      myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.generatortab.gentempcheckbox"),
-        ((GeneratorDescriptor) myModule.getModuleDescriptor()).isGenerateTemplates());
-      panel.add(myCheckBox,
+      final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModule.getModuleDescriptor();
+      JPanel generationOptions = new JPanel();
+      generationOptions.setLayout(new FlowLayout(FlowLayout.LEFT));
+      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.generatortab.gentempcheckbox"), genDescr.isGenerateTemplates());
+      myGenerateTemplates.setToolTipText("Generated templates are regular Java classes");
+      myReflectiveQueries = new JBCheckBox("Reflective queries", genDescr.isReflectiveQueries());
+      myReflectiveQueries.setToolTipText("Invoke generated queries via reflection. Compatibility option, turn off and rebuild generator");
+      myNeedOpContext = new JBCheckBox("IOperationContext parameter", genDescr.needsOperationContext());
+      myNeedOpContext.setToolTipText("This is compatibility option, turn off and rebuild generator");
+      generationOptions.add(myGenerateTemplates);
+      generationOptions.add(myReflectiveQueries);
+      generationOptions.add(myNeedOpContext);
+      panel.add(generationOptions,
         new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
           GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
@@ -1183,8 +1191,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
+      final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModuleDescriptor;
+      final boolean b1 = genDescr.isGenerateTemplates();
+      final boolean b2 = genDescr.isReflectiveQueries();
+      final boolean b3 = genDescr.needsOperationContext();
       return myPrioritiesTableModel.isModified()
-        || myCheckBox.isSelected() != ((GeneratorDescriptor) myModuleDescriptor).isGenerateTemplates();
+        || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2 || myNeedOpContext.isSelected() != b3;
     }
 
     private class GenPrioritiesTableModel extends AbstractTableModel implements ItemRemovable {

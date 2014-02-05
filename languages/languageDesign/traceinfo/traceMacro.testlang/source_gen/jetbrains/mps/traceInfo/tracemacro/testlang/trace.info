@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Generator.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.Generator" />
+  <unitInfo fileName="Generator.java" startLine="16" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.Generator" />
   <unitInfo fileName="Language.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.Language" />
 </debugInfo>
 

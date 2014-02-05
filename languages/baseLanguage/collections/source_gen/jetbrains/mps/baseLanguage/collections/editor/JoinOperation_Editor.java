@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -37,7 +36,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9t56qv_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9t56qv_a0(editorContext, node));
-    if (renderingCondition_9t56qv_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_9t56qv_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_9t56qv_b0(editorContext, node));
     }
     return editorCell;
@@ -75,7 +74,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9t56qv_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9t56qv_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "delimiter", true) != null);
   }
 

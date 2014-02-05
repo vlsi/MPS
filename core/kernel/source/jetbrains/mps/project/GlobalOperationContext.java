@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class GlobalOperationContext extends StandaloneMPSContext {
 
@@ -28,11 +27,5 @@ public class GlobalOperationContext extends StandaloneMPSContext {
   @Override
   public SModule getModule() {
     return null;
-  }
-
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return GlobalScope.getInstance();
   }
 }

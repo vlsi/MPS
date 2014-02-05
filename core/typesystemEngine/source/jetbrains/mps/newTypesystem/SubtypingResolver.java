@@ -84,10 +84,10 @@ public class SubtypingResolver {
       return true;
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRules(subType, superType, myWeak)) {
-      return true;
+      return addToCache(subType, superType, true, myWeak);
     }
     if (meetsAndJoins(subType, superType, myWeak)) {
-      return true;
+      return addToCache(subType, superType, true, myWeak);
     }
     return searchInSuperTypes(subType, new SupertypeMatcher(superType, myMatchingPairs), myWeak, canAskCache);
   }
@@ -187,6 +187,13 @@ public class SubtypingResolver {
     }
   }
 
+  private boolean addToCache(SNode subType, SNode superType, boolean answer, boolean isWeak) {
+    SubtypingCache cache = TypeChecker.getInstance().getSubtypingCache();
+    if (cache != null) {
+      cache.cacheIsSubtype(subType, superType, answer, isWeak);
+    }
+    return answer;
+  }
   private static class SupertypeMatcher implements INodeMatcher {
     private final SNode mySuperType;
     private final Collection<Pair<SNode, SNode>> myMatchingPairs;

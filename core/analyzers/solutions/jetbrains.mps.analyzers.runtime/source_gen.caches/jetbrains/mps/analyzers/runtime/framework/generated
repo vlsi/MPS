@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-62do7qoma9bbzvsw9ggk8wwdhgwigoi">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <common hash="-crzfor1q7o8t3cieoz3iaj5np1izgxe" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
+  <common hash="-crzfor1q7o8t3cieoz3iaj5np1izgxe" dependsOnNodes="true" />
   <source id="752944717341761987" name="DataFlowConstructor" hash="-am3tmb4xlmr9a58wyexv0de8h0qv27f">
     <file name="DataFlowConstructor.java" />
   </source>
@@ -10,7 +9,6 @@
     <file name="CustomAnalyzerRunner.java" />
   </source>
   <source id="7801926404027364448" name="GeneratedInstruction" hash="35gp5x8zmq2mzqgxdm9mmo5uev92k11">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="GeneratedInstruction.java" />
   </source>

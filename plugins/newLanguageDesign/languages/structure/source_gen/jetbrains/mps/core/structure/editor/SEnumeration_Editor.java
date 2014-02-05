@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -43,7 +42,7 @@ public class SEnumeration_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lrekv0_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lrekv0_b0(editorContext, node));
-    if (renderingCondition_lrekv0_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lrekv0_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_lrekv0_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createAlternation_lrekv0_d0(editorContext, node));
@@ -91,7 +90,7 @@ public class SEnumeration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lrekv0_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lrekv0_a2a(SNode node, EditorContext editorContext) {
     SReference reference = node.getReference("default");
     return reference != null && SNodeOperations.getTargetNodeSilently(reference) == null;
   }
@@ -163,7 +162,7 @@ public class SEnumeration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_lrekv0_d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SEnumeration_Editor.renderingCondition_lrekv0_a3a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SEnumeration_Editor.renderingCondition_lrekv0_a3a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_lrekv0_a3a(editorContext, node);
@@ -173,7 +172,7 @@ public class SEnumeration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lrekv0_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lrekv0_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "members", true)).isNotEmpty();
   }
 

@@ -42,7 +42,7 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ModelPlusImportedScope(_context.getModel(), true, operationContext.getScope(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+            return new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
           }
         };
       }

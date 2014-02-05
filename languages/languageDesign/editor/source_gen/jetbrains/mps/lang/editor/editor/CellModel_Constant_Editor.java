@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -38,11 +37,11 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_8hdu2g_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_8hdu2g_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_8hdu2g_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createProperty_8hdu2g_b0(editorContext, node));
-    if (renderingCondition_8hdu2g_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_8hdu2g_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_8hdu2g_c0(editorContext, node));
     }
     return editorCell;
@@ -53,7 +52,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
@@ -120,7 +119,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_8hdu2g_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_8hdu2g_a2a(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 

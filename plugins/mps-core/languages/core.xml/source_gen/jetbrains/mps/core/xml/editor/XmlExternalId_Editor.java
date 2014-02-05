@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -39,7 +38,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_dsthrr_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlExternalId_Editor.renderingCondition_dsthrr_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlExternalId_Editor.renderingCondition_dsthrr_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_dsthrr_a0a(editorContext, node);
@@ -49,7 +48,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isPublic");
   }
 

@@ -16,18 +16,17 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -40,8 +39,6 @@ import java.util.List;
   private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
-    IScope scope = context.getScope();
-
     // proceed with custom builders
     SNode referenceNodeConcept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
@@ -59,12 +56,12 @@ import java.util.List;
     }
 
     IReferencePresentation presentation = refDescriptor.getReferencePresentation();
-    return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, presentation, scope);
+    return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, presentation);
   }
 
   private static List<SubstituteAction> createActions(
-    SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-    Scope searchScope, IReferencePresentation presentation, final IScope scope) {
+      SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
+      Scope searchScope, IReferencePresentation presentation) {
 
     final SNode referentConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     if (referentConcept == null) {

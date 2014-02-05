@@ -196,6 +196,7 @@ public class ResolveUnknownUtil {
           SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, "callee"));
           call.setReference(sref.getRole(), sref);
           reattachMethodArguments(x, call);
+          reattachTypeArguments(x, call);
           return call;
         }
       };
@@ -215,6 +216,7 @@ public class ResolveUnknownUtil {
           call.setReference(sref.getRole(), sref);
 
           reattachMethodArguments(x, call);
+          reattachTypeArguments(x, call);
           return dotExpr;
         }
       };
@@ -412,6 +414,14 @@ public class ResolveUnknownUtil {
       ListSequence.fromList(SLinkOperations.getTargets(to, "actualArgument", true)).addElement(arg);
     }
   }
+
+  private static void reattachTypeArguments(SNode from, SNode to) {
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "typeArgument", true))) {
+      SNodeOperations.detachNode(arg);
+      ListSequence.fromList(SLinkOperations.getTargets(to, "typeArgument", true)).addElement(arg);
+    }
+  }
+
 
   protected static Logger LOG_180675533 = LogManager.getLogger(ResolveUnknownUtil.class);
 }

@@ -25,7 +25,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -137,7 +136,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_xc5f9o_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_c1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xc5f9o_d1a(editorContext, node));
-    if (renderingCondition_xc5f9o_a4b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xc5f9o_a4b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xc5f9o_e1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_xc5f9o_f1a(editorContext, node));
@@ -207,7 +206,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xc5f9o_a4b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xc5f9o_a4b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "leftIsExact"));
   }
 
@@ -257,7 +256,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_xc5f9o_b2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_c2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xc5f9o_d2a(editorContext, node));
-    if (renderingCondition_xc5f9o_a4c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xc5f9o_a4c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xc5f9o_e2a(editorContext, node));
     }
     return editorCell;
@@ -326,7 +325,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xc5f9o_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xc5f9o_a4c0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "rightIsExact"));
   }
 

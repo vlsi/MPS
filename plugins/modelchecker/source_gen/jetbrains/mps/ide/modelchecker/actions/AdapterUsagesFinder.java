@@ -23,7 +23,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 
 public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
   public AdapterUsagesFinder() {
@@ -55,11 +54,11 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
             if ((target != null) && SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               String qualifiedName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Object[]{});
               if ("jetbrains.mps.smodel.INodeAdapter".equals(qualifiedName) || "jetbrains.mps.smodel.BaseAdapter".equals(qualifiedName)) {
-                addIssue(results, node, "Reference to " + qualifiedName + " in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
+                SpecificChecker.addIssue(results, node, "Reference to " + qualifiedName + " in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }
 
-              if (SModelStereotype.withoutStereotype(targetSModelReference.getModelName()).endsWith(".structure") && SModelUtil.findConceptDeclaration(qualifiedName, GlobalScope.getInstance()) != null) {
-                addIssue(results, node, "Using adapter of " + qualifiedName + " concept in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
+              if (SModelStereotype.withoutStereotype(targetSModelReference.getModelName()).endsWith(".structure") && SModelUtil.findConceptDeclaration(qualifiedName) != null) {
+                SpecificChecker.addIssue(results, node, "Using adapter of " + qualifiedName + " concept in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }
             }
           }

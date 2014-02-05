@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
@@ -74,7 +73,7 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_60liib_e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_60liib_f1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_60liib_g1b0(editorContext, node));
-    if (renderingCondition_60liib_a7b1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_60liib_a7b1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_60liib_h1b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_60liib_i1b0(editorContext, node));
@@ -286,7 +285,7 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_60liib_a7b1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_60liib_a7b1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "icon", true) != null;
   }
 

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -37,7 +36,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_z5ycp4_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_z5ycp4_a0(editorContext, node));
-    if (renderingCondition_z5ycp4_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_z5ycp4_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_z5ycp4_b0(editorContext, node));
     }
     return editorCell;
@@ -79,7 +78,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_z5ycp4_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_z5ycp4_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "elementType", true) != null);
   }
 

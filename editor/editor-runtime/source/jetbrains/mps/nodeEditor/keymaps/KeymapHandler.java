@@ -24,16 +24,20 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
@@ -124,11 +128,11 @@ public abstract class KeymapHandler<E> {
       }
 
       for (SModuleReference ref : importedAndExtendedLanguages) {
-        Language language = editorContext.getScope().getLanguage(ref);
-        if (language == null) {
-          continue;
-        }
-        List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(language);
+        SModule language = ref.resolve(MPSModuleRepository.getInstance());
+        if (language == null) continue;
+        if (!VisibilityUtil.isVisibleLanguage(editorContext.getModel().getModule(), new SLanguageAdapter(language.getModuleName()))) continue;
+
+        List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(((Language) language));
         if (keyMapsForNamespace != null) {
           for (KeyMap keymap : keyMapsForNamespace) {
             if (!addedKeymaps.contains(keymap.getClass())) {

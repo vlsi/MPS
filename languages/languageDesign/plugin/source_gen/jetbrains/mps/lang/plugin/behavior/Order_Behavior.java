@@ -44,13 +44,13 @@ public class Order_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getOrder_3038738109029048958(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
+  public static boolean callSuper_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", new Class[]{SNode.class, SNode.class}, new Object[]{tab});
   }
 
   @Deprecated
-  public static boolean callSuper_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", new Class[]{SNode.class, SNode.class}, new Object[]{tab});
+  public static SNode call_getOrder_3038738109029048958(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
   }
 
   @Deprecated

@@ -22,7 +22,10 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 import java.util.Map;
 
 /**
- * Evgeny Gryaznov, Mar 26, 2010
+ * Holds input and accompanying parameters (including mapping label) as we walk through template.
+ * Analogous to stack frames that keep method parameters; hierarchical with implicit
+ * access to outer scope ({@link #getVariable(String)} looks up variable in super contexts) and
+ * explicit access to history of input nodes ({@link #getInputHistory()})
  */
 @ImmutableObject
 public interface TemplateContext {
@@ -75,7 +78,7 @@ public interface TemplateContext {
    * Shorthand for {@link #subContext(String, org.jetbrains.mps.openapi.model.SNode) ctx.subContext(ctx.getInputName(), newInputNode)},
    * to update input node while preserving current input name
    * @param newInputNode new input
-   * @return context with desired input and
+   * @return context with desired input and present input name
    */
   TemplateContext subContext(SNode newInputNode);
 }

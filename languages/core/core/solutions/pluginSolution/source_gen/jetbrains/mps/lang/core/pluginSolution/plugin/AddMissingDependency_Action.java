@@ -6,20 +6,19 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.log4j.Logger;
@@ -40,13 +39,16 @@ public class AddMissingDependency_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IScope scope = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getScope();
     for (SReference ref : ((SNode) MapSequence.fromMap(_params).get("selectedNode")).getReferences()) {
-      SModelReference uid = ref.getTargetSModelReference();
-      if (uid == null) {
+      SModelReference mr = ref.getTargetSModelReference();
+      if (mr == null) {
         continue;
       }
-      if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
+      SModel model = mr.resolve(MPSModuleRepository.getInstance());
+      if (model == null) {
+        continue;
+      }
+      if (!(new GlobalModuleDependenciesManager(((SModule) MapSequence.fromMap(_params).get("module"))).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(model.getModule()))) {
         return true;
       }
     }
@@ -93,12 +95,17 @@ public class AddMissingDependency_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IScope scope = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getScope();
       for (SReference ref : ((SNode) MapSequence.fromMap(_params).get("selectedNode")).getReferences()) {
-        SModelReference uid = ref.getTargetSModelReference();
-        if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
-          SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-          ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).addDependency(sm.getModule().getModuleReference(), false);
+        SModelReference mr = ref.getTargetSModelReference();
+        if (mr == null) {
+          continue;
+        }
+        SModel model = mr.resolve(MPSModuleRepository.getInstance());
+        if (model == null) {
+          continue;
+        }
+        if (!(new GlobalModuleDependenciesManager(((SModule) MapSequence.fromMap(_params).get("module"))).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(model.getModule()))) {
+          ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).addDependency(model.getModule().getModuleReference(), false);
         }
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

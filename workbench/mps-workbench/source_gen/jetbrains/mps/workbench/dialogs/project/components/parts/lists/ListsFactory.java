@@ -16,7 +16,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.project.Path;
 import java.util.List;
 import org.jdesktop.observablecollections.ObservableCollections;
-import jetbrains.mps.smodel.IScope;
 import java.util.Comparator;
 
 public final class ListsFactory {
@@ -118,19 +117,6 @@ public final class ListsFactory {
       return ListsFactory.PATH_COMPARATOR.compare(o1, o2);
     }
   };
-  public static final ListsFactory.ListComparator<Comparable> COMPARABLE_COMPARATOR = new ListsFactory.ListComparator<Comparable>() {
-    @Override
-    public int compare(Comparable o1, Comparable o2) {
-      return o1.compareTo(o2);
-    }
-  };
-  public static final ListsFactory.ListComparator<Object> IGNORING_COMPARATOR = new ListsFactory.ListComparator<Object>() {
-    @SuppressWarnings(value = {"ComparatorMethodParameterNotUsed"})
-    @Override
-    public int compare(Object o1, Object o2) {
-      return 0;
-    }
-  };
 
   public ListsFactory() {
   }
@@ -141,27 +127,6 @@ public final class ListsFactory {
 
   public static <T> List<T> create(ListsFactory.ListComparator<T> comparator) {
     return ObservableCollections.observableList(ListsFactory.createSortedList(comparator));
-  }
-
-  public static ListsFactory.ListComparator<SModelReference> createValidRefComparator(final IScope scope) {
-    return new ListsFactory.ListComparator<SModelReference>() {
-      @Override
-      public int compare(SModelReference o1, SModelReference o2) {
-        int result = 0;
-        if (scope != null) {
-          result = StateUtil.compare(o1, o2, scope);
-        }
-        if (result != 0) {
-          return result;
-        }
-        return ListsFactory.MODEL_REF_COMPARATOR.compare(o1, o2);
-      }
-
-      @Override
-      public boolean isEqual(SModelReference o1, SModelReference o2) {
-        return ListsFactory.MODEL_REF_COMPARATOR.isEqual(o1, o2);
-      }
-    };
   }
 
   public static abstract class ListComparator<T> implements Comparator<T> {

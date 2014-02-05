@@ -82,23 +82,13 @@ public class SimpleBuilder_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isLeaf_7288041816793416227(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLeaf_7057666463730595159", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getCreatorExpression_7288041816793071813(SNode thisNode, SNode parentRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
-  }
-
-  @Deprecated
-  public static SNode call_getAttachStatement_7288041816793075493(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAttachStatement_7288041816792215495", new Object[]{childBuilder, parentRef, childRef});
-  }
-
-  @Deprecated
   public static SNode callSuper_getResultType_7288041816793071817(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isLeaf_7288041816793416227(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLeaf_7057666463730595159", new Object[]{});
   }
 
   @Deprecated
@@ -107,8 +97,18 @@ public class SimpleBuilder_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getCreatorExpression_7288041816793071813(SNode thisNode, SNode parentRef) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
+  }
+
+  @Deprecated
   public static SNode callSuper_getCreatorExpression_7288041816793071813(SNode thisNode, String callerConceptFqName, SNode parentRef) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
+  }
+
+  @Deprecated
+  public static SNode call_getAttachStatement_7288041816793075493(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAttachStatement_7288041816792215495", new Object[]{childBuilder, parentRef, childRef});
   }
 
   @Deprecated

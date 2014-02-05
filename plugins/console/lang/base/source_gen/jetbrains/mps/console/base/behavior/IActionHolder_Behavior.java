@@ -18,13 +18,13 @@ public class IActionHolder_Behavior {
   }
 
   @Deprecated
-  public static boolean call_canExecute_3282455643657932881(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canExecute_3282455643657932881", new Object[]{});
+  public static void callSuper_execute_8517397753922085153(SNode thisNode, String callerConceptFqName, Project project) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.IActionHolder"), callerConceptFqName, "virtual_execute_8517397753922085153", new Class[]{SNode.class, Project.class}, new Object[]{project});
   }
 
   @Deprecated
-  public static void callSuper_execute_8517397753922085153(SNode thisNode, String callerConceptFqName, Project project) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.IActionHolder"), callerConceptFqName, "virtual_execute_8517397753922085153", new Class[]{SNode.class, Project.class}, new Object[]{project});
+  public static boolean call_canExecute_3282455643657932881(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canExecute_3282455643657932881", new Object[]{});
   }
 
   @Deprecated

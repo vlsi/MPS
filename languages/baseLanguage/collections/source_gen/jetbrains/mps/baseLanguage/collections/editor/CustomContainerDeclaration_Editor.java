@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -47,7 +46,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_ddrapt_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ddrapt_b0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ddrapt_c0a(editorContext, node));
-    if (renderingCondition_ddrapt_a3a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ddrapt_a3a0(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_ddrapt_d0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ddrapt_e0a(editorContext, node));
@@ -97,7 +96,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ddrapt_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ddrapt_a3a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 

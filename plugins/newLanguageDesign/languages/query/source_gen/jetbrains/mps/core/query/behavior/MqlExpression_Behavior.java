@@ -32,23 +32,23 @@ public class MqlExpression_Behavior {
   }
 
   @Deprecated
-  public static int call_getPriority_7352592509980890960(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getPriority_7352592509980890960", new Object[]{});
-  }
-
-  @Deprecated
-  public static Object call_evaluate_1671449901154581105(SNode thisNode, EvaluationEnvironment env, EvaluationContext context) {
-    return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_evaluate_1671449901154581105", new Object[]{env, context});
-  }
-
-  @Deprecated
   public static SNode callSuper_getType_228266671027861783(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlExpression"), callerConceptFqName, "virtual_getType_228266671027861783", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static int call_getPriority_7352592509980890960(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getPriority_7352592509980890960", new Object[]{});
+  }
+
+  @Deprecated
   public static int callSuper_getPriority_7352592509980890960(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlExpression"), callerConceptFqName, "virtual_getPriority_7352592509980890960", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static Object call_evaluate_1671449901154581105(SNode thisNode, EvaluationEnvironment env, EvaluationContext context) {
+    return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_evaluate_1671449901154581105", new Object[]{env, context});
   }
 
   @Deprecated

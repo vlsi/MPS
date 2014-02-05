@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,5 +38,11 @@ public class TemplateQueryContextWithMacro extends TemplateQueryContext {
   // e.g. in InsertMacro, that instantiate this context directly and may benefit from this cons.
   public TemplateQueryContextWithMacro(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
     super(macroNode, context, generator);
+  }
+
+  @Override
+  public SNode getTemplateNode() {
+    SNode macro = super.getTemplateNode();
+    return macro == null ? null : macro.getParent();
   }
 }

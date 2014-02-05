@@ -4,21 +4,30 @@ package jetbrains.mps.generator.impl;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class TemplateModelScanner {
-  private SModel myTemplateModel;
-  private Set<String> myTargetLanguages;
-  private Set<String> myQueryLanguages;
+  private final SModel myTemplateModel;
+  private final Set<String> myTargetLanguages;
+  private final Set<String> myQueryLanguages;
+  private final SNode concept_IfMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.IfMacro");
+  private final SNode concept_NodeMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro");
+  private final SNode concept_PropertyMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro");
+  private final SNode concept_ReferenceMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro");
+  private final SNode concept_TemplateFragment = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment");
+  private final SNode concept_RootTemplateAnnotation = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+  private final SNode concept_rc_InlineTemplateWithContext = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
+  private final SNode concept_rc_InlineTemplate = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
+  private final SNode concept_rule_PatternReduction = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule");
 
   public TemplateModelScanner(SModel model) {
     myTargetLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
@@ -48,7 +57,7 @@ public class TemplateModelScanner {
       }
     }
     SetSequence.fromSet(myTargetLanguages).removeElement("jetbrains.mps.lang.generator");
-    if (IterableUtil.asCollection(myTemplateModel.getRootNodes()).size() > 0) {
+    if (myTemplateModel.getRootNodes().iterator().hasNext()) {
       SetSequence.fromSet(myQueryLanguages).addElement("jetbrains.mps.lang.generator");
     }
   }
@@ -58,13 +67,13 @@ public class TemplateModelScanner {
       return;
     }
     SetSequence.fromSet(myTargetLanguages).addElement(node.getConcept().getLanguage().getQualifiedName());
-    for (SNode n : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
-      if (safeIsInstanceOf(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.IfMacro"))) {
+    for (SNode n : node.getChildren()) {
+      if (safeIsInstanceOf(n, concept_IfMacro)) {
         if (SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true) != null) {
           scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true));
         }
         scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "conditionFunction", true));
-      } else if (safeIsInstanceOf(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")) || safeIsInstanceOf(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) || safeIsInstanceOf(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro")) || safeIsInstanceOf(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro")) || safeIsInstanceOf(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) {
+      } else if (safeIsInstanceOf(n, concept_NodeMacro) || safeIsInstanceOf(n, concept_RootTemplateAnnotation) || safeIsInstanceOf(n, concept_PropertyMacro) || safeIsInstanceOf(n, concept_ReferenceMacro) || safeIsInstanceOf(n, concept_TemplateFragment)) {
         scanQueryNode(n);
       } else {
         scanTemplateNode(n);
@@ -76,28 +85,28 @@ public class TemplateModelScanner {
     if ((node == null)) {
       return;
     }
-    if ((safeNodeAttribute(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null)) {
+    if ((safeNodeAttribute(node, concept_TemplateFragment) != null)) {
       scanTemplateNode(node);
       return;
     }
-    for (SNode n : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+    for (SNode n : node.getChildren()) {
       scanTemplateContextNode(n);
     }
   }
 
   private void scanControlNode(SNode node) {
-    if (safeIsInstanceOf(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
+    if (safeIsInstanceOf(node, concept_rc_InlineTemplateWithContext)) {
       scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), "contentNode", true));
-    } else if (safeIsInstanceOf(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) {
+    } else if (safeIsInstanceOf(node, concept_rc_InlineTemplate)) {
       scanTemplateNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), "templateNode", true));
-    } else if (safeIsInstanceOf(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"))) {
+    } else if (safeIsInstanceOf(node, concept_rule_PatternReduction)) {
       // ignore pattern 
       SetSequence.fromSet(myQueryLanguages).addElement("jetbrains.mps.lang.pattern");
       scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "ruleConsequence", true));
       scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "conditionFunction", true));
     } else {
       if ("jetbrains.mps.lang.generator".equals(node.getConcept().getLanguage().getQualifiedName())) {
-        for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+        for (SNode child : node.getChildren()) {
           scanControlNode(child);
         }
       } else {
@@ -110,7 +119,7 @@ public class TemplateModelScanner {
     if ((node == null)) {
       return;
     }
-    for (SNode n : jetbrains.mps.util.SNodeOperations.getDescendants(node, null, true)) {
+    for (SNode n : SNodeUtil.getDescendants(node, null, true)) {
       SetSequence.fromSet(myQueryLanguages).addElement(n.getConcept().getLanguage().getQualifiedName());
     }
   }
@@ -127,7 +136,7 @@ public class TemplateModelScanner {
     // as this class executed before ALL generation process we cannot use isInstanceOf operation here 
     // so isInstanceOf limited only to generator language concepts 
     // todo: extending generator macroses impossible anymore, is it ok? 
-    if (eq_8grp5z_a0d0l(node.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
+    if (eq_8grp5z_a0d0u(node.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
       return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept));
     } else {
       return false;
@@ -143,7 +152,7 @@ public class TemplateModelScanner {
     });
   }
 
-  private static boolean eq_8grp5z_a0d0l(Object a, Object b) {
+  private static boolean eq_8grp5z_a0d0u(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

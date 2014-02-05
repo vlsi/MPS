@@ -35,13 +35,13 @@ public class AbstractContainerCreator_Behavior {
   }
 
   @Deprecated
-  public static boolean call_canHaveParameter_2261417478150191157(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canHaveParameter_2261417478150191157", new Object[]{});
+  public static SNode callSuper_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_canHaveParameter_2261417478150191157(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canHaveParameter_2261417478150191157", new Object[]{});
   }
 
   @Deprecated

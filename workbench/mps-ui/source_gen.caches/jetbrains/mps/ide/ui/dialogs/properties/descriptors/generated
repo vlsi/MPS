@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="6d4ry8cyj9k96v8mv57amvadn932r3d">
-  <common hash="15sxrs0w0bzc5jkw11832069d7h2v6h" />
+  <common hash="15sxrs0w0bzc5jkw11832069d7h2v6h" dependsOnNodes="true" />
   <source id="3995997045458428838" name="ColumnDescriptor" hash="-bqhimp891aqnl7civ0zc1fnur0udl9b">
     <file name="ColumnDescriptor.java" />
   </source>

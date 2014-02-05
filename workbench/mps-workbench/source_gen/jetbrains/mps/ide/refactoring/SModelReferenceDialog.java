@@ -9,7 +9,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,7 +42,7 @@ public class SModelReferenceDialog extends RefactoringDialog {
 
     BaseModelModel goToModelModel = new BaseModelModel(this.myProject) {
       @Override
-      public SModelReference[] find(IScope scope) {
+      public SModelReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 

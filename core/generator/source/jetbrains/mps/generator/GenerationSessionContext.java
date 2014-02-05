@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.impl.GenerationSessionLogger;
+import jetbrains.mps.generator.impl.RoleValidation;
+import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -46,7 +50,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class GenerationSessionContext extends StandaloneMPSContext {
 
-  private static final Object COPYED_ROOTS = new Object();
+  private static final Object COPIED_ROOTS = new Object();
 
   private final SModel myOriginalInputModel;
 
@@ -55,6 +59,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
   private final Map<String, Object> myParameters;
+  private final GenerationOptions myGenerationOptions;
+  private final GenerationSessionLogger myLogger;
+  private final RoleValidation myValidation;
+  private final QueryProviderCache myQueryProviders;
+  /*
+   * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
+   * but there's no more global context available right now.
+   */
+  private final IPerformanceTracer myPerfTrace;
 
   private final Object NULL_OBJECT = new Object();
 
@@ -78,16 +91,23 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
 
   public GenerationSessionContext(IOperationContext invocationContext,
-                                  IGenerationTracer generationTracer,
+                                  GenerationOptions generationOptions,
+                                  GenerationSessionLogger logger,
                                   TransientModelsModule transientModule,
-                                  SModel inputModel) {
+                                  SModel inputModel,
+                                  IPerformanceTracer performanceTracer) {
 
     myInvocationContext = invocationContext;
-    myGenerationTracer = generationTracer;
+    myGenerationOptions = generationOptions;
+    myGenerationTracer = generationOptions.getGenerationTracer();
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
+    myPerfTrace = performanceTracer;
+    myLogger = logger;
+    myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
     myParameters = null;
+    myValidation = new RoleValidation(generationOptions.isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
@@ -98,12 +118,17 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // copy cons
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan, @Nullable Map<String, Object> parameters) {
     myInvocationContext = prevContext.myInvocationContext;
+    myGenerationOptions = prevContext.myGenerationOptions;
     myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
+    myPerfTrace = prevContext.myPerfTrace;
+    myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
+    myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
+    myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
     myParameters = parameters;
     // the moment this copy cons is used, nothing happened, reuse
@@ -116,14 +141,19 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext) {
     myInvocationContext = prevContext.myInvocationContext;
+    myGenerationOptions = prevContext.myGenerationOptions;
     myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
+    myPerfTrace = prevContext.myPerfTrace;
+    myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
+    myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myParameters = prevContext.myParameters;
+    myQueryProviders = prevContext.myQueryProviders;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -153,14 +183,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext.getProject();
   }
 
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return getModule().getScope();
-  }
-
-  public IOperationContext getInvocationContext() {
-    return myInvocationContext;
+  public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
+    return myQueryProviders.getQueryProvider(ruleNode);
   }
 
   public String toString() {
@@ -357,9 +381,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private Set<SNode> getCopiedRoots(boolean create) {
     @SuppressWarnings("unchecked")
-    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
+    Set<SNode> set = (Set<SNode>) getStepObject(COPIED_ROOTS);
     if (set == null && create) {
-      putStepObject(COPYED_ROOTS, set = new HashSet<SNode>());
+      putStepObject(COPIED_ROOTS, set = new HashSet<SNode>());
     }
     return set;
   }
@@ -390,7 +414,31 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     getModule().clearUnused();
   }
 
+  public void disposeQueryProvider() {
+    myQueryProviders.dispose();
+  }
+
   public Object getGenerationParameter(String name) {
     return myParameters == null ? null : myParameters.get(name);
+  }
+
+  public GenerationOptions getGenerationOptions() {
+    return myGenerationOptions;
+  }
+
+  public IGeneratorLogger getLogger() {
+    return myLogger;
+  }
+
+  public RoleValidation getRoleValidationFacility() {
+    // XXX in fact, GenerationSessionContext seems to serve as an API (resides in public package and provides public services
+    // to genContext, like unique name), while RoleValidation is implementation class.
+    // However, don't want to refactor GSC now (split iface and impl) - there's e.g. GenerationPlan (impl class) exposed here as well, so it doesn't
+    // look like that intention was to keep it API, rather a facility to keep everything handy.
+    return myValidation;
+  }
+
+  public IPerformanceTracer getPerformanceTracer() {
+    return myPerfTrace;
   }
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -40,7 +39,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bi932p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bi932p_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_bi932p_c0(editorContext, node));
-    if (renderingCondition_bi932p_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bi932p_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bi932p_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_bi932p_e0(editorContext, node));
@@ -97,7 +96,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bi932p_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bi932p_a3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "extendedClass", true) != null;
   }
 

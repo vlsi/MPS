@@ -6,11 +6,8 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -62,15 +59,14 @@ public class AddReferenceMacroParam_link_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node);
-    if (sm == null || !(sm.getModule() instanceof Generator)) {
+    if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     EditorCell editorCell = editorContext.getSelectedCell();
     if (editorCell == null) {
       return false;
     }
-    return QueriesUtil.isReferenceMacroApplicable(node, editorCell);
+    return EditingUtil.isReferenceMacroApplicable(node, editorCell);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -118,7 +114,7 @@ public class AddReferenceMacroParam_link_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
+      SNode referenceMacro = EditingUtil.addReferenceMacro(node, editorContext.getSelectedCell());
       SNode referentValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", null);
       SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode linkAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);

@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.search.DelegatingGlobalSearchScope;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ReferencesSearch.SearchParameters;
@@ -31,6 +32,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
@@ -75,6 +77,8 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
 
     final PsiElement target = queryParameters.getElementToSearch();
+    if (target instanceof MPSPsiNodeBase) return;
+
     // Only class names can be prefixes in foreign ids of other nodes
     if (!(target instanceof PsiClass)) return;
     final SRepository repository = ProjectHelper.getProjectRepository(scope.getProject());
@@ -85,6 +89,11 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
+
+        if (target instanceof LightElement) {
+          // we don't handle them by default
+          return;
+        }
 
         final NodePtr nodePtr = JavaForeignIdBuilder.computeNodePtr(target);
         if (nodePtr == null) return;

@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class NodeListChildrenSearchScope extends AbstractSearchScope {
   private ArrayList<SNode> myNodes;
@@ -21,10 +21,8 @@ public class NodeListChildrenSearchScope extends AbstractSearchScope {
   public List<SNode> getNodes(Condition<SNode> condition) {
     ArrayList<SNode> result = new ArrayList<SNode>();
     for (SNode node : myNodes) {
-      for (SNode child : SNodeOperations.getChildren(node)) {
-        if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
-          result.add(child);
-        }
+      for (SNode child : SNodeUtil.getDescendants(node, condition, false)) {
+        result.add(child);
       }
     }
     return result;

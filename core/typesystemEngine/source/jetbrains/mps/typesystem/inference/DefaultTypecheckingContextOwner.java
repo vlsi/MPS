@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
@@ -36,6 +37,6 @@ public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
 
   @Override
   public SubtypingCache createSubtypingCache() {
-    return null;
+    return new ConcurrentSubtypingCache();
   }
 }

@@ -13,10 +13,10 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.List;
 
 /**
@@ -57,11 +57,10 @@ import java.util.List;
 
   private String getAssertionMessage(Object element, SNode concept) {
     String conceptFQName = NameUtil.nodeFQName(concept);
-    GlobalScope scope = GlobalScope.getInstance();
-    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName, scope);
+    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName);
     String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
     String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-    Language language = scope.getLanguage(new ModuleReference(languageFqName));
+    Language language = ((Language) new ModuleReference(languageFqName).resolve(MPSModuleRepository.getInstance()));
     SNode conceptFromScope = null;
     if (language != null) {
       conceptFromScope = language.findConceptDeclaration(conceptName);

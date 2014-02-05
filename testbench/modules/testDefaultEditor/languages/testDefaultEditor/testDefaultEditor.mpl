@@ -7,10 +7,10 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="testDefaultEditor#938834323431407324" uuid="6347035b-39ac-4ba2-a86e-006974863808">
+    <generator name="" generatorUID="testDefaultEditor#938834323431407324" uuid="6347035b-39ac-4ba2-a86e-006974863808" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
-          <sourceRoot path="${module}/generator/template" />
+          <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
       <external-templates />

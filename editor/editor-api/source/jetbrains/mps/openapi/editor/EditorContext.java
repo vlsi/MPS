@@ -19,7 +19,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -75,22 +74,6 @@ public interface EditorContext {
    * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
    */
   @Deprecated
-  void selectBefore(SNode node);
-
-  /**
-   * This method will be removed after MPS 3.0
-   *
-   * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
-   */
-  @Deprecated
-  void selectAfter(SNode node);
-
-  /**
-   * This method will be removed after MPS 3.0
-   *
-   * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
-   */
-  @Deprecated
   void selectAndSetCaret(SNode node, int position);
 
   EditorCell getSelectedCell();
@@ -114,8 +97,6 @@ public interface EditorContext {
   boolean isInsideCommand();
 
   void flushEvents();
-
-  IScope getScope();
 
   SModel getModel();
 

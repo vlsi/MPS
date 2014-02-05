@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -75,7 +74,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createCollection_r514zz_e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_f1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_g1b0(editorContext, node));
-    if (renderingCondition_r514zz_a7b1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_r514zz_a7b1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_r514zz_h1b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_r514zz_i1b0(editorContext, node));
@@ -285,7 +284,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private static boolean renderingCondition_r514zz_a7b1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_r514zz_a7b1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "icon", true) != null;
   }
 

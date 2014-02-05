@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -30,7 +29,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_kpqhey_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ThisClassifierExpression_Editor.renderingCondition_kpqhey_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ThisClassifierExpression_Editor.renderingCondition_kpqhey_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_kpqhey_a0(editorContext, node);
@@ -41,7 +40,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kpqhey_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kpqhey_a0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "classifier", false) != null;
   }
 

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -37,28 +36,28 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_imlbz9_a");
     editorCell.setBig(true);
-    if (renderingCondition_imlbz9_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_imlbz9_a0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_imlbz9_b0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_imlbz9_c0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_imlbz9_d0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_imlbz9_e0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_imlbz9_f0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_imlbz9_g0(editorContext, node));
     }
-    if (renderingCondition_imlbz9_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_imlbz9_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_imlbz9_h0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_imlbz9_i0(editorContext, node));
@@ -85,7 +84,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "visibility", true) != null);
   }
 
@@ -100,7 +99,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "static");
   }
 
@@ -115,7 +114,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "final");
   }
 
@@ -130,7 +129,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "abstract");
   }
 
@@ -145,7 +144,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "synchronized");
   }
 
@@ -157,7 +156,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "transient");
   }
 
@@ -172,7 +171,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "volatile");
   }
 
@@ -196,7 +195,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_imlbz9_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_imlbz9_a7a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "type", true) != null);
   }
 

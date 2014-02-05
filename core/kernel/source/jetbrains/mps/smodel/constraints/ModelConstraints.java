@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.*;
@@ -34,7 +33,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModule;
-import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleScope;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 /**
@@ -61,7 +59,7 @@ public class ModelConstraints {
 
     SNode parent = node.getParent();
     assert parent != null;
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
 
     return canBeParent(parent, concept, ((jetbrains.mps.smodel.SNode) node).getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
   }
@@ -100,14 +98,14 @@ public class ModelConstraints {
 
     SModule module = getModule(parentNode);
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
-    return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName, getModuleScope(module)), getOperationContext(module), checkingNodeContext);
+    return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName), getOperationContext(module), checkingNodeContext);
   }
 
   public static boolean canBeRoot(String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     ModelAccess.assertLegalRead();
 
     // todo: use concept descriptor here?
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) || !SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
       if (checkingNodeContext != null) {
         checkingNodeContext.setBreakingNode(new jetbrains.mps.smodel.SNodePointer(concept));
@@ -140,7 +138,7 @@ public class ModelConstraints {
 
   @NotNull
   private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
-    SNode concept = SModelUtil.findConceptDeclaration(referenceNode.getConcept().getQualifiedName(), GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(referenceNode.getConcept().getQualifiedName());
     SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept, role);
     if (scopeReference == null) {
       return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getQualifiedName() + "'");

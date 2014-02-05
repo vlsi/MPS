@@ -29,8 +29,8 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -79,7 +79,7 @@ public abstract class ChooserType<T> {
         }
 
         @Override
-        public SModelReference[] find(IScope scope) {
+        public SModelReference[] find(SearchScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 
@@ -127,7 +127,7 @@ public abstract class ChooserType<T> {
         }
 
         @Override
-        public SModuleReference[] find(IScope scope) {
+        public SModuleReference[] find(SearchScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 

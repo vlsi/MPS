@@ -129,6 +129,7 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
@@ -941,7 +942,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public SubtypingCache createSubtypingCache() {
-    return null;
+    return new ConcurrentSubtypingCache();
   }
 
   private String getMessagesTextFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {

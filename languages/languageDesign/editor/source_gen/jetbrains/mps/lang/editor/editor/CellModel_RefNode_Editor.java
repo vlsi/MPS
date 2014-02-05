@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -161,7 +160,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_2hk56f_a3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2hk56f_b3a(editorContext, node));
-    if (renderingCondition_2hk56f_a2d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2hk56f_a2d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2hk56f_c3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_2hk56f_d3a(editorContext, node));
@@ -310,7 +309,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2hk56f_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2hk56f_a2d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 

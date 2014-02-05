@@ -18,7 +18,6 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -51,7 +50,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_fl5ndt_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_fl5ndt_b0(editorContext, node));
-    if (renderingCondition_fl5ndt_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_fl5ndt_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_fl5ndt_c0(editorContext, node));
     }
     return editorCell;
@@ -64,7 +63,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_fl5ndt_a0a(editorContext, node));
-    if (renderingCondition_fl5ndt_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_fl5ndt_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_fl5ndt_b0a(editorContext, node));
     }
     return editorCell;
@@ -118,7 +117,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_fl5ndt_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_fl5ndt_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -246,7 +245,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_fl5ndt_c1b1a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = PreferencePage_Editor.renderingCondition_fl5ndt_a2b1b0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = PreferencePage_Editor.renderingCondition_fl5ndt_a2b1b0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_fl5ndt_a2b1b0(editorContext, node);
@@ -256,7 +255,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_fl5ndt_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_fl5ndt_a2b1b0(SNode node, EditorContext editorContext) {
     String path = null;
     SModule module = SNodeOperations.getModel(node).getModule();
     if (module instanceof AbstractModule) {
@@ -482,7 +481,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_fl5ndt_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_fl5ndt_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

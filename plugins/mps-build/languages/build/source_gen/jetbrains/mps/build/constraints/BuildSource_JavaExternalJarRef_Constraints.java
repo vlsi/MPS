@@ -74,7 +74,7 @@ public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsD
               if ((contextProject != null)) {
                 return ScopeUtil.getVisibleJarsScope(contextProject);
               }
-              return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
+              return new ModelPlusImportedScope(_context.getModel(), false, "jetbrains.mps.build.structure.BuildSource_SingleFile");
             }
           }
         };

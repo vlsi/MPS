@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -81,7 +80,7 @@ public class BuildNamedLayout_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_yt8ri3_a2a(editorContext, node));
-    if (renderingCondition_yt8ri3_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_yt8ri3_a1c0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_yt8ri3_b2a(editorContext, node));
     }
     return editorCell;
@@ -141,7 +140,7 @@ public class BuildNamedLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_yt8ri3_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_yt8ri3_a1c0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
   }
 }

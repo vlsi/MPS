@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -37,7 +36,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9o3sb9_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9o3sb9_a0(editorContext, node));
-    if (renderingCondition_9o3sb9_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_9o3sb9_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_9o3sb9_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createAttributedLinkCell_9o3sb9_c0(editorContext, node));
@@ -77,7 +76,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9o3sb9_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9o3sb9_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 

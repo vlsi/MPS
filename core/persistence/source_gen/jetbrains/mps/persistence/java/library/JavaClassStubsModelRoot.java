@@ -13,8 +13,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -63,12 +63,18 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     final Collection<String> files = getFiles(FileBasedModelRoot.SOURCE_ROOTS);
     final Collection<String> excludedFiles = getFiles(FileBasedModelRoot.EXCLUDED);
+    final HashSet<String> processedFiles = new HashSet<String>();
     for (String file : files) {
       // Find all jar (zip) files recursively 
       Set<IFile> jarFiles = new HashSet<IFile>();
       collectJarFiles(FileSystem.getInstance().getFileByPath(file), jarFiles);
       for (IFile jarFile : jarFiles) {
-        findAndAddModels(jarFile.getPath(), result, excludedFiles);
+        String jarPath = jarFile.getPath();
+        if (processedFiles.contains(jarPath) || excludedFiles.contains(jarPath)) {
+          continue;
+        }
+        findAndAddModels(jarPath, result);
+        processedFiles.add(jarPath);
       }
 
       /*
@@ -80,8 +86,14 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
         }
       */
 
-      // TODO: use commended code above Need to implement IClassPathItem for *.class files, that can get package from such files to create model ref Add it to ClassPathFactory      PS this code only works if variable file contains FQ named package dir structure 
-      findAndAddModels(file, result, excludedFiles);
+      // TODO: use commended code above 
+      // Need to implement IClassPathItem for *.class files, that can get package from such files to create model ref 
+      // Add it to ClassPathFactory 
+      // PS this code only works if variable file contains FQ named package dir structure 
+      if (processedFiles.contains(file) || excludedFiles.contains(file)) {
+        continue;
+      }
+      findAndAddModels(file, result);
     }
     return result;
   }
@@ -112,10 +124,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     }
   }
 
-  private void findAndAddModels(String file, final List<SModel> result, final Collection<String> excludedFiles) {
-    if (excludedFiles.contains(file)) {
-      return;
-    }
+  private void findAndAddModels(String file, final List<SModel> result) {
     IClassPathItem cp = create(file);
     getModelDescriptors(result, file, cp, "", LanguageID.JAVA, getModule());
   }

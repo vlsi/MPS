@@ -22,16 +22,18 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -40,12 +42,13 @@ import java.util.concurrent.ConcurrentMap;
  * Evgeny Gryaznov, Feb 16, 2010
  */
 public final class GeneratorMappings {
+  private final IGeneratorLogger myLog;
 
   /* mapping,input -> output */
   private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
 
   /* input -> output */
-  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode;
+  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>();
 
   /* new style map: Object means multiple nodes for the template */
   private final ConcurrentMap<String, Object> myTemplateNodeIdToOutputNodeMap = new ConcurrentHashMap<String, Object>();
@@ -53,8 +56,8 @@ public final class GeneratorMappings {
   /* new style map: template,input -> output */
   private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
 
-  public GeneratorMappings(int numberOfNodesInModel) {
-    myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel / 4);
+  public GeneratorMappings(IGeneratorLogger log) {
+    myLog = log;
   }
 
   // add methods
@@ -128,7 +131,7 @@ public final class GeneratorMappings {
     return o instanceof SNode ? (SNode) o : null;
   }
 
-  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, IGeneratorLogger logger) {
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     if (mappingName == null) return null;
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) return null;
@@ -139,7 +142,7 @@ public final class GeneratorMappings {
       for (int i = 0; i < list.size(); i++) {
         descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + SNodeUtil.getDebugText(list.get(i)));
       }
-      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + SNodeUtil.getDebugText(inputNode), descr);
+      myLog.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + SNodeUtil.getDebugText(inputNode), descr);
       return list.get(0);
     }
 

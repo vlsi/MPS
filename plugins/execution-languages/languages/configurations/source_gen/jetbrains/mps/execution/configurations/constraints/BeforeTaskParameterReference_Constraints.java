@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.scope.DefaultScope;
+import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -61,7 +61,7 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new DefaultScope(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter");
+            return new ModelPlusImportedScope(_context.getModel(), false, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter");
 
           }
         };

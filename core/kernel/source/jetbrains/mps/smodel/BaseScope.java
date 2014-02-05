@@ -20,11 +20,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseScope implements IScope {
+public abstract class BaseScope implements SearchScope {
   @Override
   public abstract Iterable<SModule> getModules();
 
@@ -77,61 +78,51 @@ public abstract class BaseScope implements IScope {
   // deprecated stuff
   // remove after MPS 3.0
   @Deprecated
-  @Override
   public Language getLanguage(SModuleReference moduleReference) {
     return ScopeOperations.resolveModule(this, moduleReference, Language.class);
   }
 
   @Deprecated
-  @Override
   public DevKit getDevKit(SModuleReference ref) {
     return ScopeOperations.resolveModule(this, ref, DevKit.class);
   }
 
   @Deprecated
-  @Override
   public final SModel getModelDescriptor(SModelReference modelReference) {
     return ScopeOperations.getModelDescriptor(this, modelReference);
   }
 
   @Deprecated
-  @Override
   public final Iterable<SModel> getModelDescriptors() {
     return ScopeOperations.getModelDescriptors(this);
   }
 
   @Deprecated
-  @Override
   public final Iterable<Language> getVisibleLanguages() {
     return ScopeOperations.getModules(this, Language.class);
   }
 
   @Deprecated
-  @Override
   public final Iterable<DevKit> getVisibleDevkits() {
     return ScopeOperations.getModules(this, DevKit.class);
   }
 
   @Deprecated
-  @Override
   public final Iterable<SModule> getVisibleModules() {
     return ScopeOperations.getModules(this, SModule.class);
   }
 
   @Deprecated
-  @Override
   public final SModel getModelDescriptor(SModelFqName fqName) {
     return ScopeOperations.getModelDescriptor(this, fqName);
   }
 
   @Deprecated
-  @Override
   public final Language getLanguage(String fqName) {
     return ScopeOperations.getLanguage(this, fqName);
   }
 
   @Deprecated
-  @Override
   public final Iterable<SModel> getOwnModelDescriptors() {
     throw new IllegalStateException();
   }

@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
@@ -75,7 +74,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vny568_q0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vny568_r0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_vny568_s0(editorContext, node));
-    if (renderingCondition_vny568_a91a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vny568_a91a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_vny568_t0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_vny568_u0(editorContext, node));
@@ -171,7 +170,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_vny568_a6a(editorContext, node));
-    if (renderingCondition_vny568_a1g0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vny568_a1g0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_vny568_b6a(editorContext, node));
     }
     return editorCell;
@@ -241,7 +240,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vny568_a1g0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vny568_a1g0(SNode node, EditorContext editorContext) {
     final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
     return rph != null;
   }
@@ -570,7 +569,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vny568_a91a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vny568_a91a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).isEmpty() || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last()), "abstract");
   }
 
