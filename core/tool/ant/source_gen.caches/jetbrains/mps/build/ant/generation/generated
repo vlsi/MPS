@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="5nzegnyp2paauphd9yncwogg2nv1yvx">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="66ok0pl00zp72s773dbmvepnkgf1u5m" dependsOnNodes="true" />
   <source id="9096318311151691260" name="Chunk" hash="b7wd3k17f4umq1w3klml7lmyc246i73">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Chunk.java" />
   </source>
   <source id="9096318311151864960" name="ModuleChunkPart" hash="b8qndm7u34qn0iovft70a2qehqia1o4">
     <file name="ModuleChunkPart.java" />
   </source>
   <source id="4263887295358464059" name="GenerateTask" hash="-9c3c1rgkx6ubkvd4w6pxnu7oebl1bqx">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GenerateTask.java" />
   </source>
   <source id="978600701689990961" name="Plugin" hash="bcw20t9itvce8be481uvj6tely809lv">
     <file name="Plugin.java" />
   </source>
   <source id="861826518923203126" name="GenTestTask" hash="-cbzhqsd9p3i2zyjh8qlkgvfvgz5o7s3">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GenTestTask.java" />
   </source>
 </dependencies>

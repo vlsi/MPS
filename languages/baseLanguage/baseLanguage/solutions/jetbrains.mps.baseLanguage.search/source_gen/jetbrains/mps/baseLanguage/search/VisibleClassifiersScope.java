@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.search;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -19,14 +18,14 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
   private SNode myContextNode = null;
 
   @Deprecated
-  public VisibleClassifiersScope(SModel model, int constraint, IScope scope) {
+  public VisibleClassifiersScope(SModel model, int constraint) {
     // use ClassifierScopes.getVisibleClassifiersScope instead 
-    super(model, constraint, scope);
+    super(model, constraint);
   }
 
   @Deprecated
-  public VisibleClassifiersScope(@NotNull SNode contextNode, int constraint, IScope scope) {
-    super(SNodeOperations.getModel(contextNode), constraint, scope);
+  public VisibleClassifiersScope(@NotNull SNode contextNode, int constraint) {
+    super(SNodeOperations.getModel(contextNode), constraint);
     myContextNode = contextNode;
   }
 

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="6x0ejeia93ehhfpm8ej2zsvrkxt4x7b">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="-agotlzbv8j9hcf456mza2bfxq7661vl" dependsOnNodes="true" />
   <source id="6249396921771873248" name="NewDevKitDialog" hash="-2v0f1amtf3rthqql73t85lhimgpaiib">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewDevKitDialog.java" />
   </source>
   <source id="6249396921771906419" name="NewDevKitDialogContentPane" hash="-690z9wa8m4vqsofs5zx56k27wll0puh">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewDevKitDialogContentPane.java" />
   </source>
 </dependencies>

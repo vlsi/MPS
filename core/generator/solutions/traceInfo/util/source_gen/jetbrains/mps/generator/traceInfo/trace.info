@@ -190,7 +190,7 @@
     <nodeInfo nodeId="3483822302719455988" fileName="TraceInfoCache.java" startLine="159" startPosition="75" endLine="160" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2835818332994506111" fileName="TraceInfoCache.java" startLine="161" startPosition="24" endLine="162" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7521671656020565243" fileName="TraceInfoCache.java" startLine="164" startPosition="5" endLine="165" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7521671656020565253" fileName="TraceInfoCache.java" startLine="170" startPosition="65" endLine="171" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7521671656020565253" fileName="TraceInfoCache.java" startLine="170" startPosition="62" endLine="171" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7521671656020565266" fileName="TraceInfoCache.java" startLine="172" startPosition="27" endLine="173" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7521671656020565268" fileName="TraceInfoCache.java" startLine="174" startPosition="5" endLine="175" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="463340324389002382" fileName="TraceInfoCache.java" startLine="178" startPosition="51" endLine="179" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -357,7 +357,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7521671656020564967" fileName="TraceInfoCache.java" startLine="64" startPosition="25" endLine="69" endPosition="5" />
     <scopeInfo nodeId="7521671656020564975" fileName="TraceInfoCache.java" startLine="72" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="7521671656020565252" fileName="TraceInfoCache.java" startLine="170" startPosition="65" endLine="175" endPosition="49">
+    <scopeInfo nodeId="7521671656020565252" fileName="TraceInfoCache.java" startLine="170" startPosition="62" endLine="175" endPosition="49">
       <varInfo nodeId="7521671656020565254" varName="cacheUrl" />
     </scopeInfo>
     <scopeInfo nodeId="7521671656020564920" fileName="TraceInfoCache.java" startLine="228" startPosition="0" endLine="233" endPosition="0" />

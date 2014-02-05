@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="ek0dc645sp0tj9ha57b8sn3iad4kx3s">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="8dqs6igc9hn1ly75zrcfr8gtbpzclw5" dependsOnNodes="true" />
   <source id="5294483648489409095" name="ThreadWatcher" hash="-ai723ocuk88h1c5utews8ipot9gbmdl">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ThreadWatcher.java" />
   </source>
   <source id="5294483648489409912" name="Output" hash="98irgk0kr8s4204t7zv9fh8u0jx5ala">
     <file name="Output.java" />
   </source>
   <source id="5294483648489410428" name="CachingAppender" hash="-dyfbhbmrdm0rlbpastfczwjeky1q76y">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingAppender.java" />
   </source>
   <source id="5294483648489410732" name="CachingPrintStream" hash="-bcyqft27m3pirhycm9h42an2zboq8fi">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingPrintStream.java" />
   </source>
 </dependencies>

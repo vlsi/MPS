@@ -9,12 +9,25 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -30,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
-  public static void make(Project project, final Iterable<SModel> models_, final Iterable<? extends Iterable<SModel>> models__, final Iterable<SModule> modules_, final Iterable<? extends Iterable<SModule>> modules__, final boolean dirtyOnly) {
+  public static void make(Project project, final Iterable<SModel> models_, final Iterable<? extends Iterable<SModel>> models__, final Iterable<SModule> modules_, final Iterable<? extends Iterable<SModule>> modules__, final boolean dirtyOnly, final boolean depClosure) {
     ProjectOperationContext context = new ProjectOperationContext(project);
     final Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
       public Iterable<SModel> translate(Iterable<SModel> it) {
@@ -43,29 +56,140 @@ public class IdeCommandUtil {
       }
     }));
 
-    final Wrappers._T<Iterable<SModel>> modelsToGenerate = new Wrappers._T<Iterable<SModel>>();
+    final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (Sequence.fromIterable(models_).isEmpty() && Sequence.fromIterable(models__).isEmpty() && Sequence.fromIterable(modules_).isEmpty() && Sequence.fromIterable(modules__).isEmpty()) {
-          modelsToGenerate.value = ((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors());
+          modelsToGenerate.value = SModelRepository.getInstance().getModelDescriptors();
         } else {
           modelsToGenerate.value = Sequence.fromIterable(models).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
             public Iterable<SModel> translate(SModule it) {
               return it.getModels();
             }
-          }));
+          })).toListSequence();
+        }
+        if (depClosure) {
+          Iterable<SModel> dependencies = modelsToGenerate.value;
+          int oldSize;
+          do {
+            dependencies = Sequence.fromIterable(dependencies).translate(new ITranslator2<SModel, SModel>() {
+              public Iterable<SModel> translate(SModel it) {
+                return Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a5a0(it, SModelInternal.class).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModel>() {
+                  public SModel select(jetbrains.mps.smodel.SModel.ImportElement it) {
+                    return it.getModelReference().resolve(MPSModuleRepository.getInstance());
+                  }
+                });
+              }
+            }).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
+                return SNodeOperations.isGeneratable(it);
+              }
+            }).distinct().subtract(ListSequence.fromList(modelsToGenerate.value)).toListSequence();
+            oldSize = ListSequence.fromList(modelsToGenerate.value).count();
+            ListSequence.fromList(modelsToGenerate.value).addSequence(Sequence.fromIterable(dependencies));
+          } while (ListSequence.fromList(modelsToGenerate.value).count() > oldSize);
         }
         if (dirtyOnly) {
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
-          modelsToGenerate.value = Sequence.fromIterable(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
+          modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return mgsm.generationRequired(it);
             }
-          });
+          }).toListSequence();
+        }
+        modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return SNodeOperations.isGeneratable(it);
+          }
+        }).toListSequence();
+      }
+    });
+    new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
+  }
+
+
+
+  public static void cleanCaches(Iterable<SModel> models_, Iterable<? extends Iterable<SModel>> models__, Iterable<SModule> modules_, Iterable<? extends Iterable<SModule>> modules__) {
+    Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
+      public Iterable<SModel> translate(Iterable<SModel> it) {
+        return it;
+      }
+    }));
+    Iterable<SModule> modules = Sequence.fromIterable(modules_).concat(Sequence.fromIterable(modules__).translate(new ITranslator2<Iterable<SModule>, SModule>() {
+      public Iterable<SModule> translate(Iterable<SModule> it) {
+        return it;
+      }
+    }));
+    final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
+    if (Sequence.fromIterable(models_).isEmpty() && Sequence.fromIterable(models__).isEmpty() && Sequence.fromIterable(modules_).isEmpty() && Sequence.fromIterable(modules__).isEmpty()) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          modelsToClean.value = SModelRepository.getInstance().getModelDescriptors();
+        }
+      });
+    } else {
+      modelsToClean.value = Sequence.fromIterable(models).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
+          return it.getModels();
+        }
+      })).toListSequence();
+    }
+    ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return SNodeOperations.isGeneratable(it);
+      }
+    }).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        IFile generatedFile = GenerationDependenciesCache.getInstance().getCacheFile(it);
+        generatedFile.delete();
+      }
+    });
+  }
+
+
+
+  public static void cleanSourcesGen(final Project project, Iterable<SModel> models_, Iterable<? extends Iterable<SModel>> models__, Iterable<SModule> modules_, Iterable<? extends Iterable<SModule>> modules__) {
+    Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
+      public Iterable<SModel> translate(Iterable<SModel> it) {
+        return it;
+      }
+    }));
+    final Wrappers._T<Iterable<? extends SModule>> modules = new Wrappers._T<Iterable<? extends SModule>>(Sequence.fromIterable(modules_).concat(Sequence.fromIterable(modules__).translate(new ITranslator2<Iterable<SModule>, SModule>() {
+      public Iterable<SModule> translate(Iterable<SModule> it) {
+        return it;
+      }
+    })));
+    if (Sequence.fromIterable(models_).isEmpty() && Sequence.fromIterable(models__).isEmpty() && Sequence.fromIterable(modules_).isEmpty() && Sequence.fromIterable(modules__).isEmpty()) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          modules.value = project.getModulesWithGenerators();
+        }
+      });
+    }
+    Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return SNodeOperations.isGeneratable(it);
+      }
+    }).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        String outputPath = SModuleOperations.getOutputPathFor(it);
+        String cachePath = FileGenerationUtil.getCachesPath(outputPath);
+        IFile ouputDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(outputPath));
+        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(cachePath));
+        ouputDir.delete();
+        cachesDir.delete();
+      }
+    });
+    Sequence.fromIterable(modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+      public void visit(AbstractModule it) {
+        IFile outputDir = it.getOutputPath();
+        if (outputDir != null) {
+          IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
+          outputDir.delete();
+          cacheDir.delete();
         }
       }
     });
-    new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), dirtyOnly).executeAction();
   }
 
 
@@ -91,4 +215,8 @@ public class IdeCommandUtil {
   }
 
 
+
+  private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a5a0(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }

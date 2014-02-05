@@ -26,7 +26,6 @@
     <ConfigurationWrapper RunnerId="Debug" />
     <ConfigurationWrapper RunnerId="Run" />
     <method>
-      <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
         <artifact name="mps-common:jar" />
         <artifact name="mps-jps-plugin:jar" />

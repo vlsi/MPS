@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -126,7 +126,7 @@ public final class SConceptOperations {
     return result;
   }
 
-  public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, IScope scope) {
+  public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, SearchScope scope) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }

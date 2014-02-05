@@ -1047,7 +1047,7 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeRefExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node /&lt;name&gt;/" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node/&lt;name&gt;/" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3575813534625140284" resolveInfo="AbstractNodeRefExpression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1219352800908" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -1790,7 +1790,7 @@
     <property name="name" nameId="tpck.1169194664001" value="NodePointerExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodePointer /&lt;name&gt;/" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodePointer/&lt;name&gt;/" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1828409047608048458" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />

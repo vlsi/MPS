@@ -4,47 +4,105 @@ package jetbrains.mps.console.scripts.runtime.util;
 
 import jetbrains.mps.console.tool.ConsoleContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.tool.ConsoleTool;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ScriptsUtil {
 
 
-  public static void executeScript(ConsoleContext context, SNode script) {
-    final ConsoleTool consoleTool = check_bb8vid_a0a0b(ProjectHelper.toIdeaProject(context.getProject()));
+  public static void executeScript(final ConsoleContext context, SNode script) {
     final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), script, "virtual_getCommands_1734392475491235554", new Object[]{});
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        executeCommands(consoleTool, Sequence.fromIterable(commands).toListSequence(), 0);
+        executeCommands(context, Sequence.fromIterable(commands).toListSequence(), 0);
       }
     });
   }
 
 
 
-  public static void executeCommands(final ConsoleTool consoleTool, final List<SNode> commands, final int startWith) {
+  public static void executeCommands(final ConsoleContext context, final List<SNode> commands, final int startWith) {
     if (startWith == ListSequence.fromList(commands).count()) {
       return;
     }
-    consoleTool.executeCommand(ListSequence.fromList(commands).getElement(startWith), new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        executeCommands(consoleTool, commands, startWith + 1);
+        context.getConsoleTab().execute(ListSequence.fromList(commands).getElement(startWith), null, new Runnable() {
+          public void run() {
+            executeCommands(context, commands, startWith + 1);
+          }
+        });
       }
     });
   }
 
 
 
-  private static ConsoleTool check_bb8vid_a0a0b(Project checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getComponent(ConsoleTool.class);
-    }
-    return null;
+  public static void refactor(final ConsoleContext context, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
+    Project project = ProjectHelper.toIdeaProject(context.getProject());
+    SearchResults sr = nodesToRefactoringResult(nodes);
+    RefactoringAccess.getInstance().showRefactoringView(project, new RefactoringViewAction() {
+      public void performAction(final RefactoringViewItem refactoringViewItem) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            Iterable<SNode> includedNodes;
+            if (refactoringViewItem instanceof RefactoringViewItemImpl) {
+              List<SNodeReference> nodeRefs = as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
+              includedNodes = ListSequence.fromList(nodeRefs).select(new ISelector<SNodeReference, SNode>() {
+                public SNode select(SNodeReference it) {
+                  return it.resolve(MPSModuleRepository.getInstance());
+                }
+              });
+            } else {
+              includedNodes = nodes;
+            }
+            for (SNode resultNode : Sequence.fromIterable(includedNodes)) {
+              if (resultNode != null) {
+                toExecuteWithEachNode.invoke(resultNode);
+              }
+            }
+          }
+        });
+        refactoringViewItem.close();
+        context.getConsoleTab().getConsoleTool().getToolWindow().activate(null);
+        context.getConsoleTab().getConsoleTool().selectTab(context.getConsoleTab());
+      }
+    }, sr, false, "refactor");
+  }
+
+
+
+  private static SearchResults<SNode> nodesToRefactoringResult(Iterable<SNode> nodes) {
+    final SearchResults<SNode> result = new SearchResults<SNode>();
+    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        result.getSearchResults().add(new SearchResult<SNode>(it, "Nodes to refactor"));
+      }
+    });
+    return result;
+  }
+
+
+
+
+  private static <T> T as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
