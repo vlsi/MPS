@@ -45,7 +45,7 @@ public class NodeWarningCheckOperation_Behavior {
 
           final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected warning message";
 
-          Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_NodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation")));
+          Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_nodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation")));
         }
       });
     } catch (Exception ex) {

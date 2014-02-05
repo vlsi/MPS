@@ -44,7 +44,7 @@ public class NodeErrorCheckOperation_Behavior {
           }).toListSequence();
           final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected error message";
 
-          Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_NodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")));
+          Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_nodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")));
         }
       });
     } catch (Exception ex) {

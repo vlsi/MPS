@@ -2726,7 +2726,7 @@
                                 <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp5g.4307182653741890820" resolveInfo="NodeRuleCheckOperation" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1302453276764632298" nodeInfo="nn">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302453276764459617" resolveInfo="NodeHasExpectedRuleMessage" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302453276764459617" resolveInfo="nodeHasExpectedRuleMessage" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1302453276764632299" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2912288420888368291" resolveInfo="errorReports" />
                                 </node>
@@ -3738,7 +3738,7 @@
                                 <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp5g.4307182653741890820" resolveInfo="NodeRuleCheckOperation" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1302453276764618672" nodeInfo="nn">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302453276764459617" resolveInfo="NodeHasExpectedRuleMessage" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302453276764459617" resolveInfo="nodeHasExpectedRuleMessage" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1302453276764618955" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2912288420888475549" resolveInfo="errorReports" />
                                 </node>
@@ -4164,7 +4164,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5872607264946106208" nodeInfo="sn" />
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1302453276764459617" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="NodeHasExpectedRuleMessage" />
+      <property name="name" nameId="tpck.1169194664001" value="nodeHasExpectedRuleMessage" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />

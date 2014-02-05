@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1pvh5w8aex9hy0oc24mdg4rkie2e0u0">
+<dependencies version="2" modelHash="coyw7vgzpz9afzm583hlsn7d1k9ashf">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(MPS.Editor/jetbrains.mps.openapi.editor.selection@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -346,7 +346,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NodeTypeCheckOperation_Behavior.java" />
   </source>
-  <source id="2754172450389421795" name="NodeErrorCheckOperation_Behavior" hash="-apl1dopbowpbzbwy7ltyqywcxec8ii3">
+  <source id="2754172450389421795" name="NodeErrorCheckOperation_Behavior" hash="dkv9fo90ud28lrl98co0rw6ma8t6xqz">
     <dep root="1215601170868" />
     <dep root="1821429065373963810" />
     <dep root="4098794966562281137" />
@@ -420,7 +420,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="NodeUnreachable_Behavior.java" />
   </source>
-  <source id="2754172450389430646" name="NodeWarningCheckOperation_Behavior" hash="8poqufelnkqidi6okhayrbmf2mm0q49">
+  <source id="2754172450389430646" name="NodeWarningCheckOperation_Behavior" hash="-5fq6r6npaadeqqll9c6vq62cicxzhne">
     <dep root="1215601170868" />
     <dep root="1821429065373963810" />
     <dep root="4098794966562281137" />
@@ -465,7 +465,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="VariableAlive_Behavior.java" />
   </source>
-  <source id="4098794966562281137" name="NodeRuleCheckOperation_Behavior" hash="-4axr3jd3vxxb5ze0o00vob4tq9goh8c">
+  <source id="4098794966562281137" name="NodeRuleCheckOperation_Behavior" hash="7ll0et6f4a3q6irnudz0neaavbszd69">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.errors(MPS.Core/jetbrains.mps.errors@java_stub)" />
