@@ -178,6 +178,13 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public boolean validateValue(SNode node, String value) {
+    //this line is just to get old compiled code not to get into infinite recursion.
+    //remove it after 3.1
+    //ask Mihail Muhin or Timur Abishev for details
+    if (validatorDescriptor == this) {
+      return true;
+    }
+
     return validatorDescriptor == null || validatorDescriptor.validateValue(node, value);
   }
 
