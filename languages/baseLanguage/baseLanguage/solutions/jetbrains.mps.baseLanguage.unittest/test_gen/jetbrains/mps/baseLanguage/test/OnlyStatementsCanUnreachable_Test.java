@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class OnlyStatementsCanUnreachable_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeErrorCheck1216231255040() throws Throwable {
+  public void test_NodeUnreachableNodeErrorCheck6923385624927068850() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.OnlyStatementsCanUnreachable_Test$TestBody", "test_NodeErrorCheck1216231255040", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.OnlyStatementsCanUnreachable_Test$TestBody", "test_NodeUnreachableNodeErrorCheck6923385624927068850", true);
   }
 
   @Test
@@ -26,8 +26,8 @@ public class OnlyStatementsCanUnreachable_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeErrorCheck1216231255040() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1216231255040"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeUnreachableNodeErrorCheck6923385624927068850() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927068850"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451223908")});
     }
 

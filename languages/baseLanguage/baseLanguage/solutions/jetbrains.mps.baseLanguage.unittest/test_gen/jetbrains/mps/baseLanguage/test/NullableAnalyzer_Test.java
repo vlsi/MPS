@@ -13,21 +13,21 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeWarningCheck3451033204592431073() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927436728() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431073", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927436728", true);
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431074() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929290285() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431074", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929290285", true);
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431075() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927280957() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431075", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927280957", true);
   }
 
   @Test
@@ -37,15 +37,15 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431076() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929530194() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431076", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929530194", true);
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431077() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927477751() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431077", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927477751", true);
   }
 
   @Test
@@ -55,15 +55,15 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431078() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927841333() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431078", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927841333", true);
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431079() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927680682() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431079", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927680682", true);
   }
 
   @Test
@@ -73,9 +73,9 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431080() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927885573() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431080", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927885573", true);
   }
 
   @Test
@@ -85,27 +85,27 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431081() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927684007() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431081", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927684007", true);
   }
 
   @Test
-  public void test_NodeWarningCheck671730757939429782() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927677337() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck671730757939429782", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927677337", true);
   }
 
   @Test
-  public void test_NodeWarningCheck671730757939429783() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927643021() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck671730757939429783", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927643021", true);
   }
 
   @Test
-  public void test_NodeWarningCheck671730757939429777() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927201040() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck671730757939429777", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927201040", true);
   }
 
   @Test
@@ -115,21 +115,21 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck5899025696847072437() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929642188() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck5899025696847072437", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929642188", true);
   }
 
   @Test
-  public void test_NodeWarningCheck5899025696847072412() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624928447275() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck5899025696847072412", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624928447275", true);
   }
 
   @Test
-  public void test_NodeWarningCheck5899025696847072415() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929406744() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck5899025696847072415", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929406744", true);
   }
 
   @Test
@@ -139,21 +139,21 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck7209837885460292164() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929136789() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck7209837885460292164", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929136789", true);
   }
 
   @Test
-  public void test_NodeWarningCheck7209837885460297523() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927896994() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck7209837885460297523", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927896994", true);
   }
 
   @Test
-  public void test_NodeWarningCheck7209837885460302882() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927614991() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck7209837885460302882", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927614991", true);
   }
 
   @Test
@@ -163,9 +163,9 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431084() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927087401() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431084", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927087401", true);
   }
 
   @Test
@@ -175,15 +175,15 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431085() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929410127() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431085", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929410127", true);
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431086() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624929704316() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431086", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929704316", true);
   }
 
   @Test
@@ -217,9 +217,9 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeWarningCheck3451033204592431087() throws Throwable {
+  public void test_NodeNoNameWarningCheck6923385624927607320() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3451033204592431087", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927607320", true);
   }
 
   @Test
@@ -242,18 +242,18 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeWarningCheck3451033204592431073() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431073"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927436728() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927436728"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228209")});
     }
 
-    public void test_NodeWarningCheck3451033204592431074() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431074"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929290285() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929290285"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230312")});
     }
 
-    public void test_NodeWarningCheck3451033204592431075() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431075"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927280957() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927280957"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229301")});
     }
 
@@ -262,13 +262,13 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6011730950863071458")});
     }
 
-    public void test_NodeWarningCheck3451033204592431076() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431076"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929530194() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929530194"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228477")});
     }
 
-    public void test_NodeWarningCheck3451033204592431077() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431077"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927477751() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927477751"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230861")});
     }
 
@@ -277,13 +277,13 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1228615757308491192")});
     }
 
-    public void test_NodeWarningCheck3451033204592431078() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431078"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927841333() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927841333"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231520")});
     }
 
-    public void test_NodeWarningCheck3451033204592431079() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431079"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927680682() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927680682"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451221312")});
     }
 
@@ -292,8 +292,8 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6011730950863071583")});
     }
 
-    public void test_NodeWarningCheck3451033204592431080() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431080"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927885573() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927885573"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228995")});
     }
 
@@ -302,23 +302,23 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6011730950863071629")});
     }
 
-    public void test_NodeWarningCheck3451033204592431081() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431081"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927684007() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927684007"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228558")});
     }
 
-    public void test_NodeWarningCheck671730757939429782() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("671730757939429782"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927677337() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927677337"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229961")});
     }
 
-    public void test_NodeWarningCheck671730757939429783() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("671730757939429783"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927643021() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927643021"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451221216")});
     }
 
-    public void test_NodeWarningCheck671730757939429777() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("671730757939429777"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927201040() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927201040"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231567")});
     }
 
@@ -327,18 +327,18 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6689253151531885669")});
     }
 
-    public void test_NodeWarningCheck5899025696847072437() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("5899025696847072437"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929642188() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929642188"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230232")});
     }
 
-    public void test_NodeWarningCheck5899025696847072412() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("5899025696847072412"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624928447275() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928447275"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229780")});
     }
 
-    public void test_NodeWarningCheck5899025696847072415() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("5899025696847072415"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929406744() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929406744"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230836")});
     }
 
@@ -347,18 +347,18 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("5899025696847062681")});
     }
 
-    public void test_NodeWarningCheck7209837885460292164() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7209837885460292164"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929136789() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929136789"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451225474")});
     }
 
-    public void test_NodeWarningCheck7209837885460297523() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7209837885460297523"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927896994() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927896994"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230169")});
     }
 
-    public void test_NodeWarningCheck7209837885460302882() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7209837885460302882"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927614991() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927614991"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451221145")});
     }
 
@@ -367,8 +367,8 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("741163781873507740")});
     }
 
-    public void test_NodeWarningCheck3451033204592431084() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431084"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927087401() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927087401"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451221100")});
     }
 
@@ -377,13 +377,13 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6011730950863071727")});
     }
 
-    public void test_NodeWarningCheck3451033204592431085() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431085"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929410127() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929410127"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451221192")});
     }
 
-    public void test_NodeWarningCheck3451033204592431086() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431086"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624929704316() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929704316"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229219")});
     }
 
@@ -412,8 +412,8 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8673157736019186604")});
     }
 
-    public void test_NodeWarningCheck3451033204592431087() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3451033204592431087"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeNoNameWarningCheck6923385624927607320() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927607320"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230107")});
     }
 
