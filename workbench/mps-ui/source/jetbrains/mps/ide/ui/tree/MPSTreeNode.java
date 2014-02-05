@@ -39,7 +39,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -88,22 +88,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   @Override
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {
-      return new Iterator<MPSTreeNode>() {
-        @Override
-        public boolean hasNext() {
-          return false;
-        }
-
-        @Override
-        public MPSTreeNode next() {
-          throw new IllegalStateException();
-        }
-
-        @Override
-        public void remove() {
-          throw new IllegalStateException();
-        }
-      };
+      return Collections.<MPSTreeNode>emptySet().iterator();
     }
     return children.iterator();
   }

@@ -26,14 +26,15 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -57,7 +58,50 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
     myTracer = tracer;
     myNoTabsComponent = new NoTabsComponent(this);
+    myTracer.setTracerViewTool(this);
   }
+
+  //////
+  public boolean hasTracingData() {
+    return myTracer.hasTracingData();
+  }
+  public boolean hasTraceInputData(SModelReference modelReference) {
+    return myTracer.hasTraceInputData(modelReference);
+  }
+  public boolean hasTracebackData(SModelReference modelReference) {
+    return myTracer.hasTracebackData(modelReference);
+  }
+  public boolean showTraceInputData(@NotNull SNode node) {
+    int index = getTabIndex(Kind.INPUT, node);
+    if (index > -1) {
+      selectIndex(index);
+      openToolLater(true);
+      return true;
+    }
+
+    TracerNode tracerNode = myTracer.buildTraceInputTree(node);
+    if (tracerNode == null) {
+      return false;
+    }
+    showTraceView(tracerNode);
+    return true;
+  }
+  public boolean showTracebackData(SNode node) {
+    int index = getTabIndex(Kind.OUTPUT, node);
+    if (index > -1) {
+      selectIndex(index);
+      openToolLater(true);
+      return true;
+    }
+    TracerNode tracerNode = myTracer.buildTracebackTree(node);
+    if (tracerNode == null) {
+      return false;
+    }
+    showTraceView(tracerNode);
+    return true;
+  }
+
+  //////////////////
 
   @Override
   protected void createTool(boolean early) {
@@ -167,9 +211,12 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     openToolLater(true);
   }
 
-  public void setTracingDataIsAvailable(boolean b) {
-    assert ThreadUtils.isEventDispatchThread();
-    myNoTabsComponent.setDataIsAvailable(b);
+  public void setTracingDataIsAvailable(final boolean dataPresent) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myNoTabsComponent.setDataIsAvailable(dataPresent);
+      }
+    });
   }
 
   public static class NoTabsComponent extends JPanel {
