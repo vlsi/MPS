@@ -151,11 +151,24 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public Object getValue(SNode node) {
+    //this line is just to get old compiled code not to get into infinite recursion.
+    //remove it after 3.1
+    //ask Mihail Muhin or Timur Abishev for details
+    if (getterDescriptor == this) return node.getProperty(getName());
+
     return getterDescriptor != null ? getterDescriptor.getValue(node) : node.getProperty(getName());
   }
 
   @Override
   public void setValue(SNode node, String value) {
+    //this line is just to get old compiled code not to get into infinite recursion.
+    //remove it after 3.1
+    //ask Mihail Muhin or Timur Abishev for details
+    if (setterDescriptor == this) {
+      node.setProperty(getName(), value);
+      return;
+    }
+
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value);
     } else {
