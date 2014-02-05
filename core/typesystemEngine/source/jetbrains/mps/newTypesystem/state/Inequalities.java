@@ -24,7 +24,6 @@ import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.Pair;

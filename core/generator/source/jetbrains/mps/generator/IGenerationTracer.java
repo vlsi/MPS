@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 

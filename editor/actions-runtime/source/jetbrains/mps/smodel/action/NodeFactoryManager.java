@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;

@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SNodeId;
-
 public class NopInstruction extends Instruction {
   public NopInstruction() {
   }

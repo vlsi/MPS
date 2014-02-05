@@ -18,8 +18,6 @@ package jetbrains.mps.dataFlow.lang;
 import org.junit.Test;
 import org.junit.Assert;
 
-import java.util.Set;
-
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;

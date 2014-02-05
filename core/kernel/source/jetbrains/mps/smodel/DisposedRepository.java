@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.module.*;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collections;
 
