@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.module.*;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collections;
 
@@ -45,7 +46,7 @@ public class DisposedRepository implements SRepository {
   }
 
   @Override
-  public ModelAccess getModelAccess() {
+  public org.jetbrains.mps.openapi.module.ModelAccess getModelAccess() {
     return new ModelAccess() {
       @Override
       public boolean canRead() {
