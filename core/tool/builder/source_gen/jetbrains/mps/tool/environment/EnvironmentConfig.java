@@ -70,13 +70,10 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    // running JUnit tests from an MPS instance requires "JUnit Tests" configuration, which is registered
-    // from execution.configuration (@see JUnitTests_Kind in RunConfigurationsInitializer_CustomApplicationPlugin),
-    // hence we add all dependencies of execution.configuration plugin.
-    return addPlugin("jetbrains.mps.core").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.make").
-        addPlugin("jetbrains.mps.testing").addPlugin("jetbrains.mps.execution.api").
-        addPlugin("jetbrains.mps.debugger.api").addPlugin("jetbrains.mps.debugger.java").
-        addPlugin("jetbrains.mps.execution.languages").addPlugin("jetbrains.mps.execution.configurations");
+    // running JUnit tests from an MPS instance requires "JUnit Tests" configuration, which is registered 
+    // from execution.configuration (@see JUnitTests_Kind in RunConfigurationsInitializer_CustomApplicationPlugin), 
+    // hence we add all dependencies of execution.configuration plugin. 
+    return addPlugin("jetbrains.mps.core").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.testing").addPlugin("jetbrains.mps.execution.api").addPlugin("jetbrains.mps.debugger.api").addPlugin("jetbrains.mps.debugger.java").addPlugin("jetbrains.mps.execution.languages").addPlugin("jetbrains.mps.execution.configurations");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
