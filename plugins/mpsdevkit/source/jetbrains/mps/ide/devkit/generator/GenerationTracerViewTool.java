@@ -30,11 +30,11 @@ import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -53,6 +53,8 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
   private ContentManagerAdapter myContentListener;
   private final GenerationTracer myTracer;
+  private boolean myAutoscroll;
+
 
   public GenerationTracerViewTool(Project project, GenerationTracer tracer) {
     super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -72,7 +74,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     return myTracer.hasTracebackData(modelReference);
   }
   public boolean showTraceInputData(@NotNull SNode node) {
-    int index = getTabIndex(Kind.INPUT, node);
+    int index = getTabIndex(Kind.INPUT, node.getReference());
     if (index > -1) {
       selectIndex(index);
       openToolLater(true);
@@ -87,7 +89,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     return true;
   }
   public boolean showTracebackData(SNode node) {
-    int index = getTabIndex(Kind.OUTPUT, node);
+    int index = getTabIndex(Kind.OUTPUT, node.getReference());
     if (index > -1) {
       selectIndex(index);
       openToolLater(true);
@@ -166,41 +168,43 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     getContentManager().removeAllContents(true);
   }
 
-  public void selectIndex(int index) {
+  void selectIndex(int index) {
     ContentManager manager = getContentManager();
     //noinspection ConstantConditions
     manager.setSelectedContent(manager.getContent(index));
   }
 
-  public int getTabIndex(Kind kind, SNode node) {
+  int getTabIndex(Kind kind, SNodeReference node) {
     int index = 0;
     for (GenerationTracerView tracerView : myTracerViews) {
-      TracerNode tracerNode = tracerView.getRootTracerNode();
-      if (tracerNode.getKind() == kind &&
-        tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) == node) {
+      if (tracerView.isViewFor(kind, node)) {
         return index;
       }
       index++;
     }
     return -1;
   }
+  boolean isAutoscroll() {
+    return myAutoscroll;
+  }
+  void autoscrollsChanged(boolean b) {
+    if (myAutoscroll != b) {
+      myAutoscroll = b;
+      for (GenerationTracerView tracerView : myTracerViews) {
+        tracerView.setAutoscrollToSource(b);
+      }
+    }
+  }
+  void close(GenerationTracerView view) {
+    closeTab(myTracerViews.indexOf(view));
+  }
 
   public void showTraceView(TracerNode tracerNode) {
-    GenerationTracerView tracerView = new GenerationTracerView(tracerNode, getProject()) {
-      public void close() {
-        GenerationTracerViewTool.this.closeTab(myTracerViews.indexOf(this));
-      }
-
-      public void autoscrollsChanged(boolean b) {
-        for (GenerationTracerView tracerView : myTracerViews) {
-          tracerView.setAutoscrollToSource(b);
-        }
-      }
-    };
-
+    GenerationTracerView tracerView = new GenerationTracerView(this, tracerNode, getProject());
     myTracerViews.add(tracerView);
 
-    Content content = addContent(tracerView.getComponent(), tracerView.getCaption(), tracerView.getIcon(), true);
+    Content content = addContent(tracerView.getComponent(), tracerNode.getNodePointer().toString(),
+        jetbrains.mps.ide.devkit.generator.icons.Icons.getIcon(tracerNode), true);
     getContentManager().setSelectedContent(content);
 
     Content noTabsContent = getContentManager().getContent(myNoTabsComponent);

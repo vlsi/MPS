@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
-import com.intellij.ide.actions.SplitHorizontallyAction;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -37,10 +36,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Map;
 
-public final class GenerationTracerTree extends MPSTree {
+final class GenerationTracerTree extends MPSTree {
   private TracerNode myRootTracerNode;
   private Project myProject;
-  private boolean myAutoscrollToSource;
 
   public GenerationTracerTree(TracerNode root, Project project) {
     myRootTracerNode = root;
@@ -73,10 +71,11 @@ public final class GenerationTracerTree extends MPSTree {
     return null;
   }
 
-  // FIXME in fact, it's tree to send autoscroll and doubleclick signals, no need to dispatch through GenerationTracerTreeNode
-  // FIXME why on earth these actions runWriteInEDT? they are purely read actions?!
-  void autoscroll(GenerationTracerTreeNode node) {
-    final TracerNode tracerNode = node.getTracerNode();
+  // FIXME why on earth these actions runWriteInEDT? they are purely read actions?! Is it due to resolve?
+
+  @Override
+  protected void autoscroll(@NotNull MPSTreeNode node) {
+    final TracerNode tracerNode = ((GenerationTracerTreeNode) node).getTracerNode();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
@@ -89,8 +88,9 @@ public final class GenerationTracerTree extends MPSTree {
     });
   }
 
-  void doubleClick(GenerationTracerTreeNode node) {
-    final TracerNode tracerNode = node.getTracerNode();
+  @Override
+  protected void doubleClick(@NotNull MPSTreeNode node) {
+    final TracerNode tracerNode = ((GenerationTracerTreeNode) node).getTracerNode();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
@@ -120,8 +120,6 @@ public final class GenerationTracerTree extends MPSTree {
 
     @Override
     public ActionGroup compute() {
-      final GenerationTracerViewTool tool = getViewTool();
-
       DefaultActionGroup group = new DefaultActionGroup();
       // is traceback shown?
       if (myRootTracerNode != null && myRootTracerNode.getKind() == Kind.OUTPUT) {
@@ -141,8 +139,6 @@ public final class GenerationTracerTree extends MPSTree {
     }
 
     public ActionGroup compute() {
-      final GenerationTracerViewTool tool = getViewTool();
-
       DefaultActionGroup group = new DefaultActionGroup();
 
       // is trace (forward) shown?

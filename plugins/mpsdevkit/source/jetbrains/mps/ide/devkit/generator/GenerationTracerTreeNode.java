@@ -21,7 +21,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class GenerationTracerTreeNode extends MPSTreeNode {
+final class GenerationTracerTreeNode extends MPSTreeNode {
   private TracerNode myTracerNode;
 
   public GenerationTracerTreeNode(TracerNode tracerNode) {
@@ -71,21 +71,6 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   @Override
   public int getToggleClickCount() {
     return -1;
-  }
-
-  @Override
-  public GenerationTracerTree getTree() {
-    return (GenerationTracerTree) super.getTree();
-  }
-
-  @Override
-  public void autoscroll() {
-    getTree().autoscroll(this);
-  }
-
-  @Override
-  public void doubleClick() {
-    getTree().doubleClick(this);
   }
 
   @Override
