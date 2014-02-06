@@ -113,7 +113,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       SNode item = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.PlanItem", null);
-      SPropertyOperations.set(item, "start", "" + (0));
+      SPropertyOperations.set(item, "start", "" + (-1));
       SPropertyOperations.set(item, "temperature", "" + (20));
       return item;
     }

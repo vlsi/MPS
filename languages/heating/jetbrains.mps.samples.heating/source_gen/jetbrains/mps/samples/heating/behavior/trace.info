@@ -10,6 +10,104 @@
   <unitInfo fileName="SpecificDay_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.SpecificDay_BehaviorDescriptor" />
   <unitInfo fileName="WeekDays_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekDays_BehaviorDescriptor" />
   <unitInfo fileName="WeekendDay_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekendDay_BehaviorDescriptor" />
+  <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/3409470686615095301">
+    <nodeInfo nodeId="3409470686615111102" fileName="HeatingPlan_Behavior.java" startLine="19" startPosition="79" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615256449" fileName="HeatingPlan_Behavior.java" startLine="25" startPosition="50" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615256458" fileName="HeatingPlan_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615557390" fileName="HeatingPlan_Behavior.java" startLine="33" startPosition="48" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615285518" fileName="HeatingPlan_Behavior.java" startLine="41" startPosition="50" endLine="42" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615285527" fileName="HeatingPlan_Behavior.java" startLine="45" startPosition="39" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615494550" fileName="HeatingPlan_Behavior.java" startLine="53" startPosition="39" endLine="54" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_numberOfDayPlans_3409470686615095506#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+    <nodeInfo nodeId="3409470686615256447" fileName="HeatingPlan_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3409470686615256456" fileName="HeatingPlan_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="3409470686615554787" fileName="HeatingPlan_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljava/lang/Integer;Ljava/lang/Integer;)I" />
+    <nodeInfo nodeId="3409470686615285516" fileName="HeatingPlan_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3409470686615285525" fileName="HeatingPlan_Behavior.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="3409470686615493837" fileName="HeatingPlan_Behavior.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3409470686615483871" fileName="HeatingPlan_Behavior.java" startLine="51" startPosition="107" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_itemMatchingStartTime_3409470686615482513#(Lorg/jetbrains/mps/openapi/model/SNode;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3409470686615111584" fileName="HeatingPlan_Behavior.java" startLine="39" startPosition="89" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_numberOfDistinctEventTimes_3409470686615111478#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+    <nodeInfo nodeId="3409470686615256438" fileName="HeatingPlan_Behavior.java" startLine="23" startPosition="87" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="23" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_distinctEvents_3409470686615255068#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="3409470686615095454" fileName="HeatingPlan_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="3409470686615095509" fileName="HeatingPlan_Behavior.java" startLine="19" startPosition="79" endLine="20" endPosition="99" />
+    <scopeInfo nodeId="3409470686615256448" fileName="HeatingPlan_Behavior.java" startLine="25" startPosition="50" endLine="26" endPosition="61" />
+    <scopeInfo nodeId="3409470686615256457" fileName="HeatingPlan_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="59" />
+    <scopeInfo nodeId="3409470686615554788" fileName="HeatingPlan_Behavior.java" startLine="33" startPosition="48" endLine="34" endPosition="21" />
+    <scopeInfo nodeId="3409470686615285517" fileName="HeatingPlan_Behavior.java" startLine="41" startPosition="50" endLine="42" endPosition="61" />
+    <scopeInfo nodeId="3409470686615285526" fileName="HeatingPlan_Behavior.java" startLine="45" startPosition="39" endLine="46" endPosition="59" />
+    <scopeInfo nodeId="3409470686615493838" fileName="HeatingPlan_Behavior.java" startLine="53" startPosition="39" endLine="54" endPosition="102" />
+    <scopeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="3409470686615095301" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3409470686615095301" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615256447" fileName="HeatingPlan_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3409470686615256447" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615256456" fileName="HeatingPlan_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3409470686615256456" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615554787" fileName="HeatingPlan_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="3409470686615554787" varName="a" />
+      <varInfo nodeId="3409470686615554787" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615285516" fileName="HeatingPlan_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3409470686615285516" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615285525" fileName="HeatingPlan_Behavior.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="3409470686615285525" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615493837" fileName="HeatingPlan_Behavior.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="3409470686615493837" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615482516" fileName="HeatingPlan_Behavior.java" startLine="51" startPosition="107" endLine="56" endPosition="19" />
+    <scopeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="3409470686615483826" varName="startTime" />
+      <varInfo nodeId="3409470686615095301" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615111481" fileName="HeatingPlan_Behavior.java" startLine="39" startPosition="89" endLine="48" endPosition="26" />
+    <scopeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="3409470686615095301" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615255071" fileName="HeatingPlan_Behavior.java" startLine="23" startPosition="87" endLine="36" endPosition="30" />
+    <scopeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="23" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="3409470686615095301" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3409470686615256447" fileName="HeatingPlan_Behavior.java" startLine="24" startPosition="105" endLine="28" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior$1" />
+    <unitInfo nodeId="3409470686615256456" fileName="HeatingPlan_Behavior.java" startLine="28" startPosition="18" endLine="32" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior$2" />
+    <unitInfo nodeId="3409470686615554787" fileName="HeatingPlan_Behavior.java" startLine="32" startPosition="27" endLine="36" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior$3" />
+    <unitInfo nodeId="3409470686615285516" fileName="HeatingPlan_Behavior.java" startLine="40" startPosition="105" endLine="44" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior$4" />
+    <unitInfo nodeId="3409470686615285525" fileName="HeatingPlan_Behavior.java" startLine="44" startPosition="18" endLine="48" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior$5" />
+    <unitInfo nodeId="3409470686615493837" fileName="HeatingPlan_Behavior.java" startLine="52" startPosition="169" endLine="56" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior$6" />
+    <unitInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior" />
+  </root>
+  <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/3409470686615450423">
+    <nodeInfo nodeId="3409470686615467518" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3409470686615466954" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3409470686615450483" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="105" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_planItemByStartTime_3409470686615450426#(Lorg/jetbrains/mps/openapi/model/SNode;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="3409470686615450425" fileName="DailyPlan_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="3409470686615466955" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="72" />
+    <scopeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="3409470686615450423" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615466954" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3409470686615466954" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3409470686615450429" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="105" endLine="20" endPosition="7" />
+    <scopeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3409470686615450438" varName="startTime" />
+      <varInfo nodeId="3409470686615450423" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3409470686615466954" fileName="DailyPlan_Behavior.java" startLine="16" startPosition="100" endLine="20" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior$1" />
+    <unitInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior" />
+  </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/4664795093170895833">
     <nodeInfo nodeId="4664795093170896039" fileName="DayRange_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

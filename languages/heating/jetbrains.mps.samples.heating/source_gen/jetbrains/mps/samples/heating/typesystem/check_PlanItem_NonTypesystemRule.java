@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_PlanItem_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -20,11 +20,26 @@ public class check_PlanItem_NonTypesystemRule extends AbstractNonTypesystemRule_
   }
 
   public void applyRule(final SNode planItem, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SPropertyOperations.getInteger(planItem, "start") == -1) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(planItem, "Not a valid value", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "2978080762093971534", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.samples.heating.typesystem.AssignCorrectValue_QuickFix", true);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
+      return;
+    }
     SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(planItem), "jetbrains.mps.samples.heating.structure.PlanItem");
     if ((prev != null)) {
-      if (!(SPropertyOperations.getInteger(prev, "start") < SPropertyOperations.getInteger(planItem, "start"))) {
+      if (!(SPropertyOperations.getInteger(prev, "start") <= SPropertyOperations.getInteger(planItem, "start"))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(planItem, "The event should be scheduled after the one above it", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "5063359128233240887", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix", true);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
       if (SPropertyOperations.getInteger(prev, "temperature") == SPropertyOperations.getInteger(planItem, "temperature")) {
         {
