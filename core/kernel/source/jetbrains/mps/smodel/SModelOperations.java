@@ -19,7 +19,6 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -154,7 +153,7 @@ public class SModelOperations {
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {
       for (SModuleReference dk : devkits) {
-        DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+        DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
         if (devKit == null) continue;
         for (Language l : devKit.getExportedLanguages()) {
           result.add(l.getModuleReference());
@@ -370,7 +369,7 @@ public class SModelOperations {
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {
       for (SModuleReference dk : devkits) {
-        DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+        DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
         if (devKit == null) continue;
         for (Language l : devKit.getExportedLanguages()) {
           result.add(l.getModuleReference());

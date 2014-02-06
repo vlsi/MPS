@@ -16,14 +16,10 @@
 package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
-import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
 
 import java.util.Map;

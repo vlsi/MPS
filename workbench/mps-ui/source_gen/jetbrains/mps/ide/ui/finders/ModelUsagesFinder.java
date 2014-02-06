@@ -37,7 +37,7 @@ public class ModelUsagesFinder implements IFinder {
     SModelReference modelReference = ((ModelHolder) holder).getObject();
     searchResults.getSearchedNodes().add(modelReference);
     if (query.getScope() instanceof ModelsOnlyScope) {
-      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0f0b(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
+      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0f0b(query.getScope(), ModelsOnlyScope.class)).getModels()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }

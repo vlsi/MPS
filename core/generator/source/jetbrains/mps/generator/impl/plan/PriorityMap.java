@@ -19,7 +19,6 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 

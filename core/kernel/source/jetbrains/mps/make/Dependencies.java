@@ -22,7 +22,6 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;

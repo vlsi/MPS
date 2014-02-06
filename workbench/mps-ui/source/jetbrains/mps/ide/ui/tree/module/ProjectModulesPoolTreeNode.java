@@ -64,7 +64,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    List<SModule> modules = (List<SModule>) new FilteredGlobalScope().getVisibleModules();
+    List<SModule> modules = (List<SModule>) new FilteredGlobalScope().getModules();
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");

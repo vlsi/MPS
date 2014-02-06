@@ -60,7 +60,7 @@ public class LanguageUsagesFinder implements IFinder {
     Language language = (Language) searchedModule;
     SearchScope scope = query.getScope();
     if (scope instanceof GlobalScope) {
-      for (SModule module : (as_m2sz3c_a0a0a0j0i(scope, GlobalScope.class)).getVisibleModules()) {
+      for (SModule module : (as_m2sz3c_a0a0a0j0i(scope, GlobalScope.class)).getModules()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -76,7 +76,7 @@ public class LanguageUsagesFinder implements IFinder {
       }
     } else if (query.getScope() instanceof ModelsOnlyScope) {
       searchResults.getSearchedNodes().add(language);
-      for (SModel modelDescriptor : (as_m2sz3c_a0a0b0a9a8(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
+      for (SModel modelDescriptor : (as_m2sz3c_a0a0b0a9a8(query.getScope(), ModelsOnlyScope.class)).getModels()) {
         collectUsagesInModel(language, modelDescriptor, searchResults);
       }
     }

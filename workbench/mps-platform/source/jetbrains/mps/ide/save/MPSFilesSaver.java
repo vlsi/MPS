@@ -27,7 +27,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
 public class MPSFilesSaver implements ApplicationComponent {

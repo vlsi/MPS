@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -40,7 +40,7 @@ public class ConceptEditorHelper {
 
   public static List<SNode> getAvailableConceptAspects(LanguageAspect aspect, SNode node) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    Language language = GlobalScope.getInstance().getLanguage(aspect.getMainLanguage());
+    Language language = ((Language) aspect.getMainLanguage().resolve(MPSModuleRepository.getInstance()));
     SModel structureModel = language.getStructureModelDescriptor();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(structureModel, node)));
     return result;

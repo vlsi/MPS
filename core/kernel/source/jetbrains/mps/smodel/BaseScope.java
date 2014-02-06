@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -73,57 +71,5 @@ public abstract class BaseScope implements SearchScope {
       }
     }
     return null;
-  }
-
-  // deprecated stuff
-  // remove after MPS 3.0
-  @Deprecated
-  public Language getLanguage(SModuleReference moduleReference) {
-    return ScopeOperations.resolveModule(this, moduleReference, Language.class);
-  }
-
-  @Deprecated
-  public DevKit getDevKit(SModuleReference ref) {
-    return ScopeOperations.resolveModule(this, ref, DevKit.class);
-  }
-
-  @Deprecated
-  public final SModel getModelDescriptor(SModelReference modelReference) {
-    return ScopeOperations.getModelDescriptor(this, modelReference);
-  }
-
-  @Deprecated
-  public final Iterable<SModel> getModelDescriptors() {
-    return ScopeOperations.getModelDescriptors(this);
-  }
-
-  @Deprecated
-  public final Iterable<Language> getVisibleLanguages() {
-    return ScopeOperations.getModules(this, Language.class);
-  }
-
-  @Deprecated
-  public final Iterable<DevKit> getVisibleDevkits() {
-    return ScopeOperations.getModules(this, DevKit.class);
-  }
-
-  @Deprecated
-  public final Iterable<SModule> getVisibleModules() {
-    return ScopeOperations.getModules(this, SModule.class);
-  }
-
-  @Deprecated
-  public final SModel getModelDescriptor(SModelFqName fqName) {
-    return ScopeOperations.getModelDescriptor(this, fqName);
-  }
-
-  @Deprecated
-  public final Language getLanguage(String fqName) {
-    return ScopeOperations.getLanguage(this, fqName);
-  }
-
-  @Deprecated
-  public final Iterable<SModel> getOwnModelDescriptors() {
-    throw new IllegalStateException();
   }
 }

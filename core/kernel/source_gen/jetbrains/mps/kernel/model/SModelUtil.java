@@ -57,7 +57,7 @@ public class SModelUtil {
   public static SNode findNodeByFQName(String nodeFQName, SNode concept) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModel descriptor : Sequence.fromIterable(GlobalScope.getInstance().getModelDescriptors())) {
+    for (SModel descriptor : Sequence.fromIterable(GlobalScope.getInstance().getModels())) {
       if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
         continue;
       }
