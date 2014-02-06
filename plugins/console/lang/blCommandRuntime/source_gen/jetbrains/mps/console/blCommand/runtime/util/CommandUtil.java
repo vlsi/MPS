@@ -137,9 +137,13 @@ public class CommandUtil {
 
   public static SearchResults nodesToResults(Iterable<SNodeReference> nodes, final SRepository repository) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
-    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNodeReference>() {
+    Sequence.fromIterable(nodes).where(new IWhereFilter<SNodeReference>() {
+      public boolean accept(SNodeReference it) {
+        return check_1pinza_a0a0a0a0b0t(it, repository) != null;
+      }
+    }).visitAll(new IVisitor<SNodeReference>() {
       public void visit(SNodeReference it) {
-        res.getSearchResults().add(new SearchResult<SNode>(it.resolve(repository), "usage"));
+        res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0t(it, repository), "usage"));
       }
     });
     return res;
@@ -149,9 +153,13 @@ public class CommandUtil {
 
   public static SearchResults modelsToResults(Iterable<SModelReference> models, final SRepository repository) {
     final SearchResults<SModel> res = new SearchResults<SModel>();
-    Sequence.fromIterable(models).visitAll(new IVisitor<SModelReference>() {
+    Sequence.fromIterable(models).where(new IWhereFilter<SModelReference>() {
+      public boolean accept(SModelReference it) {
+        return check_1pinza_a0a0a0a0b0v(it, repository) != null;
+      }
+    }).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        res.getSearchResults().add(new SearchResult<SModel>(it.resolve(repository), "usage"));
+        res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0v(it, repository), "usage"));
       }
     });
     return res;
@@ -161,9 +169,13 @@ public class CommandUtil {
 
   public static SearchResults modulesToResults(Iterable<SModuleReference> modules, final SRepository repository) {
     final SearchResults<SModule> res = new SearchResults<SModule>();
-    Sequence.fromIterable(modules).visitAll(new IVisitor<SModuleReference>() {
+    Sequence.fromIterable(modules).where(new IWhereFilter<SModuleReference>() {
+      public boolean accept(SModuleReference it) {
+        return check_1pinza_a0a0a0a0b0x(it, repository) != null;
+      }
+    }).visitAll(new IVisitor<SModuleReference>() {
       public void visit(SModuleReference it) {
-        res.getSearchResults().add(new SearchResult<SModule>(it.resolve(repository), "usage"));
+        res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0x(it, repository), "usage"));
       }
     });
     return res;
@@ -172,19 +184,19 @@ public class CommandUtil {
 
 
   public static SNodeReference getNodeReference(SNode aNode) {
-    return aNode.getReference();
+    return check_1pinza_a0a52(aNode);
   }
 
   public static SNodeReference getReferenceReference(SReference aReference) {
-    return aReference.getSourceNode().getReference();
+    return check_1pinza_a0a62(check_1pinza_a0a0ab(aReference));
   }
 
   public static SModelReference getModelReference(SModel aModel) {
-    return aModel.getReference();
+    return check_1pinza_a0a72(aModel);
   }
 
   public static SModuleReference getModuleReference(SModule aModule) {
-    return aModule.getModuleReference();
+    return check_1pinza_a0a82(aModule);
   }
 
 
@@ -227,4 +239,81 @@ public class CommandUtil {
 
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
+
+  private static SNode check_1pinza_a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+
+  private static SNode check_1pinza_a0a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+
+  private static SModel check_1pinza_a0a0a0a0b0v(SModelReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+
+  private static SModel check_1pinza_a0a0a0a0a0b0v(SModelReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+
+  private static SModule check_1pinza_a0a0a0a0b0x(SModuleReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+
+  private static SModule check_1pinza_a0a0a0a0a0b0x(SModuleReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+
+  private static SNodeReference check_1pinza_a0a52(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+
+  private static SNodeReference check_1pinza_a0a62(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+
+  private static SNode check_1pinza_a0a0ab(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSourceNode();
+    }
+    return null;
+  }
+
+  private static SModelReference check_1pinza_a0a72(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+
+  private static SModuleReference check_1pinza_a0a82(SModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModuleReference();
+    }
+    return null;
+  }
 }
