@@ -27,8 +27,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.console.tool.ConsoleContext;
 import java.io.StringWriter;
@@ -121,21 +125,21 @@ public class CommandUtil {
 
 
 
-  public static void printSequence(ConsoleStream console, final Project project, final SearchResults results, int resultsCount, String resultDescription) {
+  public static void printSequence(ConsoleStream console, final Project project, final _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription) {
     CommandUtil.printClosure(console, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        CommandUtil.show(project, results);
+        CommandUtil.show(project, results.invoke());
       }
     }, (resultsCount == 0 ? "empty sequence" : resultsCount + " " + resultDescription));
   }
 
 
 
-  public static SearchResults nodesToResults(Iterable<SNode> nodes) {
+  public static SearchResults nodesToResults(Iterable<SNodeReference> nodes, final SRepository repository) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
-    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        res.getSearchResults().add(new SearchResult<SNode>(it, "usage"));
+    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNodeReference>() {
+      public void visit(SNodeReference it) {
+        res.getSearchResults().add(new SearchResult<SNode>(it.resolve(repository), "usage"));
       }
     });
     return res;
@@ -143,23 +147,11 @@ public class CommandUtil {
 
 
 
-  public static SearchResults refsToResults(Iterable<SReference> references) {
-    final SearchResults<SNode> res = new SearchResults<SNode>();
-    Sequence.fromIterable(references).visitAll(new IVisitor<SReference>() {
-      public void visit(SReference it) {
-        res.getSearchResults().add(new SearchResult<SNode>(it.getSourceNode(), "usage"));
-      }
-    });
-    return res;
-  }
-
-
-
-  public static SearchResults modelsToResults(Iterable<SModel> models) {
+  public static SearchResults modelsToResults(Iterable<SModelReference> models, final SRepository repository) {
     final SearchResults<SModel> res = new SearchResults<SModel>();
-    Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel it) {
-        res.getSearchResults().add(new SearchResult<SModel>(it, "usage"));
+    Sequence.fromIterable(models).visitAll(new IVisitor<SModelReference>() {
+      public void visit(SModelReference it) {
+        res.getSearchResults().add(new SearchResult<SModel>(it.resolve(repository), "usage"));
       }
     });
     return res;
@@ -167,14 +159,32 @@ public class CommandUtil {
 
 
 
-  public static SearchResults modulesToResults(Iterable<? extends SModule> modules) {
+  public static SearchResults modulesToResults(Iterable<SModuleReference> modules, final SRepository repository) {
     final SearchResults<SModule> res = new SearchResults<SModule>();
-    Sequence.fromIterable(modules).visitAll(new IVisitor<SModule>() {
-      public void visit(SModule it) {
-        res.getSearchResults().add(new SearchResult<SModule>(it, "usage"));
+    Sequence.fromIterable(modules).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
+        res.getSearchResults().add(new SearchResult<SModule>(it.resolve(repository), "usage"));
       }
     });
     return res;
+  }
+
+
+
+  public static SNodeReference getNodeReference(SNode aNode) {
+    return aNode.getReference();
+  }
+
+  public static SNodeReference getReferenceReference(SReference aReference) {
+    return aReference.getSourceNode().getReference();
+  }
+
+  public static SModelReference getModelReference(SModel aModel) {
+    return aModel.getReference();
+  }
+
+  public static SModuleReference getModuleReference(SModule aModule) {
+    return aModule.getModuleReference();
   }
 
 
