@@ -19,9 +19,9 @@ public class UnusedMethodTypeVariableDeclaration_Test extends BaseTransformation
   }
 
   @Test
-  public void test_NodeNoNameWarningCheck6923385624928495830() throws Throwable {
+  public void test_NodeTypeVariableIsNotNeededCheck6923385624928495830() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeNoNameWarningCheck6923385624928495830", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeTypeVariableIsNotNeededCheck6923385624928495830", true);
   }
 
   @Test
@@ -37,7 +37,7 @@ public class UnusedMethodTypeVariableDeclaration_Test extends BaseTransformation
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229489")});
     }
 
-    public void test_NodeNoNameWarningCheck6923385624928495830() throws Exception {
+    public void test_NodeTypeVariableIsNotNeededCheck6923385624928495830() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928495830"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451222404")});
     }

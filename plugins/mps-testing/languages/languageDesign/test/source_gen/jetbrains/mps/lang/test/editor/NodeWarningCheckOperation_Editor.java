@@ -32,9 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -122,11 +120,8 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText_internal(SNode parameterObject) {
-      SNode myWarning = SNodeOperations.cast(parameterObject, "jetbrains.mps.lang.typesystem.structure.WarningStatement");
-      if ((AttributeOperations.getAttribute(myWarning, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) != null)) {
-        return SPropertyOperations.getString(AttributeOperations.getAttribute(myWarning, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), "name");
-      }
-      return "_NoName";
+      SNode warningStatement = parameterObject;
+      return BehaviorReflection.invokeVirtual(String.class, warningStatement, "virtual_getName_1597542831856389237", new Object[]{});
     }
   }
 

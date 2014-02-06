@@ -13,21 +13,21 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class FieldCanBeLocalVar_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeNoNameWarningCheck6923385624929411102() throws Throwable {
+  public void test_NodeFieldCanBeConvertedIntoCheck6923385624929411102() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeNoNameWarningCheck6923385624929411102", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929411102", true);
   }
 
   @Test
-  public void test_NodeNoNameWarningCheck6923385624927778166() throws Throwable {
+  public void test_NodeFieldCanBeConvertedIntoCheck6923385624927778166() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927778166", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624927778166", true);
   }
 
   @Test
-  public void test_NodeNoNameWarningCheck6923385624927778168() throws Throwable {
+  public void test_NodeIsAssignedButNeverAccessedCheck6923385624927778168() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeNoNameWarningCheck6923385624927778168", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927778168", true);
   }
 
   @Test
@@ -38,17 +38,17 @@ public class FieldCanBeLocalVar_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeNoNameWarningCheck6923385624929411102() throws Exception {
+    public void test_NodeFieldCanBeConvertedIntoCheck6923385624929411102() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929411102"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229518")});
     }
 
-    public void test_NodeNoNameWarningCheck6923385624927778166() throws Exception {
+    public void test_NodeFieldCanBeConvertedIntoCheck6923385624927778166() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927778166"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230524")});
     }
 
-    public void test_NodeNoNameWarningCheck6923385624927778168() throws Exception {
+    public void test_NodeIsAssignedButNeverAccessedCheck6923385624927778168() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927778168"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230524")});
     }

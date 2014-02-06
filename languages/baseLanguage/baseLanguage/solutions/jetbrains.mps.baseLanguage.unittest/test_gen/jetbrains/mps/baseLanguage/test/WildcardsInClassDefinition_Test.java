@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class WildcardsInClassDefinition_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeNoNameErrorCheck6923385624927497212() throws Throwable {
+  public void test_NodeSupertypeMayNotSpecifyCheck6923385624927497212() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_NodeNoNameErrorCheck6923385624927497212", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624927497212", true);
   }
 
   @Test
@@ -31,9 +31,9 @@ public class WildcardsInClassDefinition_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeNoNameErrorCheck6923385624928818605() throws Throwable {
+  public void test_NodeSupertypeMayNotSpecifyCheck6923385624928818605() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_NodeNoNameErrorCheck6923385624928818605", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624928818605", true);
   }
 
   @Test
@@ -50,7 +50,7 @@ public class WildcardsInClassDefinition_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeNoNameErrorCheck6923385624927497212() throws Exception {
+    public void test_NodeSupertypeMayNotSpecifyCheck6923385624927497212() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927497212"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229706")});
     }
@@ -65,7 +65,7 @@ public class WildcardsInClassDefinition_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8187342170692147339")});
     }
 
-    public void test_NodeNoNameErrorCheck6923385624928818605() throws Exception {
+    public void test_NodeSupertypeMayNotSpecifyCheck6923385624928818605() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928818605"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230464")});
     }

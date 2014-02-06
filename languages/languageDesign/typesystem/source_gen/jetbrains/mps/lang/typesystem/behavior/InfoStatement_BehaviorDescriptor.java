@@ -13,6 +13,10 @@ public class InfoStatement_BehaviorDescriptor extends Statement_BehaviorDescript
     InfoStatement_Behavior.virtual_attachNewMessageAnnotation_8489045168661849665(thisNode);
   }
 
+  public String virtual_getName_1597542831856389237(SNode thisNode) {
+    return InfoStatement_Behavior.virtual_getName_1597542831856389237(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.InfoStatement";

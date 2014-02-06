@@ -1371,36 +1371,30 @@
     <unitInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8202121391118617645">
-    <nodeInfo nodeId="2912288420879009619" fileName="WarningStatementReference_Behavior.java" startLine="21" startPosition="112" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2912288420879009626" fileName="WarningStatementReference_Behavior.java" startLine="23" startPosition="171" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2912288420879009634" fileName="WarningStatementReference_Behavior.java" startLine="25" startPosition="7" endLine="26" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2912288420879009647" fileName="WarningStatementReference_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2912288420879009656" fileName="WarningStatementReference_Behavior.java" startLine="32" startPosition="73" endLine="33" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2912288420879009645" fileName="WarningStatementReference_Behavior.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2912288420879009624" fileName="WarningStatementReference_Behavior.java" startLine="22" startPosition="113" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_2912288420879009652#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2912288420879009617" fileName="WarningStatementReference_Behavior.java" startLine="20" startPosition="106" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_2912288420879009614#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8202121391118617647" fileName="WarningStatementReference_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="2912288420879009625" fileName="WarningStatementReference_Behavior.java" startLine="23" startPosition="171" endLine="24" endPosition="31" />
-    <scopeInfo nodeId="2912288420879009646" fileName="WarningStatementReference_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="30" />
-    <scopeInfo nodeId="2912288420879009655" fileName="WarningStatementReference_Behavior.java" startLine="32" startPosition="73" endLine="33" endPosition="310" />
-    <scopeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="1597542831857100508" fileName="WarningStatementReference_Behavior.java" startLine="19" startPosition="112" endLine="20" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2912288420879009647" fileName="WarningStatementReference_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2912288420879009656" fileName="WarningStatementReference_Behavior.java" startLine="26" startPosition="73" endLine="27" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2912288420879009645" fileName="WarningStatementReference_Behavior.java" startLine="21" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_2912288420879009652#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2912288420879009617" fileName="WarningStatementReference_Behavior.java" startLine="18" startPosition="106" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_2912288420879009614#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8202121391118617647" fileName="WarningStatementReference_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2912288420879009618" fileName="WarningStatementReference_Behavior.java" startLine="19" startPosition="112" endLine="20" endPosition="210" />
+    <scopeInfo nodeId="2912288420879009646" fileName="WarningStatementReference_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="2912288420879009655" fileName="WarningStatementReference_Behavior.java" startLine="26" startPosition="73" endLine="27" endPosition="310" />
+    <scopeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8202121391118617645" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8202121391118617645" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2912288420879009618" fileName="WarningStatementReference_Behavior.java" startLine="21" startPosition="112" endLine="26" endPosition="201">
-      <varInfo nodeId="2912288420879009620" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2912288420879009616" fileName="WarningStatementReference_Behavior.java" startLine="20" startPosition="106" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="2912288420879009616" fileName="WarningStatementReference_Behavior.java" startLine="18" startPosition="106" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="2912288420879009649" varName="declaration" />
       <varInfo nodeId="8202121391118617645" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.WarningStatementReference_Behavior" />
+    <unitInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.WarningStatementReference_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8578280453511612110">
     <nodeInfo nodeId="2912288420889015384" fileName="NodeTypeSystemWarningCheckOperation_Behavior.java" startLine="21" startPosition="9" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1456,36 +1450,30 @@
     <unitInfo nodeId="8578280453511612110" fileName="NodeTypeSystemWarningCheckOperation_Behavior.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeTypeSystemWarningCheckOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8578280453517059631">
-    <nodeInfo nodeId="9057440207251644502" fileName="ReportErrorStatementReference_Behavior.java" startLine="21" startPosition="116" endLine="22" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4531408400492785959" fileName="ReportErrorStatementReference_Behavior.java" startLine="23" startPosition="171" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4531408400492770666" fileName="ReportErrorStatementReference_Behavior.java" startLine="25" startPosition="7" endLine="26" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9057440207251661238" fileName="ReportErrorStatementReference_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8578280453517849276" fileName="ReportErrorStatementReference_Behavior.java" startLine="32" startPosition="73" endLine="33" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9057440207251659858" fileName="ReportErrorStatementReference_Behavior.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4531408400492772570" fileName="ReportErrorStatementReference_Behavior.java" startLine="22" startPosition="117" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_8578280453517073200#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="9057440207251630009" fileName="ReportErrorStatementReference_Behavior.java" startLine="20" startPosition="106" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_8578280453517059635#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8578280453517059633" fileName="ReportErrorStatementReference_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="4531408400492772573" fileName="ReportErrorStatementReference_Behavior.java" startLine="23" startPosition="171" endLine="24" endPosition="29" />
-    <scopeInfo nodeId="9057440207251659859" fileName="ReportErrorStatementReference_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="28" />
-    <scopeInfo nodeId="8578280453517073203" fileName="ReportErrorStatementReference_Behavior.java" startLine="32" startPosition="73" endLine="33" endPosition="318" />
-    <scopeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="1597542831856614608" fileName="ReportErrorStatementReference_Behavior.java" startLine="19" startPosition="116" endLine="20" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9057440207251661238" fileName="ReportErrorStatementReference_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8578280453517849276" fileName="ReportErrorStatementReference_Behavior.java" startLine="26" startPosition="73" endLine="27" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9057440207251659858" fileName="ReportErrorStatementReference_Behavior.java" startLine="21" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_8578280453517073200#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="9057440207251630009" fileName="ReportErrorStatementReference_Behavior.java" startLine="18" startPosition="106" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getName_8578280453517059635#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8578280453517059633" fileName="ReportErrorStatementReference_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="9057440207251630012" fileName="ReportErrorStatementReference_Behavior.java" startLine="19" startPosition="116" endLine="20" endPosition="214" />
+    <scopeInfo nodeId="9057440207251659859" fileName="ReportErrorStatementReference_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="28" />
+    <scopeInfo nodeId="8578280453517073203" fileName="ReportErrorStatementReference_Behavior.java" startLine="26" startPosition="73" endLine="27" endPosition="318" />
+    <scopeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8578280453517059631" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8578280453517059631" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="9057440207251630012" fileName="ReportErrorStatementReference_Behavior.java" startLine="21" startPosition="116" endLine="26" endPosition="201">
-      <varInfo nodeId="9057440207251644505" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8578280453517059638" fileName="ReportErrorStatementReference_Behavior.java" startLine="20" startPosition="106" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="8578280453517059638" fileName="ReportErrorStatementReference_Behavior.java" startLine="18" startPosition="106" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="8578280453517071715" varName="declaration" />
       <varInfo nodeId="8578280453517059631" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_Behavior" />
+    <unitInfo nodeId="8578280453517059631" fileName="ReportErrorStatementReference_Behavior.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_Behavior" />
   </root>
 </debugInfo>
 

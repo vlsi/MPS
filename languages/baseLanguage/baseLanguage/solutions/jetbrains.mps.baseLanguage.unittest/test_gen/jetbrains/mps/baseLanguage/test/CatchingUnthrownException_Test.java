@@ -13,15 +13,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class CatchingUnthrownException_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeNoNameErrorCheck6923385624927429271() throws Throwable {
+  public void test_NodeCaughtExceptionCheck6923385624927429271() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeNoNameErrorCheck6923385624927429271", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624927429271", true);
   }
 
   @Test
-  public void test_NodeNoNameErrorCheck6923385624929290516() throws Throwable {
+  public void test_NodeCaughtExceptionCheck6923385624929290516() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeNoNameErrorCheck6923385624929290516", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624929290516", true);
   }
 
   @Test
@@ -32,12 +32,12 @@ public class CatchingUnthrownException_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeNoNameErrorCheck6923385624927429271() throws Exception {
+    public void test_NodeCaughtExceptionCheck6923385624927429271() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927429271"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230336")});
     }
 
-    public void test_NodeNoNameErrorCheck6923385624929290516() throws Exception {
+    public void test_NodeCaughtExceptionCheck6923385624929290516() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929290516"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231640")});
     }
