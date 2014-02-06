@@ -131,40 +131,39 @@
   <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5224141982809132419">
     <nodeInfo nodeId="5224141982809133134" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5224141982809141196" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5224141982809438918" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="22" startPosition="102" endLine="23" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5224141982809270800" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="24" startPosition="60" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5224141982809141920" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="26" startPosition="5" endLine="27" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5224141982809164438" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="29" startPosition="39" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5224141982809166927" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="33" startPosition="32" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5224141982809270800" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="23" startPosition="60" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5224141982809141920" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="25" startPosition="5" endLine="26" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5224141982809164438" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="39" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5224141982809166927" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="32" startPosition="32" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveItemToTheRightPositionWithinDailyPlan_QuickFix#()V" />
     <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5224141982809245936" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="23" startPosition="142" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5224141982809166051" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="32" startPosition="7" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5224141982809164429" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="27" startPosition="129" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5224141982809245936" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="22" startPosition="102" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5224141982809166051" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="31" startPosition="7" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5224141982809164429" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="26" startPosition="129" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="14" startPosition="63" endLine="14" endPosition="63" />
     <scopeInfo nodeId="5224141982809132476" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="73" />
-    <scopeInfo nodeId="5224141982809245939" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="24" startPosition="60" endLine="25" endPosition="13" />
-    <scopeInfo nodeId="5224141982809164437" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="29" startPosition="39" endLine="30" endPosition="107" />
-    <scopeInfo nodeId="5224141982809166054" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="33" startPosition="32" endLine="34" endPosition="64" />
+    <scopeInfo nodeId="5224141982809245939" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="23" startPosition="60" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="5224141982809164437" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="39" endLine="29" endPosition="107" />
+    <scopeInfo nodeId="5224141982809166054" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="32" startPosition="32" endLine="33" endPosition="64" />
     <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5224141982809132419" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5224141982809164436" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5224141982809132421" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="35" endLine="35" endPosition="5">
+    <scopeInfo nodeId="5224141982809132421" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="35" endLine="34" endPosition="5">
       <varInfo nodeId="5224141982809141921" varName="dailyPlan" />
       <varInfo nodeId="5224141982809141197" varName="item" />
       <varInfo nodeId="5224141982809164430" varName="nextSibling" />
     </scopeInfo>
-    <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="5224141982809132419" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="114" endLine="32" endPosition="5" unitName="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix$1" />
-    <unitInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix" />
+    <unitInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="27" startPosition="114" endLine="31" endPosition="5" unitName="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix$1" />
+    <unitInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix" />
   </root>
 </debugInfo>
 

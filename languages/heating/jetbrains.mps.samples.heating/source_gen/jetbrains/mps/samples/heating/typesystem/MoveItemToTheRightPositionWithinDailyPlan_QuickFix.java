@@ -20,7 +20,6 @@ public class MoveItemToTheRightPositionWithinDailyPlan_QuickFix extends QuickFix
 
   public void execute(SNode node) {
     final SNode item = SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.PlanItem");
-    System.out.println("AAAAAA " + SPropertyOperations.getInteger(item, "start") + ":" + SPropertyOperations.getInteger(item, "temperature"));
     if (SPropertyOperations.getInteger(item, "start") < 0) {
       return;
     }
