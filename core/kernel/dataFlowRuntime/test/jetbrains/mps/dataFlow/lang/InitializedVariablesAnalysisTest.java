@@ -23,8 +23,6 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.VarSet;
 
-import java.util.Set;
-
 public class InitializedVariablesAnalysisTest {
   @Test
   public void simple() {

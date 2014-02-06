@@ -16,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -29,7 +30,6 @@ import java.util.Arrays;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -66,7 +66,7 @@ public class RefactoringUtil {
 
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
-    for (Language language : GlobalScope.getInstance().getVisibleLanguages()) {
+    for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       allRefactorings.addAll(RefactoringUtil.getRefactorings(language));
     }
     return allRefactorings;

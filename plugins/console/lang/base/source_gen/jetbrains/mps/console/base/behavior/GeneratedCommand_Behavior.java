@@ -6,12 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils;
+import jetbrains.mps.console.tool.ConsoleUtil;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import org.apache.log4j.Priority;
@@ -23,19 +21,13 @@ public class GeneratedCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
-    final SNode n = thisNode;
+  public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            model.value = SNodeOperations.getModel(n);
-          }
-        });
+        final SModel model = context.getConsoleTab().getConsoleModel();
 
-        boolean result = QuickQueryUtils.make(c.getProject(), model.value);
+        boolean result = ConsoleUtil.make(context.getProject(), model);
         if (!(result)) {
           return;
         }
@@ -45,14 +37,14 @@ public class GeneratedCommand_Behavior {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
                 try {
-                  final ClassLoader loader = ClassLoaderManager.getInstance().getClassLoader(model.value.getModule());
-                  String name = CommandHolder_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(n), "jetbrains.mps.console.base.structure.CommandHolder"));
+                  final ClassLoader loader = ClassLoaderManager.getInstance().getClassLoader(model.getModule());
+                  String name = ConsoleUtil.getGeneratedModelName(context);
 
                   Method[] methods = Class.forName(name, true, loader).getMethods();
                   for (Method method : methods) {
                     if (method.getName().equals("execute")) {
                       beforeCallback.run();
-                      method.invoke(null, new Object[]{c, console});
+                      method.invoke(null, new Object[]{context, console});
                       afterCallback.run();
                       return;
                     }

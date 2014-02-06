@@ -23,7 +23,6 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.IGenerationSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
 import org.jetbrains.annotations.Nls;

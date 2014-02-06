@@ -130,9 +130,6 @@
   <dependency className="jetbrains.mps.console.blCommand.behavior.InstancesExpression_Behavior" file="InstancesExpression_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -157,10 +154,8 @@
   <dependency className="jetbrains.mps.console.blCommand.behavior.ModelsExpression_Behavior" file="ModelsExpression_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -178,10 +173,8 @@
   <dependency className="jetbrains.mps.console.blCommand.behavior.ModulesExpression_Behavior" file="ModulesExpression_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -205,10 +198,8 @@
   <dependency className="jetbrains.mps.console.blCommand.behavior.NodesExpression_Behavior" file="NodesExpression_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -331,10 +322,8 @@
   <dependency className="jetbrains.mps.console.blCommand.behavior.ReferencesExpression_Behavior" file="ReferencesExpression_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -375,9 +364,6 @@
   <dependency className="jetbrains.mps.console.blCommand.behavior.UsagesExpression_Behavior" file="UsagesExpression_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

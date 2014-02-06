@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -59,7 +58,7 @@ public abstract class BaseLanguagesImportHelper {
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
       if (neq_5vd2f2_a0b0a0e(targetModel, containerModel)) {
-        SModel scopeModel = GlobalScope.getInstance().getModelDescriptor(targetModel.getReference());
+        SModel scopeModel = targetModel.getReference().resolve(MPSModuleRepository.getInstance());
         if (scopeModel != null && neq_5vd2f2_a0a1a1a0a4(scopeModel, targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {

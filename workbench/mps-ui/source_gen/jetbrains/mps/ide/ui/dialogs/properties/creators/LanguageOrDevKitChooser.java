@@ -7,36 +7,39 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.FilteredGlobalScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.VisibleModuleRegistry;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
 public class LanguageOrDevKitChooser implements Computable<List<SModuleReference>> {
   @Override
   public List<SModuleReference> compute() {
-    final Wrappers._T<List<SModuleReference>> langOrDevKitRefs = new Wrappers._T<List<SModuleReference>>();
+    final Wrappers._T<List<SModuleReference>> refs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<Language> langs = new FilteredGlobalScope().getVisibleLanguages();
-        langOrDevKitRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, SModuleReference>() {
-          public SModuleReference select(Language lang) {
+        Collection<SModule> modules = CollectionSequence.fromCollection(new ArrayList<SModule>());
+        CollectionSequence.fromCollection(modules).addSequence(CollectionSequence.fromCollection(ModuleRepositoryFacade.getInstance().getAllModules(Language.class)));
+        CollectionSequence.fromCollection(modules).addSequence(CollectionSequence.fromCollection(ModuleRepositoryFacade.getInstance().getAllModules(DevKit.class)));
+        refs.value = CollectionSequence.fromCollection(modules).where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
+            return VisibleModuleRegistry.getInstance().isVisible(it);
+          }
+        }).select(new ISelector<SModule, SModuleReference>() {
+          public SModuleReference select(SModule lang) {
             return lang.getModuleReference();
           }
         }).toListSequence();
-
-        Iterable<DevKit> devkits = new FilteredGlobalScope().getVisibleDevkits();
-        ListSequence.fromList(langOrDevKitRefs.value).addSequence(Sequence.fromIterable(devkits).select(new ISelector<DevKit, SModuleReference>() {
-          public SModuleReference select(DevKit it) {
-            return it.getModuleReference();
-          }
-        }).toListSequence());
       }
     });
 
-    return CommonChoosers.showDialogModuleCollectionChooser(null, "Language or DevKit", langOrDevKitRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, "Language or DevKit", refs.value, null);
   }
 }

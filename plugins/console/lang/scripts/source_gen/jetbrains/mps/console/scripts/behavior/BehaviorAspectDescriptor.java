@@ -18,10 +18,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConsoleDump_BehaviorDescriptor();
       case 1:
         return new ConsoleScript_BehaviorDescriptor();
+      case 3:
+        return new RefactorOperation_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.scripts.structure.ConsoleDump", "jetbrains.mps.console.scripts.structure.ConsoleScript", "jetbrains.mps.console.scripts.structure.Execute"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.scripts.structure.ConsoleDump", "jetbrains.mps.console.scripts.structure.ConsoleScript", "jetbrains.mps.console.scripts.structure.Execute", "jetbrains.mps.console.scripts.structure.RefactorOperation"};
 }

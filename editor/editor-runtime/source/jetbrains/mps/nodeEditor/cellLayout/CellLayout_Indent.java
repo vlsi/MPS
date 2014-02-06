@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellLayout;
 import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;

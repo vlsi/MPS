@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -54,7 +53,6 @@ import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.EventListener;
 import java.util.List;
 
 class EditorSettingsPreferencesPage {

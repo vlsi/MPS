@@ -16,7 +16,6 @@
 package jetbrains.mps.icons;
 
 import com.intellij.icons.AllIcons;
-import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.LayeredIcon;
 

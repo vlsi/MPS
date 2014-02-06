@@ -20,7 +20,6 @@ import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.SModuleOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
@@ -102,7 +101,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
 
   @Override
   @Nullable
-  protected IFile getCacheFile(SModel modelDescriptor) {
+  public IFile getCacheFile(SModel modelDescriptor) {
     SModule m = modelDescriptor.getModule();
     IFile cachesModuleDir = getCachesDirInternal(m, SModuleOperations.getOutputPathFor(modelDescriptor));
     if (cachesModuleDir == null) return null;

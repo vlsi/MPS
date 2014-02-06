@@ -248,9 +248,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/sandbox/jetbrains.mps.lang.test.sandbox.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/jetbrains.mps.ide.mpsdevkit.msd" folder="platform" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" folder="platform.quickQueryLanguage" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="platform.quickQueryLanguage" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/jetbrains.mps.quickQueryLanguage.pluginSolution.msd" folder="platform.quickQueryLanguage" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/jetbrains.mps.baseLanguage.pluginSolution.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/jetbrains.mps.lang.dataFlow.pluginSolution.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/jetbrains.mps.lang.typesystem.devkit.pluginSolution.msd" folder="core.aspects.typesystem" />
@@ -350,6 +347,7 @@
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="samples.persistence" />
+      <modulePath path="$PROJECT_DIR$/solutions/test/test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/jetbrains.mps.testbench.suite.pluginSolution.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="tests" />

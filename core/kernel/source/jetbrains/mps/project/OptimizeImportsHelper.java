@@ -132,7 +132,7 @@ public class OptimizeImportsHelper {
 
     Set<SModuleReference> unusedDevkits = new HashSet<SModuleReference>();
     for (SModuleReference devkitRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedDevkits()) {
-      DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
+      DevKit dk = ((DevKit) devkitRef.resolve(MPSModuleRepository.getInstance()));
       if (dk == null) return null;
       if (ModelsAutoImportsManager.getAutoImportedDevKits(modelDescriptor.getModule(), modelDescriptor).contains(dk)) {
         continue;
@@ -214,7 +214,7 @@ public class OptimizeImportsHelper {
   }
 
   private SModuleReference getUnusedDevkitRef(Result result, SModuleReference devkitRef) {
-    DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
+    DevKit dk = ((DevKit) devkitRef.resolve(MPSModuleRepository.getInstance()));
     if (dk == null) return null;
 
     for (Language lang : dk.getAllExportedLanguages()) {
@@ -230,7 +230,7 @@ public class OptimizeImportsHelper {
   }
 
   private SModuleReference getUnusedLanguageRef(Result result, SModuleReference languageRef) {
-    Language language = GlobalScope.getInstance().getLanguage(languageRef);
+    Language language = ((Language) languageRef.resolve(MPSModuleRepository.getInstance()));
     if (language == null) return null;
     if (result.myUsedLanguages.contains(language)) return null;
 

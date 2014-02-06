@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Indicates an issue during generation that prevents the process going on.

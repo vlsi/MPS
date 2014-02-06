@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

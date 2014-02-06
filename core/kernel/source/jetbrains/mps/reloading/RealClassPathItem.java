@@ -15,12 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class RealClassPathItem extends AbstractClassPathItem {
   public abstract String getPath();
 }

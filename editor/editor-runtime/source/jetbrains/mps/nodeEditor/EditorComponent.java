@@ -2931,7 +2931,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     //PDK
     if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) return new MyCutProvider();
     if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) return new MyCopyProvider();
-    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName()) && (isFocusOwner() || IdeMain.getTestMode() == TestMode.CORE_TEST))
+    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName()) && (isFocusOwner() || mySearchPanel == null || !mySearchPanel.isVisible()))
       return new MyPasteProvider();
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
