@@ -17,15 +17,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Applicability_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
+        return Collections.<ConceptEditor>singletonList(new ChangeEvent_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
+        return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
+        return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
+        return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new PlanItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
       case 6:
         return Collections.<ConceptEditor>singletonList(new Slot_Editor());
       case 7:
@@ -46,5 +46,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay"};
 }

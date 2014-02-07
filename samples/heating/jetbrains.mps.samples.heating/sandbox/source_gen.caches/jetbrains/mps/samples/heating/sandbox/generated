@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cveqxgyvgz3t0e5tg2490s7ryhj19ug">
-  <common hash="ajs3ofvlbfgz19dlisvs0skqf9yon6m" />
-  <source id="5726447348464276940" name="LivingRoom" hash="-27kmzuh4tkovm0lgszxd3n4dczv0ezy">
+<dependencies version="2" modelHash="6qlfgflm0bjlwhw6a6fy55gu46qi182">
+  <common hash="-1d2exeldr781vcis8zbdrhifwhvy30w" />
+  <source id="5726447348464276940" name="LivingRoom" hash="-6ezxnsgxxgv7be2hs0hkojxx91kslle">
     <file name="LivingRoom" />
+  </source>
+  <source id="4383917556651099712" name="Kitchen" hash="ar0d8a1d698w7yul9kra2q0ikuy8d7t">
+    <file name="Kitchen" />
   </source>
 </dependencies>
 

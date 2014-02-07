@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class PlanItem_Constraints extends BaseConstraintsDescriptor {
-  public PlanItem_Constraints() {
-    super("jetbrains.mps.samples.heating.structure.PlanItem");
+public class ChangeEvent_Constraints extends BaseConstraintsDescriptor {
+  public ChangeEvent_Constraints() {
+    super("jetbrains.mps.samples.heating.structure.ChangeEvent");
   }
 
   @Override

@@ -16,24 +16,24 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class PlanItem_Editor extends DefaultNodeEditor {
+public class ChangeEvent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1aqra0_a(editorContext, node);
+    return this.createCollection_8rx6ch_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1aqra0_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8rx6ch_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1aqra0_a");
+    editorCell.setCellId("Collection_8rx6ch_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_1aqra0_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1aqra0_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1aqra0_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8rx6ch_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8rx6ch_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8rx6ch_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1aqra0_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8rx6ch_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "set temperature to");
-    editorCell.setCellId("Constant_1aqra0_a0");
+    editorCell.setCellId("Constant_8rx6ch_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -41,7 +41,7 @@ public class PlanItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_1aqra0_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8rx6ch_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("temperature");
     provider.setNoTargetText("<no temperature>");
@@ -59,9 +59,9 @@ public class PlanItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1aqra0_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8rx6ch_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Celsius");
-    editorCell.setCellId("Constant_1aqra0_c0");
+    editorCell.setCellId("Constant_8rx6ch_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

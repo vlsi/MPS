@@ -18,11 +18,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new DailyPlan_tabular_Editor());
+        return Collections.<ConceptEditor>singletonList(new ChangeEvent_tabular_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new HeatingPlan_tabular_Editor());
+        return Collections.<ConceptEditor>singletonList(new DailyPlan_tabular_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new PlanItem_tabular_Editor());
+        return Collections.<ConceptEditor>singletonList(new HeatingPlan_tabular_Editor());
       case 3:
         return Collections.<ConceptEditor>singletonList(new Slot_tabular_Editor());
       default:
@@ -41,5 +41,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.Slot"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.Slot"};
 }

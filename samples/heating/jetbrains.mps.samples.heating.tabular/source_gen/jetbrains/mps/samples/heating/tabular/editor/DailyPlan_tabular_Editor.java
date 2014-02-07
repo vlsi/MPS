@@ -8,6 +8,7 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.table.runtime.TableModelFactory;
 import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.AbstractTableModel;
@@ -16,8 +17,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.heating.tabular.editor.HeatingViews.tabular"});
@@ -28,10 +32,19 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createTable_dgsw3q_a(editorContext, node);
+    return this.createCollection_dgsw3q_a(editorContext, node);
   }
 
-  private EditorCell createTable_dgsw3q_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_dgsw3q_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_dgsw3q_a");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createTable_dgsw3q_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dgsw3q_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createTable_dgsw3q_a0(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
@@ -54,7 +67,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
               return ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(row - 1);
             }
             if (row > 0 && column > 0) {
-              SNode item = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(row - 1), "item", true);
+              SNode item = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(row - 1), "event", true);
               return item;
             }
             return null;
@@ -67,7 +80,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
               if (slot == null) {
                 SNode item = SNodeFactoryOperations.addNewChild(node, "items", "jetbrains.mps.samples.heating.structure.Slot");
                 SPropertyOperations.set(item, "start", "" + (row - 1));
-                SPropertyOperations.set(SLinkOperations.getTarget(item, "item", true), "temperature", "" + (20));
+                SPropertyOperations.set(SLinkOperations.getTarget(item, "event", true), "temperature", "" + (20));
               }
             }
           }
@@ -79,9 +92,19 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
 
           @Override
           public void insertRow(int rowNumber) {
+            System.out.println("AAAAAA " + rowNumber);
             if (rowNumber <= 0) {
               return;
             }
+            SNode slot = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);
+            SPropertyOperations.set(SLinkOperations.getTarget(slot, "event", true), "temperature", "" + (20));
+            SNode prevSlot = (rowNumber == 1 ? null : ((ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).count() > rowNumber - 2 ? ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(rowNumber - 2) : ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).last())));
+            if (prevSlot != null) {
+              SPropertyOperations.set(slot, "start", "" + (SPropertyOperations.getInteger(prevSlot, "start") + 1));
+            } else {
+              SPropertyOperations.set(slot, "start", "" + (0));
+            }
+            ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).insertElement(rowNumber - 1, slot);
             return;
           }
 
@@ -95,14 +118,24 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
+            ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).removeElementAt(rowNumber - 1);
             return;
           }
         };
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_dgsw3q_a");
-    editorCell.setCellId("Table_dgsw3q_a_0");
-    editorCell.setBig(true);
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_dgsw3q_a0");
+    editorCell.setCellId("Table_dgsw3q_a0_0");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_dgsw3q_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_dgsw3q_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

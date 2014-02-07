@@ -64,12 +64,12 @@ public class Slot_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_sjf1bb_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("item");
-    provider.setNoTargetText("<no item>");
+    provider.setRole("event");
+    provider.setNoTargetText("<no event>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("item");
+      editorCell.setRole("event");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

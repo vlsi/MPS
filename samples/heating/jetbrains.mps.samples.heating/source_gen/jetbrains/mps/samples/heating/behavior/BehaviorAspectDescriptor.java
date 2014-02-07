@@ -12,13 +12,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
-        return new HeatingPlan_BehaviorDescriptor();
-      case 0:
-        return new DailyPlan_BehaviorDescriptor();
-      case 4:
-        return new PlanItem_BehaviorDescriptor();
       case 3:
+        return new HeatingPlan_BehaviorDescriptor();
+      case 1:
+        return new DailyPlan_BehaviorDescriptor();
+      case 0:
+        return new ChangeEvent_BehaviorDescriptor();
+      case 4:
         return new NotSpecified_BehaviorDescriptor();
       case 8:
         return new WeekendDay_BehaviorDescriptor();
@@ -26,7 +26,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new WeekDays_BehaviorDescriptor();
       case 6:
         return new SpecificDay_BehaviorDescriptor();
-      case 1:
+      case 2:
         return new DayRange_BehaviorDescriptor();
       case 5:
         return new Slot_BehaviorDescriptor();
@@ -35,5 +35,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
 }

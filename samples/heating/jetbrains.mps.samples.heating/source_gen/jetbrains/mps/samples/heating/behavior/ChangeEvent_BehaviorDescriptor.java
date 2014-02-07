@@ -4,12 +4,12 @@ package jetbrains.mps.samples.heating.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class PlanItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public PlanItem_BehaviorDescriptor() {
+public class ChangeEvent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+  public ChangeEvent_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.samples.heating.structure.PlanItem";
+    return "jetbrains.mps.samples.heating.structure.ChangeEvent";
   }
 }

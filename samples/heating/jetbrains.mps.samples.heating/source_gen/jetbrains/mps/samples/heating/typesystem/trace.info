@@ -76,7 +76,7 @@
     <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="24" startPosition="62" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="36" startPosition="25" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="45" startPosition="201" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="45" startPosition="203" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4664795093170876739" fileName="check_Slot_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2978080762093912501" fileName="check_Slot_NonTypesystemRule.java" startLine="23" startPosition="117" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128233240213" fileName="check_Slot_NonTypesystemRule.java" startLine="35" startPosition="124" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -115,7 +115,7 @@
     <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="5063359128233238129" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="4664795093170876742" fileName="check_Slot_NonTypesystemRule.java" startLine="45" startPosition="201" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="4664795093170876742" fileName="check_Slot_NonTypesystemRule.java" startLine="45" startPosition="203" endLine="53" endPosition="9" />
     <scopeInfo nodeId="2978080762093912504" fileName="check_Slot_NonTypesystemRule.java" startLine="24" startPosition="62" endLine="33" endPosition="13" />
     <scopeInfo nodeId="5063359128233240216" fileName="check_Slot_NonTypesystemRule.java" startLine="36" startPosition="25" endLine="54" endPosition="7" />
     <scopeInfo nodeId="5063359128233238130" fileName="check_Slot_NonTypesystemRule.java" startLine="23" startPosition="117" endLine="55" endPosition="5">

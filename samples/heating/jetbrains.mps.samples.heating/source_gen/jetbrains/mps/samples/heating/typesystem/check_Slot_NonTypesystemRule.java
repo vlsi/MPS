@@ -42,7 +42,7 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-      if (SPropertyOperations.getInteger(SLinkOperations.getTarget(prev, "item", true), "temperature") == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, "item", true), "temperature")) {
+      if (SPropertyOperations.getInteger(SLinkOperations.getTarget(prev, "event", true), "temperature") == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, "event", true), "temperature")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(slot, "This event is not changing the temperature.", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "4664795093170882120", null, errorTarget);
