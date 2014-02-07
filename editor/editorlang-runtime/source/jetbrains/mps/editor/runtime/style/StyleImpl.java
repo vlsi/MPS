@@ -52,13 +52,13 @@ public class StyleImpl implements Style {
 
   @NotNull
   private <T> IntMapPointer<StyleAttributeMap<T>> getAttribute(StyleAttribute<T> attribute) {
-    return (IntMapPointer<StyleAttributeMap<T>>) (IntMapPointer) myAttributes.search(attribute.getIndex());
+    return myAttributes.getAttribute(attribute);
   }
 
   @NotNull
   private <T> IntMapPointer<StyleAttributeMap<T>> getCachedAttribute(StyleAttribute<T> attribute) {
     assert !StyleAttributes.isSimple(attribute);
-    return (IntMapPointer<StyleAttributeMap<T>>) (IntMapPointer) myCachedAttributes.search(attribute.getIndex());
+    return myCachedAttributes.getAttribute(attribute);
   }
 
   @Override

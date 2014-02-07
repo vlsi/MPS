@@ -17,6 +17,7 @@ package jetbrains.mps.editor.runtime.style;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
 import jetbrains.mps.editor.runtime.style.StyleAttributeMapImpl.StyleAttributeMapWrapper;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class TopLevelStyleMap extends StyleMapImpl<StyleAttributeMap<Object>> {
 
@@ -60,6 +61,10 @@ public class TopLevelStyleMap extends StyleMapImpl<StyleAttributeMap<Object>> {
 
   public int getSize() {
     return values.length;
+  }
+
+  public <T> IntMapPointer<StyleAttributeMap<T>> getAttribute(StyleAttribute<T> attribute) {
+    return (IntMapPointer<StyleAttributeMap<T>>) (IntMapPointer) search(attribute.getIndex());
   }
 
   public static void main(String[] args) {
