@@ -34,6 +34,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
@@ -193,9 +194,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
           MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
           if ((e.getClickCount() == 1 && isAutoOpen())) {
-            nodeToClick.autoscroll();
+            autoscroll(nodeToClick);
           } else if (e.getClickCount() == 2) {
-            nodeToClick.doubleClick();
+            doubleClick(nodeToClick);
             e.consume();
           }
         } else if (e.getButton() == MouseEvent.BUTTON3) {
@@ -207,6 +208,21 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
       }
     });
+  }
+
+  /**
+   * Gives owning tree a chance to process double-click event.
+   * By default, delegates to {@link MPSTreeNode#doubleClick()}
+   */
+  protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
+    nodeToClick.doubleClick();
+  }
+  /**
+   * Single point to dispatch auto scrolling event.
+   * By default, delegates to {@link MPSTreeNode#autoscroll()} ()}
+   */
+  protected void autoscroll(@NotNull MPSTreeNode nodeToClick) {
+    nodeToClick.autoscroll();
   }
 
   public void runWithoutExpansion(Runnable r) {
@@ -256,10 +272,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private void showPopup(int x, int y) {
     TreePath path = getPathForLocation(x, y);
-    JPopupMenu menu = null;
     if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
       final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      menu = createPopupMenu(node);
+      JPopupMenu menu = createPopupMenu(node);
       if (menu != null) {
         if (!getSelectedPaths().contains(pathToString(path))) {
           setSelectionPath(path);
@@ -446,16 +461,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private String pathToString(TreePath path) {
-    StringBuffer result = new StringBuffer();
+    StringBuilder result = new StringBuilder();
     for (int i = 1; i < path.getPathCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) path.getPathComponent(i);
       result.append(TREE_PATH_SEPARATOR);
-      if (node.getNodeIdentifier() == null) {
-        // Workaround to avoid NPE: node identifier may be null (MPS-8785)
-        result.append("[null]");
-      } else {
-        result.append(node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-"));
-      }
+      result.append(node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-"));
     }
     if (result.length() == 0) return TREE_PATH_SEPARATOR;
     return result.toString();
@@ -728,14 +738,13 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       TreePath selPath = getSelectionPath();
       if (selPath == null) return;
       MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-      selNode.doubleClick();
+      doubleClick(selNode);
     }
   }
 
   private class MyRefreshAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
-      long start = System.currentTimeMillis();
       rebuildNow();
     }
   }

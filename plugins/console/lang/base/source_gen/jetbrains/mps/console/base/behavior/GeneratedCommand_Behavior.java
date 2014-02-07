@@ -5,6 +5,8 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.tool.ConsoleUtil;
@@ -16,22 +18,29 @@ import org.apache.log4j.Priority;
 import java.lang.reflect.InvocationTargetException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import com.intellij.openapi.project.Project;
 
 public class GeneratedCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
-
+    check_3fkcai_a0a0(ProjectHelper.toIdeaProject(context.getProject()).getComponent(MessagesViewTool.class));
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         final SModel model = context.getConsoleTab().getConsoleModel();
-
-        boolean result = ConsoleUtil.make(context.getProject(), model);
-        if (!(result)) {
-          return;
+        try {
+          boolean result = ConsoleUtil.make(context.getProject(), model);
+          if (!(result)) {
+            return;
+          }
+        } finally {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              check_3fkcai_a0a0a0a0b0a0a0a0b0a(ProjectHelper.toIdeaProject(context.getProject())).setShowToolAfterAddingMessage(true);
+            }
+          });
         }
-
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -71,4 +80,18 @@ public class GeneratedCommand_Behavior {
   }
 
   protected static Logger LOG = LogManager.getLogger(GeneratedCommand_Behavior.class);
+
+  private static void check_3fkcai_a0a0(MessagesViewTool checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setShowToolAfterAddingMessage(false);
+    }
+
+  }
+
+  private static MessagesViewTool check_3fkcai_a0a0a0a0b0a0a0a0b0a(Project checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent(MessagesViewTool.class);
+    }
+    return null;
+  }
 }

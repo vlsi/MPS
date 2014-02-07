@@ -61,6 +61,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private Map<Content, MessageList> myContents = new HashMap<Content, MessageList>();
   private boolean myDisposed = false;
 
+  private boolean showToolAfterAddingMessage = true;
+
+  public void setShowToolAfterAddingMessage(boolean showToolAfterAddingMessage) {
+    this.showToolAfterAddingMessage = showToolAfterAddingMessage;
+  }
+
   public MessagesViewTool(Project project) {
     myProject = project;
     addList(DEFAULT_LIST, new DefaultMessageList(project));
@@ -104,12 +110,14 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     final MessageList list = getAvailableList(listName, true);
     list.add(message);
 
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        list.show(false);
-      }
-    });
+    if (showToolAfterAddingMessage || message.getKind() == MessageKind.ERROR) {
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          list.show(false);
+        }
+      });
+    }
   }
 
   @Override

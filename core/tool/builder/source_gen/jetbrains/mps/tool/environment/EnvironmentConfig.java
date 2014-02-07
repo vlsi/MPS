@@ -70,8 +70,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.editor").addPlugin("jetbrains.mps.ide.make");
-    // todo: add Git4Idea as default plugin? 
+    return addPlugin("jetbrains.mps.make").addPlugin("jetbrains.mps.vcs");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {

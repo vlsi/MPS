@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,33 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
 
-public abstract class GenerationTracerView {
-  private JPanel myPanel;
-  private GenerationTracerTree myTree;
-  private ToggleAction myAutoscrollAction;
-  private boolean myAutoscroll;
+final class GenerationTracerView {
+  private final JPanel myPanel;
+  private final GenerationTracerTree myTree;
+  private final GenerationTracerViewTool myTool;
+  private final TracerNode myRootTracerNode;
 
-  private TracerNode myRootTracerNode;
-
-  public GenerationTracerView(TracerNode tracerNode, Project project) {
+  public GenerationTracerView(GenerationTracerViewTool tool, TracerNode tracerNode, Project project) {
+    myTool = tool;
     myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
     myTree = new GenerationTracerTree(tracerNode, project);
@@ -46,54 +52,39 @@ public abstract class GenerationTracerView {
   }
 
   private Component createActionsToolbar() {
-    myAutoscrollAction = new ToggleAction("", "Autoscroll to Source", Icons.AUTOSCROLL_TO_SOURCE) {
+    ToggleAction autoscrollAction = new ToggleAction("", "Autoscroll to Source", Icons.AUTOSCROLL_TO_SOURCE) {
       public boolean isSelected(AnActionEvent e) {
-        return myAutoscroll;
+        return myTool.isAutoscroll();
       }
 
       public void setSelected(AnActionEvent e, boolean state) {
-        if (myAutoscroll != state) {
-          autoscrollsChanged(state);
-        }
-        myAutoscroll = state;
+        myTool.autoscrollsChanged(state);
       }
     };
 
     AnAction closeAction = new AnAction("", "Close", Icons.CLOSE) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        close();
+        myTool.close(GenerationTracerView.this);
       }
     };
 
-    ActionGroup group = ActionUtils.groupFromActions(myAutoscrollAction, closeAction);
+    ActionGroup group = ActionUtils.groupFromActions(autoscrollAction, closeAction);
     ActionManager manager = ActionManager.getInstance();
     ActionToolbar toolbar = manager.createActionToolbar(ActionPlaces.USAGE_VIEW_TOOLBAR, group, false);
     return toolbar.getComponent();
   }
 
-  public TracerNode getRootTracerNode() {
-    return myRootTracerNode;
-  }
 
-  public String getCaption() {
-    return myRootTracerNode.getNodePointer().toString();
-  }
-
-  public Icon getIcon() {
-    return Icons.getIcon(myRootTracerNode);
+  boolean isViewFor(Kind kind, SNodeReference node) {
+    return myRootTracerNode.getKind() == kind && myRootTracerNode.getNodePointer().equals(node);
   }
 
   public JComponent getComponent() {
     return myPanel;
   }
 
-  public abstract void close();
-
-  public abstract void autoscrollsChanged(boolean b);
-
-  public void setAutoscrollToSource(boolean b) {
+  void setAutoscrollToSource(boolean b) {
     myTree.setAutoOpen(b);
-    myAutoscroll = b;
   }
 }
