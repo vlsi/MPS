@@ -273,7 +273,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode;
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode && eq_tb7paq_a0a0a0a0d1a2a0a1a0m(SNodeOperations.getContainingLinkDeclaration(((SNode) toId)), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"));
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
@@ -396,6 +396,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
     }
+  }
+
+  private static boolean eq_tb7paq_a0a0a0a0d1a2a0a1a0m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e1a2a0a1a0m(Object a, Object b) {
