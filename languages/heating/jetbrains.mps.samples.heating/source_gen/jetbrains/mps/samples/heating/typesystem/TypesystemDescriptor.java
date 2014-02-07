@@ -8,7 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_PlanItem_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_Slot_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
   }

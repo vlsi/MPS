@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.heating.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.samples.heating.structure.StructureAspectDescriptor" />
   <root nodeRef="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128233346660">
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="5063359128233346660" fileName="DayDataType.java" startLine="20" startPosition="27" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

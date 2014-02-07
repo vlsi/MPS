@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -112,9 +113,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode item = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.PlanItem", null);
+      SNode item = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);
       SPropertyOperations.set(item, "start", "" + (-1));
-      SPropertyOperations.set(item, "temperature", "" + (20));
+      SPropertyOperations.set(SLinkOperations.getTarget(item, "item", true), "temperature", "" + (20));
       return item;
     }
 

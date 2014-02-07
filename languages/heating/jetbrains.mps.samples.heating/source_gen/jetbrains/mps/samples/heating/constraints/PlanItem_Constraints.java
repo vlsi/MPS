@@ -9,10 +9,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class PlanItem_Constraints extends BaseConstraintsDescriptor {
   public PlanItem_Constraints() {
@@ -22,22 +18,6 @@ public class PlanItem_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
-    properties.put("start", new BasePropertyConstraintsDescriptor("start", this) {
-      @Override
-      public boolean hasOwnValidator() {
-        return true;
-      }
-
-      @Override
-      public boolean validateValue(final SNode node, final String propertyValue) {
-        String propertyName = "start";
-        return (SPropertyOperations.getInteger(propertyValue)) >= 0 && (SPropertyOperations.getInteger(propertyValue)) <= 24 && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.samples.heating.structure.DailyPlan"), "items", true)).all(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return eq_uqqdrd_a0a0a0a0a0a0a0b0b0a1a0b0b(it, node) || SPropertyOperations.getInteger(it, "start") != (SPropertyOperations.getInteger(propertyValue));
-          }
-        });
-      }
-    });
     properties.put("temperature", new BasePropertyConstraintsDescriptor("temperature", this) {
       @Override
       public boolean hasOwnValidator() {
@@ -51,9 +31,5 @@ public class PlanItem_Constraints extends BaseConstraintsDescriptor {
       }
     });
     return properties;
-  }
-
-  private static boolean eq_uqqdrd_a0a0a0a0a0a0a0b0b0a1a0b0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

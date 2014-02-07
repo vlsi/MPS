@@ -28,13 +28,11 @@ public class PlanItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1aqra0_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1aqra0_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1aqra0_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1aqra0_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1aqra0_e0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_1aqra0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "At");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "set temperature to");
     editorCell.setCellId("Constant_1aqra0_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
@@ -44,34 +42,6 @@ public class PlanItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createProperty_1aqra0_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("start");
-    provider.setNoTargetText("<no start>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_start");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_1aqra0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "o'clock set temperature to");
-    editorCell.setCellId("Constant_1aqra0_c0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_1aqra0_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("temperature");
     provider.setNoTargetText("<no temperature>");
@@ -89,9 +59,9 @@ public class PlanItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1aqra0_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1aqra0_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Celsius");
-    editorCell.setCellId("Constant_1aqra0_e0");
+    editorCell.setCellId("Constant_1aqra0_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

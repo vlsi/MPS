@@ -16,11 +16,11 @@ public class AssignCorrectValue_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(node), "jetbrains.mps.samples.heating.structure.PlanItem");
+    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(node), "jetbrains.mps.samples.heating.structure.Slot");
     if ((prev != null)) {
-      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.PlanItem"), "start", "" + (SPropertyOperations.getInteger(prev, "start") + 1));
+      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.Slot"), "start", "" + (SPropertyOperations.getInteger(prev, "start") + 1));
     } else {
-      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.PlanItem"), "start", "" + (0));
+      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.Slot"), "start", "" + (0));
     }
   }
 }

@@ -20,18 +20,20 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new PlanItem_BehaviorDescriptor();
       case 3:
         return new NotSpecified_BehaviorDescriptor();
-      case 7:
+      case 8:
         return new WeekendDay_BehaviorDescriptor();
-      case 6:
+      case 7:
         return new WeekDays_BehaviorDescriptor();
-      case 5:
+      case 6:
         return new SpecificDay_BehaviorDescriptor();
       case 1:
         return new DayRange_BehaviorDescriptor();
+      case 5:
+        return new Slot_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.PlanItem", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
 }

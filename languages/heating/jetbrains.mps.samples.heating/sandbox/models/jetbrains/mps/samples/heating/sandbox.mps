@@ -6,188 +6,67 @@
   <language namespace="000a73b2-ac88-49d9-bfcf-a3fa90cdb367(jetbrains.mps.samples.heating.tabular)" />
   <import index="vw7d" modelUID="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <root type="vw7d.HeatingPlan" typeId="vw7d.5063359128232698866" id="5063359128233115067" nodeInfo="ng">
+  <root type="vw7d.HeatingPlan" typeId="vw7d.5063359128232698866" id="5726447348464276940" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="LivingRoom" />
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="5063359128233115068" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494522" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="6" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
+    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="5726447348464276947" nodeInfo="ng">
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464276954" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="0" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464276955" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
+        </node>
       </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494523" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="8" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464276958" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="10" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464276959" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+        </node>
       </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494524" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="15" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="22" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464276964" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="11" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464276965" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
+        </node>
       </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494525" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="21" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464291256" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="12" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464291257" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="23" />
+        </node>
       </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.DayRange" typeId="vw7d.4664795093170636139" id="4664795093170894988" nodeInfo="ng">
-        <property name="start" nameId="vw7d.4664795093170636191" value="1" />
-        <property name="end" nameId="vw7d.4664795093170636193" value="4" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464277034" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="13" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464277035" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+        </node>
       </node>
+      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekDays" typeId="vw7d.4664795093170605733" id="5726447348464276951" nodeInfo="ng" />
     </node>
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="9003042571524494530" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494555" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="5" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
+    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="5726447348464291268" nodeInfo="ng">
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464291287" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="7" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464291288" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="23" />
+        </node>
       </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494556" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="8" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="22" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464291291" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="12" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464291292" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+        </node>
       </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494558" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="22" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464291297" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="16" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464291298" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="22" />
+        </node>
       </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.SpecificDay" typeId="vw7d.4664795093170605734" id="9003042571524494540" nodeInfo="ng">
-        <property name="day" nameId="vw7d.4664795093170605735" value="5" />
+      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.Slot" typeId="vw7d.5726447348463731062" id="5726447348464291305" nodeInfo="ng">
+        <property name="start" nameId="vw7d.5726447348463731324" value="22" />
+        <node role="item" roleId="vw7d.5726447348463738321" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5726447348464291306" nodeInfo="ng">
+          <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
+        </node>
       </node>
-    </node>
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="9003042571524494566" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494598" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="8" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494600" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="15" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="22" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524494601" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="23" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekendDay" typeId="vw7d.4664795093170436346" id="9003042571524494581" nodeInfo="ng" />
-    </node>
-  </root>
-  <root type="vw7d.HeatingPlan" typeId="vw7d.5063359128232698866" id="5063359128233397225" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="Kitchen" />
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="5063359128233397226" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="4664795093170876269" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="6" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478472" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="8" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478500" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="15" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="22" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478504" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="21" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekDays" typeId="vw7d.4664795093170605733" id="9003042571524478460" nodeInfo="ng" />
-    </node>
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="9003042571524478475" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478486" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="7" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478488" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="10" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478491" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="17" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="9003042571524478495" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="21" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekendDay" typeId="vw7d.4664795093170436346" id="9003042571524478483" nodeInfo="ng" />
-    </node>
-  </root>
-  <root type="vw7d.HeatingPlan" typeId="vw7d.5063359128232698866" id="9003042571524945939" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="BathRoom" />
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="9003042571524945970" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5224141982808866253" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="2" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="19" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="3409470686615689532" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="6" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="3409470686615689533" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="8" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094070017" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="12" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094070062" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="14" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="3409470686615689535" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="21" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094070129" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="22" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.SpecificDay" typeId="vw7d.4664795093170605734" id="4001397103658746187" nodeInfo="ng" />
-    </node>
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="2978080762094046543" nodeInfo="ng">
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.SpecificDay" typeId="vw7d.4664795093170605734" id="2978080762094046562" nodeInfo="ng">
-        <property name="day" nameId="vw7d.4664795093170605735" value="sunday" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094046565" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="0" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="25" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094046570" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="11" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="18" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094046567" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="16" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="19" />
-      </node>
-    </node>
-    <node role="dailyPlans" roleId="vw7d.5063359128232717389" type="vw7d.DailyPlan" typeId="vw7d.5063359128232717391" id="3409470686615689540" nodeInfo="ng">
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="5224141982809341001" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="0" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094041883" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="4" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094046430" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="10" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="18" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094046413" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="12" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="19" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="3409470686615689570" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="14" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="22" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094070196" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="17" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="21" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="3409470686615689571" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="21" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="20" />
-      </node>
-      <node role="items" roleId="vw7d.5063359128232717399" type="vw7d.PlanItem" typeId="vw7d.5063359128232717410" id="2978080762094070218" nodeInfo="ng">
-        <property name="start" nameId="vw7d.5063359128232717419" value="22" />
-        <property name="temperature" nameId="vw7d.5063359128232717424" value="19" />
-      </node>
-      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekendDay" typeId="vw7d.4664795093170436346" id="3409470686615689553" nodeInfo="ng" />
+      <node role="applicability" roleId="vw7d.4664795093170417662" type="vw7d.WeekendDay" typeId="vw7d.4664795093170436346" id="5726447348464291284" nodeInfo="ng" />
     </node>
   </root>
 </model>

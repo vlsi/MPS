@@ -27,7 +27,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="items" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5063359128232717410" resolveInfo="PlanItem" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5726447348463731062" resolveInfo="Slot" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4664795093170417662" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -42,10 +42,6 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5063359128232717410" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PlanItem" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5063359128232717419" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="start" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5063359128232717424" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="temperature" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
@@ -126,6 +122,20 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4664795093170636193" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="end" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="5063359128233346660" resolveInfo="DayDataType" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5726447348463731062" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="Slot" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5726447348463738321" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="item" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5063359128232717410" resolveInfo="PlanItem" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5726447348463731324" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="start" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
   </root>
 </model>

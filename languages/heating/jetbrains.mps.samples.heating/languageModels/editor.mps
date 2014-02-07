@@ -15,16 +15,9 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5063359128232940655" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vw7d.5063359128232717410" resolveInfo="PlanItem" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5063359128232942917" nodeInfo="nn">
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5063359128232942924" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="At" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198595398954" resolveInfo="Field" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5063359128232942930" nodeInfo="ng">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vw7d.5063359128232717419" resolveInfo="start" />
-      </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5063359128232942920" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5063359128232942964" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="o'clock set temperature to" />
+        <property name="text" nameId="tpc2.1073389577007" value="set temperature to" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198595398954" resolveInfo="Field" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5063359128232942978" nodeInfo="ng">
@@ -65,12 +58,12 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5063359128233260817" nodeInfo="nr">
                   <property name="name" nameId="tpck.1169194664001" value="item" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5063359128233260815" nodeInfo="in">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="vw7d.5063359128232717410" resolveInfo="PlanItem" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="vw7d.5726447348463731062" resolveInfo="Slot" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5063359128233260818" nodeInfo="nn">
                     <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="5063359128233260819" nodeInfo="nn">
                       <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5063359128233260820" nodeInfo="in">
-                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="vw7d.5063359128232717410" resolveInfo="PlanItem" />
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="vw7d.5726447348463731062" resolveInfo="Slot" />
                       </node>
                     </node>
                   </node>
@@ -86,7 +79,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5063359128233260817" resolveInfo="item" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2978080762093907416" nodeInfo="nn">
-                      <link role="property" roleId="tp25.1138056395725" targetNodeId="vw7d.5063359128232717419" resolveInfo="start" />
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="vw7d.5726447348463731324" resolveInfo="start" />
                     </node>
                   </node>
                 </node>
@@ -97,10 +90,15 @@
                     <property name="value" nameId="tpee.1068580320021" value="20" />
                   </node>
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5063359128233271635" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5063359128233270449" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5063359128233260817" resolveInfo="item" />
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5726447348464037738" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5063359128233270449" nodeInfo="nn">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5063359128233260817" resolveInfo="item" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5726447348464040312" nodeInfo="nn">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="vw7d.5726447348463738321" />
+                      </node>
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5063359128233273200" nodeInfo="nn">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5726447348464041527" nodeInfo="nn">
                       <link role="property" roleId="tp25.1138056395725" targetNodeId="vw7d.5063359128232717424" resolveInfo="temperature" />
                     </node>
                   </node>
@@ -219,6 +217,24 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="4664795093170802635" nodeInfo="ng">
       <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198594875276" resolveInfo="Comment" />
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5726447348463731349" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vw7d.5726447348463731062" resolveInfo="Slot" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5726447348463738209" nodeInfo="nn">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5726447348463738303" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="At" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5726447348463738298" nodeInfo="ng">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vw7d.5726447348463731324" resolveInfo="start" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5726447348463738212" nodeInfo="nn" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5726447348463738311" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="o'clock" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5726447348463738323" nodeInfo="ng">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vw7d.5726447348463738321" />
+      </node>
     </node>
   </root>
 </model>
