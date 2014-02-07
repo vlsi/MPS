@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -27,7 +26,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -125,16 +123,14 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   void setFocusPolicy(FocusPolicy fp);
 
-  // TODO: move to open API
   <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
   List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();
 
-  // TODO: move to open API
   @Override
-  StyleImpl getStyle();
+  jetbrains.mps.openapi.editor.style.Style getStyle();
 
   boolean isLeaf();
 
