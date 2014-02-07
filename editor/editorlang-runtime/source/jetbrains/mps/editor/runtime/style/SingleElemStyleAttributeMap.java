@@ -37,7 +37,9 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
 
     @Override
     public T get() {
-      assert !isEmpty();
+      if (isEmpty()) {
+        return null;
+      }
       return myValuePointer.get();
     }
 
