@@ -19,7 +19,6 @@
     <envs />
     <patterns>
       <pattern testClass="ModuleTestSuite" />
-      <pattern testClass="ExtensionTests" />
     </patterns>
     <RunnerSettings RunnerId="Debug">
       <option name="DEBUG_PORT" value="51367" />
