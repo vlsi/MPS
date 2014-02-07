@@ -70,7 +70,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return addPlugin("jetbrains.mps.make").addPlugin("jetbrains.mps.vcs");
+    return addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.vcs");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
