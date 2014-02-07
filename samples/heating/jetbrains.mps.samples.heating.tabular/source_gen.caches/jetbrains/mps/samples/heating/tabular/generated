@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6aqt4vvten01wxyu7qpk4cirz6hlnpj">
-  <dep model="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)" hash="-djmwovj0zrj8mypdzftk8pkh9lcf8ap" />
+<dependencies version="2" modelHash="-59zrkmsfxuybtfpw8isde01ro7ms2rh">
+  <dep model="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)" hash="cir25m173zj01csb0z8j4egrroaxaij" />
   <dep model="r:998055f5-d0ad-4aaf-a7a8-2f39ff39a8a4(jetbrains.mps.samples.heating.tabular.typesystem)" hash="-87yb9xccy4jrhczotwwr47i9bb4cjt7" />
   <common dependsOnNodes="true">
     <dep model="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)" />
