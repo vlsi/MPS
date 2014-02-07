@@ -3487,6 +3487,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
+          if (isInvalid() || !isCutEnabled(dataContext)) {
+            return;
+          }
           if (!isCutEnabled(dataContext)) {
             return;
           }
@@ -3552,7 +3555,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          if (!isPastePossible(dataContext)) {
+          if (isInvalid() || !isPastePossible(dataContext)) {
             return;
           }
           jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
