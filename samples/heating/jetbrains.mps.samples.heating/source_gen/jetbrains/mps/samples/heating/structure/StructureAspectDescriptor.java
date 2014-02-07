@@ -18,25 +18,27 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.ChangeEvent").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("temperature").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DailyPlan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"items", "applicability"}, new boolean[]{true, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DailyPlan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"items", "applicability", "customizes"}, new boolean[]{true, false, false}).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DayRange").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").properties("start", "end").alias("range", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DailyPlanReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("target").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.HeatingPlan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"dailyPlans"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DayRange").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").properties("start", "end").alias("range", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.NotSpecified").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").alias("not specified", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.HeatingPlan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"dailyPlans"}, new boolean[]{true}).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.Slot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("start").children(new String[]{"event"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.NotSpecified").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").alias("not specified", "").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.SpecificDay").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").properties("day").alias("specific day", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.Slot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("start").children(new String[]{"event"}, new boolean[]{false}).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.WeekDays").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").alias("week days", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.SpecificDay").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").properties("day").alias("specific day", "").create();
       case 9:
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.WeekDays").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").alias("week days", "").create();
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.WeekendDay").super_("jetbrains.mps.samples.heating.structure.Applicability").parents("jetbrains.mps.samples.heating.structure.Applicability").alias("weekend day", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DailyPlanReference", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
 }

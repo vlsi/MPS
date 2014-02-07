@@ -15,12 +15,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -37,9 +43,15 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_dgzt1x_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dgzt1x_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dgzt1x_c0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_dgzt1x_d0(editorContext, node));
+    if (renderingCondition_dgzt1x_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_dgzt1x_c0(editorContext, node));
+    }
+    if (renderingCondition_dgzt1x_a3a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_dgzt1x_d0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_dgzt1x_e0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_dgzt1x_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dgzt1x_g0(editorContext, node));
     return editorCell;
   }
 
@@ -62,6 +74,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("applicability");
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -74,36 +89,85 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dgzt1x_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the plan for");
     editorCell.setCellId("Constant_dgzt1x_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createCollection_dgzt1x_d0(EditorContext editorContext, SNode node) {
+  private static boolean renderingCondition_dgzt1x_a2a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, "customizes", true) != null);
+  }
+
+  private EditorCell createRefNode_dgzt1x_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("customizes");
+    provider.setNoTargetText("<no customizes>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("customizes");
+    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_dgzt1x_a3a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, "customizes", true) != null);
+  }
+
+  private EditorCell createConstant_dgzt1x_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_dgzt1x_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DailyPlan_Editor.ApplySideTransforms_left_cellMenu_dgzt1x_a0e0()}));
+    return editorCell;
+  }
+
+  public static class ApplySideTransforms_left_cellMenu_dgzt1x_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_left_cellMenu_dgzt1x_a0e0() {
+      super(CellSide.LEFT);
+    }
+  }
+
+  private EditorCell createCollection_dgzt1x_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_dgzt1x_d0");
+    editorCell.setCellId("Collection_dgzt1x_f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNodeList_dgzt1x_a3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dgzt1x_a5a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_dgzt1x_a3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DailyPlan_Editor.itemsListHandler_dgzt1x_a3a(node, "items", editorContext);
+  private EditorCell createRefNodeList_dgzt1x_a5a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new DailyPlan_Editor.itemsListHandler_dgzt1x_a5a(node, "items", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_items");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class itemsListHandler_dgzt1x_a3a extends RefNodeListHandler {
-    public itemsListHandler_dgzt1x_a3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class itemsListHandler_dgzt1x_a5a extends RefNodeListHandler {
+    public itemsListHandler_dgzt1x_a5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -145,9 +209,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_dgzt1x_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dgzt1x_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_dgzt1x_e0");
+    editorCell.setCellId("Constant_dgzt1x_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

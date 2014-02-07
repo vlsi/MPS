@@ -6,8 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class RemovePlanItem_QuickFix extends QuickFix_Runtime {
-  public RemovePlanItem_QuickFix() {
+public class RemoveSlot_QuickFix extends QuickFix_Runtime {
+  public RemoveSlot_QuickFix() {
   }
 
   public String getDescription(SNode node) {

@@ -14,6 +14,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.samples.heating.behavior.Slot_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -47,9 +48,20 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(slot, "This event is not changing the temperature.", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "4664795093170882120", null, errorTarget);
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.samples.heating.typesystem.RemovePlanItem_QuickFix", false);
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix", false);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
+        }
+      }
+    }
+    SNode customizedSlot = Slot_Behavior.call_getCustomizedSlot_935069066463578518(slot);
+    if ((customizedSlot != null) && SPropertyOperations.getInteger(SLinkOperations.getTarget(customizedSlot, "event", true), "temperature") == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, "event", true), "temperature")) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(slot, "The customizing event is setting the same temperature as the original one", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "935069066463792184", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix", false);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
     }

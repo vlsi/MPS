@@ -8,6 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.samples.heating.behavior.Slot_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,21 +27,38 @@ public class Slot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sjf1bb_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_sjf1bb_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_sjf1bb_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_sjf1bb_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_sjf1bb_d0(editorContext, node));
+    if (renderingCondition_sjf1bb_a0a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_sjf1bb_a0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_sjf1bb_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_sjf1bb_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_sjf1bb_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_sjf1bb_e0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_sjf1bb_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "At");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing");
     editorCell.setCellId("Constant_sjf1bb_a0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_sjf1bb_b0(EditorContext editorContext, SNode node) {
+  private static boolean renderingCondition_sjf1bb_a0a(SNode node, EditorContext editorContext) {
+    return Slot_Behavior.call_isCustomizing_935069066463662362(node);
+  }
+
+  private EditorCell createConstant_sjf1bb_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "At");
+    editorCell.setCellId("Constant_sjf1bb_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_sjf1bb_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("start");
     provider.setNoTargetText("<no start>");
@@ -55,14 +76,14 @@ public class Slot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_sjf1bb_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_sjf1bb_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "o'clock");
-    editorCell.setCellId("Constant_sjf1bb_c0");
+    editorCell.setCellId("Constant_sjf1bb_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_sjf1bb_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_sjf1bb_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("event");
     provider.setNoTargetText("<no event>");

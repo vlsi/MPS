@@ -12,7 +12,7 @@ public class DailyPlan_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode call_planItemByStartTime_3409470686615450426(SNode thisNode, final int startTime) {
+  public static SNode call_slotByStartTime_3409470686615450426(SNode thisNode, final int startTime) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "items", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getInteger(it, "start") == startTime;

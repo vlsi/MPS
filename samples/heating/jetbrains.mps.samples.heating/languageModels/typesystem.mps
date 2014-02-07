@@ -3,7 +3,8 @@
   <persistence version="8" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="vw7d" modelUID="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)" version="2" />
+  <import index="vw7d" modelUID="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)" version="3" />
+  <import index="mspw" modelUID="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
@@ -102,7 +103,7 @@
                   <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5063359128233238132" resolveInfo="slot" />
                 </node>
                 <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="4664795093170892528" nodeInfo="ng">
-                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="4664795093170882986" resolveInfo="RemovePlanItem" />
+                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="4664795093170882986" resolveInfo="RemoveSlot" />
                 </node>
               </node>
             </node>
@@ -143,6 +144,73 @@
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="5063359128233240812" nodeInfo="nn" />
         </node>
       </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="935069066463779322" nodeInfo="nn">
+        <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="935069066463779323" nodeInfo="nr">
+          <property name="name" nameId="tpck.1169194664001" value="customizedSlot" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="935069066463779319" nodeInfo="in">
+            <link role="concept" roleId="tp25.1138405853777" targetNodeId="vw7d.5726447348463731062" resolveInfo="Slot" />
+          </node>
+          <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935069066463779324" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="935069066463779325" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5063359128233238132" resolveInfo="slot" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="935069066463779326" nodeInfo="nn">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mspw.935069066463578518" resolveInfo="getCustomizedSlot" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="935069066463777926" nodeInfo="nn">
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="935069066463777927" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="935069066463792184" nodeInfo="nn">
+            <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="935069066463792214" nodeInfo="nn">
+              <property name="value" nameId="tpee.1070475926801" value="The customizing event is setting the same temperature as the original one" />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="935069066463793536" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5063359128233238132" resolveInfo="slot" />
+            </node>
+            <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="935069066463833825" nodeInfo="ng">
+              <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="4664795093170882986" resolveInfo="RemoveSlot" />
+            </node>
+          </node>
+        </node>
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="935069066463781231" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="935069066463787110" nodeInfo="nn">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935069066463791086" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935069066463788502" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="935069066463787303" nodeInfo="nn">
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5063359128233238132" resolveInfo="slot" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="935069066463789282" nodeInfo="nn">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="vw7d.5726447348463738321" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="935069066463791862" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="vw7d.5063359128232717424" resolveInfo="temperature" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935069066463783235" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935069066463781653" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="935069066463781458" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935069066463779323" resolveInfo="customizedSlot" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="935069066463782605" nodeInfo="nn">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="vw7d.5726447348463738321" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="935069066463784229" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="vw7d.5063359128232717424" resolveInfo="temperature" />
+              </node>
+            </node>
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935069066463779652" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="935069066463779327" nodeInfo="nn">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935069066463779323" resolveInfo="customizedSlot" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="935069066463780273" nodeInfo="nn" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5063359128233238132" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="slot" />
@@ -150,7 +218,7 @@
     </node>
   </root>
   <root type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="4664795093170882986" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="RemovePlanItem" />
+    <property name="name" nameId="tpck.1169194664001" value="RemoveSlot" />
     <node role="executeBlock" roleId="tpd4.1216383424566" type="tpd4.QuickFixExecuteBlock" typeId="tpd4.1216383287005" id="4664795093170882987" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4664795093170882988" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4664795093170891849" nodeInfo="nn">

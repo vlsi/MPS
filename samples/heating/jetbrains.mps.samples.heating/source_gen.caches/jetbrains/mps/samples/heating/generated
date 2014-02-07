@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7i3kvx2jkcttet6aflsnmyz20mtlm2x">
-  <dep model="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)" hash="6axyigu934d1vkcrct5zimbimnk2qm" />
-  <dep model="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)" hash="-75u0ry7rwtyk8i79i8rdq5digtlj54r" />
+<dependencies version="2" modelHash="-d47f5c14e3dhzp890u7m2r4lrlwwpg1">
+  <dep model="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)" hash="1dpdtw7lv1j879ilchcxciyxp5ch9r7" />
+  <dep model="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)" hash="8s5assvl95c76ilgwk6iwnrkm2cr7qp" />
   <common dependsOnNodes="true">
     <dep model="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)" />
     <dep model="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)" />
