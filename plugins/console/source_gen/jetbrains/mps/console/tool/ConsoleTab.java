@@ -6,9 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
-import com.intellij.openapi.actionSystem.CustomShortcutSet;
-import com.intellij.openapi.actionSystem.MouseShortcut;
-import java.awt.event.MouseEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,11 +43,11 @@ public class ConsoleTab extends BaseConsoleTab {
 
 
   protected void registerActions(DefaultActionGroup group) {
+    super.registerActions(group);
     group.add(registerKeyShortcut(new ConsoleTab.ExecuteAction(), KeyEvent.VK_ENTER));
     group.add(registerKeyShortcut(new ConsoleTab.PrevCmdAction(), KeyEvent.VK_UP));
     group.add(registerKeyShortcut(new ConsoleTab.NextCmdAction(), KeyEvent.VK_DOWN));
     group.add(registerKeyShortcut(new ConsoleTab.ClearAction(), KeyEvent.VK_BACK_SPACE));
-    registerShortcutSet(new BaseConsoleTab.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1)));
   }
 
 
