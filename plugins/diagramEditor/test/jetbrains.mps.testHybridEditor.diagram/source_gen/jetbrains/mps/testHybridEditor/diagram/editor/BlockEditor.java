@@ -26,6 +26,7 @@ import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -137,7 +138,7 @@ public class BlockEditor extends AbstractJetpadEditor {
 
 
 
-      public Mapper<SNode, View> createDecorationMapper() {
+      public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
         return null;
       }
     };

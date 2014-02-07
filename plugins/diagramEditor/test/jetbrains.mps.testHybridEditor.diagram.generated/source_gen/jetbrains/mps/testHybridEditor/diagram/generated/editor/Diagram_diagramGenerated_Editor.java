@@ -33,13 +33,13 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -168,17 +168,17 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
 
-    public Mapper<SNode, View> createDecorationMapper(SNode node) {
-      return new Mapper<SNode, View>(getSNode(), createDecorationView()) {
+    public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
+      return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
-          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().children().get(0).children(), new MapperFactory<SNode, View>() {
+          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsDecotatorView.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
               return ((BlockCell) getDirectChildCell(node)).createDecorationMapper();
             }
           }));
-          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().children().get(1).children(), new MapperFactory<SNode, View>() {
+          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connectorsDecotatorView.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
               return ((ConnectorCell) getDirectChildCell(node)).createDecorationMapper();
             }
@@ -243,13 +243,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
-    }
-
-    private GroupView createDecorationView() {
-      GroupView decorationView = new GroupView();
-      decorationView.children().add(new GroupView());
-      decorationView.children().add(new GroupView());
-      return decorationView;
     }
   }
 
@@ -327,17 +320,17 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
 
-    public Mapper<SNode, View> createDecorationMapper(SNode node) {
-      return new Mapper<SNode, View>(getSNode(), createDecorationView()) {
+    public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
+      return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
-          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().children().get(0).children(), new MapperFactory<SNode, View>() {
+          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsDecotatorView.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
               return ((BlockCell) getDirectChildCell(node)).createDecorationMapper();
             }
           }));
-          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().children().get(1).children(), new MapperFactory<SNode, View>() {
+          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connectorsDecotatorView.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
               return ((ConnectorCell) getDirectChildCell(node)).createDecorationMapper();
             }
@@ -402,13 +395,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
-    }
-
-    private GroupView createDecorationView() {
-      GroupView decorationView = new GroupView();
-      decorationView.children().add(new GroupView());
-      decorationView.children().add(new GroupView());
-      return decorationView;
     }
   }
 

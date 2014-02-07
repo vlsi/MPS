@@ -18,6 +18,7 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -69,7 +70,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
 
 
 
-      public Mapper<SNode, View> createDecorationMapper(SNode node) {
+      public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
         return null;
       }
     };

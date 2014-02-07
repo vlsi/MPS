@@ -33,12 +33,8 @@ import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.jetpad.event.Key;
 import jetbrains.jetpad.event.ModifierKey;
-import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.values.Color;
 
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizedEditorCell {
-  protected static final int SELECTION_SQUARE_WIDTH = 6;
   private List<ReadableModelProperty> myModelProperties;
   protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(true);
 
@@ -67,7 +63,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null) {
-        if (eq_815jvj_a0a0a0c0g(message.getStatus(), MessageStatus.ERROR)) {
+        if (eq_815jvj_a0a0a0c0f(message.getStatus(), MessageStatus.ERROR)) {
           myErrorItem.set(true);
           return;
         }
@@ -171,18 +167,9 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
         }
       }
     }).build());
-
   }
 
-  protected static RectView createBlackSelectionRect(Vector origin) {
-    RectView view = new RectView();
-    view.background().set(Color.BLACK);
-    view.dimension().set(new Vector(SELECTION_SQUARE_WIDTH, SELECTION_SQUARE_WIDTH));
-    view.moveTo(new Vector(origin.x - SELECTION_SQUARE_WIDTH / 2, origin.y - SELECTION_SQUARE_WIDTH / 2));
-    return view;
-  }
-
-  private static boolean eq_815jvj_a0a0a0c0g(Object a, Object b) {
+  private static boolean eq_815jvj_a0a0a0c0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

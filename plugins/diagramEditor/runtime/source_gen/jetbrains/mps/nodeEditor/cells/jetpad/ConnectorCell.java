@@ -6,7 +6,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.jetpad.projectional.view.View;
 
 public abstract class ConnectorCell extends JetpadCellWithPosition {
   public ConnectorCell(EditorContext editorContext, SNode node) {
@@ -15,5 +14,5 @@ public abstract class ConnectorCell extends JetpadCellWithPosition {
 
   public abstract Mapper<SNode, PolyLineConnection> createMapper();
 
-  public abstract Mapper<SNode, View> createDecorationMapper();
+  public abstract Mapper<SNode, ConnectorDecoratorView> createDecorationMapper();
 }

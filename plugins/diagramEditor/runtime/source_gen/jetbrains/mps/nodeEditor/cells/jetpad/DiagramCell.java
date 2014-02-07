@@ -359,7 +359,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  public abstract Mapper<SNode, View> createDecorationMapper(SNode node);
+  public abstract Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node);
 
 
 

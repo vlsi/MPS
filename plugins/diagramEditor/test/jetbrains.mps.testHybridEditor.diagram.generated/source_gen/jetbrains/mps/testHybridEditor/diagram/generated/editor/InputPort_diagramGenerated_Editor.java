@@ -20,7 +20,10 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -92,8 +95,44 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
 
-    public Mapper<SNode, View> createDecorationMapper() {
-      return null;
+    public Mapper<SNode, PortDecoratorView> createDecorationMapper() {
+      return new Mapper<SNode, PortDecoratorView>(getSNode(), new PortDecoratorView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          DiagramCell diagramCell = getDiagramCell();
+          if (diagramCell == null) {
+            return;
+          }
+          final Mapper<? super SNode, ?> descendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
+          if (descendantMapper == null) {
+            return;
+          }
+          {
+            configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
+              public void set(Boolean isError) {
+                getTarget().setError(isError);
+              }
+            }));
+            configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
+              public void set(Boolean isSelected) {
+                getTarget().setSelected(isSelected);
+              }
+            }));
+            ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
+            configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+              public void set(Rectangle bounds) {
+                getTarget().updateErrorDecorator(bounds);
+                getTarget().updateSelectionDecorator(bounds);
+              }
+            }));
+
+
+          }
+        }
+      };
     }
+
+
   }
 }

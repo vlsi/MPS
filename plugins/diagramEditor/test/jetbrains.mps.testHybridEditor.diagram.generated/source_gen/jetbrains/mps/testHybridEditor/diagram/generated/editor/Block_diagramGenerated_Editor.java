@@ -35,13 +35,12 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.jetpad.projectional.view.GroupView;
+import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.model.property.ReadableProperty;
-import java.util.ArrayList;
-import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
@@ -220,8 +219,8 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
 
-    public Mapper<SNode, View> createDecorationMapper() {
-      return new Mapper<SNode, View>(getSNode(), new GroupView()) {
+    public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
+      return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -233,54 +232,39 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           if (descendantMapper == null) {
             return;
           }
-          final PolyLineView errorView = createErrorView();
           configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-            public void set(Boolean source) {
-              if (source) {
-                getTarget().children().add(errorView);
-              } else {
-                getTarget().children().remove(errorView);
-              }
+            public void set(Boolean isError) {
+              getTarget().setError(isError);
             }
           }));
-          ReadableProperty<Boolean> isValid = ((DiagramNodeView) descendantMapper.getTarget()).rect.valid();
-          configuration.add(Synchronizers.forProperty(isValid, new WritableProperty<Boolean>() {
-            public void set(Boolean isValid) {
-              if (isValid) {
-                Rectangle bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds().get();
-                errorView.points.clear();
-                errorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y)));
-                errorView.invalidate();
-              }
-            }
-          }));
-          final GroupView selectionView = new GroupView();
           configuration.add(Synchronizers.forProperty(((DiagramNodeView) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean source) {
-              if (source) {
-                getTarget().children().add(selectionView);
-              } else {
-                getTarget().children().remove(selectionView);
-              }
+            public void set(Boolean isSelected) {
+              getTarget().setSelected(isSelected);
             }
           }));
-          configuration.add(Synchronizers.forProperty(isValid, new WritableProperty<Boolean>() {
-            public void set(Boolean isValid) {
-              if (isValid) {
-                Rectangle bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds().get();
-                updateSelectionView(bounds, selectionView);
-              }
+          ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
+          configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+            public void set(Rectangle bounds) {
+              getTarget().updateErrorDecorator(bounds);
+              getTarget().updateSelectionDecorator(bounds);
             }
           }));
+          configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
+            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
+              return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
+            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
+              return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
+            }
+          }));
+
         }
       };
     }
 
-    private PolyLineView createErrorView() {
-      PolyLineView errorView = new PolyLineView();
-      errorView.color().set(Color.RED);
-      return errorView;
-    }
+
 
     private DiagramNodeView createDiagramNodeView() {
       final BlockView blockView = new BlockView();
@@ -318,21 +302,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       }).build());
       return blockView;
 
-    }
-
-
-
-    private void updateSelectionView(Rectangle bounds, final GroupView selectionView) {
-      selectionView.children().clear();
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x / 2, 0))));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, 0))));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, bounds.dimension.y / 2))));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, bounds.dimension.y))));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x / 2, bounds.dimension.y))));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(0, bounds.dimension.y))));
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(bounds.origin.add(new Vector(0, bounds.dimension.y / 2))));
-      selectionView.invalidate();
     }
   }
 }

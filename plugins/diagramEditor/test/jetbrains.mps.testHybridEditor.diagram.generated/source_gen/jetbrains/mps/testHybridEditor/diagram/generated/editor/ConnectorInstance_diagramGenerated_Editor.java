@@ -21,19 +21,14 @@ import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.jetpad.projectional.view.GroupView;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorDecoratorView;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import java.util.List;
 import jetbrains.jetpad.geometry.Segment;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.jetpad.projectional.view.PolyLineView;
-import jetbrains.jetpad.values.Color;
-import java.util.ArrayList;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -129,8 +124,8 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
 
 
 
-    public Mapper<SNode, View> createDecorationMapper() {
-      return new Mapper<SNode, View>(getSNode(), new GroupView()) {
+    public Mapper<SNode, ConnectorDecoratorView> createDecorationMapper() {
+      return new Mapper<SNode, ConnectorDecoratorView>(getSNode(), new ConnectorDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -142,17 +137,17 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
           if (descendantMapper == null) {
             return;
           }
-          ReadableProperty<Boolean> isValid = ((PolyLineConnection) descendantMapper.getTarget()).view().valid();
-          final GroupView errorView = createErrorView();
           configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-            public void set(Boolean source) {
-              if (source) {
-                getTarget().children().add(errorView);
-              } else {
-                getTarget().children().remove(errorView);
-              }
+            public void set(Boolean isError) {
+              getTarget().setError(isError);
             }
           }));
+          configuration.add(Synchronizers.forProperty(((PolyLineConnection) descendantMapper.getTarget()).view().focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              getTarget().setSelected(isSelected);
+            }
+          }));
+          ReadableProperty<Boolean> isValid = ((PolyLineConnection) descendantMapper.getTarget()).view().valid();
           configuration.add(Synchronizers.forProperty(isValid, new WritableProperty<Boolean>() {
             public void set(Boolean isValid) {
               if (isValid) {
@@ -160,26 +155,8 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
                 if (segmentList.isEmpty()) {
                   return;
                 }
-                Vector errorPoint = getErrorPoint(segmentList);
-                updateErrorView(errorPoint, errorView);
-              }
-            }
-          }));
-          final GroupView selectionView = new GroupView();
-          configuration.add(Synchronizers.forProperty(((PolyLineConnection) descendantMapper.getTarget()).view().focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean source) {
-              if (source) {
-                getTarget().children().add(selectionView);
-              } else {
-                getTarget().children().remove(selectionView);
-              }
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(isValid, new WritableProperty<Boolean>() {
-            public void set(Boolean isValid) {
-              if (isValid) {
-                List<Segment> segments = ((PolyLineConnection) descendantMapper.getTarget()).getSegments();
-                updateSelectionView(segments, selectionView);
+                getTarget().updateErrorView(segmentList);
+                getTarget().updateSelectionView(segmentList);
               }
             }
           }));
@@ -207,76 +184,6 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
       return connection;
     }
 
-
-
-    private Vector getErrorPoint(List<Segment> segments) {
-      if (ListSequence.fromList(segments).isEmpty()) {
-        return null;
-      }
-      double sumLength = 0;
-      for (Segment segment : ListSequence.fromList(segments)) {
-        sumLength += segment.length();
-      }
-      if (sumLength == 0) {
-        return ListSequence.fromList(segments).first().start;
-      }
-      double halfLength = sumLength / 2.0;
-      sumLength = 0;
-      for (Segment segment : ListSequence.fromList(segments)) {
-        double currentLength = segment.length();
-        if (sumLength + currentLength >= halfLength) {
-          Vector se = segment.end.sub(segment.start);
-          double d = (halfLength - sumLength) / se.length();
-          double xToAdd = se.x * d;
-          double yToAdd = se.y * d;
-          Vector result = segment.start.add(new Vector(((int) xToAdd), ((int) yToAdd)));
-          return result;
-        }
-        sumLength += currentLength;
-      }
-      return null;
-
-    }
-
-
-
-
-    private GroupView createErrorView() {
-      GroupView result = new GroupView();
-      PolyLineView firstLine = new PolyLineView();
-      PolyLineView secondLine = new PolyLineView();
-      firstLine.color().set(Color.RED);
-      secondLine.color().set(Color.RED);
-      result.children().add(firstLine);
-      result.children().add(secondLine);
-      return result;
-    }
-
-    private void updateErrorView(Vector errorPoint, final GroupView errorView) {
-      int x = errorPoint.x;
-      int y = errorPoint.y;
-      PolyLineView firstLine = ((PolyLineView) errorView.children().get(0));
-      PolyLineView secondLine = ((PolyLineView) errorView.children().get(1));
-      firstLine.points.clear();
-      secondLine.points.clear();
-      firstLine.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(x - 5, y - 5), new Vector(x + 5, y + 5)));
-      secondLine.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(x + 5, y - 5), new Vector(x - 5, y + 5)));
-      errorView.invalidate();
-    }
-
-
-
-    private void updateSelectionView(List<Segment> segments, final GroupView selectionView) {
-      selectionView.children().clear();
-      selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(ListSequence.fromList(segments).first().start));
-      for (Segment segment : ListSequence.fromList(segments)) {
-        selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(segment.end));
-        if (segment.length() > SELECTION_SQUARE_WIDTH * 10) {
-          selectionView.children().add(AbstractJetpadCell.createBlackSelectionRect(new Vector((segment.end.x + segment.start.x) / 2, (segment.end.y + segment.start.y) / 2)));
-        }
-      }
-      selectionView.invalidate();
-    }
 
 
   }

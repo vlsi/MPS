@@ -33,7 +33,7 @@ public abstract class BlockCell extends JetpadCellWithPosition {
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
 
-  public abstract Mapper<SNode, View> createDecorationMapper();
+  public abstract Mapper<SNode, NodeDecoratorView> createDecorationMapper();
 
   private void moveView(ReadableModelProperty<Integer> xProperty, ReadableModelProperty<Integer> yProperty) {
     DiagramCell cell = getDiagramCell();
