@@ -22,7 +22,7 @@ import java.util.Collection;
 
 public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
 
-  public class SingleElemPointer implements IntMapPointer<T> {
+  public class SingleElemPointer implements IntMapPointer<Object> {
 
     int insertionIndex;
 
@@ -36,14 +36,14 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
     }
 
     @Override
-    public T get() {
+    public Object get() {
       if (isEmpty()) {
         return null;
       }
       return myValuePointer.get();
     }
 
-    protected void insert(T value) {
+    protected void insert(Object value) {
       assert isEmpty();
       if (insertionIndex == 0) {
         myValuePointer.set(value);
@@ -63,7 +63,7 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
     }
 
     @Override
-    public void set(T value) {
+    public void set(Object value) {
       if (value == null) {
         if (!isEmpty()) {
           delete();
@@ -79,17 +79,17 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
   }
 
 
-  IntMapPointer<T> myValuePointer;
+  IntMapPointer<Object> myValuePointer;
 
-  public SingleElemStyleAttributeMap(IntMapPointer<T> value) {
+  public SingleElemStyleAttributeMap(IntMapPointer<Object> value) {
     myValuePointer = value;
   }
 
   @Override
-  public Collection<IntPair<T>> getAll() {
-    ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(1);
+  public Collection<IntPair<Object>> getAll() {
+    ArrayList<IntPair<Object>> result = new ArrayList<IntPair<Object>>(1);
     if (!myValuePointer.isEmpty()) {
-      result.add(new IntPair<T>(0, myValuePointer.get()));
+      result.add(new IntPair<Object>(0, myValuePointer.get()));
     }
     return result;
   }
@@ -98,7 +98,7 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
   public Collection<IntPair<T>> getDiscardNullReplaced() {
     ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(1);
     if (myValuePointer != null) {
-      result.add(new IntPair<T>(0, myValuePointer.get() instanceof StyleAttributeMap.DiscardValue ? null : myValuePointer.get()));
+      result.add(new IntPair<T>(0, myValuePointer.get() instanceof DiscardValue ? null : (T) myValuePointer.get()));
     }
     return result;
   }
@@ -109,12 +109,12 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
   }
 
   @Override
-  public void setValue(T value) {
+  public void setValue(Object value) {
     setValue(0, value);
   }
 
   @Override
-  public void setValue(int index, T value) {
+  public void setValue(int index, Object value) {
     SingleElemPointer searchResult = search(index);
     searchResult.set(value);
   }
@@ -124,7 +124,7 @@ public class SingleElemStyleAttributeMap<T> implements StyleAttributeMap<T> {
     if (myValuePointer.get() == null || myValuePointer.get() instanceof StyleAttributeMap.DiscardValue) {
       return null;
     } else {
-      return new IntPair<T>(0, myValuePointer.get());
+      return new IntPair<T>(0, (T) myValuePointer.get());
     }
   }
 

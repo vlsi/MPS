@@ -18,9 +18,9 @@ package jetbrains.mps.editor.runtime.style;
 import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
 import jetbrains.mps.editor.runtime.style.StyleAttributeMapImpl.StyleAttributeMapWrapper;
 
-public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
+public class TopLevelStyleMap extends StyleMapImpl<StyleAttributeMap<Object>> {
 
-  public class StyleMapIntMapPointer implements StyleMap.IntMapPointer<StyleAttributeMap<T>> {
+  public class StyleMapIntMapPointer<T> implements StyleMap.IntMapPointer<StyleAttributeMap<T>> {
 
     private StyleMap.IntMapPointer<StyleAttributeMap<T>> myOrigin;
 
@@ -36,11 +36,11 @@ public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
     @Override
     public StyleAttributeMap<T> get() {
       if (isEmpty()) {
-        return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<T>) myOrigin);
+        return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<Object>) (StyleMap.IntMapPointer) myOrigin);
       }
       Object result = myOrigin.get();
       if (!(result instanceof StyleAttributeMapImpl)) {
-        return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<T>) myOrigin);
+        return new SingleElemStyleAttributeMap<T>((StyleMap.IntMapPointer<Object>) (StyleMap.IntMapPointer) myOrigin);
       } else {
         return new StyleAttributeMapWrapper<T>((StyleAttributeMapImpl<T>) result, myOrigin);
       }
@@ -53,9 +53,9 @@ public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
   }
 
   @Override
-  public StyleMap.IntMapPointer<StyleAttributeMap<T>> search(int index) {
-    StyleMap.IntMapPointer<StyleAttributeMap<T>> result = super.search(index);
-    return new StyleMapIntMapPointer(result);
+  public StyleMap.IntMapPointer<StyleAttributeMap<Object>> search(int index) {
+    IntMapPointer<StyleAttributeMap<Object>> result = super.search(index);
+    return new StyleMapIntMapPointer<Object>(result);
   }
 
   public int getSize() {
@@ -63,7 +63,7 @@ public class TopLevelStyleMap<T> extends StyleMapImpl<StyleAttributeMap<T>> {
   }
 
   public static void main(String[] args) {
-    StyleMap<StyleAttributeMap<Object>> topMap = new TopLevelStyleMap<Object>();
+    TopLevelStyleMap topMap = new TopLevelStyleMap();
     StyleMap.IntMapPointer<StyleAttributeMap<Object>> pnt1 = topMap.search(1);
     assert pnt1.isEmpty();
     assert pnt1.get().getAll().isEmpty();

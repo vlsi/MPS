@@ -47,8 +47,8 @@ public class StyleImpl implements Style {
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
 
-  private TopLevelStyleMap<Object> myAttributes = new TopLevelStyleMap<Object>();
-  private TopLevelStyleMap<Object> myCachedAttributes = new TopLevelStyleMap<Object>();
+  private TopLevelStyleMap myAttributes = new TopLevelStyleMap();
+  private TopLevelStyleMap myCachedAttributes = new TopLevelStyleMap();
 
   @NotNull
   private <T> IntMapPointer<StyleAttributeMap<T>> getAttribute(StyleAttribute<T> attribute) {
@@ -155,7 +155,7 @@ public class StyleImpl implements Style {
     if (attributeValues.isEmpty()) {
       return null;
     } else {
-      return attributeValues.get().search(priority).get();
+      return (T) attributeValues.get().search(priority).get();
     }
   }
 
@@ -192,10 +192,10 @@ public class StyleImpl implements Style {
   public <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute) {
     if (StyleAttributes.isSimple(attribute)) {
       IntMapPointer<? extends StyleAttributeMap<T>> attributeValue = getAttribute(attribute);
-      return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+      return attributeValue.isEmpty() ? null : (Collection) attributeValue.get().getAll();
     } else {
       IntMapPointer<? extends StyleAttributeMap<T>> attributeValue = getCachedAttribute(attribute);
-      return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+      return attributeValue.isEmpty() ? null : (Collection) attributeValue.get().getAll();
     }
   }
 

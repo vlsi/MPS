@@ -18,7 +18,7 @@ package jetbrains.mps.editor.runtime.style;
 import jetbrains.mps.openapi.editor.style.Style.IntPair;
 import java.util.Collection;
 
-public interface StyleAttributeMap<T> extends StyleMap<T> {
+public interface StyleAttributeMap<T> extends StyleMap<Object> {
 
   public static class DiscardValue {
     private static DiscardValue myInstance;
@@ -33,8 +33,8 @@ public interface StyleAttributeMap<T> extends StyleMap<T> {
     }
   }
 
-  Collection<IntPair<T>> getAll();
+  Collection<IntPair<Object>> getAll();
   Collection<IntPair<T>> getDiscardNullReplaced();
-  void setValue(T value);
+  void setValue(Object value);
   IntPair<T> getTopPair();
 }

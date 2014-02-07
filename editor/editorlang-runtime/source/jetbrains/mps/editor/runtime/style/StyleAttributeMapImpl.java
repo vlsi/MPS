@@ -25,7 +25,7 @@ import java.util.Collection;
  * User: Mihail.Buryakov
  * Date: 11/28/13
  */
-class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttributeMap<T> {
+class StyleAttributeMapImpl<T> extends StyleMapImpl<Object> implements StyleAttributeMap<T> {
 
   public class StyleAttributeIntMapPointer extends IntMapPointerImpl {
 
@@ -48,10 +48,10 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     }
   }
 
-  public Collection<IntPair<T>> getAll() {
-    ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(indexes.length);
+  public Collection<IntPair<Object>> getAll() {
+    ArrayList<IntPair<Object>> result = new ArrayList<IntPair<Object>>(indexes.length);
     for (int i = 0; i < indexes.length; i++) {
-      result.add(new IntPair<T>(indexes[i], (T) values[i]));
+      result.add(new IntPair<Object>(indexes[i], (T) values[i]));
     }
     return result;
   }
@@ -68,12 +68,12 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     return result;
   }
 
-  public StyleMap.IntMapPointer<T> search(int index, IntMapPointer<StyleAttributeMap<T>> parentPointer) {
+  public StyleMap.IntMapPointer<Object> search(int index, IntMapPointer<StyleAttributeMap<T>> parentPointer) {
     IntMapPointerImpl result = super.searchInternal(index);
     return new StyleAttributeIntMapPointer(result, parentPointer);
   }
 
-  public void setValue(T value) {
+  public void setValue(Object value) {
     setValue(0, value);
   }
 
@@ -95,7 +95,7 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     }
 
     @Override
-    public Collection<IntPair<T>> getAll() {
+    public Collection<IntPair<Object>> getAll() {
       return myOrigin.getAll();
     }
 
@@ -105,7 +105,7 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     }
 
     @Override
-    public void setValue(T value) {
+    public void setValue(Object value) {
       myOrigin.setValue(value);
     }
 
@@ -115,12 +115,12 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<T> implements StyleAttribute
     }
 
     @Override
-    public IntMapPointer<T> search(int index) {
+    public IntMapPointer<Object> search(int index) {
       return myOrigin.search(index, myParentPointer);
     }
 
     @Override
-    public void setValue(int index, T value) {
+    public void setValue(int index, Object value) {
       myOrigin.setValue(index, value);
     }
   }
