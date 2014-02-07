@@ -24,7 +24,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   public ExecuteActionAttachedToCurrentNode_Action() {
     super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
