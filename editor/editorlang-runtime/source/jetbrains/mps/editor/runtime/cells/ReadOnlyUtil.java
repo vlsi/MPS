@@ -17,33 +17,41 @@ package jetbrains.mps.editor.runtime.cells;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.selection.Selection;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ReadOnlyUtil {
-  public static boolean isCellReadOnly(jetbrains.mps.openapi.editor.EditorComponent editorComponent, @Nullable jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+
+  public static boolean isCellReadOnly(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    return cell.getStyle().get(StyleAttributes.READ_ONLY);
+  }
+
+  public static boolean isCellOrSelectionReadOnlyInEditor(jetbrains.mps.openapi.editor.EditorComponent editorComponent,
+      @Nullable jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (editorComponent.isReadOnly()) {
       return true;
     }
     if (cell == null) {
-      return isSelectionReadOnly(editorComponent);
+      return isSelectionReadOnlyInEditor(editorComponent);
     }
-    return cell.getStyle().get(StyleAttributes.READ_ONLY);
+    return isCellReadOnly(cell);
   }
 
-  public static boolean isCellsReadOnly(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> cells) {
+  public static boolean isCellsReadOnlyInEditor(jetbrains.mps.openapi.editor.EditorComponent editorComponent,
+      Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> cells) {
     if (editorComponent.isReadOnly()) {
       return true;
     }
     for (jetbrains.mps.openapi.editor.cells.EditorCell cell : cells) {
-      if (isCellReadOnly(editorComponent, cell)) {
+      if (isCellOrSelectionReadOnlyInEditor(editorComponent, cell)) {
         return true;
       }
     }
     return false;
   }
 
-  public static boolean isSelectionReadOnly(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+  public static boolean isSelectionReadOnlyInEditor(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
     Selection selection = editorComponent.getSelectionManager().getSelection();
-    return selection == null || isCellsReadOnly(editorComponent, selection.getSelectedCells());
+    return selection == null || isCellsReadOnlyInEditor(editorComponent, selection.getSelectedCells());
   }
 }

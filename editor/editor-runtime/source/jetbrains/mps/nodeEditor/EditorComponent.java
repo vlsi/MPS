@@ -2548,7 +2548,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isKeyboardHandlerProcessingEnabled(KeyEvent keyEvent) {
-    if (!ReadOnlyUtil.isSelectionReadOnly(this)) {
+    if (!ReadOnlyUtil.isSelectionReadOnlyInEditor(this)) {
       return true;
     }
     jetbrains.mps.openapi.editor.cells.CellActionType actionType = getActionType(keyEvent, getEditorContext());
@@ -3504,7 +3504,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
       return !(isDisposed() ||
           isInvalidLightweight() ||
-          ReadOnlyUtil.isSelectionReadOnly(EditorComponent.this) ||
+          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
           getSelectionManager().getSelection() == null);
     }
 
@@ -3569,7 +3569,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isPastePossible(@NotNull DataContext dataContext) {
       return !(isDisposed() ||
           isInvalidLightweight() ||
-          ReadOnlyUtil.isSelectionReadOnly(EditorComponent.this) ||
+          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
           getSelectionManager().getSelection() == null);
     }
 
