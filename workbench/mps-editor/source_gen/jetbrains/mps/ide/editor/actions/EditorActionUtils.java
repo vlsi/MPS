@@ -4,6 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import java.util.Iterator;
@@ -36,7 +37,7 @@ public class EditorActionUtils {
     if (!(isReadonlyActionEnabled(editorComponent))) {
       return false;
     }
-    return !(editorComponent.isCellsReadOnly(changingCells));
+    return !(ReadOnlyUtil.isCellsReadOnly(editorComponent, changingCells));
   }
 
   /*package*/ static EditorCell getEditorCellToInsert(EditorComponent editorComponent) {

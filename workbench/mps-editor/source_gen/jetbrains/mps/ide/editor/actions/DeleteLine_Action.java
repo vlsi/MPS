@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.cells.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
@@ -109,7 +110,7 @@ public class DeleteLine_Action extends BaseAction {
           SNode currentNode = current.getSNode();
           if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
             EditorCell root = current.getRootParent();
-            if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isCellReadOnly(root)) {
+            if (ReadOnlyUtil.isCellReadOnly(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), root)) {
               return;
             }
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
@@ -122,7 +123,7 @@ public class DeleteLine_Action extends BaseAction {
           }
         } else if (layout instanceof CellLayout_Vertical) {
           if (current.isBig()) {
-            if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isCellReadOnly(current)) {
+            if (ReadOnlyUtil.isCellReadOnly(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), current)) {
               return;
             }
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());

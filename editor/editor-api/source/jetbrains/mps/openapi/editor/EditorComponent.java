@@ -68,12 +68,6 @@ public interface EditorComponent {
 
   boolean isReadOnly();
 
-  boolean isCellReadOnly(EditorCell editorCell);
-
-  boolean isSelectionReadOnly();
-
-  boolean isCellsReadOnly(Iterable<EditorCell> changingCells);
-
   void update();
 
   ActionHandler getActionHandler();

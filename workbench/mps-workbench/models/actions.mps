@@ -8668,7 +8668,7 @@
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ayyv.~JBColor%d&lt;init&gt;(java%dawt%dColor,java%dawt%dColor)" resolveInfo="JBColor" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7443274696672357059" nodeInfo="nn">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7443274696672357060" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7y.~Color%d&lt;init&gt;(java%dawt%dcolor%dColorSpace,float[],float)" resolveInfo="Color" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7y.~Color%d&lt;init&gt;(int,int,int)" resolveInfo="Color" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7443274696672357053" nodeInfo="nn">
                                 <property name="value" nameId="tpee.1068580320021" value="231" />
                               </node>

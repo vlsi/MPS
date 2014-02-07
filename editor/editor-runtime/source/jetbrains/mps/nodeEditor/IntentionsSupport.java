@@ -28,7 +28,9 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.editor.actions.EditorActionUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.IntentionExecutable;
@@ -153,7 +155,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.isSelectionReadOnly() || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) return;
+    if (ReadOnlyUtil.isSelectionReadOnly(myEditor) || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) return;
 
     showIntentionsMenu();
   }
@@ -178,7 +180,7 @@ public class IntentionsSupport {
           final IntentionType intentionType = ModelAccess.instance().runReadAction(new Computable<IntentionType>() {
             @Override
             public IntentionType compute() {
-              if (isInconsistentEditor() || myEditor.isSelectionReadOnly()) return null;
+              if (isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnly(myEditor)) return null;
               // TODO check for ActionsAsIntentions
               return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),
                   new Computation<IntentionType>() {
@@ -197,7 +199,7 @@ public class IntentionsSupport {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
             public void run() {
-              if (isInconsistentEditor() || myEditor.isSelectionReadOnly() || interrupted()) return;
+              if (isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnly(myEditor) || interrupted()) return;
 
               if (myEditor.getSelectedCell() == null) {
                 hideLightBulb();
