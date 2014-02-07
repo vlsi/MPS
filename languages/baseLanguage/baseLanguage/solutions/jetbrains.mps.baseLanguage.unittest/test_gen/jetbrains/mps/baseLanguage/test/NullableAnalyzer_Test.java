@@ -13,12 +13,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeParametersInDeprecatedCheck1597542831862755249() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeParametersInDeprecatedCheck1597542831862755249", true);
-  }
-
-  @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927436728() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927436728", true);
@@ -248,11 +242,6 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeParametersInDeprecatedCheck1597542831862755249() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1597542831862755249"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6011730950863071462")});
-    }
-
     public void test_NodeOperationCanProduceNPECheck6923385624927436728() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927436728"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228209")});
