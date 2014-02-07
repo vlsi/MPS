@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.TypesystemDescriptor" />
+  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/2978080762093972440">
+    <nodeInfo nodeId="2978080762093973106" fileName="AssignCorrectValue_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2978080762093983767" fileName="AssignCorrectValue_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2978080762094012385" fileName="AssignCorrectValue_QuickFix.java" startLine="20" startPosition="25" endLine="21" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2978080762094027047" fileName="AssignCorrectValue_QuickFix.java" startLine="22" startPosition="12" endLine="23" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AssignCorrectValue_QuickFix#()V" />
+    <nodeInfo nodeId="2978080762094026487" fileName="AssignCorrectValue_QuickFix.java" startLine="22" startPosition="10" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2978080762093984825" fileName="AssignCorrectValue_QuickFix.java" startLine="19" startPosition="124" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="11" startPosition="40" endLine="11" endPosition="40" />
+    <scopeInfo nodeId="2978080762093972448" fileName="AssignCorrectValue_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="34" />
+    <scopeInfo nodeId="2978080762093984828" fileName="AssignCorrectValue_QuickFix.java" startLine="20" startPosition="25" endLine="21" endPosition="173" />
+    <scopeInfo nodeId="2978080762094026488" fileName="AssignCorrectValue_QuickFix.java" startLine="22" startPosition="12" endLine="23" endPosition="125" />
+    <scopeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="2978080762093972440" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2978080762093972442" fileName="AssignCorrectValue_QuickFix.java" startLine="18" startPosition="35" endLine="24" endPosition="5">
+      <varInfo nodeId="2978080762093983768" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2978080762093972440" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2978080762093972440" fileName="AssignCorrectValue_QuickFix.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.AssignCorrectValue_QuickFix" />
+  </root>
+  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/4664795093170882986">
+    <nodeInfo nodeId="4664795093170883652" fileName="RemovePlanItem_QuickFix.java" startLine="13" startPosition="44" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4664795093170891849" fileName="RemovePlanItem_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemovePlanItem_QuickFix#()V" />
+    <nodeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="10" startPosition="36" endLine="10" endPosition="36" />
+    <scopeInfo nodeId="4664795093170882994" fileName="RemovePlanItem_QuickFix.java" startLine="13" startPosition="44" endLine="14" endPosition="30" />
+    <scopeInfo nodeId="4664795093170882988" fileName="RemovePlanItem_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="37" />
+    <scopeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="4664795093170882986" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4664795093170882986" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4664795093170882986" fileName="RemovePlanItem_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.RemovePlanItem_QuickFix" />
+  </root>
+  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233139619" />
+  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233149391" />
+  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233238129">
+    <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="26" startPosition="60" endLine="27" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="28" startPosition="9" endLine="29" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="29" startPosition="154" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2978080762093917547" fileName="check_Slot_NonTypesystemRule.java" startLine="32" startPosition="7" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128233239303" fileName="check_Slot_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="35" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="37" startPosition="110" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="38" startPosition="60" endLine="39" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="40" startPosition="9" endLine="41" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="41" startPosition="177" endLine="42" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="46" startPosition="9" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="47" startPosition="62" endLine="48" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="49" startPosition="11" endLine="50" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="50" startPosition="153" endLine="51" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="58" startPosition="46" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="63" startPosition="5" endLine="64" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="64" startPosition="130" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="69" startPosition="30" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_Slot_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="27" startPosition="233" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="39" startPosition="270" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="48" startPosition="261" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="62" startPosition="68" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="24" startPosition="62" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="36" startPosition="25" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="45" startPosition="201" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4664795093170876739" fileName="check_Slot_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2978080762093912501" fileName="check_Slot_NonTypesystemRule.java" startLine="23" startPosition="117" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5063359128233240213" fileName="check_Slot_NonTypesystemRule.java" startLine="35" startPosition="124" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="20" startPosition="41" endLine="20" endPosition="41" />
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="58" startPosition="46" endLine="59" endPosition="58" />
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="69" startPosition="30" endLine="70" endPosition="17" />
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="28" startPosition="9" endLine="30" endPosition="71">
+      <varInfo nodeId="2978080762093971534" varName="intentionProvider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="40" startPosition="9" endLine="42" endPosition="71">
+      <varInfo nodeId="5063359128233240887" varName="intentionProvider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="49" startPosition="11" endLine="51" endPosition="73">
+      <varInfo nodeId="4664795093170882120" varName="intentionProvider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="63" startPosition="5" endLine="65" endPosition="45">
+      <varInfo nodeId="5063359128233238129" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="62" startPosition="68" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="31" endPosition="9">
+      <varInfo nodeId="2978080762093971534" varName="_reporter_2309309498" />
+      <varInfo nodeId="2978080762093971534" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128233240887" fileName="check_Slot_NonTypesystemRule.java" startLine="37" startPosition="110" endLine="43" endPosition="9">
+      <varInfo nodeId="5063359128233240887" varName="_reporter_2309309498" />
+      <varInfo nodeId="5063359128233240887" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="4664795093170882120" fileName="check_Slot_NonTypesystemRule.java" startLine="46" startPosition="9" endLine="52" endPosition="11">
+      <varInfo nodeId="4664795093170882120" varName="_reporter_2309309498" />
+      <varInfo nodeId="4664795093170882120" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="5063359128233238129" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4664795093170876742" fileName="check_Slot_NonTypesystemRule.java" startLine="45" startPosition="201" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="2978080762093912504" fileName="check_Slot_NonTypesystemRule.java" startLine="24" startPosition="62" endLine="33" endPosition="13" />
+    <scopeInfo nodeId="5063359128233240216" fileName="check_Slot_NonTypesystemRule.java" startLine="36" startPosition="25" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="5063359128233238130" fileName="check_Slot_NonTypesystemRule.java" startLine="23" startPosition="117" endLine="55" endPosition="5">
+      <varInfo nodeId="5063359128233239304" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="5063359128233238129" varName="slot" />
+      <varInfo nodeId="5063359128233238129" varName="status" />
+      <varInfo nodeId="5063359128233238129" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="5063359128233238129" fileName="check_Slot_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.check_Slot_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5224141982809132419">
+    <nodeInfo nodeId="5224141982809133134" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5224141982809141196" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5224141982809270800" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="23" startPosition="60" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5224141982809141920" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="25" startPosition="5" endLine="26" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5224141982809164438" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="39" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5224141982809166927" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="32" startPosition="32" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveItemToTheRightPositionWithinDailyPlan_QuickFix#()V" />
+    <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5224141982809245936" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="22" startPosition="98" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5224141982809166051" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="31" startPosition="7" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5224141982809164429" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="26" startPosition="129" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="14" startPosition="63" endLine="14" endPosition="63" />
+    <scopeInfo nodeId="5224141982809132476" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="73" />
+    <scopeInfo nodeId="5224141982809245939" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="23" startPosition="60" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="5224141982809164437" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="39" endLine="29" endPosition="107" />
+    <scopeInfo nodeId="5224141982809166054" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="32" startPosition="32" endLine="33" endPosition="64" />
+    <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="5224141982809132419" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5224141982809164436" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5224141982809132421" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="35" endLine="34" endPosition="5">
+      <varInfo nodeId="5224141982809141921" varName="dailyPlan" />
+      <varInfo nodeId="5224141982809141197" varName="item" />
+      <varInfo nodeId="5224141982809164430" varName="nextSibling" />
+    </scopeInfo>
+    <scopeInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="21" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5224141982809132419" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5224141982809164436" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="27" startPosition="114" endLine="31" endPosition="5" unitName="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix$1" />
+    <unitInfo nodeId="5224141982809132419" fileName="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix" />
+  </root>
+</debugInfo>
+

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1gkbvpotyqkqaz34h6pj804bth1obhp">
-  <common hash="ajs3ofvlbfgz19dlisvs0skqf9yon6m" />
-  <source id="5726447348464276940" name="LivingRoom" hash="-5utp0by4hprdiorqbu9o2db5u0twqby">
-    <file name="LivingRoom" />
-  </source>
+<dependencies version="2">
+  <common hash="" />
 </dependencies>
 
