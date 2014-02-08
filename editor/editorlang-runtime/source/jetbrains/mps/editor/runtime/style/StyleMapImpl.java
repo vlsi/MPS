@@ -23,16 +23,17 @@ public class StyleMapImpl<T> implements StyleMap<T> {
   protected Object[] values = new Object[0];
 
   public class IntMapPointerImpl implements StyleMap.IntMapPointer<T> {
-    protected boolean myEmpty;
     protected int myIndex;
+    // myPointer <  -1 => empty,  insert at (- myPointer - 2)
+    // myPointer >  -1 => exists, insert at (myPointer)
+    // myPointer == -1 => reserved for single element
     protected int myPointer;
-    public IntMapPointerImpl(int pointer, boolean empty, int index) {
+    public IntMapPointerImpl(int pointer, int index) {
       myPointer = pointer;
-      myEmpty = empty;
       myIndex = index;
     }
     public boolean isEmpty() {
-      return myEmpty;
+      return myPointer >= 0;
     }
     public T get() {
       if (isEmpty()) {
@@ -43,6 +44,7 @@ public class StyleMapImpl<T> implements StyleMap<T> {
     }
     protected void insert(T value) {
       assert isEmpty();
+      myPointer = - myPointer - 2;
       int n = indexes.length;
       int[] newIndexes = new int[n + 1];
       Object[] newValues = new Object[n + 1];
@@ -54,7 +56,6 @@ public class StyleMapImpl<T> implements StyleMap<T> {
       System.arraycopy(values, myPointer, newValues, myPointer + 1, n - myPointer);
       indexes = newIndexes;
       values = newValues;
-      myEmpty = false;
     }
     public void set(T value) {
       if (value == null) {
@@ -80,7 +81,7 @@ public class StyleMapImpl<T> implements StyleMap<T> {
       System.arraycopy(values, myPointer + 1, newValues, myPointer, n - myPointer - 1);
       indexes = newIndexes;
       values = newValues;
-      myEmpty = true;
+      myPointer = - myPointer - 2;
     }
   }
 
@@ -88,9 +89,9 @@ public class StyleMapImpl<T> implements StyleMap<T> {
     int pointer = Arrays.binarySearch(indexes, index);
     IntMapPointerImpl result;
     if (pointer >= 0) {
-      result = new IntMapPointerImpl(pointer, false, index);
+      result = new IntMapPointerImpl(pointer, index);
     } else {
-      result = new IntMapPointerImpl(- pointer - 1, true, index);
+      result = new IntMapPointerImpl(pointer - 1, index);
     }
     return result;
   }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
 import jetbrains.mps.openapi.editor.style.Style.IntPair;
 
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ class StyleAttributeMapImpl<T> extends StyleMapImpl<Object> implements StyleAttr
     StyleMap.IntMapPointer myParentPointer;
 
     public StyleAttributeIntMapPointer(IntMapPointerImpl origin, IntMapPointer<StyleAttributeMap<T>> parentPointer) {
-      super(origin.myPointer, origin.myEmpty, origin.myIndex);
+      super(origin.myPointer, origin.myIndex);
       myParentPointer = parentPointer;
     }
 
