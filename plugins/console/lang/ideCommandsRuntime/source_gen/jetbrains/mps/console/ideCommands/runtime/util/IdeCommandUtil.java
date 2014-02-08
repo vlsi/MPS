@@ -28,6 +28,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.facets.TestsFacet;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -183,10 +184,16 @@ public class IdeCommandUtil {
     Sequence.fromIterable(modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
+        IFile testDir = check_nf7729_a0b0a0a4a4(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
           cacheDir.delete();
+        }
+        if (testDir != null) {
+          IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
+          testDir.delete();
+          testCacheDir.delete();
         }
       }
     });
@@ -215,6 +222,13 @@ public class IdeCommandUtil {
   }
 
 
+
+  private static IFile check_nf7729_a0b0a0a4a4(TestsFacet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTestsOutputPath();
+    }
+    return null;
+  }
 
   private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a5a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
