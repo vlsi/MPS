@@ -579,7 +579,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="5481070676328113896" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7413225496542997288" resolveInfo="addPlugin" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5481070676328113897" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.make" />
+                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.make" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5481070676328113898" nodeInfo="nn">
