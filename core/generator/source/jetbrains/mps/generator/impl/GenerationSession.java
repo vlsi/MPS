@@ -435,9 +435,10 @@ class GenerationSession {
     IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     if (tracer.isTracing()) {
       myLogger.error("last rules applied:");
-      List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(realOutputModel.getReference());
-      for (Pair<SNode, SNode> pair : pairs) {
-        myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
+      List<Pair<SNodeReference, SNodeReference>> pairs = tracer.getAllAppliedRulesWithInputNodes(realOutputModel.getReference());
+      for (Pair<SNodeReference, SNodeReference> pair : pairs) {
+        SNode templateNode = pair.o1 == null ? null : pair.o1.resolve(MPSModuleRepository.getInstance());
+        myLogger.error(pair.o1, templateNode == null ? "unknown rule" : String.format("rule: %s", SNodeUtil.getDebugText(templateNode)),
             GeneratorUtil.describe(pair.o2, "input"));
       }
     } else {

@@ -82,7 +82,7 @@ public class GlobalModuleDependenciesManager {
       collect(neighbour, result, depType);
     }
 
-    return (Collection) result;
+    return result;
   }
 
   private Set<SModule> collectNeighbours(Deptype depType) {

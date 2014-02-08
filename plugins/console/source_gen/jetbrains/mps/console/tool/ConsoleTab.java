@@ -128,14 +128,9 @@ public class ConsoleTab extends BaseConsoleTab {
             }
           }, new Runnable() {
             public void run() {
-              // todo: this is a hack - activate is not required there because command can activate some other component 
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                  myTool.getToolWindow().activate(new Runnable() {
-                    public void run() {
-                      setSelection();
-                    }
-                  });
+                  setSelection();
                 }
               });
             }
