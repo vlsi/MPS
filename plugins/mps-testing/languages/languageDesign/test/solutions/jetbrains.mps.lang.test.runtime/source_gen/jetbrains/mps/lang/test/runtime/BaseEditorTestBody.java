@@ -76,6 +76,9 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
+        if (BaseEditorTestBody.this.myStart == null) {
+          throw new IllegalStateException(BaseEditorTestBody.this.myModel.getModelName());
+        }
         if (!(after.equals(""))) {
           BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));

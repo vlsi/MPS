@@ -98,7 +98,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(parent, "This condition is always true", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343696", null, errorTarget);
                 {
                   BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix", false);
-                  intentionProvider.putArgument("value", false);
+                  intentionProvider.putArgument("value", true);
                   _reporter_2309309498.addIntentionProvider(intentionProvider);
                 }
               }
