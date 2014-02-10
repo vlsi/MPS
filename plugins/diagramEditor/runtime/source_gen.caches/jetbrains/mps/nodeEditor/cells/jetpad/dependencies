@@ -156,6 +156,13 @@
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView" file="DiagramDecoratorView.java">
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" file="EmptyCellLayout.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.TextBuilder" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout" />
+  </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.InputPortCell" file="InputPortCell.java">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />

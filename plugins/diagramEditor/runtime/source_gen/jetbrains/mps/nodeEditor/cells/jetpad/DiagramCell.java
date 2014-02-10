@@ -391,7 +391,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public void updateConnectionDragFeedback(Vector toLocation) {
-    View targetView = getRootMapper().getTarget().root().viewAt(toLocation);
+    View targetView = getRootMapper().getTarget().contentRoot().viewAt(toLocation);
     while (targetView != null && targetView.prop(JetpadUtils.CONNECTABLE).get() == null) {
       targetView = targetView.parent().get();
     }

@@ -458,6 +458,20 @@
     <unitInfo nodeId="1755573558917160140" fileName="ReadableModelProperty.java" startLine="17" startPosition="52" endLine="25" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1" />
     <unitInfo nodeId="1755573558911655916" fileName="ReadableModelProperty.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
   </root>
+  <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/2574029987319042393">
+    <nodeInfo nodeId="2574029987321686968" fileName="EmptyCellLayout.java" startLine="16" startPosition="66" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2574029987319054305" fileName="EmptyCellLayout.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doLayout#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)V" />
+    <nodeInfo nodeId="2574029987319054314" fileName="EmptyCellLayout.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doLayoutText#(Ljava/lang/Iterable;)Ljetbrains/mps/openapi/editor/TextBuilder;" />
+    <scopeInfo nodeId="2574029987319054313" fileName="EmptyCellLayout.java" startLine="13" startPosition="58" endLine="13" endPosition="58" />
+    <scopeInfo nodeId="2574029987319054323" fileName="EmptyCellLayout.java" startLine="16" startPosition="66" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="2574029987319054305" fileName="EmptyCellLayout.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="2574029987319054309" varName="collection" />
+    </scopeInfo>
+    <scopeInfo nodeId="2574029987319054314" fileName="EmptyCellLayout.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="2574029987319054318" varName="iterable" />
+    </scopeInfo>
+    <unitInfo nodeId="2574029987319042393" fileName="EmptyCellLayout.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" />
+  </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/285670992206004280">
     <nodeInfo nodeId="285670992206004290" fileName="PortCell.java" startLine="11" startPosition="60" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5374841768520389313" fileName="PortCell.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
@@ -1009,7 +1023,7 @@
     <nodeInfo nodeId="6981942132930775028" fileName="DiagramCell.java" startLine="387" startPosition="61" endLine="388" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6981942132930292194" fileName="DiagramCell.java" startLine="388" startPosition="40" endLine="389" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6981942132929047808" fileName="DiagramCell.java" startLine="389" startPosition="47" endLine="390" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5204867329701802824" fileName="DiagramCell.java" startLine="393" startPosition="63" endLine="394" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5204867329701802824" fileName="DiagramCell.java" startLine="393" startPosition="63" endLine="394" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5204867329723401760" fileName="DiagramCell.java" startLine="395" startPosition="90" endLine="396" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5204867329721504620" fileName="DiagramCell.java" startLine="398" startPosition="79" endLine="399" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5204867329702778222" fileName="DiagramCell.java" startLine="400" startPosition="12" endLine="401" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1057,7 +1071,7 @@
     <nodeInfo nodeId="4883868441281583119" fileName="DiagramCell.java" startLine="350" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
     <nodeInfo nodeId="828763237677149351" fileName="DiagramCell.java" startLine="370" startPosition="65" endLine="373" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6981942132928876494" fileName="DiagramCell.java" startLine="381" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasConnectionDragFeedback#()Z" />
-    <nodeInfo nodeId="5204867329723025782" fileName="DiagramCell.java" startLine="394" startPosition="76" endLine="397" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5204867329723025782" fileName="DiagramCell.java" startLine="394" startPosition="83" endLine="397" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6981942132929532931" fileName="DiagramCell.java" startLine="406" startPosition="0" endLine="409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hideConnectionDragFeedback#()V" />
     <nodeInfo nodeId="5204867329711456070" fileName="DiagramCell.java" startLine="414" startPosition="83" endLine="417" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5204867329711456094" fileName="DiagramCell.java" startLine="420" startPosition="58" endLine="423" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
