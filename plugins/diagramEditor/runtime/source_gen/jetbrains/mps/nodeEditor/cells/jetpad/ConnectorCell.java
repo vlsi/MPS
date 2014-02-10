@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 
-public abstract class ConnectorCell extends JetpadCellWithPosition {
+public abstract class ConnectorCell extends AbstractJetpadCell {
   public ConnectorCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }

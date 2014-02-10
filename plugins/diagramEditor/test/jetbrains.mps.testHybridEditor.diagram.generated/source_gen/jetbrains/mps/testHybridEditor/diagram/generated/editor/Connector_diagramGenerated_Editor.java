@@ -19,8 +19,8 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorDecoratorView;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import java.util.List;
 import jetbrains.jetpad.geometry.Segment;
@@ -101,10 +101,14 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
           }));
           configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new WritableProperty<Rectangle>() {
             public void set(Rectangle rect) {
-              myXValueProperty = rect.origin.x;
-              myYValueProperty = rect.origin.y;
-              myWidthValueProperty = rect.dimension.x;
-              myHeightValueProperty = rect.dimension.y;
+              DiagramCell diagramCell = getDiagramCell();
+              if (diagramCell == null) {
+                return;
+              }
+              setX(rect.origin.x + diagramCell.getX());
+              setY(rect.origin.y + diagramCell.getY());
+              setWidth(rect.dimension.x);
+              setHeight(rect.dimension.y);
             }
           }));
 

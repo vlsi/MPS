@@ -11,7 +11,7 @@ import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
 
-public abstract class BlockCell extends JetpadCellWithPosition {
+public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }

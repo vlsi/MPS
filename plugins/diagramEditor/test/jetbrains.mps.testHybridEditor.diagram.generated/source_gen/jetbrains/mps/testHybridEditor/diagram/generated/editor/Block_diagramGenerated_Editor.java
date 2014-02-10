@@ -32,11 +32,11 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
@@ -198,10 +198,14 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           }));
           configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
             public void set(Rectangle rect) {
-              myXValueProperty = rect.origin.x;
-              myYValueProperty = rect.origin.y;
-              myWidthValueProperty = rect.dimension.x;
-              myHeightValueProperty = rect.dimension.y;
+              DiagramCell diagramCell = getDiagramCell();
+              if (diagramCell == null) {
+                return;
+              }
+              setX(rect.origin.x + diagramCell.getX());
+              setY(rect.origin.y + diagramCell.getY());
+              setWidth(rect.dimension.x);
+              setHeight(rect.dimension.y);
             }
           }));
 

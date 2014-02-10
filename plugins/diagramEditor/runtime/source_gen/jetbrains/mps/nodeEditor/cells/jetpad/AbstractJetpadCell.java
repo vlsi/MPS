@@ -9,7 +9,6 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import java.awt.Graphics;
@@ -39,7 +38,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
   protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(true);
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
-    super(editorContext, node, new CellLayout_Horizontal(), null);
+    super(editorContext, node, new EmptyCellLayout(), null);
   }
 
   @Override

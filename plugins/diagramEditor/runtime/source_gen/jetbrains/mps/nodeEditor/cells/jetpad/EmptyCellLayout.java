@@ -14,6 +14,6 @@ public class EmptyCellLayout extends AbstractCellLayout {
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> iterable) {
-    return null;
+    return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
   }
 }
