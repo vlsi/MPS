@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-95z7np9uyko9zik982mh6xdzyga0fqs">
+<dependencies version="2" modelHash="7hkyhegnbujxi8qak1p6svbfl15az9x">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -7,13 +7,14 @@
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-11ybncn4u5vsfpg6u4cyqzjsjbwqosp" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-dmk1erwfb1e9ytfqfc0hj1yzc2n6ouq" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
-  <dep model="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)" hash="-409hxnyydveqykvmhaknizq07kjx41k" />
-  <dep model="r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)" hash="o5bgcqc3ywikh1uiljzixg4rwr6082" />
+  <dep model="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)" hash="-dzs7r8mbgiw3l7e2y9wsbc3in3m4haq" />
+  <dep model="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" hash="oc6nn0jhczz0d29vf60d0rb3hiuqck" />
+  <dep model="r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)" hash="cfvc6g7agqfrz565cham661zyn3d65w" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="cvhydmevs39obn7wnzj7kt9757t8ha1">
+  <common hash="-dp17lieyd6tld71cgtsropn6klk5v2k">
     <dep root="4005526075820601542" />
     <dep root="4560297596904469714" />
     <dep root="4560297596904469720" />
@@ -35,7 +36,7 @@
     <dep model="r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)" />
     <file name="BuildMpsLayout_TestModule_Editor.java" />
   </source>
-  <source id="4560297596904469720" name="BuildMpsLayout_TestModules_Editor" hash="-131xab1veyxv97e1ay9rhxrn14jqkf7">
+  <source id="4560297596904469720" name="BuildMpsLayout_TestModules_Editor" hash="-923jxu3d521zgcu84gv63mq8jmdtg6r">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -45,6 +46,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)" />
+    <dep model="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" />
     <dep model="r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)" />
     <file name="BuildMpsLayout_TestModules_Editor.java" />
   </source>
