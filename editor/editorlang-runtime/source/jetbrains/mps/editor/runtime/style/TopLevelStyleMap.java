@@ -62,20 +62,29 @@ public class TopLevelStyleMap extends StyleMapImpl<Object> {
     return StyleAttributeMapImpl.get(styleMapOrValue, this, topPointer, pointer);
   }
 
-  public <T> void setValue(StyleAttribute<T> attribute, int index, Object value) {
+  /**
+   * @return new value of topPointer
+   */
+  public <T> int setValue(StyleAttribute<T> attribute, int index, Object value) {
     int topPointer = this.search(attribute.getIndex());
-    setValue(attribute, topPointer, index, value);
+    return setValue(attribute, topPointer, index, value);
   }
 
-  public <T> void setValue(StyleAttribute<T> attribute, int topPointer, int index, Object value) {
+  /**
+   * @return new value of topPointer
+   */
+  public <T> int setValue(StyleAttribute<T> attribute, int topPointer, int index, Object value) {
     Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
     int pointer = StyleAttributeMapImpl.search(styleMapOrValue, index);
-    setValue(attribute, topPointer, index, pointer, value);
+    return setValue(attribute, topPointer, index, pointer, value);
   }
 
-  public <T> void setValue(StyleAttribute<T> attribute, int topPointer, int index, int pointer, Object value) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    StyleAttributeMapImpl.set(styleMapOrValue, this, topPointer, pointer, index, attribute.getIndex(), value);
+  /**
+   * @return new value of topPointer
+   */
+  private <T> int setValue(StyleAttribute<T> attribute, int topPointer, int index, int pointer, Object value) {
+      Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
+    return StyleAttributeMapImpl.set(styleMapOrValue, this, topPointer, pointer, index, attribute.getIndex(), value);
   }
 
   public <T> Collection<IntPair<Object>> getAll(StyleAttribute<T> attribute) {
@@ -110,32 +119,40 @@ public class TopLevelStyleMap extends StyleMapImpl<Object> {
 
   public static void main(String[] args) {
     TopLevelStyleMap topMap = new TopLevelStyleMap();
-    StyleAttribute<String> ind1 = StyleAttributes.NAVIGATABLE_REFERENCE;
+    StyleAttribute<String> ind1 = StyleAttributes.POSITION;
     int pnt1 = topMap.getAttribute(ind1);
     assert isEmpty(pnt1);
     assert topMap.getAll(ind1, pnt1).isEmpty();
-    topMap.setValue(ind1, pnt1, 0, "bcd0");
+    pnt1 = topMap.setValue(ind1, pnt1, 0, "bcd0");
     assert topMap.getValue(ind1, 0).equals("bcd0");
-    topMap.setValue(ind1, pnt1, 0, "abc0");
+    pnt1 = topMap.setValue(ind1, pnt1, 0, "abc0");
     assert topMap.getValue(ind1, 0).equals("abc0");
-    assert !(topMap.getValue(ind1, 0) instanceof StyleAttributeMapImpl);
-    topMap.setValue(ind1, pnt1, 1, "abc1");
+    assert !(TopLevelStyleMap.get(topMap, pnt1) instanceof StyleAttributeMapImpl);
+    pnt1 = topMap.setValue(ind1, pnt1, 1, "abc1");
     assert topMap.getTopPair(ind1).value.equals("abc1");
     assert topMap.getTopPair(ind1, pnt1).value.equals("abc1");
     assert topMap.getValue(ind1, pnt1, 1).equals("abc1");
     assert topMap.getValue(ind1, pnt1, 0).equals("abc0");
-    assert topMap.getValue(ind1, 0) instanceof StyleAttributeMapImpl;
-    topMap.setValue(ind1, pnt1, 0, null);
+    assert TopLevelStyleMap.get(topMap, pnt1) instanceof StyleAttributeMapImpl;
+    pnt1 = topMap.setValue(ind1, pnt1, 0, null);
     assert topMap.getValue(ind1, pnt1, 0) == null;
-    topMap.setValue(ind1, 1, DiscardValue.getInstance());
+    pnt1 = topMap.setValue(ind1, 1, DiscardValue.getInstance());
     assert topMap.getTopPair(ind1) == null;
+
+    StyleAttribute<String> ind2 = StyleAttributes.LAYOUT_CONSTRAINT;
+    int pnt2 = topMap.getAttribute(ind2);
+    pnt2 = topMap.setValue(ind2, pnt2, 1, DiscardValue.getInstance());
+    assert topMap.getValue(ind2, pnt2, 1).equals(DiscardValue.getInstance());
+
+    StyleAttribute<String> ind3 = StyleAttributes.MATCHING_LABEL;
+    int pnt3 = topMap.getAttribute(ind3);
+    pnt3 = topMap.setValue(ind3, pnt3, 0, "123abc");
+    pnt3 = topMap.setValue(ind3, pnt3, 1, "123bcd");
+    pnt3 = topMap.setValue(ind3, pnt3, 2, null);
+    pnt3 = topMap.setValue(ind3, pnt3, 1, null);
+    assert !(TopLevelStyleMap.get(topMap, pnt3) instanceof StyleAttributeMapImpl);
     /*
 
-    topMap.search(1).get().setValue(1, DiscardValue.getInstance());
-    topMap.search(1).get().getTopPair();
-
-    topMap.search(2).get().search(1).set(DiscardValue.getInstance());
-    assert topMap.search(2).get().search(1).get().equals(DiscardValue.getInstance());
 
     topMap.search(3).get().search(0).set("123abc");
     topMap.search(3).get().search(1).set("123bcd");

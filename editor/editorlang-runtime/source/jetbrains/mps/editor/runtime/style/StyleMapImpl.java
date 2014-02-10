@@ -35,6 +35,9 @@ public class StyleMapImpl<T> {
     }
   }
 
+  /**
+   * @return new pointer value
+   */
   protected static int insert(StyleMapImpl styleMap, int index, int pointer, Object value) {
     assert isEmpty(pointer);
     pointer = - pointer - 2;
@@ -52,6 +55,9 @@ public class StyleMapImpl<T> {
     return pointer;
   }
 
+  /**
+   * @return new pointer value
+   */
   public static int set(StyleMapImpl styleMap, int index, int pointer, Object value) {
     if (value == null) {
       if (!isEmpty(pointer)) {
@@ -69,6 +75,9 @@ public class StyleMapImpl<T> {
     }
   }
 
+  /**
+   * @return new pointer value
+   */
   protected static int delete(StyleMapImpl styleMap, int pointer) {
     assert !isEmpty(pointer);
     int n = styleMap.indexes.length;

@@ -74,7 +74,7 @@ public class StyleImpl implements Style {
       if (putAttributes != null) {
         int attributePointer = getAttribute(attribute);
         for (IntPair<Object> value : putAttributes) {
-          myAttributes.setValue(attribute, attributePointer, Math.max(value.index, selfPriority), value.value == null ? DiscardValue.getInstance() : value.value);
+          attributePointer = myAttributes.setValue(attribute, attributePointer, Math.max(value.index, selfPriority), value.value == null ? DiscardValue.getInstance() : value.value);
         }
       }
       if (StyleAttributes.isSimple(attribute)) {
@@ -96,7 +96,7 @@ public class StyleImpl implements Style {
       if (putAttributes != null) {
         int attributePointer = getAttribute(attribute);
         for (IntPair<Object> value : putAttributes) {
-          myAttributes.setValue(attribute, attributePointer, value.index, DiscardValue.getInstance());
+          attributePointer = myAttributes.setValue(attribute, attributePointer, value.index, DiscardValue.getInstance());
         }
       }
       if (StyleAttributes.isSimple(attribute)) {
@@ -126,8 +126,7 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
-    int attributePointer = getAttribute(attribute);
-    myAttributes.setValue(attribute, attributePointer, priority, value);
+    myAttributes.setValue(attribute, priority, value);
     Set<StyleAttribute> attributeSet = Collections.<StyleAttribute>singleton(attribute);
     if (StyleAttributes.isSimple(attribute)) {
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
@@ -139,8 +138,7 @@ public class StyleImpl implements Style {
   private <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
     assert !StyleAttributes.isSimple(attribute);
     assert ! (value instanceof DiscardValue);
-    int cachedAttributePointer = getCachedAttribute(attribute);
-    myCachedAttributes.setValue(attribute, cachedAttributePointer, priority, value);
+    myCachedAttributes.setValue(attribute, priority, value);
   }
 
   @Override
