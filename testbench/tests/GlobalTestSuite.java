@@ -46,7 +46,8 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
-    jetbrains.mps.smodel.language.ExtensionRegistryTest.class
+    jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
+    jetbrains.mps.editor.runtime.style.StyleTests.class
 })
 public class GlobalTestSuite extends TestSuite {
 }

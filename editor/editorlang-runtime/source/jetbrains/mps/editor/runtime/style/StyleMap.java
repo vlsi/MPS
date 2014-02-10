@@ -17,7 +17,7 @@ package jetbrains.mps.editor.runtime.style;
 
 import java.util.Arrays;
 
-public class StyleMapImpl<T> {
+public class StyleMap<T> {
 
   public int[] indexes = new int[0];
   public Object[] values = new Object[0];
@@ -27,49 +27,49 @@ public class StyleMapImpl<T> {
     return pointer < 0;
   }
 
-  public static Object get(StyleMapImpl styleMap, int pointer) {
+  public Object get(int pointer) {
     if (isEmpty(pointer)) {
       return null;
     } else {
-      return styleMap.values[pointer];
+      return values[pointer];
     }
   }
 
   /**
    * @return new pointer value
    */
-  protected static int insert(StyleMapImpl styleMap, int index, int pointer, Object value) {
+  protected int insert(int index, int pointer, Object value) {
     assert isEmpty(pointer);
     pointer = - pointer - 2;
-    int n = styleMap.indexes.length;
+    int n = indexes.length;
     int[] newIndexes = new int[n + 1];
     Object[] newValues = new Object[n + 1];
-    System.arraycopy(styleMap.indexes, 0, newIndexes, 0, pointer);
-    System.arraycopy(styleMap.values, 0, newValues, 0, pointer);
+    System.arraycopy(indexes, 0, newIndexes, 0, pointer);
+    System.arraycopy(values, 0, newValues, 0, pointer);
     newIndexes[pointer] = index;
     newValues[pointer] = value;
-    System.arraycopy(styleMap.indexes, pointer, newIndexes, pointer + 1, n - pointer);
-    System.arraycopy(styleMap.values, pointer, newValues, pointer + 1, n - pointer);
-    styleMap.indexes = newIndexes;
-    styleMap.values = newValues;
+    System.arraycopy(indexes, pointer, newIndexes, pointer + 1, n - pointer);
+    System.arraycopy(values, pointer, newValues, pointer + 1, n - pointer);
+    indexes = newIndexes;
+    values = newValues;
     return pointer;
   }
 
   /**
    * @return new pointer value
    */
-  public static int set(StyleMapImpl styleMap, int index, int pointer, Object value) {
+  public int set(int index, int pointer, Object value) {
     if (value == null) {
       if (!isEmpty(pointer)) {
-        return delete(styleMap, pointer);
+        return delete(pointer);
       } else {
         return pointer;
       }
     } else {
       if (isEmpty(pointer)) {
-        return insert(styleMap, index, pointer, value);
+        return insert(index, pointer, value);
       } else {
-        styleMap.values[pointer] = value;
+        values[pointer] = value;
         return pointer;
       }
     }
@@ -78,17 +78,17 @@ public class StyleMapImpl<T> {
   /**
    * @return new pointer value
    */
-  protected static int delete(StyleMapImpl styleMap, int pointer) {
+  protected int delete(int pointer) {
     assert !isEmpty(pointer);
-    int n = styleMap.indexes.length;
+    int n = indexes.length;
     int[] newIndexes = new int[n - 1];
     Object[] newValues = new Object[n - 1];
-    System.arraycopy(styleMap.indexes, 0, newIndexes, 0, pointer);
-    System.arraycopy(styleMap.values, 0, newValues, 0, pointer);
-    System.arraycopy(styleMap.indexes, pointer + 1, newIndexes, pointer, n - pointer - 1);
-    System.arraycopy(styleMap.values, pointer + 1, newValues, pointer, n - pointer - 1);
-    styleMap.indexes = newIndexes;
-    styleMap.values = newValues;
+    System.arraycopy(indexes, 0, newIndexes, 0, pointer);
+    System.arraycopy(values, 0, newValues, 0, pointer);
+    System.arraycopy(indexes, pointer + 1, newIndexes, pointer, n - pointer - 1);
+    System.arraycopy(values, pointer + 1, newValues, pointer, n - pointer - 1);
+    indexes = newIndexes;
+    values = newValues;
     pointer = - pointer - 2;
     return pointer;
   }
@@ -96,7 +96,7 @@ public class StyleMapImpl<T> {
   // pointer <  -1 => empty,  insert at (- myPointer - 2)
   // pointer >  -1 => exists, insert at (myPointer)
   // pointer == -1 => reserved for single element
-  protected int searchInternal(int index) {
+  public int search(int index) {
     int pointer = Arrays.binarySearch(indexes, index);
     if (pointer >= 0) {
       return pointer;
@@ -105,12 +105,8 @@ public class StyleMapImpl<T> {
     }
   }
 
-  public int search(int index) {
-    return searchInternal(index);
-  }
-
   public void setValue(int index, T value) {
-    StyleMapImpl.set(this, index, search(index), value);
+    set(index, search(index), value);
   }
 
 }

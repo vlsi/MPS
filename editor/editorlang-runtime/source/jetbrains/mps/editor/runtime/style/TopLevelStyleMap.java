@@ -15,25 +15,17 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributeMapImpl.DiscardValue;
+import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
 import jetbrains.mps.openapi.editor.style.Style.IntPair;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
-public class TopLevelStyleMap extends StyleMapImpl<Object> {
-
-  @Override
-  public int search(int index) {
-    return super.search(index);
-  }
+public class TopLevelStyleMap extends StyleMap<Object> {
 
   public int getSize() {
     return values.length;
-  }
-
-  public <T> int getAttribute(StyleAttribute<T> attribute) {
-    return search(attribute.getIndex());
   }
 
   public <T> Object getValue(StyleAttribute<T> attribute, int index) {
@@ -41,50 +33,105 @@ public class TopLevelStyleMap extends StyleMapImpl<Object> {
     return getValue(attribute, topPointer, index);
   }
 
-  public <T> void set(StyleAttribute<T> attribute, int topPointer, StyleAttributeMapImpl<T> attributes) {
+  public int set(int attributeIndex, int topPointer, Object value) {
+    if (!(value instanceof StyleAttributeMap)) {
+      return super.set(attributeIndex, topPointer, value);
+    }
+    StyleAttributeMap attributes = (StyleAttributeMap) value;
     if (attributes.indexes.length == 0) {
-      StyleMapImpl.set(this, attribute.getIndex(), topPointer, null);
-    } else if (attributes.indexes.length == 1) {
-      StyleMapImpl.set(this, attribute.getIndex(), topPointer, attributes.values[0]);
+      return super.set(attributeIndex, topPointer, null);
+    } else if (attributes.indexes.length == 1 && attributes.indexes[0] == 0) {
+      return super.set(attributeIndex, topPointer, attributes.values[0]);
     } else {
-      StyleMapImpl.set(this, attribute.getIndex(), topPointer, attributes);
+      return super.set(attributeIndex, topPointer, attributes);
     }
   }
 
   public <T> Object getValue(StyleAttribute<T> attribute, int topPointer, int index) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    int pointer = StyleAttributeMapImpl.search(styleMapOrValue, index);
-    return getValue(attribute, topPointer, index, pointer);
+    Object styleMapOrValue = get(topPointer);
+    int pointer = StyleAttributeMap.search(styleMapOrValue, index);
+    return StyleAttributeMap.get(styleMapOrValue, this, topPointer, pointer);
   }
 
-  public <T> Object getValue(StyleAttribute<T> attribute, int topPointer, int index, int pointer) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    return StyleAttributeMapImpl.get(styleMapOrValue, this, topPointer, pointer);
-  }
-
-  /**
-   * @return new value of topPointer
-   */
-  public <T> int setValue(StyleAttribute<T> attribute, int index, Object value) {
+  public <T> void setValue(StyleAttribute<T> attribute, int index, Object value) {
     int topPointer = this.search(attribute.getIndex());
-    return setValue(attribute, topPointer, index, value);
+    setValue(attribute, topPointer, index, value);
   }
 
   /**
    * @return new value of topPointer
    */
   public <T> int setValue(StyleAttribute<T> attribute, int topPointer, int index, Object value) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    int pointer = StyleAttributeMapImpl.search(styleMapOrValue, index);
+    Object styleMapOrValue = get(topPointer);
+    int pointer = StyleAttributeMap.search(styleMapOrValue, index);
     return setValue(attribute, topPointer, index, pointer, value);
   }
 
-  /**
-   * @return new value of topPointer
-   */
   private <T> int setValue(StyleAttribute<T> attribute, int topPointer, int index, int pointer, Object value) {
-      Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    return StyleAttributeMapImpl.set(styleMapOrValue, this, topPointer, pointer, index, attribute.getIndex(), value);
+    Object styleMapOrValue = get(topPointer);
+    if (value == null) {
+      if (!StyleAttributeMap.isStyleAttributeMapEmpty(topPointer, pointer, index)) {
+        return deleteValue(styleMapOrValue, attribute, topPointer, index, pointer);
+      } else {
+        return topPointer;
+      }
+    } else {
+      if (StyleAttributeMap.isStyleAttributeMapEmpty(topPointer, pointer, index)) {
+        return insertValue(styleMapOrValue, attribute, topPointer, index, pointer, value);
+      } else {
+        return replaceValue(styleMapOrValue, attribute, topPointer, index, pointer, value);
+      }
+    }
+  }
+
+  private <T> int deleteValue(Object styleMapOrValue, StyleAttribute<T> attribute, int topPointer, int index, int pointer) {
+    assert !StyleAttributeMap.isStyleAttributeMapEmpty(topPointer, pointer, index);
+    if (!(styleMapOrValue instanceof StyleAttributeMap)) {
+      return set(attribute.getIndex(), topPointer, null);
+    } else {
+      StyleAttributeMap styleMap = (StyleAttributeMap) styleMapOrValue;
+      styleMap.delete(pointer);
+
+      if (styleMap.indexes.length == 1 && styleMap.indexes[0] == 0) {
+        return set(attribute.getIndex(), topPointer, styleMap.values[0]);
+      }
+      if (styleMap.indexes.length == 0) {
+        return set(attribute.getIndex(), topPointer, null);
+      }
+      return topPointer;
+    }
+  }
+
+  private <T> int replaceValue(Object styleMapOrValue, StyleAttribute<T> attribute, int topPointer, int index, int pointer, Object value) {
+    assert !StyleAttributeMap.isStyleAttributeMapEmpty(topPointer, pointer, index);
+    if (!(styleMapOrValue instanceof StyleAttributeMap)) {
+      assert index == 0;
+      return set(attribute.getIndex(), topPointer, value);
+    } else {
+      StyleAttributeMap styleMap = (StyleAttributeMap) styleMapOrValue;
+      styleMap.values[pointer] = value;
+      return topPointer;
+    }
+  }
+
+  private <T> int insertValue(Object styleMapOrValue, StyleAttribute<T> attribute, int topPointer, int index, int pointer, Object value) {
+    assert StyleAttributeMap.isStyleAttributeMapEmpty(topPointer, pointer, index);
+    if (!(styleMapOrValue instanceof StyleAttributeMap)) {
+      if (index == 0) {
+        return set(attribute.getIndex(), topPointer, value);
+      } else {
+        StyleAttributeMap<T> result = new StyleAttributeMap<T>();
+        result.setValue(index, value);
+        if (!TopLevelStyleMap.isEmpty(topPointer)) {
+          result.setValue(0, get(topPointer));
+        }
+        return set(attribute.getIndex(), topPointer, result);
+      }
+    } else {
+      StyleAttributeMap styleMap = (StyleAttributeMap) styleMapOrValue;
+      styleMap.insert(index, pointer, value);
+      return topPointer;
+    }
   }
 
   public <T> Collection<IntPair<Object>> getAll(StyleAttribute<T> attribute) {
@@ -93,8 +140,17 @@ public class TopLevelStyleMap extends StyleMapImpl<Object> {
   }
 
   public <T> Collection<IntPair<Object>> getAll(StyleAttribute<T> attribute, int topPointer) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    return StyleAttributeMapImpl.getAll(styleMapOrValue, this, topPointer);
+    Object styleMapOrValue = get(topPointer);
+    if (!(styleMapOrValue instanceof StyleAttributeMap)) {
+      ArrayList<IntPair<Object>> result = new ArrayList<IntPair<Object>>(1);
+      if (!TopLevelStyleMap.isEmpty(topPointer)) {
+        result.add(new IntPair<Object>(0, get(topPointer)));
+      }
+      return result;
+    } else {
+      StyleAttributeMap<T> styleMap = (StyleAttributeMap<T>) styleMapOrValue;
+      return styleMap.getAll();
+    }
   }
 
   public <T> Collection<IntPair<T>> getDiscardNullReplaced(StyleAttribute<T> attribute) {
@@ -103,8 +159,17 @@ public class TopLevelStyleMap extends StyleMapImpl<Object> {
   }
 
   public <T> Collection<IntPair<T>> getDiscardNullReplaced(StyleAttribute<T> attribute, int topPointer) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    return (Collection) StyleAttributeMapImpl.getDiscardNullReplaced(styleMapOrValue, this, topPointer);
+    Object styleMapOrValue = get(topPointer);
+    if (!(styleMapOrValue instanceof StyleAttributeMap)) {
+      ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(1);
+      if (!TopLevelStyleMap.isEmpty(topPointer)) {
+        result.add(new IntPair<T>(0, get(topPointer) instanceof DiscardValue ? null : (T) get(topPointer)));
+      }
+      return result;
+    } else {
+      StyleAttributeMap<T> styleMap = (StyleAttributeMap<T>) styleMapOrValue;
+      return styleMap.getDiscardNullReplaced();
+    }
   }
 
   public <T> IntPair<T> getTopPair(StyleAttribute<T> attribute) {
@@ -113,53 +178,22 @@ public class TopLevelStyleMap extends StyleMapImpl<Object> {
   }
 
   public <T> IntPair<T> getTopPair(StyleAttribute<T> attribute, int topPointer) {
-    Object styleMapOrValue = TopLevelStyleMap.get(this, topPointer);
-    return StyleAttributeMapImpl.getTopPair(styleMapOrValue, this, topPointer);
-  }
-
-  public static void main(String[] args) {
-    TopLevelStyleMap topMap = new TopLevelStyleMap();
-    StyleAttribute<String> ind1 = StyleAttributes.POSITION;
-    int pnt1 = topMap.getAttribute(ind1);
-    assert isEmpty(pnt1);
-    assert topMap.getAll(ind1, pnt1).isEmpty();
-    pnt1 = topMap.setValue(ind1, pnt1, 0, "bcd0");
-    assert topMap.getValue(ind1, 0).equals("bcd0");
-    pnt1 = topMap.setValue(ind1, pnt1, 0, "abc0");
-    assert topMap.getValue(ind1, 0).equals("abc0");
-    assert !(TopLevelStyleMap.get(topMap, pnt1) instanceof StyleAttributeMapImpl);
-    pnt1 = topMap.setValue(ind1, pnt1, 1, "abc1");
-    assert topMap.getTopPair(ind1).value.equals("abc1");
-    assert topMap.getTopPair(ind1, pnt1).value.equals("abc1");
-    assert topMap.getValue(ind1, pnt1, 1).equals("abc1");
-    assert topMap.getValue(ind1, pnt1, 0).equals("abc0");
-    assert TopLevelStyleMap.get(topMap, pnt1) instanceof StyleAttributeMapImpl;
-    pnt1 = topMap.setValue(ind1, pnt1, 0, null);
-    assert topMap.getValue(ind1, pnt1, 0) == null;
-    pnt1 = topMap.setValue(ind1, 1, DiscardValue.getInstance());
-    assert topMap.getTopPair(ind1) == null;
-
-    StyleAttribute<String> ind2 = StyleAttributes.LAYOUT_CONSTRAINT;
-    int pnt2 = topMap.getAttribute(ind2);
-    pnt2 = topMap.setValue(ind2, pnt2, 1, DiscardValue.getInstance());
-    assert topMap.getValue(ind2, pnt2, 1).equals(DiscardValue.getInstance());
-
-    StyleAttribute<String> ind3 = StyleAttributes.MATCHING_LABEL;
-    int pnt3 = topMap.getAttribute(ind3);
-    pnt3 = topMap.setValue(ind3, pnt3, 0, "123abc");
-    pnt3 = topMap.setValue(ind3, pnt3, 1, "123bcd");
-    pnt3 = topMap.setValue(ind3, pnt3, 2, null);
-    pnt3 = topMap.setValue(ind3, pnt3, 1, null);
-    assert !(TopLevelStyleMap.get(topMap, pnt3) instanceof StyleAttributeMapImpl);
-    /*
-
-
-    topMap.search(3).get().search(0).set("123abc");
-    topMap.search(3).get().search(1).set("123bcd");
-    topMap.search(3).get().search(2).set(null);
-    topMap.search(3).get().search(1).set(null);
-    assert topMap.search(3).get() instanceof SingleElemStyleAttributeMap;
-    */
+    Object styleMapOrValue = get(topPointer);
+    if (!(styleMapOrValue instanceof StyleAttributeMap)) {
+      if (TopLevelStyleMap.isEmpty(topPointer) || get(topPointer) instanceof DiscardValue) {
+        return null;
+      } else {
+        return new IntPair<T>(0, (T) get(topPointer));
+      }
+    } else {
+      StyleAttributeMap styleMap = (StyleAttributeMap) styleMapOrValue;
+      for (int i = styleMap.indexes.length - 1; i >= 0; i--) {
+        if (!(styleMap.values[i] instanceof DiscardValue)) {
+          return new IntPair<T>(styleMap.indexes[i], (T) styleMap.values[i]);
+        }
+      }
+      return null;
+    }
   }
 
 }
