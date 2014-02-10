@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
@@ -46,6 +47,7 @@ public class WeavingProcessor {
 
   public void prepareWeavingRules(SModel inputModel, Iterable<TemplateWeavingRule> rules) throws GenerationCanceledException, GenerationFailureException {
     myReadyRules.clear();
+    final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
     final FastNodeFinder nodeFinder = ((jetbrains.mps.smodel.SModelInternal) inputModel).getFastNodeFinder();
     for (TemplateWeavingRule rule : rules) {
       String applicableConcept = rule.getApplicableConcept();
@@ -55,6 +57,9 @@ public class WeavingProcessor {
       }
       boolean includeInheritors = rule.applyToInheritors();
       for (SNode applicableNode : nodeFinder.getNodes(applicableConcept, includeInheritors)) {
+        if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {
+          continue;
+        }
         QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
         if (executionContext == null) {
           continue;
@@ -65,9 +70,9 @@ public class WeavingProcessor {
           if (executionContext.isApplicable(rule, environment, context)) {
             // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
             // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
-            myReadyRules.add(new ArmedWeavingRule(rule, environment,applicableNode));
+            myReadyRules.add(new ArmedWeavingRule(rule, environment, applicableNode));
+            ruleBlocks.blockWeaving(applicableNode, rule);
           }
-
         } catch (GenerationCanceledException ex) {
           throw ex;
         } catch (GenerationFailureException ex) {
@@ -85,7 +90,7 @@ public class WeavingProcessor {
 
   public void apply() throws GenerationFailureException, GenerationCanceledException {
     for (ArmedWeavingRule rule : myReadyRules) {
-      if (rule.apply(myGenerator.getGenerationTracer())) {
+      if (rule.apply()) {
         myGenerator.setChanged();
       }
     }
@@ -105,7 +110,8 @@ public class WeavingProcessor {
       myApplicableNode = applicableNode;
     }
 
-    public boolean apply(IGenerationTracer tracer) throws GenerationFailureException, GenerationCanceledException {
+    public boolean apply() throws GenerationFailureException, GenerationCanceledException {
+      final IGenerationTracer tracer = myEnv.getTracer();
       try {
         DefaultTemplateContext context = new DefaultTemplateContext(myApplicableNode);
         SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
