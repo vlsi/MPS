@@ -134,7 +134,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
       public void disposeComponent(ModelCheckerViewer c) {
         c.dispose();
       }
-    });
+    }, true);
   }
 
 
