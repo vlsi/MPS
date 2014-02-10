@@ -64,7 +64,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * User: fyodor
  * Date: 4/21/11
  */
-abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
+public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
   static final int MAX_SIZE = 10000;
 
@@ -493,7 +493,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     return renderer.getPreferredSize().width;
   }
 
-  private boolean isVisible(IMessage m) {
+  public boolean isVisible(IMessage m) {
     switch (m.getKind()) {
       case ERROR:
         return true;
@@ -583,6 +583,14 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
     setSearches(state.getSearches());
+  }
+
+  public void setWarningsEnabled(boolean enabled) {
+    myWarningsAction.setSelected(null, enabled);
+  }
+
+  public void setInfoEnabled(boolean enabled) {
+    myInfoAction.setSelected(null, enabled);
   }
 
   public /*for tests*/ static class FastListModel extends AbstractListModel {
