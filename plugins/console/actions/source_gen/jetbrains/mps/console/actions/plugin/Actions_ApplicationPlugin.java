@@ -21,7 +21,7 @@ public class Actions_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new FindInstancesByCondition_Action());
-    addAction(new ReplaceInstancesByCondition_Action());
+    addAction(new ModifyInstancesByCondition_Action());
     addAction(new ShowGenerationPlan_Action());
     // groups 
     addGroup(new FindByConditionGroup_ActionGroup());

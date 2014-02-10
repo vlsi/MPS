@@ -4,7 +4,7 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.console.actions.plugin.FindInstancesByCondition_Action" />
-    <classNode dependClassName="jetbrains.mps.console.actions.plugin.ReplaceInstancesByCondition_Action" />
+    <classNode dependClassName="jetbrains.mps.console.actions.plugin.ModifyInstancesByCondition_Action" />
     <classNode dependClassName="jetbrains.mps.console.actions.plugin.ShowGenerationPlan_Action" />
     <classNode dependClassName="jetbrains.mps.console.actions.plugin.TextPreviewGroup_Console_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindUsages_ActionGroup" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.ReplaceInstancesByCondition_Action" file="ReplaceInstancesByCondition_Action.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.ModifyInstancesByCondition_Action" file="ModifyInstancesByCondition_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />

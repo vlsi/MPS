@@ -16,7 +16,7 @@ public class FindByConditionGroup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       FindByConditionGroup_ActionGroup.this.addAction("jetbrains.mps.console.actions.plugin.FindInstancesByCondition_Action");
-      FindByConditionGroup_ActionGroup.this.addAction("jetbrains.mps.console.actions.plugin.ReplaceInstancesByCondition_Action");
+      FindByConditionGroup_ActionGroup.this.addAction("jetbrains.mps.console.actions.plugin.ModifyInstancesByCondition_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
