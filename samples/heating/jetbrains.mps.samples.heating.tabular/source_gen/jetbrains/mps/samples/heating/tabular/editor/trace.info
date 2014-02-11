@@ -77,6 +77,38 @@
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/1185481067857160734" />
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/1185481067857245148" />
+  <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/2161719505005242389">
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="95" endLine="14" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="56" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="75" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizeInTabular_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="95" endLine="14" endPosition="116" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="56" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
+    <scopeInfo nodeId="2161719505005242392" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="context" />
+      <varInfo nodeId="2161719505005242389" varName="editorCell" />
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="editorContext" />
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular$DeleteCustomizeInTabular_DELETE" />
+    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular" />
+  </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/3409470686614952150">
     <nodeInfo nodeId="3409470686614952150" fileName="HeatingPlan_tabular_Editor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="3409470686614952150" fileName="HeatingPlan_tabular_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -288,127 +320,147 @@
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="67" startPosition="50" endLine="68" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="69" startPosition="63" endLine="70" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="72" startPosition="63" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="74" startPosition="5" endLine="75" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="74" startPosition="5" endLine="75" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="75" startPosition="83" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="79" startPosition="90" endLine="80" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="80" startPosition="96" endLine="81" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="81" startPosition="49" endLine="82" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="82" startPosition="34" endLine="83" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="83" startPosition="65" endLine="84" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="84" startPosition="65" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="85" startPosition="40" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="86" startPosition="34" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="90" startPosition="90" endLine="91" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="91" startPosition="97" endLine="92" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="92" startPosition="49" endLine="93" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="93" startPosition="34" endLine="94" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="94" startPosition="65" endLine="95" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="95" startPosition="40" endLine="96" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="96" startPosition="34" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463335996" fileName="DailyPlan_tabular_Editor.java" startLine="100" startPosition="99" endLine="101" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="104" startPosition="89" endLine="105" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="105" startPosition="81" endLine="106" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="106" startPosition="35" endLine="107" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="107" startPosition="48" endLine="108" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="108" startPosition="26" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="110" startPosition="39" endLine="111" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="112" startPosition="5" endLine="113" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="113" startPosition="34" endLine="114" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="114" startPosition="63" endLine="115" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="115" startPosition="40" endLine="116" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="116" startPosition="73" endLine="117" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="117" startPosition="57" endLine="118" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="119" startPosition="35" endLine="120" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="120" startPosition="72" endLine="121" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="121" startPosition="78" endLine="122" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="123" startPosition="10" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463329910" fileName="DailyPlan_tabular_Editor.java" startLine="127" startPosition="99" endLine="128" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="131" startPosition="90" endLine="132" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="132" startPosition="86" endLine="133" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="133" startPosition="49" endLine="134" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="134" startPosition="34" endLine="135" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="135" startPosition="60" endLine="136" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="136" startPosition="65" endLine="137" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="137" startPosition="40" endLine="138" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="138" startPosition="34" endLine="139" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="139" startPosition="214" endLine="140" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="144" startPosition="62" endLine="145" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4383917556650626950" fileName="DailyPlan_tabular_Editor.java" startLine="154" startPosition="39" endLine="155" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626961" fileName="DailyPlan_tabular_Editor.java" startLine="159" startPosition="36" endLine="160" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626972" fileName="DailyPlan_tabular_Editor.java" startLine="165" startPosition="41" endLine="166" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626991" fileName="DailyPlan_tabular_Editor.java" startLine="168" startPosition="41" endLine="169" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650627019" fileName="DailyPlan_tabular_Editor.java" startLine="171" startPosition="40" endLine="172" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650627028" fileName="DailyPlan_tabular_Editor.java" startLine="172" startPosition="160" endLine="173" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650627030" fileName="DailyPlan_tabular_Editor.java" startLine="174" startPosition="13" endLine="175" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650627055" fileName="DailyPlan_tabular_Editor.java" startLine="180" startPosition="40" endLine="181" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650627066" fileName="DailyPlan_tabular_Editor.java" startLine="182" startPosition="33" endLine="183" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650627074" fileName="DailyPlan_tabular_Editor.java" startLine="183" startPosition="127" endLine="184" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650763563" fileName="DailyPlan_tabular_Editor.java" startLine="184" startPosition="71" endLine="185" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650775369" fileName="DailyPlan_tabular_Editor.java" startLine="191" startPosition="54" endLine="192" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556651582064" fileName="DailyPlan_tabular_Editor.java" startLine="196" startPosition="48" endLine="197" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650627129" fileName="DailyPlan_tabular_Editor.java" startLine="198" startPosition="33" endLine="199" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650963622" fileName="DailyPlan_tabular_Editor.java" startLine="200" startPosition="13" endLine="201" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650942127" fileName="DailyPlan_tabular_Editor.java" startLine="201" startPosition="116" endLine="202" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650985870" fileName="DailyPlan_tabular_Editor.java" startLine="202" startPosition="110" endLine="203" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650988368" fileName="DailyPlan_tabular_Editor.java" startLine="204" startPosition="35" endLine="205" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556651002770" fileName="DailyPlan_tabular_Editor.java" startLine="206" startPosition="20" endLine="207" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650928256" fileName="DailyPlan_tabular_Editor.java" startLine="208" startPosition="13" endLine="209" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650627130" fileName="DailyPlan_tabular_Editor.java" startLine="209" startPosition="118" endLine="210" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650778603" fileName="DailyPlan_tabular_Editor.java" startLine="214" startPosition="54" endLine="215" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650627168" fileName="DailyPlan_tabular_Editor.java" startLine="220" startPosition="33" endLine="221" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556651010968" fileName="DailyPlan_tabular_Editor.java" startLine="222" startPosition="13" endLine="223" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650627172" fileName="DailyPlan_tabular_Editor.java" startLine="223" startPosition="114" endLine="224" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="228" startPosition="6" endLine="229" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="229" startPosition="191" endLine="230" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="230" startPosition="47" endLine="231" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="234" startPosition="88" endLine="235" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="235" startPosition="87" endLine="236" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="236" startPosition="47" endLine="237" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="237" startPosition="34" endLine="238" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="238" startPosition="54" endLine="239" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="239" startPosition="40" endLine="240" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="240" startPosition="34" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556651001573" fileName="DailyPlan_tabular_Editor.java" startLine="206" startPosition="18" endLine="208" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="75" startPosition="63" endLine="76" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="78" startPosition="63" endLine="79" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="80" startPosition="5" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="84" startPosition="90" endLine="85" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="85" startPosition="96" endLine="86" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="86" startPosition="49" endLine="87" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="87" startPosition="34" endLine="88" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="88" startPosition="65" endLine="89" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="89" startPosition="65" endLine="90" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="90" startPosition="40" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="91" startPosition="34" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="95" startPosition="90" endLine="96" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="96" startPosition="101" endLine="97" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="97" startPosition="49" endLine="98" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="98" startPosition="34" endLine="99" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="99" startPosition="65" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="100" startPosition="40" endLine="101" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="101" startPosition="77" endLine="102" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="102" startPosition="34" endLine="103" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935069066463335996" fileName="DailyPlan_tabular_Editor.java" startLine="106" startPosition="99" endLine="107" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="110" startPosition="89" endLine="111" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="111" startPosition="81" endLine="112" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="112" startPosition="35" endLine="113" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="113" startPosition="48" endLine="114" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="114" startPosition="26" endLine="115" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="116" startPosition="39" endLine="117" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="118" startPosition="5" endLine="119" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="119" startPosition="34" endLine="120" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="120" startPosition="63" endLine="121" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="121" startPosition="40" endLine="122" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="122" startPosition="77" endLine="123" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="123" startPosition="73" endLine="124" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="124" startPosition="57" endLine="125" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="126" startPosition="35" endLine="127" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="127" startPosition="72" endLine="128" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="128" startPosition="78" endLine="129" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="130" startPosition="10" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935069066463329910" fileName="DailyPlan_tabular_Editor.java" startLine="134" startPosition="99" endLine="135" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="138" startPosition="90" endLine="139" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="139" startPosition="86" endLine="140" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="140" startPosition="49" endLine="141" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="141" startPosition="34" endLine="142" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="142" startPosition="60" endLine="143" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="143" startPosition="65" endLine="144" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="144" startPosition="40" endLine="145" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="145" startPosition="77" endLine="146" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="146" startPosition="34" endLine="147" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="147" startPosition="214" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2161719505005203457" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="99" endLine="152" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="156" startPosition="62" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="161" startPosition="90" endLine="162" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="162" startPosition="90" endLine="163" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="163" startPosition="49" endLine="164" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="164" startPosition="34" endLine="165" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="165" startPosition="65" endLine="166" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="166" startPosition="40" endLine="167" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="167" startPosition="77" endLine="168" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="168" startPosition="34" endLine="169" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2161719505005201154" fileName="DailyPlan_tabular_Editor.java" startLine="172" startPosition="99" endLine="173" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626950" fileName="DailyPlan_tabular_Editor.java" startLine="181" startPosition="39" endLine="182" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626961" fileName="DailyPlan_tabular_Editor.java" startLine="186" startPosition="36" endLine="187" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626972" fileName="DailyPlan_tabular_Editor.java" startLine="192" startPosition="41" endLine="193" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626991" fileName="DailyPlan_tabular_Editor.java" startLine="195" startPosition="41" endLine="196" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650627019" fileName="DailyPlan_tabular_Editor.java" startLine="198" startPosition="40" endLine="199" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650627028" fileName="DailyPlan_tabular_Editor.java" startLine="199" startPosition="160" endLine="200" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650627030" fileName="DailyPlan_tabular_Editor.java" startLine="201" startPosition="13" endLine="202" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650627055" fileName="DailyPlan_tabular_Editor.java" startLine="207" startPosition="40" endLine="208" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650627066" fileName="DailyPlan_tabular_Editor.java" startLine="209" startPosition="33" endLine="210" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650627074" fileName="DailyPlan_tabular_Editor.java" startLine="210" startPosition="127" endLine="211" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650763563" fileName="DailyPlan_tabular_Editor.java" startLine="211" startPosition="71" endLine="212" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650775369" fileName="DailyPlan_tabular_Editor.java" startLine="218" startPosition="54" endLine="219" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556651582064" fileName="DailyPlan_tabular_Editor.java" startLine="223" startPosition="48" endLine="224" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650627129" fileName="DailyPlan_tabular_Editor.java" startLine="225" startPosition="33" endLine="226" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650963622" fileName="DailyPlan_tabular_Editor.java" startLine="227" startPosition="13" endLine="228" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650942127" fileName="DailyPlan_tabular_Editor.java" startLine="228" startPosition="116" endLine="229" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650985870" fileName="DailyPlan_tabular_Editor.java" startLine="229" startPosition="110" endLine="230" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650988368" fileName="DailyPlan_tabular_Editor.java" startLine="231" startPosition="35" endLine="232" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556651002770" fileName="DailyPlan_tabular_Editor.java" startLine="233" startPosition="20" endLine="234" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650928256" fileName="DailyPlan_tabular_Editor.java" startLine="235" startPosition="13" endLine="236" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650627130" fileName="DailyPlan_tabular_Editor.java" startLine="236" startPosition="118" endLine="237" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650778603" fileName="DailyPlan_tabular_Editor.java" startLine="241" startPosition="54" endLine="242" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650627168" fileName="DailyPlan_tabular_Editor.java" startLine="247" startPosition="33" endLine="248" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556651010968" fileName="DailyPlan_tabular_Editor.java" startLine="249" startPosition="13" endLine="250" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650627172" fileName="DailyPlan_tabular_Editor.java" startLine="250" startPosition="114" endLine="251" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="255" startPosition="6" endLine="256" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="256" startPosition="191" endLine="257" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="257" startPosition="47" endLine="258" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="261" startPosition="88" endLine="262" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="262" startPosition="87" endLine="263" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="263" startPosition="47" endLine="264" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="264" startPosition="34" endLine="265" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="265" startPosition="54" endLine="266" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="266" startPosition="40" endLine="267" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="267" startPosition="34" endLine="268" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556651001573" fileName="DailyPlan_tabular_Editor.java" startLine="233" startPosition="18" endLine="235" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="68" startPosition="83" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="68" startPosition="83" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="71" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="71" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="935069066463335337" fileName="DailyPlan_tabular_Editor.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgsw3q_a1a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="109" startPosition="58" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="935069066463329251" fileName="DailyPlan_tabular_Editor.java" startLine="127" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgsw3q_a2a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0#()V" />
-    <nodeInfo nodeId="4383917556650626970" fileName="DailyPlan_tabular_Editor.java" startLine="164" startPosition="56" endLine="167" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650626989" fileName="DailyPlan_tabular_Editor.java" startLine="167" startPosition="13" endLine="170" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650627124" fileName="DailyPlan_tabular_Editor.java" startLine="197" startPosition="54" endLine="200" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650627166" fileName="DailyPlan_tabular_Editor.java" startLine="219" startPosition="48" endLine="222" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="74" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="74" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="77" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="77" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935069066463335337" fileName="DailyPlan_tabular_Editor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgsw3q_a1a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="115" startPosition="58" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935069066463329251" fileName="DailyPlan_tabular_Editor.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgsw3q_a2a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2161719505005202779" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgsw3q_a3a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0#()V" />
+    <nodeInfo nodeId="2161719505005200478" fileName="DailyPlan_tabular_Editor.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgsw3q_a4a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="4383917556650626970" fileName="DailyPlan_tabular_Editor.java" startLine="191" startPosition="56" endLine="194" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650626989" fileName="DailyPlan_tabular_Editor.java" startLine="194" startPosition="13" endLine="197" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650627124" fileName="DailyPlan_tabular_Editor.java" startLine="224" startPosition="54" endLine="227" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650627166" fileName="DailyPlan_tabular_Editor.java" startLine="246" startPosition="48" endLine="249" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="4383917556650626946" fileName="DailyPlan_tabular_Editor.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" />
-    <nodeInfo nodeId="4383917556650626957" fileName="DailyPlan_tabular_Editor.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowCount#()I" />
-    <nodeInfo nodeId="4383917556650627000" fileName="DailyPlan_tabular_Editor.java" startLine="170" startPosition="13" endLine="174" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650627096" fileName="DailyPlan_tabular_Editor.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertColumn#(I)V" />
-    <nodeInfo nodeId="4383917556650627135" fileName="DailyPlan_tabular_Editor.java" startLine="213" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteColumn#(I)V" />
-    <nodeInfo nodeId="4383917556650627064" fileName="DailyPlan_tabular_Editor.java" startLine="181" startPosition="102" endLine="186" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650987968" fileName="DailyPlan_tabular_Editor.java" startLine="203" startPosition="333" endLine="208" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="118" startPosition="59" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650626946" fileName="DailyPlan_tabular_Editor.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" />
+    <nodeInfo nodeId="4383917556650626957" fileName="DailyPlan_tabular_Editor.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowCount#()I" />
+    <nodeInfo nodeId="4383917556650627000" fileName="DailyPlan_tabular_Editor.java" startLine="197" startPosition="13" endLine="201" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650627096" fileName="DailyPlan_tabular_Editor.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertColumn#(I)V" />
+    <nodeInfo nodeId="4383917556650627135" fileName="DailyPlan_tabular_Editor.java" startLine="240" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteColumn#(I)V" />
+    <nodeInfo nodeId="4383917556650627064" fileName="DailyPlan_tabular_Editor.java" startLine="208" startPosition="102" endLine="213" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650987968" fileName="DailyPlan_tabular_Editor.java" startLine="230" startPosition="333" endLine="235" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="125" startPosition="59" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dgsw3q_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dgsw3q_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4383917556650627043" fileName="DailyPlan_tabular_Editor.java" startLine="179" startPosition="58" endLine="187" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4383917556650627163" fileName="DailyPlan_tabular_Editor.java" startLine="218" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRow#(I)V" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="90" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="234" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="79" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="131" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_d0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4383917556650627037" fileName="DailyPlan_tabular_Editor.java" startLine="178" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createElement#(II)V" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="65" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dgsw3q_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4383917556650626966" fileName="DailyPlan_tabular_Editor.java" startLine="163" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4383917556650627121" fileName="DailyPlan_tabular_Editor.java" startLine="195" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertRow#(I)V" />
-    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="104" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_dgsw3q_c0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4383917556650626942" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="95" endLine="226" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTableModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
-    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="149" startPosition="86" endLine="228" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="149" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTable_dgsw3q_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650627043" fileName="DailyPlan_tabular_Editor.java" startLine="206" startPosition="58" endLine="214" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4383917556650627163" fileName="DailyPlan_tabular_Editor.java" startLine="245" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRow#(I)V" />
+    <nodeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="261" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="84" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="95" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="161" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_e0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650627037" fileName="DailyPlan_tabular_Editor.java" startLine="205" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createElement#(II)V" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="138" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgsw3q_d0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650626966" fileName="DailyPlan_tabular_Editor.java" startLine="190" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4383917556650627121" fileName="DailyPlan_tabular_Editor.java" startLine="222" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertRow#(I)V" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="65" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dgsw3q_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="110" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_dgsw3q_c0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4383917556650626942" fileName="DailyPlan_tabular_Editor.java" startLine="178" startPosition="95" endLine="253" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="178" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTableModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
+    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="176" startPosition="86" endLine="255" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="176" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTable_dgsw3q_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="40" startPosition="47" endLine="41" endPosition="26" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="44" startPosition="79" endLine="45" endPosition="63" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="51" startPosition="28" endLine="52" endPosition="83" />
@@ -418,22 +470,25 @@
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="67" startPosition="50" endLine="68" endPosition="83" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="69" startPosition="63" endLine="70" endPosition="85" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="72" startPosition="63" endLine="73" endPosition="84" />
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="74" startPosition="5" endLine="75" endPosition="83" />
-    <scopeInfo nodeId="935069066463335338" fileName="DailyPlan_tabular_Editor.java" startLine="100" startPosition="99" endLine="101" endPosition="73" />
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="110" startPosition="39" endLine="111" endPosition="39" />
-    <scopeInfo nodeId="935069066463329252" fileName="DailyPlan_tabular_Editor.java" startLine="127" startPosition="99" endLine="128" endPosition="73" />
-    <scopeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="144" startPosition="62" endLine="145" endPosition="27" />
-    <scopeInfo nodeId="4383917556650626949" fileName="DailyPlan_tabular_Editor.java" startLine="154" startPosition="39" endLine="155" endPosition="21" />
-    <scopeInfo nodeId="4383917556650626960" fileName="DailyPlan_tabular_Editor.java" startLine="159" startPosition="36" endLine="160" endPosition="102" />
-    <scopeInfo nodeId="4383917556650626971" fileName="DailyPlan_tabular_Editor.java" startLine="165" startPosition="41" endLine="166" endPosition="76" />
-    <scopeInfo nodeId="4383917556650626990" fileName="DailyPlan_tabular_Editor.java" startLine="168" startPosition="41" endLine="169" endPosition="112" />
-    <scopeInfo nodeId="4383917556650627097" fileName="DailyPlan_tabular_Editor.java" startLine="191" startPosition="54" endLine="192" endPosition="19" />
-    <scopeInfo nodeId="4383917556650627128" fileName="DailyPlan_tabular_Editor.java" startLine="198" startPosition="33" endLine="199" endPosition="21" />
-    <scopeInfo nodeId="4383917556650987971" fileName="DailyPlan_tabular_Editor.java" startLine="204" startPosition="35" endLine="205" endPosition="115" />
-    <scopeInfo nodeId="4383917556651001574" fileName="DailyPlan_tabular_Editor.java" startLine="206" startPosition="20" endLine="207" endPosition="63" />
-    <scopeInfo nodeId="4383917556650627137" fileName="DailyPlan_tabular_Editor.java" startLine="214" startPosition="54" endLine="215" endPosition="19" />
-    <scopeInfo nodeId="4383917556650627167" fileName="DailyPlan_tabular_Editor.java" startLine="220" startPosition="33" endLine="221" endPosition="21" />
-    <scopeInfo nodeId="4383917556650627008" fileName="DailyPlan_tabular_Editor.java" startLine="171" startPosition="40" endLine="173" endPosition="26">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="75" startPosition="63" endLine="76" endPosition="85" />
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="78" startPosition="63" endLine="79" endPosition="85" />
+    <scopeInfo nodeId="935069066463335338" fileName="DailyPlan_tabular_Editor.java" startLine="106" startPosition="99" endLine="107" endPosition="73" />
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="116" startPosition="39" endLine="117" endPosition="39" />
+    <scopeInfo nodeId="935069066463329252" fileName="DailyPlan_tabular_Editor.java" startLine="134" startPosition="99" endLine="135" endPosition="73" />
+    <scopeInfo nodeId="2161719505005202780" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="99" endLine="152" endPosition="73" />
+    <scopeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="156" startPosition="62" endLine="157" endPosition="27" />
+    <scopeInfo nodeId="2161719505005200479" fileName="DailyPlan_tabular_Editor.java" startLine="172" startPosition="99" endLine="173" endPosition="73" />
+    <scopeInfo nodeId="4383917556650626949" fileName="DailyPlan_tabular_Editor.java" startLine="181" startPosition="39" endLine="182" endPosition="21" />
+    <scopeInfo nodeId="4383917556650626960" fileName="DailyPlan_tabular_Editor.java" startLine="186" startPosition="36" endLine="187" endPosition="102" />
+    <scopeInfo nodeId="4383917556650626971" fileName="DailyPlan_tabular_Editor.java" startLine="192" startPosition="41" endLine="193" endPosition="76" />
+    <scopeInfo nodeId="4383917556650626990" fileName="DailyPlan_tabular_Editor.java" startLine="195" startPosition="41" endLine="196" endPosition="112" />
+    <scopeInfo nodeId="4383917556650627097" fileName="DailyPlan_tabular_Editor.java" startLine="218" startPosition="54" endLine="219" endPosition="19" />
+    <scopeInfo nodeId="4383917556650627128" fileName="DailyPlan_tabular_Editor.java" startLine="225" startPosition="33" endLine="226" endPosition="21" />
+    <scopeInfo nodeId="4383917556650987971" fileName="DailyPlan_tabular_Editor.java" startLine="231" startPosition="35" endLine="232" endPosition="115" />
+    <scopeInfo nodeId="4383917556651001574" fileName="DailyPlan_tabular_Editor.java" startLine="233" startPosition="20" endLine="234" endPosition="63" />
+    <scopeInfo nodeId="4383917556650627137" fileName="DailyPlan_tabular_Editor.java" startLine="241" startPosition="54" endLine="242" endPosition="19" />
+    <scopeInfo nodeId="4383917556650627167" fileName="DailyPlan_tabular_Editor.java" startLine="247" startPosition="33" endLine="248" endPosition="21" />
+    <scopeInfo nodeId="4383917556650627008" fileName="DailyPlan_tabular_Editor.java" startLine="198" startPosition="40" endLine="200" endPosition="26">
       <varInfo nodeId="4383917556650627020" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
@@ -442,50 +497,56 @@
     </scopeInfo>
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="68" startPosition="83" endLine="71" endPosition="5" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="71" startPosition="5" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="935069066463335337" fileName="DailyPlan_tabular_Editor.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="74" startPosition="5" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="77" startPosition="5" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="935069066463335337" fileName="DailyPlan_tabular_Editor.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="935069066463335337" varName="editorContext" />
       <varInfo nodeId="935069066463335337" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="119" startPosition="35" endLine="122" endPosition="105">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="126" startPosition="35" endLine="129" endPosition="105">
       <varInfo nodeId="4383917556650626168" varName="manager" />
       <varInfo nodeId="4383917556650626168" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="935069066463329251" fileName="DailyPlan_tabular_Editor.java" startLine="127" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="935069066463329251" fileName="DailyPlan_tabular_Editor.java" startLine="134" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="935069066463329251" varName="editorContext" />
       <varInfo nodeId="935069066463329251" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="144" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="4383917556650627065" fileName="DailyPlan_tabular_Editor.java" startLine="182" startPosition="33" endLine="185" endPosition="114">
+    <scopeInfo nodeId="2161719505005202779" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="2161719505005202779" varName="editorContext" />
+      <varInfo nodeId="2161719505005202779" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="156" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="2161719505005200478" fileName="DailyPlan_tabular_Editor.java" startLine="172" startPosition="0" endLine="175" endPosition="0">
+      <varInfo nodeId="2161719505005200478" varName="editorContext" />
+      <varInfo nodeId="2161719505005200478" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556650627065" fileName="DailyPlan_tabular_Editor.java" startLine="209" startPosition="33" endLine="212" endPosition="114">
       <varInfo nodeId="4383917556650627067" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4383917556650626946" fileName="DailyPlan_tabular_Editor.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="4383917556650626957" fileName="DailyPlan_tabular_Editor.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="4383917556650627096" fileName="DailyPlan_tabular_Editor.java" startLine="190" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="4383917556650626946" fileName="DailyPlan_tabular_Editor.java" startLine="180" startPosition="0" endLine="184" endPosition="0" />
+    <scopeInfo nodeId="4383917556650626957" fileName="DailyPlan_tabular_Editor.java" startLine="185" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="4383917556650627096" fileName="DailyPlan_tabular_Editor.java" startLine="217" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="4383917556650627119" varName="columnNumber" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650627135" fileName="DailyPlan_tabular_Editor.java" startLine="213" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="4383917556650627135" fileName="DailyPlan_tabular_Editor.java" startLine="240" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="4383917556650627159" varName="columnNumber" />
     </scopeInfo>
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="57" startPosition="90" endLine="62" endPosition="22">
       <varInfo nodeId="4383917556650626168" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650627165" fileName="DailyPlan_tabular_Editor.java" startLine="219" startPosition="48" endLine="224" endPosition="19" />
+    <scopeInfo nodeId="4383917556650627165" fileName="DailyPlan_tabular_Editor.java" startLine="246" startPosition="48" endLine="251" endPosition="19" />
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="48" startPosition="89" endLine="54" endPosition="22">
       <varInfo nodeId="4383917556650626168" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650627044" fileName="DailyPlan_tabular_Editor.java" startLine="180" startPosition="40" endLine="186" endPosition="15">
+    <scopeInfo nodeId="4383917556650627044" fileName="DailyPlan_tabular_Editor.java" startLine="207" startPosition="40" endLine="213" endPosition="15">
       <varInfo nodeId="4383917556650627056" varName="slot" />
     </scopeInfo>
     <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4383917556650626168" varName="editorContext" />
       <varInfo nodeId="4383917556650626168" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="90" startPosition="90" endLine="97" endPosition="22">
-      <varInfo nodeId="4383917556650626168" varName="editorCell" />
-      <varInfo nodeId="4383917556650626168" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="234" startPosition="88" endLine="241" endPosition="22">
+    <scopeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="261" startPosition="88" endLine="268" endPosition="22">
       <varInfo nodeId="4383917556651478626" varName="editorCell" />
       <varInfo nodeId="4383917556651478626" varName="style" />
     </scopeInfo>
@@ -493,85 +554,97 @@
       <varInfo nodeId="4383917556650626168" varName="editorContext" />
       <varInfo nodeId="4383917556650626168" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="79" startPosition="90" endLine="87" endPosition="22">
+    <scopeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="84" startPosition="90" endLine="92" endPosition="22">
       <varInfo nodeId="935069066463344152" varName="editorCell" />
       <varInfo nodeId="935069066463344152" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650627042" fileName="DailyPlan_tabular_Editor.java" startLine="179" startPosition="58" endLine="187" endPosition="13" />
-    <scopeInfo nodeId="4383917556650627163" fileName="DailyPlan_tabular_Editor.java" startLine="218" startPosition="0" endLine="226" endPosition="0">
-      <varInfo nodeId="4383917556650627173" varName="rowNumber" />
-    </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="90" startPosition="0" endLine="99" endPosition="0">
-      <varInfo nodeId="4383917556650626168" varName="editorContext" />
-      <varInfo nodeId="4383917556650626168" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="131" startPosition="90" endLine="140" endPosition="22">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="95" startPosition="90" endLine="103" endPosition="22">
       <varInfo nodeId="4383917556650626168" varName="editorCell" />
       <varInfo nodeId="4383917556650626168" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="234" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="161" startPosition="90" endLine="169" endPosition="22">
+      <varInfo nodeId="4383917556650626168" varName="editorCell" />
+      <varInfo nodeId="4383917556650626168" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556650627042" fileName="DailyPlan_tabular_Editor.java" startLine="206" startPosition="58" endLine="214" endPosition="13" />
+    <scopeInfo nodeId="4383917556650627163" fileName="DailyPlan_tabular_Editor.java" startLine="245" startPosition="0" endLine="253" endPosition="0">
+      <varInfo nodeId="4383917556650627173" varName="rowNumber" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556651478626" fileName="DailyPlan_tabular_Editor.java" startLine="261" startPosition="0" endLine="270" endPosition="0">
       <varInfo nodeId="4383917556651478626" varName="editorContext" />
       <varInfo nodeId="4383917556651478626" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="79" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="935069066463344152" fileName="DailyPlan_tabular_Editor.java" startLine="84" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="935069066463344152" varName="editorContext" />
       <varInfo nodeId="935069066463344152" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="65" startPosition="91" endLine="76" endPosition="22">
-      <varInfo nodeId="4383917556650626168" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="131" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="95" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="4383917556650626168" varName="editorContext" />
       <varInfo nodeId="4383917556650626168" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626969" fileName="DailyPlan_tabular_Editor.java" startLine="164" startPosition="56" endLine="175" endPosition="24" />
-    <scopeInfo nodeId="4383917556650627037" fileName="DailyPlan_tabular_Editor.java" startLine="178" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="138" startPosition="90" endLine="148" endPosition="22">
+      <varInfo nodeId="4383917556650626168" varName="editorCell" />
+      <varInfo nodeId="4383917556650626168" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="161" startPosition="0" endLine="171" endPosition="0">
+      <varInfo nodeId="4383917556650626168" varName="editorContext" />
+      <varInfo nodeId="4383917556650626168" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556650626969" fileName="DailyPlan_tabular_Editor.java" startLine="191" startPosition="56" endLine="202" endPosition="24" />
+    <scopeInfo nodeId="4383917556650627037" fileName="DailyPlan_tabular_Editor.java" startLine="205" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="4383917556650627094" varName="column" />
       <varInfo nodeId="4383917556650627038" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="65" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="138" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="4383917556650626168" varName="editorContext" />
       <varInfo nodeId="4383917556650626168" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626966" fileName="DailyPlan_tabular_Editor.java" startLine="163" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="4383917556650626966" fileName="DailyPlan_tabular_Editor.java" startLine="190" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="4383917556650627034" varName="column" />
       <varInfo nodeId="4383917556650626967" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650627123" fileName="DailyPlan_tabular_Editor.java" startLine="196" startPosition="48" endLine="210" endPosition="19">
+    <scopeInfo nodeId="4383917556650627123" fileName="DailyPlan_tabular_Editor.java" startLine="223" startPosition="48" endLine="237" endPosition="19">
       <varInfo nodeId="4383917556650985871" varName="prevSlot" />
       <varInfo nodeId="4383917556650963623" varName="slot" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650627121" fileName="DailyPlan_tabular_Editor.java" startLine="195" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="65" startPosition="91" endLine="81" endPosition="22">
+      <varInfo nodeId="4383917556650626168" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556650627121" fileName="DailyPlan_tabular_Editor.java" startLine="222" startPosition="0" endLine="239" endPosition="0">
       <varInfo nodeId="4383917556650627131" varName="rowNumber" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="104" startPosition="89" endLine="124" endPosition="22">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="65" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="4383917556650626168" varName="editorContext" />
+      <varInfo nodeId="4383917556650626168" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="110" startPosition="89" endLine="131" endPosition="22">
       <varInfo nodeId="4383917556650626168" varName="attributeConcept" />
       <varInfo nodeId="4383917556650626168" varName="attributeKind" />
       <varInfo nodeId="4383917556650626168" varName="editorCell" />
       <varInfo nodeId="4383917556650626168" varName="provider" />
       <varInfo nodeId="4383917556650626168" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="104" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="110" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="4383917556650626168" varName="editorContext" />
       <varInfo nodeId="4383917556650626168" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="95" endLine="226" endPosition="10" />
-    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="151" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="178" startPosition="95" endLine="253" endPosition="10" />
+    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="178" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="4383917556650626191" varName="editorContext" />
       <varInfo nodeId="4383917556650626191" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="149" startPosition="86" endLine="231" endPosition="22">
+    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="176" startPosition="86" endLine="258" endPosition="22">
       <varInfo nodeId="4383917556650626191" varName="creator" />
       <varInfo nodeId="4383917556650626191" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="149" startPosition="0" endLine="233" endPosition="0">
+    <scopeInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="176" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="4383917556650626191" varName="editorContext" />
       <varInfo nodeId="4383917556650626191" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="143" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor$ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0" />
-    <unitInfo nodeId="4383917556650626945" fileName="DailyPlan_tabular_Editor.java" startLine="152" startPosition="19" endLine="226" endPosition="9" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor$2" />
-    <unitInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="150" startPosition="36" endLine="228" endPosition="5" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor$1" />
-    <unitInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="36" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor" />
+    <unitInfo nodeId="935069066462873980" fileName="DailyPlan_tabular_Editor.java" startLine="155" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor$ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0" />
+    <unitInfo nodeId="4383917556650626945" fileName="DailyPlan_tabular_Editor.java" startLine="179" startPosition="19" endLine="253" endPosition="9" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor$2" />
+    <unitInfo nodeId="4383917556650626191" fileName="DailyPlan_tabular_Editor.java" startLine="177" startPosition="36" endLine="255" endPosition="5" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor$1" />
+    <unitInfo nodeId="4383917556650626168" fileName="DailyPlan_tabular_Editor.java" startLine="36" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_tabular_Editor" />
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/4383917556650816775">
     <nodeInfo nodeId="4383917556650816775" fileName="Slot_tabular_Editor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />

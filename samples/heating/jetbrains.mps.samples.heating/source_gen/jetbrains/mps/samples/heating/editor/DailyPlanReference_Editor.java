@@ -12,7 +12,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class DailyPlanReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -55,29 +58,24 @@ public class DailyPlanReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createCollection_e3jrht_a0a0(editorContext, node);
+      return this.createProperty_e3jrht_a0a0(editorContext, node);
     }
 
-    private EditorCell createCollection_e3jrht_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-      editorCell.setCellId("Collection_e3jrht_a0a0");
+    private EditorCell createProperty_e3jrht_a0a0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("displayName");
+      provider.setNoTargetText("<no displayName>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_displayName");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("target");
       }
-      editorCell.addEditorCell(this.createRefNode_e3jrht_a0a0a(editorContext, node));
-      return editorCell;
-    }
-
-    private EditorCell createRefNode_e3jrht_a0a0a(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-      provider.setRole("applicability");
-      provider.setNoTargetText("<no applicability>");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("applicability");
-      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

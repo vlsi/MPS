@@ -72,7 +72,12 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     if (renderingCondition_dgsw3q_a2a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_dgsw3q_c0a0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_dgsw3q_d0a0(editorContext, node));
+    if (renderingCondition_dgsw3q_a3a0a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_dgsw3q_d0a0(editorContext, node));
+    }
+    if (renderingCondition_dgsw3q_a4a0a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_dgsw3q_e0a0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -88,11 +93,12 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dgsw3q_b0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the");
     editorCell.setCellId("Constant_dgsw3q_b0a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -113,6 +119,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -135,15 +142,35 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
+    DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DailyPlan_tabular_Editor.ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0()}));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_dgsw3q_a3a0a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, "customizes", true) == null);
   }
 
   public static class ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0() {
       super(CellSide.LEFT);
     }
+  }
+
+  private EditorCell createConstant_dgsw3q_e0a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
+    editorCell.setCellId("Constant_dgsw3q_e0a0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_dgsw3q_a4a0a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
 
   private EditorCell createTable_dgsw3q_b0a(EditorContext editorContext, SNode node) {

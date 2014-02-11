@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.ChangeEvent").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("temperature").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DailyPlan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"items", "applicability", "customizes"}, new boolean[]{true, false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DailyPlan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("displayName").children(new String[]{"items", "applicability", "customizes"}, new boolean[]{true, false, false}).create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.heating.structure.DailyPlanReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("target").create();
       case 4:

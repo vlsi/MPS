@@ -49,9 +49,14 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     if (renderingCondition_dgzt1x_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_dgzt1x_d0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_dgzt1x_e0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_dgzt1x_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dgzt1x_g0(editorContext, node));
+    if (renderingCondition_dgzt1x_a4a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_dgzt1x_e0(editorContext, node));
+    }
+    if (renderingCondition_dgzt1x_a5a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_dgzt1x_f0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createCollection_dgzt1x_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dgzt1x_h0(editorContext, node));
     return editorCell;
   }
 
@@ -89,11 +94,12 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dgzt1x_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the plan for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the");
     editorCell.setCellId("Constant_dgzt1x_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteCustomizes.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -136,9 +142,14 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
+    DeleteCustomizes.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DailyPlan_Editor.ApplySideTransforms_left_cellMenu_dgzt1x_a0e0()}));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_dgzt1x_a4a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, "customizes", true) == null);
   }
 
   public static class ApplySideTransforms_left_cellMenu_dgzt1x_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
@@ -147,27 +158,43 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createCollection_dgzt1x_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dgzt1x_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
+    editorCell.setCellId("Constant_dgzt1x_f0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    DeleteCustomizes.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_dgzt1x_a5a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, "customizes", true) != null);
+  }
+
+  private EditorCell createCollection_dgzt1x_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_dgzt1x_f0");
+    editorCell.setCellId("Collection_dgzt1x_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNodeList_dgzt1x_a5a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dgzt1x_a6a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_dgzt1x_a5a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DailyPlan_Editor.itemsListHandler_dgzt1x_a5a(node, "items", editorContext);
+  private EditorCell createRefNodeList_dgzt1x_a6a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new DailyPlan_Editor.itemsListHandler_dgzt1x_a6a(node, "items", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_items");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class itemsListHandler_dgzt1x_a5a extends RefNodeListHandler {
-    public itemsListHandler_dgzt1x_a5a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class itemsListHandler_dgzt1x_a6a extends RefNodeListHandler {
+    public itemsListHandler_dgzt1x_a6a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -209,9 +236,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_dgzt1x_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dgzt1x_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_dgzt1x_g0");
+    editorCell.setCellId("Constant_dgzt1x_h0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
