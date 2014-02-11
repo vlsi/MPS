@@ -17,11 +17,11 @@
             <property name="name" nameId="tpck.1169194664001" value="i" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7651593722933722510" nodeInfo="in">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3556593678837715863" nodeInfo="ng">
-                <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
                 <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-                <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
-                <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+                <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+                <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
                 <property name="cellId" nameId="tp5g.1229194968595" value="ALIAS_EDITOR_COMPONENT" />
+                <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7651593722933722512" nodeInfo="nn">
