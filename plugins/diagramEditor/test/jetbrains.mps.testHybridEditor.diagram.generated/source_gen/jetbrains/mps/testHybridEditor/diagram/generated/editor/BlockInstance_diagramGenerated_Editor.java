@@ -253,7 +253,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
-      return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
+      return new Mapper<SNode, NodeDecoratorView>(getSNode(), createNodeDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -377,6 +377,12 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
         }
       };
+    }
+
+    private NodeDecoratorView createNodeDecoratorView() {
+      NodeDecoratorView view = new NodeDecoratorView();
+      view.focusable().set(false);
+      return view;
     }
 
 

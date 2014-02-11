@@ -127,7 +127,7 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
     public Mapper<SNode, PortDecoratorView> createDecorationMapper() {
-      return new Mapper<SNode, PortDecoratorView>(getSNode(), new PortDecoratorView()) {
+      return new Mapper<SNode, PortDecoratorView>(getSNode(), createPortDecorationMapper()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -162,6 +162,12 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
           }
         }
       };
+    }
+
+    private PortDecoratorView createPortDecorationMapper() {
+      PortDecoratorView view = new PortDecoratorView();
+      view.focusable().set(false);
+      return view;
     }
 
 
