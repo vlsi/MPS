@@ -17,8 +17,9 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.util.PathUtil;
-import jetbrains.mps.workbench.WorkbenchPathManager;
+import jetbrains.mps.workbench.DocumentationHelper;
 import jetbrains.mps.workbench.MPSApplicationInfo;
+import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -99,7 +100,7 @@ public class ProjectStep extends BaseStep {
   @Override
   @Nullable
   public String getURL() {
-    return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-projects";
+    return DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-projects";
   }
 
   @Override
