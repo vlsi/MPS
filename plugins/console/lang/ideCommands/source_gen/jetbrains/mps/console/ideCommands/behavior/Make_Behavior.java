@@ -11,15 +11,15 @@ public class Make_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_legalAsStatement_1262430001741498032(SNode thisNode) {
-    return true;
-  }
-
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.RequiredOnly"));
+    return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.WithDependencies"));
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "make custom models";
+  }
+
+  public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
+    return "Makes models given as arguments.\nAccepts arguments of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments given, makes whole project.\nAffects only `generation required` models.\nWith option <withDependencies> makes not only models given as parameters, but also their dependencies.";
   }
 }

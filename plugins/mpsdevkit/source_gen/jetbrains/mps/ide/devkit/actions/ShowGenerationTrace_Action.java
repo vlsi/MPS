@@ -7,11 +7,12 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.devkit.generator.GenerationTracer;
+import jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -19,8 +20,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.IGenerationTracer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -41,12 +40,12 @@ public class ShowGenerationTrace_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer(_params);
-        event.getPresentation().setVisible(tracer.hasTracingData());
+        GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
+        event.getPresentation().setVisible(tool.hasTracingData());
         if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).isEmpty()) {
           event.getPresentation().setEnabled(false);
         } else {
-          boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()).getReference());
+          boolean hasTraceInputData = tool.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()).getReference());
           event.getPresentation().setEnabled(hasTraceInputData);
         }
       }
@@ -89,8 +88,8 @@ public class ShowGenerationTrace_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer(_params);
-      if (!(tracer.showTraceInputData(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()))) {
+      GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
+      if (!(tool.showTraceInputData(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()))) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {
@@ -98,10 +97,6 @@ public class ShowGenerationTrace_Action extends BaseAction {
         LOG.error("User's action execute method failed. Action:" + "ShowGenerationTrace", t);
       }
     }
-  }
-
-  private GenerationTracer getGenTracer(final Map<String, Object> _params) {
-    return (GenerationTracer) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
   }
 
   protected static Logger LOG = LogManager.getLogger(ShowGenerationTrace_Action.class);

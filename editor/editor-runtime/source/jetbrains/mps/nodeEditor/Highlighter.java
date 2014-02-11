@@ -42,7 +42,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;

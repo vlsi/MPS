@@ -124,7 +124,7 @@ public class AddCellAnnotation_Intention implements IntentionFactory {
         SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionStart", nodeRangeSelection.getFirstNode(), false);
         SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionEnd", nodeRangeSelection.getLastNode(), false);
       }
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.INodeAnnotattion"), newAnnotation);
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.INodeAnnotation"), newAnnotation);
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 

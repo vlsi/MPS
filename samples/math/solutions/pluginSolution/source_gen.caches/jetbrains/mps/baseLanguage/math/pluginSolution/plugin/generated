@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-48djgf0cyb21zr472psr0460jucs58l">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
   <common hash="-admd9uf99evc12ohx82da8xogmkqpmw" dependsOnNodes="true" />
   <source id="5487985028841941376" name="HLineCellProvider" hash="3fakivyttm5jlvi6xhysyw4102rdzyv">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="HLineCellProvider.java" />
   </source>
   <source id="5487985028841941507" name="EditorCell_VerticalLine" hash="1hrtrvxvj2x09ddd3y6st8rse43eug3">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="EditorCell_VerticalLine.java" />
   </source>
   <source id="5487985028841941621" name="VLineCellProvider" hash="-elgks3bs7udqp550fg7c4raf9ma4r3k">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="VLineCellProvider.java" />
   </source>

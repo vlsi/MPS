@@ -30,7 +30,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.action.BaseAction;

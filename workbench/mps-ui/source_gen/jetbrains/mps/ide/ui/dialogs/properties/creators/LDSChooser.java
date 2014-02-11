@@ -7,45 +7,34 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.FilteredGlobalScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.VisibleModuleRegistry;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
 public class LDSChooser implements Computable<List<SModuleReference>> {
   @Override
   public List<SModuleReference> compute() {
-    final Wrappers._T<List<SModuleReference>> ldsRefs = new Wrappers._T<List<SModuleReference>>();
+    final Wrappers._T<List<SModuleReference>> refs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<Language> langs = new FilteredGlobalScope().getVisibleLanguages();
-        ldsRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, SModuleReference>() {
-          public SModuleReference select(Language lang) {
+        Collection<SModule> modules = ModuleRepositoryFacade.getInstance().getAllModules(SModule.class);
+        refs.value = CollectionSequence.fromCollection(modules).where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
+            return VisibleModuleRegistry.getInstance().isVisible(it);
+          }
+        }).select(new ISelector<SModule, SModuleReference>() {
+          public SModuleReference select(SModule lang) {
             return lang.getModuleReference();
           }
         }).toListSequence();
-
-        Iterable<DevKit> devkits = new FilteredGlobalScope().getVisibleDevkits();
-        ListSequence.fromList(ldsRefs.value).addSequence(Sequence.fromIterable(devkits).select(new ISelector<DevKit, SModuleReference>() {
-          public SModuleReference select(DevKit it) {
-            return it.getModuleReference();
-          }
-        }).toListSequence());
-
-        Iterable<SModule> solutions = new FilteredGlobalScope().getModules();
-        ListSequence.fromList(ldsRefs.value).addSequence(Sequence.fromIterable(solutions).ofType(Solution.class).select(new ISelector<Solution, SModuleReference>() {
-          public SModuleReference select(Solution it) {
-            return it.getModuleReference();
-          }
-        }).toListSequence());
       }
     });
 
-    return CommonChoosers.showDialogModuleCollectionChooser(null, "DevKit contents", ldsRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, "DevKit contents", refs.value, null);
   }
 }

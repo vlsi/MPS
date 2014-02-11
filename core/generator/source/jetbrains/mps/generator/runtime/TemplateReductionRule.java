@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 
 /**
+ * XXX why this rule doesn't extend TemplateRuleWithCondition?
  * Evgeny Gryaznov, 10/27/10
  */
 public interface TemplateReductionRule {

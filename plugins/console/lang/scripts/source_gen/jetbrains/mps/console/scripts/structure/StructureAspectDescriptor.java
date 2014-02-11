@@ -21,10 +21,12 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.ConsoleScript").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.scripts.structure.AbstractConsoleScript").children(new String[]{"command"}, new boolean[]{true}).create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.Execute").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand").references("script").alias("#exec", "execute script").create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.RefactorOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").children(new String[]{"refactoring"}, new boolean[]{false}).alias("refactor", "perform changes on selected nodes").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.scripts.structure.AbstractConsoleScript", "jetbrains.mps.console.scripts.structure.ConsoleDump", "jetbrains.mps.console.scripts.structure.ConsoleScript", "jetbrains.mps.console.scripts.structure.Execute"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.scripts.structure.AbstractConsoleScript", "jetbrains.mps.console.scripts.structure.ConsoleDump", "jetbrains.mps.console.scripts.structure.ConsoleScript", "jetbrains.mps.console.scripts.structure.Execute", "jetbrains.mps.console.scripts.structure.RefactorOperation"};
 }

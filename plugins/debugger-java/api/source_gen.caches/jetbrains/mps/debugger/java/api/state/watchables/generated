@@ -1,36 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-5jk7i7en1cyyiu7dzvdrhy9m9qhu0fp">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <common hash="32w9o150b4qaanq33bz4ab0qsnzvonj" dependsOnNodes="true" />
   <source id="3432969378036014056" name="JavaWatchable" hash="-4kg6fw73fzh5smimys13dvwbncaczik">
     <file name="JavaWatchable.java" />
   </source>
   <source id="3432969378036014277" name="JavaThisObject" hash="-7dtbidyvsqhmi0tvx323v5b2o078r4h">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaThisObject.java" />
   </source>
   <source id="3432969378036015831" name="CustomJavaWatchable" hash="luns7zgnikk8xhv2ppfouueom1foy8">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CustomJavaWatchable.java" />
   </source>
   <source id="3432969378036015904" name="JavaStaticContext" hash="apfmvtg2l5g1pjaxl2kuy9bz7qfpy8l">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaStaticContext.java" />
   </source>
   <source id="3432969378036016095" name="JavaStaticField" hash="ac8lxcclhad86btjbp1d9dhayhntvl0">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaStaticField.java" />
   </source>
   <source id="3432969378036014276" name="JavaLocalVariable" hash="83mn5lf62wl81z5fyg2a1djexwd6m9t">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaLocalVariable.java" />
   </source>
   <source id="3432969378036017747" name="CalculatedWatchable" hash="a2arjs0hqs2k5l9g03l4xoi48ltslfw">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CalculatedWatchable.java" />
   </source>
   <source id="4352118152439509012" name="JavaWatchablesCategory" hash="84381vyqt3lrwt3ag9067edggrctr9b">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaWatchablesCategory.java" />
   </source>
 </dependencies>

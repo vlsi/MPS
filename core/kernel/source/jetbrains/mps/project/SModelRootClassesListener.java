@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;

@@ -19,7 +19,6 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -154,7 +153,7 @@ public class SModelOperations {
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {
       for (SModuleReference dk : devkits) {
-        DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+        DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
         if (devKit == null) continue;
         for (Language l : devKit.getExportedLanguages()) {
           result.add(l.getModuleReference());
@@ -288,21 +287,18 @@ public class SModelOperations {
    */
 
   //todo rewrite using iterators
-  @Deprecated
   @NotNull
-  private static List<SModel> importedModels(jetbrains.mps.smodel.SModel model, @NotNull IScope scope) {
+  private static List<SModel> importedModels(final jetbrains.mps.smodel.SModel model, Iterable<SModel> accessoryModelsFromUsedLanguages) {
     List<SModel> modelsList = new ArrayList<SModel>();
     for (ImportElement importElement : (model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
-      SModel modelDescriptor = scope.getModelDescriptor(modelReference);
+      SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
 
       if (modelDescriptor == null) {
-        for (Language l : getLanguages(model, scope)) {
-          for (SModel accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getReference())) {
-              modelDescriptor = accessory;
-              break;
-            }
+        for (SModel accessory : accessoryModelsFromUsedLanguages) {
+          if (modelReference.equals(accessory.getReference())) {
+            modelDescriptor = accessory;
+            break;
           }
         }
       }
@@ -353,31 +349,6 @@ public class SModelOperations {
     return Collections.unmodifiableList(references);
   }
 
-
-  //todo rewrite using iterators
-  @Deprecated
-  public static List<SModel> allImportedModels(jetbrains.mps.smodel.SModel model, IScope scope) {
-    Set<SModel> result = new LinkedHashSet<SModel>();
-    for (Language language : getLanguages(model, scope)) {
-      for (SModel am : language.getAccessoryModels()) {
-        if (am != model) {
-          SModel scopeModelDescriptor = scope.getModelDescriptor(am.getReference());
-          if (scopeModelDescriptor != null) {
-            result.add(scopeModelDescriptor);
-          }
-        }
-      }
-    }
-
-    for (SModel importedModel : importedModels(model, scope)) {
-      if (!importedModel.getReference().equals(model.getReference())) {
-        result.add(importedModel);
-      }
-    }
-
-    return new ArrayList<SModel>(result);
-  }
-
   @Nullable
   public static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     for (ImportElement importElement : model.importedModels()) {
@@ -398,7 +369,7 @@ public class SModelOperations {
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {
       for (SModuleReference dk : devkits) {
-        DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+        DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
         if (devKit == null) continue;
         for (Language l : devKit.getExportedLanguages()) {
           result.add(l.getModuleReference());
@@ -414,14 +385,13 @@ public class SModelOperations {
       ModelChange.assertLegalChange(realDescriptor);
     }
 
-    GlobalScope scope = GlobalScope.getInstance();
     final SModule module = realDescriptor == null ? null : realDescriptor.getModule();
     final Collection<SModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
     Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModel sm : allImportedModels(model, scope)) {
+    for (SModel sm : allImportedModels(model)) {
       importedModels.add(sm.getReference());
     }
 
@@ -466,14 +436,41 @@ public class SModelOperations {
     importedModels.clear();
   }
 
-  //todo rewrite using iterators
   @Deprecated
+  //todo rewrite using iterators
+  public static List<SModel> allImportedModels(jetbrains.mps.smodel.SModel model) {
+    Set<SModel> result = new LinkedHashSet<SModel>();
+    LinkedHashSet<SModel> allAccessoryModels = new LinkedHashSet<SModel>(); // linked merely to keep order the way it used to be
+    for (Language language : getLanguages(model)) {
+      List<SModel> accessoryModels = language.getAccessoryModels();
+      allAccessoryModels.addAll(accessoryModels);
+      for (SModel am : accessoryModels) {
+        if (am != model) {
+          SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
+          if (scopeModelDescriptor != null) {
+            result.add(scopeModelDescriptor);
+          }
+        }
+      }
+    }
+
+    for (SModel importedModel : importedModels(model, allAccessoryModels)) {
+      if (importedModel != model) {
+        result.add(importedModel);
+      }
+    }
+
+    return new ArrayList<SModel>(result);
+  }
+
+  @Deprecated
+  //todo rewrite using iterators
   @NotNull
-  public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model, @NotNull IScope scope) {
+  public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (SModuleReference lang : model.importedLanguages()) {
-      Language language = scope.getLanguage(lang);
+    for (SModuleReference lang : ( model).importedLanguages()) {
+      Language language = (Language) lang.resolve(MPSModuleRepository.getInstance());
 
       if (language != null) {
         languages.add(language);
@@ -481,8 +478,8 @@ public class SModelOperations {
       }
     }
 
-    for (SModuleReference dk : model.importedDevkits()) {
-      DevKit devKit = scope.getDevKit(dk);
+    for (SModuleReference dk : ( model).importedDevkits()) {
+      DevKit devKit = (DevKit) dk.resolve(MPSModuleRepository.getInstance());
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
           if (languages.add(l)) {

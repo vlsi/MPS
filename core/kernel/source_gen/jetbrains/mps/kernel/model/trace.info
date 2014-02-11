@@ -76,7 +76,7 @@
     <nodeInfo nodeId="7651139485607046835" fileName="SModelUtil.java" startLine="255" startPosition="62" endLine="256" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6270036985820077449" fileName="SModelUtil.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelUtil#()V" />
     <nodeInfo nodeId="1111873650137252149" fileName="SModelUtil.java" startLine="50" startPosition="57" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238267641602" fileName="SModelUtil.java" startLine="60" startPosition="102" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1238267641602" fileName="SModelUtil.java" startLine="60" startPosition="92" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238267713264" fileName="SModelUtil.java" startLine="65" startPosition="88" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -254,7 +254,7 @@
       <varInfo nodeId="4788436444168067059" varName="from" />
       <varInfo nodeId="4788436444168067061" varName="toFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="1238267621442" fileName="SModelUtil.java" startLine="60" startPosition="102" endLine="69" endPosition="7">
+    <scopeInfo nodeId="1238267621442" fileName="SModelUtil.java" startLine="60" startPosition="92" endLine="69" endPosition="7">
       <varInfo nodeId="1238267671234" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="2536625761249141312" fileName="SModelUtil.java" startLine="122" startPosition="33" endLine="131" endPosition="17">

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
+import java.util.List;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -41,7 +42,11 @@ public class ExtractFromIntention_Test extends BaseTransformationTest4 {
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684521"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684511"), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), SNodeOperations.cast(this.getNodeById("1230052684521"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684529"), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), SNodeOperations.cast(this.getNodeById("1230052684539"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684511"), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), SNodeOperations.cast(this.getNodeById("1230052684521"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684529"), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), SNodeOperations.cast(this.getNodeById("1230052684539"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }
