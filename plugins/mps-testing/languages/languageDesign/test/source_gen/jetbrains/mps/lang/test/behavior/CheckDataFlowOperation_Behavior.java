@@ -10,11 +10,7 @@ public class CheckDataFlowOperation_Behavior {
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    try {
-      NodeDataFlowCheckerUtil.checkDataFlow(node);
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
+    NodeDataFlowCheckerUtil.checkDataFlow(node);
   }
 
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
