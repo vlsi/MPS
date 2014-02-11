@@ -57,16 +57,20 @@ public class BaseEditorTestBody extends BaseTestBody {
 
 
   public Editor initEditor(final String before, final String after) throws Exception {
+    final Exception[] exception = new Exception[1];
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
         try {
           BaseEditorTestBody.this.initEditor_internal(before, after);
         } catch (Exception e) {
-          e.printStackTrace();
+          exception[0] = e;
         }
       }
     });
+    if (exception[0] != null) {
+      throw exception[0];
+    }
     return this.myEditor;
   }
 
@@ -82,7 +86,7 @@ public class BaseEditorTestBody extends BaseTestBody {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
         if (BaseEditorTestBody.this.myStart == null) {
-          throw new IllegalStateException(BaseEditorTestBody.this.myModel.getModelName());
+          throw new IllegalStateException("Cannot find cell reference in the test case 'before'");
         }
         if (!(after.equals(""))) {
           BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
