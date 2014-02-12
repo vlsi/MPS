@@ -91,6 +91,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     myPropertiesToDependentNodesWithNTRules.clear();
     myTypedTermsToDependentNodesWithNTRules.clear();
     myNodesDependentOnCachesWithNTRules.clear();
+    myNodesToErrorsMap.clear();
   }
 
   @Override
@@ -216,6 +217,8 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
         rulesToErrorsMap.put(currentRule, errorsSet);
       }
       errorsSet.add(errorReporter);
+      // make sure the error is cleaned on the node deletion
+      addDependentNodes(currentNode, currentRule, Collections.singleton(node));
     }
   }
 
