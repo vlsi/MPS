@@ -43,7 +43,6 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void apply_TODO(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     {
       Style priorityGroup = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_TODO_PG(priorityGroup, editorCell);
