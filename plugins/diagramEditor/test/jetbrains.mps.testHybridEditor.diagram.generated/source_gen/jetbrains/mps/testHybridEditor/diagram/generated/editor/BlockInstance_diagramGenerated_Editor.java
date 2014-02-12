@@ -32,6 +32,7 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -41,7 +42,6 @@ import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.Properties;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
@@ -159,23 +159,36 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           super.registerSynchronizers(configuration);
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputs.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode id) {
-              return new Mapper<SNode, RectView>(id, new RectView()) {
+              return new Mapper<SNode, RectView>(id, createPortView(id)) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
                   getTarget().background().set(Color.LIGHT_GRAY);
                   getTarget().dimension().set(new Vector(10, 10));
                   getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+                  configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+                    public void run() {
+                      if (getTarget().focused().get()) {
+                        SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+                      }
+                    }
+                  }));
 
-                  getTarget().prop(JetpadUtils.SOURCE).set(getSNode());
-                  getTarget().prop(JetpadUtils.ID).set(getSource());
                 }
               };
+            }
+
+            private RectView createPortView(SNode id) {
+              RectView view = new RectView();
+              view.prop(JetpadUtils.SOURCE).set(getSNode());
+              view.prop(JetpadUtils.ID).set(id);
+              view.focusable().set(true);
+              return view;
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputs.children(), new MapperFactory<SNode, View>() {
             public Mapper<? extends SNode, ? extends View> createMapper(SNode id) {
-              return new Mapper<SNode, RectView>(id, new RectView()) {
+              return new Mapper<SNode, RectView>(id, createPortView(id)) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
@@ -205,11 +218,24 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     }
                   }).build());
                   getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+                  configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+                    public void run() {
+                      if (getTarget().focused().get()) {
+                        SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+                      }
+                    }
+                  }));
 
-                  getTarget().prop(JetpadUtils.SOURCE).set(getSNode());
-                  getTarget().prop(JetpadUtils.ID).set(getSource());
                 }
               };
+            }
+
+            private RectView createPortView(SNode id) {
+              RectView view = new RectView();
+              view.prop(JetpadUtils.SOURCE).set(getSNode());
+              view.prop(JetpadUtils.ID).set(id);
+              view.focusable().set(true);
+              return view;
             }
           }));
 
@@ -253,7 +279,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
-      return new Mapper<SNode, NodeDecoratorView>(getSNode(), createNodeDecoratorView()) {
+      return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -287,9 +313,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                  if (true || false) {
-                    return;
-                  }
                   DiagramCell diagramCell = getDiagramCell();
                   if (diagramCell == null) {
                     return;
@@ -303,27 +326,18 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return;
                   }
                   final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
-                  {
-                    configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-                      public void set(Boolean isError) {
-                        getTarget().setError(isError);
-                      }
-                    }));
-                    configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-                      public void set(Boolean isSelected) {
-                        getTarget().setSelected(isSelected);
-                      }
-                    }));
-                    ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-                    configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-                      public void set(Rectangle bounds) {
-                        getTarget().updateErrorDecorator(bounds);
-                        getTarget().updateSelectionDecorator(bounds);
-                      }
-                    }));
+                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
+                    public void set(Boolean isSelected) {
+                      getTarget().setSelected(isSelected);
+                    }
+                  }));
+                  ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
+                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+                    public void set(Rectangle bounds) {
+                      getTarget().updateSelectionDecorator(bounds);
+                    }
+                  }));
 
-
-                  }
                 }
               };
             }
@@ -333,9 +347,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                  if (true || false) {
-                    return;
-                  }
                   DiagramCell diagramCell = getDiagramCell();
                   if (diagramCell == null) {
                     return;
@@ -349,27 +360,18 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return;
                   }
                   final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
-                  {
-                    configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-                      public void set(Boolean isError) {
-                        getTarget().setError(isError);
-                      }
-                    }));
-                    configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-                      public void set(Boolean isSelected) {
-                        getTarget().setSelected(isSelected);
-                      }
-                    }));
-                    ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-                    configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-                      public void set(Rectangle bounds) {
-                        getTarget().updateErrorDecorator(bounds);
-                        getTarget().updateSelectionDecorator(bounds);
-                      }
-                    }));
+                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
+                    public void set(Boolean isSelected) {
+                      getTarget().setSelected(isSelected);
+                    }
+                  }));
+                  ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
+                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+                    public void set(Rectangle bounds) {
+                      getTarget().updateSelectionDecorator(bounds);
+                    }
+                  }));
 
-
-                  }
                 }
               };
             }
@@ -377,12 +379,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
         }
       };
-    }
-
-    private NodeDecoratorView createNodeDecoratorView() {
-      NodeDecoratorView view = new NodeDecoratorView();
-      view.focusable().set(false);
-      return view;
     }
 
 
