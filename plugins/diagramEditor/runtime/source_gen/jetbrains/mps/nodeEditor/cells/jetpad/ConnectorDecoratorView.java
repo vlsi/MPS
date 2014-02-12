@@ -105,7 +105,7 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
       if (neq_2z6621_a0a0d0o(segment, ListSequence.fromList(segments).last())) {
         mySelectionView.children().add(createBlackSelectionRect(segment.end));
       }
-      if (segment.length() > SELECTION_SQUARE_WIDTH * 10) {
+      if (segment.length() > SELECTION_SQUARE_HALF_WIDTH * 20) {
         mySelectionView.children().add(createBlackSelectionRect(new Vector((segment.end.x + segment.start.x) / 2, (segment.end.y + segment.start.y) / 2)));
       }
     }

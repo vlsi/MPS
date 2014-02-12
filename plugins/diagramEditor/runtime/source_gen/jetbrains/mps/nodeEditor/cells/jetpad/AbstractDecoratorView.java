@@ -4,12 +4,12 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.values.Color;
 
 public abstract class AbstractDecoratorView extends GroupView {
-  protected static final int SELECTION_SQUARE_WIDTH = 6;
+  protected static final int SELECTION_SQUARE_HALF_WIDTH = 3;
 
   protected abstract View getSelectionView();
 
@@ -35,12 +35,16 @@ public abstract class AbstractDecoratorView extends GroupView {
 
 
 
-  protected RectView createBlackSelectionRect(Vector origin) {
-    RectView view = new RectView();
-    view.background().set(Color.BLACK);
-    view.dimension().set(new Vector(SELECTION_SQUARE_WIDTH, SELECTION_SQUARE_WIDTH));
-    view.moveTo(new Vector(origin.x - SELECTION_SQUARE_WIDTH / 2, origin.y - SELECTION_SQUARE_WIDTH / 2));
-    return view;
+  protected View createBlackSelectionRect(Vector origin) {
+    PolyLineView selectionRect = new PolyLineView();
+    selectionRect.background().set(Color.LIGHT_GRAY);
+    selectionRect.color().set(Color.GRAY);
+    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
+    selectionRect.points.add(new Vector(origin.x + SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
+    selectionRect.points.add(new Vector(origin.x + SELECTION_SQUARE_HALF_WIDTH, origin.y + SELECTION_SQUARE_HALF_WIDTH));
+    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y + SELECTION_SQUARE_HALF_WIDTH));
+    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
+    return selectionRect;
   }
 
 

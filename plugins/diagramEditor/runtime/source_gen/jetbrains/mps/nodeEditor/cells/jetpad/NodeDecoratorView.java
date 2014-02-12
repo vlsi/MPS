@@ -53,14 +53,18 @@ public class NodeDecoratorView extends AbstractDecoratorView {
 
   private void fillSelectionView(Rectangle bounds) {
     mySelectionView.children().clear();
-    mySelectionView.children().add(createBlackSelectionRect(bounds.origin));
-    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x / 2, 0))));
-    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, 0))));
+    PolyLineView selectionFrame = new PolyLineView();
+    selectionFrame.color().set(Color.GRAY);
+    updateSelectionPolyline(selectionFrame, bounds);
+    mySelectionView.children().add(selectionFrame);
+    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(-1, -1))));
+    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x / 2, -1))));
+    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, -1))));
     mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, bounds.dimension.y / 2))));
     mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x, bounds.dimension.y))));
     mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(bounds.dimension.x / 2, bounds.dimension.y))));
-    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(0, bounds.dimension.y))));
-    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(0, bounds.dimension.y / 2))));
+    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(-1, bounds.dimension.y))));
+    mySelectionView.children().add(createBlackSelectionRect(bounds.origin.add(new Vector(-1, bounds.dimension.y / 2))));
   }
 
   public void updateSelectionDecorator(Rectangle bounds) {
@@ -77,9 +81,9 @@ public class NodeDecoratorView extends AbstractDecoratorView {
     mySelectionView.invalidate();
   }
 
-  private void fillErrorView(Rectangle bounds) {
-    myErrorView.points.clear();
-    myErrorView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x, bounds.origin.y)));
+  private void updateSelectionPolyline(PolyLineView polylineView, Rectangle bounds) {
+    polylineView.points.clear();
+    polylineView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x - 1, bounds.origin.y - 1), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y - 1), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x - 1, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x - 1, bounds.origin.y - 1)));
   }
 
   public void updateErrorDecorator(Rectangle bounds) {
@@ -91,7 +95,7 @@ public class NodeDecoratorView extends AbstractDecoratorView {
         myErrorView.moveTo(bounds.origin);
       }
     } else {
-      fillErrorView(bounds);
+      updateSelectionPolyline(myErrorView, bounds);
     }
     myErrorView.invalidate();
   }

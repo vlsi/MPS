@@ -33,7 +33,6 @@
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.Properties" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ReadableProperty" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
@@ -91,7 +90,6 @@
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.Properties" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ReadableProperty" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />

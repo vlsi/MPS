@@ -41,7 +41,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.jetpad.model.property.Properties;
 import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
@@ -264,7 +263,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             }
           }));
 
-          configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
               if (getTarget().focused().get()) {
