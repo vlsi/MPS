@@ -18,25 +18,21 @@ public class NodeTypeSystemErrorCheckOperation_Behavior {
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    try {
-      final SNode operation = thisNode;
-      NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
-        public void checkOperation(TypeCheckingContext context) {
-          assert SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation");
-          List<IErrorReporter> errorReports = ListSequence.fromList(((List<IErrorReporter>) context.getTypeMessagesDontCheck(getNodeToCheck()))).where(new IWhereFilter<IErrorReporter>() {
-            public boolean accept(IErrorReporter it) {
-              return it.getMessageStatus() == MessageStatus.ERROR;
-            }
-          }).toListSequence();
+    final SNode operation = thisNode;
+    NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
+      public void checkOperation(TypeCheckingContext context) {
+        assert SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation");
+        List<IErrorReporter> errorReports = ListSequence.fromList(((List<IErrorReporter>) context.getTypeMessagesDontCheck(getNodeToCheck()))).where(new IWhereFilter<IErrorReporter>() {
+          public boolean accept(IErrorReporter it) {
+            return it.getMessageStatus() == MessageStatus.ERROR;
+          }
+        }).toListSequence();
 
-          final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected error message";
+        final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected error message";
 
-          Assert.assertTrue(errorString, NodeCheckerUtil.nodeHasExpectedTypeSystemMessage(errorReports));
-        }
-      });
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
+        Assert.assertTrue(errorString, NodeCheckerUtil.nodeHasExpectedTypeSystemMessage(errorReports));
+      }
+    });
   }
 
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {

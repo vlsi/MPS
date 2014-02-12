@@ -18,15 +18,21 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.DocumentationHelper;
 import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.lang.model.SourceVersion;
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
-import java.awt.*;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.net.URL;
@@ -119,7 +125,7 @@ public class SolutionStep extends BaseStep {
   @Override
   @Nullable
   public String getURL() {
-    return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-solutions";
+    return DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-solutions";
   }
 
   private void updateSolutionPath() {

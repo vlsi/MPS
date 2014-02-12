@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.devkit.help;
+package jetbrains.mps.workbench;
 
-import jetbrains.mps.workbench.DocumentationHelper;
+import com.intellij.openapi.application.ApplicationInfo;
 
-public class ShowDefaultKeymap extends ShowSiteAction {
-  public ShowDefaultKeymap() {
-    super("Default Keymap Reference");
-  }
-
-  protected String getSiteURL() {
-    return DocumentationHelper.getConfluenceBase() + "Default+Keymap+Reference";
+public final class DocumentationHelper {
+  public static String getConfluenceBase() {
+    return "http://confluence.jetbrains.com/display/MPSD" + ApplicationInfo.getInstance().getMajorVersion() + ApplicationInfo.getInstance().getMinorVersion() + "/";
   }
 }

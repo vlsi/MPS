@@ -20,33 +20,28 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    try {
-
-      final SNode nodeToCheck = node;
-      final SNode operation = thisNode;
-      NodeCheckerUtil.checkNodeWithCheckingAction(node, new ITypechecking.Action() {
-        @Override
-        public void run(TypeCheckingContext typeCheckingContext) {
-          typeCheckingContext.checkIfNotChecked(nodeToCheck, true);
-          for (SNode child : SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-            if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
-              IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
-              if (reporter != null) {
-                String reportError = reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(child) + "'";
-                if (!(SPropertyOperations.getBoolean(operation, "allowErrors"))) {
-                  Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
-                }
-                if (!(SPropertyOperations.getBoolean(operation, "allowWarnings"))) {
-                  Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
-                }
+    final SNode nodeToCheck = node;
+    final SNode operation = thisNode;
+    NodeCheckerUtil.checkNodeWithCheckingAction(node, new ITypechecking.Action() {
+      @Override
+      public void run(TypeCheckingContext typeCheckingContext) {
+        typeCheckingContext.checkIfNotChecked(nodeToCheck, true);
+        for (SNode child : SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+          if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
+            IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
+            if (reporter != null) {
+              String reportError = reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(child) + "'";
+              if (!(SPropertyOperations.getBoolean(operation, "allowErrors"))) {
+                Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
+              }
+              if (!(SPropertyOperations.getBoolean(operation, "allowWarnings"))) {
+                Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
               }
             }
           }
         }
-      });
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
+      }
+    });
   }
 
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {

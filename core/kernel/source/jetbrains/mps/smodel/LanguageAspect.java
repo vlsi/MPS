@@ -212,7 +212,7 @@ public enum LanguageAspect {
     }
   },;
 
-  private static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD25/";
+  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD31/";
 
   private String myName;
 
