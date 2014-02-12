@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-1f5zxj2ksvbj2xj40gn3yuw06b9ibej">
   <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="6b7od662whrdwcqeu7pqkf01dkkj4dk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="-6ueic4iaxb1bzgkdva3bji5mn8wb9qx" />
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="h0l1uuj1y3rxfx7b87v74i1jt2epfp" />
   <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" hash="6g0x97xtvpdsfky1p0fzv5jsg7m2vex" />
   <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" hash="-2ak129k9cxr3slqxs0iazuxm9c6b7ow" />
@@ -37,7 +37,7 @@
   <dep model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" hash="1p4ngo9jblc8cvevss56q9yqbls7b1n" />
   <dep model="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)" hash="-dkid0jfa9uwaagy1pp79orbmm3bc760" />
   <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)" hash="-c546c9x6diw5ggobndjh9x9ql34egnq" />
-  <dep model="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" hash="-cftbg3rfxemvg27f69m5bczf30a7vg7" />
+  <dep model="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" hash="-3sqw85vnwqhdvuxuc05ku5qsdzakzne" />
   <dep model="r:9470f421-cec1-405a-b0c5-73491b129d8a(jetbrains.mps.internal.collections.trove.test)" hash="9vhoe8kci4fd2u9dbe295r4q9lhv9li" />
   <dep model="r:a1e6d46a-5cab-40b1-8baa-74b09e2c51bc(jetbrains.mps.asTest@tests)" hash="-4x7ndtuatvr8qltye9ua5opyc08k3is" />
   <dep model="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)" hash="-3kceebt3q6eh47v08bm8bjypqe2x3sz" />

@@ -308,6 +308,9 @@
       <modulePath path="$PROJECT_DIR$/samples/generator_demo/languages/demoLang6/jetbrains.mps.samples.generator_demo.demoLang6.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/generator_demo/languages/demoLang7/jetbrains.mps.samples.generator_demo.demoLang7.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/generator_demo/solutions/test_models/jetbrains.mps.samples.generator_demo.test_models.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating.tabular/jetbrains.mps.samples.heating.tabular.mpl" folder="samples.heating" />
+      <modulePath path="$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/jetbrains.mps.samples.heating.mpl" folder="samples.heating" />
+      <modulePath path="$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/sandbox/jetbrains.mps.samples.heating.sandbox.msd" folder="samples.heating" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/languages/lambdaCalculus/jetbrains.mps.samples.lambdaCalculus.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="samples" />

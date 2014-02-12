@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="8az03hfke60qvjzjnd2k5o9xyw9rygz">
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:50b10b97-3962-4a9c-b1dc-2f508c99994a(jetbrains.mps.samples.heating.tabular.structure)" hash="9brni0rfsy40h26vn4p0m65bk7tq8cd" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <common hash="8az03hfke60qvjzjnd2k5o9xyw9rygz" dependsOnNodes="true">
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:50b10b97-3962-4a9c-b1dc-2f508c99994a(jetbrains.mps.samples.heating.tabular.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="BehaviorAspectDescriptor.java" />
+  </common>
+</dependencies>
+
