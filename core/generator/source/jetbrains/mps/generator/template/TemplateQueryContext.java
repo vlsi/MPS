@@ -16,12 +16,15 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 
@@ -172,7 +175,10 @@ public class TemplateQueryContext {
   }
 
   public IOperationContext getInvocationContext() {
-    return myGenerator.getGeneratorSessionContext();
+    // according to doc: Operation context associated with module - owner of the original input model
+    SModule originalModule = getOriginalInputModel().getModule();
+    final Project project = myGenerator.getGeneratorSessionContext().getProject();
+    return new ModuleContext(originalModule, project);
   }
 
   // user objects
