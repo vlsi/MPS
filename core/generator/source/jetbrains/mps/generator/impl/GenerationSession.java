@@ -387,7 +387,14 @@ class GenerationSession {
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, currentOutputModel);
         recycleWasteModel(currentOutputModel, true);
-        myMinorStep--; // what for?!
+        if (!isPrimary) {
+          // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
+          // applyRules did that for primary step regardless of hasChanges state, hence we decrement minorStep
+          // only on secondary no-change runs to forget about no-op applyRules.
+          // I consider this changes safer than to remove isPrimary check in applyRules (it's appealing
+          // to save TMWM only when there are changes) as it seems there's assumption about TMWM presence (if used) for each step.
+          myMinorStep--;
+        }
         if (myLogger.needsInfo()) {
           myLogger.info("unchanged, empty model '" + SModelStereotype.getStereotype(currentOutputModel.getReference().getModelName()) + "' removed");
         }
@@ -528,9 +535,8 @@ class GenerationSession {
     if (ruleManager.getPostProcessScripts().isEmpty()) {
       return currentModel;
     }
-
-    final boolean modifiesModel = ruleManager.getPostProcessScripts().modifiesModel();
-    final boolean needToCloneModel = modifiesModel && !myDiscardTransients;
+    // post-processing script is deemed to modify model always
+    final boolean needToCloneModel = !myDiscardTransients;
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone", false);
@@ -558,9 +564,7 @@ class GenerationSession {
       }
       templateGenerator.executeScript(postMappingScript);
     }
-    if (modifiesModel) {
-      myDependenciesBuilder.scriptApplied(currentModel);
-    }
+    myDependenciesBuilder.scriptApplied(currentModel);
     if (needToCloneModel) {
       if (myNewCache != null) {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
