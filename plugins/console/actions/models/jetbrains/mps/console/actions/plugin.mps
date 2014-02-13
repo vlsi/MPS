@@ -291,14 +291,18 @@
                           </node>
                         </node>
                       </node>
-                      <node role="parameter" roleId="3xdn.4307205004132279624" type="3xdn.QueryParameterList" typeId="3xdn.4307205004132277753" id="7752629037606962288" nodeInfo="ng" />
+                      <node role="parameter" roleId="3xdn.4307205004132279624" type="3xdn.QueryParameterList" typeId="3xdn.4307205004132277753" id="7752629037606962288" nodeInfo="ng">
+                        <node role="parameter" roleId="3xdn.4307205004141421222" type="3xdn.QueryParameterScope" typeId="3xdn.4307205004132412719" id="8297459932332177124" nodeInfo="ng">
+                          <node role="value" roleId="3xdn.4307205004134707081" type="3xdn.ProjectScope" typeId="3xdn.4307205004134636962" id="8297459932332177130" nodeInfo="ng" />
+                        </node>
+                      </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.WhereOperation" typeId="tp2q.1202120902084" id="7752629037606978156" nodeInfo="nn">
                       <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="7752629037606978158" nodeInfo="nn">
                         <property name="forceMultiLine" nameId="tp2c.890797661671409019" value="true" />
                         <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="7752629037606978159" nodeInfo="sn" />
                         <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="7752629037606978160" nodeInfo="ig">
-                          <property name="name" nameId="tpck.1169194664001" value="it" />
+                          <property name="name" nameId="tpck.1169194664001" value="node" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="7752629037606978161" nodeInfo="in" />
                         </node>
                       </node>
@@ -379,7 +383,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="3355341743769121285" resolveInfo="FindInstancesByCondition" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3362819150777322640" nodeInfo="ng">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3362819150777199432" resolveInfo="ReplaceInstancesByCondition" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3362819150777199432" resolveInfo="ModifyInstancesByCondition" />
       </node>
     </node>
   </root>
@@ -389,12 +393,12 @@
       <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3355341743769121285" resolveInfo="FindInstancesByCondition" />
     </node>
     <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="7840163421835605817" nodeInfo="nn">
-      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3362819150777199432" resolveInfo="ReplaceInstancesByCondition" />
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3362819150777199432" resolveInfo="ModifyInstancesByCondition" />
     </node>
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3362819150777199432" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ReplaceInstancesByCondition" />
-    <property name="caption" nameId="tp4k.1205250923097" value="Replace Instances by Condition" />
+    <property name="name" nameId="tpck.1169194664001" value="ModifyInstancesByCondition" />
+    <property name="caption" nameId="tp4k.1205250923097" value="Modify Instances by Condition" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3362819150777208270" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="project" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="nx1.~CommonDataKeys%dPROJECT" resolveInfo="PROJECT" />
@@ -448,7 +452,11 @@
                 <node role="expression" roleId="3xdn.7656298970878093890" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3362819150777247765" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3362819150777240438" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="3xdn.InstancesExpression" typeId="3xdn.7738379549910147341" id="3362819150777238795" nodeInfo="ng">
-                      <node role="parameter" roleId="3xdn.4307205004132279624" type="3xdn.QueryParameterList" typeId="3xdn.4307205004132277753" id="3362819150777238797" nodeInfo="ng" />
+                      <node role="parameter" roleId="3xdn.4307205004132279624" type="3xdn.QueryParameterList" typeId="3xdn.4307205004132277753" id="3362819150777238797" nodeInfo="ng">
+                        <node role="parameter" roleId="3xdn.4307205004141421222" type="3xdn.QueryParameterScope" typeId="3xdn.4307205004132412719" id="8297459932331849717" nodeInfo="ng">
+                          <node role="value" roleId="3xdn.4307205004134707081" type="3xdn.ProjectScope" typeId="3xdn.4307205004134636962" id="8297459932331849723" nodeInfo="ng" />
+                        </node>
+                      </node>
                       <node role="conceptArg" roleId="3xdn.7738379549910147342" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3362819150778240247" nodeInfo="nn">
                         <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3362819150778240519" nodeInfo="ng">
@@ -474,7 +482,7 @@
                           </node>
                         </node>
                         <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="3362819150777246179" nodeInfo="ig">
-                          <property name="name" nameId="tpck.1169194664001" value="it" />
+                          <property name="name" nameId="tpck.1169194664001" value="node" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="3362819150777246180" nodeInfo="in" />
                         </node>
                       </node>

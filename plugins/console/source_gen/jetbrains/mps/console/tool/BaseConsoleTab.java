@@ -61,8 +61,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Scanner;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
-import com.intellij.icons.AllIcons;
+import com.intellij.openapi.actionSystem.MouseShortcut;
+import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -407,14 +407,7 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
   protected void registerActions(DefaultActionGroup group) {
-    group.add(new PinToolwindowTabAction() {
-      @Override
-      public void update(AnActionEvent event) {
-        super.update(event);
-        event.getPresentation().setIcon(AllIcons.General.Pin_tab);
-        event.getPresentation().setEnabledAndVisible(true);
-      }
-    });
+    registerShortcutSet(new BaseConsoleTab.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1)));
   }
 
 

@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
+
+import org.jetbrains.mps.openapi.module.SModule;
 
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.smodel.Language;

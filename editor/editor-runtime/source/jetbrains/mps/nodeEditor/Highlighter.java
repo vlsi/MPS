@@ -68,7 +68,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object ADD_EDITORS_LOCK = new Object();
 
   private static final Object PENDING_LOCK = new Object();
-  private static final int DEFAULT_GRACE_PERIOD = 50;
+  private static final int DEFAULT_GRACE_PERIOD = 150;
+  public static final int DEFAULT_DELAY_MULTIPLIER = 1;
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -686,30 +687,26 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     boolean isGracePeriodExpired() {
       final long time = System.currentTimeMillis();
-      if (time - myLastCommandFinished.get() >= myGracePeriod.get()) {
-        return true;
-      }
-      return false;
+      long delta = time - myLastCommandFinished.get();
+      return delta >= myGracePeriod.get();
     }
 
     boolean isLargerGracePeriodExpired() {
       final long time = System.currentTimeMillis();
-      if (time - myLastCommandFinished.get() - 2 * DEFAULT_GRACE_PERIOD >= myGracePeriod.get()) {
-        return true;
-      }
-      return false;
+      long delta = time - myLastCommandFinished.get();
+      return delta - 2 * DEFAULT_GRACE_PERIOD >= myGracePeriod.get();
     }
 
     void resetGracePeriod() {
       myGracePeriod.set(DEFAULT_GRACE_PERIOD);
-      myCurrentMultiplier.set(4);
+      myCurrentMultiplier.set(DEFAULT_DELAY_MULTIPLIER);
     }
 
     long timeToExpiration() {
       final long time = System.currentTimeMillis();
       final long delta = time - myLastCommandFinished.get();
       final long left = myGracePeriod.get() - delta;
-      return left > 0 ? left : 0L;
+      return Math.max(left, 0L);
     }
 
     @Override
@@ -720,7 +717,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       if (delta < myGracePeriod.get()) {
         final int mult = myCurrentMultiplier.get();
         myGracePeriod.getAndAdd(delta * mult);
-        myCurrentMultiplier.set(mult / 2);
+        myCurrentMultiplier.set(Math.max(mult - 1, 0));
       }
     }
 

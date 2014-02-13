@@ -24,11 +24,11 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class ReplaceInstancesByCondition_Action extends BaseAction {
+public class ModifyInstancesByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ReplaceInstancesByCondition_Action() {
-    super("Replace Instances by Condition", "", ICON);
+  public ModifyInstancesByCondition_Action() {
+    super("Modify Instances by Condition", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -43,7 +43,7 @@ public class ReplaceInstancesByCondition_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ReplaceInstancesByCondition", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "ModifyInstancesByCondition", t);
       }
       this.disable(event.getPresentation());
     }
@@ -75,19 +75,19 @@ public class ReplaceInstancesByCondition_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
-      SNode command = _quotation_createNode_pi123x_a0b0a(((SNode) MapSequence.fromMap(_params).get("node")));
+      SNode command = _quotation_createNode_nwjg5s_a0b0a(((SNode) MapSequence.fromMap(_params).get("node")));
       tab.insertCommand(command);
       tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), "commandHolder", true), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).getElement(1), "body", true));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ReplaceInstancesByCondition", t);
+        LOG.error("User's action execute method failed. Action:" + "ModifyInstancesByCondition", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(ReplaceInstancesByCondition_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ModifyInstancesByCondition_Action.class);
 
-  private static SNode _quotation_createNode_pi123x_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_nwjg5s_a0b0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -107,11 +107,17 @@ public class ReplaceInstancesByCondition_Action extends BaseAction {
     SNode quotedNode_17 = null;
     SNode quotedNode_18 = null;
     SNode quotedNode_19 = null;
+    SNode quotedNode_20 = null;
+    SNode quotedNode_21 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.BLExpression", null, null, false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.InstancesExpression", null, null, false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterList", null, null, false);
+    quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope", null, null, false);
+    quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.ProjectScope", null, null, false);
+    quotedNode_14.addChild("value", quotedNode_18);
+    quotedNode_9.addChild("parameter", quotedNode_14);
     quotedNode_6.addChild("parameter", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_10, "conceptDeclaration", (SNode) parameter_1);
@@ -120,18 +126,18 @@ public class ReplaceInstancesByCondition_Action extends BaseAction {
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.WhereOperation", null, null, false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_11, "forceMultiLine", "true");
-    quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
-    quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, false);
-    quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_19, "value", "true");
-    quotedNode_17.addChild("expression", quotedNode_19);
-    quotedNode_14.addChild("statement", quotedNode_17);
-    quotedNode_11.addChild("body", quotedNode_14);
-    quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_15, "name", "it");
-    quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
-    quotedNode_15.addChild("type", quotedNode_18);
-    quotedNode_11.addChild("parameter", quotedNode_15);
+    quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
+    quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, false);
+    quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_21, "value", "true");
+    quotedNode_19.addChild("expression", quotedNode_21);
+    quotedNode_15.addChild("statement", quotedNode_19);
+    quotedNode_11.addChild("body", quotedNode_15);
+    quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_16, "name", "node");
+    quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
+    quotedNode_16.addChild("type", quotedNode_20);
+    quotedNode_11.addChild("parameter", quotedNode_16);
     quotedNode_7.addChild("closure", quotedNode_11);
     quotedNode_4.addChild("operation", quotedNode_7);
     quotedNode_3.addChild("operand", quotedNode_4);
@@ -142,8 +148,8 @@ public class ReplaceInstancesByCondition_Action extends BaseAction {
     quotedNode_8.addChild("body", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_13, "name", "node");
-    quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
-    quotedNode_13.addChild("type", quotedNode_16);
+    quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
+    quotedNode_13.addChild("type", quotedNode_17);
     quotedNode_8.addChild("parameter", quotedNode_13);
     quotedNode_5.addChild("closure", quotedNode_8);
     quotedNode_3.addChild("operation", quotedNode_5);
