@@ -40,7 +40,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_bs8xw7_a0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInsertPosition(style, editorCell);
+    DataFlow_StyleSheet.apply_InsertPosition(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -53,7 +53,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_bs8xw7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

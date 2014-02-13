@@ -56,7 +56,7 @@ public class MqlTriplex_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_plfzot_b0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -86,7 +86,7 @@ public class MqlTriplex_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_plfzot_d0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

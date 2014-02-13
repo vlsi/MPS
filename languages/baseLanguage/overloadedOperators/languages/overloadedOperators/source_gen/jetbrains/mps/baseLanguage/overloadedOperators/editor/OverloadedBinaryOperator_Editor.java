@@ -58,7 +58,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operator");
     editorCell.setCellId("Constant_42nz3b_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -88,7 +88,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_42nz3b_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -149,7 +149,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_42nz3b_h0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

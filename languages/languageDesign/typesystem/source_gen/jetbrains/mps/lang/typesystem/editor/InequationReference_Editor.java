@@ -120,7 +120,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("inequation");
       }
       Style style = new StyleImpl();
-      TypesystemStyles_StyleSheet.applyInequationLabel(style, editorCell);
+      TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

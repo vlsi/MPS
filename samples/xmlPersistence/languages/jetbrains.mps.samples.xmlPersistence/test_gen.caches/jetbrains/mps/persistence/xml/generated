@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-79lxse7f9l6baf2tq4youft3gwwo4f4">
-  <common hash="dc9jjnmlo9nj8l1f9psakv7vbmam9t" dependsOnNodes="true" />
-  <source id="7358309956615888947" name="XmlConverterTest" hash="ddflq9vwvyyjn9rxwmj0x82rxakq9w6">
-    <file name="XmlConverterTest.java" />
-  </source>
-</dependencies>
-

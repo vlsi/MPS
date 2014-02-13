@@ -35,7 +35,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$resolve{");
     editorCell.setCellId("Constant_o5le8o_a0");
     Style style = new StyleImpl();
-    TextGenStyles_StyleSheet.applyAppendPart(style, editorCell);
+    TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -67,7 +67,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_o5le8o_c0");
     Style style = new StyleImpl();
-    TextGenStyles_StyleSheet.applyAppendPart(style, editorCell);
+    TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

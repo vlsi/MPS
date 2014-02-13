@@ -41,7 +41,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "append");
     editorCell.setCellId("Constant_yuehr3_a0");
     Style style = new StyleImpl();
-    TextGenStyles_StyleSheet.applyTextGenOperation(style, editorCell);
+    TextGenStyles_StyleSheet.apply_TextGenOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

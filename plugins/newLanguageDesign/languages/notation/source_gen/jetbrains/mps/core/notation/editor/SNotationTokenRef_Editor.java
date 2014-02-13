@@ -74,7 +74,7 @@ public class SNotationTokenRef_Editor extends DefaultNodeEditor {
         editorCell.setRole("token");
       }
       Style style = new StyleImpl();
-      notation_StyleSheet.applyToken(style, editorCell);
+      notation_StyleSheet.apply_token(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

@@ -88,7 +88,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("function");
       }
       Style style = new StyleImpl();
-      TextGenStyles_StyleSheet.applyTextGenOperation(style, editorCell);
+      TextGenStyles_StyleSheet.apply_TextGenOperation(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

@@ -65,7 +65,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_85j21_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -92,7 +92,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_85j21_c0a");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     style.set(StyleAttributes.PUNCTUATION_LEFT, false);
     editorCell.getStyle().putAll(style);
@@ -173,7 +173,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_85j21_e0a");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

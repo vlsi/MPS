@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -42,7 +43,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
   @Override
   public boolean canExecute(EditorContext context) {
     EditorCell cell = (EditorCell) context.getEditorComponent().findNodeCell(mySemanticNode);
-    return cell != null && cell.getParent() != null;
+    return cell != null && cell.getParent() != null && ! ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(context.getEditorComponent(), cell);
   }
 
   @Override

@@ -14,6 +14,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddExtendsClause_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddExtendsClause_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddIndent_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddOnNewLine_Intention());

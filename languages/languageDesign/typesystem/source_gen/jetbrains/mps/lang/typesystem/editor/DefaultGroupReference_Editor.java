@@ -18,7 +18,7 @@ public class DefaultGroupReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    TypesystemStyles_StyleSheet.applyInequationsGroupsLabel(style, editorCell);
+    TypesystemStyles_StyleSheet.apply_InequationsGroupsLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

@@ -38,7 +38,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "horizontal-align");
     editorCell.setCellId("Constant_nmsmyd_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlign_Editor.ReplaceWith_StyleClassItem_cellMenu_nmsmyd_a0a0()}));

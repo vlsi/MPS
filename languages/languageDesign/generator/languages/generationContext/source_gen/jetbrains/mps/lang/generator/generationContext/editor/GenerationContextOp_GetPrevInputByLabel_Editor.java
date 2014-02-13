@@ -35,7 +35,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get prev input");
     editorCell.setCellId("Constant_swjj57_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -49,7 +49,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetPrevInputByLabel_Editor._Inline_swjj57_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d125vm8wwsf3paiduoq7m26lxfhtzcd">
-  <common hash="-c1pqhpg4d7p2zicaehfxsu86pk9fxmk" dependsOnNodes="true" />
-  <source id="1575175756409680350" name="FlyingActionsFinder" hash="-bhwlqped8rs1la2afdatcpbnhf95y18">
-    <file name="FlyingActionsFinder.java" />
-  </source>
-</dependencies>
-

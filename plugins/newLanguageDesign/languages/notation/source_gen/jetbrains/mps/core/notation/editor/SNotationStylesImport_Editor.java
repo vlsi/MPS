@@ -34,7 +34,7 @@ public class SNotationStylesImport_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_z1tko_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

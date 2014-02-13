@@ -31,7 +31,7 @@ public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_yb6w4b_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    TextGenStyles_StyleSheet.applyTextGenOperation(style, editorCell);
+    TextGenStyles_StyleSheet.apply_TextGenOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

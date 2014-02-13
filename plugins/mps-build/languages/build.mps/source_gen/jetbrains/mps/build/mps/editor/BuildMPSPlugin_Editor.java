@@ -29,7 +29,7 @@ public class BuildMPSPlugin_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mps");
     editorCell.setCellId("Constant_q8whwb_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyPlugin(style, editorCell);
+    buildStyles_StyleSheet.apply_plugin(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

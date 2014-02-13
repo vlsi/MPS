@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-qghuepcczss41gruhhcrvoh7xkwpbk">
-  <common hash="8l7s4jm366sttd5nt04mbeibibq6am6" dependsOnNodes="true" />
-  <source id="1585405235656481406" name="ClassRunner" hash="-7mumwc3zx53809edx0s11iyb1wz83ms">
-    <file name="ClassRunner.java" />
-  </source>
-</dependencies>
-

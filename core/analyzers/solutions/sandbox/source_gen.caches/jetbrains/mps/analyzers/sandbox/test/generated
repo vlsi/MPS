@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2j9h4q8mgy0jggc1yydo8ahaa7fqw11">
-  <common hash="2y1n2p0rdvqzdayzsc20y0lg4o70m7k" dependsOnNodes="true" />
-  <source id="7985661997283617007" name="Ff" hash="49ysmrfv1ck74qs75p0340nn6e1dofc">
-    <file name="Ff.java" />
-  </source>
-</dependencies>
-

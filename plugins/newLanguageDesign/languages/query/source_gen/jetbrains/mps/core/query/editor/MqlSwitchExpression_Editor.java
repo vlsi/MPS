@@ -51,7 +51,7 @@ public class MqlSwitchExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_d3fda4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);

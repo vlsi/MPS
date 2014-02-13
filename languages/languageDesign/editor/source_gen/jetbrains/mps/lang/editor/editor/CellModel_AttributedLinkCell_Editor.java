@@ -27,7 +27,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_54f2vs_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_54f2vs_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_54f2vs_b0(editorContext, node));
@@ -63,7 +63,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed link");
     editorCell.setCellId("Constant_54f2vs_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyAttributedCellLabel(style, editorCell);
+    Styles_StyleSheet.apply_attributedCellLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -39,7 +39,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_s9jju4_a0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInsertPosition(style, editorCell);
+    DataFlow_StyleSheet.apply_InsertPosition(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -53,7 +53,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nop");
     editorCell.setCellId("Constant_s9jju4_b0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

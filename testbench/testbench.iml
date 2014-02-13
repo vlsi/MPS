@@ -73,6 +73,7 @@
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="library" name="Commons-httpclient" level="project" />
+    <orderEntry type="module" module-name="editorlang-runtime" scope="TEST" />
   </component>
 </module>
 

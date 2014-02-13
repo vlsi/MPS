@@ -71,7 +71,7 @@ public class SNonTerm_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "::=");
     editorCell.setCellId("Constant_9v4a5v_b0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyPunctuation(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

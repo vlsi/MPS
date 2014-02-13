@@ -46,7 +46,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("VDNCC_property_name");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
     if (renderingCondition_j36akn_a0(node, editorContext)) {

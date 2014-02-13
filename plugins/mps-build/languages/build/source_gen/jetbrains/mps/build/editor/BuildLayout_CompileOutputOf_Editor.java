@@ -38,7 +38,7 @@ public class BuildLayout_CompileOutputOf_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_2ot4tw_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
+    buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_CompileOutputOf_Editor.ReplaceWith_BuildLayout_Node_cellMenu_2ot4tw_a0a0()}));

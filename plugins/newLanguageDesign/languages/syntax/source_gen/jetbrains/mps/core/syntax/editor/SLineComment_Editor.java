@@ -37,7 +37,7 @@ public class SLineComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_yhqot6_a0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyComment(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SLineComment_Editor.ReplaceWith_SLexerPart_cellMenu_yhqot6_a0a0()}));
@@ -62,7 +62,7 @@ public class SLineComment_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_content");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyComment(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

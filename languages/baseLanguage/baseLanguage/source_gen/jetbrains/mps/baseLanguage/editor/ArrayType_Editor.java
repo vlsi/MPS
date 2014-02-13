@@ -55,7 +55,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[]");
     editorCell.setCellId("Constant_5rfjfg_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     if (true) {

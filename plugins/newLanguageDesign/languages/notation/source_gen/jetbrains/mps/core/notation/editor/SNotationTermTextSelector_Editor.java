@@ -28,7 +28,7 @@ public class SNotationTermTextSelector_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

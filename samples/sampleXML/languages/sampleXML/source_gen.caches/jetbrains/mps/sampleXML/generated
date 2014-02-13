@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4qe8kmz2gkuhsmeoiulrui1pkq8m51">
-  <dep model="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)" hash="bcrfxiojrf4toyzu2ial2g2cox998o1" />
-  <common dependsOnNodes="true">
-    <dep model="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
-

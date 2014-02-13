@@ -81,7 +81,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("definition");
       }
       Style style = new StyleImpl();
-      KajakStyles_StyleSheet.applyCommand(style, editorCell);
+      KajakStyles_StyleSheet.apply_Command(style, editorCell);
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -100,7 +100,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Library call");
     editorCell.setCellId("Constant_wwx4md_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

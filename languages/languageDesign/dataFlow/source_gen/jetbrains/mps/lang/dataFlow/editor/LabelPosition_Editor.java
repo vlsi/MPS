@@ -35,7 +35,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after label");
     editorCell.setCellId("Constant_xi88on_a0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyPosition(style, editorCell);
+    DataFlow_StyleSheet.apply_Position(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

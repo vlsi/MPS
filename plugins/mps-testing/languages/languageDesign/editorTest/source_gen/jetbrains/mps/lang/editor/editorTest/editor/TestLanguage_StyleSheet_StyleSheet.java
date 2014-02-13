@@ -4,19 +4,13 @@ package jetbrains.mps.lang.editor.editorTest.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TestLanguage_StyleSheet_StyleSheet {
-  @Deprecated
-  public static Style getBaseStyle(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
+  public static void apply_baseStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    return style;
   }
 
-  public static void applyBaseStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-  }
+
 }
