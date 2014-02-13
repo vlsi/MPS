@@ -161,12 +161,12 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
-    RootGenerationTask task = myInputToTask.get(new Pair<SNode, SNodeReference>(inputNode, templateNode));
+  protected void registerRoot(GeneratedRootDescriptor rd) {
+    RootGenerationTask task = myInputToTask.get(new Pair<SNode, SNodeReference>(rd.myInputNode, rd.myTemplateNode));
     if (task == null) {
-      getLogger().error(templateNode, "internal: cannot find task for generated root", GeneratorUtil.describe(inputNode, "input node"));
+      getLogger().error(rd.myTemplateNode, "internal: cannot find task for generated root", GeneratorUtil.describe(rd.myInputNode, "input node"));
     } else {
-      task.addGeneratedRoot(new GeneratedRootDescriptor(outputRoot, inputNode, templateNode, isCopied));
+      task.addGeneratedRoot(rd);
     }
   }
 
@@ -206,22 +206,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
         return;
       }
       for (GeneratedRootDescriptor descriptor : generated) {
-        ParallelTemplateGenerator.super.registerRoot(descriptor.myOutputRoot, descriptor.myRoot, descriptor.myTemplateNode, descriptor.myCopied);
+        ParallelTemplateGenerator.super.registerRoot(descriptor);
       }
-    }
-  }
-
-  public static class GeneratedRootDescriptor {
-    SNode myOutputRoot;
-    SNode myRoot;
-    SNodeReference myTemplateNode;
-    boolean myCopied;
-
-    public GeneratedRootDescriptor(SNode outputRoot, SNode root, SNodeReference templateNode, boolean copied) {
-      myOutputRoot = outputRoot;
-      myRoot = root;
-      myTemplateNode = templateNode;
-      myCopied = copied;
     }
   }
 

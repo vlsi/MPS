@@ -345,7 +345,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
 
       for (SNode outputNode : outputNodes) {
-        registerRoot(outputNode, null, rule.getRuleNode(), false);
+        registerRoot(new GeneratedRootDescriptor(outputNode, rule.getRuleNode()));
         setChanged();
       }
     } catch (DismissTopMappingRuleException ex) {
@@ -367,8 +367,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      final boolean inputIsRoot = inputNode.getParent() == null;
+      final boolean preserveInputRoot = inputIsRoot && rule.keepSourceRoot();
       for (SNode outputNode : outputNodes) {
-        registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
+        registerRoot(new GeneratedRootDescriptor(outputNode, inputNode, preserveInputRoot, rule.getRuleNode()));
         setChanged();
         // we copy user objects in reduction rules, root mapping rules are no different
         // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
@@ -691,15 +693,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
-    myOutputRoots.add(outputRoot);
-    myNewToOldRoot.put(outputRoot, inputNode);
-    myDependenciesBuilder.registerRoot(outputRoot, inputNode);
-    if (isCopied) {
-      getGeneratorSessionContext().registerCopiedRoot(outputRoot);
+  protected void registerRoot(GeneratedRootDescriptor rd) {
+    myOutputRoots.add(rd.myOutputRoot);
+    myNewToOldRoot.put(rd.myOutputRoot, rd.myInputNode);
+    myDependenciesBuilder.registerRoot(rd.myOutputRoot, rd.myInputNode);
+    if (rd.myIsCopied) {
+      getGeneratorSessionContext().registerCopiedRoot(rd.myOutputRoot);
     }
     if (myDeltaBuilder != null) {
-      myDeltaBuilder.registerRoot(inputNode, outputRoot);
+      if (rd.myIsInputPreserved) {
+        // if a new root comes from root mapping rule with keepRoot == true, pretend it's completely new root
+        // FIXME the whole thing with registerRoot shall be refactored - there's little sense to forget about context
+        // root being added at, and to restore this knowledge inside DeltaBuilder.registerRoot based on two node values only.
+        myDeltaBuilder.registerRoot(null, rd.myOutputRoot);
+      } else {
+        myDeltaBuilder.registerRoot(rd.myInputNode, rd.myOutputRoot);
+      }
     }
   }
 
@@ -791,6 +800,42 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
+  static class GeneratedRootDescriptor {
+    // newly created root output node
+    final SNode myOutputRoot;
+    // input node, if any; not necessarily root
+    final SNode myInputNode;
+    // rule that produced the root, or null if copy root
+    final SNodeReference myTemplateNode;
+    // true if root is a copy of a root in input model
+    final boolean myIsCopied;
+    // true iff outputRoot is created from inputNode which is root and is kept in the output model as well.
+    final boolean myIsInputPreserved;
+
+    private GeneratedRootDescriptor(@NotNull SNode outputRoot, @Nullable SNode input, boolean isInputPreserved, SNodeReference templateNode, boolean isCopied) {
+      myOutputRoot = outputRoot;
+      myInputNode = input;
+      myTemplateNode = templateNode;
+      myIsInputPreserved = isInputPreserved;
+      myIsCopied = isCopied;
+    }
+
+    // new root produced
+    public GeneratedRootDescriptor(@NotNull SNode outputRoot, @NotNull SNodeReference templateNode) {
+      this(outputRoot, null, false, templateNode, false);
+    }
+
+    // new root produced based on existing node, possibly replacing it
+    public GeneratedRootDescriptor(@NotNull SNode outputRoot, @NotNull SNode input, boolean preserveInputRoot, @NotNull SNodeReference templateNode) {
+      this(outputRoot, input, preserveInputRoot, templateNode, false);
+    }
+
+    // copy of input root in the output model
+    public GeneratedRootDescriptor(@NotNull SNode outputRoot, @NotNull SNode input) {
+      this(outputRoot, input, false, null, true);
+    }
+  }
+
   private class PartialCopyFacility extends  NodeCopyFacility {
     private final TemplateGenerator myGenerator;
     private final DeltaBuilder myDeltaBuilder;
@@ -827,7 +872,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // at the moment root is registered (to fill id map of new nodes)
       // TODO make map building an explicit step in DeltaBuilder so that ordering won't matter that much.
       // (the question is what if anyone calls findOutputNode while rules are applied (seems !strict model allows that)
-      myGenerator.registerRoot(inputRootNode, inputRootNode, null, true); // weaving rules need myNewToOldRoot mapping
+      myGenerator.registerRoot(new GeneratedRootDescriptor(inputRootNode, inputRootNode)); // weaving rules need myNewToOldRoot mapping
     }
 
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
@@ -885,7 +930,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
         SNode root = copyInputNode(inputRootNode);
-        myGenerator.registerRoot(root, inputRootNode, null, true);
+        myGenerator.registerRoot(new GeneratedRootDescriptor(root, inputRootNode));
       } finally {
         myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       }
