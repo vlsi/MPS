@@ -138,7 +138,7 @@
     <nodeInfo nodeId="7413225496543004894" fileName="EnvironmentConfig.java" startLine="56" startPosition="52" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8713822108809171876" fileName="EnvironmentConfig.java" startLine="62" startPosition="54" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="106664114202257169" fileName="EnvironmentConfig.java" startLine="68" startPosition="49" endLine="69" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5481070676328113887" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5481070676328113887" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6170820365632513864" fileName="EnvironmentConfig.java" startLine="77" startPosition="58" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170820365632581587" fileName="EnvironmentConfig.java" startLine="79" startPosition="5" endLine="80" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4590871013634747820" fileName="EnvironmentConfig.java" startLine="85" startPosition="56" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -164,7 +164,7 @@
     <scopeInfo nodeId="106664114202436234" fileName="EnvironmentConfig.java" startLine="39" startPosition="35" endLine="40" endPosition="45" />
     <scopeInfo nodeId="7413225496543005682" fileName="EnvironmentConfig.java" startLine="62" startPosition="54" endLine="63" endPosition="16" />
     <scopeInfo nodeId="7413225496543186847" fileName="EnvironmentConfig.java" startLine="68" startPosition="49" endLine="69" endPosition="89" />
-    <scopeInfo nodeId="106664114201982031" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="74" />
+    <scopeInfo nodeId="106664114201982031" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="78" />
     <scopeInfo nodeId="878521226300894244" fileName="EnvironmentConfig.java" startLine="77" startPosition="58" endLine="78" endPosition="60" />
     <scopeInfo nodeId="4590871013634673013" fileName="EnvironmentConfig.java" startLine="90" startPosition="54" endLine="91" endPosition="35" />
     <scopeInfo nodeId="4590871013634745160" fileName="EnvironmentConfig.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />

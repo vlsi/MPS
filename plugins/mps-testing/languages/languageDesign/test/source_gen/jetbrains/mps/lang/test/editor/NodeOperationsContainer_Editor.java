@@ -62,6 +62,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
+    Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cftbg3rfxemvg27f69m5bczf30a7vg7">
+<dependencies version="2" modelHash="-3sqw85vnwqhdvuxuc05ku5qsdzakzne">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -15,12 +15,12 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="96lei8ezpygv3e9ji04p0zwkgpvy6m6" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="aiwycxdjasrybhlrycavc5oq374r2ce" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-gbgkbnk1lq91g61a5dqg3gd5j0djxt" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-871y8sri95aexw8zr70yq6jseqnmtyu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="2aiwa7zb4ep59uxlyb81qoypesebfvh" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-8xs8r5kihq4wl5jxh7slxw7nxlxkggj" />
   <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="3yayypcq2yql8egodwnkzsrbmci2j9t" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="dpke4cswko9xroy08r6socd6rf1hqz5" dependsOnNodes="true">
+  <common hash="6rk5lucohe504cujc0dpmo9cklcg0or" dependsOnNodes="true">
     <dep root="1086097794003843976" />
     <dep root="1195975797953542959" />
     <dep root="1195975797953892764" />
@@ -19924,7 +19924,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="Post_StaticFieldToLocalStaticFieldReference_Test.java" />
   </source>
-  <source id="7075734325385824176" name="StaticBehaviorMethodWithParameters_completion" hash="awl2kiaf8l2lxl91nrkvosuu5nxd40r" dependsOnNodes="true">
+  <source id="7075734325385824176" name="StaticBehaviorMethodWithParameters_completion" hash="94drvsp5kejdnzrz6tqeaoses3wsf2u" dependsOnNodes="true">
     <dep root="1086097794003843976" />
     <dep root="1195975797953542959" />
     <dep root="1195975797953892764" />

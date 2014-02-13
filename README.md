@@ -9,7 +9,7 @@ Useful links
 ------------
 
 - [Home page](http://www.jetbrains.com/mps/)
-- [Documentation](http://confluence.jetbrains.net/display/MPSD30/MPS+User%27s+Guide)
+- [Documentation](http://confluence.jetbrains.net/display/MPSD31/MPS+User%27s+Guide)
 - [JetBrains MPS wifi space](http://confluence.jetbrains.com/display/MPS/Welcome+to+JetBrains+MPS+Space)
 - [Issue tracker](http://www.jetbrains.net/tracker/issues/MPS)
 - [Forum](http://forum.jetbrains.com/forum/Meta-Programming-System)

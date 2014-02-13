@@ -845,8 +845,14 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841903254" nodeInfo="nn">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4xk.~BrowserUtil" resolveInfo="BrowserUtil" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4xk.~BrowserUtil%dlaunchBrowser(java%dlang%dString)%cvoid" resolveInfo="launchBrowser" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5487985028841903255" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="http://confluence.jetbrains.com/display/MPSD2/Generator#Generator-aboutgenerator" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2091704536956086821" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2091704536956086891" nodeInfo="nn">
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="cu2c.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="cu2c.~LanguageAspect%dCONFLUENCE_BASE" resolveInfo="CONFLUENCE_BASE" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5487985028841903255" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1070475926801" value="Generator#Generator-aboutgenerator" />
+                    </node>
                   </node>
                 </node>
               </node>

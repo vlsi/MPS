@@ -17,6 +17,7 @@ package jetbrains.mps.ide.devkit.help;
 
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.workbench.DocumentationHelper;
 
 import java.util.Map;
 
@@ -39,6 +40,6 @@ public class ShowUserGuideAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://confluence.jetbrains.com/display/MPSD25/MPS+User%27s+Guide";
+    return DocumentationHelper.getConfluenceBase() + "MPS+User%27s+Guide";
   }
 }

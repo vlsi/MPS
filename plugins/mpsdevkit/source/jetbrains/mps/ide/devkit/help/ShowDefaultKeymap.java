@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.ide.devkit.help;
 
+import jetbrains.mps.workbench.DocumentationHelper;
+
 public class ShowDefaultKeymap extends ShowSiteAction {
   public ShowDefaultKeymap() {
     super("Default Keymap Reference");
   }
 
   protected String getSiteURL() {
-    return "http://confluence.jetbrains.com/display/MPSD25/Default+Keymap+Reference";
+    return DocumentationHelper.getConfluenceBase() + "Default+Keymap+Reference";
   }
 }

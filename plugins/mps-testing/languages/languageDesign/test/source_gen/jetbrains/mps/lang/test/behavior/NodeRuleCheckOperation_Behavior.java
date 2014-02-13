@@ -20,7 +20,7 @@ public class NodeRuleCheckOperation_Behavior {
     return SNodeOperations.isInstanceOf(NodeRuleCheckOperation_Behavior.call_getReferencedRuleNode_5872607264946106205(thisNode), "jetbrains.mps.lang.typesystem.structure.MessageStatement");
   }
 
-  public static boolean call_NodeHasExpectedRuleMessage_1302453276764459617(SAbstractConcept thisConcept, List<IErrorReporter> errorReports, SNode operation) {
+  public static boolean call_nodeHasExpectedRuleMessage_1302453276764459617(SAbstractConcept thisConcept, List<IErrorReporter> errorReports, SNode operation) {
     SNode ruleNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), operation, "virtual_getReferencedRuleNode_5872607264946106205", new Object[]{});
     if (ListSequence.fromList(errorReports).isEmpty()) {
       return false;

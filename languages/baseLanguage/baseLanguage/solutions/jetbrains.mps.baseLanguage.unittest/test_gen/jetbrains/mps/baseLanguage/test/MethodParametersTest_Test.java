@@ -20,15 +20,15 @@ public class MethodParametersTest_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeErrorCheck3951985765451230146() throws Throwable {
+  public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeErrorCheck3951985765451230146", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278", true);
   }
 
   @Test
-  public void test_NodeWarningCheck963887337804134458() throws Throwable {
+  public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeWarningCheck963887337804134458", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232", true);
   }
 
   @MPSLaunch
@@ -38,13 +38,13 @@ public class MethodParametersTest_Test extends BaseTransformationTest4 {
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444224347"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
 
-    public void test_NodeErrorCheck3951985765451230146() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3951985765451230146"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927544278"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230144")});
     }
 
-    public void test_NodeWarningCheck963887337804134458() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804134458"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929086232"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230141")});
     }
   }

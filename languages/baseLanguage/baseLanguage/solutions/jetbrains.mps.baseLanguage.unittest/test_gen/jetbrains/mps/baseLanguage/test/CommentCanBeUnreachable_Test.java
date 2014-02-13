@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class CommentCanBeUnreachable_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeWarningCheck2736903840391132362() throws Throwable {
+  public void test_NodeUnusedVariableWarningCheck6923385624928604784() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody", "test_NodeWarningCheck2736903840391132362", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624928604784", true);
   }
 
   @Test
@@ -26,8 +26,8 @@ public class CommentCanBeUnreachable_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeWarningCheck2736903840391132362() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2736903840391132362"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeUnusedVariableWarningCheck6923385624928604784() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928604784"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451227675")});
     }
 

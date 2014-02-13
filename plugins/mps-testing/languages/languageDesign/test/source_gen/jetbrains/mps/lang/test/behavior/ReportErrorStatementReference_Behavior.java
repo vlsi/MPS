@@ -5,9 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -19,11 +17,7 @@ public class ReportErrorStatementReference_Behavior {
 
   public static String call_getName_8578280453517059635(SAbstractConcept thisConcept, SNode declaration) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement")) {
-      SNode node = SNodeOperations.cast(declaration, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
-      if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) == null)) {
-        return "NoNameError";
-      }
-      return SPropertyOperations.getString(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), "name");
+      return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(declaration, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"), "virtual_getName_1597542831856389237", new Object[]{});
     } else {
       return "UnknownError";
     }
