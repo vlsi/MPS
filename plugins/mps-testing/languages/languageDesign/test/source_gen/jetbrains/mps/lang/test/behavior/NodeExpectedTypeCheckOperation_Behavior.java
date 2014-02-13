@@ -14,20 +14,16 @@ public class NodeExpectedTypeCheckOperation_Behavior {
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    try {
-      final SNode operation = thisNode;
-      NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
-        public void checkOperation(TypeCheckingContext context) {
-          if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation")) {
-            SNode type1 = TypeChecker.getInstance().getInequalitiesForHole(getNodeToCheck(), false).getExpectedType();
-            SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation"), "type", true);
-            NodeCheckerUtil.assertTypesAreTheSame(getNodeToCheck(), type1, type2);
-          }
+    final SNode operation = thisNode;
+    NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
+      public void checkOperation(TypeCheckingContext context) {
+        if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation")) {
+          SNode type1 = TypeChecker.getInstance().getInequalitiesForHole(getNodeToCheck(), false).getExpectedType();
+          SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation"), "type", true);
+          NodeCheckerUtil.assertTypesAreTheSame(getNodeToCheck(), type1, type2);
         }
-      });
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
+      }
+    });
   }
 
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {

@@ -6,4 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public interface MessageStatement_BehaviorDescriptor {
   public void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode);
+  public String virtual_getName_1597542831856389237(SNode thisNode);
 }

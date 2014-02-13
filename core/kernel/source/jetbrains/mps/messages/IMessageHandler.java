@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.messages;
 
+import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
+
 public interface IMessageHandler {
   public static final IMessageHandler NULL_HANDLER = new IMessageHandler() {
     @Override
@@ -24,6 +27,29 @@ public interface IMessageHandler {
     public void clear() {
     }
   };
+  public final static class LogHandler implements IMessageHandler {
+    @NotNull
+    private final Logger myLog;
+
+    public LogHandler(@NotNull Logger log) {
+      myLog = log;
+    }
+    @Override
+    public void handle(IMessage msg) {
+      if (msg.getKind() == MessageKind.ERROR) {
+        myLog.error(msg.getText(), msg.getException(), msg.getHintObject());
+      } else if (msg.getKind() == MessageKind.WARNING) {
+        myLog.warning(msg.getText(), msg.getException(), msg.getHintObject());
+      } else {
+        myLog.info(msg.getText(), msg.getException(), msg.getHintObject());
+      }
+    }
+
+    @Override
+    public void clear() {
+      // no-op
+    }
+  }
 
   void handle(IMessage msg);
 

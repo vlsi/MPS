@@ -13,9 +13,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class Validation_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeErrorCheck4456514995149638912() throws Throwable {
+  public void test_NodeRecursiveConstructorInvocationCheck6923385624929443716() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeErrorCheck4456514995149638912", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929443716", true);
+  }
+
+  @Test
+  public void test_NodeRecursiveConstructorInvocationCheck6923385624929443718() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929443718", true);
   }
 
   @Test
@@ -25,27 +31,44 @@ public class Validation_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeErrorCheck4456514995149638910() throws Throwable {
+  public void test_NodeRecursiveConstructorInvocationCheck6923385624929451248() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeErrorCheck4456514995149638910", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929451248", true);
   }
 
   @Test
-  public void test_NodeErrorCheck4456514995149638908() throws Throwable {
+  public void test_NodeRecursiveConstructorInvocationCheck6923385624929451250() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeErrorCheck4456514995149638908", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929451250", true);
   }
 
   @Test
-  public void test_NodeErrorCheck2319519288049976971() throws Throwable {
+  public void test_NodeRecursiveConstructorInvocationCheck6923385624929609456() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeErrorCheck2319519288049976971", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929609456", true);
+  }
+
+  @Test
+  public void test_NodeRecursiveConstructorInvocationCheck6923385624929609458() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929609458", true);
+  }
+
+  @Test
+  public void test_NodeIllegalCombinationOfModifiersCheck6923385624927426848() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeIllegalCombinationOfModifiersCheck6923385624927426848", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeErrorCheck4456514995149638912() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("4456514995149638912"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeRecursiveConstructorInvocationCheck6923385624929443716() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929443716"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229135")});
+    }
+
+    public void test_NodeRecursiveConstructorInvocationCheck6923385624929443718() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929443718"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229135")});
     }
 
@@ -54,18 +77,28 @@ public class Validation_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("7868761255934329296")});
     }
 
-    public void test_NodeErrorCheck4456514995149638910() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("4456514995149638910"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeRecursiveConstructorInvocationCheck6923385624929451248() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929451248"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229787")});
     }
 
-    public void test_NodeErrorCheck4456514995149638908() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("4456514995149638908"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeRecursiveConstructorInvocationCheck6923385624929451250() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929451250"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229787")});
+    }
+
+    public void test_NodeRecursiveConstructorInvocationCheck6923385624929609456() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929609456"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228860")});
     }
 
-    public void test_NodeErrorCheck2319519288049976971() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2319519288049976971"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeRecursiveConstructorInvocationCheck6923385624929609458() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929609458"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228860")});
+    }
+
+    public void test_NodeIllegalCombinationOfModifiersCheck6923385624927426848() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927426848"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231039")});
     }
   }

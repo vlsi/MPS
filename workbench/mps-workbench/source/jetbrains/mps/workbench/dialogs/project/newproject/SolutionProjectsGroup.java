@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.DocumentationHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,7 +48,7 @@ class SolutionProjectsGroup implements ProjectTemplatesGroup {
     @Override
     public String getDescription() {
       return "Solutions are used to store code written in MPS languages. " +
-          "Each <a href=\"http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-solutions\">MPS solution</a> " +
+          "Each <a href=\"" + DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-solutions\">MPS solution</a> " +
           "is a set of models with a name.";
     }
 

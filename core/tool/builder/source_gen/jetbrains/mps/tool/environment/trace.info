@@ -138,41 +138,40 @@
     <nodeInfo nodeId="7413225496543004894" fileName="EnvironmentConfig.java" startLine="56" startPosition="52" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8713822108809171876" fileName="EnvironmentConfig.java" startLine="62" startPosition="54" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="106664114202257169" fileName="EnvironmentConfig.java" startLine="68" startPosition="49" endLine="69" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="106664114202179858" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6170820365631216940" fileName="EnvironmentConfig.java" startLine="73" startPosition="116" endLine="74" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6170820365632513864" fileName="EnvironmentConfig.java" startLine="78" startPosition="58" endLine="79" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6170820365632581587" fileName="EnvironmentConfig.java" startLine="80" startPosition="5" endLine="81" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4590871013634747820" fileName="EnvironmentConfig.java" startLine="86" startPosition="56" endLine="87" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7413225496543233504" fileName="EnvironmentConfig.java" startLine="87" startPosition="42" endLine="88" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4590871013634673762" fileName="EnvironmentConfig.java" startLine="91" startPosition="54" endLine="92" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5481070676328113887" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6170820365632513864" fileName="EnvironmentConfig.java" startLine="77" startPosition="58" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6170820365632581587" fileName="EnvironmentConfig.java" startLine="79" startPosition="5" endLine="80" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4590871013634747820" fileName="EnvironmentConfig.java" startLine="85" startPosition="56" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7413225496543233504" fileName="EnvironmentConfig.java" startLine="86" startPosition="42" endLine="87" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4590871013634673762" fileName="EnvironmentConfig.java" startLine="90" startPosition="54" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4590871013634745160" fileName="EnvironmentConfig.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EnvironmentConfig#()V" />
     <nodeInfo nodeId="106664114202338215" fileName="EnvironmentConfig.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="plugins#()Ljava/util/Set;" />
     <nodeInfo nodeId="106664114202363337" fileName="EnvironmentConfig.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="macros#()Ljava/util/Map;" />
     <nodeInfo nodeId="106664114202436231" fileName="EnvironmentConfig.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="libs#()Ljava/util/Map;" />
     <nodeInfo nodeId="7413225496543005679" fileName="EnvironmentConfig.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Z)Ljetbrains/mps/tool/environment/Environment;" />
     <nodeInfo nodeId="7413225496543186844" fileName="EnvironmentConfig.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withDefaultSamples#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
-    <nodeInfo nodeId="878521226300894242" fileName="EnvironmentConfig.java" startLine="77" startPosition="53" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4590871013634673010" fileName="EnvironmentConfig.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="emptyEnvironment#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
+    <nodeInfo nodeId="106664114201982028" fileName="EnvironmentConfig.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withDefaultPlugins#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
+    <nodeInfo nodeId="878521226300894242" fileName="EnvironmentConfig.java" startLine="76" startPosition="53" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4590871013634673010" fileName="EnvironmentConfig.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="emptyEnvironment#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
     <nodeInfo nodeId="7413225496542997288" fileName="EnvironmentConfig.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPlugin#(Ljava/lang/String;)Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
     <nodeInfo nodeId="7413225496542997630" fileName="EnvironmentConfig.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMacro#(Ljava/lang/String;Ljava/io/File;)Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
     <nodeInfo nodeId="7413225496543004241" fileName="EnvironmentConfig.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLib#(Ljava/lang/String;Ljava/io/File;)Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
-    <nodeInfo nodeId="106664114201982028" fileName="EnvironmentConfig.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withDefaultPlugins#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
-    <nodeInfo nodeId="7413225496543228387" fileName="EnvironmentConfig.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultEnvironment#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
-    <nodeInfo nodeId="6170820365632484401" fileName="EnvironmentConfig.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withBootstrapLibraries#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
+    <nodeInfo nodeId="7413225496543228387" fileName="EnvironmentConfig.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultEnvironment#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
+    <nodeInfo nodeId="6170820365632484401" fileName="EnvironmentConfig.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withBootstrapLibraries#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
     <scopeInfo nodeId="4590871013634745165" fileName="EnvironmentConfig.java" startLine="26" startPosition="31" endLine="26" endPosition="31" />
     <scopeInfo nodeId="106664114202338218" fileName="EnvironmentConfig.java" startLine="31" startPosition="32" endLine="32" endPosition="57" />
     <scopeInfo nodeId="106664114202363340" fileName="EnvironmentConfig.java" startLine="35" startPosition="37" endLine="36" endPosition="47" />
     <scopeInfo nodeId="106664114202436234" fileName="EnvironmentConfig.java" startLine="39" startPosition="35" endLine="40" endPosition="45" />
     <scopeInfo nodeId="7413225496543005682" fileName="EnvironmentConfig.java" startLine="62" startPosition="54" endLine="63" endPosition="16" />
     <scopeInfo nodeId="7413225496543186847" fileName="EnvironmentConfig.java" startLine="68" startPosition="49" endLine="69" endPosition="89" />
-    <scopeInfo nodeId="878521226300894244" fileName="EnvironmentConfig.java" startLine="78" startPosition="58" endLine="79" endPosition="60" />
-    <scopeInfo nodeId="4590871013634673013" fileName="EnvironmentConfig.java" startLine="91" startPosition="54" endLine="92" endPosition="35" />
+    <scopeInfo nodeId="106664114201982031" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="73" endPosition="78" />
+    <scopeInfo nodeId="878521226300894244" fileName="EnvironmentConfig.java" startLine="77" startPosition="58" endLine="78" endPosition="60" />
+    <scopeInfo nodeId="4590871013634673013" fileName="EnvironmentConfig.java" startLine="90" startPosition="54" endLine="91" endPosition="35" />
     <scopeInfo nodeId="4590871013634745160" fileName="EnvironmentConfig.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="7413225496542997291" fileName="EnvironmentConfig.java" startLine="45" startPosition="53" endLine="47" endPosition="16" />
     <scopeInfo nodeId="7413225496542997633" fileName="EnvironmentConfig.java" startLine="50" startPosition="72" endLine="52" endPosition="16" />
     <scopeInfo nodeId="7413225496543004244" fileName="EnvironmentConfig.java" startLine="55" startPosition="65" endLine="57" endPosition="16" />
-    <scopeInfo nodeId="106664114201982031" fileName="EnvironmentConfig.java" startLine="72" startPosition="49" endLine="74" endPosition="45" />
-    <scopeInfo nodeId="7413225496543228390" fileName="EnvironmentConfig.java" startLine="86" startPosition="56" endLine="88" endPosition="102" />
+    <scopeInfo nodeId="7413225496543228390" fileName="EnvironmentConfig.java" startLine="85" startPosition="56" endLine="87" endPosition="102" />
     <scopeInfo nodeId="106664114202338215" fileName="EnvironmentConfig.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="106664114202363337" fileName="EnvironmentConfig.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="106664114202436231" fileName="EnvironmentConfig.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
@@ -180,10 +179,11 @@
       <varInfo nodeId="7413225496543005718" varName="withIdeaInstance" />
     </scopeInfo>
     <scopeInfo nodeId="7413225496543186844" fileName="EnvironmentConfig.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="878521226300894242" fileName="EnvironmentConfig.java" startLine="77" startPosition="53" endLine="80" endPosition="5">
+    <scopeInfo nodeId="106664114201982028" fileName="EnvironmentConfig.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="878521226300894242" fileName="EnvironmentConfig.java" startLine="76" startPosition="53" endLine="79" endPosition="5">
       <varInfo nodeId="878521226300894243" varName="bpath" />
     </scopeInfo>
-    <scopeInfo nodeId="4590871013634673010" fileName="EnvironmentConfig.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="4590871013634673010" fileName="EnvironmentConfig.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="7413225496542997288" fileName="EnvironmentConfig.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="7413225496542997394" varName="plugin" />
     </scopeInfo>
@@ -195,11 +195,10 @@
       <varInfo nodeId="7413225496543004387" varName="libName" />
       <varInfo nodeId="7413225496543004875" varName="libPath" />
     </scopeInfo>
-    <scopeInfo nodeId="106664114201982028" fileName="EnvironmentConfig.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="6170820365632484404" fileName="EnvironmentConfig.java" startLine="77" startPosition="53" endLine="81" endPosition="90" />
-    <scopeInfo nodeId="7413225496543228387" fileName="EnvironmentConfig.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="6170820365632484401" fileName="EnvironmentConfig.java" startLine="77" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="7413225496542992777" fileName="EnvironmentConfig.java" startLine="15" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <scopeInfo nodeId="6170820365632484404" fileName="EnvironmentConfig.java" startLine="76" startPosition="53" endLine="80" endPosition="90" />
+    <scopeInfo nodeId="7413225496543228387" fileName="EnvironmentConfig.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="6170820365632484401" fileName="EnvironmentConfig.java" startLine="76" startPosition="0" endLine="82" endPosition="0" />
+    <unitInfo nodeId="7413225496542992777" fileName="EnvironmentConfig.java" startLine="15" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.tool.environment.EnvironmentConfig" />
   </root>
   <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/7413225496542996633">
     <nodeInfo nodeId="2239521199951145312" fileName="MpsEnvironment.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="openedProjects" />

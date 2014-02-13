@@ -60,7 +60,7 @@ public class CellReference {
     SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionEnd", false);
 
     Selection selection = component.getSelectionManager().getSelection();
-    assert selection != null;
+    assert selection != null : "Selection was not set in the resulting editor";
     if (selection instanceof SingularSelection) {
       EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
       Assert.assertSame(this.getNode(), MapSequence.fromMap(map).get(selectedCell.getSNode()));
@@ -79,11 +79,7 @@ public class CellReference {
       Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
       Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
     } else {
-      if (selection != null) {
-        Assert.fail("Selection of unsupported type: " + selection.getClass());
-      } else {
-        Assert.fail("Selection was not set in resulting editor");
-      }
+      Assert.fail("Selection of unsupported type: " + selection.getClass());
     }
 
   }

@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.DocumentationHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,7 +38,7 @@ public class OtherProjectsGroup implements ProjectTemplatesGroup {
     @Nullable
     @Override
     public String getDescription() {
-      return "Empty <a href=\"http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-projects\">MPS project</a> without languages and solutions.";
+      return "Empty <a href=\""+ DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-projects\">MPS project</a> without languages and solutions.";
     }
 
     @Nullable

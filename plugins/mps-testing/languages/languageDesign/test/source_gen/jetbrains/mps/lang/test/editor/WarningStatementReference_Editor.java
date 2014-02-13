@@ -93,7 +93,7 @@ public class WarningStatementReference_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       structure_StyleSheet.applyAnnotationNode(style, editorCell);
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

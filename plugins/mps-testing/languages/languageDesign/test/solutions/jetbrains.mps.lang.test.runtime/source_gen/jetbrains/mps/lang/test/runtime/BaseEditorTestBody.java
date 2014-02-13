@@ -50,22 +50,31 @@ public class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myStart;
   protected CellReference myFinish;
 
+
   public BaseEditorTestBody() {
   }
 
+
+
   public Editor initEditor(final String before, final String after) throws Exception {
+    final Exception[] exception = new Exception[1];
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
         try {
           BaseEditorTestBody.this.initEditor_internal(before, after);
         } catch (Exception e) {
-          e.printStackTrace();
+          exception[0] = e;
         }
       }
     });
+    if (exception[0] != null) {
+      throw exception[0];
+    }
     return this.myEditor;
   }
+
+
 
   private void initEditor_internal(final String before, final String after) throws Exception {
     this.addNodeById(before);
@@ -76,6 +85,9 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
+        if (BaseEditorTestBody.this.myStart == null) {
+          throw new IllegalStateException("Cannot find cell reference in the test case 'before'");
+        }
         if (!(after.equals(""))) {
           BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
@@ -86,6 +98,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
+
+
   private CellReference findCellReference(SNode node) {
     List<SNode> annotations = SNodeOperations.getDescendants(node, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{});
     if (ListSequence.fromList(annotations).isEmpty()) {
@@ -93,6 +107,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     }
     return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getNodeId().toString()), ListSequence.fromList(annotations).first(), this.myMap);
   }
+
+
 
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
@@ -119,6 +135,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     }
   }
 
+
+
   public void testMethod() throws Throwable {
     try {
       this.testMethodImpl();
@@ -133,8 +151,12 @@ public class BaseEditorTestBody extends BaseTestBody {
     }
   }
 
+
+
   public void testMethodImpl() throws Exception {
   }
+
+
 
   public static void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -158,19 +180,27 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
+
+
   public static Editor openEditor(Project project, SModel model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
     return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
   }
+
+
 
   public static void closeEditor(Project project, SNode node) {
     FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(project));
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
 
+
+
   public static void typeString(Editor editor, String text) throws InterruptedException, InvocationTargetException {
     typeString((EditorComponent) editor.getCurrentEditorComponent(), text);
   }
+
+
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -183,9 +213,13 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
+
+
   public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
   }
+
+
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -215,6 +249,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
     flushEventQueueAfterAction();
   }
+
+
 
   protected static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
     // flush queue 

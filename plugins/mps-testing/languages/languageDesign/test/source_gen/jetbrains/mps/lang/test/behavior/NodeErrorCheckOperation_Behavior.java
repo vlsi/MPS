@@ -32,24 +32,20 @@ public class NodeErrorCheckOperation_Behavior {
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    try {
-      final SNode operation = thisNode;
-      NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
-        public void checkOperation(TypeCheckingContext context) {
-          assert SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation");
-          List<IErrorReporter> errorReports = ListSequence.fromList(((List<IErrorReporter>) context.getTypeMessagesDontCheck(getNodeToCheck()))).where(new IWhereFilter<IErrorReporter>() {
-            public boolean accept(IErrorReporter it) {
-              return it.getMessageStatus() == MessageStatus.ERROR;
-            }
-          }).toListSequence();
-          final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected error message";
+    final SNode operation = thisNode;
+    NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
+      public void checkOperation(TypeCheckingContext context) {
+        assert SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation");
+        List<IErrorReporter> errorReports = ListSequence.fromList(((List<IErrorReporter>) context.getTypeMessagesDontCheck(getNodeToCheck()))).where(new IWhereFilter<IErrorReporter>() {
+          public boolean accept(IErrorReporter it) {
+            return it.getMessageStatus() == MessageStatus.ERROR;
+          }
+        }).toListSequence();
+        final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected error message";
 
-          Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_NodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")));
-        }
-      });
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
+        Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_nodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")));
+      }
+    });
   }
 
   public static boolean virtual_canAttachReference_1334460907022490922(SNode thisNode, SNode reference) {

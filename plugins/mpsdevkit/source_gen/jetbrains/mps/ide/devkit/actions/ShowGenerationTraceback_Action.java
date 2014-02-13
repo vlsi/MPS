@@ -11,8 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.devkit.generator.GenerationTracer;
+import jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.devkit.generator.GenerationTracer;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -43,9 +44,10 @@ public class ShowGenerationTraceback_Action extends BaseAction {
         if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
           disable(event.getPresentation());
         }
+        GenerationTracerViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(GenerationTracerViewTool.class);
         GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
-        event.getPresentation().setVisible(tracer.hasTracingData());
-        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
+        event.getPresentation().setVisible(tool.hasTracingData());
+        event.getPresentation().setEnabled(tool.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -95,8 +97,8 @@ public class ShowGenerationTraceback_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
-      if (!(tracer.showTracebackData(((SNode) MapSequence.fromMap(_params).get("node"))))) {
+      GenerationTracerViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(GenerationTracerViewTool.class);
+      if (!(tool.showTracebackData(((SNode) MapSequence.fromMap(_params).get("node"))))) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {

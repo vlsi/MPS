@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
@@ -28,11 +27,11 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.util.FlattenIterable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -52,7 +51,7 @@ public class RuleManager {
 
   private Map<SModelReference, TemplateModel> myModelMap;
 
-  private ScriptManager myScripts;
+  private ScriptManager myPreScripts, myPostScripts;
 
   private final FastRuleFinder myRuleFinder;
 
@@ -63,7 +62,7 @@ public class RuleManager {
     myRuleFinder = initRules(configurations);
 
     myModelMap = new HashMap<SModelReference, TemplateModel>();
-    for(TemplateModel m : plan.getTemplateModels()) {
+    for (TemplateModel m : plan.getTemplateModels()) {
       myModelMap.put(m.getSModelReference(), m);
     }
   }
@@ -92,7 +91,7 @@ public class RuleManager {
         }
         postScripts.add(postMappingScript);
       }
-      for (TemplateMappingScript preMappingScript :mappingConfigs.getPreScripts()) {
+      for (TemplateMappingScript preMappingScript : mappingConfigs.getPreScripts()) {
         if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
           logger.warning(preMappingScript.getScriptNode(), String.format(warnMsg, preMappingScript.getLongName()));
           continue;
@@ -100,7 +99,8 @@ public class RuleManager {
         preScripts.add(preMappingScript);
       }
     }
-    myScripts = new ScriptManager(new ArrayList<TemplateMappingScript>(preScripts), new ArrayList<TemplateMappingScript>(postScripts));
+    myPreScripts = new ScriptManager(preScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(preScripts));
+    myPostScripts = new ScriptManager(postScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(postScripts));
   }
 
 
@@ -145,63 +145,35 @@ public class RuleManager {
     return myModelMap.get(modelReference);
   }
 
-  public ScriptManager getScripts() {
-    return myScripts;
+  public ScriptManager getPreProcessScripts() {
+    return myPreScripts;
   }
 
-  public class ScriptManager {
-    private List<TemplateMappingScript> myPreScripts;
-    private List<TemplateMappingScript> myPostScripts;
+  public ScriptManager getPostProcessScripts() {
+    return myPostScripts;
+  }
 
-    public ScriptManager(List<TemplateMappingScript> preScripts, List<TemplateMappingScript> postScripts) {
-      myPreScripts = preScripts;
-      myPostScripts = postScripts;
+  public final class ScriptManager {
+    private final List<TemplateMappingScript> myScripts;
+
+    public ScriptManager(List<TemplateMappingScript> scripts) {
+      myScripts = scripts;
     }
 
-    public List<TemplateMappingScript> getPreMappingScripts() {
-      return myPreScripts;
+    public List<TemplateMappingScript> getScripts() {
+      return myScripts;
     }
 
-    public List<TemplateMappingScript> getPostMappingScripts() {
-      return myPostScripts;
+    public boolean isEmpty() {
+      return myScripts.isEmpty();
     }
 
-    public boolean preprocessing() {
-      return !myPreScripts.isEmpty();
-    }
-
-    public boolean postprocessing() {
-      return !myPostScripts.isEmpty();
-    }
-
-    public boolean needModelCloneToPreprocess(SModel model, boolean persistentTransientModels) {
-      // need to clone input model?
-      // generally, there's no need to have a copy to run a script, even if it modifies the model (unless it's the model we can't modify, i.e. initial one)
-      // however, if we keep transients AND model is modified, it's handy to get a copy of the model to see the difference
-      if (modifiesModel(myPreScripts)) {
-        // we can modify our transient models in place, but when transients are kept, do a copy for ease of tracing
-        // besides, need a copy if trying to run modification script against non-transient model (not to affect any user model)
-        return persistentTransientModels || !isTransientModel(model) ;
-      }
-      return false;
-    }
-
-    public boolean needModelCloneToPostprocess(SModel model, boolean persistentTransientModels) {
-      // cloned model needed only for tracing and if there are chances script make any change
-      return modifiesModel(myPostScripts) && (persistentTransientModels || !isTransientModel(model));
-    }
-
-    private boolean isTransientModel(SModel model) {
-      // deprecated smodel.SModelDescriptor.isTransient suggests to do instanceof instead
-      return model.getModule() instanceof TransientModelsModule;
-    }
-
-    private boolean modifiesModel(List<TemplateMappingScript> scripts) {
-      for (TemplateMappingScript script : scripts) {
-          if (script.modifiesModel()) {
-            return true;
-          }
+    public boolean modifiesModel() {
+      for (TemplateMappingScript script : myScripts) {
+        if (script.modifiesModel()) {
+          return true;
         }
+      }
       return false;
     }
   }

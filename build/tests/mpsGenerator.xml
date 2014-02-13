@@ -726,7 +726,7 @@
       <pathelement location="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
-    <junit showoutput="true" fork="true">
+    <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
       <jvmarg value="-Xmx1024m" />

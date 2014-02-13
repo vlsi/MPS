@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public interface IGenerationTracer {
 
   void discardTracing(SModel inputModel, SModel outputModel);
 
-  List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference);
+  List<Pair<SNodeReference, SNodeReference>> getAllAppliedRulesWithInputNodes(SModelReference outputModelReference);
 
   void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> preMappingScripts);
 
