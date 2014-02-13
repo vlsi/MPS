@@ -187,5 +187,10 @@ public class WeavingProcessor {
         return true;
       }
     }
+
+    @Override
+    public String toString() {
+      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept(), myApplicableNode);
+    }
   }
  }
