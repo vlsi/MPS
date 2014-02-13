@@ -11,16 +11,16 @@ import java.awt.Dimension;
 public class MyDrawing extends JFrame {
   private JPanel panel = new JPanel() {
     @Override
-    protected void paintComponent(Graphics g) {
-      super.paintComponent(g);
-      g.setColor(Color.BLUE);
-      g.drawOval(200, 300, 100, 100);
+    protected void paintComponent(Graphics graphics) {
+      super.paintComponent(graphics);
+      graphics.setColor(Color.BLUE);
+      graphics.drawOval(200, 300, 100, 100);
 
-      g.setColor(Color.GREEN);
-      g.drawRect(50, 150, 100, 100);
+      graphics.setColor(Color.GREEN);
+      graphics.drawRect(50, 150, 100, 100);
 
-      g.setColor(Color.RED);
-      g.drawRect(350, 150, 100, 100);
+      graphics.setColor(Color.RED);
+      graphics.drawRect(350, 150, 100, 100);
 
     }
   };
