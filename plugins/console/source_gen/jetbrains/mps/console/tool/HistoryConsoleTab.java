@@ -14,8 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.icons.AllIcons;
+import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -59,6 +61,14 @@ public class HistoryConsoleTab extends BaseConsoleTab {
   protected void registerActions(DefaultActionGroup group) {
     super.registerActions(group);
     group.add(new HistoryConsoleTab.CloseAction());
+    group.add(new PinToolwindowTabAction() {
+      @Override
+      public void update(AnActionEvent event) {
+        super.update(event);
+        event.getPresentation().setIcon(AllIcons.General.Pin_tab);
+        event.getPresentation().setEnabledAndVisible(true);
+      }
+    });
   }
 
 

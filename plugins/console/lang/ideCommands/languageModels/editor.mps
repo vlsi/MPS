@@ -385,13 +385,9 @@
           <property name="text" nameId="tpc2.1073389577007" value="(" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1234958090348" resolveInfo="LeftParenAfterName" />
         </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="2840424593984889563" nodeInfo="ng">
-          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5308946314780122741" nodeInfo="ng">
+          <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;project&gt;" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="caxt.2840424593984889584" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2840424593984889564" nodeInfo="nn" />
-          <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2840424593984889565" nodeInfo="nn">
-            <property name="nullText" nameId="tpc2.1082639509531" value="&lt;all&gt;" />
-          </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2840424593984889566" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value=")" />

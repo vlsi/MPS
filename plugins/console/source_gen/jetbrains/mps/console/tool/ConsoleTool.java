@@ -64,7 +64,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
 
 
-  private BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon) {
+  private BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
     String title = check_xg3v07_a0a0q(tabState);
     String history = check_xg3v07_a0b0q(tabState);
     if (icon == null) {
@@ -85,7 +85,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
         ListSequence.fromList(myTabs).removeElement(ct);
         ct.disposeConsoleTab();
       }
-    });
+    }, openTool);
     return tab;
   }
 
@@ -102,12 +102,12 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   private void initTabs() {
     if (loadedState != null) {
       for (ConsoleTool.TabState tabState : ListSequence.fromList(loadedState.tabs)) {
-        BaseConsoleTab tab = addConsoleTab(tabState, null);
+        BaseConsoleTab tab = addConsoleTab(tabState, null, false);
         getContentManager().getContent(tab).setPinned(true);
       }
     }
     if (ListSequence.fromList(myTabs).count() == 0) {
-      BaseConsoleTab tab = addConsoleTab(null, null);
+      BaseConsoleTab tab = addConsoleTab(null, null, false);
       getContentManager().getContent(tab).setPinned(true);
     }
     check_xg3v07_a2a02(getContentManager().getContent(0), this);
@@ -150,7 +150,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       }
     });
     tabState.isHistoryTab = true;
-    final BaseConsoleTab tab = addConsoleTab(tabState, null);
+    final BaseConsoleTab tab = addConsoleTab(tabState, null, true);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         tab.execute(command, null, null);

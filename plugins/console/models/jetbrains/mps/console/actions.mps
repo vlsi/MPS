@@ -239,7 +239,6 @@
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3257040239264480619" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ExecuteActionAttachedToCurrentNode" />
     <property name="caption" nameId="tp4k.1205250923097" value="Execute Attached Action" />
-    <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="2431734420460342167" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dNODE" resolveInfo="NODE" />

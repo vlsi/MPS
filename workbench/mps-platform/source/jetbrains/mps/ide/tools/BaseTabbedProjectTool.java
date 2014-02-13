@@ -54,7 +54,7 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
   }
 
   public <T extends JComponent> void addTab(final T tabComponent, @NotNull String title, Icon icon,
-      final IComponentDisposer<T> tabDisposer) {
+      final IComponentDisposer<T> tabDisposer, boolean openTool) {
     IDisposableTab tab = new IDisposableTab() {
       @Override
       public void disposeTab() {
@@ -75,7 +75,9 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
     addContent(tab.getComponent(), title, icon, true);
     setSelectedComponent(tab.getComponent());
     myTabList.add(tab);
-    openToolLater(true);
+    if (openTool) {
+      openToolLater(true);
+    }
   }
 
   public JComponent getSelectedTab() {

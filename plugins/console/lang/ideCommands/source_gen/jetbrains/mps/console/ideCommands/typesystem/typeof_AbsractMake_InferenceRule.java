@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -24,13 +23,12 @@ public class typeof_AbsractMake_InferenceRule extends AbstractInferenceRule_Runt
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891845", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891850", true), (SNode) _quotation_createNode_m0ryz8_a0a0b(), _info_12389875345);
     }
-    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(absractMake, "argument", true))) {
-      {
-        SNode _nodeToCheck_1029348928467 = param;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891858", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891860", true), (SNode) _quotation_createNode_m0ryz8_a0a0b0b(), false, true, _info_12389875345);
-      }
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(absractMake, "argument", true);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891858", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "2840424593984891860", true), (SNode) _quotation_createNode_m0ryz8_a0b0b(), false, true, _info_12389875345);
     }
+
   }
 
   public String getApplicableConceptFQName() {
@@ -55,7 +53,7 @@ public class typeof_AbsractMake_InferenceRule extends AbstractInferenceRule_Runt
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_m0ryz8_a0a0b0b() {
+  private static SNode _quotation_createNode_m0ryz8_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

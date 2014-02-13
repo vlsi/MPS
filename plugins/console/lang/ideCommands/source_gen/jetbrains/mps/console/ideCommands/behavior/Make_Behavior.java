@@ -20,6 +20,6 @@ public class Make_Behavior {
   }
 
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return "Makes models given as arguments.\nAccepts arguments of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments given, makes whole project.\nAffects only `generation required` models.\nWith option <withDependencies> makes not only models given as parameters, but also their dependencies.";
+    return "Makes models given as argument.\nAccepts argument of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments given, makes whole project.\nAffects only `generation required` models.\nWith option <withDependencies> makes not only models given as parameters, but also their dependencies.";
   }
 }
