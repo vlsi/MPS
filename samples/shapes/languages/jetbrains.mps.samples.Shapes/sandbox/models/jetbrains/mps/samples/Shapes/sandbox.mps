@@ -9,19 +9,27 @@
   <root type="lpry.Canvas" typeId="lpry.5898776707557467933" id="5898776707557509373" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="MyDrawing" />
     <node role="shapes" roleId="lpry.5898776707557489223" type="lpry.Circle" typeId="lpry.5898776707557474712" id="4191445539799725021" nodeInfo="ng">
-      <property name="x" nameId="lpry.5898776707557474713" value="10" />
-      <property name="y" nameId="lpry.5898776707557474715" value="10" />
-      <property name="radius" nameId="lpry.5898776707557474718" value="10" />
+      <property name="x" nameId="lpry.5898776707557474713" value="200" />
+      <property name="y" nameId="lpry.5898776707557474715" value="300" />
+      <property name="radius" nameId="lpry.5898776707557474718" value="100" />
       <node role="color" roleId="lpry.4191445539799470732" type="lpry.ColorReference" typeId="lpry.4191445539799302575" id="4191445539799725029" nodeInfo="ng">
         <link role="color" roleId="lpry.4191445539799302810" targetNodeId="1t7x.~Color%dBLUE" resolveInfo="BLUE" />
       </node>
     </node>
     <node role="shapes" roleId="lpry.5898776707557489223" type="lpry.Square" typeId="lpry.5898776707557474722" id="4191445539799725037" nodeInfo="ng">
-      <property name="upperLeftX" nameId="lpry.5898776707557474723" value="100" />
-      <property name="upperLeftY" nameId="lpry.5898776707557474725" value="200" />
-      <property name="size" nameId="lpry.5898776707557474728" value="50" />
+      <property name="upperLeftX" nameId="lpry.5898776707557474723" value="50" />
+      <property name="upperLeftY" nameId="lpry.5898776707557474725" value="150" />
+      <property name="size" nameId="lpry.5898776707557474728" value="100" />
       <node role="color" roleId="lpry.4191445539799470732" type="lpry.ColorReference" typeId="lpry.4191445539799302575" id="4191445539799725047" nodeInfo="ng">
         <link role="color" roleId="lpry.4191445539799302810" targetNodeId="1t7x.~Color%dGREEN" resolveInfo="GREEN" />
+      </node>
+    </node>
+    <node role="shapes" roleId="lpry.5898776707557489223" type="lpry.Square" typeId="lpry.5898776707557474722" id="2601511096305620288" nodeInfo="ng">
+      <property name="upperLeftX" nameId="lpry.5898776707557474723" value="350" />
+      <property name="upperLeftY" nameId="lpry.5898776707557474725" value="150" />
+      <property name="size" nameId="lpry.5898776707557474728" value="100" />
+      <node role="color" roleId="lpry.4191445539799470732" type="lpry.ColorReference" typeId="lpry.4191445539799302575" id="2601511096305632882" nodeInfo="ng">
+        <link role="color" roleId="lpry.4191445539799302810" targetNodeId="1t7x.~Color%dRED" resolveInfo="RED" />
       </node>
     </node>
   </root>

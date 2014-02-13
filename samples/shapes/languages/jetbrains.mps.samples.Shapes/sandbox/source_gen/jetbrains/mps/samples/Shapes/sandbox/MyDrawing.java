@@ -14,10 +14,13 @@ public class MyDrawing extends JFrame {
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
       g.setColor(Color.BLUE);
-      g.drawOval(10, 10, 10, 10);
+      g.drawOval(200, 300, 100, 100);
 
       g.setColor(Color.GREEN);
-      g.drawRect(100, 200, 50, 50);
+      g.drawRect(50, 150, 100, 100);
+
+      g.setColor(Color.RED);
+      g.drawRect(350, 150, 100, 100);
 
     }
   };
