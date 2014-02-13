@@ -151,6 +151,10 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
       this.defaultListState = defaultListState;
       this.showToolAfterAddingMessage = showToolAfterAddingMessage;
     }
+    public MessageViewToolState() {
+      this.defaultListState = new MessageListState();
+      this.showToolAfterAddingMessage = true;
+    }
     MessageListState defaultListState;
     boolean showToolAfterAddingMessage;
   }
