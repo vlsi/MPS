@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="b6h9qzg7mu0f8wevy1ck70kvqvw4qvr">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+  <dep model="r:7167ea39-4474-4333-92a9-38da0777e4f4(jetbrains.mps.samples.Shapes.generator.template.main@generator)" hash="-5mmag0gl4s5e0sx558zsrs7evyc0nu" />
+  <common hash="do7wzzzo9yddwuxnxlgpq0czybz8y2j" dependsOnNodes="true" />
+  <source id="5898776707557509373" name="MyDrawing" hash="aqp6wfgjkmg7lxhymni0t58xy40bevh">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="r:7167ea39-4474-4333-92a9-38da0777e4f4(jetbrains.mps.samples.Shapes.generator.template.main@generator)" />
+    <file name="MyDrawing.java" />
+  </source>
+</dependencies>
+
