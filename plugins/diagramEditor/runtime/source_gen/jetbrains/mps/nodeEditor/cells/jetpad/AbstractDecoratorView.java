@@ -10,10 +10,32 @@ import jetbrains.jetpad.values.Color;
 
 public abstract class AbstractDecoratorView extends GroupView {
   protected static final int SELECTION_SQUARE_HALF_WIDTH = 3;
+  protected GroupView myErrorView;
+  protected GroupView mySelectionView;
 
-  protected abstract View getSelectionView();
+  protected View getSelectionView() {
+    if (mySelectionView == null) {
+      mySelectionView = createSelectionView();
+    }
+    return mySelectionView;
+  }
 
-  protected abstract View getErrorView();
+  protected View getErrorView() {
+    if (myErrorView == null) {
+      myErrorView = createErrorView();
+    }
+    return myErrorView;
+  }
+
+
+
+  protected abstract GroupView createSelectionView();
+
+  protected abstract GroupView createErrorView();
+
+
+
+
 
   public void setSelected(boolean isSelected) {
     if (isSelected) {
@@ -35,7 +57,7 @@ public abstract class AbstractDecoratorView extends GroupView {
 
 
 
-  protected View createBlackSelectionRect(Vector origin) {
+  protected View createSelectionRect(Vector origin) {
     PolyLineView selectionRect = new PolyLineView();
     selectionRect.background().set(Color.LIGHT_GRAY);
     selectionRect.color().set(Color.GRAY);

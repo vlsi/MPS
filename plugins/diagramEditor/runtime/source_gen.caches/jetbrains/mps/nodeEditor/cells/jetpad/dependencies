@@ -84,14 +84,14 @@
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorDecoratorView" file="ConnectorDecoratorView.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Segment" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.LineView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
+    <classNode extendsClassName="jetbrains.jetpad.projectional.view.LineView" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractDecoratorView" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" file="DiagramCell.java">
@@ -186,10 +186,9 @@
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractDecoratorView" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.RectDecoratorView" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.OutputPortCell" file="OutputPortCell.java">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
@@ -211,12 +210,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractDecoratorView" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.RectDecoratorView" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" file="PropertyMapperCell.java">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
@@ -232,6 +227,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode extendsClassName="jetbrains.jetpad.model.property.ValueProperty" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.RectDecoratorView" file="RectDecoratorView.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
+    <classNode dependClassName="jetbrains.jetpad.values.Color" />
+    <classNode extendsClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractDecoratorView" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" file="WritableModelProperty.java">
     <classNode dependClassName="java.lang.Runnable" />
