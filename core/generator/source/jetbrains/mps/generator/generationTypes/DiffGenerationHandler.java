@@ -18,25 +18,37 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.*;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.DifflibFacade;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.util.Condition;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * In-memory generation. Compares generated sources with on-disk state.
@@ -102,7 +114,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
 
   @Nullable
   public String getExtension(SNode outputNode) {
-    return TextGenManager.instance().getExtension(outputNode);
+    return TextGen.getExtension(outputNode);
   }
 
   public String getName(String outputNode, SModelReference outputModel) {

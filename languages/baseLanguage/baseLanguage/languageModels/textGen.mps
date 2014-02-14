@@ -893,8 +893,8 @@
             <node role="initializer" roleId="tpee.1068431790190" type="2omo.UtilityMethodCall" typeId="2omo.1234529062040" id="8394413739791173583" nodeInfo="nn">
               <link role="function" roleId="2omo.1234529163244" targetNodeId="1234799495933" resolveInfo="getUserObjects" />
               <node role="parameter" roleId="2omo.1234529174917" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8394413739791173584" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGenManager%dDEPENDENCY" resolveInfo="DEPENDENCY" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGen" resolveInfo="TextGen" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGen%dDEPENDENCY" resolveInfo="DEPENDENCY" />
               </node>
             </node>
           </node>
@@ -1380,8 +1380,8 @@
             <node role="initializer" roleId="tpee.1068431790190" type="2omo.UtilityMethodCall" typeId="2omo.1234529062040" id="7493607813808732175" nodeInfo="nn">
               <link role="function" roleId="2omo.1234529163244" targetNodeId="1234799495933" resolveInfo="getUserObjects" />
               <node role="parameter" roleId="2omo.1234529174917" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7762714124132024347" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGenManager%dEXTENDS" resolveInfo="EXTENDS" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGen" resolveInfo="TextGen" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGen%dEXTENDS" resolveInfo="EXTENDS" />
               </node>
             </node>
           </node>
@@ -1488,8 +1488,8 @@
             <node role="initializer" roleId="tpee.1068431790190" type="2omo.UtilityMethodCall" typeId="2omo.1234529062040" id="7493607813808732152" nodeInfo="nn">
               <link role="function" roleId="2omo.1234529163244" targetNodeId="1234799495933" resolveInfo="getUserObjects" />
               <node role="parameter" roleId="2omo.1234529174917" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7762714124132024350" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGenManager%dEXTENDS" resolveInfo="EXTENDS" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGen" resolveInfo="TextGen" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGen%dEXTENDS" resolveInfo="EXTENDS" />
               </node>
             </node>
           </node>
@@ -10471,6 +10471,7 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136230684045923686" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6136230684046056257" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="USER_OBJECT_KEY" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6136230684046056313" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6136230684046056264" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6136230684046056266" nodeInfo="nn">
@@ -11280,8 +11281,8 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6136230684046080943" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenBuffer%dgetUserObject(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="getUserObject" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="6136230684046080944" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGenManager%dROOT_NODE" resolveInfo="ROOT_NODE" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGen" resolveInfo="TextGen" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGen%dROOT_NODE" resolveInfo="ROOT_NODE" />
                       </node>
                     </node>
                   </node>

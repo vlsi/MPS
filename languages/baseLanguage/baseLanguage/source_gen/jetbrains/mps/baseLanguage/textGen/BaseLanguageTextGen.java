@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -113,7 +114,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void extendedInterface(SNode interface1, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.EXTENDS, textGen);
     SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(interface1));
   }
 
@@ -126,7 +127,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void extendedClasses(SNode classConcept, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.EXTENDS, textGen);
     SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(classConcept));
   }
 
@@ -280,7 +281,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   protected static void addDependency(String fqName, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.DEPENDENCY, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.DEPENDENCY, textGen);
     SetSequence.fromSet(dependencies).addElement(InternUtil.intern(fqName));
   }
 
