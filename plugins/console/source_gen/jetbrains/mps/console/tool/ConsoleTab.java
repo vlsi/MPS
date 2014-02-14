@@ -118,9 +118,8 @@ public class ConsoleTab extends BaseConsoleTab {
           if ((lastCmd == null)) {
             return;
           }
-          execute(lastCmd, new Runnable() {
+          execute(null, new Runnable() {
             public void run() {
-              SNodeOperations.deleteNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", true));
               myNewCommand = null;
             }
           }, new Runnable() {
