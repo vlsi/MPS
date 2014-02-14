@@ -37,7 +37,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -184,7 +184,7 @@ public class IdeCommandUtil {
 
 
   public static void callAction(final SNode actionDeclaration, final Map<String, Object> parameters) {
-    AnAction action = ActionManager.getInstance().getAction(BehaviorReflection.invokeNonVirtual(String.class, actionDeclaration, "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "call_getGeneratedClassFQName_1213877371952", new Object[]{}));
+    AnAction action = ActionManager.getInstance().getAction(ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(actionDeclaration));
     ActionUtils.updateAndPerformAction(action, ActionUtils.createEvent(ActionPlaces.UNKNOWN, new DataContext() {
       @Nullable
       public Object getData(@NonNls String key) {
