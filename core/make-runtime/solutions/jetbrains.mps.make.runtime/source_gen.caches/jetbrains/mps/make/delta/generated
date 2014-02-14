@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dlt8f49a3wq5p1rcs05yyowu1buajxa">
-  <common hash="b9c1t9c7cy3i46g2p8but0499mly1js" dependsOnNodes="true" />
-  <source id="1268765481875672245" name="IDelta" hash="-3xti2gwyt4ptzl3q6ls7l3jehv7si2l">
-    <file name="IDelta.java" />
-  </source>
-  <source id="5429064975945235670" name="IInternalDelta" hash="5a77rgijcnerwrogtli2qbxg5hntrjm">
-    <file name="IInternalDelta.java" />
-  </source>
-  <source id="6067326609049460296" name="IDeltaVisitor" hash="-81qddb4xehy3spoztqf9tke7pi3g42r">
-    <file name="IDeltaVisitor.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="dlt8f49a3wq5p1rcs05yyowu1buajxa" />
 

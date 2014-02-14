@@ -43,7 +43,7 @@ public class VariableAlive_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alive");
     editorCell.setCellId("Constant_p9fr1_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -80,7 +80,7 @@ public class VariableAlive_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyTestLabel(style, editorCell);
+    transformationTest_StyleSheet.apply_TestLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

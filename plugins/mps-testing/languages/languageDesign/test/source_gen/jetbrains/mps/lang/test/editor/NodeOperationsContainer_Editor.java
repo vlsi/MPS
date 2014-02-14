@@ -48,7 +48,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_62u4bw_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -59,7 +59,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_62u4bw_b0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -142,7 +142,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "...");
       editorCell.setCellId("operationCell");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
       style.set(StyleAttributes.PUNCTUATION_LEFT, false);
       editorCell.getStyle().putAll(style);
       Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -155,7 +155,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_62u4bw_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

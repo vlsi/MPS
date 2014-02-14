@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cvfgdbk4zvg7zylzztja33lpzexyrct">
-  <common hash="1ivi23mj1lxenxryd6wbdpfdirc3uf" dependsOnNodes="true" />
-  <source id="1483465595852166755" name="JavaSourceStubModelRootSettingsEditor" hash="aubwrajqenmaepz9dz8t65kbd8rzagl">
-    <file name="JavaSourceStubModelRootSettingsEditor.java" />
-  </source>
-  <source id="1483465595852166869" name="JavaSourceStubModelRootSettingsProvider" hash="-3l3nnr1wrs8zt05o59obrdf4ibvabjz">
-    <file name="JavaSourceStubModelRootSettingsProvider.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-cvfgdbk4zvg7zylzztja33lpzexyrct" />
 

@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="63tgd5el65a0aert9f6eyzt8pp2v5qu">
-  <common hash="867c8670tyrus8nz11d6k55qjlpw29e" dependsOnNodes="true" />
-  <source id="3432969378036015275" name="CustomViewersManager" hash="-9fwsalrmdb3pakriewrftnvssi68aew">
-    <file name="CustomViewersManager.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="63tgd5el65a0aert9f6eyzt8pp2v5qu" />
 

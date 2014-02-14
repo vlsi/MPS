@@ -33,7 +33,7 @@ public class NotSpecified_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_3ok5bb_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NotSpecified_Editor.ReplaceWith_Applicability_cellMenu_3ok5bb_a0a0()}));
     return editorCell;

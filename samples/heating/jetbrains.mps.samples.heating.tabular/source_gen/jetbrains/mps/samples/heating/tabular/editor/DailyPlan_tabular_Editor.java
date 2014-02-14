@@ -85,7 +85,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Daily plan");
     editorCell.setCellId("Constant_dgsw3q_a0a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -96,7 +96,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the");
     editorCell.setCellId("Constant_dgsw3q_b0a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -117,7 +117,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
       editorCell.setRole("customizes");
     }
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -162,7 +162,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
     editorCell.setCellId("Constant_dgsw3q_e0a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

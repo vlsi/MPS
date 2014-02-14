@@ -44,7 +44,7 @@ public class Applicability_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_j44m5v_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Applicability_Editor.ReplaceWith_Applicability_cellMenu_j44m5v_a0b0()}));
     return editorCell;

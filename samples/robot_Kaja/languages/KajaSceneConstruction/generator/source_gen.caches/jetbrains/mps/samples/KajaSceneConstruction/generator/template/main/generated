@@ -1,30 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-85l6x5is104p9mz7a3qg0a1mkkbj5pk">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="85t8gj3oyc0p2yn3v3ynr03iyidt85k" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="96lei8ezpygv3e9ji04p0zwkgpvy6m6" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
-  <dep model="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" hash="1qi8zm4wef3pjhxk11nznubagueb1ym" />
-  <common hash="309p3ve29ve3kea04fsyvhaiv72skbw" dependsOnNodes="true">
-    <dep root="3210697320273563034" />
-    <dep root="3210697320273607275" />
-    <dep root="3210697320273612346" />
-    <dep root="3210697320273614443" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
-    <dep model="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" />
-    <file name="QueriesGenerated.java" />
-  </common>
-  <source id="3210697320273563027" name="main" hash="9n2uut6uxadcitjsa5evkte8wttumeg" />
-  <source id="3210697320273563034" name="reduce_BuildWall" hash="-68c1uh1pre0nbnau5tp16gqtejb47gr" />
-  <source id="3210697320273607275" name="reduce_DestroyWall" hash="axwkknye5r565f5rxx6vi5oc45d6zmn" />
-  <source id="3210697320273612346" name="reduce_DropMark" hash="-aj4wjl8lwosfehr21l18897b65gyorw" />
-  <source id="3210697320273614443" name="reduce_PickMark" hash="6e8yqmzl57yyuu4zcs0lad9zdauaivo" />
-</dependencies>
+<dependencies version="2" modelHash="-85l6x5is104p9mz7a3qg0a1mkkbj5pk" />
 

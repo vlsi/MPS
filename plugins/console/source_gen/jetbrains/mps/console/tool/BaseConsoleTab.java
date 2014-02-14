@@ -30,15 +30,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.apache.log4j.Priority;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -51,11 +45,15 @@ import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -178,34 +176,6 @@ public abstract class BaseConsoleTab extends JPanel {
           return (myTool.getPasteAsRef() ? new BaseConsoleTab.MyPasteProvider(parentPasteProvider) : parentPasteProvider);
         }
         return super.getData(key);
-      }
-
-      @Override
-      public boolean isReadOnly() {
-        final SNode selectedNode = getSelectedNode();
-        final Wrappers._boolean editable = new Wrappers._boolean(false);
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (selectedNode != null) {
-              EditorCell selectedCell = getSelectedCell();
-              if (eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0ab(check_6q36mf_a0a1a0a0c0b0a0a0a62(selectedCell), SLinkOperations.getTarget(myRoot, "commandHolder", true)) && check_6q36mf_a0b0a0a2a1a0a0a0ab(selectedCell)) {
-                editable.value = false;
-              } else {
-                editable.value = SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.console.base.structure.CommandHolder", true, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
-              }
-            } else {
-              List<SNode> selectedNodes = getSelectedNodes();
-              if (selectedNodes != null) {
-                editable.value = ListSequence.fromList(selectedNodes).all(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.CommandHolder", false, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
-                  }
-                });
-              }
-            }
-          }
-        });
-        return !(editable.value);
       }
     };
     myEditor.editNode(myRoot);
@@ -489,20 +459,6 @@ public abstract class BaseConsoleTab extends JPanel {
     return null;
   }
 
-  private static boolean check_6q36mf_a0b0a0a2a1a0a0a0ab(EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isBig();
-    }
-    return false;
-  }
-
-  private static SNode check_6q36mf_a0a1a0a0c0b0a0a0a62(EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNode();
-    }
-    return null;
-  }
-
   private static SNode check_6q36mf_a0d0a0a5jb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
@@ -574,9 +530,5 @@ public abstract class BaseConsoleTab extends JPanel {
 
   private static <T> T as_6q36mf_a0a0a1a0a0a0a0ab(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
-  }
-
-  private static boolean eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0ab(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

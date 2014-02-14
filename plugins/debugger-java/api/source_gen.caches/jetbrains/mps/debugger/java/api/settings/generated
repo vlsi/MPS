@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7om183yxi04bzysiyphpzluhl58gf4o">
-  <common hash="-4mw31lnqqja88n3114yj49aq79zive4" dependsOnNodes="true" />
-  <source id="3432969378036013784" name="RemoteConnectionSettings" hash="derw33zy6hy0vgwuyg3mq53jfdmmdz8">
-    <file name="RemoteConnectionSettings.java" />
-  </source>
-  <source id="3432969378036013783" name="DebugConnectionSettings" hash="7tazmvp3wh5y718ac2s1u80h8wiq2yi">
-    <file name="DebugConnectionSettings.java" />
-  </source>
-  <source id="3432969378036017435" name="LocalConnectionSettings" hash="-7nthjbef5dd6a9sy1cuun3rwio771yt">
-    <file name="LocalConnectionSettings.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="7om183yxi04bzysiyphpzluhl58gf4o" />
 
