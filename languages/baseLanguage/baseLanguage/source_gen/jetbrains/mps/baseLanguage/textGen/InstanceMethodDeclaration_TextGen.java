@@ -7,11 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Priority;
 import java.util.List;
@@ -26,7 +26,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createScopeInfo(this, node);
     }
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), this.getSNode());
+      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
     }
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
@@ -43,26 +43,30 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
       this.append(" ");
     }
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "returnType", true), this.getSNode());
-    this.append(" ");
-    this.append(SPropertyOperations.getString(node, "name"));
-    this.append("(");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
-          this.append(", ");
+    {
+      appendNode(SLinkOperations.getTarget(node, "returnType", true));
+      this.append(" ");
+      this.append(SPropertyOperations.getString(node, "name"));
+      this.append("(");
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(", ");
         }
       }
+      this.append(")");
     }
-    this.append(")");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
-      this.append(" throws ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "throwsItem", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).last()) {
-            this.append(", ");
+      {
+        this.append(" throws ");
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "throwsItem", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }
@@ -74,7 +78,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       this.append(" {");
       this.increaseDepth();
       if ((SLinkOperations.getTarget(node, "body", true) != null)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
+        appendNode(SLinkOperations.getTarget(node, "body", true));
       } else {
         this.appendNewLine();
         this.appendWithIndent("throw new RuntimeException(\"NOT IMPLEMENTED\");");

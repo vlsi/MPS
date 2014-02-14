@@ -6,9 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class XmlComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -17,12 +15,13 @@ public class XmlComment_TextGen extends SNodeTextGen {
       this.appendNewLine();
       this.indentBuffer();
     }
-    this.append("<!--");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "lines", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+    {
+      this.append("<!--");
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "lines", true);
+      for (SNode item : collection) {
+        appendNode(item);
       }
+      this.append("-->");
     }
-    this.append("-->");
   }
 }

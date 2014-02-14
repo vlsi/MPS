@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.textGen;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public abstract class SNodeTextGen {
   private TextGenBuffer myBuffer;
@@ -75,6 +81,18 @@ public abstract class SNodeTextGen {
     myBuffer.appendWithIndent(s);
   }
 
+  public void appendNode(SNode node) {
+    if (node == null) {
+      myBuffer.append("???");
+      if (mySNode != null) {
+        myBuffer.foundError("possible broken reference in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(mySNode), mySNode, null);
+      }
+      return;
+    }
+
+    getTextGenForNode(node).doGenerateText(node, myBuffer);
+  }
+
   public void indentBuffer() {
     myBuffer.indentBuffer();
   }
@@ -87,6 +105,10 @@ public abstract class SNodeTextGen {
     myBuffer.putUserObject(key, o);
   }
 
+  /**
+   * @deprecated Errors without explanation are not that much helpful
+   */
+  @Deprecated
   public void foundError() {
     foundError(null);
   }
@@ -177,5 +199,10 @@ public abstract class SNodeTextGen {
 
   public String getDefaultNoTextGenErrorText(SNode node) {
     return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
+  }
+
+  @NotNull
+  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
+    return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getQualifiedName());
   }
 }

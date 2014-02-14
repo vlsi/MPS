@@ -5,13 +5,12 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class DimensionExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     if ((SLinkOperations.getTarget(node, "expression", true) != null)) {
       this.append("[");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "expression", true));
       this.append("]");
     } else {
       this.append("[]");

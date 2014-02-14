@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class MethodDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -22,7 +21,7 @@ public class MethodDocReference_TextGen extends SNodeTextGen {
       if (i != 0) {
         this.append(", ");
       }
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i), "type", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i), "type", true));
     }
     this.append(")");
   }

@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public abstract class BaseClassConceptTextGen {
@@ -34,18 +33,18 @@ public abstract class BaseClassConceptTextGen {
         boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
         boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
         BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), textGen);
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), member, textGen.getSNode());
+        textGen.appendNode(member);
         BaseLanguageTextGen.newLine(needsLineAfter && !(lastMember == member), textGen);
         isWrappedElementBefore = needsLineAfter;
       } else {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), member, textGen.getSNode());
+        textGen.appendNode(member);
         isWrappedElementBefore = false;
       }
     }
     if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true) != null)) {
       textGen.appendWithIndent("static {");
       textGen.increaseDepth();
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true), textGen.getSNode());
+      textGen.appendNode(SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true));
       textGen.appendNewLine();
       textGen.decreaseDepth();
       textGen.appendWithIndent("}");
@@ -60,7 +59,7 @@ public abstract class BaseClassConceptTextGen {
   public static void innerClassifiers(SNode concept, final SNodeTextGen textGen) {
     SNode last = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)).last();
     for (SNode classifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)) {
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), classifier, textGen.getSNode());
+      textGen.appendNode(classifier);
       if (!(classifier.equals(last))) {
         textGen.appendNewLine();
       }
@@ -68,11 +67,12 @@ public abstract class BaseClassConceptTextGen {
   }
 
   public static void collection(Iterable<SNode> nodes, final SNodeTextGen textGen) {
-    if (Sequence.fromIterable(nodes).isNotEmpty()) {
-      for (SNode item : nodes) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = nodes;
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
+      textGen.appendNewLine();
     }
-    textGen.appendNewLine();
   }
 }

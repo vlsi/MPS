@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -18,22 +18,24 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
     } else {
       this.appendWithIndent(SPropertyOperations.getString(node, "name"));
     }
-    this.append("(");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
-          this.append(", ");
+    {
+      this.append("(");
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(", ");
         }
       }
+      this.append(")");
     }
-    this.append(")");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
       this.append(" {");
       this.appendNewLine();
       this.increaseDepth();
       for (SNode imd : SLinkOperations.getTargets(node, "method", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), imd, this.getSNode());
+        appendNode(imd);
       }
       this.decreaseDepth();
       this.appendNewLine();

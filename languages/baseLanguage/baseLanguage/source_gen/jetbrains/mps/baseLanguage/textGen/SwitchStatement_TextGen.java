@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Priority;
@@ -30,7 +29,7 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
     }
     this.appendNewLine();
     this.appendWithIndent("switch (");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "expression", true));
     this.append(") {");
     this.increaseDepth();
     for (SNode sc : SLinkOperations.getTargets(node, "case", true)) {
@@ -40,17 +39,17 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
         SNode enumConstant = (SNode) SLinkOperations.getTarget(sc, "expression", true);
         this.append(SPropertyOperations.getString(SLinkOperations.getTarget(enumConstant, "enumConstantDeclaration", false), "name"));
       } else {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(sc, "expression", true), this.getSNode());
+        appendNode(SLinkOperations.getTarget(sc, "expression", true));
       }
       this.append(":");
       this.increaseDepth();
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(sc, "body", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(sc, "body", true));
       this.decreaseDepth();
     }
     this.appendNewLine();
     this.appendWithIndent("default:");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "defaultBlock", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "defaultBlock", true));
     this.decreaseDepth();
     this.decreaseDepth();
     this.appendNewLine();

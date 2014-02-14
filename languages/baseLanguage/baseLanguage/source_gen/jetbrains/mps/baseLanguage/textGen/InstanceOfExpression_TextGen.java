@@ -4,13 +4,12 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InstanceOfExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "leftExpression", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "leftExpression", true));
     this.append(" instanceof ");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "classType", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "classType", true));
   }
 }

@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -36,31 +36,33 @@ public class ForStatement_TextGen extends SNodeTextGen {
     this.indentBuffer();
     this.append("for (");
     if ((SLinkOperations.getTarget(node, "variable", true) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "variable", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "variable", true));
     }
     for (SNode additionalVar : SLinkOperations.getTargets(node, "additionalVar", true)) {
       this.append(", ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), additionalVar, this.getSNode());
+      appendNode(additionalVar);
     }
     this.append("; ");
     if ((SLinkOperations.getTarget(node, "condition", true) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "condition", true));
     }
     this.append(";");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).isNotEmpty()) {
       this.append(" ");
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "iteration", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).last()) {
-          this.append(", ");
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "iteration", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(", ");
         }
       }
     }
     this.append(") {");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "body", true));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");

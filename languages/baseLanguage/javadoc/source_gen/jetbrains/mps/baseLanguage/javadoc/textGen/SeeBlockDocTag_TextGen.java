@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -13,7 +12,7 @@ public class SeeBlockDocTag_TextGen extends SNodeTextGen {
     this.appendNewLine();
     DocCommentTextGen.javadocIndent(this);
     this.append("@see ");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "reference", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "reference", true));
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "text"));
   }

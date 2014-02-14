@@ -4,16 +4,15 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ArrayCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "componentType", true), this.getSNode());
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "dimensionExpression", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "dimensionExpression", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+    {
+      appendNode(SLinkOperations.getTarget(node, "componentType", true));
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "dimensionExpression", true);
+      for (SNode item : collection) {
+        appendNode(item);
       }
     }
   }

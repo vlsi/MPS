@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
@@ -41,7 +40,7 @@ public class BlockStatement_TextGen extends SNodeTextGen {
       this.increaseDepth();
     }
     if ((SLinkOperations.getTarget(node, "statements", true) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "statements", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "statements", true));
     }
     if (needBrackets) {
       this.decreaseDepth();
