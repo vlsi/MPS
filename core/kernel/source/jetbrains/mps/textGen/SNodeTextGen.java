@@ -160,7 +160,7 @@ public abstract class SNodeTextGen {
     } else {
       SNode targetNode = reference.getTargetNode();
       if (targetNode == null) {
-        foundError();
+        foundError(String.format("Unknown target for role %s", reference.getRole()));
         return "???";
       }
       shortName = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
