@@ -41,6 +41,7 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -554,10 +555,15 @@ class GenerationSession {
       myDependenciesBuilder.scriptApplied(currentModel);
     } else {
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
+      // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
+      if (currentModel instanceof SModelInternal) {
+        ((SModelInternal) currentModel).disposeFastNodeFinder();
+      }
     }
 
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentModel, currentModel,
         myDependenciesBuilder);
+
     for (TemplateMappingScript postMappingScript : ruleManager.getPostProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
