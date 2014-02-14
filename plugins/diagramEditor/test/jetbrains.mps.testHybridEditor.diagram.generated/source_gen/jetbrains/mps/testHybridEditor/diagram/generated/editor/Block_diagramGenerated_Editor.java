@@ -245,12 +245,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
             }
           }));
           ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
-          configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-            public void set(Rectangle bounds) {
-              getTarget().updateErrorDecorator(bounds);
-              getTarget().updateSelectionDecorator(bounds);
-            }
-          }));
+          configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
               return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();

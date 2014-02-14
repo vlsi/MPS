@@ -300,12 +300,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             }
           }));
           ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
-          configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-            public void set(Rectangle bounds) {
-              getTarget().updateErrorDecorator(bounds);
-              getTarget().updateSelectionDecorator(bounds);
-            }
-          }));
+          configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(final SNode id) {
               return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {
@@ -330,11 +325,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     }
                   }));
                   ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-                    public void set(Rectangle bounds) {
-                      getTarget().updateSelectionDecorator(bounds);
-                    }
-                  }));
+                  configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
 
                 }
               };
@@ -364,11 +355,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     }
                   }));
                   ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-                  configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-                    public void set(Rectangle bounds) {
-                      getTarget().updateSelectionDecorator(bounds);
-                    }
-                  }));
+                  configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
 
                 }
               };

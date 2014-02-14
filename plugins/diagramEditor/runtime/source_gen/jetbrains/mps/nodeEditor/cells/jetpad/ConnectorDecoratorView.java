@@ -11,7 +11,7 @@ import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.projectional.view.LineView;
 
 public class ConnectorDecoratorView extends AbstractDecoratorView {
-  private static final int CROSS_LENGTH = 5;
+  private static final int CROSS_LENGTH = 4;
   protected ConnectorDecoratorView.CrossView myCrossErrorView;
 
 

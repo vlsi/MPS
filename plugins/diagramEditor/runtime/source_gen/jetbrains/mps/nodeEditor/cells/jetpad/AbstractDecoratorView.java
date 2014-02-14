@@ -4,6 +4,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.values.Color;
@@ -12,6 +13,13 @@ public abstract class AbstractDecoratorView extends GroupView {
   protected static final int SELECTION_SQUARE_HALF_WIDTH = 3;
   protected GroupView myErrorView;
   protected GroupView mySelectionView;
+
+
+  public AbstractDecoratorView() {
+    initSynchronizers();
+  }
+
+
 
   protected View getSelectionView() {
     if (mySelectionView == null) {
@@ -25,6 +33,15 @@ public abstract class AbstractDecoratorView extends GroupView {
       myErrorView = createErrorView();
     }
     return myErrorView;
+  }
+
+  private void initSynchronizers() {
+    new Mapper<AbstractDecoratorView, AbstractDecoratorView>(this, this) {
+      @Override
+      protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+        super.registerSynchronizers(configuration);
+      }
+    }.attachRoot();
   }
 
 

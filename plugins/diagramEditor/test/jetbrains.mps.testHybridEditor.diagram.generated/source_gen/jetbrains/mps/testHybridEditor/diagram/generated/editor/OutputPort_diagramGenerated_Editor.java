@@ -151,12 +151,7 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
               }
             }));
             ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-            configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-              public void set(Rectangle bounds) {
-                getTarget().updateErrorDecorator(bounds);
-                getTarget().updateSelectionDecorator(bounds);
-              }
-            }));
+            configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
 
 
           }
