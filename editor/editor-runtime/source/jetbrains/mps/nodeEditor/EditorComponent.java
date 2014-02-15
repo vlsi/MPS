@@ -2740,6 +2740,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     dependentCells.add(cell);
   }
 
+  @Deprecated
   public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeReference, String> pair) {
     addCellDependentOnNodeProperty(((EditorCell) cell), pair);
   }
