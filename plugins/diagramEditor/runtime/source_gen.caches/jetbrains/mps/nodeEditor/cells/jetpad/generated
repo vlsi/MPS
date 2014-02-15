@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bo82p1pql1cadfqs103wp0aggpjmdd5">
+<dependencies version="2" modelHash="52rlbrfbkdjtx3okyybrfz0fvoxo1kw">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -186,16 +186,18 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NodeDecoratorView.java" />
   </source>
-  <source id="1457236892457084394" name="AbstractDecoratorView" hash="9deqwaobvmrqhysvy5hbb8x01y2cbbt">
+  <source id="1457236892457084394" name="AbstractDecoratorView" hash="ean20nraz8ttip7ruwqjo1t9a9kdcfs">
     <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.mapper(jetbrains.jetpad/jetbrains.jetpad.mapper@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="AbstractDecoratorView.java" />
   </source>
-  <source id="1457236892457542566" name="ConnectorDecoratorView" hash="da9rwui09yueebm34jdwpspd03e65ct">
+  <source id="1457236892457542566" name="ConnectorDecoratorView" hash="73ckifavcfl5u90p3kxuau29vjh2xsh">
+    <dep root="1457236892457084394" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.geometry(jetbrains.jetpad/jetbrains.jetpad.geometry@java_stub)" />
+    <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.composite(jetbrains.jetpad/jetbrains.jetpad.model.composite@java_stub)" />
+    <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
@@ -224,7 +226,7 @@
   <source id="2574029987319042393" name="EmptyCellLayout" hash="dp8lqezb3zesajzvuhmz94mve78gigx">
     <file name="EmptyCellLayout.java" />
   </source>
-  <source id="6105677650605339291" name="RectDecoratorView" hash="3n3y3cuzb92gbj1pl7s691b7o154xyb">
+  <source id="6105677650605339291" name="RectDecoratorView" hash="e1pmysipxudf979eihqrmw8m5jfqjy6">
     <dep root="1457236892457084394" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

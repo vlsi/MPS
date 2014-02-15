@@ -9,14 +9,14 @@ import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public abstract class RectDecoratorView extends AbstractDecoratorView {
-  public static final ViewPropertySpec<Rectangle> BOUNDS = new ViewPropertySpec<Rectangle>("bounds", ViewPropertyKind.RELAYOUT, null);
+  public static final ViewPropertySpec<Rectangle> BOUNDS = new ViewPropertySpec<Rectangle>("bounds", ViewPropertyKind.RELAYOUT, new Rectangle(0, 0, 0, 0));
 
   protected PolyLineView myErrorPolylineView;
 
@@ -29,7 +29,7 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
 
   protected GroupView createErrorView() {
     GroupView result = new GroupView();
-    myErrorPolylineView = new RectDecoratorView.SimplePolylineView();
+    myErrorPolylineView = new AbstractDecoratorView.SimplePolylineView();
     myErrorPolylineView.color().set(Color.RED);
     result.children().add(myErrorPolylineView);
     return result;
@@ -41,13 +41,6 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
     return new GroupView();
   }
 
-  public static class SimplePolylineView extends PolyLineView {
-    @Override
-    protected boolean contains(Vector vector) {
-      return false;
-    }
-  }
-
 
 
 
@@ -55,7 +48,7 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
     if (mySelectionView != null) {
-      PolyLineView selectionFrame = new PolyLineView();
+      PolyLineView selectionFrame = new AbstractDecoratorView.SimplePolylineView();
       selectionFrame.color().set(Color.GRAY);
       updateSelectionPolyline(selectionFrame);
       mySelectionView.children().clear();

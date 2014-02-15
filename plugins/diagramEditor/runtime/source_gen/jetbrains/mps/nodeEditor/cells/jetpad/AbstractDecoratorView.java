@@ -75,7 +75,7 @@ public abstract class AbstractDecoratorView extends GroupView {
 
 
   protected View createSelectionRect(Vector origin) {
-    PolyLineView selectionRect = new PolyLineView();
+    PolyLineView selectionRect = new AbstractDecoratorView.SimplePolylineView();
     selectionRect.background().set(Color.LIGHT_GRAY);
     selectionRect.color().set(Color.GRAY);
     selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
@@ -87,4 +87,11 @@ public abstract class AbstractDecoratorView extends GroupView {
   }
 
 
+
+  public static class SimplePolylineView extends PolyLineView {
+    @Override
+    protected boolean contains(Vector vector) {
+      return false;
+    }
+  }
 }

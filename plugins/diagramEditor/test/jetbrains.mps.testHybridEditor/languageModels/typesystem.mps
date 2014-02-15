@@ -281,5 +281,22 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="adck.725186580883451828" resolveInfo="InputPort" />
     </node>
   </root>
+  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3804439703459446717" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="check_outputport" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="3804439703459446718" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="3804439703459446719" nodeInfo="nn">
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3804439703459446720" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="input port error" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3804439703459446721" nodeInfo="nn">
+          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3804439703459446722" resolveInfo="outputPort" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3804439703459446722" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="outputPort" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="adck.725186580883451839" resolveInfo="OutputPort" />
+    </node>
+  </root>
 </model>
 

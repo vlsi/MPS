@@ -22,8 +22,6 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
-import java.util.List;
-import jetbrains.jetpad.geometry.Segment;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
@@ -119,7 +117,7 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
 
 
     public Mapper<SNode, ConnectorDecoratorView> createDecorationMapper() {
-      return new Mapper<SNode, ConnectorDecoratorView>(getSNode(), new ConnectorDecoratorView()) {
+      return new Mapper<SNode, ConnectorDecoratorView>(getSNode(), createConnectorDecoratorView()) {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
@@ -141,22 +139,25 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
               getTarget().setSelected(isSelected);
             }
           }));
-          ReadableProperty<Boolean> isValid = ((PolyLineConnection) descendantMapper.getTarget()).view().valid();
-          configuration.add(Synchronizers.forProperty(isValid, new WritableProperty<Boolean>() {
-            public void set(Boolean isValid) {
-              if (isValid) {
-                List<Segment> segmentList = ((PolyLineConnection) descendantMapper.getTarget()).getSegments();
-                if (segmentList.isEmpty()) {
-                  return;
-                }
-                getTarget().updateErrorView(segmentList);
-                getTarget().updateSelectionView(segmentList);
-              }
-            }
-          }));
+          ReadableProperty<Boolean> valid = ((PolyLineConnection) descendantMapper.getTarget()).view().valid();
+          configuration.add(Synchronizers.forProperty(valid, getTarget().isValid()));
 
         }
       };
+    }
+
+    private ConnectorDecoratorView createConnectorDecoratorView() {
+      ConnectorDecoratorView connectorDecoratorView = new ConnectorDecoratorView();
+      DiagramCell diagramCell = getDiagramCell();
+      if (diagramCell == null) {
+        return connectorDecoratorView;
+      }
+      Mapper<? super SNode, ?> descendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
+      if (descendantMapper == null) {
+        return connectorDecoratorView;
+      }
+      connectorDecoratorView.setSegments(((PolyLineConnection) descendantMapper.getTarget()).getSegments());
+      return connectorDecoratorView;
     }
 
 
