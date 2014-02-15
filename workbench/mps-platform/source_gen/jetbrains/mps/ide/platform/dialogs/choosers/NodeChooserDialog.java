@@ -14,7 +14,7 @@ import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -59,7 +59,7 @@ public class NodeChooserDialog extends DialogWrapper {
       }
 
       @Override
-      public SNodeReference[] find(IScope scope) {
+      public SNodeReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 

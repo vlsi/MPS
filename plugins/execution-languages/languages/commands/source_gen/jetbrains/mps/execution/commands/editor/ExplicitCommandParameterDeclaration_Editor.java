@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -38,10 +37,10 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1nfcr6_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1nfcr6_b0(editorContext, node));
-    if (renderingCondition_1nfcr6_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1nfcr6_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1nfcr6_c0(editorContext, node));
     }
-    if (renderingCondition_1nfcr6_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1nfcr6_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_1nfcr6_d0(editorContext, node));
     }
     return editorCell;
@@ -83,7 +82,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  private static boolean renderingCondition_1nfcr6_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1nfcr6_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
@@ -91,7 +90,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1nfcr6_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -127,7 +126,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  private static boolean renderingCondition_1nfcr6_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1nfcr6_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isRequired");
   }
 
@@ -144,7 +143,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "required:");
     editorCell.setCellId("Constant_1nfcr6_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

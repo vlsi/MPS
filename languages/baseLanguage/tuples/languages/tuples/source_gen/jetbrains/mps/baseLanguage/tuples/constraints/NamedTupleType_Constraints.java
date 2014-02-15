@@ -9,17 +9,12 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Condition;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
@@ -39,26 +34,15 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ? _context.getEnclosingNode() : _context.getReferenceNode()), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
-              @Override
-              protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
-                List<SNode> result = new ArrayList<SNode>();
-                for (SNode classifier : classifiers) {
-                  if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")) {
-                    result.add(classifier);
-                  }
-                }
-                return result;
-              }
-            };
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_rcfzhs_a0a0a0a0a1a0b0a1a1;
           }
 
           @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_rcfzhs_a0a1a0a0a1a0b0a1a1;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return ClassifierScopes.getVisibleClassifiersScope(((_context.getReferenceNode() == null) ? _context.getEnclosingNode() : _context.getReferenceNode()), false);
           }
         };
       }
@@ -66,5 +50,5 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_rcfzhs_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1652220223504359703");
+  private static SNodePointer breakingNode_rcfzhs_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "4443326012737938966");
 }

@@ -16,11 +16,9 @@
 
 package jetbrains.mps.ide.ui.tree.module;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModuleChangingOperationContext implements IOperationContext {
   private final SModule myModule;
@@ -49,12 +47,6 @@ public class ModuleChangingOperationContext implements IOperationContext {
   @Override
   public Project getProject() {
     return myOperationContext.getProject();
-  }
-
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return myOperationContext.getScope();
   }
 
   @Override

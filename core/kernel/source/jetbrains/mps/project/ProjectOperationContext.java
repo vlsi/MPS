@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -43,12 +42,6 @@ public class ProjectOperationContext extends StandaloneMPSContext {
   @Override
   public Project getProject() {
     return myProject;
-  }
-
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return getProject().getScope();
   }
 
   public String toString() {

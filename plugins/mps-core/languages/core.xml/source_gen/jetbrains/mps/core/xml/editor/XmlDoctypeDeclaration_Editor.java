@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -42,7 +41,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_kqvvq_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_kqvvq_a0a(editorContext, node);
@@ -52,7 +51,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
@@ -60,7 +59,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!");
     editorCell.setCellId("Constant_kqvvq_a0a");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -72,7 +71,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!");
     editorCell.setCellId("Constant_kqvvq_a0a_0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "openTag");
@@ -94,7 +93,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DOCTYPE");
     editorCell.setCellId("Constant_kqvvq_a1a");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +107,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_doctypeName");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -153,7 +152,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (true));
       return newId;
@@ -172,7 +171,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (false));
       return newId;
@@ -181,7 +180,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_kqvvq_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_kqvvq_a2a(editorContext, node);
@@ -191,7 +190,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 
@@ -199,7 +198,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_kqvvq_a2a");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     editorCell.getStyle().putAll(style);
@@ -211,7 +210,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_kqvvq_a2a_0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "openTag");

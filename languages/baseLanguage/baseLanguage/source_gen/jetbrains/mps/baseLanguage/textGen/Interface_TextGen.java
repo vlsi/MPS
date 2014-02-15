@@ -8,12 +8,12 @@ import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
@@ -28,7 +28,7 @@ public class Interface_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), this.getSNode());
+      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")));
     }
     if (!(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Interface")).contains(node))) {
       this.append("static ");
@@ -37,12 +37,14 @@ public class Interface_TextGen extends SNodeTextGen {
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
-      this.append(" extends ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "extendedInterface", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).last()) {
-            this.append(", ");
+      {
+        this.append(" extends ");
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "extendedInterface", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }

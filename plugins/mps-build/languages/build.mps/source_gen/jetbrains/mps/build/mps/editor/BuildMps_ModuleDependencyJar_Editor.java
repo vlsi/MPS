@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
@@ -30,7 +29,7 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_z29e2a_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z29e2a_b0(editorContext, node));
-    if (renderingCondition_z29e2a_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_z29e2a_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_z29e2a_c0(editorContext, node));
     }
     return editorCell;
@@ -40,7 +39,7 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "jar");
     editorCell.setCellId("Constant_z29e2a_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -77,7 +76,7 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_z29e2a_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_z29e2a_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customLocation", true) != null);
   }
 
@@ -85,7 +84,7 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");
     editorCell.setCellId("Constant_z29e2a_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

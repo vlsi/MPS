@@ -29,7 +29,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vo2134_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

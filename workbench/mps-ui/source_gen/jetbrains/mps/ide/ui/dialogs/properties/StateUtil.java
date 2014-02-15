@@ -8,10 +8,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 
 public class StateUtil {
   public static final int normal = 0;
@@ -35,20 +31,6 @@ public class StateUtil {
     return true;
   }
 
-  public static boolean isInScope(final IScope scope, final SModelReference modelReference) {
-    SModel model;
-    if (scope != null) {
-      model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        @Override
-        public SModel compute() {
-          return scope.getModelDescriptor(modelReference);
-        }
-      });
-      return model != null;
-    }
-    return true;
-  }
-
   public static int compare(boolean isOk1, boolean isOk2) {
     if (isOk1 && !(isOk2)) {
       return 1;
@@ -57,14 +39,6 @@ public class StateUtil {
       return -1;
     }
     return 0;
-  }
-
-  public static int compare(final SModelReference ref1, final SModelReference ref2, final IScope scope) {
-    int result = compare(isAvailable(ref1), isAvailable(ref2));
-    if (result != 0) {
-      return result;
-    }
-    return compare(isInScope(scope, ref1), isInScope(scope, ref2));
   }
 
   public static int compare(SModuleReference moduleRef1, SModuleReference moduleRef2) {

@@ -20,6 +20,7 @@
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="mps-icons" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 

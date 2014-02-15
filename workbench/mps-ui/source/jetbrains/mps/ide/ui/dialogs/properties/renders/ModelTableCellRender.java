@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.ColoredTableCellRenderer;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.choose.models.ModelPresentation;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -24,11 +23,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JTable;
 
 public class ModelTableCellRender extends ColoredTableCellRenderer {
-  protected IScope myScope;
-  public ModelTableCellRender(IScope scope) {
-    super();
-    myScope = scope;
-  }
   @Override
   protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
     setPaintFocusBorder(false);
@@ -40,7 +34,7 @@ public class ModelTableCellRender extends ColoredTableCellRenderer {
       setIcon(modelPresentation.doGetIcon());
       DependencyCellState cellState = getDependencyCellState(modelReference);
       append(modelPresentation.doGetPresentableText(), cellState.getTextAttributes());
-      if(cellState.equals(DependencyCellState.NOT_IN_SCOPE)) {
+      if (cellState.equals(DependencyCellState.NOT_IN_SCOPE)) {
         append(" (out of scope)", cellState.getTextAttributes());
       }
     }

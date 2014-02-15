@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2j80dxafop9sws2x0pl20p3fai11nqw">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
-  <common hash="-blangiegs7eq8o3i0id7zgs1fk9tt99" dependsOnNodes="true" />
-  <source id="1560298786499494350" name="CopySupport" hash="-b9w1zxsym4sekmtla9ekvidf4w04qfn">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="CopySupport.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-2j80dxafop9sws2x0pl20p3fai11nqw" />
 

@@ -1,15 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1d0upp9wocvifcmk32ljf3x6gmkvg2e">
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9w55c48vk485rs349fzpe325xrq4cz2" />
-  <dep model="r:0f9e1a40-e026-47d9-b2c4-9e19063036dd(jetbrains.mps.core.smodel.editor)" hash="-aqlt85a1uoqfqo5l4vdlq6egrfkr88z" />
-  <dep model="r:51081164-5cb8-4581-b1a7-d92a2d5fc7da(jetbrains.mps.core.smodel.typesystem)" hash="arp4d07u18ol12920q535hcqbbsd90l" />
-  <dep model="r:e0893869-3da2-44ae-906d-cfcba5f538c8(jetbrains.mps.core.smodel.findUsages)" hash="548kv2528exw15d7jf2u65a8hw4uk1w" />
-  <common dependsOnNodes="true">
-    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
-    <dep model="r:0f9e1a40-e026-47d9-b2c4-9e19063036dd(jetbrains.mps.core.smodel.editor)" />
-    <dep model="r:51081164-5cb8-4581-b1a7-d92a2d5fc7da(jetbrains.mps.core.smodel.typesystem)" />
-    <dep model="r:e0893869-3da2-44ae-906d-cfcba5f538c8(jetbrains.mps.core.smodel.findUsages)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="1d0upp9wocvifcmk32ljf3x6gmkvg2e" />
 

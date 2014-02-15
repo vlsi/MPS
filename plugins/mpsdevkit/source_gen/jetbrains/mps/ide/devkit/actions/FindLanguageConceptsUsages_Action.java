@@ -18,7 +18,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConceptsUsagesFinder;
@@ -82,10 +82,6 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSCommonDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
-      return false;
-    }
     return true;
   }
 
@@ -94,7 +90,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
-      final SearchScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
+      final SearchScope scope = GlobalScope.getInstance();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           query[0] = new SearchQuery(module, scope);

@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -51,7 +50,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "optionsName";
         return isEmptyString((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
       }

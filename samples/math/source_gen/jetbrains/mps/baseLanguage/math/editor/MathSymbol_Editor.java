@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.CellAlign;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -68,12 +67,12 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_b0ego6_a0b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_b0ego6_a0b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_b0ego6_a1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_b0ego6_b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b0ego6_c1a(editorContext, node));
-    if (renderingCondition_b0ego6_a3b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_b0ego6_a3b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_b0ego6_d1a(editorContext, node));
     }
     return editorCell;
@@ -86,7 +85,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
   }
 
@@ -174,7 +173,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "precondition", true) != null;
   }
 

@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
 
@@ -41,7 +40,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mps settings");
     editorCell.setCellId("Constant_koy33t_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -65,7 +64,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap");
     editorCell.setCellId("Constant_koy33t_a1a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -99,7 +98,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_koy33t_a2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_koy33t_b2a(editorContext, node));
-    if (renderingCondition_koy33t_a2c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_koy33t_a2c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_koy33t_c2a(editorContext, node));
     }
     return editorCell;
@@ -109,7 +108,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test generation");
     editorCell.setCellId("Constant_koy33t_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -144,7 +143,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_koy33t_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_koy33t_a2c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "testGeneration");
   }
 
@@ -152,7 +151,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes:");
     editorCell.setCellId("Constant_koy33t_a2c0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -194,7 +193,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generation max heap size in mb");
     editorCell.setCellId("Constant_koy33t_a3a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

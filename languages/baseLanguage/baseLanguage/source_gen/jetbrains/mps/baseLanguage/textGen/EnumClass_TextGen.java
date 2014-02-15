@@ -8,11 +8,11 @@ import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
@@ -27,7 +27,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), this.getSNode());
+      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")));
     }
     if (!(SNodeOperations.isRoot(node))) {
       this.append("static ");
@@ -35,30 +35,34 @@ public class EnumClass_TextGen extends SNodeTextGen {
     this.appendWithIndent("enum ");
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-      this.append(" implements ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
-            this.append(", ");
+      {
+        this.append(" implements ");
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "implementedInterface", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }
     }
     this.append(" {");
     this.increaseDepth();
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "enumConstant", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).last()) {
-          this.append(",");
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "enumConstant", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(",");
         }
       }
+      this.append(";");
+      this.appendNewLine();
+      this.appendNewLine();
+      BaseClassConceptTextGen.members(node, this);
     }
-    this.append(";");
-    this.appendNewLine();
-    this.appendNewLine();
-    BaseClassConceptTextGen.members(node, this);
     this.decreaseDepth();
     this.appendWithIndent("}");
     this.appendNewLine();

@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,10 +38,10 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_7mrjrs_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7mrjrs_b0(editorContext, node));
-    if (renderingCondition_7mrjrs_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_7mrjrs_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_7mrjrs_c0(editorContext, node));
     }
-    if (renderingCondition_7mrjrs_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_7mrjrs_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_7mrjrs_d0(editorContext, node));
     }
     return editorCell;
@@ -51,7 +50,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_7mrjrs_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0()}));
     return editorCell;
@@ -81,7 +80,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -94,7 +93,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_7mrjrs_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_7mrjrs_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
@@ -102,7 +101,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     public MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
     }
 
@@ -134,7 +133,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_7mrjrs_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_7mrjrs_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 }

@@ -41,6 +41,7 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -387,7 +388,14 @@ class GenerationSession {
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, currentOutputModel);
         recycleWasteModel(currentOutputModel, true);
-        myMinorStep--; // what for?!
+        if (!isPrimary) {
+          // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
+          // applyRules did that for primary step regardless of hasChanges state, hence we decrement minorStep
+          // only on secondary no-change runs to forget about no-op applyRules.
+          // I consider this changes safer than to remove isPrimary check in applyRules (it's appealing
+          // to save TMWM only when there are changes) as it seems there's assumption about TMWM presence (if used) for each step.
+          myMinorStep--;
+        }
         if (myLogger.needsInfo()) {
           myLogger.info("unchanged, empty model '" + SModelStereotype.getStereotype(currentOutputModel.getReference().getModelName()) + "' removed");
         }
@@ -435,9 +443,10 @@ class GenerationSession {
     IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     if (tracer.isTracing()) {
       myLogger.error("last rules applied:");
-      List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(realOutputModel.getReference());
-      for (Pair<SNode, SNode> pair : pairs) {
-        myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
+      List<Pair<SNodeReference, SNodeReference>> pairs = tracer.getAllAppliedRulesWithInputNodes(realOutputModel.getReference());
+      for (Pair<SNodeReference, SNodeReference> pair : pairs) {
+        SNode templateNode = pair.o1 == null ? null : pair.o1.resolve(MPSModuleRepository.getInstance());
+        myLogger.error(pair.o1, templateNode == null ? "unknown rule" : String.format("rule: %s", SNodeUtil.getDebugText(templateNode)),
             GeneratorUtil.describe(pair.o2, "input"));
       }
     } else {
@@ -471,11 +480,15 @@ class GenerationSession {
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
-    if (!ruleManager.getScripts().preprocessing()) {
+    if (ruleManager.getPreProcessScripts().isEmpty()) {
       return currentInputModel;
     }
 
-    final boolean needToCloneInputModel = ruleManager.getScripts().needModelCloneToPreprocess(currentInputModel, !myDiscardTransients);
+    final boolean modifiesModel = ruleManager.getPreProcessScripts().modifiesModel();
+    // need to clone input model?
+    // generally, there's no need to have a copy to run a script, even if it modifies the model
+    // however, if we keep transients AND model is modified, it's handy to get a copy of the model to see the difference
+    final boolean needToCloneInputModel = modifiesModel && !myDiscardTransients;
     SModel toRecycle = null;
     if (needToCloneInputModel) {
       ttrace.push("model clone", false);
@@ -487,46 +500,44 @@ class GenerationSession {
       new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getScripts().getPreMappingScripts());
+      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getPreProcessScripts().getScripts());
 
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
       currentInputModel = currentInputModel_clone;
-      myDependenciesBuilder.scriptApplied(currentInputModel); // WTF? why scriptApplied for a blank copy?
+      myDependenciesBuilder.scriptApplied(currentInputModel); // scriptApplied for a blank copy to record old root to new root mapping
     } else {
-      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getScripts().getPreMappingScripts());
+      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getPreProcessScripts().getScripts());
     }
 
-    boolean preProcessed = false;
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel,
         currentInputModel, myDependenciesBuilder);
-    for (TemplateMappingScript preMappingScript : ruleManager.getScripts().getPreMappingScripts()) {
+    for (TemplateMappingScript preMappingScript : ruleManager.getPreProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
       }
       templateGenerator.executeScript(preMappingScript);
-      preProcessed = true;
+    }
+    if (modifiesModel) {
+      myDependenciesBuilder.scriptApplied(currentInputModel);
     }
     if (needToCloneInputModel) {
-      myDependenciesBuilder.scriptApplied(currentInputModel);
       if (myNewCache != null) {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
       recycleWasteModel(toRecycle, false);
     }
-    if (myLogger.needsInfo() && preProcessed) {
-      myLogger.info("pre-processing finished");
-    }
+    myLogger.info("pre-processing finished");
     return currentInputModel;
   }
 
   private SModel postProcessModel(RuleManager ruleManager, SModel currentModel) throws GenerationFailureException {
-    if (!ruleManager.getScripts().postprocessing()) {
+    if (ruleManager.getPostProcessScripts().isEmpty()) {
       return currentModel;
     }
-
-    boolean needToCloneModel = ruleManager.getScripts().needModelCloneToPostprocess(currentModel, !myDiscardTransients);
+    // post-processing script is deemed to modify model always
+    final boolean needToCloneModel = !myDiscardTransients;
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone", false);
@@ -537,35 +548,37 @@ class GenerationSession {
       new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getScripts().getPostMappingScripts());
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone,
+          ruleManager.getPostProcessScripts().getScripts());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
     } else {
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getScripts().getPostMappingScripts());
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
+      // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
+      if (currentModel instanceof SModelInternal) {
+        ((SModelInternal) currentModel).disposeFastNodeFinder();
+      }
     }
 
-    boolean postProcessed = false;
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentModel, currentModel,
         myDependenciesBuilder);
-    for (TemplateMappingScript postMappingScript : ruleManager.getScripts().getPostMappingScripts()) {
+
+    for (TemplateMappingScript postMappingScript : ruleManager.getPostProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
       }
       templateGenerator.executeScript(postMappingScript);
-      postProcessed = true;
     }
+    myDependenciesBuilder.scriptApplied(currentModel);
     if (needToCloneModel) {
-      myDependenciesBuilder.scriptApplied(currentModel);
       if (myNewCache != null) {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
       recycleWasteModel(toRecycle, false);
     }
-    if (myLogger.needsInfo() && postProcessed) {
-      myLogger.info("post-processing finished");
-    }
+    myLogger.info("post-processing finished");
     return currentModel;
   }
 

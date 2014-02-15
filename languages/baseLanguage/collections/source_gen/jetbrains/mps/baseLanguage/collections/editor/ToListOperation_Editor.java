@@ -21,7 +21,7 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_fiobsf_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyOperation(style, editorCell);
+    Collections_Style_StyleSheet.apply_Operation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

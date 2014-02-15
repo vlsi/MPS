@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -92,7 +91,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_6h6dhy_a0");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no role>");
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_6h6dhy_a0a0()}));
@@ -112,7 +111,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     public LinkDeclaration_null_postfixCellMenu_6h6dhy_a0a0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(node, "target", false) != null)) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
@@ -137,17 +136,17 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_6h6dhy_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6h6dhy_b2a(editorContext, node));
-    if (renderingCondition_6h6dhy_a2c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a2c0(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_6h6dhy_c2a(editorContext, node));
     }
-    if (renderingCondition_6h6dhy_a3c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a3c0(node, editorContext)) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_6h6dhy_d2a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_6h6dhy_e2a(editorContext, node));
-    if (renderingCondition_6h6dhy_a5c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a5c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_6h6dhy_f2a(editorContext, node));
     }
-    if (renderingCondition_6h6dhy_a6c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a6c0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_6h6dhy_g2a(editorContext, node));
     }
     return editorCell;
@@ -197,7 +196,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("target");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -232,7 +231,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_sourceCardinality");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -245,7 +244,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a2c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "specializedLink", false) == null;
   }
 
@@ -253,7 +252,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     public LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c2a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
         for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
@@ -289,7 +288,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a3c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a3c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
 
@@ -316,7 +315,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a5c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a5c0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "specializedLink", false) != null);
   }
 
@@ -324,7 +323,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specializes:");
     editorCell.setCellId("Constant_6h6dhy_a5c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -389,13 +388,13 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered");
     editorCell.setCellId("Constant_6h6dhy_g2a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a6c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a6c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "unordered");
   }
 
@@ -412,7 +411,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered:");
     editorCell.setCellId("Constant_6h6dhy_a0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

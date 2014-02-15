@@ -8,7 +8,6 @@ import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -36,7 +35,7 @@ public class HelpCommand_Behavior {
 
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     if ((SLinkOperations.getTarget(thisNode, "target", true) == null)) {
-      Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleModel(), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleTab().getConsoleModel())).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(it);
         }

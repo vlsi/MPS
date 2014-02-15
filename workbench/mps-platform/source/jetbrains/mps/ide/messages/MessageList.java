@@ -25,7 +25,6 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.pom.Navigatable;
 import com.intellij.pom.NavigatableAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
@@ -43,7 +42,6 @@ import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -66,7 +64,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * User: fyodor
  * Date: 4/21/11
  */
-abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
+public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
   static final int MAX_SIZE = 10000;
 
@@ -495,7 +493,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     return renderer.getPreferredSize().width;
   }
 
-  private boolean isVisible(IMessage m) {
+  public boolean isVisible(IMessage m) {
     switch (m.getKind()) {
       case ERROR:
         return true;
@@ -585,6 +583,14 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
     setSearches(state.getSearches());
+  }
+
+  public void setWarningsEnabled(boolean enabled) {
+    myWarningsAction.setSelected(null, enabled);
+  }
+
+  public void setInfoEnabled(boolean enabled) {
+    myInfoAction.setSelected(null, enabled);
   }
 
   public /*for tests*/ static class FastListModel extends AbstractListModel {

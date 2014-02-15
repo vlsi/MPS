@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -33,7 +32,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_bap4zq_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_bap4zq_a0(editorContext, node));
-    if (renderingCondition_bap4zq_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bap4zq_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bap4zq_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_bap4zq_c0(editorContext, node));
@@ -109,7 +108,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bap4zq_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bap4zq_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
   }
 
@@ -117,7 +116,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_bap4zq_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -147,7 +146,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_bap4zq_c1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

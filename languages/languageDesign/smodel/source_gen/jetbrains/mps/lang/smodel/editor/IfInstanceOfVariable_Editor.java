@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -51,7 +50,7 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLocalVariable(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LocalVariable(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IfInstanceOfVariable_Editor.IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -68,7 +67,7 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     public IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"), "nodeConcept", false);
       List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "node");
       if (nodeConcept != null) {

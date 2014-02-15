@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import java.text.SimpleDateFormat;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -27,7 +26,7 @@ public class BuildVariableMacroInitWithDate_Constraints extends BaseConstraintsD
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "pattern";
         try {
           new SimpleDateFormat((SPropertyOperations.getString(propertyValue)));

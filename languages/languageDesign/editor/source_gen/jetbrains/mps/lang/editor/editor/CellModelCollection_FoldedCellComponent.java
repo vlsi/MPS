@@ -30,7 +30,7 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9yikpc_a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_9yikpc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9yikpc_b0(editorContext, node));
@@ -41,7 +41,7 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/folded cell:");
     editorCell.setCellId("Constant_9yikpc_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -57,7 +57,7 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
       editorCell.setRole("foldedCellModel");
     }
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

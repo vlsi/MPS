@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -37,7 +36,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
     editorCell.setCellId("Constant_d77dl_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -45,7 +44,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_d77dl_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CharConstant_Editor.renderingCondition_d77dl_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = CharConstant_Editor.renderingCondition_d77dl_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_d77dl_a1a(editorContext, node);
@@ -58,7 +57,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
 
@@ -70,7 +69,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_charConstant");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -91,7 +90,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_charConstant_1");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyCompactKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_CompactKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -108,7 +107,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
     editorCell.setCellId("Constant_d77dl_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

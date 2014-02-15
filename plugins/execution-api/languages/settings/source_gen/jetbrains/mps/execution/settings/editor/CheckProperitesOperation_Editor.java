@@ -71,7 +71,7 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
         editorCell.setRole("member");
       }
       Style style = new StyleImpl();
-      RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+      RunConfigurations_StyleSheet.apply_operation(style, editorCell);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
@@ -81,7 +81,7 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ti2jjv_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -91,7 +91,7 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ti2jjv_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

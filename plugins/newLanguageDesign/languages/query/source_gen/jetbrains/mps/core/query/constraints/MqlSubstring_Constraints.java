@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -49,7 +48,7 @@ public class MqlSubstring_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public void setValue(SNode node, String propertyValue, IScope scope) {
+      public void setValue(SNode node, String propertyValue) {
         String propertyName = "kind";
         // FIXME: hardcoded 1, I coudn't get enum member comparison to work, generator seems to be broken 
         if ((SPropertyOperations.getInteger(propertyValue)) == 1) {

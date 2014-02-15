@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -31,7 +30,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_uc5iyq_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_uc5iyq_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_uc5iyq_a0(editorContext, node));
     }
     return editorCell;
@@ -53,7 +52,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 
@@ -61,7 +60,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
     editorCell.setCellId("Constant_uc5iyq_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -73,7 +72,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
     editorCell.setCellId("Constant_uc5iyq_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -83,7 +82,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
     editorCell.setCellId("Constant_uc5iyq_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyJavaDoc(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -94,7 +93,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_uc5iyq_d0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -105,7 +104,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**...*/");
     editorCell.setCellId("Constant_uc5iyq_a0a_0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFoldedCell(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FoldedCell(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

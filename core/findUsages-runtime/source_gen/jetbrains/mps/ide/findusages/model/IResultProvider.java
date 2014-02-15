@@ -4,9 +4,9 @@ package jetbrains.mps.ide.findusages.model;
 
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface IResultProvider extends IExternalizeable {
   public SearchResults getResults(SearchQuery query, ProgressMonitor monitor);
-  public long getEstimatedTime(IScope scope);
+  public long getEstimatedTime(SearchScope scope);
 }

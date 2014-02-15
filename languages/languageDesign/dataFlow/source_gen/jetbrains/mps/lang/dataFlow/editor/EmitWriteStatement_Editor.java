@@ -34,7 +34,7 @@ public class EmitWriteStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_7agu8k_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

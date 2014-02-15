@@ -10,7 +10,7 @@ import jetbrains.mps.util.JavaNameUtil;
 public abstract class BaseLangInternal extends BaseLanguageTextGen {
   public static void className(String fqClassName, SNode contextNode, final SNodeTextGen textGen) {
     if (fqClassName == null) {
-      textGen.foundError();
+      textGen.foundError("Class name is undefined");
       textGen.append("???");
     } else {
       if (fqClassName.contains("@")) {

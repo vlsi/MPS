@@ -15,9 +15,12 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.typesystem.uiActions.AffectingRulesFinder;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -73,7 +76,8 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
       final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getScope());
+          SearchScope scope = ((AbstractModule) SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getModule()).getScope();
+          query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), scope);
           provider.value = FindUtils.makeProvider(new AffectingRulesFinder());
         }
       });

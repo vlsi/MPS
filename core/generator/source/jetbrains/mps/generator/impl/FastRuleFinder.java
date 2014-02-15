@@ -16,11 +16,13 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -96,6 +98,11 @@ public class FastRuleFinder {
     private final Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
     // can be modified by several threads FIXME we can block rules on a per-root (i.e. per thread) basis, so no synchronization is really needed here
     private final Map<SNode, Object> myNextReductionData = new ConcurrentHashMap<SNode, Object>();
+    // although not quite nice, keep weavings separate from reductions but do it the same way - reductionData needs refactoring anyway
+    // and once changed, weaving rules would go through refactoring as well
+    private final Map<SNode, Collection<TemplateWeavingRule>> myCurrentWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
+    // weavings are executed from the single thread
+    private final Map<SNode, Collection<TemplateWeavingRule>> myNextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
 
     public boolean isReductionBlocked(SNode node, TemplateReductionRule rule, ReductionContext reductionContext) {
       return isReductionBlocked(node, rule)
@@ -120,10 +127,34 @@ public class FastRuleFinder {
       myNextReductionData.put(outputNode, o);
     }
 
+    public boolean isWeavingBlocked(@NotNull SNode node, @NotNull TemplateWeavingRule rule) {
+      return myCurrentWeaveData.containsKey(node) && myCurrentWeaveData.get(node).contains(rule);
+    }
+
+    public void blockWeaving(@NotNull SNode inputNode, @NotNull TemplateWeavingRule rule) {
+      Collection<TemplateWeavingRule> nxt = myNextWeaveData.get(inputNode);
+      if (nxt == null) {
+        nxt = new ArrayList<TemplateWeavingRule>(5);
+        Collection<TemplateWeavingRule> cur = myCurrentWeaveData.get(inputNode);
+        if (cur != null) {
+          nxt.addAll(cur);
+        }
+        myNextWeaveData.put(inputNode, nxt);
+      }
+      if (nxt.contains(rule)) {
+        return;
+      }
+      nxt.add(rule);
+    }
+
     public void advanceStep() {
       myCurrentReductionData.clear();
       myCurrentReductionData.putAll(myNextReductionData);
       myNextReductionData.clear();
+      //
+      myCurrentWeaveData.clear();
+      myCurrentWeaveData.putAll(myNextWeaveData);
+      myNextWeaveData.clear();
     }
   }
 }

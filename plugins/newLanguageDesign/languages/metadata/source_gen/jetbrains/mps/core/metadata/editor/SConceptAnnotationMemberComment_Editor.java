@@ -38,7 +38,7 @@ public class SConceptAnnotationMemberComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_1ksyt1_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyComment(style, editorCell);
+    default_StyleSheet.apply_comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SConceptAnnotationMemberComment_Editor.ReplaceWith_SConceptAnnotationMember_cellMenu_1ksyt1_a0a0()}));
@@ -63,7 +63,7 @@ public class SConceptAnnotationMemberComment_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_comment");
     Style style = new StyleImpl();
-    default_StyleSheet.applyComment(style, editorCell);
+    default_StyleSheet.apply_comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

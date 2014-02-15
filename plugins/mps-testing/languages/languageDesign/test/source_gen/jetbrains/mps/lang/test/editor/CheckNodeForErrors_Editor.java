@@ -36,7 +36,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_ue6gv5_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,10 +63,10 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ue6gv5_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type errors");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error messages");
     editorCell.setCellId("Constant_ue6gv5_c0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -76,7 +76,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ue6gv5_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

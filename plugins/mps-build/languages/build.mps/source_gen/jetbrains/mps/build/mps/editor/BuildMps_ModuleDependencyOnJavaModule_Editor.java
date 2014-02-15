@@ -18,7 +18,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEditor {
@@ -31,7 +30,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
     editorCell.setCellId("Collection_1yxynp_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_1yxynp_a0(editorContext, node));
-    if (renderingCondition_1yxynp_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1yxynp_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_1yxynp_b0(editorContext, node));
     }
     return editorCell;
@@ -99,14 +98,14 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_1yxynp_b0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_javaDepReexport.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_1yxynp_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1yxynp_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "reexport");
   }
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -26,12 +25,12 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bs8xw7_a");
     editorCell.setBig(true);
-    if (renderingCondition_bs8xw7_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bs8xw7_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_bs8xw7_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_bs8xw7_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bs8xw7_c0(editorContext, node));
-    if (renderingCondition_bs8xw7_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bs8xw7_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_bs8xw7_d0(editorContext, node));
     }
     return editorCell;
@@ -41,20 +40,20 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_bs8xw7_a0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInsertPosition(style, editorCell);
+    DataFlow_StyleSheet.apply_InsertPosition(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_bs8xw7_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bs8xw7_a0a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "position", true) != null;
   }
 
   private EditorCell createComponent_bs8xw7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -99,7 +98,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "position", true) != null;
   }
 }

@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -94,7 +93,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("function");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -112,7 +111,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_26flog_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -125,7 +124,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new UtilityMethodCall_Editor.parameterListHandler_26flog_c0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_26flog_a2a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_26flog_a2a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -197,7 +196,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_26flog_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_26flog_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall"), "function", false), "parameter", true)).isNotEmpty();
   }
 
@@ -205,19 +204,19 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_26flog_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_26flog_a3a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_26flog_a3a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_26flog_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_26flog_a3a(SNode node, EditorContext editorContext) {
     if (SLinkOperations.getTarget(node, "function", false) == null) {
       return false;
     }

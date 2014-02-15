@@ -38,7 +38,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_q2tbc1_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractPaddingStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_q2tbc1_a0a0()}));
     return editorCell;

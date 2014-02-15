@@ -76,7 +76,7 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ClassifierScopes.getClassesForStaticFieldReference(_context.getContextNode(), operationContext.getScope());
+            return ClassifierScopes.getClassesForStaticFieldReference(_context.getContextNode());
           }
         };
       }

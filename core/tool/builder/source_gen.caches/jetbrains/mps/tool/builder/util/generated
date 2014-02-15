@@ -1,30 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-51ife5mhletzr1jfx2a7xuy3vxsioh4">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
-  <common hash="1n8ukx82e37tc09hpdgr4vwqr2nrii3" dependsOnNodes="true" />
-  <source id="4774692914340655529" name="PathManager" hash="-37nrsuuc6ewpx71bdl9zaswma2it6cf">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="PathManager.java" />
-  </source>
-  <source id="5900076103425047615" name="MapPathMacrosProvider" hash="45ujam7cqefxpsq8plmc9csddn31sou">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="MapPathMacrosProvider.java" />
-  </source>
-  <source id="5900076103425675110" name="SetLibraryContributor" hash="6xyo8v8nhu2tijcj8v1w4k370rsyjh0">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="SetLibraryContributor.java" />
-  </source>
-  <source id="878521226300613674" name="MpsPlatform" hash="blfxor6c4drhxg4h92rqss7xh77h40">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="MpsPlatform.java" />
-  </source>
-  <source id="1365200781785613152" name="ClassloaderUtil" hash="-9hb547434v623eyxvusq3643zt6h75a">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ClassloaderUtil.java" />
-  </source>
-  <source id="1365200781786323609" name="ContainerUtil" hash="-54puk771ly0tg289y113kadqq6idsro">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ContainerUtil.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-51ife5mhletzr1jfx2a7xuy3vxsioh4" />
 

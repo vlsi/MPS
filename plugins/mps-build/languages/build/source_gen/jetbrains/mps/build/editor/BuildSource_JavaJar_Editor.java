@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -33,7 +32,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gw6hs4_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gw6hs4_b0(editorContext, node));
-    if (renderingCondition_gw6hs4_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gw6hs4_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gw6hs4_c0(editorContext, node));
     }
     return editorCell;
@@ -42,7 +41,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_gw6hs4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSource_JavaJar_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_gw6hs4_a0a0()}));
     return editorCell;
@@ -88,7 +87,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gw6hs4_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gw6hs4_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customLocation", true) != null);
   }
 
@@ -96,7 +95,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");
     editorCell.setCellId("Constant_gw6hs4_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

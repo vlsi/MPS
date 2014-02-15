@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -35,24 +34,24 @@ public class ModuleReferenceExpression_Behavior {
   }
 
   @NotNull
-  public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"))), scope);
+  public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
+    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"))));
   }
 
   @NotNull
-  public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept, IScope scope) {
+  public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
     ListSequence.fromList(result).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
     return result;
   }
 
   @Deprecated
-  public static List<SModule> call_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
+  public static List<SModule> call_getVisibleModules_4040588429969394404(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{});
   }
 
   @Deprecated
-  public static List<SModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName, IScope scope) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SModule>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class, IScope.class}, new Object[]{scope});
+  public static List<SModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SModule>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class}, new Object[]{});
   }
 }

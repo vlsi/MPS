@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -39,7 +38,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_dsthrr_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlExternalId_Editor.renderingCondition_dsthrr_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlExternalId_Editor.renderingCondition_dsthrr_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_dsthrr_a0a(editorContext, node);
@@ -49,7 +48,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isPublic");
   }
 
@@ -65,7 +64,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "PUBLIC");
     editorCell.setCellId("Constant_dsthrr_a0a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a0()}));
@@ -93,7 +92,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_publicId");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -110,7 +109,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SYSTEM");
     editorCell.setCellId("Constant_dsthrr_a0a");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a()}));
@@ -138,7 +137,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_systemId");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

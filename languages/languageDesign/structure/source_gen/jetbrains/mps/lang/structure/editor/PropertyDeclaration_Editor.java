@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.smodel.IScope;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -47,7 +46,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTransactionalProperty_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lnae77_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_lnae77_c0(editorContext, node));
-    if (renderingCondition_lnae77_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lnae77_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_lnae77_d0(editorContext, node));
     }
     return editorCell;
@@ -81,7 +80,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_lnae77_a0");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no name>");
@@ -166,13 +165,13 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
     editorCell.setCellId("Constant_lnae77_d0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_lnae77_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lnae77_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
 
@@ -189,7 +188,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
     editorCell.setCellId("Constant_lnae77_a0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

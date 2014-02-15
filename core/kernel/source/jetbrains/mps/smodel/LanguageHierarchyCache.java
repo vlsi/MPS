@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -40,7 +39,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 // todo: DO NOT USE if not sure, use ConceptDescendantsCache
 // todo: should be built based on nodes, useful for ConceptHierarchyTree?
@@ -127,7 +125,7 @@ public class LanguageHierarchyCache implements CoreComponent {
         result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<String>>() {
           @Override
           public List<String> compute() {
-            SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+            SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName);
             if (declaration == null) {
               return Collections.emptyList();
             }
@@ -205,7 +203,7 @@ public class LanguageHierarchyCache implements CoreComponent {
 
     result.add(conceptFqName);
 
-    SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName);
     if (declaration == null) {
       return;
     }

@@ -38,7 +38,7 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_f4uw03_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+    RunConfigurations_StyleSheet.apply_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -47,7 +47,7 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_f4uw03_b0");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -97,7 +97,7 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("persistentPropertyDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -115,7 +115,7 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_f4uw03_d0");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

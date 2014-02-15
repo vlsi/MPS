@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubstituteAction {
   /**
    * @param concept instanceof AbstractConceptDeclaration
    */
-  public DefaultSimpleSubstituteAction(SNode concept, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    super(concept, parentNode, currentChild, setter, scope);
+  public DefaultSimpleSubstituteAction(SNode concept, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
+    super(concept, parentNode, currentChild, setter);
   }
 
   public boolean hasSubstitute() {

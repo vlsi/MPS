@@ -51,7 +51,7 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
       public Language select(final Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         return ModelAccess.instance().runReadAction(new Computable<Language>() {
           public Language compute() {
-            return (Language) SModelUtil.findConceptDeclaration(it._0(), GlobalScope.getInstance()).getModel().getModule();
+            return (Language) SModelUtil.findConceptDeclaration(it._0()).getModel().getModule();
           }
         });
       }

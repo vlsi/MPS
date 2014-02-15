@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -41,7 +40,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_d5p1uc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_d5p1uc_b0(editorContext, node));
-    if (renderingCondition_d5p1uc_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_d5p1uc_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_d5p1uc_c0(editorContext, node));
     }
     return editorCell;
@@ -51,7 +50,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_d5p1uc_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -105,7 +104,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
         editorCell.setRole("annotation");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -132,7 +131,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_d5p1uc_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_d5p1uc_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }
 
@@ -140,7 +139,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_d5p1uc_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -223,7 +222,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_d5p1uc_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

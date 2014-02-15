@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="erpul3jv3xpmri231h9kpqs0bgngtnu">
-  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="4fik9q08vp6y6bso4j02p2ik4qfsl53" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="1fbejyngxgdw1z499uyby3j4q7dvwpn" />
-  <common hash="-16gls31c119k69vccif3q58m0pijhto" dependsOnNodes="true" />
-  <source id="6856864117646528335" name="Migration30Actions" hash="-5wywqg7mi88d11fhaxca7tabiwrvhl0">
-    <dep root="8418469470841235721" />
-    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
-    <file name="Migration30Actions.xml" />
-  </source>
-  <source id="8418469470841235721" name="Migrations30" hash="-a6snblususacsgaggsih5gs0n421uc5" />
-</dependencies>
+<dependencies version="2" modelHash="erpul3jv3xpmri231h9kpqs0bgngtnu" />
 

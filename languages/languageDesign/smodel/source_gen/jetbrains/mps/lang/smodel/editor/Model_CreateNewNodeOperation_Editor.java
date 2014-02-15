@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -42,7 +41,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_tsmvai_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tsmvai_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_tsmvai_c0(editorContext, node));
-    if (renderingCondition_tsmvai_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tsmvai_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_tsmvai_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_tsmvai_e0(editorContext, node));
@@ -58,7 +57,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_tsmvai_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -137,7 +136,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_tsmvai_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tsmvai_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
 
@@ -172,7 +171,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_tsmvai_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

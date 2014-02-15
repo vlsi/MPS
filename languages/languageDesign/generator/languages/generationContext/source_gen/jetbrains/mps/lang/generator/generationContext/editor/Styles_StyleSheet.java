@@ -4,25 +4,17 @@ package jetbrains.mps.lang.generator.generationContext.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
-  @Deprecated
-  public static Style getGenContext_operation(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
+  public static void apply_genContext_operation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-    return style;
   }
 
-  public static void applyGenContext_operation(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.EDITABLE, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-  }
+
 }

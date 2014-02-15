@@ -4,9 +4,9 @@ package jetbrains.mps.vcs.core.mergedriver;
 
 import java.io.File;
 import java.io.OutputStream;
-import java.io.FileOutputStream;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 
@@ -21,13 +21,11 @@ public class FileMerger {
       FileContent baseContent = new FileContent(baseFile);
       FileContent localContent = new FileContent(localFile);
       FileContent latestContent = new FileContent(latestFile);
-
-      out = (overwrite ? new FileOutputStream(localFile) : System.out);
-
       Tuples._2<Integer, byte[]> mergeResult = contentMerger.mergeContents(baseContent, localContent, latestContent);
       if (mergeResult == null) {
         mergeResult = MultiTuple.<Integer,byte[]>from(AbstractContentMerger.FATAL_ERROR, localContent.getData());
       }
+      out = (overwrite ? new FileOutputStream(localFile) : System.out);
       out.write((convertCRLF ? convert(mergeResult._1()) : mergeResult._1()));
       return (int) mergeResult._0();
     } catch (IOException e) {

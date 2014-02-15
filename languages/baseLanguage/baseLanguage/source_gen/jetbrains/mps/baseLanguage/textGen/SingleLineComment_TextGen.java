@@ -6,7 +6,6 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -22,7 +21,7 @@ public class SingleLineComment_TextGen extends SNodeTextGen {
     this.indentBuffer();
     this.append("// ");
     for (SNode commentPart : SLinkOperations.getTargets(node, "commentPart", true)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), commentPart, this.getSNode());
+      appendNode(commentPart);
       this.append(" ");
     }
     if (getBuffer().hasPositionsSupport()) {

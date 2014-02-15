@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="545559em58kbian0nbyo6hx9b3ai0k0">
-  <common hash="-76pjdjz794mkywaaj3l6eq1s6u7g2ar" />
-  <source id="9212378209272341619" name="plugin" hash="egu79fm39wjwfwml117km4ck4hbfz7t">
-    <file name="plugin.xml" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="545559em58kbian0nbyo6hx9b3ai0k0" />
 

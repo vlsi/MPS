@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -115,7 +114,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_c9gv4j_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -125,7 +124,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     AbstractCellListHandler handler = new DefaultClassifierMethodCallOperation_Editor.actualArgumentListHandler_c9gv4j_c0(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_actualArgument");
-    if (renderingCondition_c9gv4j_a2a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_c9gv4j_a2a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -197,7 +196,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     }
   }
 
-  private static boolean renderingCondition_c9gv4j_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_c9gv4j_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "member", false), "parameter", true)).isNotEmpty();
   }
 
@@ -205,16 +204,16 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_c9gv4j_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_c9gv4j_a3a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_c9gv4j_a3a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_c9gv4j_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_c9gv4j_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "member", false), "parameter", true)).isEmpty();
   }
 }

@@ -18,7 +18,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -32,7 +31,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_wwx4md_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_wwx4md_a0(editorContext, node));
-    if (renderingCondition_wwx4md_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_wwx4md_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_wwx4md_b0(editorContext, node));
     }
     return editorCell;
@@ -82,7 +81,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("definition");
       }
       Style style = new StyleImpl();
-      KajakStyles_StyleSheet.applyCommand(style, editorCell);
+      KajakStyles_StyleSheet.apply_Command(style, editorCell);
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -101,13 +100,13 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Library call");
     editorCell.setCellId("Constant_wwx4md_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_wwx4md_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_wwx4md_a1a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "definition", false), "jetbrains.mps.samples.Kaja.structure.Library", false, false) != null;
   }
 }

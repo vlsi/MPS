@@ -89,7 +89,7 @@ public class SNotationUnorderedGroup_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      default_StyleSheet.applyKeyword(style, editorCell);
+      default_StyleSheet.apply_keyword(style, editorCell);
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.FIRST_POSITION_ALLOWED, true);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));

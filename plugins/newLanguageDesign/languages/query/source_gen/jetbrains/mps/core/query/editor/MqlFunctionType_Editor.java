@@ -46,7 +46,7 @@ public class MqlFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2l09kp_a0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -127,7 +127,7 @@ public class MqlFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_2l09kp_c0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -159,7 +159,7 @@ public class MqlFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2l09kp_e0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
     editorCell.getStyle().putAll(style);

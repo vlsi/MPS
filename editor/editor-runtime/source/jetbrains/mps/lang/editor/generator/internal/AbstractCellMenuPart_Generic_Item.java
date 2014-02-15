@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -62,7 +61,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
 
       @Override
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        handleAction(node, node.getModel(), context.getScope(), context, editorContext);
+        handleAction(node, node.getModel(), context, editorContext);
         return null;
       }
     });
@@ -73,21 +72,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>handleAction(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-    handleAction(node, model, scope, operationContext);
-  }
+  protected abstract void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext);
 
   protected abstract String getMatchingText();
 }

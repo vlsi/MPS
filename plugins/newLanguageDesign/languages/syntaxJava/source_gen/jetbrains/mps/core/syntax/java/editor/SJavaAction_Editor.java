@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.core.syntax.java.behavior.SJavaAction_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -40,7 +39,7 @@ public class SJavaAction_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_qr97bk_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SJavaAction_Editor.renderingCondition_qr97bk_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SJavaAction_Editor.renderingCondition_qr97bk_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_qr97bk_a0a(editorContext, node);
@@ -50,7 +49,7 @@ public class SJavaAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qr97bk_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qr97bk_a0a(SNode node, EditorContext editorContext) {
     return SJavaAction_Behavior.call_isInline_5989029785192081032(node);
   }
 

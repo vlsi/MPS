@@ -21,7 +21,7 @@ public class ModelChooser implements Computable<List<SModelReference>> {
     List<SModelReference> models = ModelAccess.instance().runReadAction(new Computable<List<SModelReference>>() {
       @Override
       public List<SModelReference> compute() {
-        Iterable<SModel> descriptors = new FilteredGlobalScope().getModelDescriptors();
+        Iterable<SModel> descriptors = new FilteredGlobalScope().getModels();
         return Sequence.fromIterable(descriptors).select(new ISelector<SModel, SModelReference>() {
           public SModelReference select(SModel it) {
             return it.getReference();

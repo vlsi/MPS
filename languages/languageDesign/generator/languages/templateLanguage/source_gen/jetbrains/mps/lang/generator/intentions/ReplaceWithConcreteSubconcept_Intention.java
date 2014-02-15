@@ -85,7 +85,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
   }
 
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node), editorContext.getScope())).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "abstract"));
       }

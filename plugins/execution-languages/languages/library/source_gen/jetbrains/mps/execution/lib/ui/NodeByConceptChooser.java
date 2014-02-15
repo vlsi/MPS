@@ -60,7 +60,7 @@ public class NodeByConceptChooser extends NodeChooser {
   }
 
   public SNode getTargetConceptNode() {
-    return (SNode) SModelUtil.findConceptDeclaration(myTargetConcept, GlobalScope.getInstance());
+    return (SNode) SModelUtil.findConceptDeclaration(myTargetConcept);
   }
 
   public void setTargetConcept(String targetConcept) {

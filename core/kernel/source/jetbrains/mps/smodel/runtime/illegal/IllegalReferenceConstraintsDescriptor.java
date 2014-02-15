@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalReferenceConstraintsDescriptor implements ReferenceConstraintsDescriptor {
   private final String role;
@@ -48,12 +47,12 @@ public class IllegalReferenceConstraintsDescriptor implements ReferenceConstrain
   }
 
   @Override
-  public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
     return false;
   }
 
   @Override
-  public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
     throw new UnsupportedOperationException();
   }
 }

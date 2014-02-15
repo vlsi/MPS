@@ -33,7 +33,7 @@ public class BuildLayout_Comment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_xjc2q2_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyComment(style, editorCell);
+    buildStyles_StyleSheet.apply_comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -48,7 +48,7 @@ public class BuildLayout_Comment_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyComment(style, editorCell);
+    buildStyles_StyleSheet.apply_comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

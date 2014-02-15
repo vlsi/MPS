@@ -35,7 +35,7 @@ public class MqlStringLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_csrxn_a0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyStringLiteral(style, editorCell);
+    MqlSS_StyleSheet.apply_StringLiteral(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -51,7 +51,7 @@ public class MqlStringLiteral_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyStringLiteral(style, editorCell);
+    MqlSS_StyleSheet.apply_StringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -68,7 +68,7 @@ public class MqlStringLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_csrxn_c0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyStringLiteral(style, editorCell);
+    MqlSS_StyleSheet.apply_StringLiteral(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

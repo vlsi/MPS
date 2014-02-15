@@ -38,7 +38,7 @@ public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "script-kind");
     editorCell.setCellId("Constant_8gq3xs_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ScriptKindClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_8gq3xs_a0a0()}));

@@ -31,7 +31,7 @@ public class Style extends StyleImpl {
   }
 
   public Style(EditorCell contextCell) {
-    super(contextCell);
+    super();
   }
 
   @Override

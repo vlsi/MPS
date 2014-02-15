@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -76,7 +75,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_89tgy3_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0()}));
     return editorCell;
@@ -95,7 +94,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     public BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       // hack before actions are refactored 
       List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
         @Override
@@ -111,11 +110,11 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
       return actions;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SubstituteAction) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SubstituteAction) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "ALIAS_EDITOR_COMPONENT", -1);
     }

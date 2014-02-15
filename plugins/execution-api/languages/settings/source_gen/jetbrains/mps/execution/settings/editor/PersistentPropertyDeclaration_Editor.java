@@ -15,7 +15,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -30,7 +29,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_k4cjtr_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_k4cjtr_b0(editorContext, node));
-    if (renderingCondition_k4cjtr_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_k4cjtr_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_k4cjtr_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_k4cjtr_d0(editorContext, node));
@@ -60,7 +59,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_k4cjtr_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -76,7 +75,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_k4cjtr_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_k4cjtr_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
@@ -84,7 +83,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_k4cjtr_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

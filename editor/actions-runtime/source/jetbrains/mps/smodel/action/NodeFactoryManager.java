@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
@@ -39,8 +38,8 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(NodeFactoryManager.class));
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    return createNode(conceptDeclaration, sampleNode, enclosingNode, model, GlobalScope.getInstance());
+    SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName);
+    return createNode(conceptDeclaration, sampleNode, enclosingNode, model);
   }
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
@@ -48,8 +47,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     SNode linkDeclaration = getTopLinkDeclaration(concept, SModelSearchUtil.findLinkDeclaration(concept, linkRole));
     SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     SModel model = enclosingNode.getModel();
-    IScope scope = editorContext.getOperationContext().getScope();
-    return createNode(targetConcept, null, enclosingNode, model, scope);
+    return createNode(targetConcept, null, enclosingNode, model);
   }
 
   private static SNode getTopLinkDeclaration(SNode conceptDeclaration, SNode linkDeclaration) {
@@ -65,7 +63,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return result;
   }
 
-  public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+  public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(nodeConcept));
       return new jetbrains.mps.smodel.SNode(conceptFqName);
@@ -77,14 +75,14 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       sampleNode = CopyUtil.copy(sampleNode);
     }
     nodeConcept = ((jetbrains.mps.smodel.SNode) newNode).getConceptDeclarationNode(); // default concrete concept could change nodeConcept
-    setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
-    createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
+    setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model);
+    createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model);
     return newNode;
   }
 
   private static void createNodeStructure(SNode nodeConcept,
                                          SNode newNode, SNode sampleNode, SNode enclosingNode,
-                                         SModel model, IScope scope) {
+                                         SModel model) {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
 
@@ -95,25 +93,25 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
         if (targetConcept != null && !newNode.getChildren(role).iterator().hasNext()) {
-          SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, scope);
+          SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model);
           newNode.addChild(role, childNode);
         }
       }
     }
   }
 
-  public static void setupNode(SNode nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model, scope);
+  public static void setupNode(SNode nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
+    boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model);
     if (!done) {
       // TODO: remove adapter here
       setupNode_deprecated(nodeConcept, node, sampleNode);
     }
   }
 
-  private static boolean setupNode_internal(SNode nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
+  private static boolean setupNode_internal(SNode nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     List<SNode> nodeFactories = new ArrayList<SNode>();
     for (String ancestor : ConceptRegistry.getInstance().getConceptDescriptor(NameUtil.nodeFQName(nodeConcept)).getAncestorsNames()) {
-      SNode acd = SModelUtil.findConceptDeclaration(ancestor, scope);
+      SNode acd = SModelUtil.findConceptDeclaration(ancestor);
       Language language = SModelUtil.getDeclaringLanguage(acd);
       if (language == null) break;
       nodeFactories.addAll(NodeFactoryUtil.getApplicableNodeFactories(acd, language));

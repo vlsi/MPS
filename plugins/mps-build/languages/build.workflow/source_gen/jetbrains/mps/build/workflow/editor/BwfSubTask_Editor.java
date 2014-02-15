@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -39,10 +38,10 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6puhak_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6puhak_b0(editorContext, node));
-    if (renderingCondition_6puhak_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6puhak_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_6puhak_c0(editorContext, node));
     }
-    if (renderingCondition_6puhak_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6puhak_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_6puhak_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNodeList_6puhak_e0(editorContext, node));
@@ -54,7 +53,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "subtask");
     editorCell.setCellId("Constant_6puhak_a0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -92,7 +91,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6puhak_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6puhak_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "after", true)).isNotEmpty();
   }
 
@@ -100,7 +99,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
     editorCell.setCellId("Constant_6puhak_a2a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -176,7 +175,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6puhak_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6puhak_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "before", true)).isNotEmpty();
   }
 
@@ -184,7 +183,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before");
     editorCell.setCellId("Constant_6puhak_a3a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

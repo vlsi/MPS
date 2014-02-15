@@ -21,7 +21,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -82,7 +81,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_a0a0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "startIncluded", "" + (false));
     }
 
@@ -95,7 +94,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_b0a0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "startIncluded", "" + (true));
     }
 
@@ -188,7 +187,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_a0e0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "endIncluded", "" + (false));
     }
 
@@ -201,7 +200,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_b0e0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "endIncluded", "" + (true));
     }
 

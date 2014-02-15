@@ -18,7 +18,6 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -46,7 +45,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_7chywb_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7chywb_b0(editorContext, node));
-    if (renderingCondition_7chywb_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_7chywb_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_7chywb_c0(editorContext, node));
     }
     return editorCell;
@@ -59,7 +58,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_7chywb_a0a(editorContext, node));
-    if (renderingCondition_7chywb_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_7chywb_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_7chywb_b0a(editorContext, node));
     }
     return editorCell;
@@ -113,7 +112,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_7chywb_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_7chywb_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -201,7 +200,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<persistent properties>");
       editorCell.setCellId("Constant_7chywb_a0b1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyEmptyCell(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -339,7 +338,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no preference pages>");
       editorCell.setCellId("Constant_7chywb_a7b1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyEmptyCell(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -358,7 +357,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_7chywb_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_7chywb_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

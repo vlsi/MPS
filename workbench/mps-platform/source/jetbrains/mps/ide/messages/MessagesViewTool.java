@@ -32,6 +32,7 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
+import jetbrains.mps.ide.messages.MessagesViewTool.MessageViewToolState;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -53,13 +54,19 @@ import java.util.Map;
     )
   }
 )
-public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MessageListState>, Disposable {
+public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MessageViewToolState>, Disposable {
   private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
   private Project myProject;
   private Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
   private Map<Content, MessageList> myContents = new HashMap<Content, MessageList>();
   private boolean myDisposed = false;
+
+  private boolean showToolAfterAddingMessage = true;
+
+  public void setShowToolAfterAddingMessage(boolean showToolAfterAddingMessage) {
+    this.showToolAfterAddingMessage = showToolAfterAddingMessage;
+  }
 
   public MessagesViewTool(Project project) {
     myProject = project;
@@ -104,12 +111,14 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     final MessageList list = getAvailableList(listName, true);
     list.add(message);
 
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        list.show(false);
-      }
-    });
+    if (list.isVisible(message) && (showToolAfterAddingMessage || message.getKind() == MessageKind.ERROR)) {
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          list.show(false);
+        }
+      });
+    }
   }
 
   @Override
@@ -137,14 +146,28 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   public void projectClosed() {
   }
 
-  @Override
-  public MessageListState getState() {
-    return getDefaultList().getState();
+  public static class MessageViewToolState {
+    public MessageViewToolState(MessageListState defaultListState, boolean showToolAfterAddingMessage) {
+      this.defaultListState = defaultListState;
+      this.showToolAfterAddingMessage = showToolAfterAddingMessage;
+    }
+    public MessageViewToolState() {
+      this.defaultListState = new MessageListState();
+      this.showToolAfterAddingMessage = true;
+    }
+    MessageListState defaultListState;
+    boolean showToolAfterAddingMessage;
   }
 
   @Override
-  public void loadState(MessageListState state) {
-    getDefaultList().loadState(state);
+  public MessageViewToolState getState() {
+    return new MessageViewToolState(getDefaultList().getState(), showToolAfterAddingMessage);
+  }
+
+  @Override
+  public void loadState(MessageViewToolState state) {
+    getDefaultList().loadState(state.defaultListState);
+    showToolAfterAddingMessage = state.showToolAfterAddingMessage;
   }
 
   public MessageView getMessagesService() {
@@ -166,7 +189,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     lists.add(list);
   }
 
-  private synchronized MessageList getAvailableList(String name, boolean createIfNotFound) {
+  public synchronized MessageList getAvailableList(String name, boolean createIfNotFound) {
     List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
     if (!myMessageLists.containsKey(name)) {
       myMessageLists.put(name, lists);

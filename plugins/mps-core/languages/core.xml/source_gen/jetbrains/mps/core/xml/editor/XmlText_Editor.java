@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 
 public class XmlText_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -31,7 +30,7 @@ public class XmlText_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_crdhdg_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_crdhdg_a0(editorContext, node));
-    if (renderingCondition_crdhdg_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_crdhdg_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_crdhdg_b0(editorContext, node));
     }
     return editorCell;
@@ -84,7 +83,7 @@ public class XmlText_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_crdhdg_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_crdhdg_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 }

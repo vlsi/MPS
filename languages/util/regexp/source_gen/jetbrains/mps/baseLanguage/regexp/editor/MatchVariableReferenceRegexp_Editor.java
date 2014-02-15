@@ -40,7 +40,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\");
     editorCell.setCellId("Constant_7j6yq4_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RegexpBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

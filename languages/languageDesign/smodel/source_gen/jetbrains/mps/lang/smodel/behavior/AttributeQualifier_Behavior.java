@@ -5,9 +5,6 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -21,12 +18,6 @@ public class AttributeQualifier_Behavior {
 
   public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getApplicableRoles_959482772563105834(SAbstractConcept thisConcept, SNode enclosingNode, String attributeType, SModel model, IScope scope) {
-    // use AttributeDesignTimeOperations#getApplicableAttributes 
-    return null;
   }
 
   @Deprecated

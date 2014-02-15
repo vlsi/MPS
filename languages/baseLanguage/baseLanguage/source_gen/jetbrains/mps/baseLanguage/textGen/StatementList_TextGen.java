@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -21,10 +20,8 @@ public class StatementList_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createScopeInfo(this, node);
     }
-    int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
-    for (int i = 0; i < size; i++) {
-      SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
+    for (SNode stmt : ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true))) {
+      appendNode(stmt);
     }
     if (getBuffer().hasPositionsSupport()) {
       {

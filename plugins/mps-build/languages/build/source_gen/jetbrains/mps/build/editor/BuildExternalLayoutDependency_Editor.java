@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -33,7 +32,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_rscqin_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_rscqin_a0(editorContext, node));
-    if (renderingCondition_rscqin_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_rscqin_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_rscqin_b0(editorContext, node));
     }
     return editorCell;
@@ -110,7 +109,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_rscqin_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_rscqin_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "layout", false) != null);
   }
 
@@ -129,7 +128,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "artifacts location");
     editorCell.setCellId("Constant_rscqin_b1a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

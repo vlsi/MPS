@@ -24,7 +24,6 @@ import java.awt.Frame;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
@@ -82,10 +81,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSCommonDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
-      return false;
-    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
@@ -118,12 +113,12 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         }
       });
       SNode conceptDeclaration = cd[0];
-      SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l, conceptDeclaration, ((IScope) MapSequence.fromMap(_params).get("scope")));
+      SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l, conceptDeclaration);
       if (editorModel == null) {
         return;
       }
 
-      final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(editorModel, conceptDeclaration, ((SNode) MapSequence.fromMap(_params).get("node")), ((IScope) MapSequence.fromMap(_params).get("scope")));
+      final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(editorModel, conceptDeclaration, ((SNode) MapSequence.fromMap(_params).get("node")));
       if (editorNode == null) {
         return;
       }

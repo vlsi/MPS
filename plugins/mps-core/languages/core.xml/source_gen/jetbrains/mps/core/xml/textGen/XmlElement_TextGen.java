@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
 
 public class XmlElement_TextGen extends SNodeTextGen {
@@ -23,11 +23,13 @@ public class XmlElement_TextGen extends SNodeTextGen {
       this.append(" ");
     }
     this.increaseDepth();
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "attributes", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).last()) {
-          this.append(" ");
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "attributes", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(" ");
         }
       }
     }
@@ -41,9 +43,10 @@ public class XmlElement_TextGen extends SNodeTextGen {
       this.appendNewLine();
       this.increaseDepth();
       this.indentBuffer();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "content", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "content", true);
+        for (SNode item : collection) {
+          appendNode(item);
         }
       }
       this.decreaseDepth();
@@ -52,9 +55,10 @@ public class XmlElement_TextGen extends SNodeTextGen {
     } else {
       this.increaseDepth();
       this.increaseDepth();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "content", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "content", true);
+        for (SNode item : collection) {
+          appendNode(item);
         }
       }
       this.decreaseDepth();

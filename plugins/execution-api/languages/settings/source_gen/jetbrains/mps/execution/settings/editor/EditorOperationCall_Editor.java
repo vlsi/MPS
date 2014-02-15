@@ -82,7 +82,7 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("editorOperationDeclaration");
       }
       Style style = new StyleImpl();
-      RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+      RunConfigurations_StyleSheet.apply_operation(style, editorCell);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
@@ -92,7 +92,7 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_jn1wx6_b0");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -174,7 +174,7 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_jn1wx6_d0");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

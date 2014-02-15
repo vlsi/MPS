@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.SubtreeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -21,7 +21,7 @@ public class ReturnFromTry_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_ReturnFromTry() throws Exception {
       this.addNodeById("7209837885461546653");
-      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("7209837885461546654"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("7209837885461546654"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
     }
   }
 }

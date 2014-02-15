@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
 
@@ -27,7 +26,7 @@ public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescri
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         {
           SModule module = ModuleReferenceExpression_Behavior.call_getModule_4040588429969043137(node);

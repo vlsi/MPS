@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -41,7 +40,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_lu5mzk_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_lu5mzk_a0(editorContext, node));
-    if (renderingCondition_lu5mzk_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lu5mzk_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_lu5mzk_b0(editorContext, node));
     }
     return editorCell;
@@ -114,7 +113,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lu5mzk_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lu5mzk_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).isNotEmpty();
   }
 
@@ -122,7 +121,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_lu5mzk_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -190,7 +189,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_lu5mzk_c1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -42,7 +41,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_jpvk41_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_jpvk41_a0(editorContext, node));
-    if (renderingCondition_jpvk41_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jpvk41_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_jpvk41_b0(editorContext, node));
     }
     return editorCell;
@@ -92,7 +91,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
         editorCell.setRole("declaration");
       }
       Style style = new StyleImpl();
-      StyleSheet_StyleSheet.applyBuilder(style, editorCell);
+      StyleSheet_StyleSheet.apply_Builder(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -118,7 +117,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_jpvk41_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jpvk41_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "declaration", false), "parameter", true)).isNotEmpty();
   }
 
@@ -126,7 +125,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_jpvk41_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -212,7 +211,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_jpvk41_c1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

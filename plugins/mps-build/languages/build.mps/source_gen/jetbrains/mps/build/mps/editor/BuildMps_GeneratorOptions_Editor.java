@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
@@ -39,7 +38,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator options");
     editorCell.setCellId("Constant_aauy4y_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_projectPartKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -78,7 +77,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_aauy4y_b2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aauy4y_c2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_aauy4y_d2a(editorContext, node));
-    if (renderingCondition_aauy4y_a4c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_aauy4y_a4c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_aauy4y_e2a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_aauy4y_f2a(editorContext, node));
@@ -90,7 +89,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strict mode");
     editorCell.setCellId("Constant_aauy4y_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -121,7 +120,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "multiple threads");
     editorCell.setCellId("Constant_aauy4y_c2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -159,7 +158,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "parallel");
   }
 
@@ -167,7 +166,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "number of threads");
     editorCell.setCellId("Constant_aauy4y_a4c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -198,7 +197,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inplace transform");
     editorCell.setCellId("Constant_aauy4y_f2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

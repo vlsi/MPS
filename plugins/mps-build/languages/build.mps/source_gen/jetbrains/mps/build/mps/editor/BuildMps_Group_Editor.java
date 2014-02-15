@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -41,7 +40,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pilq2t_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pilq2t_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pilq2t_c0(editorContext, node));
-    if (renderingCondition_pilq2t_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_pilq2t_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_pilq2t_d0(editorContext, node));
     }
     return editorCell;
@@ -51,7 +50,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mps group");
     editorCell.setCellId("Constant_pilq2t_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_projectPartKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -157,7 +156,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_pilq2t_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_pilq2t_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "modules", true)).isEmpty() || (SNodeOperations.getNextSibling(node) == null);
   }
 }

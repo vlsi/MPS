@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -43,10 +42,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_azr75j_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_azr75j_b0(editorContext, node));
-    if (renderingCondition_azr75j_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_azr75j_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_azr75j_c0(editorContext, node));
     }
-    if (renderingCondition_azr75j_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_azr75j_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_azr75j_d0(editorContext, node));
     }
     return editorCell;
@@ -55,7 +54,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_azr75j_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0()}));
     return editorCell;
@@ -95,7 +94,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_azr75j_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_azr75j_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
@@ -103,15 +102,15 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "color", SEnumOperations.getEnumMemberValue(parameterObject));
     }
@@ -125,7 +124,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_b0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
     }
 
@@ -138,7 +137,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_c0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     }
 
@@ -170,7 +169,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
@@ -178,15 +177,15 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_a0d0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "color", SEnumOperations.getEnumMemberValue(parameterObject));
     }
@@ -200,7 +199,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_b0d0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
     }
 
@@ -213,7 +212,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_c0d0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     }
 

@@ -33,7 +33,7 @@ public class NotSimpleMathExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "not");
     editorCell.setCellId("Constant_4ya0gj_a0");
     Style style = new StyleImpl();
-    SimpleMath_StyleSheet.applyKeyWord(style, editorCell);
+    SimpleMath_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -33,11 +32,11 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yzyesl_a");
     editorCell.setBig(true);
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
-    if (renderingCondition_yzyesl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_yzyesl_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_yzyesl_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_yzyesl_b0(editorContext, node));
-    if (renderingCondition_yzyesl_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_yzyesl_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_yzyesl_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_yzyesl_d0(editorContext, node));
@@ -50,13 +49,13 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_yzyesl_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_yzyesl_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_yzyesl_a0a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
@@ -84,13 +83,13 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_yzyesl_c0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_yzyesl_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_yzyesl_a2a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
@@ -98,7 +97,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_yzyesl_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -130,7 +129,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_yzyesl_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);

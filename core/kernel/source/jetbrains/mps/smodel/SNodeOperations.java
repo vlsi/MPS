@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -58,7 +57,7 @@ public class SNodeOperations {
   public static List<SNode> getConceptLinks(final SNode node, final String linkName, boolean lookupHierarchy) {
     SNode conceptDeclaration = node;
     if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclaration))) {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(conceptDeclaration.getConcept().getQualifiedName(), GlobalScope.getInstance());
+      conceptDeclaration = SModelUtil.findConceptDeclaration(conceptDeclaration.getConcept().getQualifiedName());
     }
 
     if (lookupHierarchy) {

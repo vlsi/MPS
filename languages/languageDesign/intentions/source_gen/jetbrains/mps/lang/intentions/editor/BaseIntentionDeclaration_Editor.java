@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -42,7 +41,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_2ji0fa_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2ji0fa_b0(editorContext, node));
-    if (renderingCondition_2ji0fa_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ji0fa_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2ji0fa_c0(editorContext, node));
     }
     return editorCell;
@@ -55,7 +54,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_2ji0fa_a0a(editorContext, node));
-    if (renderingCondition_2ji0fa_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ji0fa_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2ji0fa_b0a(editorContext, node));
     }
     return editorCell;
@@ -103,7 +102,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concept");
     editorCell.setCellId("Constant_2ji0fa_c0a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -156,7 +155,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("forConcept");
       }
       Style style = new StyleImpl();
-      SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
+      SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -182,7 +181,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ji0fa_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ji0fa_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -256,7 +255,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2ji0fa_b1b0");
     editorCell.addEditorCell(this.createCollection_2ji0fa_a1b1a(editorContext, node));
-    if (renderingCondition_2ji0fa_a1b1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2ji0fa_a1b1b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2ji0fa_b1b1a(editorContext, node));
     }
     return editorCell;
@@ -306,7 +305,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ji0fa_a1b1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ji0fa_a1b1b0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isAvailableInChildNodes");
   }
 
@@ -436,7 +435,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2ji0fa_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2ji0fa_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

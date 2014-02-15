@@ -21,8 +21,6 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -32,7 +30,6 @@ import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new HashMap<SNode, Set<IErrorReporter>>();
@@ -129,7 +126,10 @@ public class LanguageErrorsComponent {
   }
 
   private void invalidate(SNode errorNode) {
-    SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
+    // avoid searching for _already_removed_ node later in check() 
+    if (SNodeOperations.getModel(errorNode) != null) {
+      SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
+    }
     MapSequence.fromMap(myNodesToErrors).removeKey(errorNode);
     Set<SNode> additionals = MapSequence.fromMap(myNodesToDependecies).removeKey(errorNode);
     if (additionals != null) {
@@ -158,7 +158,6 @@ public class LanguageErrorsComponent {
     Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new HashSet<SNode>(1);
-    IScope scope = check_29uvfh_a0h0v(((AbstractModule) check_29uvfh_a0a0a7a12(SNodeOperations.getModel(root))));
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -166,7 +165,7 @@ public class LanguageErrorsComponent {
             myCurrentNode = node;
             addDependency(node);
             for (AbstractConstraintsChecker checker : checkers) {
-              checker.checkNode(node, this, operationContext, scope);
+              checker.checkNode(node, this, operationContext);
             }
           } finally {
             myCurrentNode = null;
@@ -178,6 +177,8 @@ public class LanguageErrorsComponent {
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>(1);
     }
+    // traversed the whole root, should have been removed all invalid nodes 
+    SetSequence.fromSet(myInvalidNodes).clear();
     myCheckedRoot = true;
     return true;
   }
@@ -340,20 +341,6 @@ public class LanguageErrorsComponent {
   private static SModelReference check_29uvfh_a0a0c0s(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-
-  private static IScope check_29uvfh_a0h0v(AbstractModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getScope();
-    }
-    return null;
-  }
-
-  private static SModule check_29uvfh_a0a0a7a12(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
     }
     return null;
   }

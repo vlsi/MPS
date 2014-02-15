@@ -47,7 +47,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8agmue_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -61,7 +61,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     provider.setAuxiliaryCellProvider(new Node_GetReferentSearchScopeOperation_Editor._Inline_8agmue_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    SharedStyles_StyleSheet.applyReferenceOnConceptualFeature(style, editorCell);
+    SharedStyles_StyleSheet.apply_ReferenceOnConceptualFeature(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -142,7 +142,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8agmue_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

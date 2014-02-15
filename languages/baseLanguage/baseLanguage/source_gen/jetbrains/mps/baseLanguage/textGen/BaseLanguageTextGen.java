@@ -6,7 +6,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -32,30 +33,34 @@ import org.apache.log4j.LogManager;
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final SNodeTextGen textGen) {
     if (ListSequence.fromList(types).isNotEmpty()) {
-      textGen.append("<");
-      if (ListSequence.fromList(types).isNotEmpty()) {
-        for (SNode item : types) {
-          TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-          if (item != ListSequence.fromList(types).last()) {
+      {
+        textGen.append("<");
+        Iterable<SNode> collection = types;
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          textGen.appendNode(item);
+          if (item != lastItem) {
             textGen.append(", ");
           }
         }
+        textGen.append(">");
       }
-      textGen.append(">");
     }
   }
 
   public static void arguments(SNode methodCall, final SNodeTextGen textGen) {
-    textGen.append("(");
-    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(methodCall, "actualArgument", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).last()) {
+    {
+      textGen.append("(");
+      Iterable<SNode> collection = SLinkOperations.getTargets(methodCall, "actualArgument", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        textGen.appendNode(item);
+        if (item != lastItem) {
           textGen.append(", ");
         }
       }
+      textGen.append(")");
     }
-    textGen.append(")");
   }
 
   public static void newLine(boolean need, final SNodeTextGen textGen) {
@@ -65,9 +70,10 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void annotations(SNode annotable, final SNodeTextGen textGen) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(annotable, "annotation", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(annotable, "annotation", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(annotable, "annotation", true);
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
     }
     if (SNodeOperations.isInstanceOf(annotable, "jetbrains.mps.lang.core.structure.IDeprecatable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(annotable, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", new Object[]{})) {
@@ -81,7 +87,7 @@ public abstract class BaseLanguageTextGen {
       if (!(containsDeprecated)) {
         SNode deprecated = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
         SLinkOperations.setTarget(deprecated, "annotation", SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"), false);
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), deprecated, textGen.getSNode());
+        textGen.appendNode(deprecated);
       }
     }
   }
@@ -90,7 +96,7 @@ public abstract class BaseLanguageTextGen {
     if ((v == null)) {
       textGen.append("/*package*/ ");
     } else {
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), v, textGen.getSNode());
+      textGen.appendNode(v);
     }
   }
 
@@ -113,7 +119,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void extendedInterface(SNode interface1, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.EXTENDS, textGen);
     SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(interface1));
   }
 
@@ -126,7 +132,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void extendedClasses(SNode classConcept, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.EXTENDS, textGen);
     SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(classConcept));
   }
 
@@ -134,12 +140,12 @@ public abstract class BaseLanguageTextGen {
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
       textGen.append("final ");
     }
-    TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(node, "type", true), textGen.getSNode());
+    textGen.appendNode(SLinkOperations.getTarget(node, "type", true));
     textGen.append(" ");
     textGen.append(SPropertyOperations.getString(node, "name"));
     if ((SLinkOperations.getTarget(node, "initializer", true) != null)) {
       textGen.append(" = ");
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(node, "initializer", true), textGen.getSNode());
+      textGen.appendNode(SLinkOperations.getTarget(node, "initializer", true));
     }
   }
 
@@ -171,16 +177,18 @@ public abstract class BaseLanguageTextGen {
 
   public static void methodTypeArguments(SNode methodCall, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
-      textGen.append("<");
-      if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(methodCall, "typeArgument", true)) {
-          TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).last()) {
+      {
+        textGen.append("<");
+        Iterable<SNode> collection = SLinkOperations.getTargets(methodCall, "typeArgument", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          textGen.appendNode(item);
+          if (item != lastItem) {
             textGen.append(",");
           }
         }
+        textGen.append(">");
       }
-      textGen.append(">");
     }
   }
 
@@ -280,7 +288,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   protected static void addDependency(String fqName, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.DEPENDENCY, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.DEPENDENCY, textGen);
     SetSequence.fromSet(dependencies).addElement(InternUtil.intern(fqName));
   }
 

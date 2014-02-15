@@ -13,7 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -48,10 +47,10 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cv1jro_a0a(editorContext, node));
-    if (renderingCondition_cv1jro_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cv1jro_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_cv1jro_b0a(editorContext, node));
     }
-    if (renderingCondition_cv1jro_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_cv1jro_a2a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_cv1jro_c0a(editorContext, node));
     }
     return editorCell;
@@ -61,7 +60,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Deprecated");
     editorCell.setCellId("Constant_cv1jro_a0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyAnnotationNode(style, editorCell);
+    structure_StyleSheet.apply_AnnotationNode(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     DeprecatedNodeAnnotation_ActionMap.setCellActions(editorCell, node, editorContext);
@@ -82,7 +81,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cv1jro_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cv1jro_a1a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 
@@ -146,7 +145,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "build") != null;
   }
 

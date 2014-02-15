@@ -43,7 +43,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"concept", "body"}, new boolean[]{false, false}).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").children(new String[]{"smodel", "scope"}, new boolean[]{false, false}).alias("sub-concepts", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").children(new String[]{"smodel"}, new boolean[]{false}).alias("sub-concepts", "").staticScope(StaticScope.NONE).create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").alias("super-concepts/all", "").staticScope(StaticScope.NONE).create();
       case 16:
@@ -133,9 +133,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 58:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier").super_("jetbrains.mps.lang.smodel.structure.AttributeQualifier").parents("jetbrains.mps.lang.smodel.structure.AttributeQualifier").references("attributeConcept").create();
       case 59:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.NodePointerExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("referentNode").alias("nodePointer /<name>/", "named node pointer").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.NodePointerExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("referentNode").alias("nodePointer/<name>/", "named node pointer").staticScope(StaticScope.NONE).create();
       case 60:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.NodeRefExpression").super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").references("referentNode").alias("node /<name>/", "named node reference").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.NodeRefExpression").super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").references("referentNode").alias("node/<name>/", "named node reference").staticScope(StaticScope.NONE).create();
       case 61:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.baseLanguage.structure.IMethodCall").properties("directCall").references("conceptMethodDeclaration").staticScope(StaticScope.NONE).create();
       case 62:

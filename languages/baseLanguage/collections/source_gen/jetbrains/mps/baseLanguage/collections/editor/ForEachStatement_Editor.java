@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -38,10 +37,10 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kov3ab_a");
     editorCell.setBig(true);
-    if (renderingCondition_kov3ab_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kov3ab_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_kov3ab_a0(editorContext, node));
     }
-    if (renderingCondition_kov3ab_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kov3ab_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_kov3ab_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_kov3ab_c0(editorContext, node));
@@ -65,7 +64,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -77,7 +76,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLabel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Label(style, editorCell);
     editorCell.getStyle().putAll(style);
     AbstractLoopStatement_Label_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -113,7 +112,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
 
@@ -152,7 +151,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
     editorCell.setCellId("Constant_kov3ab_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -183,7 +182,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_kov3ab_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -198,7 +197,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("inputSequence");
     }
-    if (renderingCondition_kov3ab_a5a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_kov3ab_a5a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -212,7 +211,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
@@ -220,7 +219,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_kov3ab_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -255,7 +254,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_kov3ab_i0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

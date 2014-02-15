@@ -4,9 +4,9 @@ package jetbrains.mps.lang.test.runtime;
 
 import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.ide.IdeMain;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -48,12 +48,13 @@ public class TransformationTestRunner {
   }
 
   public void initTest(final TransformationTest test, @NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
     if (reOpenProject) {
       // close all projects before run test 
       TestMain.PROJECT_CONTAINER.clear();
     }
     MpsTestsSupport.initEnv(true);
+    //  MpsTestsSupport.initEnv(true) instantiates IdeaEnvironment which set test mode to CORE_TEST, override if needed 
+    IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
     // we do not want to save our project, see MPS-13352 
     ApplicationManagerEx.getApplicationEx().doNotSave();
     clearSystemClipboard();

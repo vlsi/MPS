@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2jcxicml8wp28q5psuu9grfyqcx1mte">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
-  <common hash="-617zardjjq9zebdju7zgsyqefeiwawh" dependsOnNodes="true" />
-  <source id="3196018662491356444" name="ABC" hash="27dqwcc9fn4vi6alhj9oq5sac3c7o0d">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ABC.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-2jcxicml8wp28q5psuu9grfyqcx1mte" />
 

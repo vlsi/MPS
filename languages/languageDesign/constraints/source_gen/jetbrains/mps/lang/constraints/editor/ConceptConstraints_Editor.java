@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -117,7 +116,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_g00aa7_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -132,31 +131,31 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_g00aa7_a0d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a0d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_g00aa7_a3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_g00aa7_b3a(editorContext, node));
-    if (renderingCondition_g00aa7_a2d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a2d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_c3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_g00aa7_d3a(editorContext, node));
-    if (renderingCondition_g00aa7_a4d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a4d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_g00aa7_e3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_g00aa7_f3a(editorContext, node));
-    if (renderingCondition_g00aa7_a6d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a6d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_g3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_g00aa7_h3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g00aa7_i3a(editorContext, node));
-    if (renderingCondition_g00aa7_a9d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a9d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_j3a(editorContext, node));
     }
-    if (renderingCondition_g00aa7_a01d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a01d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_k3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_g00aa7_l3a(editorContext, node));
-    if (renderingCondition_g00aa7_a21d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a21d0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_g00aa7_m3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_g00aa7_n3a(editorContext, node));
@@ -183,7 +182,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a0d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a0d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "concept", false), "abstract");
   }
 
@@ -271,7 +270,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g00aa7_a1d0(editorContext, node));
-    if (renderingCondition_g00aa7_a1b3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a1b3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_b1d0(editorContext, node));
     }
     return editorCell;
@@ -304,7 +303,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a1b3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a1b3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "canBeChild", true) == null;
   }
 
@@ -332,7 +331,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a2d0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "canBeChild", true) != null;
   }
 
@@ -356,14 +355,14 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_g00aa7_a4d0(editorContext, node));
-    if (renderingCondition_g00aa7_a1e3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a1e3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_b4d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_g00aa7_c4d0(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a4d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a4d0(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(((SNode) SLinkOperations.getTarget(node, "concept", false)), "rootable");
   }
 
@@ -376,7 +375,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g00aa7_a0e3a(editorContext, node));
-    if (renderingCondition_g00aa7_a1a4d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a1a4d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_b0e3a(editorContext, node));
     }
     return editorCell;
@@ -409,7 +408,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a1a4d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a1a4d0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "canBeRoot", true) == null);
   }
 
@@ -437,7 +436,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a1e3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a1e3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
   }
 
@@ -459,7 +458,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g00aa7_a5d0(editorContext, node));
-    if (renderingCondition_g00aa7_a1f3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a1f3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_b5d0(editorContext, node));
     }
     return editorCell;
@@ -492,7 +491,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a1f3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a1f3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "canBeParent", true) == null;
   }
 
@@ -520,7 +519,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a6d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a6d0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "canBeParent", true) != null;
   }
 
@@ -565,7 +564,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a9d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a9d0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "canBeAncestor", true) == null;
   }
 
@@ -594,7 +593,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a01d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a01d0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "canBeAncestor", true) != null;
   }
 
@@ -618,14 +617,14 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_g00aa7_a21d0(editorContext, node));
-    if (renderingCondition_g00aa7_a1m3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a1m3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_b21d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_g00aa7_c21d0(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && isNotEmptyString(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
   }
 
@@ -638,7 +637,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g00aa7_a0m3a(editorContext, node));
-    if (renderingCondition_g00aa7_a1a21d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g00aa7_a1a21d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_g00aa7_b0m3a(editorContext, node));
     }
     return editorCell;
@@ -671,7 +670,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a1a21d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a1a21d0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "canBeRoot", true) == null);
   }
 
@@ -699,7 +698,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a1m3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g00aa7_a1m3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
   }
 
@@ -927,7 +926,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_g00aa7_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

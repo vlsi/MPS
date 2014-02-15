@@ -15,11 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.fileTypes.FileIcons;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 /**
  * evgeny, 11/11/11
  */

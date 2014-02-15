@@ -100,7 +100,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -116,6 +115,7 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
@@ -396,11 +396,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     @Override
-    protected IScope getScope() {
-      return ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope();
-    }
-
-    @Override
     protected TableCellRenderer getTableCellRender() {
       return new ModuleTableCellRender() {
         @Override
@@ -421,7 +416,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = myModule.getScope();
+          final SearchScope scope = myModule.getScope();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -627,9 +622,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myAccessoriesModelsTableModel = new AccessoriesModelsTableModel();
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
 
-      accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(
-        ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope()
-      ));
+      accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender());
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);
       decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {

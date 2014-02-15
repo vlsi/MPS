@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -36,7 +35,7 @@ public class SConceptAnnotationChildLink_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_rp8o59_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rp8o59_b0(editorContext, node));
-    if (renderingCondition_rp8o59_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_rp8o59_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_rp8o59_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_rp8o59_d0(editorContext, node));
@@ -120,7 +119,7 @@ public class SConceptAnnotationChildLink_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    default_StyleSheet.applyFeature(style, editorCell);
+    default_StyleSheet.apply_feature(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -142,7 +141,7 @@ public class SConceptAnnotationChildLink_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_rp8o59_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_rp8o59_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "cardinality", true) != null);
   }
 
@@ -150,7 +149,7 @@ public class SConceptAnnotationChildLink_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_rp8o59_d0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

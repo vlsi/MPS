@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class AnonymousCellAnnotation_BehaviorDescriptor extends INodeAnnotattion_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class AnonymousCellAnnotation_BehaviorDescriptor extends INodeAnnotation_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public AnonymousCellAnnotation_BehaviorDescriptor() {
   }
 

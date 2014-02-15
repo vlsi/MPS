@@ -25,12 +25,12 @@ import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import javax.swing.ListCellRenderer;
 import java.util.ArrayList;
@@ -163,7 +163,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   public abstract NavigationItem doGetNavigationItem(T object);
 
-  public abstract T[] find(IScope scope);
+  public abstract T[] find(SearchScope scope);
 
   //---------------------INTERFACE STUFF------------------------
 

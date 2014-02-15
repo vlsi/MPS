@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -44,7 +43,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "by id:");
     editorCell.setCellId("Constant_pdl482_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyEditorOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -76,7 +75,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     public BootstrapActionReference_actionId_cellMenu_pdl482_a0b0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       for (List<String> ext : ExtensionPoint.<List<String>>generify(new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs", List.class)).getObjects()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ext));

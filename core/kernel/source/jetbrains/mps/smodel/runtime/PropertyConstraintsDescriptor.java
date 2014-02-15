@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface PropertyConstraintsDescriptor {
@@ -23,11 +22,11 @@ public interface PropertyConstraintsDescriptor {
 
   ConstraintsDescriptor getContainer();
 
-  Object getValue(SNode node, IScope scope);
+  Object getValue(SNode node);
 
-  void setValue(SNode node, String value, IScope scope);
+  void setValue(SNode node, String value);
 
-  boolean validateValue(SNode node, String value, IScope scope);
+  boolean validateValue(SNode node, String value);
 
   boolean isReadOnly();
 }

@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b3levz77xf5i5ay54ipz1d9fnhdtp28">
-  <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-9cll6256mojubdt2j6h1no8vbwol440" />
-  <common hash="-dwnsv0buou82v394qsgxg77dw0vdrgz" />
-  <source id="398731435597190701" name="mps" hash="83egq1ucav5c237naoysajqqdgivj8q">
-    <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
-    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
-    <file name="mps" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
 

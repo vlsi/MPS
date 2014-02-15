@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -56,7 +55,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_g7zihj_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -84,7 +83,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_g7zihj_b1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -149,7 +148,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_g7zihj_d1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -163,7 +162,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_configurationName");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -180,10 +179,10 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_c0");
     editorCell.addEditorCell(this.createIndentCell_g7zihj_a2a(editorContext, node));
-    if (renderingCondition_g7zihj_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g7zihj_a1c0(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_g7zihj_b2a(editorContext, node));
     }
-    if (renderingCondition_g7zihj_a2c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_g7zihj_a2c0(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_g7zihj_c2a(editorContext, node));
     }
     return editorCell;
@@ -199,7 +198,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g7zihj_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g7zihj_a1c0(SNode node, EditorContext editorContext) {
     return !(RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node));
   }
 
@@ -208,7 +207,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g7zihj_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_g7zihj_a2c0(SNode node, EditorContext editorContext) {
     return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node);
   }
 
@@ -295,7 +294,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debugger:");
     editorCell.setCellId("Constant_g7zihj_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -19,7 +19,6 @@ import org.jetbrains.annotations.Nls;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -157,7 +156,7 @@ __switch__:
     if (nodeName == null) {
       return null;
     }
-    SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), GlobalScope.getInstance());
+    SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
     if (node == null) {
       return null;
     }

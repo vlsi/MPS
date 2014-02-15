@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -32,7 +31,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_lj1m7a_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lj1m7a_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lj1m7a_c0(editorContext, node));
-    if (renderingCondition_lj1m7a_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lj1m7a_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_lj1m7a_d0(editorContext, node));
     }
     return editorCell;
@@ -42,7 +41,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_lj1m7a_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -58,7 +57,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -76,7 +75,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_lj1m7a_c0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
@@ -89,7 +88,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lj1m7a_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lj1m7a_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "styleClass", true)).isNotEmpty();
   }
 }

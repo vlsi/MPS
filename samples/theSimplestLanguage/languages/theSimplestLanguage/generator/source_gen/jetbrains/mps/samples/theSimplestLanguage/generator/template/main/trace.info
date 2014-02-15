@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.generator.template.main.QueriesGenerated" />
   <root nodeRef="r:d971f3d5-180f-4b06-b56a-ac44861a7c95(jetbrains.mps.samples.theSimplestLanguage.generator.template.main@generator)/1222955948389">
-    <nodeInfo nodeId="1222956039722" fileName="QueriesGenerated.java" startLine="12" startPosition="148" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1222956033525" fileName="QueriesGenerated.java" startLine="16" startPosition="148" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1222956038127" fileName="QueriesGenerated.java" startLine="12" startPosition="148" endLine="13" endPosition="69" />
-    <scopeInfo nodeId="1222956031899" fileName="QueriesGenerated.java" startLine="16" startPosition="148" endLine="17" endPosition="69" />
+    <nodeInfo nodeId="1222956039722" fileName="QueriesGenerated.java" startLine="13" startPosition="106" endLine="14" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222956033525" fileName="QueriesGenerated.java" startLine="17" startPosition="106" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1222956038127" fileName="QueriesGenerated.java" startLine="13" startPosition="106" endLine="14" endPosition="69" />
+    <scopeInfo nodeId="1222956031899" fileName="QueriesGenerated.java" startLine="17" startPosition="106" endLine="18" endPosition="69" />
   </root>
 </debugInfo>
 

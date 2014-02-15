@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -52,14 +52,14 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
-    List parameterObjects = createParameterObjects(parentNode, currentChild, defaultConceptOfChild, context.getScope(), context, editorContext);
+    List parameterObjects = createParameterObjects(parentNode, currentChild, defaultConceptOfChild, context, editorContext);
     if (parameterObjects == null) {
       return Collections.emptyList();
     }
 
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
-      actions.add(new DefaultChildNodeSubstituteAction(parameterObject, parentNode, currentChild, setter, context.getScope()) {
+      actions.add(new DefaultChildNodeSubstituteAction(parameterObject, parentNode, currentChild, setter) {
         @Override
         protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_ReplaceChild_Group.this.getMatchingText(parameterObject);
@@ -74,7 +74,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
         public SNode createChildNode(Object parameterObjectWhichActuallyAnOutputConcept, SModel model, String pattern) {
           SNode newChild;
           if (isCustomCreateChildNode()) {
-            newChild = customCreateChildNode(parameterObject, parentNode, currentChild, defaultConceptOfChild, model, getScope(), context, editorContext);
+            newChild = customCreateChildNode(parameterObject, parentNode, currentChild, defaultConceptOfChild, model, context, editorContext);
           } else {
             newChild = super.createChildNode(parameterObject, model, pattern);
           }
@@ -95,20 +95,8 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     return false;
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>customCreateChildNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope,
-      IOperationContext context) {
-    return null;
-  }
-
-  protected SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope,
-      IOperationContext context, EditorContext editorContext) {
-    return customCreateChildNode(parameterObject, node, currentChild, defaultConceptOfChild, model, scope, context);
-  }
+  protected abstract SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
+      IOperationContext context, EditorContext editorContext);
 
   protected String getMatchingText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
@@ -125,22 +113,8 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     return "";
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createParameterObjects(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected List createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected List createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext,
-      EditorContext editorContext) {
-    return createParameterObjects(node, currentChild, defaultConceptOfChild, scope, operationContext);
-  }
+  protected abstract List createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext,
+      EditorContext editorContext);
 
   protected abstract boolean isReferentPresentation();
 }

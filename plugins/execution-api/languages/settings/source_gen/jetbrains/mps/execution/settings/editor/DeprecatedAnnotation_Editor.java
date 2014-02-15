@@ -13,7 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -46,10 +45,10 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_lchw91_a0a(editorContext, node));
-    if (renderingCondition_lchw91_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lchw91_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_lchw91_b0a(editorContext, node));
     }
-    if (renderingCondition_lchw91_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_lchw91_a2a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_lchw91_c0a(editorContext, node));
     }
     return editorCell;
@@ -59,7 +58,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Deprecated");
     editorCell.setCellId("Constant_lchw91_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -77,7 +76,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lchw91_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lchw91_a1a0(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "since"));
   }
 
@@ -122,7 +121,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_lchw91_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lchw91_a2a0(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "comment"));
   }
 

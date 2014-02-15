@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class ArithmeticSimpleMathExpression_Constraints extends BaseConstraintsD
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "operator";
         return (SPropertyOperations.getString(propertyValue)).length() == 1 && ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "+", "-", "*", "/")).contains((SPropertyOperations.getString(propertyValue)));
       }

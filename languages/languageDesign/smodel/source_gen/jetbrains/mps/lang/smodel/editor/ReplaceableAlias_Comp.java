@@ -8,7 +8,6 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -32,7 +31,7 @@ public class ReplaceableAlias_Comp implements ConceptEditorComponent {
 
   private EditorCell createAlternation_gk1mhy_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ReplaceableAlias_Comp.renderingCondition_gk1mhy_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ReplaceableAlias_Comp.renderingCondition_gk1mhy_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createComponent_gk1mhy_a0(editorContext, node);
@@ -42,7 +41,7 @@ public class ReplaceableAlias_Comp implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gk1mhy_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gk1mhy_a0(SNode node, EditorContext editorContext) {
     return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
 

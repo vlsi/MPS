@@ -7,7 +7,6 @@ import jetbrains.mps.core.query.runtime.EvaluationEnvironment;
 import jetbrains.mps.core.query.runtime.EvaluationContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class MqlNullLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -23,7 +22,7 @@ public class MqlNullLiteral_Behavior {
 
   private static SNode createMqlNullType_3dw22g_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlNullType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlNullType", null, false);
     return n1;
   }
 }

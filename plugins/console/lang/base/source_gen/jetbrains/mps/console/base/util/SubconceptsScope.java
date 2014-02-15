@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
@@ -28,8 +27,8 @@ public abstract class SubconceptsScope extends Scope {
   public abstract String getName(SNode child);
 
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
-    SConceptOperations.getAllSubConcepts(concept, model, GlobalScope.getInstance());
-    Iterable<SNode> seq = SConceptOperations.getAllSubConcepts(concept, model, GlobalScope.getInstance());
+    SConceptOperations.getAllSubConcepts(concept, model);
+    Iterable<SNode> seq = SConceptOperations.getAllSubConcepts(concept, model);
     if (prefix == null || prefix.isEmpty()) {
       return seq;
     }

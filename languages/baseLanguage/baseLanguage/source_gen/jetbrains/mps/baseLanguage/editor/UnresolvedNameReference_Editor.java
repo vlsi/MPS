@@ -30,7 +30,7 @@ public class UnresolvedNameReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_resolveName");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

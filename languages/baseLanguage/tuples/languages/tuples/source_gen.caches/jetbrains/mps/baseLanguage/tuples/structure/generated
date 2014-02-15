@@ -1,37 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="44fzax3vzb0hm43k2gn7eznrp0n7qas">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
-  <common hash="-bqpo6teafzwzusb7ihkckoebipjqqbv" dependsOnNodes="true">
-    <dep root="1238852151516" />
-    <dep root="1238853782547" />
-    <dep root="1238857743184" />
-    <dep root="1239360506533" />
-    <dep root="1239462176079" />
-    <dep root="1239531918181" />
-    <dep root="1239559992092" />
-    <dep root="1239560581441" />
-    <dep root="1239576519914" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="1238852151516" name="IndexedTupleType" hash="-88s59o1m7q39taw3mnd4ikcqs62jqax" />
-  <source id="1238853782547" name="IndexedTupleLiteral" hash="-bz0ctpz7c29gcw13dioe97eu8z1piwp" />
-  <source id="1238857743184" name="IndexedTupleMemberAccessExpression" hash="-94j3s3yy6iotw3opu8w2x7847rcqea5" />
-  <source id="1239360506533" name="NamedTupleDeclaration" hash="-e3lbgj6btpiwvodg909jnw8tut6sxyr" />
-  <source id="1239462176079" name="NamedTupleComponentDeclaration" hash="-1cswzeqacjwq42813kj4kfykfwj035g" />
-  <source id="1239531918181" name="NamedTupleType" hash="-cs2scst2dss2aviw1ygaun3nkey9xu5" />
-  <source id="1239559992092" name="NamedTupleLiteral" hash="-ds3jzm9hecxf6t6sydvo94efb9hbvje" />
-  <source id="1239560581441" name="NamedTupleComponentReference" hash="-17rfk8pvau56ju59lao898gaw7pygxc" />
-  <source id="1239576519914" name="NamedTupleComponentAccessOperation" hash="-eab895plyfinmybszd21wo3kuzjrrzf" />
-</dependencies>
+<dependencies version="2" modelHash="44fzax3vzb0hm43k2gn7eznrp0n7qas" />
 

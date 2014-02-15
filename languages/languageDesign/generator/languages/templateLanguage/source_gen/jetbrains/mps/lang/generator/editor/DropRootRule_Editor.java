@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DropRootRule_Editor extends DefaultNodeEditor {
@@ -35,7 +34,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_fdnaen_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fdnaen_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fdnaen_c0(editorContext, node));
-    if (renderingCondition_fdnaen_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_fdnaen_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_fdnaen_d0(editorContext, node));
     }
     return editorCell;
@@ -49,7 +48,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new DropRootRule_Editor._Inline_fdnaen_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
+    SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -106,7 +105,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_fdnaen_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -142,7 +141,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_fdnaen_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_fdnaen_a3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "conditionFunction", true) == null;
   }
 }

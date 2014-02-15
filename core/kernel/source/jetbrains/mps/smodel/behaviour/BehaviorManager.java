@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -109,7 +108,7 @@ public final class BehaviorManager {
 
   private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, @NotNull String conceptFqName, boolean includeSelf, String methodName,
       Class[] parametersTypes, Object... parameters) {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (concept == null) {
       concept = SModelUtil.getBaseConcept();
     }

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,7 +29,7 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
       SModule module = check_gfouwf_a0b0a0b(check_gfouwf_a0a1a0a1(classCreator));
 
       if ((refText != null && refText.length() > 0) && module != null) {
-        SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(classCreator, ((AbstractModule) module).getScope()).resolve(classCreator, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(classCreator).resolve(classCreator, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
         if ((clazz != null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -28,7 +27,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_165sw5_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_165sw5_a0(editorContext, node));
-    if (renderingCondition_165sw5_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_165sw5_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_165sw5_b0(editorContext, node));
     }
     return editorCell;
@@ -50,7 +49,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_165sw5_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_165sw5_a1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
@@ -58,7 +57,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_165sw5_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

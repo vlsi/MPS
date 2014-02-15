@@ -55,7 +55,7 @@ public class SSource_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "syntax");
     editorCell.setCellId("Constant_5svtcf_a0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyKeyword(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -83,7 +83,7 @@ public class SSource_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generates");
     editorCell.setCellId("Constant_5svtcf_c0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyKeyword(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -126,7 +126,7 @@ public class SSource_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%input");
     editorCell.setCellId("Constant_5svtcf_f0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyKeyword(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -252,7 +252,7 @@ public class SSource_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< lexer definition >>");
       editorCell.setCellId("Constant_5svtcf_a9a");
       Style style = new StyleImpl();
-      SyntaxSS_StyleSheet.applyEmptyCollection(style, editorCell);
+      SyntaxSS_StyleSheet.apply_EmptyCollection(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -273,7 +273,7 @@ public class SSource_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "grammar");
     editorCell.setCellId("Constant_5svtcf_l0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyKeyword(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -345,7 +345,7 @@ public class SSource_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< grammar definition >>");
       editorCell.setCellId("Constant_5svtcf_a31a");
       Style style = new StyleImpl();
-      SyntaxSS_StyleSheet.applyEmptyCollection(style, editorCell);
+      SyntaxSS_StyleSheet.apply_EmptyCollection(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

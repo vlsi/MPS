@@ -129,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

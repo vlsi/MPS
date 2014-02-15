@@ -257,9 +257,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/sandbox/jetbrains.mps.lang.test.sandbox.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/jetbrains.mps.ide.mpsdevkit.msd" folder="platform" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" folder="platform.quickQueryLanguage" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="platform.quickQueryLanguage" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/jetbrains.mps.quickQueryLanguage.pluginSolution.msd" folder="platform.quickQueryLanguage" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/jetbrains.mps.baseLanguage.pluginSolution.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/jetbrains.mps.lang.dataFlow.pluginSolution.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/jetbrains.mps.lang.typesystem.devkit.pluginSolution.msd" folder="core.aspects.typesystem" />
@@ -320,6 +317,9 @@
       <modulePath path="$PROJECT_DIR$/samples/generator_demo/languages/demoLang6/jetbrains.mps.samples.generator_demo.demoLang6.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/generator_demo/languages/demoLang7/jetbrains.mps.samples.generator_demo.demoLang7.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/generator_demo/solutions/test_models/jetbrains.mps.samples.generator_demo.test_models.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating.tabular/jetbrains.mps.samples.heating.tabular.mpl" folder="samples.heating" />
+      <modulePath path="$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/jetbrains.mps.samples.heating.mpl" folder="samples.heating" />
+      <modulePath path="$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/sandbox/jetbrains.mps.samples.heating.sandbox.msd" folder="samples.heating" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/languages/lambdaCalculus/jetbrains.mps.samples.lambdaCalculus.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="samples" />
@@ -352,6 +352,8 @@
       <modulePath path="$PROJECT_DIR$/samples/sampleXML/languages/sampleXML/jetbrains.mps.sampleXML.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/sampleXML/languages/sampleXML/solutions/pluginSolution/jetbrains.mps.sampleXML.pluginSolution.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/sampleXML/solutions/sandbox/sampleXML.sandbox.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/jetbrains.mps.samples.Shapes.mpl" folder="samples.shapes" />
+      <modulePath path="$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/sandbox/jetbrains.mps.samples.Shapes.sandbox.msd" folder="samples.shapes" />
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/jetbrains.mps.samples.theSimplestLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpl" folder="samples" />

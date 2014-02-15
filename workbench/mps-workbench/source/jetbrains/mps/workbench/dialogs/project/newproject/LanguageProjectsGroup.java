@@ -7,9 +7,9 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.DocumentationHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -49,7 +49,7 @@ class LanguageProjectsGroup implements ProjectTemplatesGroup {
     @Override
     public String getDescription() {
       return "In MPS, you create new languages and then use them to write code " +
-          "in solutions. An <a href=\"http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-languages\">MPS language</a> describes the syntax, editor, generator and other aspects of the " +
+          "in solutions. An <a href=\""+ DocumentationHelper.getConfluenceBase() +"MPS+project+structure#MPSprojectstructure-languages\">MPS language</a> describes the syntax, editor, generator and other aspects of the " +
           "new language.";
     }
 

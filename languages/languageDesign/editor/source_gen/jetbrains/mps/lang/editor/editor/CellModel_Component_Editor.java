@@ -31,7 +31,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_r0l70z_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new CellModel_Component_KeyMap());
     editorCell.addEditorCell(this.createComponent_r0l70z_a0(editorContext, node));
@@ -53,7 +53,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new CellModel_Component_Editor._Inline_r0l70z_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

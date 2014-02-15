@@ -24,7 +24,7 @@ import java.awt.event.ActionEvent;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(text, operationContext.getProject());
+    super(text, operationContext.getProject(),operationContext.getModule());
   }
 
   @NotNull

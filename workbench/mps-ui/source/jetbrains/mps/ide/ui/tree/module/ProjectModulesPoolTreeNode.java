@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,16 +19,13 @@ import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-
-import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectModulesPoolTreeNode extends TextTreeNode {
   private MPSProject myProject;
@@ -64,7 +61,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    List<SModule> modules = (List<SModule>) new FilteredGlobalScope().getVisibleModules();
+    Iterable<SModule> modules = new FilteredGlobalScope().getModules();
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
@@ -80,8 +77,10 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode languages = new TextTreeNode("Languages");
-      for (Language l : CollectionUtil.filter(Language.class, modules)) {
-        builder.addNode(ProjectModuleTreeNode.createFor(myProject, l, true));
+      for (SModule m : modules) {
+        if (Language.class.isInstance(m)) {
+          builder.addNode(ProjectModuleTreeNode.createFor(myProject, m, true));
+        }
       }
       builder.fillNode(languages);
       add(languages);
@@ -90,8 +89,10 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode devkits = new TextTreeNode("DevKits");
-      for (DevKit devKit : CollectionUtil.filter(DevKit.class, modules)) {
-        builder.addNode(ProjectModuleTreeNode.createFor(myProject, devKit, true));
+      for (SModule m  : modules) {
+        if (DevKit.class.isInstance(m)) {
+          builder.addNode(ProjectModuleTreeNode.createFor(myProject, m, true));
+        }
       }
       builder.fillNode(devkits);
       add(devkits);

@@ -15,7 +15,6 @@ import jetbrains.mps.core.query.runtime.EvaluationException;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class MqlCollectionProperty_Behavior {
   public static void init(SNode thisNode) {
@@ -90,13 +89,13 @@ public class MqlCollectionProperty_Behavior {
 
   private static SNode createMqlIntType_tz2cyz_a0a0c0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlIntType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlIntType", null, false);
     return n1;
   }
 
   private static SNode createMqlBoolType_tz2cyz_a0a1c0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlBoolType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlBoolType", null, false);
     return n1;
   }
 }

@@ -74,7 +74,7 @@ public class SimpleBuilderParameterReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("parameter");
       }
       Style style = new StyleImpl();
-      StyleSheet_StyleSheet.applyParameter(style, editorCell);
+      StyleSheet_StyleSheet.apply_Parameter(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

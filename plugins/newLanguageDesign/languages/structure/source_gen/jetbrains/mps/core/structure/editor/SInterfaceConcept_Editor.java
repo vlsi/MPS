@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -41,12 +40,12 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qx8fwl_a");
     editorCell.setBig(true);
-    if (renderingCondition_qx8fwl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qx8fwl_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_qx8fwl_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_qx8fwl_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qx8fwl_c0(editorContext, node));
-    if (renderingCondition_qx8fwl_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qx8fwl_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_qx8fwl_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createAlternation_qx8fwl_e0(editorContext, node));
@@ -103,7 +102,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_qx8fwl_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qx8fwl_a0a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "annotations", true)).isNotEmpty();
   }
 
@@ -111,7 +110,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface concept");
     editorCell.setCellId("Constant_qx8fwl_b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
@@ -162,7 +161,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qx8fwl_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qx8fwl_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extends", true)).isNotEmpty();
   }
 
@@ -170,7 +169,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_qx8fwl_a3a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -236,7 +235,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_qx8fwl_e0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SInterfaceConcept_Editor.renderingCondition_qx8fwl_a4a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SInterfaceConcept_Editor.renderingCondition_qx8fwl_a4a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_qx8fwl_a4a(editorContext, node);
@@ -246,7 +245,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qx8fwl_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qx8fwl_a4a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "members", true)).isNotEmpty();
   }
 
@@ -254,7 +253,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qx8fwl_a4a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
@@ -267,7 +266,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qx8fwl_a4a_0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -343,7 +342,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_qx8fwl_g0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

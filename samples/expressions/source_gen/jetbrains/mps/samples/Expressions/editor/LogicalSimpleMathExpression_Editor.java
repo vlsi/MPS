@@ -52,7 +52,7 @@ public class LogicalSimpleMathExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_hge5w8_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    SimpleMath_StyleSheet.applyKeyWord(style, editorCell);
+    SimpleMath_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

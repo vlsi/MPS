@@ -6,20 +6,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.smodel.SNodeUtil;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -62,7 +62,7 @@ public final class SConceptOperations {
   }
 
   public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
-    return SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    return SModelUtil.findConceptDeclaration(conceptFqName);
   }
 
   @Deprecated
@@ -106,7 +106,7 @@ public final class SConceptOperations {
     return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
 
-  public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
+  public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
     return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
 
@@ -117,7 +117,7 @@ public final class SConceptOperations {
     Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
-      SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
+      SNode declaration = SModelUtil.findConceptDeclaration(descendant);
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
       if (SetSequence.fromSet(availableLanguages).contains(lang)) {
         result.add(declaration);
@@ -126,7 +126,7 @@ public final class SConceptOperations {
     return result;
   }
 
-  public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, IScope scope) {
+  public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, SearchScope scope) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
@@ -145,6 +145,6 @@ public final class SConceptOperations {
 
   @Deprecated
   public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
+    return ((jetbrains.mps.smodel.SNode) jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName));
   }
 }

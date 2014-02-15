@@ -20,25 +20,16 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SolutionRef_1280144168199506928(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -59,7 +50,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final SModuleReference item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode solutionRef = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.SolutionRef", null);
                 SPropertyOperations.set(solutionRef, "moduleFQName", (item).getModuleName());
@@ -90,22 +81,12 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
-              public Iterable<SNode> translate(SModel smd) {
-                return new AllSubclassifiersScope(SLinkOperations.getTarget(_quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a(), "classifier", false), smd, IClassifiersSearchScope.CLASS, (mscope != null ? mscope : operationContext.getScope())).getNodes(new Condition<SNode>() {
-                  public boolean met(SNode cls) {
-                    return !(SPropertyOperations.getBoolean(cls, "abstractClass"));
-                  }
-                });
-              }
-            }).toListSequence();
+            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
           }
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
@@ -137,32 +118,12 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_wt5x6r_a0a2a0a1a(), "annotation", false);
-
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
-              public Iterable<SNode> translate(SModel smd) {
-                return new ReachableClassifiersScope(smd, IClassifiersSearchScope.CLASS, (mscope != null ? mscope : operationContext.getScope())).getNodes(new Condition<SNode>() {
-                  public boolean met(SNode cls) {
-                    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).translate(new ITranslator2<SNode, SNode>() {
-                      public Iterable<SNode> translate(SNode m) {
-                        return SLinkOperations.getTargets(m, "annotation", true);
-                      }
-                    }).any(new IWhereFilter<SNode>() {
-                      public boolean accept(SNode ani) {
-                        return SLinkOperations.getTarget(ani, "annotation", false) == testAnn;
-                      }
-                    });
-                  }
-                });
-              }
-            }).toListSequence();
+            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
           }
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
@@ -204,7 +165,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "testCase", (item), false);
@@ -226,21 +187,5 @@ public class QueriesGenerated {
       }
     }
     return result;
-  }
-
-  private static SNode _quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_wt5x6r_a0a2a0a1a() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
-    return quotedNode_1;
   }
 }

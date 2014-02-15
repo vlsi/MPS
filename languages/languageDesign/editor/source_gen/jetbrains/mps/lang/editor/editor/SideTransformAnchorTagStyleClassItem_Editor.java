@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
@@ -50,10 +49,10 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_2l0gvl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2l0gvl_b0(editorContext, node));
-    if (renderingCondition_2l0gvl_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2l0gvl_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_2l0gvl_c0(editorContext, node));
     }
-    if (renderingCondition_2l0gvl_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2l0gvl_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_2l0gvl_d0(editorContext, node));
     }
     return editorCell;
@@ -62,7 +61,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   private EditorCell createComponent_2l0gvl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0()}));
     return editorCell;
@@ -102,7 +101,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  private static boolean renderingCondition_2l0gvl_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2l0gvl_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isEmpty();
   }
 
@@ -110,15 +109,15 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "RightTransformAnchorTag"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).clear();
       SPropertyOperations.set(node, "tag", SEnumOperations.getEnumMemberValue(parameterObject));
     }
@@ -132,7 +131,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode tagWrapper = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
       SPropertyOperations.set(tagWrapper, "tag", SPropertyOperations.getString_def(node, "tag", null));
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).addElement(tagWrapper);
@@ -203,7 +202,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     }
   }
 
-  private static boolean renderingCondition_2l0gvl_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2l0gvl_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isNotEmpty();
   }
 }
