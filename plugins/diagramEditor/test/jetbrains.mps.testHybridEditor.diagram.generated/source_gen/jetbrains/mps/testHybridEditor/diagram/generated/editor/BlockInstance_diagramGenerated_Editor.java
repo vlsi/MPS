@@ -289,16 +289,8 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           if (descendantMapper == null) {
             return;
           }
-          configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-            public void set(Boolean isError) {
-              getTarget().setError(isError);
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(((DiagramNodeView) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean isSelected) {
-              getTarget().setSelected(isSelected);
-            }
-          }));
+          configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
+          configuration.add(Synchronizers.forProperty(((DiagramNodeView) descendantMapper.getTarget()).focused(), getTarget().isSelected));
           ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
           configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
@@ -319,11 +311,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return;
                   }
                   final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
-                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-                    public void set(Boolean isSelected) {
-                      getTarget().setSelected(isSelected);
-                    }
-                  }));
+                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
                   ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
                   configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
 
@@ -349,11 +337,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return;
                   }
                   final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
-                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-                    public void set(Boolean isSelected) {
-                      getTarget().setSelected(isSelected);
-                    }
-                  }));
+                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
                   ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
                   configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
 

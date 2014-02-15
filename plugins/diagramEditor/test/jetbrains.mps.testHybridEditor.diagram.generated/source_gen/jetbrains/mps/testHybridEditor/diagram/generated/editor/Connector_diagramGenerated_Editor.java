@@ -129,16 +129,8 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
           if (descendantMapper == null) {
             return;
           }
-          configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-            public void set(Boolean isError) {
-              getTarget().setError(isError);
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(((PolyLineConnection) descendantMapper.getTarget()).view().focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean isSelected) {
-              getTarget().setSelected(isSelected);
-            }
-          }));
+          configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
+          configuration.add(Synchronizers.forProperty(((PolyLineConnection) descendantMapper.getTarget()).view().focused(), getTarget().isSelected));
           ReadableProperty<Boolean> valid = ((PolyLineConnection) descendantMapper.getTarget()).view().valid();
           configuration.add(Synchronizers.forProperty(valid, getTarget().isValid()));
 

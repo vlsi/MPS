@@ -113,16 +113,8 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
             return;
           }
           {
-            configuration.add(Synchronizers.forProperty(myErrorItem, new WritableProperty<Boolean>() {
-              public void set(Boolean isError) {
-                getTarget().setError(isError);
-              }
-            }));
-            configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), new WritableProperty<Boolean>() {
-              public void set(Boolean isSelected) {
-                getTarget().setSelected(isSelected);
-              }
-            }));
+            configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
+            configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
             ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
             configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
 
