@@ -13,7 +13,6 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -37,7 +36,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_inwiug_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createAlternation_inwiug_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_inwiug_b0(editorContext, node));
@@ -46,7 +45,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_inwiug_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CellModel_DiagramPort_Editor.renderingCondition_inwiug_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = CellModel_DiagramPort_Editor.renderingCondition_inwiug_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_inwiug_a0a(editorContext, node);
@@ -57,7 +56,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_inwiug_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_inwiug_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "input");
   }
 
@@ -65,7 +64,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "input", "" + (true));
     }
 
@@ -78,7 +77,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "input", "" + (false));
     }
 

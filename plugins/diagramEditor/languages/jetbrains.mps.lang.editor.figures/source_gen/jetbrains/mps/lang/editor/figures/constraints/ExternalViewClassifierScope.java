@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.figures.constraints;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +17,7 @@ public class ExternalViewClassifierScope extends FilteringScope {
   private SModel myModel;
 
   public ExternalViewClassifierScope(SModel model) {
-    super(new ModelPlusImportedScope(model, false, ((AbstractModule) model.getModule()).getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    super(new ModelPlusImportedScope(model, false, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     myModel = model;
   }
 

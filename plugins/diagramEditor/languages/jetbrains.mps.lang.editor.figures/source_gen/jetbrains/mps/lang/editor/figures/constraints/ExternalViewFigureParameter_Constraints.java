@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -39,7 +38,7 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "fieldDeclaration", false), "name");
       }

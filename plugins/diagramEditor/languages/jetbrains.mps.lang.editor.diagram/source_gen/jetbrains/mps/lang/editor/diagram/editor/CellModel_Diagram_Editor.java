@@ -37,7 +37,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_7br2q0_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_7br2q0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7br2q0_b0(editorContext, node));
@@ -52,7 +52,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_7br2q0_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
     editorCell.setCellId("Constant_7br2q0_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -72,7 +72,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_7br2q0_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyLeftParen(style, editorCell);
+    Styles_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -150,7 +150,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_7br2q0_f0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRightParen(style, editorCell);
+    Styles_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -159,7 +159,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_7br2q0_g0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

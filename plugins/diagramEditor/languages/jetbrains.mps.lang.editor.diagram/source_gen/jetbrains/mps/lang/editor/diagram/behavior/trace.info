@@ -249,128 +249,128 @@
     <unitInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8570854907290566950">
-    <nodeInfo nodeId="2028694650681103162" fileName="DiagramElementCreationHandler_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2028694650681103174" fileName="DiagramElementCreationHandler_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2028694650681103169" fileName="DiagramElementCreationHandler_Behavior.java" startLine="20" startPosition="157" endLine="21" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290719484" fileName="DiagramElementCreationHandler_Behavior.java" startLine="21" startPosition="154" endLine="22" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2028694650681103179" fileName="DiagramElementCreationHandler_Behavior.java" startLine="22" startPosition="154" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2028694650681099839" fileName="DiagramElementCreationHandler_Behavior.java" startLine="23" startPosition="18" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2028694650681124656" fileName="DiagramElementCreationHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="31" startPosition="60" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="63" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="34" startPosition="159" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_78v23b_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="8570854907290567103" fileName="DiagramElementCreationHandler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="2028694650681123995" fileName="DiagramElementCreationHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="47" />
-    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="159" />
-    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="2028694650681103162" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650681103174" fileName="DiagramElementCreationHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681103169" fileName="DiagramElementCreationHandler_Behavior.java" startLine="19" startPosition="157" endLine="20" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290719484" fileName="DiagramElementCreationHandler_Behavior.java" startLine="20" startPosition="154" endLine="21" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681103179" fileName="DiagramElementCreationHandler_Behavior.java" startLine="21" startPosition="154" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2028694650681099839" fileName="DiagramElementCreationHandler_Behavior.java" startLine="22" startPosition="18" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2028694650681124656" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="60" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="31" startPosition="63" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="33" startPosition="132" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_78v23b_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="8570854907290567103" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2028694650681123995" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" />
+    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" />
+    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="8570854907290566950" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8570854907290566950" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="31" startPosition="60" endLine="35" endPosition="24">
+    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="60" endLine="34" endPosition="24">
       <varInfo nodeId="2028694650681124671" varName="facade" />
       <varInfo nodeId="2028694650681124671" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="2028694650681051032" fileName="DiagramElementCreationHandler_Behavior.java" startLine="18" startPosition="81" endLine="24" endPosition="0">
+    <scopeInfo nodeId="2028694650681051032" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="23" endPosition="0">
       <varInfo nodeId="2028694650681103163" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="8570854907290566950" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_Behavior" />
+    <unitInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/939897302409085213">
-    <nodeInfo nodeId="939897302409085219" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409519468" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409659738" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="20" startPosition="157" endLine="21" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519473" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="21" startPosition="161" endLine="22" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519478" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="22" startPosition="159" endLine="23" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519483" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="23" startPosition="159" endLine="24" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519356" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="24" startPosition="157" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="939897302409085241" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="25" startPosition="0" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409085243" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="26" startPosition="18" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="939897302409085248" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="34" startPosition="60" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="63" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="36" startPosition="30" endLine="37" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="36" startPosition="30" endLine="37" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="36" startPosition="30" endLine="37" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="37" startPosition="159" endLine="38" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d606ao_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="939897302409085252" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="939897302409085247" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="47" />
-    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="36" startPosition="30" endLine="37" endPosition="159" />
-    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="939897302409085219" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409519468" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409659738" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="19" startPosition="157" endLine="20" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409519473" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="20" startPosition="161" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409519478" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="21" startPosition="159" endLine="22" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409519483" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="22" startPosition="159" endLine="23" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409519356" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="23" startPosition="157" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="939897302409085241" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="24" startPosition="0" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409085243" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="25" startPosition="18" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="939897302409085248" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="60" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="34" startPosition="63" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="36" startPosition="132" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d606ao_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="939897302409085252" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="939897302409085247" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="47" />
+    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" />
+    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="939897302409085213" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="939897302409085213" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="34" startPosition="60" endLine="38" endPosition="24">
+    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="60" endLine="37" endPosition="24">
       <varInfo nodeId="939897302409085249" varName="facade" />
       <varInfo nodeId="939897302409085249" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="939897302409085218" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="18" startPosition="81" endLine="27" endPosition="0">
+    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="939897302409085218" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="26" endPosition="0">
       <varInfo nodeId="939897302409085220" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="939897302409085213" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_Behavior" />
+    <unitInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/939897302409110471">
-    <nodeInfo nodeId="939897302409110477" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409110484" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409517388" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="20" startPosition="161" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409517883" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="21" startPosition="159" endLine="22" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409518521" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="22" startPosition="159" endLine="23" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409110489" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="23" startPosition="157" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409110491" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="24" startPosition="18" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="939897302409110496" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="32" startPosition="60" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="63" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="35" startPosition="162" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_xy3eks_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="939897302409110500" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="939897302409110495" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" />
-    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="162" />
-    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="939897302409110477" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409110484" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409517388" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="19" startPosition="161" endLine="20" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409517883" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="20" startPosition="159" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409518521" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="21" startPosition="159" endLine="22" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409110489" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="22" startPosition="157" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409110491" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="23" startPosition="18" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="939897302409110496" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="60" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="32" startPosition="63" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="34" startPosition="135" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_xy3eks_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="939897302409110500" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="939897302409110495" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="47" />
+    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" />
+    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="939897302409110471" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="939897302409110471" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="32" startPosition="60" endLine="36" endPosition="24">
+    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="60" endLine="35" endPosition="24">
       <varInfo nodeId="939897302409110497" varName="facade" />
       <varInfo nodeId="939897302409110497" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="939897302409110476" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="18" startPosition="81" endLine="25" endPosition="0">
+    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="939897302409110476" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="81" endLine="24" endPosition="0">
       <varInfo nodeId="939897302409110478" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="939897302409110471" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_Behavior" />
+    <unitInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_Behavior" />
   </root>
 </debugInfo>
 

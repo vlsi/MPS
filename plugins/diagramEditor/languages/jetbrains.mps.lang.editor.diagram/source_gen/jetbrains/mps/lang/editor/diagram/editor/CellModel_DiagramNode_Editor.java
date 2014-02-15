@@ -40,7 +40,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_5xszyv_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5xszyv_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5xszyv_b0(editorContext, node));
@@ -88,7 +88,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_5xszyv_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyLeftParen(style, editorCell);
+    Styles_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -159,7 +159,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_5xszyv_e0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRightParen(style, editorCell);
+    Styles_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

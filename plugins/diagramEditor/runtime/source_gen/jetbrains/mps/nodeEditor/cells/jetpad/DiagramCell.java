@@ -241,7 +241,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
-            SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container), editorContext.getOperationContext().getScope());
+            SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
             ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
             DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
             setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());

@@ -72,6 +72,36 @@ public class Styles_StyleSheet {
     style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
   }
 
+  public static void apply_AnyBracket(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+  }
+
+  public static void apply_Parenthesis(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_AnyBracket(style, editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+  }
+
+  public static void apply_LeftParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_Parenthesis(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+  }
+
+  public static void apply_RightParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_Parenthesis(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+  }
+
+  public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_LeftParen(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+  }
+
+  public static void apply_KeyWord(Style style, EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
+  }
+
 
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {

@@ -389,8 +389,8 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -463,9 +463,9 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -535,8 +535,8 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -600,8 +600,8 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
