@@ -12,7 +12,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.LinkedList;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
@@ -81,9 +83,27 @@ public class GeneratorUtilEx {
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new LinkedList<SNode>();
-    for (SNode subnode : jetbrains.mps.util.SNodeOperations.getDescendants(template, new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
-      templateFragments.add((SNode) subnode);
-    }
+    LinkedList<SNode> queue = new LinkedList<SNode>();
+    queue.addFirst(template);
+    do {
+      SNode subnode = queue.removeFirst();
+      boolean tfFound = false;
+      final List<SNode> attributes = SLinkOperations.getTargets(subnode, "smodelAttribute", true);
+      for (SNode attr : ListSequence.fromList(attributes)) {
+        if (SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(attr), "jetbrains.mps.lang.generator.structure.TemplateFragment")) {
+          templateFragments.add(SNodeOperations.cast(attr, "jetbrains.mps.lang.generator.structure.TemplateFragment"));
+          tfFound = true;
+          break;
+        }
+      }
+      if (!(tfFound)) {
+        queue.addAll(ListSequence.fromList(SNodeOperations.getChildren(subnode)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !(ListSequence.fromList(attributes).contains(it));
+          }
+        }).toListSequence());
+      }
+    } while (!(queue.isEmpty()));
     return templateFragments;
   }
 
