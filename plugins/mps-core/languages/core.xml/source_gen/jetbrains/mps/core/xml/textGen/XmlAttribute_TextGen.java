@@ -15,14 +15,14 @@ public class XmlAttribute_TextGen extends SNodeTextGen {
       this.indentBuffer();
       this.append("\t");
     }
+    this.append(SPropertyOperations.getString(node, "attrName"));
+    this.append("=\"");
     {
-      this.append(SPropertyOperations.getString(node, "attrName"));
-      this.append("=\"");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "value", true);
       for (SNode item : collection) {
         appendNode(item);
       }
-      this.append("\"");
     }
+    this.append("\"");
   }
 }

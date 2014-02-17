@@ -13,8 +13,8 @@ public class InternalClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+      this.append("<");
       {
-        this.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -23,11 +23,11 @@ public class InternalClassCreator_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(">");
       }
+      this.append(">");
     }
+    this.append("(");
     {
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -36,7 +36,7 @@ public class InternalClassCreator_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
   }
 }

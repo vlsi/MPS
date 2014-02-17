@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    appendNode(SLinkOperations.getTarget(node, "componentType", true));
     {
-      appendNode(SLinkOperations.getTarget(node, "componentType", true));
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "dimensionExpression", true);
       for (SNode item : collection) {
         appendNode(item);

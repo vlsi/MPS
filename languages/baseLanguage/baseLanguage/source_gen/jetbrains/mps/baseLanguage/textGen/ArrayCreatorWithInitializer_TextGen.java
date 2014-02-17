@@ -9,9 +9,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ArrayCreatorWithInitializer_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    appendNode(SLinkOperations.getTarget(node, "componentType", true));
+    this.append("[]{");
     {
-      appendNode(SLinkOperations.getTarget(node, "componentType", true));
-      this.append("[]{");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "initValue", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -20,7 +20,7 @@ public class ArrayCreatorWithInitializer_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append("}");
     }
+    this.append("}");
   }
 }

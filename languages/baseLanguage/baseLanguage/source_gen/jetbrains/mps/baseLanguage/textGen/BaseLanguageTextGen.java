@@ -33,8 +33,8 @@ import org.apache.log4j.LogManager;
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final SNodeTextGen textGen) {
     if (ListSequence.fromList(types).isNotEmpty()) {
+      textGen.append("<");
       {
-        textGen.append("<");
         Iterable<SNode> collection = types;
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -43,14 +43,14 @@ public abstract class BaseLanguageTextGen {
             textGen.append(", ");
           }
         }
-        textGen.append(">");
       }
+      textGen.append(">");
     }
   }
 
   public static void arguments(SNode methodCall, final SNodeTextGen textGen) {
+    textGen.append("(");
     {
-      textGen.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(methodCall, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -59,8 +59,8 @@ public abstract class BaseLanguageTextGen {
           textGen.append(", ");
         }
       }
-      textGen.append(")");
     }
+    textGen.append(")");
   }
 
   public static void newLine(boolean need, final SNodeTextGen textGen) {
@@ -177,8 +177,8 @@ public abstract class BaseLanguageTextGen {
 
   public static void methodTypeArguments(SNode methodCall, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
+      textGen.append("<");
       {
-        textGen.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(methodCall, "typeArgument", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -187,8 +187,8 @@ public abstract class BaseLanguageTextGen {
             textGen.append(",");
           }
         }
-        textGen.append(">");
       }
+      textGen.append(">");
     }
   }
 

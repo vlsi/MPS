@@ -11,8 +11,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
   public static void typeDeclarations(SNode generic, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {
+      textGen.append("<");
       {
-        textGen.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(generic, "typeVariableDeclaration", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -21,8 +21,8 @@ public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
             textGen.append(", ");
           }
         }
-        textGen.append(">");
       }
+      textGen.append(">");
     }
   }
 }

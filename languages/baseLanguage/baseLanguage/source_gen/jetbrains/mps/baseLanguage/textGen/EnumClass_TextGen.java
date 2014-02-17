@@ -35,8 +35,8 @@ public class EnumClass_TextGen extends SNodeTextGen {
     this.appendWithIndent("enum ");
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+      this.append(" implements ");
       {
-        this.append(" implements ");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "implementedInterface", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -58,11 +58,11 @@ public class EnumClass_TextGen extends SNodeTextGen {
           append(",");
         }
       }
-      this.append(";");
-      this.appendNewLine();
-      this.appendNewLine();
-      BaseClassConceptTextGen.members(node, this);
     }
+    this.append(";");
+    this.appendNewLine();
+    this.appendNewLine();
+    BaseClassConceptTextGen.members(node, this);
     this.decreaseDepth();
     this.appendWithIndent("}");
     this.appendNewLine();

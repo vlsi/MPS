@@ -21,8 +21,8 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier")), this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+      this.append("<");
       {
-        this.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "typeParameter", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -31,12 +31,12 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(">");
       }
+      this.append(">");
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+      this.append("(");
       {
-        this.append("(");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -45,11 +45,11 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(")");
       }
+      this.append(")");
     } else {
+      this.append("(");
       {
-        this.append("(");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -58,8 +58,8 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(")");
       }
+      this.append(")");
     }
     this.append(" ");
     BaseClassConceptTextGen.membersWithBrackets(node, false, this);

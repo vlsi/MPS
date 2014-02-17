@@ -72,7 +72,7 @@ public abstract class BaseClassConceptTextGen {
       for (SNode item : collection) {
         textGen.appendNode(item);
       }
-      textGen.appendNewLine();
     }
+    textGen.appendNewLine();
   }
 }

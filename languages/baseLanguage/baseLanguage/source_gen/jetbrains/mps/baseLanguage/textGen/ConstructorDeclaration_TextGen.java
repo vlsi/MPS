@@ -40,9 +40,9 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
       this.append(" ");
     }
     assert declaringClass != null;
+    this.append(SPropertyOperations.getString(declaringClass, "name"));
+    this.append("(");
     {
-      this.append(SPropertyOperations.getString(declaringClass, "name"));
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -51,11 +51,11 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
+      this.append(" throws ");
       {
-        this.append(" throws ");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "throwsItem", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
