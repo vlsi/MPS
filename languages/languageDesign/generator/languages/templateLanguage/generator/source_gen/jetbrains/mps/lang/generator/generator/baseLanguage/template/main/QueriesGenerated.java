@@ -575,12 +575,12 @@ public class QueriesGenerated {
     return "innerResult" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
-  public static Object propertyMacro_GetPropertyValue_1147906725605225631(final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "applyToConceptInheritors");
+  public static Object propertyMacro_GetPropertyValue_5390171681995365401(final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1147906725605225643(final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false));
+  public static Object propertyMacro_GetPropertyValue_5390171681995367031(final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "applyToConceptInheritors");
   }
 
   public static Object propertyMacro_GetPropertyValue_9191117361655049561(final PropertyMacroContext _context) {
@@ -722,7 +722,7 @@ public class QueriesGenerated {
     return "WeavingRule" + index;
   }
 
-  public static Object propertyMacro_GetPropertyValue_330395710727988798(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5390171681995476502(final PropertyMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "patternNode", true).getConcept().getQualifiedName();
   }
 

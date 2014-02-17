@@ -14,8 +14,8 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collections;
+import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import jetbrains.mps.generator.impl.AbandonRuleInputException;
 
 @Generated
 public class SwitchbetterSwitch implements TemplateSwitchMapping {
@@ -47,46 +47,34 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     environment.getGenerator().getLogger().info(context.getInput(), "Hmm, input is null");
   }
 
-  public class ReductionRule0 implements TemplateReductionRule {
+  public final class ReductionRule0 extends ReductionRuleBase {
     public ReductionRule0() {
+      super(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066877"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false);
     }
 
-    public boolean applyToInheritors() {
-      return false;
-    }
-
-    public String getApplicableConcept() {
-      return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
-    }
-
-    public SNodeReference getRuleNode() {
-      return reductionRule_duaj4c_a0a3h;
-    }
-
+    @Override
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, reductionRule_duaj4c_a0a3h, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, getRuleNode(), environment.getGenerator())))) {
         return null;
       }
 
-      environment.getTracer().pushRule(reductionRule_duaj4c_a0a3h);
+      environment.getTracer().pushRule(getRuleNode());
       try {
-        return apply(context, environment.getEnvironment(context.getInput(), this));
-      } catch (AbandonRuleInputException e) {
-        return Collections.emptyList();
+        return doApply(context, environment.getEnvironment(context.getInput(), this));
       } finally {
-        environment.getTracer().closeRule(reductionRule_duaj4c_a0a3h);
+        environment.getTracer().closeRule(getRuleNode());
       }
 
     }
 
-    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a5h);
+    @Override
+    protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a2h);
       Collection<SNode> tlist1 = new Templatereduce__InputNode__A().apply(environment, context);
       return tlist1;
     }
   }
 
   private static SNodePointer conseq_duaj4c_a0a0a5 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066876");
-  private static SNodePointer reductionRule_duaj4c_a0a3h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066877");
-  private static SNodePointer conseq_duaj4c_a0a0a5h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066883");
+  private static SNodePointer conseq_duaj4c_a0a0a2h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066883");
 }

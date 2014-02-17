@@ -246,7 +246,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, executionContext, new ReductionContext());
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, executionContext);
         for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
           checkMonitorCanceled();
           applyCreateRoot(rule, environment);
@@ -273,7 +273,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       QueryExecutionContext context = getExecutionContext(rootToCopy);
       if (context != null) {
-        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context, new ReductionContext());
+        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context);
         copyRootInputNode(rootToCopy, rootenv);
       }
     }
@@ -300,7 +300,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsConsumed) throws GenerationFailureException, GenerationCanceledException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
+      getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
@@ -536,6 +536,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
 
+    } catch (AbandonRuleInputException ex) {
+      return Collections.emptyList();
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       if (ex.isLoggingNeeded() && reductionRule != null) {
