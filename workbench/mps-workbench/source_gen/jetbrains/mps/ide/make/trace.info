@@ -172,8 +172,8 @@
     <nodeInfo nodeId="173672751428922855" fileName="TextPreviewFile.java" startLine="31" startPosition="77" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428922867" fileName="TextPreviewFile.java" startLine="32" startPosition="23" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6183178211408221159" fileName="TextPreviewFile.java" startLine="33" startPosition="37" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6183178211408261662" fileName="TextPreviewFile.java" startLine="40" startPosition="45" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428922763" fileName="TextPreviewFile.java" startLine="42" startPosition="5" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428922763" fileName="TextPreviewFile.java" startLine="40" startPosition="42" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8009600572784795187" fileName="TextPreviewFile.java" startLine="42" startPosition="5" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428922773" fileName="TextPreviewFile.java" startLine="47" startPosition="31" endLine="48" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428922782" fileName="TextPreviewFile.java" startLine="54" startPosition="27" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428922789" fileName="TextPreviewFile.java" startLine="59" startPosition="30" endLine="60" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -275,7 +275,7 @@
     <scopeInfo nodeId="173672751428922511" fileName="TextPreviewFile.java" startLine="203" startPosition="89" endLine="203" endPosition="89" />
     <scopeInfo nodeId="173672751428922635" fileName="TextPreviewFile.java" startLine="262" startPosition="77" endLine="262" endPosition="77" />
     <scopeInfo nodeId="173672751428922652" fileName="TextPreviewFile.java" startLine="271" startPosition="75" endLine="271" endPosition="75" />
-    <scopeInfo nodeId="173672751428922734" fileName="TextPreviewFile.java" startLine="40" startPosition="45" endLine="41" endPosition="44" />
+    <scopeInfo nodeId="173672751428922734" fileName="TextPreviewFile.java" startLine="40" startPosition="42" endLine="41" endPosition="61" />
     <scopeInfo nodeId="173672751428922772" fileName="TextPreviewFile.java" startLine="47" startPosition="31" endLine="48" endPosition="36" />
     <scopeInfo nodeId="173672751428922781" fileName="TextPreviewFile.java" startLine="54" startPosition="27" endLine="55" endPosition="18" />
     <scopeInfo nodeId="173672751428922788" fileName="TextPreviewFile.java" startLine="59" startPosition="30" endLine="60" endPosition="14" />
@@ -343,7 +343,7 @@
       <varInfo nodeId="173672751428922647" varName="file" />
       <varInfo nodeId="173672751428922649" varName="l" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428922732" fileName="TextPreviewFile.java" startLine="39" startPosition="58" endLine="43" endPosition="59" />
+    <scopeInfo nodeId="173672751428922732" fileName="TextPreviewFile.java" startLine="39" startPosition="58" endLine="43" endPosition="49" />
     <scopeInfo nodeId="173672751428922769" fileName="TextPreviewFile.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="173672751428922785" fileName="TextPreviewFile.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="173672751428922792" fileName="TextPreviewFile.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />

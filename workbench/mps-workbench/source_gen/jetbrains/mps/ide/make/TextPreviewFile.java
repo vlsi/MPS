@@ -37,10 +37,10 @@ public class TextPreviewFile extends StubVirtualFile {
   @NotNull
   @Override
   public byte[] contentsToByteArray() throws IOException {
-    if (!(myFileContent instanceof String)) {
-      BINARY_CONTENT.getBytes(getCharset());
+    if (myFileContent instanceof String) {
+      return ((String) myFileContent).getBytes(getCharset());
     }
-    return ((String) myFileContent).getBytes(getCharset());
+    return BINARY_CONTENT.getBytes(getCharset());
   }
 
   @Override
