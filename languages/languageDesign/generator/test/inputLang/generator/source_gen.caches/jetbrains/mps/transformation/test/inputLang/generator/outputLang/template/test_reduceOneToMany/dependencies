@@ -28,6 +28,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -62,6 +63,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter__switch2" file="Switchbetter__switch2.java">

@@ -112,6 +112,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.SwitchreturnLanguageAspectDescriptor" file="SwitchreturnLanguageAspectDescriptor.java">
@@ -140,6 +141,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" file="TemplateGenerator.java">

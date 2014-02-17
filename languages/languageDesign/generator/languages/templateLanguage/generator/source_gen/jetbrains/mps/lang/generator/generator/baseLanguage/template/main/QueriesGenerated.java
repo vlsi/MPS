@@ -2268,7 +2268,7 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1751251480823453109(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_688382666505520896(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
 
@@ -2284,6 +2284,10 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_8371596541809145634(final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
     return name != null;
+  }
+
+  public static boolean ifMacro_Condition_688382666505321993(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
 
   public static boolean ifMacro_Condition_59720043761728363(final IfMacroContext _context) {

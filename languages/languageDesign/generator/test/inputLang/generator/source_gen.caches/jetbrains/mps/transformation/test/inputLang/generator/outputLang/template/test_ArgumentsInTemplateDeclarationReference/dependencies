@@ -33,6 +33,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />

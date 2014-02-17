@@ -19,11 +19,12 @@ import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
@@ -108,34 +109,22 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
-    }
-
-    @Override
     protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2r);
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1r);
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2r);
+        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a1r);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/1209604217076");
         SNodeAccessUtil.setProperty(tnode1, "text", "wrapper created by reduction 1");
 
         {
           Collection<SNode> tlist2 = null;
           try {
-            environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a2r);
+            environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a1r);
             final SNode copySrcInput2 = context.getInput();
-            tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a2r, "tpl/r:00000000-0000-4000-0000-011c89590606/1209604251671", null, context);
+            tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a1r, "tpl/r:00000000-0000-4000-0000-011c89590606/1209604251671", null, context);
           } finally {
-            environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a2r);
+            environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a1r);
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild("outputChild", child3);
@@ -144,30 +133,20 @@ public class Mappingmain implements TemplateMappingConfiguration {
         }
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a2r);
+        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a1r);
       }
       return TemplateUtil.singletonList(tnode1);
     }
   }
 
-  public final class ReductionRule1 extends ReductionRuleBase {
+  public final class ReductionRule1 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule1() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8900764248744322637"), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8900764248744322639(new ReductionRuleQueryContext(context, getRuleNode(), environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_8900764248744322639(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
     @Override
@@ -216,34 +195,22 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
-    }
-
-    @Override
     protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2t);
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1t);
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2t);
+        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a1t);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/1209662301917");
         SNodeAccessUtil.setProperty(tnode1, "text", "wrapper created by reduction 2");
 
         {
           Collection<SNode> tlist2 = null;
           try {
-            environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a2t);
+            environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a1t);
             final SNode copySrcInput2 = context.getInput();
-            tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a2t, "tpl/r:00000000-0000-4000-0000-011c89590606/1209662301918", null, context);
+            tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a1t, "tpl/r:00000000-0000-4000-0000-011c89590606/1209662301918", null, context);
           } finally {
-            environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a2t);
+            environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a1t);
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild("outputChild", child3);
@@ -252,7 +219,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         }
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a2t);
+        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a1t);
       }
       return TemplateUtil.singletonList(tnode1);
     }
@@ -264,29 +231,17 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
-    }
-
-    @Override
     protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2u);
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1u);
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2u);
+        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a1u);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695913379840");
         SNodeAccessUtil.setProperty(tnode1, "value", "42");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a2u);
+        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a1u);
       }
       return TemplateUtil.singletonList(tnode1);
     }
@@ -298,41 +253,29 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
-    }
-
-    @Override
     protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2v);
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1v);
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2v);
+        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a1v);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681233");
 
         {
           final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           try {
-            environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a2a2v);
+            environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a2a1v);
             environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234");
-            SNodeAccessUtil.setProperty(tnode2, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681251(new PropertyMacroContext(context, "i", propertyMacro_417xrn_c0a0c0c0b0d0c0c12, environment.getGenerator()))));
+            SNodeAccessUtil.setProperty(tnode2, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681251(new PropertyMacroContext(context, "i", propertyMacro_417xrn_c0a0c0c0b0d0c0b12, environment.getGenerator()))));
 
             {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
               try {
-                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a2v);
+                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a1v);
                 environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681235");
 
               } finally {
                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
-                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a2v);
+                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a1v);
               }
               if (tnode3 != null) {
                 tnode2.addChild("type", tnode3);
@@ -342,13 +285,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
             {
               final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
               try {
-                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a2a2v);
+                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a2a1v);
                 environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/6054909491974232093");
                 SNodeAccessUtil.setProperty(tnode4, "value", "0");
 
               } finally {
                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
-                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a2a2v);
+                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a2a1v);
               }
               if (tnode4 != null) {
                 tnode2.addChild("initializer", tnode4);
@@ -357,7 +300,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             }
           } finally {
             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
-            environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a2v);
+            environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a1v);
           }
           if (tnode2 != null) {
             tnode1.addChild("localVariableDeclaration", tnode2);
@@ -366,29 +309,29 @@ public class Mappingmain implements TemplateMappingConfiguration {
         }
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a2v);
+        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a1v);
       }
       final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a4a2v);
+        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a4a1v);
         environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681237");
 
         {
           final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           try {
-            environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a4a2v);
+            environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a4a1v);
             environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681238");
-            SNodeAccessUtil.setProperty(tnode6, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681260(new PropertyMacroContext(context, "e", propertyMacro_417xrn_c0a0c0c0b0d0e0c12, environment.getGenerator()))));
+            SNodeAccessUtil.setProperty(tnode6, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681260(new PropertyMacroContext(context, "e", propertyMacro_417xrn_c0a0c0c0b0d0e0b12, environment.getGenerator()))));
 
             {
               final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
               try {
-                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a4a2v);
+                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a4a1v);
                 environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681239");
 
               } finally {
                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
-                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a4a2v);
+                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a4a1v);
               }
               if (tnode7 != null) {
                 tnode6.addChild("type", tnode7);
@@ -398,19 +341,19 @@ public class Mappingmain implements TemplateMappingConfiguration {
             {
               final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.MulExpression");
               try {
-                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a4a2v);
+                environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a4a1v);
                 environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681242");
 
                 {
                   final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                   try {
-                    environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a1a5a1a3a4a2v);
+                    environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a1a5a1a3a4a1v);
                     environment.nodeCopied(context, tnode9, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363103841");
-                    environment.resolveInTemplateLater(tnode9, "variableDeclaration", templateNode_417xrn_a0a0a1a3a1a5a1a3a4a2v, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234", "i", context);
+                    environment.resolveInTemplateLater(tnode9, "variableDeclaration", templateNode_417xrn_a0a0a1a3a1a5a1a3a4a1v, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234", "i", context);
 
                   } finally {
                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode9));
-                    environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a5a1a3a4a2v);
+                    environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a5a1a3a4a1v);
                   }
                   if (tnode9 != null) {
                     tnode8.addChild("leftExpression", tnode9);
@@ -420,13 +363,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 {
                   final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                   try {
-                    environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a5a1a3a4a2v);
+                    environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a5a1a3a4a1v);
                     environment.nodeCopied(context, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681245");
                     SNodeAccessUtil.setProperty(tnode10, "value", "2");
 
                   } finally {
                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode10));
-                    environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a5a1a3a4a2v);
+                    environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a5a1a3a4a1v);
                   }
                   if (tnode10 != null) {
                     tnode8.addChild("rightExpression", tnode10);
@@ -435,7 +378,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 }
               } finally {
                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode8));
-                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a4a2v);
+                environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a4a1v);
               }
               if (tnode8 != null) {
                 tnode6.addChild("initializer", tnode8);
@@ -444,7 +387,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             }
           } finally {
             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
-            environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a4a2v);
+            environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a4a1v);
           }
           if (tnode6 != null) {
             tnode5.addChild("localVariableDeclaration", tnode6);
@@ -453,7 +396,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         }
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode5));
-        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a4a2v);
+        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a4a1v);
       }
       Collection<SNode> tlist11 = TemplateUtil.asList(tnode1, tnode5);
       return tlist11;
@@ -1058,31 +1001,31 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  private static SNodePointer conseq_417xrn_a0a0a2r = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604206699");
-  private static SNodePointer templateNode_417xrn_a0a0a2a2r = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604217076");
-  private static SNodePointer copySrcMacro_417xrn_a0a0a1a4a2a2r = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604320454");
+  private static SNodePointer conseq_417xrn_a0a0a1r = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604206699");
+  private static SNodePointer templateNode_417xrn_a0a0a2a1r = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604217076");
+  private static SNodePointer copySrcMacro_417xrn_a0a0a1a4a2a1r = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604320454");
   private static SNodePointer conseq_417xrn_a0a0a2s = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8900764248744322643");
   private static SNodePointer copySrcMacro_417xrn_a0a0a2a2s = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1473665232107485239");
   private static SNodePointer templateNode_417xrn_a0a0a5a2s = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363090086");
   private static SNodePointer referenceMacro_417xrn_c0a0a0a0a0a0c0f0c81 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1473665232107455263");
-  private static SNodePointer conseq_417xrn_a0a0a2t = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301916");
-  private static SNodePointer templateNode_417xrn_a0a0a2a2t = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301917");
-  private static SNodePointer copySrcMacro_417xrn_a0a0a1a4a2a2t = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301919");
-  private static SNodePointer conseq_417xrn_a0a0a2u = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913379838");
-  private static SNodePointer templateNode_417xrn_a0a0a2a2u = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913379840");
-  private static SNodePointer conseq_417xrn_a0a0a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681229");
-  private static SNodePointer templateNode_417xrn_a0a0a2a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681233");
-  private static SNodePointer templateNode_417xrn_a0a0a1a3a2a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681234");
-  private static SNodePointer propertyMacro_417xrn_c0a0c0c0b0d0c0c12 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681248");
-  private static SNodePointer templateNode_417xrn_a0a0a1a4a1a3a2a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681235");
-  private static SNodePointer templateNode_417xrn_a0a0a1a5a1a3a2a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6054909491974232093");
-  private static SNodePointer templateNode_417xrn_a0a0a4a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681237");
-  private static SNodePointer templateNode_417xrn_a0a0a1a3a4a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681238");
-  private static SNodePointer propertyMacro_417xrn_c0a0c0c0b0d0e0c12 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681257");
-  private static SNodePointer templateNode_417xrn_a0a0a1a4a1a3a4a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681239");
-  private static SNodePointer templateNode_417xrn_a0a0a1a5a1a3a4a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681242");
-  private static SNodePointer templateNode_417xrn_a0a0a1a3a1a5a1a3a4a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363103841");
-  private static SNodePointer templateNode_417xrn_a0a0a1a4a1a5a1a3a4a2v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681245");
+  private static SNodePointer conseq_417xrn_a0a0a1t = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301916");
+  private static SNodePointer templateNode_417xrn_a0a0a2a1t = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301917");
+  private static SNodePointer copySrcMacro_417xrn_a0a0a1a4a2a1t = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301919");
+  private static SNodePointer conseq_417xrn_a0a0a1u = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913379838");
+  private static SNodePointer templateNode_417xrn_a0a0a2a1u = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913379840");
+  private static SNodePointer conseq_417xrn_a0a0a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681229");
+  private static SNodePointer templateNode_417xrn_a0a0a2a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681233");
+  private static SNodePointer templateNode_417xrn_a0a0a1a3a2a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681234");
+  private static SNodePointer propertyMacro_417xrn_c0a0c0c0b0d0c0b12 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681248");
+  private static SNodePointer templateNode_417xrn_a0a0a1a4a1a3a2a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681235");
+  private static SNodePointer templateNode_417xrn_a0a0a1a5a1a3a2a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6054909491974232093");
+  private static SNodePointer templateNode_417xrn_a0a0a4a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681237");
+  private static SNodePointer templateNode_417xrn_a0a0a1a3a4a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681238");
+  private static SNodePointer propertyMacro_417xrn_c0a0c0c0b0d0e0b12 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681257");
+  private static SNodePointer templateNode_417xrn_a0a0a1a4a1a3a4a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681239");
+  private static SNodePointer templateNode_417xrn_a0a0a1a5a1a3a4a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681242");
+  private static SNodePointer templateNode_417xrn_a0a0a1a3a1a5a1a3a4a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363103841");
+  private static SNodePointer templateNode_417xrn_a0a0a1a4a1a5a1a3a4a1v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681245");
   private static SNodePointer conseq_417xrn_a0a0a2w = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617111");
   private static SNodePointer conseq_417xrn_a0a0a2x = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288283438");
   private static SNodePointer templateNode_417xrn_a0a0a2a2x = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288283462");

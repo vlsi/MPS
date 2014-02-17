@@ -18,11 +18,12 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.ReductionRuleBase;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
@@ -95,24 +96,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return false;
   }
 
-  public final class ReductionRule0 extends ReductionRuleBase {
+  public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170730024"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", true);
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202780919451(new ReductionRuleQueryContext(context, getRuleNode(), environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_1202780919451(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
     @Override
@@ -150,24 +141,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  public final class ReductionRule1 extends ReductionRuleBase {
+  public final class ReductionRule1 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule1() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1202780884290"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false);
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202780894871(new ReductionRuleQueryContext(context, getRuleNode(), environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_1202780894871(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
     @Override

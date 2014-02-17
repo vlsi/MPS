@@ -19,8 +19,8 @@ import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.GenerationException;
 
 @Generated
@@ -87,24 +87,12 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
-    }
-
-    @Override
     protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2p);
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1p);
       Collection<SNode> tlist1 = new Templatestring_x0020switch_x0020template().apply(environment, context);
       return tlist1;
     }
   }
 
-  private static SNodePointer conseq_417xrn_a0a0a2p = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420131");
+  private static SNodePointer conseq_417xrn_a0a0a1p = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420131");
 }

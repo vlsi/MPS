@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.ReductionRuleBase;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 
 @Generated
@@ -47,24 +48,14 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     environment.getGenerator().getLogger().info(context.getInput(), "Hmm, input is null");
   }
 
-  public final class ReductionRule0 extends ReductionRuleBase {
+  public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
       super(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066877"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false);
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, getRuleNode(), environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
     @Override

@@ -48,24 +48,12 @@ public class Switchswitch__InputNode__A implements TemplateSwitchMapping {
     }
 
     @Override
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context, environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
-
-    }
-
-    @Override
     protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_t87kqm_a0a0a2h);
+      environment.getTracer().pushRuleConsequence(conseq_t87kqm_a0a0a1h);
       Collection<SNode> tlist1 = new Templatereduce__InputNode__A__switch().apply(environment, context);
       return tlist1;
     }
   }
 
-  private static SNodePointer conseq_t87kqm_a0a0a2h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311962");
+  private static SNodePointer conseq_t87kqm_a0a0a1h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311962");
 }

@@ -44,6 +44,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -529,6 +530,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, env.getReductionContext())) {
+          if (rule instanceof TemplateRuleWithCondition) {
+            if (!env.getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, env, context)) {
+              continue;
+            }
+            // fall-through
+          }
           Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
           if (outputNodes != null) {
             return outputNodes;
