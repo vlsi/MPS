@@ -26,10 +26,10 @@
   <import index="y596" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(jetbrains.mps.openapi.editor.selection@java_stub)" version="-1" />
   <import index="jxum" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.selection(jetbrains.mps.nodeEditor.selection@java_stub)" version="-1" />
   <import index="557t" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.messageTargets(MPS.Editor/jetbrains.mps.nodeEditor.messageTargets@java_stub)" version="-1" />
+  <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
-  <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="e2lc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -1242,25 +1242,6 @@
       </node>
     </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="2161378634484252704" nodeInfo="ng" />
-    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="2161378634484258302" nodeInfo="ng">
-      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ejnv.~StyleImpl" resolveInfo="StyleImpl" />
-      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="2161378634484271174" nodeInfo="ng">
-        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="mcec.~Style" resolveInfo="Style" />
-      </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2161378634484483223" nodeInfo="ng">
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="ejnv.~StyleImpl%dset(jetbrains%dmps%dopenapi%deditor%dstyle%dStyleAttribute,jetbrains%dmps%dopenapi%deditor%dstyle%dAttributeCalculator)%cvoid" resolveInfo="set" />
-        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="2161378634484622256" nodeInfo="ng">
-          <property name="snodeId" nameId="tp33.2291767839160466985" value="~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void" />
-        </node>
-      </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="1456224659231323244" nodeInfo="ng">
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="ejnv.~StyleImpl%dget(jetbrains%dmps%dopenapi%deditor%dstyle%dStyleAttribute)%cjava%dlang%dObject" resolveInfo="get" />
-        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="1456224659233706102" nodeInfo="ng">
-          <property name="snodeId" nameId="tp33.2291767839160466985" value="~Style.get(jetbrains.mps.nodeEditor.style.StyleAttribute):java.lang.Object" />
-        </node>
-      </node>
-    </node>
-    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="6715535892752750026" nodeInfo="ng" />
     <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="6715535892752750956" nodeInfo="ng">
       <property name="updateClassifierTypes" nameId="tp33.7867202088808133349" value="true" />
       <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="nu8w.~CellAction" resolveInfo="CellAction" />

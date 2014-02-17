@@ -119,7 +119,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_s8y0yt_b2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -134,7 +134,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_s8y0yt_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     _InstanceMethodDeclaration_RemoveAbstract.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -149,7 +149,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
     editorCell.setCellId("Constant_s8y0yt_d2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -298,7 +298,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_s8y0yt_a8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -389,7 +389,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_s8y0yt_a01a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

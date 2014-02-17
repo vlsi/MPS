@@ -32,7 +32,7 @@ public class ConceptExpr_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_wpvzdj_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

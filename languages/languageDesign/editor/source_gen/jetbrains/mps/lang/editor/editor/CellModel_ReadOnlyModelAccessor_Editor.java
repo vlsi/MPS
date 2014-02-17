@@ -33,7 +33,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_fs6ae3_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_fs6ae3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fs6ae3_b0(editorContext, node));
@@ -50,7 +50,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "R/O model access");
     editorCell.setCellId("Constant_fs6ae3_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a0b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a1b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a2b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
@@ -116,7 +116,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
     editorCell.setCellId("Constant_fs6ae3_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
+    Styles_StyleSheet.apply_header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -71,7 +71,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==");
     editorCell.setCellId("Constant_1px6hs_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

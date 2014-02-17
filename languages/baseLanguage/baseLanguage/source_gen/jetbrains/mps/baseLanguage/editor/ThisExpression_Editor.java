@@ -104,7 +104,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("classConcept");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -122,7 +122,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_xaaxob_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -132,7 +132,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_xaaxob_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -147,7 +147,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_xaaxob_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -216,7 +216,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("classConcept");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

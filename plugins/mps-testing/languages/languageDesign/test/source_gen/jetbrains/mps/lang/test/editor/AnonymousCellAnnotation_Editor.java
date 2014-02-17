@@ -52,7 +52,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
     editorCell.setCellId("Constant_ql48ef_b0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyEditorOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

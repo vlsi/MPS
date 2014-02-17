@@ -37,7 +37,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return");
     editorCell.setCellId("Constant_evgwyu_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     ReturnStatement_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -73,7 +73,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_evgwyu_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

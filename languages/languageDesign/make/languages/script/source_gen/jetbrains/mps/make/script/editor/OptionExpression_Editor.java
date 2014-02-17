@@ -39,7 +39,7 @@ public class OptionExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new OptionExpression_Editor._Inline_57zibj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

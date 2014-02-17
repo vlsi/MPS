@@ -61,7 +61,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new XmlTextValue_text());
@@ -94,7 +94,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text_1");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new XmlTextValue_text());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0()}));

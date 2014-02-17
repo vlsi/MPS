@@ -60,7 +60,7 @@ public class EditorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "editor:");
     editorCell.setCellId("Constant_8q27zs_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

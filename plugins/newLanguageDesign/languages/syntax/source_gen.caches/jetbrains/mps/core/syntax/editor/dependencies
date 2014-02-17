@@ -315,9 +315,7 @@
   </dependency>
   <dependency className="jetbrains.mps.core.syntax.editor.SyntaxSS_StyleSheet" file="SyntaxSS_StyleSheet.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />

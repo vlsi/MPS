@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cyhyd0p66ghk6jau2n7d1nog8hnmv5w">
-  <dep model="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)" hash="-aay91e0kl7mzbze381uxng9re999dge" />
-  <dep model="r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)" hash="-1j5ldac760jqbxr1rk7lf3669jekr7e" />
-  <common dependsOnNodes="true">
-    <dep model="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="cyhyd0p66ghk6jau2n7d1nog8hnmv5w" />
 

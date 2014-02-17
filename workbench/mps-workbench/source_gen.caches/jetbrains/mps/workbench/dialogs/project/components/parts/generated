@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2j80dxafop9sws2x0pl20p3fai11nqw">
-  <common hash="-blangiegs7eq8o3i0id7zgs1fk9tt99" dependsOnNodes="true" />
-  <source id="1560298786499494350" name="CopySupport" hash="-b9w1zxsym4sekmtla9ekvidf4w04qfn">
-    <file name="CopySupport.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-2j80dxafop9sws2x0pl20p3fai11nqw" />
 

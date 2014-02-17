@@ -64,7 +64,7 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_c9bxgq_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);

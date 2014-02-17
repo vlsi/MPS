@@ -7,22 +7,24 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ClassifierType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-      this.append("<");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
-            this.append(", ");
+      {
+        this.append("<");
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
+        this.append(">");
       }
-      this.append(">");
     }
   }
 }

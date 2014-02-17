@@ -110,7 +110,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface concept");
     editorCell.setCellId("Constant_qx8fwl_b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
@@ -169,7 +169,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_qx8fwl_a3a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -253,7 +253,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qx8fwl_a4a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
@@ -266,7 +266,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qx8fwl_a4a_0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -342,7 +342,7 @@ public class SInterfaceConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_qx8fwl_g0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

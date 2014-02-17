@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6mzioo19p272jluskuvyi0keofcr4un">
-  <common hash="9x34utno9d6lex2gvlmphxopxidauiu" dependsOnNodes="true" />
-  <source id="7841036633975757760" name="ConvertToBinaryWorker" hash="-1dvkqms0296f2wd5we8fwoagbdewsyo">
-    <file name="ConvertToBinaryWorker.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-6mzioo19p272jluskuvyi0keofcr4un" />
 

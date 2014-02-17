@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a2hy8sdbzsdgber2jubgx0b2bgbzo0a">
-  <common hash="vbbkz149kw1jfhl6k6aq46tj0uq6s" dependsOnNodes="true" />
-  <source id="1650644170366801770" name="IntervalTest" hash="ecll254wdwkfbou588tjulfp8ci3988">
-    <file name="IntervalTest.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-a2hy8sdbzsdgber2jubgx0b2bgbzo0a" />
 

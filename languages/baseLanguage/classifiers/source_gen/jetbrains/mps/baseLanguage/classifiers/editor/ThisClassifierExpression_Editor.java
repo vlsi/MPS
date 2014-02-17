@@ -97,7 +97,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("classifier");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -115,7 +115,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_kpqhey_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -125,7 +125,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_kpqhey_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -136,7 +136,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_kpqhey_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

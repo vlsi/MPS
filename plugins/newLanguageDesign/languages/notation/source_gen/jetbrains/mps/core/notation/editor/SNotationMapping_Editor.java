@@ -83,7 +83,7 @@ public class SNotationMapping_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_l0jb7d_a1a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -130,7 +130,7 @@ public class SNotationMapping_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_l0jb7d_a2b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

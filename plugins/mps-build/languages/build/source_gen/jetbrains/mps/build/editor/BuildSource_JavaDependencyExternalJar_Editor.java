@@ -42,7 +42,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external jar");
     editorCell.setCellId("Constant_v39yb3_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -72,7 +72,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_v39yb3_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_reexport_inJavaDependencyImportedJar.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -96,7 +96,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
     editorCell.setCellId("Constant_v39yb3_a0_0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

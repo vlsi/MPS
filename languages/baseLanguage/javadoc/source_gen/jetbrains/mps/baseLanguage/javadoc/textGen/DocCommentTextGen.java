@@ -4,9 +4,7 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public abstract class DocCommentTextGen {
@@ -21,9 +19,10 @@ public abstract class DocCommentTextGen {
 
     textGen.appendNewLine();
     DocCommentTextGen.javadocIndent(textGen);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "body", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "body", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "body", true);
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
     }
 
@@ -32,24 +31,28 @@ public abstract class DocCommentTextGen {
       DocCommentTextGen.javadocIndent(textGen);
     }
 
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "author", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "author", true);
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "since", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "since", true);
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "version", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "version", true);
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "see", true)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "see", true);
+      for (SNode item : collection) {
+        textGen.appendNode(item);
       }
     }
   }

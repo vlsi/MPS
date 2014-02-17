@@ -27,7 +27,7 @@ public class LoopLabel_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

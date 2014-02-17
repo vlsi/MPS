@@ -51,7 +51,7 @@ public class Style_Component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Style:");
     editorCell.setCellId("Constant_zdjsuv_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
+    Styles_StyleSheet.apply_header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -136,7 +136,7 @@ public class Style_Component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_zdjsuv_b0b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -206,7 +206,7 @@ public class Style_Component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_zdjsuv_c1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

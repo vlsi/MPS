@@ -42,7 +42,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4p4aum_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -107,7 +107,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4p4aum_c0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

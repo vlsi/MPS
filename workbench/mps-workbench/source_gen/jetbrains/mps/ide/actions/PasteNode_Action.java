@@ -40,7 +40,6 @@ public class PasteNode_Action extends BaseAction {
     super("Paste", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
-    this.addPlace(null);
   }
 
   @Override

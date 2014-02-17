@@ -51,7 +51,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export");
     editorCell.setCellId("Constant_kawrig_a0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -65,7 +65,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location");
     editorCell.setCellId("Constant_kawrig_b0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -79,7 +79,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized");
     editorCell.setCellId("Constant_kawrig_c0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -93,7 +93,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");
     editorCell.setCellId("Constant_kawrig_d0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -170,7 +170,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
     editorCell.setCellId("Constant_kawrig_a0_0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -201,7 +201,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location:");
     editorCell.setCellId("Constant_kawrig_c0_0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -232,7 +232,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized:");
     editorCell.setCellId("Constant_kawrig_e0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -75,7 +75,7 @@ public class ExtensionStaticFieldReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("variableDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

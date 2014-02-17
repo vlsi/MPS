@@ -37,7 +37,7 @@ public class BuildExternalLayout_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external layout");
     editorCell.setCellId("Constant_ya6pfo_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -78,7 +78,7 @@ public class BuildExternalLayout_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "layout:");
     editorCell.setCellId("Constant_ya6pfo_d0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

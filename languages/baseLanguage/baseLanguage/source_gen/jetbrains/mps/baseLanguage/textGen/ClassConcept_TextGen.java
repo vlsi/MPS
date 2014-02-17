@@ -7,11 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -24,7 +24,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), this.getSNode());
+      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")));
     }
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
@@ -43,15 +43,17 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if ((SLinkOperations.getTarget(node, "superclass", true) != null)) {
       this.append(" extends ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "superclass", true));
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-      this.append(" implements ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
-            this.append(", ");
+      {
+        this.append(" implements ");
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "implementedInterface", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }

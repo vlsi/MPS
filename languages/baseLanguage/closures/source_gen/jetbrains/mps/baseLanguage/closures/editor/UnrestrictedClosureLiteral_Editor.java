@@ -52,7 +52,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8l0in6_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -135,7 +135,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==>");
     editorCell.setCellId("Constant_8l0in6_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_8l0in6_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -176,7 +176,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8l0in6_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

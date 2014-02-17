@@ -58,7 +58,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_3zwjq4_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -68,7 +68,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_3zwjq4_c0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalKeyword(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -1,29 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3swut0a1to8j2o97nbquj5kq8p4hf79">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
-  <common hash="7s93vldmea26qyt6zr38mjfg0wr9pwv" dependsOnNodes="true">
-    <dep root="2975785153735111398" />
-    <dep root="2975785153735230336" />
-    <dep root="633195941006921788" />
-    <dep root="8923957828369477802" />
-    <dep root="8923957828369477803" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="8923957828369477802" name="ParallelFor" hash="-6a5mtszey4m8vz46fqee7flh0xvszfv" />
-  <source id="8923957828369477803" name="ParallelLoopVariable" hash="7wvvwq2ydsj9l1s1h0m2oaxnfx51rpn" />
-  <source id="633195941006921788" name="ThreadPool" hash="7016jcofui6fckhdesyp0c5jg5a5nkt" />
-  <source id="2975785153735111398" name="ThreadSafe" hash="3lfzyw7tunhz8i4he4qk8d1nm4j37q4" />
-  <source id="2975785153735230336" name="NonThreadSafeClass" hash="-6n1akwg3bbxcemyjf1mo4hohtaunpgq" />
-</dependencies>
+<dependencies version="2" modelHash="-3swut0a1to8j2o97nbquj5kq8p4hf79" />
 

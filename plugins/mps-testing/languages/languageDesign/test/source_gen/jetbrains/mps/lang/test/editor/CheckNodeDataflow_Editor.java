@@ -36,7 +36,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_r9gaet_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.apply_AssertStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -66,7 +66,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dataflow");
     editorCell.setCellId("Constant_r9gaet_c0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.apply_AssertStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

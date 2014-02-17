@@ -53,7 +53,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    properiesSS_StyleSheet.applyKey(style, editorCell);
+    properiesSS_StyleSheet.apply_Key(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -70,7 +70,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_cuzp02_b0");
     Style style = new StyleImpl();
-    properiesSS_StyleSheet.applySeparator(style, editorCell);
+    properiesSS_StyleSheet.apply_Separator(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -87,7 +87,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    properiesSS_StyleSheet.applyValue(style, editorCell);
+    properiesSS_StyleSheet.apply_Value(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

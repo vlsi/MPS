@@ -77,9 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.editor.DataFlow_StyleSheet" file="DataFlow_StyleSheet.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />

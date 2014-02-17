@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class InternalClassExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -24,7 +23,7 @@ public class InternalClassExpression_TextGen extends SNodeTextGen {
         BaseLanguageTextGen.internalClassifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), node, this);
       }
     } else {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), type, this.getSNode());
+      appendNode(type);
     }
     this.append(".class");
   }

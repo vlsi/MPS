@@ -130,7 +130,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "artifacts location");
     editorCell.setCellId("Constant_jumb3f_b1a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -34,7 +34,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_zgm7s3_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_zgm7s3_a0(editorContext, node));
@@ -82,7 +82,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_a1a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zgm7s3_a0b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zgm7s3_b0b0(editorContext, node));
@@ -93,7 +93,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true:");
     editorCell.setCellId("Constant_zgm7s3_a0b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -126,7 +126,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_b1a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zgm7s3_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zgm7s3_b1b0(editorContext, node));
@@ -137,7 +137,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false:");
     editorCell.setCellId("Constant_zgm7s3_a1b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -170,7 +170,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     editorCell.getStyle().putAll(style);
@@ -202,7 +202,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true:");
     editorCell.setCellId("Constant_zgm7s3_a0c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -247,7 +247,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false:");
     editorCell.setCellId("Constant_zgm7s3_a1c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -314,7 +314,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cell alternation:");
     editorCell.setCellId("Constant_zgm7s3_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
+    Styles_StyleSheet.apply_header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -348,7 +348,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vertical");
     editorCell.setCellId("Constant_zgm7s3_a0d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -391,7 +391,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alt. condition");
     editorCell.setCellId("Constant_zgm7s3_a1d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -98,7 +98,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
         editorCell.setRole("template");
       }
       Style style = new StyleImpl();
-      ExecutionSettings_StyleSheet.applyPersistentConfigurationRef(style, editorCell);
+      ExecutionSettings_StyleSheet.apply_persistentConfigurationRef(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -160,7 +160,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
         editorCell.setRole("template");
       }
       Style style = new StyleImpl();
-      ExecutionSettings_StyleSheet.applyPersistentConfigurationRefDeprecated(style, editorCell);
+      ExecutionSettings_StyleSheet.apply_persistentConfigurationRefDeprecated(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -182,7 +182,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_e5b6m9_c0");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -262,7 +262,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_e5b6m9_e0");
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
+    RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

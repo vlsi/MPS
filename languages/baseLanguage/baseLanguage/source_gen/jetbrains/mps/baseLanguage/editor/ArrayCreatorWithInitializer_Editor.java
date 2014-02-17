@@ -72,7 +72,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[]");
     editorCell.setCellId("Constant_ym22pt_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
@@ -85,7 +85,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ym22pt_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -198,7 +198,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ym22pt_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -49,7 +49,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
     editorCell.setCellId("Constant_c4imx1_a0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, FieldDocComment_Editor._StyleParameter_QueryFunction_c4imx1_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
@@ -66,7 +66,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_body");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -168,7 +168,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_author");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -221,7 +221,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_since");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -274,7 +274,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_version");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -327,7 +327,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_see");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -379,7 +379,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_c4imx1_d0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

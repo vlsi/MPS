@@ -40,7 +40,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "priority rule");
     editorCell.setCellId("Constant_6p5nan_a0");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -88,7 +88,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
     editorCell.setCellId("Constant_6p5nan_d0");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

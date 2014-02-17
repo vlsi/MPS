@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="89ll5f4gte9jm8rkicwg2xao84mdn5i">
-  <dep model="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)" hash="bzn08bn7qlxrhx6wfkobzjlidl4to93" />
-  <dep model="r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)" hash="evoyvib8idjj19s37xb6m077b6ew6ts" />
-  <common dependsOnNodes="true">
-    <dep model="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)" />
-    <dep model="r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="89ll5f4gte9jm8rkicwg2xao84mdn5i" />
 

@@ -104,7 +104,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -192,7 +192,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
     return editorCell;
@@ -261,7 +261,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_2ojjgh_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -331,7 +331,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_2ojjgh_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ecy99sg3wrte0mokpzkvrbeorzm12hm">
-  <common hash="devgbfmoftl59c0mgaxjb0h90jtg4n" dependsOnNodes="true" />
-  <source id="7783830406851712418" name="PatternUtil" hash="4r0ijff46tcz5c3d1aiq88bdbtkuv2z">
-    <file name="PatternUtil.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-ecy99sg3wrte0mokpzkvrbeorzm12hm" />
 

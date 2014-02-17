@@ -4,7 +4,6 @@ package jetbrains.mps.samples.Kaja.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -12,18 +11,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class KajakStyles_StyleSheet {
-  @Deprecated
-  public static Style getCommand(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(editorCell));
+  public static void apply_Command(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    return style;
   }
 
-  public static void applyCommand(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-  }
+
 }

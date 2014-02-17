@@ -36,7 +36,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
     editorCell.setCellId("Constant_oq95n1_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     CommentedStatement_Actions.setCellActions(editorCell, node, editorContext);

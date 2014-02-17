@@ -40,7 +40,7 @@ public class CodeInlineDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_xp1rdu_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CodeInlineDocTag_Editor.ReplaceWith_BaseInlineDocTag_cellMenu_xp1rdu_a0a0()}));
     return editorCell;

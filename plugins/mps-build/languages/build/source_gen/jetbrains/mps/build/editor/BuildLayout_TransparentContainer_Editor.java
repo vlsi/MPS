@@ -32,7 +32,7 @@ public class BuildLayout_TransparentContainer_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_frgcez_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
+    buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_TransparentContainer_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_frgcez_a0a0()}));

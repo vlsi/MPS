@@ -21,7 +21,7 @@ public class SEnum_MembersOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rgzic9_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStaticMethod(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StaticMethod(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

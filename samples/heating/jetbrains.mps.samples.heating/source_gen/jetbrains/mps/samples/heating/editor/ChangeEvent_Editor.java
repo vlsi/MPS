@@ -35,7 +35,7 @@ public class ChangeEvent_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "set temperature to");
     editorCell.setCellId("Constant_8rx6ch_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,7 +63,7 @@ public class ChangeEvent_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Celsius");
     editorCell.setCellId("Constant_8rx6ch_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

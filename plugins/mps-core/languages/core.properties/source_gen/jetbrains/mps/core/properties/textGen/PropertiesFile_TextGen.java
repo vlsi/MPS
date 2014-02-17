@@ -6,9 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -21,9 +19,10 @@ public class PropertiesFile_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
     getBuffer().putUserObject(TextGen.OUTPUT_ENCODING, "ISO-8859-1");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "lines", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "lines", true);
+      for (SNode item : collection) {
+        appendNode(item);
       }
     }
     if (getBuffer().hasPositionsSupport()) {

@@ -150,7 +150,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_53xyyk_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -221,7 +221,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_53xyyk_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);

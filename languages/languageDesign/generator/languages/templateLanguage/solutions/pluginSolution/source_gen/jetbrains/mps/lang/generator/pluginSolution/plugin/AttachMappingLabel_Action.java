@@ -157,6 +157,13 @@ __switch__:
                         this.__CP__ = 4;
                         break;
                       case 5:
+                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, "name"))) {
+                          this.__CP__ = 6;
+                          break;
+                        }
+                        this.__CP__ = 3;
+                        break;
+                      case 7:
                         this.__CP__ = 3;
                         this.yield(SPropertyOperations.getString(_2_label, "name"));
                         return true;
@@ -165,6 +172,9 @@ __switch__:
                         break;
                       case 4:
                         this.__CP__ = 5;
+                        break;
+                      case 6:
+                        this.__CP__ = 7;
                         break;
                       default:
                         break __loop__;
@@ -200,5 +210,9 @@ __switch__:
       return checkedDotOperand.getModule();
     }
     return null;
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

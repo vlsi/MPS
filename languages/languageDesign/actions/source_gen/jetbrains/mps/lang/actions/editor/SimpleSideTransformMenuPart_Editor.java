@@ -49,7 +49,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple item");
     editorCell.setCellId("Constant_cqa5bf_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -97,7 +97,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_cqa5bf_a1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -143,7 +143,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_cqa5bf_c1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -225,7 +225,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_cqa5bf_b0e1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -271,7 +271,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon node");
     editorCell.setCellId("Constant_cqa5bf_f1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -317,7 +317,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_cqa5bf_h1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -363,7 +363,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
     editorCell.setCellId("Constant_cqa5bf_j1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

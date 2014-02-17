@@ -7,10 +7,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -25,6 +25,9 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nvbf9m_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.READ_ONLY, true);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_nvbf9m_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nvbf9m_b0(editorContext, node));
     return editorCell;
@@ -50,7 +53,9 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("command");
     }
-    CommandHolder_Actions.setCellActions(editorCell, node, editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.READ_ONLY, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -66,7 +66,7 @@ public class SNotationTab_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\t");
     editorCell.setCellId("Constant_i2cn6u_b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

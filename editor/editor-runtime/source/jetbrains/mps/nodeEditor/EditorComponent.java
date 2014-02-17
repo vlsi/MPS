@@ -47,6 +47,7 @@ import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
@@ -2548,7 +2549,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isKeyboardHandlerProcessingEnabled(KeyEvent keyEvent) {
-    if (!isReadOnly()) {
+    if (!ReadOnlyUtil.isSelectionReadOnlyInEditor(this)) {
       return true;
     }
     jetbrains.mps.openapi.editor.cells.CellActionType actionType = getActionType(keyEvent, getEditorContext());
@@ -3483,11 +3484,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private class MyCutProvider implements CutProvider {
     @Override
-    public void performCut(@NotNull DataContext dataContext) {
+    public void performCut(@NotNull final DataContext dataContext) {
       getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          if (isDisposed() || isInvalid() || isReadOnly()) {
+          if (isInvalid() || !isCutEnabled(dataContext)) {
+            return;
+          }
+          if (!isCutEnabled(dataContext)) {
             return;
           }
           jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
@@ -3502,10 +3506,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
-      return !isDisposed() &&
-          !isInvalidLightweight() &&
-          !isReadOnly() &&
-          getSelectionManager().getSelection() != null;
+      return !(isDisposed() ||
+          isInvalidLightweight() ||
+          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
+          getSelectionManager().getSelection() == null);
     }
 
     @Override
@@ -3548,11 +3552,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private class MyPasteProvider implements PasteProvider {
     @Override
-    public void performPaste(@NotNull DataContext dataContext) {
+    public void performPaste(@NotNull final DataContext dataContext) {
       getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          if (isDisposed() || isInvalid() || isReadOnly()) {
+          if (isInvalid() || !isPastePossible(dataContext)) {
             return;
           }
           jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
@@ -3567,10 +3571,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isPastePossible(@NotNull DataContext dataContext) {
-      return !isDisposed() &&
-          !isInvalidLightweight() &&
-          !isReadOnly() &&
-          getSelectionManager().getSelection() != null;
+      return !(isDisposed() ||
+          isInvalidLightweight() ||
+          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
+          getSelectionManager().getSelection() == null);
     }
 
     @Override

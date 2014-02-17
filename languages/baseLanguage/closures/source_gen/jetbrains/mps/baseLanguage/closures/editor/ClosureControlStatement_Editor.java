@@ -58,7 +58,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -136,7 +136,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_2saq3j_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -287,7 +287,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_2saq3j_a2b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -359,7 +359,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2saq3j_d1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -370,7 +370,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2saq3j_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -404,7 +404,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2saq3j_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -72,7 +72,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setRole("visibility");
     }
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -140,7 +140,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1i2int_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -226,7 +226,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1i2int_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     ExtensionMethodDeclaration_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -256,7 +256,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_1i2int_a7a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -339,7 +339,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_1i2int_a8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

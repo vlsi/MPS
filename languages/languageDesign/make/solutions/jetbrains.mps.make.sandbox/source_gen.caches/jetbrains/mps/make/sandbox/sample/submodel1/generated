@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7jnswq3btndg359q3ch2pvfltb2uxl5">
-  <common hash="409magows6pukpdmu1f9zyipxsvi7uv" dependsOnNodes="true" />
-  <source id="4990394870453870416" name="Foo" hash="-cmpoay9mkmdc3hffcehzqq32bn93wxz">
-    <file name="Foo.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-7jnswq3btndg359q3ch2pvfltb2uxl5" />
 

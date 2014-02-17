@@ -28,7 +28,7 @@ public class InternalThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "_this");
     editorCell.setCellId("Constant_w8nkik_a0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -1,33 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a21kiiml31e1173a56x1cy4l8i4ht40">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-5kctb7b7jnlp1h0duovrvgm0c42ily4" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
-  <common hash="bwsamia8qi9hdqlogdavx0hcg1vlmr6" dependsOnNodes="true">
-    <dep root="1563914226484898744" />
-    <dep root="1563914226484921014" />
-    <dep root="1563914226484928842" />
-    <dep root="1563914226484928843" />
-    <dep root="8707387027762047752" />
-    <dep root="8707387027762047758" />
-    <dep root="8707387027762047761" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="8707387027762047752" name="PatternTest" hash="7q7gp06ld61fphmqezsa5hqmyut2tfx" />
-  <source id="8707387027762047758" name="VariableValue" hash="2oy9c4b41b0w03b9rrmgg7o28k7smkb" />
-  <source id="8707387027762047761" name="TestVariableReference" hash="djxitihzxs8lnhm7c1epe51blst3l83" />
-  <source id="1563914226484898744" name="TestPropertyVariableReference" hash="3m1cljvnvkads6ambuute8wt1q3mzho" />
-  <source id="1563914226484921014" name="PropertyValue" hash="-amhyxa6feacwd0xf0kttrccq4maupt7" />
-  <source id="1563914226484928842" name="ListValue" hash="8o4vejwmvic0bvhtjylm1plv1hlo9pu" />
-  <source id="1563914226484928843" name="TestListReference" hash="-dyd8wn3cu6s8kpe69myadio2d4i33dy" />
-</dependencies>
+<dependencies version="2" modelHash="-a21kiiml31e1173a56x1cy4l8i4ht40" />
 

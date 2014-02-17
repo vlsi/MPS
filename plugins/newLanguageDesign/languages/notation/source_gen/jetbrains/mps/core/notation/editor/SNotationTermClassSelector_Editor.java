@@ -49,7 +49,7 @@ public class SNotationTermClassSelector_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_className");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

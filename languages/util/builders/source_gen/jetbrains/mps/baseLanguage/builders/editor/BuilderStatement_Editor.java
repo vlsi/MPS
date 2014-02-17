@@ -62,7 +62,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_idzzzw_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -92,7 +92,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_idzzzw_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -126,7 +126,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_idzzzw_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

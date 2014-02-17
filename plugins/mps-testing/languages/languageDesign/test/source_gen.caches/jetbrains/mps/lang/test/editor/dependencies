@@ -908,9 +908,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" file="transformationTest_StyleSheet.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />

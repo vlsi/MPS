@@ -41,7 +41,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_gw6hs4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSource_JavaJar_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_gw6hs4_a0a0()}));
     return editorCell;
@@ -95,7 +95,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");
     editorCell.setCellId("Constant_gw6hs4_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

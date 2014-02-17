@@ -4,11 +4,10 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AnonymousClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "cls", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "cls", true));
   }
 }

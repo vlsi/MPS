@@ -61,7 +61,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_fty1bq_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -182,7 +182,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_fty1bq_b3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -212,7 +212,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_fty1bq_d3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -222,7 +222,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_fty1bq_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

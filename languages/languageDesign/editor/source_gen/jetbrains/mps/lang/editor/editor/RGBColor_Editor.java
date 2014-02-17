@@ -38,7 +38,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_7cvrmj_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -54,7 +54,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

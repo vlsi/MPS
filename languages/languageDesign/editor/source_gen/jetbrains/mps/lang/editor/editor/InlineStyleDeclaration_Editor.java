@@ -113,7 +113,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_tl5ft1_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -183,7 +183,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_tl5ft1_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

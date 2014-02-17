@@ -93,7 +93,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("function");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -111,7 +111,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_26flog_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -204,7 +204,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_26flog_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);

@@ -17,16 +17,15 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.List;
@@ -50,8 +49,8 @@ public class TextGenerationHandler extends GenerationHandlerBase {
     boolean generatedOk = true;
     // generate files
     for (SNode output : outputModel.getRootNodes()) {
-      String fileName = output.getName() + "." + TextGenManager.instance().getExtension(output);
-      TextGenerationResult result = TextGenerationUtil.generateText(ocontext, output);
+      String fileName = output.getName() + "." + TextGen.getExtension(output);
+      TextGenerationResult result = TextGen.generateText(output);
       if (result.hasErrors()) {
         warning("cannot generate " + fileName);
         generatedOk = false;

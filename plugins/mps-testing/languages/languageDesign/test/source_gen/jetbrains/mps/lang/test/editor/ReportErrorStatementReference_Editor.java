@@ -92,7 +92,7 @@ public class ReportErrorStatementReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("declaration");
       }
       Style style = new StyleImpl();
-      structure_StyleSheet.applyAnnotationNode(style, editorCell);
+      structure_StyleSheet.apply_AnnotationNode(style, editorCell);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       editorCell.getStyle().putAll(style);
       return editorCell;

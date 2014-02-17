@@ -74,7 +74,7 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("declaration");
       }
       Style style = new StyleImpl();
-      transformationTest_StyleSheet.applyNodeAnnotation(style, editorCell);
+      transformationTest_StyleSheet.apply_NodeAnnotation(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

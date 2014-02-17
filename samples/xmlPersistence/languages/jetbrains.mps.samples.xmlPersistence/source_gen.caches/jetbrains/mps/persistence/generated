@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="55oqv3s0bfdfzi3v484f3m8set315ys">
-  <common hash="anb3n8m07jklsuhdoasrbmvyzybjfsj" dependsOnNodes="true" />
-  <source id="7358309956614999744" name="XmlModelPersistence" hash="-9lfv0vgs0ns4d064w41rnvx9h9etehc">
-    <file name="XmlModelPersistence.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="55oqv3s0bfdfzi3v484f3m8set315ys" />
 

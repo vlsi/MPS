@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a9bnt1uuw138tjm5ej4spx0xbcpgrrl">
-  <dep model="r:3a5df19a-24e4-45dd-b626-7b1cda9f9622(jetbrains.mps.traceInfo.tracemacro.testlang.editor)" hash="-c8tv2rn4it2yop3099sfde45ahaj82e" />
-  <dep model="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)" hash="3yv18c48e3q8zir41z35stubiua7lww" />
-  <dep model="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)" hash="-5ynlhrhsw3txixiec0ndktqrss15g9a" />
-  <common dependsOnNodes="true">
-    <dep model="r:3a5df19a-24e4-45dd-b626-7b1cda9f9622(jetbrains.mps.traceInfo.tracemacro.testlang.editor)" />
-    <dep model="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)" />
-    <dep model="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)" />
-    <file name="Generator.java" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="a9bnt1uuw138tjm5ej4spx0xbcpgrrl" />
 

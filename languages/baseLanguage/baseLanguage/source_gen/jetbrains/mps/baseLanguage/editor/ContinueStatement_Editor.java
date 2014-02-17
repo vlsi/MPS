@@ -55,7 +55,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "continue");
     editorCell.setCellId("Constant_vgxjtu_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
@@ -85,7 +85,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLabel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Label(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -188,7 +188,7 @@ __switch__:
       editorCell.setRole("loopLabelReference");
     }
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -205,7 +205,7 @@ __switch__:
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_vgxjtu_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

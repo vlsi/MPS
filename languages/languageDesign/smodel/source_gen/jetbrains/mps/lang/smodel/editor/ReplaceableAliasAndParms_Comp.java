@@ -91,7 +91,7 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_n84rmm_a1a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyOperationParameter(style, editorCell);
+    Styles_StyleSheet.apply_operationParameter(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -181,7 +181,7 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_n84rmm_c1a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyOperationParameter(style, editorCell);
+    Styles_StyleSheet.apply_operationParameter(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

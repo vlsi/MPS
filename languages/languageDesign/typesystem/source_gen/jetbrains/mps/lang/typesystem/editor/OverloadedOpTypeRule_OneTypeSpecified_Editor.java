@@ -302,7 +302,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-----------------------------------------------");
     editorCell.setCellId("Constant_38fsuu_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

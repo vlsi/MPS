@@ -84,7 +84,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_t6d1qn_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteStaticInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -95,7 +95,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_t6d1qn_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -110,7 +110,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_t6d1qn_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteStaticTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -125,7 +125,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_t6d1qn_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteStaticVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -159,7 +159,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_t6d1qn_i0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -183,7 +183,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_t6d1qn_a9a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -216,7 +216,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_t6d1qn_k0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

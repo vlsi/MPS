@@ -46,7 +46,7 @@ public class MqlClosure_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ghrf70_a0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -126,7 +126,7 @@ public class MqlClosure_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_ghrf70_c0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -157,7 +157,7 @@ public class MqlClosure_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ghrf70_e0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

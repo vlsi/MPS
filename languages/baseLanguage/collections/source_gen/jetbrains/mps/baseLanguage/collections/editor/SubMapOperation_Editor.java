@@ -37,7 +37,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_j1ndjk_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyOperation(style, editorCell);
+    Collections_Style_StyleSheet.apply_Operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_j1ndjk_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -76,7 +76,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_j1ndjk_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -106,7 +106,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_j1ndjk_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

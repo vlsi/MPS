@@ -74,7 +74,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
         editorCell.setRole("link");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyRef_link_role(style, editorCell);
+      Styles_StyleSheet.apply_ref_link_role(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

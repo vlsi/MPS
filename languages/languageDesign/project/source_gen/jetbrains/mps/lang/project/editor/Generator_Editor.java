@@ -50,7 +50,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator");
     editorCell.setCellId("Constant_cqvux8_a0");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -79,7 +79,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id");
     editorCell.setCellId("Constant_cqvux8_c0");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -159,7 +159,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
     editorCell.setCellId("Constant_cqvux8_a5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -200,7 +200,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate templates");
     editorCell.setCellId("Constant_cqvux8_d5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -248,7 +248,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models");
     editorCell.setCellId("Constant_cqvux8_h5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -328,7 +328,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model roots");
     editorCell.setCellId("Constant_cqvux8_l5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -408,7 +408,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "used languages");
     editorCell.setCellId("Constant_cqvux8_p5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -488,7 +488,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "used devkits");
     editorCell.setCellId("Constant_cqvux8_t5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -568,7 +568,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
     editorCell.setCellId("Constant_cqvux8_x5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -648,7 +648,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on generators");
     editorCell.setCellId("Constant_cqvux8_bb5a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

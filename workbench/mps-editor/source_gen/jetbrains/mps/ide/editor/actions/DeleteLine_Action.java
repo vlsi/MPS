@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.cells.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
@@ -46,7 +47,7 @@ public class DeleteLine_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().getSelectedCells());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -109,6 +110,9 @@ public class DeleteLine_Action extends BaseAction {
           SNode currentNode = current.getSNode();
           if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
             EditorCell root = current.getRootParent();
+            if (ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), root)) {
+              return;
+            }
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             if (CellLayout_Indent.isNewLineAfter(root, current)) {
               cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
@@ -119,6 +123,9 @@ public class DeleteLine_Action extends BaseAction {
           }
         } else if (layout instanceof CellLayout_Vertical) {
           if (current.isBig()) {
+            if (ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), current)) {
+              return;
+            }
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             break;

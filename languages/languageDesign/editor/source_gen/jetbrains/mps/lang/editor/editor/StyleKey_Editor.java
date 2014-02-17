@@ -28,7 +28,7 @@ public class StyleKey_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_value");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

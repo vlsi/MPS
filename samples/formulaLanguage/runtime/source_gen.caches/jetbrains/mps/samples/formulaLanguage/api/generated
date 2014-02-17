@@ -1,17 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9wnstioahkouc78a3wbg3nl8ly6czf">
-  <common hash="3y4y4rpghxhnrmyb2n88lmih77iuyr7" dependsOnNodes="true" />
-  <source id="8307544070813664740" name="MultiplyOperation" hash="dwqsdba6n2irlhwfxzv7ux320vlgqhl">
-    <file name="MultiplyOperation.java" />
-  </source>
-  <source id="8307544070813664794" name="IfFunction" hash="ewto2bofct3cjlyhdztx01u37hezv9s">
-    <file name="IfFunction.java" />
-  </source>
-  <source id="8307544070813664858" name="Function" hash="-45u094gq5qvtrmcrdcef7delqom6cbz">
-    <file name="Function.java" />
-  </source>
-  <source id="8307544070813664867" name="DoubleConstant" hash="azy96qjx70fwshoii2yqx1z23fu72w1">
-    <file name="DoubleConstant.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-9wnstioahkouc78a3wbg3nl8ly6czf" />
 

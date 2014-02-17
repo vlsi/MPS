@@ -1,17 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8l6dpb8lznx4fqjfg3y1xiwwxgvvjho">
-  <common hash="-e1hg7esqipe0o6gwk19t6gay9s4gvpf" dependsOnNodes="true" />
-  <source id="3531370237489972135" name="MergeDriverBackupUtil" hash="-75uu1hv92x8efla4yujqacs8wskt629">
-    <file name="MergeDriverBackupUtil.java" />
-  </source>
-  <source id="3531370237490043789" name="MergeVersion" hash="6a6hv4dt8o1ob0qxz556t8wkqvrairy">
-    <file name="MergeVersion.java" />
-  </source>
-  <source id="3531370237490043817" name="ModelVersion" hash="-4e04ziuhryj05rqlo3hlc6kq5yrbruj">
-    <file name="ModelVersion.java" />
-  </source>
-  <source id="3531370237490043869" name="MergeConstants" hash="-8ue7zgnuhf2tu60geigpv3m1obc7gl4">
-    <file name="MergeConstants.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-8l6dpb8lznx4fqjfg3y1xiwwxgvvjho" />
 

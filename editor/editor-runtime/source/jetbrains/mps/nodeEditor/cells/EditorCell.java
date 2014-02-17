@@ -123,16 +123,14 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   void setFocusPolicy(FocusPolicy fp);
 
-  // TODO: move to open API
   <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
   List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();
 
-  // TODO: move to open API
   @Override
-  Style getStyle();
+  jetbrains.mps.openapi.editor.style.Style getStyle();
 
   boolean isLeaf();
 

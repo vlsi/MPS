@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -22,7 +21,7 @@ public class Annotation_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), this.getSNode());
+      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")));
     }
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);

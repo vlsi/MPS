@@ -60,7 +60,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add custom items ");
     editorCell.setCellId("Constant_yjtbks_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

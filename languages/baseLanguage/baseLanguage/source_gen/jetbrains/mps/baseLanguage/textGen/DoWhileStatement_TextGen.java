@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -32,11 +31,11 @@ public class DoWhileStatement_TextGen extends SNodeTextGen {
     this.indentBuffer();
     this.append("do {");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "body", true));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("} while (");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "condition", true));
     this.append(");");
     if (getBuffer().hasPositionsSupport()) {
       {

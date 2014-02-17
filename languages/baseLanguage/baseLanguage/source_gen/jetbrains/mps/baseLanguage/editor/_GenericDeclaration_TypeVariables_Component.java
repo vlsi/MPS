@@ -48,7 +48,7 @@ public class _GenericDeclaration_TypeVariables_Component implements ConceptEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_k0lfun_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "angle-brackets");
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -119,7 +119,7 @@ public class _GenericDeclaration_TypeVariables_Component implements ConceptEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_k0lfun_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "angle-brackets");
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.SELECTABLE, false);

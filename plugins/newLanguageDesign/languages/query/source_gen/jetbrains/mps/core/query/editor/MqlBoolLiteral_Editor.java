@@ -35,7 +35,7 @@ public class MqlBoolLiteral_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

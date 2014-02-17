@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class AnnotationInstance_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -19,16 +19,18 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", "annotation")), this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
-      this.append("(");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "value", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).last()) {
-            this.append(", ");
+      {
+        this.append("(");
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "value", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
+        this.append(")");
       }
-      this.append(")");
     }
     if (oneLine) {
       this.append(" ");

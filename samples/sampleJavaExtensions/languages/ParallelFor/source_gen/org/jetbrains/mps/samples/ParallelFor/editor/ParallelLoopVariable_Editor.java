@@ -40,7 +40,7 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_d89sde_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

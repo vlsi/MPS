@@ -38,7 +38,7 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default-baseline");
     editorCell.setCellId("Constant_4pywwz_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultBaseLine_Editor.ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0()}));

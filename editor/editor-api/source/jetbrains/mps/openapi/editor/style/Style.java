@@ -17,7 +17,7 @@ package jetbrains.mps.openapi.editor.style;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
-
+import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 
 /**
@@ -25,29 +25,42 @@ import java.util.Collection;
  * Date: 12/17/12
  */
 public interface Style {
-  /**
-   * Deprecated: should be removed after MPS 3.0
-   */
-  @Deprecated
-  void apply(@NotNull EditorCell cell);
 
   void putAll(@NotNull Style style);
 
-  <T> void set(StyleAttribute<T> attribute, T value);
+  void putAll(@NotNull Style style, int selfPriority);
 
-  /**
-   * Deprecated: should be removed after MPS 3.0
-   */
-  @Deprecated
-  <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator);
+  void removeAll(@NotNull Style style);
+
+  <T> void set(StyleAttribute<T> attribute, T value);
+  <T> void set(StyleAttribute<T> attribute, int priority, T value);
+
+  public static class IntPair<T> {
+    public int index;
+    public T value;
+
+    public IntPair(int index, T value) {
+      this.index = index;
+      this.value = value;
+    }
+  }
+
+  <T> int getHighestPriority(StyleAttribute<T> attribute);
 
   <T> T get(StyleAttribute<T> attribute);
+
+  /**
+   * @return null if no values specified, returned collection can contain nulls: they mean not to push style from parent, not to call combine, but set null
+   */
+  @Nullable
+  <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
+
+  @Nullable
+  <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute);
 
   <T> boolean isSpecified(StyleAttribute<T> attribute);
 
   Iterable<StyleAttribute> getSpecifiedAttributes();
-
-  Object rawGet(StyleAttribute attribute);
 
   void addListener(StyleListener l);
 

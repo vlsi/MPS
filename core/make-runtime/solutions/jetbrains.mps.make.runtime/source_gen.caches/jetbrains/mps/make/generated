@@ -1,28 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="54jl5afcok27w7hga8xlw7lrayolp7o">
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
-  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="a5h93nuoh92rfbvnb4w9h69ckv1nm2" />
-  <common hash="-6h8n4nys634tl27l8b59ga7p5kdlmo3" dependsOnNodes="true" />
-  <source id="2082624981609760242" name="IMakeService" hash="dhppu982yeov3x1jbb6kr1iskl4a2fu">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
-    <file name="IMakeService.java" />
-  </source>
-  <source id="8695426379435232461" name="MakeSession" hash="-afxyo4qr2t15zzjc16fma7j24708p97">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <file name="MakeSession.java" />
-  </source>
-  <source id="8464977774479999203" name="MakeNotification" hash="cvzpuyhe3lid8t68ss2cqgsotyq2ppn">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <file name="MakeNotification.java" />
-  </source>
-  <source id="8464977774480012290" name="IMakeNotificationListener" hash="-24exiixlj1pr554h0mw31d7968g3mb4">
-    <dep root="8464977774479999203" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <file name="IMakeNotificationListener.java" />
-  </source>
-  <source id="2958721966247272985" name="IHName" hash="b72lyyg0xy7g5sbtyyo78t3cmxafq8k">
-    <file name="IHName.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="54jl5afcok27w7hga8xlw7lrayolp7o" />
 

@@ -33,7 +33,7 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "clone");
     editorCell.setCellId("Constant_l0mk2c_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyInstanceMethod(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_InstanceMethod(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -45,7 +45,7 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_l0mk2c_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -66,7 +66,7 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_l0mk2c_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

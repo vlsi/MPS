@@ -4,21 +4,22 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ArrayLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("{");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "item", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "item", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "item", true)).last()) {
-          this.append(", ");
+    {
+      this.append("{");
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "item", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(", ");
         }
       }
+      this.append("}");
     }
-    this.append("}");
   }
 }

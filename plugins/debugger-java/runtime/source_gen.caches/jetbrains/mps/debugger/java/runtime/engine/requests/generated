@@ -1,20 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-15tvz0jtunc1rbb3k7djngg5q3z45sz">
-  <common hash="3t3ercrodeom7lxm836up4nu7l2eaic" dependsOnNodes="true" />
-  <source id="2891782949125146377" name="Requestor" hash="7crc13wc4m90w463drpi8o6xii9efgx">
-    <file name="Requestor.java" />
-  </source>
-  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="3ipyv7n5bmdd97nhykqflu8xq66cyyp">
-    <file name="ClassPrepareRequestor.java" />
-  </source>
-  <source id="2891782949125205202" name="LocatableEventRequestor" hash="hp6pyrnb6jtpqjt70j00htqxh3ihaw">
-    <file name="LocatableEventRequestor.java" />
-  </source>
-  <source id="6460341978864598530" name="IRequestManager" hash="-b7xgy3fm14frda9s7556z4ogq1qvvhh">
-    <file name="IRequestManager.java" />
-  </source>
-  <source id="6460341978864599228" name="StepRequestor" hash="-anuu2lks60eeqf3pni0jpm411nck1sc">
-    <file name="StepRequestor.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-15tvz0jtunc1rbb3k7djngg5q3z45sz" />
 

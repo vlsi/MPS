@@ -40,7 +40,7 @@ public class NodeReachable_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_kwpl6o_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -56,7 +56,7 @@ public class NodeReachable_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyTestLabel(style, editorCell);
+    transformationTest_StyleSheet.apply_TestLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -103,7 +103,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_x06od6_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -174,7 +174,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_x06od6_h0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

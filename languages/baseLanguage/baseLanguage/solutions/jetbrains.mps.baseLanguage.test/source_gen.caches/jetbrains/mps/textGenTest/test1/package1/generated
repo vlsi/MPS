@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d5j4pofz7bt4w3qje3u9skcg4t6n614">
-  <common hash="-8lq11xpkms5k98siso20kgd2mqcrew7" dependsOnNodes="true" />
-  <source id="5257650213624905139" name="Clazz" hash="-4qbx5qualqhux4xvm37aguhcntctjia">
-    <file name="Clazz.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="d5j4pofz7bt4w3qje3u9skcg4t6n614" />
 

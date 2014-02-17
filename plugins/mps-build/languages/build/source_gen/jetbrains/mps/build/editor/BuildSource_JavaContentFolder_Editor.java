@@ -36,7 +36,7 @@ public class BuildSource_JavaContentFolder_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_kind");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

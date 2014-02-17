@@ -18,7 +18,7 @@ public class LeftTurn_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    KajakStyles_StyleSheet.applyCommand(style, editorCell);
+    KajakStyles_StyleSheet.apply_Command(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

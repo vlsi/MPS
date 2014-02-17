@@ -35,7 +35,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get output");
     editorCell.setCellId("Constant_3dlbxb_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -49,7 +49,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabel_Editor._Inline_3dlbxb_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -97,7 +97,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the");
     editorCell.setCellId("Constant_dgzt1x_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteCustomizes.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -118,7 +118,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
       editorCell.setRole("customizes");
     }
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -162,7 +162,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
     editorCell.setCellId("Constant_dgzt1x_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     DeleteCustomizes.setCellActions(editorCell, node, editorContext);

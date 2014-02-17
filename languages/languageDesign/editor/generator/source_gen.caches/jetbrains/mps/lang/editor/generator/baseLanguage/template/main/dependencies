@@ -32,8 +32,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />

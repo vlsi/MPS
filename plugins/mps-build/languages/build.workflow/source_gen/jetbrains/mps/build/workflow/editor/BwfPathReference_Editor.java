@@ -44,7 +44,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_75jjqz_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -55,7 +55,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pathref");
     editorCell.setCellId("Constant_75jjqz_b0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlExtensionName(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlExtensionName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -123,7 +123,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/>");
     editorCell.setCellId("Constant_75jjqz_d0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

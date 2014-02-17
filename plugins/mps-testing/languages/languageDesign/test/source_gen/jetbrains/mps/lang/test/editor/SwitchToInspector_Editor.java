@@ -18,7 +18,7 @@ public class SwitchToInspector_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyEditorOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

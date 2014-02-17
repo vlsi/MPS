@@ -45,7 +45,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "const");
     editorCell.setCellId("Constant_ipnr5b_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -74,7 +74,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ipnr5b_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_ipnr5b_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -116,7 +116,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ipnr5b_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

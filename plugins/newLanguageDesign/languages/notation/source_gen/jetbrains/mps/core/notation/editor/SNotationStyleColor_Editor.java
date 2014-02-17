@@ -39,7 +39,7 @@ public class SNotationStyleColor_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_kind");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="15qwnpo0nqillmodw5b2le6d474dp0w">
-  <common hash="-1vc0j29c1dxo0lnwiq001ily6fukqyn" dependsOnNodes="true" />
-  <source id="5231630840089786268" name="TypesystemChecker" hash="4picmtb1sca0g1np56ixatyurphcj7u">
-    <file name="TypesystemChecker.java" />
-  </source>
-  <source id="3364928926666865010" name="TypesystemCheckerComponent" hash="5o1ya45kofrcukrcj1upnpafeguu93">
-    <file name="TypesystemCheckerComponent.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="15qwnpo0nqillmodw5b2le6d474dp0w" />
 

@@ -1,31 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1hnolndtxj4cbaws0x58bkjj18ekzkj">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-gr2zs39ir60re4v2cnhxizxzi8x804" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-678kcoxyd773tflbpxsyyz58cxkoyqd" />
-  <common hash="bjy0yfd3g5s7im4fzo8y5kd1xq9o7ay" dependsOnNodes="true">
-    <dep root="763922957008726945" />
-    <dep root="763922957008729147" />
-    <dep root="763922957008729149" />
-    <dep root="763922957008729154" />
-    <dep root="763922957008729156" />
-    <dep root="763922957008729158" />
-    <dep root="7943979732673457898" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="763922957008726945" name="StateMachine" hash="96dlscl78y5qbmg6dbt4awz6m4zm8bu" />
-  <source id="763922957008729147" name="Event" hash="-3iato6efyb3p2e6o8dodcbx6qumkywb" />
-  <source id="763922957008729149" name="Transition" hash="-9g8729dg26dr4lop3pqnxs5ox99ib8u" />
-  <source id="763922957008729154" name="State" hash="-bn3jvz0n9crvr1ipw51nn7wq4z83wke" />
-  <source id="7943979732673457898" name="AbstractStateMachineElement" hash="-en3zw8brx5fgszooun3w0c2txtn2rb2" />
-  <source id="763922957008729156" name="StateReference" hash="-4zfenj7hx8cq891ou6qygb8cdr7p2vy" />
-  <source id="763922957008729158" name="EventReference" hash="74h7e8zvnry4d53djbvzixgy5hcvh9s" />
-</dependencies>
+<dependencies version="2" modelHash="1hnolndtxj4cbaws0x58bkjj18ekzkj" />
 

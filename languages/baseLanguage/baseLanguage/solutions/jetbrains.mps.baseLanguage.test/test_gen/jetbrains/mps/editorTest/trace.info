@@ -1093,7 +1093,6 @@
     <unitInfo nodeId="1236090523881" fileName="SideDeleteAtEndWithBackSpace_Test.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test$TestBody" />
     <unitInfo nodeId="1236090523881" fileName="SideDeleteAtEndWithBackSpace_Test.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1236160248682540373" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1236160248682577253">
     <nodeInfo nodeId="1236160248682577253" fileName="PasteStatement_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236160248682577253" fileName="PasteStatement_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2395,7 +2394,6 @@
     <unitInfo nodeId="3956753173913394401" fileName="LT_SNodeTypeCast_with_PlusExpression_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_SNodeTypeCast_with_PlusExpression_Test$TestBody" />
     <unitInfo nodeId="3956753173913394401" fileName="LT_SNodeTypeCast_with_PlusExpression_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_SNodeTypeCast_with_PlusExpression_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4172912343885056959" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4246727699196031257">
     <nodeInfo nodeId="4246727699196031257" fileName="RT_toStaticFieldReference_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246727699196031257" fileName="RT_toStaticFieldReference_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3287,8 +3285,6 @@
     <unitInfo nodeId="6042072087468738470" fileName="LT_DotExpression_with_PrefixDecrement_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_PrefixDecrement_Test$TestBody" />
     <unitInfo nodeId="6042072087468738470" fileName="LT_DotExpression_with_PrefixDecrement_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_PrefixDecrement_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134259009" />
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134288774" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134300552">
     <nodeInfo nodeId="6181413376134300552" fileName="MethodAddGenericCaret_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6181413376134300552" fileName="MethodAddGenericCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4346,7 +4342,6 @@
     <unitInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.PasteParameterManyTimes_Test$TestBody" />
     <unitInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteParameterManyTimes_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8187342170706220252" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8221415467041264294">
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4779,7 +4774,6 @@
     <unitInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodToAnonymousClass_Test$TestBody" />
     <unitInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodToAnonymousClass_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9138276493804605319" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/938834323431398136">
     <nodeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="18" startPosition="48" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -69,7 +69,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_tdrdn7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);

@@ -5,7 +5,6 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,7 +17,7 @@ public class XmlFile_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "document", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "document", true));
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;

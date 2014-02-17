@@ -75,7 +75,7 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("quickFixArgument");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

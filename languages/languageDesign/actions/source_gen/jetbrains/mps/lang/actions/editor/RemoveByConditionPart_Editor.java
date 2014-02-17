@@ -46,7 +46,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove by condition");
     editorCell.setCellId("Constant_kx3b3w_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

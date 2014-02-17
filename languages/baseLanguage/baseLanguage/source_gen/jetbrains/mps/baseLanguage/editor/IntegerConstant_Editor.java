@@ -28,7 +28,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_value");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

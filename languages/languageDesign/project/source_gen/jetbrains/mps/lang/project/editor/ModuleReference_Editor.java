@@ -83,7 +83,7 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
     editorCell.setCellId("Constant_ijcvyu_a1a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

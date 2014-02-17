@@ -4,185 +4,79 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Styles_StyleSheet {
-  @Deprecated
-  public static Style getGeneratorKeyWord(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getConstant(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getLiteral(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMacroStart(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.EDITABLE, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getNodeUnderMacro(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMappingLabelReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMacroDescriptionText(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMappingRuleDeclaration(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMappingRuleReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getMappingRuleDeclaration(editorCell));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getParenthesis(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
-    return style;
-  }
-
-  @Deprecated
-  public static Style getLeftParen(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getRightParen(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    return style;
-  }
-
-  public static void applyGeneratorKeyWord(Style style, EditorCell editorCell) {
+  public static void apply_GeneratorKeyWord(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyReference(Style style, EditorCell editorCell) {
+  public static void apply_reference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
-  public static void applyConstant(Style style, EditorCell editorCell) {
+  public static void apply_constant(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyLiteral(Style style, EditorCell editorCell) {
+  public static void apply_literal(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyMacroStart(Style style, EditorCell editorCell) {
+  public static void apply_macroStart(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
-  public static void applyNodeUnderMacro(Style style, EditorCell editorCell) {
+  public static void apply_nodeUnderMacro(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
   }
 
-  public static void applyMappingLabelReference(Style style, EditorCell editorCell) {
+  public static void apply_mappingLabelReference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
   }
 
-  public static void applyMacroDescriptionText(Style style, EditorCell editorCell) {
+  public static void apply_macroDescriptionText(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
   }
 
-  public static void applyMappingRuleDeclaration(Style style, EditorCell editorCell) {
+  public static void apply_mappingRuleDeclaration(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
   }
 
-  public static void applyMappingRuleReference(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyMappingRuleDeclaration(style, editorCell);
+  public static void apply_mappingRuleReference(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_mappingRuleDeclaration(style, editorCell);
   }
 
-  public static void applyParenthesis(Style style, EditorCell editorCell) {
+  public static void apply_Parenthesis(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
   }
 
-  public static void applyLeftParen(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyParenthesis(style, editorCell);
+  public static void apply_LeftParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 
-  public static void applyRightParen(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyParenthesis(style, editorCell);
+  public static void apply_RightParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
+
+
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ public class CutNode_Action extends BaseAction {
     super("Cut", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
-    this.addPlace(null);
   }
 
   @Override
@@ -46,9 +44,6 @@ public class CutNode_Action extends BaseAction {
       if (check_n39602_a1a0a0(SNodeOperations.getModel(node))) {
         return false;
       }
-    }
-    if (((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE) {
-      return false;
     }
     return CutNode_Action.this.getProjectPane(_params) != null;
   }
@@ -87,10 +82,6 @@ public class CutNode_Action extends BaseAction {
       }
     }
     if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
-    if (MapSequence.fromMap(_params).get("place") == null) {
       return false;
     }
     return true;

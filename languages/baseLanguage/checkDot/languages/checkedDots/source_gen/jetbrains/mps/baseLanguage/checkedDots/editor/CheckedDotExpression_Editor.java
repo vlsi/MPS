@@ -58,7 +58,7 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".?");
     editorCell.setCellId("Constant_6ihim1_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     CheckedDot_Actions_MakeUnchecked.setCellActions(editorCell, node, editorContext);

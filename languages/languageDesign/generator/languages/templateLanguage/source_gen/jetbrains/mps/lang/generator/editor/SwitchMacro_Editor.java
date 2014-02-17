@@ -60,7 +60,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$SWITCH$");
     editorCell.setCellId("Constant_31t0mi_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.STRIKE_OUT, true);
     editorCell.getStyle().putAll(style);
     if (true) {
@@ -100,7 +100,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_31t0mi_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyReference(style, editorCell);
+    Styles_StyleSheet.apply_reference(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "templateSwitch");
     editorCell.getStyle().putAll(style);
@@ -287,7 +287,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -442,7 +442,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("templateSwitch");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyReference(style, editorCell);
+      Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

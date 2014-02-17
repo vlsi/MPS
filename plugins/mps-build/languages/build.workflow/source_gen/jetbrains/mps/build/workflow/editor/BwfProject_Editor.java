@@ -56,7 +56,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build");
     editorCell.setCellId("Constant_4tk4ky_a0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -106,7 +106,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imports:");
     editorCell.setCellId("Constant_4tk4ky_e0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -176,7 +176,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
     editorCell.setCellId("Constant_4tk4ky_h0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -187,7 +187,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
     editorCell.setCellId("Constant_4tk4ky_i0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -217,7 +217,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "temporary directory:");
     editorCell.setCellId("Constant_4tk4ky_k0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -261,7 +261,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "workflow:");
     editorCell.setCellId("Constant_4tk4ky_n0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

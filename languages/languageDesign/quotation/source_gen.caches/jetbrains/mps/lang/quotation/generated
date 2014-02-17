@@ -1,16 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9hduu4gklnx41pxte3igyc11qurf4mv">
-  <dep model="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)" hash="-2xdcms2rbls2alknqahdhj2bmj9qm3c" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)" hash="8y4bux3kepf7ownl114g8nd7wl6vqjj" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" hash="-ebhie3ln4t6mz3sqactcz4lkqmp8xbo" />
-  <dep model="r:b7e75e21-5f04-43f4-94cb-24c612b5504a(jetbrains.mps.lang.quotation.generator.baseLanguage.template.util)" hash="6i11gs0wag8c8kx5nend74fw4s3pdnc" />
-  <common dependsOnNodes="true">
-    <dep model="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b7e75e21-5f04-43f4-94cb-24c612b5504a(jetbrains.mps.lang.quotation.generator.baseLanguage.template.util)" />
-    <file name="Generator.java" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="9hduu4gklnx41pxte3igyc11qurf4mv" />
 

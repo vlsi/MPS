@@ -43,7 +43,7 @@ public class NodeBuilderInitProperty_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new NodeBuilderInitProperty_Editor._Inline_s7nj87_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -97,7 +97,7 @@ public class NodeBuilderInitProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_s7nj87_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

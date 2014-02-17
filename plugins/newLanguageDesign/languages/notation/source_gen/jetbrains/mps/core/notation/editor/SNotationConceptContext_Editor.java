@@ -132,7 +132,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_tvsk60_a1a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);

@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7jwzqfi1mp1wbs04h45xyjriysbnx69">
-  <common hash="3l27db4eq8rb8j3xc1tv7ekyuzhkym5" dependsOnNodes="true" />
-  <source id="1560298786499497434" name="ModulePathChooser" hash="cgp2w9w9mj3bdtcpu8cu787baeyyuvw">
-    <file name="ModulePathChooser.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-7jwzqfi1mp1wbs04h45xyjriysbnx69" />
 
