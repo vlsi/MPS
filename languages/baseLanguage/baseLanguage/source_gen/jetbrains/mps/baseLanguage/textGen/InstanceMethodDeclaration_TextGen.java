@@ -43,11 +43,11 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
       this.append(" ");
     }
+    appendNode(SLinkOperations.getTarget(node, "returnType", true));
+    this.append(" ");
+    this.append(SPropertyOperations.getString(node, "name"));
+    this.append("(");
     {
-      appendNode(SLinkOperations.getTarget(node, "returnType", true));
-      this.append(" ");
-      this.append(SPropertyOperations.getString(node, "name"));
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -56,11 +56,11 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
+      this.append(" throws ");
       {
-        this.append(" throws ");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "throwsItem", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {

@@ -15,18 +15,18 @@ public class HTMLElement_TextGen extends SNodeTextGen {
       this.append(SPropertyOperations.getString(node, "name"));
       this.append(" />");
     } else {
+      this.append("<");
+      this.append(SPropertyOperations.getString(node, "name"));
+      this.append(">");
       {
-        this.append("<");
-        this.append(SPropertyOperations.getString(node, "name"));
-        this.append(">");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "line", true);
         for (SNode item : collection) {
           appendNode(item);
         }
-        this.append("</");
-        this.append(SPropertyOperations.getString(node, "name"));
-        this.append(">");
       }
+      this.append("</");
+      this.append(SPropertyOperations.getString(node, "name"));
+      this.append(">");
     }
   }
 }

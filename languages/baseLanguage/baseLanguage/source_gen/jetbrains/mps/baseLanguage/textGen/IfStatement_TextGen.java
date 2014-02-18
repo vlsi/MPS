@@ -25,9 +25,9 @@ public class IfStatement_TextGen extends SNodeTextGen {
     this.increaseDepth();
     appendNode(SLinkOperations.getTarget(node, "ifTrue", true));
     this.decreaseDepth();
+    this.appendNewLine();
+    this.appendWithIndent("}");
     {
-      this.appendNewLine();
-      this.appendWithIndent("}");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "elsifClauses", true);
       for (SNode item : collection) {
         appendNode(item);

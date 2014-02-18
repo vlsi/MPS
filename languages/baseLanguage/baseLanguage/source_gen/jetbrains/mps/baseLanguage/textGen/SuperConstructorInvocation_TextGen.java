@@ -20,8 +20,8 @@ public class SuperConstructorInvocation_TextGen extends SNodeTextGen {
     }
     this.appendNewLine();
     this.indentBuffer();
+    this.append("super(");
     {
-      this.append("super(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -30,8 +30,8 @@ public class SuperConstructorInvocation_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(");");
     }
+    this.append(");");
     if (getBuffer().hasPositionsSupport()) {
       {
         String traceableProperty = "";

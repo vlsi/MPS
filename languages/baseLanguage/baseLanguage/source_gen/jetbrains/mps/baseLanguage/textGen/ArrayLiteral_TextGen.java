@@ -9,8 +9,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ArrayLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    this.append("{");
     {
-      this.append("{");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "item", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -19,7 +19,7 @@ public class ArrayLiteral_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append("}");
     }
+    this.append("}");
   }
 }

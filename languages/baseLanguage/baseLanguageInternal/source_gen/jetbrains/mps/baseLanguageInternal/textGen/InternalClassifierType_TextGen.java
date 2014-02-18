@@ -14,8 +14,8 @@ public class InternalClassifierType_TextGen extends SNodeTextGen {
     String fqClassName = SPropertyOperations.getString(node, "fqClassName");
     BaseLangInternal.className(fqClassName, node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+      this.append("<");
       {
-        this.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -24,8 +24,8 @@ public class InternalClassifierType_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(">");
       }
+      this.append(">");
     }
   }
 }

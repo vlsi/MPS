@@ -16,14 +16,14 @@ public class OutputNode_TextGen extends SNodeTextGen {
       this.append("!no text!");
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
+      this.append(" children:{");
       {
-        this.append(" children:{");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "outputChild", true);
         for (SNode item : collection) {
           appendNode(item);
         }
-        this.append("}");
       }
+      this.append("}");
     }
   }
 }

@@ -19,8 +19,8 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", "annotation")), this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
+      this.append("(");
       {
-        this.append("(");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "value", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -29,8 +29,8 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(")");
       }
+      this.append(")");
     }
     if (oneLine) {
       this.append(" ");

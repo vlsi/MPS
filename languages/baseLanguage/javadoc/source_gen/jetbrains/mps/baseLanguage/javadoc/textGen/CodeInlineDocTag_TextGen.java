@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CodeInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    this.append("code ");
     {
-      this.append("code ");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "line", true);
       for (SNode item : collection) {
         appendNode(item);

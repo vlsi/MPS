@@ -126,11 +126,11 @@ public class QueriesGenerated {
     return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkAccess"), "link", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1237469183268(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2626571763597779777(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "separator");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5018463559796135918(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2626571763597779795(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "separator");
   }
 
@@ -278,19 +278,19 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
   }
 
-  public static boolean ifMacro_Condition_8762297933728007049(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2626571763597779736(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "separator"));
   }
 
-  public static boolean ifMacro_Condition_1408971595082488365(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2626571763597779759(final IfMacroContext _context) {
     return SimpleTextGenOperation_Behavior.call_inLangConcept_1236168713983(_context.getNode());
   }
 
-  public static boolean ifMacro_Condition_1237469183275(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2626571763597779784(final IfMacroContext _context) {
     return SimpleTextGenOperation_Behavior.call_inLangConcept_1236168713983(_context.getNode());
   }
 
-  public static boolean ifMacro_Condition_1237984687060(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2626571763597779805(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "separator"));
   }
 
@@ -330,7 +330,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
-  public static SNode sourceNodeQuery_8762297933727997029(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2626571763597779721(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "list", true);
   }
 

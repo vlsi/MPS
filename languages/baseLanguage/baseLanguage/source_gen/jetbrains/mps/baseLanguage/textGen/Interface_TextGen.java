@@ -37,8 +37,8 @@ public class Interface_TextGen extends SNodeTextGen {
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
+      this.append(" extends ");
       {
-        this.append(" extends ");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "extendedInterface", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {

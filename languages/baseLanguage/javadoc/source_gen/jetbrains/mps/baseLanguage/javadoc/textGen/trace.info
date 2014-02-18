@@ -4,17 +4,18 @@
     <nodeInfo nodeId="2099616960330116574" fileName="HTMLElement_TextGen.java" startLine="13" startPosition="90" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2099616960330116574" fileName="HTMLElement_TextGen.java" startLine="14" startPosition="23" endLine="15" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2099616960330116574" fileName="HTMLElement_TextGen.java" startLine="15" startPosition="63" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="18" startPosition="7" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="19" startPosition="25" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="20" startPosition="65" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="21" startPosition="25" endLine="22" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="12" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="18" startPosition="23" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="19" startPosition="63" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="21" startPosition="7" endLine="22" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="23" startPosition="39" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="25" startPosition="9" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="26" startPosition="26" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="27" startPosition="65" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="26" startPosition="7" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="27" startPosition="24" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="28" startPosition="63" endLine="29" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2099616960330116574" fileName="HTMLElement_TextGen.java" startLine="13" startPosition="90" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="22" startPosition="84" endLine="25" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="12" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="20" startPosition="23" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="12" endLine="29" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2099616960330116589" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2099616960330116558" fileName="HTMLElement_TextGen.java" startLine="12" startPosition="42" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2099616960330110596" fileName="HTMLElement_TextGen.java" startLine="12" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -24,10 +25,11 @@
     <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="22" startPosition="84" endLine="25" endPosition="9">
       <varInfo nodeId="2099616960330116591" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="18" startPosition="7" endLine="28" endPosition="25">
+    <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="21" startPosition="7" endLine="25" endPosition="9">
       <varInfo nodeId="2099616960330116591" varName="collection" />
     </scopeInfo>
-    <scopeInfo nodeId="2099616960330116590" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="12" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="2099616960330116590" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="12" endLine="29" endPosition="23" />
+    <scopeInfo nodeId="2099616960330116591" fileName="HTMLElement_TextGen.java" startLine="17" startPosition="12" endLine="29" endPosition="23" />
     <scopeInfo nodeId="2099616960330110596" fileName="HTMLElement_TextGen.java" startLine="12" startPosition="42" endLine="30" endPosition="5" />
     <scopeInfo nodeId="2099616960330110596" fileName="HTMLElement_TextGen.java" startLine="12" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="2099616960330110596" varName="node" />
@@ -52,6 +54,8 @@
     <nodeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="20" startPosition="87" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9054439867185875454" fileName="MethodDocComment_TextGen.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="12" startPosition="0" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="12" startPosition="0" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="18" startPosition="5" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="18" startPosition="5" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592914129117" fileName="MethodDocComment_TextGen.java" startLine="10" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2004985048484856452" fileName="MethodDocComment_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="50" />
@@ -72,6 +76,8 @@
     <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="19" startPosition="5" endLine="23" endPosition="7">
       <varInfo nodeId="2004985048484774486" varName="collection" />
     </scopeInfo>
+    <scopeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="12" startPosition="0" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="18" startPosition="5" endLine="24" endPosition="5" />
     <scopeInfo nodeId="4021391592914129117" fileName="MethodDocComment_TextGen.java" startLine="10" startPosition="42" endLine="29" endPosition="48" />
     <scopeInfo nodeId="4021391592914129117" fileName="MethodDocComment_TextGen.java" startLine="10" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="4021391592914129117" varName="node" />
@@ -283,6 +289,7 @@
     <nodeInfo nodeId="2004985048484856472" fileName="ClassifierDocComment_TextGen.java" startLine="19" startPosition="0" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="14" startPosition="83" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="10" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2004985048484856458" fileName="ClassifierDocComment_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="50" />
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="15" startPosition="37" endLine="16" endPosition="25" />
@@ -293,6 +300,7 @@
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="13" startPosition="5" endLine="17" endPosition="7">
       <varInfo nodeId="2004985048484774339" varName="collection" />
     </scopeInfo>
+    <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="18" endPosition="5" />
     <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="10" startPosition="42" endLine="20" endPosition="48" />
     <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="10" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4021391592916003702" varName="node" />
@@ -319,6 +327,7 @@
     <nodeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="17" startPosition="82" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2099616960330159358" fileName="CommentLine_TextGen.java" startLine="11" startPosition="42" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="15" startPosition="5" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="15" startPosition="5" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916694532" fileName="CommentLine_TextGen.java" startLine="11" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="18" startPosition="37" endLine="19" endPosition="25" />
     <scopeInfo nodeId="2099616960330159359" fileName="CommentLine_TextGen.java" startLine="12" startPosition="54" endLine="14" endPosition="44" />
@@ -329,6 +338,7 @@
     <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="16" startPosition="5" endLine="20" endPosition="7">
       <varInfo nodeId="4021391592916694589" varName="collection" />
     </scopeInfo>
+    <scopeInfo nodeId="4021391592916694589" fileName="CommentLine_TextGen.java" startLine="15" startPosition="5" endLine="21" endPosition="5" />
     <scopeInfo nodeId="4021391592916694532" fileName="CommentLine_TextGen.java" startLine="11" startPosition="42" endLine="21" endPosition="5" />
     <scopeInfo nodeId="4021391592916694532" fileName="CommentLine_TextGen.java" startLine="11" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="4021391592916694532" varName="node" />
@@ -375,9 +385,14 @@
     <nodeInfo nodeId="4021391592916753345" fileName="DocCommentTextGen.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="javadocIndent#(Ljetbrains/mps/textGen/SNodeTextGen;)V" />
     <nodeInfo nodeId="2004985048484856403" fileName="DocCommentTextGen.java" startLine="28" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2004985048484856397" fileName="DocCommentTextGen.java" startLine="21" startPosition="45" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856397" fileName="DocCommentTextGen.java" startLine="21" startPosition="45" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856413" fileName="DocCommentTextGen.java" startLine="33" startPosition="0" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856413" fileName="DocCommentTextGen.java" startLine="33" startPosition="0" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856418" fileName="DocCommentTextGen.java" startLine="39" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856418" fileName="DocCommentTextGen.java" startLine="39" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856423" fileName="DocCommentTextGen.java" startLine="45" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856423" fileName="DocCommentTextGen.java" startLine="45" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856428" fileName="DocCommentTextGen.java" startLine="51" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856428" fileName="DocCommentTextGen.java" startLine="51" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916753345" fileName="DocCommentTextGen.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="docCommentEnd#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
     <nodeInfo nodeId="4021391592916753345" fileName="DocCommentTextGen.java" startLine="16" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="docCommentStart#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
@@ -428,6 +443,11 @@
       <varInfo nodeId="2004985048484856428" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="4021391592916753345" fileName="DocCommentTextGen.java" startLine="60" startPosition="76" endLine="64" endPosition="28" />
+    <scopeInfo nodeId="2004985048484856397" fileName="DocCommentTextGen.java" startLine="21" startPosition="45" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="2004985048484856413" fileName="DocCommentTextGen.java" startLine="33" startPosition="0" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="2004985048484856418" fileName="DocCommentTextGen.java" startLine="39" startPosition="5" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="2004985048484856423" fileName="DocCommentTextGen.java" startLine="45" startPosition="5" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="2004985048484856428" fileName="DocCommentTextGen.java" startLine="51" startPosition="5" endLine="57" endPosition="5" />
     <scopeInfo nodeId="4021391592916753345" fileName="DocCommentTextGen.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="2004985048484856464" varName="node" />
       <varInfo nodeId="4021391592916753345" varName="textGen" />
@@ -482,20 +502,22 @@
     <unitInfo nodeId="4021391592916798988" fileName="InlineTagCommentLinePart_TextGen.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.InlineTagCommentLinePart_TextGen" />
   </root>
   <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/4021391592916799006">
-    <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="11" startPosition="5" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="12" startPosition="27" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="12" startPosition="5" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="14" startPosition="37" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="13" startPosition="82" endLine="16" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="11" startPosition="25" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="10" startPosition="42" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916799006" fileName="CodeInlineDocTag_TextGen.java" startLine="10" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="14" startPosition="37" endLine="15" endPosition="25" />
     <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="13" startPosition="82" endLine="16" endPosition="7">
       <varInfo nodeId="4021391592916799009" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="11" startPosition="5" endLine="16" endPosition="7">
+    <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="12" startPosition="5" endLine="16" endPosition="7">
       <varInfo nodeId="4021391592916799009" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="4021391592916799006" fileName="CodeInlineDocTag_TextGen.java" startLine="10" startPosition="42" endLine="17" endPosition="5" />
+    <scopeInfo nodeId="4021391592916799009" fileName="CodeInlineDocTag_TextGen.java" startLine="10" startPosition="42" endLine="17" endPosition="5" />
     <scopeInfo nodeId="4021391592916799006" fileName="CodeInlineDocTag_TextGen.java" startLine="10" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4021391592916799006" varName="node" />
     </scopeInfo>
@@ -516,11 +538,12 @@
     <nodeInfo nodeId="4021391592916879721" fileName="LinkInlineDocTag_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916879721" fileName="LinkInlineDocTag_TextGen.java" startLine="12" startPosition="25" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916879721" fileName="LinkInlineDocTag_TextGen.java" startLine="12" startPosition="25" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="15" startPosition="7" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="16" startPosition="25" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="14" startPosition="93" endLine="15" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="16" startPosition="7" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="18" startPosition="39" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916879721" fileName="LinkInlineDocTag_TextGen.java" startLine="11" startPosition="42" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="17" startPosition="84" endLine="20" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="15" startPosition="23" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="14" startPosition="93" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916960563" fileName="LinkInlineDocTag_TextGen.java" startLine="13" startPosition="67" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4021391592916879718" fileName="LinkInlineDocTag_TextGen.java" startLine="11" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -530,10 +553,11 @@
     <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="17" startPosition="84" endLine="20" endPosition="9">
       <varInfo nodeId="4021391592916960578" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="15" startPosition="7" endLine="20" endPosition="9">
+    <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="16" startPosition="7" endLine="20" endPosition="9">
       <varInfo nodeId="4021391592916960578" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="4021391592916960564" fileName="LinkInlineDocTag_TextGen.java" startLine="14" startPosition="93" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="4021391592916960578" fileName="LinkInlineDocTag_TextGen.java" startLine="14" startPosition="93" endLine="21" endPosition="7" />
     <scopeInfo nodeId="4021391592916879718" fileName="LinkInlineDocTag_TextGen.java" startLine="11" startPosition="42" endLine="22" endPosition="5" />
     <scopeInfo nodeId="4021391592916879718" fileName="LinkInlineDocTag_TextGen.java" startLine="11" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4021391592916879718" varName="node" />
@@ -578,6 +602,7 @@
     <nodeInfo nodeId="4021391592917144299" fileName="CodeSnippet_TextGen.java" startLine="23" startPosition="25" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856374" fileName="CodeSnippet_TextGen.java" startLine="17" startPosition="87" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2004985048484856374" fileName="CodeSnippet_TextGen.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856374" fileName="CodeSnippet_TextGen.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856372" fileName="CodeSnippet_TextGen.java" startLine="14" startPosition="25" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592917101583" fileName="CodeSnippet_TextGen.java" startLine="13" startPosition="22" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592917060962" fileName="CodeSnippet_TextGen.java" startLine="10" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -592,6 +617,7 @@
     <scopeInfo nodeId="2004985048484856374" fileName="CodeSnippet_TextGen.java" startLine="16" startPosition="5" endLine="20" endPosition="7">
       <varInfo nodeId="2004985048484856374" varName="collection" />
     </scopeInfo>
+    <scopeInfo nodeId="2004985048484856374" fileName="CodeSnippet_TextGen.java" startLine="15" startPosition="25" endLine="21" endPosition="5" />
     <scopeInfo nodeId="2004985048484856372" fileName="CodeSnippet_TextGen.java" startLine="14" startPosition="25" endLine="22" endPosition="25" />
     <scopeInfo nodeId="4021391592917101583" fileName="CodeSnippet_TextGen.java" startLine="13" startPosition="22" endLine="23" endPosition="25" />
     <scopeInfo nodeId="4021391592917060962" fileName="CodeSnippet_TextGen.java" startLine="10" startPosition="42" endLine="26" endPosition="22" />

@@ -23,8 +23,8 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
     }
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+      this.append("<");
       {
-        this.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "typeParameter", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -33,11 +33,11 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(">");
       }
+      this.append(">");
     }
+    this.append("(");
     {
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "constructorArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -46,8 +46,8 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
     this.append(" ");
     BaseClassConceptTextGen.membersWithBrackets(node, false, this);
     if (getBuffer().hasPositionsSupport()) {

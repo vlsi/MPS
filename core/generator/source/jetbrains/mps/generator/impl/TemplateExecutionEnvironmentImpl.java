@@ -61,7 +61,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     this(generator, executionContext, new ReductionContext());
   }
 
-  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext, @NotNull ReductionContext reductionContext) {
+  private TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext, @NotNull ReductionContext reductionContext) {
     this.generator = generator;
     this.reductionContext = reductionContext;
     myExecutionContext = executionContext;

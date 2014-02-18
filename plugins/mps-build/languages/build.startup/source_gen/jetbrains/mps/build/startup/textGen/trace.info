@@ -5,6 +5,7 @@
     <nodeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="13" startPosition="37" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="12" startPosition="83" endLine="15" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="10" startPosition="42" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="10" startPosition="42" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1731640411964623579" fileName="TextFile_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="13" startPosition="37" endLine="14" endPosition="25" />
     <scopeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="12" startPosition="83" endLine="15" endPosition="7">
@@ -14,6 +15,7 @@
       <varInfo nodeId="1731640411964625389" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="1731640411964623579" fileName="TextFile_TextGen.java" startLine="10" startPosition="42" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="1731640411964625389" fileName="TextFile_TextGen.java" startLine="10" startPosition="42" endLine="16" endPosition="5" />
     <scopeInfo nodeId="1731640411964623579" fileName="TextFile_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1731640411964623579" varName="node" />
     </scopeInfo>
