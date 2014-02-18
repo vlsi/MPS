@@ -64,6 +64,7 @@ public class TemplateContainer {
     myNodeAndMappingNamePairs = result;
   }
 
+  @NotNull
   public List<SNode> apply(@NotNull TemplateContext ctx)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();

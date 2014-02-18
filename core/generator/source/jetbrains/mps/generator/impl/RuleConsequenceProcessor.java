@@ -61,6 +61,7 @@ public class RuleConsequenceProcessor {
 
   // XXX Does DismissTopMappingRuleException get thrown from within TemplateProcessor, or it's solely GeneratorUtilEx realm (i.e. whether it's rule
   // level or lower, template level). Remove from throws here if can't happen from within TP (the only suspicious location is switch.tryDefault (macro).
+  @NotNull
   public List<SNode> processRuleConsequence() throws DismissTopMappingRuleException,
       GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
     return myTemplateContainer.apply(myConsequenceContext);
