@@ -52,7 +52,7 @@ public class typeof_OfConceptOperation_InferenceRule extends AbstractInferenceRu
               SNode conceptType = SNodeOperations.cast(typeCheckingContext.getExpandedNode(requestedConceptType), "jetbrains.mps.lang.smodel.structure.SConceptType");
               if (SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false) == null) {
                 {
-                  SNode _nodeToCheck_1029348928467 = typeCheckingContext.getExpandedNode(requestedConceptType);
+                  SNode _nodeToCheck_1029348928467 = ofConceptOperation;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "6864030874024608968", 0, null);
                   typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "6864030874024608970", true), (SNode) _quotation_createNode_nf8bul_a0a0b0a0a0d0b(), _info_12389875345);
                 }
