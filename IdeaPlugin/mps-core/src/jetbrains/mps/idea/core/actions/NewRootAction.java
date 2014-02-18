@@ -29,6 +29,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.impl.file.PsiJavaDirectoryImpl;
 import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -134,8 +135,8 @@ public class NewRootAction extends AnAction {
   }
 
   private boolean createPerRootModel(AnActionEvent e) {
-    PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+    final PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
+    if (psiElement == null || !(psiElement instanceof PsiJavaDirectoryImpl)) {
       //Can be used only on package
       return true;
     }
@@ -159,8 +160,7 @@ public class NewRootAction extends AnAction {
         }
         if(useModelRoot == null) return null;
 
-        final String prefix = useSourceRoot.endsWith(File.separator) ? useSourceRoot : (useSourceRoot + File.separator);
-        final String modelName = targetDir.getPath().replace(prefix,"").replace("/", ".");
+        final String modelName = ((PsiJavaDirectoryImpl) psiElement).getPresentation().getLocationString();
         EditableSModel model = null;
         try {
           model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot,
