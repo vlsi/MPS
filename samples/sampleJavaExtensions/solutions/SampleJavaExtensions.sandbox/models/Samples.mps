@@ -2401,7 +2401,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4120418308310980273" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SimpleParallelForSample" />
-    <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+    <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4120418308310980274" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4120418308310980275" nodeInfo="igu">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4120418308310980276" nodeInfo="in" />
