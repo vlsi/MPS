@@ -22,10 +22,15 @@ public class check_CastExpressionLegalExpression_NonTypesystemRule extends Abstr
   public void applyRule(final SNode castExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(PrecedenceUtil.needsParensAroundCastExpression(castExpression)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(castExpression, "expression", true), "Complex cast expressions should be wrapped in parentheses", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "481464699803970958", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(castExpression, "expression", true), "Cast expression applied to an operation of a lower priority. The expression should be wrapped in parentheses or re-balanced", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "481464699803970958", null, errorTarget);
       {
         BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.wrapCastExpressionInParentheses_QuickFix", false);
         intentionProvider.putArgument("expression", SLinkOperations.getTarget(castExpression, "expression", true));
+        _reporter_2309309498.addIntentionProvider(intentionProvider);
+      }
+      {
+        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.rebalanceCastExpression_QuickFix", false);
+        intentionProvider.putArgument("castExpression", castExpression);
         _reporter_2309309498.addIntentionProvider(intentionProvider);
       }
     }
