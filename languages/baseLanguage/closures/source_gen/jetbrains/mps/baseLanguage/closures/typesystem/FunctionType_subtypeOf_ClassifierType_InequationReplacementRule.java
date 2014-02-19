@@ -36,7 +36,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
-    String errorMsg;
+    String errorMsg = null;
     Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(classifier);
     Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
@@ -51,10 +51,12 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     if (it.hasNext()) {
       errorMsg = ": more than one abstract method";
     } else if (mtd != null) {
-      SNode md = Sequence.fromIterable(methods).first();
-      if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
-        SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
+      if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count()) {
+        SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), supertype);
         if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+            errorMsg = ": no result type in function type";
+          }
           {
             SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1858552893540392470", 0, null);
@@ -64,7 +66,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         }
         {
           Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-          Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+          Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).iterator();
           SNode fpt_var;
           SNode mpt_var;
           while (fpt_it.hasNext() && mpt_it.hasNext()) {
@@ -78,7 +80,10 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             }
           }
         }
-        return;
+        // dont report error, return immediately 
+        if (errorMsg == null) {
+          return;
+        }
       } else {
         errorMsg = ": wrong parameter number";
       }
@@ -96,7 +101,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     boolean result_14532009 = true;
     {
       SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
-      String errorMsg;
+      String errorMsg = null;
       Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(classifier);
       Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
@@ -111,15 +116,17 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       if (it.hasNext()) {
         errorMsg = ": more than one abstract method";
       } else if (mtd != null) {
-        SNode md = Sequence.fromIterable(methods).first();
-        if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
-          SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
+        if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count()) {
+          SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), supertype);
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+            if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+              errorMsg = ": no result type in function type";
+            }
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
           }
           {
             Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-            Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+            Iterator<SNode> mpt_it = ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).iterator();
             SNode fpt_var;
             SNode mpt_var;
             while (fpt_it.hasNext() && mpt_it.hasNext()) {
@@ -128,7 +135,10 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt_var, "type", true), supertype), (SNode) fpt_var, true);
             }
           }
-          return result_14532009;
+          // dont report error, return immediately 
+          if (errorMsg == null) {
+            return result_14532009;
+          }
         } else {
           errorMsg = ": wrong parameter number";
         }
