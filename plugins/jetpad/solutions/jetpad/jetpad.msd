@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetpad" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true">
   <models>
-    <modelRoot contentPath="${mps_home}/plugins/jetpad/lib" type="java_classes">
-      <sourceRoot location="base-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="dataflow-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="diagram-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="domUtil-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="event-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="geometry-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="grammar-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="gwt-util-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="json-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="mapper-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="model-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="test-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="values-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="view-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="otmodel-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="cell-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="completion-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="persistence-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="websocket-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="gwt-framework-1.0-SNAPSHOT.jar" />
+    <modelRoot contentPath="${mps_home}/plugins/jetpad" type="java_classes">
+      <sourceRoot location="lib" />
+      <excluded location="lib/jetpadBuildNumber.txt" />
     </modelRoot>
   </models>
   <facets>
