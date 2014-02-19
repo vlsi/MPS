@@ -41,14 +41,10 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
@@ -57,9 +53,12 @@ import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -618,7 +617,7 @@ class GenerationSession {
       }
     }
     if (generationPlan.hasConflictingPriorityRules()) {
-      Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
+      Map<TemplateMappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<TemplateMappingPriorityRule, TemplateModule>();
       for (TemplateModule generator : generationPlan.getGenerators()) {
         Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
         if (priorities == null) {
@@ -626,15 +625,15 @@ class GenerationSession {
         }
 
         for (TemplateMappingPriorityRule rule : priorities) {
-          myRule2Generator.put((MappingPriorityRule) rule, generator);
+          myRule2Generator.put(rule, generator);
         }
       }
 
 
       myLogger.error("Conflicting mapping priority rules encountered:");
-      List<Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
-      for (Pair<MappingPriorityRule, String> error : errors) {
-        MappingPriorityRule rule = error.o1;
+      List<Pair<TemplateMappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
+      for (Pair<TemplateMappingPriorityRule, String> error : errors) {
+        TemplateMappingPriorityRule rule = error.o1;
         String text = error.o2;
 
         TemplateModule templateModule = myRule2Generator.get(rule);

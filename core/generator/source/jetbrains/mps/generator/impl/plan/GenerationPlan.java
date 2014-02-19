@@ -19,6 +19,7 @@ import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -133,7 +134,7 @@ public class GenerationPlan {
     return myConflictingPriorityRules.hasConflicts();
   }
 
-  public List<Pair<MappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
+  public List<Pair<TemplateMappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
     return myConflictingPriorityRules.describe();
   }
 

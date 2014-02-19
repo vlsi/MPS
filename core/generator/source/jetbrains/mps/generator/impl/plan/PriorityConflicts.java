@@ -54,7 +54,7 @@ public final class PriorityConflicts {
     return false;
   }
 
-  public List<Pair<MappingPriorityRule, String>> describe() {
+  public List<Pair<TemplateMappingPriorityRule, String>> describe() {
     // no reason to keep this formatting as field, initialize right before use
     Map<Kind, String> messageFormats = new HashMap<Kind, String>();
     messageFormats.put(Kind.SelfLock, "Self-locking rule: %s");
@@ -63,7 +63,7 @@ public final class PriorityConflicts {
     messageFormats.put(Kind.CoherentWithStrict, "Coherent configurations on both sides of strict rule: %s");
     messageFormats.put(null, "%s");
     //
-    List<Pair<MappingPriorityRule, String>> rv = new ArrayList<Pair<MappingPriorityRule, String>>();
+    List<Pair<TemplateMappingPriorityRule, String>> rv = new ArrayList<Pair<TemplateMappingPriorityRule, String>>();
     for (Kind k : Kind.values()) {
       Set<TemplateMappingPriorityRule> rules = myConflictingRules.get(k);
       if (rules.isEmpty()) {
@@ -71,9 +71,8 @@ public final class PriorityConflicts {
       }
       String fmt = messageFormats.get(messageFormats.containsKey(k) ? k : null);
       for (TemplateMappingPriorityRule r : rules) {
-        MappingPriorityRule mpr = (MappingPriorityRule) r;
-        String msg = String.format(fmt, GenerationPartitioningUtil.asString(mpr, true));
-        rv.add(new Pair<MappingPriorityRule, String>(mpr, msg));
+        String msg = String.format(fmt, r.toString());
+        rv.add(new Pair<TemplateMappingPriorityRule, String>(r, msg));
       }
     }
     return rv;
