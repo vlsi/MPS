@@ -855,19 +855,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4699812310058205509(final PropertyMacroContext _context) {
-    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false)));
+    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "style", false)));
   }
 
   public static Object propertyMacro_GetPropertyValue_4699812310058205522(final PropertyMacroContext _context) {
-    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false));
+    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "style", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_4699812310058375435(final PropertyMacroContext _context) {
-    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false)));
+    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "style", false)));
   }
 
   public static Object propertyMacro_GetPropertyValue_4699812310058375448(final PropertyMacroContext _context) {
-    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false));
+    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "style", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_4699812310058406179(final PropertyMacroContext _context) {

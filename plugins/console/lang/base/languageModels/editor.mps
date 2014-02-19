@@ -193,9 +193,9 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1583916890557930443" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1583916890557930028" resolveInfo="ConsoleRoot" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1583916890557947353" nodeInfo="nn">
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="795210086019063127" nodeInfo="ng">
-          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319586252" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039364043" nodeInfo="nn">
@@ -225,9 +225,9 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1583916890557947371" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930417" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.DiscardStylePrioriryGroup" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
-          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="4122848433161827169" nodeInfo="ng">
-            <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnapplyStyle" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
+          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319716735" nodeInfo="ng">
+            <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
           </node>
         </node>
       </node>

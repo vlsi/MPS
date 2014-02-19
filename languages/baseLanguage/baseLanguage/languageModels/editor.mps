@@ -33,6 +33,7 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" />
   <import index="fnmy" modelUID="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" version="-1" />
+  <import index="tpco" modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -55,7 +56,6 @@
   <import index="vsqk" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
   <import index="ec5m" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <import index="nu8w" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" implicit="yes" />
-  <import index="tpco" modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" version="-1" implicit="yes" />
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1073416106125" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="StatementList_Editor" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
@@ -11080,9 +11080,9 @@
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1198594875276" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Comment" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="3516632611398418738" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="3516632611398453113" nodeInfo="ng">
-          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="3516632611398418738" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319584980" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
         </node>
       </node>
     </node>
@@ -11126,9 +11126,9 @@
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="7730231143345802634" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="TODO" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="3516632611398486798" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="6044426492108868378" nodeInfo="ng">
-          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398472564" resolveInfo="TODO_PG" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="3516632611398486798" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319584986" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="3516632611398472564" resolveInfo="TODO_PG" />
         </node>
       </node>
     </node>
@@ -11141,9 +11141,9 @@
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1794287103456802471" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="BlockComment" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="2475588304313474950" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="2475588304313474954" nodeInfo="ng">
-          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="2475588304313460312" resolveInfo="BlockCommentPG" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="2475588304313474950" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319584988" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="2475588304313460312" resolveInfo="BlockCommentPG" />
         </node>
       </node>
     </node>

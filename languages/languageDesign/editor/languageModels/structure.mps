@@ -3555,14 +3555,14 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1950447826686048995" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="DiscardStylePrioriryGroup" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="discard-priority-group" />
+    <property name="name" nameId="tpck.1169194664001" value="UnapplyStyle" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="unapply" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1950447826686049051" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="target" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137422349" resolveInfo="StylePriorityGroupReference" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797312246523" resolveInfo="StyleReference" />
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3383245079136928391" nodeInfo="ig">
@@ -3588,14 +3588,14 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1950447826681509042" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="ApplyStylePriorityGroup" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="priority-group" />
+    <property name="name" nameId="tpck.1169194664001" value="ApplyStyle" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1950447826683828796" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="target" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137422349" resolveInfo="StylePriorityGroupReference" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797312246523" resolveInfo="StyleReference" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9122903797276194520" nodeInfo="ig">
@@ -3607,6 +3607,17 @@
       <property name="role" nameId="tpce.1071599776563" value="element" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137422349" resolveInfo="StylePriorityGroupReference" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9122903797312246523" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
+    <property name="name" nameId="tpck.1169194664001" value="StyleReference" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9122903797312247166" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="style" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079136928391" resolveInfo="IStyleSheetMember" />
     </node>
   </root>
 </model>
