@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.apache.log4j.Logger;
@@ -69,7 +68,8 @@ public class GenerationPartitioningUtil {
   }
 
   public static List<TemplateModule> getTemplateModules(SModel inputModel, @Nullable Collection<String> additionalLanguages) {
-    Queue<String> queue = new LinkedList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel, false));
+    final Collection<String> actualUsedLanguages = ModelContentUtil.getUsedLanguageNamespaces(inputModel, false);
+    Queue<String> queue = new LinkedList<String>(actualUsedLanguages);
     if (additionalLanguages != null) {
       queue.addAll(additionalLanguages);
     }
@@ -110,6 +110,11 @@ public class GenerationPartitioningUtil {
           for (String referenced : referencedModules) {
             int slash = referenced.indexOf('/');
             String sourceLanguage = referenced.substring(0, slash);
+            if (!actualUsedLanguages.contains(sourceLanguage)) {
+              // some generator extends another generator (G) (likely to specify rule priorities)
+              // we don't want to include language of G unless it's actually employed in the model at hand.
+              continue;
+            }
             if (!processed.contains(sourceLanguage)) {
               processed.add(sourceLanguage);
               queue.add(sourceLanguage);
@@ -165,28 +170,6 @@ public class GenerationPartitioningUtil {
       }
     });
     return strings;
-  }
-
-  public static List<Pair<MappingPriorityRule, String>> toStrings(Iterable<TemplateMappingPriorityRule> priorityRules, boolean moreDetails) {
-    List<Pair<MappingPriorityRule, String>> list = new ArrayList<Pair<MappingPriorityRule, String>>();
-    for (TemplateMappingPriorityRule rule : priorityRules) {
-      String text = asString((MappingPriorityRule) rule, moreDetails);
-      if (moreDetails) {
-        //todo text = asString(rule.findParent(GeneratorDescriptor.class)) + ": " + text;
-      } else {
-        if (text.length() > 120) {
-          text = text.substring(0, 120) + "...";
-        }
-      }
-      list.add(new Pair(rule, text));
-    }
-    Collections.sort(list, new Comparator<Pair<MappingPriorityRule, String>>() {
-      @Override
-      public int compare(Pair<MappingPriorityRule, String> o1, Pair<MappingPriorityRule, String> o2) {
-        return o1.o2.compareTo(o2.o2);
-      }
-    });
-    return list;
   }
 
   public static String asString(MappingPriorityRule rule, boolean moreDetails) {
