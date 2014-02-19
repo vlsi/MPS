@@ -326,6 +326,7 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="795210086018976096" nodeInfo="ng">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
+      <node role="extendedGroup" roleId="tpc2.3383245079137422296" type="tpc2.StylePriorityGroupReferenceList" typeId="tpc2.9122903797276194520" id="9122903797291589399" nodeInfo="ng" />
     </node>
   </root>
 </model>

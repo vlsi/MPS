@@ -32,10 +32,13 @@ public class StylePriorityGroup_Behavior {
       if (ListSequence.fromList(extendsTree).tail(ListSequence.fromList(extendsTree).count() - 1).contains(ListSequence.fromList(extendsTree).first())) {
         return -1;
       } else if (down) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(extendsTree).first(), "extendedGroup", true)).isNotEmpty()) {
+        if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).isNotEmpty()) {
           MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), -1);
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(extendsTree).first(), "extendedGroup", true)).getElement(0), "stylePriorityGroup", false));
+          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).getElement(0), "stylePriorityGroup", false));
           ListSequence.fromList(childNums).insertElement(0, 0);
+        } else if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true) != null)) {
+          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 1);
+          down = false;
         } else {
           MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 0);
           down = false;
@@ -45,16 +48,16 @@ public class StylePriorityGroup_Behavior {
           break;
         }
         int newIndex = ListSequence.fromList(childNums).first() + 1;
-        assert newIndex <= ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(extendsTree).getElement(1), "extendedGroup", true)).count();
+        assert newIndex <= ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).getElement(1), "extendedGroup", true), "element", true)).count();
         MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).getElement(1), Math.max(MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).first()) + 1, MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).getElement(1))));
         ListSequence.fromList(extendsTree).removeElementAt(0);
         ListSequence.fromList(childNums).removeElementAt(0);
-        if (newIndex < ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(extendsTree).first(), "extendedGroup", true)).count()) {
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(extendsTree).first(), "extendedGroup", true)).getElement(newIndex), "stylePriorityGroup", false));
+        if (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).count()) {
+          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).getElement(newIndex), "stylePriorityGroup", false));
           ListSequence.fromList(childNums).insertElement(0, newIndex);
           down = true;
         } else {
-          assert newIndex == ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(extendsTree).first(), "extendedGroup", true)).count();
+          assert newIndex == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).count();
         }
       }
     }

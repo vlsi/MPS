@@ -11,6 +11,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -72,7 +73,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "extendedGroup", "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference");
+      SLinkOperations.setTarget(node, "extendedGroup", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StylePriorityGroupReferenceList", null), true);
     }
 
     public IntentionDescriptor getDescriptor() {
