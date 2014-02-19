@@ -11,26 +11,25 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddExtendsClause_Intention implements IntentionFactory {
+public class AddOverridesClause_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public AddExtendsClause_Intention() {
+  public AddOverridesClause_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.editor.structure.StyleSheetClass";
+    return "jetbrains.mps.lang.editor.structure.StylePriorityGroup";
   }
 
   public String getPresentation() {
-    return "AddExtendsClause";
+    return "AddOverridesClause";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.editor.intentions.AddExtendsClause_Intention";
+    return "jetbrains.mps.lang.editor.intentions.AddOverridesClause_Intention";
   }
 
   public String getLanguageFqName() {
@@ -50,7 +49,7 @@ public class AddExtendsClause_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1239735706419");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1707191813404431435");
   }
 
   public boolean isSurroundWith() {
@@ -59,7 +58,7 @@ public class AddExtendsClause_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddExtendsClause_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOverridesClause_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -69,15 +68,15 @@ public class AddExtendsClause_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Extends Clause";
+      return "Add Overrides Clause";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "extendedClass", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", null), true);
+      SNodeFactoryOperations.addNewChild(node, "extendedGroup", "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference");
     }
 
     public IntentionDescriptor getDescriptor() {
-      return AddExtendsClause_Intention.this;
+      return AddOverridesClause_Intention.this;
     }
   }
 }

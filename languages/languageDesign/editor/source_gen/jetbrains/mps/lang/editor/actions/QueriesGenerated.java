@@ -1163,11 +1163,11 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StylePriorityGroup"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "extendedGroup", "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference");
+        return SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "extendedGroup", "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference");
       }
 
       public String getMatchingText(String pattern) {
-        return "extends";
+        return "overrides";
       }
 
       public String getVisibleMatchingText(String pattern) {

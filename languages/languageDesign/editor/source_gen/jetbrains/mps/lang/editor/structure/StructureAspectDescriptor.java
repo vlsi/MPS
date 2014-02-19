@@ -431,7 +431,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 207:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleKeyPack").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"styleKey"}, new boolean[]{true}).create();
       case 208:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StylePriorityGroup").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember").children(new String[]{"extendedGroup"}, new boolean[]{false}).alias("priority group", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StylePriorityGroup").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember").children(new String[]{"extendedGroup"}, new boolean[]{true}).alias("priority group", "").create();
       case 209:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StylePriorityGroupReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("stylePriorityGroup").create();
       case 210:
