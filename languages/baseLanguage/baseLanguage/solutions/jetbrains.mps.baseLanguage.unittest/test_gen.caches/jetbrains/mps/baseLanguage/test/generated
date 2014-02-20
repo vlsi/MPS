@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bw5waymj2uzis6g38cltl4cs7ijv6a6">
+<dependencies version="2" modelHash="cqay651b93ef91k15vehjs354rkfzfq">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-8a6tcgri8pnr6v6nc4v0m8xy59p6e1v" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="6vr7bgg1qgwgrejs09k3js4pgm4xyib" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="x1khrinq296mfdsv66aivga6cvgymm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="e9xjc4cpen5cjni8adxmu1o4h6wtf8i" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-c06t0p64e1pwugw1ioimfr3mxtpke0v" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="96lei8ezpygv3e9ji04p0zwkgpvy6m6" />
@@ -3135,7 +3135,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="NonStaticInnerClassInstantiatedInStaticContext_Test.java" />
   </source>
-  <source id="3983029200623345182" name="InstanceMethodDeclarationThrownExceptions" hash="8oot0swfjob7plur99ep4r4m6ywcp02" dependsOnNodes="true">
+  <source id="3983029200623345182" name="InstanceMethodDeclarationThrownExceptions" hash="-q67h1zvoql587exuo7r0s4kjdh7q9q" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -3191,6 +3191,7 @@
     <dep root="9092976468699800028" />
     <dep root="966837649722289098" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />

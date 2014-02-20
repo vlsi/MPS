@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class InstanceMethodDeclarationThrownExceptions_Test extends BaseTransformationTest4 {
   @Test
-  public void test_NodeErrorCheck3983029200623432679() throws Throwable {
+  public void test_NodeUnnamedErrorCheck143797558343291602() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeErrorCheck3983029200623432679", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeUnnamedErrorCheck143797558343291602", true);
   }
 
   @Test
@@ -25,9 +25,9 @@ public class InstanceMethodDeclarationThrownExceptions_Test extends BaseTransfor
   }
 
   @Test
-  public void test_NodeErrorCheck3983029200623450347() throws Throwable {
+  public void test_NodeUnnamedErrorCheck143797558343290023() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeErrorCheck3983029200623450347", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeUnnamedErrorCheck143797558343290023", true);
   }
 
   @Test
@@ -43,21 +43,21 @@ public class InstanceMethodDeclarationThrownExceptions_Test extends BaseTransfor
   }
 
   @Test
-  public void test_NodeErrorCheck3983029200623471622() throws Throwable {
+  public void test_NodeOverridenMethodDoesNotCheck143797558343280410() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeErrorCheck3983029200623471622", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeOverridenMethodDoesNotCheck143797558343280410", true);
   }
 
   @Test
-  public void test_NodeErrorCheck3983029200623475647() throws Throwable {
+  public void test_NodeOverridenMethodDoesNotCheck143797558343288436() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeErrorCheck3983029200623475647", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeOverridenMethodDoesNotCheck143797558343288436", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeErrorCheck3983029200623432679() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3983029200623432679"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeUnnamedErrorCheck143797558343291602() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("143797558343291602"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3983029200623367486")});
     }
 
@@ -66,8 +66,8 @@ public class InstanceMethodDeclarationThrownExceptions_Test extends BaseTransfor
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3983029200623367447")});
     }
 
-    public void test_NodeErrorCheck3983029200623450347() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3983029200623450347"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeUnnamedErrorCheck143797558343290023() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("143797558343290023"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3983029200623374669")});
     }
 
@@ -81,13 +81,13 @@ public class InstanceMethodDeclarationThrownExceptions_Test extends BaseTransfor
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3983029200623467830")});
     }
 
-    public void test_NodeErrorCheck3983029200623471622() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3983029200623471622"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeOverridenMethodDoesNotCheck143797558343280410() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("143797558343280410"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3983029200623470506")});
     }
 
-    public void test_NodeErrorCheck3983029200623475647() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3983029200623475647"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeOverridenMethodDoesNotCheck143797558343288436() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("143797558343288436"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3983029200623475285")});
     }
   }
