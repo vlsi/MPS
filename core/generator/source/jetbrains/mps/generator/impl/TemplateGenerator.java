@@ -663,12 +663,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   BlockedReductionsData getBlockedReductionsData() {
     if (myReductionData == null) {
-      Object blockedReductions = getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
-      if (blockedReductions == null) {
-        blockedReductions = new BlockedReductionsData();
-        getGeneratorSessionContext().putStepObject(BlockedReductionsData.KEY, blockedReductions);
-      }
-      myReductionData = (BlockedReductionsData) blockedReductions;
+      myReductionData = BlockedReductionsData.getStepData(getGeneratorSessionContext());
     }
     return myReductionData;
   }

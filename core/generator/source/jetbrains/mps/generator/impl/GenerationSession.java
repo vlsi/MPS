@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
@@ -418,14 +419,20 @@ class GenerationSession {
         recycleWasteModel(currentInputModel, false); // we can forget about former input model here
         currentInputModel = currentOutputModel;
         ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder(); // why?!
-        currentOutputModel = createTransientModel();
       } else {
         assert currentInputModel == realOutputModel;
-        myDependenciesBuilder.dropModel();
-        // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
-        recycleWasteModel(currentOutputModel, true);
-        currentOutputModel = createTransientModel();
+        if (!myDiscardTransients) {
+          new CloneUtil(realOutputModel, currentOutputModel).cloneModelWithImports();
+          BlockedReductionsData.getStepData(mySessionContext).advanceForModelClone(currentOutputModel, myLogger);
+          recycleWasteModel(currentInputModel, false); // we can forget about former input model here
+          currentInputModel = currentOutputModel;
+        } else {
+          myDependenciesBuilder.dropModel();
+          // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
+          recycleWasteModel(currentOutputModel, true);
+        }
       }
+      currentOutputModel = createTransientModel();
     }
 
     // -----------------------
