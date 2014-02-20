@@ -202,7 +202,7 @@ public class ClassifierType_Behavior {
             SNode _typeParam = typeParam_var;
             while (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
               SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
-              if (temp != null) {
+              if (temp != null && temp != _myParam) {
                 _myParam = temp;
               } else {
                 break;
@@ -210,7 +210,7 @@ public class ClassifierType_Behavior {
             }
             while (SNodeOperations.isInstanceOf(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
               SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
-              if (temp != null) {
+              if (temp != null && temp != _typeParam) {
                 _typeParam = temp;
               } else {
                 break;
