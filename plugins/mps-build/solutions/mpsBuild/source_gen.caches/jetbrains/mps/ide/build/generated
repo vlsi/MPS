@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8ewgb1jiyx6rths73yp8bt57b5fsvkf">
+<dependencies version="2" modelHash="czypxik4ypqmg9gl7qc515wxgoi9ya3">
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="27vcgb5dvmsbnh1v92f7b6cmvnzc1d1" />
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
@@ -370,7 +370,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsNewLanguageDesign.xml" />
   </source>
-  <source id="2405506926871158265" name="jetpad" hash="boaixfd1drrlvtyqti55tysycujtsa5">
+  <source id="2405506926871158265" name="jetpad" hash="6b10e9th0h9xocz0xe4wkonzdfvrcjq">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
