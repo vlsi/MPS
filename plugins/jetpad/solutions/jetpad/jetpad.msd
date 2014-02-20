@@ -31,6 +31,7 @@
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
