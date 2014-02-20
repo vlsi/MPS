@@ -3060,7 +3060,7 @@
     <nodeInfo nodeId="2176128700690970629" fileName="ClassifierType_Behavior.java" startLine="223" startPosition="202" endLine="224" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2035236736666212800" fileName="ClassifierType_Behavior.java" startLine="226" startPosition="583" endLine="227" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029841626179007914" fileName="ClassifierType_Behavior.java" startLine="230" startPosition="69" endLine="231" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4853049144108074278" fileName="ClassifierType_Behavior.java" startLine="236" startPosition="351" endLine="237" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4853049144108074278" fileName="ClassifierType_Behavior.java" startLine="236" startPosition="748" endLine="237" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029841626179007916" fileName="ClassifierType_Behavior.java" startLine="238" startPosition="9" endLine="239" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029841626179007863" fileName="ClassifierType_Behavior.java" startLine="240" startPosition="12" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9029841626179007918" fileName="ClassifierType_Behavior.java" startLine="242" startPosition="5" endLine="243" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3405,7 +3405,7 @@
     <scopeInfo nodeId="2176128700690755288" fileName="ClassifierType_Behavior.java" startLine="223" startPosition="202" endLine="224" endPosition="27" />
     <scopeInfo nodeId="2035236736666212799" fileName="ClassifierType_Behavior.java" startLine="226" startPosition="583" endLine="227" endPosition="29" />
     <scopeInfo nodeId="9029841626179007913" fileName="ClassifierType_Behavior.java" startLine="230" startPosition="69" endLine="231" endPosition="29" />
-    <scopeInfo nodeId="4853049144107728146" fileName="ClassifierType_Behavior.java" startLine="236" startPosition="351" endLine="237" endPosition="23" />
+    <scopeInfo nodeId="4853049144107728146" fileName="ClassifierType_Behavior.java" startLine="236" startPosition="748" endLine="237" endPosition="23" />
     <scopeInfo nodeId="9011026350741578238" fileName="ClassifierType_Behavior.java" startLine="246" startPosition="95" endLine="247" endPosition="48" />
     <scopeInfo nodeId="3508583411997837252" fileName="ClassifierType_Behavior.java" startLine="250" startPosition="90" endLine="251" endPosition="250" />
     <scopeInfo nodeId="5744862332972811594" fileName="ClassifierType_Behavior.java" startLine="257" startPosition="85" endLine="258" endPosition="258" />
