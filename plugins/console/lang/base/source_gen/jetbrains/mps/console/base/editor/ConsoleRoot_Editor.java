@@ -28,9 +28,10 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     {
-      Style priorityGroup = new StyleImpl();
-      Console_Styles_StyleSheet.apply_readOnly(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Console_Styles_StyleSheet.apply_readOnly(styleToPut, editorCell);
+      style.putAll(styleToPut);
     }
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_drvoix_a0(editorContext, node));
@@ -113,9 +114,10 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     {
-      Style priorityGroup = new StyleImpl();
-      Console_Styles_StyleSheet.apply_readOnly(priorityGroup, editorCell);
-      style.removeAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Console_Styles_StyleSheet.apply_readOnly(styleToPut, editorCell);
+      style.removeAll(styleToPut);
     }
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

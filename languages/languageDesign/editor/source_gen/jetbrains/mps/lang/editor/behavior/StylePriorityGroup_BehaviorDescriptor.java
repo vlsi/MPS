@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class StylePriorityGroup_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetMember_BehaviorDescriptor {
+public class StylePriorityGroup_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetMember_BehaviorDescriptor, IStyle_BehaviorDescriptor {
   public StylePriorityGroup_BehaviorDescriptor() {
   }
 

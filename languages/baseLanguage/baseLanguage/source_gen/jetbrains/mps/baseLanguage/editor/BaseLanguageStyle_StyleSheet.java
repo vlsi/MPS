@@ -30,9 +30,10 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void apply_Comment(Style style, EditorCell editorCell) {
     {
-      Style priorityGroup = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_CommentPG(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_CommentPG(styleToPut, editorCell);
+      style.putAll(styleToPut);
     }
   }
 
@@ -44,9 +45,10 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void apply_TODO(Style style, EditorCell editorCell) {
     {
-      Style priorityGroup = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_TODO_PG(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_TODO_PG(styleToPut, editorCell);
+      style.putAll(styleToPut);
     }
   }
 
@@ -56,9 +58,10 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void apply_BlockComment(Style style, EditorCell editorCell) {
     {
-      Style priorityGroup = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_BlockCommentPG(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_BlockCommentPG(styleToPut, editorCell);
+      style.putAll(styleToPut);
     }
   }
 
