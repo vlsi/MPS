@@ -200,6 +200,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   private synchronized MessageList createList(String name) {
     AuxMessageList list = new AuxMessageList(myProject, name);
+    list.loadState(getDefaultList().getState());
     list.createContent();
     return list;
   }

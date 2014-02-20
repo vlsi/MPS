@@ -15,19 +15,29 @@
  */
 package jetbrains.mps.ide.generator;
 
+import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
-import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.Icon;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultFormatter;
-import java.awt.*;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.text.ParseException;
 
 class GenerationSettingsPreferencesPage {
@@ -133,7 +143,7 @@ class GenerationSettingsPreferencesPage {
     };
     myStrictMode.addChangeListener(listener);
     myIncremental.addChangeListener(listener);
-    optionsPanel.setBorder(BorderFactory.createTitledBorder("General"));
+    optionsPanel.setBorder(IdeBorderFactory.createTitledBorder("General"));
     return optionsPanel;
   }
 
@@ -193,7 +203,7 @@ class GenerationSettingsPreferencesPage {
     myShowWarnings.addChangeListener(listener);
     c.ipady = 0;
     panel.add(createLinkErrorsGroup(), c);
-    panel.setBorder(BorderFactory.createTitledBorder("Error reporting"));
+    panel.setBorder(IdeBorderFactory.createTitledBorder("Error reporting"));
     return panel;
   }
 
@@ -231,7 +241,7 @@ class GenerationSettingsPreferencesPage {
     gotoPanel.add(myTraceSteps);
     gotoPanel.add(myTraceLanguages);
     gotoPanel.add(myTraceTypes);
-    gotoPanel.setBorder(BorderFactory.createTitledBorder("Model generation performance report"));
+    gotoPanel.setBorder(IdeBorderFactory.createTitledBorder("Model generation performance report"));
     return gotoPanel;
   }
 
@@ -240,7 +250,7 @@ class GenerationSettingsPreferencesPage {
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
     textgenPanel.add(myFailOnMissingTextgen);
     textgenPanel.add(myGenerateDebugInfo);
-    textgenPanel.setBorder(BorderFactory.createTitledBorder("TextGen options"));
+    textgenPanel.setBorder(IdeBorderFactory.createTitledBorder("TextGen options"));
     return textgenPanel;
   }
 
