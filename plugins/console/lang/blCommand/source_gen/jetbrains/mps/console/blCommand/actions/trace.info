@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PasteWrappers.java" startLine="17" startPosition="49" endLine="29" endPosition="5" unitName="jetbrains.mps.console.blCommand.actions.PasteWrappers$1" />
-  <unitInfo fileName="PasteWrappers.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.console.blCommand.actions.PasteWrappers" />
+  <unitInfo fileName="PasteWrappers.java" startLine="19" startPosition="49" endLine="31" endPosition="5" unitName="jetbrains.mps.console.blCommand.actions.PasteWrappers$1" />
+  <unitInfo fileName="PasteWrappers.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.console.blCommand.actions.PasteWrappers" />
   <unitInfo fileName="QueriesGenerated.java" startLine="25" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.console.blCommand.actions.QueriesGenerated" />
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.console.blCommand.actions)/3492877759608901704">
     <nodeInfo nodeId="3492877759608901836" fileName="QueriesGenerated.java" startLine="40" startPosition="152" endLine="41" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -102,20 +102,20 @@
     </scopeInfo>
   </root>
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.console.blCommand.actions)/4615018937607083682">
-    <nodeInfo nodeId="4615018937607084454" fileName="PasteWrappers.java" startLine="26" startPosition="55" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="33" startPosition="67" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="34" startPosition="63" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="131" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="131" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="36" startPosition="42" endLine="37" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBLExpression_sma98h_a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="4615018937607083685" fileName="PasteWrappers.java" startLine="26" startPosition="55" endLine="27" endPosition="73" />
-    <scopeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="131" endLine="36" endPosition="42" />
-    <scopeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="33" startPosition="67" endLine="37" endPosition="14">
+    <nodeInfo nodeId="4615018937607084454" fileName="PasteWrappers.java" startLine="28" startPosition="55" endLine="29" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="67" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="36" startPosition="63" endLine="37" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="37" startPosition="131" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="37" startPosition="131" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="38" startPosition="42" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBLExpression_sma98h_a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="4615018937607083685" fileName="PasteWrappers.java" startLine="28" startPosition="55" endLine="29" endPosition="169" />
+    <scopeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="37" startPosition="131" endLine="38" endPosition="42" />
+    <scopeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="67" endLine="39" endPosition="14">
       <varInfo nodeId="4615018937607084452" varName="facade" />
       <varInfo nodeId="4615018937607084452" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4615018937607084452" fileName="PasteWrappers.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4615018937607084452" varName="p0" />
     </scopeInfo>
   </root>

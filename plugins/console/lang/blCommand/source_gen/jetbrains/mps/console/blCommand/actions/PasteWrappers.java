@@ -8,6 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -24,7 +26,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        return createBLExpression_sma98h_a0a0a(_context.getSourceNode());
+        return createBLExpression_sma98h_a0a0a(SNodeOperations.cast(HUtil.copyIfNecessary(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
     });
     return result;
