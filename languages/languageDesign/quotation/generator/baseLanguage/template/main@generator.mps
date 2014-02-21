@@ -6594,6 +6594,7 @@
   </root>
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="8274572146452539018" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="preprocess" />
+    <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8274572146452628027" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp3r.8182547171709752110" resolveInfo="NodeBuilderExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="88288618187046501" nodeInfo="ng">

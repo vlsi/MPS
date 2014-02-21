@@ -84,7 +84,7 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
   }
 
   public boolean isTopPriority() {
-    return false;
+    return true;
   }
 
   public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
