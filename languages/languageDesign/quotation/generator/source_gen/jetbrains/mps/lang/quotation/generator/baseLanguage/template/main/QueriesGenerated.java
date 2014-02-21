@@ -9,6 +9,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -34,7 +35,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.HashMap;
@@ -67,7 +67,7 @@ public class QueriesGenerated {
       }
     }
     SNode parent = SNodeOperations.getParent(_context.getNode());
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "metaClass", "aggregation", "reference");
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "metaClass", "aggregation", "reference") && LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_3180306201267234161(final PropertyMacroContext _context) {
