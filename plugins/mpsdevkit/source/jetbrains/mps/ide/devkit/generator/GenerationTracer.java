@@ -55,6 +55,7 @@ public class GenerationTracer implements IGenerationTracer {
 
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
   private GenerationTracerViewTool myTool;
+  private SModelReference myCurrentInputModel;
   private SModelReference myCurrentOutputModel;
 
   public GenerationTracer(Project project) {
@@ -72,6 +73,7 @@ public class GenerationTracer implements IGenerationTracer {
     myModelsProcessedByScripts = new ModelsProcessedByScripts();
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
     myCurrentOutputModel = null;
 
     if (myTool != null) {
@@ -95,6 +97,7 @@ public class GenerationTracer implements IGenerationTracer {
     myModelsProcessedByScripts = null;
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
     myCurrentOutputModel = null;
 
     if (myTool != null) {
@@ -111,8 +114,9 @@ public class GenerationTracer implements IGenerationTracer {
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
-    myTracingDataByInputModel.put(inputModel.getReference().toString(), myCurrentTracingData);
+    myCurrentInputModel = inputModel.getReference();
     myCurrentOutputModel = outputModel.getReference();
+    myTracingDataByInputModel.put(myCurrentInputModel.toString(), myCurrentTracingData);
     myTracingDataByOutputModel.put(myCurrentOutputModel.toString(), myCurrentTracingData);
     myCurrentTraceNode = null;
   }
@@ -124,24 +128,39 @@ public class GenerationTracer implements IGenerationTracer {
     myTracingDataByOutputModel.remove(outputModel.getReference().toString());
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
     myCurrentOutputModel = null;
+  }
+
+  private SNodeReference adoptToModel(SModelReference desiredModel, SNodeReference node) {
+    if (!desiredModel.equals(node.getModelReference())) {
+      SNodeId nodeId = node instanceof SNodePointer ? ((SNodePointer) node).getNodeId() : null;
+      if (nodeId != null) {
+        node = new SNodePointer(desiredModel, nodeId);
+      }
+      // fall-through
+    }
+    return node;
   }
 
   @Override
   public void pushInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     push(new TracerNode(TracerNode.Kind.INPUT, node));
   }
 
   @Override
   public void closeInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     closeBranch(TracerNode.Kind.INPUT, node);
   }
 
   @Override
   public void popInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     pop(TracerNode.Kind.INPUT, node);
   }
 
@@ -184,13 +203,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushOutputNode(SNodeReference node) {
     if (!myActive) return;
-    if (!myCurrentOutputModel.equals(node.getModelReference())) {
-      SNodeId nodeId = node instanceof SNodePointer ? ((SNodePointer) node).getNodeId() : null;
-      if (nodeId != null) {
-        node = new SNodePointer(myCurrentOutputModel, nodeId);
-      }
-      // fall-through
-    }
+    node = adoptToModel(myCurrentOutputModel, node);
     push(new TracerNode(TracerNode.Kind.OUTPUT, node));
   }
 

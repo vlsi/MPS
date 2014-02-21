@@ -875,7 +875,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       try {
         visitInputNode(inputRootNode);
       } finally {
-        myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
+        myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
         myDeltaBuilder.leaveInputRoot(inputRootNode);
       }
       // for now, registerRoot shall go *after* leaveInputRoot, as deltaBuilder expects CopyRoot to be full of replacing nodes
@@ -900,7 +900,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             visitInputNode(inputChildNode);
           }
         } finally {
-          myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
+          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
         }
       }
     }
