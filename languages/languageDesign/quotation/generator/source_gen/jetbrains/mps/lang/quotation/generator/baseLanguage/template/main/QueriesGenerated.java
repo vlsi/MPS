@@ -5,6 +5,7 @@ package jetbrains.mps.lang.quotation.generator.baseLanguage.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -43,12 +44,28 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
 
   public static boolean baseMappingRule_Condition_8274572146452630995(final BaseMappingRuleContext _context) {
+    {
+      SNode matchedNode_x583g4_a0b = _context.getNode();
+      {
+        boolean matches_x583g4_a0a1 = false;
+        GeneratedMatchingPattern matchingPattern_x583g4_a0a1 = new QueriesGenerated.Pattern_x583g4_a0a1a1a0a1();
+        matches_x583g4_a0a1 = matchingPattern_x583g4_a0a1.match(matchedNode_x583g4_a0b);
+        if (matches_x583g4_a0a1) {
+          return false;
+        }
+      }
+    }
     SNode parent = SNodeOperations.getParent(_context.getNode());
     return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "metaClass", "aggregation", "reference");
   }
@@ -358,6 +375,16 @@ public class QueriesGenerated {
     return SNodeOperations.as(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), "nodeVariable"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
+  public static Object referenceMacro_GetReferent_7838325468140239892(final ReferenceMacroContext _context) {
+    SNode initLink;
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.quotation.structure.NodeBuilderList")) {
+      initLink = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.quotation.structure.NodeBuilderList")), "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink");
+    } else {
+      initLink = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink");
+    }
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(initLink, "link", false), "target", false);
+  }
+
   public static boolean ifMacro_Condition_1196351886745(final IfMacroContext _context) {
     return false;
   }
@@ -434,7 +461,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
-  public static SNode sourceNodeQuery_88288618187143682(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7838325468139287103(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
@@ -909,4 +936,101 @@ public class QueriesGenerated {
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }
+
+  public static class Pattern_x583g4_a0a1a1a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode patternVar_expr;
+    /*package*/ SNode patternVar_concept;
+
+    public Pattern_x583g4_a0a1a1a0a1() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_x583g4_a0a0a0b = nodeToMatch;
+        if (!("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression".equals(nodeToMatch_x583g4_a0a0a0b.getConcept().getQualifiedName()))) {
+          return false;
+        }
+        {
+          String childRole_x583g4_ = "expression";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0b, childRole_x583g4_, 1))) {
+            return false;
+          }
+          {
+            SNode childVar_x583g4_a0a0a0a1 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0b.getChildren(childRole_x583g4_), 0);
+            {
+              SNode nodeToMatch_x583g4_a0a0a0a1 = childVar_x583g4_a0a0a0a1;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression".equals(nodeToMatch_x583g4_a0a0a0a1.getConcept().getQualifiedName()))) {
+                return false;
+              }
+              patternVar_concept = nodeToMatch_x583g4_a0a0a0a1.getReferenceTarget("concept");
+              {
+                String childRole_x583g4__0 = "leftExpression";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a1, childRole_x583g4__0, 1))) {
+                  return false;
+                }
+                {
+                  SNode childVar_x583g4_a0a0a0a0b = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a1.getChildren(childRole_x583g4__0), 0);
+                  {
+                    SNode nodeToMatch_x583g4_a0a0a0a0b = childVar_x583g4_a0a0a0a0b;
+                    if (!("jetbrains.mps.baseLanguage.structure.StaticMethodCall".equals(nodeToMatch_x583g4_a0a0a0a0b.getConcept().getQualifiedName()))) {
+                      return false;
+                    }
+                    {
+                      SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0b0b0b0b0b0b0b0b0b0a0b0b0a0a0a0b0b0a0b;
+                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0b.getReferenceTarget("baseMethodDeclaration")))) {
+                        return false;
+                      }
+                    }
+                    {
+                      SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0b0b0b0b0b0b0b0b0b0b0b0b0a0b0b0a0a0a0b0b0a0b;
+                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0b.getReferenceTarget("classConcept")))) {
+                        return false;
+                      }
+                    }
+                    {
+                      String childRole_x583g4__1 = "actualArgument";
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a0b, childRole_x583g4__1, 1))) {
+                        return false;
+                      }
+                      {
+                        SNode childVar_x583g4_a0a0a0a0a1 = IterableUtil.get(nodeToMatch_x583g4_a0a0a0a0b.getChildren(childRole_x583g4__1), 0);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        patternVar_expr = (SNode) pattern.getFieldValue("patternVar_expr");
+        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("patternVar_expr".equals(fieldName)) {
+        return patternVar_expr;
+      }
+      if ("patternVar_concept".equals(fieldName)) {
+        return patternVar_concept;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0b0b0b0b0b0b0b0b0b0b0a0b0b0a0a0a0b0b0a0b = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0b0b0b0b0b0b0b0b0b0b0b0b0a0b0b0a0a0a0b0b0a0b = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil");
 }

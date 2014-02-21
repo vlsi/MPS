@@ -24,7 +24,7 @@ public class Generator implements TemplateModule {
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)", TemplateUtil.createRefNormal("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8274572146452539018")), TemplateUtil.createRefExternal("b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)", TemplateUtil.createRefNormal("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887556"))));
     models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl"));
-    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.baseLanguageInternal", "jetbrains.mps.lang.smodel");
+    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.baseLanguageInternal", "jetbrains.mps.lang.quotation", "jetbrains.mps.lang.smodel");
   }
 
   @Override
