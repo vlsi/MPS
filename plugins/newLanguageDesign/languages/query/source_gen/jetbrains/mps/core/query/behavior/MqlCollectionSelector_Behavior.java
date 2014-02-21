@@ -4,9 +4,10 @@ package jetbrains.mps.core.query.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.query.runtime.EvaluationEnvironment;
 import jetbrains.mps.core.query.runtime.EvaluationContext;
 import jetbrains.mps.core.query.runtime.EvaluationException;
@@ -30,13 +31,13 @@ public class MqlCollectionSelector_Behavior {
     if (SPropertyOperations.hasValue(thisNode, "kind", "5", null) || SPropertyOperations.hasValue(thisNode, "kind", "6", null)) {
       return createMqlBoolType_6kvg7a_a0a0a0();
     } else if (SPropertyOperations.hasValue(thisNode, "kind", "8", null)) {
-      return createMqlListType_6kvg7a_a0a0a0a(MqlSelector_Behavior.call_getContainerType_228266671027861723(thisNode));
+      return createMqlListType_6kvg7a_a0a0a0a(SNodeOperations.cast(HUtil.copyIfNecessary(MqlSelector_Behavior.call_getContainerType_228266671027861723(thisNode)), "jetbrains.mps.core.query.structure.MqlType"));
     } else if (SPropertyOperations.hasValue(thisNode, "kind", "1", null) || SPropertyOperations.hasValue(thisNode, "kind", "2", null)) {
       SNode node = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "expr", true), "virtual_getType_228266671027861783", new Object[]{});
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.query.structure.MqlListType")) {
         return node;
       }
-      return createMqlListType_6kvg7a_a2a1a0a(SNodeOperations.copyNode(node));
+      return createMqlListType_6kvg7a_a2a1a0a(SNodeOperations.cast(HUtil.copyIfNecessary(SNodeOperations.copyNode(node)), "jetbrains.mps.core.query.structure.MqlType"));
     }
     return MqlSelector_Behavior.call_getContainerType_228266671027861723(thisNode);
   }
