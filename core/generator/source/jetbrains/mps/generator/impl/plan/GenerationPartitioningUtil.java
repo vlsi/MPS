@@ -18,8 +18,6 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -31,11 +29,10 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -48,83 +45,17 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
 
 /**
  * Igor Alshannikov
  * Date: Mar 30, 2007
  */
 public class GenerationPartitioningUtil {
-  private static final Logger LOG = LogManager.getLogger(GenerationPartitioningUtil.class);
-
-  public static List<TemplateModule> getTemplateModules(SModel inputModel) {
-    return getTemplateModules(inputModel, null);
-  }
-
-  public static List<TemplateModule> getTemplateModules(SModel inputModel, @Nullable Collection<String> additionalLanguages) {
-    final Collection<String> actualUsedLanguages = ModelContentUtil.getUsedLanguageNamespaces(inputModel, false);
-    Queue<String> queue = new LinkedList<String>(actualUsedLanguages);
-    if (additionalLanguages != null) {
-      queue.addAll(additionalLanguages);
-    }
-    Set<String> processed = new HashSet<String>(queue);
-    List<TemplateModule> result = new ArrayList<TemplateModule>();
-
-    while (!queue.isEmpty()) {
-      String next = queue.remove();
-      LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(next);
-      if (language == null) {
-        LOG.error(String.format("Model %s uses language %s which is missing (likely is not yet generated or is a bootstrap dependency)", inputModel.getModelName(), next));
-        continue;
-      }
-
-      Collection<TemplateModule> generators = language.getGenerators();
-      if (generators == null) {
-        continue;
-      }
-
-      for (TemplateModule generator : generators) {
-        if (generator == null) {
-          continue;
-        }
-
-        result.add(generator);
-
-        // handle Used languages
-        for (String used : generator.getUsedLanguages()) {
-          if (!processed.contains(used)) {
-            processed.add(used);
-            queue.add(used);
-          }
-        }
-
-        // handle Referenced generators
-        Collection<String> referencedModules = generator.getReferencedModules();
-        if (referencedModules != null) {
-          for (String referenced : referencedModules) {
-            int slash = referenced.indexOf('/');
-            String sourceLanguage = referenced.substring(0, slash);
-            if (!actualUsedLanguages.contains(sourceLanguage)) {
-              // some generator extends another generator (G) (likely to specify rule priorities)
-              // we don't want to include language of G unless it's actually employed in the model at hand.
-              continue;
-            }
-            if (!processed.contains(sourceLanguage)) {
-              processed.add(sourceLanguage);
-              queue.add(sourceLanguage);
-            }
-          }
-        }
-      }
-    }
-
-    return result;
+  public static Collection<TemplateModule> getTemplateModules(SModel inputModel) {
+    return new EngagedGeneratorCollector(inputModel, null).getAccessibleGenerators();
   }
 
   public static List<Pair<String, TemplateMappingConfiguration>> toStrings(List<TemplateMappingConfiguration> mappings) {

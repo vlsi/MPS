@@ -22,7 +22,6 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
@@ -34,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -59,19 +59,28 @@ public class GenerationPlan {
   public GenerationPlan(@NotNull SModel inputModel, Collection<String> additionalLanguages) {
     myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
     try {
-      myGenerators = GenerationPartitioningUtil.getTemplateModules(inputModel, additionalLanguages);
+      EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
 
-      initTemplateModels();
-//      for (Generator generator : generators) {
-//        myLanguages.add(generator.getSourceLanguage());
-//      }
-
-      GenerationPartitioner partitioner = new GenerationPartitioner(myGenerators);
-      myPlan = partitioner.createMappingSets();
+      GenerationPartitioner partitioner = new GenerationPartitioner(c.getAccessibleGenerators());
+      final List<List<TemplateMappingConfiguration>> mappingSets = partitioner.createMappingSets();
+      myGenerators = c.getDirectlyEngagedGenerators();
+      myPlan = new ArrayList<List<TemplateMappingConfiguration>>();
+      for (List<TemplateMappingConfiguration> l : mappingSets) {
+        for (Iterator<TemplateMappingConfiguration> it = l.iterator(); it.hasNext(); ) {
+          final TemplateMappingConfiguration tmc = it.next();
+          if (!myGenerators.contains(tmc.getModel().getModule())) {
+            it.remove();
+          }
+        }
+        if (!l.isEmpty()) {
+          myPlan.add(l);
+        }
+      }
       if (myPlan.isEmpty()) {
-        myPlan.add(new ArrayList<TemplateMappingConfiguration>());
+        myPlan.add(Collections.<TemplateMappingConfiguration>emptyList());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
+      initTemplateModels();
     } catch (Throwable t) {
       LOG.error(null, t);
       throw new RuntimeException("Couldn't compute generation steps for model '" + jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel) + "'", t);
@@ -98,7 +107,7 @@ public class GenerationPlan {
     return myGenerators;
   }
 
-  public void initTemplateModels() {
+  private void initTemplateModels() {
     myTemplateModels = new ArrayList<TemplateModel>();
     for (TemplateModule module : myGenerators) {
       myTemplateModels.addAll(module.getModels());
@@ -146,7 +155,10 @@ public class GenerationPlan {
     sb.append(" steps\n");
     int i = 0;
     for (List<TemplateMappingConfiguration> step : myPlan) {
-      sb.append("[" + (i++) + "]\n");
+      sb.append('[');
+      sb.append(i++);
+      sb.append(']');
+      sb.append('\n');
       List<String> res = new ArrayList<String>(step.size());
       for (TemplateMappingConfiguration mconfig : step) {
         res.add(toString(mconfig));
