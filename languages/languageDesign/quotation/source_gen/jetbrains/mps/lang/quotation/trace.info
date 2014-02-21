@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Generator.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.quotation.Generator" />
+  <unitInfo fileName="Generator.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.quotation.Generator" />
   <unitInfo fileName="Language.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.quotation.Language" />
 </debugInfo>
 

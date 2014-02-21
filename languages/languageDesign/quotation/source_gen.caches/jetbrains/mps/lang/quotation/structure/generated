@@ -1,3 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ctcf714cpxqwwijdx5h3rp850uj9l75" />
+<dependencies version="2" modelHash="-ctcf714cpxqwwijdx5h3rp850uj9l75">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <common hash="2knmkjorrp59zk6n9881tkq8ebqppul" dependsOnNodes="true">
+    <dep root="1196350785110" />
+    <dep root="1196350785112" />
+    <dep root="1196350785113" />
+    <dep root="1196350785117" />
+    <dep root="1196350785118" />
+    <dep root="1196866233735" />
+    <dep root="5455284157993863837" />
+    <dep root="5455284157993863840" />
+    <dep root="5455284157993911077" />
+    <dep root="5455284157993911097" />
+    <dep root="5455284157994012186" />
+    <dep root="8182547171709614739" />
+    <dep root="8182547171709738802" />
+    <dep root="8182547171709752110" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1196350785110" name="AbstractAntiquotation" hash="-1hi7lh973h5enw9b2mr67ido7ajq4wl" />
+  <source id="1196350785112" name="Antiquotation" hash="-7vtvp8ummljt5p2eu2wl2e47eeu77y9" />
+  <source id="1196350785113" name="Quotation" hash="58pj9l7jgkll47it5c3jvasugeuxpd8" />
+  <source id="1196350785117" name="ReferenceAntiquotation" hash="-65ld1tjh98cvdid244924e6qx60toee" />
+  <source id="1196350785118" name="ListAntiquotation" hash="-93cjs7r64k0k9fwfcvktwidn7mqkce3" />
+  <source id="1196866233735" name="PropertyAntiquotation" hash="-b6ae9qi3il5heb9pfjfxcphld0i2h6" />
+  <source id="5455284157993911077" name="NodeBuilderInitProperty" hash="708xwq23pkrbxrh105wwcsc2kswlxis" />
+  <source id="8182547171709738802" name="NodeBuilderList" hash="-4qplssky69wqwan1tjk9iav2wsnf13h" />
+  <source id="5455284157993863837" name="NodeBuilder" hash="eh71tfq4dlsi0ks6u1gvodjxm83gz24" />
+  <source id="5455284157994012186" name="NodeBuilderInitLink" hash="anqy99kbfxa5w4ea2czxn50cv4bs95r" />
+  <source id="8182547171709614739" name="NodeBuilderRef" hash="-1ph52frd1g6im83ydvy09x9zr0482a4" />
+  <source id="8182547171709752110" name="NodeBuilderExpression" hash="eix492zxb7wyer0xlb3vhg07dpgysaw" />
+  <source id="5455284157993863840" name="NodeBuilderNode" hash="-4a97rzkj3otvpn28sxyjxjv5ltpq75d" />
+  <source id="5455284157993911097" name="NodeBuilderInitPart" hash="a78zarpn6wa228dm62boo8makdb4ki3" />
+</dependencies>
 
