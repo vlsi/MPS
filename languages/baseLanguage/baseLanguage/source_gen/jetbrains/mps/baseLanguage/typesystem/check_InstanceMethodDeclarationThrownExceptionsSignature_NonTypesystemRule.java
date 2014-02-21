@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -44,21 +44,24 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
     final List<SNode> superThrown = SLinkOperations.getTargets(nearestOverriddenMethod, "throwsItem", true);
     ListSequence.fromList(myThrown).visitAll(new IVisitor<SNode>() {
       public void visit(SNode my) {
-        final SNode myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(my, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+        final SNode myClassifier = ThrownTypeVariableReferencesHelper.retrieveClassifier(my);
+        if (myClassifier == null) {
+          return;
+        }
         Iterable<SNode> superTypes = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(myClassifier);
 
-        if (!((eq_l20hbd_a0a0a0d0a0a0a0i0b(myClassifier, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
+        if (!((eq_l20hbd_a0a0a0e0a0a0a0i0b(myClassifier, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_l20hbd_a0a0a0a0a0a0a0d0a0a0a0i0b(it, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException"));
+            return eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(it, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException"));
           }
         }))) && !(ListSequence.fromList(superThrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            final SNode superClassifier = SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-            return eq_l20hbd_a0a1a0a0a0a0a3a0a0a0a8a1(myClassifier, superClassifier) || SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(myClassifier)).any(new IWhereFilter<SNode>() {
+            final SNode superClassifier = ThrownTypeVariableReferencesHelper.retrieveClassifier(it);
+            return superClassifier != null && (eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(myClassifier, superClassifier) || SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(myClassifier)).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_l20hbd_a0a0a0a0a0a1a0a0a0a0a3a0a0a0a8a1(it, superClassifier);
+                return eq_l20hbd_a0a0a0a0a0a0a1a0a0a0a0a4a0a0a0a8a1(it, superClassifier);
               }
-            });
+            }));
           }
         }))) {
           String thrownName = SPropertyOperations.getString(myClassifier, "name");
@@ -86,19 +89,19 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
     return false;
   }
 
-  private static boolean eq_l20hbd_a0a1a0a0a0a0a3a0a0a0a8a1(Object a, Object b) {
+  private static boolean eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_l20hbd_a0a0a0a0a0a1a0a0a0a0a3a0a0a0a8a1(Object a, Object b) {
+  private static boolean eq_l20hbd_a0a0a0a0a0a0a1a0a0a0a0a4a0a0a0a8a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_l20hbd_a0a0a0a0a0a0a0d0a0a0a0i0b(Object a, Object b) {
+  private static boolean eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_l20hbd_a0a0a0d0a0a0a0i0b(Object a, Object b) {
+  private static boolean eq_l20hbd_a0a0a0e0a0a0a0i0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
