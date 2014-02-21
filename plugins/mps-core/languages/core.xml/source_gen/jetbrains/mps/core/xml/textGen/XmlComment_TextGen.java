@@ -15,13 +15,13 @@ public class XmlComment_TextGen extends SNodeTextGen {
       this.appendNewLine();
       this.indentBuffer();
     }
+    this.append("<!--");
     {
-      this.append("<!--");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "lines", true);
       for (SNode item : collection) {
         appendNode(item);
       }
-      this.append("-->");
     }
+    this.append("-->");
   }
 }

@@ -15,29 +15,29 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
-import java.util.Collections;
 
-public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
+public class TemplateReductionRuleInterpreted implements TemplateReductionRule, TemplateRuleWithCondition {
 
   private final SNode ruleNode;
   private final String applicableConcept;
@@ -76,10 +76,6 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if (!checkCondition(environment, context)) {
-      return null;
-    }
-
     environment.getTracer().pushRule(myNodePointer);
     try {
       if (environment.getGenerator().isIncremental()) {
@@ -88,8 +84,6 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       }
 
       return apply(context, environment.getEnvironment(context.getInput(), this));
-    } catch (AbandonRuleInputException e) {
-      return Collections.emptyList();
     } finally {
       if (environment.getGenerator().isIncremental()) {
         // restore tracing
@@ -99,7 +93,8 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
   }
 
-  private boolean checkCondition(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
+  @Override
+  public boolean isApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationException {
     if (myConditionMethodName == null) {
       return true;
     }
@@ -116,12 +111,10 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
   }
 
-  @Nullable
+  @NotNull
   private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment) throws GenerationException {
-
     if (myRuleConsequence == null) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
-      return null;
+      throw new TemplateProcessingFailureException(ruleNode, "no rule consequence", GeneratorUtil.describe(context.getInput(), "input"));
     }
 
     RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);

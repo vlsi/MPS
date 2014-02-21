@@ -29,26 +29,26 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
-  private final SNode ruleNode;
-  private final SNode applicableConcept;
+  private final SNode myRuleNode;
+  private final String myApplicableConcept;
   private final String myConditionMethod;
   private DropRuleCondition myCondition;
 
   public TemplateDropRuleInterpreted(SNode child) {
-    this.ruleNode = child;
-    this.applicableConcept = RuleUtil.getDropRuleApplicableConcept(ruleNode);
-    SNode condition = RuleUtil.getDropRuleCondition(ruleNode);
+    myRuleNode = child;
+    myApplicableConcept = NameUtil.nodeFQName(RuleUtil.getDropRuleApplicableConcept(myRuleNode));
+    SNode condition = RuleUtil.getDropRuleCondition(myRuleNode);
     myConditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
   }
 
   @Override
   public SNodeReference getRuleNode() {
-    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
+    return new jetbrains.mps.smodel.SNodePointer(myRuleNode);
   }
 
   @Override
   public String getApplicableConcept() {
-    return NameUtil.nodeFQName(this.applicableConcept);
+    return myApplicableConcept;
   }
 
   @Override
@@ -61,7 +61,7 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
       if (myCondition == null) {
         myCondition = environment.getQueryProvider(getRuleNode()).getDropRuleCondition(myConditionMethod);
       }
-      return myCondition.check(new DropRootRuleContext(context.getInput(), ruleNode, environment.getGenerator()));
+      return myCondition.check(new DropRootRuleContext(context.getInput(), myRuleNode, environment.getGenerator()));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
       environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", myConditionMethod));

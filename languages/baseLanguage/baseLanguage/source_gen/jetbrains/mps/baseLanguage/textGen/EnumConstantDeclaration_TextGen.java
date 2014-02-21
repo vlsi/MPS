@@ -18,8 +18,8 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
     } else {
       this.appendWithIndent(SPropertyOperations.getString(node, "name"));
     }
+    this.append("(");
     {
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -28,8 +28,8 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
       this.append(" {");
       this.appendNewLine();

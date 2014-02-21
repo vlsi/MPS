@@ -44,6 +44,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -246,7 +247,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, executionContext, new ReductionContext());
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, executionContext);
         for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
           checkMonitorCanceled();
           applyCreateRoot(rule, environment);
@@ -273,7 +274,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       QueryExecutionContext context = getExecutionContext(rootToCopy);
       if (context != null) {
-        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context, new ReductionContext());
+        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context);
         copyRootInputNode(rootToCopy, rootenv);
       }
     }
@@ -300,7 +301,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsConsumed) throws GenerationFailureException, GenerationCanceledException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
+      getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
@@ -439,6 +440,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
     if (builder != null) {
       if (builder.isUnchanged()) {
+        if (myDeltaBuilder != null) {
+          // Unchanged roots shall not participate in further generation steps, hence
+          // we need to tell DeltaBuilder to forget it.
+          SNode inputRoot = inputNode.getContainingRoot();
+          myDeltaBuilder.deleteInputRoot(inputRoot);
+        }
         return null;
       }
 
@@ -529,6 +536,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, env.getReductionContext())) {
+          if (rule instanceof TemplateRuleWithCondition) {
+            if (!env.getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, env, context)) {
+              continue;
+            }
+            // fall-through
+          }
           Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
           if (outputNodes != null) {
             return outputNodes;
@@ -536,6 +549,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
 
+    } catch (AbandonRuleInputException ex) {
+      return Collections.emptyList();
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       if (ex.isLoggingNeeded() && reductionRule != null) {

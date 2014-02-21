@@ -80,9 +80,9 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-      if(conditionMethod == null) {
-        return true;
-      }
+    if (conditionMethod == null) {
+      return true;
+    }
     try {
       if (myCondition == null) {
         myCondition = environment.getQueryProvider(getRuleNode()).getMapRootRuleCondition(conditionMethod);

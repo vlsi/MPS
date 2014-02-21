@@ -34,7 +34,7 @@ public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule ex
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getIndexInParent(it) >= SNodeOperations.getIndexInParent(typeVariableDeclaration);
+        return SNodeOperations.getIndexInParent(it) > SNodeOperations.getIndexInParent(typeVariableDeclaration);
       }
     });
     if (Sequence.fromIterable(fwdRefs).isNotEmpty()) {

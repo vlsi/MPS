@@ -8,8 +8,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
@@ -54,16 +52,12 @@ public class QueriesGenerated {
     return SPropertyOperations.getInteger(_context.getNode(), "size");
   }
 
-  public static Object referenceMacro_GetReferent_4191445539799727686(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "color", false);
+  public static Object referenceMacro_GetReferent_6037902070683321763(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "color", true), "color", false);
   }
 
-  public static SNode sourceNodeQuery_2546905132912377005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "color", true);
-  }
-
-  public static SNode sourceNodeQuery_2546905132911893628(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "color", true);
+  public static Object referenceMacro_GetReferent_6037902070683332881(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "color", true), "color", false);
   }
 
   public static Iterable sourceNodesQuery_5898776707557819858(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -17,9 +17,9 @@ public class InternalPartialInstanceMethodCall_TextGen extends SNodeTextGen {
         this.append(".");
       }
     }
+    this.append(SPropertyOperations.getString(node, "methodName"));
+    this.append("(");
     {
-      this.append(SPropertyOperations.getString(node, "methodName"));
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -28,7 +28,7 @@ public class InternalPartialInstanceMethodCall_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
   }
 }

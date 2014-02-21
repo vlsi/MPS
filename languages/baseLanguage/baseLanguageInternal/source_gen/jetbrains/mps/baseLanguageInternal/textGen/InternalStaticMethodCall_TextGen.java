@@ -14,8 +14,8 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     this.append(".");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+      this.append("<");
       {
-        this.append("<");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "typeParameter", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
@@ -24,12 +24,12 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
             append(", ");
           }
         }
-        this.append(">");
       }
+      this.append(">");
     }
     this.append(SPropertyOperations.getString(node, "methodName"));
+    this.append("(");
     {
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -38,7 +38,7 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
   }
 }

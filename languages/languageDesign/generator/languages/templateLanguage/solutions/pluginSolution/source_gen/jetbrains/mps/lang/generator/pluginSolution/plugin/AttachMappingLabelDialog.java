@@ -4,34 +4,32 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.openapi.editor.EditorContext;
-import javax.swing.JPanel;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import javax.swing.JComboBox;
 import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import org.jetbrains.annotations.NotNull;
-import javax.swing.Action;
+import java.awt.Insets;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import java.awt.Insets;
 
 public class AttachMappingLabelDialog extends DialogWrapper {
   protected EditorContext myEditorContext;
-  protected JPanel myPanel;
   private SNode myTemplateNode;
   private List<String> myExistingLabels;
   private String myResultLabelName = "";
+  private JComboBox myNameCombo;
 
   public AttachMappingLabelDialog(SNode templateNode, List<String> existingLabels, EditorContext editorContext) {
     super(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()));
@@ -39,8 +37,6 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     this.myExistingLabels = existingLabels;
     this.myEditorContext = editorContext;
     this.myTemplateNode = templateNode;
-    this.initPanel();
-
     init();
   }
 
@@ -53,18 +49,18 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     c.fill = GridBagConstraints.HORIZONTAL;
     c.weightx = 1;
     c.gridx = 1;
-    final JComboBox nameCombo = new JComboBox(ListSequence.fromList(this.myExistingLabels).toGenericArray(String.class));
-    nameCombo.setEditable(true);
-    namePanel.add(nameCombo, c);
-    nameCombo.addActionListener(new ActionListener() {
+    myNameCombo = new JComboBox(ListSequence.fromList(this.myExistingLabels).toGenericArray(String.class));
+    myNameCombo.setEditable(true);
+    namePanel.add(myNameCombo, c);
+    myNameCombo.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent p0) {
-        AttachMappingLabelDialog.this.myResultLabelName = (String) nameCombo.getSelectedItem();
+        AttachMappingLabelDialog.this.myResultLabelName = (String) myNameCombo.getSelectedItem();
       }
     });
     if (ListSequence.fromList(this.myExistingLabels).isNotEmpty()) {
-      nameCombo.setSelectedItem(ListSequence.fromList(this.myExistingLabels).first());
-      JTextField textField = ((JTextField) nameCombo.getEditor().getEditorComponent());
+      myNameCombo.setSelectedItem(ListSequence.fromList(this.myExistingLabels).first());
+      JTextField textField = ((JTextField) myNameCombo.getEditor().getEditorComponent());
       textField.setSelectionStart(0);
       textField.setSelectionEnd(ListSequence.fromList(this.myExistingLabels).first().length());
     }
@@ -74,19 +70,30 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    return this.myPanel;
+    setOKButtonText("Attach label");
+    // 
+    JPanel panel = new JPanel(new GridBagLayout());
+    GridBagConstraints c = new GridBagConstraints();
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.insets = new Insets(3, 3, 3, 3);
+    c.gridx = 0;
+    c.gridy = 0;
+    c.weightx = 1;
+    c.weighty = 0;
+    panel.add(createNamePanel(), c);
+    return panel;
   }
 
   @Override
-  @NotNull
-  protected Action[] createActions() {
-    return new Action[]{new DialogWrapper.DialogWrapperAction("Attach label") {
-      @Override
-      protected void doAction(ActionEvent p0) {
-        doOKAction();
-        doAttachMappingLabel();
-      }
-    }, getCancelAction()};
+  protected void doOKAction() {
+    super.doOKAction();
+    doAttachMappingLabel();
+  }
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myNameCombo;
   }
 
   protected void doAttachMappingLabel() {
@@ -108,17 +115,5 @@ public class AttachMappingLabelDialog extends DialogWrapper {
         SLinkOperations.setTarget(newMacro, "mappingLabel", mappingLabel, false);
       }
     });
-  }
-
-  protected void initPanel() {
-    this.myPanel = new JPanel(new GridBagLayout());
-    GridBagConstraints c = new GridBagConstraints();
-    c.fill = GridBagConstraints.HORIZONTAL;
-    c.insets = new Insets(3, 3, 3, 3);
-    c.gridx = 0;
-    c.gridy = 0;
-    c.weightx = 1;
-    c.weighty = 0;
-    this.myPanel.add(this.createNamePanel(), c);
   }
 }

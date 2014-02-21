@@ -10,10 +10,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class InternalSuperMethodCallOperation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    this.append("super.");
+    this.append(SPropertyOperations.getString(node, "methodName"));
+    this.append("(");
     {
-      this.append("super.");
-      this.append(SPropertyOperations.getString(node, "methodName"));
-      this.append("(");
       Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
@@ -22,7 +22,7 @@ public class InternalSuperMethodCallOperation_TextGen extends SNodeTextGen {
           append(", ");
         }
       }
-      this.append(")");
     }
+    this.append(")");
   }
 }

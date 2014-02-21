@@ -46,8 +46,8 @@ public class ClassConcept_TextGen extends SNodeTextGen {
       appendNode(SLinkOperations.getTarget(node, "superclass", true));
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+      this.append(" implements ");
       {
-        this.append(" implements ");
         Iterable<SNode> collection = SLinkOperations.getTargets(node, "implementedInterface", true);
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
