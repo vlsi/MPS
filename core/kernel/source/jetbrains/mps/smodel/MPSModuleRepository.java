@@ -261,6 +261,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();
         }
+        for (SModule m : getModules()) {
+          ((AbstractModule) m).invalidateCaches();
+        }
         SModelUtil.clearCaches();
 
         // FIXME temporary workaround: modelReplaced event is delivered in EDT, so Language caches
