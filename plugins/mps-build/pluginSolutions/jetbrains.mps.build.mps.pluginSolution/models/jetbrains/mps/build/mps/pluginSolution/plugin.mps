@@ -12848,8 +12848,8 @@
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Comment" typeId="3ior.9126048691954557131" id="6265574260762010966" nodeInfo="ng">
                             <property name="text" nameId="3ior.9126048691954700811" value="optional plugins" />
                           </node>
-                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6265574260762108798" nodeInfo="ng">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.6265574260762011106" />
+                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="7688489240249795379" nodeInfo="ng">
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.7688489240247950220" resolveInfo="mps-make" />
                           </node>
                           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3256085672520562296" nodeInfo="ng">
                             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="3256085672520562297" nodeInfo="ng">

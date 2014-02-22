@@ -603,7 +603,7 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <library file="${artifacts.mpsJava}/lib/mps-java-common.jar" />
-      <library file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+      <library file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
@@ -1168,7 +1168,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.ideCommands.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.internalCommands.runtime" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -1225,7 +1225,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1284,7 +1284,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.ideCommands.runtime" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1348,7 +1348,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.ideCommands" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.ideCommands.runtime" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1714,7 +1714,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.ideCommands" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.ideCommands.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.internalCommands.runtime" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
