@@ -12,7 +12,7 @@ public class TextPreviewGroup_Console_ActionGroup extends GeneratedActionGroup {
 
   public TextPreviewGroup_Console_ActionGroup() {
     super("TextPreviewGroup_Console", ID);
-    this.setIsInternal(true);
+    this.setIsInternal(false);
     this.setPopup(false);
     try {
       TextPreviewGroup_Console_ActionGroup.this.addAction("jetbrains.mps.console.actions.plugin.ShowGenerationPlan_Action");

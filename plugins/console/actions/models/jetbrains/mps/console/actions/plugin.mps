@@ -210,7 +210,6 @@
   <root type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="3894227536045060131" nodeInfo="ng" />
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6359836120039452651" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TextPreviewGroup_Console" />
-    <property name="isInternal" nameId="tp4k.1205160838084" value="true" />
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6359836120039458701" nodeInfo="ng">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="afa5.8610665572788515362" resolveInfo="TextPreviewGroup" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="afa5.4045134570814154915" resolveInfo="other" />
