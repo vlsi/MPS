@@ -36,7 +36,9 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_rubh59_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rubh59_b0(editorContext, node));
+    if (renderingCondition_rubh59_a1a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_rubh59_b0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_rubh59_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rubh59_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rubh59_e0(editorContext, node));
@@ -60,6 +62,10 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_rubh59_a1a(SNode node, EditorContext editorContext) {
+    return true;
   }
 
   private EditorCell createConstant_rubh59_c0(EditorContext editorContext, SNode node) {

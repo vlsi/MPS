@@ -107,6 +107,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractDecoratorView" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" file="DiagramCell.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Window" />
@@ -145,15 +146,24 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.awt.ViewContainerComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.plugin.DiagramEditorTool_Tool" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.BasicCellContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CellContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.Selection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionListener" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />

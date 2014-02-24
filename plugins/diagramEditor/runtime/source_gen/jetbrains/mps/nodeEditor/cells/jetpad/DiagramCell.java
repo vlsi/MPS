@@ -9,11 +9,19 @@ import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.lang.editor.diagram.runtime.plugin.DiagramEditorTool_Tool;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 import jetbrains.jetpad.projectional.view.ViewTrait;
@@ -24,13 +32,15 @@ import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.jetpad.event.Key;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -53,6 +63,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private Mapper<SNode, ViewContainer> myRootMapper;
   private Mapper<SNode, ViewContainer> myDecorationRootMapper;
   private ViewContainerComponent myComponent;
+  private SubstituteInfo myCommonSubstituteInfo;
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
   private int myPatternEditorY;
@@ -63,6 +74,25 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
+    editorContext.getEditorComponent().getSelectionManager().addSelectionListener(new SelectionListener() {
+      public void selectionChanged(EditorComponent component, Selection oldSelection, Selection newSelection) {
+        openPalette(newSelection, component);
+      }
+    });
+  }
+
+  private void openPalette(Selection newSelection, EditorComponent component) {
+    if (newSelection != null && eq_xnhqai_a0a0a21(newSelection.getSelectedCells().get(0), this)) {
+      Project ideaProject = ProjectHelper.toIdeaProject(component.getOperationContext().getProject());
+      if (ideaProject == null) {
+        return;
+      }
+      if (ideaProject.getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class) == null) {
+        return;
+      }
+      ideaProject.getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).setDiagramCell(this);
+      ideaProject.getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).openTool(false);
+    }
   }
 
   public JComponent getComponent() {
@@ -162,15 +192,31 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public void createNewDiagramElement(int x, int y) {
+    setSubstituteInfo(new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), new SubstituteInfoPartExt[]{new SubstituteInfoPartExt() {
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        return ListSequence.fromListAndArray(new ArrayList<SubstituteAction>(), ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getSelectedSubstituteAction());
+      }
+    }}));
+    myPatternEditorX = x;
+    myPatternEditorY = y;
     if (trySubstituteImmediately()) {
       return;
     }
-    myPatternEditorX = x;
-    myPatternEditorY = y;
     getEditor().activateNodeSubstituteChooser(this, false);
   }
 
+  public void setCommonSubstituteInfo(SubstituteInfo info) {
+    myCommonSubstituteInfo = info;
+  }
+
+  public SubstituteInfo getCommonSubstituteInfo() {
+    return myCommonSubstituteInfo;
+  }
+
   private boolean trySubstituteImmediately() {
+    if (getSubstituteInfo() == null) {
+      return false;
+    }
     getSubstituteInfo().invalidateActions();
     List<SubstituteAction> matchingActions = getSubstituteInfo().getMatchingActions("", false);
     if (matchingActions.size() == 0) {
@@ -191,6 +237,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       return false;
     }
     theAction.substitute(getContext(), "");
+
     return true;
   }
 
@@ -471,5 +518,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     private void setToId(Object value) {
       this.myToId = value;
     }
+  }
+
+  private static boolean eq_xnhqai_a0a0a21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

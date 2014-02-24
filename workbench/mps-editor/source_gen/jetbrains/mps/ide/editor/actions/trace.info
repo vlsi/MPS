@@ -162,7 +162,7 @@
     <unitInfo nodeId="2768238731211621495" fileName="MoveElementsDown_Action.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" />
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3205778618063801970">
-    <unitInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="1" startPosition="0" endLine="315" endPosition="13" unitName="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
+    <unitInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="1" startPosition="0" endLine="317" endPosition="13" unitName="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3207605520775490121">
     <nodeInfo nodeId="3207605520775490121" fileName="ShowGenerationActions_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

@@ -6036,6 +6036,9 @@
         <property name="name" nameId="tpck.1169194664001" value="hints" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="6569848372886312036" nodeInfo="ng" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="7927326103008329187" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="diagram" />
+      </node>
     </node>
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3228268613620327405" nodeInfo="ng">
