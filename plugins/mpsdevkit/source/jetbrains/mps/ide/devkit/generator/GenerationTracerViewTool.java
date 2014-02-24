@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
@@ -74,7 +73,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     return myTracer.hasTracebackData(modelReference);
   }
   public boolean showTraceInputData(@NotNull SNode node) {
-    int index = getTabIndex(Kind.INPUT, node.getReference());
+    int index = getTabIndex(GenerationTracerView.Kind.TraceForward, node.getReference());
     if (index > -1) {
       selectIndex(index);
       openToolLater(true);
@@ -85,11 +84,12 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     if (tracerNode == null) {
       return false;
     }
-    showTraceView(tracerNode);
+    showTraceView(GenerationTracerView.Kind.TraceForward, new TraceNodeUI(tracerNode));
     return true;
   }
+
   public boolean showTracebackData(SNode node) {
-    int index = getTabIndex(Kind.OUTPUT, node.getReference());
+    int index = getTabIndex(GenerationTracerView.Kind.TraceBackward, node.getReference());
     if (index > -1) {
       selectIndex(index);
       openToolLater(true);
@@ -99,7 +99,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     if (tracerNode == null) {
       return false;
     }
-    showTraceView(tracerNode);
+    showTraceView(GenerationTracerView.Kind.TraceBackward, new TraceNodeUI(tracerNode));
     return true;
   }
 
@@ -153,6 +153,16 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     getContentManager().addContentManagerListener(myContentListener);
   }
 
+  @Override
+  protected void doUnregister() {
+    final ContentManager contentManager = getContentManager();
+    if (myContentListener != null && contentManager != null) {
+      contentManager.removeContentManagerListener(myContentListener);
+    }
+    myContentListener = null;
+    super.doUnregister();
+  }
+
   private void showNoTabsComponent() {
     ContentManager manager = getContentManager();
     manager.removeAllContents(true);
@@ -174,7 +184,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     manager.setSelectedContent(manager.getContent(index));
   }
 
-  int getTabIndex(Kind kind, SNodeReference node) {
+  int getTabIndex(GenerationTracerView.Kind kind, SNodeReference node) {
     int index = 0;
     for (GenerationTracerView tracerView : myTracerViews) {
       if (tracerView.isViewFor(kind, node)) {
@@ -199,12 +209,11 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     closeTab(myTracerViews.indexOf(view));
   }
 
-  public void showTraceView(TracerNode tracerNode) {
-    GenerationTracerView tracerView = new GenerationTracerView(this, tracerNode, getProject());
+  public void showTraceView(GenerationTracerView.Kind viewToken, TraceNodeUI tracerNode) {
+    GenerationTracerView tracerView = new GenerationTracerView(this, viewToken, tracerNode, getProject());
     myTracerViews.add(tracerView);
 
-    Content content = addContent(tracerView.getComponent(), tracerNode.getNodePointer().toString(),
-        jetbrains.mps.ide.devkit.generator.icons.Icons.getIcon(tracerNode), true);
+    Content content = addContent(tracerView.getComponent(), tracerNode.getName(), tracerNode.getIcon(), true);
     getContentManager().setSelectedContent(content);
 
     Content noTabsContent = getContentManager().getContent(myNoTabsComponent);

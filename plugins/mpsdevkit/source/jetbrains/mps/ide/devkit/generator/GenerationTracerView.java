@@ -24,7 +24,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -35,16 +34,20 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 
 final class GenerationTracerView {
+  enum Kind { TraceForward, TraceBackward }
+
   private final JPanel myPanel;
   private final GenerationTracerTree myTree;
   private final GenerationTracerViewTool myTool;
-  private final TracerNode myRootTracerNode;
+  private final TraceNodeUI myRootTracerNode;
+  private final Kind myViewToken;
 
-  public GenerationTracerView(GenerationTracerViewTool tool, TracerNode tracerNode, Project project) {
+  public GenerationTracerView(GenerationTracerViewTool tool, Kind viewToken, TraceNodeUI tracerNode, Project project) {
     myTool = tool;
+    myViewToken = viewToken;
     myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
-    myTree = new GenerationTracerTree(tracerNode, project);
+    myTree = new GenerationTracerTree(this, tracerNode, project);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     myPanel.add(createActionsToolbar(), BorderLayout.WEST);
 
@@ -75,9 +78,18 @@ final class GenerationTracerView {
     return toolbar.getComponent();
   }
 
-
   boolean isViewFor(Kind kind, SNodeReference node) {
-    return myRootTracerNode.getKind() == kind && myRootTracerNode.getNodePointer().equals(node);
+    return myViewToken == kind && myRootTracerNode.matches(node);
+  }
+
+  boolean isForwardTraceView() {
+    return myViewToken == Kind.TraceForward;
+  }
+  boolean isBackwardTraceView() {
+    return myViewToken == Kind.TraceBackward;
+  }
+  GenerationTracerViewTool getTool() {
+    return myTool;
   }
 
   public JComponent getComponent() {

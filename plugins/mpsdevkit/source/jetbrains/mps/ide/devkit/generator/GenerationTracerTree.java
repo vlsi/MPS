@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -37,117 +36,126 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Map;
 
 final class GenerationTracerTree extends MPSTree {
-  private TracerNode myRootTracerNode;
+  private final GenerationTracerView myView;
+  private TraceNodeUI myRootTracerNode;
   private Project myProject;
 
-  public GenerationTracerTree(TracerNode root, Project project) {
+  public GenerationTracerTree(@NotNull GenerationTracerView view, @NotNull TraceNodeUI root, @NotNull Project project) {
+    myView = view;
     myRootTracerNode = root;
     myProject = project;
   }
 
-  protected GenerationTracerTreeNode rebuild() {
-    return new GenerationTracerTreeNode(myRootTracerNode);
+  protected MPSTreeNode rebuild() {
+    return create(myRootTracerNode);
+  }
+
+  private static MPSTreeNode create(TraceNodeUI n) {
+    MPSTreeNode treeNode = new MPSTreeNode(null);
+    treeNode.setUserObject(n);
+    treeNode.setNodeIdentifier(n.getNodeIdentifier());
+    treeNode.setText(n.getText());
+    final SNodeReference target = n.getNavigateTarget();
+    if (target != null && target.getModelReference() != null) {
+      treeNode.setAdditionalText(target.getModelReference().getModelName());
+    }
+    treeNode.setIcon(n.getIcon());
+    for (TraceNodeUI ch : n.getChildren()) {
+      treeNode.add(create(ch));
+    }
+    treeNode.setToggleClickCount(-1);
+    treeNode.setAutoExpandable(treeNode.getChildCount() == 1);
+    return treeNode;
   }
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-    if (!(node instanceof GenerationTracerTreeNode)) return null;
-    return getTracerActionGroup((GenerationTracerTreeNode) node);
-  }
-
-  ActionGroup getTracerActionGroup(GenerationTracerTreeNode selected) {
-    final TracerNode tracerNode = selected.getTracerNode();
-    if (tracerNode.getNodePointer() == null) {
+    final Object userObject = node.getUserObject();
+    if (false == userObject instanceof TraceNodeUI) {
       return null;
     }
-    final boolean isInput = tracerNode.getKind() == Kind.INPUT || tracerNode.getKind() == Kind.APPROXIMATE_INPUT;
-    final boolean isOutput = tracerNode.getKind() == Kind.OUTPUT || tracerNode.getKind() == Kind.APPROXIMATE_OUTPUT;
-    if (isInput) {
-      return ModelAccess.instance().runReadAction(new InputNodeActionGroup(tracerNode));
+    return getTracerActionGroup((TraceNodeUI) userObject);
+  }
+
+  ActionGroup getTracerActionGroup(TraceNodeUI selected) {
+    if (selected.getNavigateTarget() == null) {
+      return null;
     }
-    if (isOutput) {
-      return ModelAccess.instance().runReadAction(new OutputNodeActionGroup(tracerNode));
+    if (selected.hasPrevStep() || selected.hasNextStep()) {
+      return ModelAccess.instance().runReadAction(new NodeActionGroup(selected));
     }
     return null;
   }
 
-  // FIXME why on earth these actions runWriteInEDT? they are purely read actions?! Is it due to resolve?
+  // these actions runWriteInEDT even though they are purely read actions, is convention brought by MPS-15256 - NavigationSupport expects write lock
 
   @Override
   protected void autoscroll(@NotNull MPSTreeNode node) {
-    final TracerNode tracerNode = ((GenerationTracerTreeNode) node).getTracerNode();
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode nodeToOpen = tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance());
-        if (nodeToOpen == null) return;
-
-        IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-        NavigationSupport.getInstance().openNode(context, nodeToOpen, true, true);
-      }
-    });
+    TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
+    ModelAccess.instance().runWriteInEDT(new Navigate(ProjectHelper.toMPSProject(myProject), traceNode.getNavigateTarget()));
   }
 
   @Override
   protected void doubleClick(@NotNull MPSTreeNode node) {
-    final TracerNode tracerNode = ((GenerationTracerTreeNode) node).getTracerNode();
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNodeReference nodePointer = tracerNode.getNodePointer();
-        if (nodePointer == null) return;
-        SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-        if (node == null) {
-          return;
-        }
-        IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-        NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
-      }
-    });
-
+    TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
+    ModelAccess.instance().runWriteInEDT(new Navigate(ProjectHelper.toMPSProject(myProject), traceNode.getNavigateTarget()));
   }
 
   GenerationTracerViewTool getViewTool() {
-    return myProject.getComponent(GenerationTracerViewTool.class);
+    return myView.getTool();
   }
 
-  private class InputNodeActionGroup implements Computable<ActionGroup> {
-    private final TracerNode myTracerNode;
+  private static final class Navigate implements Runnable {
+    private final jetbrains.mps.project.Project myProject;
+    private final SNodeReference myNode;
 
-    InputNodeActionGroup(@NotNull TracerNode tracerNode) {
-      this.myTracerNode = tracerNode;
+    public Navigate(jetbrains.mps.project.Project mpsProject, SNodeReference node) {
+      myProject = mpsProject;
+      myNode = node;
     }
 
     @Override
-    public ActionGroup compute() {
-      DefaultActionGroup group = new DefaultActionGroup();
-      // is traceback shown?
-      if (myRootTracerNode != null && myRootTracerNode.getKind() == Kind.OUTPUT) {
-        group.add(new ShowTraceAction("Show Trace", myTracerNode.getNodePointer()));
+    public void run() {
+      if (myNode == null) {
+        return;
       }
-
-      group.add(new ShowTracebackAction("Show Prev Step Traceback", myTracerNode.getNodePointer()));
-      return group;
+      SNode node = myNode.resolve(MPSModuleRepository.getInstance());
+      if (node == null) {
+        return;
+      }
+      IOperationContext context = new ProjectOperationContext(myProject);
+      // do not select top-level nodes - don't know the reason, but this is the way it used to be
+      NavigationSupport.getInstance().openNode(context, node, true, node.getModel() == null || node.getParent() != null);
     }
   }
 
-  private class OutputNodeActionGroup implements Computable<ActionGroup> {
-    private final TracerNode myTracerNode;
 
-    OutputNodeActionGroup(@NotNull TracerNode tracerNode) {
-      this.myTracerNode = tracerNode;
+  private class NodeActionGroup implements Computable<ActionGroup> {
+    private final TraceNodeUI myTraceNode;
+
+    public NodeActionGroup(@NotNull TraceNodeUI nodeUI) {
+      myTraceNode = nodeUI;
     }
 
     public ActionGroup compute() {
+      assert myTraceNode.getNavigateTarget() != null;
       DefaultActionGroup group = new DefaultActionGroup();
+      if (myTraceNode.hasPrevStep()) {
+        if (myView.isBackwardTraceView()) {
+          group.add(new ShowTraceAction("Show Trace", myTraceNode.getNavigateTarget()));
+        }
 
-      // is trace (forward) shown?
-      if (myRootTracerNode != null && (myRootTracerNode.getKind() == Kind.INPUT || myRootTracerNode.getKind() == Kind.RULE)) {
-        group.add(new ShowTracebackAction("Show Traceback", myTracerNode.getNodePointer()));
+        group.add(new ShowTracebackAction("Show Prev Step Traceback", myTraceNode.getNavigateTarget()));
+      } else if (myTraceNode.hasNextStep()) {
+        if (myView.isForwardTraceView()) {
+          group.add(new ShowTracebackAction("Show Traceback", myTraceNode.getNavigateTarget()));
+        }
+        group.add(new ShowTraceAction("Show Next Step Trace", myTraceNode.getNavigateTarget()));
       }
-      group.add(new ShowTraceAction("Show Next Step Trace", myTracerNode.getNodePointer()));
+      //
       return group;
     }
+
   }
 
   private class ShowTraceAction extends BaseAction {
