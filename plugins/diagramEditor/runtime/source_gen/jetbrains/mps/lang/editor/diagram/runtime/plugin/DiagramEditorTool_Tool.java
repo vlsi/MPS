@@ -27,6 +27,10 @@ public class DiagramEditorTool_Tool extends GeneratedTool {
     DiagramEditorTool_Tool.this.myComponent.setDiagramCell(diagramCell);
   }
 
+  public DiagramCell getDiagramCell() {
+    return DiagramEditorTool_Tool.this.myComponent.getDiagramCell();
+  }
+
   public SubstituteAction getSelectedSubstituteAction() {
     return DiagramEditorTool_Tool.this.myComponent.getSelectedSubstituteAction();
   }

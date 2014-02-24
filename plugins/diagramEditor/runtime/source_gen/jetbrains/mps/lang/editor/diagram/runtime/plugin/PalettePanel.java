@@ -4,13 +4,13 @@ package jetbrains.mps.lang.editor.diagram.runtime.plugin;
 
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.awt.BorderLayout;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -25,7 +25,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class PalettePanel extends JPanel {
   private DiagramCell myDiagramCell;
-  private SubstituteAction mySelectedSubstituteAction;
+  private DiagramCell.TunableNodeSubstituteAction mySelectedSubstituteAction;
   private JPanel myActionPanel = new JPanel(new BorderLayout());
   private List<AnAction> myToggleActions = ListSequence.fromList(new ArrayList<AnAction>());
 
@@ -36,8 +36,10 @@ public class PalettePanel extends JPanel {
 
   private ActionGroup createButtonsGroup() {
     ListSequence.fromList(myToggleActions).clear();
-    for (SubstituteAction action : ListSequence.fromList(myDiagramCell.getCommonSubstituteInfo().getMatchingActions("", false))) {
-      ToggleAction substituteAction = new PalettePanel.SubstituteToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, action);
+    for (SubstituteAction action : ListSequence.fromList(myDiagramCell.getSubstituteInfo().getMatchingActions("", false))) {
+      DiagramCell.TunableNodeSubstituteAction tunableAction = ((DiagramCell.TunableNodeSubstituteAction) action);
+      tunableAction.setSubstitutable(false);
+      ToggleAction substituteAction = new PalettePanel.SubstituteToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, tunableAction);
       ListSequence.fromList(myToggleActions).addElement(substituteAction);
     }
 
@@ -46,7 +48,12 @@ public class PalettePanel extends JPanel {
 
   public void setDiagramCell(@NotNull DiagramCell diagramCell) {
     myDiagramCell = diagramCell;
+    mySelectedSubstituteAction = null;
     update();
+  }
+
+  public DiagramCell getDiagramCell() {
+    return myDiagramCell;
   }
 
   public SubstituteAction getSelectedSubstituteAction() {
@@ -67,9 +74,9 @@ public class PalettePanel extends JPanel {
 
   private class SubstituteToggleAction extends ToggleAction {
     private boolean mySelected;
-    private SubstituteAction mySubstituteAction;
+    private DiagramCell.TunableNodeSubstituteAction mySubstituteAction;
 
-    public SubstituteToggleAction(@Nullable String text, @Nullable String description, @Nullable Icon icon, SubstituteAction action) {
+    public SubstituteToggleAction(@Nullable String text, @Nullable String description, @Nullable Icon icon, DiagramCell.TunableNodeSubstituteAction action) {
       super(text, description, icon);
       mySubstituteAction = action;
     }
@@ -82,6 +89,7 @@ public class PalettePanel extends JPanel {
 
     public void setSelected(AnActionEvent event, boolean state) {
       mySelected = state;
+      mySubstituteAction.setSubstitutable(mySelected);
       if (mySelected) {
         mySelectedSubstituteAction = mySubstituteAction;
         for (AnAction anAction : ListSequence.fromList(myToggleActions)) {
