@@ -339,7 +339,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._0(), "modelToCreate", true), "parametersFromExpressions");
   }
 
-  public static Object referenceMacro_GetReferent_429601079676787138(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_3143347504358680260(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "expression", true), "parametersFromExpressions");
   }
 

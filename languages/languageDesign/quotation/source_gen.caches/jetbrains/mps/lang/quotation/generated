@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-eaxt75fhurpzf9f9uv0xfuawho95pxs">
   <dep model="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)" hash="-2xdcms2rbls2alknqahdhj2bmj9qm3c" />
   <dep model="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)" hash="-ds07uq38kahqfdwvhitc5jh3p72xgfz" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" hash="-7h1b7ce768ayc7odz0f1dful2ko1gnq" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" hash="-d333mooms533o6l0de5owmld694naek" />
   <dep model="r:b7e75e21-5f04-43f4-94cb-24c612b5504a(jetbrains.mps.lang.quotation.generator.baseLanguage.template.util)" hash="6i11gs0wag8c8kx5nend74fw4s3pdnc" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)" />
