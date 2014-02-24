@@ -80,11 +80,11 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       return true;
     }
 
-    TracerNode tracerNode = myTracer.buildTraceInputTree(node);
+    TraceNodeUI tracerNode = myTracer.buildTraceInputTree(node);
     if (tracerNode == null) {
       return false;
     }
-    showTraceView(GenerationTracerView.Kind.TraceForward, new TraceNodeUI(tracerNode));
+    showTraceView(GenerationTracerView.Kind.TraceForward, tracerNode);
     return true;
   }
 
@@ -95,11 +95,11 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       openToolLater(true);
       return true;
     }
-    TracerNode tracerNode = myTracer.buildTracebackTree(node);
+    TraceNodeUI tracerNode = myTracer.buildTracebackTree(node);
     if (tracerNode == null) {
       return false;
     }
-    showTraceView(GenerationTracerView.Kind.TraceBackward, new TraceNodeUI(tracerNode));
+    showTraceView(GenerationTracerView.Kind.TraceBackward, tracerNode);
     return true;
   }
 
@@ -121,20 +121,9 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   private void postStartup() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        setTracingDataIsAvailable(myTracer.hasTracingData());
         showNoTabsComponent();
+        setTracingDataIsAvailable(myTracer.hasTracingData());
         setAvailable(false);
-        getContentManager().addContentManagerListener(new ContentManagerAdapter() {
-          public void contentRemoved(ContentManagerEvent event) {
-            boolean closeAfter = event.getContent().getComponent() == myNoTabsComponent;
-            if (getContentManager().getContentCount() == 0) {
-              showNoTabsComponent();
-              if (closeAfter) {
-                makeUnavailableLater();
-              }
-            }
-          }
-        });
       }
     });
   }
@@ -143,9 +132,16 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     super.doRegister();
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
+        final boolean removedNoTabsTab = event.getContent().getComponent() == myNoTabsComponent;
         //noTabs component could be removed
-        if (event.getContent().getComponent() != myNoTabsComponent) {
+        if (!removedNoTabsTab) {
           myTracerViews.remove(event.getIndex());
+        }
+        if (getContentManager().getContentCount() == 0) {
+          showNoTabsComponent();
+          if (removedNoTabsTab) {
+            makeUnavailableLater();
+          }
         }
       }
     };
@@ -156,7 +152,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   @Override
   protected void doUnregister() {
     final ContentManager contentManager = getContentManager();
-    if (myContentListener != null && contentManager != null) {
+    if (myContentListener != null && contentManager != null && !contentManager.isDisposed()) {
       contentManager.removeContentManagerListener(myContentListener);
     }
     myContentListener = null;
@@ -209,7 +205,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     closeTab(myTracerViews.indexOf(view));
   }
 
-  public void showTraceView(GenerationTracerView.Kind viewToken, TraceNodeUI tracerNode) {
+  void showTraceView(GenerationTracerView.Kind viewToken, TraceNodeUI tracerNode) {
     GenerationTracerView tracerView = new GenerationTracerView(this, viewToken, tracerNode, getProject());
     myTracerViews.add(tracerView);
 

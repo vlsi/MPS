@@ -33,6 +33,9 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
 
+/**
+ * Tree of trace elements and an action bar
+ */
 final class GenerationTracerView {
   enum Kind { TraceForward, TraceBackward }
 

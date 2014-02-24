@@ -345,6 +345,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      environment.getTracer().trace(null, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
       for (SNode outputNode : outputNodes) {
         registerRoot(new GeneratedRootDescriptor(outputNode, rule.getRuleNode()));
         setChanged();
@@ -367,6 +368,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (outputNodes == null) {
         return;
       }
+
+      environment.getTracer().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
 
       final boolean inputIsRoot = inputNode.getParent() == null;
       final boolean preserveInputRoot = inputIsRoot && rule.keepSourceRoot();
@@ -544,6 +547,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
           Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
           if (outputNodes != null) {
+            IGenerationTracer tracer = env.getTracer();
+            SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
+            tracer.trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
             return outputNodes;
           }
         }

@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,70 +31,94 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 final class TraceNodeUI {
-  private final TracerNode myTracerNode;
+  @Nullable
+  private final Kind myKind;
+  @Nullable
+  private final SNodeReference myTargetNode;
+  private final Icon myIcon;
   private List<TraceNodeUI> myChildren;
+  private final String myText;
+
+  /*package*/ TraceNodeUI(@NotNull String text, Icon icon) {
+    myKind = null;
+    myTargetNode = null;
+    myIcon = icon;
+    myText = text;
+  }
+
+  /*package*/ TraceNodeUI(@Nullable Kind kind, @Nullable SNodeReference targetNode) {
+    myKind = kind;
+    myTargetNode = targetNode;
+    myIcon = Icons.getIcon(kind, targetNode);
+    myText = null;
+  }
 
   /*package*/ TraceNodeUI(@NotNull TracerNode tracerNode) {
-    myTracerNode = tracerNode;
+    myKind = tracerNode.getKind();
+    myTargetNode = tracerNode.getNodePointer();
+    myIcon = Icons.getIcon(tracerNode);
+    myText = null;
   }
 
   public String getName() {
-    final SNodeReference node = myTracerNode.getNodePointer();
-    if (node == null) {
-      return '<' + String.valueOf(myTracerNode.getKind()) + '>';
+    if (myTargetNode == null) {
+      return '<' + String.valueOf(myKind) + '>';
     }
-    return node.toString();
+    return myTargetNode.toString();
   }
   public String getText() {
-    final SNodeReference node = myTracerNode.getNodePointer();
-    if (node == null) {
+    if (myText != null) {
+      return myText;
+    }
+    if (myTargetNode == null) {
       return getName();
     }
-    if (myTracerNode.getKind() == Kind.APPROXIMATE_OUTPUT || myTracerNode.getKind() == Kind.APPROXIMATE_INPUT) {
-      return "[approximate location] " + node.toString();
+    if (myKind == Kind.APPROXIMATE_OUTPUT || myKind == Kind.APPROXIMATE_INPUT) {
+      return "[approximate location] " + myTargetNode.toString();
     } else {
-      return node.toString();
+      return myTargetNode.toString();
     }
   }
   public Icon getIcon() {
-    return Icons.getIcon(myTracerNode);
+    return myIcon;
   }
 
   public boolean matches(@NotNull SNodeReference node) {
-    return node.equals(myTracerNode.getNodePointer());
+    return node.equals(myTargetNode);
   }
 
   public Iterable<TraceNodeUI> getChildren() {
     if (myChildren == null) {
-      final List<TracerNode> traceChildren = myTracerNode.getChildren();
-      myChildren = new ArrayList<TraceNodeUI>(traceChildren.size());
-      for (TracerNode n : traceChildren) {
-        myChildren.add(new TraceNodeUI(n));
-      }
+      return Collections.emptyList();
     }
     return myChildren;
+  }
+  public void addChild(@NotNull TraceNodeUI child) {
+    if (myChildren == null) {
+      myChildren = new ArrayList<TraceNodeUI>(5);
+    }
+    myChildren.add(child);
   }
 
   // whatever it is, MPSTreeNode requires one
   public String getNodeIdentifier() {
-    SNodeReference nodePointer = myTracerNode.getNodePointer();
-    if (nodePointer != null) {
-      return String.valueOf(nodePointer.hashCode());
+    if (myTargetNode != null) {
+      return String.valueOf(myTargetNode.hashCode());
     } else {
-      return '<' + String.valueOf(myTracerNode.getKind()) + '>';
+      return '<' + String.valueOf(myKind) + '>';
     }
   }
 
   public boolean hasNextStep() {
-    return myTracerNode.getKind() == Kind.OUTPUT || myTracerNode.getKind() == Kind.APPROXIMATE_OUTPUT;
+    return myKind == Kind.OUTPUT || myKind == Kind.APPROXIMATE_OUTPUT;
   }
 
   public boolean hasPrevStep() {
-    return myTracerNode.getKind() == Kind.INPUT || myTracerNode.getKind() == Kind.APPROXIMATE_INPUT;
+    return myKind == Kind.INPUT || myKind == Kind.APPROXIMATE_INPUT;
   }
 
   @Nullable
   public SNodeReference getNavigateTarget() {
-    return myTracerNode.getNodePointer();
+    return myTargetNode;
   }
 }
