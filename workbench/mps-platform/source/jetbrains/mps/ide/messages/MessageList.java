@@ -15,12 +15,23 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.icons.AllIcons.General;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.InputValidatorEx;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
@@ -49,14 +60,35 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.AbstractListModel;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
+import javax.swing.KeyStroke;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -65,8 +97,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Date: 4/21/11
  */
 public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
-
-  static final int MAX_SIZE = 10000;
 
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
     @Override
@@ -93,8 +123,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private int myErrors;
   private int myHintObjects;
   private List<String> mySearches = new ArrayList<String>();
+  private int myMaxListSize = 10000;
 
-  protected final FastListModel myModel = new FastListModel(MAX_SIZE);
+  protected final FastListModel myModel = new FastListModel(this.myMaxListSize);
   private JPanel myComponent = new RootPanel();
   protected final JList myList = new JBList(myModel);
   private ActionToolbar myToolbar;
@@ -177,8 +208,8 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         }
 
         int messagesToRemove = 0;
-        if (myMessages.size() > MAX_SIZE) {
-          for (int i = Math.min(myMessages.size() - MAX_SIZE, myMessages.size()); i > 0; i--) {
+        if (myMessages.size() > MessageList.this.myMaxListSize) {
+          for (int i = Math.min(myMessages.size() - MessageList.this.myMaxListSize, myMessages.size()); i > 0; i--) {
             IMessage toRemove = myMessages.remove();
             updateMessageCounters(toRemove, -1);
             if (isVisible(toRemove)) {
@@ -269,6 +300,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.add(myWarningsAction);
     group.add(myInfoAction);
     group.add(myAutoscrollToSourceAction);
+    group.add(new MessagesLimitAction());
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
@@ -574,8 +606,45 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
   }
 
+  private class MessagesLimitAction extends AnAction {
+    private MessagesLimitAction() {
+      super(General.Settings);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent e) {
+      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages limit", null, String.valueOf(MessageList.this.myMaxListSize),
+          new InputValidatorEx() {
+            @Nullable
+            @Override
+            public String getErrorText(String inputString) {
+              return checkInput(inputString) ? null : "Enter correct number";
+            }
+
+            @Override
+            public boolean checkInput(String inputString) {
+              try {
+                final Integer i = Integer.valueOf(inputString);
+                if(i < 1) return false;
+              } catch (NumberFormatException nfe) {
+                return false;
+              }
+              return true;
+            }
+
+            @Override
+            public boolean canClose(String inputString) {
+              return checkInput(inputString);
+            }
+          });
+      if(result != null)
+        MessageList.this.myMaxListSize = Integer.valueOf(result);
+    }
+  }
+
   /*package*/ MessageListState getState() {
-    return new MessageListState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null), mySearches);
+    return new MessageListState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null), mySearches,
+        myMaxListSize);
   }
 
   /*package*/ void loadState(MessageListState state) {
@@ -583,6 +652,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
     setSearches(state.getSearches());
+    myMaxListSize = state.getMaxListSize();
   }
 
   public void setWarningsEnabled(boolean enabled) {
@@ -677,15 +747,17 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     private boolean myInfo;
     private boolean myAutoscrollToSource;
     private List<String> mySearches = new ArrayList<String>();
+    private int myMaxListSize = 10000;
 
     public MessageListState() {
     }
 
-    public MessageListState(boolean warnings, boolean info, boolean autoscrollToSource, List<String> searches) {
+    public MessageListState(boolean warnings, boolean info, boolean autoscrollToSource, List<String> searches, int maxListSize) {
       myWarnings = warnings;
       myInfo = info;
       myAutoscrollToSource = autoscrollToSource;
       mySearches = new ArrayList<String>(searches);
+      myMaxListSize = maxListSize;
     }
 
     public boolean isWarnings() {
@@ -718,6 +790,14 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
     public void setSearches(List<String> searches) {
       mySearches = searches;
+    }
+
+    public int getMaxListSize() {
+      return myMaxListSize;
+    }
+
+    public void setMaxListSize(int maxListSize) {
+      myMaxListSize = maxListSize;
     }
   }
 
