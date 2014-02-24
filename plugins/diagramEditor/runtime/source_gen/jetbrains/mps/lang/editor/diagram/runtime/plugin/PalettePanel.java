@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.icons.AllIcons;
@@ -36,9 +37,13 @@ public class PalettePanel extends JPanel {
 
   private ActionGroup createButtonsGroup() {
     ListSequence.fromList(myToggleActions).clear();
-    for (SubstituteAction action : ListSequence.fromList(myDiagramCell.getSubstituteInfo().getMatchingActions("", false))) {
+
+    SubstituteInfo substituteInfo = myDiagramCell.getSubstituteInfo();
+    substituteInfo.invalidateActions();
+    for (SubstituteAction action : ListSequence.fromList(substituteInfo.getMatchingActions("", false))) {
       DiagramCell.TunableNodeSubstituteAction tunableAction = ((DiagramCell.TunableNodeSubstituteAction) action);
       tunableAction.setSubstitutable(false);
+      tunableAction.setIsInitializing(false);
       ToggleAction substituteAction = new PalettePanel.SubstituteToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, tunableAction);
       ListSequence.fromList(myToggleActions).addElement(substituteAction);
     }

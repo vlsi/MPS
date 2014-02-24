@@ -192,7 +192,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public void createNewDiagramElement(int x, int y) {
-    if (ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getDiagramCell() != this || ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getSelectedSubstituteAction() != null) {
+    if (ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getDiagramCell() != this || ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getSelectedSubstituteAction() == null) {
       return;
     }
     myPatternEditorX = x;
@@ -241,6 +241,13 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
           result.add(new DiagramCell.TunableNodeSubstituteAction(action) {
             @Override
+            public boolean canSubstitute(String string) {
+              return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
+            }
+
+
+
+            @Override
             public SNode substitute(@Nullable EditorContext context, String string) {
               SNode result = super.substitute(context, string);
               setNodePositionCallback.invoke(result, myPatternEditorX, myPatternEditorY);
@@ -262,7 +269,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         AbstractNodeSubstituteAction action = new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
           @Override
           public boolean canSubstitute(String string) {
-            if ((super.canSubstitute(string))) {
+            if (!(hasConnectionDragFeedback()) || !(super.canSubstitute(string))) {
               return false;
             }
 
@@ -511,14 +518,19 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
 
     private boolean myCanSubstitute = true;
+    private boolean myIsInitializing = true;
 
     @Override
     public boolean canSubstitute(String string) {
-      return myCanSubstitute && super.canSubstitute(string);
+      return myIsInitializing || (myCanSubstitute && super.canSubstitute(string));
     }
 
     public void setSubstitutable(boolean canSubstitute) {
       myCanSubstitute = canSubstitute;
+    }
+
+    public void setIsInitializing(boolean isInitializing) {
+      myIsInitializing = isInitializing;
     }
   }
 
