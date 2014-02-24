@@ -440,6 +440,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
     if (builder != null) {
       if (builder.isUnchanged()) {
+        if (myDeltaBuilder != null) {
+          // Unchanged roots shall not participate in further generation steps, hence
+          // we need to tell DeltaBuilder to forget it.
+          SNode inputRoot = inputNode.getContainingRoot();
+          myDeltaBuilder.deleteInputRoot(inputRoot);
+        }
         return null;
       }
 
@@ -657,12 +663,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   BlockedReductionsData getBlockedReductionsData() {
     if (myReductionData == null) {
-      Object blockedReductions = getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
-      if (blockedReductions == null) {
-        blockedReductions = new BlockedReductionsData();
-        getGeneratorSessionContext().putStepObject(BlockedReductionsData.KEY, blockedReductions);
-      }
-      myReductionData = (BlockedReductionsData) blockedReductions;
+      myReductionData = BlockedReductionsData.getStepData(getGeneratorSessionContext());
     }
     return myReductionData;
   }
@@ -874,7 +875,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       try {
         visitInputNode(inputRootNode);
       } finally {
-        myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
+        myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
         myDeltaBuilder.leaveInputRoot(inputRootNode);
       }
       // for now, registerRoot shall go *after* leaveInputRoot, as deltaBuilder expects CopyRoot to be full of replacing nodes
@@ -899,7 +900,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             visitInputNode(inputChildNode);
           }
         } finally {
-          myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
+          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
         }
       }
     }
