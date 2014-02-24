@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -93,7 +96,7 @@ public class FastRuleFinder {
   }
 
   public static class BlockedReductionsData {
-    public static final Object KEY = new Object();
+    private static final Object KEY = new Object();
     // reduction data for this micro step is read-only
     private final Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
     // can be modified by several threads FIXME we can block rules on a per-root (i.e. per thread) basis, so no synchronization is really needed here
@@ -103,6 +106,16 @@ public class FastRuleFinder {
     private final Map<SNode, Collection<TemplateWeavingRule>> myCurrentWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
     // weavings are executed from the single thread
     private final Map<SNode, Collection<TemplateWeavingRule>> myNextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
+
+    @NotNull
+    public static BlockedReductionsData getStepData(GenerationSessionContext sessionContext) {
+      Object blockedReductions = sessionContext.getStepObject(BlockedReductionsData.KEY);
+      if (blockedReductions == null) {
+        blockedReductions = new BlockedReductionsData();
+        sessionContext.putStepObject(BlockedReductionsData.KEY, blockedReductions);
+      }
+      return (BlockedReductionsData) blockedReductions;
+    }
 
     public boolean isReductionBlocked(SNode node, TemplateReductionRule rule, ReductionContext reductionContext) {
       return isReductionBlocked(node, rule)
@@ -145,6 +158,36 @@ public class FastRuleFinder {
         return;
       }
       nxt.add(rule);
+    }
+
+    /**
+     * Update blocked rules to apply for nodes in cloned model, assuming present nodes were cloned into clonedModel with nodeid preserved.
+     * Single-thread.
+     */
+    public void advanceForModelClone(@NotNull SModel clonedModel, @NotNull IGeneratorLogger log) {
+      HashMap<SNode, Object> nextReductionData = new HashMap<SNode, Object>(myCurrentReductionData.size() * 4 / 3);
+      for (Map.Entry<SNode,Object> e : myCurrentReductionData.entrySet()) {
+        final SNode clonedNode = clonedModel.getNode(e.getKey().getNodeId());
+        if (clonedNode != null) {
+          nextReductionData.put(clonedNode, e.getValue());
+        } else {
+          log.warning(e.getKey().getReference(), "Node copied in one of previous microsteps is not found in cloned model");
+        }
+      }
+      myCurrentReductionData.clear();
+      myCurrentReductionData.putAll(nextReductionData);
+      //
+      HashMap<SNode, Collection<TemplateWeavingRule>> nextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>(myCurrentWeaveData.size() * 4 / 3);
+      for (Map.Entry<SNode, Collection<TemplateWeavingRule>> e : myCurrentWeaveData.entrySet()) {
+        final SNode clonedNode = clonedModel.getNode(e.getKey().getNodeId());
+        if (clonedNode != null) {
+          nextWeaveData.put(clonedNode, e.getValue());
+        } else {
+          log.warning(e.getKey().getReference(), "Node copied in one of previous microsteps is not found in cloned model");
+        }
+      }
+      myCurrentWeaveData.clear();
+      myCurrentWeaveData.putAll(nextWeaveData);
     }
 
     public void advanceStep() {

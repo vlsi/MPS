@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
@@ -83,7 +84,6 @@ class GenerationSession {
   private final IOperationContext myInvokeContext; // initial context the session was initiated within
   private GenerationPlan myGenerationPlan;
 
-  private final boolean myDiscardTransients;
   private final ProgressMonitor myProgressMonitor;
   private MPSAppenderBase myLoggingHandler;
   private final GenerationSessionLogger myLogger;
@@ -103,7 +103,6 @@ class GenerationSession {
       IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
-    myDiscardTransients = !generationOptions.isSaveTransientModels();
     myProgressMonitor = progressMonitor;
     myLogger = logger;
     ttrace = tracer;
@@ -357,6 +356,7 @@ class GenerationSession {
   private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
     IGenerationTracer tracer = mySessionContext.getGenerationTracer();
+    final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
 
     // -----------------------
     // run pre-processing scripts
@@ -369,24 +369,37 @@ class GenerationSession {
 
     if (myLogger.needsInfo()) {
       myLogger.info(
-          "generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
+          "generating model '" + currentInputModel.getModelName() + "' --> '" + currentOutputModel.getModelName() + "'");
     }
     boolean isPrimary = true;
     // exit condition for secondary mapping
     int secondaryMappingRepeatCount = 0;
     while (true) {
       if (myLogger.needsInfo() && !isPrimary /*only for 1+ minor steps*/) {
-        myLogger.info("next minor step '" + SModelStereotype.getStereotype(
-            currentInputModel.getReference().getModelName()) + "' --> '" + SModelStereotype.getStereotype(currentOutputModel.getReference().getModelName()) + "'");
+        myLogger.info(String.format("next minor step '%s' --> '%s'",
+            SModelStereotype.getStereotype(currentInputModel), SModelStereotype.getStereotype(currentOutputModel)));
       }
       tracer.startTracing(currentInputModel, currentOutputModel);
+
+      final SModel exposedInputModel = currentInputModel;
+      if (cloneInputModel) {
+        // if we expect inplace to happen, make a new model which will be the one to modify in-place
+        // we won't keep it among transients, and drop it forcefully once cloned to those exposed to user.
+        SModel inputModelPrim = createTransientModel(SModelStereotype.getStereotype(currentInputModel) + "_inplace");
+        new CloneUtil(currentInputModel, inputModelPrim).cloneModelWithImports();
+        if (!isPrimary) { // there're no blocked rules for primary step
+          // rules are blocked for nodes of exposedInputModel, we need to block them against actual input nodes
+          BlockedReductionsData.getStepData(mySessionContext).advanceForModelClone(inputModelPrim, myLogger);
+        }
+        currentInputModel = inputModelPrim;
+      }
       final Pair<Boolean, SModel> applied = applyRules(currentInputModel, currentOutputModel, isPrimary, ruleManager);
       boolean somethingHasBeenGenerated = applied.o1;
       SModel realOutputModel = applied.o2;
       if (!somethingHasBeenGenerated) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
-        tracer.discardTracing(currentInputModel, currentOutputModel);
+        tracer.discardTracing(exposedInputModel, currentOutputModel);
         recycleWasteModel(currentOutputModel, true);
         if (!isPrimary) {
           // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
@@ -397,9 +410,12 @@ class GenerationSession {
           myMinorStep--;
         }
         if (myLogger.needsInfo()) {
-          myLogger.info("unchanged, empty model '" + SModelStereotype.getStereotype(currentOutputModel.getReference().getModelName()) + "' removed");
+          myLogger.info(String.format("unchanged, empty model '%s' removed", SModelStereotype.getStereotype(currentOutputModel)));
         }
-        currentOutputModel = currentInputModel;
+        if (cloneInputModel) {
+          recycleWasteModel(currentInputModel, true);
+        }
+        currentOutputModel = exposedInputModel;
         break;
       }
 
@@ -415,17 +431,25 @@ class GenerationSession {
       SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
       myDependenciesBuilder.updateModel(realOutputModel);
       if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
-        recycleWasteModel(currentInputModel, false); // we can forget about former input model here
+        recycleWasteModel(currentInputModel, cloneInputModel); // we can (or even shall, if it's a clone) forget about former input model here
         currentInputModel = currentOutputModel;
         ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder(); // why?!
-        currentOutputModel = createTransientModel();
       } else {
         assert currentInputModel == realOutputModel;
         myDependenciesBuilder.dropModel();
-        // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
-        recycleWasteModel(currentOutputModel, true);
-        currentOutputModel = createTransientModel();
+        if (cloneInputModel) {
+          // there'd be at least one more micro-step, and to expose present output in transient models
+          // we need to clone everything from our internal, _inplace model into exposed currentOutputModel
+          new CloneUtil(realOutputModel, currentOutputModel).cloneModelWithImports();
+          BlockedReductionsData.getStepData(mySessionContext).advanceForModelClone(currentOutputModel, myLogger);
+          recycleWasteModel(currentInputModel, true);
+          currentInputModel = currentOutputModel;
+        } else {
+          // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
+          recycleWasteModel(currentOutputModel, true);
+        }
       }
+      currentOutputModel = createTransientModel();
     }
 
     // -----------------------
@@ -488,7 +512,7 @@ class GenerationSession {
     // need to clone input model?
     // generally, there's no need to have a copy to run a script, even if it modifies the model
     // however, if we keep transients AND model is modified, it's handy to get a copy of the model to see the difference
-    final boolean needToCloneInputModel = modifiesModel && !myDiscardTransients;
+    final boolean needToCloneInputModel = modifiesModel && myGenerationOptions.isSaveTransientModels();
     SModel toRecycle = null;
     if (needToCloneInputModel) {
       ttrace.push("model clone", false);
@@ -537,7 +561,7 @@ class GenerationSession {
       return currentModel;
     }
     // post-processing script is deemed to modify model always
-    final boolean needToCloneModel = !myDiscardTransients;
+    final boolean needToCloneModel = myGenerationOptions.isSaveTransientModels();
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone", false);
@@ -600,7 +624,8 @@ class GenerationSession {
     if (model.getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
-      if (force || (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model))) {
+      final boolean discardTransients = !myGenerationOptions.isSaveTransientModels();
+      if (force || (discardTransients && !mySessionContext.isTransientModelToKeep(model))) {
         mySessionContext.getModule().removeModel(model);
       }
       ttrace.pop();
@@ -688,7 +713,7 @@ class GenerationSession {
 
   public void discardTransients() {
     if (mySessionContext == null) return;
-    if (myDiscardTransients) {
+    if (!myGenerationOptions.isSaveTransientModels()) {
       mySessionContext.clearTransientModels();
     }
     mySessionContext.disposeQueryProvider();

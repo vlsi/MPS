@@ -22,7 +22,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -54,6 +55,8 @@ public class GenerationTracer implements IGenerationTracer {
 
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
   private GenerationTracerViewTool myTool;
+  private SModelReference myCurrentInputModel;
+  private SModelReference myCurrentOutputModel;
 
   public GenerationTracer(Project project) {
   }
@@ -70,6 +73,8 @@ public class GenerationTracer implements IGenerationTracer {
     myModelsProcessedByScripts = new ModelsProcessedByScripts();
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
+    myCurrentOutputModel = null;
 
     if (myTool != null) {
       myTool.setTracingDataIsAvailable(false);
@@ -92,6 +97,8 @@ public class GenerationTracer implements IGenerationTracer {
     myModelsProcessedByScripts = null;
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
+    myCurrentOutputModel = null;
 
     if (myTool != null) {
       myTool.setTracingDataIsAvailable(false);
@@ -107,8 +114,10 @@ public class GenerationTracer implements IGenerationTracer {
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
-    myTracingDataByInputModel.put(inputModel.getReference().toString(), myCurrentTracingData);
-    myTracingDataByOutputModel.put(outputModel.getReference().toString(), myCurrentTracingData);
+    myCurrentInputModel = inputModel.getReference();
+    myCurrentOutputModel = outputModel.getReference();
+    myTracingDataByInputModel.put(myCurrentInputModel.toString(), myCurrentTracingData);
+    myTracingDataByOutputModel.put(myCurrentOutputModel.toString(), myCurrentTracingData);
     myCurrentTraceNode = null;
   }
 
@@ -119,23 +128,39 @@ public class GenerationTracer implements IGenerationTracer {
     myTracingDataByOutputModel.remove(outputModel.getReference().toString());
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
+    myCurrentOutputModel = null;
+  }
+
+  private SNodeReference adoptToModel(SModelReference desiredModel, SNodeReference node) {
+    if (!desiredModel.equals(node.getModelReference())) {
+      SNodeId nodeId = node instanceof SNodePointer ? ((SNodePointer) node).getNodeId() : null;
+      if (nodeId != null) {
+        node = new SNodePointer(desiredModel, nodeId);
+      }
+      // fall-through
+    }
+    return node;
   }
 
   @Override
   public void pushInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     push(new TracerNode(TracerNode.Kind.INPUT, node));
   }
 
   @Override
   public void closeInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     closeBranch(TracerNode.Kind.INPUT, node);
   }
 
   @Override
   public void popInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     pop(TracerNode.Kind.INPUT, node);
   }
 
@@ -178,6 +203,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushOutputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentOutputModel, node);
     push(new TracerNode(TracerNode.Kind.OUTPUT, node));
   }
 
@@ -286,7 +312,7 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   public boolean hasTraceInputData(SModelReference modelReference) {
-    if (getRootTracerNodes(Kind.INPUT, modelReference) != null) {
+    if (!getRootsOfInputModel(modelReference).isEmpty()) {
       return true;
     }
     return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(modelReference);
@@ -294,9 +320,16 @@ public class GenerationTracer implements IGenerationTracer {
 
   @Nullable
   public TracerNode buildTraceInputTree(@NotNull SNode node) {
-    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, node.getReference());
+    final SNodeReference nodeRef = node.getReference();
+    List<TracerNode> rootTracerNodes = getRootsOfInputModel(nodeRef.getModelReference());
+
+    List<TracerNode> tracerNodes = new ArrayList<TracerNode>();
+    for (TracerNode rootTracerNode : rootTracerNodes) {
+      rootTracerNode.findAllTopmost(Kind.INPUT, nodeRef, tracerNodes);
+    }
+
     if (!tracerNodes.isEmpty()) {
-      TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
+      TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0)); // FIXME this should be plain container node
       for (TracerNode tracerNode : tracerNodes) {
         List<TracerNode> childrensCopy = tracerNode.getChildrenCopy();
         for (TracerNode childCopy : childrensCopy) {
@@ -316,9 +349,7 @@ public class GenerationTracer implements IGenerationTracer {
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
-      SNodeId nodeId = SNodeId.fromString(inputNode.getNodeId().toString());
-      assert nodeId != null : "wrong node id string";
-      outputNode = outputModel.getNode(nodeId);
+      outputNode = outputModel.getNode(inputNode.getNodeId());
       if (outputNode != null) break;
       inputNode = inputNode.getParent();
     }
@@ -342,16 +373,26 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   public boolean hasTracebackData(SModelReference modelReference) {
-    if (getRootTracerNodes(Kind.OUTPUT, modelReference) != null) {
+    if (!getRootsOfOutputModel(modelReference).isEmpty()) {
       return true;
     }
     return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(modelReference);
   }
 
   public TracerNode buildTracebackTree(SNode node) {
-    TracerNode tracerNode1 = findTracerNode(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(node));
-    if (tracerNode1 != null) {
-      return buildTracebackTree(tracerNode1, 0);
+    final SNodeReference nodeRef = node.getReference();
+    List<TracerNode> rootTracerNodes = getRootsOfOutputModel(nodeRef.getModelReference());
+
+    TracerNode tracerNode = null;
+    for (TracerNode rootTracerNode : rootTracerNodes) {
+      tracerNode = rootTracerNode.find(Kind.OUTPUT, nodeRef);
+      if (tracerNode != null) {
+        break;
+      }
+    }
+
+    if (tracerNode != null) {
+      return buildTracebackTree(tracerNode, 0);
     }
 
     // may be output is produced by scripts?
@@ -364,15 +405,13 @@ public class GenerationTracer implements IGenerationTracer {
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
-      SNodeId nodeId = SNodeId.fromString(outputNode.getNodeId().toString());
-      assert nodeId != null : "wrong node id string";
-      inputNode = inputModel.getNode(nodeId);
+      inputNode = inputModel.getNode(outputNode.getNodeId());
       if (inputNode != null) break;
       outputNode = outputNode.getParent();
     }
 
     TracerNode outputTracerNode = new TracerNode(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(node));
-    TracerNode tracerNode = outputTracerNode;
+    tracerNode = outputTracerNode;
     List<TemplateMappingScript> mappingScripts_reversed = new ArrayList<TemplateMappingScript>(mappingScripts);
     Collections.reverse(mappingScripts_reversed);
     for (TemplateMappingScript mappingScript : mappingScripts_reversed) {
@@ -392,48 +431,19 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @NotNull
-  private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNodeReference node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModelReference());
-    if (rootTracerNodes == null) return new ArrayList<TracerNode>();
-
-    List<TracerNode> result = new ArrayList<TracerNode>();
-    for (TracerNode rootTracerNode : rootTracerNodes) {
-      rootTracerNode.findAllTopmost(kind, node, result);
-    }
-    return result;
+  private List<TracerNode> getRootsOfInputModel(SModelReference modelReference) {
+    final List<TracerNode> tn = myTracingDataByInputModel == null ? null : myTracingDataByInputModel.get(modelReference.toString());
+    return tn == null ? Collections.<TracerNode>emptyList() : tn;
   }
 
-  @Nullable
-  private List<TracerNode> getRootTracerNodes(Kind kind, SModelReference modelReference) {
-    if (myTracingDataByInputModel == null) return null;
-
-    if (kind == Kind.INPUT) {
-      String inputModelUID = modelReference.toString();
-      return myTracingDataByInputModel.get(inputModelUID);
-    } else if (kind == Kind.OUTPUT) {
-      String outputModelUID = modelReference.toString();
-      return myTracingDataByOutputModel.get(outputModelUID);
-    }
-
-    LOG.errorWithTrace("unexpected trace node kind: " + kind);
-    return null;
-  }
-
-  private TracerNode findTracerNode(Kind kind, SNodeReference node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModelReference());
-    if (rootTracerNodes == null) return null;
-
-    for (TracerNode rootTracerNode : rootTracerNodes) {
-      TracerNode tracerNode = rootTracerNode.find(kind, node);
-      if (tracerNode != null) {
-        return tracerNode;
-      }
-    }
-    return null;
+  @NotNull
+  private List<TracerNode> getRootsOfOutputModel(SModelReference modelReference) {
+    final List<TracerNode> tn = myTracingDataByOutputModel == null ? null : myTracingDataByOutputModel.get(modelReference.toString());
+    return tn == null ? Collections.<TracerNode>emptyList() : tn;
   }
 
   private TracerNode buildTracebackTree(TracerNode tracerNode, int depth) {
-    TracerNode tracebackNode = new TracerNode(tracerNode.getKind(), tracerNode.getNodePointer());
+    TracerNode tracebackNode = new TracerNode(tracerNode);
     if (depth >= 200) {
       // its enough
       return tracebackNode;
@@ -450,7 +460,7 @@ public class GenerationTracer implements IGenerationTracer {
    */
   @Override
   public List<Pair<SNodeReference, SNodeReference>> getAllAppliedRulesWithInputNodes(SModelReference outputModelReference) {
-    List<TracerNode> list = myTracingDataByOutputModel.get(outputModelReference.toString());
+    List<TracerNode> list = getRootsOfOutputModel(outputModelReference);
     List<TracerNode> ruleNodes = new ArrayList<TracerNode>();
     for (TracerNode tracerNode : list) {
       tracerNode.findAll(Kind.RULE, ruleNodes);
