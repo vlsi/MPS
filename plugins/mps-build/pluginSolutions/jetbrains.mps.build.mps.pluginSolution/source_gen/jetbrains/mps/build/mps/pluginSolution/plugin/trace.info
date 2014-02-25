@@ -6578,19 +6578,18 @@
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="51" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="14" startPosition="44" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659545" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659546" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="18" startPosition="65" endLine="19" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="16" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPaneProjectAddition_ActionGroup#()V" />
-    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+    <nodeInfo nodeId="8722937377469659546" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPaneProjectAddition_ActionGroup#()V" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="146" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
       <varInfo nodeId="8722937377469659543" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
-    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="19" endPosition="146" />
-    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="51" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="51" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup" />
   </root>
 </debugInfo>
 

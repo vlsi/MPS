@@ -16267,7 +16267,6 @@
     <property name="name" nameId="tpck.1169194664001" value="ProjectPaneProjectAddition" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8722937377469659544" nodeInfo="ng">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8722937377469659545" nodeInfo="ng" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8722937377469659546" nodeInfo="ng">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8722937377469659497" resolveInfo="GenerateBuildForProjectAction" />
       </node>
