@@ -2740,11 +2740,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     dependentCells.add(cell);
   }
 
-  @Deprecated
-  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeReference, String> pair) {
-    addCellDependentOnNodeProperty(((EditorCell) cell), pair);
-  }
-
   public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
