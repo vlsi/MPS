@@ -9,17 +9,19 @@ import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.JLabel;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -27,16 +29,30 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 public class PalettePanel extends JPanel {
   private DiagramCell myDiagramCell;
   private DiagramCell.TunableNodeSubstituteAction mySelectedSubstituteAction;
-  private JPanel myActionPanel = new JPanel(new BorderLayout());
-  private List<AnAction> myToggleActions = ListSequence.fromList(new ArrayList<AnAction>());
+  private JPanel myBlockActionPanel = new JPanel(new BorderLayout());
+  private JPanel myConnectorActionPanel = new JPanel(new BorderLayout());
+  private List<AnAction> myBlockToggleActions = ListSequence.fromList(new ArrayList<AnAction>());
+  private List<AnAction> myConnectorToggleActions = ListSequence.fromList(new ArrayList<AnAction>());
 
   public PalettePanel() {
-    super(new BorderLayout());
-    add(myActionPanel, BorderLayout.NORTH);
+    super(new GridBagLayout());
+    GridBagConstraints c = new GridBagConstraints();
+    c.gridx = 0;
+    c.gridy = 0;
+    c.anchor = GridBagConstraints.NORTHWEST;
+
+    add(new JLabel("Blocks"), c);
+    c.gridy = 1;
+    add(myBlockActionPanel, c);
+    c.gridy = 2;
+    add(new JLabel("Connectors"), c);
+    c.gridy = 3;
+    add(myConnectorActionPanel, c);
   }
 
-  private ActionGroup createButtonsGroup() {
-    ListSequence.fromList(myToggleActions).clear();
+  private void updateToggleActions() {
+    ListSequence.fromList(myBlockToggleActions).clear();
+    ListSequence.fromList(myConnectorToggleActions).clear();
 
     SubstituteInfo substituteInfo = myDiagramCell.getSubstituteInfo();
     substituteInfo.invalidateActions();
@@ -45,10 +61,13 @@ public class PalettePanel extends JPanel {
       tunableAction.setSubstitutable(false);
       tunableAction.setIsInitializing(false);
       ToggleAction substituteAction = new PalettePanel.SubstituteToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, tunableAction);
-      ListSequence.fromList(myToggleActions).addElement(substituteAction);
+      if (tunableAction.isBlockAction()) {
+        ListSequence.fromList(myBlockToggleActions).addElement(substituteAction);
+      } else {
+        ListSequence.fromList(myConnectorToggleActions).addElement(substituteAction);
+      }
     }
 
-    return ActionUtils.groupFromActions(ListSequence.fromList(myToggleActions).toGenericArray(AnAction.class));
   }
 
   public void setDiagramCell(@NotNull DiagramCell diagramCell) {
@@ -68,9 +87,13 @@ public class PalettePanel extends JPanel {
   private void update() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, createButtonsGroup(), true).getComponent();
-        myActionPanel.removeAll();
-        myActionPanel.add(buttonsPanel, BorderLayout.WEST);
+        updateToggleActions();
+        JComponent blockActionPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ActionUtils.groupFromActions(ListSequence.fromList(myBlockToggleActions).toGenericArray(AnAction.class)), true).getComponent();
+        myBlockActionPanel.removeAll();
+        myBlockActionPanel.add(blockActionPanel, BorderLayout.WEST);
+        JComponent connectorActionPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ActionUtils.groupFromActions(ListSequence.fromList(myConnectorToggleActions).toGenericArray(AnAction.class)), true).getComponent();
+        myConnectorActionPanel.removeAll();
+        myConnectorActionPanel.add(connectorActionPanel, BorderLayout.WEST);
       }
     });
   }
@@ -97,7 +120,7 @@ public class PalettePanel extends JPanel {
       mySubstituteAction.setSubstitutable(mySelected);
       if (mySelected) {
         mySelectedSubstituteAction = mySubstituteAction;
-        for (AnAction anAction : ListSequence.fromList(myToggleActions)) {
+        for (AnAction anAction : ListSequence.fromList(myBlockToggleActions)) {
           if (anAction != this && anAction instanceof ToggleAction) {
             ((ToggleAction) anAction).setSelected(event, false);
           }

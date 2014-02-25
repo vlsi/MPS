@@ -193,6 +193,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   public void createNewDiagramElement(int x, int y) {
     if (ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getDiagramCell() != this || ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getSelectedSubstituteAction() == null) {
+      hideConnectionDragFeedback();
       return;
     }
     myPatternEditorX = x;
@@ -239,7 +240,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
         for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
-          result.add(new DiagramCell.TunableNodeSubstituteAction(action) {
+          result.add(new DiagramCell.TunableNodeSubstituteAction(action, true) {
             @Override
             public boolean canSubstitute(String string) {
               return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
@@ -286,7 +287,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             return result;
           }
         };
-        return Collections.<SubstituteAction>singletonList(new DiagramCell.TunableNodeSubstituteAction(action));
+        return Collections.<SubstituteAction>singletonList(new DiagramCell.TunableNodeSubstituteAction(action, false));
       }
     };
   }
@@ -513,8 +514,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public static class TunableNodeSubstituteAction extends NodeSubstituteActionWrapper {
-    public TunableNodeSubstituteAction(SubstituteAction action) {
+    private boolean myIsBlock;
+
+    public TunableNodeSubstituteAction(SubstituteAction action, boolean isBlock) {
       super(action);
+      myIsBlock = isBlock;
     }
 
     private boolean myCanSubstitute = true;
@@ -531,6 +535,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
     public void setIsInitializing(boolean isInitializing) {
       myIsInitializing = isInitializing;
+    }
+
+    public boolean isBlockAction() {
+      return myIsBlock;
     }
   }
 
