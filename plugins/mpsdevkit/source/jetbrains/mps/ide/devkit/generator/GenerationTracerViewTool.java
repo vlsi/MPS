@@ -209,7 +209,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     GenerationTracerView tracerView = new GenerationTracerView(this, viewToken, tracerNode, getProject());
     myTracerViews.add(tracerView);
 
-    Content content = addContent(tracerView.getComponent(), tracerNode.getName(), tracerNode.getIcon(), true);
+    Content content = addContent(tracerView.getComponent(), tracerNode.getText(), tracerNode.getIcon(), true);
     getContentManager().setSelectedContent(content);
 
     Content noTabsContent = getContentManager().getContent(myNoTabsComponent);

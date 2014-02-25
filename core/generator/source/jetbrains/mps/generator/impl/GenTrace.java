@@ -23,7 +23,10 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Artem Tikhomirov
@@ -48,6 +51,7 @@ public class GenTrace {
     public Phase next;
     public final Phase prev;
     public final SModelReference input, output;
+    private Map<SNodeId, Collection<Element>> inputIndex, outputIndex;
 
     public Phase(@NotNull SModelReference inputModel, @NotNull SModelReference outputModel, @Nullable Phase previous) {
       input = inputModel;
@@ -56,6 +60,7 @@ public class GenTrace {
     }
 
     public void add(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
+      inputIndex = outputIndex = null;
       for (SNodeId n : output) {
         myTrace.add(new Element(input, n, templateNode));
       }
@@ -63,25 +68,40 @@ public class GenTrace {
 
     // null if no input nodes found
     public Element[] findByInputAncestors(SNode inputNode) {
-      Element[] rv;
+      buildIndex();
+      Collection<Element> rv;
       do {
-        rv = findByInput(inputNode.getNodeId());
+        rv = inputIndex.get(inputNode.getNodeId());
         inputNode = inputNode.getParent();
       } while (inputNode != null && rv == null);
-      return rv;
+      return rv == null ? null : rv.toArray(new Element[rv.size()]);
     }
 
-    private Element[] findByInput(SNodeId inputNode) {
-      ArrayList<Element> rv = new ArrayList<Element>();
+    public Element[] findByOutputAncestors(SNode node) {
+      buildIndex();
+      Collection<Element> rv;
+      do {
+        rv = outputIndex.get(node.getNodeId());
+        node = node.getParent();
+      } while (node != null && rv == null);
+      return rv == null ? null : rv.toArray(new Element[rv.size()]);
+    }
+    private void buildIndex() {
+      HashMap<SNodeId, Collection<Element>> index1 = new HashMap<SNodeId, Collection<Element>>();
+      HashMap<SNodeId, Collection<Element>> index2 = new HashMap<SNodeId, Collection<Element>>();
       for (Element e : myTrace) {
-        if (inputNode.equals(e.input)) {
-          rv.add(e);
-        }
+        updateMap(e.input, e, index1);
+        updateMap(e.output, e, index2);
       }
-      if (rv.isEmpty()) {
-        return null;
+      inputIndex = index1;
+      outputIndex = index2;
+    }
+    private static void updateMap(SNodeId nid, Element e, Map<SNodeId, Collection<Element>> map) {
+      Collection<Element> c = map.get(nid);
+      if (c == null) {
+        map.put(nid, c = new ArrayList<Element>(5));
       }
-      return rv.toArray(new Element[rv.size()]);
+      c.add(e);
     }
   }
 }

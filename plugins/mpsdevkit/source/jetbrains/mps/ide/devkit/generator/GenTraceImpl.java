@@ -21,6 +21,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -63,39 +64,52 @@ public class GenTraceImpl {
     myCurrent.add(input, output, templateNode);
   }
 
-  public List<TraceNodeUI> buildTrace(SNode inputNode) {
-    Phase ph = findPhase(inputNode);
+  public List<TraceNodeUI> buildTrace(@NotNull SNode inputNode) {
+    Phase ph = findPhaseForInput(inputNode);
     if (ph == null) {
       return Collections.emptyList();
     }
+    final MPSModuleRepository modelRepository = MPSModuleRepository.getInstance();
     ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>();
     ArrayList<SNodeId> input = new ArrayList<SNodeId>();
     input.add(inputNode.getNodeId());
     do {
-      TraceNodeUI phaseNode = new TraceNodeUI(String.format("Phase %s->%s", ph.input.getModelName(), ph.output.getModelName()), Icons.COLLECTION);
+      TraceNodeUI phaseNode = new TraceNodeUI(String.format("Phase %s->%s", ph.input.getModelName(), ph.output.getModelName()), Icons.COLLECTION, null);
       LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<SNodeId>();
       for (SNodeId nid : input) {
-        SNode in = new SNodePointer(ph.input, nid).resolve(MPSModuleRepository.getInstance());
+        SNode in = new SNodePointer(ph.input, nid).resolve(modelRepository);
         if (in == null) {
           continue;
         }
         Element[] changes = ph.findByInputAncestors(in);
+        List<TraceNodeUI> uiNodes = new ArrayList<TraceNodeUI>(5);
         if (changes == null) {
-          TraceNodeUI n = new TraceNodeUI(Kind.COPY_OPERATION, null);
-          phaseNode.addChild(n);
-          n.addChild(new TraceNodeUI(Kind.INPUT, in.getReference()));
           SNodeReference o = new SNodePointer(ph.output, nid);
-          n.addChild(new TraceNodeUI(Kind.OUTPUT, o));
-          nextInputs.add(nid);
-          continue;
+          if (o.resolve(modelRepository) != null) {
+            TraceNodeUI n = new TraceNodeUI(Kind.COPY_OPERATION, null);
+            n.addChild(new TraceNodeUI(Kind.OUTPUT, o));
+            uiNodes.add(n);
+            nextInputs.add(nid);
+          }
+        } else {
+          MultiMap<SNodeId, TraceNodeUI> outputs = new MultiMap<SNodeId, TraceNodeUI>();
+          for (Element e : changes) {
+            outputs.putValue(e.output, new TraceNodeUI(Kind.TEMPLATE, e.template));
+            nextInputs.add(e.output);
+          }
+          for (SNodeId e : outputs.keySet()) {
+            TraceNodeUI out = new TraceNodeUI(Kind.OUTPUT, new SNodePointer(ph.output, e));
+            for (TraceNodeUI n : outputs.get(e)) {
+              out.addChild(n);
+            }
+            uiNodes.add(out);
+          }
         }
-        for (Element e : changes) {
-          TraceNodeUI n = new TraceNodeUI(Kind.TEMPLATE, e.template);
-          SNodeReference o = new SNodePointer(ph.output, e.output);
-          n.addChild(new TraceNodeUI(Kind.OUTPUT, o));
-          nextInputs.add(e.output);
-          phaseNode.addChild(n);
+        TraceNodeUI top = new TraceNodeUI(Kind.INPUT, in.getReference());
+        for (TraceNodeUI n : uiNodes) {
+          top.addChild(n);
         }
+        phaseNode.addChild(top);
       }
       if (phaseNode.getChildren().iterator().hasNext()) {
         rv.add(phaseNode);
@@ -107,14 +121,54 @@ public class GenTraceImpl {
     return rv;
   }
 
-  public List<Element> buildBackTrace(SNode node) {
-    return Collections.emptyList();
+  public List<TraceNodeUI> buildBackTrace(@NotNull final SNode node) {
+    Phase ph = findPhaseForOutput(node);
+    if (ph == null) {
+      // FIXME proceed with the last phase?
+      return Collections.emptyList();
+    }
+    ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>();
+    TraceNodeUI phaseNode = new TraceNodeUI(String.format("Phase %s->%s", ph.input.getModelName(), ph.output.getModelName()), Icons.COLLECTION, null);
+
+    SNode outNode = node;
+    do {
+      Element[] changes = ph.findByOutputAncestors(outNode);
+      if (changes != null) {
+        MultiMap<SNodeId, TraceNodeUI> byInput = new MultiMap<SNodeId, TraceNodeUI>();
+        for (Element e : changes) {
+          byInput.putValue(e.input, new TraceNodeUI(Kind.TEMPLATE, e.template));
+        }
+        for (SNodeId input : byInput.keySet()) {
+          TraceNodeUI child = new TraceNodeUI(Kind.INPUT, new SNodePointer(ph.input, input));
+          for (TraceNodeUI n : byInput.get(input)) {
+            child.addChild(n);
+          }
+          phaseNode.addChild(child);
+        }
+        break;
+      }
+      outNode = outNode.getParent();
+    } while (outNode != null);
+    if (phaseNode.getChildren().iterator().hasNext()) {
+      rv.add(phaseNode);
+    }
+    return rv;
   }
 
-  private Phase findPhase(SNode inputNode) {
+  private Phase findPhaseForInput(SNode inputNode) {
     SModelReference mr = inputNode.getReference().getModelReference();
     for (Phase p = mySequence; p != null; p = p.next) {
       if (p.input.equals(mr)) {
+        return p;
+      }
+    }
+    return null;
+  }
+
+  private Phase findPhaseForOutput(SNode node) {
+    SModelReference mr = node.getReference().getModelReference();
+    for (Phase p = mySequence; p != null; p = p.next) {
+      if (p.output.equals(mr)) {
         return p;
       }
     }

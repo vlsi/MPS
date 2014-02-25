@@ -350,7 +350,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
     final TraceNodeUI newTracer;
     if (myNewTrace != null) {
-      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION);
+      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION, nodeRef);
       for (TraceNodeUI n : myNewTrace.buildTrace(node)) {
         newTracer.addChild(n);
       }
@@ -360,20 +360,21 @@ public class GenerationTracer implements IGenerationTracer {
 
     if (!tracerNodes.isEmpty()) {
       TraceNodeUI resultTracerNode;
-      if (tracerNodes.size() == 1 && newTracer == null) {
+      if (tracerNodes.size() == 1) {
         TracerNode theOne = tracerNodes.get(0);
         resultTracerNode = new TraceNodeUI(theOne);
         tracerNodes = theOne.getChildren();
       } else {
-        resultTracerNode = new TraceNodeUI("Multiple use of same input node", Icons.COLLECTION);
+        resultTracerNode = new TraceNodeUI("Multiple use of same input node", Icons.COLLECTION, nodeRef);
       }
       for (TracerNode tracerNode : tracerNodes) {
         resultTracerNode.addChild(create(tracerNode));
       }
       if (newTracer != null) {
-        resultTracerNode.addChild(newTracer);
+        return group(resultTracerNode, newTracer);
+      } else {
+        return resultTracerNode;
       }
-      return resultTracerNode;
     }
 
     // may be input is processed by scripts?
@@ -404,9 +405,17 @@ public class GenerationTracer implements IGenerationTracer {
       }
     }
     if (newTracer != null) {
-      traceNode.addChild(newTracer);
+      return group(traceNode, newTracer);
     }
     return traceNode;
+  }
+
+  private static TraceNodeUI group(TraceNodeUI... elements) {
+    TraceNodeUI rv = new TraceNodeUI("", Icons.COLLECTION, elements[0].getNavigateTarget());
+    for (TraceNodeUI e : elements) {
+      rv.addChild(e);
+    }
+    return rv;
   }
 
   private static TraceNodeUI create(TracerNode tn) {
@@ -428,6 +437,16 @@ public class GenerationTracer implements IGenerationTracer {
     final SNodeReference nodeRef = node.getReference();
     List<TracerNode> rootTracerNodes = getRootsOfOutputModel(nodeRef.getModelReference());
 
+    final TraceNodeUI newTracer;
+    if (myNewTrace != null) {
+      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION, nodeRef);
+      for (TraceNodeUI n : myNewTrace.buildBackTrace(node)) {
+        newTracer.addChild(n);
+      }
+    } else {
+      newTracer = null;
+    }
+
     TracerNode tracerNode = null;
     for (TracerNode rootTracerNode : rootTracerNodes) {
       tracerNode = rootTracerNode.find(Kind.OUTPUT, nodeRef);
@@ -437,7 +456,8 @@ public class GenerationTracer implements IGenerationTracer {
     }
 
     if (tracerNode != null) {
-      return buildTracebackTree(tracerNode, 0);
+      final TraceNodeUI tbt = buildTracebackTree(tracerNode, 0);
+      return newTracer == null ? tbt : group(tbt, newTracer);
     }
 
     // may be output is produced by scripts?
@@ -470,6 +490,9 @@ public class GenerationTracer implements IGenerationTracer {
       }
     }
 
+    if (newTracer != null) {
+      return group(outputTracerNode, newTracer);
+    }
     return outputTracerNode;
   }
 

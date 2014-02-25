@@ -17,8 +17,10 @@ package jetbrains.mps.ide.devkit.generator;
 
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
@@ -39,9 +41,9 @@ final class TraceNodeUI {
   private List<TraceNodeUI> myChildren;
   private final String myText;
 
-  /*package*/ TraceNodeUI(@NotNull String text, Icon icon) {
+  /*package*/ TraceNodeUI(@NotNull String text, Icon icon, @Nullable SNodeReference targetNode) {
     myKind = null;
-    myTargetNode = null;
+    myTargetNode = targetNode;
     myIcon = icon;
     myText = text;
   }
@@ -60,23 +62,26 @@ final class TraceNodeUI {
     myText = null;
   }
 
-  public String getName() {
-    if (myTargetNode == null) {
-      return '<' + String.valueOf(myKind) + '>';
-    }
-    return myTargetNode.toString();
-  }
   public String getText() {
     if (myText != null) {
       return myText;
     }
     if (myTargetNode == null) {
-      return getName();
+      if (myKind != null) {
+        return '<' + String.valueOf(myKind) + '>';
+      }
+      return "<unknown>";
     }
-    if (myKind == Kind.APPROXIMATE_OUTPUT || myKind == Kind.APPROXIMATE_INPUT) {
-      return "[approximate location] " + myTargetNode.toString();
-    } else {
+    SNode n = myTargetNode.resolve(MPSModuleRepository.getInstance());
+    if (n == null) {
       return myTargetNode.toString();
+    }
+    // TODO initialize myText once in the cons
+    String text = String.format("[%s] %s (%s)", n.getConcept().getName(), n.getPresentation(), n.getNodeId());
+    if (myKind == Kind.APPROXIMATE_OUTPUT || myKind == Kind.APPROXIMATE_INPUT) {
+      return "[approximate location] " + text;
+    } else {
+      return text;
     }
   }
   public Icon getIcon() {
@@ -104,8 +109,10 @@ final class TraceNodeUI {
   public String getNodeIdentifier() {
     if (myTargetNode != null) {
       return String.valueOf(myTargetNode.hashCode());
-    } else {
+    } else if (myKind != null) {
       return '<' + String.valueOf(myKind) + '>';
+    } else {
+      return String.valueOf(hashCode());
     }
   }
 
