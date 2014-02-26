@@ -1,3 +1,326 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3gis36kvnrydoakl5ek35ggf339mupz" />
+<dependencies version="2" modelHash="-3gis36kvnrydoakl5ek35ggf339mupz">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="1456l4f473hired2n1le0oup7kiwjxt" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="5wx4jkhrfzvphsvehsqcduzvh6exl1r" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
+  <common hash="3werg4lp8ipowm9xenpi34zvc36sl4r" dependsOnNodes="true">
+    <dep root="1076452857759748200" />
+    <dep root="1076452857759748206" />
+    <dep root="1174642743670" />
+    <dep root="1174642788531" />
+    <dep root="1174642900584" />
+    <dep root="1174643105530" />
+    <dep root="1174648085619" />
+    <dep root="1174650418652" />
+    <dep root="1174657487114" />
+    <dep root="1174658326157" />
+    <dep root="1174660718586" />
+    <dep root="1174663118805" />
+    <dep root="1174663239020" />
+    <dep root="1174663314467" />
+    <dep root="1174665551739" />
+    <dep root="1174666260556" />
+    <dep root="1174989242422" />
+    <dep root="1174989777619" />
+    <dep root="1174989799417" />
+    <dep root="1175147569072" />
+    <dep root="1175147670730" />
+    <dep root="1175517400280" />
+    <dep root="1175517767210" />
+    <dep root="1175594888091" />
+    <dep root="1176543928247" />
+    <dep root="1176544042499" />
+    <dep root="1176547808367" />
+    <dep root="1176547843728" />
+    <dep root="1176558773329" />
+    <dep root="1177068340529" />
+    <dep root="1177406296561" />
+    <dep root="1177514343197" />
+    <dep root="1177514840044" />
+    <dep root="1178870617262" />
+    <dep root="1178871491133" />
+    <dep root="1179479408386" />
+    <dep root="1179832490862" />
+    <dep root="1180099659756" />
+    <dep root="1185281562361" />
+    <dep root="1185281562363" />
+    <dep root="1185788561607" />
+    <dep root="1185788614172" />
+    <dep root="1185805035213" />
+    <dep root="1188473524530" />
+    <dep root="1188811367543" />
+    <dep root="1193662402729" />
+    <dep root="1193733698246" />
+    <dep root="1193733783530" />
+    <dep root="1193733802812" />
+    <dep root="1195213580585" />
+    <dep root="1195214364922" />
+    <dep root="1201607707634" />
+    <dep root="1201618299781" />
+    <dep root="1203424364259" />
+    <dep root="1203432538703" />
+    <dep root="1205762105978" />
+    <dep root="1205762656241" />
+    <dep root="1207055528241" />
+    <dep root="1210784285454" />
+    <dep root="1210784384552" />
+    <dep root="1212056081426" />
+    <dep root="1212056179025" />
+    <dep root="1212573620175" />
+    <dep root="1216383170661" />
+    <dep root="1216383287005" />
+    <dep root="1216383337216" />
+    <dep root="1216383482742" />
+    <dep root="1216390348809" />
+    <dep root="1216390987552" />
+    <dep root="1220357310820" />
+    <dep root="1223381117053" />
+    <dep root="1224760201579" />
+    <dep root="1227096479619" />
+    <dep root="1227096498176" />
+    <dep root="1227096620180" />
+    <dep root="1227096774658" />
+    <dep root="1227107274859" />
+    <dep root="1227107461373" />
+    <dep root="1228481911130" />
+    <dep root="1228482344443" />
+    <dep root="1228482485159" />
+    <dep root="1228482578363" />
+    <dep root="1228482838236" />
+    <dep root="1228487409934" />
+    <dep root="1228487445949" />
+    <dep root="1228487523202" />
+    <dep root="1230113867585" />
+    <dep root="1236083041311" />
+    <dep root="1236083146670" />
+    <dep root="1236083209648" />
+    <dep root="1236083245720" />
+    <dep root="1236083248858" />
+    <dep root="1236163200695" />
+    <dep root="1236165709895" />
+    <dep root="1238776677112" />
+    <dep root="1238776816380" />
+    <dep root="1240322207314" />
+    <dep root="1240322303006" />
+    <dep root="1320713984677695202" />
+    <dep root="2990591960991114251" />
+    <dep root="3000845361816456520" />
+    <dep root="3148295837107269752" />
+    <dep root="3585736512129529703" />
+    <dep root="3592071576955708904" />
+    <dep root="3701925705266317933" />
+    <dep root="3701925705266318588" />
+    <dep root="4315056782306262711" />
+    <dep root="4484478261143582584" />
+    <dep root="4484478261143582585" />
+    <dep root="4778346850551666963" />
+    <dep root="534601184072080872" />
+    <dep root="5548354512157832012" />
+    <dep root="5622704259074429274" />
+    <dep root="6136676636349908958" />
+    <dep root="6359146168314178663" />
+    <dep root="6773347515165533831" />
+    <dep root="6998169140110894792" />
+    <dep root="6998169140110925844" />
+    <dep root="7739208407757103780" />
+    <dep root="7884032992241804516" />
+    <dep root="7884032992241804520" />
+    <dep root="7992060018732187438" />
+    <dep root="7992060018732187441" />
+    <dep root="7992060018732187444" />
+    <dep root="8058965347377019242" />
+    <dep root="8058965347377019245" />
+    <dep root="8058965347377049973" />
+    <dep root="8090891477833017662" />
+    <dep root="8090891477833069917" />
+    <dep root="8124453027370766044" />
+    <dep root="8124453027370845339" />
+    <dep root="838715195501404652" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1174642743670" name="ApplicableNodeCondition" hash="-ejhyw93odzi1js1xnh9vds6vjydscgw" />
+  <source id="1174642788531" name="ConceptReference" hash="53218ollcpewi66e2nc68iawb7q1upn" />
+  <source id="1174642900584" name="PatternCondition" hash="bvql39xto65c8544sp1qwsvdz5ox6rf" />
+  <source id="1174643105530" name="InferenceRule" hash="-9v889r09ztp4v15k4aolq0oi50pec5j" />
+  <source id="1174648085619" name="AbstractRule" hash="-bmbs5hb7a6by5ycujsc9mfs36ydzm4u" />
+  <source id="1174650418652" name="ApplicableNodeReference" hash="6cazi6n189mjnyul3rppzz344k8616i" />
+  <source id="1174657487114" name="TypeOfExpression" hash="c9bvosywwyg09f28ecovemmqksahzj9" />
+  <source id="1174658326157" name="CreateEquationStatement" hash="emshbaaxzeaa96z3s9qzmcadn4v92tk" />
+  <source id="1174660718586" name="AbstractEquationStatement" hash="-3s4ycnpaqt3jxo8s4vykay7kkv2ed0y" />
+  <source id="1174663118805" name="CreateLessThanInequationStatement" hash="cz0j4rhvu7gm2cv1uk5khuv3v83moxj" />
+  <source id="1174663239020" name="CreateGreaterThanInequationStatement" hash="xbao4gnivxfvqc3pt4q8dzgvjo8xx8" />
+  <source id="1174663314467" name="CreateComparableEquationStatement" hash="-ztwx3u4cnmgwkfzvduc4hvnu09nd9z" />
+  <source id="1174665551739" name="TypeVarDeclaration" hash="-ebfw0qni244rojk6gggxingydeqqhxx" />
+  <source id="1174666260556" name="TypeVarReference" hash="-btoq03kcwro8272qzzi25ir8oijz7xb" />
+  <source id="1174989242422" name="PatternVariableReference" hash="xnbwq2c9vuxjhioghj6lybxd2bo7jt" />
+  <source id="1174989777619" name="LinkPatternVariableReference" hash="-22vk3376myy5zex6un1pgu9n10vmbdi" />
+  <source id="1174989799417" name="PropertyPatternVariableReference" hash="7o62ijmw31z9i1cwxzcjwocpmdk5fat" />
+  <source id="1175147569072" name="AbstractSubtypingRule" hash="9hvt9x5nsr17h1tgkltp2e7jrkk0vbg" />
+  <source id="1175147670730" name="SubtypingRule" hash="-8nc85jdkwlpa5hc7xubzumoqicpozne" />
+  <source id="1175517400280" name="AssertStatement" hash="1vfsn60z4hcrsd8t3yxj7knd6zhci4h" />
+  <source id="1175517767210" name="ReportErrorStatement" hash="5sskm1lxgbat9oubzdbnk14gyn4tkjf" />
+  <source id="1175594888091" name="TypeCheckerAccessExpression" hash="-u5fcm3f4nz1rugs241764j7e5bb5rl" />
+  <source id="1176543928247" name="IsSubtypeExpression" hash="70ladiwyefjufxohs991d9drkicxme8" />
+  <source id="1176544042499" name="Node_TypeOperation" hash="-9vwqjzys45felzrgxm8orrp1kqny6sg" />
+  <source id="1176547808367" name="MultipleForeachLoop" hash="-coirqdfd2faepa2uicg030lz8q5qnx0" />
+  <source id="1176547843728" name="MultipleForeachLoopVariable" hash="78gaq2j50slurc03dhdd1shaiijbngp" />
+  <source id="1176558773329" name="CoerceStatement" hash="-n5zltpz9tgiaiuod0xyfjocbnw2mvm" />
+  <source id="1177068340529" name="ImmediateSupertypesExpression" hash="2ciluo7fntauidbo58iinp001moz59q" />
+  <source id="1177406296561" name="IsStrongSubtypeExpression" hash="-9iennuyu12o3h3n9og7sqm59nfd1n9e" />
+  <source id="1177514343197" name="MatchStatement" hash="9cjgggr16v9y8upgtmmjqmkxv59ow6" />
+  <source id="1177514840044" name="MatchStatementItem" hash="6n3dmqgjjzts8xwp6exz2sxi50xxt0z" />
+  <source id="1178870617262" name="CoerceExpression" hash="-6ue4jd95knaql08w5iw23y86qlpqxpt" />
+  <source id="1178871491133" name="CoerceStrongExpression" hash="-2o7rsqzn8nfsgwz92e2mgehgjmqczc" />
+  <source id="1179479408386" name="JoinType" hash="5medgyxfwygxf2jojc3xdozduydbugq" />
+  <source id="1179832490862" name="CreateStrongLessThanInequationStatement" hash="-1zf6x1ku54qfnarbu6vumv9kidbyffs" />
+  <source id="1180099659756" name="CreateComparableEquationStatementStrong" hash="-2z2clud82a830ofia0n14bi7axndj2e" />
+  <source id="1185281562361" name="RuntimeErrorType" hash="-2vyj6tl2iughqxpfyh1zl5javlk6p5t" />
+  <source id="1185281562363" name="RuntimeTypeVariable" hash="-a43qe8f21wwa7x8585696oycl6f136j" />
+  <source id="1185788561607" name="TypeClause" hash="c9fxgkuhiu68g4j6chj1ir8dympk7li" />
+  <source id="1185788614172" name="NormalTypeClause" hash="4ziukqdqib5noa19qi7yfg64izlsd6n" />
+  <source id="1185805035213" name="WhenConcreteStatement" hash="-eh3rkjxskb10u7b3tktvieg338u7tab" />
+  <source id="1188473524530" name="MeetType" hash="-dz7oifmaz98eqz1q8o8c2hdit5mpzlz" />
+  <source id="1188811367543" name="ComparisonRule" hash="-97etlhrjlqqx4ovj2fhypo3qt6bigvn" />
+  <source id="1193662402729" name="EquationDirection_Enum" hash="-33i2vcnp0ury5xuz3p323zqtgul2c2a">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="EquationDirection_Enum.java" />
+    <file name="EquationDirection_Enum_PropertySupport.java" />
+  </source>
+  <source id="1193733698246" name="Dependency" hash="1o3vyn1d2bdb890vdl8lm8fothuy0tz" />
+  <source id="1193733783530" name="FindSourceBlock" hash="90accialxlc144bv8abz7yawjamdjwl" />
+  <source id="1193733802812" name="FindSourceBlockParameter" hash="2xsaulpr70ro0alfg0jmi7suhbpdchz" />
+  <source id="1195213580585" name="AbstractCheckingRule" hash="-43u3xpbo09kvd0beftog3z1the9kvnf" />
+  <source id="1195214364922" name="NonTypesystemRule" hash="3han1bi6bqf1v23bte3yopab0pqm4e0" />
+  <source id="1201607707634" name="InequationReplacementRule" hash="66o11jz67kuic8mcqwx33jtg3fm0v71" />
+  <source id="1201618299781" name="ErrorInfoExpression" hash="-2g0rip3d8vpy6yoac9h9oftifz82o29" />
+  <source id="1203424364259" name="RuntimeListVariable" hash="898sxd5bqqxyfxse84uvrcs7l9awoxp" />
+  <source id="1203432538703" name="ListVarDeclaration" hash="6z1jnfvidhzyo0o5hbg21xwxj7q71z3" />
+  <source id="1205762105978" name="WhenConcreteVariableDeclaration" hash="2a4nvqr6pqpqvcb8o7iz0a7xcazxfit" />
+  <source id="1205762656241" name="WhenConcreteVariableReference" hash="-bhwcfzy2nf912lgg1k3bx010lfj12j2" />
+  <source id="1207055528241" name="WarningStatement" hash="-4hpd6tzc264zjuvner23bui5jw4o4mk" />
+  <source id="1210784285454" name="TypesystemIntention" hash="czyn2g93zn7cudmngieynfidpy9av5f" />
+  <source id="1210784384552" name="TypesystemIntentionArgument" hash="-47t2tqd77env2zzi2ft31iv5mez5sud" />
+  <source id="1212056081426" name="AbstractInequationStatement" hash="-d66fyzdtcdiii92i08iuskdyc7bbj82" />
+  <source id="1212056179025" name="InequationPriority" hash="-361ctketrqdo56p58ibu2ekqt169hsm">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="InequationPriority.java" />
+    <file name="InequationPriority_PropertySupport.java" />
+  </source>
+  <source id="1212573620175" name="RestrictionKind" hash="82aeya7jewz67ble6pifpqtqxth9a6o">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="RestrictionKind.java" />
+    <file name="RestrictionKind_PropertySupport.java" />
+  </source>
+  <source id="1216383170661" name="TypesystemQuickFix" hash="-n2w0ocmlb0bw9e8b4f0ngcmlejx67a" />
+  <source id="1216383287005" name="QuickFixExecuteBlock" hash="-b8t9x0imj5sc762u21mg383ts6cuotv" />
+  <source id="1216383337216" name="ConceptFunctionParameter_node" hash="-ac10rxaozmsljbzt3rcf1rflnkpxqrl" />
+  <source id="1216383482742" name="QuickFixArgument" hash="40jvh7ehyvl325d8tgg2vwven8gsym7" />
+  <source id="1216390348809" name="QuickFixArgumentReference" hash="2xlzlgjv2kkrign6f8rgwov9iqcl2nj" />
+  <source id="1216390987552" name="QuickFixDescriptionBlock" hash="b5v1pcmzqbwwn3gnh2y3ai47nqlxdd1" />
+  <source id="1220357310820" name="AddDependencyStatement" hash="debg7amw96h4q5njm3oxd5rmyj90xva" />
+  <source id="1223381117053" name="Processed" hash="7ou3evrrwqmde9ka6b125y5pt5jv33y" />
+  <source id="1224760201579" name="InfoStatement" hash="dq20oqqjxtrdem8qxyh7nyo78us8zqo" />
+  <source id="1227096479619" name="MessageTarget" hash="-8cl8x4spuvx8ywnaobo3oppkisqvdgv" />
+  <source id="1227096498176" name="PropertyMessageTarget" hash="2eghuzp7qvwbi2zpegnaeucsxbekebn" />
+  <source id="1227096620180" name="ReferenceMessageTarget" hash="d4ptajbdcrhzse9p9celnicjomo2xmi" />
+  <source id="1227096774658" name="MessageStatement" hash="-85fregc8gnm7f5mf2vpv55gqti6szg3" />
+  <source id="1227107274859" name="PropertyNameTarget" hash="h2yw2l4x0trlpha1g7n5fl9xxsphdv" />
+  <source id="1227107461373" name="ReferenceRoleTarget" hash="bemqm3c9p7ejh3feruxvnx76buaj79l" />
+  <source id="1228481911130" name="VariableConverterItem" hash="b4u1d35ajxgdtziyqs0nsjwv2wltp0i" />
+  <source id="1228482344443" name="VariableConverterItem_ApplicableBlock" hash="-sun6eci2gpj9jsmvcyc6qnqpcfwdos" />
+  <source id="1228482485159" name="ConceptFunctionParameter_var" hash="-18h10eqs8wepfmg6npdlsem5ge1snbu" />
+  <source id="1228482578363" name="VariableConverterItem_ConvertBlock" hash="-cwyyvgvp5zun2r1l7427dra20w5vplz" />
+  <source id="1228482838236" name="VariableConvertersContainer" hash="-qu5prx48hfato4ii9nwmq1y6ijqlgg" />
+  <source id="1228487409934" name="ConceptFunctionParameter_Role" hash="-38d3jyn94y03v5nflruajcmutq7gtzj" />
+  <source id="1228487445949" name="ConceptFunctionParameter_isAggregation" hash="-e4wdr62pgokddv5v7l16c3lol0vfzd9" />
+  <source id="1228487523202" name="ConceptFunctionParameter_ContextNode" hash="7c0n0l6x88gh1a0n4yysv0yblhebzzz" />
+  <source id="1230113867585" name="RuntimeHoleType" hash="ce0mskziw4xdlykhaa48w7xa756fpfr" />
+  <source id="1236083041311" name="OverloadedOperatorTypeRule" hash="54hoa0rx9hpy5hn6yrb6rlstakw1rbi" />
+  <source id="1236083146670" name="OverloadedOperatorTypeFunction" hash="-6wxerx0pfqsvcqa7dtuj6v6rg4qm5os" />
+  <source id="1236083209648" name="LeftOperandType_parameter" hash="e3brazcf4ohp1cwsma3m916bfzvq8r9" />
+  <source id="1236083245720" name="Operation_parameter" hash="734maan4frh6xd9fcdh1vo17ms2v48r" />
+  <source id="1236083248858" name="RightOperandType_parameter" hash="-3f2zjvj2bd95k342hopdt9hz0hfya0v" />
+  <source id="1236163200695" name="GetOperationType" hash="-1v3fzqm83zzx5rd8fhehhmdlsbgcg2r" />
+  <source id="1236165709895" name="OverloadedOpRulesContainer" hash="-2ictaaoygqjkqopz1a9e0g9iaovuf2e" />
+  <source id="1238776677112" name="MeetContainer" hash="9at2t6lx539rgod0udlv7tqcbd3ew2k" />
+  <source id="1238776816380" name="JoinContainer" hash="-7zfuw9iaoxldxknfxzxrxon6wh1mekm" />
+  <source id="1240322207314" name="ConceptTypeClause" hash="-7r8i4o4d5dzghhcmct84ts6usiabt5c" />
+  <source id="1240322303006" name="ConceptClauseLinkInfo" hash="5cg9e718e0mr242lu264jqm41mkt3g8" />
+  <source id="8124453027370766044" name="OverloadedOpTypeRule_OneTypeSpecified" hash="-a618ltkvp7idbaovtfla2i3jkqrzpay" />
+  <source id="8124453027370845339" name="AbstractOverloadedOpsTypeRule" hash="-ejh7it5l9h131qc80zmjdx9jqzlbbbx" />
+  <source id="5622704259074429274" name="OperationContextExpression" hash="-d7e3slu35nd9b9au63xyp69chu4pos2" />
+  <source id="3592071576955708904" name="IsReplacementRuleApplicable_ConceptFunction" hash="2nh8gnj7mddt9g8js4l9yng6fjz4q9z" />
+  <source id="4778346850551666963" name="InequationReference" hash="2mml44qbr0nx9z48iclcsjyvg2f7i9r" />
+  <source id="1320713984677695202" name="DefaultGroupReference" hash="-d4q3i7eopczozkuruvizuozgh4i1zw0" />
+  <source id="6359146168314178663" name="Node_InferTypeOperation" hash="-147wm60qrk1xal7khtu50b60btflzz6" />
+  <source id="6773347515165533831" name="NodeInfo" hash="-46fhlrfk67zr274kvtvo7kfjrz9wgl" />
+  <source id="8058965347377019242" name="DependentComputationItem" hash="-88wiv5au5a06jshoc3xyrnfjrim410l" />
+  <source id="8058965347377019245" name="ConceptFunctionParameter_DependentComputationNode" hash="b24epr5ntybj6ww0f69ukfkcrz7ogjd" />
+  <source id="8058965347377049973" name="DependentComputationItem_FindMasterBlock" hash="3xdsk2cr5dech23cy3lzfi0i4vtg508" />
+  <source id="3000845361816456520" name="DependentComputationItem_ApplicableBlock" hash="-7189c0zxo3zzd67xgy99m2oz4q7cfys" />
+  <source id="7884032992241804516" name="DependentComputationItem_BlockingBlock" hash="-4tzfolnj5g6gx7gars4m6do9du543to" />
+  <source id="7884032992241804520" name="ConceptFunctionParameter_BlockingComputationNode" hash="-oclntajrod4chwupo60kncbdhg2fof" />
+  <source id="2990591960991114251" name="OriginalNodeId" hash="-7wu1a4dxhnx8uhjebgptuu0cflny9ab" />
+  <source id="6136676636349908958" name="OverloadedOpIsApplicableFunction" hash="-xsvmwv6wvg9fagwgme4206phdwv3s9" />
+  <source id="3701925705266317933" name="QuickFixSetSelectionBlock" hash="523h6o5zzpwlq9qs8lc6l7f18v91u2" />
+  <source id="3701925705266318588" name="ConceptFunctionParameter_EditorContext" hash="6p1m0rpouptobq35szgoqb3mgusm22h" />
+  <source id="8090891477833017662" name="QuickFixField" hash="-1s9vsncreg7csfc5jr0gd86k60jldnk" />
+  <source id="8090891477833069917" name="QuickFixFieldReference" hash="da9185n3qia6cuh2ree78bp2i4he4vw" />
+  <source id="6998169140110894792" name="SelectionType" hash="6t0wif32410annqbh5rz3f8vkw05dm2" />
+  <source id="6998169140110925844" name="ConceptFunctionParameter_Selection" hash="6uxa3rlc27qt6hc0dhlv0wyur6ts5o9" />
+  <source id="1076452857759748200" name="CaretPositionOperation" hash="9wt779rgkstxrw8yy6pobwwu1vix2m9" />
+  <source id="1076452857759748206" name="WasSelectedNodeOperation" hash="98kkimzrkt3r7w9u2rjn0uemz3c98ya" />
+  <source id="4484478261143582584" name="IRuleWithOneNode" hash="-d535d8i9res5q71ccbg76nxb8ny0n5l" />
+  <source id="4484478261143582585" name="IRuleWithTwoNodes" hash="-8jagilbj2xijuu8dwyp7vkwr58xllot" />
+  <source id="5548354512157832012" name="ReplacementRuleReference" hash="cbw6snusjox43axb6tf88l8qix1skcr" />
+  <source id="3585736512129529703" name="CreateStrongGreaterThanInequationStatement" hash="3oah92sq07j6cbc5e3kn4zjeu5xc3kf" />
+  <source id="4315056782306262711" name="AbstractComparableStatement" hash="89okua81ki9268uhgaewfhut2t20ry8" />
+  <source id="838715195501404652" name="OrStatement" hash="-1sf8015v1bg3bwunbux14uv4ebapfuz" />
+  <source id="7739208407757103780" name="InequalityProperty" hash="33wl4k4vaszdm4qvaut3nnelsfwnzr9">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="InequalityProperty.java" />
+    <file name="InequalityProperty_PropertySupport.java" />
+  </source>
+  <source id="534601184072080872" name="PrintToTrace" hash="-aao8z0carfpp6ho2e2pht86ubsk2lfm" />
+  <source id="3148295837107269752" name="MessageStatementAnnotation" hash="2qr0f97s2ury13jus675wdc7hn5lau9" />
+  <source id="7992060018732187438" name="ReportErrorStatementAnnotation" hash="duvv5578jkmplrsx5owisgk7q0xffus" />
+  <source id="7992060018732187441" name="InfoStatementAnnotation" hash="e737k63qikhgjit8turivft9v9d3fqh" />
+  <source id="7992060018732187444" name="WarningStatementAnnotation" hash="-7dxaww58v3nd1dsiqjniq3k3zd6ozz6" />
+</dependencies>
 
