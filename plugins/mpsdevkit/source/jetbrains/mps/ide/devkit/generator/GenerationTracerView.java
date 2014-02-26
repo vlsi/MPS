@@ -21,17 +21,25 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.util.Map;
 
 /**
  * Tree of trace elements and an action bar
@@ -85,6 +93,17 @@ final class GenerationTracerView {
     return myViewToken == kind && myRootTracerNode.matches(node);
   }
 
+  @Nullable
+  ActionGroup getTraceActionGroup(TraceNodeUI selected) {
+    if (selected.getNavigateTarget() == null) {
+      return null;
+    }
+    if (selected.hasPrevStep() || selected.hasNextStep()) {
+      return ModelAccess.instance().runReadAction(new NodeActionGroup(selected));
+    }
+    return null;
+  }
+
   boolean isForwardTraceView() {
     return myViewToken == Kind.TraceForward;
   }
@@ -101,5 +120,74 @@ final class GenerationTracerView {
 
   void setAutoscrollToSource(boolean b) {
     myTree.setAutoOpen(b);
+  }
+
+  private class NodeActionGroup implements Computable<ActionGroup> {
+    private final TraceNodeUI myTraceNode;
+
+    public NodeActionGroup(@NotNull TraceNodeUI nodeUI) {
+      myTraceNode = nodeUI;
+    }
+
+    public ActionGroup compute() {
+      assert myTraceNode.getNavigateTarget() != null;
+      DefaultActionGroup group = new DefaultActionGroup();
+      if (myTraceNode.hasPrevStep()) {
+        if (isBackwardTraceView()) {
+          group.add(new ShowTraceAction("Show Trace", myTraceNode.getNavigateTarget()));
+        }
+
+        group.add(new ShowTracebackAction("Show Prev Step Traceback", myTraceNode.getNavigateTarget()));
+      } else if (myTraceNode.hasNextStep()) {
+        if (isForwardTraceView()) {
+          group.add(new ShowTracebackAction("Show Traceback", myTraceNode.getNavigateTarget()));
+        }
+        group.add(new ShowTraceAction("Show Next Step Trace", myTraceNode.getNavigateTarget()));
+      }
+      //
+      return group;
+    }
+
+  }
+
+  private class ShowTraceAction extends BaseAction {
+    private final SNodeReference myNode;
+
+    ShowTraceAction(@NotNull String title, @NotNull SNodeReference node) {
+      super(title);
+      myNode = node;
+    }
+
+    @Override
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      getTool().showTraceInputData(myNode.resolve(MPSModuleRepository.getInstance()));
+    }
+
+    @Override
+    protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+      boolean enabled = myNode.resolve(MPSModuleRepository.getInstance()) != null && getTool().hasTraceInputData(myNode.getModelReference());
+      setEnabledState(e.getPresentation(), enabled);
+    }
+  }
+
+  private class ShowTracebackAction extends BaseAction {
+    @NotNull
+    private final SNodeReference myNode;
+
+    ShowTracebackAction(@NotNull String title, @NotNull SNodeReference node) {
+      super(title);
+      myNode = node;
+    }
+
+    @Override
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      getTool().showTracebackData(myNode.resolve(MPSModuleRepository.getInstance()));
+    }
+
+    @Override
+    protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+      boolean enabled = myNode.resolve(MPSModuleRepository.getInstance()) != null && getTool().hasTracebackData(myNode.getModelReference());
+      setEnabledState(e.getPresentation(), enabled);
+    }
   }
 }

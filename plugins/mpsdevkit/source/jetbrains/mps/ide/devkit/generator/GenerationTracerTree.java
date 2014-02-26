@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -27,13 +25,9 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-
-import java.util.Map;
 
 final class GenerationTracerTree extends MPSTree {
   private final GenerationTracerView myView;
@@ -74,17 +68,7 @@ final class GenerationTracerTree extends MPSTree {
     if (false == userObject instanceof TraceNodeUI) {
       return null;
     }
-    return getTracerActionGroup((TraceNodeUI) userObject);
-  }
-
-  ActionGroup getTracerActionGroup(TraceNodeUI selected) {
-    if (selected.getNavigateTarget() == null) {
-      return null;
-    }
-    if (selected.hasPrevStep() || selected.hasNextStep()) {
-      return ModelAccess.instance().runReadAction(new NodeActionGroup(selected));
-    }
-    return null;
+    return myView.getTraceActionGroup((TraceNodeUI) userObject);
   }
 
   // these actions runWriteInEDT even though they are purely read actions, is convention brought by MPS-15256 - NavigationSupport expects write lock
@@ -99,10 +83,6 @@ final class GenerationTracerTree extends MPSTree {
   protected void doubleClick(@NotNull MPSTreeNode node) {
     TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
     ModelAccess.instance().runWriteInEDT(new Navigate(ProjectHelper.toMPSProject(myProject), traceNode.getNavigateTarget()));
-  }
-
-  GenerationTracerViewTool getViewTool() {
-    return myView.getTool();
   }
 
   private static final class Navigate implements Runnable {
@@ -127,76 +107,5 @@ final class GenerationTracerTree extends MPSTree {
       // do not select top-level nodes - don't know the reason, but this is the way it used to be
       NavigationSupport.getInstance().openNode(context, node, true, node.getModel() == null || node.getParent() != null);
     }
-  }
-
-
-  private class NodeActionGroup implements Computable<ActionGroup> {
-    private final TraceNodeUI myTraceNode;
-
-    public NodeActionGroup(@NotNull TraceNodeUI nodeUI) {
-      myTraceNode = nodeUI;
-    }
-
-    public ActionGroup compute() {
-      assert myTraceNode.getNavigateTarget() != null;
-      DefaultActionGroup group = new DefaultActionGroup();
-      if (myTraceNode.hasPrevStep()) {
-        if (myView.isBackwardTraceView()) {
-          group.add(new ShowTraceAction("Show Trace", myTraceNode.getNavigateTarget()));
-        }
-
-        group.add(new ShowTracebackAction("Show Prev Step Traceback", myTraceNode.getNavigateTarget()));
-      } else if (myTraceNode.hasNextStep()) {
-        if (myView.isForwardTraceView()) {
-          group.add(new ShowTracebackAction("Show Traceback", myTraceNode.getNavigateTarget()));
-        }
-        group.add(new ShowTraceAction("Show Next Step Trace", myTraceNode.getNavigateTarget()));
-      }
-      //
-      return group;
-    }
-
-  }
-
-  private class ShowTraceAction extends BaseAction {
-    private final SNodeReference myNode;
-
-    ShowTraceAction(@NotNull String title, @NotNull SNodeReference node) {
-      super(title);
-      myNode = node;
-    }
-
-    @Override
-    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      getViewTool().showTraceInputData(myNode.resolve(MPSModuleRepository.getInstance()));
-    }
-
-    @Override
-    protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
-      boolean enabled = myNode.resolve(MPSModuleRepository.getInstance()) != null && getViewTool().hasTraceInputData(myNode.getModelReference());
-      setEnabledState(e.getPresentation(), enabled);
-    }
-  }
-
-  private class ShowTracebackAction extends BaseAction {
-    @NotNull
-    private final SNodeReference myNode;
-
-    ShowTracebackAction(@NotNull String title, @NotNull SNodeReference node) {
-      super(title);
-      myNode = node;
-    }
-
-    @Override
-    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      getViewTool().showTracebackData(myNode.resolve(MPSModuleRepository.getInstance()));
-    }
-
-    @Override
-    protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
-      boolean enabled = myNode.resolve(MPSModuleRepository.getInstance()) != null && getViewTool().hasTracebackData(myNode.getModelReference());
-      setEnabledState(e.getPresentation(), enabled);
-    }
-
   }
 }
