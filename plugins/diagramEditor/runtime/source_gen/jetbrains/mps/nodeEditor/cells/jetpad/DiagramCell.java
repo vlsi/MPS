@@ -55,6 +55,10 @@ import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.geometry.Vector;
+import java.util.ListIterator;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
@@ -437,6 +441,16 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   private void hideConnectionDragFeedback() {
     myConnectionSingleList.setItem(null);
+  }
+
+  protected void syncDiagramElements(Iterable<SNode> elements, ListIterator<SNode> blocksIterator, Set<SNode> existingBlocks, ListIterator<SNode> connectorsIterator, Set<SNode> existingConnectors) {
+    for (SNode nextElement : Sequence.fromIterable(elements)) {
+      EditorCell cell = getContext().createNodeCell(nextElement);
+      if (!(cell instanceof BlockCell) && !(cell instanceof ConnectorCell)) {
+        continue;
+      }
+      syncToNextNode((cell instanceof BlockCell ? blocksIterator : connectorsIterator), (cell instanceof BlockCell ? existingBlocks : existingConnectors), nextElement, cell);
+    }
   }
 
   private class ConnectionInfo {

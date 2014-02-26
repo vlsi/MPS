@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNode;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,6 +34,28 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
   private Set<Pair<SNodeReference, String>> myCleanlyReadAccessedProperties = new HashSet<Pair<SNodeReference, String>>();
 
   private static final Logger LOG = LogManager.getLogger(NodeReadAccessInEditorListener.class);
+
+  public NodeReadAccessInEditorListener() {
+  }
+
+  /**
+   * This constructor should be used while creating NodeReadAccessInEditorListener to track top-level EditorCell dependencies.
+   * In this case NodeReadAccessInEditorListener instance will include passed rootNode into the set myNodesToDependOn.
+   * Intention is to properly handle EditorCell dependencies and update in case root cell has no node-sensitive child cells, so
+   * read-access to the root node will not be recorded.
+   * <p/>
+   * For example, in case root node editor looks like:
+   * <p/>
+   * [- (- %children% -) -]
+   * <p/>
+   * then read access to each of the child nodes will e recorded, but root (parent) node will not be tracked and returned as one
+   * of myNodesToDependOn. That's because nodeChildReadAccess() is never called anymore.
+   *
+   * @param rootNode the node used to create root cell of the editor
+   */
+  public NodeReadAccessInEditorListener(SNode rootNode) {
+    myNodesToDependOn.add(rootNode);
+  }
 
   public Set<SNode> getNodesToDependOn() {
     return myNodesToDependOn;
@@ -94,7 +115,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
 
   @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-     addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(referent));
+    addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(referent));
   }
 
   public void addRefTargetToDependOn(SNodeReference target) {
@@ -114,7 +135,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
 
   @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-    nodeUnclassifiedReadAccess(node);
+    assert false : "should be never called";
   }
 
   @Override

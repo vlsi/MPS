@@ -10,6 +10,10 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
+import java.util.ListIterator;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
@@ -48,5 +52,41 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
   }
 
+  protected void syncPortNodes(Iterable<? extends SNode> ports, ListIterator<SNode> portsIterator, Set<SNode> existingPorts) {
+    for (SNode nextPort : Sequence.fromIterable(ports)) {
+      EditorCell portCell = getContext().createNodeCell(nextPort);
+      if (!(portCell instanceof PortCell)) {
+        continue;
+      }
+      syncToNextNode(portsIterator, existingPorts, nextPort, portCell);
+    }
+    purgeTailNodes(portsIterator);
+  }
 
+  protected void syncPortObjects(Iterable ports, ListIterator portsIterator, Set existingPorts) {
+    for (Object port : ports) {
+      if (existingPorts.contains(port)) {
+        syncToNextObject(portsIterator, existingPorts, port);
+      } else {
+        portsIterator.add(port);
+        existingPorts.add(port);
+      }
+    }
+    while (portsIterator.hasNext()) {
+      portsIterator.next();
+      portsIterator.remove();
+    }
+  }
+
+  private void syncToNextObject(ListIterator listIterator, Set elementsSet, Object next) {
+    while (listIterator.hasNext()) {
+      Object nextFromList = listIterator.next();
+      if (nextFromList == next) {
+        return;
+      }
+      listIterator.remove();
+      elementsSet.remove(nextFromList);
+    }
+    assert false : "Next element was not found in passed listIterator";
+  }
 }

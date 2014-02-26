@@ -103,29 +103,23 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     return null;
   }
 
-  protected void syncToNextObject(ListIterator listIterator, Set elementsSet, Object next) {
-    while (listIterator.hasNext()) {
-      Object nextFromList = listIterator.next();
-      if (nextFromList == next) {
-        return;
+  protected void syncToNextNode(ListIterator<SNode> nodesIterator, Set<SNode> existingNodes, SNode node, EditorCell cell) {
+    if (existingNodes.contains(node)) {
+      while (nodesIterator.hasNext()) {
+        SNode nextNode = nodesIterator.next();
+        if (nextNode == node) {
+          return;
+        }
+        nodesIterator.remove();
+        existingNodes.remove(nextNode);
+        removeCell((getDirectChildCell(nextNode)));
       }
-      listIterator.remove();
-      elementsSet.remove(nextFromList);
+      assert false : "Next element was not found in passed listIterator";
+    } else {
+      addEditorCell(cell);
+      nodesIterator.add(node);
+      existingNodes.add(node);
     }
-    assert false : "Next element was not found in passed listIterator";
-  }
-
-  protected void syncToNextNode(ListIterator<SNode> listIterator, Set<SNode> elementsSet, SNode nextNode) {
-    while (listIterator.hasNext()) {
-      SNode nextFromList = listIterator.next();
-      if (nextFromList == nextNode) {
-        return;
-      }
-      listIterator.remove();
-      elementsSet.remove(nextFromList);
-      removeCell((getDirectChildCell(nextFromList)));
-    }
-    assert false : "Next element was not found in passed listIterator";
   }
 
   protected void purgeTailNodes(ListIterator<SNode> listIterator) {
@@ -133,13 +127,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
       SNode nextFromList = listIterator.next();
       listIterator.remove();
       removeCell((getDirectChildCell(nextFromList)));
-    }
-  }
-
-  protected void purgeTailObject(ListIterator listIterator) {
-    while (listIterator.hasNext()) {
-      listIterator.next();
-      listIterator.remove();
     }
   }
 

@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.SynchronizedEditorCell;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -334,8 +335,9 @@ public class EditorManager {
 
       EditorComponent nodeEditorComponent = getEditorComponent(context);
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
+      EditorCell oldCell = null;
       if (modifications != null) {
-        EditorCell oldCell = myContextToOldCellMap.peek().get(refContext);
+        oldCell = myContextToOldCellMap.peek().get(refContext);
         boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell, context.getCellFactory().getCellContext());
 
         if (!nodeChanged) {
@@ -371,6 +373,9 @@ public class EditorManager {
         if (childContextToCellMap != null) {
           myContextToOldCellMap.push(childContextToCellMap);
         }
+        if (oldCell instanceof SynchronizedEditorCell) {
+          return syncEditorCell((SynchronizedEditorCell) oldCell, context, refContext);
+        }
         return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
       } finally {
         if (childContextToCellMap != null) {
@@ -400,6 +405,29 @@ public class EditorManager {
     return myCreatingInspectedCell;
   }
 
+  private EditorCell syncEditorCell(SynchronizedEditorCell editorCell, EditorContext context, ReferencedNodeContext refContext) {
+    pushTask(context, getMessage(context, refContext, "+"));
+    EditorCell result = null;
+    try {
+      final SNode node = refContext.getNode();
+      NodeReadAccessInEditorListener nodeAccessListener = refContext.isRoot() ? new NodeReadAccessInEditorListener(node) : new NodeReadAccessInEditorListener();
+      try {
+        NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
+        editorCell.synchronize();
+        result = editorCell;
+      } catch (Throwable e) {
+        LOG.error("Failed to synchronize cell for node " + SNodeUtil.getDebugText(node), e);
+        result = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+      } finally {
+        NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
+        addNodeDependenciesToEditor(result, nodeAccessListener, context);
+      }
+      return result;
+    } finally {
+      popTask(context);
+    }
+  }
+
   private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
     pushTask(context, getMessage(context, refContext, "+"));
     try {
@@ -410,7 +438,7 @@ public class EditorManager {
 
       EditorComponent editorComponent = getEditorComponent(context);
       EditorCell nodeCell = null;
-      NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
+      NodeReadAccessInEditorListener nodeAccessListener = refContext.isRoot() ? new NodeReadAccessInEditorListener(node) : new NodeReadAccessInEditorListener();
       try {
         //voodoo for editor incremental rebuild support
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
