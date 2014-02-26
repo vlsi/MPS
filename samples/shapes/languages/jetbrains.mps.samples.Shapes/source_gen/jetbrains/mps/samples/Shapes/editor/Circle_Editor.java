@@ -15,6 +15,16 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import java.awt.Color;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.samples.Shapes.behavior.ColorReference_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.awt.Graphics;
+import java.awt.Dimension;
 
 public class Circle_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,6 +43,7 @@ public class Circle_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zihja6_f0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_zihja6_g0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_zihja6_h0(editorContext, node));
+    editorCell.addEditorCell(this.createJComponent_zihja6_i0(editorContext, node));
     return editorCell;
   }
 
@@ -124,5 +135,51 @@ public class Circle_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_zihja6_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.Shapes.editor.ShapeColor");
     return editorCell;
+  }
+
+  private EditorCell createJComponent_zihja6_i0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Circle_Editor._QueryFunction_JComponent_zihja6_a8a(node, editorContext), "_zihja6_i0");
+    editorCell.setCellId("JComponent_zihja6_i0");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_zihja6_a8a(final SNode node, final EditorContext editorContext) {
+    return new JPanel() {
+      private Color foundColor = null;
+      private int radius = 0;
+
+
+      private void initialize() {
+        setOpaque(false);
+        SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            foundColor = ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(node, "color", true));
+            radius = SPropertyOperations.getInteger(node, "radius");
+          }
+        });
+      }
+
+
+
+      @Override
+      protected void paintComponent(final Graphics graphics) {
+        super.paintComponent(graphics);
+        initialize();
+        if (foundColor == null) {
+          return;
+        }
+
+        graphics.setColor(foundColor);
+        graphics.drawOval(10, 10, radius, radius);
+      }
+
+
+
+      @Override
+      public Dimension getPreferredSize() {
+        initialize();
+        return new Dimension(20 + radius, 20 + radius);
+      }
+    };
   }
 }
