@@ -19,16 +19,10 @@ import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.FacetsFacade;
-import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
@@ -37,14 +31,18 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -60,7 +58,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 // 2) change module
 // 3) load all unloaded classes
 // Make some doModuleChangeAction({ => }) method in ClassLoaderManager?
-// Main paint: modules && modules repository knows nothing about classloading
+// Main point: modules && modules repository knows nothing about class loading
 // Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
 // todo: move to workbench
 // todo: rewrite!
@@ -82,19 +80,7 @@ public class ClassLoaderManager implements CoreComponent {
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
 
-  private SRepositoryListener myRepositoryListener = new SRepositoryAdapter() {
-    @Override
-    public void beforeModuleRemoved(SModule module) {
-      unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
-    }
-
-    @Override
-    public void moduleAdded(SModule module) {
-      loadClasses(Arrays.asList(module), new EmptyProgressMonitor());
-    }
-
-    // todo: add listener on module reloaded! (?)
-  };
+  private SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
 
   // temporary stuff for profiling
   private Map<String, Long> actionToTime = new HashMap<String, Long>();
@@ -193,9 +179,10 @@ public class ClassLoaderManager implements CoreComponent {
       }
     }
 
-    if (module.getFacet(JavaModuleFacet.class) != null && !module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
+    JavaModuleFacet moduleFacet = module.getFacet(JavaModuleFacet.class);
+    if (moduleFacet != null && !moduleFacet.isCompileInMps()) {
       // core module
-      LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have nonreloadable facet");
+      LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
       return ClassLoaderManager.class.getClassLoader();
     }
     
@@ -436,11 +423,6 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   @Deprecated
-  public void updateClassPath() {
-    reloadAll(new EmptyProgressMonitor());
-  }
-
-  @Deprecated
   public void addReloadHandler(ReloadListener handler) {
     addClassesHandler(handler);
   }
@@ -449,4 +431,5 @@ public class ClassLoaderManager implements CoreComponent {
   public void removeReloadHandler(ReloadListener handler) {
     removeClassesHandler(handler);
   }
+
 }

@@ -92,7 +92,9 @@ public class SLanguageAdapter implements SLanguage {
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
-    for (Language language : SetSequence.fromSet(getSourceModule().getAllExtendedLanguages())) {
+    Language sourceModule = getSourceModule();
+    assert sourceModule != null;
+    for (Language language : SetSequence.fromSet(sourceModule.getAllExtendedLanguages())) {
       runtimes.addAll(language.getRuntimeModulesReferences());
     }
     return runtimes;

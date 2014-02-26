@@ -41,10 +41,15 @@ public class ModuleClassLoaderSupport {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
 
-    compileDependencies = new HashSet<SModule>();
+    compileDependencies = collectCompileDependencies(module);
+  }
+
+  private static Set<SModule> collectCompileDependencies(SModule module) {
+    Set<SModule> compileDependencies = new HashSet<SModule>();
     for (SModule dependency : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
       compileDependencies.add(dependency);
     }
+    return compileDependencies;
   }
 
   // ext point possible here
