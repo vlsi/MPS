@@ -31,6 +31,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
+    jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,6 +24,7 @@ import java.util.concurrent.ConcurrentMap;
  * Based on generated structure descriptors
  */
 public class ConceptDescendantsCache implements CoreComponent {
+  private static final org.apache.log4j.Logger LOGGER = LogManager.getLogger(ConceptDescendantsCache.class);
   private static ConceptDescendantsCache INSTANCE;
 
   private final MPSModuleRepository myModuleRepository;
@@ -131,6 +133,7 @@ public class ConceptDescendantsCache implements CoreComponent {
 
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
     SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_AbstractConceptDeclaration);
+    assert abstractConceptDeclaration != null;
     for (SNode root : structureModel.getRootNodes()) {
       if (root.getConcept().isSubConceptOf(abstractConceptDeclaration)) {
         ConceptDescriptor descriptor = structureDescriptor.getDescriptor(NameUtil.nodeFQName(root));
