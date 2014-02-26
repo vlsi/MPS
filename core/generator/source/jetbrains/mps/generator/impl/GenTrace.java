@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -23,7 +25,9 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,27 +70,46 @@ public class GenTrace {
       }
     }
 
-    // null if no input nodes found
-    public Element[] findByInputAncestors(SNode inputNode) {
+    public Collection<Element> getChangesWithInput(Iterable<SNodeId> inputs) {
       buildIndex();
-      Collection<Element> rv;
-      do {
-        rv = inputIndex.get(inputNode.getNodeId());
-        inputNode = inputNode.getParent();
-      } while (inputNode != null && rv == null);
-      return rv == null ? null : rv.toArray(new Element[rv.size()]);
+      return collectChanges(inputIndex, input, inputs);
     }
 
-    public Element[] findByOutputAncestors(SNode node) {
+    public Collection<Element> getChangesWithOutput(Iterable<SNodeId> outputs) {
       buildIndex();
+      return collectChanges(outputIndex, output, outputs);
+    }
+
+    private static Collection<Element> collectChanges(Map<SNodeId, Collection<Element>> index, SModelReference model, Iterable<SNodeId> nodes) {
+      final MPSModuleRepository modelRepository = MPSModuleRepository.getInstance();
+      final ArrayList<Element> rv = new ArrayList<Element>();
+      for (SNodeId nid : nodes) {
+        Collection<Element> changes = index.get(nid);
+        if (changes == null || changes.isEmpty()) {
+          SNode in = new SNodePointer(model, nid).resolve(modelRepository);
+          if (in == null) {
+            continue;
+          }
+          changes = findByAncestor(index, in);
+        }
+        rv.addAll(changes);
+      }
+      return rv.isEmpty() ? Collections.<Element>emptyList() : rv;
+    }
+
+    private static Collection<Element> findByAncestor(Map<SNodeId, Collection<Element>> index, SNode node) {
       Collection<Element> rv;
       do {
-        rv = outputIndex.get(node.getNodeId());
+        rv = index.get(node.getNodeId());
         node = node.getParent();
       } while (node != null && rv == null);
-      return rv == null ? null : rv.toArray(new Element[rv.size()]);
+      return rv == null ? Collections.<Element>emptyList() : rv;
     }
+
     private void buildIndex() {
+      if (inputIndex != null && outputIndex != null) {
+        return;
+      }
       HashMap<SNodeId, Collection<Element>> index1 = new HashMap<SNodeId, Collection<Element>>();
       HashMap<SNodeId, Collection<Element>> index2 = new HashMap<SNodeId, Collection<Element>>();
       for (Element e : myTrace) {
