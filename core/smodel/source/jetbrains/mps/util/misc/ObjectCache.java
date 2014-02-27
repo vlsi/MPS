@@ -22,6 +22,11 @@ import java.util.EventListener;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * This class is scheduled for removal in next release
+ * @deprecated There's hardly anything this class could do what regular java collections could not.
+ */
+@Deprecated
 public final class ObjectCache<K, V> {
 
 
