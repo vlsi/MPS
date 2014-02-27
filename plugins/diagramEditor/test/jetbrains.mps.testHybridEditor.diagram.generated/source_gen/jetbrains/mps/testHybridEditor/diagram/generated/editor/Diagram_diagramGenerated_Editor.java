@@ -106,13 +106,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, final SNode node) {
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
-    wrappingCollection.setSelectable(false);
-    final DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_c0(editorContext, node);
+  private EditorCell createDiagram_tb7paq_c0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_c0(editorContext, node);
     editorCell.setCellId("Diagram_tb7paq_c0");
-    wrappingCollection.addEditorCell(editorCell);
-    return wrappingCollection;
+    return editorCell;
   }
 
   private class DiagramCellImpl_tb7paq_c0 extends DiagramCell {
@@ -208,13 +205,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, final SNode node) {
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
-    wrappingCollection.setSelectable(false);
-    final DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0(editorContext, node);
+  private EditorCell createDiagram_tb7paq_e0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0(editorContext, node);
     editorCell.setCellId("Diagram_tb7paq_e0");
-    wrappingCollection.addEditorCell(editorCell);
-    return wrappingCollection;
+    return editorCell;
   }
 
   private class DiagramCellImpl_tb7paq_e0 extends DiagramCell {
