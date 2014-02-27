@@ -146,7 +146,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly();
+    return !isDoNotGenerate();
   }
 
   @Override

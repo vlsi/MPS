@@ -133,7 +133,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly();
+    return !isDoNotGenerate();
   }
 
   @Override

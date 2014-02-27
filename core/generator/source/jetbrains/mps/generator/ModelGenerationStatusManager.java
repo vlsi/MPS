@@ -80,6 +80,9 @@ public class ModelGenerationStatusManager implements CoreComponent {
   }
 
   public boolean generationRequired(SModel md) {
+    if (md.isReadOnly()) {
+      return false;
+    }
     if (!(md instanceof GeneratableSModel)) return false;
     GeneratableSModel sm = (GeneratableSModel) md;
     if (!sm.isGeneratable()) return false;
