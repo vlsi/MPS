@@ -63,7 +63,7 @@ import java.util.Stack;
 public class EditorManager {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorManager.class));
 
-  public static final String BIG_CELL_CONTEXT = "big-cell-context";
+  private static final String BIG_CELL_CONTEXT = "big-cell-context";
 
   public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "st-hint-anchor-cell-id";
   public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
@@ -402,7 +402,7 @@ public class EditorManager {
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
         if (!isAttributedCell(editorCell)) {
-          removeSideTransformHintCell(editorCell);
+          editorCell = removeSideTransformHintCell(editorCell);
         }
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
         editorCell.synchronize();
@@ -417,6 +417,10 @@ public class EditorManager {
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         addNodeDependenciesToEditor(result, nodeAccessListener, context);
+        if (!isAttributedCell(result)) {
+          result.putUserObject(BIG_CELL_CONTEXT, refContext);
+          getEditorComponent(context).registerAsBigCell(result, this);
+        }
       }
       return result;
     } finally {
