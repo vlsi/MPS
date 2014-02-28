@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,72 +15,40 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
-import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 public abstract class TreeNodeVisitor {
-  private static ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 2, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
-  protected static final TreeNodeUpdater ourUpdater = new TreeNodeUpdater();
-
-  public final void visitNode(final MPSTreeNode node) {
+  // We can't (or don't want to, no idea) alter MPSTreeNode to perform dispatch
+  // (as regular visitor pattern would require us to do).
+  // So, we mimic dispatching through MPSTreeNode here
+  public void dispatch(MPSTreeNode node) {
     if (!(node instanceof SModelTreeNode || node instanceof ProjectModuleTreeNode || node instanceof ProjectTreeNode)) {
       return;
     }
-    myExecutor.execute(new Runnable() {
-      @Override
-      public void run() {
-        boolean disposed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          @Override
-          public Boolean compute() {
-            return !TreeNodeUpdater.checkDisposed(node);
-          }
-        });
-        if (disposed) return;
+    doDispatch(node);
+  }
 
-        Project project = ProjectHelper.toIdeaProject(node.getOperationContext().getProject());
-        if (project != null) {
-          DumbService.getInstance(project).waitForSmartMode();
-        }
-
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            if (node instanceof SModelTreeNode) {
-              visitModelNode(((SModelTreeNode) node));
-            }
-            if (node instanceof ProjectModuleTreeNode) {
-              visitModuleNode(((ProjectModuleTreeNode) node));
-            }
-            if (node instanceof ProjectTreeNode) {
-              visitProjectNode(((ProjectTreeNode) node));
-            }
-          }
-        });
-      }
-    });
+  protected void doDispatch(MPSTreeNode node) {
+    if (node instanceof SModelTreeNode) {
+      visitModelNode(((SModelTreeNode) node));
+    }
+    if (node instanceof ProjectModuleTreeNode) {
+      visitModuleNode(((ProjectModuleTreeNode) node));
+    }
+    if (node instanceof ProjectTreeNode) {
+      visitProjectNode(((ProjectTreeNode) node));
+    }
   }
 
   protected void visitModelNode(SModelTreeNode node) {
-
   }
 
   protected void visitModuleNode(ProjectModuleTreeNode node) {
-
   }
 
   protected void visitProjectNode(ProjectTreeNode node) {
-
   }
 }

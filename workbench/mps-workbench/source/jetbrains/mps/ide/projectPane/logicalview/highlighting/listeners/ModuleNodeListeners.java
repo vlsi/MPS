@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,37 +15,78 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ListenersFactory.NodeListeners;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
-import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeUpdateVisitor;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
-public class ModuleNodeListeners implements NodeListeners {
-  private ProjectModuleTreeNode myNode;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.Semaphore;
 
-  private ProjectPaneTreeErrorChecker myChecker = new ProjectPaneTreeErrorChecker();
-  private MyReloadAdapter myHandler = new MyReloadAdapter();
+/**
+ * Control listeners that track changes to module node.
+ * Use {@link #startListening()}/{@link #startListening()} to turn change tracking on and off.
+ * Use {@link #attach(jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode)} and {@link #detach(jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode)}
+ * to include/exclude given node from update.
+ */
+public final class ModuleNodeListeners {
+  private final List<ProjectModuleTreeNode> myNodes = new ArrayList<ProjectModuleTreeNode>();
+  private final Semaphore myListAccess;
+  private final TreeUpdateVisitor myChecker;
+  private final MyReloadAdapter myHandler = new MyReloadAdapter();
 
-  public ModuleNodeListeners(ProjectModuleTreeNode node) {
-    myNode = node;
+  public ModuleNodeListeners(@NotNull TreeUpdateVisitor errorChecker) {
+    myChecker = errorChecker;
+    myListAccess = new Semaphore(1);
   }
 
-  @Override
   public void startListening() {
-    myChecker.visitNode(myNode);
-    ClassLoaderManager.getInstance().addReloadHandler(myHandler);
+    ClassLoaderManager.getInstance().addClassesHandler(myHandler);
   }
 
-  @Override
   public void stopListening() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+    ClassLoaderManager.getInstance().removeClassesHandler(myHandler);
   }
 
-  private class MyReloadAdapter extends ReloadAdapter {
+  public void attach(@NotNull ProjectModuleTreeNode node) {
+    myListAccess.acquireUninterruptibly();
+    try {
+      myNodes.add(node);
+    } finally {
+      myListAccess.release();
+    }
+    myChecker.dispatch(node);
+  }
+
+  public void detach(@NotNull ProjectModuleTreeNode node) {
+    myListAccess.acquireUninterruptibly();
+    try {
+      myNodes.remove(node);
+    } finally {
+      myListAccess.release();
+    }
+  }
+
+  void refreshTreeNodes() {
+    List<ProjectModuleTreeNode> a = Collections.emptyList();
+    myListAccess.acquireUninterruptibly();
+    try {
+      a = new ArrayList<ProjectModuleTreeNode>(myNodes);
+    } finally {
+      myListAccess.release();
+    }
+    myChecker.dispatchAll(a);
+  }
+
+  private class MyReloadAdapter extends MPSClassesListenerAdapter {
     @Override
-    public void onAfterReload() {
-      myChecker.visitNode(myNode);
+    public void afterClassesLoaded(Set<SModule> loadedModules) {
+      refreshTreeNodes();
     }
   }
 }
