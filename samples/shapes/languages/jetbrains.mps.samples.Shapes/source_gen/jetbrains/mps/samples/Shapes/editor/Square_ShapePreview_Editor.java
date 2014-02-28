@@ -22,8 +22,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.samples.Shapes.behavior.ColorReference_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.awt.Dimension;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -162,9 +160,7 @@ public class Square_ShapePreview_Editor extends DefaultNodeEditor {
         super.paintComponent(graphics);
         SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            if (ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(node, "color", true)) != null) {
-              BehaviorReflection.invokeVirtual(Void.class, node, "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, 10, 10});
-            }
+            BehaviorReflection.invokeVirtual(Void.class, node, "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, 10, 10});
           }
         });
       }
