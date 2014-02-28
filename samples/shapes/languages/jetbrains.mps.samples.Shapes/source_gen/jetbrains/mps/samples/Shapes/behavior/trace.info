@@ -2,10 +2,10 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="Canvas_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor" />
-  <unitInfo fileName="Circle_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" />
+  <unitInfo fileName="Circle_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" />
   <unitInfo fileName="ColorReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" />
-  <unitInfo fileName="Shape_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
-  <unitInfo fileName="Square_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" />
+  <unitInfo fileName="Shape_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
+  <unitInfo fileName="Square_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" />
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535528661">
     <nodeInfo nodeId="4001135958236502590" fileName="Canvas_Behavior.java" startLine="25" startPosition="39" endLine="26" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1082824515535776993" fileName="Canvas_Behavior.java" startLine="33" startPosition="73" endLine="34" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -76,16 +76,25 @@
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535573728">
     <nodeInfo nodeId="1082824515535632139" fileName="Shape_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="21" startPosition="92" endLine="22" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958238384576" fileName="Shape_Behavior.java" startLine="20" startPosition="111" endLine="21" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="25" startPosition="92" endLine="26" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="30" startPosition="125" endLine="31" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="35" startPosition="108" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="40" startPosition="141" endLine="41" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_interpret_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_interpret_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_interpret_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_drawShape_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_drawShapeAt_4001135958238383544#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;II)V" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_drawShape_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_drawShape_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_drawShapeAt_4001135958238383544#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;II)V" />
+    <nodeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_drawShapeAt_4001135958238383544#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/awt/Graphics;II)V" />
     <scopeInfo nodeId="1082824515535573730" fileName="Shape_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1082824515535573734" fileName="Shape_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="134" />
-    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="21" startPosition="92" endLine="22" endPosition="124" />
-    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="266" />
+    <scopeInfo nodeId="4001135958238383547" fileName="Shape_Behavior.java" startLine="20" startPosition="111" endLine="21" endPosition="134" />
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="25" startPosition="92" endLine="26" endPosition="124" />
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="30" startPosition="125" endLine="31" endPosition="266" />
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="35" startPosition="108" endLine="36" endPosition="132" />
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="40" startPosition="141" endLine="41" endPosition="302" />
     <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1082824515535573728" varName="thisNode" />
     </scopeInfo>
@@ -93,48 +102,87 @@
       <varInfo nodeId="1082824515535573743" varName="graphics" />
       <varInfo nodeId="1082824515535573728" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4001135958238383660" varName="graphics" />
+      <varInfo nodeId="1082824515535573728" varName="thisNode" />
+      <varInfo nodeId="4001135958238383627" varName="x" />
+      <varInfo nodeId="4001135958238383639" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1082824515535573743" varName="graphics" />
       <varInfo nodeId="1082824515535573728" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1082824515535573728" varName="callerConceptFqName" />
       <varInfo nodeId="1082824515535573743" varName="graphics" />
       <varInfo nodeId="1082824515535573728" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Shape_Behavior" />
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="4001135958238383660" varName="graphics" />
+      <varInfo nodeId="1082824515535573728" varName="thisNode" />
+      <varInfo nodeId="4001135958238383627" varName="x" />
+      <varInfo nodeId="4001135958238383639" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1082824515535573728" varName="callerConceptFqName" />
+      <varInfo nodeId="4001135958238383660" varName="graphics" />
+      <varInfo nodeId="1082824515535573728" varName="thisNode" />
+      <varInfo nodeId="4001135958238383627" varName="x" />
+      <varInfo nodeId="4001135958238383639" varName="y" />
+    </scopeInfo>
+    <unitInfo nodeId="1082824515535573728" fileName="Shape_Behavior.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Shape_Behavior" />
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535622258">
     <nodeInfo nodeId="1082824515535649750" fileName="Circle_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1082824515535626253" fileName="Circle_Behavior.java" startLine="15" startPosition="170" endLine="16" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958238385808" fileName="Circle_Behavior.java" startLine="19" startPosition="111" endLine="20" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958238386897" fileName="Circle_Behavior.java" startLine="20" startPosition="178" endLine="21" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_interpret_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_drawShape_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_drawShapeAt_4001135958238383544#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;II)V" />
     <scopeInfo nodeId="1082824515535622260" fileName="Circle_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1082824515535622258" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1082824515535622267" fileName="Circle_Behavior.java" startLine="14" startPosition="95" endLine="16" endPosition="220" />
+    <scopeInfo nodeId="4001135958238385794" fileName="Circle_Behavior.java" startLine="19" startPosition="111" endLine="21" endPosition="132" />
     <scopeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1082824515535622268" varName="graphics" />
       <varInfo nodeId="1082824515535622258" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Circle_Behavior" />
+    <scopeInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4001135958238385795" varName="graphics" />
+      <varInfo nodeId="1082824515535622258" varName="thisNode" />
+      <varInfo nodeId="4001135958238385797" varName="x" />
+      <varInfo nodeId="4001135958238385799" varName="y" />
+    </scopeInfo>
+    <unitInfo nodeId="1082824515535622258" fileName="Circle_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Circle_Behavior" />
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535631875">
     <nodeInfo nodeId="1082824515535644514" fileName="Square_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1082824515535637451" fileName="Square_Behavior.java" startLine="15" startPosition="170" endLine="16" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958238660835" fileName="Square_Behavior.java" startLine="19" startPosition="111" endLine="20" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958238661281" fileName="Square_Behavior.java" startLine="20" startPosition="178" endLine="21" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_interpret_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_drawShape_1082824515535573731#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_drawShapeAt_4001135958238383544#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;II)V" />
     <scopeInfo nodeId="1082824515535631877" fileName="Square_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1082824515535631875" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1082824515535631884" fileName="Square_Behavior.java" startLine="14" startPosition="95" endLine="16" endPosition="234" />
+    <scopeInfo nodeId="4001135958238660821" fileName="Square_Behavior.java" startLine="19" startPosition="111" endLine="21" endPosition="128" />
     <scopeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1082824515535631885" varName="graphics" />
       <varInfo nodeId="1082824515535631875" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Square_Behavior" />
+    <scopeInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4001135958238660822" varName="graphics" />
+      <varInfo nodeId="1082824515535631875" varName="thisNode" />
+      <varInfo nodeId="4001135958238660824" varName="x" />
+      <varInfo nodeId="4001135958238660826" varName="y" />
+    </scopeInfo>
+    <unitInfo nodeId="1082824515535631875" fileName="Square_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Square_Behavior" />
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/2097561739636354491">
     <nodeInfo nodeId="2097561739636356813" fileName="ColorReference_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

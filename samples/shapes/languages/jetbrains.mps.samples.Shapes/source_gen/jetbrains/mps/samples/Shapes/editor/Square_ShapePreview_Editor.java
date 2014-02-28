@@ -20,13 +20,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import java.awt.Color;
+import java.awt.Graphics;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.samples.Shapes.behavior.ColorReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.awt.Graphics;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.awt.Dimension;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Square_ShapePreview_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"});
@@ -154,16 +154,17 @@ public class Square_ShapePreview_Editor extends DefaultNodeEditor {
 
   private static JComponent _QueryFunction_JComponent_ukdplt_a8a(final SNode node, final EditorContext editorContext) {
     return new JPanel() {
-      private Color foundColor = null;
-      private int size = 0;
 
 
-      private void initialize() {
+      @Override
+      protected void paintComponent(final Graphics graphics) {
         setOpaque(false);
+        super.paintComponent(graphics);
         SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            foundColor = ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(node, "color", true));
-            size = SPropertyOperations.getInteger(node, "size");
+            if (ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(node, "color", true)) != null) {
+              BehaviorReflection.invokeVirtual(Void.class, node, "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, 10, 10});
+            }
           }
         });
       }
@@ -171,23 +172,8 @@ public class Square_ShapePreview_Editor extends DefaultNodeEditor {
 
 
       @Override
-      protected void paintComponent(final Graphics graphics) {
-        super.paintComponent(graphics);
-        initialize();
-        if (foundColor == null) {
-          return;
-        }
-
-        graphics.setColor(foundColor);
-        graphics.drawRect(10, 10, size, size);
-      }
-
-
-
-      @Override
       public Dimension getPreferredSize() {
-        initialize();
-        return new Dimension(20 + size, 20 + size);
+        return new Dimension(20 + SPropertyOperations.getInteger(node, "size"), 20 + SPropertyOperations.getInteger(node, "size"));
       }
     };
   }

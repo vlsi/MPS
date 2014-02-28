@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1bj0cfkh5obz7b2dpqcm3rgqkxnzk25">
+<dependencies version="2" modelHash="-45emd86i9w46wwkw6pzxf4av21ejcoq">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="r:7167ea39-4474-4333-92a9-38da0777e4f4(jetbrains.mps.samples.Shapes.generator.template.main@generator)" hash="3rnz5oamb4cbxkxxfawooit9pl8v90e" />
   <common hash="do7wzzzo9yddwuxnxlgpq0czybz8y2j" dependsOnNodes="true" />
-  <source id="5898776707557509373" name="MyDrawing" hash="awd1i9rdumgkvih0e7l649z5nyrmugz">
+  <source id="5898776707557509373" name="MyDrawing" hash="-afgv83zgc5d05792ha8dwo8zewudjot">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:7167ea39-4474-4333-92a9-38da0777e4f4(jetbrains.mps.samples.Shapes.generator.template.main@generator)" />
     <file name="MyDrawing.java" />

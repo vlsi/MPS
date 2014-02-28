@@ -11,8 +11,13 @@ public class Circle_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_interpret_1082824515535573731(SNode thisNode, Graphics graphics) {
-    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_interpret_1082824515535573731", new Object[]{graphics});
+  public static void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_drawShape_1082824515535573731", new Object[]{graphics});
     graphics.drawOval(SPropertyOperations.getInteger(thisNode, "x"), SPropertyOperations.getInteger(thisNode, "y"), SPropertyOperations.getInteger(thisNode, "radius"), SPropertyOperations.getInteger(thisNode, "radius"));
+  }
+
+  public static void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, x, y});
+    graphics.drawOval(x, y, SPropertyOperations.getInteger(thisNode, "radius"), SPropertyOperations.getInteger(thisNode, "radius"));
   }
 }

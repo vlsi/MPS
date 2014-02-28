@@ -23,7 +23,7 @@ public class Canvas_Behavior {
       public void run() {
         ListSequence.fromList(SLinkOperations.getTargets(thisCanvas, "shapes", true)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            BehaviorReflection.invokeVirtual(Void.class, it, "virtual_interpret_1082824515535573731", new Object[]{graphics});
+            BehaviorReflection.invokeVirtual(Void.class, it, "virtual_drawShape_1082824515535573731", new Object[]{graphics});
           }
         });
       }
@@ -41,7 +41,7 @@ public class Canvas_Behavior {
           public void run() {
             ListSequence.fromList(SLinkOperations.getTargets(thisCanvas, "shapes", true)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
-                BehaviorReflection.invokeVirtual(Void.class, it, "virtual_interpret_1082824515535573731", new Object[]{graphics});
+                BehaviorReflection.invokeVirtual(Void.class, it, "virtual_drawShape_1082824515535573731", new Object[]{graphics});
               }
             });
           }
