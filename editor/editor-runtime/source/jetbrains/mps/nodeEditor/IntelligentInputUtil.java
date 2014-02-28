@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.sidetransform.STHintPropertyUtil;
 import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -129,10 +130,10 @@ public class IntelligentInputUtil {
         }
       }
     } else if (info.getMatchingActions(pattern, false).isEmpty() &&
-      info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
-      nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
+        info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
+        nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
-      SNodeEditorUtil.removeRightTransformHint(cell.getSNode());
+      STHintPropertyUtil.removeTransformHints(cell.getSNode());
 
       EditorCell_Label label = (EditorCell_Label) nextCell;
       label.changeText(pattern);

@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -73,6 +74,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
       if (editor != null) {
         result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+        assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by " + editor.getClass().getName() + " ConceptEditor.";
       }
     } catch (RuntimeException e) {
       LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
@@ -85,6 +87,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     if (result == null) {
       ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : new DefaultEditor();
       result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+      assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
 
     result.setCellContext(getCellContext());
@@ -189,12 +192,16 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     @Override
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return new EditorCell_Error(context, node, "    ");
+      EditorCell_Error editorCell = new EditorCell_Error(context, node, "    ");
+      editorCell.setBig(true);
+      return editorCell;
     }
 
     @Override
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
-      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
+      EditorCell_Constant editorCell = new EditorCell_Constant(context, node, SNodeOperations.getDebugText(node));
+      editorCell.setBig(true);
+      return editorCell;
     }
   }
 
