@@ -35,28 +35,6 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
 
   private static final Logger LOG = LogManager.getLogger(NodeReadAccessInEditorListener.class);
 
-  public NodeReadAccessInEditorListener() {
-  }
-
-  /**
-   * This constructor should be used while creating NodeReadAccessInEditorListener to track top-level EditorCell dependencies.
-   * In this case NodeReadAccessInEditorListener instance will include passed rootNode into the set myNodesToDependOn.
-   * Intention is to properly handle EditorCell dependencies and update in case root cell has no node-sensitive child cells, so
-   * read-access to the root node will not be recorded.
-   * <p/>
-   * For example, in case root node editor looks like:
-   * <p/>
-   * [- (- %children% -) -]
-   * <p/>
-   * then read access to each of the child nodes will e recorded, but root (parent) node will not be tracked and returned as one
-   * of myNodesToDependOn. That's because nodeChildReadAccess() is never called anymore.
-   *
-   * @param rootNode the node used to create root cell of the editor
-   */
-  public NodeReadAccessInEditorListener(SNode rootNode) {
-    myNodesToDependOn.add(rootNode);
-  }
-
   public Set<SNode> getNodesToDependOn() {
     return myNodesToDependOn;
   }

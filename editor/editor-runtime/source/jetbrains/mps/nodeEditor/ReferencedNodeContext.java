@@ -25,7 +25,6 @@ public class ReferencedNodeContext {
   private SNode myNode = null;
   private Stack<String> myContextRoles = null;
   private boolean myIsNodeAttribute = false;
-  private boolean myIsRoot = true;
 
   private ReferencedNodeContext(SNode node) {
     assert node != null;
@@ -34,7 +33,6 @@ public class ReferencedNodeContext {
 
   private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
     this(node);
-    myIsRoot = false;
     if (prototype.myContextRoles != null) {
       myContextRoles = new Stack<String>();
       myContextRoles.addAll(prototype.myContextRoles);
@@ -90,10 +88,6 @@ public class ReferencedNodeContext {
       myContextRefererNodes = new Stack<SNode>();
     }
     myContextRefererNodes.push(contextRefererNode);
-  }
-
-  public boolean isRoot() {
-    return myIsRoot;
   }
 
   public int hashCode() {
