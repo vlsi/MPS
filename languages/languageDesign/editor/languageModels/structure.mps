@@ -155,6 +155,9 @@
       <property name="name" nameId="tpck.1169194664001" value="usesFolding" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759946545" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389577006" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -173,6 +176,9 @@
       <property name="name" nameId="tpck.1169194664001" value="nullText" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759943145" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389658414" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -187,6 +193,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759955240" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389882823" nodeInfo="ig">
@@ -3596,6 +3605,10 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137422349" resolveInfo="StylePriorityGroupReference" />
     </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8770580973047386957" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="Synchronizeable" />
   </root>
 </model>
 

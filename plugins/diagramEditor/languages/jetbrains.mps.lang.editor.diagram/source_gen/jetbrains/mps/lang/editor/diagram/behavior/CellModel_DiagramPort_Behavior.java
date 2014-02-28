@@ -4,16 +4,8 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellModel_DiagramNode_Behavior {
+public class CellModel_DiagramPort_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return "{";
-  }
-
-  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    return "}";
   }
 
   public static boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {

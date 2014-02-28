@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.SynchronizedEditorCell" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadEditor" file="AbstractJetpadEditor.java">
     <classNode dependClassName="java.lang.String" />

@@ -4,8 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellModel_Collection_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
+public class CellModel_Collection_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements Synchronizeable_BehaviorDescriptor {
   public CellModel_Collection_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
+    return CellModel_Collection_Behavior.virtual_canBeSynchronized_4052492221165595783(thisNode);
   }
 
   public String virtual_getClosingText_1220339738643(SNode thisNode) {

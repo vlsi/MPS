@@ -56,6 +56,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createCollection_tb7paq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_tb7paq_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tb7paq_a0(editorContext, node));
@@ -68,6 +69,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createCollection_tb7paq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_tb7paq_a0");
     editorCell.addEditorCell(this.createConstant_tb7paq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tb7paq_b0a(editorContext, node));

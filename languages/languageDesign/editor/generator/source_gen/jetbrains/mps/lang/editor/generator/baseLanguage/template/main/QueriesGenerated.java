@@ -1172,6 +1172,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "inspectedCellModel", true) != null;
   }
 
+  public static boolean ifMacro_Condition_4033442785759270479(final IfMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_canBeSynchronized_4052492221165595783", new Object[]{});
+  }
+
   public static boolean ifMacro_Condition_6577030305815218822(final IfMacroContext _context) {
     return CellModel_Collection_Behavior.call_isVerticalGrid_1239872947848(_context.getNode());
   }

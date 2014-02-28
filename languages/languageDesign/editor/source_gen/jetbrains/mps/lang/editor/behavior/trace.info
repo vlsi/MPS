@@ -80,9 +80,9 @@
   <unitInfo fileName="CellModel_BlockEnd_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_BlockEnd_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_BlockStart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_BlockStart_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Block_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Block_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Collection_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_Collection_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Component_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Component_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Constant_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Constant_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_Constant_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Constant_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Custom_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Custom_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Empty_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Empty_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Error_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Error_BehaviorDescriptor" />
@@ -92,7 +92,7 @@
   <unitInfo fileName="CellModel_ListWithRole_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_ModelAccess_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ModelAccess_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_NonEmptyProperty_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_NonEmptyProperty_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Property_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Property_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_Property_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Property_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_ReadOnlyModelAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ReadOnlyModelAccessor_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_RefCell_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_RefCell_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_RefNodeList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_BehaviorDescriptor" />
@@ -215,6 +215,7 @@
   <unitInfo fileName="StyleSheetClass_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheetClass_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheet_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheet_BehaviorDescriptor" />
   <unitInfo fileName="StyledTextType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyledTextType_BehaviorDescriptor" />
+  <unitInfo fileName="Synchronizeable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.Synchronizeable_BehaviorDescriptor" />
   <unitInfo fileName="TableComponentStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.TableComponentStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="TextBackgroundColorStyleClassItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.TextBackgroundColorStyleClassItem_BehaviorDescriptor" />
@@ -398,16 +399,19 @@
     <nodeInfo nodeId="7210141041756816678" fileName="CellModel_Property_Behavior.java" startLine="18" startPosition="85" endLine="19" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220339957462" fileName="CellModel_Property_Behavior.java" startLine="22" startPosition="77" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220339968253" fileName="CellModel_Property_Behavior.java" startLine="26" startPosition="77" endLine="27" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165693116" fileName="CellModel_Property_Behavior.java" startLine="30" startPosition="87" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRoleForCell_1216377898846#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDefaultCellId_4539255030934103845#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1213877309983" fileName="CellModel_Property_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1216377943399" fileName="CellModel_Property_Behavior.java" startLine="14" startPosition="77" endLine="15" endPosition="116" />
     <scopeInfo nodeId="1216812350987" fileName="CellModel_Property_Behavior.java" startLine="18" startPosition="85" endLine="19" endPosition="148" />
     <scopeInfo nodeId="1220339953020" fileName="CellModel_Property_Behavior.java" startLine="22" startPosition="77" endLine="23" endPosition="15" />
     <scopeInfo nodeId="1220339963765" fileName="CellModel_Property_Behavior.java" startLine="26" startPosition="77" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="4052492221165693113" fileName="CellModel_Property_Behavior.java" startLine="30" startPosition="87" endLine="31" endPosition="16" />
     <scopeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1213877309981" varName="thisNode" />
     </scopeInfo>
@@ -423,7 +427,10 @@
     <scopeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1213877309981" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Property_Behavior" />
+    <scopeInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1213877309981" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877309981" fileName="CellModel_Property_Behavior.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Property_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877312933">
     <nodeInfo nodeId="1213877312933" fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1682,91 +1689,111 @@
     <unitInfo nodeId="1220339770457" fileName="CellModel_Error_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Error_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1220339802197">
-    <nodeInfo nodeId="1220339817300" fileName="CellModel_Collection_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237382111388" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237382109714" fileName="CellModel_Collection_Behavior.java" startLine="19" startPosition="12" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1220339829832" fileName="CellModel_Collection_Behavior.java" startLine="25" startPosition="80" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237382130636" fileName="CellModel_Collection_Behavior.java" startLine="27" startPosition="91" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237382132546" fileName="CellModel_Collection_Behavior.java" startLine="29" startPosition="12" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237380236303" fileName="CellModel_Collection_Behavior.java" startLine="34" startPosition="71" endLine="35" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239872947850" fileName="CellModel_Collection_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237380261473" fileName="CellModel_Collection_Behavior.java" startLine="42" startPosition="73" endLine="43" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237380280825" fileName="CellModel_Collection_Behavior.java" startLine="46" startPosition="75" endLine="47" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1822203275565710640" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="83" endLine="51" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237451103979" fileName="CellModel_Collection_Behavior.java" startLine="55" startPosition="87" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237481324619" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="82" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237451163300" fileName="CellModel_Collection_Behavior.java" startLine="62" startPosition="211" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237451200098" fileName="CellModel_Collection_Behavior.java" startLine="65" startPosition="266" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237451122560" fileName="CellModel_Collection_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1237382108946" fileName="CellModel_Collection_Behavior.java" startLine="19" startPosition="10" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237382128525" fileName="CellModel_Collection_Behavior.java" startLine="29" startPosition="10" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isVertical_1237380214915#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isVerticalGrid_1239872947848#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isHorizontal_1237380252717#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isIndentLayout_1237380273398#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isFoldingEnabled_1822203275565710635#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1237451030598" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="77" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237481317844" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237451148741" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="86" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237451166758" fileName="CellModel_Collection_Behavior.java" startLine="64" startPosition="7" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1220339813605" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="77" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1220339826371" fileName="CellModel_Collection_Behavior.java" startLine="24" startPosition="77" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="60" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isVerticalIndent_1237451001939#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="1220339802199" fileName="CellModel_Collection_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="1220339813607" fileName="CellModel_Collection_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="18" />
-    <scopeInfo nodeId="1237382098611" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="18" />
-    <scopeInfo nodeId="1237382108947" fileName="CellModel_Collection_Behavior.java" startLine="19" startPosition="12" endLine="20" endPosition="18" />
-    <scopeInfo nodeId="1220339826373" fileName="CellModel_Collection_Behavior.java" startLine="25" startPosition="80" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="1237382121330" fileName="CellModel_Collection_Behavior.java" startLine="27" startPosition="91" endLine="28" endPosition="18" />
-    <scopeInfo nodeId="1237382128526" fileName="CellModel_Collection_Behavior.java" startLine="29" startPosition="12" endLine="30" endPosition="18" />
-    <scopeInfo nodeId="1237380214917" fileName="CellModel_Collection_Behavior.java" startLine="34" startPosition="71" endLine="35" endPosition="283" />
-    <scopeInfo nodeId="1239872947849" fileName="CellModel_Collection_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="289" />
-    <scopeInfo nodeId="1237380252719" fileName="CellModel_Collection_Behavior.java" startLine="42" startPosition="73" endLine="43" endPosition="288" />
-    <scopeInfo nodeId="1237380273400" fileName="CellModel_Collection_Behavior.java" startLine="46" startPosition="75" endLine="47" endPosition="154" />
-    <scopeInfo nodeId="1822203275565710638" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="83" endLine="51" endPosition="146" />
-    <scopeInfo nodeId="1237451030600" fileName="CellModel_Collection_Behavior.java" startLine="55" startPosition="87" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="1237481317845" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="82" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="1237451148742" fileName="CellModel_Collection_Behavior.java" startLine="62" startPosition="211" endLine="63" endPosition="20" />
-    <scopeInfo nodeId="1237451166759" fileName="CellModel_Collection_Behavior.java" startLine="65" startPosition="266" endLine="66" endPosition="20" />
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="1220339817300" fileName="CellModel_Collection_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237382111388" fileName="CellModel_Collection_Behavior.java" startLine="20" startPosition="91" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237382109714" fileName="CellModel_Collection_Behavior.java" startLine="22" startPosition="12" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1220339829832" fileName="CellModel_Collection_Behavior.java" startLine="28" startPosition="80" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237382130636" fileName="CellModel_Collection_Behavior.java" startLine="30" startPosition="91" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237382132546" fileName="CellModel_Collection_Behavior.java" startLine="32" startPosition="12" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237380236303" fileName="CellModel_Collection_Behavior.java" startLine="37" startPosition="71" endLine="38" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239872947850" fileName="CellModel_Collection_Behavior.java" startLine="41" startPosition="75" endLine="42" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237380261473" fileName="CellModel_Collection_Behavior.java" startLine="45" startPosition="73" endLine="46" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237380280825" fileName="CellModel_Collection_Behavior.java" startLine="49" startPosition="75" endLine="50" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1822203275565710640" fileName="CellModel_Collection_Behavior.java" startLine="53" startPosition="83" endLine="54" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237451103979" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="87" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237481324619" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="82" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237451163300" fileName="CellModel_Collection_Behavior.java" startLine="65" startPosition="211" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237451200098" fileName="CellModel_Collection_Behavior.java" startLine="68" startPosition="266" endLine="69" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237451122560" fileName="CellModel_Collection_Behavior.java" startLine="71" startPosition="5" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165755093" fileName="CellModel_Collection_Behavior.java" startLine="77" startPosition="39" endLine="78" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165918953" fileName="CellModel_Collection_Behavior.java" startLine="83" startPosition="101" endLine="84" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1237382108946" fileName="CellModel_Collection_Behavior.java" startLine="22" startPosition="10" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237382128525" fileName="CellModel_Collection_Behavior.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isVertical_1237380214915#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isVerticalGrid_1239872947848#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isHorizontal_1237380252717#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isIndentLayout_1237380273398#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isFoldingEnabled_1822203275565710635#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1237451030598" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="77" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237481317844" fileName="CellModel_Collection_Behavior.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237451148741" fileName="CellModel_Collection_Behavior.java" startLine="64" startPosition="86" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237451166758" fileName="CellModel_Collection_Behavior.java" startLine="67" startPosition="7" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4052492221165754217" fileName="CellModel_Collection_Behavior.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canBeSynchronized_4052492221165827676#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4052492221165733585" fileName="CellModel_Collection_Behavior.java" startLine="75" startPosition="93" endLine="80" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1220339813605" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="77" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1220339826371" fileName="CellModel_Collection_Behavior.java" startLine="27" startPosition="77" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="63" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isVerticalIndent_1237451001939#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="1220339802199" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1220339813607" fileName="CellModel_Collection_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="1237382098611" fileName="CellModel_Collection_Behavior.java" startLine="20" startPosition="91" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="1237382108947" fileName="CellModel_Collection_Behavior.java" startLine="22" startPosition="12" endLine="23" endPosition="18" />
+    <scopeInfo nodeId="1220339826373" fileName="CellModel_Collection_Behavior.java" startLine="28" startPosition="80" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="1237382121330" fileName="CellModel_Collection_Behavior.java" startLine="30" startPosition="91" endLine="31" endPosition="18" />
+    <scopeInfo nodeId="1237382128526" fileName="CellModel_Collection_Behavior.java" startLine="32" startPosition="12" endLine="33" endPosition="18" />
+    <scopeInfo nodeId="1237380214917" fileName="CellModel_Collection_Behavior.java" startLine="37" startPosition="71" endLine="38" endPosition="283" />
+    <scopeInfo nodeId="1239872947849" fileName="CellModel_Collection_Behavior.java" startLine="41" startPosition="75" endLine="42" endPosition="289" />
+    <scopeInfo nodeId="1237380252719" fileName="CellModel_Collection_Behavior.java" startLine="45" startPosition="73" endLine="46" endPosition="288" />
+    <scopeInfo nodeId="1237380273400" fileName="CellModel_Collection_Behavior.java" startLine="49" startPosition="75" endLine="50" endPosition="154" />
+    <scopeInfo nodeId="1822203275565710638" fileName="CellModel_Collection_Behavior.java" startLine="53" startPosition="83" endLine="54" endPosition="146" />
+    <scopeInfo nodeId="1237451030600" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="87" endLine="59" endPosition="19" />
+    <scopeInfo nodeId="1237481317845" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="82" endLine="62" endPosition="18" />
+    <scopeInfo nodeId="1237451148742" fileName="CellModel_Collection_Behavior.java" startLine="65" startPosition="211" endLine="66" endPosition="20" />
+    <scopeInfo nodeId="1237451166759" fileName="CellModel_Collection_Behavior.java" startLine="68" startPosition="266" endLine="69" endPosition="20" />
+    <scopeInfo nodeId="4052492221165754218" fileName="CellModel_Collection_Behavior.java" startLine="77" startPosition="39" endLine="78" endPosition="102" />
+    <scopeInfo nodeId="4052492221165827679" fileName="CellModel_Collection_Behavior.java" startLine="83" startPosition="101" endLine="84" endPosition="332" />
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237451108063" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="86" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1220339803813" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="77" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="1220339806615" fileName="CellModel_Collection_Behavior.java" startLine="24" startPosition="77" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="60" startPosition="5" endLine="68" endPosition="5">
+    <scopeInfo nodeId="4052492221165754217" fileName="CellModel_Collection_Behavior.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="4052492221165754217" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="4052492221165829272" varName="childCell" />
+      <varInfo nodeId="1220339802197" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165726645" fileName="CellModel_Collection_Behavior.java" startLine="75" startPosition="93" endLine="80" endPosition="155" />
+    <scopeInfo nodeId="1237451108063" fileName="CellModel_Collection_Behavior.java" startLine="64" startPosition="86" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="1220339803813" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="77" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="1220339806615" fileName="CellModel_Collection_Behavior.java" startLine="27" startPosition="77" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1220339802197" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="63" startPosition="5" endLine="71" endPosition="5">
       <varInfo nodeId="1237451108066" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237451001941" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="77" endLine="69" endPosition="17" />
-    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1237451001941" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="77" endLine="72" endPosition="17" />
+    <scopeInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1220339802197" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="10" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior" />
+    <unitInfo nodeId="4052492221165754217" fileName="CellModel_Collection_Behavior.java" startLine="76" startPosition="103" endLine="80" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior$1" />
+    <unitInfo nodeId="1220339802197" fileName="CellModel_Collection_Behavior.java" startLine="13" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1220339884256">
     <nodeInfo nodeId="1220339889374" fileName="CellModel_Custom_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1906,17 +1933,23 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1220962155097">
     <nodeInfo nodeId="1221473775235" fileName="CellModel_Constant_Behavior.java" startLine="12" startPosition="79" endLine="13" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165670030" fileName="CellModel_Constant_Behavior.java" startLine="16" startPosition="87" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDefaultFontStyle_1221472292001#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+    <nodeInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1220962155099" fileName="CellModel_Constant_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="1221473513350" fileName="CellModel_Constant_Behavior.java" startLine="12" startPosition="79" endLine="13" endPosition="50" />
+    <scopeInfo nodeId="4052492221165670027" fileName="CellModel_Constant_Behavior.java" startLine="16" startPosition="87" endLine="17" endPosition="16" />
     <scopeInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1220962155097" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1220962155097" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Constant_Behavior" />
+    <scopeInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1220962155097" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1220962155097" fileName="CellModel_Constant_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Constant_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1221482169625">
     <nodeInfo nodeId="2028694650683961613" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="19" startPosition="81" endLine="20" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4199,6 +4232,27 @@
       <varInfo nodeId="3696012239575646494" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="3696012239575646494" fileName="CellModel_URL_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_URL_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/4052492221165589292">
+    <nodeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="15" startPosition="84" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="4052492221165589445" fileName="Synchronizeable_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="15" startPosition="84" endLine="16" endPosition="133" />
+    <scopeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="266" />
+    <scopeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="4052492221165589292" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4052492221165589292" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4052492221165589292" varName="callerConceptFqName" />
+      <varInfo nodeId="4052492221165589292" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4052492221165589292" fileName="Synchronizeable_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.Synchronizeable_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/4151393920407069289">
     <nodeInfo nodeId="4151393920407078855" fileName="StyleKey_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

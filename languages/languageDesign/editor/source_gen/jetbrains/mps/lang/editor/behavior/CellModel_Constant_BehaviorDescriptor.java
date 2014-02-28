@@ -4,8 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellModel_Constant_BehaviorDescriptor extends CellModel_AbstractLabel_BehaviorDescriptor {
+public class CellModel_Constant_BehaviorDescriptor extends CellModel_AbstractLabel_BehaviorDescriptor implements Synchronizeable_BehaviorDescriptor {
   public CellModel_Constant_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
+    return CellModel_Constant_Behavior.virtual_canBeSynchronized_4052492221165595783(thisNode);
   }
 
   public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
