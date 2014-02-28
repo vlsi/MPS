@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintPropertyUtil;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -64,9 +64,6 @@ public class EditorManager {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorManager.class));
 
   private static final String BIG_CELL_CONTEXT = "big-cell-context";
-
-  public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "st-hint-anchor-cell-id";
-  public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
 
   public static final String OLD_NODE_FOR_SUBSTITUTION = "oldNode";
 
@@ -512,22 +509,22 @@ public class EditorManager {
   private EditorCell addSideTransformHintCell(EditorCell nodeCell) {
     SNode node = nodeCell.getSNode();
     CellSide side;
-    if (STHintPropertyUtil.hasRightTransformHint(node)) {
+    if (STHintUtil.hasRightTransformHint(node)) {
       side = CellSide.RIGHT;
-    } else if (STHintPropertyUtil.hasLeftTransformHint(node)) {
+    } else if (STHintUtil.hasLeftTransformHint(node)) {
       side = CellSide.LEFT;
     } else {
       return nodeCell;
     }
 
-    Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = anchorId == null ? null : CellFinderUtil.findChildById(nodeCell, node, anchorId.toString(), true);
+    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
+    EditorCell anchorCell = anchorId == null ? null : CellFinderUtil.findChildById(nodeCell, node, anchorId, true);
     assert
         anchorCell == null || anchorCell.getSNode() == node :
         "Anchor cell should be associated with the same node as main cell. Anchor cell node: " + anchorCell.getSNode().getNodeId() + "; main node: " +
             node.getNodeId();
 
-    String sideTransformTag = (String) node.getUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG);
+    String sideTransformTag = STHintUtil.getTransformHintAnchorTag(node);
 
     EditorCell_STHint sideTransformHintCell =
         new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getEditorComponent(nodeCell.getContext()).getRecentlySelectedCellInfo());

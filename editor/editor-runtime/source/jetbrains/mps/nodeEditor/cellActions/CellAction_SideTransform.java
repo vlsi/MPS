@@ -19,11 +19,10 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.SideTransformTagUtils;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.sidetransform.STHintPropertyUtil;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -94,23 +93,15 @@ public class CellAction_SideTransform extends AbstractCellAction {
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = context.getSelectedCell();
     SNode node = selectedCell.getSNode();
 
-    STHintPropertyUtil.removeTransformHints(node);
+    STHintUtil.removeTransformHints(node);
     jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
 
     String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
     if (mySide == CellSide.LEFT) {
-      STHintPropertyUtil.addLeftTransformHint(node);
+      STHintUtil.addLeftTransformHint(node, anchorCell.getCellId(), anchorTag);
     } else {
-      STHintPropertyUtil.addRightTransformHint(node);
+      STHintUtil.addRightTransformHint(node, anchorCell.getCellId(), anchorTag);
     }
-
-    node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, anchorCell.getCellId());
-    if (anchorTag != null) {
-      node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
-    } else {
-      node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, null);
-    }
-
     context.flushEvents();
 
     EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();

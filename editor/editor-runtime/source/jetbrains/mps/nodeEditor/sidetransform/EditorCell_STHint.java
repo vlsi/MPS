@@ -108,7 +108,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 @Override
                 public void run() {
-                  STHintPropertyUtil.removeTransformHints(getSNode());
+                  STHintUtil.removeTransformHints(getSNode());
                 }
               });
               return super.substitute(context, pattern);
@@ -133,7 +133,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
   public void changeText(String text) {
     super.changeText(text);
     if ("".equals(getText())) {
-      STHintPropertyUtil.removeTransformHints(getSNode());
+      STHintUtil.removeTransformHints(getSNode());
     }
   }
 
@@ -150,7 +150,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
   }
 
   private void removeSTHintAndChangeSelection(final EditorContext context, SNode node) {
-    STHintPropertyUtil.removeTransformHints(getSNode());
+    STHintUtil.removeTransformHints(getSNode());
     context.flushEvents();
 
     if (myRestoreSelectionCellInfo == null) {

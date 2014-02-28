@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintPropertyUtil;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -133,7 +133,7 @@ public class IntelligentInputUtil {
         info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
         nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
-      STHintPropertyUtil.removeTransformHints(cell.getSNode());
+      STHintUtil.removeTransformHints(cell.getSNode());
 
       EditorCell_Label label = (EditorCell_Label) nextCell;
       label.changeText(pattern);
