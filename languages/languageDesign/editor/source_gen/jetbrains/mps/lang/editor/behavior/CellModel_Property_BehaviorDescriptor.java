@@ -28,6 +28,10 @@ public class CellModel_Property_BehaviorDescriptor extends CellModel_WithRole_Be
     return CellModel_Property_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
   }
 
+  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+    return CellModel_Property_Behavior.virtual_shellBeSynchronized_4500758155551546553(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Property";

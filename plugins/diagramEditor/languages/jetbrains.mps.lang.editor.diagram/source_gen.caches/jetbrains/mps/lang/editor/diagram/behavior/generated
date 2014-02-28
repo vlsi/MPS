@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="19ji14txc6zi8k7sbs433ggy5dujp79">
+<dependencies version="2" modelHash="4k0cgd6zl9r3mxwv6q1p4ut4ves7d8h">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -8,7 +8,7 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-41zcj4srfxst432ncw70viq3i78t8jl" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="dz7sjdoxpozo9ydar0gw6iq779m8qfv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="7o640hbtslfhvd0zpof3uvgrzca1kf6" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="ebhxhjc04f0709spqx9tv4ej59e7a3x" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="yi5ugah5g3thu4gze76h530ls5hf5a" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
@@ -77,7 +77,7 @@
     <file name="XFunctionParameter_BehaviorDescriptor.java" />
     <file name="YFunctionParameter_BehaviorDescriptor.java" />
   </common>
-  <source id="3748979635599119476" name="CellModel_DiagramNode_Behavior" hash="-4pei2350uolh98e38h6ax80h099umon">
+  <source id="3748979635599119476" name="CellModel_DiagramNode_Behavior" hash="-75vz9vi6f46l8u2neelsuz55wiu09bl">
     <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
@@ -122,13 +122,13 @@
     <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
     <file name="AbstractFigureReference_Behavior.java" />
   </source>
-  <source id="7140846024011931670" name="CellModel_Diagram_Behavior" hash="-vdzbmwhpoqdit9169at12t4rellx4g">
+  <source id="7140846024011931670" name="CellModel_Diagram_Behavior" hash="-c8p42a89bphzp31ci47sl3vq5xveeks">
     <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
     <file name="CellModel_Diagram_Behavior.java" />
   </source>
-  <source id="7140846024011932205" name="CellModel_DiagramConnector_Behavior" hash="-3rcbslujkz3w8p1d9r817mv8gai31lt">
+  <source id="7140846024011932205" name="CellModel_DiagramConnector_Behavior" hash="-7a7zajnizusac3foyeoxh7p1jwpcl65">
     <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
@@ -186,7 +186,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DiagramConnectorCanCreateHandler_Behavior.java" />
   </source>
-  <source id="4052492221165688944" name="CellModel_DiagramPort_Behavior" hash="esdkjkcepspy1mfkciai9a6t9546hfc">
+  <source id="4052492221165688944" name="CellModel_DiagramPort_Behavior" hash="-2lkmlfy6h8oeertz2car0u5iheorenz">
     <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />

@@ -6,4 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public interface Synchronizeable_BehaviorDescriptor {
   public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode);
+  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode);
 }

@@ -22,6 +22,10 @@ public class CellModel_DiagramConnector_BehaviorDescriptor extends EditorCellMod
     return CellModel_DiagramConnector_Behavior.virtual_getOpeningText_1220339714057(thisNode);
   }
 
+  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+    return CellModel_DiagramConnector_Behavior.virtual_shellBeSynchronized_4500758155551546553(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector";

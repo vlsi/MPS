@@ -1173,7 +1173,8 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4033442785759270479(final IfMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_canBeSynchronized_4052492221165595783", new Object[]{});
+    // setting canBeSynchronized flag for root collection cells only 
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.EditorCellModel")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{}) && BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_canBeSynchronized_4052492221165595783", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_6577030305815218822(final IfMacroContext _context) {

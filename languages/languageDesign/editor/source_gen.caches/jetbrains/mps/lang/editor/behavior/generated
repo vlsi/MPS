@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dz7sjdoxpozo9ydar0gw6iq779m8qfv">
+<dependencies version="2" modelHash="7o640hbtslfhvd0zpof3uvgrzca1kf6">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
@@ -461,7 +461,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="CellModel_Component_Behavior.java" />
   </source>
-  <source id="1213877309981" name="CellModel_Property_Behavior" hash="cdoy7so8fc051rkieyqe26akqth9srq">
+  <source id="1213877309981" name="CellModel_Property_Behavior" hash="-77tsdt6omysdowubz10z2v8qcpr870r">
     <dep root="1213877329110" />
     <dep root="1213877386047" />
     <dep root="4052492221165589292" />
@@ -728,7 +728,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="CellModel_Error_Behavior.java" />
   </source>
-  <source id="1220339802197" name="CellModel_Collection_Behavior" hash="bvvb8mo0dwwbf92fjtuio25wvxxlhgd">
+  <source id="1220339802197" name="CellModel_Collection_Behavior" hash="-6fjwig2y3kg0v2746pvq7mr2743l58t">
     <dep root="1213877386047" />
     <dep root="4052492221165589292" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -783,7 +783,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="CellMenuUtil.java" />
   </source>
-  <source id="1220962155097" name="CellModel_Constant_Behavior" hash="-6lqzwe6vf7gfuo630e5awxm7e3i2fh0">
+  <source id="1220962155097" name="CellModel_Constant_Behavior" hash="-1r660c4p55pc6a0w0r21mgx4o8otf4z">
     <dep root="1213877386047" />
     <dep root="4052492221165589292" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -1640,7 +1640,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StylePriorityGroup_Behavior.java" />
   </source>
-  <source id="4052492221165589292" name="Synchronizeable_Behavior" hash="-bz8ojwbwwvdeljeyml7kzuswe5cseqv">
+  <source id="4052492221165589292" name="Synchronizeable_Behavior" hash="xn9ofcrfdmazjota15kkliy9ktgtor">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />

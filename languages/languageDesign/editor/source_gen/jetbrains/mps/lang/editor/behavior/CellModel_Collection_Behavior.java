@@ -72,6 +72,18 @@ public class CellModel_Collection_Behavior {
     return false;
   }
 
+  public static boolean virtual_shellBeSynchronized_4500758155551546553(final SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "childCellModel", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, it);
+      }
+    }) || CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
+  }
+
+  public static boolean call_shellBeSynchronized_4500758155551647684(SNode thisNode, SNode childCell) {
+    return childCell != null && SNodeOperations.isInstanceOf(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable"), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{});
+  }
+
   public static boolean virtual_canBeSynchronized_4052492221165595783(final SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "childCellModel", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
