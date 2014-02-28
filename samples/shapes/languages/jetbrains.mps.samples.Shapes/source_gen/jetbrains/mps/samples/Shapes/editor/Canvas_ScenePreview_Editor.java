@@ -28,12 +28,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.Graphics;
-import jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior;
-import java.awt.Dimension;
-import javax.swing.border.Border;
-import javax.swing.border.TitledBorder;
+import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
 
 public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"});
@@ -157,26 +152,6 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
   }
 
   private static JComponent _QueryFunction_JComponent_3bcydw_a0c2a(final SNode node, final EditorContext editorContext) {
-    return new JPanel() {
-
-
-      @Override
-      protected void paintComponent(final Graphics graphics) {
-        super.paintComponent(graphics);
-        Canvas_Behavior.call_draw_4001135958236502564(node, graphics, node);
-      }
-
-
-
-      @Override
-      public Dimension getPreferredSize() {
-        return new Dimension(500, 500);
-      }
-
-      @Override
-      public Border getBorder() {
-        return new TitledBorder("Instant Preview");
-      }
-    };
+    return PreviewFactory.createPanel(node);
   }
 }

@@ -7,72 +7,25 @@
   <unitInfo fileName="Shape_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
   <unitInfo fileName="Square_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" />
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535528661">
-    <nodeInfo nodeId="4001135958236502590" fileName="Canvas_Behavior.java" startLine="25" startPosition="39" endLine="26" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535776993" fileName="Canvas_Behavior.java" startLine="33" startPosition="73" endLine="34" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515535541579" fileName="Canvas_Behavior.java" startLine="34" startPosition="38" endLine="35" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515535593457" fileName="Canvas_Behavior.java" startLine="38" startPosition="62" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958236505686" fileName="Canvas_Behavior.java" startLine="43" startPosition="43" endLine="44" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2660783627952694516" fileName="Canvas_Behavior.java" startLine="48" startPosition="11" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1082824515535605632" fileName="Canvas_Behavior.java" startLine="55" startPosition="43" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1082824515535578626" fileName="Canvas_Behavior.java" startLine="58" startPosition="6" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535528735" fileName="Canvas_Behavior.java" startLine="59" startPosition="21" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535547697" fileName="Canvas_Behavior.java" startLine="60" startPosition="27" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4001135958236502588" fileName="Canvas_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4001135958236505684" fileName="Canvas_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1082824515535603939" fileName="Canvas_Behavior.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="4001135958236502582" fileName="Canvas_Behavior.java" startLine="23" startPosition="25" endLine="28" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958236505678" fileName="Canvas_Behavior.java" startLine="41" startPosition="29" endLine="46" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958236502580" fileName="Canvas_Behavior.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4001135958236505676" fileName="Canvas_Behavior.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4001135958236502569" fileName="Canvas_Behavior.java" startLine="21" startPosition="117" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958236505665" fileName="Canvas_Behavior.java" startLine="39" startPosition="39" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_draw_4001135958236502564#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Graphics;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1082824515535593444" fileName="Canvas_Behavior.java" startLine="37" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="1082824515535577121" fileName="Canvas_Behavior.java" startLine="35" startPosition="95" endLine="58" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="33" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_interpret_1082824515535528722#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1082824515535528663" fileName="Canvas_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="4001135958236502589" fileName="Canvas_Behavior.java" startLine="25" startPosition="39" endLine="26" endPosition="126" />
-    <scopeInfo nodeId="4001135958236505685" fileName="Canvas_Behavior.java" startLine="43" startPosition="43" endLine="44" endPosition="130" />
-    <scopeInfo nodeId="1082824515535603946" fileName="Canvas_Behavior.java" startLine="55" startPosition="43" endLine="56" endPosition="39" />
-    <scopeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1082824515535541579" fileName="Canvas_Behavior.java" startLine="14" startPosition="73" endLine="15" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1082824515535577121" fileName="Canvas_Behavior.java" startLine="15" startPosition="93" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1082824515535578626" fileName="Canvas_Behavior.java" startLine="16" startPosition="62" endLine="17" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535528735" fileName="Canvas_Behavior.java" startLine="17" startPosition="21" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535547697" fileName="Canvas_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_interpret_1082824515535528722#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1082824515535528663" fileName="Canvas_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1082824515535528661" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958236502588" fileName="Canvas_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="4001135958236502588" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958236505684" fileName="Canvas_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="4001135958236505684" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515535603939" fileName="Canvas_Behavior.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="4001135958236502581" fileName="Canvas_Behavior.java" startLine="23" startPosition="25" endLine="28" endPosition="11" />
-    <scopeInfo nodeId="4001135958236505677" fileName="Canvas_Behavior.java" startLine="41" startPosition="29" endLine="46" endPosition="15" />
-    <scopeInfo nodeId="4001135958236502580" fileName="Canvas_Behavior.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4001135958236505676" fileName="Canvas_Behavior.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4001135958236502568" fileName="Canvas_Behavior.java" startLine="21" startPosition="117" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="4001135958236502598" varName="graphics" />
-      <varInfo nodeId="4001135958236502600" varName="thisCanvas" />
-      <varInfo nodeId="1082824515535528661" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515535593453" fileName="Canvas_Behavior.java" startLine="38" startPosition="62" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1082824515535593444" fileName="Canvas_Behavior.java" startLine="37" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="1082824515535593448" varName="graphics" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515535528725" fileName="Canvas_Behavior.java" startLine="33" startPosition="73" endLine="61" endPosition="17">
+    <scopeInfo nodeId="1082824515535528725" fileName="Canvas_Behavior.java" startLine="14" startPosition="73" endLine="19" endPosition="17">
       <varInfo nodeId="1082824515535541580" varName="frame" />
       <varInfo nodeId="1082824515535577122" varName="panel" />
-      <varInfo nodeId="1082824515535776994" varName="thisCanvas" />
     </scopeInfo>
-    <scopeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="33" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1082824515535528661" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4001135958236502588" fileName="Canvas_Behavior.java" startLine="24" startPosition="99" endLine="28" endPosition="9" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior$2" />
-    <unitInfo nodeId="4001135958236505684" fileName="Canvas_Behavior.java" startLine="42" startPosition="103" endLine="46" endPosition="13" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior$4" />
-    <unitInfo nodeId="4001135958236502580" fileName="Canvas_Behavior.java" startLine="22" startPosition="92" endLine="30" endPosition="5" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior$1" />
-    <unitInfo nodeId="4001135958236505676" fileName="Canvas_Behavior.java" startLine="40" startPosition="96" endLine="48" endPosition="9" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior$3" />
-    <unitInfo nodeId="1082824515535590946" fileName="Canvas_Behavior.java" startLine="36" startPosition="29" endLine="58" endPosition="5" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior$2" />
-    <unitInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior" />
+    <unitInfo nodeId="1082824515535528661" fileName="Canvas_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior" />
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535573728">
     <nodeInfo nodeId="1082824515535632139" fileName="Shape_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -223,6 +176,43 @@
       <varInfo nodeId="2097561739636354491" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2097561739636354491" fileName="ColorReference_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.ColorReference_Behavior" />
+  </root>
+  <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/4001135958239008473">
+    <nodeInfo nodeId="4001135958239205244" fileName="PreviewFactory.java" startLine="23" startPosition="62" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958239205268" fileName="PreviewFactory.java" startLine="28" startPosition="43" endLine="29" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958239205281" fileName="PreviewFactory.java" startLine="39" startPosition="43" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958239205292" fileName="PreviewFactory.java" startLine="46" startPosition="33" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958239205266" fileName="PreviewFactory.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4001135958239205277" fileName="PreviewFactory.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="4001135958239205288" fileName="PreviewFactory.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBorder#()Ljavax/swing/border/Border;" />
+    <nodeInfo nodeId="4001135958239205260" fileName="PreviewFactory.java" startLine="26" startPosition="29" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958239205258" fileName="PreviewFactory.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4001135958239205247" fileName="PreviewFactory.java" startLine="24" startPosition="39" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958239205238" fileName="PreviewFactory.java" startLine="22" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="4001135958239014861" fileName="PreviewFactory.java" startLine="20" startPosition="60" endLine="49" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958239008500" fileName="PreviewFactory.java" startLine="20" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPanel#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/JPanel;" />
+    <scopeInfo nodeId="4001135958239205267" fileName="PreviewFactory.java" startLine="28" startPosition="43" endLine="29" endPosition="130" />
+    <scopeInfo nodeId="4001135958239205280" fileName="PreviewFactory.java" startLine="39" startPosition="43" endLine="40" endPosition="39" />
+    <scopeInfo nodeId="4001135958239205291" fileName="PreviewFactory.java" startLine="46" startPosition="33" endLine="47" endPosition="51" />
+    <scopeInfo nodeId="4001135958239205266" fileName="PreviewFactory.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="4001135958239205266" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958239205277" fileName="PreviewFactory.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4001135958239205288" fileName="PreviewFactory.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4001135958239205259" fileName="PreviewFactory.java" startLine="26" startPosition="29" endLine="31" endPosition="15" />
+    <scopeInfo nodeId="4001135958239205258" fileName="PreviewFactory.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4001135958239205243" fileName="PreviewFactory.java" startLine="23" startPosition="62" endLine="33" endPosition="11" />
+    <scopeInfo nodeId="4001135958239205238" fileName="PreviewFactory.java" startLine="22" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4001135958239205241" varName="graphics" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958239008503" fileName="PreviewFactory.java" startLine="20" startPosition="60" endLine="49" endPosition="6" />
+    <scopeInfo nodeId="4001135958239008500" fileName="PreviewFactory.java" startLine="20" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="4001135958239013358" varName="thisCanvas" />
+    </scopeInfo>
+    <unitInfo nodeId="4001135958239205266" fileName="PreviewFactory.java" startLine="27" startPosition="103" endLine="31" endPosition="13" unitName="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$3" />
+    <unitInfo nodeId="4001135958239205258" fileName="PreviewFactory.java" startLine="25" startPosition="96" endLine="33" endPosition="9" unitName="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$2" />
+    <unitInfo nodeId="4001135958239205236" fileName="PreviewFactory.java" startLine="21" startPosition="15" endLine="49" endPosition="5" unitName="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$1" />
+    <unitInfo nodeId="4001135958239008473" fileName="PreviewFactory.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.Shapes.behavior.PreviewFactory" />
   </root>
 </debugInfo>
 
