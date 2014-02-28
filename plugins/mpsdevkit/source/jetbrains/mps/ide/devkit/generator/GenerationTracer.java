@@ -59,10 +59,11 @@ public class GenerationTracer implements IGenerationTracer {
   private SModelReference myCurrentInputModel;
   private SModelReference myCurrentOutputModel;
 
-  private final GenTraceImpl myNewTrace;
+  private GenTraceImpl myNewTrace;
+  private final boolean enableNewTrace;
 
   public GenerationTracer(Project project) {
-    myNewTrace = Boolean.parseBoolean(System.getProperty("mps.internal.newgentrace", Boolean.toString(true))) ? new GenTraceImpl() : null;
+    enableNewTrace = Boolean.parseBoolean(System.getProperty("mps.internal.newgentrace", Boolean.toString(true)));
   }
 
   @Override
@@ -94,6 +95,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (myTool != null) {
       myTool.setTracingDataIsAvailable(false);
     }
+    myNewTrace = enableNewTrace ? new GenTraceImpl() : null;
   }
 
   @Override
@@ -118,6 +120,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (myTool != null) {
       myTool.setTracingDataIsAvailable(false);
     }
+    myNewTrace = null;
   }
 
   @Override
