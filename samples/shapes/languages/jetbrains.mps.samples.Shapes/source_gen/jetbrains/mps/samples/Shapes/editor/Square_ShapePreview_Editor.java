@@ -28,8 +28,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.Graphics;
 import java.awt.Dimension;
 
-public class Square_IncludingPreview_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.IncludingPreview"});
+public class Square_ShapePreview_Editor extends DefaultNodeEditor {
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"});
 
   @Override
   public Collection<String> getContextHints() {
@@ -37,28 +37,28 @@ public class Square_IncludingPreview_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ri5xoj_a(editorContext, node);
+    return this.createCollection_ukdplt_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ri5xoj_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ukdplt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ri5xoj_a");
+    editorCell.setCellId("Collection_ukdplt_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_ri5xoj_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ri5xoj_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ri5xoj_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ri5xoj_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ri5xoj_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ri5xoj_f0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ri5xoj_g0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_ri5xoj_h0(editorContext, node));
-    editorCell.addEditorCell(this.createJComponent_ri5xoj_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ukdplt_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ukdplt_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ukdplt_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ukdplt_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ukdplt_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ukdplt_f0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ukdplt_g0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ukdplt_h0(editorContext, node));
+    editorCell.addEditorCell(this.createJComponent_ukdplt_i0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ri5xoj_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ukdplt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "square");
-    editorCell.setCellId("Constant_ri5xoj_a0");
+    editorCell.setCellId("Constant_ukdplt_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -66,14 +66,14 @@ public class Square_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ri5xoj_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ukdplt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x:");
-    editorCell.setCellId("Constant_ri5xoj_b0");
+    editorCell.setCellId("Constant_ukdplt_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_ri5xoj_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ukdplt_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("upperLeftX");
     provider.setNoTargetText("<no upperLeftX>");
@@ -91,14 +91,14 @@ public class Square_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ri5xoj_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ukdplt_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y:");
-    editorCell.setCellId("Constant_ri5xoj_d0");
+    editorCell.setCellId("Constant_ukdplt_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_ri5xoj_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ukdplt_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("upperLeftY");
     provider.setNoTargetText("<no upperLeftY>");
@@ -116,14 +116,14 @@ public class Square_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ri5xoj_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ukdplt_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "size:");
-    editorCell.setCellId("Constant_ri5xoj_f0");
+    editorCell.setCellId("Constant_ukdplt_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_ri5xoj_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ukdplt_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("size");
     provider.setNoTargetText("<no size>");
@@ -141,18 +141,18 @@ public class Square_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_ri5xoj_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ukdplt_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.Shapes.editor.ShapeColor");
     return editorCell;
   }
 
-  private EditorCell createJComponent_ri5xoj_i0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Square_IncludingPreview_Editor._QueryFunction_JComponent_ri5xoj_a8a(node, editorContext), "_ri5xoj_i0");
-    editorCell.setCellId("JComponent_ri5xoj_i0");
+  private EditorCell createJComponent_ukdplt_i0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Square_ShapePreview_Editor._QueryFunction_JComponent_ukdplt_a8a(node, editorContext), "_ukdplt_i0");
+    editorCell.setCellId("JComponent_ukdplt_i0");
     return editorCell;
   }
 
-  private static JComponent _QueryFunction_JComponent_ri5xoj_a8a(final SNode node, final EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_ukdplt_a8a(final SNode node, final EditorContext editorContext) {
     return new JPanel() {
       private Color foundColor = null;
       private int size = 0;

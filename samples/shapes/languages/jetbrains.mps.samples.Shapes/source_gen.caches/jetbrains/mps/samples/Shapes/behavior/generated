@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6mg0lenq9hn0ym3bk8mifl138cmitg4">
+<dependencies version="2" modelHash="b9bbh04bgztpi8vtusuo6czic5w64oz">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -54,7 +54,7 @@
     <dep model="r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)" />
     <file name="ColorReference_Behavior.java" />
   </source>
-  <source id="1082824515535528661" name="Canvas_Behavior" hash="-6mbemlcx9ielq35i8zwzm5hv5z3pcqk">
+  <source id="1082824515535528661" name="Canvas_Behavior" hash="2fbvpg1f0ouq8gzow292dr90eqf23kk">
     <dep root="1082824515535573728" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />

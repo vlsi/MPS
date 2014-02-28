@@ -13,18 +13,18 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("IncludingPreview", "With Instant Shape Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.IncludingPreview"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("ScenePreview", "With Scene Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"), new ConceptEditorHintImpl("ShapePreview", "With Shape Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new Canvas_Editor());
+        return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
       case 1:
-        return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_IncludingPreview_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
       case 2:
         return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
       case 3:
-        return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_IncludingPreview_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
       default:
     }
     return Collections.emptyList();

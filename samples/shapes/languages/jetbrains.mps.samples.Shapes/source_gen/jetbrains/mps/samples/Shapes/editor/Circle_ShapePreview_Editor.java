@@ -28,8 +28,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.Graphics;
 import java.awt.Dimension;
 
-public class Circle_IncludingPreview_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.IncludingPreview"});
+public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"});
 
   @Override
   public Collection<String> getContextHints() {
@@ -37,28 +37,28 @@ public class Circle_IncludingPreview_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_u9999_a(editorContext, node);
+    return this.createCollection_347ksb_a(editorContext, node);
   }
 
-  private EditorCell createCollection_u9999_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_347ksb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_u9999_a");
+    editorCell.setCellId("Collection_347ksb_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_u9999_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_u9999_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_u9999_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_u9999_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_u9999_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_u9999_f0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_u9999_g0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_u9999_h0(editorContext, node));
-    editorCell.addEditorCell(this.createJComponent_u9999_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_347ksb_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_347ksb_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_347ksb_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_347ksb_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_347ksb_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_347ksb_f0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_347ksb_g0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_347ksb_h0(editorContext, node));
+    editorCell.addEditorCell(this.createJComponent_347ksb_i0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_u9999_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_347ksb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "circle");
-    editorCell.setCellId("Constant_u9999_a0");
+    editorCell.setCellId("Constant_347ksb_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -66,14 +66,14 @@ public class Circle_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_u9999_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_347ksb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x:");
-    editorCell.setCellId("Constant_u9999_b0");
+    editorCell.setCellId("Constant_347ksb_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_u9999_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_347ksb_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
     provider.setNoTargetText("<no x>");
@@ -91,14 +91,14 @@ public class Circle_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_u9999_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_347ksb_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y:");
-    editorCell.setCellId("Constant_u9999_d0");
+    editorCell.setCellId("Constant_347ksb_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_u9999_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_347ksb_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
     provider.setNoTargetText("<no y>");
@@ -116,14 +116,14 @@ public class Circle_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_u9999_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_347ksb_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "radius:");
-    editorCell.setCellId("Constant_u9999_f0");
+    editorCell.setCellId("Constant_347ksb_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_u9999_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_347ksb_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("radius");
     provider.setNoTargetText("<no radius>");
@@ -141,18 +141,18 @@ public class Circle_IncludingPreview_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_u9999_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_347ksb_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.Shapes.editor.ShapeColor");
     return editorCell;
   }
 
-  private EditorCell createJComponent_u9999_i0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Circle_IncludingPreview_Editor._QueryFunction_JComponent_u9999_a8a(node, editorContext), "_u9999_i0");
-    editorCell.setCellId("JComponent_u9999_i0");
+  private EditorCell createJComponent_347ksb_i0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Circle_ShapePreview_Editor._QueryFunction_JComponent_347ksb_a8a(node, editorContext), "_347ksb_i0");
+    editorCell.setCellId("JComponent_347ksb_i0");
     return editorCell;
   }
 
-  private static JComponent _QueryFunction_JComponent_u9999_a8a(final SNode node, final EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_347ksb_a8a(final SNode node, final EditorContext editorContext) {
     return new JPanel() {
       private Color foundColor = null;
       private int radius = 0;
