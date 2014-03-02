@@ -21,10 +21,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
  * User: shatalin
  * Date: 02/01/14
  */
-public interface SynchronizedEditorCell extends EditorCell {
+public interface SynchronizeableEditorCell extends EditorCell {
   /**
    * This method should be called in order to update cell structure in accordance with model changes.
    * This method will be called instead of re-creating the cell.
    */
   void synchronize();
+
+  boolean canBeSynchronized();
 }

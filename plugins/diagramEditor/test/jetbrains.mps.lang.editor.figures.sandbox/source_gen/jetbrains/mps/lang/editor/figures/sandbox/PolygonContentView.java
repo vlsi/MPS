@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.figures.sandbox;
 import jetbrains.jetpad.projectional.view.PolygonView;
 import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.cell.TextCell;
+import jetbrains.jetpad.projectional.view.TextView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.cell.view.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
@@ -24,7 +25,7 @@ public class PolygonContentView extends PolygonView {
   private static final int HEIGHT = 50;
   private PolyLineView myPolyLine = new PolyLineView();
   private TextCell myCell = new TextCell();
-  private TextCell myMetaTextCell = new TextCell();
+  private TextView myMetaText = new TextView();
 
   public PolygonContentView() {
     color().set(Color.LIGHT_BLUE);
@@ -38,10 +39,8 @@ public class PolygonContentView extends PolygonView {
     space.background().set(Color.LIGHT_BLUE);
     space.dimension().set(new Vector(0, 5));
     children().add(space);
-    CellView metaTextCellView = new CellView();
-    metaTextCellView.cell.set(myMetaTextCell);
-    myMetaTextCell.bold().set(true);
-    children().add(metaTextCellView);
+    myMetaText.bold().set(true);
+    children().add(myMetaText);
     bounds().addHandler(new EventHandler<PropertyChangeEvent<Rectangle>>() {
       public void onEvent(PropertyChangeEvent<Rectangle> event) {
         adjustPoints(event.getNewValue().dimension.x - 1, event.getNewValue().dimension.y - 1);
@@ -113,7 +112,7 @@ public class PolygonContentView extends PolygonView {
   }
 
   public Property<String> metaText() {
-    return myMetaTextCell.text();
+    return myMetaText.text();
   }
 
 

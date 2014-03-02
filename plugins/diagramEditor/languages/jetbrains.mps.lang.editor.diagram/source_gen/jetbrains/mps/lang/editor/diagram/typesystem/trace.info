@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/1491555030356781789">
     <nodeInfo nodeId="1491555030356827125" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1491555030356827125" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -250,6 +250,64 @@
       <varInfo nodeId="4088443785018266987" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="4088443785018266987" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_DiagramNode_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/7200199917722151577">
+    <nodeInfo nodeId="6663698541542215777" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="23" startPosition="120" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6663698541542218836" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="25" startPosition="138" endLine="26" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4052492221165279614" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4052492221165306925" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="30" startPosition="39" endLine="31" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165343667" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4052492221165343667" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="35" startPosition="60" endLine="36" endPosition="339" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="41" startPosition="46" endLine="42" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="47" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="47" startPosition="130" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="52" startPosition="30" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_CellModel_Diagram_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6663698541542215932" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="24" startPosition="33" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4052492221165305727" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4052492221165343667" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="45" startPosition="68" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4052492221165279709" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="20" startPosition="54" endLine="20" endPosition="54" />
+    <scopeInfo nodeId="6663698541542215934" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="25" startPosition="138" endLine="26" endPosition="138" />
+    <scopeInfo nodeId="4052492221165305728" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="30" startPosition="39" endLine="31" endPosition="150" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="41" startPosition="46" endLine="42" endPosition="75" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="52" startPosition="30" endLine="53" endPosition="17" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4052492221165343667" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="36" endPosition="339">
+      <varInfo nodeId="4052492221165343667" varName="_reporter_2309309498" />
+      <varInfo nodeId="4052492221165343667" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="48" endPosition="45">
+      <varInfo nodeId="7200199917722151577" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165305727" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4052492221165305727" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="4052492221165279715" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="45" startPosition="68" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="7200199917722151577" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165279709" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="38" endPosition="5">
+      <varInfo nodeId="4052492221165279711" varName="nonSynchronizeableCellModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="7200199917722151578" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="23" startPosition="120" endLine="38" endPosition="5">
+      <varInfo nodeId="6663698541542215780" varName="topLevelCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7200199917722151577" varName="diagram" />
+      <varInfo nodeId="7200199917722151577" varName="status" />
+      <varInfo nodeId="7200199917722151577" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4052492221165305727" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="29" startPosition="200" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule$1" />
+    <unitInfo nodeId="7200199917722151577" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule" />
   </root>
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/8570854907291318065">
     <nodeInfo nodeId="8570854907291359968" fileName="check_DiagramElementsCreation_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

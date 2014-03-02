@@ -38,9 +38,9 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -57,6 +57,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createCollection_tb7paq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_tb7paq_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tb7paq_a0(editorContext, node));
@@ -107,13 +108,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, final SNode node) {
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
-    wrappingCollection.setSelectable(false);
-    final DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_c0(editorContext, node);
+  private EditorCell createDiagram_tb7paq_c0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_c0(editorContext, node);
     editorCell.setCellId("Diagram_tb7paq_c0");
-    wrappingCollection.addEditorCell(editorCell);
-    return wrappingCollection;
+    return editorCell;
   }
 
   private class DiagramCellImpl_tb7paq_c0 extends DiagramCell {
@@ -185,9 +183,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
-
     public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
       return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
@@ -212,50 +207,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
       ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
-      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "blocks", true))) {
-        if (existingBlocks.contains(nextElement)) {
-          syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        } else if (existingConnectors.contains(nextElement)) {
-          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        }
-
-        EditorCell cell = getContext().createNodeCell(nextElement);
-        if (cell instanceof BlockCell) {
-          addEditorCell(cell);
-          blocksIterator.add(nextElement);
-          existingBlocks.add(nextElement);
-        } else if (cell instanceof ConnectorCell) {
-          addEditorCell(cell);
-          connectorsIterator.add(nextElement);
-          existingConnectors.add(nextElement);
-        }
-      }
-      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "connectors", true))) {
-        if (existingBlocks.contains(nextElement)) {
-          syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        } else if (existingConnectors.contains(nextElement)) {
-          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        }
-
-        EditorCell cell = getContext().createNodeCell(nextElement);
-        if (cell instanceof BlockCell) {
-          addEditorCell(cell);
-          blocksIterator.add(nextElement);
-          existingBlocks.add(nextElement);
-        } else if (cell instanceof ConnectorCell) {
-          addEditorCell(cell);
-          connectorsIterator.add(nextElement);
-          existingConnectors.add(nextElement);
-        }
-      }
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "blocks", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "connectors", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }
@@ -273,13 +226,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, final SNode node) {
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
-    wrappingCollection.setSelectable(false);
-    final DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0(editorContext, node);
+  private EditorCell createDiagram_tb7paq_e0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0(editorContext, node);
     editorCell.setCellId("Diagram_tb7paq_e0");
-    wrappingCollection.addEditorCell(editorCell);
-    return wrappingCollection;
+    return editorCell;
   }
 
   private class DiagramCellImpl_tb7paq_e0 extends DiagramCell {
@@ -361,9 +311,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
-
     public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
       return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
@@ -388,50 +335,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
       ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
-      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newBlocks", true))) {
-        if (existingBlocks.contains(nextElement)) {
-          syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        } else if (existingConnectors.contains(nextElement)) {
-          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        }
-
-        EditorCell cell = getContext().createNodeCell(nextElement);
-        if (cell instanceof BlockCell) {
-          addEditorCell(cell);
-          blocksIterator.add(nextElement);
-          existingBlocks.add(nextElement);
-        } else if (cell instanceof ConnectorCell) {
-          addEditorCell(cell);
-          connectorsIterator.add(nextElement);
-          existingConnectors.add(nextElement);
-        }
-      }
-      for (SNode nextElement : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "newConnectors", true))) {
-        if (existingBlocks.contains(nextElement)) {
-          syncToNextNode(blocksIterator, existingBlocks, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        } else if (existingConnectors.contains(nextElement)) {
-          syncToNextNode(connectorsIterator, existingConnectors, nextElement);
-          getDirectChildCell(nextElement).synchronize();
-          continue;
-        }
-
-        EditorCell cell = getContext().createNodeCell(nextElement);
-        if (cell instanceof BlockCell) {
-          addEditorCell(cell);
-          blocksIterator.add(nextElement);
-          existingBlocks.add(nextElement);
-        } else if (cell instanceof ConnectorCell) {
-          addEditorCell(cell);
-          connectorsIterator.add(nextElement);
-          existingConnectors.add(nextElement);
-        }
-      }
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "newBlocks", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "newConnectors", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }

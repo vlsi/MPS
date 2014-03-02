@@ -53,6 +53,10 @@ import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.geometry.Vector;
+import java.util.ListIterator;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.Map;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -468,6 +472,16 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     myConnectionSingleList.setItem(null);
   }
 
+  protected void syncDiagramElements(Iterable<SNode> elements, ListIterator<SNode> blocksIterator, Set<SNode> existingBlocks, ListIterator<SNode> connectorsIterator, Set<SNode> existingConnectors) {
+    for (SNode nextElement : Sequence.fromIterable(elements)) {
+      EditorCell cell = getContext().createNodeCell(nextElement);
+      if (!(cell instanceof BlockCell) && !(cell instanceof ConnectorCell)) {
+        continue;
+      }
+      syncToNextNode((cell instanceof BlockCell ? blocksIterator : connectorsIterator), (cell instanceof BlockCell ? existingBlocks : existingConnectors), nextElement, cell);
+    }
+  }
+
   private class ConnectionInfo {
 
 
@@ -643,7 +657,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
 
     private boolean isActionEnabled(SubstituteAction substituteAction) {
-      return check_xnhqai_a0a91wb(MapSequence.fromMap(myActionToButtonMap).get(substituteAction));
+      return check_xnhqai_a0a91xb(MapSequence.fromMap(myActionToButtonMap).get(substituteAction));
     }
 
 
@@ -737,7 +751,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  private static boolean check_xnhqai_a0a91wb(ToggleAction checkedDotOperand) {
+  private static boolean check_xnhqai_a0a91xb(ToggleAction checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isSelected(null);
     }

@@ -5,10 +5,10 @@
   <unitInfo fileName="AbstractParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractParameter_BehaviorDescriptor" />
   <unitInfo fileName="AttributedFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CellModel_DiagramConnector_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_DiagramNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_DiagramPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Diagram_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_DiagramConnector_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_DiagramNode_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_DiagramPort_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_Diagram_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
   <unitInfo fileName="ConnectionEndBLQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndBLQuery_BehaviorDescriptor" />
   <unitInfo fileName="ConnectionEnd_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEnd_BehaviorDescriptor" />
   <unitInfo fileName="DiagramConnectorCanCreateHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_BehaviorDescriptor" />
@@ -33,12 +33,18 @@
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599119476">
     <nodeInfo nodeId="7140846024011929329" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011931601" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165685031" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4500758155551631637" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="3748979635599119632" fileName="CellModel_DiagramNode_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="7140846024011929330" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />
     <scopeInfo nodeId="7140846024011929383" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" />
+    <scopeInfo nodeId="4052492221165685028" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="4500758155551631634" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
     <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="3748979635599119476" varName="thisNode" />
     </scopeInfo>
@@ -48,7 +54,13 @@
     <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="3748979635599119476" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
+    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3748979635599119476" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="3748979635599119476" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599843644">
     <nodeInfo nodeId="3748979635600310581" fileName="AbstractFigureParameter_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -84,6 +96,26 @@
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior" />
+  </root>
+  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/4052492221165688944">
+    <nodeInfo nodeId="4052492221165688954" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4500758155551632102" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="89" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="4052492221165688946" fileName="CellModel_DiagramPort_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="4052492221165688951" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="4500758155551632099" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="89" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="4052492221165688944" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="4052492221165688944" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4052492221165688944" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/5422656561931890811">
     <nodeInfo nodeId="5422656561931993301" fileName="AttributedFigureReference_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -133,12 +165,18 @@
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/7140846024011931670">
     <nodeInfo nodeId="7140846024011931923" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011932139" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165676458" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4500758155551629673" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="7140846024011931672" fileName="CellModel_Diagram_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="7140846024011931679" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />
     <scopeInfo nodeId="7140846024011931691" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" />
+    <scopeInfo nodeId="4052492221165676455" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="4500758155551629670" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
     <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="7140846024011931670" varName="thisNode" />
     </scopeInfo>
@@ -148,17 +186,29 @@
     <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="7140846024011931670" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_Behavior" />
+    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="7140846024011931670" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="7140846024011931670" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/7140846024011932205">
     <nodeInfo nodeId="7140846024011932458" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011932621" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052492221165681115" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4500758155551631142" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="7140846024011932207" fileName="CellModel_DiagramConnector_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="7140846024011932214" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />
     <scopeInfo nodeId="7140846024011932226" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" />
+    <scopeInfo nodeId="4052492221165681112" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="4500758155551631139" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
     <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="7140846024011932205" varName="thisNode" />
     </scopeInfo>
@@ -168,7 +218,13 @@
     <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="7140846024011932205" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_Behavior" />
+    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="7140846024011932205" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="7140846024011932205" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8322026508615561874">
     <nodeInfo nodeId="1491555030356615989" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

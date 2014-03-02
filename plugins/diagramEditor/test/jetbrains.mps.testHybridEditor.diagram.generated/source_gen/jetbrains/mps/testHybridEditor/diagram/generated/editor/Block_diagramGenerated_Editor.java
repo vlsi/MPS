@@ -18,17 +18,14 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.ListIterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
+import java.util.HashSet;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
@@ -131,40 +128,8 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       super.synchronizeViewWithModel();
       myPropertyCell_70mnj_a0a.synchronize();
       myPropertyCell_70mnj_a1a.synchronize();
-      Set<SNode> existingPorts_70mnj_a0 = new HashSet<SNode>(myInputPorts);
-      ListIterator<SNode> portsIterator_70mnj_a0 = myInputPorts.listIterator();
-      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "inputPorts", true))) {
-        if (existingPorts_70mnj_a0.contains(port)) {
-          syncToNextNode(portsIterator_70mnj_a0, existingPorts_70mnj_a0, port);
-          getDirectChildCell(port).synchronize();
-          continue;
-        }
-
-        EditorCell portCell = getContext().createNodeCell(port);
-        if (portCell instanceof PortCell) {
-          addEditorCell(portCell);
-          portsIterator_70mnj_a0.add(port);
-          existingPorts_70mnj_a0.add(port);
-        }
-      }
-      purgeTailNodes(portsIterator_70mnj_a0);
-      Set<SNode> existingPorts_70mnj_a0_0 = new HashSet<SNode>(myOutputPorts);
-      ListIterator<SNode> portsIterator_70mnj_a0_0 = myOutputPorts.listIterator();
-      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "outputPorts", true))) {
-        if (existingPorts_70mnj_a0_0.contains(port)) {
-          syncToNextNode(portsIterator_70mnj_a0_0, existingPorts_70mnj_a0_0, port);
-          getDirectChildCell(port).synchronize();
-          continue;
-        }
-
-        EditorCell portCell = getContext().createNodeCell(port);
-        if (portCell instanceof PortCell) {
-          addEditorCell(portCell);
-          portsIterator_70mnj_a0_0.add(port);
-          existingPorts_70mnj_a0_0.add(port);
-        }
-      }
-      purgeTailNodes(portsIterator_70mnj_a0_0);
+      syncPortNodes(SLinkOperations.getTargets(getSNode(), "inputPorts", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
+      syncPortNodes(SLinkOperations.getTargets(getSNode(), "outputPorts", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
 
     public Mapper<SNode, DiagramNodeView> createMapper() {
@@ -219,8 +184,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override
@@ -252,8 +215,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       };
     }
-
-
 
     private DiagramNodeView createDiagramNodeView() {
       final BlockView blockView = new BlockView();
@@ -290,7 +251,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       }).build());
       return blockView;
-
     }
   }
 }

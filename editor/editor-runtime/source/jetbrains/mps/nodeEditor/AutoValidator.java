@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
@@ -77,8 +78,7 @@ class AutoValidator {
               }
 
               if (editorCell instanceof EditorCell_STHint) {
-                SNodeEditorUtil.removeRightTransformHint(node);
-                SNodeEditorUtil.removeLeftTransformHint(node);
+                STHintUtil.removeTransformHints(node);
               }
             }
           });
