@@ -242,6 +242,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         theAction.substitute(getContext(), "");
       }
     }, getOperationContext().getProject());
+    hideConnectionDragFeedback();
     return true;
   }
 
