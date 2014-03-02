@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class IAllowsErrors_Behavior {
+public class IChecksRules_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -20,6 +20,6 @@ public class IAllowsErrors_Behavior {
 
   @Deprecated
   public static boolean callSuper_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, String callerConceptFqName, List<IErrorReporter> errorReporters) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.IAllowsErrors"), callerConceptFqName, "virtual_hasExpectedRuleMessage_5348336190814877000", new Class[]{SNode.class, List.class}, new Object[]{errorReporters});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.IChecksRules"), callerConceptFqName, "virtual_hasExpectedRuleMessage_5348336190814877000", new Class[]{SNode.class, List.class}, new Object[]{errorReporters});
   }
 }

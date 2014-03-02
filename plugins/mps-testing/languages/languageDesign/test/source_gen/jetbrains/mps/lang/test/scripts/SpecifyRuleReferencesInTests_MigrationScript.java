@@ -33,7 +33,7 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SpecifyUtil.isNodeApplicableForSpecification(node);
+        return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -51,7 +51,7 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
       }
 
       public boolean isShowAsIntention() {
-        return true;
+        return false;
       }
     });
   }

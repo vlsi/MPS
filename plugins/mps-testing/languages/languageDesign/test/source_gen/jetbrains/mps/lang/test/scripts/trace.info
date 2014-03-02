@@ -1,87 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/1089663077933459099">
-    <nodeInfo nodeId="1089663077933459102" fileName="SpecifyUtil.java" startLine="10" startPosition="70" endLine="11" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1089663077933459100" fileName="SpecifyUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNodeApplicableForSpecification#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="1089663077933459101" fileName="SpecifyUtil.java" startLine="10" startPosition="70" endLine="11" endPosition="161" />
-    <scopeInfo nodeId="1089663077933459100" fileName="SpecifyUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1089663077933459111" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1089663077933459099" fileName="SpecifyUtil.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.test.scripts.SpecifyUtil" />
-  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/1089663077933459099" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/1089663077933459884">
     <nodeInfo nodeId="1089663077933477485" fileName="TestsErrorsChecker.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" />
     <nodeInfo nodeId="1089663077933477625" fileName="TestsErrorsChecker.java" startLine="25" startPosition="41" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="965462826529194902" fileName="TestsErrorsChecker.java" startLine="31" startPosition="61" endLine="32" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1089663077933079629" fileName="TestsErrorsChecker.java" startLine="32" startPosition="89" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5348336190814412766" fileName="TestsErrorsChecker.java" startLine="33" startPosition="51" endLine="34" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5348336190814424051" fileName="TestsErrorsChecker.java" startLine="36" startPosition="50" endLine="37" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="965462826529194910" fileName="TestsErrorsChecker.java" startLine="39" startPosition="5" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="965462826529195743" fileName="TestsErrorsChecker.java" startLine="45" startPosition="62" endLine="46" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1089663077932532262" fileName="TestsErrorsChecker.java" startLine="46" startPosition="89" endLine="47" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4670889958492032558" fileName="TestsErrorsChecker.java" startLine="47" startPosition="49" endLine="48" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1089663077932724678" fileName="TestsErrorsChecker.java" startLine="48" startPosition="59" endLine="49" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="965462826529195751" fileName="TestsErrorsChecker.java" startLine="49" startPosition="101" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="965462826528690134" fileName="TestsErrorsChecker.java" startLine="55" startPosition="51" endLine="56" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1089663077933146054" fileName="TestsErrorsChecker.java" startLine="56" startPosition="89" endLine="57" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1089663077933136775" fileName="TestsErrorsChecker.java" startLine="57" startPosition="100" endLine="58" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="965462826528690328" fileName="TestsErrorsChecker.java" startLine="58" startPosition="101" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7691029917082874827" fileName="TestsErrorsChecker.java" startLine="64" startPosition="92" endLine="65" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7691029917082892134" fileName="TestsErrorsChecker.java" startLine="67" startPosition="48" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7691029917082902883" fileName="TestsErrorsChecker.java" startLine="70" startPosition="8" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1089663077933079629" fileName="TestsErrorsChecker.java" startLine="31" startPosition="61" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5348336190814412766" fileName="TestsErrorsChecker.java" startLine="32" startPosition="51" endLine="33" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8333855927568575880" fileName="TestsErrorsChecker.java" startLine="33" startPosition="98" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1089663077932532262" fileName="TestsErrorsChecker.java" startLine="39" startPosition="62" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4670889958492032558" fileName="TestsErrorsChecker.java" startLine="40" startPosition="49" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8333855927568438663" fileName="TestsErrorsChecker.java" startLine="41" startPosition="59" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8333855927568443173" fileName="TestsErrorsChecker.java" startLine="42" startPosition="66" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8333855927568527475" fileName="TestsErrorsChecker.java" startLine="50" startPosition="48" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="965462826528690134" fileName="TestsErrorsChecker.java" startLine="58" startPosition="51" endLine="59" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1089663077933146054" fileName="TestsErrorsChecker.java" startLine="59" startPosition="89" endLine="60" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1089663077933136775" fileName="TestsErrorsChecker.java" startLine="60" startPosition="100" endLine="61" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="965462826528690328" fileName="TestsErrorsChecker.java" startLine="61" startPosition="101" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7691029917082874827" fileName="TestsErrorsChecker.java" startLine="67" startPosition="92" endLine="68" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7691029917082892134" fileName="TestsErrorsChecker.java" startLine="70" startPosition="48" endLine="71" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7691029917082902883" fileName="TestsErrorsChecker.java" startLine="73" startPosition="8" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1089663077933470967" fileName="TestsErrorsChecker.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestsErrorsChecker#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5348336190814422086" fileName="TestsErrorsChecker.java" startLine="35" startPosition="49" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7691029917082891465" fileName="TestsErrorsChecker.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/errors/IErrorReporter;)Z" />
-    <nodeInfo nodeId="5348336190814416610" fileName="TestsErrorsChecker.java" startLine="34" startPosition="98" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7691029917082881929" fileName="TestsErrorsChecker.java" startLine="65" startPosition="89" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1089663077933487957" fileName="TestsErrorsChecker.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorReporters#()Ljava/util/List;" />
-    <nodeInfo nodeId="1089663077933486055" fileName="TestsErrorsChecker.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConstraintsErrorReporters#()Ljava/util/List;" />
-    <nodeInfo nodeId="7691029917082868547" fileName="TestsErrorsChecker.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorReportersSpecificType#(Ljetbrains/mps/errors/MessageStatus;)Ljava/util/List;" />
-    <nodeInfo nodeId="1089663077933484639" fileName="TestsErrorsChecker.java" startLine="31" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeSystemErrorReporters#()Ljava/util/List;" />
+    <nodeInfo nodeId="8333855927568524561" fileName="TestsErrorsChecker.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/errors/IErrorReporter;)Z" />
+    <nodeInfo nodeId="7691029917082891465" fileName="TestsErrorsChecker.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/errors/IErrorReporter;)Z" />
+    <nodeInfo nodeId="1089663077933484639" fileName="TestsErrorsChecker.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeSystemErrorReporters#()Ljava/util/List;" />
+    <nodeInfo nodeId="8333855927568508105" fileName="TestsErrorsChecker.java" startLine="48" startPosition="100" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7691029917082881929" fileName="TestsErrorsChecker.java" startLine="68" startPosition="89" endLine="73" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1089663077933486055" fileName="TestsErrorsChecker.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConstraintsErrorReporters#()Ljava/util/List;" />
+    <nodeInfo nodeId="1089663077933487957" fileName="TestsErrorsChecker.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorReporters#()Ljava/util/List;" />
+    <nodeInfo nodeId="8333855927568481971" fileName="TestsErrorsChecker.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filterReportersByNode#(Ljava/util/Set;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="7691029917082868547" fileName="TestsErrorsChecker.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorReportersSpecificType#(Ljetbrains/mps/errors/MessageStatus;)Ljava/util/List;" />
     <scopeInfo nodeId="1089663077933470970" fileName="TestsErrorsChecker.java" startLine="25" startPosition="41" endLine="26" endPosition="21" />
-    <scopeInfo nodeId="5348336190814422087" fileName="TestsErrorsChecker.java" startLine="36" startPosition="50" endLine="37" endPosition="64" />
-    <scopeInfo nodeId="7691029917082891466" fileName="TestsErrorsChecker.java" startLine="67" startPosition="48" endLine="68" endPosition="50" />
+    <scopeInfo nodeId="8333855927568524562" fileName="TestsErrorsChecker.java" startLine="50" startPosition="48" endLine="51" endPosition="42" />
+    <scopeInfo nodeId="7691029917082891466" fileName="TestsErrorsChecker.java" startLine="70" startPosition="48" endLine="71" endPosition="50" />
     <scopeInfo nodeId="1089663077933470967" fileName="TestsErrorsChecker.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1089663077933471320" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5348336190814416613" fileName="TestsErrorsChecker.java" startLine="35" startPosition="49" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="7691029917082891465" fileName="TestsErrorsChecker.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="7691029917082891465" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8048812996918687746" fileName="TestsErrorsChecker.java" startLine="55" startPosition="51" endLine="59" endPosition="18">
-      <varInfo nodeId="965462826528690137" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5348336190814416610" fileName="TestsErrorsChecker.java" startLine="34" startPosition="98" endLine="39" endPosition="5">
-      <varInfo nodeId="5348336190814416616" varName="errorReporter" />
-    </scopeInfo>
-    <scopeInfo nodeId="965462826529195742" fileName="TestsErrorsChecker.java" startLine="45" startPosition="62" endLine="50" endPosition="18">
-      <varInfo nodeId="1089663077932532263" varName="checker" />
-      <varInfo nodeId="4670889958492032559" varName="context" />
-      <varInfo nodeId="965462826529195744" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1089663077933487957" fileName="TestsErrorsChecker.java" startLine="55" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1089663077933486055" fileName="TestsErrorsChecker.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="7691029917082868550" fileName="TestsErrorsChecker.java" startLine="64" startPosition="92" endLine="71" endPosition="18">
-      <varInfo nodeId="7691029917082874830" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="965462826529194901" fileName="TestsErrorsChecker.java" startLine="31" startPosition="61" endLine="40" endPosition="18">
+    <scopeInfo nodeId="965462826529194901" fileName="TestsErrorsChecker.java" startLine="31" startPosition="61" endLine="34" endPosition="47">
       <varInfo nodeId="1089663077933079630" varName="checker" />
       <varInfo nodeId="5348336190814412767" varName="errors" />
-      <varInfo nodeId="965462826529194903" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7691029917082868547" fileName="TestsErrorsChecker.java" startLine="64" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="8333855927568524561" fileName="TestsErrorsChecker.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="8333855927568524561" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7691029917082891465" fileName="TestsErrorsChecker.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="7691029917082891465" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="965462826529195742" fileName="TestsErrorsChecker.java" startLine="39" startPosition="62" endLine="43" endPosition="47">
+      <varInfo nodeId="1089663077932532263" varName="checker" />
+      <varInfo nodeId="4670889958492032559" varName="context" />
+      <varInfo nodeId="8333855927568438664" varName="errors" />
+    </scopeInfo>
+    <scopeInfo nodeId="8048812996918687746" fileName="TestsErrorsChecker.java" startLine="58" startPosition="51" endLine="62" endPosition="18">
+      <varInfo nodeId="965462826528690137" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1089663077933484639" fileName="TestsErrorsChecker.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8333855927568481974" fileName="TestsErrorsChecker.java" startLine="48" startPosition="100" endLine="53" endPosition="24" />
+    <scopeInfo nodeId="1089663077933486055" fileName="TestsErrorsChecker.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1089663077933487957" fileName="TestsErrorsChecker.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="8333855927568481971" fileName="TestsErrorsChecker.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="8333855927568503556" varName="errors" />
+      <varInfo nodeId="8333855927568505923" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7691029917082868550" fileName="TestsErrorsChecker.java" startLine="67" startPosition="92" endLine="74" endPosition="18">
+      <varInfo nodeId="7691029917082874830" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7691029917082868547" fileName="TestsErrorsChecker.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="7691029917082870173" varName="errorType" />
     </scopeInfo>
-    <scopeInfo nodeId="1089663077933484639" fileName="TestsErrorsChecker.java" startLine="31" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="7691029917082891465" fileName="TestsErrorsChecker.java" startLine="66" startPosition="99" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker$1" />
-    <unitInfo nodeId="1089663077933459884" fileName="TestsErrorsChecker.java" startLine="21" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker" />
+    <unitInfo nodeId="8333855927568524561" fileName="TestsErrorsChecker.java" startLine="49" startPosition="49" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker$1" />
+    <unitInfo nodeId="7691029917082891465" fileName="TestsErrorsChecker.java" startLine="69" startPosition="99" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker$2" />
+    <unitInfo nodeId="1089663077933459884" fileName="TestsErrorsChecker.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/4098794966557888877">
     <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="20" startPosition="91" endLine="21" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="23" startPosition="31" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="41" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5425888223947042037" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1089663077933459102" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7344575040117469781" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="39" startPosition="52" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1334460907022745824" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="40" startPosition="39" endLine="41" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5587533744543826748" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="41" startPosition="182" endLine="42" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -91,7 +86,7 @@
     <nodeInfo nodeId="428590876657250630" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="46" startPosition="77" endLine="47" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4098794966557418407" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="47" startPosition="137" endLine="48" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4307182653745433029" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="49" startPosition="9" endLine="50" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="42" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="42" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
@@ -105,8 +100,8 @@
     <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="23" startPosition="31" endLine="24" endPosition="41" />
     <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="41" endLine="28" endPosition="41" />
     <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="63" />
-    <scopeInfo nodeId="428590876658645093" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="66" />
-    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="42" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="428590876658645093" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="165" />
+    <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="53" startPosition="42" endLine="54" endPosition="21" />
     <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />

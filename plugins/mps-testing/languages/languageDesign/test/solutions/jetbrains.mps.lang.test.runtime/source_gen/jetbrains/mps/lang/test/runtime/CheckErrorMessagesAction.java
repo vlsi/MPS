@@ -51,7 +51,7 @@ public class CheckErrorMessagesAction implements Runnable {
     }
     SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     for (SNode property : SLinkOperations.getTargets(container, "nodeOperations", true)) {
-      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.IAllowsErrors")) {
+      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.IChecksRules")) {
         return true;
       }
     }

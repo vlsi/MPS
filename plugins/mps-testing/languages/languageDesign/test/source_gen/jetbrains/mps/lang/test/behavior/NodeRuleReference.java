@@ -6,11 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeRuleReference {
-  private SNode reference;
+  private SNode ruleNode;
 
 
-  public NodeRuleReference(SNode reference) {
-    this.reference = reference;
+  public NodeRuleReference(SNode ruleNode) {
+    this.ruleNode = ruleNode;
   }
 
 
@@ -20,6 +20,8 @@ public class NodeRuleReference {
       return RuleType.TYPESYSTEM;
     } else if (isConstraints()) {
       return RuleType.CONSTRAINTS;
+    } else if (isMessageStatement()) {
+      return RuleType.MESSAGESTATEMENT;
     } else {
       return RuleType.DEFAULT;
     }
@@ -28,13 +30,19 @@ public class NodeRuleReference {
 
 
   private boolean isTypeSystem() {
-    return SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
+    return SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
   }
 
 
 
   private boolean isConstraints() {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(reference), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(ruleNode), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
+  }
+
+
+
+  private boolean isMessageStatement() {
+    return SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.typesystem.structure.MessageStatement");
   }
 
 

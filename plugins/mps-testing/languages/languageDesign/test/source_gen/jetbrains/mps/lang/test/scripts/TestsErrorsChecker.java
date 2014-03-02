@@ -5,8 +5,6 @@ package jetbrains.mps.lang.test.scripts;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import java.util.Set;
@@ -15,8 +13,10 @@ import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.NullOperationContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.errors.MessageStatus;
 
 public class TestsErrorsChecker {
   private SNode node;
@@ -29,25 +29,28 @@ public class TestsErrorsChecker {
 
 
   public List<IErrorReporter> getTypeSystemErrorReporters() {
-    List<IErrorReporter> result = ListSequence.fromList(new ArrayList<IErrorReporter>());
     INodeChecker checker = new TypesystemChecker();
     Set<IErrorReporter> errors = checker.getErrors(SNodeOperations.getContainingRoot(node), null);
-    for (IErrorReporter errorReporter : errors) {
-      if (errorReporter.getSNode().equals(node)) {
-        ListSequence.fromList(result).addElement(errorReporter);
-      }
-    }
-    return result;
+    return filterReportersByNode(errors, node);
   }
 
 
 
   public List<IErrorReporter> getConstraintsErrorReporters() {
-    List<IErrorReporter> result = ListSequence.fromList(new ArrayList<IErrorReporter>());
     INodeChecker checker = new LanguageChecker();
     IOperationContext context = new NullOperationContext();
-    ListSequence.fromList(result).addSequence(SetSequence.fromSet(checker.getErrors(node, context)));
-    return result;
+    Set<IErrorReporter> errors = checker.getErrors(node, context);
+    return filterReportersByNode(errors, node);
+  }
+
+
+
+  private List<IErrorReporter> filterReportersByNode(Set<IErrorReporter> errors, final SNode node) {
+    return SetSequence.fromSet(errors).where(new IWhereFilter<IErrorReporter>() {
+      public boolean accept(IErrorReporter it) {
+        return it.getSNode().equals(node);
+      }
+    }).toListSequence();
   }
 
 

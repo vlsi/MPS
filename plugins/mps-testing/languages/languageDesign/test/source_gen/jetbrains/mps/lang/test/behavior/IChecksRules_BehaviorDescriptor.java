@@ -6,6 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 
-public interface IAllowsErrors_BehaviorDescriptor {
+public interface IChecksRules_BehaviorDescriptor {
   public boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, List<IErrorReporter> errorReporters);
 }

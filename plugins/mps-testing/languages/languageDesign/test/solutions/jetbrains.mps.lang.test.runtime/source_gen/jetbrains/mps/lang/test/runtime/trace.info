@@ -950,7 +950,7 @@
     <nodeInfo nodeId="7835233914435876969" fileName="CheckErrorMessagesAction.java" startLine="40" startPosition="9" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7835233914435876979" fileName="CheckErrorMessagesAction.java" startLine="49" startPosition="158" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7835233914435876987" fileName="CheckErrorMessagesAction.java" startLine="51" startPosition="5" endLine="52" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7835233914435877003" fileName="CheckErrorMessagesAction.java" startLine="54" startPosition="102" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7835233914435877003" fileName="CheckErrorMessagesAction.java" startLine="54" startPosition="101" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7835233914435877009" fileName="CheckErrorMessagesAction.java" startLine="57" startPosition="5" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7835233914435877026" fileName="CheckErrorMessagesAction.java" startLine="64" startPosition="28" endLine="65" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7835233914435877047" fileName="CheckErrorMessagesAction.java" startLine="72" startPosition="26" endLine="73" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -970,7 +970,7 @@
     <nodeInfo nodeId="7835233914435876975" fileName="CheckErrorMessagesAction.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasErrorOrWarningCheckOperationTag#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="7835233914435876914" fileName="CheckErrorMessagesAction.java" startLine="30" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <scopeInfo nodeId="7835233914435876978" fileName="CheckErrorMessagesAction.java" startLine="49" startPosition="158" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="7835233914435877002" fileName="CheckErrorMessagesAction.java" startLine="54" startPosition="102" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="7835233914435877002" fileName="CheckErrorMessagesAction.java" startLine="54" startPosition="101" endLine="55" endPosition="20" />
     <scopeInfo nodeId="7835233914435877025" fileName="CheckErrorMessagesAction.java" startLine="64" startPosition="28" endLine="65" endPosition="90" />
     <scopeInfo nodeId="7835233914435877046" fileName="CheckErrorMessagesAction.java" startLine="72" startPosition="26" endLine="73" endPosition="86" />
     <scopeInfo nodeId="7835233914435877065" fileName="CheckErrorMessagesAction.java" startLine="79" startPosition="70" endLine="80" endPosition="96" />

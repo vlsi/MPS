@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeErrorCheckOperation_BehaviorDescriptor extends NodeRuleCheckOperation_BehaviorDescriptor {
+public class NodeErrorCheckOperation_BehaviorDescriptor extends AbstractNodeErrorCheckOperation_BehaviorDescriptor {
   public NodeErrorCheckOperation_BehaviorDescriptor() {
   }
 
@@ -16,16 +16,8 @@ public class NodeErrorCheckOperation_BehaviorDescriptor extends NodeRuleCheckOpe
     return NodeErrorCheckOperation_Behavior.virtual_canAttachReference_2893471348147804024(thisNode, reference);
   }
 
-  public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
-    return NodeErrorCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
-  }
-
-  public SNode virtual_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
-    return NodeErrorCheckOperation_Behavior.virtual_getReferencedRuleNode_2893471348147987869(thisNode);
-  }
-
-  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    NodeErrorCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
+  public SNode virtual_getReference_8333855927540237654(SNode thisNode) {
+    return NodeErrorCheckOperation_Behavior.virtual_getReference_8333855927540237654(thisNode);
   }
 
   @Override

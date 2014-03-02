@@ -25,16 +25,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.test.scripts.SpecifyUtil" />
     <classNode dependClassName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.test.scripts.SpecifyUtil" file="SpecifyUtil.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.scripts.TestsErrorsChecker" file="TestsErrorsChecker.java">
     <classNode dependClassName="java.util.ArrayList" />

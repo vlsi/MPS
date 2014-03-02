@@ -9,6 +9,6 @@ public class UnknownRuleReference_Behavior {
   }
 
   public static String virtual_getName_7691029917083872184(SNode thisNode) {
-    return "";
+    return "UnknownRule";
   }
 }

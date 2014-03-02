@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 
-public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor implements IAllowsErrors_BehaviorDescriptor, IReferenceAttachable_BehaviorDescriptor {
+public abstract class NodeRuleCheckOperation_BehaviorDescriptor extends AbstractNodeRuleCheckOperation_BehaviorDescriptor implements IReferenceAttachable_BehaviorDescriptor {
   public NodeRuleCheckOperation_BehaviorDescriptor() {
   }
 

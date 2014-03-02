@@ -6,7 +6,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class NodeRuleFactory {
   private IErrorReporter reporter;
@@ -18,18 +17,22 @@ public class NodeRuleFactory {
 
 
 
-  public SNode createNodeFromError(SNode reference) {
+  public SNode createNodeFromRuleMsg(SNode reference) {
     NodeRuleReference ruleReference = new NodeRuleReference(reference);
     if (ruleReference.getType() == RuleType.TYPESYSTEM) {
-      return this.createTypeSystemErrorCheckOperation();
+      return this.createTypeSystemCheckOperation();
+    } else if (ruleReference.getType() == RuleType.CONSTRAINTS) {
+      return this.createConstraintsCheckOperation(reference);
+    } else if (ruleReference.getType() == RuleType.MESSAGESTATEMENT) {
+      return this.createMessageStatementCheckOperation(reference);
     } else {
-      return this.createRuleCheckOperation(reference);
+      return this.createDefaultCheckOperation(reference);
     }
   }
 
 
 
-  private SNode createTypeSystemErrorCheckOperation() {
+  private SNode createTypeSystemCheckOperation() {
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       return SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", null);
     } else {
@@ -39,15 +42,36 @@ public class NodeRuleFactory {
 
 
 
-  private SNode createRuleCheckOperation(SNode reference) {
+  private SNode createConstraintsCheckOperation(SNode reference) {
+    SNode result;
+    if (reporter.getMessageStatus() == MessageStatus.ERROR) {
+      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", null);
+    } else {
+      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
+    }
+    return result;
+  }
+
+
+
+  private SNode createMessageStatementCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);
     } else {
       result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
     }
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, result, "virtual_canAttachReference_2893471348147804024", new Object[]{reference})) {
-      BehaviorReflection.invokeVirtual(Void.class, result, "virtual_attachReference_2893471348147987863", new Object[]{reference});
+    return result;
+  }
+
+
+
+  private SNode createDefaultCheckOperation(SNode reference) {
+    SNode result;
+    if (reporter.getMessageStatus() == MessageStatus.ERROR) {
+      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", null);
+    } else {
+      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
     }
     return result;
   }

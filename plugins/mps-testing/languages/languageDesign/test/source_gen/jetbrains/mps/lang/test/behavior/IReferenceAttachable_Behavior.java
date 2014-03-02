@@ -32,6 +32,16 @@ public class IReferenceAttachable_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getReference_8333855927540237654(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_getReference_8333855927540237654(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable"), callerConceptFqName, "virtual_getReference_8333855927540237654", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode call_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReferencedRuleNode_2893471348147987869", new Object[]{});
   }

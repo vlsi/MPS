@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8pw92s3n9lf4tgizwue79fq8w2o9se" />
+<dependencies version="2" modelHash="-e2axucxg0heqapqxbaabsmr8q5nw76w">
+  <dep model="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" hash="6bqls6giv3l8cueu2o5wlw6riscxwbe" />
+  <dep model="r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)" hash="-aqog1ejvyzggozcma3z1vgahrxn1blq" />
+  <dep model="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)" hash="-62pos921aiqbd3qt3e2nzjlvstlgqpl" />
+  <common dependsOnNodes="true">
+    <dep model="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" />
+    <dep model="r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)" />
+    <dep model="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
 

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 
 public enum RuleType {
   DEFAULT(),
+  MESSAGESTATEMENT(),
   CONSTRAINTS(),
   TYPESYSTEM();
 

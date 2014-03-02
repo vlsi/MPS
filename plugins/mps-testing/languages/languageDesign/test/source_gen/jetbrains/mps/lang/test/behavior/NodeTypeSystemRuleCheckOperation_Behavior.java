@@ -5,7 +5,6 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 
 public class NodeTypeSystemRuleCheckOperation_Behavior {
@@ -13,9 +12,6 @@ public class NodeTypeSystemRuleCheckOperation_Behavior {
   }
 
   public static boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, List<IErrorReporter> errorReporters) {
-    if (ListSequence.fromList(errorReporters).isEmpty()) {
-      return false;
-    }
     for (IErrorReporter errorReport : errorReporters) {
       SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(errorReport);
       if (new NodeRuleReference(ruleNode).getType() == RuleType.TYPESYSTEM) {

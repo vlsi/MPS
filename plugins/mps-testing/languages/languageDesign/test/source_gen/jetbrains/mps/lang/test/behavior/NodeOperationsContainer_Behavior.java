@@ -17,14 +17,14 @@ public class NodeOperationsContainer_Behavior {
   public static void call_detachAllErrorOperations_5587533744543326483(SNode thisNode) {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.test.structure.IAllowsErrors");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.test.structure.IChecksRules");
       }
     });
   }
 
   public static void call_createNodeAndAttachReference_428590876657265140(SNode thisNode, SNode reference, IErrorReporter reporter) {
     NodeRuleFactory factory = new NodeRuleFactory(reporter);
-    SNode newNode = factory.createNodeFromError(reference);
+    SNode newNode = factory.createNodeFromRuleMsg(reference);
     if (SNodeOperations.isInstanceOf(newNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable")) {
       SNode node = SNodeOperations.cast(newNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable");
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canAttachReference_2893471348147804024", new Object[]{reference})) {
