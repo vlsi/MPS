@@ -8,20 +8,20 @@ public class NodeWarningCheckOperation_BehaviorDescriptor extends NodeRuleCheckO
   public NodeWarningCheckOperation_BehaviorDescriptor() {
   }
 
-  public void virtual_attachReference_8489045168660953479(SNode thisNode, SNode reference) {
-    NodeWarningCheckOperation_Behavior.virtual_attachReference_8489045168660953479(thisNode, reference);
+  public void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
+    NodeWarningCheckOperation_Behavior.virtual_attachReference_2893471348147987863(thisNode, reference);
   }
 
-  public boolean virtual_canAttachReference_1334460907022490922(SNode thisNode, SNode reference) {
-    return NodeWarningCheckOperation_Behavior.virtual_canAttachReference_1334460907022490922(thisNode, reference);
+  public boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference) {
+    return NodeWarningCheckOperation_Behavior.virtual_canAttachReference_2893471348147804024(thisNode, reference);
   }
 
   public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return NodeWarningCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
 
-  public SNode virtual_getReferencedRuleNode_5872607264946106205(SNode thisNode) {
-    return NodeWarningCheckOperation_Behavior.virtual_getReferencedRuleNode_5872607264946106205(thisNode);
+  public SNode virtual_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
+    return NodeWarningCheckOperation_Behavior.virtual_getReferencedRuleNode_2893471348147987869(thisNode);
   }
 
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {

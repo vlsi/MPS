@@ -14,10 +14,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -75,7 +72,7 @@ public class ReportErrorStatementReference_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_ycncvi_a0a0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return ReportErrorStatementReference_Behavior.call_getName_8578280453517059635(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ReportErrorStatementReference"))), node);
+          return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getName_1597542831856389237", new Object[]{});
         }
 
         public void setText(String s) {

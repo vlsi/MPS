@@ -4,17 +4,8 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.errors.MessageStatus;
-import junit.framework.Assert;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NodeErrorCheckOperation_Behavior {
@@ -26,45 +17,29 @@ public class NodeErrorCheckOperation_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "errorRef", true) == null)) {
       errorName = "Error";
     } else {
-      errorName = ReportErrorStatementReference_Behavior.call_getName_8578280453517073200(SLinkOperations.getTarget(thisNode, "errorRef", true));
+      errorName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "errorRef", true), "virtual_getName_7691029917083872184", new Object[]{});
     }
     return "Node" + errorName + "Check";
   }
 
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    final SNode operation = thisNode;
-    NodeCheckerUtil.checkNodeWithCheckingAction(node, new CheckingAction(operation) {
-      public void checkOperation(TypeCheckingContext context) {
-        assert SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation");
-        List<IErrorReporter> errorReports = ListSequence.fromList(((List<IErrorReporter>) context.getTypeMessagesDontCheck(getNodeToCheck()))).where(new IWhereFilter<IErrorReporter>() {
-          public boolean accept(IErrorReporter it) {
-            return it.getMessageStatus() == MessageStatus.ERROR;
-          }
-        }).toListSequence();
-        final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(getNodeToCheck()) + "> does not have expected error message";
-
-        Assert.assertTrue(errorString, NodeRuleCheckOperation_Behavior.call_nodeHasExpectedRuleMessage_1302453276764459617(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"))), errorReports, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")));
-      }
-    });
+    PerformUtil.checkNodeHasError(thisNode);
   }
 
-  public static boolean virtual_canAttachReference_1334460907022490922(SNode thisNode, SNode reference) {
-    if (SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement")) {
-      return true;
-    }
+  public static boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference) {
     if (!(SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.MessageStatement"))) {
       return true;
     }
-    return false;
+    return SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
   }
 
-  public static void virtual_attachReference_8489045168660953479(SNode thisNode, SNode reference) {
-    assert NodeRuleCheckOperation_Behavior.call_canAttachReference_1334460907022490922(thisNode, reference);
+  public static void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
+    assert IReferenceAttachable_Behavior.call_canAttachReference_2893471348147804024(thisNode, reference);
     SLinkOperations.setTarget(thisNode, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null), true);
-    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "errorRef", true), "declaration", reference, false);
+    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "errorRef", true), "declaration", SNodeOperations.cast(reference, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"), false);
   }
 
-  public static SNode virtual_getReferencedRuleNode_5872607264946106205(SNode thisNode) {
+  public static SNode virtual_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "errorRef", true) == null)) {
       return null;
     }

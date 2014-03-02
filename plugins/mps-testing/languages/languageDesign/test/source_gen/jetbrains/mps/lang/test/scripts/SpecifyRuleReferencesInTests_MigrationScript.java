@@ -8,16 +8,12 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.inference.ITypechecking;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 
 public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationScript {
@@ -37,27 +33,21 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null);
+        return SpecifyUtil.isNodeApplicableForSpecification(node);
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
-        SNode root = SNodeOperations.getContainingRoot(node);
         final SNode nodeToCheck = node;
-        final SNode myNode = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
-        NodeOperationsContainer_Behavior.call_detachAllErrorOperations_5587533744543326483(myNode);
-        TypeContextManager.getInstance().runTypeCheckingAction(owner, root, new ITypechecking.Action() {
-          @Override
-          public void run(TypeCheckingContext p0) {
-            p0.checkIfNotChecked(nodeToCheck, true);
-            for (IErrorReporter reporter : p0.getTypeMessagesDontCheck(nodeToCheck)) {
-              SNode ruleNode = NodeCheckerUtil.getRuleNode(reporter);
-              NodeOperationsContainer_Behavior.call_attachReference_428590876657265140(myNode, ruleNode, reporter);
-              ((SModelBase) SNodeOperations.getModel(myNode)).addModelImport(SNodeOperations.getModel(ruleNode).getReference(), false);
-            }
-            MissingDependenciesFixer.fixDependencies(SNodeOperations.getModel(myNode), true);
-          }
-        });
+        final SNode operationsContainer = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+        NodeOperationsContainer_Behavior.call_detachAllErrorOperations_5587533744543326483(operationsContainer);
+        TestsErrorsChecker checker = new TestsErrorsChecker(nodeToCheck);
+        final List<IErrorReporter> reporters = checker.getErrorReporters();
+        for (IErrorReporter reporter : reporters) {
+          SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter);
+          NodeOperationsContainer_Behavior.call_createNodeAndAttachReference_428590876657265140(operationsContainer, ruleNode, reporter);
+          ((SModelBase) SNodeOperations.getModel(operationsContainer)).addModelImport(SNodeOperations.getModel(ruleNode).getReference(), false);
+        }
+        MissingDependenciesFixer.fixDependencies(SNodeOperations.getModel(operationsContainer), true);
       }
 
       public boolean isShowAsIntention() {

@@ -2,6 +2,10 @@
 <model modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="38">
   <persistence version="8" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
@@ -9,6 +13,12 @@
   <import index="tp3j" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="7" />
+  <import index="tp5n" modelUID="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)" version="-1" />
+  <import index="tp6m" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="0" />
+  <import index="nax5" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.errors(MPS.Core/jetbrains.mps.errors@java_stub)" version="-1" />
+  <import index="ua2a" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
+  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
+  <import index="tp5o" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="38" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1210673684636" nodeInfo="ig">
@@ -658,8 +668,11 @@
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="check specific rule" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8578280453507219300" nodeInfo="ig">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2893471348147803958" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8578280453507219248" resolveInfo="IAllowsErrors" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2893471348147803963" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2893471348147803052" resolveInfo="IReferenceAttachable" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4531408400484511853" nodeInfo="ig">
@@ -668,7 +681,10 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="declaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpd4.1175517767210" resolveInfo="ReportErrorStatement" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7691029917083955322" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7691029917083872157" resolveInfo="IRuleReference" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4531408400486526326" nodeInfo="ig">
@@ -677,7 +693,10 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="declaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpd4.1207055528241" resolveInfo="WarningStatement" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7691029917083977146" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7691029917083872157" resolveInfo="IRuleReference" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="428590876651279930" nodeInfo="ig">
@@ -685,10 +704,7 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeTypeSystemErrorCheckOperation" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has typesystem error" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="check for unknown typesystem error" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8578280453507219302" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8578280453507219248" resolveInfo="IAllowsErrors" />
-    </node>
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5348336190815082969" resolveInfo="NodeTypeSystemRuleCheckOperation" />
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8578280453507219248" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
@@ -699,10 +715,39 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeTypeSystemWarningCheckOperation" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has typesystem warning" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="check for unknown typesystem warning" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5348336190815082969" resolveInfo="NodeTypeSystemRuleCheckOperation" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5348336190815082969" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
+    <property name="name" nameId="tpck.1169194664001" value="NodeTypeSystemRuleCheckOperation" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8578280453509464011" nodeInfo="ig">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5348336190815082970" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8578280453507219248" resolveInfo="IAllowsErrors" />
     </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2893471348147803052" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
+    <property name="name" nameId="tpck.1169194664001" value="IReferenceAttachable" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7691029917083831655" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
+    <property name="name" nameId="tpck.1169194664001" value="UnknownRuleReference" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7691029917083846666" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="declaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7691029917083872195" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7691029917083872157" resolveInfo="IRuleReference" />
+    </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7691029917083872157" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
+    <property name="name" nameId="tpck.1169194664001" value="IRuleReference" />
   </root>
 </model>
 

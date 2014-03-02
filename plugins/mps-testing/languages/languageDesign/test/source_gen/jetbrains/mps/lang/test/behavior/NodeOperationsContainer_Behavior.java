@@ -8,8 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class NodeOperationsContainer_Behavior {
@@ -24,28 +22,15 @@ public class NodeOperationsContainer_Behavior {
     });
   }
 
-  public static void call_attachReference_428590876657265140(SNode thisNode, SNode reference, IErrorReporter reporter) {
-    if (SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")) {
-      if (reporter.getMessageStatus() == MessageStatus.ERROR) {
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", null));
-      } else {
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", null));
+  public static void call_createNodeAndAttachReference_428590876657265140(SNode thisNode, SNode reference, IErrorReporter reporter) {
+    NodeRuleFactory factory = new NodeRuleFactory(reporter);
+    SNode newNode = factory.createNodeFromError(reference);
+    if (SNodeOperations.isInstanceOf(newNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable")) {
+      SNode node = SNodeOperations.cast(newNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable");
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canAttachReference_2893471348147804024", new Object[]{reference})) {
+        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachReference_2893471348147987863", new Object[]{reference});
       }
-    } else {
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(NodeOperationsContainer_Behavior.call_createRuleCheckOperation_428590876657656318(thisNode, reference, reporter));
     }
-  }
-
-  public static SNode call_createRuleCheckOperation_428590876657656318(SNode thisNode, SNode reference, IErrorReporter reporter) {
-    SNode result;
-    if (reporter.getMessageStatus() == MessageStatus.ERROR) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);
-    } else {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
-    }
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, result, "virtual_canAttachReference_1334460907022490922", new Object[]{reference})) {
-      BehaviorReflection.invokeVirtual(Void.class, result, "virtual_attachReference_8489045168660953479", new Object[]{reference});
-    }
-    return result;
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(newNode);
   }
 }

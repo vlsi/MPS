@@ -6,11 +6,11 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
-public abstract class CheckingAction implements ITypechecking.Action {
+public abstract class NodeTypeCheckingAction implements ITypechecking.Action {
   private SNode operation;
 
 
-  public CheckingAction(final SNode operation) {
+  public NodeTypeCheckingAction(final SNode operation) {
     this.operation = operation;
   }
 
