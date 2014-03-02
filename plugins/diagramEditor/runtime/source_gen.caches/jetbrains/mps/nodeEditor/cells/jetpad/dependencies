@@ -118,6 +118,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
@@ -145,6 +146,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="jetbrains.jetpad.event.Key" />
     <classNode dependClassName="jetbrains.jetpad.event.KeyEvent" />
     <classNode dependClassName="jetbrains.jetpad.event.ModifierKey" />

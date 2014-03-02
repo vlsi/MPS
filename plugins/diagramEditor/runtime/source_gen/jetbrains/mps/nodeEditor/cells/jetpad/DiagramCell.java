@@ -64,8 +64,10 @@ import java.util.HashMap;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import javax.swing.JLabel;
 import com.intellij.icons.AllIcons;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.SwingConstants;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -93,7 +95,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   public JComponent getComponent() {
     if (myPanel == null) {
       myPanel = new JPanel(new GridLayoutManager(1, 2));
-      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
       myPanel.add(getPalette(), constraints);
       constraints.setColumn(1);
       constraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
@@ -688,11 +690,15 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
     private void update() {
       updateToggleActions();
-      GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-      JComponent blockActionPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myBlockActionGroup, true).getComponent();
+      GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+      ActionToolbar elementsToolbat = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myBlockActionGroup, true);
+      elementsToolbat.setOrientation(SwingConstants.VERTICAL);
+      JComponent blockActionPanel = elementsToolbat.getComponent();
       myBlockActionPanel.removeAll();
       myBlockActionPanel.add(blockActionPanel, gridConstraints);
-      JComponent connectorActionPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myConnectorActionGroup, true).getComponent();
+      ActionToolbar connectorToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myConnectorActionGroup, true);
+      connectorToolbar.setOrientation(SwingConstants.VERTICAL);
+      JComponent connectorActionPanel = connectorToolbar.getComponent();
       myConnectorActionPanel.removeAll();
       myConnectorActionPanel.add(connectorActionPanel, gridConstraints);
     }
