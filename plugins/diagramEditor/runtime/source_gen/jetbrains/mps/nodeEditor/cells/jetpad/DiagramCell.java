@@ -13,17 +13,13 @@ import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.selection.SelectionListener;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.selection.Selection;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.lang.editor.diagram.runtime.plugin.DiagramEditorTool_Tool;
-import javax.swing.JComponent;
-import java.awt.Dimension;
 import jetbrains.jetpad.projectional.view.ViewTrait;
+import javax.swing.JPanel;
+import jetbrains.mps.openapi.editor.EditorContext;
+import javax.swing.JComponent;
+import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.GridConstraints;
+import java.awt.Dimension;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -41,11 +37,13 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
 import java.awt.Point;
@@ -55,7 +53,19 @@ import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.geometry.Vector;
-import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import java.util.Map;
+import com.intellij.openapi.actionSystem.ToggleAction;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import javax.swing.JLabel;
+import com.intellij.icons.AllIcons;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import javax.swing.Icon;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
@@ -67,35 +77,30 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   protected ObservableList<SNode> myBlocks = new ObservableArrayList<SNode>();
   protected ObservableList<SNode> myConnectors = new ObservableArrayList<SNode>();
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
+  private ViewTrait myHandlingTrait;
+  private DiagramCell.DiagramPalette myPalettePanel;
+  private JPanel myPanel;
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    editorContext.getEditorComponent().getSelectionManager().addSelectionListener(new SelectionListener() {
-      public void selectionChanged(EditorComponent component, Selection oldSelection, Selection newSelection) {
-        openPalette(newSelection, component);
-      }
-    });
-  }
-
-  private void openPalette(Selection newSelection, EditorComponent component) {
-    if (newSelection != null && eq_xnhqai_a0a0a11(newSelection.getSelectedCells().get(0), this)) {
-      if (getSubstituteInfo() != null) {
-        getSubstituteInfo().invalidateActions();
-      }
-      Project ideaProject = ProjectHelper.toIdeaProject(component.getOperationContext().getProject());
-      if (ideaProject == null) {
-        return;
-      }
-      if (ideaProject.getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class) == null) {
-        return;
-      }
-      ideaProject.getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).setDiagramCell(this);
-      ideaProject.getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).openTool(false);
-    }
   }
 
   public JComponent getComponent() {
+    if (myPanel == null) {
+      myPanel = new JPanel(new GridLayoutManager(1, 2));
+      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+      myPanel.add(getPalette(), constraints);
+      constraints.setColumn(1);
+      constraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
+      constraints.setHSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
+      myPanel.add(getContainerComponent(), constraints);
+
+    }
+    return myPanel;
+  }
+
+  private ViewContainerComponent getContainerComponent() {
     if (myComponent == null) {
       myComponent = new ViewContainerComponent();
       getRootMapper().attachRoot();
@@ -103,11 +108,14 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       getDecorationRootMapper().attachRoot();
     }
     return myComponent;
+
   }
 
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
+    getPalette().doLayout();
+    getContainerComponent().doLayout();
     getComponent().doLayout();
     Dimension preferredSize = getComponent().getPreferredSize();
     getComponent().setSize(preferredSize);
@@ -150,10 +158,15 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return false;
   }
 
-
+  public DiagramCell.DiagramPalette getPalette() {
+    if (myPalettePanel == null) {
+      myPalettePanel = new DiagramCell.DiagramPalette();
+    }
+    return myPalettePanel;
+  }
 
   private ViewTrait getEventHandlingTrate() {
-    return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+    this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
         if (view.focused().get()) {
           hidePatternEditor();
@@ -189,13 +202,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         event.consume();
       }
     }).build();
+    return this.myHandlingTrait;
   }
 
   public void createNewDiagramElement(int x, int y) {
-    if (ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getDiagramCell() != this || ProjectHelper.toIdeaProject(getOperationContext().getProject()).getComponent(ProjectPluginManager.class).getTool(DiagramEditorTool_Tool.class).getSelectedSubstituteAction() == null) {
-      hideConnectionDragFeedback();
-      return;
-    }
     myPatternEditorX = x;
     myPatternEditorY = y;
     if (trySubstituteImmediately()) {
@@ -240,13 +250,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
         for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
-          result.add(new DiagramCell.TunableNodeSubstituteAction(action, true) {
+          result.add(new NodeSubstituteActionWrapper(action) {
             @Override
             public boolean canSubstitute(String string) {
               return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
             }
-
-
 
             @Override
             public SNode substitute(@Nullable EditorContext context, String string) {
@@ -275,7 +283,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             }
 
             DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
-            return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
+            return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getFromNode(), connectionInfo.getFromId());
           }
 
           @Override
@@ -287,10 +295,23 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             return result;
           }
         };
-        return Collections.<SubstituteAction>singletonList(new DiagramCell.TunableNodeSubstituteAction(action, false));
+        return Collections.<SubstituteAction>singletonList(new DiagramCell.DiagramSubstituteActionWraper(action, DiagramCell.ActionType.CONNECTOR));
       }
     };
   }
+
+
+
+
+  @Override
+  public SubstituteInfo getSubstituteInfo() {
+    if (myPalettePanel.isActive()) {
+      return myPalettePanel.getSubstituteInfo();
+    }
+    return super.getSubstituteInfo();
+  }
+
+
 
   @Override
   public NodeSubstitutePatternEditor createSubstitutePatternEditor() {
@@ -450,7 +471,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private class ConnectionInfo {
 
 
-    private ConnectionInfo() {
+    public ConnectionInfo() {
       PolyLineConnection connectionDragFeedback = myConnectionSingleList.getItem();
       if (connectionDragFeedback == null) {
         return;
@@ -513,36 +534,213 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
   }
 
-  public static class TunableNodeSubstituteAction extends NodeSubstituteActionWrapper {
-    private boolean myIsBlock;
+  public class DiagramPalette extends JPanel {
+    private JPanel myBlockActionPanel = new JPanel(new GridLayoutManager(1, 1));
+    private JPanel myConnectorActionPanel = new JPanel(new GridLayoutManager(1, 1));
 
-    public TunableNodeSubstituteAction(SubstituteAction action, boolean isBlock) {
-      super(action);
-      myIsBlock = isBlock;
+    public boolean myIsActive = true;
+    private Map<SubstituteAction, ToggleAction> myActionToButtonMap = MapSequence.fromMap(new HashMap<SubstituteAction, ToggleAction>());
+    private SubstituteInfo mySubstituteInfo;
+    private DefaultActionGroup myBlockActionGroup = new DefaultActionGroup();
+    private DefaultActionGroup myConnectorActionGroup = new DefaultActionGroup();
+
+    public DiagramPalette() {
+      super(new GridLayoutManager(4, 1));
+      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+
+      add(new JLabel("Blocks"), constraints);
+      constraints.setRow(1);
+      add(myBlockActionPanel, constraints);
+
+      constraints.setRow(2);
+      add(new JLabel("Connectors"), constraints);
+      constraints.setRow(3);
+      add(myConnectorActionPanel, constraints);
     }
 
-    private boolean myCanSubstitute = true;
-    private boolean myIsInitializing = true;
 
-    @Override
-    public boolean canSubstitute(String string) {
-      return myIsInitializing || (myCanSubstitute && super.canSubstitute(string));
+
+    public void setSubstituteInfo(SubstituteInfo substituteInfo) {
+      mySubstituteInfo = substituteInfo;
+      update();
     }
 
-    public void setSubstitutable(boolean canSubstitute) {
-      myCanSubstitute = canSubstitute;
+
+
+    public SubstituteInfo getSubstituteInfo() {
+      return mySubstituteInfo;
     }
 
-    public void setIsInitializing(boolean isInitializing) {
-      myIsInitializing = isInitializing;
+
+
+    public boolean isActive() {
+      return myIsActive;
     }
 
-    public boolean isBlockAction() {
-      return myIsBlock;
+
+
+
+    public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+      return new SubstituteInfoPartExt() {
+        public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+          List<SubstituteAction> result = new ArrayList<SubstituteAction>();
+          for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
+            result.add(new DiagramCell.DiagramSubstituteActionWraper(action, DiagramCell.ActionType.BLOCK) {
+              @Override
+              public boolean canSubstitute(String string) {
+                if (!(super.canSubstitute(string))) {
+                  return false;
+                }
+                return isActionEnabled(this) && !(hasConnectionDragFeedback());
+              }
+
+              @Override
+              public SNode substitute(@Nullable EditorContext context, String string) {
+                SNode result = super.substitute(context, string);
+                setNodePositionCallback.invoke(result, myPatternEditorX, myPatternEditorY);
+                return result;
+              }
+            });
+          }
+          return result;
+        }
+      };
+    }
+
+    public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
+      // TMP solution: manually creating instance of connection instead of using 
+      // ModelActions.createChildNodeSubstituteActions() because of mbeddr reqirements: 
+      // hiding text-specific connection substitute actions from the diagram 
+      return new SubstituteInfoPartExt() {
+        public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+          AbstractNodeSubstituteAction action = new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
+            @Override
+            public boolean canSubstitute(String string) {
+              if (!(super.canSubstitute(string))) {
+                return false;
+              }
+              DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
+              return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId()) && hasConnectionDragFeedback();
+            }
+
+            @Override
+            protected SNode doSubstitute(@Nullable EditorContext context, String string) {
+              SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
+              ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
+              DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
+              setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
+              return result;
+            }
+          };
+          return Collections.<SubstituteAction>singletonList(new DiagramCell.DiagramSubstituteActionWraper(action, DiagramCell.ActionType.CONNECTOR) {
+            @Override
+            public boolean canSubstitute(String string) {
+              return isActionEnabled(this) && super.canSubstitute(string);
+            }
+          });
+        }
+      };
+    }
+
+    private boolean isActionEnabled(SubstituteAction substituteAction) {
+      return check_xnhqai_a0a91wb(MapSequence.fromMap(myActionToButtonMap).get(substituteAction));
+    }
+
+
+
+    private void updateToggleActions() {
+      SubstituteInfo substituteInfo = getSubstituteInfo();
+      if (substituteInfo == null) {
+        return;
+      }
+      substituteInfo.invalidateActions();
+      for (SubstituteAction action : ListSequence.fromList(((DiagramCompositeSubstituteInfo) mySubstituteInfo).createActions())) {
+        ToggleAction substituteButton = null;
+        switch (((DiagramCell.DiagramSubstituteActionWraper) action).getType()) {
+          case BLOCK:
+            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, myBlockActionGroup);
+            myBlockActionGroup.add(substituteButton);
+            break;
+          case CONNECTOR:
+            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, myConnectorActionGroup);
+            myConnectorActionGroup.add(substituteButton);
+            break;
+          default:
+        }
+        MapSequence.fromMap(myActionToButtonMap).put(action, substituteButton);
+      }
+    }
+
+    private void update() {
+      updateToggleActions();
+      GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+      JComponent blockActionPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myBlockActionGroup, true).getComponent();
+      myBlockActionPanel.removeAll();
+      myBlockActionPanel.add(blockActionPanel, gridConstraints);
+      JComponent connectorActionPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myConnectorActionGroup, true).getComponent();
+      myConnectorActionPanel.removeAll();
+      myConnectorActionPanel.add(connectorActionPanel, gridConstraints);
+    }
+
+
+
+
+
+    private class MyToggleAction extends ToggleAction {
+      private boolean myIsSelected;
+      private ActionGroup myParentGroup;
+
+      public MyToggleAction(@Nullable String text, @Nullable String description, @Nullable Icon icon, ActionGroup parent) {
+        super(text, description, icon);
+        myParentGroup = parent;
+      }
+
+      public boolean isSelected(AnActionEvent actionEvent) {
+        return myIsSelected;
+      }
+
+      public void setSelected(AnActionEvent actionEvent, boolean isSelected) {
+        myIsSelected = isSelected;
+        if (isSelected) {
+          for (AnAction action : myParentGroup.getChildren(null)) {
+            if (action != this) {
+              ((ToggleAction) action).setSelected(null, false);
+            }
+          }
+        }
+      }
     }
   }
 
-  private static boolean eq_xnhqai_a0a0a11(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+
+
+  private static class DiagramSubstituteActionWraper extends NodeSubstituteActionWrapper {
+    private DiagramCell.ActionType myType;
+
+    private DiagramSubstituteActionWraper(SubstituteAction action, DiagramCell.ActionType type) {
+      super(action);
+      myType = type;
+    }
+
+    public DiagramCell.ActionType getType() {
+      return myType;
+    }
+  }
+
+  public static   enum ActionType {
+    BLOCK(),
+    CONNECTOR();
+
+    ActionType() {
+    }
+  }
+
+
+
+  private static boolean check_xnhqai_a0a91wb(ToggleAction checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.isSelected(null);
+    }
+    return false;
   }
 }

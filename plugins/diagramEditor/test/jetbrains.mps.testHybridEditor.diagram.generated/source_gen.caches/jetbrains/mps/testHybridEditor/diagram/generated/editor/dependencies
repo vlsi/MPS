@@ -233,6 +233,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCompositeSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
