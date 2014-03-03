@@ -50,7 +50,9 @@
         <library jar="../../lib/gwt-framework-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/websocket-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/persistence-1.0-SNAPSHOT.jar" />
-        <sources jar="jetbrains.jetpad-src.jar" descriptor="jetbrains.jetpad.msd" />
+        <library jar="../../lib/projectional-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/hybrid-1.0-SNAPSHOT.jar" />
+        <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/jetpad/languages/jetpad/jetbrains.jetpad.jar">
@@ -109,6 +111,12 @@
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
