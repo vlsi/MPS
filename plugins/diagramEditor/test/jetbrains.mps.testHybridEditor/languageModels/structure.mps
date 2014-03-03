@@ -72,6 +72,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="725186580883451809" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Connector" />
+    <property name="iconPath" nameId="tpce.1160488491229" value="${module}/icons/connector.png" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="725186580883451924" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -107,7 +108,12 @@
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="MetaBlock" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="newBlocks" />
+    <property name="iconPath" nameId="tpce.1160488491229" value="${module}/icons/block.png" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="9168054762589307856" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="iconPath" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2353136177973888134" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="inMetaPorts" />
@@ -161,7 +167,12 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2353136177974088982" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="newBlocks" />
     <property name="name" nameId="tpck.1169194664001" value="ConnectorInstance" />
+    <property name="iconPath" nameId="tpce.1160488491229" value="${module}/icons/connector.png" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="9168054762590341442" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="iconPath" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5288989961863964096" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="source" />

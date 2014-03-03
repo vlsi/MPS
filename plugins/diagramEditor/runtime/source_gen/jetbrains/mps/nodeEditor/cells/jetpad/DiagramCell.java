@@ -63,7 +63,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import javax.swing.JLabel;
-import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -72,6 +71,10 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
@@ -673,13 +676,14 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       substituteInfo.invalidateActions();
       for (SubstituteAction action : ListSequence.fromList(((DiagramCompositeSubstituteInfo) mySubstituteInfo).createActions())) {
         ToggleAction substituteButton = null;
-        switch (((DiagramCell.DiagramSubstituteActionWraper) action).getType()) {
+        DiagramCell.DiagramSubstituteActionWraper actionWrapper = ((DiagramCell.DiagramSubstituteActionWraper) action);
+        switch (actionWrapper.getType()) {
           case BLOCK:
-            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, myBlockActionGroup);
+            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(actionWrapper.getMatchingText(""), actionWrapper.getMatchingText(""), actionWrapper.getIconFor(""), myBlockActionGroup);
             myBlockActionGroup.add(substituteButton);
             break;
           case CONNECTOR:
-            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(action.getMatchingText(""), action.getMatchingText(""), AllIcons.Actions.Refresh, myConnectorActionGroup);
+            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(actionWrapper.getMatchingText(""), actionWrapper.getMatchingText(""), actionWrapper.getIconFor(""), myConnectorActionGroup);
             myConnectorActionGroup.add(substituteButton);
             break;
           default:
@@ -745,6 +749,20 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
     public DiagramCell.ActionType getType() {
       return myType;
+    }
+
+
+
+    @Override
+    public Icon getIconFor(String string) {
+      Icon icon;
+      SNode iconNode = getIconNode(string);
+      if (iconNode != null) {
+        icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((isReferentPresentation()))) ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode));
+      } else {
+        icon = IdeIcons.DEFAULT_ICON;
+      }
+      return icon;
     }
   }
 
