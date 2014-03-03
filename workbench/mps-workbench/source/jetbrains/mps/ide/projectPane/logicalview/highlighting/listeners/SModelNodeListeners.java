@@ -28,6 +28,7 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -38,6 +39,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -90,7 +92,7 @@ public class SModelNodeListeners {
   }
 
   public void startListening() {
-    SRepositoryRegistry.getInstance().addGlobalListener(myRepositoryListener);
+    SRepositoryListenerPlug.plug(SRepositoryRegistry.getInstance(), myRepositoryListener);
     ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myGenStatusListener);
     // FIXME There's no way to unregister EventsCollector explicitly, other than dispose. Shall refactor its uses to (un)register explicitly
     myEventsListener = new MyEventsCollector();
@@ -99,7 +101,7 @@ public class SModelNodeListeners {
   public void stopListening() {
     myEventsListener.dispose();
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myGenStatusListener);
-    SRepositoryRegistry.getInstance().removeGlobalListener(myRepositoryListener);
+    SRepositoryListenerPlug.unplug(SRepositoryRegistry.getInstance(), myRepositoryListener);
   }
 
   public void attach(@NotNull SModelTreeNode node) {
@@ -292,6 +294,39 @@ public class SModelNodeListeners {
         MySNodeTreeUpdater treeUpdater = new MySNodeTreeUpdater(treeNode.getOperationContext().getProject(), treeNode);
         treeUpdater.setDependencyRecorder(treeNode.getDependencyRecorder());
         treeUpdater.eventsHappenedInCommand(new ArrayList<SModelEvent>(byModel.get(m)));
+      }
+    }
+  }
+
+  // ensures repository listener being attached/detached from Read command
+  //
+  private static class SRepositoryListenerPlug implements Runnable {
+    private final boolean myIsAttach;
+    private final SRepositoryRegistry myWhere;
+    private final SRepositoryListener myWhat;
+
+    private SRepositoryListenerPlug(boolean attach, @NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
+      myIsAttach = attach;
+      myWhere = where;
+      myWhat = what;
+    }
+
+    public static void plug(@NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
+      getModelAccess().runReadAction(new SRepositoryListenerPlug(true, where, what));
+    }
+    public static void unplug(@NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
+      getModelAccess().runReadAction(new SRepositoryListenerPlug(false, where, what));
+    }
+    private static ModelAccess getModelAccess() {
+      // no idea how to get correct ModelAccess for SRepositoryRegistry, and don't want to use smodel.ModelAccess
+      return MPSModuleRepository.getInstance().getModelAccess();
+    }
+    @Override
+    public void run() {
+      if (myIsAttach) {
+        myWhere.addGlobalListener(myWhat);
+      } else {
+        myWhere.removeGlobalListener(myWhat);
       }
     }
   }
