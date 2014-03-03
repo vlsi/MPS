@@ -64,6 +64,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ImportHelper {
+
   public static void addModelImport(final Project project, final SModule module, final SModel model,
       @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
@@ -113,7 +114,11 @@ public class ImportHelper {
   }
 
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
-      @Nullable BaseAction parentAction) {
+                                       @Nullable BaseAction parentAction) {
+    addLanguageImport(project, contextModule, model, parentAction, null);
+  }
+  public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
+      @Nullable BaseAction parentAction, @Nullable final Runnable onClose) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
@@ -141,6 +146,9 @@ public class ImportHelper {
       @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
+        if(onClose != null) {
+          onClose.run();
+        }
       }
 
       @Override
