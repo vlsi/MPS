@@ -49,9 +49,4 @@ public class ProjectTreeNode extends TextTreeNode {
   public MPSProject getProject() {
     return myProject;
   }
-
-  @Override
-  public int getToggleClickCount() {
-    return 2;
-  }
 }

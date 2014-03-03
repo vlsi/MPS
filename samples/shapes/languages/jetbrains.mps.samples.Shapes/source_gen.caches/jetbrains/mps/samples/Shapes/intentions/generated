@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="evs61u2dkqzogf9ahxcpw7194ny1ilz">
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="96lei8ezpygv3e9ji04p0zwkgpvy6m6" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="-a0lsdnmgv9cvgwcfusy1fm6ru17f513" />
+  <dep model="r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)" hash="dwgm3c6cgukflkfo7q6oh2ifgmle7kt" />
+  <dep model="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)" hash="-6mg0lenq9hn0ym3bk8mifl138cmitg4" />
+  <common hash="6nhovtf3qhh1cbvyxiki8i6c5ypiy5h" dependsOnNodes="true">
+    <dep root="1082824515535656124" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
+    <file name="IntentionsDescriptor.java" />
+  </common>
+  <source id="1082824515535656124" name="PreviewScene" hash="107iwe8u5am17uqy5u3v9k7d5ybjg2r">
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)" />
+    <dep model="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)" />
+    <file name="PreviewScene_Intention.java" />
+  </source>
+</dependencies>
+

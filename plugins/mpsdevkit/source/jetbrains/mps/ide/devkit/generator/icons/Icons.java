@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,13 @@ package jetbrains.mps.ide.devkit.generator.icons;
 
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
+import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Generator;
 import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -34,26 +36,21 @@ public class Icons {
   public static final Icon CLOSE = Actions.Cancel;
   public static final Icon AUTOSCROLL_TO_SOURCE = General.AutoscrollToSource;
 
-  // nodes
-  public static final Icon INPUT = Generator.Input;
-  public static final Icon OUTPUT = Generator.Output;
-  public static final Icon RULE = Generator.Rule;
-  public static final Icon COPY_OPERATION = Generator.CopyOperation;
-  public static final Icon MACRO = Generator.Macro;
-  public static final Icon RULE_CONSEQUENCE = Generator.RuleConsequence;
-  public static final Icon SWITCH = Generator.Switch;
-  public static final Icon TEMPALTE = Generator.Template;
-  public static final Icon MAPPING_SCRIPT = Generator.MappingScript;
-
+  public static final Icon COLLECTION = Nodes.Folder;
 
   public static Icon getIcon(TracerNode tracerNode) {
-    Icon mainIcon = getMainIcon(tracerNode);
-    Icon kindIcon = getKindIcon(tracerNode);
+    Icon mainIcon = getMainIcon(tracerNode.getNodePointer());
+    Icon kindIcon = getKindIcon(tracerNode.getKind());
     return new CompositeIcon(mainIcon, kindIcon);
   }
 
-  private static Icon getMainIcon(TracerNode tracerNode) {
-    SNodeReference nodePointer = tracerNode.getNodePointer();
+  public static Icon getIcon(@Nullable Kind kind, @Nullable SNodeReference nodeRef) {
+    Icon mainIcon = getMainIcon(nodeRef);
+    Icon kindIcon = kind == null ? null : getKindIcon(kind);
+    return new CompositeIcon(mainIcon, kindIcon);
+  }
+
+  private static Icon getMainIcon(@Nullable SNodeReference nodePointer) {
     if (nodePointer != null) {
       SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
       if (node != null) {
@@ -66,19 +63,22 @@ public class Icons {
     return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
   }
 
-  private static Icon getKindIcon(TracerNode tracerNode) {
-    Kind kind = tracerNode.getKind();
-    if (kind == Kind.INPUT) return Icons.INPUT;
-    if (kind == Kind.OUTPUT) return Icons.OUTPUT;
-    if (kind == Kind.APPROXIMATE_OUTPUT) return Icons.OUTPUT;
-    if (kind == Kind.APPROXIMATE_INPUT) return Icons.INPUT;
-    if (kind == Kind.RULE) return Icons.RULE;
-    if (kind == Kind.RULE_CONSEQUENCE) return Icons.RULE_CONSEQUENCE;
-    if (kind == Kind.MACRO) return Icons.MACRO;
-    if (kind == Kind.TEMPLATE) return Icons.TEMPALTE;
-    if (kind == Kind.SWITCH) return Icons.SWITCH;
-    if (kind == Kind.COPY_OPERATION) return Icons.COPY_OPERATION;
-    if (kind == Kind.MAPPING_SCRIPT) return Icons.MAPPING_SCRIPT;
+  private static Icon getKindIcon(Kind kind) {
+    switch (kind) {
+      case INPUT:
+      case APPROXIMATE_INPUT:
+        return Generator.Input;
+      case OUTPUT:
+      case APPROXIMATE_OUTPUT:
+        return Generator.Output;
+      case RULE: return Generator.Rule;
+      case RULE_CONSEQUENCE: return Generator.RuleConsequence;
+      case MACRO: return Generator.Macro;
+      case TEMPLATE: return Generator.Template;
+      case SWITCH: return Generator.Switch;
+      case COPY_OPERATION: return Generator.CopyOperation;
+      case MAPPING_SCRIPT: return Generator.MappingScript;
+    }
     return null;
   }
 

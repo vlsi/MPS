@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.util.misc.hash;
 
+/**
+ * This class is scheduled for removal in next release
+ * @deprecated Gonna be removed along with its only client, AbstractHashMap.
+ */
+@Deprecated
 public interface ObjectProcedure<T> {
 
   boolean execute(T object);

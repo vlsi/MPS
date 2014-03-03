@@ -59,6 +59,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jdom.Element;
@@ -215,17 +216,25 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setDefaultRenderer(SModelReference.class,
           new ModelTableCellRender() {
             @Override
-            protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-              if (!StateUtil.isAvailable(modelReference)) {
-                return DependencyCellState.NOT_AVALIABLE;
-              }
-              if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
-                return DependencyCellState.NOT_IN_SCOPE;
-              }
-              if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
-                return DependencyCellState.UNUSED;
-              }
+            protected DependencyCellState getDependencyCellState(final org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+              DependencyCellState res = ModelAccess.instance().runReadAction(new Computable<DependencyCellState>() {
+                @Override
+                public DependencyCellState compute() {
+                  if (!StateUtil.isAvailable(modelReference)) {
+                    return DependencyCellState.NOT_AVALIABLE;
+                  }
+                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
+                    return DependencyCellState.NOT_IN_SCOPE;
+                  }
+                  if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
+                    return DependencyCellState.UNUSED;
+                  }
 
+                  return null;
+                }
+              });
+
+              if (res != null) return res;
               return super.getDependencyCellState(modelReference);
             }
           }

@@ -18,8 +18,10 @@ package jetbrains.mps.ide.ui.tree;
 import jetbrains.mps.smodel.IOperationContext;
 
 /**
+ * @deprecated There's no added value using this class instead of MPSTreeNode
  * @author Kostik
  */
+@Deprecated
 public class TextMPSTreeNode extends MPSTreeNode {
   protected String myText;
 

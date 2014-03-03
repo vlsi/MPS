@@ -1026,7 +1026,7 @@ public class QueriesGenerated {
   private static SNode createExpressionSwitchBranch_s5rs0q_a0a0a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.ExpressionSwitchBranch", null, false);
-    n1.setProperty("kind", (String) p0);
+    n1.setProperty("kind", String.valueOf(p0));
     return n1;
   }
 

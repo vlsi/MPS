@@ -2279,7 +2279,7 @@ public class QueriesGenerated {
   private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a693(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
-    n1.setProperty("path", (String) p0);
+    n1.setProperty("path", String.valueOf(p0));
     n1.setReferenceTarget("project", (SNode) p1);
     return n1;
   }

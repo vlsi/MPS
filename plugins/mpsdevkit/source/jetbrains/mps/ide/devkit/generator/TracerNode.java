@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ArrayWrapper;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,14 +56,18 @@ public class TracerNode {
    */
   private static TracerNode[] EMPTY_ARRAY = new TracerNode[0];
 
-  private Kind myKind;
-  private SNodeReference myNodePointer;
+  private final Kind myKind;
+  private final SNodeReference myNodePointer;
   private TracerNode myParent;
   private TracerNode[] myChildren = EMPTY_ARRAY;
 
   public TracerNode(Kind kind, SNodeReference nodePointer) {
     myKind = kind;
     myNodePointer = nodePointer;
+  }
+  public TracerNode(TracerNode other) {
+    myKind = other.myKind;
+    myNodePointer = other.myNodePointer;
   }
 
   public Kind getKind() {
@@ -119,19 +121,6 @@ public class TracerNode {
     return myKind == kind && myNodePointer.equals(nodePointer);
   }
 
-  /*package*/ TracerNode find(SNode node) {
-    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == node) return this;
-    if (getDepth() > 1000) return null;
-    for (TracerNode child : myChildren) {
-      TracerNode tracerNode = child.find(node);
-      if (tracerNode != null) {
-        return tracerNode;
-      }
-    }
-    return null;
-  }
-
-
   /*package*/ TracerNode find(Kind kind, SNodeReference node) {
     if (isThis(kind, node)) return this;
     if (getDepth() > 1000) return null;
@@ -181,7 +170,7 @@ public class TracerNode {
   public List<TracerNode> getChildrenCopy() {
     List<TracerNode> result = new ArrayList<TracerNode>();
     for (TracerNode child : myChildren) {
-      TracerNode childCopy = new TracerNode(child.getKind(), child.getNodePointer());
+      TracerNode childCopy = new TracerNode(child);
       List<TracerNode> children2 = child.getChildrenCopy();
       for (TracerNode child2 : children2) {
         childCopy.addChild(child2);

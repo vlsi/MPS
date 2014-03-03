@@ -185,7 +185,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, false);
     {
-      n1.setProperty("name", (String) p0);
+      n1.setProperty("name", String.valueOf(p0));
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
       n2.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", n2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
       n1.addChild("type", n2);

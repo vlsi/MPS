@@ -2398,7 +2398,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719236" resolveInfo="node" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3575782568432719210" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mlq0.~MPSTreeNode%disLeaf()%cboolean" resolveInfo="isLeaf" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="osf5.~DefaultMutableTreeNode%disLeaf()%cboolean" resolveInfo="isLeaf" />
                 </node>
               </node>
             </node>

@@ -222,14 +222,14 @@ public class SModelRepository implements CoreComponent {
       return;
     }
 
+    boolean needToNotify = false;
     synchronized (myReloadingDescriptorMap) {
-
-      boolean needToNotify = myReloadingDescriptorMap.isEmpty();
+      needToNotify = myReloadingDescriptorMap.isEmpty();
       myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
+    }
 
-      if (needToNotify) {
-        notifyAfterReload();
-      }
+    if (needToNotify) {
+      notifyAfterReload();
     }
   }
 

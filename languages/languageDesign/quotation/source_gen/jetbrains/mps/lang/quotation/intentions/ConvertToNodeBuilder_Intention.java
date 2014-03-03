@@ -68,7 +68,7 @@ public class ConvertToNodeBuilder_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Convert to Node Builder";
+      return "Convert to Light Quotation";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

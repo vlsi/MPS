@@ -89,7 +89,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
-    insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
+    insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_languageExt);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);

@@ -7820,246 +7820,240 @@
     <nodeInfo nodeId="1198242106122" fileName="NonTypesystemRule_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="89" endLine="70" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="70" startPosition="90" endLine="71" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="71" startPosition="48" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="73" startPosition="66" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="74" startPosition="40" endLine="75" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="79" startPosition="89" endLine="80" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="80" startPosition="82" endLine="81" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="81" startPosition="29" endLine="82" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="82" startPosition="42" endLine="83" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="83" startPosition="26" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="84" startPosition="58" endLine="85" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="85" startPosition="42" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="86" startPosition="34" endLine="87" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="87" startPosition="79" endLine="88" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="88" startPosition="40" endLine="89" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="89" startPosition="210" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="90" startPosition="57" endLine="91" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="92" startPosition="35" endLine="93" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="93" startPosition="72" endLine="94" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="94" startPosition="78" endLine="95" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="96" startPosition="10" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214394153" fileName="NonTypesystemRule_Editor.java" startLine="104" startPosition="120" endLine="105" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214394162" fileName="NonTypesystemRule_Editor.java" startLine="106" startPosition="158" endLine="107" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214394173" fileName="NonTypesystemRule_Editor.java" startLine="108" startPosition="90" endLine="109" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214394182" fileName="NonTypesystemRule_Editor.java" startLine="109" startPosition="111" endLine="110" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214394206" fileName="NonTypesystemRule_Editor.java" startLine="112" startPosition="7" endLine="113" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="117" startPosition="89" endLine="118" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="118" startPosition="87" endLine="119" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="119" startPosition="48" endLine="120" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="120" startPosition="34" endLine="121" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="121" startPosition="68" endLine="122" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="122" startPosition="40" endLine="123" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="123" startPosition="34" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="127" startPosition="90" endLine="128" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="128" startPosition="99" endLine="129" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="129" startPosition="49" endLine="130" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="130" startPosition="34" endLine="131" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="131" startPosition="49" endLine="132" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="132" startPosition="40" endLine="133" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="132" startPosition="40" endLine="133" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="133" startPosition="84" endLine="134" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="133" startPosition="84" endLine="134" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="134" startPosition="84" endLine="135" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="138" startPosition="91" endLine="139" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="139" startPosition="78" endLine="140" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="143" startPosition="91" endLine="144" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="144" startPosition="97" endLine="145" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="145" startPosition="50" endLine="146" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="146" startPosition="34" endLine="147" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="147" startPosition="49" endLine="148" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="148" startPosition="40" endLine="149" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="148" startPosition="40" endLine="149" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="71" startPosition="48" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="76" startPosition="89" endLine="77" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="77" startPosition="82" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="78" startPosition="29" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="79" startPosition="42" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="80" startPosition="26" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="81" startPosition="58" endLine="82" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="82" startPosition="42" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="83" startPosition="34" endLine="84" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="84" startPosition="79" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="85" startPosition="40" endLine="86" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="86" startPosition="210" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="87" startPosition="57" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="89" startPosition="35" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="90" startPosition="72" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="91" startPosition="78" endLine="92" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="93" startPosition="10" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214394153" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="120" endLine="102" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214394162" fileName="NonTypesystemRule_Editor.java" startLine="103" startPosition="158" endLine="104" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214394173" fileName="NonTypesystemRule_Editor.java" startLine="105" startPosition="90" endLine="106" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214394182" fileName="NonTypesystemRule_Editor.java" startLine="106" startPosition="111" endLine="107" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214394206" fileName="NonTypesystemRule_Editor.java" startLine="109" startPosition="7" endLine="110" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="114" startPosition="89" endLine="115" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="115" startPosition="87" endLine="116" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="116" startPosition="48" endLine="117" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="117" startPosition="34" endLine="118" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="118" startPosition="68" endLine="119" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="119" startPosition="40" endLine="120" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="120" startPosition="34" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="124" startPosition="90" endLine="125" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="125" startPosition="99" endLine="126" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="126" startPosition="49" endLine="127" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="127" startPosition="34" endLine="128" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="128" startPosition="49" endLine="129" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="129" startPosition="40" endLine="130" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="129" startPosition="40" endLine="130" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="130" startPosition="84" endLine="131" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="130" startPosition="84" endLine="131" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="131" startPosition="84" endLine="132" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="135" startPosition="91" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="140" startPosition="91" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="141" startPosition="97" endLine="142" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="142" startPosition="50" endLine="143" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="143" startPosition="34" endLine="144" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="144" startPosition="49" endLine="145" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="145" startPosition="40" endLine="146" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="145" startPosition="40" endLine="146" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="146" startPosition="85" endLine="147" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="146" startPosition="85" endLine="147" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="147" startPosition="85" endLine="148" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="147" startPosition="85" endLine="148" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="148" startPosition="83" endLine="149" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="148" startPosition="83" endLine="149" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="149" startPosition="85" endLine="150" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="149" startPosition="85" endLine="150" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="150" startPosition="85" endLine="151" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="150" startPosition="85" endLine="151" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="152" startPosition="85" endLine="153" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="152" startPosition="85" endLine="153" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="153" startPosition="85" endLine="154" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="153" startPosition="85" endLine="154" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="154" startPosition="83" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="158" startPosition="92" endLine="159" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="159" startPosition="99" endLine="160" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="160" startPosition="51" endLine="161" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="161" startPosition="34" endLine="162" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="162" startPosition="49" endLine="163" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="163" startPosition="40" endLine="164" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="163" startPosition="40" endLine="164" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="164" startPosition="84" endLine="165" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="164" startPosition="84" endLine="165" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="165" startPosition="84" endLine="166" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="165" startPosition="84" endLine="166" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="166" startPosition="83" endLine="167" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="170" startPosition="91" endLine="171" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="171" startPosition="96" endLine="172" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="172" startPosition="50" endLine="173" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="173" startPosition="34" endLine="174" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="174" startPosition="47" endLine="175" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="175" startPosition="40" endLine="176" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="176" startPosition="34" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="180" startPosition="91" endLine="181" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="181" startPosition="89" endLine="182" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="182" startPosition="50" endLine="183" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="183" startPosition="34" endLine="184" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="184" startPosition="66" endLine="185" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="185" startPosition="40" endLine="186" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="186" startPosition="34" endLine="187" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="190" startPosition="90" endLine="191" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="191" startPosition="81" endLine="192" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="192" startPosition="39" endLine="193" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="193" startPosition="52" endLine="194" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="194" startPosition="26" endLine="195" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="196" startPosition="39" endLine="197" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="199" startPosition="15" endLine="200" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="201" startPosition="5" endLine="202" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="202" startPosition="73" endLine="203" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="203" startPosition="57" endLine="204" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="205" startPosition="35" endLine="206" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="206" startPosition="72" endLine="207" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="207" startPosition="78" endLine="208" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="209" startPosition="10" endLine="210" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="92" endLine="214" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="214" startPosition="99" endLine="215" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="215" startPosition="51" endLine="216" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="216" startPosition="34" endLine="217" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="217" startPosition="49" endLine="218" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="40" endLine="219" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="40" endLine="219" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="219" startPosition="84" endLine="220" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="219" startPosition="84" endLine="220" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="220" startPosition="84" endLine="221" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="224" startPosition="91" endLine="225" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="225" startPosition="95" endLine="226" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="226" startPosition="50" endLine="227" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="227" startPosition="34" endLine="228" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="231" startPosition="91" endLine="232" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="232" startPosition="82" endLine="233" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="233" startPosition="34" endLine="234" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="234" startPosition="47" endLine="235" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="235" startPosition="26" endLine="236" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="236" startPosition="58" endLine="237" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="237" startPosition="47" endLine="238" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="238" startPosition="73" endLine="239" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="239" startPosition="57" endLine="240" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="241" startPosition="35" endLine="242" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="242" startPosition="72" endLine="243" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="243" startPosition="78" endLine="244" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="245" startPosition="10" endLine="246" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="249" startPosition="90" endLine="250" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="250" startPosition="87" endLine="251" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="251" startPosition="49" endLine="252" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="252" startPosition="34" endLine="253" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="253" startPosition="49" endLine="254" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="254" startPosition="40" endLine="255" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="255" startPosition="34" endLine="256" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="92" endLine="260" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="260" startPosition="99" endLine="261" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="261" startPosition="51" endLine="262" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="262" startPosition="34" endLine="263" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="263" startPosition="49" endLine="264" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="40" endLine="265" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="40" endLine="265" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="265" startPosition="84" endLine="266" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="265" startPosition="84" endLine="266" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="266" startPosition="84" endLine="267" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="270" startPosition="91" endLine="271" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="271" startPosition="88" endLine="272" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="272" startPosition="50" endLine="273" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="273" startPosition="34" endLine="274" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="274" startPosition="66" endLine="275" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="275" startPosition="79" endLine="276" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="276" startPosition="40" endLine="277" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="277" startPosition="34" endLine="278" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="281" startPosition="91" endLine="282" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="282" startPosition="87" endLine="283" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="283" startPosition="50" endLine="284" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="284" startPosition="34" endLine="285" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="285" startPosition="68" endLine="286" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="286" startPosition="58" endLine="287" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="287" startPosition="47" endLine="288" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="288" startPosition="40" endLine="289" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="289" startPosition="34" endLine="290" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="293" startPosition="92" endLine="294" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="294" startPosition="99" endLine="295" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="51" endLine="296" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="51" endLine="296" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="296" startPosition="86" endLine="297" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="296" startPosition="86" endLine="297" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="297" startPosition="83" endLine="298" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="301" startPosition="93" endLine="302" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="302" startPosition="78" endLine="303" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="306" startPosition="90" endLine="307" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="307" startPosition="81" endLine="308" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="308" startPosition="29" endLine="309" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="309" startPosition="42" endLine="310" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="310" startPosition="26" endLine="311" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="312" startPosition="39" endLine="313" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="314" startPosition="5" endLine="315" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="315" startPosition="73" endLine="316" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="316" startPosition="57" endLine="317" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="318" startPosition="35" endLine="319" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="319" startPosition="72" endLine="320" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="320" startPosition="78" endLine="321" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="322" startPosition="10" endLine="323" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="326" startPosition="90" endLine="327" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="327" startPosition="87" endLine="328" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="328" startPosition="49" endLine="329" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="329" startPosition="34" endLine="330" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="330" startPosition="69" endLine="331" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="331" startPosition="58" endLine="332" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="332" startPosition="47" endLine="333" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="333" startPosition="40" endLine="334" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="334" startPosition="34" endLine="335" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="338" startPosition="88" endLine="339" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="339" startPosition="87" endLine="340" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="340" startPosition="47" endLine="341" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="341" startPosition="34" endLine="342" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="342" startPosition="69" endLine="343" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="343" startPosition="40" endLine="344" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="344" startPosition="34" endLine="345" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a#()V" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="155" startPosition="92" endLine="156" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="156" startPosition="99" endLine="157" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="157" startPosition="51" endLine="158" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="158" startPosition="34" endLine="159" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="159" startPosition="49" endLine="160" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="160" startPosition="40" endLine="161" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="160" startPosition="40" endLine="161" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="161" startPosition="84" endLine="162" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="161" startPosition="84" endLine="162" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="162" startPosition="84" endLine="163" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="162" startPosition="84" endLine="163" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="163" startPosition="83" endLine="164" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="167" startPosition="91" endLine="168" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="168" startPosition="96" endLine="169" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="169" startPosition="50" endLine="170" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="170" startPosition="34" endLine="171" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="171" startPosition="47" endLine="172" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="172" startPosition="40" endLine="173" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="173" startPosition="34" endLine="174" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="177" startPosition="91" endLine="178" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="178" startPosition="89" endLine="179" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="179" startPosition="50" endLine="180" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="180" startPosition="34" endLine="181" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="184" startPosition="90" endLine="185" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="185" startPosition="81" endLine="186" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="186" startPosition="39" endLine="187" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="187" startPosition="52" endLine="188" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="188" startPosition="26" endLine="189" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="190" startPosition="39" endLine="191" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="193" startPosition="15" endLine="194" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="195" startPosition="5" endLine="196" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="196" startPosition="73" endLine="197" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="197" startPosition="57" endLine="198" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="199" startPosition="35" endLine="200" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="200" startPosition="72" endLine="201" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="201" startPosition="78" endLine="202" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="203" startPosition="10" endLine="204" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="207" startPosition="92" endLine="208" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="208" startPosition="99" endLine="209" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="209" startPosition="51" endLine="210" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="210" startPosition="34" endLine="211" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="211" startPosition="49" endLine="212" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="212" startPosition="40" endLine="213" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="212" startPosition="40" endLine="213" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="84" endLine="214" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="84" endLine="214" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="214" startPosition="84" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="91" endLine="219" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="219" startPosition="95" endLine="220" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="220" startPosition="50" endLine="221" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="221" startPosition="34" endLine="222" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="225" startPosition="91" endLine="226" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="226" startPosition="82" endLine="227" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="227" startPosition="34" endLine="228" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="228" startPosition="47" endLine="229" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="229" startPosition="26" endLine="230" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="230" startPosition="58" endLine="231" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="231" startPosition="47" endLine="232" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="232" startPosition="73" endLine="233" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="233" startPosition="57" endLine="234" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="235" startPosition="35" endLine="236" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="236" startPosition="72" endLine="237" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="237" startPosition="78" endLine="238" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="239" startPosition="10" endLine="240" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="243" startPosition="90" endLine="244" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="244" startPosition="87" endLine="245" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="245" startPosition="49" endLine="246" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="246" startPosition="34" endLine="247" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="247" startPosition="49" endLine="248" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="248" startPosition="40" endLine="249" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="249" startPosition="34" endLine="250" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="253" startPosition="92" endLine="254" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="254" startPosition="99" endLine="255" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="255" startPosition="51" endLine="256" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="256" startPosition="34" endLine="257" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="257" startPosition="49" endLine="258" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="258" startPosition="40" endLine="259" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="258" startPosition="40" endLine="259" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="84" endLine="260" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="84" endLine="260" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="260" startPosition="84" endLine="261" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="91" endLine="265" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="265" startPosition="88" endLine="266" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="266" startPosition="50" endLine="267" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="267" startPosition="34" endLine="268" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="268" startPosition="66" endLine="269" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="269" startPosition="79" endLine="270" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="270" startPosition="40" endLine="271" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="271" startPosition="34" endLine="272" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="275" startPosition="91" endLine="276" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="276" startPosition="87" endLine="277" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="277" startPosition="50" endLine="278" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="278" startPosition="34" endLine="279" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="279" startPosition="68" endLine="280" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="280" startPosition="58" endLine="281" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="281" startPosition="47" endLine="282" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="282" startPosition="40" endLine="283" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="283" startPosition="34" endLine="284" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="287" startPosition="92" endLine="288" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="288" startPosition="99" endLine="289" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="289" startPosition="51" endLine="290" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="289" startPosition="51" endLine="290" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="290" startPosition="86" endLine="291" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="290" startPosition="86" endLine="291" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="291" startPosition="83" endLine="292" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="93" endLine="296" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="296" startPosition="78" endLine="297" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="300" startPosition="90" endLine="301" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="301" startPosition="81" endLine="302" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="302" startPosition="29" endLine="303" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="303" startPosition="42" endLine="304" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="304" startPosition="26" endLine="305" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="306" startPosition="39" endLine="307" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="308" startPosition="5" endLine="309" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="309" startPosition="73" endLine="310" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="310" startPosition="57" endLine="311" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="312" startPosition="35" endLine="313" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="313" startPosition="72" endLine="314" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="314" startPosition="78" endLine="315" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="316" startPosition="10" endLine="317" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="320" startPosition="90" endLine="321" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="321" startPosition="87" endLine="322" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="322" startPosition="49" endLine="323" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="323" startPosition="34" endLine="324" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="324" startPosition="69" endLine="325" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="325" startPosition="58" endLine="326" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="326" startPosition="47" endLine="327" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="327" startPosition="40" endLine="328" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="328" startPosition="34" endLine="329" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="332" startPosition="88" endLine="333" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="333" startPosition="87" endLine="334" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="334" startPosition="47" endLine="335" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="335" startPosition="34" endLine="336" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="336" startPosition="69" endLine="337" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="337" startPosition="40" endLine="338" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="338" startPosition="34" endLine="339" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="98" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a#()V" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="195" startPosition="58" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="198" startPosition="5" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="311" startPosition="58" endLine="314" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195214394171" fileName="NonTypesystemRule_Editor.java" startLine="107" startPosition="207" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_tg6zfx_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="301" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_tg6zfx_a4b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="189" startPosition="58" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="192" startPosition="5" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="305" startPosition="58" endLine="308" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195214394171" fileName="NonTypesystemRule_Editor.java" startLine="104" startPosition="207" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_tg6zfx_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_tg6zfx_a4b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1198242106122" fileName="NonTypesystemRule_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="91" startPosition="59" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="204" startPosition="59" endLine="210" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="224" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a1b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="240" startPosition="59" endLine="246" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="317" startPosition="59" endLine="323" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195214394160" fileName="NonTypesystemRule_Editor.java" startLine="105" startPosition="75" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="293" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_e1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="88" startPosition="59" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="177" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_b0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="198" startPosition="59" endLine="204" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a1b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="234" startPosition="59" endLine="240" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="311" startPosition="59" endLine="317" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195214394160" fileName="NonTypesystemRule_Editor.java" startLine="102" startPosition="75" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="287" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_e1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="117" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_d0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="170" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="180" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_b0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="249" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_c1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="338" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="127" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_b1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_d1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="270" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a3b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="104" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="158" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="281" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_b3b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="326" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_f1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="114" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_d0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="167" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="243" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_c1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="332" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="124" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="207" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_b1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="253" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_d1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_a3b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="155" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_b3b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="320" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tg6zfx_f1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="143" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="231" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tg6zfx_b1b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="306" startPosition="0" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_tg6zfx_b4b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="79" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tg6zfx_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="190" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_tg6zfx_c0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="59" endLine="101" endPosition="59" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="140" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tg6zfx_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="225" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tg6zfx_b1b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="300" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_tg6zfx_b4b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="76" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tg6zfx_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="184" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_tg6zfx_c0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="98" startPosition="59" endLine="98" endPosition="59" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="42" startPosition="28" endLine="43" endPosition="83" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="43" startPosition="83" endLine="44" endPosition="83" />
@@ -8068,126 +8062,132 @@
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="55" startPosition="82" endLine="56" endPosition="82" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="56" startPosition="82" endLine="57" endPosition="82" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="82" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="132" startPosition="40" endLine="133" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="133" startPosition="84" endLine="134" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="148" startPosition="40" endLine="149" endPosition="85" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="129" startPosition="40" endLine="130" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="130" startPosition="84" endLine="131" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="145" startPosition="40" endLine="146" endPosition="85" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="146" startPosition="85" endLine="147" endPosition="85" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="147" startPosition="85" endLine="148" endPosition="83" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="148" startPosition="83" endLine="149" endPosition="85" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="149" startPosition="85" endLine="150" endPosition="85" />
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="150" startPosition="85" endLine="151" endPosition="83" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="85" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="152" startPosition="85" endLine="153" endPosition="85" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="153" startPosition="85" endLine="154" endPosition="83" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="163" startPosition="40" endLine="164" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="164" startPosition="84" endLine="165" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="165" startPosition="84" endLine="166" endPosition="83" />
-    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="196" startPosition="39" endLine="197" endPosition="43" />
-    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="199" startPosition="15" endLine="200" endPosition="95" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="40" endLine="219" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="219" startPosition="84" endLine="220" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="40" endLine="265" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="265" startPosition="84" endLine="266" endPosition="84" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="51" endLine="296" endPosition="86" />
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="296" startPosition="86" endLine="297" endPosition="83" />
-    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="312" startPosition="39" endLine="313" endPosition="33" />
-    <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="1195214394172" fileName="NonTypesystemRule_Editor.java" startLine="108" startPosition="90" endLine="110" endPosition="110" />
-    <scopeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="138" startPosition="91" endLine="140" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="160" startPosition="40" endLine="161" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="161" startPosition="84" endLine="162" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="162" startPosition="84" endLine="163" endPosition="83" />
+    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="190" startPosition="39" endLine="191" endPosition="43" />
+    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="193" startPosition="15" endLine="194" endPosition="95" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="212" startPosition="40" endLine="213" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="84" endLine="214" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="258" startPosition="40" endLine="259" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="84" endLine="260" endPosition="84" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="289" startPosition="51" endLine="290" endPosition="86" />
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="290" startPosition="86" endLine="291" endPosition="83" />
+    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="306" startPosition="39" endLine="307" endPosition="33" />
+    <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="98" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="1195214394172" fileName="NonTypesystemRule_Editor.java" startLine="105" startPosition="90" endLine="107" endPosition="110" />
+    <scopeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="135" startPosition="91" endLine="137" endPosition="22">
       <varInfo nodeId="1217335697550" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="301" startPosition="93" endLine="303" endPosition="22">
+    <scopeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="93" endLine="297" endPosition="22">
       <varInfo nodeId="1217335705708" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="92" startPosition="35" endLine="95" endPosition="105">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105">
       <varInfo nodeId="1195214383471" varName="manager" />
       <varInfo nodeId="1195214383471" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="205" startPosition="35" endLine="208" endPosition="105">
+    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="199" startPosition="35" endLine="202" endPosition="105">
       <varInfo nodeId="1198242185699" varName="manager" />
       <varInfo nodeId="1198242185699" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="241" startPosition="35" endLine="244" endPosition="105">
+    <scopeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="235" startPosition="35" endLine="238" endPosition="105">
       <varInfo nodeId="1198242185702" varName="manager" />
       <varInfo nodeId="1198242185702" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="318" startPosition="35" endLine="321" endPosition="105">
+    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="312" startPosition="35" endLine="315" endPosition="105">
       <varInfo nodeId="1198242185707" varName="manager" />
       <varInfo nodeId="1198242185707" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="1198242106122" fileName="NonTypesystemRule_Editor.java" startLine="62" startPosition="89" endLine="66" endPosition="22">
       <varInfo nodeId="1198242106122" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="89" endLine="73" endPosition="22">
+      <varInfo nodeId="1198242110455" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="135" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="1217335697550" varName="editorContext" />
       <varInfo nodeId="1217335697550" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="224" startPosition="91" endLine="228" endPosition="22">
+    <scopeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="177" startPosition="91" endLine="181" endPosition="22">
+      <varInfo nodeId="1198242221914" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="91" endLine="222" endPosition="22">
       <varInfo nodeId="1198242185701" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="301" startPosition="0" endLine="305" endPosition="0">
+    <scopeInfo nodeId="1217335705708" fileName="NonTypesystemRule_Editor.java" startLine="295" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="1217335705708" varName="editorContext" />
       <varInfo nodeId="1217335705708" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214394161" fileName="NonTypesystemRule_Editor.java" startLine="106" startPosition="158" endLine="111" endPosition="9">
+    <scopeInfo nodeId="1195214394161" fileName="NonTypesystemRule_Editor.java" startLine="103" startPosition="158" endLine="108" endPosition="9">
       <varInfo nodeId="1195214394163" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="293" startPosition="92" endLine="298" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="287" startPosition="92" endLine="292" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1198242106122" fileName="NonTypesystemRule_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1198242106122" varName="editorContext" />
       <varInfo nodeId="1198242106122" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="224" startPosition="0" endLine="230" endPosition="0">
+    <scopeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1198242110455" varName="editorContext" />
+      <varInfo nodeId="1198242110455" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="177" startPosition="0" endLine="183" endPosition="0">
+      <varInfo nodeId="1198242221914" varName="editorContext" />
+      <varInfo nodeId="1198242221914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198242185701" fileName="NonTypesystemRule_Editor.java" startLine="218" startPosition="0" endLine="224" endPosition="0">
       <varInfo nodeId="1198242185701" varName="editorContext" />
       <varInfo nodeId="1198242185701" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="39" startPosition="89" endLine="46" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="89" endLine="76" endPosition="22">
-      <varInfo nodeId="1198242110455" varName="editorCell" />
-      <varInfo nodeId="1198242110455" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="117" startPosition="89" endLine="124" endPosition="22">
+    <scopeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="114" startPosition="89" endLine="121" endPosition="22">
       <varInfo nodeId="1198242165437" varName="editorCell" />
       <varInfo nodeId="1198242165437" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="170" startPosition="91" endLine="177" endPosition="22">
+    <scopeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="167" startPosition="91" endLine="174" endPosition="22">
       <varInfo nodeId="1198242185698" varName="editorCell" />
       <varInfo nodeId="1198242185698" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="180" startPosition="91" endLine="187" endPosition="22">
-      <varInfo nodeId="1198242221914" varName="editorCell" />
-      <varInfo nodeId="1198242221914" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="249" startPosition="90" endLine="256" endPosition="22">
+    <scopeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="243" startPosition="90" endLine="250" endPosition="22">
       <varInfo nodeId="1198242185703" varName="editorCell" />
       <varInfo nodeId="1198242185703" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="293" startPosition="0" endLine="300" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="287" startPosition="0" endLine="294" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="338" startPosition="88" endLine="345" endPosition="22">
+    <scopeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="332" startPosition="88" endLine="339" endPosition="22">
       <varInfo nodeId="1198242332213" varName="editorCell" />
       <varInfo nodeId="1198242332213" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="127" startPosition="90" endLine="135" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="124" startPosition="90" endLine="132" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="92" endLine="221" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="207" startPosition="92" endLine="215" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="92" endLine="267" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="253" startPosition="92" endLine="261" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="270" startPosition="91" endLine="278" endPosition="22">
+    <scopeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="91" endLine="272" endPosition="22">
       <varInfo nodeId="1198242249168" varName="editorCell" />
       <varInfo nodeId="1198242249168" varName="style" />
     </scopeInfo>
@@ -8195,42 +8195,34 @@
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242110455" fileName="NonTypesystemRule_Editor.java" startLine="69" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="1198242110455" varName="editorContext" />
-      <varInfo nodeId="1198242110455" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1195214394152" fileName="NonTypesystemRule_Editor.java" startLine="104" startPosition="120" endLine="113" endPosition="20">
+    <scopeInfo nodeId="1195214394152" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="120" endLine="110" endPosition="20">
       <varInfo nodeId="1195214394154" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="117" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="1198242165437" fileName="NonTypesystemRule_Editor.java" startLine="114" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1198242165437" varName="editorContext" />
       <varInfo nodeId="1198242165437" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="158" startPosition="92" endLine="167" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="155" startPosition="92" endLine="164" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="170" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="1198242185698" fileName="NonTypesystemRule_Editor.java" startLine="167" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="1198242185698" varName="editorContext" />
       <varInfo nodeId="1198242185698" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242221914" fileName="NonTypesystemRule_Editor.java" startLine="180" startPosition="0" endLine="189" endPosition="0">
-      <varInfo nodeId="1198242221914" varName="editorContext" />
-      <varInfo nodeId="1198242221914" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="249" startPosition="0" endLine="258" endPosition="0">
+    <scopeInfo nodeId="1198242185703" fileName="NonTypesystemRule_Editor.java" startLine="243" startPosition="0" endLine="252" endPosition="0">
       <varInfo nodeId="1198242185703" varName="editorContext" />
       <varInfo nodeId="1198242185703" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="281" startPosition="91" endLine="290" endPosition="22">
+    <scopeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="275" startPosition="91" endLine="284" endPosition="22">
       <varInfo nodeId="1198242245494" varName="editorCell" />
       <varInfo nodeId="1198242245494" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="326" startPosition="90" endLine="335" endPosition="22">
+    <scopeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="320" startPosition="90" endLine="329" endPosition="22">
       <varInfo nodeId="1198242185708" varName="editorCell" />
       <varInfo nodeId="1198242185708" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="338" startPosition="0" endLine="347" endPosition="0">
+    <scopeInfo nodeId="1198242332213" fileName="NonTypesystemRule_Editor.java" startLine="332" startPosition="0" endLine="341" endPosition="0">
       <varInfo nodeId="1198242332213" varName="editorContext" />
       <varInfo nodeId="1198242332213" varName="node" />
     </scopeInfo>
@@ -8238,36 +8230,36 @@
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="127" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="124" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="213" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="207" startPosition="0" endLine="217" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="259" startPosition="0" endLine="269" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="253" startPosition="0" endLine="263" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="270" startPosition="0" endLine="280" endPosition="0">
+    <scopeInfo nodeId="1198242249168" fileName="NonTypesystemRule_Editor.java" startLine="264" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="1198242249168" varName="editorContext" />
       <varInfo nodeId="1198242249168" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="104" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="101" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="1195214394150" varName="editorContext" />
       <varInfo nodeId="1195214394150" varName="node" />
       <varInfo nodeId="1195214394150" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="158" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="155" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="281" startPosition="0" endLine="292" endPosition="0">
+    <scopeInfo nodeId="1198242245494" fileName="NonTypesystemRule_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="1198242245494" varName="editorContext" />
       <varInfo nodeId="1198242245494" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="326" startPosition="0" endLine="337" endPosition="0">
+    <scopeInfo nodeId="1198242185708" fileName="NonTypesystemRule_Editor.java" startLine="320" startPosition="0" endLine="331" endPosition="0">
       <varInfo nodeId="1198242185708" varName="editorContext" />
       <varInfo nodeId="1198242185708" varName="node" />
     </scopeInfo>
@@ -8275,57 +8267,57 @@
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="143" startPosition="91" endLine="155" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="140" startPosition="91" endLine="152" endPosition="22">
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="143" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="140" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="231" startPosition="91" endLine="246" endPosition="22">
+    <scopeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="225" startPosition="91" endLine="240" endPosition="22">
       <varInfo nodeId="1198242185702" varName="attributeConcept" />
       <varInfo nodeId="1198242185702" varName="attributeKind" />
       <varInfo nodeId="1198242185702" varName="editorCell" />
       <varInfo nodeId="1198242185702" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="231" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="1198242185702" fileName="NonTypesystemRule_Editor.java" startLine="225" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="1198242185702" varName="editorContext" />
       <varInfo nodeId="1198242185702" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="306" startPosition="90" endLine="323" endPosition="22">
+    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="300" startPosition="90" endLine="317" endPosition="22">
       <varInfo nodeId="1198242185707" varName="attributeConcept" />
       <varInfo nodeId="1198242185707" varName="attributeKind" />
       <varInfo nodeId="1198242185707" varName="editorCell" />
       <varInfo nodeId="1198242185707" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="79" startPosition="89" endLine="97" endPosition="22">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="76" startPosition="89" endLine="94" endPosition="22">
       <varInfo nodeId="1195214383471" varName="attributeConcept" />
       <varInfo nodeId="1195214383471" varName="attributeKind" />
       <varInfo nodeId="1195214383471" varName="editorCell" />
       <varInfo nodeId="1195214383471" varName="provider" />
       <varInfo nodeId="1195214383471" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="306" startPosition="0" endLine="325" endPosition="0">
+    <scopeInfo nodeId="1198242185707" fileName="NonTypesystemRule_Editor.java" startLine="300" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="1198242185707" varName="editorContext" />
       <varInfo nodeId="1198242185707" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="79" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="76" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="1195214383471" varName="editorContext" />
       <varInfo nodeId="1195214383471" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="190" startPosition="90" endLine="210" endPosition="22">
+    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="184" startPosition="90" endLine="204" endPosition="22">
       <varInfo nodeId="1198242185699" varName="attributeConcept" />
       <varInfo nodeId="1198242185699" varName="attributeKind" />
       <varInfo nodeId="1198242185699" varName="editorCell" />
       <varInfo nodeId="1198242185699" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="190" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="184" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="1198242185699" varName="editorContext" />
       <varInfo nodeId="1198242185699" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="100" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor$NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a" />
-    <unitInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="34" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor" />
+    <unitInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="97" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor$NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a" />
+    <unitInfo nodeId="1195214383471" fileName="NonTypesystemRule_Editor.java" startLine="34" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/1197936731292">
     <nodeInfo nodeId="1197936731292" fileName="TypeClause_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

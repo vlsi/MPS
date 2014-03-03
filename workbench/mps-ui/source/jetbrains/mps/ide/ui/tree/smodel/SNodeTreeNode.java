@@ -62,6 +62,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     } else {
       setNodeIdentifier(myNode.getNodeId().toString());
     }
+    setToggleClickCount(-1);
   }
 
   @Override
@@ -128,11 +129,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     return null;
-  }
-
-  @Override
-  public int getToggleClickCount() {
-    return -1;
   }
 
   @Override

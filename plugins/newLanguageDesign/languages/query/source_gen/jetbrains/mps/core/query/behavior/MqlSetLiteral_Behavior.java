@@ -7,6 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,7 +18,7 @@ public class MqlSetLiteral_Behavior {
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
     SNode inner = (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).count() > 0 ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).first(), "virtual_getType_228266671027861783", new Object[]{}) : SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlNullType", null));
-    return createMqlOrderedSetType_2yi5um_a1a0(inner);
+    return createMqlOrderedSetType_2yi5um_a1a0(SNodeOperations.cast(HUtil.copyIfNecessary(inner), "jetbrains.mps.core.query.structure.MqlType"));
   }
 
   private static SNode createMqlOrderedSetType_2yi5um_a1a0(Object p0) {

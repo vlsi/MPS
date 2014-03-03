@@ -4,6 +4,7 @@ package jetbrains.mps.lang.plugin.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.plugin.pluginSolution");
@@ -17,12 +18,15 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new GeneratePluginSolution_Action());
     addAction(new SortKeymapMembers_Action());
     // groups 
+    addGroup(new ProjectPaneProjectAddition_ActionGroup());
     addGroup(new RefactoringAdditions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
+    insertGroupIntoAnother(ProjectPaneProjectAddition_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, null);
   }
 }
