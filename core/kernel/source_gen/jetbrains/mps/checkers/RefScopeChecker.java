@@ -27,7 +27,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
 
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
-    if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
+    if (node == null || SNodeOperations.getModel(node) == null) {
       return;
     }
     SModule module = check_bt3k2y_a0b0b(SNodeOperations.getModel(node));

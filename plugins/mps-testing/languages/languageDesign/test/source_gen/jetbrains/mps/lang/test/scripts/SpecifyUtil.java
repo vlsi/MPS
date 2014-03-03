@@ -31,6 +31,7 @@ public class SpecifyUtil {
 
   public static void fillContainerWithRuleMessages(SNode node) {
     SNode operationsContainer = SpecifyUtil.getOperationsContainer(node);
+    assert (operationsContainer != null);
     NodeOperationsContainer_Behavior.call_detachAllErrorOperations_5587533744543326483(operationsContainer);
     List<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
     for (IErrorReporter reporter : reporters) {

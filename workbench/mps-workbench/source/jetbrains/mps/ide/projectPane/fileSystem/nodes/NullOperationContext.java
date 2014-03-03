@@ -20,7 +20,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class NullOperationContext implements IOperationContext {
+class NullOperationContext implements IOperationContext {
   public NullOperationContext() {
   }
 
