@@ -157,7 +157,9 @@
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableSingleItemList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
+    <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />

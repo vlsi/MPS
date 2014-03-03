@@ -11,12 +11,10 @@ import jetbrains.jetpad.cell.view.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.model.event.EventHandler;
-import jetbrains.jetpad.model.property.PropertyChangeEvent;
-import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.Property;
 
 public class PolygonContentView extends PolygonView {
@@ -41,11 +39,6 @@ public class PolygonContentView extends PolygonView {
     children().add(space);
     myMetaText.bold().set(true);
     children().add(myMetaText);
-    bounds().addHandler(new EventHandler<PropertyChangeEvent<Rectangle>>() {
-      public void onEvent(PropertyChangeEvent<Rectangle> event) {
-        adjustPoints(event.getNewValue().dimension.x - 1, event.getNewValue().dimension.y - 1);
-      }
-    });
     initSynchronizers();
   }
 
@@ -74,6 +67,7 @@ public class PolygonContentView extends PolygonView {
     if (height < HEIGHT) {
       height = HEIGHT;
     }
+    adjustPoints(width, height);
     int yOffset = bounds().get().origin.y + FOLDING_SIZE / 2;
     int xOrigin = bounds().get().origin.x;
     for (View nextChild : ListSequence.fromList(children())) {
@@ -85,9 +79,7 @@ public class PolygonContentView extends PolygonView {
       yOffset += childBounds.dimension.y;
     }
     context.bounds(new Rectangle(bounds().get().origin, new Vector(width + 1, height + 1)), baseLine());
-    if (!((myPolyLine.valid().get()))) {
-      validate();
-    }
+    super.doValidate(context);
   }
 
   private void adjustPoints(int width, int height) {

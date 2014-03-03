@@ -33,7 +33,7 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
-import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView;
 import java.util.Set;
 import java.util.HashSet;
@@ -173,9 +173,13 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
               return ((ConnectorCell) getDirectChildCell(node)).createMapper();
             }
           }));
-          configuration.add(Synchronizers.forObservableRole(this, myConnectionSingleList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
-            public Mapper<? extends PolyLineConnection, ? extends Connection> createMapper(PolyLineConnection source) {
-              return new Mapper<PolyLineConnection, Connection>(source, source) {};
+          configuration.add(Synchronizers.forProperty(myIsShowingDragFeedBack, new WritableProperty<Boolean>() {
+            public void set(Boolean showDragFeedBack) {
+              if (showDragFeedBack) {
+                getTarget().connections.add(myDragConnection);
+              } else {
+                getTarget().connections.remove(myDragConnection);
+              }
             }
           }));
 
@@ -301,9 +305,13 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
               return ((ConnectorCell) getDirectChildCell(node)).createMapper();
             }
           }));
-          configuration.add(Synchronizers.forObservableRole(this, myConnectionSingleList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
-            public Mapper<? extends PolyLineConnection, ? extends Connection> createMapper(PolyLineConnection source) {
-              return new Mapper<PolyLineConnection, Connection>(source, source) {};
+          configuration.add(Synchronizers.forProperty(myIsShowingDragFeedBack, new WritableProperty<Boolean>() {
+            public void set(Boolean showDragFeedBack) {
+              if (showDragFeedBack) {
+                getTarget().connections.add(myDragConnection);
+              } else {
+                getTarget().connections.remove(myDragConnection);
+              }
             }
           }));
 

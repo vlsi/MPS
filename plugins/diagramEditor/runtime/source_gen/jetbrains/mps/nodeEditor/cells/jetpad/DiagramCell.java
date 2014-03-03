@@ -13,6 +13,8 @@ import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import javax.swing.JPanel;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -86,6 +88,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   protected ObservableList<SNode> myBlocks = new ObservableArrayList<SNode>();
   protected ObservableList<SNode> myConnectors = new ObservableArrayList<SNode>();
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
+  protected Property<Boolean> myIsShowingDragFeedBack = new ValueProperty<Boolean>(false);
+  protected PolyLineConnection myDragConnection = new PolyLineConnection();
   private ViewTrait myHandlingTrait;
   private DiagramCell.DiagramPalette myPalettePanel;
   private JPanel myPanel;
@@ -450,14 +454,15 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public boolean hasConnectionDragFeedback() {
-    return !(myConnectionSingleList.isEmpty());
+    return myIsShowingDragFeedBack.get();
   }
 
   public PolyLineConnection showConnectionDragFeedback(View fromView) {
-    assert myConnectionSingleList.isEmpty();
+    assert !(myIsShowingDragFeedBack.get());
     PolyLineConnection connection = new PolyLineConnection();
     connection.fromView().set(fromView);
-    myConnectionSingleList.setItem(connection);
+    myDragConnection = connection;
+    myIsShowingDragFeedBack.set(true);
     return connection;
   }
 
@@ -467,15 +472,15 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       targetView = targetView.parent().get();
     }
     if (targetView != null && targetView.prop(JetpadUtils.CONNECTABLE).get()) {
-      myConnectionSingleList.getItem().toView().set(targetView);
+      myDragConnection.toView().set(targetView);
     } else {
-      myConnectionSingleList.getItem().toView().set(null);
+      myDragConnection.toView().set(null);
     }
-    myConnectionSingleList.getItem().toLocation().set(toLocation);
+    myDragConnection.toLocation().set(toLocation);
   }
 
   private void hideConnectionDragFeedback() {
-    myConnectionSingleList.setItem(null);
+    myIsShowingDragFeedBack.set(false);
   }
 
   protected void syncDiagramElements(Iterable<SNode> elements, ListIterator<SNode> blocksIterator, Set<SNode> existingBlocks, ListIterator<SNode> connectorsIterator, Set<SNode> existingConnectors) {
@@ -492,7 +497,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
     public ConnectionInfo() {
-      PolyLineConnection connectionDragFeedback = myConnectionSingleList.getItem();
+      PolyLineConnection connectionDragFeedback = myDragConnection;
       if (connectionDragFeedback == null) {
         return;
       }
@@ -663,7 +668,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
 
     private boolean isActionEnabled(SubstituteAction substituteAction) {
-      return check_xnhqai_a0a91xb(MapSequence.fromMap(myActionToButtonMap).get(substituteAction));
+      return check_xnhqai_a0a91zb(MapSequence.fromMap(myActionToButtonMap).get(substituteAction));
     }
 
 
@@ -776,7 +781,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  private static boolean check_xnhqai_a0a91xb(ToggleAction checkedDotOperand) {
+  private static boolean check_xnhqai_a0a91zb(ToggleAction checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isSelected(null);
     }
