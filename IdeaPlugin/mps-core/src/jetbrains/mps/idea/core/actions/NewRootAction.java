@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.facet.FacetManager;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -69,7 +70,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -99,7 +99,13 @@ public class NewRootAction extends AnAction {
 
     if(myConceptFqNameToNodePointerMap.isEmpty()) {
       ImportHelper.addLanguageImport(myProject, myModelDescriptor.getModule(),
-        myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null);
+        myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null, new Runnable() {
+        @Override
+        public void run() {
+          final ProjectView projectView = ProjectView.getInstance(myProject);
+          projectView.refresh();
+        }
+      });
       return;
     }
 
@@ -171,6 +177,7 @@ public class NewRootAction extends AnAction {
         }
 
         model.setChanged(true);
+        model.load();
         model.save();
 
         //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
