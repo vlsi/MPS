@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 
+@Deprecated
 public interface IOperationContext {
 
   Project getProject();

@@ -767,7 +767,7 @@
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeCheckOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.test.scripts.TestsErrorsChecker" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestsErrorsChecker" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />

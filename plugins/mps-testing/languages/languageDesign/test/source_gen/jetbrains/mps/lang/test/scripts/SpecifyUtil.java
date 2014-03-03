@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
