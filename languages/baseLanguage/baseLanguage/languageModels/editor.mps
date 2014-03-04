@@ -11071,24 +11071,24 @@
         <link role="styleSheetClass" roleId="tpc2.1198252276894" targetNodeId="1186415544875" resolveInfo="KeyWord" />
       </node>
     </node>
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="3516632611398403426" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="3516632611398403426" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="CommentPG" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="3516632611398415396" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="184304648420812679" />
       </node>
-      <node role="extendedGroup" roleId="tpc2.3383245079137422296" type="tpc2.StylePriorityGroupReferenceList" typeId="tpc2.9122903797276194520" id="9122903797284561936" nodeInfo="ng">
+      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="9122903797284561936" nodeInfo="ng">
         <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.SimpleOverrideItem" typeId="tpc2.8876051143647434470" id="8876051143655022507" nodeInfo="ng" />
       </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1198594875276" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Comment" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="3516632611398418738" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319584980" nodeInfo="ng">
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="3516632611398418738" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="8876051143686241017" nodeInfo="ng">
           <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
         </node>
       </node>
     </node>
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="3516632611398472564" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="3516632611398472564" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="TODO_PG" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="1854016315433320680" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="184304648420781294" />
@@ -11120,34 +11120,34 @@
           </node>
         </node>
       </node>
-      <node role="extendedGroup" roleId="tpc2.3383245079137422296" type="tpc2.StylePriorityGroupReferenceList" typeId="tpc2.9122903797276194520" id="9122903797284560966" nodeInfo="ng">
-        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="9122903797284561934" nodeInfo="ng">
-          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
+      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="8876051143686241955" nodeInfo="ng">
+        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.StyleClassReference" typeId="tpc2.3383245079137422349" id="8876051143686242891" nodeInfo="ng">
+          <link role="styleClass" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
         </node>
       </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="7730231143345802634" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="TODO" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="3516632611398486798" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319584986" nodeInfo="ng">
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="3516632611398486798" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="8876051143686242893" nodeInfo="ng">
           <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="3516632611398472564" resolveInfo="TODO_PG" />
         </node>
       </node>
     </node>
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="2475588304313460312" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="2475588304313460312" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="BlockCommentPG" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="7730231143345231991" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="1794287103456760646" />
       </node>
-      <node role="extendedGroup" roleId="tpc2.3383245079137422296" type="tpc2.StylePriorityGroupReferenceList" typeId="tpc2.9122903797276194520" id="9122903797284561938" nodeInfo="ng">
-        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.SimpleOverrideItem" typeId="tpc2.8876051143647434470" id="8876051143655013219" nodeInfo="ng" />
+      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="8876051143686242895" nodeInfo="ng">
+        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.SimpleOverrideItem" typeId="tpc2.8876051143647434470" id="8876051143686242897" nodeInfo="ng" />
       </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1794287103456802471" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="BlockComment" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyle" typeId="tpc2.1950447826681509042" id="2475588304313474950" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="9122903797319584988" nodeInfo="ng">
-          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="2475588304313460312" resolveInfo="BlockCommentPG" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="2475588304313474950" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="8876051143686244108" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
         </node>
       </node>
     </node>

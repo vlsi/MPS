@@ -26,7 +26,7 @@ import jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior;
+import jetbrains.mps.lang.editor.behavior.StyleClass_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -847,23 +847,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6044426492099262766(final PropertyMacroContext _context) {
-    return StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
+    return StyleClass_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StyleClass"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6044426492099334692(final PropertyMacroContext _context) {
-    return StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
+    return StyleClass_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StyleClass"));
   }
 
   public static Object propertyMacro_GetPropertyValue_9122903797338822310(final PropertyMacroContext _context) {
-    return StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
+    return StyleClass_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StyleClass"));
   }
 
   public static Object propertyMacro_GetPropertyValue_9122903797338848360(final PropertyMacroContext _context) {
-    return StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
+    return StyleClass_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StyleClass"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4699812310058406179(final PropertyMacroContext _context) {
-    int priority = StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
+    int priority = StyleClass_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StyleClass"));
     if (priority < 0) {
       _context.showErrorMessage(SNodeOperations.getParent(_context.getNode()), "Cyclic priority group inheritance detected");
     }
@@ -1560,7 +1560,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6044426492099256976(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
+    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleClass", "styleItem");
   }
 
   public static boolean ifMacro_Condition_4699812310058064311(final IfMacroContext _context) {
@@ -1568,19 +1568,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6044426492099334685(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
+    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleClass", "styleItem");
   }
 
   public static boolean ifMacro_Condition_9122903797338822303(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
+    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleClass", "styleItem");
   }
 
   public static boolean ifMacro_Condition_9122903797338848353(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
+    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleClass", "styleItem");
   }
 
   public static boolean ifMacro_Condition_4699812310058406172(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
+    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleClass", "styleItem");
   }
 
   public static SNode sourceNodeQuery_996730828436923520(final SourceSubstituteMacroNodeContext _context) {

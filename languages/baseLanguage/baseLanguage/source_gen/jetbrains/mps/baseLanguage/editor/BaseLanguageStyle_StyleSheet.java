@@ -60,7 +60,7 @@ public class BaseLanguageStyle_StyleSheet {
     {
       Style styleToPut;
       styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_BlockCommentPG(styleToPut, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_CommentPG(styleToPut, editorCell);
       style.putAll(styleToPut);
     }
   }

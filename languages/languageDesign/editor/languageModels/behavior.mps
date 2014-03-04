@@ -14376,7 +14376,7 @@
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1938068300780663539" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7417001528577667349" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="hasCycles" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7417001528577667350" nodeInfo="nn" />
@@ -14404,14 +14404,14 @@
             <property name="name" nameId="tpck.1169194664001" value="priorities" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.MapType" typeId="tp2q.1197683403723" id="9122903797272964338" nodeInfo="in">
               <node role="keyType" roleId="tp2q.1197683466920" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797272964339" nodeInfo="in">
-                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
               </node>
               <node role="valueType" roleId="tp2q.1197683475734" type="tpee.IntegerType" typeId="tpee.1070534370425" id="9122903797272964340" nodeInfo="in" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9122903797272964341" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.HashMapCreator" typeId="tp2q.1197686869805" id="9122903797272964342" nodeInfo="nn">
                 <node role="keyType" roleId="tp2q.1197687026896" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797272964343" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
                 </node>
                 <node role="valueType" roleId="tp2q.1197687035757" type="tpee.IntegerType" typeId="tpee.1070534370425" id="9122903797272964344" nodeInfo="in" />
               </node>
@@ -14424,13 +14424,13 @@
             <property name="name" nameId="tpck.1169194664001" value="extendsTree" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="9122903797272964348" nodeInfo="in">
               <node role="elementType" roleId="tp2q.1151688676805" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797272964349" nodeInfo="in">
-                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9122903797272964350" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.LinkedListCreator" typeId="tp2q.1227008614712" id="9122903797272964351" nodeInfo="nn">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797272964352" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="9122903797272964353" nodeInfo="nn" />
               </node>
@@ -14575,7 +14575,7 @@
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.OfConceptOperation" typeId="tp25.4693937538533521280" id="8876051143647956862" nodeInfo="ng">
                                     <node role="requestedConcept" roleId="tp25.4693937538533538124" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8876051143647957343" nodeInfo="nn">
-                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.3383245079137422349" resolveInfo="StylePriorityGroupReference" />
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.3383245079137422349" resolveInfo="StyleClassReference" />
                                     </node>
                                   </node>
                                 </node>
@@ -14943,7 +14943,7 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8876051143653944819" nodeInfo="nn">
                           <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8876051143653960230" nodeInfo="nn">
-                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.3383245079137422349" resolveInfo="StylePriorityGroupReference" />
+                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.3383245079137422349" resolveInfo="StyleClassReference" />
                           </node>
                         </node>
                       </node>
@@ -14959,7 +14959,7 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddFirstElementOperation" typeId="tp2q.1227022159410" id="8876051143653924944" nodeInfo="nn">
                             <node role="argument" roleId="tp2q.1227022622978" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8876051143653924945" nodeInfo="nn">
                               <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8876051143654032526" nodeInfo="nn">
-                                <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpc2.3383245079137422349" resolveInfo="StylePriorityGroupReference" />
+                                <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpc2.3383245079137422349" resolveInfo="StyleClassReference" />
                                 <node role="leftExpression" roleId="tp25.1140138123956" type="tp2q.ListElementAccessExpression" typeId="tp2q.1225711141656" id="8876051143653924946" nodeInfo="nn">
                                   <node role="index" roleId="tp2q.1225711191269" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8876051143653924947" nodeInfo="nn">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9122903797272964438" resolveInfo="newIndex" />

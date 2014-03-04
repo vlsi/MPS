@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior;
+import jetbrains.mps.lang.editor.behavior.StyleClass_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +18,7 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
   }
 
   public void applyRule(final SNode stylePriorityGroup, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (StylePriorityGroup_Behavior.call_hasCycles_7417001528577667349(stylePriorityGroup)) {
+    if (StyleClass_Behavior.call_hasCycles_7417001528577667349(stylePriorityGroup)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic priority group inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4467412253500708194", null, errorTarget);
@@ -27,7 +27,7 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.structure.StylePriorityGroup";
+    return "jetbrains.mps.lang.editor.structure.StyleClass";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

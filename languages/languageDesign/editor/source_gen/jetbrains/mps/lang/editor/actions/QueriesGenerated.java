@@ -1159,11 +1159,11 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), "selectionEnd", true) == null && SNodeOperations.getContainingLinkDeclaration(_context.getSourceNode()) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "selectionStart");
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_StylePriorityGroup_3383245079143155344(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_StyleClass_3383245079143155344(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StylePriorityGroup"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SLinkOperations.setTarget(_context.getSourceNode(), "extendedGroup", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StylePriorityGroupReferenceList", null), true);
+        return SLinkOperations.setTarget(_context.getSourceNode(), "extendedStyleClassList", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null), true);
       }
 
       public String getMatchingText(String pattern) {
@@ -1179,7 +1179,7 @@ public class QueriesGenerated {
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StylePriorityGroup"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StylePriorityGroup"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass"), null));
       }
     });
     return result;

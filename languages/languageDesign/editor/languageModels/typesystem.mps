@@ -3015,7 +3015,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1938068300781494911" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="stylePriorityGroup" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
     </node>
   </root>
 </model>

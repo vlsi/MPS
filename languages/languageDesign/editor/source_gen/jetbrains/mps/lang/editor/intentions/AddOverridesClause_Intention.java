@@ -22,7 +22,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.editor.structure.StylePriorityGroup";
+    return "jetbrains.mps.lang.editor.structure.StyleClass";
   }
 
   public String getPresentation() {
@@ -73,7 +73,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "extendedGroup", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StylePriorityGroupReferenceList", null), true);
+      SLinkOperations.setTarget(node, "extendedStyleClassList", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null), true);
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -3362,9 +3362,9 @@
     <property name="name" nameId="tpck.1169194664001" value="addExtendedClass" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3383245079143155344" nodeInfo="ng">
       <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3383245079143157182" nodeInfo="ng">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="3383245079143157187" nodeInfo="ng">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="3383245079143157188" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3383245079143157189" nodeInfo="sn">
@@ -3373,7 +3373,7 @@
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9122903797276577686" nodeInfo="nn">
                     <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="9122903797276624343" nodeInfo="nn">
                       <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797276624344" nodeInfo="in">
-                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.9122903797276194520" resolveInfo="StylePriorityGroupReferenceList" />
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.9122903797276194520" resolveInfo="StyleClassReferenceList" />
                       </node>
                     </node>
                   </node>

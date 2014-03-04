@@ -4353,7 +4353,7 @@
   <root type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1707191813404431435" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <property name="name" nameId="tpck.1169194664001" value="AddOverridesClause" />
-    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="1707191813404431436" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1707191813404431437" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1707191813404437715" nodeInfo="nn">
@@ -4370,7 +4370,7 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9122903797276644579" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="9122903797276645188" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797276645190" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.9122903797276194520" resolveInfo="StylePriorityGroupReferenceList" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.9122903797276194520" resolveInfo="StyleClassReferenceList" />
                 </node>
               </node>
             </node>
