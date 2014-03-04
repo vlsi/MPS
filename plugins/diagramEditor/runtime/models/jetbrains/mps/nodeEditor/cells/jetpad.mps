@@ -602,27 +602,6 @@
         </node>
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="718530200792645318" nodeInfo="igu">
-      <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
-      <property name="isTransient" nameId="tpee.8606350594693632173" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="myConnectionSingleList" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="718530200793626211" nodeInfo="nn" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="718530200792673178" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9wxy.~ObservableSingleItemList" resolveInfo="ObservableSingleItemList" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="718530200793061035" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vdrg.~PolyLineConnection" resolveInfo="PolyLineConnection" />
-        </node>
-      </node>
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="718530200792713389" nodeInfo="nn">
-        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="718530200792718612" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9wxy.~ObservableSingleItemList%d&lt;init&gt;()" resolveInfo="ObservableSingleItemList" />
-          <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="718530200793042016" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vdrg.~PolyLineConnection" resolveInfo="PolyLineConnection" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5519313752213154306" nodeInfo="igu">
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
       <property name="isTransient" nameId="tpee.8606350594693632173" value="false" />
@@ -2466,16 +2445,16 @@
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="639949279732119609" nodeInfo="nn">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="639949279732119593" resolveInfo="connectionInfo" />
                                       </node>
-                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.PropertyReference" typeId="tpee.1201385106094" id="639949279732119610" nodeInfo="nn">
-                                        <link role="property" roleId="tpee.1201385237847" targetNodeId="5204867329715575036" />
+                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.PropertyReference" typeId="tpee.1201385106094" id="8574284199672401357" nodeInfo="nn">
+                                        <link role="property" roleId="tpee.1201385237847" targetNodeId="5204867329715844682" />
                                       </node>
                                     </node>
                                     <node role="parameter" roleId="tp2c.1225797361612" type="tpee.DotExpression" typeId="tpee.1197027756228" id="639949279732119611" nodeInfo="nn">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="639949279732119612" nodeInfo="nn">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="639949279732119593" resolveInfo="connectionInfo" />
                                       </node>
-                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.PropertyReference" typeId="tpee.1201385106094" id="639949279732119613" nodeInfo="nn">
-                                        <link role="property" roleId="tpee.1201385237847" targetNodeId="5204867329715705952" />
+                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.PropertyReference" typeId="tpee.1201385106094" id="8574284199672436557" nodeInfo="nn">
+                                        <link role="property" roleId="tpee.1201385237847" targetNodeId="5204867329715982776" />
                                       </node>
                                     </node>
                                   </node>

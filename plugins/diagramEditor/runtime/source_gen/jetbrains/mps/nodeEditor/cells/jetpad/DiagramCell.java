@@ -11,10 +11,9 @@ import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
-import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
-import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import javax.swing.JPanel;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -69,7 +68,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private int myPatternEditorY;
   protected ObservableList<SNode> myBlocks = new ObservableArrayList<SNode>();
   protected ObservableList<SNode> myConnectors = new ObservableArrayList<SNode>();
-  protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
   protected Property<Boolean> myIsShowingDragFeedBack = new ValueProperty<Boolean>(false);
   protected PolyLineConnection myDragConnection = new PolyLineConnection();
   private ViewTrait myHandlingTrait;
@@ -279,7 +277,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             }
 
             DiagramCell.ConnectionInfo connectionInfo = getConnectionInfo();
-            return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getFromNode(), connectionInfo.getFromId());
+            return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
           }
 
           @Override

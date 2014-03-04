@@ -144,7 +144,6 @@
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
-    <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableSingleItemList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
