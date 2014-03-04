@@ -59,24 +59,6 @@ import java.util.ListIterator;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import java.util.Map;
-import com.intellij.openapi.actionSystem.ToggleAction;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import javax.swing.JLabel;
-import com.intellij.openapi.actionSystem.ActionToolbar;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.SwingConstants;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import javax.swing.Icon;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
@@ -91,7 +73,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   protected Property<Boolean> myIsShowingDragFeedBack = new ValueProperty<Boolean>(false);
   protected PolyLineConnection myDragConnection = new PolyLineConnection();
   private ViewTrait myHandlingTrait;
-  private DiagramCell.DiagramPalette myPalettePanel;
+  private DiagramPalette myPalettePanel;
   private JPanel myPanel;
 
 
@@ -171,9 +153,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return false;
   }
 
-  public DiagramCell.DiagramPalette getPalette() {
+  public DiagramPalette getPalette() {
     if (myPalettePanel == null) {
-      myPalettePanel = new DiagramCell.DiagramPalette();
+      myPalettePanel = new DiagramPalette(this);
     }
     return myPalettePanel;
   }
@@ -296,7 +278,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
               return false;
             }
 
-            DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
+            DiagramCell.ConnectionInfo connectionInfo = getConnectionInfo();
             return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getFromNode(), connectionInfo.getFromId());
           }
 
@@ -304,23 +286,38 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
             SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
             ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
-            DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
+            DiagramCell.ConnectionInfo connectionInfo = getConnectionInfo();
             setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
             return result;
           }
         };
-        return Collections.<SubstituteAction>singletonList(new DiagramCell.DiagramSubstituteActionWraper(action, DiagramCell.ActionType.CONNECTOR));
+        return Collections.<SubstituteAction>singletonList(action);
       }
     };
   }
 
 
 
+  /*package*/ DiagramCell.ConnectionInfo getConnectionInfo() {
+    return new DiagramCell.ConnectionInfo();
+  }
+
+
+
+  /*package*/ int getPatternEditorX() {
+    return myPatternEditorX;
+  }
+
+  /*package*/ int getPatternEditorY() {
+    return myPatternEditorY;
+  }
+
+
 
   @Override
   public SubstituteInfo getSubstituteInfo() {
-    if (myPalettePanel.isActive()) {
-      return myPalettePanel.getSubstituteInfo();
+    if (getPalette().isActive()) {
+      return getPalette().getSubstituteInfo();
     }
     return super.getSubstituteInfo();
   }
@@ -493,17 +490,16 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
   }
 
-  private class ConnectionInfo {
+  /*package*/ class ConnectionInfo {
 
 
     public ConnectionInfo() {
-      PolyLineConnection connectionDragFeedback = myDragConnection;
-      if (connectionDragFeedback == null) {
+      if (myDragConnection == null) {
         return;
       }
 
-      View fromView = connectionDragFeedback.fromView().get();
-      View toView = connectionDragFeedback.toView().get();
+      View fromView = myDragConnection.fromView().get();
+      View toView = myDragConnection.toView().get();
       if (fromView == null || toView == null) {
         return;
       }
@@ -559,232 +555,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
   }
 
-  public class DiagramPalette extends JPanel {
-    private JPanel myBlockActionPanel = new JPanel(new GridLayoutManager(1, 1));
-    private JPanel myConnectorActionPanel = new JPanel(new GridLayoutManager(1, 1));
-
-    public boolean myIsActive = true;
-    private Map<SubstituteAction, ToggleAction> myActionToButtonMap = MapSequence.fromMap(new HashMap<SubstituteAction, ToggleAction>());
-    private SubstituteInfo mySubstituteInfo;
-    private DefaultActionGroup myBlockActionGroup = new DefaultActionGroup();
-    private DefaultActionGroup myConnectorActionGroup = new DefaultActionGroup();
-
-    public DiagramPalette() {
-      super(new GridLayoutManager(4, 1));
-      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-
-      add(new JLabel("Blocks"), constraints);
-      constraints.setRow(1);
-      add(myBlockActionPanel, constraints);
-
-      constraints.setRow(2);
-      add(new JLabel("Connectors"), constraints);
-      constraints.setRow(3);
-      add(myConnectorActionPanel, constraints);
-    }
 
 
-
-    public void setSubstituteInfo(SubstituteInfo substituteInfo) {
-      mySubstituteInfo = substituteInfo;
-      update();
-    }
-
-
-
-    public SubstituteInfo getSubstituteInfo() {
-      return mySubstituteInfo;
-    }
-
-
-
-    public boolean isActive() {
-      return myIsActive;
-    }
-
-
-
-
-    public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
-      return new SubstituteInfoPartExt() {
-        public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-          List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-          for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
-            result.add(new DiagramCell.DiagramSubstituteActionWraper(action, DiagramCell.ActionType.BLOCK) {
-              @Override
-              public boolean canSubstitute(String string) {
-                if (!(super.canSubstitute(string))) {
-                  return false;
-                }
-                return isActionEnabled(this) && !(hasConnectionDragFeedback());
-              }
-
-              @Override
-              public SNode substitute(@Nullable EditorContext context, String string) {
-                SNode result = super.substitute(context, string);
-                setNodePositionCallback.invoke(result, myPatternEditorX, myPatternEditorY);
-                return result;
-              }
-            });
-          }
-          return result;
-        }
-      };
-    }
-
-    public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
-      // TMP solution: manually creating instance of connection instead of using 
-      // ModelActions.createChildNodeSubstituteActions() because of mbeddr reqirements: 
-      // hiding text-specific connection substitute actions from the diagram 
-      return new SubstituteInfoPartExt() {
-        public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
-          AbstractNodeSubstituteAction action = new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
-            @Override
-            public boolean canSubstitute(String string) {
-              if (!(super.canSubstitute(string))) {
-                return false;
-              }
-              DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
-              return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId()) && hasConnectionDragFeedback();
-            }
-
-            @Override
-            protected SNode doSubstitute(@Nullable EditorContext context, String string) {
-              SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
-              ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
-              DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
-              setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
-              return result;
-            }
-          };
-          return Collections.<SubstituteAction>singletonList(new DiagramCell.DiagramSubstituteActionWraper(action, DiagramCell.ActionType.CONNECTOR) {
-            @Override
-            public boolean canSubstitute(String string) {
-              return isActionEnabled(this) && super.canSubstitute(string);
-            }
-          });
-        }
-      };
-    }
-
-    private boolean isActionEnabled(SubstituteAction substituteAction) {
-      return check_xnhqai_a0a91zb(MapSequence.fromMap(myActionToButtonMap).get(substituteAction));
-    }
-
-
-
-    private void updateToggleActions() {
-      SubstituteInfo substituteInfo = getSubstituteInfo();
-      if (substituteInfo == null) {
-        return;
-      }
-      substituteInfo.invalidateActions();
-      for (SubstituteAction action : ListSequence.fromList(((DiagramCompositeSubstituteInfo) mySubstituteInfo).createActions())) {
-        ToggleAction substituteButton = null;
-        DiagramCell.DiagramSubstituteActionWraper actionWrapper = ((DiagramCell.DiagramSubstituteActionWraper) action);
-        switch (actionWrapper.getType()) {
-          case BLOCK:
-            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(actionWrapper.getMatchingText(""), actionWrapper.getMatchingText(""), actionWrapper.getIconFor(""), myBlockActionGroup);
-            myBlockActionGroup.add(substituteButton);
-            break;
-          case CONNECTOR:
-            substituteButton = new DiagramCell.DiagramPalette.MyToggleAction(actionWrapper.getMatchingText(""), actionWrapper.getMatchingText(""), actionWrapper.getIconFor(""), myConnectorActionGroup);
-            myConnectorActionGroup.add(substituteButton);
-            break;
-          default:
-        }
-        MapSequence.fromMap(myActionToButtonMap).put(action, substituteButton);
-      }
-    }
-
-    private void update() {
-      updateToggleActions();
-      GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-      ActionToolbar elementsToolbat = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myBlockActionGroup, true);
-      elementsToolbat.setOrientation(SwingConstants.VERTICAL);
-      JComponent blockActionPanel = elementsToolbat.getComponent();
-      myBlockActionPanel.removeAll();
-      myBlockActionPanel.add(blockActionPanel, gridConstraints);
-      ActionToolbar connectorToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myConnectorActionGroup, true);
-      connectorToolbar.setOrientation(SwingConstants.VERTICAL);
-      JComponent connectorActionPanel = connectorToolbar.getComponent();
-      myConnectorActionPanel.removeAll();
-      myConnectorActionPanel.add(connectorActionPanel, gridConstraints);
-    }
-
-
-
-
-
-    private class MyToggleAction extends ToggleAction {
-      private boolean myIsSelected;
-      private ActionGroup myParentGroup;
-
-      public MyToggleAction(@Nullable String text, @Nullable String description, @Nullable Icon icon, ActionGroup parent) {
-        super(text, description, icon);
-        myParentGroup = parent;
-      }
-
-      public boolean isSelected(AnActionEvent actionEvent) {
-        return myIsSelected;
-      }
-
-      public void setSelected(AnActionEvent actionEvent, boolean isSelected) {
-        myIsSelected = isSelected;
-        if (isSelected) {
-          for (AnAction action : myParentGroup.getChildren(null)) {
-            if (action != this) {
-              ((ToggleAction) action).setSelected(null, false);
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-
-  private static class DiagramSubstituteActionWraper extends NodeSubstituteActionWrapper {
-    private DiagramCell.ActionType myType;
-
-    private DiagramSubstituteActionWraper(SubstituteAction action, DiagramCell.ActionType type) {
-      super(action);
-      myType = type;
-    }
-
-    public DiagramCell.ActionType getType() {
-      return myType;
-    }
-
-
-
-    @Override
-    public Icon getIconFor(String string) {
-      Icon icon;
-      SNode iconNode = getIconNode(string);
-      if (iconNode != null) {
-        icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((isReferentPresentation()))) ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode));
-      } else {
-        icon = IdeIcons.DEFAULT_ICON;
-      }
-      return icon;
-    }
-  }
-
-  public static   enum ActionType {
-    BLOCK(),
-    CONNECTOR();
-
-    ActionType() {
-    }
-  }
-
-
-
-  private static boolean check_xnhqai_a0a91zb(ToggleAction checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isSelected(null);
-    }
-    return false;
-  }
 }
