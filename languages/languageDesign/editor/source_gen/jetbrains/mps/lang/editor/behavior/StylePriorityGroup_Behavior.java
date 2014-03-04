@@ -10,6 +10,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StylePriorityGroup_Behavior {
   public static void init(SNode thisNode) {
@@ -33,8 +35,9 @@ public class StylePriorityGroup_Behavior {
         return -1;
       } else if (down) {
         if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).isNotEmpty()) {
-          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), -1);
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).getElement(0), "stylePriorityGroup", false));
+          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true), "jetbrains.mps.lang.editor.structure.SimpleOverrideItem")).isEmpty() ? -1 : 1));
+          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true), "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference")).first(), "stylePriorityGroup", false));
+
           ListSequence.fromList(childNums).insertElement(0, 0);
         } else if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true) != null)) {
           MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 1);
@@ -52,12 +55,14 @@ public class StylePriorityGroup_Behavior {
         MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).getElement(1), Math.max(MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).first()) + 1, MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).getElement(1))));
         ListSequence.fromList(extendsTree).removeElementAt(0);
         ListSequence.fromList(childNums).removeElementAt(0);
+        while (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).count() && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).getElement(newIndex), "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference")) {
+          newIndex++;
+          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).getElement(1), Math.max(1, MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).getElement(1))));
+        }
         if (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).count()) {
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).getElement(newIndex), "stylePriorityGroup", false));
+          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).getElement(newIndex), "jetbrains.mps.lang.editor.structure.StylePriorityGroupReference"), "stylePriorityGroup", false));
           ListSequence.fromList(childNums).insertElement(0, newIndex);
           down = true;
-        } else {
-          assert newIndex == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedGroup", true), "element", true)).count();
         }
       }
     }

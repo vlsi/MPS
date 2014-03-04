@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class StylePriorityGroupReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public class StylePriorityGroupReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements OverrideItem_BehaviorDescriptor {
   public StylePriorityGroupReference_BehaviorDescriptor() {
   }
 
