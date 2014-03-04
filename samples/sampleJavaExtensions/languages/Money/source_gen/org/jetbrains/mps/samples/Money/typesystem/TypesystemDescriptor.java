@@ -29,6 +29,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_MovingAverage_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_StockPriceInquiry_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new Money_extends_java_lang_Object_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

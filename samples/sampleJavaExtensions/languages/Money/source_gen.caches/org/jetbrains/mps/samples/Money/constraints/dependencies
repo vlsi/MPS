@@ -6,9 +6,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.ConvertTo_Constraints" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.CurrentStockPrice_Constraints" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.GetAmount_Constraints" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.GetCurrency_Constraints" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.MoneyLiteral_Constraints" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.StockSymbol_Constraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.constraints.ConvertTo_Constraints" file="ConvertTo_Constraints.java">
@@ -22,6 +24,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.Money.constraints.CurrentStockPrice_Constraints" file="CurrentStockPrice_Constraints.java">
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.constraints.GetAmount_Constraints" file="GetAmount_Constraints.java">
@@ -51,6 +56,18 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.constraints.MoneyLiteral_Constraints" file="MoneyLiteral_Constraints.java">
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.Money.constraints.StockSymbol_Constraints" file="StockSymbol_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Money.behavior.StockSymbol_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
 </dependenciesRoot>
