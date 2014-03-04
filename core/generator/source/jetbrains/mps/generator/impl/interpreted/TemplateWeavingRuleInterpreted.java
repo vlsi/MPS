@@ -110,7 +110,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       }
       return myContentNodeQuery.contextNode(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
     } catch (Exception e) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "cannot evaluate rule context query");
+      environment.getLogger().error(getRuleNode(), "cannot evaluate rule context query", GeneratorUtil.describeInput(context));
       environment.getLogger().handleException(e);
     }
     return null;
@@ -136,7 +136,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   @Override
   public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
     if (consequence == null) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "weaving rule: no rule consequence");
+      environment.getLogger().error(getRuleNode(), "weaving rule: no rule consequence", GeneratorUtil.describeInput(context));
       return false;
     }
 
@@ -242,7 +242,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       if (query == null) {
-        environment.getGenerator().showErrorMessage(context.getInput(), ruleNode, "weaving rule: cannot create list of source nodes");
+        environment.getLogger().error(getRuleNode(), "weaving rule: cannot create list of source nodes", GeneratorUtil.describeInput(context));
         return false;
       }
       Collection<SNode> queryNodes = environment.getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
@@ -263,7 +263,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, consequenceNode, "weaving rule: unsupported rule consequence");
+      environment.getLogger().error(getRuleNode(), "weaving rule: unsupported rule consequence", GeneratorUtil.describeIfExists(consequenceNode, "rule consequence"));
       return false;
     }
   }

@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -51,11 +52,11 @@ public class InputQueryUtil {
         return env.getQueryExecutor().evaluateInsertQuery(context.getInput(), insertMacro, query, context);
       }
 
-      env.getGenerator().showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert");
+      env.getLogger().error(insertMacro.getReference(), "couldn't get nodes to insert", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException("couldn't get nodes to insert");
     } catch (Throwable t) {
       env.getLogger().handleException(t);
-      env.getGenerator().showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert (see exception)");
+      env.getLogger().error(insertMacro.getReference(), "couldn't get nodes to insert (see exception)", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(t);
     }
   }
@@ -74,7 +75,7 @@ public class InputQueryUtil {
       }
 
       if (requiredSourceNodesQuery.contains(nodeMacro.getConcept().getQualifiedName())) {
-        env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get input nodes");
+        env.getLogger().error(nodeMacro.getReference(), "couldn't get input nodes", GeneratorUtil.describeInput(context));
         throw new GenerationFailureException("couldn't get input nodes");
       }
 
@@ -83,7 +84,7 @@ public class InputQueryUtil {
 
     } catch (Throwable t) {
       env.getLogger().handleException(t);
-      env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get input nodes (see exception)");
+      env.getLogger().error(nodeMacro.getReference(), "couldn't get input nodes (see exception)", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(t);
     }
   }
@@ -106,7 +107,7 @@ public class InputQueryUtil {
       return context.getInput();
     } catch (Throwable t) {
       env.getLogger().handleException(t);
-      env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get new input node");
+      env.getLogger().error(nodeMacro, "couldn't get new input node", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(t);
     }
   }

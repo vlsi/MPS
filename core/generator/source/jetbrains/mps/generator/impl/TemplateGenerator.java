@@ -294,7 +294,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+      getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
     }
   }
 
@@ -332,7 +332,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         } catch (GenerationException e) {
           if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
           if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-          showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+          getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
         }
       }
     }
@@ -799,7 +799,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
       String applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) {
-        myEnvironment.getGenerator().showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
+        myEnvironment.getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
         return false;
       }
 
@@ -810,7 +810,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } catch (GenerationFailureException ex) {
         throw ex;
       } catch (GenerationException e) {
-        myEnvironment.getGenerator().showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+        myEnvironment.getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
       }
       return false;
     }

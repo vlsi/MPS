@@ -212,7 +212,7 @@ public class DelayedChanges {
       try {
         myExecContext.executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
       } catch (Throwable t) {
-        generator.showErrorMessage(myContext.getInput(), myMapSrcMacro, String.format("mapping failed: '%s'", t.getMessage()));
+        generator.getLogger().error(myMapSrcMacro.getReference(), String.format("mapping failed: '%s'", t.getMessage()), GeneratorUtil.describeInput(myContext));
         generator.getLogger().handleException(t);
       }
     }
@@ -236,7 +236,7 @@ public class DelayedChanges {
       try {
         myExecContext.executeInContext(myOutputChild, myContext, myProcessor);
       } catch (Throwable t) {
-        generator.showErrorMessage(myContext.getInput(), null, String.format("mapping failed: '%s'", t.getMessage()));
+        generator.getLogger().error((SNodeReference) null, String.format("mapping failed: '%s'", t.getMessage()), GeneratorUtil.describeInput(myContext));
         generator.getLogger().handleException(t);
       }
     }
