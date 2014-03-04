@@ -31,9 +31,8 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import java.util.LinkedHashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class RefactoringUtil {
   private static final Logger LOG = LogManager.getLogger(RefactoringUtil.class);
@@ -171,21 +170,27 @@ public class RefactoringUtil {
   }
 
   public static Map<SModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
+    final Map<SModule, List<SModel>> langs = new LinkedHashMap<SModule, List<SModel>>();
+    fillLanguageAndItsExtendingLanguageModels(language, langs);
+    return langs;
+  }
+
+  public static void fillLanguageAndItsExtendingLanguageModels(Language language, Map<SModule, List<SModel>> toFill) {
     Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
-    Map<SModule, List<SModel>> result = new LinkedHashMap<SModule, List<SModel>>(extendingLangs.size() + 1);
-    result.put(language, RefactoringUtil.getLanguageModelsList(language));
+    toFill.put(language, RefactoringUtil.getLanguageModelsList(language));
     for (Language l : extendingLangs) {
-      if (!(l.equals(language))) {
-        result.put(l, RefactoringUtil.getLanguageModelsList(l));
+      if (!(toFill.containsKey(language))) {
+        toFill.put(l, RefactoringUtil.getLanguageModelsList(l));
       }
     }
-    return result;
   }
 
   public static List<SModel> getLanguageModelsList(Language l) {
-    return Sequence.fromIterable(Sequence.fromArray(l.getModels().toArray(new SModel[0]))).where(new IWhereFilter<SModel>() {
+    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+    ListSequence.fromList(models).addSequence(ListSequence.fromList(l.getModels()));
+    return ListSequence.fromList(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
+        return SNodeOperations.isGeneratable(it);
       }
     }).toListSequence();
   }

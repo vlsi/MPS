@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.misc.ObjectCache;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -27,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -41,7 +41,17 @@ public class NameUtil {
   private static final HashSet<String> PARTICLES;
   private static final HashSet<String> ARTICLES;
 
-  private static final ObjectCache<String, String> ourCompactNamespaceCache = new ObjectCache<String, String>(1000);
+  private static final Map<String, String> ourCompactNamespaceCache;
+  static {
+    // map, ordered by access (least recently to most recently)
+    ourCompactNamespaceCache = new LinkedHashMap<String, String>(128, 0.75f, true) {
+      @Override
+      protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
+        // eldest is the least recently accessed element of the map
+        return size() > 1000;
+      }
+    };
+  }
 
   private static final Map<Character, String> ESCAPE_INVISIBLE_CHARS_MAP = new HashMap<Character, String>();
   private static final Map<Character, String> ESCAPE_MAP = new HashMap<Character, String>();
@@ -504,8 +514,12 @@ public class NameUtil {
 
 
   public static String compactNamespace(String namespace) {
+    String result = ourCompactNamespaceCache.get(namespace);
+    if (result != null) {
+      return result;
+    }
     synchronized (ourCompactNamespaceCache) {
-      String result = ourCompactNamespaceCache.tryKey(namespace);
+      result = ourCompactNamespaceCache.get(namespace);
       if (result == null) {
         result = _compactNamespace(namespace);
         ourCompactNamespaceCache.put(namespace, result);

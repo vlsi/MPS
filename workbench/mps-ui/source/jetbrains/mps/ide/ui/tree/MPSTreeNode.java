@@ -50,7 +50,7 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
+public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
   private IOperationContext myOperationContext;
@@ -71,6 +71,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private final Object myTreeMessagesLock = new Object();
   private List<TreeMessage> myTreeMessages = null;
   private Map<TextAttribute, Object> myFontAttributes = new HashMap<TextAttribute, Object>();
+  private int myToggleClickCount = 2;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -260,11 +261,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-  @Override
-  public boolean isLeaf() {
-    return false;
-  }
-
   public MPSTreeNode findExactChildWith(Object userObject) {
     for (MPSTreeNode child : this) {
       if (child.getUserObject() == userObject) return child;
@@ -306,8 +302,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
+  /**
+   * Default value is: 2
+   */
   public int getToggleClickCount() {
-    return 2;
+    return myToggleClickCount;
+  }
+
+  public void setToggleClickCount(int clickCount) {
+    myToggleClickCount = clickCount;
   }
 
   //updates and refreshes tree

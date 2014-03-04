@@ -16,9 +16,12 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 
@@ -30,6 +33,11 @@ import java.util.List;
 public class NullGenerationTracer implements IGenerationTracer {
 
   public final static IGenerationTracer INSTANCE = new NullGenerationTracer();
+
+  @Override
+  public void trace(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
+
+  }
 
   @Override
   public void pushInputNode(SNodeReference node) {

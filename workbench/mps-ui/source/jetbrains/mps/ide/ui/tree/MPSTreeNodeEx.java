@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,18 @@ package jetbrains.mps.ide.ui.tree;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Intended for tree elements backed with SNode and populated lazily
+ */
 public abstract class MPSTreeNodeEx extends MPSTreeNode {
   protected MPSTreeNodeEx(IOperationContext operationContext) {
     super(operationContext);
   }
 
-  public SNode getSNode() {
-    return null;
+  public abstract SNode getSNode();
+
+  @Override
+  public boolean isLeaf() {
+    return false;
   }
 }

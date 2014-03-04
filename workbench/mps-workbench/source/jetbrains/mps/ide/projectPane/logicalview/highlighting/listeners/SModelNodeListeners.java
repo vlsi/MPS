@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,156 +15,189 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.logicalview.PresentationUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
-import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ListenersFactory.NodeListeners;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
-import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher;
-import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeUpdateVisitor;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import javax.swing.tree.DefaultTreeModel;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class SModelNodeListeners implements NodeListeners {
-  private SimpleModelListener mySimpleModelListener;
-  private SModelRepositoryListener myModelRepositoryListener;
-  private MyGenerationStatusListener myStatusListener;
-  private SModelEventsListener myEventsListener;
-  private MySNodeTreeUpdater myTreeUpdater;
+/**
+ * Control listeners that track changes to a model node.
+ * Invoke {@link #startListening()}/{@link #stopListening()} to enable/disable listening,
+ * and {@link #attach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}/{@link #detach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)} to \
+ * include/exclude selected model tree node from update.
+ */
+public class SModelNodeListeners {
+  private final ModelChangeListener myModelChangeListener;
+  private final SRepositoryListener myRepositoryListener;
+  private final MyGenerationStatusListener myGenStatusListener;
+  private EventsCollector myEventsListener;
 
-  private SModelTreeNode myTreeNode;
-  private SModel myModel;
+  private final ConcurrentHashMap<SModelReference, SModelTreeNode> myTreeNodes = new ConcurrentHashMap<SModelReference, SModelTreeNode>();
+  private final TreeUpdateVisitor[] myUpdates; // shall be CompositeVisitor, but I'm lazy for that
 
-  private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
-  private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
-  private ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
 
-  public SModelNodeListeners(final SModelTreeNode modelNode) {
-    myTreeNode = modelNode;
-    myModel = modelNode.getSModelDescriptor();
+  public SModelNodeListeners(TreeUpdateVisitor genStatusUpdate, TreeUpdateVisitor errorVisitor, TreeUpdateVisitor modifiedMarker) {
+    myUpdates = new TreeUpdateVisitor[3];
+    myUpdates[0] = genStatusUpdate;
+    myUpdates[1] = errorVisitor;
+    myUpdates[2] = modifiedMarker;
 
-    mySimpleModelListener = new MySimpleModelListener(modelNode);
-    myModelRepositoryListener = new SModelRepositoryAdapter() {
+    myModelChangeListener = new ModelChangeListener();
+    myRepositoryListener = new SRepositoryContentAdapter() {
       @Override
-      public void modelsReplaced(Set<SModel> replacedModels) {
-        if (replacedModels.contains(myModel)) {
-          visitNode(modelNode);
-        }
+      protected void startListening(SModel model) {
+        model.addModelListener(this);
+      }
+
+      @Override
+      protected void stopListening(SModel model) {
+        model.removeModelListener(this);
+      }
+
+      @Override
+      public void modelReplaced(SModel model) {
+        refreshAffectedTreeNodes(model);
       }
     };
-    myStatusListener = new MyGenerationStatusListener();
-    if (myModel instanceof EditableSModel) {
-      myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
-      myTreeUpdater.setDependencyRecorder(modelNode.getDependencyRecorder());
-    }
-    myEventsListener = new MySModelEventsListener();
+    myGenStatusListener = new MyGenerationStatusListener(genStatusUpdate);
   }
 
-  @Override
   public void startListening() {
-    visitNode(myTreeNode);
-
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-
-    SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-    ((SModelInternal) myModel).addModelListener(mySimpleModelListener);
-
-    if (!SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(myModel))) {
-      ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
-    }
+    SRepositoryListenerPlug.plug(SRepositoryRegistry.getInstance(), myRepositoryListener);
+    ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myGenStatusListener);
+    // FIXME There's no way to unregister EventsCollector explicitly, other than dispose. Shall refactor its uses to (un)register explicitly
+    myEventsListener = new MyEventsCollector();
   }
 
-  @Override
   public void stopListening() {
-    if (!SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(myModel))) {
-      ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
-    }
-
-    ((SModelInternal) myModel).removeModelListener(mySimpleModelListener);
-    SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
-
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    myEventsListener.dispose();
+    ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myGenStatusListener);
+    SRepositoryListenerPlug.unplug(SRepositoryRegistry.getInstance(), myRepositoryListener);
   }
 
-  private void visitNode(SModelTreeNode modelNode) {
-    myGenStatusVisitor.visitNode(modelNode);
-    myErrorVisitor.visitNode(modelNode);
-    myModifiedMarker.visitNode(modelNode);
+  public void attach(@NotNull SModelTreeNode node) {
+    final SModel model = node.getModel();
+    if (model != null) {
+      myTreeNodes.put(model.getReference(), node);
+      ((SModelInternal) model).addModelListener(myModelChangeListener);
+    }
+    refreshTreeNodes(node);
+  }
+
+  public void detach(@NotNull SModelTreeNode node) {
+    final SModel model = node.getModel();
+    if (model != null) {
+      ((SModelInternal) model).removeModelListener(myModelChangeListener);
+      myTreeNodes.remove(model.getReference());
+    }
+  }
+
+  void refreshAffectedTreeNodes(SModel changed) {
+    final SModelTreeNode treeNode = findTreeNode(changed);
+    if (treeNode != null) {
+      refreshTreeNodes(treeNode);
+    }
+  }
+
+  SModelTreeNode findTreeNode(SModel sm) {
+    return myTreeNodes.get(sm.getReference());
+  }
+
+  void refreshTreeNodes(SModelTreeNode toRefresh) {
+    for (TreeUpdateVisitor v : myUpdates) {
+      v.dispatch(toRefresh);
+    }
+  }
+
+  void updateNodePresentation(SModelTreeNode treeNode, boolean reloadSubTree, boolean updateAncestors) {
+    new PresentationUpdater<SModelTreeNode>(treeNode) {
+      @Override
+      protected boolean isValid(SModelTreeNode treeNode) {
+        if (!super.isValid(treeNode)) return false;
+        final SModel model = treeNode.getModel();
+        if (model.isLoaded()) {
+          return !jetbrains.mps.util.SNodeOperations.isModelDisposed(model);
+        }
+        return true;
+      }
+    }.update(reloadSubTree, updateAncestors);
   }
 
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
+    private final TreeUpdateVisitor myGenStatusVisitor;
+
+    public MyGenerationStatusListener(TreeUpdateVisitor genStatusUpdate) {
+      myGenStatusVisitor = genStatusUpdate;
+    }
+
     @Override
-    public void generatedFilesChanged(org.jetbrains.mps.openapi.model.SModel sm) {
-      if (sm != myModel) return;
-      myGenStatusVisitor.visitNode(myTreeNode);
+    public void generatedFilesChanged(SModel sm) {
+      SModelTreeNode treeNode = findTreeNode(sm);
+      if (treeNode != null) {
+        myGenStatusVisitor.dispatch(treeNode);
+      }
     }
   }
 
-  private class MySimpleModelListener extends SimpleModelListener {
-    private final SModelTreeNode myModelNode;
-
-    public MySimpleModelListener(SModelTreeNode modelNode) {
-      super(modelNode);
-      myModelNode = modelNode;
-    }
-
+  private class ModelChangeListener extends SModelAdapter {
     @Override
     public void modelChangedDramatically(SModel model) {
-      updateNodePresentation(false, true);
-      visitNode(myModelNode);
+      SModelTreeNode treeNode = findTreeNode(model);
+      if (treeNode != null) {
+        updateNodePresentation(treeNode, false, true);
+        refreshTreeNodes(treeNode);
+      }
     }
 
     @Override
     public void modelChanged(SModel model) {
-      updateNodePresentation(false, true);
-      visitNode(myModelNode);
+      SModelTreeNode treeNode = findTreeNode(model);
+      if (treeNode != null) {
+        updateNodePresentation(treeNode, false, true);
+        refreshTreeNodes(treeNode);
+      }
     }
 
     @Override
     public void modelSaved(SModel sm) {
-      visitNode(myModelNode);
+      refreshAffectedTreeNodes(sm);
     }
 
     @Override
-    public boolean isValid() {
-      if (!super.isValid()) return false;
-      if (!(myModel.isLoaded())) return true;
-      return !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel);
-    }
-  }
-
-  private class MySModelEventsListener implements SModelEventsListener {
-    @Override
-    @NotNull
-    public SModel getModelDescriptor() {
-      return myModel;
-    }
-
-    @Override
-    public void eventsHappened(List<SModelEvent> events) {
-      if (myTreeUpdater == null) return;
-      myTreeUpdater.eventsHappenedInCommand(events);
+    public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
+      SModelTreeNode treeNode = findTreeNode(sm);
+      if (treeNode != null) {
+        updateNodePresentation(treeNode, false, false);
+      }
     }
   }
 
@@ -203,7 +236,7 @@ public class SModelNodeListeners implements NodeListeners {
 
     @Override
     public SModel getSModelDescriptor() {
-      return myTreeNode.getSModelDescriptor();
+      return myTreeNode.getModel();
     }
 
     @Override
@@ -239,6 +272,62 @@ public class SModelNodeListeners implements NodeListeners {
         }
       }
       myTreeNode.insertRoots(nodesWithChangedPackages);
+    }
+  }
+
+  private class MyEventsCollector extends EventsCollector {
+    @Override
+    protected void eventsHappened(List<SModelEvent> events) {
+      MultiMap<SModel, SModelEvent> byModel = new MultiMap<SModel, SModelEvent>();
+      for (SModelEvent e : events) {
+        final SModel model = e.getModel();
+        if (model instanceof EditableSModel) {
+          // we create SNodeTreeUpdater only for editable model, this is the way it used to be
+          byModel.putValue(model, e);
+        }
+      }
+      for (SModel m : byModel.keySet()) {
+        SModelTreeNode treeNode = findTreeNode(m);
+        if (treeNode == null) {
+          continue;
+        }
+        MySNodeTreeUpdater treeUpdater = new MySNodeTreeUpdater(treeNode.getOperationContext().getProject(), treeNode);
+        treeUpdater.setDependencyRecorder(treeNode.getDependencyRecorder());
+        treeUpdater.eventsHappenedInCommand(new ArrayList<SModelEvent>(byModel.get(m)));
+      }
+    }
+  }
+
+  // ensures repository listener being attached/detached from Read command
+  //
+  private static class SRepositoryListenerPlug implements Runnable {
+    private final boolean myIsAttach;
+    private final SRepositoryRegistry myWhere;
+    private final SRepositoryListener myWhat;
+
+    private SRepositoryListenerPlug(boolean attach, @NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
+      myIsAttach = attach;
+      myWhere = where;
+      myWhat = what;
+    }
+
+    public static void plug(@NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
+      getModelAccess().runReadAction(new SRepositoryListenerPlug(true, where, what));
+    }
+    public static void unplug(@NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
+      getModelAccess().runReadAction(new SRepositoryListenerPlug(false, where, what));
+    }
+    private static ModelAccess getModelAccess() {
+      // no idea how to get correct ModelAccess for SRepositoryRegistry, and don't want to use smodel.ModelAccess
+      return MPSModuleRepository.getInstance().getModelAccess();
+    }
+    @Override
+    public void run() {
+      if (myIsAttach) {
+        myWhere.addGlobalListener(myWhat);
+      } else {
+        myWhere.removeGlobalListener(myWhat);
+      }
     }
   }
 }

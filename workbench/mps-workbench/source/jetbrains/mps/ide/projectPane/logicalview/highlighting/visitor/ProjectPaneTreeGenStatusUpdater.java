@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbService;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -28,19 +27,18 @@ import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreeNode;
 
-public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
+public class ProjectPaneTreeGenStatusUpdater extends TreeUpdateVisitor {
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
     do {
@@ -68,16 +66,16 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     boolean wasChanged = ((EditableSModel) md).isChanged();
 
     if (moduleNode.getModule().isReadOnly()) {
-      ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
-      ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
+      addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
+      addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
       return;
     }
 
     if (wasChanged) {
-      ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
-      ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+      addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+      addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
       if (moduleNode.getModule() instanceof Generator) {
-        ourUpdater.addUpdate(getContainingModuleNode(moduleNode), new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+        addUpdate(getContainingModuleNode(moduleNode), new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
       }
       return;
     }
@@ -96,7 +94,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (moduleNode.getModule() instanceof Generator) {
       updateModuleStatus(getContainingModuleNode(moduleNode));
     }
-    ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(modelStatus.getMessage()));
+    addUpdate(modelNode, new GenStatusNodeUpdate(modelStatus.getMessage()));
   }
 
   private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
@@ -107,10 +105,10 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
         return generationRequired(moduleNode);
       }
     });
-    ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(moduleStatus.getMessage()));
+    addUpdate(moduleNode, new GenStatusNodeUpdate(moduleStatus.getMessage()));
   }
 
-  private boolean generationRequired(SModule module, IOperationContext context) {
+  private boolean generationRequired(SModule module) {
     if (!(module instanceof AbstractModule)) return false;
     for (SModel md : ((AbstractModule) module).getModels()) {
       boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md);
@@ -121,11 +119,10 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private GenerationStatus generationRequired(ProjectModuleTreeNode node) {
     SModule module = node.getModule();
-    ProjectOperationContext context = new ProjectOperationContext(node.getOperationContext().getProject());
-    if (generationRequired(module, context)) return GenerationStatus.REQUIRED;
+    if (generationRequired(module)) return GenerationStatus.REQUIRED;
     if (module instanceof Language) {
       for (Generator generator : ((Language) module).getGenerators()) {
-        if (generationRequired(generator, context)) return GenerationStatus.REQUIRED;
+        if (generationRequired(generator)) return GenerationStatus.REQUIRED;
       }
     }
     return GenerationStatus.NOT_REQUIRED;
@@ -146,7 +143,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private boolean isPackaged(SModelTreeNode node) {
     SModel md = node.getModel();
     if (!(md instanceof EditableSModel)) return false;
-    return ((EditableSModel) md).isReadOnly();
+    return md.isReadOnly();
   }
 
   private boolean isDoNotGenerate(SModelTreeNode node) {

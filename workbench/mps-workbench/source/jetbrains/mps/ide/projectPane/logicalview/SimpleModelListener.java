@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,19 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview;
 
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.jetbrains.mps.openapi.model.SModel;
 
-public abstract class SimpleModelListener extends SModelAdapter {
-  private MPSTreeNode myTreeNode;
+public class SimpleModelListener extends SModelAdapter {
+  private PresentationUpdater myUpdater;
 
-  public SimpleModelListener(MPSTreeNode treeNode) {
-    myTreeNode = treeNode;
+  public SimpleModelListener(PresentationUpdater updater) {
+    myUpdater = updater;
   }
 
-  protected void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (isValid()) {
-          myTreeNode.updatePresentation(reloadSubTree, updateAncestors);
-        }
-      }
-    });
+  protected void updateNodePresentation(boolean reloadSubTree, boolean updateAncestors) {
+    myUpdater.update(reloadSubTree, updateAncestors);
   }
 
   @Override
@@ -46,14 +38,5 @@ public abstract class SimpleModelListener extends SModelAdapter {
   @Override
   public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
     updateNodePresentation(false, false);
-  }
-
-  public boolean isValid() {
-    if (myTreeNode.getTree() == null) return false;
-
-    //module has been already removed
-    if (!myTreeNode.getOperationContext().isValid()) return false;
-
-    return true;
   }
 }

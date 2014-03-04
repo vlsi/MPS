@@ -17,6 +17,10 @@ package jetbrains.mps.util.misc.hash;
 
 import java.util.Arrays;
 
+/**
+ * This class is scheduled for removal in next release
+ */
+@Deprecated
 class HashUtil {
 
   public static final int MIN_CAPACITY = 4;

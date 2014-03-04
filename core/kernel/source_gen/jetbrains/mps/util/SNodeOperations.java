@@ -350,7 +350,7 @@ public class SNodeOperations {
   }
 
   public static boolean isGeneratable(SModel model) {
-    assert model instanceof SModel;
+    // I wonder why this method doesn't reside in SModelOperations 
     return model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable();
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,21 +25,21 @@ import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
 import java.util.List;
 
-public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
+public class ProjectPaneTreeErrorChecker extends TreeUpdateVisitor {
   @Override
   protected void visitModelNode(final SModelTreeNode node) {
     List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       @Override
       public List<String> compute() {
-        final SModel modelDescriptor = node.getSModelDescriptor();
+        final SModel modelDescriptor = node.getModel();
         if (modelDescriptor == null) return Collections.emptyList();
         if (!(modelDescriptor.isLoaded())) return Collections.emptyList();
         IOperationContext context = node.getOperationContext();
@@ -56,7 +56,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
       }
     }
 
-    ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(result, false));
+    addUpdate(node, new ErrorStateNodeUpdate(result, false));
   }
 
   @Override
@@ -67,7 +67,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
         SModule module = node.getModule();
         if (module == null) return null;
         ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
-        return new Pair(validator.getErrors(), validator.getWarnings());
+        return new Pair<List<String>, List<String>>(validator.getErrors(), validator.getWarnings());
       }
     });
 
@@ -94,12 +94,12 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
       }
     }
     final boolean warning = !hasErrors;
-    ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(result, warning));
+    addUpdate(node, new ErrorStateNodeUpdate(result, warning));
   }
 
   @Override
   protected void visitProjectNode(final ProjectTreeNode node) {
     String errors = ((StandaloneMPSProject) node.getProject()).getErrors();
-    ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(errors, false));
+    addUpdate(node, new ErrorStateNodeUpdate(errors, false));
   }
 }

@@ -62,6 +62,10 @@ public class SModelStereotype {
     return stereotype.endsWith(STUB_SUFFIX);
   }
 
+  public static boolean isStubModel(SModel model) {
+    return isStubModelStereotype(getStereotype(model));
+  }
+
   public static String getStubStereotypeForId(String languageId) {
     return languageId + STUB_SUFFIX;
   }
