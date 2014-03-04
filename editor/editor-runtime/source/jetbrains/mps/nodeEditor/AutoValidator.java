@@ -29,6 +29,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
 
 class AutoValidator {
+  private boolean mySuppressSelectionChanges = false;
+
   AutoValidator(EditorComponent editorComponent) {
     editorComponent.getSelectionManager().addSelectionListener(new MyCellSelectionListener());
   }
@@ -36,7 +38,7 @@ class AutoValidator {
   private class MyCellSelectionListener implements SelectionListener {
     @Override
     public void selectionChanged(final jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-      if (oldSelection == newSelection) {
+      if (mySuppressSelectionChanges || oldSelection == newSelection) {
         return;
       }
       final EditorComponent editorComponentInternal = (EditorComponent) editorComponent;
@@ -71,9 +73,14 @@ class AutoValidator {
                 EditorCell cell = cellInfo.findCell(editorComponentInternal);
                 if (cell != null) {
                   Object memento = editorComponent.getEditorContext().createMemento();
-                  APICellAdapter.validate(cell, true, false);
-                  editorComponentInternal.flushEvents();
-                  editorComponent.getEditorContext().setMemento(memento);
+                  mySuppressSelectionChanges = true;
+                  try {
+                    APICellAdapter.validate(cell, true, false);
+                    editorComponentInternal.flushEvents();
+                    editorComponent.getEditorContext().setMemento(memento);
+                  } finally {
+                    mySuppressSelectionChanges = false;
+                  }
                 }
               }
 
