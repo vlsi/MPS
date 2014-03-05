@@ -207,6 +207,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     // todo: !!!
     myModule.setModuleDescriptor(myModuleDescriptor, true);
     myModule.save();
+    //In case of Generator saving lead to reload of containing Language
+    //As result Language unload old Generator module and creates new - so we need to update object
+    //TODO: remove when generator will be separated from language
+    if(myModule instanceof Generator)
+      myModule = (AbstractModule) MPSModuleRepository.getInstance().getModule(myModule.getModuleId());
   }
 
   @Nls

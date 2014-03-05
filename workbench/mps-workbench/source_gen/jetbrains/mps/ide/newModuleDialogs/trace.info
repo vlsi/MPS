@@ -25,7 +25,7 @@
     <nodeInfo nodeId="7619659760484896485" fileName="NewSolutionDialog.java" startLine="72" startPosition="28" endLine="73" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2729157578428856464" fileName="NewSolutionDialog.java" startLine="73" startPosition="152" endLine="74" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3978024352677988470" fileName="NewSolutionDialog.java" startLine="81" startPosition="52" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3926595287077698121" fileName="NewSolutionDialog.java" startLine="88" startPosition="33" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3926595287077698121" fileName="NewSolutionDialog.java" startLine="88" startPosition="33" endLine="89" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1012908514805344418" fileName="NewSolutionDialog.java" startLine="93" startPosition="28" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1012908514805592878" fileName="NewSolutionDialog.java" startLine="97" startPosition="27" endLine="98" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1012908514805592890" fileName="NewSolutionDialog.java" startLine="98" startPosition="142" endLine="99" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -47,7 +47,7 @@
     <scopeInfo nodeId="8016425263805317893" fileName="NewSolutionDialog.java" startLine="55" startPosition="31" endLine="56" endPosition="41" />
     <scopeInfo nodeId="7619659760484896465" fileName="NewSolutionDialog.java" startLine="65" startPosition="21" endLine="66" endPosition="13" />
     <scopeInfo nodeId="6929542275387724636" fileName="NewSolutionDialog.java" startLine="81" startPosition="52" endLine="82" endPosition="61" />
-    <scopeInfo nodeId="3926595287077697910" fileName="NewSolutionDialog.java" startLine="88" startPosition="33" endLine="89" endPosition="16" />
+    <scopeInfo nodeId="3926595287077697910" fileName="NewSolutionDialog.java" startLine="88" startPosition="33" endLine="89" endPosition="20" />
     <scopeInfo nodeId="1012908514805334060" fileName="NewSolutionDialog.java" startLine="93" startPosition="28" endLine="94" endPosition="19" />
     <scopeInfo nodeId="5049856602248792142" fileName="NewSolutionDialog.java" startLine="72" startPosition="28" endLine="74" endPosition="83" />
     <scopeInfo nodeId="3926595287077697907" fileName="NewSolutionDialog.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />

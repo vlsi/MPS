@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3185926g40ce4a456msz024ruu64iqa">
+<dependencies version="2" modelHash="-8w7myoslmmf8x0lr7x38i3wvc5ndw6y">
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="27vcgb5dvmsbnh1v92f7b6cmvnzc1d1" />
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
@@ -283,7 +283,7 @@
     <file name="mps.sh" />
     <file name="mps.vmoptions" />
   </source>
-  <source id="5548512857136492214" name="mpsDevKit" hash="-59x28dqd8gwtqel1m6pu30vd0651krk">
+  <source id="5548512857136492214" name="mpsDevKit" hash="-85wcvbvdd1bu9lvy84yik4lsshjakh0">
     <dep root="2569834391839970845" />
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
