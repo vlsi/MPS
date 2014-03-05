@@ -20,7 +20,7 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;

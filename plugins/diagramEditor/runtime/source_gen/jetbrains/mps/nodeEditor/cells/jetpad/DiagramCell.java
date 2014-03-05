@@ -51,6 +51,7 @@ import java.awt.Window;
 import java.awt.Point;
 import jetbrains.jetpad.event.ModifierKey;
 import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;

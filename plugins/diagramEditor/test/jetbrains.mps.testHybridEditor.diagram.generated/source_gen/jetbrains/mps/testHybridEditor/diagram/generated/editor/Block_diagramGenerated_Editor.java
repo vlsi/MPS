@@ -31,9 +31,9 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.values.Color;
@@ -200,7 +200,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(((DiagramNodeView) descendantMapper.getTarget()).focused(), getTarget().isSelected));
           ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
-          configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
+          configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
               return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();

@@ -33,7 +33,7 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.model.property.WritableProperty;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;

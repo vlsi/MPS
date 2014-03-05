@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984049021">
+    <nodeInfo nodeId="4287318874984049022" fileName="AbstractDecoratorView.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SELECTION_SQUARE_HALF_WIDTH" />
+    <nodeInfo nodeId="4287318874984049026" fileName="AbstractDecoratorView.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrorView" />
+    <nodeInfo nodeId="4287318874984049029" fileName="AbstractDecoratorView.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectionView" />
+    <nodeInfo nodeId="4287318874984049032" fileName="AbstractDecoratorView.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasError" />
+    <nodeInfo nodeId="4287318874984049040" fileName="AbstractDecoratorView.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isSelected" />
+    <nodeInfo nodeId="4287318874985107097" fileName="AbstractDecoratorView.java" startLine="28" startPosition="34" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049061" fileName="AbstractDecoratorView.java" startLine="33" startPosition="34" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049068" fileName="AbstractDecoratorView.java" startLine="35" startPosition="5" endLine="36" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984049070" fileName="AbstractDecoratorView.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionView#()null" />
+    <nodeInfo nodeId="4287318874989932843" fileName="AbstractDecoratorView.java" startLine="44" startPosition="93" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874989932846" fileName="AbstractDecoratorView.java" startLine="45" startPosition="51" endLine="46" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986477297" fileName="AbstractDecoratorView.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSelectionViewSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874984049080" fileName="AbstractDecoratorView.java" startLine="54" startPosition="30" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049087" fileName="AbstractDecoratorView.java" startLine="56" startPosition="5" endLine="57" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984049089" fileName="AbstractDecoratorView.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorView#()null" />
+    <nodeInfo nodeId="4287318874989958858" fileName="AbstractDecoratorView.java" startLine="65" startPosition="93" endLine="66" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874989958861" fileName="AbstractDecoratorView.java" startLine="66" startPosition="51" endLine="67" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986442772" fileName="AbstractDecoratorView.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerErrorViewSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874990277990" fileName="AbstractDecoratorView.java" startLine="77" startPosition="93" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874993190351" fileName="AbstractDecoratorView.java" startLine="80" startPosition="41" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874993598998" fileName="AbstractDecoratorView.java" startLine="87" startPosition="101" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874993630355" fileName="AbstractDecoratorView.java" startLine="88" startPosition="59" endLine="89" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874993636510" fileName="AbstractDecoratorView.java" startLine="95" startPosition="45" endLine="96" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874993636543" fileName="AbstractDecoratorView.java" startLine="102" startPosition="101" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874993727814" fileName="AbstractDecoratorView.java" startLine="103" startPosition="59" endLine="104" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049112" fileName="AbstractDecoratorView.java" startLine="116" startPosition="34" endLine="117" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874985607480" fileName="AbstractDecoratorView.java" startLine="117" startPosition="41" endLine="118" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990054153" fileName="AbstractDecoratorView.java" startLine="118" startPosition="47" endLine="119" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049122" fileName="AbstractDecoratorView.java" startLine="120" startPosition="16" endLine="121" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874985610409" fileName="AbstractDecoratorView.java" startLine="121" startPosition="44" endLine="122" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990057970" fileName="AbstractDecoratorView.java" startLine="122" startPosition="47" endLine="123" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049146" fileName="AbstractDecoratorView.java" startLine="129" startPosition="34" endLine="130" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990131126" fileName="AbstractDecoratorView.java" startLine="130" startPosition="45" endLine="131" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874985576969" fileName="AbstractDecoratorView.java" startLine="131" startPosition="103" endLine="132" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049156" fileName="AbstractDecoratorView.java" startLine="133" startPosition="16" endLine="134" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874985580257" fileName="AbstractDecoratorView.java" startLine="134" startPosition="48" endLine="135" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988096207" fileName="AbstractDecoratorView.java" startLine="143" startPosition="53" endLine="144" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4287318874984049171" fileName="AbstractDecoratorView.java" startLine="144" startPosition="74" endLine="145" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984049176" fileName="AbstractDecoratorView.java" startLine="145" startPosition="64" endLine="146" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049183" fileName="AbstractDecoratorView.java" startLine="146" startPosition="53" endLine="147" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049190" fileName="AbstractDecoratorView.java" startLine="147" startPosition="42" endLine="148" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049208" fileName="AbstractDecoratorView.java" startLine="148" startPosition="121" endLine="149" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049226" fileName="AbstractDecoratorView.java" startLine="149" startPosition="121" endLine="150" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049244" fileName="AbstractDecoratorView.java" startLine="150" startPosition="121" endLine="151" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049262" fileName="AbstractDecoratorView.java" startLine="151" startPosition="121" endLine="152" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049280" fileName="AbstractDecoratorView.java" startLine="152" startPosition="121" endLine="153" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984049049" fileName="AbstractDecoratorView.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractDecoratorView#()V" />
+    <nodeInfo nodeId="4287318874984049059" fileName="AbstractDecoratorView.java" startLine="32" startPosition="46" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984049078" fileName="AbstractDecoratorView.java" startLine="53" startPosition="38" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874993180113" fileName="AbstractDecoratorView.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()null" />
+    <nodeInfo nodeId="4287318874993636506" fileName="AbstractDecoratorView.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()null" />
+    <nodeInfo nodeId="4287318874984049154" fileName="AbstractDecoratorView.java" startLine="133" startPosition="14" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4287318874984049120" fileName="AbstractDecoratorView.java" startLine="120" startPosition="14" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4287318874989932837" fileName="AbstractDecoratorView.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874989958852" fileName="AbstractDecoratorView.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874993598985" fileName="AbstractDecoratorView.java" startLine="86" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874993636537" fileName="AbstractDecoratorView.java" startLine="101" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874984049055" fileName="AbstractDecoratorView.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectionView#()null" />
+    <nodeInfo nodeId="4287318874984049074" fileName="AbstractDecoratorView.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorView#()null" />
+    <nodeInfo nodeId="4287318874989920997" fileName="AbstractDecoratorView.java" startLine="41" startPosition="78" endLine="48" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874989953191" fileName="AbstractDecoratorView.java" startLine="62" startPosition="66" endLine="69" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874993343880" fileName="AbstractDecoratorView.java" startLine="84" startPosition="96" endLine="91" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874993636530" fileName="AbstractDecoratorView.java" startLine="99" startPosition="108" endLine="106" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984049144" fileName="AbstractDecoratorView.java" startLine="128" startPosition="63" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874985598569" fileName="AbstractDecoratorView.java" startLine="41" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionViewMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="4287318874985561833" fileName="AbstractDecoratorView.java" startLine="62" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorViewMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="4287318874993305834" fileName="AbstractDecoratorView.java" startLine="84" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(null)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="4287318874993636520" fileName="AbstractDecoratorView.java" startLine="99" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(null)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="4287318874984049110" fileName="AbstractDecoratorView.java" startLine="115" startPosition="63" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984049137" fileName="AbstractDecoratorView.java" startLine="128" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="4287318874984049103" fileName="AbstractDecoratorView.java" startLine="115" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="4287318874984049129" fileName="AbstractDecoratorView.java" startLine="126" startPosition="7" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049166" fileName="AbstractDecoratorView.java" startLine="143" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionRect#(Ljetbrains/jetpad/geometry/Vector;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="4287318874984049095" fileName="AbstractDecoratorView.java" startLine="113" startPosition="33" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990281928" fileName="AbstractDecoratorView.java" startLine="78" startPosition="51" endLine="93" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874993636495" fileName="AbstractDecoratorView.java" startLine="93" startPosition="12" endLine="108" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984049093" fileName="AbstractDecoratorView.java" startLine="113" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachHandlers#()V" />
+    <nodeInfo nodeId="4287318874990277977" fileName="AbstractDecoratorView.java" startLine="76" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874990272775" fileName="AbstractDecoratorView.java" startLine="74" startPosition="31" endLine="110" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990264399" fileName="AbstractDecoratorView.java" startLine="74" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachMapper#()V" />
+    <scopeInfo nodeId="4287318874984049052" fileName="AbstractDecoratorView.java" startLine="28" startPosition="34" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="4287318874984049060" fileName="AbstractDecoratorView.java" startLine="33" startPosition="34" endLine="34" endPosition="46" />
+    <scopeInfo nodeId="4287318874984049070" fileName="AbstractDecoratorView.java" startLine="39" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4287318874986477297" fileName="AbstractDecoratorView.java" startLine="51" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="4287318874986477298" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049079" fileName="AbstractDecoratorView.java" startLine="54" startPosition="30" endLine="55" endPosition="38" />
+    <scopeInfo nodeId="4287318874984049089" fileName="AbstractDecoratorView.java" startLine="60" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="4287318874986442772" fileName="AbstractDecoratorView.java" startLine="72" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="4287318874986453505" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874993180117" fileName="AbstractDecoratorView.java" startLine="80" startPosition="41" endLine="81" endPosition="34" />
+    <scopeInfo nodeId="4287318874993636509" fileName="AbstractDecoratorView.java" startLine="95" startPosition="45" endLine="96" endPosition="38" />
+    <scopeInfo nodeId="4287318874989932842" fileName="AbstractDecoratorView.java" startLine="44" startPosition="93" endLine="46" endPosition="58" />
+    <scopeInfo nodeId="4287318874989958857" fileName="AbstractDecoratorView.java" startLine="65" startPosition="93" endLine="67" endPosition="54" />
+    <scopeInfo nodeId="4287318874993598994" fileName="AbstractDecoratorView.java" startLine="87" startPosition="101" endLine="89" endPosition="62" />
+    <scopeInfo nodeId="4287318874993636542" fileName="AbstractDecoratorView.java" startLine="102" startPosition="101" endLine="104" endPosition="66" />
+    <scopeInfo nodeId="4287318874984049155" fileName="AbstractDecoratorView.java" startLine="133" startPosition="16" endLine="135" endPosition="51" />
+    <scopeInfo nodeId="4287318874984049049" fileName="AbstractDecoratorView.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="4287318874993180113" fileName="AbstractDecoratorView.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="4287318874993636506" fileName="AbstractDecoratorView.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="4287318874984049111" fileName="AbstractDecoratorView.java" startLine="116" startPosition="34" endLine="119" endPosition="42" />
+    <scopeInfo nodeId="4287318874984049121" fileName="AbstractDecoratorView.java" startLine="120" startPosition="16" endLine="123" endPosition="42" />
+    <scopeInfo nodeId="4287318874984049145" fileName="AbstractDecoratorView.java" startLine="129" startPosition="34" endLine="132" endPosition="49">
+      <varInfo nodeId="4287318874990131127" varName="createSelectionViewMapper" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049058" fileName="AbstractDecoratorView.java" startLine="32" startPosition="46" endLine="36" endPosition="27" />
+    <scopeInfo nodeId="4287318874984049077" fileName="AbstractDecoratorView.java" startLine="53" startPosition="38" endLine="57" endPosition="23" />
+    <scopeInfo nodeId="4287318874989932837" fileName="AbstractDecoratorView.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4287318874989932840" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874989958852" fileName="AbstractDecoratorView.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="4287318874989958855" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874993598985" fileName="AbstractDecoratorView.java" startLine="86" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="4287318874993598989" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874993636537" fileName="AbstractDecoratorView.java" startLine="101" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="4287318874993636540" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049055" fileName="AbstractDecoratorView.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="4287318874984049074" fileName="AbstractDecoratorView.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4287318874985598572" fileName="AbstractDecoratorView.java" startLine="41" startPosition="78" endLine="48" endPosition="6" />
+    <scopeInfo nodeId="4287318874985561836" fileName="AbstractDecoratorView.java" startLine="62" startPosition="66" endLine="69" endPosition="6" />
+    <scopeInfo nodeId="4287318874993305844" fileName="AbstractDecoratorView.java" startLine="84" startPosition="96" endLine="91" endPosition="14" />
+    <scopeInfo nodeId="4287318874993636529" fileName="AbstractDecoratorView.java" startLine="99" startPosition="108" endLine="106" endPosition="14" />
+    <scopeInfo nodeId="4287318874984049143" fileName="AbstractDecoratorView.java" startLine="128" startPosition="63" endLine="136" endPosition="9" />
+    <scopeInfo nodeId="4287318874985598569" fileName="AbstractDecoratorView.java" startLine="41" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4287318874985561833" fileName="AbstractDecoratorView.java" startLine="62" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="4287318874993305834" fileName="AbstractDecoratorView.java" startLine="84" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="4287318874993305842" varName="errorView" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874993636520" fileName="AbstractDecoratorView.java" startLine="99" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="4287318874993636527" varName="selectionView" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049109" fileName="AbstractDecoratorView.java" startLine="115" startPosition="63" endLine="124" endPosition="9" />
+    <scopeInfo nodeId="4287318874984049137" fileName="AbstractDecoratorView.java" startLine="128" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="4287318874984049140" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049170" fileName="AbstractDecoratorView.java" startLine="143" startPosition="53" endLine="153" endPosition="25">
+      <varInfo nodeId="4287318874984049172" varName="selectionRect" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049103" fileName="AbstractDecoratorView.java" startLine="115" startPosition="0" endLine="126" endPosition="0">
+      <varInfo nodeId="4287318874984049106" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049166" fileName="AbstractDecoratorView.java" startLine="143" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="4287318874984049168" varName="origin" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984049094" fileName="AbstractDecoratorView.java" startLine="113" startPosition="33" endLine="138" endPosition="7" />
+    <scopeInfo nodeId="4287318874984049093" fileName="AbstractDecoratorView.java" startLine="113" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="4287318874990277986" fileName="AbstractDecoratorView.java" startLine="77" startPosition="93" endLine="108" endPosition="12" />
+    <scopeInfo nodeId="4287318874990277977" fileName="AbstractDecoratorView.java" startLine="76" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="4287318874990277981" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874990264402" fileName="AbstractDecoratorView.java" startLine="74" startPosition="31" endLine="110" endPosition="19" />
+    <scopeInfo nodeId="4287318874990264399" fileName="AbstractDecoratorView.java" startLine="74" startPosition="0" endLine="112" endPosition="0" />
+    <unitInfo nodeId="4287318874993180111" fileName="AbstractDecoratorView.java" startLine="79" startPosition="78" endLine="83" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$4" />
+    <unitInfo nodeId="4287318874993636504" fileName="AbstractDecoratorView.java" startLine="94" startPosition="80" endLine="98" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$4" />
+    <unitInfo nodeId="4287318874989932831" fileName="AbstractDecoratorView.java" startLine="42" startPosition="15" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$1" />
+    <unitInfo nodeId="4287318874989958846" fileName="AbstractDecoratorView.java" startLine="63" startPosition="15" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$2" />
+    <unitInfo nodeId="4287318874993591839" fileName="AbstractDecoratorView.java" startLine="85" startPosition="23" endLine="91" endPosition="13" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$5" />
+    <unitInfo nodeId="4287318874993636533" fileName="AbstractDecoratorView.java" startLine="100" startPosition="23" endLine="106" endPosition="13" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$5" />
+    <unitInfo nodeId="4287318874993305832" fileName="AbstractDecoratorView.java" startLine="83" startPosition="40" endLine="93" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$4" />
+    <unitInfo nodeId="4287318874993636518" fileName="AbstractDecoratorView.java" startLine="98" startPosition="40" endLine="108" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$4" />
+    <unitInfo nodeId="4287318874984049135" fileName="AbstractDecoratorView.java" startLine="127" startPosition="30" endLine="138" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$5" />
+    <unitInfo nodeId="4287318874984049101" fileName="AbstractDecoratorView.java" startLine="114" startPosition="28" endLine="126" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$4" />
+    <unitInfo nodeId="4287318874990273485" fileName="AbstractDecoratorView.java" startLine="75" startPosition="8" endLine="110" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView$3" />
+    <unitInfo nodeId="4287318874984049021" fileName="AbstractDecoratorView.java" startLine="20" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984209776">
+    <nodeInfo nodeId="4287318874984209777" fileName="ConnectorDecoratorView.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CROSS_LENGTH" />
+    <nodeInfo nodeId="4287318874984209784" fileName="ConnectorDecoratorView.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySegments" />
+    <nodeInfo nodeId="4287318874986818972" fileName="ConnectorDecoratorView.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValid" />
+    <nodeInfo nodeId="4287318874984209804" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="55" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986968743" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="38" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986054300" fileName="ConnectorDecoratorView.java" startLine="30" startPosition="41" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984875408" fileName="ConnectorDecoratorView.java" startLine="31" startPosition="42" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987447756" fileName="ConnectorDecoratorView.java" startLine="32" startPosition="35" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984319408" fileName="ConnectorDecoratorView.java" startLine="33" startPosition="46" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986671023" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="25" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984210019" fileName="ConnectorDecoratorView.java" startLine="45" startPosition="45" endLine="46" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874987661637" fileName="ConnectorDecoratorView.java" startLine="53" startPosition="25" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209848" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="54" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209853" fileName="ConnectorDecoratorView.java" startLine="62" startPosition="5" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209861" fileName="ConnectorDecoratorView.java" startLine="64" startPosition="63" endLine="65" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209869" fileName="ConnectorDecoratorView.java" startLine="67" startPosition="25" endLine="68" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209878" fileName="ConnectorDecoratorView.java" startLine="69" startPosition="5" endLine="70" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209884" fileName="ConnectorDecoratorView.java" startLine="70" startPosition="40" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209892" fileName="ConnectorDecoratorView.java" startLine="72" startPosition="63" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209900" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="52" endLine="75" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209911" fileName="ConnectorDecoratorView.java" startLine="75" startPosition="51" endLine="76" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209922" fileName="ConnectorDecoratorView.java" startLine="76" startPosition="58" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209930" fileName="ConnectorDecoratorView.java" startLine="77" startPosition="33" endLine="78" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209938" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="33" endLine="79" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209956" fileName="ConnectorDecoratorView.java" startLine="79" startPosition="86" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209963" fileName="ConnectorDecoratorView.java" startLine="81" startPosition="7" endLine="82" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209967" fileName="ConnectorDecoratorView.java" startLine="83" startPosition="5" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209969" fileName="ConnectorDecoratorView.java" startLine="84" startPosition="16" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4287318874984210129" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="38" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984210141" fileName="ConnectorDecoratorView.java" startLine="91" startPosition="82" endLine="92" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984210158" fileName="ConnectorDecoratorView.java" startLine="94" startPosition="64" endLine="95" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986873086" fileName="ConnectorDecoratorView.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefautlValue" />
+    <nodeInfo nodeId="4287318874986874670" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="48" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986861511" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="33" endLine="108" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986867034" fileName="ConnectorDecoratorView.java" startLine="111" startPosition="20" endLine="112" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986887817" fileName="ConnectorDecoratorView.java" startLine="115" startPosition="30" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="120" startPosition="65" endLine="121" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209799" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSegments#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="4287318874984209810" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="4287318874986933318" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4287318874984210015" fileName="ConnectorDecoratorView.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionView#()Ljetbrains/jetpad/projectional/view/GroupView;" />
+    <nodeInfo nodeId="4287318874987480578" fileName="ConnectorDecoratorView.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4287318874984209846" fileName="ConnectorDecoratorView.java" startLine="59" startPosition="34" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984209857" fileName="ConnectorDecoratorView.java" startLine="63" startPosition="25" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4287318874984209867" fileName="ConnectorDecoratorView.java" startLine="66" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984210139" fileName="ConnectorDecoratorView.java" startLine="90" startPosition="63" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984210156" fileName="ConnectorDecoratorView.java" startLine="93" startPosition="7" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874986870222" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventSourceProperty#(null)V" />
+    <nodeInfo nodeId="4287318874986861499" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropExpr#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4287318874986861512" fileName="ConnectorDecoratorView.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()null" />
+    <nodeInfo nodeId="4287318874986861524" fileName="ConnectorDecoratorView.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(null)V" />
+    <nodeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_2z6621_a0a0b0m#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4287318874986647264" fileName="ConnectorDecoratorView.java" startLine="37" startPosition="98" endLine="42" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987480568" fileName="ConnectorDecoratorView.java" startLine="51" startPosition="102" endLine="56" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209974" fileName="ConnectorDecoratorView.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorView#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/views/CrossView;" />
+    <nodeInfo nodeId="4287318874986546034" fileName="ConnectorDecoratorView.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerErrorViewSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874986568040" fileName="ConnectorDecoratorView.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSelectionViewSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874984209898" fileName="ConnectorDecoratorView.java" startLine="73" startPosition="46" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984210135" fileName="ConnectorDecoratorView.java" startLine="89" startPosition="42" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4287318874984210119" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSelectionView#()V" />
+    <nodeInfo nodeId="4287318874984209888" fileName="ConnectorDecoratorView.java" startLine="71" startPosition="18" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4287318874984209844" fileName="ConnectorDecoratorView.java" startLine="59" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorPoint#()Ljetbrains/jetpad/geometry/Vector;" />
+    <scopeInfo nodeId="4287318874984209803" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="55" endLine="23" endPosition="26" />
+    <scopeInfo nodeId="4287318874984209811" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="38" endLine="27" endPosition="19" />
+    <scopeInfo nodeId="4287318874986933322" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="25" endLine="40" endPosition="59" />
+    <scopeInfo nodeId="4287318874984210018" fileName="ConnectorDecoratorView.java" startLine="45" startPosition="45" endLine="46" endPosition="27" />
+    <scopeInfo nodeId="4287318874987480581" fileName="ConnectorDecoratorView.java" startLine="53" startPosition="25" endLine="54" endPosition="30" />
+    <scopeInfo nodeId="4287318874984209847" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="54" endLine="61" endPosition="18" />
+    <scopeInfo nodeId="4287318874984209860" fileName="ConnectorDecoratorView.java" startLine="64" startPosition="63" endLine="65" endPosition="36" />
+    <scopeInfo nodeId="4287318874984209868" fileName="ConnectorDecoratorView.java" startLine="67" startPosition="25" endLine="68" endPosition="61" />
+    <scopeInfo nodeId="4287318874984210140" fileName="ConnectorDecoratorView.java" startLine="91" startPosition="82" endLine="92" endPosition="76" />
+    <scopeInfo nodeId="4287318874984210157" fileName="ConnectorDecoratorView.java" startLine="94" startPosition="64" endLine="95" endPosition="153" />
+    <scopeInfo nodeId="4287318874986870225" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="48" endLine="104" endPosition="36" />
+    <scopeInfo nodeId="4287318874986861509" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="33" endLine="108" endPosition="37" />
+    <scopeInfo nodeId="4287318874986861523" fileName="ConnectorDecoratorView.java" startLine="111" startPosition="20" endLine="112" endPosition="28" />
+    <scopeInfo nodeId="4287318874986861541" fileName="ConnectorDecoratorView.java" startLine="115" startPosition="30" endLine="116" endPosition="59" />
+    <scopeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="120" startPosition="65" endLine="121" endPosition="49" />
+    <scopeInfo nodeId="4287318874984209799" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4287318874984209800" varName="segments" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984209810" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4287318874986933318" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4287318874984210015" fileName="ConnectorDecoratorView.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4287318874987480578" fileName="ConnectorDecoratorView.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4287318874984209857" fileName="ConnectorDecoratorView.java" startLine="63" startPosition="25" endLine="66" endPosition="5">
+      <varInfo nodeId="4287318874984209858" varName="segment" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874986870222" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="4287318874986870744" varName="defaultValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874986861499" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4287318874986861512" fileName="ConnectorDecoratorView.java" startLine="111" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="4287318874986861524" fileName="ConnectorDecoratorView.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="4287318874986861528" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="4287318874984210151" varName="a" />
+      <varInfo nodeId="4287318874984210151" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984209975" fileName="ConnectorDecoratorView.java" startLine="30" startPosition="41" endLine="34" endPosition="21">
+      <varInfo nodeId="4287318874986054301" varName="errorView" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874986546040" fileName="ConnectorDecoratorView.java" startLine="37" startPosition="98" endLine="42" endPosition="8" />
+    <scopeInfo nodeId="4287318874986568046" fileName="ConnectorDecoratorView.java" startLine="51" startPosition="102" endLine="56" endPosition="8" />
+    <scopeInfo nodeId="4287318874984209974" fileName="ConnectorDecoratorView.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4287318874984209899" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="52" endLine="80" endPosition="22">
+      <varInfo nodeId="4287318874984209912" varName="d" />
+      <varInfo nodeId="4287318874984209939" varName="result" />
+      <varInfo nodeId="4287318874984209901" varName="se" />
+      <varInfo nodeId="4287318874984209923" varName="xToAdd" />
+      <varInfo nodeId="4287318874984209931" varName="yToAdd" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984210138" fileName="ConnectorDecoratorView.java" startLine="90" startPosition="63" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="4287318874986546034" fileName="ConnectorDecoratorView.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4287318874986546035" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874986568040" fileName="ConnectorDecoratorView.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="4287318874986568041" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984210135" fileName="ConnectorDecoratorView.java" startLine="89" startPosition="42" endLine="97" endPosition="5">
+      <varInfo nodeId="4287318874984210136" varName="segment" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984210122" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="38" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="4287318874984209891" fileName="ConnectorDecoratorView.java" startLine="72" startPosition="63" endLine="82" endPosition="33">
+      <varInfo nodeId="4287318874984209893" varName="currentLength" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984210119" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="4287318874984209888" fileName="ConnectorDecoratorView.java" startLine="71" startPosition="18" endLine="83" endPosition="5">
+      <varInfo nodeId="4287318874984209889" varName="segment" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984209845" fileName="ConnectorDecoratorView.java" startLine="59" startPosition="34" endLine="85" endPosition="0">
+      <varInfo nodeId="4287318874984209879" varName="halfLength" />
+      <varInfo nodeId="4287318874984209854" varName="sumLength" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984209844" fileName="ConnectorDecoratorView.java" startLine="59" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="4287318874986933316" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="61" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$1" />
+    <unitInfo nodeId="4287318874987480576" fileName="ConnectorDecoratorView.java" startLine="52" startPosition="61" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$2" />
+    <unitInfo nodeId="4287318874986848090" fileName="ConnectorDecoratorView.java" startLine="100" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$EventSourceProperty" />
+    <unitInfo nodeId="4287318874984209776" fileName="ConnectorDecoratorView.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984254796">
+    <nodeInfo nodeId="4287318874984265817" fileName="NonFocusableLineView.java" startLine="10" startPosition="45" endLine="11" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984265811" fileName="NonFocusableLineView.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/jetpad/geometry/Vector;)Z" />
+    <scopeInfo nodeId="4287318874984265816" fileName="NonFocusableLineView.java" startLine="10" startPosition="45" endLine="11" endPosition="17" />
+    <scopeInfo nodeId="4287318874984265811" fileName="NonFocusableLineView.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="4287318874984265814" varName="vector" />
+    </scopeInfo>
+    <unitInfo nodeId="4287318874984254796" fileName="NonFocusableLineView.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusableLineView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984352379">
+    <nodeInfo nodeId="4287318874984377715" fileName="CrossView.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFirstLine" />
+    <nodeInfo nodeId="4287318874984379227" fileName="CrossView.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySecondLine" />
+    <nodeInfo nodeId="4287318874984399298" fileName="CrossView.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="color" />
+    <nodeInfo nodeId="4287318874984961065" fileName="CrossView.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="segmentLength" />
+    <nodeInfo nodeId="4287318874986702587" fileName="CrossView.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="centerLocation" />
+    <nodeInfo nodeId="4287318874984382296" fileName="CrossView.java" startLine="21" startPosition="22" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984382301" fileName="CrossView.java" startLine="22" startPosition="32" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984382308" fileName="CrossView.java" startLine="23" startPosition="40" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984723392" fileName="CrossView.java" startLine="24" startPosition="33" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984794889" fileName="CrossView.java" startLine="30" startPosition="61" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984815410" fileName="CrossView.java" startLine="31" startPosition="45" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987389485" fileName="CrossView.java" startLine="36" startPosition="62" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987413564" fileName="CrossView.java" startLine="41" startPosition="63" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987306754" fileName="CrossView.java" startLine="47" startPosition="30" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874987306762" fileName="CrossView.java" startLine="48" startPosition="35" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874987336804" fileName="CrossView.java" startLine="49" startPosition="35" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874987303282" fileName="CrossView.java" startLine="50" startPosition="37" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4287318874987247222" fileName="CrossView.java" startLine="51" startPosition="0" endLine="52" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247235" fileName="CrossView.java" startLine="52" startPosition="64" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247241" fileName="CrossView.java" startLine="53" startPosition="62" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247247" fileName="CrossView.java" startLine="54" startPosition="65" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987017599" fileName="CrossView.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="4287318874987410192" fileName="CrossView.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="4287318874984780758" fileName="CrossView.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="4287318874987004825" fileName="CrossView.java" startLine="34" startPosition="7" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987394718" fileName="CrossView.java" startLine="39" startPosition="7" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984382286" fileName="CrossView.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CrossView#()V" />
+    <nodeInfo nodeId="4287318874984755417" fileName="CrossView.java" startLine="28" startPosition="31" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987144214" fileName="CrossView.java" startLine="47" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateCross#()V" />
+    <nodeInfo nodeId="4287318874984715147" fileName="CrossView.java" startLine="28" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initHandlers#()V" />
+    <scopeInfo nodeId="4287318874987017605" fileName="CrossView.java" startLine="36" startPosition="62" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="4287318874987410198" fileName="CrossView.java" startLine="41" startPosition="63" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="4287318874984780764" fileName="CrossView.java" startLine="30" startPosition="61" endLine="32" endPosition="46" />
+    <scopeInfo nodeId="4287318874987017599" fileName="CrossView.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4287318874987017603" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874987410192" fileName="CrossView.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4287318874987410196" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984382288" fileName="CrossView.java" startLine="21" startPosition="22" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="4287318874984780758" fileName="CrossView.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4287318874984780762" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984382286" fileName="CrossView.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4287318874987144217" fileName="CrossView.java" startLine="47" startPosition="30" endLine="55" endPosition="63">
+      <varInfo nodeId="4287318874987336807" varName="length" />
+      <varInfo nodeId="4287318874987306755" varName="x" />
+      <varInfo nodeId="4287318874987306763" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874987144214" fileName="CrossView.java" startLine="47" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4287318874984715150" fileName="CrossView.java" startLine="28" startPosition="31" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="4287318874984715147" fileName="CrossView.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
+    <unitInfo nodeId="4287318874987017597" fileName="CrossView.java" startLine="35" startPosition="34" endLine="39" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView$2" />
+    <unitInfo nodeId="4287318874987410190" fileName="CrossView.java" startLine="40" startPosition="33" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView$3" />
+    <unitInfo nodeId="4287318874984780756" fileName="CrossView.java" startLine="29" startPosition="25" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView$1" />
+    <unitInfo nodeId="4287318874984352379" fileName="CrossView.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874988311587">
+    <nodeInfo nodeId="4287318874988748679" fileName="RectDecoratorView.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bounds" />
+    <nodeInfo nodeId="4287318874988411593" fileName="RectDecoratorView.java" startLine="23" startPosition="44" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874988311631" fileName="RectDecoratorView.java" startLine="24" startPosition="57" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988311645" fileName="RectDecoratorView.java" startLine="25" startPosition="34" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874988472262" fileName="RectDecoratorView.java" startLine="31" startPosition="41" endLine="32" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988478835" fileName="RectDecoratorView.java" startLine="37" startPosition="45" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874988479644" fileName="RectDecoratorView.java" startLine="38" startPosition="39" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874988711101" fileName="RectDecoratorView.java" startLine="44" startPosition="41" endLine="45" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988715058" fileName="RectDecoratorView.java" startLine="50" startPosition="54" endLine="51" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874988715063" fileName="RectDecoratorView.java" startLine="51" startPosition="65" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988715066" fileName="RectDecoratorView.java" startLine="52" startPosition="48" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988715072" fileName="RectDecoratorView.java" startLine="53" startPosition="42" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988715083" fileName="RectDecoratorView.java" startLine="55" startPosition="76" endLine="56" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988311735" fileName="RectDecoratorView.java" startLine="60" startPosition="81" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988311741" fileName="RectDecoratorView.java" startLine="61" startPosition="32" endLine="62" endPosition="425" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988311847" fileName="RectDecoratorView.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectionPoints#(Ljetbrains/jetpad/geometry/Rectangle;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4287318874988463968" fileName="RectDecoratorView.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="4287318874988561916" fileName="RectDecoratorView.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="4287318874988715079" fileName="RectDecoratorView.java" startLine="54" startPosition="54" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4287318874988311648" fileName="RectDecoratorView.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionView#()Ljetbrains/jetpad/projectional/view/GroupView;" />
+    <nodeInfo nodeId="4287318874988311723" fileName="RectDecoratorView.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updatePolylineFrame#(Ljetbrains/jetpad/projectional/view/PolyLineView;Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="4287318874988311617" fileName="RectDecoratorView.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorView#()Ljetbrains/jetpad/projectional/view/PolyLineView;" />
+    <nodeInfo nodeId="4287318874988446186" fileName="RectDecoratorView.java" startLine="29" startPosition="98" endLine="34" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988557052" fileName="RectDecoratorView.java" startLine="42" startPosition="102" endLine="47" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988341820" fileName="RectDecoratorView.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerErrorViewSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874988349352" fileName="RectDecoratorView.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSelectionViewSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874988693583" fileName="RectDecoratorView.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSelectionView#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <scopeInfo nodeId="4287318874988463974" fileName="RectDecoratorView.java" startLine="31" startPosition="41" endLine="32" endPosition="52" />
+    <scopeInfo nodeId="4287318874988561922" fileName="RectDecoratorView.java" startLine="44" startPosition="41" endLine="45" endPosition="36" />
+    <scopeInfo nodeId="4287318874988715082" fileName="RectDecoratorView.java" startLine="55" startPosition="76" endLine="56" endPosition="68" />
+    <scopeInfo nodeId="4287318874988311847" fileName="RectDecoratorView.java" startLine="67" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4287318874989027232" varName="bounds" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988311649" fileName="RectDecoratorView.java" startLine="37" startPosition="45" endLine="39" endPosition="18">
+      <varInfo nodeId="4287318874988478836" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988311728" fileName="RectDecoratorView.java" startLine="60" startPosition="81" endLine="62" endPosition="425" />
+    <scopeInfo nodeId="4287318874988311620" fileName="RectDecoratorView.java" startLine="23" startPosition="44" endLine="26" endPosition="18">
+      <varInfo nodeId="4287318874988411594" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988463968" fileName="RectDecoratorView.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4287318874988463972" varName="bounds" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988561916" fileName="RectDecoratorView.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="4287318874988561920" varName="bounds" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988715079" fileName="RectDecoratorView.java" startLine="54" startPosition="54" endLine="57" endPosition="5">
+      <varInfo nodeId="4287318874988715080" varName="point" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988311648" fileName="RectDecoratorView.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4287318874988311723" fileName="RectDecoratorView.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="4287318874988359618" varName="bounds" />
+      <varInfo nodeId="4287318874988311726" varName="polylineView" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988311617" fileName="RectDecoratorView.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4287318874988341826" fileName="RectDecoratorView.java" startLine="29" startPosition="98" endLine="34" endPosition="8" />
+    <scopeInfo nodeId="4287318874988349358" fileName="RectDecoratorView.java" startLine="42" startPosition="102" endLine="47" endPosition="8" />
+    <scopeInfo nodeId="4287318874988341820" fileName="RectDecoratorView.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4287318874988341821" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988349352" fileName="RectDecoratorView.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="4287318874988349353" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988693586" fileName="RectDecoratorView.java" startLine="50" startPosition="54" endLine="57" endPosition="5">
+      <varInfo nodeId="4287318874988715059" varName="selectionFrame" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988693583" fileName="RectDecoratorView.java" startLine="50" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4287318874988705949" varName="bounds" />
+    </scopeInfo>
+    <unitInfo nodeId="4287318874988463966" fileName="RectDecoratorView.java" startLine="30" startPosition="60" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView$1" />
+    <unitInfo nodeId="4287318874988561914" fileName="RectDecoratorView.java" startLine="43" startPosition="60" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView$2" />
+    <unitInfo nodeId="4287318874988311587" fileName="RectDecoratorView.java" startLine="19" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874988988889">
+    <nodeInfo nodeId="4287318874988988890" fileName="NodeDecoratorView.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="inputPortDecotatorView" />
+    <nodeInfo nodeId="4287318874988988895" fileName="NodeDecoratorView.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="outputPortDecotatorView" />
+    <nodeInfo nodeId="4287318874988988903" fileName="NodeDecoratorView.java" startLine="16" startPosition="30" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988988908" fileName="NodeDecoratorView.java" startLine="17" startPosition="43" endLine="18" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874988989013" fileName="NodeDecoratorView.java" startLine="23" startPosition="39" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874988989011" fileName="NodeDecoratorView.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/jetpad/geometry/Vector;)Ljetbrains/jetpad/geometry/Vector;" />
+    <nodeInfo nodeId="4287318874988988900" fileName="NodeDecoratorView.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeDecoratorView#()V" />
+    <nodeInfo nodeId="4287318874988988925" fileName="NodeDecoratorView.java" startLine="21" startPosition="73" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874988988914" fileName="NodeDecoratorView.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectionPoints#(Ljetbrains/jetpad/geometry/Rectangle;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="4287318874988989012" fileName="NodeDecoratorView.java" startLine="23" startPosition="39" endLine="24" endPosition="37" />
+    <scopeInfo nodeId="4287318874988988902" fileName="NodeDecoratorView.java" startLine="16" startPosition="30" endLine="18" endPosition="44" />
+    <scopeInfo nodeId="4287318874988989011" fileName="NodeDecoratorView.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4287318874988989011" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874988988900" fileName="NodeDecoratorView.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4287318874988988918" fileName="NodeDecoratorView.java" startLine="21" startPosition="73" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="4287318874988988914" fileName="NodeDecoratorView.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="4287318874989035721" varName="bounds" />
+    </scopeInfo>
+    <unitInfo nodeId="4287318874988989011" fileName="NodeDecoratorView.java" startLine="22" startPosition="436" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView$1" />
+    <unitInfo nodeId="4287318874988988889" fileName="NodeDecoratorView.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874989177351">
+    <nodeInfo nodeId="4287318874989177403" fileName="PortDecoratorView.java" startLine="17" startPosition="39" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874989177352" fileName="PortDecoratorView.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PortDecoratorView#()V" />
+    <nodeInfo nodeId="4287318874989177401" fileName="PortDecoratorView.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/jetpad/geometry/Vector;)Ljetbrains/jetpad/geometry/Vector;" />
+    <nodeInfo nodeId="4287318874989177363" fileName="PortDecoratorView.java" startLine="15" startPosition="73" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874989177356" fileName="PortDecoratorView.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectionPoints#(Ljetbrains/jetpad/geometry/Rectangle;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="4287318874989177354" fileName="PortDecoratorView.java" startLine="12" startPosition="30" endLine="12" endPosition="30" />
+    <scopeInfo nodeId="4287318874989177402" fileName="PortDecoratorView.java" startLine="17" startPosition="39" endLine="18" endPosition="37" />
+    <scopeInfo nodeId="4287318874989177352" fileName="PortDecoratorView.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="4287318874989177401" fileName="PortDecoratorView.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4287318874989177401" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874989177362" fileName="PortDecoratorView.java" startLine="15" startPosition="73" endLine="20" endPosition="7" />
+    <scopeInfo nodeId="4287318874989177356" fileName="PortDecoratorView.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4287318874989177357" varName="bounds" />
+    </scopeInfo>
+    <unitInfo nodeId="4287318874989177401" fileName="PortDecoratorView.java" startLine="16" startPosition="244" endLine="20" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView$1" />
+    <unitInfo nodeId="4287318874989177351" fileName="PortDecoratorView.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874989282741">
+    <nodeInfo nodeId="4287318874989282742" fileName="DiagramDecoratorView.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="itemsDecotatorView" />
+    <nodeInfo nodeId="4287318874989282747" fileName="DiagramDecoratorView.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="connectorsDecotatorView" />
+    <nodeInfo nodeId="4287318874989282755" fileName="DiagramDecoratorView.java" startLine="11" startPosition="33" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874989282760" fileName="DiagramDecoratorView.java" startLine="12" startPosition="39" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874989282752" fileName="DiagramDecoratorView.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiagramDecoratorView#()V" />
+    <scopeInfo nodeId="4287318874989282754" fileName="DiagramDecoratorView.java" startLine="11" startPosition="33" endLine="13" endPosition="44" />
+    <scopeInfo nodeId="4287318874989282752" fileName="DiagramDecoratorView.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="4287318874989282741" fileName="DiagramDecoratorView.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/8574284199674286561">
+    <nodeInfo nodeId="3804439703459768776" fileName="NonFocusablePolyLineView.java" startLine="10" startPosition="45" endLine="11" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3804439703459768770" fileName="NonFocusablePolyLineView.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/jetpad/geometry/Vector;)Z" />
+    <scopeInfo nodeId="3804439703459768775" fileName="NonFocusablePolyLineView.java" startLine="10" startPosition="45" endLine="11" endPosition="17" />
+    <scopeInfo nodeId="3804439703459768770" fileName="NonFocusablePolyLineView.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="3804439703459768773" varName="vector" />
+    </scopeInfo>
+    <unitInfo nodeId="8574284199674286561" fileName="NonFocusablePolyLineView.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView" />
+  </root>
+</debugInfo>
+

@@ -57,6 +57,7 @@
   <import index="ctj8" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetpad/jetbrains.jetpad.model.property@java_stub)" version="-1" />
   <import index="ew18" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.values(jetpad/jetbrains.jetpad.values@java_stub)" version="-1" />
   <import index="h6z8" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.mps.diagram.layoutView(jetpad/jetbrains.mps.diagram.layoutView@java_stub)" version="-1" />
+  <import index="8n5u" modelUID="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -736,7 +737,7 @@
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2qq2.~Mapper" resolveInfo="Mapper" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4883868441285244490" nodeInfo="in" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1457236892476530663" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8jsd.1457236892456641113" resolveInfo="DiagramDecoratorView" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8n5u.4287318874989282741" resolveInfo="DiagramDecoratorView" />
                       </node>
                     </node>
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4883868441285244492" nodeInfo="ir">
@@ -2091,7 +2092,7 @@
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2qq2.~Mapper" resolveInfo="Mapper" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4883868441285127490" nodeInfo="in" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1457236892485188134" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8jsd.1457236892456727529" resolveInfo="NodeDecoratorView" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8n5u.4287318874988988889" resolveInfo="NodeDecoratorView" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4883868441285127494" nodeInfo="sn">
@@ -2845,7 +2846,7 @@
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2qq2.~Mapper" resolveInfo="Mapper" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4883868441350733104" nodeInfo="in" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1457236892478631989" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8jsd.1457236892457542566" resolveInfo="ConnectorDecoratorView" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8n5u.4287318874984209776" resolveInfo="ConnectorDecoratorView" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4883868441350733108" nodeInfo="sn">

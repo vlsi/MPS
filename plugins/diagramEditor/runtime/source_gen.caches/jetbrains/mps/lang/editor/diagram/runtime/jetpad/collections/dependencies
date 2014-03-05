@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.collections.SubList" file="SubList.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
+    <classNode extendsClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
+  </dependency>
+</dependenciesRoot>
+

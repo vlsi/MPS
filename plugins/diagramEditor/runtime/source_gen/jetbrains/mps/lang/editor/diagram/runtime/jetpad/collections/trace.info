@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:2fa0d00d-e8d2-4a36-ac8b-b893ff852e7c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.collections)/4287318874990159661">
+    <nodeInfo nodeId="4287318874990166024" fileName="SubList.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBaseList" />
+    <nodeInfo nodeId="4287318874990166752" fileName="SubList.java" startLine="11" startPosition="50" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990159945" fileName="SubList.java" startLine="16" startPosition="73" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990173448" fileName="SubList.java" startLine="17" startPosition="47" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990160613" fileName="SubList.java" startLine="22" startPosition="75" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990183581" fileName="SubList.java" startLine="23" startPosition="49" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874990163870" fileName="SubList.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubList#(Ljetbrains/jetpad/model/collections/list/ObservableList;)V" />
+    <nodeInfo nodeId="4287318874990159925" fileName="SubList.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterItemAdded#(InullZ)V" />
+    <nodeInfo nodeId="4287318874990160593" fileName="SubList.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterItemRemoved#(InullZ)V" />
+    <scopeInfo nodeId="4287318874990163874" fileName="SubList.java" startLine="11" startPosition="50" endLine="12" endPosition="26" />
+    <scopeInfo nodeId="4287318874990159939" fileName="SubList.java" startLine="16" startPosition="73" endLine="18" endPosition="25" />
+    <scopeInfo nodeId="4287318874990160607" fileName="SubList.java" startLine="22" startPosition="75" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="4287318874990163870" fileName="SubList.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="4287318874990164391" varName="baseList" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874990159925" fileName="SubList.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4287318874990159929" varName="index" />
+      <varInfo nodeId="4287318874990159931" varName="item" />
+      <varInfo nodeId="4287318874990159933" varName="success" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874990160593" fileName="SubList.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4287318874990160597" varName="index" />
+      <varInfo nodeId="4287318874990160599" varName="item" />
+      <varInfo nodeId="4287318874990160601" varName="success" />
+    </scopeInfo>
+    <unitInfo nodeId="4287318874990159661" fileName="SubList.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.collections.SubList" />
+  </root>
+</debugInfo>
+
