@@ -121,22 +121,35 @@
     <nodeInfo nodeId="5667822611620059857" fileName="PolygonContentView.java" startLine="108" startPosition="53" endLine="109" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5667822611620059862" fileName="PolygonContentView.java" startLine="109" startPosition="49" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5667822611620059867" fileName="PolygonContentView.java" startLine="110" startPosition="55" endLine="111" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5667822611623762424" fileName="PolygonContentView.java" startLine="114" startPosition="34" endLine="115" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5667822611623875771" fileName="PolygonContentView.java" startLine="118" startPosition="38" endLine="119" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874995305394" fileName="PolygonContentView.java" startLine="115" startPosition="41" endLine="116" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4287318874995306877" fileName="PolygonContentView.java" startLine="116" startPosition="48" endLine="117" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874995308590" fileName="PolygonContentView.java" startLine="117" startPosition="22" endLine="118" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874995308570" fileName="PolygonContentView.java" startLine="118" startPosition="22" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4287318874995315398" fileName="PolygonContentView.java" startLine="120" startPosition="29" endLine="121" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874995320263" fileName="PolygonContentView.java" startLine="121" startPosition="43" endLine="122" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874995322011" fileName="PolygonContentView.java" startLine="123" startPosition="5" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4287318874995326267" fileName="PolygonContentView.java" startLine="125" startPosition="22" endLine="126" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874995371634" fileName="PolygonContentView.java" startLine="127" startPosition="12" endLine="128" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5667822611623762424" fileName="PolygonContentView.java" startLine="132" startPosition="34" endLine="133" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5667822611623875771" fileName="PolygonContentView.java" startLine="136" startPosition="38" endLine="137" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874995348959" fileName="PolygonContentView.java" startLine="127" startPosition="10" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8574284199673094736" fileName="PolygonContentView.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
     <nodeInfo nodeId="5667822611620059699" fileName="PolygonContentView.java" startLine="68" startPosition="62" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5667822611620059730" fileName="PolygonContentView.java" startLine="75" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5667822611620059771" fileName="PolygonContentView.java" startLine="81" startPosition="62" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5667822611623762422" fileName="PolygonContentView.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="text#()Ljetbrains/jetpad/model/property/Property;" />
-    <nodeInfo nodeId="5667822611623875769" fileName="PolygonContentView.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="metaText#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="5667822611623762422" fileName="PolygonContentView.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="text#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="5667822611623875769" fileName="PolygonContentView.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="metaText#()Ljetbrains/jetpad/model/property/Property;" />
     <nodeInfo nodeId="5667822611620059659" fileName="PolygonContentView.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874995309584" fileName="PolygonContentView.java" startLine="119" startPosition="0" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8574284199673074881" fileName="PolygonContentView.java" startLine="45" startPosition="31" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8574284199673711800" fileName="PolygonContentView.java" startLine="89" startPosition="51" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874995324385" fileName="PolygonContentView.java" startLine="124" startPosition="0" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5667822611620059653" fileName="PolygonContentView.java" startLine="54" startPosition="36" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5667822611620059651" fileName="PolygonContentView.java" startLine="54" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSynchronizers#()V" />
     <nodeInfo nodeId="5667822611620554332" fileName="PolygonContentView.java" startLine="67" startPosition="30" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5667822611620885189" fileName="PolygonContentView.java" startLine="80" startPosition="42" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5667822611620059834" fileName="PolygonContentView.java" startLine="97" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustPoints#(II)V" />
+    <nodeInfo nodeId="4287318874995174420" fileName="PolygonContentView.java" startLine="114" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateBounds#()Ljetbrains/jetpad/geometry/Rectangle;" />
     <nodeInfo nodeId="5667822611620059544" fileName="PolygonContentView.java" startLine="32" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PolygonContentView#()V" />
     <nodeInfo nodeId="5667822611620059676" fileName="PolygonContentView.java" startLine="63" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doValidate#(Ljetbrains/jetpad/projectional/view/View/ValidationContext;)V" />
     <scopeInfo nodeId="8574284199673094740" fileName="PolygonContentView.java" startLine="47" startPosition="62" endLine="48" endPosition="67" />
@@ -144,16 +157,22 @@
     <scopeInfo nodeId="5667822611620059710" fileName="PolygonContentView.java" startLine="69" startPosition="70" endLine="70" endPosition="17" />
     <scopeInfo nodeId="5667822611620059735" fileName="PolygonContentView.java" startLine="76" startPosition="26" endLine="77" endPosition="22" />
     <scopeInfo nodeId="5667822611620059782" fileName="PolygonContentView.java" startLine="82" startPosition="70" endLine="83" endPosition="17" />
-    <scopeInfo nodeId="5667822611623762423" fileName="PolygonContentView.java" startLine="114" startPosition="34" endLine="115" endPosition="25" />
-    <scopeInfo nodeId="5667822611623875770" fileName="PolygonContentView.java" startLine="118" startPosition="38" endLine="119" endPosition="29" />
+    <scopeInfo nodeId="4287318874995324388" fileName="PolygonContentView.java" startLine="125" startPosition="22" endLine="126" endPosition="18" />
+    <scopeInfo nodeId="4287318874995348960" fileName="PolygonContentView.java" startLine="127" startPosition="12" endLine="128" endPosition="46" />
+    <scopeInfo nodeId="5667822611623762423" fileName="PolygonContentView.java" startLine="132" startPosition="34" endLine="133" endPosition="25" />
+    <scopeInfo nodeId="5667822611623875770" fileName="PolygonContentView.java" startLine="136" startPosition="38" endLine="137" endPosition="29" />
+    <scopeInfo nodeId="4287318874995309587" fileName="PolygonContentView.java" startLine="120" startPosition="29" endLine="122" endPosition="43" />
     <scopeInfo nodeId="8574284199673094736" fileName="PolygonContentView.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="8574284199673094737" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="8574284199673711803" fileName="PolygonContentView.java" startLine="90" startPosition="38" endLine="93" endPosition="32" />
-    <scopeInfo nodeId="5667822611623762422" fileName="PolygonContentView.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="5667822611623875769" fileName="PolygonContentView.java" startLine="118" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="5667822611623762422" fileName="PolygonContentView.java" startLine="132" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="5667822611623875769" fileName="PolygonContentView.java" startLine="136" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="5667822611620059659" fileName="PolygonContentView.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="5667822611620059661" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874995309584" fileName="PolygonContentView.java" startLine="119" startPosition="0" endLine="123" endPosition="5">
+      <varInfo nodeId="4287318874995309590" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="5667822611620059652" fileName="PolygonContentView.java" startLine="54" startPosition="36" endLine="60" endPosition="19" />
     <scopeInfo nodeId="5667822611620554338" fileName="PolygonContentView.java" startLine="68" startPosition="62" endLine="74" endPosition="40">
@@ -170,10 +189,15 @@
       <varInfo nodeId="5667822611620885190" varName="nextChild" />
     </scopeInfo>
     <scopeInfo nodeId="5667822611620059839" fileName="PolygonContentView.java" startLine="97" startPosition="52" endLine="111" endPosition="55" />
+    <scopeInfo nodeId="4287318874995174425" fileName="PolygonContentView.java" startLine="115" startPosition="41" endLine="129" endPosition="5">
+      <varInfo nodeId="4287318874995308591" varName="max" />
+      <varInfo nodeId="4287318874995306878" varName="min" />
+    </scopeInfo>
     <scopeInfo nodeId="5667822611620059834" fileName="PolygonContentView.java" startLine="97" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="5667822611620059837" varName="height" />
       <varInfo nodeId="5667822611620059835" varName="width" />
     </scopeInfo>
+    <scopeInfo nodeId="4287318874995174420" fileName="PolygonContentView.java" startLine="114" startPosition="0" endLine="131" endPosition="0" />
     <scopeInfo nodeId="5667822611620059546" fileName="PolygonContentView.java" startLine="32" startPosition="31" endLine="51" endPosition="24">
       <varInfo nodeId="5667822611620059557" varName="myCellView" />
       <varInfo nodeId="5667822611620059577" varName="space" />
@@ -190,7 +214,7 @@
     </scopeInfo>
     <unitInfo nodeId="8574284199673094734" fileName="PolygonContentView.java" startLine="46" startPosition="35" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView$1" />
     <unitInfo nodeId="5667822611620059657" fileName="PolygonContentView.java" startLine="55" startPosition="8" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView$2" />
-    <unitInfo nodeId="5667822611619791699" fileName="PolygonContentView.java" startLine="23" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" />
+    <unitInfo nodeId="5667822611619791699" fileName="PolygonContentView.java" startLine="23" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" />
   </root>
 </debugInfo>
 
