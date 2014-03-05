@@ -82,7 +82,7 @@ public class ApplyStyleClassCondition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_w35i2r_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply condition:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition:");
     editorCell.setCellId("Constant_w35i2r_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -91,7 +91,7 @@ public class ApplyStyleClassCondition_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_w35i2r_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
-    provider.setNoTargetText("always");
+    provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

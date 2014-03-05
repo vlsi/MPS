@@ -1933,6 +1933,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3383245079137382173" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3383245079136928391" resolveInfo="IStyleSheetMember" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2491174914162276359" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198252369256" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="extendedClass" />
@@ -3545,9 +3548,9 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3383245079137422296" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="extendedStyleClassList" />
+      <property name="role" nameId="tpce.1071599776563" value="overlaps" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797276194520" resolveInfo="StyleClassReferenceList" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2491174914159318432" resolveInfo="OverlapsRecord" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3383245079137422281" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3383245079136928391" resolveInfo="IStyleSheetMember" />
@@ -3595,9 +3598,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137382180" resolveInfo="StyleClass" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8876051143647434468" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8876051143647433813" resolveInfo="OverrideItem" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1950447826681509042" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
@@ -3619,7 +3619,10 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="element" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="8876051143647433813" resolveInfo="OverrideItem" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137422349" resolveInfo="StyleClassReference" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2491174914162137966" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9122903797312246523" nodeInfo="ig">
@@ -3655,18 +3658,15 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1223387125302" resolveInfo="QueryFunction_Boolean" />
     </node>
   </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8876051143647433813" nodeInfo="ig">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2491174914159318432" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="OverrideItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8876051143647434470" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="SimpleOverrideItem" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="simple" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="all styles that do not override anything" />
+    <property name="name" nameId="tpck.1169194664001" value="OverlapsRecord" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8876051143647434471" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8876051143647433813" resolveInfo="OverrideItem" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2491174914159330058" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="overlapsStyleClassList" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797276194520" resolveInfo="StyleClassReferenceList" />
     </node>
   </root>
 </model>

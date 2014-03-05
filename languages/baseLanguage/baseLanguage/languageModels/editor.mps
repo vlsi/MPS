@@ -11076,9 +11076,7 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="3516632611398415396" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="184304648420812679" />
       </node>
-      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="9122903797284561936" nodeInfo="ng">
-        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.SimpleOverrideItem" typeId="tpc2.8876051143647434470" id="8876051143655022507" nodeInfo="ng" />
-      </node>
+      <node role="overlaps" roleId="tpc2.3383245079137422296" type="tpc2.OverlapsRecord" typeId="tpc2.2491174914159318432" id="2491174914162137754" nodeInfo="ng" />
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1198594875276" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Comment" />
@@ -11120,9 +11118,11 @@
           </node>
         </node>
       </node>
-      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="8876051143686241955" nodeInfo="ng">
-        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.StyleClassReference" typeId="tpc2.3383245079137422349" id="8876051143686242891" nodeInfo="ng">
-          <link role="styleClass" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
+      <node role="overlaps" roleId="tpc2.3383245079137422296" type="tpc2.OverlapsRecord" typeId="tpc2.2491174914159318432" id="2491174914173528333" nodeInfo="ng">
+        <node role="overlapsStyleClassList" roleId="tpc2.2491174914159330058" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="2491174914173529280" nodeInfo="ng">
+          <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.StyleClassReference" typeId="tpc2.3383245079137422349" id="2491174914173529279" nodeInfo="ng">
+            <link role="styleClass" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
+          </node>
         </node>
       </node>
     </node>
@@ -11139,9 +11139,7 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="7730231143345231991" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="1794287103456760646" />
       </node>
-      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="8876051143686242895" nodeInfo="ng">
-        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.SimpleOverrideItem" typeId="tpc2.8876051143647434470" id="8876051143686242897" nodeInfo="ng" />
-      </node>
+      <node role="overlaps" roleId="tpc2.3383245079137422296" type="tpc2.OverlapsRecord" typeId="tpc2.2491174914159318432" id="2491174914175051915" nodeInfo="ng" />
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1794287103456802471" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="BlockComment" />

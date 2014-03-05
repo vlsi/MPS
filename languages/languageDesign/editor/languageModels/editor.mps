@@ -11781,14 +11781,10 @@
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="3383245079137390569" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3383245079137390570" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="overrides" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="wr1s.269654322145162290" resolveInfo="KeyWord" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="9122903797276202003" nodeInfo="ng">
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3383245079137390572" nodeInfo="nn" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2491174914159334487" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.3383245079137422296" />
         </node>
-        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3383245079137390572" nodeInfo="nn" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3383245079137390573" nodeInfo="nn">
         <property name="usesFolding" nameId="tpc2.1160590353935" value="true" />
@@ -11870,23 +11866,33 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.9122903797336200705" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="9122903797336200837" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="apply condition:" />
+        <property name="text" nameId="tpc2.1073389577007" value="condition:" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="9122903797336200838" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="always" />
         <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.9122903797336200706" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="9122903797336200839" nodeInfo="nn" />
     </node>
   </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8876051143647434496" nodeInfo="ng">
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2491174914159330083" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.8876051143647434470" resolveInfo="SimpleOverrideItem" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="8876051143651175422" nodeInfo="ng">
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
-      <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1214310532702" resolveInfo="style" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.2491174914159318432" resolveInfo="OverlapsRecord" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2491174914159331033" nodeInfo="nn">
+      <property name="vertical" nameId="tpc2.1073389446425" value="false" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="2491174914159331042" nodeInfo="nn">
+        <property name="flag" nameId="tpc2.1186414551515" value="false" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2491174914159331043" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="overlaps" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2491174914159331044" nodeInfo="ng">
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default&gt;" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.2491174914159330058" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2491174914159331045" nodeInfo="nn" />
     </node>
   </root>
 </model>

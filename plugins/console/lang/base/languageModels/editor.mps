@@ -194,8 +194,8 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1583916890557930028" resolveInfo="ConsoleRoot" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1583916890557947353" nodeInfo="nn">
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleClassReference" typeId="tpc2.3383245079137422349" id="9122903797319586252" nodeInfo="ng">
-          <link role="style" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="2491174914160683846" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039364043" nodeInfo="nn">
@@ -226,8 +226,8 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1583916890557947371" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930417" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnapplyStyle" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
-          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleClassReference" typeId="tpc2.3383245079137422349" id="9122903797319716735" nodeInfo="ng">
-            <link role="style" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="2491174914160683972" nodeInfo="ng">
+            <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
           </node>
         </node>
       </node>
@@ -326,9 +326,7 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="795210086018976096" nodeInfo="ng">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
-      <node role="extendedStyleClassList" roleId="tpc2.3383245079137422296" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="8876051143694788837" nodeInfo="ng">
-        <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.SimpleOverrideItem" typeId="tpc2.8876051143647434470" id="8876051143694788841" nodeInfo="ng" />
-      </node>
+      <node role="overlaps" roleId="tpc2.3383245079137422296" type="tpc2.OverlapsRecord" typeId="tpc2.2491174914159318432" id="2491174914180457997" nodeInfo="ng" />
     </node>
   </root>
 </model>

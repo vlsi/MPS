@@ -15,9 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -82,33 +81,22 @@ public class StyleClass_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_zc4y0i_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_zc4y0i_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_zc4y0i_a2a(editorContext, node));
     return editorCell;
   }
 
   private static boolean renderingCondition_zc4y0i_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "extendedStyleClassList", true) != null);
+    return (SLinkOperations.getTarget(node, "overlaps", true) != null);
   }
 
-  private EditorCell createConstant_zc4y0i_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "overrides");
-    editorCell.setCellId("Constant_zc4y0i_a2a");
-    Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_zc4y0i_b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_zc4y0i_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("extendedStyleClassList");
-    provider.setNoTargetText("<no extendedStyleClassList>");
+    provider.setRole("overlaps");
+    provider.setNoTargetText("<no overlaps>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("extendedStyleClassList");
+      editorCell.setRole("overlaps");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -34,14 +34,15 @@ public class StyleClass_Behavior {
       if (ListSequence.fromList(extendsTree).tail(ListSequence.fromList(extendsTree).count() - 1).contains(ListSequence.fromList(extendsTree).first())) {
         return -1;
       } else if (down) {
-        if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true)).isNotEmpty()) {
-          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true), "jetbrains.mps.lang.editor.structure.SimpleOverrideItem")).isEmpty() ? -1 : 1));
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true), "jetbrains.mps.lang.editor.structure.StyleClassReference")).first(), "styleClass", false));
-
-          ListSequence.fromList(childNums).insertElement(0, 0);
-        } else if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true) != null)) {
-          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 1);
-          down = false;
+        if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "overlaps", true) != null)) {
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "overlaps", true), "overlapsStyleClassList", true), "element", true)).isEmpty()) {
+            MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 1);
+            down = false;
+          } else {
+            MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), -1);
+            ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "overlaps", true), "overlapsStyleClassList", true), "element", true), "jetbrains.mps.lang.editor.structure.StyleClassReference")).first(), "styleClass", false));
+            ListSequence.fromList(childNums).insertElement(0, 0);
+          }
         } else {
           MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 0);
           down = false;
@@ -51,16 +52,12 @@ public class StyleClass_Behavior {
           break;
         }
         int newIndex = ListSequence.fromList(childNums).first() + 1;
-        assert newIndex <= ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).getElement(1), "extendedStyleClassList", true), "element", true)).count();
+        assert newIndex <= ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).getElement(1), "overlaps", true), "overlapsStyleClassList", true), "element", true)).count();
         MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).getElement(1), Math.max(MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).first()) + 1, MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).getElement(1))));
         ListSequence.fromList(extendsTree).removeElementAt(0);
         ListSequence.fromList(childNums).removeElementAt(0);
-        while (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true)).count() && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true)).getElement(newIndex), "jetbrains.mps.lang.editor.structure.StyleClassReference")) {
-          newIndex++;
-          MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).getElement(1), Math.max(1, MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).getElement(1))));
-        }
-        if (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true)).count()) {
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "extendedStyleClassList", true), "element", true)).getElement(newIndex), "jetbrains.mps.lang.editor.structure.StyleClassReference"), "styleClass", false));
+        if (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "overlaps", true), "overlapsStyleClassList", true), "element", true)).count()) {
+          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "overlaps", true), "overlapsStyleClassList", true), "element", true)).getElement(newIndex), "jetbrains.mps.lang.editor.structure.StyleClassReference"), "styleClass", false));
           ListSequence.fromList(childNums).insertElement(0, newIndex);
           down = true;
         }

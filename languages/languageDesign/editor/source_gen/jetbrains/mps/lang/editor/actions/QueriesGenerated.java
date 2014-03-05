@@ -35,12 +35,17 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
+import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_CellModel_Property_1158947460473(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -970,6 +975,35 @@ public class QueriesGenerated {
     return _context.getCurrentTargetNode() == null;
   }
 
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_StyleClassReferenceList_2491174914161947403(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassReferenceList");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassReference");
+        IChildNodeSetter setter = new AbstractChildNodeSetter() {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
+            return createStyleClassReferenceList_vu8rqe_a0a0a0a(Sequence.<SNode>singleton(nodeToWrap));
+          }
+
+          public boolean returnSmallPart(SNode nodeToWrap) {
+            return false;
+          }
+
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
+            return (returnSmallPart(nc) ? nc : wrappedNode);
+          }
+        };
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
+    }
+    return result;
+  }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1948540814637841122(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), _context.getSourceNode()) {
@@ -1163,11 +1197,11 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SLinkOperations.setTarget(_context.getSourceNode(), "extendedStyleClassList", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null), true);
+        return SLinkOperations.setTarget(_context.getSourceNode(), "overlaps", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.OverlapsRecord", null), true);
       }
 
       public String getMatchingText(String pattern) {
-        return "overrides";
+        return "overlaps";
       }
 
       public String getVisibleMatchingText(String pattern) {
@@ -1209,5 +1243,40 @@ public class QueriesGenerated {
       }
     });
     return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ApplyStyleClassCondition_2491174914176590340(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean");
+      }
+
+      public String getMatchingText(String pattern) {
+        return "condition";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), null));
+      }
+    });
+    return result;
+  }
+
+  private static SNode createStyleClassReferenceList_vu8rqe_a0a0a0a(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null, false);
+    for (SNode n : (Iterable<SNode>) p0) {
+      n1.addChild("element", n);
+    }
+    return n1;
   }
 }
