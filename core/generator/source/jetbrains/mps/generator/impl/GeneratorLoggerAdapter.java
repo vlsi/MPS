@@ -17,17 +17,21 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -42,8 +46,9 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   protected final boolean myHandleWarnings;
 
   public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings) {
-    this(messageHandler, new BasicFactory(),  handleInfo, handleWarnings);
+    this(messageHandler, new BasicFactory(), handleInfo, handleWarnings);
   }
+
   public GeneratorLoggerAdapter(IMessageHandler messageHandler, MessageFactory msgFactory, boolean handleInfo, boolean handleWarnings) {
     myMessageHandler = messageHandler;
     myFactory = msgFactory;
@@ -131,16 +136,16 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   @Override
   public void handleException(Throwable t) {
     String text = t.getMessage();
-    if(text == null) {
+    if (text == null) {
       Throwable cause = t.getCause();
       int tries = 0;
-      while(text == null && cause != null && tries < 10) {
+      while (text == null && cause != null && tries < 10) {
         text = cause.getMessage();
         cause = cause.getCause();
         tries++;
       }
     }
-    if(text == null) {
+    if (text == null) {
       text = "An exception was encountered: " + t.getClass().getName() + " (no message) (right-click to see)";
     } else {
       text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
@@ -154,6 +159,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   protected void errorReported() {
     // no-op
   }
+
   protected void warningReported() {
     // no-op
   }
@@ -162,7 +168,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     addMessage(myFactory.prepare(kind, text == null ? "" : text, node));
   }
 
-  protected final void addMessage(@NotNull Message msg) {
+  protected final void addMessage(@NotNull IMessage msg) {
     synchronized (myMessageHandler) {
       myMessageHandler.handle(msg);
     }
@@ -191,25 +197,64 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     myMessageHandler.clear();
   }
 
-  protected static class BasicFactory implements MessageFactory {
+  abstract static class MessageFactory {
+    @Nullable
+    abstract SNodeReference process(@Nullable SNodeReference node);
 
-    @Override
     @NotNull
-    public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
+    Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
       Message message = new Message(kind, text);
-      if (node != null && node.getModelReference() != null) {
-        SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
-        if (model != null && !(model.getModule() instanceof TransientModelsModule)) {
-          // XXX I don't know why we shall not include references to transient elements
-          message.setHintObject(node);
-        }
-      }
+      message.setHintObject(process(node));
       return message;
     }
   }
 
-  interface MessageFactory {
+
+  protected static class BasicFactory extends MessageFactory {
+    @Nullable
+    @Override
+    public SNodeReference process(@Nullable SNodeReference node) {
+      if (node == null || node.getModelReference() == null) {
+        return null;
+      }
+      SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
+      if (model != null && !(model.getModule() instanceof TransientModelsModule)) {
+        // XXX I don't know why we shall not include references to transient elements
+        return node;
+      }
+      return null;
+    }
+  }
+
+
+  static class RecordingFactory extends BasicFactory {
+    @SuppressWarnings("unchecked")
+    private final Collection<SModelReference>[] a = new Collection[MessageKind.values().length];
+
+    public RecordingFactory() {
+      for (MessageKind k : MessageKind.values()) {
+        a[k.ordinal()] = new ConcurrentHashSet<SModelReference>();
+      }
+    }
+    public Collection<SModelReference> ofKind(MessageKind kind) {
+      return a[kind.ordinal()];
+    }
+    public void reset() {
+      for (MessageKind k : MessageKind.values()) {
+        a[k.ordinal()].clear();
+      }
+    }
+
     @NotNull
-    Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node);
+    @Override
+    Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
+      if (node != null && node.getModelReference() != null) {
+        record(kind, node.getModelReference());
+      }
+      return super.prepare(kind, text, node);
+    }
+    private void record(MessageKind kind, SModelReference modelRef) {
+      a[kind.ordinal()].add(modelRef);
+    }
   }
 }
