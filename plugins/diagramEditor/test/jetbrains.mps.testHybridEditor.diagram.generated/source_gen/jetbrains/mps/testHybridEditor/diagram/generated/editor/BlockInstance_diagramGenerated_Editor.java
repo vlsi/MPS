@@ -38,9 +38,9 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.mps.nodeEditor.cells.jetpad.NodeDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import java.util.Set;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
@@ -268,7 +268,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(((DiagramNodeView) descendantMapper.getTarget()).focused(), getTarget().isSelected));
           ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
-          configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
+          configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(final SNode id) {
               return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {
@@ -289,7 +289,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                   final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
                   configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
                   ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-                  configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
+                  configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
 
                 }
               };
@@ -315,7 +315,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                   final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
                   configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
                   ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-                  configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
+                  configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
 
                 }
               };

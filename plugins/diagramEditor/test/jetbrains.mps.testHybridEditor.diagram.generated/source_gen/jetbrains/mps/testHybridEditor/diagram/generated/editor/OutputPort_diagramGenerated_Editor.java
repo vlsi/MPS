@@ -26,7 +26,7 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -143,7 +143,7 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
             configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
             configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
             ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-            configuration.add(Synchronizers.forProperty(bounds, getTarget().rectBounds()));
+            configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
 
 
           }

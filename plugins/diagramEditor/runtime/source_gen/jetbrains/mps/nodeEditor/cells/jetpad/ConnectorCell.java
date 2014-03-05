@@ -6,6 +6,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
 
 public abstract class ConnectorCell extends AbstractJetpadCell {
   public ConnectorCell(EditorContext editorContext, SNode node) {
