@@ -4830,6 +4830,34 @@
     <unitInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody" />
     <unitInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7638302724810884631">
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="16" startPosition="79" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="22" startPosition="77" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="29" startPosition="81" endLine="30" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="30" startPosition="146" endLine="31" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="34" startPosition="79" endLine="35" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="35" startPosition="146" endLine="36" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnknownRuleCheck7638302724810915733#()V" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck7638302724810894630#()V" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnknownRuleCheck7638302724810915733#()V" />
+    <nodeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck7638302724810894630#()V" />
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="16" startPosition="79" endLine="18" endPosition="138" />
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="22" startPosition="77" endLine="24" endPosition="136" />
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="29" startPosition="81" endLine="31" endPosition="159">
+      <varInfo nodeId="7638302724810884631" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="34" startPosition="79" endLine="36" endPosition="159">
+      <varInfo nodeId="7638302724810884631" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody" />
+    <unitInfo nodeId="7638302724810884631" fileName="SampleConstraints_Test.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.SampleConstraints_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7868761255934329294">
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="16" startPosition="98" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
