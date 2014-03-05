@@ -37,7 +37,7 @@ public class DiagramPaletteButton extends ToggleAction {
         });
         myPalette.unselectActionWhichWasSelected(this);
       } else if (mySelected && !(isSelected)) {
-        myPalette.unselectActionWhichWasSelected(null);
+        myPalette.unselectActionWhichWasSelected();
         myPalette.setSubstituteInfo(null);
       }
     }

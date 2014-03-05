@@ -45,7 +45,6 @@ public class DiagramPalette extends JPanel {
     add(new JLabel("Connectors"), constraints);
     constraints.setRow(3);
     add(myConnectorActionPanel, constraints);
-    update();
   }
 
 
@@ -54,14 +53,15 @@ public class DiagramPalette extends JPanel {
     for (SubstituteInfoPartExt ext : exts) {
       ListSequence.fromList(myAllBlockSubstituteActions).addSequence(ListSequence.fromList(ext.createActions(new BasicCellContext(myDiagramCell.getSNode()), myDiagramCell.getContext())));
     }
-    update();
+    updateActions(myBlockActionGroup, myAllBlockSubstituteActions, myBlockActionPanel);
   }
 
   public void setAllConnectorSubstituteInfoPartExt(SubstituteInfoPartExt[] exts) {
     for (SubstituteInfoPartExt ext : exts) {
       ListSequence.fromList(myAllConnectorSubstituteActions).addSequence(ListSequence.fromList(ext.createActions(new BasicCellContext(myDiagramCell.getSNode()), myDiagramCell.getContext())));
     }
-    update();
+    updateActions(myConnectorActionGroup, myAllConnectorSubstituteActions, myConnectorActionPanel);
+
   }
 
 
@@ -95,34 +95,20 @@ public class DiagramPalette extends JPanel {
 
 
 
-  private void updateToggleActions() {
-    myBlockActionGroup.removeAll();
-    for (SubstituteAction action : ListSequence.fromList(myAllBlockSubstituteActions)) {
+  private void updateActions(DefaultActionGroup actionGroup, List<SubstituteAction> actions, JPanel actionPanel) {
+    actionGroup.removeAll();
+    for (SubstituteAction action : ListSequence.fromList(actions)) {
       DiagramCell.DiagramSubstituteActionWraper actionWrapper = ((DiagramCell.DiagramSubstituteActionWraper) action);
       ToggleAction substituteButton = new DiagramPaletteButton(this, action, actionWrapper.getMatchingText(""), actionWrapper.getMatchingText(""), actionWrapper.getIconFor(""));
-      myBlockActionGroup.add(substituteButton);
+      actionGroup.add(substituteButton);
     }
-    myConnectorActionGroup.removeAll();
-    for (SubstituteAction action : ListSequence.fromList(myAllConnectorSubstituteActions)) {
-      DiagramCell.DiagramSubstituteActionWraper actionWrapper = ((DiagramCell.DiagramSubstituteActionWraper) action);
-      ToggleAction substituteButton = new DiagramPaletteButton(this, action, actionWrapper.getMatchingText(""), actionWrapper.getMatchingText(""), actionWrapper.getIconFor(""));
-      myConnectorActionGroup.add(substituteButton);
-    }
-  }
-
-  private void update() {
-    updateToggleActions();
     GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-    ActionToolbar elementsToolbat = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myBlockActionGroup, true);
-    elementsToolbat.setOrientation(SwingConstants.VERTICAL);
-    JComponent blockActionPanel = elementsToolbat.getComponent();
-    myBlockActionPanel.removeAll();
-    myBlockActionPanel.add(blockActionPanel, gridConstraints);
-    ActionToolbar connectorToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myConnectorActionGroup, true);
-    connectorToolbar.setOrientation(SwingConstants.VERTICAL);
-    JComponent connectorActionPanel = connectorToolbar.getComponent();
-    myConnectorActionPanel.removeAll();
-    myConnectorActionPanel.add(connectorActionPanel, gridConstraints);
+    ActionToolbar elementsToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    elementsToolbar.setOrientation(SwingConstants.VERTICAL);
+    JComponent blockActionPanel = elementsToolbar.getComponent();
+    actionPanel.removeAll();
+    actionPanel.add(blockActionPanel, gridConstraints);
+
   }
 
 

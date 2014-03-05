@@ -176,7 +176,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return myPalettePanel;
   }
 
-  private ViewTrait getEventHandlingTrate() {
+  private ViewTrait getEventHandlingTrait() {
     this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
         if (view.focused().get()) {
@@ -451,7 +451,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     });
     result.root().addTrait(RootTrait.ROOT_TRAIT);
-    result.root().addTrait(getEventHandlingTrate());
+    result.root().addTrait(getEventHandlingTrait());
     return result;
   }
 
