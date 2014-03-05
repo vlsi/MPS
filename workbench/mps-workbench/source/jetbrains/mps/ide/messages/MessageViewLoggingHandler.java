@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,6 @@ public class MessageViewLoggingHandler extends MPSAppenderBase implements Projec
   protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable t,
       @Nullable Object hintObject) {
     MessageKind kind = MessageKind.fromPriority(level);
-    if (kind == null) return;
     Message message = new Message(kind, categoryName, messageText);
     message.setHintObject(hintObject);
     message.setException(t);

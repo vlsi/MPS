@@ -286,7 +286,6 @@ class GenerationSession {
         }
       }
     } finally {
-      recordAccessedTransientModels();
       monitor.done();
     }
   }
@@ -352,11 +351,15 @@ class GenerationSession {
     });
     RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
-    SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
-    if (myLogger.getErrorCount() > 0) {
-      myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
+    try {
+      SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
+      if (myLogger.getErrorCount() > 0) {
+        myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
+      }
+      return outputModel;
+    } finally {
+      recordAccessedTransientModels();
     }
-    return outputModel;
   }
 
   private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
@@ -702,6 +705,7 @@ class GenerationSession {
     for (SModelReference mr : modelToKeepCandidates) {
       mySessionContext.keepTransientModel(mr, false);
     }
+    myLogRecorder.reset();
     final boolean discardTransients = !myGenerationOptions.isSaveTransientModels();
     for (SModel m : myTransientModelsToRecycle) {
       if (discardTransients && !modelToKeepCandidates.contains(m.getReference())) {
@@ -720,15 +724,14 @@ class GenerationSession {
         @Override
         protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t,
             @Nullable Object hintObject) {
-          if (mySessionContext == null) return;
           if (hintObject instanceof SNode) {
             final SModel m = ((SNode) hintObject).getModel();
-            mySessionContext.keepTransientModel(m.getReference(), false);
+            myLogRecorder.record(MessageKind.fromPriority(level), m.getReference());
           } else if (hintObject instanceof NodeWithContext) {
             SModelReference mr = ((NodeWithContext) hintObject).getNode().getModelReference();
-            mySessionContext.keepTransientModel(mr, false);
+            myLogRecorder.record(MessageKind.fromPriority(level), mr);
           } else if (hintObject instanceof SNodeReference) {
-            mySessionContext.keepTransientModel(((SNodeReference) hintObject).getModelReference(), false);
+            myLogRecorder.record(MessageKind.fromPriority(level), ((SNodeReference) hintObject).getModelReference());
           }
         }
       };

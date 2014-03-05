@@ -227,6 +227,9 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   }
 
 
+  /**
+   * Concurrent record of models reported through messages
+   */
   static class RecordingFactory extends BasicFactory {
     @SuppressWarnings("unchecked")
     private final Collection<SModelReference>[] a = new Collection[MessageKind.values().length];
@@ -248,13 +251,15 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     @NotNull
     @Override
     Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
-      if (node != null && node.getModelReference() != null) {
+      if (node != null) {
         record(kind, node.getModelReference());
       }
       return super.prepare(kind, text, node);
     }
-    private void record(MessageKind kind, SModelReference modelRef) {
-      a[kind.ordinal()].add(modelRef);
+    public void record(@NotNull MessageKind kind, @Nullable SModelReference modelRef) {
+      if (modelRef != null) {
+        a[kind.ordinal()].add(modelRef);
+      }
     }
   }
 }
