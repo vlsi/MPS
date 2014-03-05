@@ -38,7 +38,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -58,6 +57,12 @@ import java.util.ListIterator;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import javax.swing.Icon;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
@@ -244,7 +249,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
         for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
-          result.add(new NodeSubstituteActionWrapper(action) {
+          result.add(new DiagramCell.DiagramSubstituteActionWraper(action) {
             @Override
             public boolean canSubstitute(String string) {
               return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
@@ -289,7 +294,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             return result;
           }
         };
-        return Collections.<SubstituteAction>singletonList(action);
+        return Collections.<SubstituteAction>singletonList(new DiagramCell.DiagramSubstituteActionWraper(action));
       }
     };
   }
@@ -302,19 +307,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  /*package*/ int getPatternEditorX() {
-    return myPatternEditorX;
-  }
-
-  /*package*/ int getPatternEditorY() {
-    return myPatternEditorY;
-  }
-
-
-
   @Override
   public SubstituteInfo getSubstituteInfo() {
-    if (getPalette().isActive()) {
+    if (getPalette().getSubstituteInfo() != null) {
       return getPalette().getSubstituteInfo();
     }
     return super.getSubstituteInfo();
@@ -487,6 +482,26 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       syncToNextNode((cell instanceof BlockCell ? blocksIterator : connectorsIterator), (cell instanceof BlockCell ? existingBlocks : existingConnectors), nextElement, cell);
     }
   }
+
+  /*package*/ static class DiagramSubstituteActionWraper extends NodeSubstituteActionWrapper {
+    private DiagramSubstituteActionWraper(SubstituteAction action) {
+      super(action);
+    }
+
+    @Override
+    public Icon getIconFor(String string) {
+      Icon icon;
+      SNode iconNode = getIconNode(string);
+      if (iconNode != null) {
+        icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((isReferentPresentation()))) ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode));
+      } else {
+        icon = IdeIcons.DEFAULT_ICON;
+      }
+      return icon;
+    }
+  }
+
+
 
   /*package*/ class ConnectionInfo {
 
