@@ -119,6 +119,8 @@
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Window" />
+    <classNode dependClassName="java.awt.event.FocusEvent" />
+    <classNode dependClassName="java.awt.event.FocusListener" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />

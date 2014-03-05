@@ -20,6 +20,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.GridConstraints;
+import java.awt.event.FocusListener;
+import java.awt.event.FocusEvent;
 import java.awt.Dimension;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -104,6 +106,16 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       getRootMapper().attachRoot();
       myComponent.container(getRootMapper().getTarget());
       getDecorationRootMapper().attachRoot();
+      myComponent.addFocusListener(new FocusListener() {
+
+
+        public void focusGained(FocusEvent event) {
+        }
+
+        public void focusLost(FocusEvent focusEvent) {
+          hidePatternEditor();
+        }
+      });
     }
     return myComponent;
 
@@ -185,7 +197,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           event.consume();
           return;
         }
-
         if (event.key() == Key.ESCAPE) {
           view.container().focusedView().set(null);
           event.consume();
@@ -323,7 +334,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       @Override
       public void activate(Window window, Point point, Dimension dimension) {
         Dimension actualDimension = new Dimension(100, 0);
-        point.translate(myPatternEditorX, myPatternEditorY);
+        point.translate(myPatternEditorX + getContainerComponent().getX(), myPatternEditorY + getContainerComponent().getY());
         super.activate(window, point, actualDimension);
         mySubstituteEditorVisible = true;
       }
