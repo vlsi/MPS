@@ -2387,7 +2387,7 @@
     <nodeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="63" startPosition="5" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1707191813404437715" fileName="AddOverridesClause_Intention.java" startLine="71" startPosition="87" endLine="72" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1707191813404439462" fileName="AddOverridesClause_Intention.java" startLine="75" startPosition="78" endLine="76" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1707191813404439462" fileName="AddOverridesClause_Intention.java" startLine="75" startPosition="78" endLine="76" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="79" startPosition="48" endLine="80" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddOverridesClause_Intention#()V" />
     <nodeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -2418,7 +2418,7 @@
     <scopeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="56" startPosition="35" endLine="57" endPosition="17" />
     <scopeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="134" />
     <scopeInfo nodeId="1707191813404431437" fileName="AddOverridesClause_Intention.java" startLine="71" startPosition="87" endLine="72" endPosition="36" />
-    <scopeInfo nodeId="1707191813404431439" fileName="AddOverridesClause_Intention.java" startLine="75" startPosition="78" endLine="76" endPosition="177" />
+    <scopeInfo nodeId="1707191813404431439" fileName="AddOverridesClause_Intention.java" startLine="75" startPosition="78" endLine="76" endPosition="154" />
     <scopeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="79" startPosition="48" endLine="80" endPosition="47" />
     <scopeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1707191813404431435" fileName="AddOverridesClause_Intention.java" startLine="68" startPosition="0" endLine="70" endPosition="0" />

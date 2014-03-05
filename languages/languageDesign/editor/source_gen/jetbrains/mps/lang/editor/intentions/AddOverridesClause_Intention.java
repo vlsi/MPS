@@ -73,7 +73,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "extendedStyleClassList", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null), true);
+      SLinkOperations.setTarget(node, "overlaps", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.OverlapsRecord", null), true);
     }
 
     public IntentionDescriptor getDescriptor() {

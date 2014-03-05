@@ -27,7 +27,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ApplyStyleClass").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").children(new String[]{"target"}, new boolean[]{false}).alias("apply", "").create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").children(new String[]{"target", "query"}, new boolean[]{false, false}).alias("apply-condition", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition").super_("jetbrains.mps.lang.editor.structure.ApplyStyleClass").parents("jetbrains.mps.lang.editor.structure.ApplyStyleClass").children(new String[]{"query"}, new boolean[]{false}).alias("apply-condition", "").create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("auto-deletable", "").staticScope(StaticScope.NONE).create();
       case 8:

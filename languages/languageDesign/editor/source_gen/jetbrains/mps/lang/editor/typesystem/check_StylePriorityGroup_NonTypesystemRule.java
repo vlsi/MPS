@@ -21,9 +21,16 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
     if (StyleClass_Behavior.call_hasCycles_7417001528577667349(stylePriorityGroup)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic priority group inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4467412253500708194", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic priority group inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2491174914185197927", null, errorTarget);
       }
     }
+    if (StyleClass_Behavior.call_hasApplyCycles_2491174914184428685(stylePriorityGroup)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic style application", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4467412253500708194", null, errorTarget);
+      }
+    }
+
   }
 
   public String getApplicableConceptFQName() {

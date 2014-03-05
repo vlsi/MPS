@@ -4370,7 +4370,7 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9122903797276644579" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="9122903797276645188" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797276645190" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.9122903797276194520" resolveInfo="StyleClassReferenceList" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.2491174914159318432" resolveInfo="OverlapsRecord" />
                 </node>
               </node>
             </node>

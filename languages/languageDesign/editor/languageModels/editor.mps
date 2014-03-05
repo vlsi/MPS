@@ -11863,7 +11863,7 @@
         <property name="text" nameId="tpc2.1073389577007" value=":" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="9122903797336200861" nodeInfo="ng">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.9122903797336200705" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.1950447826683828796" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="9122903797336200837" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="condition:" />
