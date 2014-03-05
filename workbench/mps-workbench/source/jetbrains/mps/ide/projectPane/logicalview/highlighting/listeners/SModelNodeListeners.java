@@ -45,9 +45,12 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Control listeners that track changes to a model node.
@@ -61,7 +64,11 @@ public class SModelNodeListeners {
   private final MyGenerationStatusListener myGenStatusListener;
   private EventsCollector myEventsListener;
 
-  private final ConcurrentHashMap<SModelReference, SModelTreeNode> myTreeNodes = new ConcurrentHashMap<SModelReference, SModelTreeNode>();
+  /**
+   * There might be more than one tree node for the same model (e.g. one under language, another under @descriptor),
+   * we need to track all tree nodes to update them on model change
+   */
+  private final Map<SModelReference, Collection<SModelTreeNode>> myTreeNodes = new HashMap<SModelReference, Collection<SModelTreeNode>>();
   private final TreeUpdateVisitor[] myUpdates; // shall be CompositeVisitor, but I'm lazy for that
 
 
@@ -107,8 +114,20 @@ public class SModelNodeListeners {
   public void attach(@NotNull SModelTreeNode node) {
     final SModel model = node.getModel();
     if (model != null) {
-      myTreeNodes.put(model.getReference(), node);
-      ((SModelInternal) model).addModelListener(myModelChangeListener);
+      boolean modelSeenFirstTime = true;
+      synchronized (myTreeNodes) {
+        Collection<SModelTreeNode> knownNodes = myTreeNodes.get(model.getReference());
+        if (knownNodes == null) {
+          myTreeNodes.put(model.getReference(), knownNodes = new ArrayList<SModelTreeNode>(3));
+        } else {
+          modelSeenFirstTime = false;
+        }
+        knownNodes.add(node);
+      }
+      if (modelSeenFirstTime) {
+        ((SModelInternal) model).addModelListener(myModelChangeListener);
+        myEventsListener.add(model);
+      }
     }
     refreshTreeNodes(node);
   }
@@ -116,20 +135,35 @@ public class SModelNodeListeners {
   public void detach(@NotNull SModelTreeNode node) {
     final SModel model = node.getModel();
     if (model != null) {
-      ((SModelInternal) model).removeModelListener(myModelChangeListener);
-      myTreeNodes.remove(model.getReference());
+      boolean modelSeenLastTime = false;
+      synchronized (myTreeNodes) {
+        Collection<SModelTreeNode> knownNodes = myTreeNodes.get(model.getReference());
+        if (knownNodes != null) {
+          knownNodes.remove(node);
+          if (knownNodes.isEmpty()) {
+            myTreeNodes.remove(model.getReference());
+            modelSeenLastTime = true;
+          }
+        }
+      }
+      if (modelSeenLastTime) {
+        myEventsListener.remove(model);
+        ((SModelInternal) model).removeModelListener(myModelChangeListener);
+      }
     }
   }
 
   void refreshAffectedTreeNodes(SModel changed) {
-    final SModelTreeNode treeNode = findTreeNode(changed);
-    if (treeNode != null) {
+    for (SModelTreeNode treeNode : findTreeNode(changed)) {
       refreshTreeNodes(treeNode);
     }
   }
 
-  SModelTreeNode findTreeNode(SModel sm) {
-    return myTreeNodes.get(sm.getReference());
+  Iterable<SModelTreeNode> findTreeNode(SModel sm) {
+    synchronized (myTreeNodes) {
+      final Collection<SModelTreeNode> nodes = myTreeNodes.get(sm.getReference());
+      return nodes == null ? Collections.<SModelTreeNode>emptyList() : new ArrayList<SModelTreeNode>(nodes);
+    }
   }
 
   void refreshTreeNodes(SModelTreeNode toRefresh) {
@@ -161,8 +195,7 @@ public class SModelNodeListeners {
 
     @Override
     public void generatedFilesChanged(SModel sm) {
-      SModelTreeNode treeNode = findTreeNode(sm);
-      if (treeNode != null) {
+      for (SModelTreeNode treeNode : findTreeNode(sm)) {
         myGenStatusVisitor.dispatch(treeNode);
       }
     }
@@ -171,8 +204,7 @@ public class SModelNodeListeners {
   private class ModelChangeListener extends SModelAdapter {
     @Override
     public void modelChangedDramatically(SModel model) {
-      SModelTreeNode treeNode = findTreeNode(model);
-      if (treeNode != null) {
+      for (SModelTreeNode treeNode : findTreeNode(model)) {
         updateNodePresentation(treeNode, false, true);
         refreshTreeNodes(treeNode);
       }
@@ -180,8 +212,7 @@ public class SModelNodeListeners {
 
     @Override
     public void modelChanged(SModel model) {
-      SModelTreeNode treeNode = findTreeNode(model);
-      if (treeNode != null) {
+      for (SModelTreeNode treeNode : findTreeNode(model)) {
         updateNodePresentation(treeNode, false, true);
         refreshTreeNodes(treeNode);
       }
@@ -194,15 +225,18 @@ public class SModelNodeListeners {
 
     @Override
     public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
-      SModelTreeNode treeNode = findTreeNode(sm);
-      if (treeNode != null) {
+      for (SModelTreeNode treeNode : findTreeNode(sm)) {
         updateNodePresentation(treeNode, false, false);
       }
     }
   }
 
-  private class MySNodeTreeUpdater extends SNodeTreeUpdater<SModelTreeNode> {
-    public MySNodeTreeUpdater(Project project, SModelTreeNode treeNode) {
+  /**
+   * This class is unrelated to highlighting and lives here just because we've got the map (model->[tree nodes])
+   * here, and it's an overkill to keep one more identical map to separate structural and highlighting updates.
+   */
+  private static class TreeStructureUpdate extends SNodeTreeUpdater<SModelTreeNode> {
+    public TreeStructureUpdate(Project project, SModelTreeNode treeNode) {
       super(project, treeNode);
     }
 
@@ -287,13 +321,11 @@ public class SModelNodeListeners {
         }
       }
       for (SModel m : byModel.keySet()) {
-        SModelTreeNode treeNode = findTreeNode(m);
-        if (treeNode == null) {
-          continue;
+        for (SModelTreeNode treeNode : findTreeNode(m)) {
+          TreeStructureUpdate treeUpdater = new TreeStructureUpdate(treeNode.getOperationContext().getProject(), treeNode);
+          treeUpdater.setDependencyRecorder(treeNode.getDependencyRecorder());
+          treeUpdater.eventsHappenedInCommand(new ArrayList<SModelEvent>(byModel.get(m)));
         }
-        MySNodeTreeUpdater treeUpdater = new MySNodeTreeUpdater(treeNode.getOperationContext().getProject(), treeNode);
-        treeUpdater.setDependencyRecorder(treeNode.getDependencyRecorder());
-        treeUpdater.eventsHappenedInCommand(new ArrayList<SModelEvent>(byModel.get(m)));
       }
     }
   }
