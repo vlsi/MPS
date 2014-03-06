@@ -326,6 +326,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
           if (incrementalMode) {
             nodesReadListener.setAccessReport(true);
             addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
+            addDependentNodes(node, rule.o1, Collections.singleton(node));
             addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
             nodesReadListener.setAccessReport(false);
 

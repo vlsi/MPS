@@ -958,6 +958,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result.toString();
   }
 
+  @NotNull
   private List<HighlighterMessage> getHighlighterMessagesFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell parent = cell;
     while (parent != null) {
@@ -974,15 +975,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return Collections.emptyList();
   }
 
-  // TODO: remove this method and use getHighlighterMessagesFor(EditorCell cell) instead
   private HighlighterMessage getHighlighterMessageFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> highlighterMessages = getHighlighterMessagesFor(cell);
     return highlighterMessages.isEmpty() ? null : highlighterMessages.get(0);
   }
 
+  @Nullable
   public IErrorReporter getErrorReporterFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     HighlighterMessage message = getHighlighterMessageFor(cell);
-    if (message == null) return null;
+    if (message == null)
+      return null;
     return message.getErrorReporter();
   }
 

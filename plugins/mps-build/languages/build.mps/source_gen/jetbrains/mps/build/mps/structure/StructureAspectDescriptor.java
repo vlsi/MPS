@@ -19,7 +19,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMPSPlugin").super_("jetbrains.mps.build.structure.BuildPlugin").parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").alias("mps", "adds MPS capabilities (packaging, generation) to the project").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsAspect").super_("jetbrains.mps.build.structure.BuildAspect").parents("jetbrains.mps.build.structure.BuildAspect").properties("bootstrap", "testGeneration", "excludes", "generationMaxHeapSizeInMb").alias("mps settings", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsAspect").super_("jetbrains.mps.build.structure.BuildAspect").parents("jetbrains.mps.build.structure.BuildAspect").properties("bootstrap", "testGeneration", "excludes", "generationMaxHeapSizeInMb", "generationMaxPermSizeInMb").alias("mps settings", "").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources").super_("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources").parents("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.structure.BuildLayout_InJarNode").alias("folder with sources of", "MPS module").create();
       case 4:

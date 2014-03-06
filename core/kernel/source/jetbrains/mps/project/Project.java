@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -138,8 +139,12 @@ public abstract class Project implements MPSModuleOwner {
     myModules.remove(module);
   }
 
+  /** @deprecated
+   * should be left for compatibility with generated plugins (editor openers)
+   * @see jetbrains.mps.smodel.IOperationContext
+   */
   @Deprecated
-  // should be left for compatibility with generated plugins (editor openers)
+  @ToRemove(version = 3.2)
   public abstract <T> T getComponent(Class<T> t);
 
   public abstract String getName();

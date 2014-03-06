@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ccvjn79zz9eghdtxkxrk0xicit3x1jp" />
+<dependencies version="2" modelHash="-ccvjn79zz9eghdtxkxrk0xicit3x1jp">
+  <common hash="bkajnnulispe9511j4wzb6j7t5wypxc" dependsOnNodes="true" />
+  <source id="2939287019638088102" name="IconResourceBundle" hash="-9kkp5i30r9qpnyi9bmtsbixu3v2lxh">
+    <file name="IconResourceBundle.java" />
+  </source>
+  <source id="2939287019638088106" name="PluginResourceBundle" hash="-cywg3orfm551nuz6t9mod06riowfkin">
+    <file name="PluginResourceBundle.java" />
+  </source>
+</dependencies>
 

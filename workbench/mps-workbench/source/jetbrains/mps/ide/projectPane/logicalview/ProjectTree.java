@@ -44,12 +44,21 @@ public class ProjectTree extends MPSTree {
   private ProjectTreeNode myProjectTreeNode;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
   private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
+  private final TreeStructureUpdate myStructureUpdate;
 
   public ProjectTree(Project project) {
     myProject = project;
 
     getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
     scrollsOnExpand = false;
+    myStructureUpdate = new TreeStructureUpdate(this);
+    myStructureUpdate.init();
+  }
+
+  @Override
+  public void dispose() {
+    myStructureUpdate.dispose();
+    super.dispose();
   }
 
   @Override

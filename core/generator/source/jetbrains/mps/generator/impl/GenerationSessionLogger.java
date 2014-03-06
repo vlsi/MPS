@@ -15,34 +15,23 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
- * Igor Alshannikov
- * Nov 30, 2007
+ * Almost useless(?!) {@link jetbrains.mps.generator.IGeneratorLogger} implementation that counts errors and warnings
+ * and aware of errors for modules (beside nodes).
  */
 public class GenerationSessionLogger extends GeneratorLoggerAdapter implements IGeneratorLogger {
 
   private int myWarningsCount;
   private int myErrorsCount;
 
-  public GenerationSessionLogger(GeneratorLoggerAdapter logger, boolean keepModelsWithWarnings) {
-    super(logger.myMessageHandler, new KeepWithWarningsAwareFactory(keepModelsWithWarnings && logger.myHandleWarnings), logger.myHandleInfo,
-        logger.myHandleWarnings);
-  }
-
-  public void setOperationContext(GenerationSessionContext operationContext) {
-    if (myFactory instanceof KeepWithWarningsAwareFactory) {
-      ((KeepWithWarningsAwareFactory) myFactory).setOperationContext(operationContext);
-    }
+  public GenerationSessionLogger(GeneratorLoggerAdapter logger, MessageFactory factory) {
+    super(logger.myMessageHandler, factory, logger.myHandleInfo, logger.myHandleWarnings);
   }
 
   /* package */ void error(@NotNull SModuleReference moduleReference, String message) {
@@ -60,58 +49,10 @@ public class GenerationSessionLogger extends GeneratorLoggerAdapter implements I
     myWarningsCount++;
   }
 
-  private void report(MessageKind kind, String text, SModuleReference module) {
-    addMessage(prepare(kind, text, module));
-  }
-
-  private Message prepare(MessageKind kind, String text, @NotNull SModuleReference module) {
-    Message message = new Message(kind, text);
-    message.setHintObject(module);
-    return message;
-  }
-
-  static class KeepWithWarningsAwareFactory extends BasicFactory {
-    // XXX I'm not quite sure this is the right place for keepModelsWithWarnings option,
-    // perhaps, can keep it in TransientModelsModule or anywhere outside of this class?
-    private final boolean myKeepModelsWithWarnings;
-    @Nullable
-    private GenerationSessionContext myOperationContext;
-
-     KeepWithWarningsAwareFactory(boolean keepModelsWithWarnings) {
-       myKeepModelsWithWarnings = keepModelsWithWarnings;
-     }
-
-    public void setOperationContext(@Nullable GenerationSessionContext operationContext) {
-      myOperationContext = operationContext;
-    }
-
-    @NotNull
-    @Override
-    public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
-
-      if (node != null && myOperationContext != null) {
-        if (keepModel(node.getModelReference(), kind != MessageKind.ERROR)) {
-          Message message = new Message(kind, text);
-          message.setHintObject(node);
-          return message;
-        }
-      }
-      return super.prepare(kind, text, node);
-    }
-
-    private boolean keepModel(SModelReference model, boolean isWarning) {
-      if (model == null) {
-        return false;
-      }
-      assert myOperationContext != null;
-      if (myOperationContext.getModule().isMyTransientModel(model)) {
-        if (isWarning && !myKeepModelsWithWarnings) {
-          return false;
-        }
-        return myOperationContext.keepTransientModel(model, false);
-      }
-      return true;
-    }
+  private void report(MessageKind kind, String text, @NotNull SModuleReference module) {
+    Message m = myFactory.prepare(kind, text, null);
+    m.setHintObject(module);
+    addMessage(m);
   }
 
   public int getErrorCount() {

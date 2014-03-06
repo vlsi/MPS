@@ -59,8 +59,15 @@ public interface ITemplateGenerator {
 
   IGeneratorLogger getLogger();
 
+  /**
+   * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
+   */
+  @Deprecated
   void showErrorMessage(SNode inputNode, SNode templateNode, String message);
 
-  // FIXME switch to SNodeReference (templateNode and ruleNode) and move to IGeneratorLogger
+  /**
+   * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
+   */
+  @Deprecated
   void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 }

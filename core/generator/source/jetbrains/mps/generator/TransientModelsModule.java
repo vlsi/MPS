@@ -61,7 +61,7 @@ public class TransientModelsModule extends AbstractModule {
   private final SModule myOriginalModule;
   private final TransientModelsProvider myComponent;
 
-  private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
+  private Set<String> myModelsToPublish = new ConcurrentHashSet<String>();
   private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
   private Set<SModel> myPublished = new ConcurrentHashSet<SModel>();
 
@@ -94,7 +94,7 @@ public class TransientModelsModule extends AbstractModule {
   public void clearAll() {
     removeAll();
     dependenciesChanged();
-    myModelsToKeep.clear();
+    myModelsToPublish.clear();
     myPublished.clear();
     myModels.clear();
   }
@@ -107,12 +107,11 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public void clearUnused() {
-    Collection<SModel> models = this.getTransientModels();
-    for (SModel model : models) {
-      if (!myModelsToKeep.contains(model.getReference().toString())) {
-        removeModel(model);
-      } else {
+    for (SModel model : getTransientModels()) {
+      if (isModelToPublish(model)) {
         unloadModel(model);
+      } else {
+        removeModel(model);
       }
     }
   }
@@ -121,25 +120,24 @@ public class TransientModelsModule extends AbstractModule {
     assert isMyTransientModel(modelReference);
     String modelRef = modelReference.toString();
     if (force) {
-      myModelsToKeep.add(modelRef);
+      myModelsToPublish.add(modelRef);
       return true;
     }
-    if (myModelsToKeep.contains(modelRef)) {
+    if (myModelsToPublish.contains(modelRef)) {
       return true;
     }
     if (!myComponent.canKeepOneMore()) {
       // maximum number of models reached
-      return myModelsToKeep.contains(modelRef);
+      return myModelsToPublish.contains(modelRef);
     }
-    if (!myModelsToKeep.add(modelRef)) {
+    if (!myModelsToPublish.add(modelRef)) {
       myComponent.decreaseKeptModels();
     }
     return true;
   }
 
-  public boolean isModelToKeep(SModel model) {
-    assert model.getModule() instanceof TransientModelsModule;
-    return myModelsToKeep.contains(model.getReference().toString());
+  private boolean isModelToPublish(SModel model) {
+    return myModelsToPublish.contains(model.getReference().toString());
   }
 
   private boolean isValidName(String modelName) {
@@ -148,14 +146,12 @@ public class TransientModelsModule extends AbstractModule {
             && !myModels.containsKey(modelName);
   }
 
-  public boolean publishTransientModel(SModel model) {
+  private void publishTransientModel(SModel model) {
     if (myModels.containsKey(model.getModelName())) {
       if (myPublished.add(model)) {
         registerModel((SModelBase) model);
-        return true;
       }
     }
-    return false;
   }
 
   public void removeModel(SModel md) {
@@ -182,9 +178,10 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public void publishAll() {
-    Collection<SModel> models = this.getTransientModels();
-    for (SModel model : models) {
-      publishTransientModel(model);
+    for (SModel model : getTransientModels()) {
+      if (isModelToPublish(model)) {
+        publishTransientModel(model);
+      }
     }
   }
 

@@ -163,5 +163,11 @@
     <move id="tpd4.8489045168661912131" to="tp5g.4531408400488279562" />
     <move id="tpd4.8489045168661912134" to="tp5g.4531408400488279563" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="38" />
+    </dependencies>
+    <rename id="tp5g.8578280453507219248" type="CONCEPT" from="IAllowsErrors" to="IChecksRules" />
+  </StructureModification>
 </history>
 

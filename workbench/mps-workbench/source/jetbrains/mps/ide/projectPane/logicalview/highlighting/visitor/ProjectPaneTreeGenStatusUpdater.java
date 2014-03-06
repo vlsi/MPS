@@ -22,7 +22,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.GenStatusNodeUpdate;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.AdditionalTextNodeUpdate;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
@@ -66,16 +66,16 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeUpdateVisitor {
     boolean wasChanged = ((EditableSModel) md).isChanged();
 
     if (moduleNode.getModule().isReadOnly()) {
-      addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
-      addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
+      addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
+      addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
       return;
     }
 
     if (wasChanged) {
-      addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
-      addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+      addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+      addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
       if (moduleNode.getModule() instanceof Generator) {
-        addUpdate(getContainingModuleNode(moduleNode), new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+        addUpdate(getContainingModuleNode(moduleNode), new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
       }
       return;
     }
@@ -94,7 +94,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeUpdateVisitor {
     if (moduleNode.getModule() instanceof Generator) {
       updateModuleStatus(getContainingModuleNode(moduleNode));
     }
-    addUpdate(modelNode, new GenStatusNodeUpdate(modelStatus.getMessage()));
+    addUpdate(modelNode, new AdditionalTextNodeUpdate(modelStatus.getMessage()));
   }
 
   private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
@@ -105,7 +105,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeUpdateVisitor {
         return generationRequired(moduleNode);
       }
     });
-    addUpdate(moduleNode, new GenStatusNodeUpdate(moduleStatus.getMessage()));
+    addUpdate(moduleNode, new AdditionalTextNodeUpdate(moduleStatus.getMessage()));
   }
 
   private boolean generationRequired(SModule module) {

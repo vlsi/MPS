@@ -5,8 +5,6 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -22,9 +20,6 @@ public class NodeCheckOperation_Behavior {
     }
   }
 
-  public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-  }
-
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;
   }
@@ -38,8 +33,8 @@ public class NodeCheckOperation_Behavior {
   }
 
   public static SNode call_getAnnotatedNode_2912288420882528229(SNode thisNode) {
-    assert AttributeOperations.getAttribute(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null;
-    return SNodeOperations.getParent(SNodeOperations.getParent(thisNode));
+    SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.test.structure.NodeOperationsContainer");
+    return SNodeOperations.getParent(container);
   }
 
   @Deprecated

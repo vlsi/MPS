@@ -105,7 +105,7 @@ public class Message implements IMessage {
     return s;
   }
 
-  public void setHintObject(Object obj) {
+  public void setHintObject(@Nullable Object obj) {
     boolean error = true;
     if (obj instanceof SNode) {
       myHintObject = ((SNode) obj).getReference();

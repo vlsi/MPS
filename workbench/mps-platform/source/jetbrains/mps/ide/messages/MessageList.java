@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,10 +56,12 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import javax.swing.AbstractAction;
 import javax.swing.AbstractListModel;
@@ -311,9 +313,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList);
     myComponent.add(scrollPane, BorderLayout.CENTER);
 
-    KeyStroke findKeyStroke = com.intellij.openapi.util.SystemInfo.isMac
-      ? KeyStroke.getKeyStroke("meta F")
-      : KeyStroke.getKeyStroke("ctrl F");
     myComponent.registerKeyboardAction(new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -323,7 +322,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         }
         mySearchPanel.activate();
       }
-    }, findKeyStroke, JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke('F', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
@@ -348,6 +347,13 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         showHelpForCurrentMessage();
       }
     }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    myList.registerKeyboardAction(new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        myList.getSelectionModel().setSelectionInterval(0, myList.getModel().getSize());
+      }
+    }, KeyStroke.getKeyStroke('A', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseWheelListener(new MouseWheelListener() {
       @Override
@@ -442,18 +448,21 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private DefaultActionGroup createActionGroup() {
     DefaultActionGroup group = new DefaultActionGroup();
 
-    if (myList.getSelectedIndices().length != 0) {
-      group.add(new AnAction("Copy Text", null, null) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          StringBuilder sb = new StringBuilder();
-          for (Object o : myList.getSelectedValues()) {
-            sb.append(((IMessage) o).getText());
-            sb.append("\n");
-          }
-          CopyPasteManagerEx.getInstance().setContents(new StringSelection(sb.toString()));
+    final Object[] selectedValues = myList.getSelectedValues();
+    if (selectedValues.length > 0) {
+      StringBuilder sb = new StringBuilder();
+      for (Object o : myList.getSelectedValues()) {
+        sb.append(((IMessage) o).getText());
+        sb.append("\n");
+      }
+      group.add(new CopyToClipboardAction("Copy Text").setTextToCopy(sb.toString()));
+      Object hintObj;
+      if (selectedValues.length == 1 && (hintObj = ((IMessage) selectedValues[0]).getHintObject()) != null) {
+        SNodeId nodeId = hintObj instanceof SNodePointer ? ((SNodePointer) hintObj).getNodeId(): null;
+        if (nodeId != null) {
+          group.add(new CopyToClipboardAction("Copy Node Id").setTextToCopy(nodeId.toString()));
         }
-      });
+      }
     }
 
     group.addSeparator();
@@ -568,6 +577,29 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   private boolean hasHintObjects() {
     return myHintObjects > 0;
+  }
+
+  private static class CopyToClipboardAction extends AnAction {
+    private String myTextToCopy;
+
+    CopyToClipboardAction(String actionTitle) {
+      super(actionTitle);
+    }
+    public CopyToClipboardAction setTextToCopy(String textToCopy) {
+      myTextToCopy = textToCopy;
+      return this;
+    }
+
+    @Override
+    public void update(AnActionEvent e) {
+      super.update(e);
+      e.getPresentation().setEnabled(myTextToCopy != null);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+      CopyPasteManagerEx.getInstance().setContents(new StringSelection(myTextToCopy));
+    }
   }
 
   private class MyToggleAction extends ToggleAction {

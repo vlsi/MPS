@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.smodel.EventsCollector;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -16,7 +15,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -52,8 +50,10 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -70,17 +70,16 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class ChangesTracking {
-  private Project myProject;
-  private CurrentDifference myDifference;
-  private SimpleCommandQueue myQueue;
-  private EditableSModel myModelDescriptor;
-  private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
-  private EventsCollector myEventsCollector = new ChangesTracking.MyEventsCollector();
+  private final Project myProject;
+  private final CurrentDifference myDifference;
+  private final SimpleCommandQueue myQueue;
+  private final EditableSModel myModelDescriptor;
+  private final CurrentDifferenceRegistry myRegistry;
+  private final ModelEventListener myEventCollector = new ChangesTracking.MyEventsCollector();
   private boolean myDisposed = false;
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();
   private Set<ModelChange> myMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
@@ -89,24 +88,20 @@ public class ChangesTracking {
   private FileStatus myStatusOnLastUpdate;
   private EventConsumingMapping myEventConsumingMapping = new EventConsumingMapping();
 
-  public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
+  public ChangesTracking(@NotNull CurrentDifferenceRegistry registry, @NotNull CurrentDifference difference) {
     myDifference = difference;
-    myProject = project;
+    myProject = registry.getProject();
     myModelDescriptor = myDifference.getModelDescriptor();
-    myQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
-    synchronized (this) {
-      SModelRepository.getInstance().addModelRepositoryListener(myModelListener);
-      myEventsCollector.add(myModelDescriptor);
-    }
+    myQueue = registry.getCommandQueue();
+    myRegistry = registry;
+    registry.addEventCollector(myModelDescriptor, myEventCollector);
   }
 
   public void dispose() {
     synchronized (this) {
       if (!(myDisposed)) {
         myDisposed = true;
-        SModelRepository.getInstance().removeModelRepositoryListener(myModelListener);
-        myEventsCollector.remove(myModelDescriptor);
-        myEventsCollector.dispose();
+        myRegistry.removeEventCollector(myModelDescriptor, myEventCollector);
         myQueue.runTask(new Runnable() {
           public void run() {
             myDifference.removeChangeSet();
@@ -382,14 +377,13 @@ public class ChangesTracking {
     return null;
   }
 
-  public class MyEventsCollector extends EventsCollector {
-    public MyEventsCollector() {
-    }
+  public class MyEventsCollector implements ModelEventListener {
+
 
     @Override
-    protected void eventsHappened(List<SModelEvent> events) {
+    public void handle(Collection<SModelEvent> events) {
       Map<SNode, Set<String>> chlidChanged = MapSequence.fromMap(new HashMap<SNode, Set<String>>());
-      for (SModelEvent event : ListSequence.fromList(events)) {
+      for (SModelEvent event : CollectionSequence.fromCollection(events)) {
         if (event instanceof SModelPropertyEvent) {
           processProperty((SModelPropertyEvent) event);
         } else if (event instanceof SModelReferenceEvent) {
@@ -578,18 +572,6 @@ public class ChangesTracking {
           }
         }
       }, null, event);
-    }
-  }
-
-  private class MyModelListener extends SModelRepositoryAdapter {
-    public MyModelListener() {
-    }
-
-    @Override
-    public void modelsReplaced(Set<SModel> descriptors) {
-      if (descriptors.contains(myModelDescriptor)) {
-        scheduleFullUpdate();
-      }
     }
   }
 

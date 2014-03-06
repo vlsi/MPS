@@ -21,7 +21,6 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
@@ -47,14 +46,14 @@ public class GeneratorUtil {
     return args.toArray(new SNode[args.size()]);
   }
 
-  private static String[] getParameters(SNode templateCall, ITemplateGenerator generator) {
+  private static String[] getParameters(SNode templateCall, IGeneratorLogger log) {
     final SNode template = RuleUtil.getTemplateCall_Template(templateCall);
     if (template == null) {
       return null;
     }
     String[] templateDeclarationParameterNames = RuleUtil.getTemplateDeclarationParameterNames(template);
     if(templateDeclarationParameterNames == null) {
-      generator.showErrorMessage(null, template, "broken template");
+      log.error(template.getReference(), "broken template");
       return null;
     }
     return templateDeclarationParameterNames.length == 0 ? null : templateDeclarationParameterNames;
@@ -72,14 +71,14 @@ public class GeneratorUtil {
   @NotNull
   static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
     final SNode[] arguments = getArguments(templateCall);
-    final ITemplateGenerator generator = env.getGenerator();
-    final String[] parameters = getParameters(templateCall, generator);
+    final IGeneratorLogger log = env.getLogger();
+    final String[] parameters = getParameters(templateCall, log);
 
     if (arguments == null && parameters == null) {
       return outerContext.subContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
-      generator.showErrorMessage(outerContext.getInput(), templateCall, "number of arguments doesn't match template");
+      log.error(templateCall.getReference(), "number of arguments doesn't match template", GeneratorUtil.describeInput(outerContext));
       return outerContext.subContext(newInputNode);
     }
 
@@ -92,14 +91,16 @@ public class GeneratorUtil {
       if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
         SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
         if (parameter == null) {
-          generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
+          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference",
+              GeneratorUtil.describeInput(outerContext));
         } else {
           value = outerContext.getVariable(parameter.getName());
         }
       } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
         String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
         if (patternVar == null) {
-          generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
+          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference",
+              GeneratorUtil.describeInput(outerContext));
         } else {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(patternVar);
@@ -112,7 +113,8 @@ public class GeneratorUtil {
           try {
             value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
           } catch(IllegalArgumentException ex) {
-            generator.showErrorMessage(outerContext.getInput(), templateCall, "cannot evaluate template argument #" + (i + 1));
+            log.error(templateCall.getReference(), String.format("cannot evaluate template argument #%d: %s", i + 1, ex.toString()),
+                GeneratorUtil.describeInput(outerContext));
           }
         }
       }
@@ -148,6 +150,10 @@ public class GeneratorUtil {
         indent.deleteCharAt(indent.length() - 1);
       }
     }
+  }
+
+  public static ProblemDescription describeInput(TemplateContext ctx) {
+    return ctx == null ? null : describeIfExists(ctx.getInput(), "input node");
   }
 
   public static ProblemDescription describe(SNode node, String nodeRole) {
