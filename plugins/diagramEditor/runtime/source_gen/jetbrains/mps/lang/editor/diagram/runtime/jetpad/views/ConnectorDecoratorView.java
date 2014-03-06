@@ -34,10 +34,10 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
     return errorView;
   }
 
-  protected void registerErrorViewSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+  protected void registerErrorViewSynchronizers(Mapper.SynchronizersConfiguration configuration, final CrossView errorView) {
     configuration.add(Synchronizers.forProperty(myValid, new Runnable() {
       public void run() {
-        getErrorView().centerLocation.set(getErrorPoint());
+        errorView.centerLocation.set(getErrorPoint());
       }
     }));
   }
@@ -48,10 +48,10 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
 
 
 
-  protected void registerSelectionViewSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+  protected void registerSelectionViewSynchronizers(Mapper.SynchronizersConfiguration configuration, final GroupView selectionView) {
     configuration.add(Synchronizers.forProperty(myValid, new Runnable() {
       public void run() {
-        updateSelectionView();
+        updateSelectionView(selectionView);
       }
     }));
   }
@@ -85,14 +85,14 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
 
   }
 
-  private void updateSelectionView() {
-    getSelectionView().children().clear();
+  private void updateSelectionView(GroupView selectionView) {
+    selectionView.children().clear();
     for (Segment segment : Sequence.fromIterable(mySegments)) {
       if (neq_2z6621_a0a0b0m(segment, Sequence.fromIterable(mySegments).last())) {
-        getSelectionView().children().add(createSelectionRect(segment.end));
+        selectionView.children().add(createSelectionRect(segment.end));
       }
       if (segment.length() > SELECTION_SQUARE_HALF_WIDTH * 20) {
-        getSelectionView().children().add(createSelectionRect(new Vector((segment.end.x + segment.start.x) / 2, (segment.end.y + segment.start.y) / 2)));
+        selectionView.children().add(createSelectionRect(new Vector((segment.end.x + segment.start.x) / 2, (segment.end.y + segment.start.y) / 2)));
       }
     }
   }
