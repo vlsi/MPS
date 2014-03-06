@@ -800,6 +800,10 @@
       <property name="name" nameId="tpck.1169194664001" value="generationMaxHeapSizeInMb" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="353547257300482730" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="generationMaxPermSizeInMb" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469340766" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSourcePath" />
