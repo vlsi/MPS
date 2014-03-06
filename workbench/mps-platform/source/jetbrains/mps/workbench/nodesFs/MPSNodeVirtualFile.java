@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -43,6 +45,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   private SNodeReference myNode;
   private String myPath;
   private String myName;
+  private String myPresentationName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
 
@@ -63,10 +66,18 @@ public class MPSNodeVirtualFile extends VirtualFile {
         SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
-          myName = "";
+          myName = myPresentationName = "";
           myPath = "";
         } else {
-          myName = "" + node.getPresentation();
+          myName = myPresentationName = String.valueOf(node.getPresentation());
+          if (node.getModel() != null && node.getModel().getModule() instanceof TransientModelsModule) {
+            // it's common to open same node from different generation steps (transient models)
+            // and to tell nodes from different steps we append model's identification
+            final String s = SModelStereotype.getStereotype(node.getModel());
+            if (!s.isEmpty()) {
+              myPresentationName = myName + '@' + s;
+            }
+          }
           myPath = NODE_PREFIX + NiceReferenceSerializer.serializeNode(node);
         }
       }
@@ -97,6 +108,11 @@ public class MPSNodeVirtualFile extends VirtualFile {
   @NonNls
   public String getName() {
     return myName;
+  }
+
+  @Override
+  public String getPresentableName() {
+    return myPresentationName;
   }
 
   @Override
