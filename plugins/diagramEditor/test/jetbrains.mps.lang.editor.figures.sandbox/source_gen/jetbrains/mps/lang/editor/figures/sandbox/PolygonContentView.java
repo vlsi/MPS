@@ -111,24 +111,6 @@ public class PolygonContentView extends PolygonView {
     myPolyLine.points.add(new Vector(FOLDING_SIZE, 0));
   }
 
-  @Override
-  protected Rectangle calculateBounds() {
-    // TODO: remove this method (bug in JetPad) 
-    Vector min = null;
-    Vector max = null;
-
-    for (Vector p : points) {
-      min = (min == null ? p : min.min(p));
-      max = (max == null ? p : max.max(p));
-    }
-
-    if (min == null) {
-      return null;
-    } else {
-      return new Rectangle(min, max.sub(min));
-    }
-  }
-
   public Property<String> text() {
     return myCell.text();
   }
