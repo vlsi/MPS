@@ -9,7 +9,8 @@ import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.transform.LazyConditionalItem2CollectionTransformer;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.collections.SubList;
+import jetbrains.jetpad.projectional.diagram.util.SubList;
+import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
@@ -80,7 +81,11 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
           protected ErrorView getItem() {
             return getErrorView();
           }
-        }, new SubList(children()), new MapperFactory<ErrorView, View>() {
+        }, new SubList<View>() {
+          protected ObservableList<View> getBaseList() {
+            return children();
+          }
+        }, new MapperFactory<ErrorView, View>() {
           public Mapper<? extends ErrorView, ? extends View> createMapper(ErrorView errorView) {
             return new Mapper<ErrorView, View>(errorView, errorView) {
               @Override
@@ -95,7 +100,11 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
           protected SelectionView getItem() {
             return getSelectionView();
           }
-        }, new SubList(children()), new MapperFactory<SelectionView, View>() {
+        }, new SubList<View>() {
+          protected ObservableList<View> getBaseList() {
+            return children();
+          }
+        }, new MapperFactory<SelectionView, View>() {
           public Mapper<? extends SelectionView, ? extends View> createMapper(SelectionView selectionView) {
             return new Mapper<SelectionView, View>(selectionView, selectionView) {
               @Override
