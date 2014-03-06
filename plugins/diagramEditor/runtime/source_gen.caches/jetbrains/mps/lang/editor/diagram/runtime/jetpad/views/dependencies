@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" file="AbstractDecoratorView.java">
+    <classNode dependClassName="com.google.common.base.Supplier" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.System" />
@@ -9,15 +10,16 @@
     <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
+    <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableSingleItemList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
+    <classNode dependClassName="jetbrains.jetpad.model.transform.Transformers" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.util.SubList" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.transform.LazyConditionalItem2CollectionTransformer" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>

@@ -8,7 +8,9 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.transform.LazyConditionalItem2CollectionTransformer;
+import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
+import jetbrains.jetpad.model.transform.Transformers;
+import com.google.common.base.Supplier;
 import jetbrains.jetpad.projectional.diagram.util.SubList;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.mapper.MapperFactory;
@@ -77,11 +79,11 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forObservableRole(this, hasError, new LazyConditionalItem2CollectionTransformer<ErrorView>() {
-          protected ErrorView getItem() {
+        configuration.add(Synchronizers.forObservableRole(this, new ObservableSingleItemList<ErrorView>(), Transformers.addFirstWithCondition(new Supplier<ErrorView>() {
+          public ErrorView get() {
             return getErrorView();
           }
-        }, new SubList<View>() {
+        }, hasError), new SubList<View>() {
           protected ObservableList<View> getBaseList() {
             return children();
           }
@@ -96,11 +98,11 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
             };
           }
         }));
-        configuration.add(Synchronizers.forObservableRole(this, isSelected, new LazyConditionalItem2CollectionTransformer<SelectionView>() {
-          protected SelectionView getItem() {
+        configuration.add(Synchronizers.forObservableRole(this, new ObservableSingleItemList<SelectionView>(), Transformers.addFirstWithCondition(new Supplier<SelectionView>() {
+          public SelectionView get() {
             return getSelectionView();
           }
-        }, new SubList<View>() {
+        }, isSelected), new SubList<View>() {
           protected ObservableList<View> getBaseList() {
             return children();
           }
