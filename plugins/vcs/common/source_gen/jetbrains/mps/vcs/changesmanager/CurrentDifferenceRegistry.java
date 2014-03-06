@@ -22,6 +22,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
@@ -154,11 +155,11 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     return myGlobalBroadcaster;
   }
 
-  /*package*/ void addEventCollector(SModel model, ModelEventListener listener) {
+  /*package*/ void addEventCollector(SModel model, SModelCommandListener listener) {
     myEventsCollector.addListener(model, listener);
   }
 
-  /*package*/ void removeEventCollector(SModel model, ModelEventListener listener) {
+  /*package*/ void removeEventCollector(SModel model, SModelCommandListener listener) {
     myEventsCollector.removeListener(model, listener);
   }
 
@@ -209,9 +210,9 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   private static class MyEventsCollector extends EventsCollector {
-    private final MultiMap<SModelReference, ModelEventListener> myListeners = new MultiMap<SModelReference, ModelEventListener>();
+    private final MultiMap<SModelReference, SModelCommandListener> myListeners = new MultiMap<SModelReference, SModelCommandListener>();
 
-    public void addListener(SModel model, ModelEventListener listener) {
+    public void addListener(SModel model, SModelCommandListener listener) {
       if (!(myListeners.containsKey(model.getReference()))) {
         //  first time we see the model, tell EventCollector we are interested 
         add(model);
@@ -219,7 +220,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       myListeners.putValue(model.getReference(), listener);
     }
 
-    private void removeListener(SModel model, ModelEventListener listener) {
+    private void removeListener(SModel model, SModelCommandListener listener) {
       myListeners.remove(model.getReference(), listener);
       if (!(myListeners.containsKey(model.getReference()))) {
         // no more listeners, no reason to listen any more 
@@ -235,13 +236,13 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
         modelToEvents.putValue(mr, event);
       }
       for (SModelReference mr : SetSequence.fromSet(modelToEvents.keySet())) {
-        Collection<ModelEventListener> listeners = myListeners.get(mr);
+        Collection<SModelCommandListener> listeners = myListeners.get(mr);
         if (listeners == null) {
           continue;
         }
-        final Collection<SModelEvent> eventsForTheModel = modelToEvents.get(mr);
-        for (ModelEventListener l : new ArrayList<ModelEventListener>(listeners)) {
-          l.handle(eventsForTheModel);
+        final ArrayList<SModelEvent> eventsForTheModel = new ArrayList<SModelEvent>(modelToEvents.get(mr));
+        for (SModelCommandListener l : new ArrayList<SModelCommandListener>(listeners)) {
+          l.eventsHappenedInCommand(eventsForTheModel);
         }
       }
     }
