@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,19 @@
  */
 package jetbrains.mps.smodel.event;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author Kostik
  */
+@Immutable
 public class SModelPropertyEvent extends SModelEvent {
-  private String myPropertyName;
-  private SNode myNode;
-  private String myOldPropertyValue;
-  private String myNewPropertyValue;
+  private final String myPropertyName;
+  private final SNode myNode;
+  private final String myOldPropertyValue;
+  private final String myNewPropertyValue;
 
   public SModelPropertyEvent(SModel model, String propertyName, SNode node, String oldPropertyValue, String newPropertyValue) {
     super(model);
