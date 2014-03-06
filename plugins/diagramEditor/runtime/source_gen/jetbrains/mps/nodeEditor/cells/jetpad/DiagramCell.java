@@ -16,11 +16,15 @@ import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import javax.swing.JPanel;
+import jetbrains.jetpad.model.event.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.GridConstraints;
+import java.awt.event.FocusListener;
+import java.awt.event.FocusEvent;
 import java.awt.Dimension;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -31,14 +35,12 @@ import jetbrains.jetpad.event.Key;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -59,6 +61,12 @@ import java.util.ListIterator;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import javax.swing.Icon;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
@@ -74,6 +82,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private ViewTrait myHandlingTrait;
   private DiagramPalette myPalettePanel;
   private JPanel myPanel;
+  private Registration myRegistration;
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
@@ -100,6 +109,16 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       getRootMapper().attachRoot();
       myComponent.container(getRootMapper().getTarget());
       getDecorationRootMapper().attachRoot();
+      myComponent.addFocusListener(new FocusListener() {
+
+
+        public void focusGained(FocusEvent event) {
+        }
+
+        public void focusLost(FocusEvent focusEvent) {
+          hidePatternEditor();
+        }
+      });
     }
     return myComponent;
 
@@ -147,55 +166,77 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     getComponent().setLocation(myX, myY);
   }
 
+  /*package*/ void setPatternEditorX(int x) {
+    myPatternEditorX = x;
+  }
+
+  /*package*/ void setPatternEditorY(int y) {
+    myPatternEditorY = y;
+  }
+
+  /*package*/ void setExternalTrait(ViewTrait trait) {
+    if (trait == null) {
+      myRegistration = getRootMapper().getTarget().root().addTrait(getEventHandlingTrait());
+    } else {
+      myRegistration.remove();
+      getRootMapper().getTarget().root().addTrait(trait);
+    }
+  }
+
   @Override
   public boolean isDrawBorder() {
     return false;
   }
 
-  public DiagramPalette getPalette() {
+  private DiagramPalette getPalette() {
     if (myPalettePanel == null) {
-      myPalettePanel = new DiagramPalette(this);
+      myPalettePanel = new DiagramPalette(this, createPaletteBlockSubstituteInfoPartExts(), createPaletteConnectorSubstituteInfoPartExts());
     }
     return myPalettePanel;
   }
 
-  private ViewTrait getEventHandlingTrate() {
-    this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
-      public void handle(View view, MouseEvent event) {
-        if (view.focused().get()) {
-          hidePatternEditor();
-        } else {
-          view.container().focusedView().set(view);
-        }
-        View viewUnderMouse = view.viewAt(event.location());
-        if (viewUnderMouse != getRootMapper().getTarget().root()) {
-          return;
-        }
-        createNewDiagramElement(event.x(), event.y());
-        event.consume();
-      }
-    }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
-      public void handle(View view, KeyEvent event) {
-        if (mySubstituteEditorVisible) {
-          getEditor().processKeyPressed(getAWTKeyEvent(event, false));
-          event.consume();
-          return;
-        }
+  protected abstract SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts();
 
-        if (event.key() == Key.ESCAPE) {
-          view.container().focusedView().set(null);
+  protected abstract SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts();
+
+  private ViewTrait getEventHandlingTrait() {
+    if (myHandlingTrait == null) {
+      this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+        public void handle(View view, MouseEvent event) {
+          if (view.focused().get()) {
+            hidePatternEditor();
+          } else {
+            view.container().focusedView().set(view);
+          }
+          View viewUnderMouse = view.viewAt(event.location());
+          if (viewUnderMouse != getRootMapper().getTarget().root()) {
+            return;
+          }
+          createNewDiagramElement(event.x(), event.y());
           event.consume();
         }
-      }
-    }).on(ViewEvents.KEY_TYPED, new ViewEventHandler<KeyEvent>() {
-      public void handle(View view, KeyEvent event) {
-        if (!(mySubstituteEditorVisible)) {
-          return;
+      }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
+        public void handle(View view, KeyEvent event) {
+          if (mySubstituteEditorVisible) {
+            getEditor().processKeyPressed(getAWTKeyEvent(event, false));
+            event.consume();
+            return;
+          }
+          if (event.key() == Key.ESCAPE) {
+            view.container().focusedView().set(null);
+            event.consume();
+          }
         }
-        getEditor().processKeyTyped(getAWTKeyEvent(event, false));
-        event.consume();
-      }
-    }).build();
+      }).on(ViewEvents.KEY_TYPED, new ViewEventHandler<KeyEvent>() {
+        public void handle(View view, KeyEvent event) {
+          if (!(mySubstituteEditorVisible)) {
+            return;
+          }
+          getEditor().processKeyTyped(getAWTKeyEvent(event, false));
+          event.consume();
+        }
+      }).build();
+    }
     return this.myHandlingTrait;
   }
 
@@ -245,7 +286,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
         for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
-          result.add(new NodeSubstituteActionWrapper(action) {
+          result.add(new DiagramCell.DiagramSubstituteActionWraper(action) {
             @Override
             public boolean canSubstitute(String string) {
               return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
@@ -290,7 +331,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             return result;
           }
         };
-        return Collections.<SubstituteAction>singletonList(action);
+        return Collections.<SubstituteAction>singletonList(new DiagramCell.DiagramSubstituteActionWraper(action));
       }
     };
   }
@@ -303,19 +344,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  /*package*/ int getPatternEditorX() {
-    return myPatternEditorX;
-  }
-
-  /*package*/ int getPatternEditorY() {
-    return myPatternEditorY;
-  }
-
-
-
   @Override
   public SubstituteInfo getSubstituteInfo() {
-    if (getPalette().isActive()) {
+    if (getPalette().getSubstituteInfo() != null) {
       return getPalette().getSubstituteInfo();
     }
     return super.getSubstituteInfo();
@@ -329,7 +360,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       @Override
       public void activate(Window window, Point point, Dimension dimension) {
         Dimension actualDimension = new Dimension(100, 0);
-        point.translate(myPatternEditorX, myPatternEditorY);
+        point.translate(myPatternEditorX + getContainerComponent().getX(), myPatternEditorY + getContainerComponent().getY());
         super.activate(window, point, actualDimension);
         mySubstituteEditorVisible = true;
       }
@@ -445,7 +476,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     });
     result.root().addTrait(RootTrait.ROOT_TRAIT);
-    result.root().addTrait(getEventHandlingTrate());
+    this.myRegistration = result.root().addTrait(getEventHandlingTrait());
     return result;
   }
 
@@ -488,6 +519,26 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       syncToNextNode((cell instanceof BlockCell ? blocksIterator : connectorsIterator), (cell instanceof BlockCell ? existingBlocks : existingConnectors), nextElement, cell);
     }
   }
+
+  /*package*/ static class DiagramSubstituteActionWraper extends NodeSubstituteActionWrapper {
+    private DiagramSubstituteActionWraper(SubstituteAction action) {
+      super(action);
+    }
+
+    @Override
+    public Icon getIconFor(String string) {
+      Icon icon;
+      SNode iconNode = getIconNode(string);
+      if (iconNode != null) {
+        icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((isReferentPresentation()))) ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode));
+      } else {
+        icon = IdeIcons.DEFAULT_ICON;
+      }
+      return icon;
+    }
+  }
+
+
 
   /*package*/ class ConnectionInfo {
 

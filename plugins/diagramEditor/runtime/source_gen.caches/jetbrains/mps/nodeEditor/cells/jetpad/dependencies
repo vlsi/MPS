@@ -88,6 +88,8 @@
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Window" />
+    <classNode dependClassName="java.awt.event.FocusEvent" />
+    <classNode dependClassName="java.awt.event.FocusListener" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
@@ -102,6 +104,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ListIterator" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.jetpad.event.Key" />
@@ -114,6 +117,7 @@
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.model.event.Registration" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
@@ -128,6 +132,8 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.awt.ViewContainerComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" />
@@ -144,63 +150,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.jetpad.mapper.MapperFactory" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
-  </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCompositeSubstituteInfo" file="DiagramCompositeSubstituteInfo.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CellContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
-  </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramPalette" file="DiagramPalette.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="com.intellij.uiDesigner.core.GridConstraints" />
-    <classNode dependClassName="com.intellij.uiDesigner.core.GridLayoutManager" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.SwingConstants" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CellContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCompositeSubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
@@ -209,9 +158,50 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
-    <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="jetbrains.jetpad.mapper.MapperFactory" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
     <classNode extendsClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramPalette" file="DiagramPalette.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+    <classNode dependClassName="com.intellij.uiDesigner.core.GridConstraints" />
+    <classNode dependClassName="com.intellij.uiDesigner.core.GridLayoutManager" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.SwingConstants" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.BasicCellContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramPaletteButton" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
+    <classNode extendsClassName="javax.swing.JPanel" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramPaletteButton" file="DiagramPaletteButton.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTrait" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" file="EmptyCellLayout.java">
     <classNode dependClassName="java.lang.Iterable" />
