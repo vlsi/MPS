@@ -12,27 +12,27 @@
   </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
