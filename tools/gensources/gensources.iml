@@ -444,8 +444,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/source_gen" isTestSource="false" />
@@ -457,8 +455,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/generator/classes_gen" />
