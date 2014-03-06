@@ -26,6 +26,8 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
+import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
+import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.ModelRefRewriteFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
@@ -44,14 +46,11 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
@@ -60,9 +59,12 @@ import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -90,6 +92,7 @@ class GenerationSession {
   private final ProgressMonitor myProgressMonitor;
   private MPSAppenderBase myLoggingHandler;
   private final RecordingFactory myLogRecorder;
+  private final ModelRefRewriteFactory myMessageModelRefRewrite;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
 
@@ -109,8 +112,9 @@ class GenerationSession {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myProgressMonitor = progressMonitor;
-    myLogRecorder = new RecordingFactory();
-    myLogger = new GenerationSessionLogger(logger, myLogRecorder);
+    myLogRecorder = new RecordingFactory(new BasicFactory());
+    myMessageModelRefRewrite = new ModelRefRewriteFactory(myLogRecorder);
+    myLogger = new GenerationSessionLogger(logger, myMessageModelRefRewrite);
     ttrace = tracer;
     myGenerationOptions = generationOptions;
     myInvokeContext = invocationContext;
@@ -366,6 +370,13 @@ class GenerationSession {
     SModel currentInputModel = inputModel;
     IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
+    final HashMap<SModelReference, SModelReference> modelRefRewriteMap;
+    if (cloneInputModel) {
+      modelRefRewriteMap = new HashMap<SModelReference, SModelReference>();
+      myMessageModelRefRewrite.rewriteWith(modelRefRewriteMap);
+    } else {
+      modelRefRewriteMap = null;
+    }
 
     // -----------------------
     // run pre-processing scripts
@@ -400,6 +411,7 @@ class GenerationSession {
           // rules are blocked for nodes of exposedInputModel, we need to block them against actual input nodes
           BlockedReductionsData.getStepData(mySessionContext).advanceForModelClone(inputModelPrim, myLogger);
         }
+        modelRefRewriteMap.put(inputModelPrim.getReference(), currentInputModel.getReference());
         currentInputModel = inputModelPrim;
       }
       final Pair<Boolean, SModel> applied = applyRules(currentInputModel, currentOutputModel, isPrimary, ruleManager);
