@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" file="AbstractDecoratorView.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
@@ -13,10 +12,7 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.model.transform.Transformers" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.util.SubList" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" file="ConnectorDecoratorView.java">
@@ -34,16 +30,19 @@
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView" />
     <classNode extendsClassName="jetbrains.jetpad.model.event.SimpleEventSource" />
     <classNode extendsClassName="jetbrains.jetpad.model.property.Property" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView" file="CrossView.java">
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
-    <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.LineView" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
@@ -98,7 +97,20 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView" file="ResizeHandleView.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
+    <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
+    <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
+    <classNode dependClassName="jetbrains.jetpad.values.Color" />
+    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView" />
   </dependency>
 </dependenciesRoot>
 

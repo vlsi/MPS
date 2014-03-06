@@ -13,9 +13,6 @@ import jetbrains.jetpad.model.transform.Transformers;
 import jetbrains.jetpad.projectional.diagram.util.SubList;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.projectional.view.PolyLineView;
-import jetbrains.jetpad.values.Color;
 
 public abstract class AbstractDecoratorView<SelectionView extends View, ErrorView extends View> extends GroupView {
   protected static final int SELECTION_SQUARE_HALF_WIDTH = 3;
@@ -29,11 +26,11 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
 
   protected abstract SelectionView createSelectionView();
 
-  protected abstract void registerSelectionViewSynchronizers(Mapper.SynchronizersConfiguration configuration, SelectionView selectionView);
+  protected abstract void registerSelectionViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, SelectionView selectionView);
 
   protected abstract ErrorView createErrorView();
 
-  protected abstract void registerErrorViewSynchronizers(Mapper.SynchronizersConfiguration configuration, ErrorView errorView);
+  protected abstract void registerErrorViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, ErrorView errorView);
 
   private void attachMapper() {
     new Mapper<AbstractDecoratorView, AbstractDecoratorView>(this, this) {
@@ -50,7 +47,7 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
-                registerErrorViewSynchronizers(configuration, getTarget());
+                registerErrorViewSynchronizers(this, configuration, getTarget());
               }
             };
           }
@@ -65,27 +62,12 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
-                registerSelectionViewSynchronizers(configuration, getTarget());
+                registerSelectionViewSynchronizers(this, configuration, getTarget());
               }
             };
           }
         }));
       }
     }.attachRoot();
-  }
-
-
-
-  protected View createSelectionRect(Vector origin) {
-    // TODO: extract separate class SelectionRectangleView from this code 
-    PolyLineView selectionRect = new NonFocusablePolyLineView();
-    selectionRect.background().set(Color.LIGHT_GRAY);
-    selectionRect.color().set(Color.GRAY);
-    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x + SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x + SELECTION_SQUARE_HALF_WIDTH, origin.y + SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y + SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
-    return selectionRect;
   }
 }

@@ -14,7 +14,6 @@ import jetbrains.jetpad.model.event.SimpleEventSource;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 
 public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, CrossView> {
-  private static final int CROSS_LENGTH = 4;
   private Iterable<Segment> mySegments;
   private Property<Boolean> myValid = new ConnectorDecoratorView.EventSourceProperty<Boolean>(Boolean.TRUE);
 
@@ -30,11 +29,10 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
   protected CrossView createErrorView() {
     CrossView errorView = new CrossView();
     errorView.color.set(Color.RED);
-    errorView.segmentLength.set(CROSS_LENGTH);
     return errorView;
   }
 
-  protected void registerErrorViewSynchronizers(Mapper.SynchronizersConfiguration configuration, final CrossView errorView) {
+  protected void registerErrorViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, final CrossView errorView) {
     configuration.add(Synchronizers.forProperty(myValid, new Runnable() {
       public void run() {
         errorView.centerLocation.set(getErrorPoint());
@@ -48,7 +46,7 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
 
 
 
-  protected void registerSelectionViewSynchronizers(Mapper.SynchronizersConfiguration configuration, final GroupView selectionView) {
+  protected void registerSelectionViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, final GroupView selectionView) {
     configuration.add(Synchronizers.forProperty(myValid, new Runnable() {
       public void run() {
         updateSelectionView(selectionView);
@@ -88,11 +86,13 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
   private void updateSelectionView(GroupView selectionView) {
     selectionView.children().clear();
     for (Segment segment : Sequence.fromIterable(mySegments)) {
-      if (neq_2z6621_a0a0b0m(segment, Sequence.fromIterable(mySegments).last())) {
-        selectionView.children().add(createSelectionRect(segment.end));
+      if (neq_2z6621_a0a0b0l(segment, Sequence.fromIterable(mySegments).last())) {
+        ResizeHandleView handleView = new ResizeHandleView(segment.end);
+        selectionView.children().add(handleView);
       }
       if (segment.length() > SELECTION_SQUARE_HALF_WIDTH * 20) {
-        selectionView.children().add(createSelectionRect(new Vector((segment.end.x + segment.start.x) / 2, (segment.end.y + segment.start.y) / 2)));
+        ResizeHandleView handleView = new ResizeHandleView(new Vector((segment.end.x + segment.start.x) / 2, (segment.end.y + segment.start.y) / 2));
+        selectionView.children().add(handleView);
       }
     }
   }
@@ -117,7 +117,7 @@ public class ConnectorDecoratorView extends AbstractDecoratorView<GroupView, Cro
     }
   }
 
-  private static boolean neq_2z6621_a0a0b0m(Object a, Object b) {
+  private static boolean neq_2z6621_a0a0b0l(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
 }
