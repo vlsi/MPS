@@ -178,7 +178,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     if (trait == null) {
       myRegistration = getRootMapper().getTarget().root().addTrait(getEventHandlingTrait());
     } else {
-      myRegistration.remove();
+      check_xnhqai_a0a0a0ab(myRegistration);
       getRootMapper().getTarget().root().addTrait(trait);
     }
   }
@@ -607,4 +607,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
+
+  private static void check_xnhqai_a0a0a0ab(Registration checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.remove();
+    }
+
+  }
 }
