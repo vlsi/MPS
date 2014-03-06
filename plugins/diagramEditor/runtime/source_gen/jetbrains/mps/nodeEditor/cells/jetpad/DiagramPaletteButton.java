@@ -4,21 +4,36 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import javax.swing.Icon;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import javax.swing.Icon;
 import java.util.List;
 import java.util.Collections;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.MouseEvent;
+import jetbrains.jetpad.projectional.view.View;
 
 public class DiagramPaletteButton extends ToggleAction {
   private boolean mySelected;
   private DiagramPalette myPalette;
   private SubstituteAction mySubstituteAction;
+  private ViewTrait myHandlingTrait;
+  private DiagramCell myDiagramCell;
+  private AbstractNodeSubstituteInfo mySubstituteInfo;
 
   /*package*/ DiagramPaletteButton(DiagramPalette palette, SubstituteAction substituteAction, String text, String description, Icon icon) {
     super(text, description, icon);
     myPalette = palette;
     mySubstituteAction = substituteAction;
+    myDiagramCell = myPalette.getDiagramCell();
+    mySubstituteInfo = new AbstractNodeSubstituteInfo(myDiagramCell.getContext()) {
+      protected List<SubstituteAction> createActions() {
+        return Collections.singletonList(mySubstituteAction);
+      }
+    };
   }
 
 
@@ -30,17 +45,46 @@ public class DiagramPaletteButton extends ToggleAction {
   public void setSelected(AnActionEvent event, boolean isSelected) {
     if (event != null) {
       if (!(mySelected) && isSelected) {
-        myPalette.setSubstituteInfo(new AbstractNodeSubstituteInfo(myPalette.getDiagramCell().getContext()) {
-          protected List<SubstituteAction> createActions() {
-            return Collections.singletonList(mySubstituteAction);
-          }
-        });
-        myPalette.unselectActionWhichWasSelected(this);
+        select();
       } else if (mySelected && !(isSelected)) {
-        myPalette.unselectActionWhichWasSelected();
-        myPalette.setSubstituteInfo(null);
+        unselect();
       }
     }
     mySelected = isSelected;
   }
+
+  private void select() {
+    myPalette.setSubstituteInfo(mySubstituteInfo);
+    myPalette.unselectActionWhichWasSelected(this);
+    myDiagramCell.setExternalTrait(getEventHandlingTrait());
+  }
+
+  private void unselect() {
+    myPalette.unselectActionWhichWasSelected();
+    myPalette.setSubstituteInfo(null);
+    myDiagramCell.setExternalTrait(null);
+  }
+
+  private ViewTrait getEventHandlingTrait() {
+    if (myHandlingTrait == null) {
+      this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+        public void handle(View view, MouseEvent event) {
+          if (!(view.focused().get())) {
+            view.container().focusedView().set(view);
+          }
+          View viewUnderMouse = view.viewAt(event.location());
+          if (viewUnderMouse != myDiagramCell.getRootMapper().getTarget().root()) {
+            return;
+          }
+          myDiagramCell.createNewDiagramElement(event.x(), event.y());
+          unselect();
+          mySelected = false;
+          event.consume();
+        }
+      }).build();
+    }
+    return this.myHandlingTrait;
+  }
+
+
 }

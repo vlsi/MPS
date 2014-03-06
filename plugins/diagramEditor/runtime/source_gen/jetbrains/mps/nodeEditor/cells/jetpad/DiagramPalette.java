@@ -11,9 +11,9 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.ToggleAction;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.JLabel;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -33,7 +33,7 @@ public class DiagramPalette extends JPanel {
   private List<SubstituteAction> myAllConnectorSubstituteActions = ListSequence.fromList(new ArrayList<SubstituteAction>());
   private ToggleAction mySelectedToggleAction;
 
-  public DiagramPalette(DiagramCell diagramCell) {
+  public DiagramPalette(DiagramCell diagramCell, SubstituteInfoPartExt[] blockExts, SubstituteInfoPartExt[] connectorExts) {
     super(new GridLayoutManager(4, 1));
     myDiagramCell = diagramCell;
     GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
@@ -45,18 +45,20 @@ public class DiagramPalette extends JPanel {
     add(new JLabel("Connectors"), constraints);
     constraints.setRow(3);
     add(myConnectorActionPanel, constraints);
+    setAllBlockSubstituteInfoPartExt(blockExts);
+    setAllConnectorSubstituteInfoPartExt(connectorExts);
   }
 
 
 
-  public void setAllBlockSubstituteInfoPartExt(SubstituteInfoPartExt[] exts) {
+  private void setAllBlockSubstituteInfoPartExt(SubstituteInfoPartExt[] exts) {
     for (SubstituteInfoPartExt ext : exts) {
       ListSequence.fromList(myAllBlockSubstituteActions).addSequence(ListSequence.fromList(ext.createActions(new BasicCellContext(myDiagramCell.getSNode()), myDiagramCell.getContext())));
     }
     updateActions(myBlockActionGroup, myAllBlockSubstituteActions, myBlockActionPanel);
   }
 
-  public void setAllConnectorSubstituteInfoPartExt(SubstituteInfoPartExt[] exts) {
+  private void setAllConnectorSubstituteInfoPartExt(SubstituteInfoPartExt[] exts) {
     for (SubstituteInfoPartExt ext : exts) {
       ListSequence.fromList(myAllConnectorSubstituteActions).addSequence(ListSequence.fromList(ext.createActions(new BasicCellContext(myDiagramCell.getSNode()), myDiagramCell.getContext())));
     }

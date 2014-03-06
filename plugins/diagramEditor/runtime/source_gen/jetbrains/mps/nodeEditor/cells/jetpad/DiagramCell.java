@@ -16,6 +16,7 @@ import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import javax.swing.JPanel;
+import jetbrains.jetpad.model.event.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -23,6 +24,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import java.awt.event.FocusListener;
 import java.awt.event.FocusEvent;
 import java.awt.Dimension;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -33,7 +35,6 @@ import jetbrains.jetpad.event.Key;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
@@ -81,6 +82,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private ViewTrait myHandlingTrait;
   private DiagramPalette myPalettePanel;
   private JPanel myPanel;
+  private Registration myRegistration;
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
@@ -164,54 +166,77 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     getComponent().setLocation(myX, myY);
   }
 
+  /*package*/ void setPatternEditorX(int x) {
+    myPatternEditorX = x;
+  }
+
+  /*package*/ void setPatternEditorY(int y) {
+    myPatternEditorY = y;
+  }
+
+  /*package*/ void setExternalTrait(ViewTrait trait) {
+    if (trait == null) {
+      myRegistration = getRootMapper().getTarget().root().addTrait(getEventHandlingTrait());
+    } else {
+      myRegistration.remove();
+      getRootMapper().getTarget().root().addTrait(trait);
+    }
+  }
+
   @Override
   public boolean isDrawBorder() {
     return false;
   }
 
-  public DiagramPalette getPalette() {
+  private DiagramPalette getPalette() {
     if (myPalettePanel == null) {
-      myPalettePanel = new DiagramPalette(this);
+      myPalettePanel = new DiagramPalette(this, createPaletteBlockSubstituteInfoPartExts(), createPaletteConnectorSubstituteInfoPartExts());
     }
     return myPalettePanel;
   }
 
+  protected abstract SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts();
+
+  protected abstract SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts();
+
   private ViewTrait getEventHandlingTrait() {
-    this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
-      public void handle(View view, MouseEvent event) {
-        if (view.focused().get()) {
-          hidePatternEditor();
-        } else {
-          view.container().focusedView().set(view);
-        }
-        View viewUnderMouse = view.viewAt(event.location());
-        if (viewUnderMouse != getRootMapper().getTarget().root()) {
-          return;
-        }
-        createNewDiagramElement(event.x(), event.y());
-        event.consume();
-      }
-    }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
-      public void handle(View view, KeyEvent event) {
-        if (mySubstituteEditorVisible) {
-          getEditor().processKeyPressed(getAWTKeyEvent(event, false));
-          event.consume();
-          return;
-        }
-        if (event.key() == Key.ESCAPE) {
-          view.container().focusedView().set(null);
+    if (myHandlingTrait == null) {
+      this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+        public void handle(View view, MouseEvent event) {
+          if (view.focused().get()) {
+            hidePatternEditor();
+          } else {
+            view.container().focusedView().set(view);
+          }
+          View viewUnderMouse = view.viewAt(event.location());
+          if (viewUnderMouse != getRootMapper().getTarget().root()) {
+            return;
+          }
+          createNewDiagramElement(event.x(), event.y());
           event.consume();
         }
-      }
-    }).on(ViewEvents.KEY_TYPED, new ViewEventHandler<KeyEvent>() {
-      public void handle(View view, KeyEvent event) {
-        if (!(mySubstituteEditorVisible)) {
-          return;
+      }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
+        public void handle(View view, KeyEvent event) {
+          if (mySubstituteEditorVisible) {
+            getEditor().processKeyPressed(getAWTKeyEvent(event, false));
+            event.consume();
+            return;
+          }
+          if (event.key() == Key.ESCAPE) {
+            view.container().focusedView().set(null);
+            event.consume();
+          }
         }
-        getEditor().processKeyTyped(getAWTKeyEvent(event, false));
-        event.consume();
-      }
-    }).build();
+      }).on(ViewEvents.KEY_TYPED, new ViewEventHandler<KeyEvent>() {
+        public void handle(View view, KeyEvent event) {
+          if (!(mySubstituteEditorVisible)) {
+            return;
+          }
+          getEditor().processKeyTyped(getAWTKeyEvent(event, false));
+          event.consume();
+        }
+      }).build();
+    }
     return this.myHandlingTrait;
   }
 
@@ -451,7 +476,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     });
     result.root().addTrait(RootTrait.ROOT_TRAIT);
-    result.root().addTrait(getEventHandlingTrait());
+    this.myRegistration = result.root().addTrait(getEventHandlingTrait());
     return result;
   }
 

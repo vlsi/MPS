@@ -117,6 +117,7 @@
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.model.event.Registration" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
@@ -190,7 +191,14 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTrait" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramPalette" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
