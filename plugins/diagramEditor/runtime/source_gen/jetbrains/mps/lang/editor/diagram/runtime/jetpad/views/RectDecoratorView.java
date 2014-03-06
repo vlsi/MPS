@@ -26,10 +26,10 @@ public abstract class RectDecoratorView extends AbstractDecoratorView<GroupView,
     return result;
   }
 
-  protected void registerErrorViewSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+  protected void registerErrorViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, final PolyLineView errorView) {
     configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
       public void set(Rectangle bounds) {
-        updatePolylineFrame(getErrorView(), bounds);
+        updatePolylineFrame(errorView, bounds);
       }
     }));
   }
@@ -39,21 +39,21 @@ public abstract class RectDecoratorView extends AbstractDecoratorView<GroupView,
     return result;
   }
 
-  protected void registerSelectionViewSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+  protected void registerSelectionViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, final GroupView selectionView) {
     configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
       public void set(Rectangle bounds) {
-        updateSelectionView(bounds);
+        updateSelectionView(selectionView, bounds);
       }
     }));
   }
 
-  private void updateSelectionView(Rectangle bounds) {
+  private void updateSelectionView(GroupView selectionView, Rectangle bounds) {
     PolyLineView selectionFrame = new NonFocusablePolyLineView();
     updatePolylineFrame(selectionFrame, bounds);
-    getSelectionView().children().clear();
-    getSelectionView().children().add(selectionFrame);
+    selectionView.children().clear();
+    selectionView.children().add(selectionFrame);
     for (Vector point : Sequence.fromIterable(getSelectionPoints(bounds))) {
-      getSelectionView().children().add(createSelectionRect(point));
+      selectionView.children().add(new ResizeHandleView(point));
     }
   }
 

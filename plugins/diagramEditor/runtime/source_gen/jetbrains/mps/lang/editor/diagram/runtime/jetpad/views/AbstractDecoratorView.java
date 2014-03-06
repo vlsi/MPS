@@ -8,19 +8,14 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.transform.LazyConditionalItem2CollectionTransformer;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.collections.SubList;
+import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
+import jetbrains.jetpad.model.transform.Transformers;
+import jetbrains.jetpad.projectional.diagram.util.SubList;
+import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.jetpad.model.event.EventHandler;
-import jetbrains.jetpad.model.property.PropertyChangeEvent;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.projectional.view.PolyLineView;
-import jetbrains.jetpad.values.Color;
 
 public abstract class AbstractDecoratorView<SelectionView extends View, ErrorView extends View> extends GroupView {
   protected static final int SELECTION_SQUARE_HALF_WIDTH = 3;
-  private ErrorView myErrorView;
-  private SelectionView mySelectionView;
   public final Property<Boolean> hasError = new ValueProperty<Boolean>(false);
   public final Property<Boolean> isSelected = new ValueProperty<Boolean>(false);
 
@@ -29,127 +24,50 @@ public abstract class AbstractDecoratorView<SelectionView extends View, ErrorVie
     attachMapper();
   }
 
-  protected SelectionView getSelectionView() {
-    if (mySelectionView == null) {
-      mySelectionView = createSelectionView();
-    }
-    return mySelectionView;
-  }
-
   protected abstract SelectionView createSelectionView();
 
-  protected Mapper<SelectionView, SelectionView> createSelectionViewMapper() {
-    return new Mapper<SelectionView, SelectionView>(getSelectionView(), getSelectionView()) {
-      @Override
-      protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-        super.registerSynchronizers(configuration);
-        registerSelectionViewSynchronizers(configuration);
-      }
-    };
-  }
-
-  protected abstract void registerSelectionViewSynchronizers(Mapper.SynchronizersConfiguration configuration);
-
-  protected ErrorView getErrorView() {
-    if (myErrorView == null) {
-      myErrorView = createErrorView();
-    }
-    return myErrorView;
-  }
+  protected abstract void registerSelectionViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, SelectionView selectionView);
 
   protected abstract ErrorView createErrorView();
 
-  protected Mapper<ErrorView, ErrorView> createErrorViewMapper() {
-    return new Mapper<ErrorView, ErrorView>(getErrorView(), getErrorView()) {
-      @Override
-      protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-        super.registerSynchronizers(configuration);
-        registerErrorViewSynchronizers(configuration);
-      }
-    };
-  }
-
-  protected abstract void registerErrorViewSynchronizers(Mapper.SynchronizersConfiguration configuration);
+  protected abstract void registerErrorViewSynchronizers(Mapper mapper, Mapper.SynchronizersConfiguration configuration, ErrorView errorView);
 
   private void attachMapper() {
     new Mapper<AbstractDecoratorView, AbstractDecoratorView>(this, this) {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forObservableRole(this, hasError, new LazyConditionalItem2CollectionTransformer<ErrorView>() {
-          protected ErrorView getItem() {
-            return getErrorView();
+        configuration.add(Synchronizers.forObservableRole(this, new ObservableSingleItemList<Boolean>(), Transformers.<Boolean,Boolean,Boolean>addFirstWithCondition(Boolean.TRUE, hasError), new SubList<View>() {
+          protected ObservableList<View> getBaseList() {
+            return children();
           }
-        }, new SubList(children()), new MapperFactory<ErrorView, View>() {
-          public Mapper<? extends ErrorView, ? extends View> createMapper(ErrorView errorView) {
-            return new Mapper<ErrorView, View>(errorView, errorView) {
+        }, new MapperFactory<Boolean, View>() {
+          public Mapper<? extends Boolean, ? extends View> createMapper(Boolean error) {
+            return new Mapper<Boolean, ErrorView>(error, createErrorView()) {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
-                registerErrorViewSynchronizers(configuration);
+                registerErrorViewSynchronizers(this, configuration, getTarget());
               }
             };
           }
         }));
-        configuration.add(Synchronizers.forObservableRole(this, isSelected, new LazyConditionalItem2CollectionTransformer<SelectionView>() {
-          protected SelectionView getItem() {
-            return getSelectionView();
+        configuration.add(Synchronizers.forObservableRole(this, new ObservableSingleItemList<Boolean>(), Transformers.<Boolean,Boolean,Boolean>addFirstWithCondition(Boolean.TRUE, isSelected), new SubList<View>() {
+          protected ObservableList<View> getBaseList() {
+            return children();
           }
-        }, new SubList(children()), new MapperFactory<SelectionView, View>() {
-          public Mapper<? extends SelectionView, ? extends View> createMapper(SelectionView selectionView) {
-            return new Mapper<SelectionView, View>(selectionView, selectionView) {
+        }, new MapperFactory<Boolean, View>() {
+          public Mapper<? extends Boolean, ? extends View> createMapper(Boolean selected) {
+            return new Mapper<Boolean, SelectionView>(selected, createSelectionView()) {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
-                registerSelectionViewSynchronizers(configuration);
+                registerSelectionViewSynchronizers(this, configuration, getTarget());
               }
             };
           }
         }));
       }
     }.attachRoot();
-  }
-
-  private void attachHandlers() {
-    hasError.addHandler(new EventHandler<PropertyChangeEvent<Boolean>>() {
-      public void onEvent(PropertyChangeEvent<Boolean> event) {
-        if (event.getNewValue()) {
-          children().add(getErrorView());
-          createErrorViewMapper().attachRoot();
-          System.out.println("Attaching");
-        } else {
-          children().remove(getErrorView());
-          createErrorViewMapper().detachRoot();
-          System.out.println("Detaching");
-        }
-      }
-    });
-    isSelected.addHandler(new EventHandler<PropertyChangeEvent<Boolean>>() {
-      public void onEvent(PropertyChangeEvent<Boolean> event) {
-        if (event.getNewValue()) {
-          children().add(getSelectionView());
-          Mapper<SelectionView, SelectionView> createSelectionViewMapper = createSelectionViewMapper();
-          createSelectionViewMapper.attachRoot();
-        } else {
-          children().remove(getSelectionView());
-          createSelectionViewMapper().detachRoot();
-        }
-      }
-    });
-  }
-
-
-
-  protected View createSelectionRect(Vector origin) {
-    // TODO: extract separate class SelectionRectangleView from this code 
-    PolyLineView selectionRect = new NonFocusablePolyLineView();
-    selectionRect.background().set(Color.LIGHT_GRAY);
-    selectionRect.color().set(Color.GRAY);
-    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x + SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x + SELECTION_SQUARE_HALF_WIDTH, origin.y + SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y + SELECTION_SQUARE_HALF_WIDTH));
-    selectionRect.points.add(new Vector(origin.x - SELECTION_SQUARE_HALF_WIDTH, origin.y - SELECTION_SQUARE_HALF_WIDTH));
-    return selectionRect;
   }
 }

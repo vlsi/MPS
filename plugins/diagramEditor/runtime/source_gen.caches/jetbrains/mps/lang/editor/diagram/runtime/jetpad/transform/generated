@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4ho8jt7teelurop3j27tf33bkyt96ft">
-  <common hash="aip2v61l1th0xmriian5n763wszsris" dependsOnNodes="true" />
-  <source id="4287318874992706172" name="LazyConditionalItem2CollectionTransformer" hash="-ahz2q8dzheug7g783vcqeod5qyseuur">
-    <file name="LazyConditionalItem2CollectionTransformer.java" />
-  </source>
-</dependencies>
-

@@ -21,6 +21,8 @@
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -44,6 +46,8 @@
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar!/" />
     </SOURCES>
   </library>
 </component>
