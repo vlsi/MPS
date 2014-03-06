@@ -52,7 +52,7 @@
         <library jar="../../lib/persistence-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/projectional-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/hybrid-1.0-SNAPSHOT.jar" />
-        <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
+        <sources jar="jetbrains.jetpad-src.jar" descriptor="jetbrains.jetpad.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/jetpad/languages/jetpad/jetbrains.jetpad.jar">
