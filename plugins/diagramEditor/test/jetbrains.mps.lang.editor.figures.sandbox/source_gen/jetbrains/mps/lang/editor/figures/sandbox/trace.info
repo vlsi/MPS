@@ -106,7 +106,7 @@
     <nodeInfo nodeId="8574284199673152736" fileName="PolygonContentView.java" startLine="88" startPosition="5" endLine="89" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8574284199673455468" fileName="PolygonContentView.java" startLine="90" startPosition="38" endLine="91" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8574284199673685662" fileName="PolygonContentView.java" startLine="91" startPosition="108" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8574284199673616353" fileName="PolygonContentView.java" startLine="92" startPosition="34" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8574284199673616353" fileName="PolygonContentView.java" startLine="92" startPosition="34" endLine="93" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5667822611620059840" fileName="PolygonContentView.java" startLine="97" startPosition="52" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5667822611622774847" fileName="PolygonContentView.java" startLine="98" startPosition="19" endLine="99" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5667822611622774839" fileName="PolygonContentView.java" startLine="99" startPosition="44" endLine="100" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -149,7 +149,7 @@
     <scopeInfo nodeId="8574284199673094736" fileName="PolygonContentView.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="8574284199673094737" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8574284199673711803" fileName="PolygonContentView.java" startLine="90" startPosition="38" endLine="93" endPosition="32" />
+    <scopeInfo nodeId="8574284199673711803" fileName="PolygonContentView.java" startLine="90" startPosition="38" endLine="93" endPosition="23" />
     <scopeInfo nodeId="5667822611623762422" fileName="PolygonContentView.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="5667822611623875769" fileName="PolygonContentView.java" startLine="118" startPosition="0" endLine="121" endPosition="0" />
     <scopeInfo nodeId="5667822611620059659" fileName="PolygonContentView.java" startLine="56" startPosition="0" endLine="60" endPosition="0">

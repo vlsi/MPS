@@ -37,6 +37,7 @@ public class SelectionFrameView extends GroupView {
   }
 
   private void updateBorderView(Rectangle bounds, int lineWidth) {
+    // playing with *Shifts in order to draw decorator always around original rectangle 
     int leftShift = lineWidth - lineWidth / 2;
     int dimensionShift = ((lineWidth & 1) == 0 ? lineWidth - 1 : lineWidth);
     Rectangle frameBounds = new Rectangle(bounds.origin.sub(new Vector(leftShift, leftShift)), bounds.dimension.add(new Vector(dimensionShift, dimensionShift)));

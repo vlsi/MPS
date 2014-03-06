@@ -90,7 +90,7 @@ public class PolygonContentView extends PolygonView {
     if (!(myPolyLine.valid().get())) {
       // Calling super.doValidate() once again because myPolyLine can be invalidated as a result of setting 
       // myPreferredSize property 
-      super.doValidate(context);
+      super.validate();
     }
   }
 
