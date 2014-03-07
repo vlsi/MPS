@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.messages;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Date;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * @author Kostik
@@ -94,19 +92,6 @@ public class Message implements IMessage {
   @Override
   public long getCreationTime() {
     return myCreationTime;
-  }
-
-  public String getCreationTimeString() {
-    Date date = new Date(myCreationTime);
-    return expand("" + date.getHours(), 2) + ":" +
-      expand("" + date.getMinutes(), 2) + ":" + expand("" + date.getSeconds(), 2);
-  }
-
-  private String expand(String s, int n) {
-    for (int i = 0; i < n - s.length(); i++) {
-      s = "0" + s;
-    }
-    return s;
   }
 
   /**

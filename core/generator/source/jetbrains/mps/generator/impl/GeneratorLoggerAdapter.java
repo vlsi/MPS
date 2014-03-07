@@ -146,14 +146,12 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
       }
     }
     if (text == null) {
-      text = "An exception was encountered: " + t.getClass().getName() + " (no message) (right-click to see)";
+      text = String.format("An exception was encountered: %s (no message)", t.getClass().getName());
     } else {
-      text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
+      text = String.format("(%s): %s", t.getClass().getName(), text);
     }
     errorReported();
-    Message message = new Message(MessageKind.ERROR, text);
-    message.setException(t);
-    addMessage(message);
+    addMessage(new Message(MessageKind.ERROR, text).setException(t));
   }
 
   protected void errorReported() {
