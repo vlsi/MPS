@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ef91bf702xk4bnhpi1kgdqwlucik6bi">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
+<dependencies version="2" modelHash="-apvmj0tiqs310iepldipi3snwaoexh8">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <common hash="-7fw1iww88ydy79n1saw1te8iyl8m8d1" />
   <source id="7241381882860002146" name="ASMArrayType" hash="-9ez6hkiojzacyh43cao952gt5v9vidn">
     <file name="ASMArrayType.java" />
@@ -9,6 +10,7 @@
     <file name="ASMClassType.java" />
   </source>
   <source id="7241381882860005690" name="ASMMethod" hash="-85hn4h8sv13124rhiqo6bdlfedhm5tt">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMMethod.java" />
   </source>
@@ -16,22 +18,28 @@
     <file name="ASMPrimitiveType.java" />
   </source>
   <source id="7241381882860006793" name="ASMField" hash="6081flwl6bk7qz0cctrxvvhvptb51w9">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMField.java" />
   </source>
   <source id="7241381882860001929" name="SignatureVisitorAdapter" hash="apnnhdaxwukwd87vd0l8bwbffoh8mwb">
+    <dep root="7241381882860007196" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <file name="SignatureVisitorAdapter.java" />
   </source>
   <source id="7241381882860007172" name="ASMVarArgType" hash="xmolv2xia457gjxtna6y2n7qn269f5">
     <file name="ASMVarArgType.java" />
   </source>
   <source id="7241381882860007196" name="NullSignatureVisitor" hash="-ba4yfqium0yerwqsarh4oyo2bpu1ted">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <file name="NullSignatureVisitor.java" />
   </source>
   <source id="7241381882860007300" name="ASMUnboundedType" hash="-55d13it4vopidojyltmqnrv6t5sg6qp">
     <file name="ASMUnboundedType.java" />
   </source>
-  <source id="7241381882860007306" name="TypeUtil" hash="bo38yqpbin55fye2q0lrwz7pjnnzchg">
+  <source id="7241381882860007306" name="TypeUtil" hash="cq6abzp3zvthke94z6m8zms0tuz62k0">
+    <dep root="7241381882860006706" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TypeUtil.java" />
   </source>
@@ -44,14 +52,14 @@
   <source id="7241381882860008701" name="ASMTypeVariable" hash="-dnxhi9a27kmy5sfxc6bpa7uf5huzq8k">
     <file name="ASMTypeVariable.java" />
   </source>
-  <source id="7241381882860008734" name="ASMSuperType" hash="ejavnst6or7yi7mduq1efglv6f7cm7c">
+  <source id="7241381882860008734" name="ASMSuperType" hash="-du67pq7nnx1u2mrjm1ajqzuhbpxitsm">
     <file name="ASMSuperType.java" />
   </source>
   <source id="7241381882860008759" name="ASMFormalTypeParameter" hash="-9u6f06tu1rymmgbofevx3fr083zldf1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMFormalTypeParameter.java" />
   </source>
-  <source id="7241381882860008819" name="ASMExtendsType" hash="81728bta6qemfrkcdgwh8zx1ao66t6t">
+  <source id="7241381882860008819" name="ASMExtendsType" hash="-ddg13sgd0869xnhawuf9opc79uln8qb">
     <file name="ASMExtendsType.java" />
   </source>
   <source id="7241381882860009267" name="ASMParameterizedType" hash="6ab5zmob7hrmmu7rggu6zce0cecmpo6">
@@ -59,12 +67,16 @@
     <file name="ASMParameterizedType.java" />
   </source>
   <source id="7241381882860009362" name="ASMClass" hash="-1bpzyeqtvjuof5eppn57nkho36e6nph">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMClass.java" />
   </source>
   <source id="6849912058625332189" name="ASMAnnotation" hash="-8a0a1doaw1xp1z7poczcfwvpotczlob">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMAnnotation.java" />
+  </source>
+  <source id="3275604661365085736" name="ASMBoundedType" hash="78fepfupca57li9xp0sd49spmrmzlx9">
+    <file name="ASMBoundedType.java" />
   </source>
 </dependencies>
 

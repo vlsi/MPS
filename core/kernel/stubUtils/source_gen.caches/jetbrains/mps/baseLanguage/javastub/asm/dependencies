@@ -16,6 +16,9 @@
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType" file="ASMArrayType.java">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMBoundedType" file="ASMBoundedType.java">
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" file="ASMClass.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -53,7 +56,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType" file="ASMExtendsType.java">
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMBoundedType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMField" file="ASMField.java">
     <classNode dependClassName="java.lang.Object" />
@@ -110,7 +114,8 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMSuperType" file="ASMSuperType.java">
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMBoundedType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMType" file="ASMType.java" />
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable" file="ASMTypeVariable.java">
@@ -146,6 +151,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMBoundedType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMClassType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMFormalTypeParameter" />

@@ -570,17 +570,17 @@ public class ClassifierUpdater {
     }
     if (type instanceof ASMExtendsType) {
       ASMExtendsType e = (ASMExtendsType) type;
-      if (e.getBase() instanceof ASMClassType) {
-        ASMClassType ct = (ASMClassType) e.getBase();
+      if (e.getBound() instanceof ASMClassType) {
+        ASMClassType ct = (ASMClassType) e.getBound();
         if (ct.getName().equals("java.lang.Object")) {
           return _quotation_createNode_ol94f8_a0a1a1a41a52();
         }
       }
-      return _quotation_createNode_ol94f8_a2a41a52(getTypeByASMType(e.getBase(), method, classifier));
+      return _quotation_createNode_ol94f8_a2a41a52(getTypeByASMType(e.getBound(), method, classifier));
     }
     if (type instanceof ASMSuperType) {
       ASMSuperType e = (ASMSuperType) type;
-      return _quotation_createNode_ol94f8_a1a51a52(getTypeByASMType(e.getBase(), method, classifier));
+      return _quotation_createNode_ol94f8_a1a51a52(getTypeByASMType(e.getBound(), method, classifier));
     }
     if (type instanceof ASMUnboundedType) {
       return _quotation_createNode_ol94f8_a0a61a52();

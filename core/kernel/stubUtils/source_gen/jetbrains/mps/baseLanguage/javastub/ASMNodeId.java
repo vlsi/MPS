@@ -97,10 +97,10 @@ public class ASMNodeId {
       return ((ASMTypeVariable) type).getName();
     }
     if (type instanceof ASMExtendsType) {
-      return "? extends " + ASMNodeId.asString(((ASMExtendsType) type).getBase());
+      return "? extends " + ASMNodeId.asString(((ASMExtendsType) type).getBound());
     }
     if (type instanceof ASMSuperType) {
-      return "? super " + ASMNodeId.asString(((ASMSuperType) type).getBase());
+      return "? super " + ASMNodeId.asString(((ASMSuperType) type).getBound());
     }
     if (type instanceof ASMUnboundedType) {
       return "?";
