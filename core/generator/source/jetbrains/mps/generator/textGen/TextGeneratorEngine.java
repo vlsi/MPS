@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.generator.textGen;
 
+import jetbrains.mps.generator.impl.NamedThreadFactory;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -30,8 +30,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class TextGeneratorEngine {
   private final boolean generateDebugInfo;
@@ -43,7 +41,7 @@ public class TextGeneratorEngine {
     this.failIfNoTextgen = failIfNoTextgen;
 
     // availableProcessors()*2 ?
-    this.executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(), new ModelReadThreadFactory());
+    this.executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(), new NamedThreadFactory("textgen-thread-"));
   }
 
   /**
@@ -87,7 +85,7 @@ public class TextGeneratorEngine {
             SModel model = root.getModel();
             TextGenerationResult result = TextGen.generateText(root, failIfNoTextgen, generateDebugInfo, null);
             int modelRootsCount = rootsCounts.get(model);
-            List<TextGenerationResult> modelResults = resultsForModel.get(model);
+            final List<TextGenerationResult> modelResults = resultsForModel.get(model);
 
             synchronized (modelResults) {
               modelResults.add(result);
@@ -116,28 +114,5 @@ public class TextGeneratorEngine {
 
   public static interface GenerateCallback {
     public void modelGenerated(SModel model, List<TextGenerationResult> results);
-  }
-
-  // todo: copied from GenerationTaskPool !
-  private static class ModelReadThreadFactory implements ThreadFactory {
-    final ThreadGroup group;
-    final AtomicInteger threadNumber = new AtomicInteger(1);
-    final String namePrefix;
-
-    ModelReadThreadFactory() {
-      group = Thread.currentThread().getThreadGroup();
-      namePrefix = "textgen-thread-";
-    }
-
-    @Override
-    @NotNull
-    public Thread newThread(@NotNull final Runnable original) {
-      Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
-      if (t.isDaemon())
-        t.setDaemon(false);
-      if (t.getPriority() != Thread.NORM_PRIORITY)
-        t.setPriority(Thread.NORM_PRIORITY);
-      return t;
-    }
   }
 }
