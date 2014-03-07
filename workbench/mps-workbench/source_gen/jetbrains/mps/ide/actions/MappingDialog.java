@@ -35,8 +35,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
-import javax.swing.Icon;
 import jetbrains.mps.smodel.IOperationContext;
+import javax.swing.Icon;
 
 public class MappingDialog extends DialogWrapper {
   private JPanel myMainComponent = new JPanel(new BorderLayout());
@@ -106,10 +106,10 @@ public class MappingDialog extends DialogWrapper {
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : myLanguage.getGenerators()) {
       ModuleContext moduleContext = new ModuleContext(generator, ProjectHelper.toMPSProject(myProject));
-      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getName());
+      MPSTreeNode generatorTreeNode = newTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModel md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + "@" + SModelStereotype.getStereotype(md));
+        MPSTreeNode modelTreeNode = newTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
         SModel model = md;
         for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
@@ -153,20 +153,11 @@ public class MappingDialog extends DialogWrapper {
     super.doCancelAction();
   }
 
-  /*package*/ class MyTreeNode extends MPSTreeNode {
-    private Icon myIcon;
-    private String myNodeIdentifier;
-    private String myText;
-
-    public MyTreeNode(IOperationContext context, Icon icon, String nodeIdentifier, String text) {
-      super(context);
-      myIcon = icon;
-      myNodeIdentifier = nodeIdentifier;
-      myText = text;
-
-      setNodeIdentifier(myNodeIdentifier);
-      setText(myText);
-      setIcon(myIcon);
-    }
+  private static MPSTreeNode newTreeNode(IOperationContext context, Icon icon, String nodeIdentifier, String text) {
+    MPSTreeNode n = new MPSTreeNode(context);
+    n.setNodeIdentifier(nodeIdentifier);
+    n.setText(text);
+    n.setIcon(icon);
+    return n;
   }
 }
