@@ -18,54 +18,58 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 
 import com.intellij.util.ui.Timer;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class TreeNodeUpdater {
-  private static final Object LOCK = new Object();
-
   private final Timer myTimer;
-  private List<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new LinkedList<Pair<MPSTreeNode, NodeUpdate>>();
+  private Queue<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new ConcurrentLinkedQueue<Pair<MPSTreeNode, NodeUpdate>>();
 
   public TreeNodeUpdater() {
     myTimer = new Timer("ProjectPane Tree Updater", 500) {
       @Override
       protected void onTimer() throws InterruptedException {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            process();
-          }
-        });
+        process();
       }
     };
   }
 
   private void process() {
-    List<Pair<MPSTreeNode, NodeUpdate>> updates;
-    synchronized (LOCK) {
-      updates = myUpdates;
-      myUpdates = new LinkedList<Pair<MPSTreeNode, NodeUpdate>>();
-      myTimer.suspend();
+    myTimer.suspend();
+    int batchProcessMax = 20; // do not process more than X at single timer tick
+    final ArrayList<Pair<MPSTreeNode, NodeUpdate>> updates = new ArrayList<Pair<MPSTreeNode, NodeUpdate>>(batchProcessMax);
+    Pair<MPSTreeNode, NodeUpdate> u;
+    while ((u = myUpdates.poll()) != null && --batchProcessMax >= 0) {
+      updates.add(u);
     }
-    for (Pair<MPSTreeNode, NodeUpdate> update : updates) {
-      MPSTreeNode node = update.o1;
-      if (!checkDisposed(node)) return;
-      update.o2.update(node);
-      node.updateNodePresentationInTree();
+    if (!myUpdates.isEmpty()) {
+      myTimer.resume();
     }
+    if (updates.isEmpty()) {
+      return;
+    }
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
+      public void run() {
+        for (Pair<MPSTreeNode, NodeUpdate> update : updates) {
+          MPSTreeNode node = update.o1;
+          if (!checkDisposed(node)) return;
+          update.o2.update(node);
+          node.updateNodePresentationInTree();
+        }
+      }
+    });
   }
 
   public void addUpdate(MPSTreeNode node, NodeUpdate r) {
     if (!r.needed(node)) return;
-    synchronized (LOCK) {
-      myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
-      myTimer.resume();
-    }
+    myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
+    myTimer.resume();
   }
 
   public static boolean checkDisposed(MPSTreeNode node) {

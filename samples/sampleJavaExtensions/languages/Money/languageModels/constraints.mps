@@ -134,29 +134,5 @@
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3607579524910558859" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="v0h4.5447719361346490674" resolveInfo="MoneyLiteral" />
   </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4001135958235527505" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="stock" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="v0h4.4001135958233291203" resolveInfo="CurrentStockPrice" />
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4001135958235786362" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="stock" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="v0h4.4001135958235394442" resolveInfo="StockSymbol" />
-    <node role="property" roleId="tp1t.1213098023997" type="tp1t.NodePropertyConstraint" typeId="tp1t.1147467115080" id="4001135958235786414" nodeInfo="ng">
-      <link role="applicableProperty" roleId="tp1t.1147467295099" targetNodeId="v0h4.4001135958235786331" resolveInfo="symbol" />
-      <node role="propertyValidator" roleId="tp1t.1212097481299" type="tp1t.ConstraintFunction_PropertyValidator" typeId="tp1t.1212096972063" id="4001135958235786416" nodeInfo="nn">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4001135958235786417" nodeInfo="sn">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4001135958235788403" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4001135958235788663" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintsFunctionParameter_node" typeId="tp1t.1147468365020" id="4001135958235788402" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4001135958235790249" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="40pp.4001135958235787610" resolveInfo="isValidSymbol" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintsFunctionParameter_propertyValue" typeId="tp1t.1153138554286" id="4001135958235790991" nodeInfo="nn" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
 </model>
 

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeTypeSystemWarningCheckOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor implements IAllowsErrors_BehaviorDescriptor {
+public class NodeTypeSystemWarningCheckOperation_BehaviorDescriptor extends NodeTypeSystemRuleCheckOperation_BehaviorDescriptor {
   public NodeTypeSystemWarningCheckOperation_BehaviorDescriptor() {
   }
 

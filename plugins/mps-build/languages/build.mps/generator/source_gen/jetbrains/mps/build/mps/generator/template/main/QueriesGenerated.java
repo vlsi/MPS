@@ -21,11 +21,11 @@ import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.build.mps.util.MPSModulesPartitioner;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -474,11 +474,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_9076354678688345524(final PropertyMacroContext _context) {
-    SNode mpsAspect = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "aspects", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMpsAspect");
-      }
-    }), "jetbrains.mps.build.mps.structure.BuildMpsAspect");
+    SNode mpsAspect = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "aspects", true), "jetbrains.mps.build.mps.structure.BuildMpsAspect")).first();
 
     int heapSize;
     // 0 as default value and 0 as heap size should be distinguished 
@@ -490,6 +486,12 @@ public class QueriesGenerated {
     }
 
     return "-Xmx" + heapSize + "m";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_353547257300549687(final PropertyMacroContext _context) {
+    // 0 is the default value (not generated) 
+    int size = SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "aspects", true), "jetbrains.mps.build.mps.structure.BuildMpsAspect")).first(), "generationMaxPermSizeInMb");
+    return "-XX:MaxPermSize=" + size + "m";
   }
 
   public static Object propertyMacro_GetPropertyValue_5002485985636846575(final PropertyMacroContext _context) {
@@ -523,11 +525,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8702237507672319034(final PropertyMacroContext _context) {
-    SNode mpsAspect = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "aspects", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMpsAspect");
-      }
-    }), "jetbrains.mps.build.mps.structure.BuildMpsAspect");
+    SNode mpsAspect = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "aspects", true), "jetbrains.mps.build.mps.structure.BuildMpsAspect")).first();
 
     int heapSize;
     // 0 as default value and 0 as heap size should be distinguished 
@@ -539,6 +537,12 @@ public class QueriesGenerated {
     }
 
     return "-Xmx" + heapSize + "m";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_353547257301863279(final PropertyMacroContext _context) {
+    // 0 is the default value (not generated) 
+    int size = SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "aspects", true), "jetbrains.mps.build.mps.structure.BuildMpsAspect")).first(), "generationMaxPermSizeInMb");
+    return "-XX:MaxPermSize=" + size + "m";
   }
 
   public static Object propertyMacro_GetPropertyValue_5002485985637417295(final PropertyMacroContext _context) {
@@ -708,7 +712,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1462305029084461806(final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a421(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a621(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_2172791612910915663(final IfMacroContext _context) {
@@ -751,6 +755,10 @@ public class QueriesGenerated {
     return ((MPSModulesPartitioner.Chunk) _context.getVariable("var:chunk")).isConflicting(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_353547257300591823(final IfMacroContext _context) {
+    return SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "aspects", true), "jetbrains.mps.build.mps.structure.BuildMpsAspect")).first(), "generationMaxPermSizeInMb") != 0;
+  }
+
   public static boolean ifMacro_Condition_398731435601112752(final IfMacroContext _context) {
     return Sequence.fromIterable(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal()).isNotEmpty();
   }
@@ -770,6 +778,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_3239569521490197880(final IfMacroContext _context) {
     return ((String[]) _context.getVariable("var:requiredPlugins")).length > 0;
+  }
+
+  public static boolean ifMacro_Condition_353547257301863303(final IfMacroContext _context) {
+    return SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "aspects", true), "jetbrains.mps.build.mps.structure.BuildMpsAspect")).first(), "generationMaxPermSizeInMb") != 0;
   }
 
   public static boolean ifMacro_Condition_5002485985634204066(final IfMacroContext _context) {
@@ -1280,7 +1292,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_978600701690054686(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0gh(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0kh(it);
       }
     });
   }
@@ -1322,7 +1334,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3239569521490197891(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0lh(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0ph(it);
       }
     });
   }
@@ -1673,7 +1685,7 @@ public class QueriesGenerated {
     List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
     return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
       public SNode select(Tuples._2<SNode, String> it) {
-        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a312(it._1(), it._0());
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a712(it._1(), it._0());
       }
     }).toListSequence();
   }
@@ -1716,21 +1728,21 @@ public class QueriesGenerated {
     return partitioner;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0gh(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0kh(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0lh(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0ph(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
-  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a312(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a712(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
     n1.setProperty("path", String.valueOf(p0));
@@ -1758,7 +1770,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean neq_x583g4_a0a0a421(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0a621(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
 }

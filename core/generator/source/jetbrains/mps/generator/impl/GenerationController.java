@@ -167,7 +167,7 @@ public class GenerationController implements ITaskPoolProvider {
     TypeChecker.getInstance().generationStarted(traceTypes ? ttrace : null);
 
     final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
-      myCancellationMonitor, new GenerationSessionLogger(myLogger, myOptions.isKeepModelsWithWarnings()), myTransientModelsProvider.getModule(module), ttrace, myOptions);
+      myCancellationMonitor, myLogger, myTransientModelsProvider.getModule(module), ttrace, myOptions);
 
     monitor.start(inputModel.getModelName(), 10);
     try {

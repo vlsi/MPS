@@ -17,6 +17,11 @@ package jetbrains.mps.util.misc.hash;
 
 import java.util.*;
 
+/**
+ * This class is scheduled for removal in next release
+ * @deprecated There's hardly anything this class could do what regular java collections could not.
+ */
+@Deprecated
 public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
 
   protected int size;

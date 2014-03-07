@@ -139,7 +139,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_62u4bw_a3a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "...");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("operationCell");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);

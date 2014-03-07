@@ -16,19 +16,23 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Translates IGeneratorLogger calls into IMessageHandler's
@@ -42,8 +46,9 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   protected final boolean myHandleWarnings;
 
   public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings) {
-    this(messageHandler, new BasicFactory(),  handleInfo, handleWarnings);
+    this(messageHandler, new BasicFactory(), handleInfo, handleWarnings);
   }
+
   public GeneratorLoggerAdapter(IMessageHandler messageHandler, MessageFactory msgFactory, boolean handleInfo, boolean handleWarnings) {
     myMessageHandler = messageHandler;
     myFactory = msgFactory;
@@ -131,16 +136,16 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   @Override
   public void handleException(Throwable t) {
     String text = t.getMessage();
-    if(text == null) {
+    if (text == null) {
       Throwable cause = t.getCause();
       int tries = 0;
-      while(text == null && cause != null && tries < 10) {
+      while (text == null && cause != null && tries < 10) {
         text = cause.getMessage();
         cause = cause.getCause();
         tries++;
       }
     }
-    if(text == null) {
+    if (text == null) {
       text = "An exception was encountered: " + t.getClass().getName() + " (no message) (right-click to see)";
     } else {
       text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
@@ -154,6 +159,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   protected void errorReported() {
     // no-op
   }
+
   protected void warningReported() {
     // no-op
   }
@@ -162,10 +168,8 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     addMessage(myFactory.prepare(kind, text == null ? "" : text, node));
   }
 
-  protected final void addMessage(@NotNull Message msg) {
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(msg);
-    }
+  protected final void addMessage(@NotNull IMessage msg) {
+    myMessageHandler.handle(msg);
   }
 
   protected final void report(MessageKind kind, String text, SNodeReference node, ProblemDescription... descriptions) {
@@ -180,10 +184,8 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
         messages.add(myFactory.prepare(kind, "-- " + d.getMessage(), d.getNode()));
       }
     }
-    synchronized (myMessageHandler) {
-      for (Message m : messages) {
-        addMessage(m);
-      }
+    for (Message m : messages) {
+      addMessage(m);
     }
   }
 
@@ -191,25 +193,86 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     myMessageHandler.clear();
   }
 
-  protected static class BasicFactory implements MessageFactory {
+  interface MessageFactory {
+    Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node);
+  }
 
-    @Override
+  static class BasicFactory implements MessageFactory {
     @NotNull
-    public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
+    public Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
       Message message = new Message(kind, text);
-      if (node != null && node.getModelReference() != null) {
-        SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
-        if (model != null && !(model.getModule() instanceof TransientModelsModule)) {
-          // XXX I don't know why we shall not include references to transient elements
-          message.setHintObject(node);
-        }
-      }
+      message.setHintObject(node);
       return message;
     }
   }
 
-  interface MessageFactory {
+  /**
+   * Concurrent record of models reported through messages
+   */
+  static class RecordingFactory implements MessageFactory {
+    @SuppressWarnings("unchecked")
+    private final Collection<SModelReference>[] a = new Collection[MessageKind.values().length];
+    private final MessageFactory myDelegate;
+
+    public RecordingFactory(@NotNull MessageFactory delegate) {
+      myDelegate = delegate;
+      for (MessageKind k : MessageKind.values()) {
+        a[k.ordinal()] = new ConcurrentHashSet<SModelReference>();
+      }
+    }
+    public Collection<SModelReference> ofKind(MessageKind kind) {
+      return a[kind.ordinal()];
+    }
+    public void reset() {
+      for (MessageKind k : MessageKind.values()) {
+        a[k.ordinal()].clear();
+      }
+    }
+
+    /**
+     * Record additional access to model, for use from log4j listeners
+     */
+    public void record(@NotNull MessageKind kind, @Nullable SModelReference modelRef) {
+      if (modelRef != null) {
+        a[kind.ordinal()].add(modelRef);
+      }
+    }
+
     @NotNull
-    Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node);
+    @Override
+    public Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
+      if (node != null) {
+        record(kind, node.getModelReference());
+      }
+      return myDelegate.prepare(kind, text, node);
+    }
+  }
+
+  /**
+   * Rewrite model reference part of hint node based on supplied map
+   */
+  static class ModelRefRewriteFactory implements MessageFactory {
+    private final MessageFactory myDelegate;
+    private Map<SModelReference,SModelReference> myModels2Update = Collections.emptyMap();
+    public ModelRefRewriteFactory(@NotNull MessageFactory delegate) {
+      myDelegate = delegate;
+    }
+
+    public void rewriteWith(@NotNull Map<SModelReference,SModelReference> models2Update) {
+      myModels2Update = models2Update;
+    }
+
+    @Override
+    public Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
+      if (node != null && /*there's no way at the moment to obtain NodeId other than cast*/node instanceof SNodePointer) {
+        final SModelReference originalModelRef = node.getModelReference();
+        final SModelReference replacementModelRef = myModels2Update.get(originalModelRef);
+        if (replacementModelRef != null) {
+          node = new SNodePointer(replacementModelRef, ((SNodePointer) node).getNodeId());
+        }
+        // fall-through
+      }
+      return myDelegate.prepare(kind, text, node);
+    }
   }
 }

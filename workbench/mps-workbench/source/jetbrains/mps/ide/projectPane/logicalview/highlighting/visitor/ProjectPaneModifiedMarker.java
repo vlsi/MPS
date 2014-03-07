@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,16 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.*;
 
-public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
+public class ProjectPaneModifiedMarker extends TreeUpdateVisitor {
   @Override
   protected void visitModelNode(final SModelTreeNode node) {
-    SModel md = node.getSModelDescriptor();
+    SModel md = node.getModel();
     if (!(md.isLoaded())) return;
     if (!(md instanceof EditableSModel)) return;
 
     boolean changed = ((EditableSModel) md).isChanged();
 
     final Icon icon = changed ? new LayeredIcon(node.getDefaultIcon(), General.Modified) : node.getDefaultIcon();
-    ourUpdater.addUpdate(node, new IconNodeUpdate(icon));
+    addUpdate(node, new IconNodeUpdate(icon));
   }
 }

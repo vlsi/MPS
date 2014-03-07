@@ -4,16 +4,11 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
-import jetbrains.mps.typesystem.inference.ITypechecking;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import junit.framework.Assert;
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CheckNodeForErrorMessagesOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -22,26 +17,7 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     final SNode nodeToCheck = node;
     final SNode operation = thisNode;
-    NodeCheckerUtil.checkNodeWithCheckingAction(node, new ITypechecking.Action() {
-      @Override
-      public void run(TypeCheckingContext typeCheckingContext) {
-        typeCheckingContext.checkIfNotChecked(nodeToCheck, true);
-        for (SNode child : SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-          if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
-            IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
-            if (reporter != null) {
-              String reportError = reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(child) + "'";
-              if (!(SPropertyOperations.getBoolean(operation, "allowErrors"))) {
-                Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
-              }
-              if (!(SPropertyOperations.getBoolean(operation, "allowWarnings"))) {
-                Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
-              }
-            }
-          }
-        }
-      }
-    });
+    NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(thisNode, "allowWarnings"), SPropertyOperations.getBoolean(thisNode, "allowErrors"));
   }
 
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {

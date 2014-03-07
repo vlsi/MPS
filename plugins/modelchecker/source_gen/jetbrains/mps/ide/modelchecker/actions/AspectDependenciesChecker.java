@@ -71,7 +71,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         }
         SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
         if (targetNode == null) {
-          addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
+          SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
               return ResolverComponent.getInstance().resolve(ref, operationContext);
             }
@@ -82,7 +82,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         SModel targetModel = SNodeOperations.getModel(targetNode);
         int targetKind = getModelKind(targetModel, ref);
         if (targetKind > modelKind) {
-          addIssue(results, node, "Wrong reference: " + SLinkOperations.getResolveInfo(ref) + ", reference from " + kindToString(modelKind) + " to " + kindToString(targetKind), ModelChecker.SEVERITY_ERROR, "wrong aspect dependency (" + kindToString(modelKind) + ")", null);
+          SpecificChecker.addIssue(results, node, "Wrong reference: " + SLinkOperations.getResolveInfo(ref) + ", reference from " + kindToString(modelKind) + " to " + kindToString(targetKind), ModelChecker.SEVERITY_ERROR, "wrong aspect dependency (" + kindToString(modelKind) + ")", null);
         }
       }
     }

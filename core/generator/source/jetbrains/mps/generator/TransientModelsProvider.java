@@ -17,7 +17,8 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -85,17 +86,11 @@ public class TransientModelsProvider {
   }
 
   public TransientModelsModule getModule(final SModule module) {
-    TransientModelsModule transientModelsModule = ModelAccess.instance().requireRead(new Computable<TransientModelsModule>() {
-      @Override
-      public TransientModelsModule compute() {
-        if (myModuleMap.containsKey(module)) {
-          return myModuleMap.get(module);
-        }
+    if (myModuleMap.containsKey(module)) {
+      return myModuleMap.get(module);
+    }
 
-        throw new IllegalStateException();
-      }
-    });
-    return transientModelsModule;
+    throw new IllegalStateException();
   }
 
   public boolean canKeepOneMore() {
@@ -168,7 +163,7 @@ public class TransientModelsProvider {
   private String newSessionId() {
     File projectFile = myProject.getProjectFile();
     return (projectFile != null ? projectFile.getAbsolutePath().hashCode() : System.identityHashCode(myProject)) +
-      Long.toHexString(System.currentTimeMillis());
+        Long.toHexString(System.currentTimeMillis());
   }
 
   public static interface TransientSwapSpace {

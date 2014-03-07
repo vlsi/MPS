@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
@@ -232,10 +233,10 @@ public class TemplateQueryContext {
 
   public void showErrorMessage(SNode node, String message) {
     SNode inputNode = (node != null) ? node : getInputNode();
-    SNode tn = getTemplateNode();
+    SNodeReference tn = getTemplateNodeRef();
     SNodeReference rnr = getRuleNode();
-    SNode rn = rnr == null ? null : rnr.resolve(MPSModuleRepository.getInstance());
-    myGenerator.showErrorMessage(inputNode, tn, rn, message);
+    myGenerator.getLogger().error(rnr == null ? tn : rnr, message,
+        GeneratorUtil.describeIfExists(inputNode, "input node"), GeneratorUtil.describeIfExists(tn, "template node"));
   }
 
   /**

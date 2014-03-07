@@ -62,6 +62,10 @@ public class SModelStereotype {
     return stereotype.endsWith(STUB_SUFFIX);
   }
 
+  public static boolean isStubModel(SModel model) {
+    return isStubModelStereotype(getStereotype(model));
+  }
+
   public static String getStubStereotypeForId(String languageId) {
     return languageId + STUB_SUFFIX;
   }
@@ -74,10 +78,12 @@ public class SModelStereotype {
     return DESCRIPTOR.equals(stereotype);
   }
 
+  @NotNull
   public static String getStereotype(SModel model) {
     return getStereotype(model.getModelName());
   }
 
+  @NotNull
   public static String getStereotype(String modelName) {
     int atIndex = modelName.lastIndexOf('@');
     if (atIndex == -1) {

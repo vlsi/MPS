@@ -15,16 +15,12 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import java.util.Set;
-import java.util.LinkedHashSet;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.extapi.model.GeneratableSModel;
+import java.util.LinkedHashMap;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
@@ -85,28 +81,13 @@ public class RenameLanguageDialog extends RenameDialog {
       }
     });
     if (needToRegenerate) {
-      final Set<Language> langs = new LinkedHashSet<Language>();
+      final Map<SModule, List<SModel>> langs = new LinkedHashMap<SModule, List<SModel>>();
       modelAccess.runReadAction(new Runnable() {
         public void run() {
-          langs.add(myLanguage);
-          langs.addAll(ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(myLanguage));
+          RefactoringUtil.fillLanguageAndItsExtendingLanguageModels(myLanguage, langs);
         }
       });
-      for (final Language l : langs) {
-        final List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-        modelAccess.runReadAction(new Runnable() {
-          public void run() {
-            ListSequence.fromList(models).addSequence(Sequence.fromIterable(Sequence.fromArray(l.getModels().toArray(new SModel[0]))).where(new IWhereFilter<SModel>() {
-              public boolean accept(SModel it) {
-                return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
-              }
-            }));
-          }
-        });
-        if (models == null) {
-          setErrorText("Rebuild configuration is invalid");
-          return;
-        }
+      for (final List<SModel> models : langs.values()) {
         ModuleContext context = new ModuleContext(myLanguage, myProject);
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {

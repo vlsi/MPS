@@ -78,7 +78,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       e.consume();
     }
   };
-  private ProjectPaneTreeHighlighter myHighlighter = new ProjectPaneTreeHighlighter();
+  private final ProjectPaneTreeHighlighter myHighlighter = new ProjectPaneTreeHighlighter();
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
     super(project);
@@ -111,7 +111,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       @Override
       public void run() {
         SNode node = treeNode.getSNode();
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || node.getModel() == null) {
+        if (node.getModel() == null) {
           return;
         }
         myProjectPane.editNode(node, treeNode.getOperationContext(), wasClicked);
@@ -143,7 +143,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
   public void populate(SNodeTreeNode treeNode) {
     if (myProjectPane.isShowPropertiesAndReferences()) {
       SNode n = treeNode.getSNode();
-      if (n == null || jetbrains.mps.util.SNodeOperations.isDisposed(n)) return;
+      if (n == null || n.getModel() == null) return;
 
       treeNode.add(new ConceptTreeNode(treeNode.getOperationContext(), n));
       treeNode.add(new PropertiesTreeNode(treeNode.getOperationContext(), n));
@@ -210,7 +210,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
         @Override
         public void run() {
           for (SNode node : myProjectPane.getSelectedSNodes()) {
-            result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), ""));
+            result.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), ""));
           }
           SModel contextDescriptor = myProjectPane.getContextModel();
           if (contextDescriptor != null) {
@@ -233,7 +233,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
                   basePack.append(".");
                 }
                 basePack.append(secondPart);
-                result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
+                result.add(new Pair<SNodeReference,String>(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
               }
             }
           }

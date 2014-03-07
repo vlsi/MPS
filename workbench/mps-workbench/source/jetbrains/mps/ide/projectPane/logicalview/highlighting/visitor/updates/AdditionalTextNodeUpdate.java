@@ -18,10 +18,10 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.util.EqualUtil;
 
-public class GenStatusNodeUpdate extends NodeUpdate {
-  private String myText;
+public class AdditionalTextNodeUpdate extends NodeUpdate {
+  private final String myText;
 
-  public GenStatusNodeUpdate(String addText) {
+  public AdditionalTextNodeUpdate(String addText) {
     myText = addText;
   }
 

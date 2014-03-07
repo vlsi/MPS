@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeRef="r:5dc84f1a-c56e-473c-93f2-bd4845d4780a(jetbrains.mps.lang.test.actions)/8333855927565347872" />
+</debugInfo>
 
