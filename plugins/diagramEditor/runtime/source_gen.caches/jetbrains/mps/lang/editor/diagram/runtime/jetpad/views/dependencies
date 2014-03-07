@@ -41,6 +41,7 @@
     <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
+    <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

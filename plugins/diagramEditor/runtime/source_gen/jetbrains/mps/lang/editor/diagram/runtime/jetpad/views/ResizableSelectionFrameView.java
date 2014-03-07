@@ -19,7 +19,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
   public Property<Boolean> resizable = new ValueProperty<Boolean>(false);
   public Property<Boolean> showSideHandler = new ValueProperty<Boolean>(true);
   public Property<Integer> selectionLineWidth = new ValueProperty<Integer>(1);
-  public Property<Color> color = new ValueProperty<Color>(Color.GRAY);
+  public Property<Color> color = new ValueProperty<Color>(Color.BLACK);
   public Property<Color> backgroundColor = new ValueProperty<Color>(Color.LIGHT_GRAY);
 
   private ObservableList<Vector> myCornerResizeHandlePositions = new ObservableArrayList<Vector>();

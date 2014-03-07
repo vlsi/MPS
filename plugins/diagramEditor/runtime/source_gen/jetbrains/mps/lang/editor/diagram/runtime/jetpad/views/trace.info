@@ -391,191 +391,197 @@
     <unitInfo nodeId="4287318874984049021" fileName="AbstractDecoratorView.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
   </root>
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984209776">
-    <nodeInfo nodeId="4287318874984209784" fileName="ConnectorDecoratorView.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySegments" />
-    <nodeInfo nodeId="4287318874986818972" fileName="ConnectorDecoratorView.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValid" />
-    <nodeInfo nodeId="1897569136983744404" fileName="ConnectorDecoratorView.java" startLine="25" startPosition="93" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136984260940" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="51" endLine="27" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136983745904" fileName="ConnectorDecoratorView.java" startLine="27" startPosition="142" endLine="28" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136984253342" fileName="ConnectorDecoratorView.java" startLine="28" startPosition="134" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1897569136986169864" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="97" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136986169881" fileName="ConnectorDecoratorView.java" startLine="42" startPosition="33" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136986085385" fileName="ConnectorDecoratorView.java" startLine="57" startPosition="97" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136986085402" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="33" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984209804" fileName="ConnectorDecoratorView.java" startLine="70" startPosition="55" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874986968743" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="38" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874986054300" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="39" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984875408" fileName="ConnectorDecoratorView.java" startLine="79" startPosition="42" endLine="80" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984319408" fileName="ConnectorDecoratorView.java" startLine="80" startPosition="35" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984210019" fileName="ConnectorDecoratorView.java" startLine="84" startPosition="45" endLine="85" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984209848" fileName="ConnectorDecoratorView.java" startLine="89" startPosition="54" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984209853" fileName="ConnectorDecoratorView.java" startLine="91" startPosition="5" endLine="92" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209861" fileName="ConnectorDecoratorView.java" startLine="93" startPosition="63" endLine="94" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984209869" fileName="ConnectorDecoratorView.java" startLine="96" startPosition="25" endLine="97" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984209878" fileName="ConnectorDecoratorView.java" startLine="98" startPosition="5" endLine="99" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209884" fileName="ConnectorDecoratorView.java" startLine="99" startPosition="40" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984209892" fileName="ConnectorDecoratorView.java" startLine="101" startPosition="63" endLine="102" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209900" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="52" endLine="104" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209911" fileName="ConnectorDecoratorView.java" startLine="104" startPosition="51" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209922" fileName="ConnectorDecoratorView.java" startLine="105" startPosition="58" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209930" fileName="ConnectorDecoratorView.java" startLine="106" startPosition="33" endLine="107" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209938" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="33" endLine="108" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984209956" fileName="ConnectorDecoratorView.java" startLine="108" startPosition="86" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984209963" fileName="ConnectorDecoratorView.java" startLine="110" startPosition="7" endLine="111" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984209967" fileName="ConnectorDecoratorView.java" startLine="112" startPosition="5" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984209969" fileName="ConnectorDecoratorView.java" startLine="113" startPosition="16" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4287318874984210129" fileName="ConnectorDecoratorView.java" startLine="117" startPosition="61" endLine="118" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129755042158461084" fileName="ConnectorDecoratorView.java" startLine="120" startPosition="82" endLine="121" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3129755042158428554" fileName="ConnectorDecoratorView.java" startLine="121" startPosition="72" endLine="122" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129755042158510989" fileName="ConnectorDecoratorView.java" startLine="124" startPosition="64" endLine="125" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4287318874984210158" fileName="ConnectorDecoratorView.java" startLine="125" startPosition="149" endLine="126" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874986873086" fileName="ConnectorDecoratorView.java" startLine="132" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefautlValue" />
-    <nodeInfo nodeId="4287318874986874670" fileName="ConnectorDecoratorView.java" startLine="134" startPosition="48" endLine="135" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874986861511" fileName="ConnectorDecoratorView.java" startLine="138" startPosition="33" endLine="139" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874986867034" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="20" endLine="143" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874986887817" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="30" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="151" startPosition="65" endLine="152" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1897569136986169877" fileName="ConnectorDecoratorView.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1897569136986085398" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4287318874984209799" fileName="ConnectorDecoratorView.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSegments#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="4287318874984209810" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Ljetbrains/jetpad/model/property/Property;" />
-    <nodeInfo nodeId="4287318874984210015" fileName="ConnectorDecoratorView.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionView#()Ljetbrains/jetpad/projectional/view/GroupView;" />
-    <nodeInfo nodeId="4287318874984209846" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="34" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4287318874984209857" fileName="ConnectorDecoratorView.java" startLine="92" startPosition="25" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4287318874984209867" fileName="ConnectorDecoratorView.java" startLine="95" startPosition="5" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4287318874986870222" fileName="ConnectorDecoratorView.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventSourceProperty#(null)V" />
-    <nodeInfo nodeId="4287318874986861499" fileName="ConnectorDecoratorView.java" startLine="138" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropExpr#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4287318874986861512" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()null" />
-    <nodeInfo nodeId="4287318874986861524" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(null)V" />
-    <nodeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_2z6621_a0a0b0l#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4287318874984210139" fileName="ConnectorDecoratorView.java" startLine="119" startPosition="63" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4287318874984210156" fileName="ConnectorDecoratorView.java" startLine="123" startPosition="7" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1897569136986169867" fileName="ConnectorDecoratorView.java" startLine="40" startPosition="55" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136986085388" fileName="ConnectorDecoratorView.java" startLine="58" startPosition="55" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874984209974" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorView#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/views/CrossView;" />
-    <nodeInfo nodeId="1897569136983744391" fileName="ConnectorDecoratorView.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="4287318874984209898" fileName="ConnectorDecoratorView.java" startLine="102" startPosition="46" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1897569136983733277" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="35" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897569136986169858" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="1897569136986085379" fileName="ConnectorDecoratorView.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="4287318874984210135" fileName="ConnectorDecoratorView.java" startLine="118" startPosition="37" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1897569136983720228" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorDecoratorView#()V" />
-    <nodeInfo nodeId="1897569136986169849" fileName="ConnectorDecoratorView.java" startLine="36" startPosition="92" endLine="47" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1897569136986085370" fileName="ConnectorDecoratorView.java" startLine="54" startPosition="89" endLine="65" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4287318874984209888" fileName="ConnectorDecoratorView.java" startLine="100" startPosition="18" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1897569136986169839" fileName="ConnectorDecoratorView.java" startLine="36" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Ljava/lang/Boolean;)Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="1897569136986085360" fileName="ConnectorDecoratorView.java" startLine="54" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Ljava/lang/Boolean;)Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="4287318874984210119" fileName="ConnectorDecoratorView.java" startLine="117" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSelectionView#(Ljetbrains/jetpad/projectional/view/GroupView;)V" />
-    <nodeInfo nodeId="1897569136986169834" fileName="ConnectorDecoratorView.java" startLine="34" startPosition="85" endLine="49" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1897569136986085355" fileName="ConnectorDecoratorView.java" startLine="52" startPosition="81" endLine="67" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1897569136986170381" fileName="ConnectorDecoratorView.java" startLine="34" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionDecoratorMapperFactory#()Ljetbrains/jetpad/mapper/MapperFactory;" />
-    <nodeInfo nodeId="1897569136986086021" fileName="ConnectorDecoratorView.java" startLine="52" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorDecoratorMapperFactory#()Ljetbrains/jetpad/mapper/MapperFactory;" />
-    <nodeInfo nodeId="4287318874984209844" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorPoint#()Ljetbrains/jetpad/geometry/Vector;" />
-    <scopeInfo nodeId="1897569136986169880" fileName="ConnectorDecoratorView.java" startLine="42" startPosition="33" endLine="43" endPosition="49" />
-    <scopeInfo nodeId="1897569136986085401" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="33" endLine="61" endPosition="64" />
-    <scopeInfo nodeId="4287318874984209803" fileName="ConnectorDecoratorView.java" startLine="70" startPosition="55" endLine="71" endPosition="26" />
-    <scopeInfo nodeId="4287318874984209811" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="38" endLine="75" endPosition="19" />
-    <scopeInfo nodeId="4287318874984210018" fileName="ConnectorDecoratorView.java" startLine="84" startPosition="45" endLine="85" endPosition="27" />
-    <scopeInfo nodeId="4287318874984209847" fileName="ConnectorDecoratorView.java" startLine="89" startPosition="54" endLine="90" endPosition="18" />
-    <scopeInfo nodeId="4287318874984209860" fileName="ConnectorDecoratorView.java" startLine="93" startPosition="63" endLine="94" endPosition="36" />
-    <scopeInfo nodeId="4287318874984209868" fileName="ConnectorDecoratorView.java" startLine="96" startPosition="25" endLine="97" endPosition="61" />
-    <scopeInfo nodeId="4287318874986870225" fileName="ConnectorDecoratorView.java" startLine="134" startPosition="48" endLine="135" endPosition="36" />
-    <scopeInfo nodeId="4287318874986861509" fileName="ConnectorDecoratorView.java" startLine="138" startPosition="33" endLine="139" endPosition="37" />
-    <scopeInfo nodeId="4287318874986861523" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="20" endLine="143" endPosition="28" />
-    <scopeInfo nodeId="4287318874986861541" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="30" endLine="147" endPosition="59" />
-    <scopeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="151" startPosition="65" endLine="152" endPosition="49" />
-    <scopeInfo nodeId="4287318874984210140" fileName="ConnectorDecoratorView.java" startLine="120" startPosition="82" endLine="122" endPosition="49">
-      <varInfo nodeId="3129755042158461085" varName="handleView" />
-    </scopeInfo>
-    <scopeInfo nodeId="4287318874984210157" fileName="ConnectorDecoratorView.java" startLine="124" startPosition="64" endLine="126" endPosition="49">
-      <varInfo nodeId="3129755042158510990" varName="handleView" />
-    </scopeInfo>
-    <scopeInfo nodeId="1897569136986169877" fileName="ConnectorDecoratorView.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1897569136986085398" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4287318874984209799" fileName="ConnectorDecoratorView.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <nodeInfo nodeId="1897569136995749696" fileName="ConnectorDecoratorView.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="color" />
+    <nodeInfo nodeId="1897569136995749710" fileName="ConnectorDecoratorView.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="backgroundColor" />
+    <nodeInfo nodeId="4287318874984209784" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySegments" />
+    <nodeInfo nodeId="4287318874986818972" fileName="ConnectorDecoratorView.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValid" />
+    <nodeInfo nodeId="1897569136983744404" fileName="ConnectorDecoratorView.java" startLine="29" startPosition="93" endLine="30" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136984260940" fileName="ConnectorDecoratorView.java" startLine="30" startPosition="51" endLine="31" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136983745904" fileName="ConnectorDecoratorView.java" startLine="31" startPosition="142" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136984253342" fileName="ConnectorDecoratorView.java" startLine="32" startPosition="134" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1897569136986169864" fileName="ConnectorDecoratorView.java" startLine="43" startPosition="97" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136986169881" fileName="ConnectorDecoratorView.java" startLine="46" startPosition="33" endLine="47" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136986085385" fileName="ConnectorDecoratorView.java" startLine="61" startPosition="97" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136986085402" fileName="ConnectorDecoratorView.java" startLine="64" startPosition="33" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209804" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="55" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986968743" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="38" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986054300" fileName="ConnectorDecoratorView.java" startLine="82" startPosition="39" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984875408" fileName="ConnectorDecoratorView.java" startLine="83" startPosition="42" endLine="84" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984319408" fileName="ConnectorDecoratorView.java" startLine="84" startPosition="35" endLine="85" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984210019" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="45" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209848" fileName="ConnectorDecoratorView.java" startLine="93" startPosition="54" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209853" fileName="ConnectorDecoratorView.java" startLine="95" startPosition="5" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209861" fileName="ConnectorDecoratorView.java" startLine="97" startPosition="63" endLine="98" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209869" fileName="ConnectorDecoratorView.java" startLine="100" startPosition="25" endLine="101" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209878" fileName="ConnectorDecoratorView.java" startLine="102" startPosition="5" endLine="103" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209884" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="40" endLine="104" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209892" fileName="ConnectorDecoratorView.java" startLine="105" startPosition="63" endLine="106" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209900" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="52" endLine="108" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209911" fileName="ConnectorDecoratorView.java" startLine="108" startPosition="51" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209922" fileName="ConnectorDecoratorView.java" startLine="109" startPosition="58" endLine="110" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209930" fileName="ConnectorDecoratorView.java" startLine="110" startPosition="33" endLine="111" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209938" fileName="ConnectorDecoratorView.java" startLine="111" startPosition="33" endLine="112" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4287318874984209956" fileName="ConnectorDecoratorView.java" startLine="112" startPosition="86" endLine="113" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209963" fileName="ConnectorDecoratorView.java" startLine="114" startPosition="7" endLine="115" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209967" fileName="ConnectorDecoratorView.java" startLine="116" startPosition="5" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209969" fileName="ConnectorDecoratorView.java" startLine="117" startPosition="16" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4287318874984210129" fileName="ConnectorDecoratorView.java" startLine="121" startPosition="61" endLine="122" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129755042158461084" fileName="ConnectorDecoratorView.java" startLine="124" startPosition="82" endLine="125" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1897569136995812407" fileName="ConnectorDecoratorView.java" startLine="125" startPosition="72" endLine="126" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136995832036" fileName="ConnectorDecoratorView.java" startLine="126" startPosition="42" endLine="127" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129755042158428554" fileName="ConnectorDecoratorView.java" startLine="127" startPosition="62" endLine="128" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129755042158510989" fileName="ConnectorDecoratorView.java" startLine="130" startPosition="64" endLine="131" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1897569136995898585" fileName="ConnectorDecoratorView.java" startLine="131" startPosition="149" endLine="132" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136995898594" fileName="ConnectorDecoratorView.java" startLine="132" startPosition="42" endLine="133" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984210158" fileName="ConnectorDecoratorView.java" startLine="133" startPosition="62" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986873086" fileName="ConnectorDecoratorView.java" startLine="140" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefautlValue" />
+    <nodeInfo nodeId="4287318874986874670" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="48" endLine="143" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874986861511" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="33" endLine="147" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986867034" fileName="ConnectorDecoratorView.java" startLine="150" startPosition="20" endLine="151" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874986887817" fileName="ConnectorDecoratorView.java" startLine="154" startPosition="30" endLine="155" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="159" startPosition="65" endLine="160" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1897569136986169877" fileName="ConnectorDecoratorView.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1897569136986085398" fileName="ConnectorDecoratorView.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4287318874984209799" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSegments#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="4287318874984209810" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="4287318874984210015" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionView#()Ljetbrains/jetpad/projectional/view/GroupView;" />
+    <nodeInfo nodeId="4287318874984209846" fileName="ConnectorDecoratorView.java" startLine="92" startPosition="34" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984209857" fileName="ConnectorDecoratorView.java" startLine="96" startPosition="25" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4287318874984209867" fileName="ConnectorDecoratorView.java" startLine="99" startPosition="5" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874986870222" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventSourceProperty#(null)V" />
+    <nodeInfo nodeId="4287318874986861499" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropExpr#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4287318874986861512" fileName="ConnectorDecoratorView.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()null" />
+    <nodeInfo nodeId="4287318874986861524" fileName="ConnectorDecoratorView.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(null)V" />
+    <nodeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_2z6621_a0a0b0o#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1897569136986169867" fileName="ConnectorDecoratorView.java" startLine="44" startPosition="55" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136986085388" fileName="ConnectorDecoratorView.java" startLine="62" startPosition="55" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874984209974" fileName="ConnectorDecoratorView.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorView#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/views/CrossView;" />
+    <nodeInfo nodeId="4287318874984210139" fileName="ConnectorDecoratorView.java" startLine="123" startPosition="63" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874984210156" fileName="ConnectorDecoratorView.java" startLine="129" startPosition="7" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1897569136983744391" fileName="ConnectorDecoratorView.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="4287318874984209898" fileName="ConnectorDecoratorView.java" startLine="106" startPosition="46" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1897569136983733277" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="35" endLine="35" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897569136986169858" fileName="ConnectorDecoratorView.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="1897569136986085379" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="1897569136983720228" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorDecoratorView#()V" />
+    <nodeInfo nodeId="1897569136986169849" fileName="ConnectorDecoratorView.java" startLine="40" startPosition="92" endLine="51" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1897569136986085370" fileName="ConnectorDecoratorView.java" startLine="58" startPosition="89" endLine="69" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4287318874984209888" fileName="ConnectorDecoratorView.java" startLine="104" startPosition="18" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1897569136986169839" fileName="ConnectorDecoratorView.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Ljava/lang/Boolean;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="1897569136986085360" fileName="ConnectorDecoratorView.java" startLine="58" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Ljava/lang/Boolean;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="4287318874984210135" fileName="ConnectorDecoratorView.java" startLine="122" startPosition="37" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1897569136986169834" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="85" endLine="53" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1897569136986085355" fileName="ConnectorDecoratorView.java" startLine="56" startPosition="81" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1897569136986170381" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSelectionDecoratorMapperFactory#()Ljetbrains/jetpad/mapper/MapperFactory;" />
+    <nodeInfo nodeId="1897569136986086021" fileName="ConnectorDecoratorView.java" startLine="56" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorDecoratorMapperFactory#()Ljetbrains/jetpad/mapper/MapperFactory;" />
+    <nodeInfo nodeId="4287318874984210119" fileName="ConnectorDecoratorView.java" startLine="121" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSelectionView#(Ljetbrains/jetpad/projectional/view/GroupView;)V" />
+    <nodeInfo nodeId="4287318874984209844" fileName="ConnectorDecoratorView.java" startLine="92" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorPoint#()Ljetbrains/jetpad/geometry/Vector;" />
+    <scopeInfo nodeId="1897569136986169880" fileName="ConnectorDecoratorView.java" startLine="46" startPosition="33" endLine="47" endPosition="49" />
+    <scopeInfo nodeId="1897569136986085401" fileName="ConnectorDecoratorView.java" startLine="64" startPosition="33" endLine="65" endPosition="64" />
+    <scopeInfo nodeId="4287318874984209803" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="55" endLine="75" endPosition="26" />
+    <scopeInfo nodeId="4287318874984209811" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="38" endLine="79" endPosition="19" />
+    <scopeInfo nodeId="4287318874984210018" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="45" endLine="89" endPosition="27" />
+    <scopeInfo nodeId="4287318874984209847" fileName="ConnectorDecoratorView.java" startLine="93" startPosition="54" endLine="94" endPosition="18" />
+    <scopeInfo nodeId="4287318874984209860" fileName="ConnectorDecoratorView.java" startLine="97" startPosition="63" endLine="98" endPosition="36" />
+    <scopeInfo nodeId="4287318874984209868" fileName="ConnectorDecoratorView.java" startLine="100" startPosition="25" endLine="101" endPosition="61" />
+    <scopeInfo nodeId="4287318874986870225" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="48" endLine="143" endPosition="36" />
+    <scopeInfo nodeId="4287318874986861509" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="33" endLine="147" endPosition="37" />
+    <scopeInfo nodeId="4287318874986861523" fileName="ConnectorDecoratorView.java" startLine="150" startPosition="20" endLine="151" endPosition="28" />
+    <scopeInfo nodeId="4287318874986861541" fileName="ConnectorDecoratorView.java" startLine="154" startPosition="30" endLine="155" endPosition="59" />
+    <scopeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="159" startPosition="65" endLine="160" endPosition="49" />
+    <scopeInfo nodeId="1897569136986169877" fileName="ConnectorDecoratorView.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1897569136986085398" fileName="ConnectorDecoratorView.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="4287318874984209799" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="4287318874984209800" varName="segments" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984209810" fileName="ConnectorDecoratorView.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="4287318874984209975" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="39" endLine="81" endPosition="21">
+    <scopeInfo nodeId="4287318874984209810" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="4287318874984209975" fileName="ConnectorDecoratorView.java" startLine="82" startPosition="39" endLine="85" endPosition="21">
       <varInfo nodeId="4287318874986054301" varName="errorView" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984210015" fileName="ConnectorDecoratorView.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4287318874984209857" fileName="ConnectorDecoratorView.java" startLine="92" startPosition="25" endLine="95" endPosition="5">
+    <scopeInfo nodeId="4287318874984210015" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="4287318874984209857" fileName="ConnectorDecoratorView.java" startLine="96" startPosition="25" endLine="99" endPosition="5">
       <varInfo nodeId="4287318874984209858" varName="segment" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874986870222" fileName="ConnectorDecoratorView.java" startLine="134" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="4287318874986870222" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="4287318874986870744" varName="defaultValue" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874986861499" fileName="ConnectorDecoratorView.java" startLine="138" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="4287318874986861512" fileName="ConnectorDecoratorView.java" startLine="142" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="4287318874986861524" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="4287318874986861499" fileName="ConnectorDecoratorView.java" startLine="146" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="4287318874986861512" fileName="ConnectorDecoratorView.java" startLine="150" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="4287318874986861524" fileName="ConnectorDecoratorView.java" startLine="154" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="4287318874986861528" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="151" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="4287318874984210151" fileName="ConnectorDecoratorView.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="4287318874984210151" varName="a" />
       <varInfo nodeId="4287318874984210151" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1897569136983744400" fileName="ConnectorDecoratorView.java" startLine="25" startPosition="93" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4287318874984209974" fileName="ConnectorDecoratorView.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1897569136986169863" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="97" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="1897569136986085384" fileName="ConnectorDecoratorView.java" startLine="57" startPosition="97" endLine="63" endPosition="16" />
-    <scopeInfo nodeId="4287318874984209899" fileName="ConnectorDecoratorView.java" startLine="103" startPosition="52" endLine="109" endPosition="22">
+    <scopeInfo nodeId="1897569136983744400" fileName="ConnectorDecoratorView.java" startLine="29" startPosition="93" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4287318874984210140" fileName="ConnectorDecoratorView.java" startLine="124" startPosition="82" endLine="128" endPosition="49">
+      <varInfo nodeId="3129755042158461085" varName="handleView" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984210157" fileName="ConnectorDecoratorView.java" startLine="130" startPosition="64" endLine="134" endPosition="49">
+      <varInfo nodeId="3129755042158510990" varName="handleView" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874984209974" fileName="ConnectorDecoratorView.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1897569136986169863" fileName="ConnectorDecoratorView.java" startLine="43" startPosition="97" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="1897569136986085384" fileName="ConnectorDecoratorView.java" startLine="61" startPosition="97" endLine="67" endPosition="16" />
+    <scopeInfo nodeId="4287318874984209899" fileName="ConnectorDecoratorView.java" startLine="107" startPosition="52" endLine="113" endPosition="22">
       <varInfo nodeId="4287318874984209912" varName="d" />
       <varInfo nodeId="4287318874984209939" varName="result" />
       <varInfo nodeId="4287318874984209901" varName="se" />
       <varInfo nodeId="4287318874984209923" varName="xToAdd" />
       <varInfo nodeId="4287318874984209931" varName="yToAdd" />
     </scopeInfo>
-    <scopeInfo nodeId="1897569136983744391" fileName="ConnectorDecoratorView.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1897569136983744391" fileName="ConnectorDecoratorView.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1897569136983744395" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984210138" fileName="ConnectorDecoratorView.java" startLine="119" startPosition="63" endLine="127" endPosition="7" />
-    <scopeInfo nodeId="1897569136983720232" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="35" endLine="31" endPosition="19" />
-    <scopeInfo nodeId="1897569136986169858" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1897569136983720232" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="35" endLine="35" endPosition="19" />
+    <scopeInfo nodeId="1897569136986169858" fileName="ConnectorDecoratorView.java" startLine="42" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1897569136986169861" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="1897569136986085379" fileName="ConnectorDecoratorView.java" startLine="56" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1897569136986085379" fileName="ConnectorDecoratorView.java" startLine="60" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1897569136986085382" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984209891" fileName="ConnectorDecoratorView.java" startLine="101" startPosition="63" endLine="111" endPosition="33">
+    <scopeInfo nodeId="4287318874984209891" fileName="ConnectorDecoratorView.java" startLine="105" startPosition="63" endLine="115" endPosition="33">
       <varInfo nodeId="4287318874984209893" varName="currentLength" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984210135" fileName="ConnectorDecoratorView.java" startLine="118" startPosition="37" endLine="128" endPosition="5">
-      <varInfo nodeId="4287318874984210136" varName="segment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1897569136983720228" fileName="ConnectorDecoratorView.java" startLine="22" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1897569136986169848" fileName="ConnectorDecoratorView.java" startLine="36" startPosition="92" endLine="47" endPosition="10" />
-    <scopeInfo nodeId="1897569136986085369" fileName="ConnectorDecoratorView.java" startLine="54" startPosition="89" endLine="65" endPosition="10" />
-    <scopeInfo nodeId="4287318874984210122" fileName="ConnectorDecoratorView.java" startLine="117" startPosition="61" endLine="128" endPosition="5" />
-    <scopeInfo nodeId="4287318874984209888" fileName="ConnectorDecoratorView.java" startLine="100" startPosition="18" endLine="112" endPosition="5">
+    <scopeInfo nodeId="1897569136983720228" fileName="ConnectorDecoratorView.java" startLine="26" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1897569136986169848" fileName="ConnectorDecoratorView.java" startLine="40" startPosition="92" endLine="51" endPosition="10" />
+    <scopeInfo nodeId="1897569136986085369" fileName="ConnectorDecoratorView.java" startLine="58" startPosition="89" endLine="69" endPosition="10" />
+    <scopeInfo nodeId="4287318874984209888" fileName="ConnectorDecoratorView.java" startLine="104" startPosition="18" endLine="116" endPosition="5">
       <varInfo nodeId="4287318874984209889" varName="segment" />
     </scopeInfo>
-    <scopeInfo nodeId="1897569136986169839" fileName="ConnectorDecoratorView.java" startLine="36" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="4287318874984210138" fileName="ConnectorDecoratorView.java" startLine="123" startPosition="63" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="1897569136986169839" fileName="ConnectorDecoratorView.java" startLine="40" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1897569136986169846" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="1897569136986085360" fileName="ConnectorDecoratorView.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="1897569136986085360" fileName="ConnectorDecoratorView.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1897569136986085367" varName="error" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984210119" fileName="ConnectorDecoratorView.java" startLine="117" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="4287318874984210135" fileName="ConnectorDecoratorView.java" startLine="122" startPosition="37" endLine="136" endPosition="5">
+      <varInfo nodeId="4287318874984210136" varName="segment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1897569136986169342" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="85" endLine="53" endPosition="6" />
+    <scopeInfo nodeId="1897569136986084748" fileName="ConnectorDecoratorView.java" startLine="56" startPosition="81" endLine="71" endPosition="6" />
+    <scopeInfo nodeId="4287318874984210122" fileName="ConnectorDecoratorView.java" startLine="121" startPosition="61" endLine="136" endPosition="5" />
+    <scopeInfo nodeId="1897569136986170381" fileName="ConnectorDecoratorView.java" startLine="38" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1897569136986086021" fileName="ConnectorDecoratorView.java" startLine="56" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4287318874984210119" fileName="ConnectorDecoratorView.java" startLine="121" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="3129755042156988772" varName="selectionView" />
     </scopeInfo>
-    <scopeInfo nodeId="1897569136986169342" fileName="ConnectorDecoratorView.java" startLine="34" startPosition="85" endLine="49" endPosition="6" />
-    <scopeInfo nodeId="1897569136986084748" fileName="ConnectorDecoratorView.java" startLine="52" startPosition="81" endLine="67" endPosition="6" />
-    <scopeInfo nodeId="1897569136986170381" fileName="ConnectorDecoratorView.java" startLine="34" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1897569136986086021" fileName="ConnectorDecoratorView.java" startLine="52" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="4287318874984209845" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="34" endLine="114" endPosition="0">
+    <scopeInfo nodeId="4287318874984209845" fileName="ConnectorDecoratorView.java" startLine="92" startPosition="34" endLine="118" endPosition="0">
       <varInfo nodeId="4287318874984209879" varName="halfLength" />
       <varInfo nodeId="4287318874984209854" varName="sumLength" />
     </scopeInfo>
-    <scopeInfo nodeId="4287318874984209844" fileName="ConnectorDecoratorView.java" startLine="88" startPosition="0" endLine="116" endPosition="0" />
-    <unitInfo nodeId="1897569136986169875" fileName="ConnectorDecoratorView.java" startLine="41" startPosition="69" endLine="45" endPosition="13" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$4" />
-    <unitInfo nodeId="1897569136986085396" fileName="ConnectorDecoratorView.java" startLine="59" startPosition="69" endLine="63" endPosition="13" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$5" />
-    <unitInfo nodeId="1897569136983734059" fileName="ConnectorDecoratorView.java" startLine="23" startPosition="8" endLine="31" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$1" />
-    <unitInfo nodeId="1897569136986169852" fileName="ConnectorDecoratorView.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$3" />
-    <unitInfo nodeId="1897569136986085373" fileName="ConnectorDecoratorView.java" startLine="55" startPosition="19" endLine="65" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$4" />
-    <unitInfo nodeId="1897569136986169837" fileName="ConnectorDecoratorView.java" startLine="35" startPosition="15" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$2" />
-    <unitInfo nodeId="1897569136986085358" fileName="ConnectorDecoratorView.java" startLine="53" startPosition="15" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$3" />
-    <unitInfo nodeId="4287318874986848090" fileName="ConnectorDecoratorView.java" startLine="131" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$EventSourceProperty" />
-    <unitInfo nodeId="4287318874984209776" fileName="ConnectorDecoratorView.java" startLine="17" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
+    <scopeInfo nodeId="4287318874984209844" fileName="ConnectorDecoratorView.java" startLine="92" startPosition="0" endLine="120" endPosition="0" />
+    <unitInfo nodeId="1897569136986169875" fileName="ConnectorDecoratorView.java" startLine="45" startPosition="69" endLine="49" endPosition="13" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$4" />
+    <unitInfo nodeId="1897569136986085396" fileName="ConnectorDecoratorView.java" startLine="63" startPosition="69" endLine="67" endPosition="13" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$5" />
+    <unitInfo nodeId="1897569136983734059" fileName="ConnectorDecoratorView.java" startLine="27" startPosition="8" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$1" />
+    <unitInfo nodeId="1897569136986169852" fileName="ConnectorDecoratorView.java" startLine="41" startPosition="19" endLine="51" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$3" />
+    <unitInfo nodeId="1897569136986085373" fileName="ConnectorDecoratorView.java" startLine="59" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$4" />
+    <unitInfo nodeId="1897569136986169837" fileName="ConnectorDecoratorView.java" startLine="39" startPosition="15" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$2" />
+    <unitInfo nodeId="1897569136986085358" fileName="ConnectorDecoratorView.java" startLine="57" startPosition="15" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$3" />
+    <unitInfo nodeId="4287318874986848090" fileName="ConnectorDecoratorView.java" startLine="139" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView$EventSourceProperty" />
+    <unitInfo nodeId="4287318874984209776" fileName="ConnectorDecoratorView.java" startLine="18" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
   </root>
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984254796">
     <nodeInfo nodeId="4287318874984265817" fileName="NonFocusableLineView.java" startLine="10" startPosition="45" endLine="11" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
