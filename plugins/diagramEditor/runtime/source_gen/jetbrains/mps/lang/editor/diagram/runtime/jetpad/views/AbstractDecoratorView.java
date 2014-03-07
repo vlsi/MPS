@@ -48,13 +48,11 @@ public abstract class AbstractDecoratorView extends GroupView {
     }.attachRoot();
   }
 
-  protected ObservableList<View> childSublist() {
-    return new AbstractDecoratorView.ChildSubList();
-  }
-
-  private class ChildSubList extends SubList<View> {
-    protected ObservableList<View> getBaseList() {
-      return children();
-    }
+  protected ObservableList<View> childSubList() {
+    return new SubList<View>() {
+      protected ObservableList<View> getBaseList() {
+        return children();
+      }
+    };
   }
 }

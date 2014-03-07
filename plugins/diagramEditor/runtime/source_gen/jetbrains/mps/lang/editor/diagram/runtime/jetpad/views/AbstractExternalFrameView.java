@@ -8,11 +8,14 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.model.collections.list.ObservableList;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.projectional.diagram.util.SubList;
 
 public abstract class AbstractExternalFrameView extends GroupView {
   public Property<Rectangle> internalsBounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
+  public Property<Integer> frameWidth = new ValueProperty<Integer>(1);
 
-  protected Property<Integer> frameWidth = new ValueProperty<Integer>(1);
   protected Property<Rectangle> frameRectangle = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
 
 
@@ -43,5 +46,13 @@ public abstract class AbstractExternalFrameView extends GroupView {
 
   protected static int getHalfWidth(int lineWidth) {
     return lineWidth - lineWidth / 2;
+  }
+
+  protected ObservableList<View> childSubList() {
+    return new SubList<View>() {
+      protected ObservableList<View> getBaseList() {
+        return children();
+      }
+    };
   }
 }

@@ -40,14 +40,13 @@ public class SelectionFrameView extends AbstractExternalFrameView {
             };
           }
         }));
-        configuration.add(Synchronizers.forProperty(lineWidth, new Runnable() {
-          public void run() {
-            frameWidth.set(AbstractExternalFrameView.getHalfWidth(lineWidth.get()));
-          }
-        }));
-
       }
     }.attachRoot();
+  }
+
+  public void setLineWidth(int width) {
+    lineWidth.set(width);
+    frameWidth.set(AbstractExternalFrameView.getHalfWidth(width));
   }
 
   private void updateBorderView(PolyLineView polyLine, Rectangle frameBounds) {

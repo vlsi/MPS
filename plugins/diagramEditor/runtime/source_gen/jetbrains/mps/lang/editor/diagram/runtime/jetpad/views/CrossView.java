@@ -16,6 +16,7 @@ public class CrossView extends GroupView {
   public Property<Integer> segmentLength = new ValueProperty<Integer>(4);
   public Property<Integer> lineWidth = new ValueProperty<Integer>(3);
   public Property<Vector> centerLocation = new ValueProperty<Vector>(new Vector(0, 0));
+
   private final LineView myFirstLine = new NonFocusableLineView();
   private final LineView mySecondLine = new NonFocusableLineView();
 

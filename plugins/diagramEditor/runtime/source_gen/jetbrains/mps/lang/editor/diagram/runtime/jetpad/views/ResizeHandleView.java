@@ -10,9 +10,11 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 
 public class ResizeHandleView extends NonFocusablePolyLineView {
+  public static final int DEFAULT_HALF_WIDTH = 3;
+
   public Property<Color> color = new ValueProperty<Color>(Color.GRAY);
   public Property<Color> backgroundColor = new ValueProperty<Color>(Color.LIGHT_GRAY);
-  public Property<Integer> halfWidth = new ValueProperty<Integer>(3);
+  public Property<Integer> halfWidth = new ValueProperty<Integer>(DEFAULT_HALF_WIDTH);
   public Property<Vector> centerLocation = new ValueProperty<Vector>(new Vector(0, 0));
 
 

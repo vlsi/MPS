@@ -24,8 +24,8 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forObservableRole(this, selectionDecorator, childSublist(), createSelectionDecoratorMapperFactory()));
-        configuration.add(Synchronizers.forObservableRole(this, errorDecorator, childSublist(), createErrorDecoratorMapperFactory()));
+        configuration.add(Synchronizers.forObservableRole(this, selectionDecorator, childSubList(), createSelectionDecoratorMapperFactory()));
+        configuration.add(Synchronizers.forObservableRole(this, errorDecorator, childSubList(), createErrorDecoratorMapperFactory()));
 
       }
     }.attachRoot();

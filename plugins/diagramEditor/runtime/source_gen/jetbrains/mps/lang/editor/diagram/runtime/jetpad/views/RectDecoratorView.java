@@ -7,19 +7,19 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.GroupView;
-import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.projectional.view.PolyLineView;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public abstract class RectDecoratorView extends AbstractDecoratorView {
+  private static final int ERROR_FRAME_WIDTH = 3;
+
   public Property<Rectangle> bounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
-  private Property<Rectangle> internalsBounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
+  public Property<Boolean> resizable = new ValueProperty<Boolean>(false);
+
+  private Property<Rectangle> myInternalsBounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
 
 
   public RectDecoratorView() {
@@ -27,8 +27,13 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forObservableRole(this, selectionDecorator, childSublist(), createSelectionDecoratorMapperFactory()));
-        configuration.add(Synchronizers.forObservableRole(this, errorDecorator, childSublist(), createErrorDecoratorMapperFactory()));
+        configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
+          public void set(Rectangle newBounds) {
+            myInternalsBounds.set(new Rectangle(newBounds.origin.x, newBounds.origin.y, newBounds.dimension.x - 1, newBounds.dimension.y - 1));
+          }
+        }));
+        configuration.add(Synchronizers.forObservableRole(this, selectionDecorator, childSubList(), createSelectionDecoratorMapperFactory()));
+        configuration.add(Synchronizers.forObservableRole(this, errorDecorator, childSubList(), createErrorDecoratorMapperFactory()));
       }
     }.attachRoot();
   }
@@ -36,16 +41,13 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
   private MapperFactory<Boolean, GroupView> createSelectionDecoratorMapperFactory() {
     return new MapperFactory<Boolean, GroupView>() {
       public Mapper<? extends Boolean, ? extends GroupView> createMapper(Boolean selected) {
-        return new Mapper<Boolean, GroupView>(selected, createSelectionView()) {
+        return new Mapper<Boolean, ResizableSelectionFrameView>(selected, new ResizableSelectionFrameView()) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-              public void set(Rectangle bounds) {
-                updateSelectionView(getTarget(), bounds);
-              }
-            }));
-
+            configuration.add(Synchronizers.forProperty(myInternalsBounds, getTarget().internalsBounds));
+            configuration.add(Synchronizers.forProperty(resizable, getTarget().resizable));
+            configuration.add(Synchronizers.forProperty(Properties.ifProp(hasError, AbstractExternalFrameView.getHalfWidth(ERROR_FRAME_WIDTH), AbstractExternalFrameView.getHalfWidth(getTarget().selectionLineWidth.get())), getTarget().frameWidth));
           }
         };
       }
@@ -59,12 +61,7 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forProperty(bounds, new WritableProperty<Rectangle>() {
-              public void set(Rectangle newBounds) {
-                internalsBounds.set(new Rectangle(newBounds.origin.x, newBounds.origin.y, newBounds.dimension.x - 1, newBounds.dimension.y - 1));
-              }
-            }));
-            configuration.add(Synchronizers.forProperty(internalsBounds, getTarget().internalsBounds));
+            configuration.add(Synchronizers.forProperty(myInternalsBounds, getTarget().internalsBounds));
           }
         };
       }
@@ -74,31 +71,7 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
   private SelectionFrameView createErrorView() {
     SelectionFrameView result = new SelectionFrameView();
     result.color.set(Color.RED);
-    result.lineWidth.set(3);
+    result.setLineWidth(ERROR_FRAME_WIDTH);
     return result;
   }
-
-  protected GroupView createSelectionView() {
-    GroupView result = new GroupView();
-    return result;
-  }
-
-  private void updateSelectionView(GroupView selectionView, Rectangle bounds) {
-    PolyLineView selectionFrame = new NonFocusablePolyLineView();
-    updatePolylineFrame(selectionFrame, bounds);
-    selectionView.children().clear();
-    selectionView.children().add(selectionFrame);
-    for (Vector point : Sequence.fromIterable(getSelectionPoints(bounds))) {
-      selectionView.children().add(new ResizeHandleView(point));
-    }
-  }
-
-  private void updatePolylineFrame(PolyLineView polylineView, Rectangle bounds) {
-    polylineView.points.clear();
-    polylineView.points.addAll(ListSequence.fromListAndArray(new ArrayList<Vector>(), new Vector(bounds.origin.x - 1, bounds.origin.y - 1), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y - 1), new Vector(bounds.origin.x + bounds.dimension.x, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x - 1, bounds.origin.y + bounds.dimension.y), new Vector(bounds.origin.x - 1, bounds.origin.y - 1)));
-  }
-
-
-
-  protected abstract Iterable<Vector> getSelectionPoints(Rectangle bounds);
 }
