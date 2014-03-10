@@ -12,13 +12,18 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.textGen.TextGenerationResult;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.extapi.model.GeneratableSModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
 
 public class TextGenUtil {
   private TextGenUtil() {
   }
 
+  @Deprecated
   public static void generateText(TextGeneratorEngine engine, Iterable<GResource> inputResources, final TextGenUtil.TextGenerationCallback callback) {
     ModelAccess.assertLegalRead();
 
@@ -43,26 +48,27 @@ public class TextGenUtil {
     });
   }
 
-  public static boolean runWriteTransaction(final Runnable runnable, AtomicLong mutableOverheadStatistic) {
-    long outerStartTime = System.currentTimeMillis();
-    final AtomicLong innerTime = new AtomicLong(0);
-    boolean result = FileSystem.getInstance().runWriteTransaction(new Runnable() {
-      @Override
-      public void run() {
-        long innerStartTime = System.currentTimeMillis();
-        runnable.run();
-        innerTime.set(System.currentTimeMillis() - innerStartTime);
-      }
-    });
-    long outerTime = System.currentTimeMillis() - outerStartTime;
-    mutableOverheadStatistic.addAndGet(outerTime - innerTime.get());
-    return result;
+  public static IFile getOutputDir(IFile root, SModel model, IFile override) {
+    if (override != null) {
+      return override;
+    }
+    return FileGenerationUtil.getDefaultOutputDir(model, root);
   }
 
-  public static long withTimeTracking(Runnable runnable) {
-    long startTime = System.currentTimeMillis();
-    runnable.run();
-    return System.currentTimeMillis() - startTime;
+  public static IFile getOverriddenOutputDir(SModel md) {
+    if (md instanceof GeneratableSModel) {
+      boolean useModelFolder = ((GeneratableSModel) md).isGenerateIntoModelFolder();
+      DataSource source = md.getSource();
+      if (useModelFolder && source instanceof FileDataSource) {
+        IFile file = ((FileDataSource) source).getFile();
+        return file.getParent();
+      }
+    }
+    return null;
+  }
+
+  public static boolean runWriteTransaction(final Runnable runnable) {
+    return FileSystem.getInstance().runWriteTransaction(runnable);
   }
 
   public static interface TextGenerationCallback {

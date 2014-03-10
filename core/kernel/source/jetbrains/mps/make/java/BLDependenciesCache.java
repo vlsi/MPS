@@ -16,12 +16,16 @@
 package jetbrains.mps.make.java;
 
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 
@@ -65,18 +69,12 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
   }
 
   @Override
-  protected Element toXml(ModelDependencies modelDependencies) {
-    return modelDependencies.toXml();
-  }
-
-  @Override
   protected ModelDependencies fromXml(Element e) {
     return ModelDependencies.fromXml(e);
   }
 
-  @Override
-  protected ModelDependencies generateCache(GenerationStatus status) {
-    return status.getBLDependencies();
+  public CacheGenerator getGenerator() {
+    return new CacheGen();
   }
 
   @Override
@@ -94,6 +92,49 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
       throw new IOException(ex);
     } catch (Exception ex) {
       throw new IOException(ex);
+    }
+  }
+
+  private class CacheGen implements CacheGenerator {
+    @Override
+    public void generateCache(GenerationStatus status, StreamHandler handler) {
+      final ModelDependencies deps = updateUnchanged(status, handler);
+      if (deps == null) {
+        return;
+      }
+      update(status.getOriginalInputModel(), deps);
+
+      handler.saveStream(getCacheFileName(), deps.toXml());
+    }
+
+    private ModelDependencies updateUnchanged(GenerationStatus genStatus, StreamHandler streamHandler) {
+      final ModelDependencies newDeps = genStatus.getBLDependencies();
+      if (newDeps == null) {
+        return null;
+      }
+      // update modelDependencies and generationDependencies
+      ModelDependencies modelDep = null;
+
+      // process unchanged files
+      SModel originalInputModel = genStatus.getOriginalInputModel();
+      for (GenerationRootDependencies rdep : genStatus.getUnchangedDependencies()) {
+        for (String filename : rdep.getFiles()) {
+          if (!streamHandler.touch(filename)) {
+            continue;
+          }
+          // re-register baseLanguage dependencies
+          if (modelDep == null) {
+            modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
+          }
+          if (modelDep != null) {
+            RootDependencies root = modelDep.getDependency(filename);
+            if (root != null) {
+              newDeps.replaceRoot(root);
+            }
+          }
+        }
+      }
+      return newDeps;
     }
   }
 }

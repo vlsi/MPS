@@ -22,31 +22,40 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.IStatus;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Status;
 import jetbrains.mps.util.Status.ERROR;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /**
+ *
  * @author Artem Tikhomirov
  */
-public class CacheFacility {
-  private final CacheGenerator[] myGenerators;
+public class CacheGenLayout {
+  private final List<Pair<StreamHandler, CacheGenerator>> myGenerators;
   private final List<IMessage> myErrors = new ArrayList<IMessage>();
 
-  public CacheFacility(@NotNull CacheGenerator... cacheGenerators) {
-    myGenerators = cacheGenerators;
+  public CacheGenLayout() {
+    myGenerators = new ArrayList<Pair<StreamHandler, CacheGenerator>>();
   }
 
-  public IStatus serialize(GenerationStatus genStatus, StreamHandler streamHandler) {
-    for (CacheGenerator g : myGenerators) {
+  public CacheGenLayout register(@NotNull StreamHandler locationHandler, @Nullable CacheGenerator cg) {
+    if (cg != null) {
+      myGenerators.add(new Pair<StreamHandler, CacheGenerator>(locationHandler, cg));
+    }
+    return this;
+  }
+
+  public IStatus serialize(GenerationStatus genStatus) {
+    myErrors.clear();
+    for (Pair<StreamHandler, CacheGenerator> p : myGenerators) {
       try {
-        if (g != null) {
-          g.generateCache(genStatus, streamHandler);
-        }
+          p.o2.generateCache(genStatus, p.o1);
       } catch (Throwable t) {
         myErrors.add(new Message(MessageKind.ERROR, t.toString()).setException(t));
       }

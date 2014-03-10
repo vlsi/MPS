@@ -26,6 +26,11 @@ import java.util.List;
 
 public class TextGenerator {
 
+  /**
+   * @deprecated This method will be removed and replaced with a better alternative. Meanwhile,
+   * use TextFacility if control over text gen process is needed.
+   */
+  @Deprecated
   public static List<IMessage> handleTextGenResults(GenerationStatus sourceStatus, List<TextGenerationResult> results,
       boolean generateDebugInfo, StreamHandler streamHandler, CacheGenerator[] cacheGenerators) {
 
@@ -34,16 +39,9 @@ public class TextGenerator {
     }
 
     TextFacility tf = new TextFacility(sourceStatus);
+    tf.generateBaseLangDeps(false).generateDebug(false);
     tf.setTextGenOutcome(results);
-    tf.updateBaseLangDeps(streamHandler);
-
-    if (generateDebugInfo) {
-      tf.updateDebugInfo();
-    }
-
     tf.serializeOutcome(streamHandler);
-    tf.serializeCaches(streamHandler, cacheGenerators);
-
     return tf.getErrors();
   }
 }

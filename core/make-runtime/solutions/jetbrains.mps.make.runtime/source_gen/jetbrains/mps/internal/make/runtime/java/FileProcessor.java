@@ -23,7 +23,7 @@ import java.util.Arrays;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 
-/*package*/ class FileProcessor {
+public class FileProcessor {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
   private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();

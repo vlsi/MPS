@@ -20,7 +20,9 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
+import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
@@ -73,27 +75,27 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       long startJobTime = System.currentTimeMillis();
 
       if (status.isOk()) {
-        JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
-        try {
-          TextFacility tf = new TextFacility(status);
-          tf.generateDebug(true).failNoTextGen(false);
-          tf.toTextModel();
-          tf.updateBaseLangDeps(javaStreamHandler);
-          tf.updateDebugInfo();
-          tf.serializeOutcome(javaStreamHandler);
-          tf.serializeCaches(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(),
-              TraceInfoCache.getInstance().getGenerator(),
-              GenerationDependenciesCache.getInstance().getGenerator());
-          if (!tf.getErrors().isEmpty()) {
-            info("there were errors:");
-            for (IMessage m : tf.getErrors()) {
-              myLogger.info(m.getText());
-            }
-            return false;
+        JavaStreamHandler javaSourcesLocation = new JavaStreamHandler(inputModel, targetDir, myProcessor);
+        JavaStreamHandler cachesLocation = new JavaStreamHandler(inputModel, FileGenerationUtil.getCachesDir(targetDir), myProcessor);
+        TextFacility tf = new TextFacility(status);
+        tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
+        tf.produceTextModel();
+        tf.serializeOutcome(javaSourcesLocation);
+        CacheGenLayout cgl = new CacheGenLayout();
+        cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
+        cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
+        cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
+        tf.serializeCaches(cgl);
+        if (!tf.getErrors().isEmpty()) {
+          info("there were errors:");
+          for (IMessage m : tf.getErrors()) {
+            myLogger.info(m.getText());
           }
-        } finally {
-          javaStreamHandler.dispose();
+          return false;
         }
+        myProcessor.filesToDelete(javaSourcesLocation.getFilesToDelete());
+        myProcessor.filesToDelete(cachesLocation.getFilesToDelete());
+        myProcessor.invalidateModel(inputModel);
       }
 
       if (myLogger.needsInfo()) {

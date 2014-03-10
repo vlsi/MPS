@@ -20,6 +20,7 @@ import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.smodel.SModelRepository;
@@ -87,30 +88,8 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   }
 
   @Override
-  protected Element toXml(GenerationDependencies dependencies) {
-    return dependencies.toXml();
-  }
-
-  @Override
-  protected void saveCache(@NotNull GenerationDependencies cache, SModel model, StreamHandler handler) {
-    super.saveCache(cache, model, handler);
-
-    if (InternalFlag.isInternalMode()) {
-      String trace = cache.extractDependenciesTraces();
-      if (trace != null) {
-        handler.saveStream(getCacheFileName() + ".trace", trace, true);
-      }
-    }
-  }
-
-  @Override
   protected GenerationDependencies fromXml(Element e) {
     return GenerationDependencies.fromXml(e);
-  }
-
-  @Override
-  protected GenerationDependencies generateCache(GenerationStatus status) {
-    return status.getDependencies();
   }
 
   @Override
@@ -120,6 +99,10 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
       ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(md));
     }
     return md;
+  }
+
+  public CacheGenerator getGenerator() {
+    return new CacheGen();
   }
 
   public IFile findCachesPathRedirect(IFile cachesPath) {
@@ -144,5 +127,26 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
 
   public static interface CachePathRedirect {
     IFile redirectTo(IFile outputPath);
+  }
+
+  private class CacheGen implements CacheGenerator {
+
+    @Override
+    public void generateCache(GenerationStatus status, StreamHandler handler) {
+      GenerationDependencies cache = status.getDependencies();
+      if (cache == null) {
+        return;
+      }
+      update(status.getOriginalInputModel(), cache);
+
+      handler.saveStream(getCacheFileName(), cache.toXml());
+
+      if (InternalFlag.isInternalMode()) {
+        String trace = cache.extractDependenciesTraces();
+        if (trace != null) {
+          handler.saveStream(getCacheFileName() + ".trace", trace);
+        }
+      }
+    }
   }
 }

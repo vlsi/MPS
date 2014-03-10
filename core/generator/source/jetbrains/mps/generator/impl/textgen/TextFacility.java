@@ -16,15 +16,10 @@
 package jetbrains.mps.generator.impl.textgen;
 
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.generator.impl.cache.CacheFacility;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
+import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine.GenerateCallback;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
@@ -62,7 +57,7 @@ public final class TextFacility {
   private final GenerationStatus myGenStatus;
   private final List<IMessage> myErrors = new ArrayList<IMessage>();
   private List<TextGenerationResult> myTextGenOutcome;
-  private boolean myGenerateDebugInfo = true, myFailNoTextGen = false;
+  private boolean myGenerateDebugInfo = true, myFailNoTextGen = false, myNeedBaseLangDeps = true;
 
   public TextFacility(@NotNull GenerationStatus generationStatus) {
     myGenStatus = generationStatus;
@@ -76,13 +71,17 @@ public final class TextFacility {
     myFailNoTextGen = failWithError;
     return this;
   }
+  public TextFacility generateBaseLangDeps(boolean shallGenerateBaseLangDependencies) {
+    myNeedBaseLangDeps = shallGenerateBaseLangDependencies;
+    return this;
+  }
 
 
   public List<IMessage> getErrors() {
     return new ArrayList<IMessage>(myErrors);
   }
 
-  public void toTextModel() {
+  public void produceTextModel() {
 
     if (myGenStatus.getOutputModel() != null) {
       TextGeneratorEngine engine = new TextGeneratorEngine(myGenerateDebugInfo, myFailNoTextGen);
@@ -114,24 +113,10 @@ public final class TextFacility {
 
   private List<TextGenerationResult> getTextGenOutcome() {
     if (myTextGenOutcome == null) {
-      toTextModel();
+      produceTextModel();
       accumulateErrors();
     }
     return myTextGenOutcome;
-  }
-
-  // FIXME shall not use streamHandler here
-  public void updateBaseLangDeps(StreamHandler streamHandler) {
-    final ModelDependencies modelDependencies = buildBLDependencies();
-    updateUnchanged(modelDependencies, streamHandler);
-
-    myGenStatus.setBLDependencies(modelDependencies);
-  }
-
-  public void updateDebugInfo() {
-    DebugInfo generatedDebugInfo = buildDebugInfo();
-    updateUnchanged(generatedDebugInfo);
-    myGenStatus.setDebugInfo(generatedDebugInfo);
   }
 
   public IStatus serializeOutcome(StreamHandler streamHandler) {
@@ -151,18 +136,24 @@ public final class TextFacility {
       }
 
       if (contents instanceof String) {
-        streamHandler.saveStream(name, (String) contents, false);
+        streamHandler.saveStream(name, (String) contents);
       } else {
-        streamHandler.saveStream(name, (byte[]) contents, false);
+        streamHandler.saveStream(name, (byte[]) contents);
       }
     }
     return success ? Status.NO_ERRORS : new Status.ERROR("Failed to serialize textgen outcome");
   }
 
-  public void serializeCaches(StreamHandler streamHandler, CacheGenerator... cacheGenerators) {
-    final CacheFacility cf = new CacheFacility(cacheGenerators);
-    if (cf.serialize(myGenStatus, streamHandler).isError()) {
-      myErrors.addAll(cf.getErrors());
+  public void serializeCaches(CacheGenLayout genLayout) {
+    if (myNeedBaseLangDeps) {
+      myGenStatus.setBLDependencies(buildBLDependencies());
+    }
+    if (myGenerateDebugInfo) {
+      myGenStatus.setDebugInfo(buildDebugInfo());
+    }
+
+    if (genLayout.serialize(myGenStatus).isError()) {
+      myErrors.addAll(genLayout.getErrors());
     }
 
   }
@@ -207,51 +198,5 @@ public final class TextFacility {
       }
     }
     return debugInfoBuilder.getDebugInfo();
-  }
-
-  private void updateUnchanged(ModelDependencies newDeps, StreamHandler streamHandler) {
-    // update modelDependencies and generationDependencies
-    ModelDependencies modelDep = null;
-
-    // process unchanged files
-    SModel originalInputModel = myGenStatus.getOriginalInputModel();
-    for (GenerationRootDependencies rdep : getUnchangedDependencies()) {
-      for (String filename : rdep.getFiles()) {
-        if (!streamHandler.touch(filename, false)) {
-          continue;
-        }
-        // re-register baseLanguage dependencies
-        if (modelDep == null) {
-          modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
-        }
-        if (modelDep != null) {
-          RootDependencies root = modelDep.getDependency(filename);
-          if (root != null) {
-            newDeps.replaceRoot(root);
-          }
-        }
-      }
-    }
-  }
-
-  private void updateUnchanged(DebugInfo generatedDebugInfo) {
-    // complete debug info with info for roots that did not changed and therefore were not generated
-    // we get debug info for them from cache
-    DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(myGenStatus.getOriginalInputModel());
-    if (cachedDebugInfo != null) {
-      List<String> unchangedFiles = new ArrayList<String>();
-
-      for (GenerationRootDependencies dependency : getUnchangedDependencies()) {
-        unchangedFiles.addAll(dependency.getFiles());
-      }
-
-      DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedFiles);
-    }
-  }
-
-
-  private List<GenerationRootDependencies> getUnchangedDependencies() {
-    GenerationDependencies dependencies = myGenStatus.getDependencies();
-    return (dependencies != null) ? dependencies.getUnchangedDependencies() : Collections.<GenerationRootDependencies>emptyList();
   }
 }

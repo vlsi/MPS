@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.GenerationStatus;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -26,7 +25,13 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import java.net.MalformedURLException;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import org.jdom.Element;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
+import java.util.ArrayList;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
+import jetbrains.mps.traceInfo.DebugInfoBuilder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -73,11 +78,6 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Override
   public String getCacheFileName() {
     return TRACE_FILE_NAME;
-  }
-
-  @Override
-  protected DebugInfo generateCache(GenerationStatus status) {
-    return status.getDebugInfo();
   }
 
   @Nullable
@@ -202,14 +202,13 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     }
   }
 
-  @Override
-  protected boolean isCache() {
-    return false;
+  public CacheGenerator getGenerator() {
+    return new TraceInfoCache.CacheGen();
   }
 
   @Override
-  protected Element toXml(DebugInfo debugInfo) {
-    return debugInfo.toXml();
+  protected boolean isCache() {
+    return false;
   }
 
   @Override
@@ -248,6 +247,37 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static interface TraceInfoResourceProvider {
     public URL getResource(SModule module, String resourceName);
   }
+
+  private class CacheGen implements CacheGenerator {
+    @Override
+    public void generateCache(GenerationStatus status, StreamHandler handler) {
+      DebugInfo cache = updateUnchanged(status);
+      if (cache == null) {
+        return;
+      }
+      update(status.getOriginalInputModel(), cache);
+      handler.saveStream(getCacheFileName(), cache.toXml());
+    }
+
+    private DebugInfo updateUnchanged(GenerationStatus genStatus) {
+      DebugInfo generatedDebugInfo = genStatus.getDebugInfo();
+      if (generatedDebugInfo == null) {
+        return null;
+      }
+      // complete debug info with info for roots that did not changed and therefore were not generated 
+      // we get debug info for them from cache 
+      DebugInfo cachedDebugInfo = TraceInfoCache.this.getLastGeneratedDebugInfo(genStatus.getOriginalInputModel());
+      if (cachedDebugInfo != null) {
+        List<String> unchangedFiles = new ArrayList<String>();
+        for (GenerationRootDependencies dependency : genStatus.getUnchangedDependencies()) {
+          unchangedFiles.addAll(dependency.getFiles());
+        }
+        DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedFiles);
+      }
+      return generatedDebugInfo;
+    }
+  }
+
 
   protected static Logger LOG = LogManager.getLogger(TraceInfoCache.class);
 }
