@@ -2,186 +2,161 @@
 <debugInfo>
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/4421917191016660666" />
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/6214179127578263953">
-    <nodeInfo nodeId="6214179127578268770" fileName="TestMakeService.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
-    <nodeInfo nodeId="6214179127578268883" fileName="TestMakeService.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
-    <nodeInfo nodeId="6214179127578268773" fileName="TestMakeService.java" startLine="40" startPosition="85" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578268886" fileName="TestMakeService.java" startLine="41" startPosition="27" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107886699324873264" fileName="TestMakeService.java" startLine="46" startPosition="173" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107886699324873271" fileName="TestMakeService.java" startLine="48" startPosition="53" endLine="49" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107886699324873277" fileName="TestMakeService.java" startLine="49" startPosition="55" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107886699324873282" fileName="TestMakeService.java" startLine="50" startPosition="26" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4107886699324873291" fileName="TestMakeService.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4107886699324873292" fileName="TestMakeService.java" startLine="53" startPosition="0" endLine="54" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237901" fileName="TestMakeService.java" startLine="58" startPosition="36" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237909" fileName="TestMakeService.java" startLine="63" startPosition="54" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8464977774480118469" fileName="TestMakeService.java" startLine="72" startPosition="63" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="8464977774480118472" fileName="TestMakeService.java" startLine="77" startPosition="66" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6214179127578269544" fileName="TestMakeService.java" startLine="81" startPosition="38" endLine="82" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578268919" fileName="TestMakeService.java" startLine="85" startPosition="77" endLine="86" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6214179127578268939" fileName="TestMakeService.java" startLine="89" startPosition="64" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6214179127578268945" fileName="TestMakeService.java" startLine="91" startPosition="42" endLine="92" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578268955" fileName="TestMakeService.java" startLine="93" startPosition="9" endLine="94" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6214179127578269332" fileName="TestMakeService.java" startLine="99" startPosition="50" endLine="100" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269019" fileName="TestMakeService.java" startLine="102" startPosition="6" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6214179127578269047" fileName="TestMakeService.java" startLine="110" startPosition="19" endLine="111" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269051" fileName="TestMakeService.java" startLine="111" startPosition="40" endLine="112" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269056" fileName="TestMakeService.java" startLine="113" startPosition="25" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269067" fileName="TestMakeService.java" startLine="118" startPosition="16" endLine="119" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8493703692275706915" fileName="TestMakeService.java" startLine="124" startPosition="91" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269119" fileName="TestMakeService.java" startLine="129" startPosition="47" endLine="130" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6214179127578269141" fileName="TestMakeService.java" startLine="130" startPosition="211" endLine="131" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269151" fileName="TestMakeService.java" startLine="131" startPosition="59" endLine="132" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269159" fileName="TestMakeService.java" startLine="132" startPosition="46" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269176" fileName="TestMakeService.java" startLine="133" startPosition="22" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6214179127578269179" fileName="TestMakeService.java" startLine="135" startPosition="26" endLine="136" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2857879851034056825" fileName="TestMakeService.java" startLine="143" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="taskName" />
-    <nodeInfo nodeId="2857879851034056828" fileName="TestMakeService.java" startLine="144" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mh" />
-    <nodeInfo nodeId="2857879851034056809" fileName="TestMakeService.java" startLine="146" startPosition="61" endLine="147" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2857879851034056815" fileName="TestMakeService.java" startLine="147" startPosition="31" endLine="148" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2857879851034056844" fileName="TestMakeService.java" startLine="151" startPosition="163" endLine="152" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2857879851034056864" fileName="TestMakeService.java" startLine="156" startPosition="194" endLine="157" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2857879851034056871" fileName="TestMakeService.java" startLine="157" startPosition="82" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5256025380477436694" fileName="TestMakeService.java" startLine="158" startPosition="0" endLine="159" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5256025380477436716" fileName="TestMakeService.java" startLine="159" startPosition="91" endLine="160" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5520723819347757803" fileName="TestMakeService.java" startLine="160" startPosition="24" endLine="161" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6214179127578269065" fileName="TestMakeService.java" startLine="118" startPosition="14" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
-    <nodeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6214179127578268943" fileName="TestMakeService.java" startLine="90" startPosition="21" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6214179127578269177" fileName="TestMakeService.java" startLine="134" startPosition="0" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2857879851034056831" fileName="TestMakeService.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTask#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMakeService#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;)V" />
-    <nodeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
-    <nodeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
-    <nodeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="6214179127578269320" fileName="TestMakeService.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
-    <nodeInfo nodeId="6214179127578269071" fileName="TestMakeService.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="2857879851034056805" fileName="TestMakeService.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskRunner#(Ljava/lang/String;Ljetbrains/mps/messages/IMessageHandler;)V" />
-    <nodeInfo nodeId="4107886699324873269" fileName="TestMakeService.java" startLine="47" startPosition="29" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6214179127578268974" fileName="TestMakeService.java" startLine="96" startPosition="6" endLine="102" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6214179127578269045" fileName="TestMakeService.java" startLine="109" startPosition="50" endLine="115" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="6214179127578268930" fileName="TestMakeService.java" startLine="88" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
-    <nodeInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="109" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
-    <nodeInfo nodeId="2857879851034056849" fileName="TestMakeService.java" startLine="155" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClusteredInput#(Ljava/lang/Iterable;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="6214179127578268923" fileName="TestMakeService.java" startLine="86" startPosition="92" endLine="96" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6214179127578269039" fileName="TestMakeService.java" startLine="107" startPosition="26" endLine="117" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="128" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="6214179127578269037" fileName="TestMakeService.java" startLine="106" startPosition="103" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="105" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="6214179127578269024" fileName="TestMakeService.java" startLine="103" startPosition="0" endLine="139" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="85" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeController#(Ljetbrains/mps/make/script/IScriptController;)Ljetbrains/mps/make/script/IScriptController;" />
-    <scopeInfo nodeId="3180200298862810294" fileName="TestMakeService.java" startLine="68" startPosition="49" endLine="68" endPosition="49" />
-    <scopeInfo nodeId="8695426379435237900" fileName="TestMakeService.java" startLine="58" startPosition="36" endLine="59" endPosition="17" />
-    <scopeInfo nodeId="8695426379435237908" fileName="TestMakeService.java" startLine="63" startPosition="54" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="8464977774480118467" fileName="TestMakeService.java" startLine="72" startPosition="63" endLine="73" endPosition="46" />
-    <scopeInfo nodeId="8464977774480118461" fileName="TestMakeService.java" startLine="77" startPosition="66" endLine="78" endPosition="46" />
-    <scopeInfo nodeId="6214179127578269543" fileName="TestMakeService.java" startLine="81" startPosition="38" endLine="82" endPosition="63" />
-    <scopeInfo nodeId="6214179127578268944" fileName="TestMakeService.java" startLine="91" startPosition="42" endLine="92" endPosition="54" />
-    <scopeInfo nodeId="6214179127578269325" fileName="TestMakeService.java" startLine="99" startPosition="50" endLine="100" endPosition="73" />
-    <scopeInfo nodeId="6214179127578269055" fileName="TestMakeService.java" startLine="113" startPosition="25" endLine="114" endPosition="43" />
-    <scopeInfo nodeId="6214179127578269066" fileName="TestMakeService.java" startLine="118" startPosition="16" endLine="119" endPosition="28" />
-    <scopeInfo nodeId="6214179127578269078" fileName="TestMakeService.java" startLine="124" startPosition="91" endLine="125" endPosition="26" />
-    <scopeInfo nodeId="6214179127578269178" fileName="TestMakeService.java" startLine="135" startPosition="26" endLine="136" endPosition="26" />
-    <scopeInfo nodeId="2857879851034056843" fileName="TestMakeService.java" startLine="151" startPosition="163" endLine="152" endPosition="75" />
-    <scopeInfo nodeId="6214179127578263958" fileName="TestMakeService.java" startLine="40" startPosition="85" endLine="42" endPosition="41" />
-    <scopeInfo nodeId="6214179127578269046" fileName="TestMakeService.java" startLine="110" startPosition="19" endLine="112" endPosition="34" />
-    <scopeInfo nodeId="2857879851034056808" fileName="TestMakeService.java" startLine="146" startPosition="61" endLine="148" endPosition="19" />
-    <scopeInfo nodeId="4107886699324873270" fileName="TestMakeService.java" startLine="48" startPosition="53" endLine="51" endPosition="56">
+    <nodeInfo nodeId="6214179127578268770" fileName="TestMakeService.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
+    <nodeInfo nodeId="6214179127578268883" fileName="TestMakeService.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
+    <nodeInfo nodeId="6214179127578268773" fileName="TestMakeService.java" startLine="41" startPosition="85" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578268886" fileName="TestMakeService.java" startLine="42" startPosition="27" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107886699324873264" fileName="TestMakeService.java" startLine="47" startPosition="173" endLine="48" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107886699324873271" fileName="TestMakeService.java" startLine="49" startPosition="53" endLine="50" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107886699324873277" fileName="TestMakeService.java" startLine="50" startPosition="55" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107886699324873282" fileName="TestMakeService.java" startLine="51" startPosition="26" endLine="52" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4634869729622204340" fileName="TestMakeService.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4634869729621959215" fileName="TestMakeService.java" startLine="54" startPosition="0" endLine="55" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4634869729622004369" fileName="TestMakeService.java" startLine="55" startPosition="46" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4634869729622021578" fileName="TestMakeService.java" startLine="56" startPosition="39" endLine="57" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107886699324873291" fileName="TestMakeService.java" startLine="57" startPosition="43" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4634869729622241572" fileName="TestMakeService.java" startLine="58" startPosition="0" endLine="59" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4634869729622241579" fileName="TestMakeService.java" startLine="59" startPosition="80" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4634869729622241580" fileName="TestMakeService.java" startLine="60" startPosition="0" endLine="61" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4634869729622241591" fileName="TestMakeService.java" startLine="61" startPosition="80" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4634869729622241596" fileName="TestMakeService.java" startLine="62" startPosition="22" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237901" fileName="TestMakeService.java" startLine="67" startPosition="36" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237909" fileName="TestMakeService.java" startLine="72" startPosition="54" endLine="73" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8464977774480118469" fileName="TestMakeService.java" startLine="81" startPosition="63" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="8464977774480118472" fileName="TestMakeService.java" startLine="86" startPosition="66" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6214179127578269544" fileName="TestMakeService.java" startLine="90" startPosition="38" endLine="91" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578268919" fileName="TestMakeService.java" startLine="94" startPosition="77" endLine="95" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578268939" fileName="TestMakeService.java" startLine="98" startPosition="64" endLine="99" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578268945" fileName="TestMakeService.java" startLine="100" startPosition="42" endLine="101" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578268955" fileName="TestMakeService.java" startLine="102" startPosition="9" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6214179127578269332" fileName="TestMakeService.java" startLine="108" startPosition="50" endLine="109" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269019" fileName="TestMakeService.java" startLine="111" startPosition="6" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6214179127578269047" fileName="TestMakeService.java" startLine="119" startPosition="19" endLine="120" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269051" fileName="TestMakeService.java" startLine="120" startPosition="40" endLine="121" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269056" fileName="TestMakeService.java" startLine="122" startPosition="25" endLine="123" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269067" fileName="TestMakeService.java" startLine="127" startPosition="16" endLine="128" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8493703692275706915" fileName="TestMakeService.java" startLine="133" startPosition="91" endLine="134" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269119" fileName="TestMakeService.java" startLine="138" startPosition="47" endLine="139" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578269141" fileName="TestMakeService.java" startLine="139" startPosition="211" endLine="140" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269151" fileName="TestMakeService.java" startLine="140" startPosition="59" endLine="141" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269159" fileName="TestMakeService.java" startLine="141" startPosition="46" endLine="142" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269176" fileName="TestMakeService.java" startLine="142" startPosition="22" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6214179127578269179" fileName="TestMakeService.java" startLine="144" startPosition="26" endLine="145" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269065" fileName="TestMakeService.java" startLine="127" startPosition="14" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
+    <nodeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6214179127578268943" fileName="TestMakeService.java" startLine="99" startPosition="21" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6214179127578269177" fileName="TestMakeService.java" startLine="143" startPosition="0" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMakeService#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;)V" />
+    <nodeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
+    <nodeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
+    <nodeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="6214179127578269320" fileName="TestMakeService.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
+    <nodeInfo nodeId="6214179127578269071" fileName="TestMakeService.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="4107886699324873269" fileName="TestMakeService.java" startLine="48" startPosition="29" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6214179127578268974" fileName="TestMakeService.java" startLine="105" startPosition="6" endLine="111" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578269045" fileName="TestMakeService.java" startLine="118" startPosition="50" endLine="124" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="6214179127578268930" fileName="TestMakeService.java" startLine="97" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+    <nodeInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="118" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
+    <nodeInfo nodeId="6214179127578268923" fileName="TestMakeService.java" startLine="95" startPosition="92" endLine="105" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578269039" fileName="TestMakeService.java" startLine="116" startPosition="26" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="137" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="6214179127578269037" fileName="TestMakeService.java" startLine="115" startPosition="103" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="114" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="46" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="6214179127578269024" fileName="TestMakeService.java" startLine="112" startPosition="0" endLine="148" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="94" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeController#(Ljetbrains/mps/make/script/IScriptController;)Ljetbrains/mps/make/script/IScriptController;" />
+    <scopeInfo nodeId="3180200298862810294" fileName="TestMakeService.java" startLine="77" startPosition="49" endLine="77" endPosition="49" />
+    <scopeInfo nodeId="8695426379435237900" fileName="TestMakeService.java" startLine="67" startPosition="36" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="8695426379435237908" fileName="TestMakeService.java" startLine="72" startPosition="54" endLine="73" endPosition="17" />
+    <scopeInfo nodeId="8464977774480118467" fileName="TestMakeService.java" startLine="81" startPosition="63" endLine="82" endPosition="46" />
+    <scopeInfo nodeId="8464977774480118461" fileName="TestMakeService.java" startLine="86" startPosition="66" endLine="87" endPosition="46" />
+    <scopeInfo nodeId="6214179127578269543" fileName="TestMakeService.java" startLine="90" startPosition="38" endLine="91" endPosition="63" />
+    <scopeInfo nodeId="6214179127578268944" fileName="TestMakeService.java" startLine="100" startPosition="42" endLine="101" endPosition="54" />
+    <scopeInfo nodeId="6214179127578269325" fileName="TestMakeService.java" startLine="108" startPosition="50" endLine="109" endPosition="73" />
+    <scopeInfo nodeId="6214179127578269055" fileName="TestMakeService.java" startLine="122" startPosition="25" endLine="123" endPosition="43" />
+    <scopeInfo nodeId="6214179127578269066" fileName="TestMakeService.java" startLine="127" startPosition="16" endLine="128" endPosition="28" />
+    <scopeInfo nodeId="6214179127578269078" fileName="TestMakeService.java" startLine="133" startPosition="91" endLine="134" endPosition="26" />
+    <scopeInfo nodeId="6214179127578269178" fileName="TestMakeService.java" startLine="144" startPosition="26" endLine="145" endPosition="26" />
+    <scopeInfo nodeId="6214179127578263958" fileName="TestMakeService.java" startLine="41" startPosition="85" endLine="43" endPosition="41" />
+    <scopeInfo nodeId="6214179127578269046" fileName="TestMakeService.java" startLine="119" startPosition="19" endLine="121" endPosition="34" />
+    <scopeInfo nodeId="4107886699324873270" fileName="TestMakeService.java" startLine="49" startPosition="53" endLine="52" endPosition="65">
       <varInfo nodeId="4107886699324873272" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="3180200298862810290" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="6214179127578269541" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="2857879851034056831" fileName="TestMakeService.java" startLine="151" startPosition="0" endLine="154" endPosition="0">
-      <varInfo nodeId="2857879851034056838" varName="controller" />
-      <varInfo nodeId="2857879851034056836" varName="defaultScript" />
-      <varInfo nodeId="2857879851034056832" varName="inputRes" />
-      <varInfo nodeId="4671800353872697676" varName="monitor" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6214179127578268767" varName="context" />
       <varInfo nodeId="6214179127578268878" varName="messageHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8695426379435237906" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="8464977774480118463" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="8464977774480118459" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269320" fileName="TestMakeService.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="6214179127578269320" fileName="TestMakeService.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="6214179127578269321" varName="fdbk" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269071" fileName="TestMakeService.java" startLine="123" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="6214179127578269071" fileName="TestMakeService.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="6214179127578269072" varName="code" />
     </scopeInfo>
-    <scopeInfo nodeId="2857879851034056805" fileName="TestMakeService.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
-      <varInfo nodeId="2857879851034056823" varName="mh" />
-      <varInfo nodeId="2857879851034056821" varName="taskName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578268938" fileName="TestMakeService.java" startLine="89" startPosition="64" endLine="94" endPosition="59">
+    <scopeInfo nodeId="6214179127578268938" fileName="TestMakeService.java" startLine="98" startPosition="64" endLine="103" endPosition="59">
       <varInfo nodeId="6214179127578268940" varName="opt" />
     </scopeInfo>
-    <scopeInfo nodeId="2857879851034056863" fileName="TestMakeService.java" startLine="156" startPosition="194" endLine="161" endPosition="47">
-      <varInfo nodeId="2857879851034056865" varName="ctl" />
-      <varInfo nodeId="5256025380477436695" varName="task" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578269044" fileName="TestMakeService.java" startLine="109" startPosition="50" endLine="115" endPosition="15" />
-    <scopeInfo nodeId="4671800353872913487" fileName="TestMakeService.java" startLine="46" startPosition="173" endLine="54" endPosition="115">
-      <varInfo nodeId="4107886699324873265" varName="scrName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578268930" fileName="TestMakeService.java" startLine="88" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="6214179127578269044" fileName="TestMakeService.java" startLine="118" startPosition="50" endLine="124" endPosition="15" />
+    <scopeInfo nodeId="6214179127578268930" fileName="TestMakeService.java" startLine="97" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="6214179127578268931" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="109" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="118" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="6214179127578269043" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269118" fileName="TestMakeService.java" startLine="129" startPosition="47" endLine="137" endPosition="9">
+    <scopeInfo nodeId="6214179127578269118" fileName="TestMakeService.java" startLine="138" startPosition="47" endLine="146" endPosition="9">
       <varInfo nodeId="6214179127578269120" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="2857879851034056849" fileName="TestMakeService.java" startLine="155" startPosition="0" endLine="163" endPosition="0">
-      <varInfo nodeId="2857879851034056850" varName="clustRes" />
-      <varInfo nodeId="2857879851034056858" varName="controller" />
-      <varInfo nodeId="4671800353872688354" varName="monitor" />
-      <varInfo nodeId="2857879851034056855" varName="scripts" />
+    <scopeInfo nodeId="6214179127578269038" fileName="TestMakeService.java" startLine="116" startPosition="26" endLine="126" endPosition="13" />
+    <scopeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="137" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="6214179127578269114" varName="pool" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269038" fileName="TestMakeService.java" startLine="107" startPosition="26" endLine="117" endPosition="13" />
-    <scopeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="6214179127578269036" fileName="TestMakeService.java" startLine="115" startPosition="103" endLine="129" endPosition="9" />
+    <scopeInfo nodeId="4671800353872913487" fileName="TestMakeService.java" startLine="47" startPosition="173" endLine="63" endPosition="54">
+      <varInfo nodeId="4634869729622241573" varName="ctl" />
+      <varInfo nodeId="4634869729621959216" varName="makeSeq" />
+      <varInfo nodeId="4107886699324873265" varName="scrName" />
+      <varInfo nodeId="4634869729622241581" varName="task" />
+    </scopeInfo>
+    <scopeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="114" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="6214179127578269032" varName="code" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="46" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4671800353872913483" varName="controller" />
       <varInfo nodeId="4671800353872913512" varName="monitor" />
       <varInfo nodeId="4671800353872913476" varName="resources" />
       <varInfo nodeId="4671800353872913481" varName="script" />
       <varInfo nodeId="4671800353872913474" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="128" startPosition="0" endLine="139" endPosition="0">
-      <varInfo nodeId="6214179127578269114" varName="pool" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578269036" fileName="TestMakeService.java" startLine="106" startPosition="103" endLine="120" endPosition="9" />
-    <scopeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="105" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="6214179127578269032" varName="code" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578268918" fileName="TestMakeService.java" startLine="85" startPosition="77" endLine="139" endPosition="6">
+    <scopeInfo nodeId="6214179127578268918" fileName="TestMakeService.java" startLine="94" startPosition="77" endLine="148" endPosition="6">
       <varInfo nodeId="6214179127578268924" varName="cmon" />
       <varInfo nodeId="6214179127578268920" varName="cmon2delegate" />
       <varInfo nodeId="6214179127578268975" varName="jmon" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="85" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="94" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="6214179127578268916" varName="ctl" />
     </scopeInfo>
-    <unitInfo nodeId="6214179127578269316" fileName="TestMakeService.java" startLine="97" startPosition="33" endLine="102" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$2" />
-    <unitInfo nodeId="6214179127578268928" fileName="TestMakeService.java" startLine="87" startPosition="36" endLine="96" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$1" />
-    <unitInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="108" startPosition="39" endLine="117" endPosition="11" unitName="jetbrains.mps.testbench.TestMakeService$4" />
-    <unitInfo nodeId="2857879851034056804" fileName="TestMakeService.java" startLine="142" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.testbench.TestMakeService$TaskRunner" />
-    <unitInfo nodeId="6214179127578269027" fileName="TestMakeService.java" startLine="104" startPosition="15" endLine="139" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$3" />
-    <unitInfo nodeId="6214179127578263953" fileName="TestMakeService.java" startLine="36" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.testbench.TestMakeService" />
+    <unitInfo nodeId="6214179127578269316" fileName="TestMakeService.java" startLine="106" startPosition="33" endLine="111" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$2" />
+    <unitInfo nodeId="6214179127578268928" fileName="TestMakeService.java" startLine="96" startPosition="36" endLine="105" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$1" />
+    <unitInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="117" startPosition="39" endLine="126" endPosition="11" unitName="jetbrains.mps.testbench.TestMakeService$4" />
+    <unitInfo nodeId="6214179127578269027" fileName="TestMakeService.java" startLine="113" startPosition="15" endLine="148" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$3" />
+    <unitInfo nodeId="6214179127578263953" fileName="TestMakeService.java" startLine="37" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.testbench.TestMakeService" />
   </root>
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/6214179127578269219" />
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/8597743085639790147">

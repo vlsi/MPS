@@ -10,8 +10,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.ISequence;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Set;
@@ -39,7 +39,7 @@ public class ModulesClusterizer {
   public ModulesClusterizer() {
   }
 
-  public Iterable<? extends Iterable<? extends IResource>> clusterize(Iterable<IResource> res) {
+  public Iterable<Cluster> clusterize(Iterable<? extends IResource> res) {
     final Iterable<MResource> mres = Sequence.fromIterable(res).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
         return r instanceof MResource;
@@ -54,29 +54,33 @@ public class ModulesClusterizer {
         return r.module();
       }
     });
-    List<IResource> rest = Sequence.fromIterable(res).subtract(Sequence.fromIterable(mres)).toListSequence();
+    Iterable<IResource> rest = Sequence.fromIterable(((Iterable<IResource>) res)).subtract(Sequence.fromIterable(mres));
     ModulesCluster clst = new ModulesCluster(mods);
     clst.collectRequired(mods);
-    Iterable<? extends Iterable<? extends IResource>> toBuild = Sequence.fromIterable(clst.buildOrder()).select(new ISelector<Iterable<SModule>, IListSequence<MResource>>() {
-      public IListSequence<MResource> select(final Iterable<SModule> cl) {
+    Iterable<? extends Iterable<SModule>> moduleBuildOrder = clst.buildOrder();
+    Iterable<? extends Iterable<MResource>> mresBuildOrder = Sequence.fromIterable(moduleBuildOrder).select(new ISelector<Iterable<SModule>, ISequence<MResource>>() {
+      public ISequence<MResource> select(final Iterable<SModule> cl) {
         return Sequence.fromIterable(mres).where(new IWhereFilter<MResource>() {
           public boolean accept(MResource r) {
             return Sequence.fromIterable(cl).contains(r.module());
           }
-        }).toListSequence();
+        });
       }
     });
-    Iterable<? extends Iterable<IResource>> seq = (ListSequence.fromList(rest).isNotEmpty() ? Sequence.<List<IResource>>singleton(rest) : null);
 
-    List<Iterable<? extends IResource>> result = ListSequence.fromList(new ArrayList<Iterable<? extends IResource>>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(toBuild));
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(seq));
+    List<Cluster> result = ListSequence.fromList(new ArrayList<Cluster>());
+    for (Iterable<MResource> s : mresBuildOrder) {
+      ListSequence.fromList(result).addElement(new Cluster(s, allUsedLangNamespaces(s)));
+    }
+    if (Sequence.fromIterable(rest).isNotEmpty()) {
+      ListSequence.fromList(result).addElement(new Cluster(rest, allUsedLangNamespaces(rest)));
+    }
     return result;
   }
 
 
 
-  public Iterable<String> allUsedLangNamespaces(Iterable<? extends IResource> cluster) {
+  public static Iterable<String> allUsedLangNamespaces(Iterable<? extends IResource> cluster) {
     Iterable<MResource> mres = Sequence.fromIterable(cluster).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
         return r instanceof MResource;
@@ -94,7 +98,7 @@ public class ModulesClusterizer {
     return allNamespaces(mods);
   }
 
-  private Iterable<String> allNamespaces(Iterable<SModule> modules) {
+  private static Iterable<String> allNamespaces(Iterable<SModule> modules) {
     final Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
     Set<TemplateModule> seen = SetSequence.fromSet(new HashSet<TemplateModule>());
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());

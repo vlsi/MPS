@@ -20,6 +20,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
+import jetbrains.mps.make.dependencies.MakeSequence;
+import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -28,7 +30,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -84,10 +85,17 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       String msg = scrName + " aborted: nothing to do";
       makeSession.getMessageHandler().handle(new Message(MessageKind.ERROR, msg));
-      return new FutureValue(new IResult.FAILURE(null));
+      return new FutureValue<IResult>(new IResult.FAILURE(null));
     }
+    MakeSequence makeSeq = new MakeSequence();
+    makeSeq.prepareClusters(inputRes);
+    makeSeq.prepareScipts(defaultScript, makeSession);
 
-    return new BuildMakeService.TaskRunner(scrName, makeSession).runTask(inputRes, defaultScript, controller, monitor);
+    IScriptController ctl = this.completeController(makeSession, controller);
+
+    CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, makeSession.getMessageHandler());
+    task.run(monitor);
+    return new FutureValue<IResult>(task.getResult());
   }
 
   private IScriptController completeController(final MakeSession msess, final IScriptController ctl) {
@@ -107,34 +115,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
 
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
-  }
-
-  private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
-    private String taskName;
-    private MakeSession makeSession;
-
-    private TaskRunner(String taskName, MakeSession makeSession) {
-      this.taskName = taskName;
-      this.makeSession = makeSession;
-    }
-
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      return processRawInput(inputRes, defaultScript, controller, monitor);
-    }
-
-    @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      IScriptController ctl = BuildMakeService.this.completeController(makeSession, controller);
-
-      CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler());
-      task.run(monitor);
-      return new FutureValue(task.getResult());
-    }
-
-    @Override
-    protected IScript toScript(ScriptBuilder scriptBuilder) {
-      return makeSession.toScript(scriptBuilder);
-    }
   }
 
   private static class DelegatingScriptController extends IScriptController.Stub {

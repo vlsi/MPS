@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
+import jetbrains.mps.make.dependencies.MakeSequence;
+import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -31,11 +33,10 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.service.CoreMakeTask;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
-  private IOperationContext context;
-  private IMessageHandler messageHandler;
+  private final IOperationContext context;
+  private final IMessageHandler messageHandler;
 
   public TestMakeService(IOperationContext context, IMessageHandler messageHandler) {
     this.context = context;
@@ -48,10 +49,18 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     if (Sequence.fromIterable(resources).isEmpty()) {
       String msg = scrName + " aborted: nothing to do";
       this.showError(msg);
-      return new FutureValue(new IResult.FAILURE(null));
+      return new FutureValue<IResult>(new IResult.FAILURE(null));
     }
 
-    return new TestMakeService.TaskRunner(scrName, messageHandler).runTask(resources, script, controller, monitor);
+    MakeSequence makeSeq = new MakeSequence();
+    makeSeq.prepareClusters(resources);
+    makeSeq.prepareScipts(script, session);
+
+    IScriptController ctl = TestMakeService.this.completeController(controller);
+
+    CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, messageHandler);
+    task.run(monitor);
+    return new FutureValue<IResult>(task.getResult());
   }
 
   @Override
@@ -137,28 +146,5 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
         }
       }
     };
-  }
-
-  private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
-    private String taskName;
-    private IMessageHandler mh;
-
-    private TaskRunner(String taskName, IMessageHandler mh) {
-      this.taskName = taskName;
-      this.mh = mh;
-    }
-
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      return processRawInput(inputRes, defaultScript, controller, monitor);
-    }
-
-    @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      IScriptController ctl = TestMakeService.this.completeController(controller);
-
-      CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, mh);
-      task.run(monitor);
-      return new FutureValue(task.getResult());
-    }
   }
 }

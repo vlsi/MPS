@@ -37,16 +37,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
+import jetbrains.mps.make.dependencies.MakeSequence;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
+import javax.swing.SwingUtilities;
+import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy;
-import com.intellij.openapi.progress.PerformInBackgroundOption;
-import javax.swing.SwingUtilities;
-import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -54,7 +56,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -119,7 +120,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
     return result;
-
   }
 
   @Override
@@ -223,14 +223,64 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         String msg = scrName + " aborted: nothing to do";
         mh.handle(new Message(MessageKind.ERROR, msg));
         this.displayInfo(msg);
-        return new FutureValue(new IResult.FAILURE(null));
+        return new FutureValue<IResult>(new IResult.FAILURE(null));
       } else {
         this.displayInfo("Everything up to date");
-        return new FutureValue(new IResult.SUCCESS(null));
+        return new FutureValue<IResult>(new IResult.SUCCESS(null));
       }
     }
 
-    return new WorkbenchMakeService.TaskRunner(scrName, mh).runTask(inputRes, defaultScript, controller, monitor);
+    MakeSequence makeSeq = new MakeSequence();
+    makeSeq.prepareClusters(inputRes);
+    final MakeSession session = getSession();
+    makeSeq.prepareScipts(defaultScript, session);
+
+    Project ideaPrj = ProjectHelper.toIdeaProject(session.getContext().getProject());
+    final MakeTask task = new MakeTask(ideaPrj, scrName, makeSeq, new WorkbenchMakeService.Controller(controller, mh), mh, PerformInBackgroundOption.DEAF) {
+      @Override
+      protected void aboutToStart() {
+        notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_ABOUT_TO_START));
+      }
+
+      @Override
+      protected void done() {
+        currentProcess.compareAndSet(this, null);
+        attemptCloseSession();
+        notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_FINISHED));
+      }
+
+      @Override
+      protected void displayInfo(String info) {
+        WorkbenchMakeService.this.displayInfo(info);
+      }
+    };
+
+    try {
+      getSession().doExecute(new Runnable() {
+        public void run() {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              IdeEventQueue.getInstance().flushQueue();
+              if (currentProcess.compareAndSet(null, task)) {
+                ProgressManager.getInstance().run(task);
+              } else {
+                throw new IllegalStateException("unexpected: make process already running");
+              }
+              IdeEventQueue.getInstance().flushQueue();
+            }
+          });
+        }
+      });
+
+    } catch (RuntimeException rex) {
+      // abort session 
+      if (currentProcess.get() == null) {
+        abortSession();
+      }
+      throw rex;
+    }
+
+    return task;
   }
 
   private void checkValidUsage() {
@@ -259,78 +309,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
   }
 
-  private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
-    private String taskName;
-    private IMessageHandler mh;
-
-    private TaskRunner(String taskName, IMessageHandler mh) {
-      this.taskName = taskName;
-      this.mh = mh;
-    }
-
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      return processRawInput(inputRes, defaultScript, controller, monitor);
-    }
-
-    @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      final ProgressMonitorProgressStrategy pmps = new ProgressMonitorProgressStrategy();
-      WorkbenchMakeService.this.getSession();
-      final MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(WorkbenchMakeService.this.getSession().getContext().getProject()), taskName, scripts, taskName, clustRes, new WorkbenchMakeService.Controller(controller, mh, pmps), mh, PerformInBackgroundOption.DEAF) {
-        @Override
-        protected void aboutToStart() {
-          notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_ABOUT_TO_START));
-        }
-
-        @Override
-        protected void done() {
-          currentProcess.compareAndSet(this, null);
-          attemptCloseSession();
-          notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_FINISHED));
-        }
-
-        @Override
-        protected void displayInfo(String info) {
-          WorkbenchMakeService.this.displayInfo(info);
-        }
-      };
-
-      MakeSession session = WorkbenchMakeService.this.getSession();
-      try {
-        session.doExecute(new Runnable() {
-          public void run() {
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                IdeEventQueue.getInstance().flushQueue();
-                if (currentProcess.compareAndSet(null, task)) {
-                  ProgressManager.getInstance().run(task);
-                } else {
-                  throw new IllegalStateException("unexpected: make process already running");
-                }
-                IdeEventQueue.getInstance().flushQueue();
-              }
-            });
-          }
-        });
-
-      } catch (RuntimeException rex) {
-        // abort session 
-        if (currentProcess.get() == null) {
-          abortSession();
-        }
-        throw rex;
-      }
-
-      return task;
-    }
-
-    @Override
-    protected IScript toScript(ScriptBuilder scriptBuilder) {
-      MakeSession session = WorkbenchMakeService.this.getSession();
-      return session.toScript(scriptBuilder);
-    }
-  }
-
   private class Controller extends IScriptController.Stub {
     private final ProgressMonitorProgressStrategy pmps;
     private final IScriptController delegateScrCtr;
@@ -340,9 +318,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     private IMessageHandler mh;
     private IPropertiesPool predParamPool;
 
-    public Controller(IScriptController delegate, IMessageHandler mh, ProgressMonitorProgressStrategy pmps) {
+    public Controller(IScriptController delegate, IMessageHandler mh) {
       this.delegateScrCtr = delegate;
-      this.pmps = pmps;
+      this.pmps = new ProgressMonitorProgressStrategy();
       this.mh = mh;
       init();
     }
@@ -384,7 +362,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       // todo: why should we specify project only for Generate facet? 
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
-      Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+      Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean> vars = (Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
       if (vars != null) {
         vars._0(getSession().getContext().getProject());
         vars._1(getSession().getContext());
@@ -392,7 +370,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
 
       // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
-      Tuples._2<Project, Boolean> varsForJavaCompile = (Tuples._2<Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
+      Tuples._2<jetbrains.mps.project.Project, Boolean> varsForJavaCompile = (Tuples._2<jetbrains.mps.project.Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
       if (varsForJavaCompile != null) {
         varsForJavaCompile._0(getSession().getContext().getProject());
       }

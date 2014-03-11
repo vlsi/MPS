@@ -67,6 +67,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
+    <classNode dependClassName="jetbrains.mps.make.dependencies.MakeSequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -93,7 +94,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
     <classNode extendsClassName="jetbrains.mps.make.script.Stub" />
-    <classNode extendsClassName="jetbrains.mps.make.service.AbstractInputProcessor" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractMakeService" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.ConsoleMessageFormat" file="ConsoleMessageFormat.java">

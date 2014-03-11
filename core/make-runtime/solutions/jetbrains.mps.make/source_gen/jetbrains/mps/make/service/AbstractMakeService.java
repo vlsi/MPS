@@ -12,18 +12,14 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.dependencies.ModulesClusterizer;
+import jetbrains.mps.make.dependencies.MakeSequence;
+import jetbrains.mps.make.dependencies.Cluster;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.FacetRegistry;
-import jetbrains.mps.make.facet.ITarget;
 
 public abstract class AbstractMakeService implements IMakeService {
   public AbstractMakeService() {
@@ -46,7 +42,9 @@ public abstract class AbstractMakeService implements IMakeService {
 
 
 
+  @Deprecated
   protected abstract class AbstractInputProcessor {
+    @Deprecated
     protected AbstractInputProcessor() {
     }
 
@@ -57,59 +55,24 @@ public abstract class AbstractMakeService implements IMakeService {
       return processRawInput(inputRes, defaultScript, controller, new EmptyProgressMonitor());
     }
 
-    protected final Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      final Wrappers._T<Iterable<? extends Iterable<? extends IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<? extends IResource>>>();
-      final Wrappers._T<Iterable<? extends Iterable<String>>> usedLangs = new Wrappers._T<Iterable<? extends Iterable<String>>>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          final ModulesClusterizer mcr = new ModulesClusterizer();
-          clInput.value = mcr.clusterize(Sequence.fromIterable(inputRes).select(new ISelector<IResource, IResource>() {
-            public IResource select(IResource r) {
-              return r;
-            }
-          }));
-          usedLangs.value = Sequence.fromIterable(clInput.value).select(new ISelector<Iterable<? extends IResource>, Iterable<String>>() {
-            public Iterable<String> select(Iterable<? extends IResource> it) {
-              return mcr.allUsedLangNamespaces(it);
-            }
-          }).toListSequence();
+    protected final Future<IResult> processRawInput(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
+      MakeSequence makeSeq = new MakeSequence();
+      makeSeq.prepareClusters(inputRes);
+      makeSeq.prepareScipts(defaultScript, null);
+      Iterable<Cluster> clInput = makeSeq.getClusters();
+      Iterable<IScript> scripts = Sequence.fromIterable(clInput).select(new ISelector<Cluster, IScript>() {
+        public IScript select(Cluster cluster) {
+          return cluster.getScript();
         }
       });
 
-      Iterable<ScriptBuilder> scriptBuilders = Sequence.fromIterable(usedLangs.value).select(new ISelector<Iterable<String>, ScriptBuilder>() {
-        public ScriptBuilder select(Iterable<String> langs) {
-          final ScriptBuilder scb = new ScriptBuilder();
-          Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
-            public void visit(String ns) {
-              LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
-              Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
-              scb.withFacetNames(Sequence.fromIterable(fcts).select(new ISelector<IFacet, IFacet.Name>() {
-                public IFacet.Name select(IFacet fct) {
-                  return fct.getName();
-                }
-              }));
-              scb.withFacetNames(Sequence.fromIterable(FacetRegistry.getInstance().getFacetsForLanguage(ns)).select(new ISelector<IFacet, IFacet.Name>() {
-                public IFacet.Name select(IFacet fct) {
-                  return fct.getName();
-                }
-              }));
-            }
-          });
-          return scb.withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
-        }
-      }).toListSequence();
-
-      Iterable<IScript> scripts = ((defaultScript != null ? Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
-        public IScript select(ScriptBuilder it) {
-          return defaultScript;
-        }
-      }) : Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
-        public IScript select(ScriptBuilder scb) {
-          return toScript(scb);
-        }
-      })));
-
-      return processClusteredInput((Iterable<? extends Iterable<IResource>>) clInput.value, scripts, controller, monitor);
+      List<List<IResource>> clusteredInput = ListSequence.fromList(new ArrayList<List<IResource>>());
+      for (Cluster cc : clInput) {
+        List<IResource> l = ListSequence.fromList(new ArrayList<IResource>());
+        ListSequence.fromList(l).addSequence(Sequence.fromIterable(cc.getResources()));
+        ListSequence.fromList(clusteredInput).addElement(l);
+      }
+      return processClusteredInput(clusteredInput, scripts, controller, monitor);
     }
 
     protected IScript toScript(ScriptBuilder scriptBuilder) {
@@ -128,4 +91,6 @@ public abstract class AbstractMakeService implements IMakeService {
       return this.processClusteredInput(clustRes, scripts, controller);
     }
   }
+
+
 }
