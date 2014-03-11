@@ -429,7 +429,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 206:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("strike-out", "").staticScope(StaticScope.NONE).create();
       case 207:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IStyle").children(new String[]{"overlaps"}, new boolean[]{false}).alias("style", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").children(new String[]{"overlaps"}, new boolean[]{false}).alias("style", "").create();
       case 208:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClassItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().staticScope(StaticScope.NONE).create();
       case 209:

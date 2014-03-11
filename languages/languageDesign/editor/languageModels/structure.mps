@@ -3558,6 +3558,12 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9122903797325741811" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9122903797320402872" resolveInfo="IStyle" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5163058412366247618" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5163058412366247981" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="795210086017940429" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
