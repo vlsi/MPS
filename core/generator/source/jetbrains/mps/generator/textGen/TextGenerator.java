@@ -39,9 +39,13 @@ public class TextGenerator {
     }
 
     TextFacility tf = new TextFacility(sourceStatus);
-    tf.generateBaseLangDeps(false).generateDebug(false);
-    tf.setTextGenOutcome(results);
-    tf.serializeOutcome(streamHandler);
-    return tf.getErrors();
+    try {
+      tf.generateBaseLangDeps(false).generateDebug(false);
+      tf.setTextGenOutcome(results);
+      tf.serializeOutcome(streamHandler);
+      return tf.getErrors();
+    } finally {
+      tf.dispose();
+    }
   }
 }

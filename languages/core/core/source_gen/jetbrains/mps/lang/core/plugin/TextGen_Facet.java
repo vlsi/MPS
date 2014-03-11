@@ -144,7 +144,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
 
-              TextGeneratorEngine engine = new TextGeneratorEngine(_generateDebugInfo, _failIfNoTextgen);
+              final TextGeneratorEngine engine = new TextGeneratorEngine();
               try {
                 IResource lastResource = Sequence.fromIterable(resourcesWithOutput).last();
 
@@ -193,11 +193,12 @@ public class TextGen_Facet extends IFacet.Stub {
 
                   // TODO run in parallel 
                   for (final GResource inputResource : ListSequence.fromList(currentInput)) {
-                    final TextFacility tf = new TextFacility(inputResource.status());
+                    final TextFacility tf = new TextFacility(engine, inputResource.status());
                     tf.failNoTextGen(_failIfNoTextgen).generateDebug(_generateDebugInfo).generateBaseLangDeps(true);
+                    tf.produceTextModel();
+
                     ModelAccess.instance().runReadAction(new Runnable() {
                       public void run() {
-                        tf.produceTextModel();
                         String output = SModuleOperations.getOutputPathFor(inputResource.model());
 
                         final IFile javaOutputDir = TextGenUtil.getOutputDir(pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), inputResource.model(), TextGenUtil.getOverriddenOutputDir(inputResource.model()));
@@ -222,7 +223,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         fp.invalidateModel(inputResource.model());
                       }
                     });
-
+                    tf.dispose();
                   }
 
                   if (ListSequence.fromList(errors).isNotEmpty()) {

@@ -78,20 +78,24 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         JavaStreamHandler javaSourcesLocation = new JavaStreamHandler(inputModel, targetDir, myProcessor);
         JavaStreamHandler cachesLocation = new JavaStreamHandler(inputModel, FileGenerationUtil.getCachesDir(targetDir), myProcessor);
         TextFacility tf = new TextFacility(status);
-        tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
-        tf.produceTextModel();
-        tf.serializeOutcome(javaSourcesLocation);
-        CacheGenLayout cgl = new CacheGenLayout();
-        cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
-        cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
-        cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
-        tf.serializeCaches(cgl);
-        if (!tf.getErrors().isEmpty()) {
-          info("there were errors:");
-          for (IMessage m : tf.getErrors()) {
-            myLogger.info(m.getText());
+        try {
+          tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
+          tf.produceTextModel();
+          tf.serializeOutcome(javaSourcesLocation);
+          CacheGenLayout cgl = new CacheGenLayout();
+          cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
+          cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
+          cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
+          tf.serializeCaches(cgl);
+          if (!tf.getErrors().isEmpty()) {
+            info("there were errors:");
+            for (IMessage m : tf.getErrors()) {
+              myLogger.info(m.getText());
+            }
+            return false;
           }
-          return false;
+        } finally {
+          tf.dispose();
         }
         myProcessor.filesToDelete(javaSourcesLocation.getFilesToDelete());
         myProcessor.filesToDelete(cachesLocation.getFilesToDelete());

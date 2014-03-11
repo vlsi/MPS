@@ -102,18 +102,22 @@ public class MPSCompiler {
                   JavaStreamHandler javaSourcesLocation = new JavaStreamHandler(inputModel, targetDir, myProcessor);
                   JavaStreamHandler cachesLocation = new JavaStreamHandler(inputModel, cachesDir, myProcessor);
                   TextFacility tf = new TextFacility(status);
-                  tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
-                  tf.produceTextModel();
-                  tf.serializeOutcome(javaSourcesLocation);
-                  CacheGenLayout cgl = new CacheGenLayout();
-                  cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
-                  cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
-                  cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
-                  tf.serializeCaches(cgl);
-                  myContext.getCompileContext().processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, BuildMessage.Kind.INFO, "saving " + inputModel.getModelName() + " into " + targetDir.getPath()));
-                  if (!tf.getErrors().isEmpty()) {
-                    info("there were errors.");
-                    return false;
+                  try {
+                    tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
+                    tf.produceTextModel();
+                    tf.serializeOutcome(javaSourcesLocation);
+                    CacheGenLayout cgl = new CacheGenLayout();
+                    cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
+                    cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
+                    cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
+                    tf.serializeCaches(cgl);
+                    myContext.getCompileContext().processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, BuildMessage.Kind.INFO, "saving " + inputModel.getModelName() + " into " + targetDir.getPath()));
+                    if (!tf.getErrors().isEmpty()) {
+                      info("there were errors.");
+                      return false;
+                    }
+                  } finally {
+                    tf.dispose();
                   }
                 }
 
