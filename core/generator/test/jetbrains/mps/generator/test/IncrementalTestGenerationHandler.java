@@ -157,6 +157,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       // we don't really need to serialize BL dependencies, but rather check StreamHandler#touch
       tf.serializeCaches(new CacheGenLayout().register(touchOnlyHandler, BLDependenciesCache.getInstance().getGenerator()));
       generatedContent.putAll(touchOnlyHandler.getTouched());
+      tf.dispose();
       Assert.assertTrue(tf.getErrors().isEmpty());
     }
     return true;

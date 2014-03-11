@@ -54,13 +54,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * @author Artem Tikhomirov
  */
 public final class TextFacility {
+  private final TextGeneratorEngine myEngine;
   private final GenerationStatus myGenStatus;
   private final List<IMessage> myErrors = new ArrayList<IMessage>();
   private List<TextGenerationResult> myTextGenOutcome;
   private boolean myGenerateDebugInfo = true, myFailNoTextGen = false, myNeedBaseLangDeps = true;
+  private boolean myIsOwnEngine;
 
   public TextFacility(@NotNull GenerationStatus generationStatus) {
+    this(new TextGeneratorEngine(), generationStatus);
+    myIsOwnEngine = true; // override value set in another cons
+  }
+
+  public TextFacility(@NotNull TextGeneratorEngine engine, @NotNull GenerationStatus generationStatus) {
+    myEngine = engine;
     myGenStatus = generationStatus;
+    myIsOwnEngine = false;
   }
 
   public TextFacility generateDebug(boolean shallGenerateDebugInfo) {
@@ -84,25 +93,26 @@ public final class TextFacility {
   public void produceTextModel() {
 
     if (myGenStatus.getOutputModel() != null) {
-      TextGeneratorEngine engine = new TextGeneratorEngine(myGenerateDebugInfo, myFailNoTextGen);
+      myEngine.generateDebugInfo(myGenerateDebugInfo).failIfNoTextGen(myFailNoTextGen);
       // there seems to be no reason for AtomicReference (callback is invoked before the method #generateModels() returns)
       // but this is the way it used to be. Leave it for now.
       final AtomicReference<List<TextGenerationResult>> result = new AtomicReference<List<TextGenerationResult>>();
-      try {
-        engine.generateModels(Collections.singletonList(myGenStatus.getOutputModel()), new GenerateCallback() {
-          @Override
-          public void modelGenerated(SModel model, List<TextGenerationResult> results) {
-            result.set(results);
-          }
-        });
-      } finally {
-        engine.shutdown();
-      }
+      myEngine.generateModels(Collections.singletonList(myGenStatus.getOutputModel()), new GenerateCallback() {
+        @Override
+        public void modelGenerated(SModel model, List<TextGenerationResult> results) {
+          result.set(results);
+        }
+      });
       myTextGenOutcome = result.get();
     } else {
       myTextGenOutcome = Collections.emptyList();
     }
+  }
 
+  public void dispose() {
+    if (myIsOwnEngine) {
+      myEngine.shutdown();
+    }
   }
 
   // FIXME temp method, migration of old code only. shall be dropped asap
