@@ -262,7 +262,11 @@ public class ClassifierType_Behavior {
 
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    String preparedFQName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{}).replace('.', '/');
+    String fqName = check_hz3823_a0b0n(classifier);
+    if (fqName == null) {
+      return "";
+    }
+    String preparedFQName = fqName.replace('.', '/');
     return "L" + preparedFQName + ";";
   }
 
@@ -582,6 +586,13 @@ public class ClassifierType_Behavior {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
     return quotedNode_1;
+  }
+
+  private static String check_hz3823_a0b0n(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
+    }
+    return null;
   }
 
   private static SNode _quotation_createNode_hz3823_a0a0a1a6a91() {
