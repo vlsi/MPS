@@ -1975,6 +1975,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.IStyleSheetMember_BehaviorDescriptor" file="IStyleSheetMember_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyle_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IStyle_BehaviorDescriptor" file="IStyle_BehaviorDescriptor.java" />
@@ -2980,9 +2981,11 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleClass_BehaviorDescriptor" file="StyleClass_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleSheetMember_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyle_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
