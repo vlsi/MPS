@@ -262,7 +262,7 @@ public class ClassifierType_Behavior {
 
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    String fqName = check_hz3823_a0b0n(classifier);
+    String fqName = check_hz3823_a0b0o(classifier);
     if (fqName == null) {
       return "";
     }
@@ -588,7 +588,7 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static String check_hz3823_a0b0n(SNode checkedDotOperand) {
+  private static String check_hz3823_a0b0o(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
     }
