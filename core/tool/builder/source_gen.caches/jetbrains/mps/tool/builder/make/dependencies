@@ -63,6 +63,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
@@ -81,7 +82,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.make.service.CoreMakeTask" />
-    <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
@@ -89,7 +89,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />

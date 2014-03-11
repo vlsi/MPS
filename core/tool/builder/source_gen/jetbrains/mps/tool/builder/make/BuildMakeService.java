@@ -20,17 +20,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
+import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.facet.ITarget;
-import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.service.CoreMakeTask;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -38,6 +36,7 @@ import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
+import jetbrains.mps.make.script.IFeedback;
 
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
   private static Logger LOG = LogManager.getLogger(BuildMakeService.class);
@@ -48,16 +47,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     return doMake(session, resources, script, controller, monitor);
-  }
-
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return make(session, resources, script, controller, new EmptyProgressMonitor());
-  }
-
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
   @Override
@@ -102,7 +91,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   }
 
   private IScriptController completeController(final MakeSession msess, final IScriptController ctl) {
-    return new BuildMakeService.DelegatingScriptController(ctl, new BuildMakeService.MessageFeedbackStrategy(msess.getMessageHandler())) {
+    return new BuildMakeService.DelegatingScriptController(ctl, new MessageFeedbackStrategy(msess.getMessageHandler())) {
       @Override
       public void setup(IPropertiesPool pool) {
         super.setup(pool);
@@ -114,18 +103,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
         }
       }
     };
-  }
-
-  public void disposeComponent() {
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Build Make Service";
-  }
-
-  public void initComponent() {
   }
 
   public static IScript defaultMakeScript() {
@@ -160,42 +137,12 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     }
   }
 
-  public static class MessageFeedbackStrategy {
-    private IMessageHandler handler;
-
-    public MessageFeedbackStrategy(IMessageHandler handler) {
-      this.handler = handler;
-    }
-
-    public void reportFeedback(IFeedback fdk) {
-      MessageKind messageKind;
-      switch (fdk.getSeverity()) {
-        case ERROR:
-          messageKind = MessageKind.ERROR;
-          break;
-        case WARNING:
-          messageKind = MessageKind.WARNING;
-          break;
-        case INFO:
-          messageKind = MessageKind.INFORMATION;
-          break;
-        default:
-          messageKind = MessageKind.ERROR;
-          break;
-      }
-      Message message = new Message(messageKind, fdk.getMessage());
-      message.setException(fdk.getException());
-      message.setHintObject(fdk.getSource());
-      handler.handle(message);
-    }
-  }
-
   private static class DelegatingScriptController extends IScriptController.Stub {
     private IScriptController delegate;
-    private BuildMakeService.MessageFeedbackStrategy mfs;
+    private MessageFeedbackStrategy mfs;
     private ProgressMonitor currentMonitor;
 
-    public DelegatingScriptController(IScriptController delegate, BuildMakeService.MessageFeedbackStrategy mfs) {
+    public DelegatingScriptController(IScriptController delegate, MessageFeedbackStrategy mfs) {
       this.delegate = delegate;
       this.mfs = mfs;
     }
@@ -291,9 +238,9 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
 
     public static class DelegatingJobMonitor extends IJobMonitor.Stub {
       private IJobMonitor delegateJobMon;
-      private BuildMakeService.MessageFeedbackStrategy mfs;
+      private MessageFeedbackStrategy mfs;
 
-      public DelegatingJobMonitor(IJobMonitor delegate, BuildMakeService.MessageFeedbackStrategy mfs) {
+      public DelegatingJobMonitor(IJobMonitor delegate, MessageFeedbackStrategy mfs) {
         this.delegateJobMon = delegate;
         this.mfs = mfs;
       }

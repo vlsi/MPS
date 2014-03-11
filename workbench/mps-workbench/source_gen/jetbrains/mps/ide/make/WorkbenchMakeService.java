@@ -24,7 +24,6 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -107,25 +106,20 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return make(session, resources, null, null, new EmptyProgressMonitor());
-  }
-
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return make(session, resources, script, null, new EmptyProgressMonitor());
-  }
-
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return make(session, resources, script, controller, new EmptyProgressMonitor());
-  }
-
-  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     this.checkValidUsage();
     this.checkValidSession(session);
-    return doMake(resources, script, controller, monitor);
+    Future<IResult> result = null;
+    try {
+      awaitCurrentProcess();
+      result = _doMake(resources, script, controller, monitor);
+    } finally {
+      if (result == null || result.isDone()) {
+        this.attemptCloseSession();
+      }
+    }
+    return result;
+
   }
 
   @Override
@@ -183,19 +177,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         li.handleNotification(notification);
       }
     });
-  }
-
-  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
-    Future<IResult> result = null;
-    try {
-      awaitCurrentProcess();
-      result = _doMake(inputRes, script, controller, monitor);
-    } finally {
-      if (result == null || result.isDone()) {
-        this.attemptCloseSession();
-      }
-    }
-    return result;
   }
 
   private void attemptCloseSession() {

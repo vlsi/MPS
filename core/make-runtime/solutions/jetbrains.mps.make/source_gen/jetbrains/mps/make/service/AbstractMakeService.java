@@ -7,11 +7,11 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.dependencies.ModulesClusterizer;
@@ -30,10 +30,21 @@ public abstract class AbstractMakeService implements IMakeService {
   }
 
   @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
-    // compatibility: calls method without monitor 
-    return make(session, resources, script, controller);
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
+    return make(session, resources, null, null, new EmptyProgressMonitor());
   }
+
+  @Override
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
+    return make(session, resources, script, null, new EmptyProgressMonitor());
+  }
+
+  @Override
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
+    return make(session, resources, script, controller, new EmptyProgressMonitor());
+  }
+
+
 
   protected abstract class AbstractInputProcessor {
     protected AbstractInputProcessor() {
