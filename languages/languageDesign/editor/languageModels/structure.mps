@@ -3586,6 +3586,9 @@
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3383245079136928391" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <property name="name" nameId="tpck.1169194664001" value="IStyleSheetMember" />
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1666929921461326726" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9122903797320402872" resolveInfo="IStyle" />
+    </node>
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2984340427841566890" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
     </node>

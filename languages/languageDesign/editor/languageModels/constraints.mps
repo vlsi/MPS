@@ -1143,7 +1143,7 @@
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1873972548978313577" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.3383245079136928391" resolveInfo="IStyleSheetMember" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.9122903797320402872" resolveInfo="IStyle" />
     <node role="defaultScope" roleId="tp1t.1213101058038" type="tp1t.NodeDefaultSearchScope" typeId="tp1t.1159285995602" id="1873972548978318485" nodeInfo="ng">
       <node role="searchScopeFactory" roleId="tp1t.1159286114227" type="tp1t.ConstraintFunction_ReferentSearchScope_Factory" typeId="tp1t.1148684180339" id="1873972548978322667" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1873972548978322669" nodeInfo="sn">
@@ -1242,7 +1242,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7609778533465519000" nodeInfo="nn" />
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1213877372468" nodeInfo="nn">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1213877372469" nodeInfo="nr">
-              <property name="name" nameId="tpck.1169194664001" value="styleSheets" />
+              <property name="name" nameId="tpck.1169194664001" value="styles" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7609778533465644131" nodeInfo="nn">
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.TranslateOperation" typeId="tp2q.1201792049884" id="7609778533465842733" nodeInfo="nn">
                   <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="7609778533465842735" nodeInfo="nn">
@@ -1258,7 +1258,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesOperation" typeId="tp25.1171323947159" id="1873972548978624069" nodeInfo="nn">
-                            <link role="concept" roleId="tp25.1171323947160" targetNodeId="tpc2.3383245079136928391" resolveInfo="IStyleSheetMember" />
+                            <link role="concept" roleId="tp25.1171323947160" targetNodeId="tpc2.9122903797320402872" resolveInfo="IStyle" />
                           </node>
                         </node>
                       </node>
@@ -1321,7 +1321,7 @@
               </node>
               <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="7609778533465891340" nodeInfo="in">
                 <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7609778533465891378" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079136928391" resolveInfo="IStyleSheetMember" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.9122903797320402872" resolveInfo="IStyle" />
                 </node>
               </node>
             </node>
@@ -1330,7 +1330,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877372477" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1213877372478" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1873972548978660011" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877372469" resolveInfo="styleSheets" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877372469" resolveInfo="styles" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.ToListOperation" typeId="tp2q.1151702311717" id="1213877372493" nodeInfo="nn" />
             </node>

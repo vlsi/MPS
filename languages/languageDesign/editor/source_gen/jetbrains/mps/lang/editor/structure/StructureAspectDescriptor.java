@@ -293,7 +293,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 138:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleContainer").interface_().children(new String[]{"styleItem"}, new boolean[]{true}).create();
       case 139:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleSheetMember").interface_().parents("jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleSheetMember").interface_().parents("jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").create();
       case 140:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IdSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").properties("cellId").create();
       case 141:
