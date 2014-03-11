@@ -81,6 +81,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
@@ -1312,6 +1314,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return createRootCell(null);
   }
 
+  protected final void pushCellContext() {
+    if (myUseCustomHints) {
+      getEditorContext().getCellFactory().pushCellContext();
+      Object[] hints = myEnabledHints.toArray();
+      getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+    } else {
+      getEditorContext().getCellFactory().pushCellContext();
+      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getCurrentProject());
+      HintsState state = project != null ? ConceptEditorHintSettingsComponent.getInstance(project).getState() : null;
+      if (project != null && state != null) {
+        Object[] hints = state.getEnabledHints().toArray();
+        getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+      }
+    }
+  }
+
+  protected final void popCellContext() {
+    getEditorContext().getCellFactory().popCellContext();
+  }
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void setFolded(EditorCell cell, boolean folded) {
@@ -1890,22 +1911,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
-        boolean pushContext = myUseCustomHints;
-        if (pushContext) {
-          getEditorContext().getCellFactory().pushCellContext();
-          Object[] hints = myEnabledHints.toArray();
-          getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-        }
+
         runSwapCellsActions(new Runnable() {
           @Override
           public void run() {
-
             setRootCell(createRootCell(events));
           }
         });
-        if (pushContext) {
-          getEditorContext().getCellFactory().popCellContext();
-        }
         getEditorContext().popTracerTask();
 
         for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {

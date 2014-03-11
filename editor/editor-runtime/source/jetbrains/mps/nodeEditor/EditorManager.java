@@ -24,8 +24,6 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -48,7 +46,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -122,7 +119,6 @@ public class EditorManager {
   }
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
-    boolean needToPushContext = false;
     try {
       pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
       EditorComponent nodeEditorComponent = getEditorComponent(context);
@@ -135,21 +131,8 @@ public class EditorManager {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      needToPushContext = !context.getCellFactory().hasCellContext();
-      if (needToPushContext) {
-        context.getCellFactory().pushCellContext();
-        com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
-        MyState state = project != null ? ConceptEditorHintSettingsComponent.getInstance(project).getState() : null;
-        if (project != null && state != null) {
-          Object[] hints = state.getEnabledHints().toArray();
-          context.getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-        }
-      }
       return createEditorCell(context, modifications, nodeRefContext);
     } finally {
-      if (needToPushContext) {
-        context.getCellFactory().popCellContext();
-      }
       myContextToOldCellMap.pop();
       popTask(context);
     }
