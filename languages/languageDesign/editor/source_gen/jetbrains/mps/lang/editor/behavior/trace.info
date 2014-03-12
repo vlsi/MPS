@@ -121,6 +121,7 @@
   <unitInfo fileName="ContextHintsSpecification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ContextHintsSpecification_BehaviorDescriptor" />
   <unitInfo fileName="DefaultBaseLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DefaultBaseLine_BehaviorDescriptor" />
   <unitInfo fileName="DefaultCaretPositionStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DefaultCaretPositionStyleClassItem_BehaviorDescriptor" />
+  <unitInfo fileName="DominatesRecord_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DominatesRecord_BehaviorDescriptor" />
   <unitInfo fileName="DrawBorderStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DrawBorderStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="DrawBracketsStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DrawBracketsStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="EditableStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.EditableStyleClassItem_BehaviorDescriptor" />
@@ -159,7 +160,6 @@
   <unitInfo fileName="ModelAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ModelAccessor_BehaviorDescriptor" />
   <unitInfo fileName="NavigatableNodeStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.NavigatableNodeStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="NavigatableReferenceStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.NavigatableReferenceStyleClassItem_BehaviorDescriptor" />
-  <unitInfo fileName="OverlapsRecord_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.OverlapsRecord_BehaviorDescriptor" />
   <unitInfo fileName="PaddingBottomStyleClassItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PaddingBottomStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PaddingLeftStyleClassItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PaddingLeftStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PaddingRightStyleClassItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PaddingRightStyleClassItem_BehaviorDescriptor" />
@@ -2520,21 +2520,21 @@
     <nodeInfo nodeId="9122903797272964366" fileName="StyleClass_Behavior.java" startLine="33" startPosition="79" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9122903797272964369" fileName="StyleClass_Behavior.java" startLine="35" startPosition="61" endLine="36" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="9122903797272964381" fileName="StyleClass_Behavior.java" startLine="37" startPosition="153" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2491174914172789011" fileName="StyleClass_Behavior.java" startLine="41" startPosition="241" endLine="42" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2491174914172789011" fileName="StyleClass_Behavior.java" startLine="41" startPosition="243" endLine="42" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797276756640" fileName="StyleClass_Behavior.java" startLine="42" startPosition="95" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2491174914172802608" fileName="StyleClass_Behavior.java" startLine="44" startPosition="18" endLine="45" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122903797272964388" fileName="StyleClass_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="422" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122903797272964401" fileName="StyleClass_Behavior.java" startLine="46" startPosition="422" endLine="47" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9122903797272964388" fileName="StyleClass_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="424" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9122903797272964401" fileName="StyleClass_Behavior.java" startLine="46" startPosition="424" endLine="47" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797276760898" fileName="StyleClass_Behavior.java" startLine="49" startPosition="16" endLine="50" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797276760906" fileName="StyleClass_Behavior.java" startLine="50" startPosition="93" endLine="51" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797272964431" fileName="StyleClass_Behavior.java" startLine="54" startPosition="62" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="9122903797272964437" fileName="StyleClass_Behavior.java" startLine="56" startPosition="9" endLine="57" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9122903797272964445" fileName="StyleClass_Behavior.java" startLine="57" startPosition="68" endLine="58" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="9122903797272979772" fileName="StyleClass_Behavior.java" startLine="58" startPosition="256" endLine="59" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9122903797272964445" fileName="StyleClass_Behavior.java" startLine="57" startPosition="68" endLine="58" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="9122903797272979772" fileName="StyleClass_Behavior.java" startLine="58" startPosition="258" endLine="59" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797272964455" fileName="StyleClass_Behavior.java" startLine="59" startPosition="276" endLine="60" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797272964459" fileName="StyleClass_Behavior.java" startLine="60" startPosition="62" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8876051143653924941" fileName="StyleClass_Behavior.java" startLine="62" startPosition="248" endLine="63" endPosition="428" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8876051143653924961" fileName="StyleClass_Behavior.java" startLine="63" startPosition="428" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8876051143653924941" fileName="StyleClass_Behavior.java" startLine="62" startPosition="250" endLine="63" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8876051143653924961" fileName="StyleClass_Behavior.java" startLine="63" startPosition="430" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8876051143653924966" fileName="StyleClass_Behavior.java" startLine="64" startPosition="70" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797272964524" fileName="StyleClass_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2491174914184487871" fileName="StyleClass_Behavior.java" startLine="72" startPosition="81" endLine="73" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2553,7 +2553,7 @@
     <nodeInfo nodeId="2491174914184957117" fileName="StyleClass_Behavior.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="2491174914172802548" fileName="StyleClass_Behavior.java" startLine="44" startPosition="16" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8876051143654005874" fileName="StyleClass_Behavior.java" startLine="61" startPosition="60" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2491174914172781045" fileName="StyleClass_Behavior.java" startLine="40" startPosition="112" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2491174914172781045" fileName="StyleClass_Behavior.java" startLine="40" startPosition="113" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2491174914184978741" fileName="StyleClass_Behavior.java" startLine="79" startPosition="85" endLine="88" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9122903797272964386" fileName="StyleClass_Behavior.java" startLine="39" startPosition="24" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9122903797272964427" fileName="StyleClass_Behavior.java" startLine="53" startPosition="12" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2572,20 +2572,20 @@
     <scopeInfo nodeId="1938068300780663539" fileName="StyleClass_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1938068300780663539" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2491174914172781048" fileName="StyleClass_Behavior.java" startLine="41" startPosition="241" endLine="43" endPosition="25" />
+    <scopeInfo nodeId="2491174914172781048" fileName="StyleClass_Behavior.java" startLine="41" startPosition="243" endLine="43" endPosition="25" />
     <scopeInfo nodeId="9122903797276758570" fileName="StyleClass_Behavior.java" startLine="49" startPosition="16" endLine="51" endPosition="23" />
     <scopeInfo nodeId="1938068300780663539" fileName="StyleClass_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1938068300780663539" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2491174914172802549" fileName="StyleClass_Behavior.java" startLine="44" startPosition="18" endLine="47" endPosition="65" />
-    <scopeInfo nodeId="8876051143654005877" fileName="StyleClass_Behavior.java" startLine="62" startPosition="248" endLine="65" endPosition="22" />
+    <scopeInfo nodeId="8876051143654005877" fileName="StyleClass_Behavior.java" startLine="62" startPosition="250" endLine="65" endPosition="22" />
     <scopeInfo nodeId="2491174914184928204" fileName="StyleClass_Behavior.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="2491174914184928204" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2491174914184957117" fileName="StyleClass_Behavior.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="2491174914184957117" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="9122903797272964387" fileName="StyleClass_Behavior.java" startLine="40" startPosition="112" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="9122903797272964387" fileName="StyleClass_Behavior.java" startLine="40" startPosition="113" endLine="48" endPosition="11" />
     <scopeInfo nodeId="9122903797272964385" fileName="StyleClass_Behavior.java" startLine="39" startPosition="24" endLine="52" endPosition="9" />
     <scopeInfo nodeId="9122903797272964428" fileName="StyleClass_Behavior.java" startLine="53" startPosition="14" endLine="66" endPosition="9">
       <varInfo nodeId="9122903797272964438" varName="newIndex" />

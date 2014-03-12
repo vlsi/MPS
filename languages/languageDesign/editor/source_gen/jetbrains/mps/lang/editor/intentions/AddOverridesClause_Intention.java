@@ -73,7 +73,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "overlaps", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.OverlapsRecord", null), true);
+      SLinkOperations.setTarget(node, "dominates", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.DominatesRecord", null), true);
     }
 
     public IntentionDescriptor getDescriptor() {

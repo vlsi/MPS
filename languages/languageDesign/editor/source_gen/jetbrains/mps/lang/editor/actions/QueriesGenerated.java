@@ -1197,11 +1197,11 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SLinkOperations.setTarget(_context.getSourceNode(), "overlaps", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.OverlapsRecord", null), true);
+        return SLinkOperations.setTarget(_context.getSourceNode(), "dominates", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.DominatesRecord", null), true);
       }
 
       public String getMatchingText(String pattern) {
-        return "overlaps";
+        return "dominates";
       }
 
       public String getVisibleMatchingText(String pattern) {

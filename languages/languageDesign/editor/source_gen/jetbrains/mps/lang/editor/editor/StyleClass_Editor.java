@@ -86,17 +86,17 @@ public class StyleClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_zc4y0i_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "overlaps", true) != null);
+    return (SLinkOperations.getTarget(node, "dominates", true) != null);
   }
 
   private EditorCell createRefNode_zc4y0i_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("overlaps");
-    provider.setNoTargetText("<no overlaps>");
+    provider.setRole("dominates");
+    provider.setNoTargetText("<no dominates>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("overlaps");
+      editorCell.setRole("dominates");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

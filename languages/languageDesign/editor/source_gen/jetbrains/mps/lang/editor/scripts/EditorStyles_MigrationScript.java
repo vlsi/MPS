@@ -78,7 +78,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         final SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleClass", null);
-        SLinkOperations.setTarget(newNode, "overlaps", null, true);
+        SLinkOperations.setTarget(newNode, "dominates", null, true);
         SPropertyOperations.set(newNode, "name", SPropertyOperations.getString(node, "name"));
         ListSequence.fromList(SLinkOperations.getTargets(newNode, "styleItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)));
 

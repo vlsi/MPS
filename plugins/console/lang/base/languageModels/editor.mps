@@ -326,7 +326,7 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="795210086018976096" nodeInfo="ng">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
-      <node role="overlaps" roleId="tpc2.3383245079137422296" type="tpc2.OverlapsRecord" typeId="tpc2.2491174914159318432" id="2491174914180457997" nodeInfo="ng" />
+      <node role="dominates" roleId="tpc2.3383245079137422296" type="tpc2.DominatesRecord" typeId="tpc2.2491174914159318432" id="2491174914180457997" nodeInfo="ng" />
     </node>
   </root>
 </model>
