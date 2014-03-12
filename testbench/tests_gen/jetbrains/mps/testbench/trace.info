@@ -2,563 +2,536 @@
 <debugInfo>
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/4421917191016660666" />
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/6214179127578263953">
-    <nodeInfo nodeId="6214179127578268770" fileName="TestMakeService.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
-    <nodeInfo nodeId="6214179127578268883" fileName="TestMakeService.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
-    <nodeInfo nodeId="6214179127578268773" fileName="TestMakeService.java" startLine="35" startPosition="85" endLine="36" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578268886" fileName="TestMakeService.java" startLine="36" startPosition="27" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050634255991" fileName="TestMakeService.java" startLine="47" startPosition="26" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9122198050634259832" fileName="TestMakeService.java" startLine="48" startPosition="72" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="9122198050634256431" fileName="TestMakeService.java" startLine="49" startPosition="85" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="9122198050634267568" fileName="TestMakeService.java" startLine="50" startPosition="36" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107886699324873264" fileName="TestMakeService.java" startLine="52" startPosition="5" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107886699324873271" fileName="TestMakeService.java" startLine="54" startPosition="53" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107886699324873277" fileName="TestMakeService.java" startLine="55" startPosition="55" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107886699324873282" fileName="TestMakeService.java" startLine="56" startPosition="26" endLine="57" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4634869729622204340" fileName="TestMakeService.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4634869729621959215" fileName="TestMakeService.java" startLine="59" startPosition="0" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4634869729622004369" fileName="TestMakeService.java" startLine="60" startPosition="46" endLine="61" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4634869729622021578" fileName="TestMakeService.java" startLine="61" startPosition="39" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107886699324873291" fileName="TestMakeService.java" startLine="62" startPosition="43" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4634869729622241572" fileName="TestMakeService.java" startLine="63" startPosition="0" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4634869729622241579" fileName="TestMakeService.java" startLine="64" startPosition="73" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4634869729622241580" fileName="TestMakeService.java" startLine="65" startPosition="0" endLine="66" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4634869729622241591" fileName="TestMakeService.java" startLine="66" startPosition="80" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4634869729622241596" fileName="TestMakeService.java" startLine="67" startPosition="22" endLine="68" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237901" fileName="TestMakeService.java" startLine="72" startPosition="36" endLine="73" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237909" fileName="TestMakeService.java" startLine="77" startPosition="54" endLine="78" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8464977774480118469" fileName="TestMakeService.java" startLine="86" startPosition="63" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="8464977774480118472" fileName="TestMakeService.java" startLine="91" startPosition="66" endLine="92" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6214179127578269544" fileName="TestMakeService.java" startLine="95" startPosition="38" endLine="96" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050634146651" fileName="TestMakeService.java" startLine="99" startPosition="102" endLine="100" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9122198050635027489" fileName="TestMakeService.java" startLine="100" startPosition="92" endLine="101" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9122198050635289320" fileName="TestMakeService.java" startLine="105" startPosition="26" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050635284823" fileName="TestMakeService.java" startLine="107" startPosition="16" endLine="108" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050635293681" fileName="TestMakeService.java" startLine="114" startPosition="26" endLine="115" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050635284841" fileName="TestMakeService.java" startLine="116" startPosition="16" endLine="117" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050634778233" fileName="TestMakeService.java" startLine="122" startPosition="47" endLine="123" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6214179127578269179" fileName="TestMakeService.java" startLine="124" startPosition="26" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9122198050634234475" fileName="TestMakeService.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMakeService#()V" />
-    <nodeInfo nodeId="9122198050635291292" fileName="TestMakeService.java" startLine="107" startPosition="14" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9122198050635292935" fileName="TestMakeService.java" startLine="116" startPosition="14" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
-    <nodeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6214179127578269177" fileName="TestMakeService.java" startLine="123" startPosition="36" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
-    <nodeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
-    <nodeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMakeService#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;)V" />
-    <nodeInfo nodeId="4107886699324873269" fileName="TestMakeService.java" startLine="53" startPosition="29" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9122198050635288350" fileName="TestMakeService.java" startLine="104" startPosition="97" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9122198050635292695" fileName="TestMakeService.java" startLine="113" startPosition="91" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9122198050634248979" fileName="TestMakeService.java" startLine="46" startPosition="173" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="121" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="9122198050635284806" fileName="TestMakeService.java" startLine="103" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="9122198050635284824" fileName="TestMakeService.java" startLine="112" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="45" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="9122198050635034063" fileName="TestMakeService.java" startLine="101" startPosition="81" endLine="128" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="99" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeController#(Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/make/MakeSession;)Ljetbrains/mps/make/script/IScriptController;" />
-    <scopeInfo nodeId="9122198050634234478" fileName="TestMakeService.java" startLine="40" startPosition="28" endLine="40" endPosition="28" />
-    <scopeInfo nodeId="3180200298862810294" fileName="TestMakeService.java" startLine="82" startPosition="49" endLine="82" endPosition="49" />
-    <scopeInfo nodeId="8695426379435237900" fileName="TestMakeService.java" startLine="72" startPosition="36" endLine="73" endPosition="17" />
-    <scopeInfo nodeId="8695426379435237908" fileName="TestMakeService.java" startLine="77" startPosition="54" endLine="78" endPosition="17" />
-    <scopeInfo nodeId="8464977774480118467" fileName="TestMakeService.java" startLine="86" startPosition="63" endLine="87" endPosition="46" />
-    <scopeInfo nodeId="8464977774480118461" fileName="TestMakeService.java" startLine="91" startPosition="66" endLine="92" endPosition="46" />
-    <scopeInfo nodeId="6214179127578269543" fileName="TestMakeService.java" startLine="95" startPosition="38" endLine="96" endPosition="63" />
-    <scopeInfo nodeId="9122198050635288353" fileName="TestMakeService.java" startLine="105" startPosition="26" endLine="106" endPosition="41" />
-    <scopeInfo nodeId="9122198050635291293" fileName="TestMakeService.java" startLine="107" startPosition="16" endLine="108" endPosition="43" />
-    <scopeInfo nodeId="9122198050635292698" fileName="TestMakeService.java" startLine="114" startPosition="26" endLine="115" endPosition="38" />
-    <scopeInfo nodeId="9122198050635292936" fileName="TestMakeService.java" startLine="116" startPosition="16" endLine="117" endPosition="40" />
-    <scopeInfo nodeId="6214179127578269178" fileName="TestMakeService.java" startLine="124" startPosition="26" endLine="125" endPosition="26" />
-    <scopeInfo nodeId="6214179127578263958" fileName="TestMakeService.java" startLine="35" startPosition="85" endLine="37" endPosition="41" />
-    <scopeInfo nodeId="9122198050634234475" fileName="TestMakeService.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="4107886699324873270" fileName="TestMakeService.java" startLine="54" startPosition="53" endLine="57" endPosition="65">
+    <nodeInfo nodeId="6214179127578268770" fileName="TestMakeService.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
+    <nodeInfo nodeId="6214179127578268883" fileName="TestMakeService.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
+    <nodeInfo nodeId="6214179127578268773" fileName="TestMakeService.java" startLine="33" startPosition="85" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578268886" fileName="TestMakeService.java" startLine="34" startPosition="27" endLine="35" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9122198050634255991" fileName="TestMakeService.java" startLine="45" startPosition="26" endLine="46" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9122198050634259832" fileName="TestMakeService.java" startLine="46" startPosition="72" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="9122198050634256431" fileName="TestMakeService.java" startLine="47" startPosition="85" endLine="48" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="9122198050634267568" fileName="TestMakeService.java" startLine="48" startPosition="36" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107886699324873264" fileName="TestMakeService.java" startLine="50" startPosition="5" endLine="51" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107886699324873271" fileName="TestMakeService.java" startLine="52" startPosition="53" endLine="53" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107886699324873277" fileName="TestMakeService.java" startLine="53" startPosition="55" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107886699324873282" fileName="TestMakeService.java" startLine="54" startPosition="26" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4634869729622204340" fileName="TestMakeService.java" startLine="56" startPosition="5" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4634869729621959215" fileName="TestMakeService.java" startLine="57" startPosition="0" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4634869729622004369" fileName="TestMakeService.java" startLine="58" startPosition="46" endLine="59" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4634869729622021578" fileName="TestMakeService.java" startLine="59" startPosition="39" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107886699324873291" fileName="TestMakeService.java" startLine="60" startPosition="43" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4634869729622241572" fileName="TestMakeService.java" startLine="61" startPosition="0" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4634869729622241579" fileName="TestMakeService.java" startLine="62" startPosition="73" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4634869729622241580" fileName="TestMakeService.java" startLine="63" startPosition="0" endLine="64" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4634869729622241591" fileName="TestMakeService.java" startLine="64" startPosition="80" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4634869729622241596" fileName="TestMakeService.java" startLine="65" startPosition="22" endLine="66" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237901" fileName="TestMakeService.java" startLine="70" startPosition="36" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237909" fileName="TestMakeService.java" startLine="75" startPosition="54" endLine="76" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8464977774480118469" fileName="TestMakeService.java" startLine="84" startPosition="63" endLine="85" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="8464977774480118472" fileName="TestMakeService.java" startLine="89" startPosition="66" endLine="90" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6214179127578269544" fileName="TestMakeService.java" startLine="93" startPosition="38" endLine="94" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6705512905417397071" fileName="TestMakeService.java" startLine="97" startPosition="102" endLine="98" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6705512905417401039" fileName="TestMakeService.java" startLine="98" startPosition="93" endLine="99" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6705512905417404092" fileName="TestMakeService.java" startLine="99" startPosition="108" endLine="100" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6705512905417408178" fileName="TestMakeService.java" startLine="100" startPosition="108" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6705512905417385898" fileName="TestMakeService.java" startLine="102" startPosition="22" endLine="103" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9122198050634146651" fileName="TestMakeService.java" startLine="104" startPosition="5" endLine="105" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9122198050635027489" fileName="TestMakeService.java" startLine="105" startPosition="92" endLine="106" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9122198050634778233" fileName="TestMakeService.java" startLine="109" startPosition="47" endLine="110" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9122198050634234475" fileName="TestMakeService.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMakeService#()V" />
+    <nodeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
+    <nodeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6705512905417382298" fileName="TestMakeService.java" startLine="101" startPosition="38" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
+    <nodeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
+    <nodeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMakeService#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;)V" />
+    <nodeInfo nodeId="4107886699324873269" fileName="TestMakeService.java" startLine="51" startPosition="29" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9122198050634248979" fileName="TestMakeService.java" startLine="44" startPosition="173" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9122198050635034063" fileName="TestMakeService.java" startLine="106" startPosition="81" endLine="112" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="97" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeController#(Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/make/MakeSession;)Ljetbrains/mps/make/script/IScriptController;" />
+    <nodeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="43" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <scopeInfo nodeId="9122198050634234478" fileName="TestMakeService.java" startLine="38" startPosition="28" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="3180200298862810294" fileName="TestMakeService.java" startLine="80" startPosition="49" endLine="80" endPosition="49" />
+    <scopeInfo nodeId="8695426379435237900" fileName="TestMakeService.java" startLine="70" startPosition="36" endLine="71" endPosition="17" />
+    <scopeInfo nodeId="8695426379435237908" fileName="TestMakeService.java" startLine="75" startPosition="54" endLine="76" endPosition="17" />
+    <scopeInfo nodeId="8464977774480118467" fileName="TestMakeService.java" startLine="84" startPosition="63" endLine="85" endPosition="46" />
+    <scopeInfo nodeId="8464977774480118461" fileName="TestMakeService.java" startLine="89" startPosition="66" endLine="90" endPosition="46" />
+    <scopeInfo nodeId="6214179127578269543" fileName="TestMakeService.java" startLine="93" startPosition="38" endLine="94" endPosition="63" />
+    <scopeInfo nodeId="6705512905417382301" fileName="TestMakeService.java" startLine="102" startPosition="22" endLine="103" endPosition="17" />
+    <scopeInfo nodeId="6214179127578269118" fileName="TestMakeService.java" startLine="109" startPosition="47" endLine="110" endPosition="36" />
+    <scopeInfo nodeId="6214179127578263958" fileName="TestMakeService.java" startLine="33" startPosition="85" endLine="35" endPosition="41" />
+    <scopeInfo nodeId="9122198050634234475" fileName="TestMakeService.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4107886699324873270" fileName="TestMakeService.java" startLine="52" startPosition="53" endLine="55" endPosition="65">
       <varInfo nodeId="4107886699324873272" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="3180200298862810289" fileName="TestMakeService.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="3180200298862810290" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="6214179127578269536" fileName="TestMakeService.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="6214179127578269541" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="9122198050634248982" fileName="TestMakeService.java" startLine="47" startPosition="26" endLine="51" endPosition="63" />
-    <scopeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="9122198050634248982" fileName="TestMakeService.java" startLine="45" startPosition="26" endLine="49" endPosition="63" />
+    <scopeInfo nodeId="8695426379435237897" fileName="TestMakeService.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8695426379435237903" fileName="TestMakeService.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="8695426379435237906" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="8464977774480118462" fileName="TestMakeService.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="8464977774480118463" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="8464977774480118456" fileName="TestMakeService.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="8464977774480118459" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269118" fileName="TestMakeService.java" startLine="122" startPosition="47" endLine="126" endPosition="9" />
-    <scopeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="6214179127578269114" varName="pool" />
+    </scopeInfo>
+    <scopeInfo nodeId="6214179127578263955" fileName="TestMakeService.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="6214179127578268767" varName="context" />
       <varInfo nodeId="6214179127578268878" varName="messageHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="9122198050635284820" fileName="TestMakeService.java" startLine="104" startPosition="97" endLine="109" endPosition="9" />
-    <scopeInfo nodeId="9122198050635284838" fileName="TestMakeService.java" startLine="113" startPosition="91" endLine="118" endPosition="9" />
-    <scopeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="121" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="6214179127578269114" varName="pool" />
+    <scopeInfo nodeId="6214179127578268918" fileName="TestMakeService.java" startLine="97" startPosition="102" endLine="112" endPosition="6">
+      <varInfo nodeId="9122198050634146649" varName="initGenFacet" />
+      <varInfo nodeId="9122198050635027490" varName="monitor" />
     </scopeInfo>
-    <scopeInfo nodeId="9122198050635284806" fileName="TestMakeService.java" startLine="103" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="9122198050635284809" varName="code" />
+    <scopeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="97" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="6214179127578268916" varName="ctl" />
+      <varInfo nodeId="9122198050634172020" varName="makeSession" />
     </scopeInfo>
-    <scopeInfo nodeId="9122198050635284824" fileName="TestMakeService.java" startLine="112" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="9122198050635284825" varName="code" />
-    </scopeInfo>
-    <scopeInfo nodeId="4671800353872913487" fileName="TestMakeService.java" startLine="46" startPosition="173" endLine="68" endPosition="54">
+    <scopeInfo nodeId="4671800353872913487" fileName="TestMakeService.java" startLine="44" startPosition="173" endLine="66" endPosition="54">
       <varInfo nodeId="4634869729622241573" varName="ctl" />
       <varInfo nodeId="4634869729621959216" varName="makeSeq" />
       <varInfo nodeId="4107886699324873265" varName="scrName" />
       <varInfo nodeId="4634869729622241581" varName="task" />
     </scopeInfo>
-    <scopeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="45" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="4671800353872913473" fileName="TestMakeService.java" startLine="43" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="4671800353872913483" varName="controller" />
       <varInfo nodeId="4671800353872913512" varName="monitor" />
       <varInfo nodeId="4671800353872913476" varName="resources" />
       <varInfo nodeId="4671800353872913481" varName="script" />
       <varInfo nodeId="4671800353872913474" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578268918" fileName="TestMakeService.java" startLine="99" startPosition="102" endLine="128" endPosition="6">
-      <varInfo nodeId="9122198050634146649" varName="initGenFacet" />
-      <varInfo nodeId="9122198050635027490" varName="monitor" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="99" startPosition="0" endLine="130" endPosition="0">
-      <varInfo nodeId="6214179127578268916" varName="ctl" />
-      <varInfo nodeId="9122198050634172020" varName="makeSession" />
-    </scopeInfo>
-    <unitInfo nodeId="6214179127578269027" fileName="TestMakeService.java" startLine="102" startPosition="15" endLine="128" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$1" />
-    <unitInfo nodeId="6214179127578263953" fileName="TestMakeService.java" startLine="30" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.testbench.TestMakeService" />
+    <unitInfo nodeId="6214179127578269027" fileName="TestMakeService.java" startLine="107" startPosition="15" endLine="112" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$1" />
+    <unitInfo nodeId="6214179127578263953" fileName="TestMakeService.java" startLine="28" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.testbench.TestMakeService" />
   </root>
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/6214179127578269219" />
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/8597743085639790147">
-    <nodeInfo nodeId="1202495231125162902" fileName="ModuleGenerationHolder.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ignoredFiles" />
-    <nodeInfo nodeId="8981027491094736558" fileName="ModuleGenerationHolder.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
-    <nodeInfo nodeId="8981027491094734791" fileName="ModuleGenerationHolder.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
-    <nodeInfo nodeId="6078875650364604224" fileName="ModuleGenerationHolder.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tmpPath" />
-    <nodeInfo nodeId="3416062119153932762" fileName="ModuleGenerationHolder.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path2tmp" />
-    <nodeInfo nodeId="7352662836539749211" fileName="ModuleGenerationHolder.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
-    <nodeInfo nodeId="6607750055057841842" fileName="ModuleGenerationHolder.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isSucessful" />
-    <nodeInfo nodeId="8981027491094734803" fileName="ModuleGenerationHolder.java" startLine="76" startPosition="66" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8981027491094736563" fileName="ModuleGenerationHolder.java" startLine="77" startPosition="25" endLine="78" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6078875650364604150" fileName="ModuleGenerationHolder.java" startLine="78" startPosition="27" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6078875650364605983" fileName="ModuleGenerationHolder.java" startLine="80" startPosition="9" endLine="81" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6078875650364604157" fileName="ModuleGenerationHolder.java" startLine="81" startPosition="57" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6078875650364604166" fileName="ModuleGenerationHolder.java" startLine="82" startPosition="22" endLine="83" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6078875650364605987" fileName="ModuleGenerationHolder.java" startLine="84" startPosition="30" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6078875650364604229" fileName="ModuleGenerationHolder.java" startLine="86" startPosition="5" endLine="87" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055058624222" fileName="ModuleGenerationHolder.java" startLine="93" startPosition="37" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055058624184" fileName="ModuleGenerationHolder.java" startLine="94" startPosition="25" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6607750055058621687" fileName="ModuleGenerationHolder.java" startLine="96" startPosition="5" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="921684950836915474" fileName="ModuleGenerationHolder.java" startLine="97" startPosition="0" endLine="98" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="921684950837061101" fileName="ModuleGenerationHolder.java" startLine="98" startPosition="14" endLine="99" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9143630131836949541" fileName="ModuleGenerationHolder.java" startLine="99" startPosition="88" endLine="100" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9143630131836949596" fileName="ModuleGenerationHolder.java" startLine="101" startPosition="21" endLine="102" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5782055005733406795" fileName="ModuleGenerationHolder.java" startLine="102" startPosition="68" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6078875650364604187" fileName="ModuleGenerationHolder.java" startLine="104" startPosition="5" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9122198050634715968" fileName="ModuleGenerationHolder.java" startLine="108" startPosition="48" endLine="109" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6705512905414473803" fileName="ModuleGenerationHolder.java" startLine="109" startPosition="69" endLine="110" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6705512905414486528" fileName="ModuleGenerationHolder.java" startLine="110" startPosition="104" endLine="111" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9122198050634725661" fileName="ModuleGenerationHolder.java" startLine="111" startPosition="47" endLine="112" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7621205992838583725" fileName="ModuleGenerationHolder.java" startLine="112" startPosition="74" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9122198050634746636" fileName="ModuleGenerationHolder.java" startLine="113" startPosition="0" endLine="114" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5294074698114021970" fileName="ModuleGenerationHolder.java" startLine="114" startPosition="97" endLine="115" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294074698114021996" fileName="ModuleGenerationHolder.java" startLine="117" startPosition="44" endLine="118" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294074698114021969" fileName="ModuleGenerationHolder.java" startLine="120" startPosition="11" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9143630131837001691" fileName="ModuleGenerationHolder.java" startLine="121" startPosition="0" endLine="122" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9143630131837001707" fileName="ModuleGenerationHolder.java" startLine="122" startPosition="220" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9143630131836949539" fileName="ModuleGenerationHolder.java" startLine="125" startPosition="6" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5031229775986962290" fileName="ModuleGenerationHolder.java" startLine="126" startPosition="0" endLine="127" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2120492242099858645" fileName="ModuleGenerationHolder.java" startLine="127" startPosition="67" endLine="128" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5031229775986953945" fileName="ModuleGenerationHolder.java" startLine="130" startPosition="25" endLine="131" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5031229775986953936" fileName="ModuleGenerationHolder.java" startLine="131" startPosition="73" endLine="132" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9122198050634322274" fileName="ModuleGenerationHolder.java" startLine="133" startPosition="13" endLine="134" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2120492242099858665" fileName="ModuleGenerationHolder.java" startLine="134" startPosition="81" endLine="135" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2120492242099858661" fileName="ModuleGenerationHolder.java" startLine="140" startPosition="7" endLine="141" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055057856119" fileName="ModuleGenerationHolder.java" startLine="141" startPosition="45" endLine="142" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055058020742" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="37" endLine="146" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7352662836539757580" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="37" endLine="150" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7352662836539757584" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="36" endLine="154" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153995139" fileName="ModuleGenerationHolder.java" startLine="157" startPosition="30" endLine="158" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153932878" fileName="ModuleGenerationHolder.java" startLine="159" startPosition="86" endLine="160" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153932888" fileName="ModuleGenerationHolder.java" startLine="160" startPosition="38" endLine="161" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153932897" fileName="ModuleGenerationHolder.java" startLine="162" startPosition="87" endLine="163" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153933004" fileName="ModuleGenerationHolder.java" startLine="164" startPosition="56" endLine="165" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932940" fileName="ModuleGenerationHolder.java" startLine="166" startPosition="36" endLine="167" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932965" fileName="ModuleGenerationHolder.java" startLine="168" startPosition="36" endLine="169" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153933030" fileName="ModuleGenerationHolder.java" startLine="170" startPosition="14" endLine="171" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153995155" fileName="ModuleGenerationHolder.java" startLine="173" startPosition="5" endLine="174" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7216969004037110172" fileName="ModuleGenerationHolder.java" startLine="178" startPosition="58" endLine="179" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6078875650364605934" fileName="ModuleGenerationHolder.java" startLine="180" startPosition="5" endLine="181" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3703252800112061830" fileName="ModuleGenerationHolder.java" startLine="181" startPosition="32" endLine="182" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932770" fileName="ModuleGenerationHolder.java" startLine="182" startPosition="57" endLine="183" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153932780" fileName="ModuleGenerationHolder.java" startLine="183" startPosition="96" endLine="184" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6078875650364604242" fileName="ModuleGenerationHolder.java" startLine="184" startPosition="49" endLine="185" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153994869" fileName="ModuleGenerationHolder.java" startLine="188" startPosition="79" endLine="189" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153994911" fileName="ModuleGenerationHolder.java" startLine="189" startPosition="62" endLine="190" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648299012528511857" fileName="ModuleGenerationHolder.java" startLine="194" startPosition="32" endLine="195" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153994975" fileName="ModuleGenerationHolder.java" startLine="196" startPosition="11" endLine="197" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648299012528511861" fileName="ModuleGenerationHolder.java" startLine="202" startPosition="32" endLine="203" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153995015" fileName="ModuleGenerationHolder.java" startLine="204" startPosition="11" endLine="205" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1901124280489778756" fileName="ModuleGenerationHolder.java" startLine="210" startPosition="30" endLine="211" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1901124280489778757" fileName="ModuleGenerationHolder.java" startLine="212" startPosition="7" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3416062119153995050" fileName="ModuleGenerationHolder.java" startLine="213" startPosition="0" endLine="214" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153995056" fileName="ModuleGenerationHolder.java" startLine="214" startPosition="40" endLine="215" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5378512516364166440" fileName="ModuleGenerationHolder.java" startLine="217" startPosition="37" endLine="218" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153995068" fileName="ModuleGenerationHolder.java" startLine="218" startPosition="53" endLine="219" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153995078" fileName="ModuleGenerationHolder.java" startLine="220" startPosition="47" endLine="221" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7984465977408064212" fileName="ModuleGenerationHolder.java" startLine="223" startPosition="16" endLine="224" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153995103" fileName="ModuleGenerationHolder.java" startLine="226" startPosition="14" endLine="227" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3224166544242268089" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="48" endLine="233" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153994301" fileName="ModuleGenerationHolder.java" startLine="236" startPosition="46" endLine="237" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153941740" fileName="ModuleGenerationHolder.java" startLine="237" startPosition="73" endLine="238" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153941748" fileName="ModuleGenerationHolder.java" startLine="239" startPosition="9" endLine="240" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5378512516364166404" fileName="ModuleGenerationHolder.java" startLine="240" startPosition="103" endLine="241" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153994349" fileName="ModuleGenerationHolder.java" startLine="242" startPosition="46" endLine="243" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153994325" fileName="ModuleGenerationHolder.java" startLine="245" startPosition="29" endLine="246" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153994274" fileName="ModuleGenerationHolder.java" startLine="249" startPosition="13" endLine="250" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153994359" fileName="ModuleGenerationHolder.java" startLine="254" startPosition="5" endLine="255" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4128185861943385985" fileName="ModuleGenerationHolder.java" startLine="259" startPosition="150" endLine="260" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4128185861943386030" fileName="ModuleGenerationHolder.java" startLine="260" startPosition="68" endLine="261" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4128185861943386020" fileName="ModuleGenerationHolder.java" startLine="263" startPosition="30" endLine="264" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4128185861943386047" fileName="ModuleGenerationHolder.java" startLine="265" startPosition="16" endLine="266" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932803" fileName="ModuleGenerationHolder.java" startLine="269" startPosition="5" endLine="270" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932795" fileName="ModuleGenerationHolder.java" startLine="270" startPosition="24" endLine="271" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7352662836539759268" fileName="ModuleGenerationHolder.java" startLine="271" startPosition="42" endLine="272" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055058402184" fileName="ModuleGenerationHolder.java" startLine="279" startPosition="58" endLine="280" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6607750055058402186" fileName="ModuleGenerationHolder.java" startLine="282" startPosition="9" endLine="283" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6085445418775290702" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="55" endLine="289" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767231643656643806" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="41" endLine="295" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6663830059446823701" fileName="ModuleGenerationHolder.java" startLine="298" startPosition="54" endLine="299" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3037398679707966202" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="104" endLine="305" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3730996872184513717" fileName="ModuleGenerationHolder.java" startLine="310" startPosition="46" endLine="311" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3037398679707992883" fileName="ModuleGenerationHolder.java" startLine="318" startPosition="41" endLine="319" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8597743085639790171" fileName="ModuleGenerationHolder.java" startLine="325" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationErrors" />
-    <nodeInfo nodeId="8597743085639790175" fileName="ModuleGenerationHolder.java" startLine="326" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationWarnings" />
-    <nodeInfo nodeId="8597743085639790707" fileName="ModuleGenerationHolder.java" startLine="335" startPosition="43" endLine="336" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8597743085639790712" fileName="ModuleGenerationHolder.java" startLine="336" startPosition="53" endLine="337" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8597743085639790721" fileName="ModuleGenerationHolder.java" startLine="337" startPosition="72" endLine="338" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8597743085639790699" fileName="ModuleGenerationHolder.java" startLine="339" startPosition="18" endLine="340" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8597743085639790730" fileName="ModuleGenerationHolder.java" startLine="341" startPosition="11" endLine="342" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8597743085639790734" fileName="ModuleGenerationHolder.java" startLine="343" startPosition="21" endLine="344" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8597743085639790741" fileName="ModuleGenerationHolder.java" startLine="344" startPosition="50" endLine="345" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8597743085639790745" fileName="ModuleGenerationHolder.java" startLine="346" startPosition="25" endLine="347" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8597743085639790747" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="47" endLine="353" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8597743085639790750" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="49" endLine="357" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8597743085639790753" fileName="ModuleGenerationHolder.java" startLine="360" startPosition="27" endLine="361" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8597743085639790757" fileName="ModuleGenerationHolder.java" startLine="361" startPosition="33" endLine="362" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153933028" fileName="ModuleGenerationHolder.java" startLine="170" startPosition="12" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7984465977408064210" fileName="ModuleGenerationHolder.java" startLine="223" startPosition="14" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3416062119153995101" fileName="ModuleGenerationHolder.java" startLine="226" startPosition="12" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4128185861943386045" fileName="ModuleGenerationHolder.java" startLine="265" startPosition="14" endLine="267" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8597743085639790179" fileName="ModuleGenerationHolder.java" startLine="328" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMessageHandler#()V" />
-    <nodeInfo nodeId="8597743085639790697" fileName="ModuleGenerationHolder.java" startLine="339" startPosition="16" endLine="341" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5294074698114021992" fileName="ModuleGenerationHolder.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="6607750055058019586" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBuildSucessful#()Z" />
-    <nodeInfo nodeId="7352662836539757550" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildErrors#()Ljava/util/List;" />
-    <nodeInfo nodeId="7352662836539757568" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildWarns#()Ljava/util/List;" />
-    <nodeInfo nodeId="7216969004037110160" fileName="ModuleGenerationHolder.java" startLine="177" startPosition="38" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6648299012528511844" fileName="ModuleGenerationHolder.java" startLine="193" startPosition="38" endLine="196" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6648299012528511859" fileName="ModuleGenerationHolder.java" startLine="201" startPosition="38" endLine="204" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1901124280489778745" fileName="ModuleGenerationHolder.java" startLine="209" startPosition="96" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3243693673213719690" fileName="ModuleGenerationHolder.java" startLine="219" startPosition="69" endLine="222" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3224166544242268084" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ignoredFile#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="5378512516364166418" fileName="ModuleGenerationHolder.java" startLine="241" startPosition="18" endLine="244" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6607750055058402180" fileName="ModuleGenerationHolder.java" startLine="278" startPosition="54" endLine="281" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5460949978728582631" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultScriptBuilder#()Ljetbrains/mps/make/script/ScriptBuilder;" />
-    <nodeInfo nodeId="3767231643656643804" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-    <nodeInfo nodeId="3767231643656643813" fileName="ModuleGenerationHolder.java" startLine="298" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3730996872184513713" fileName="ModuleGenerationHolder.java" startLine="310" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="3037398679707992881" fileName="ModuleGenerationHolder.java" startLine="318" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="8597743085639790187" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationErrors#()Ljava/util/List;" />
-    <nodeInfo nodeId="8597743085639790191" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationWarnings#()Ljava/util/List;" />
-    <nodeInfo nodeId="8597743085639790198" fileName="ModuleGenerationHolder.java" startLine="365" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="6607750055058621913" fileName="ModuleGenerationHolder.java" startLine="92" startPosition="23" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9143630131836949591" fileName="ModuleGenerationHolder.java" startLine="100" startPosition="92" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3416062119153994267" fileName="ModuleGenerationHolder.java" startLine="248" startPosition="23" endLine="252" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8597743085639790195" fileName="ModuleGenerationHolder.java" startLine="360" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cleanUp#()V" />
-    <nodeInfo nodeId="5294074698114021990" fileName="ModuleGenerationHolder.java" startLine="115" startPosition="257" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4128185861943386010" fileName="ModuleGenerationHolder.java" startLine="262" startPosition="38" endLine="267" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6607750055058402173" fileName="ModuleGenerationHolder.java" startLine="277" startPosition="32" endLine="282" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3037398679707966826" fileName="ModuleGenerationHolder.java" startLine="308" startPosition="79" endLine="313" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3037398679707966845" fileName="ModuleGenerationHolder.java" startLine="316" startPosition="7" endLine="321" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9121742173815480872" fileName="ModuleGenerationHolder.java" startLine="132" startPosition="79" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3416062119153994971" fileName="ModuleGenerationHolder.java" startLine="193" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3416062119153995013" fileName="ModuleGenerationHolder.java" startLine="201" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3416062119153994287" fileName="ModuleGenerationHolder.java" startLine="247" startPosition="15" endLine="253" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6078875650364605976" fileName="ModuleGenerationHolder.java" startLine="79" startPosition="16" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4128185861943386001" fileName="ModuleGenerationHolder.java" startLine="261" startPosition="25" endLine="268" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3037398679707966819" fileName="ModuleGenerationHolder.java" startLine="307" startPosition="25" endLine="314" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8597743085639790691" fileName="ModuleGenerationHolder.java" startLine="334" startPosition="19" endLine="341" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3416062119153994957" fileName="ModuleGenerationHolder.java" startLine="191" startPosition="96" endLine="199" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153995006" fileName="ModuleGenerationHolder.java" startLine="199" startPosition="9" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055058549114" fileName="ModuleGenerationHolder.java" startLine="277" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="3416062119153995066" fileName="ModuleGenerationHolder.java" startLine="216" startPosition="55" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3767231643656643796" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="78" endLine="301" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3037398679707966653" fileName="ModuleGenerationHolder.java" startLine="307" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2120492242099858651" fileName="ModuleGenerationHolder.java" startLine="130" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6078875650364604217" fileName="ModuleGenerationHolder.java" startLine="177" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tmpFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="6607750055058544440" fileName="ModuleGenerationHolder.java" startLine="275" startPosition="64" endLine="285" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153932844" fileName="ModuleGenerationHolder.java" startLine="161" startPosition="40" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4128185861943385956" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="25" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5460949978728589355" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="withGenerators#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3037398679707966652" fileName="ModuleGenerationHolder.java" startLine="305" startPosition="89" endLine="316" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2120492242099858649" fileName="ModuleGenerationHolder.java" startLine="128" startPosition="45" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6607750055058400930" fileName="ModuleGenerationHolder.java" startLine="275" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="needsGeneration#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-    <nodeInfo nodeId="6607750055057276483" fileName="ModuleGenerationHolder.java" startLine="76" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleGenerationHolder#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="3416062119153995064" fileName="ModuleGenerationHolder.java" startLine="215" startPosition="40" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3416062119153932828" fileName="ModuleGenerationHolder.java" startLine="158" startPosition="72" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3416062119153941762" fileName="ModuleGenerationHolder.java" startLine="238" startPosition="29" endLine="254" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4128185861943385942" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cleanUp#()V" />
-    <nodeInfo nodeId="8597743085639790683" fileName="ModuleGenerationHolder.java" startLine="332" startPosition="38" endLine="349" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="9143630131837001685" fileName="ModuleGenerationHolder.java" startLine="107" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="3416062119153994947" fileName="ModuleGenerationHolder.java" startLine="190" startPosition="62" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3416062119153932790" fileName="ModuleGenerationHolder.java" startLine="157" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="diff#()Ljava/util/List;" />
-    <nodeInfo nodeId="5460949978728651005" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectResources#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="9143630131837001678" fileName="ModuleGenerationHolder.java" startLine="105" startPosition="0" endLine="125" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8597743085639790182" fileName="ModuleGenerationHolder.java" startLine="331" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
-    <nodeInfo nodeId="3416062119153995038" fileName="ModuleGenerationHolder.java" startLine="208" startPosition="5" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3416062119153933708" fileName="ModuleGenerationHolder.java" startLine="236" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileToStrings#(Ljava/io/File;)Ljava/util/List;" />
-    <nodeInfo nodeId="3416062119153932835" fileName="ModuleGenerationHolder.java" startLine="188" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="diffDirs#(Ljava/io/File;Ljava/io/File;Ljava/util/List;)V" />
-    <nodeInfo nodeId="8597743085639790165" fileName="ModuleGenerationHolder.java" startLine="92" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#()V" />
-    <scopeInfo nodeId="9121742173815480875" fileName="ModuleGenerationHolder.java" startLine="136" startPosition="0" endLine="136" endPosition="47">
+    <nodeInfo nodeId="1202495231125162902" fileName="ModuleGenerationHolder.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ignoredFiles" />
+    <nodeInfo nodeId="8981027491094736558" fileName="ModuleGenerationHolder.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
+    <nodeInfo nodeId="8981027491094734791" fileName="ModuleGenerationHolder.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
+    <nodeInfo nodeId="6078875650364604224" fileName="ModuleGenerationHolder.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tmpPath" />
+    <nodeInfo nodeId="3416062119153932762" fileName="ModuleGenerationHolder.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path2tmp" />
+    <nodeInfo nodeId="7352662836539749211" fileName="ModuleGenerationHolder.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
+    <nodeInfo nodeId="6607750055057841842" fileName="ModuleGenerationHolder.java" startLine="74" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isSucessful" />
+    <nodeInfo nodeId="8981027491094734803" fileName="ModuleGenerationHolder.java" startLine="77" startPosition="66" endLine="78" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8981027491094736563" fileName="ModuleGenerationHolder.java" startLine="78" startPosition="25" endLine="79" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6078875650364604150" fileName="ModuleGenerationHolder.java" startLine="79" startPosition="27" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6078875650364605983" fileName="ModuleGenerationHolder.java" startLine="81" startPosition="9" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6078875650364604157" fileName="ModuleGenerationHolder.java" startLine="82" startPosition="57" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6078875650364604166" fileName="ModuleGenerationHolder.java" startLine="83" startPosition="22" endLine="84" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6078875650364605987" fileName="ModuleGenerationHolder.java" startLine="85" startPosition="30" endLine="86" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6078875650364604229" fileName="ModuleGenerationHolder.java" startLine="87" startPosition="5" endLine="88" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6607750055058624222" fileName="ModuleGenerationHolder.java" startLine="94" startPosition="37" endLine="95" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6607750055058624184" fileName="ModuleGenerationHolder.java" startLine="95" startPosition="25" endLine="96" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6607750055058621687" fileName="ModuleGenerationHolder.java" startLine="97" startPosition="5" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="921684950836915474" fileName="ModuleGenerationHolder.java" startLine="98" startPosition="0" endLine="99" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="921684950837061101" fileName="ModuleGenerationHolder.java" startLine="99" startPosition="14" endLine="100" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9143630131836949541" fileName="ModuleGenerationHolder.java" startLine="100" startPosition="88" endLine="101" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9143630131836949596" fileName="ModuleGenerationHolder.java" startLine="102" startPosition="21" endLine="103" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5782055005733406795" fileName="ModuleGenerationHolder.java" startLine="103" startPosition="68" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9143630131836949539" fileName="ModuleGenerationHolder.java" startLine="105" startPosition="5" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5031229775986962290" fileName="ModuleGenerationHolder.java" startLine="106" startPosition="0" endLine="107" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2120492242099858645" fileName="ModuleGenerationHolder.java" startLine="107" startPosition="67" endLine="108" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5031229775986953945" fileName="ModuleGenerationHolder.java" startLine="110" startPosition="25" endLine="111" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5031229775986953936" fileName="ModuleGenerationHolder.java" startLine="111" startPosition="73" endLine="112" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9122198050634322274" fileName="ModuleGenerationHolder.java" startLine="113" startPosition="13" endLine="114" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6705512905417363642" fileName="ModuleGenerationHolder.java" startLine="114" startPosition="87" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6705512905414473803" fileName="ModuleGenerationHolder.java" startLine="118" startPosition="54" endLine="119" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6705512905414486528" fileName="ModuleGenerationHolder.java" startLine="119" startPosition="110" endLine="120" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9122198050634725661" fileName="ModuleGenerationHolder.java" startLine="120" startPosition="53" endLine="121" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294074698114021996" fileName="ModuleGenerationHolder.java" startLine="123" startPosition="50" endLine="124" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6705512905417335753" fileName="ModuleGenerationHolder.java" startLine="126" startPosition="33" endLine="127" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6705512905417359249" fileName="ModuleGenerationHolder.java" startLine="129" startPosition="12" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2120492242099858665" fileName="ModuleGenerationHolder.java" startLine="130" startPosition="0" endLine="131" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2120492242099858661" fileName="ModuleGenerationHolder.java" startLine="136" startPosition="7" endLine="137" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6607750055057856119" fileName="ModuleGenerationHolder.java" startLine="137" startPosition="45" endLine="138" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6607750055058020742" fileName="ModuleGenerationHolder.java" startLine="141" startPosition="37" endLine="142" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7352662836539757580" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="37" endLine="146" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7352662836539757584" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="36" endLine="150" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153995139" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="30" endLine="154" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153932878" fileName="ModuleGenerationHolder.java" startLine="155" startPosition="86" endLine="156" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153932888" fileName="ModuleGenerationHolder.java" startLine="156" startPosition="38" endLine="157" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153932897" fileName="ModuleGenerationHolder.java" startLine="158" startPosition="87" endLine="159" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153933004" fileName="ModuleGenerationHolder.java" startLine="160" startPosition="56" endLine="161" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932940" fileName="ModuleGenerationHolder.java" startLine="162" startPosition="36" endLine="163" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932965" fileName="ModuleGenerationHolder.java" startLine="164" startPosition="36" endLine="165" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153933030" fileName="ModuleGenerationHolder.java" startLine="166" startPosition="14" endLine="167" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153995155" fileName="ModuleGenerationHolder.java" startLine="169" startPosition="5" endLine="170" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7216969004037110172" fileName="ModuleGenerationHolder.java" startLine="174" startPosition="58" endLine="175" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6078875650364605934" fileName="ModuleGenerationHolder.java" startLine="176" startPosition="5" endLine="177" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3703252800112061830" fileName="ModuleGenerationHolder.java" startLine="177" startPosition="32" endLine="178" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932770" fileName="ModuleGenerationHolder.java" startLine="178" startPosition="57" endLine="179" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153932780" fileName="ModuleGenerationHolder.java" startLine="179" startPosition="96" endLine="180" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6078875650364604242" fileName="ModuleGenerationHolder.java" startLine="180" startPosition="49" endLine="181" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153994869" fileName="ModuleGenerationHolder.java" startLine="184" startPosition="79" endLine="185" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153994911" fileName="ModuleGenerationHolder.java" startLine="185" startPosition="62" endLine="186" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6648299012528511857" fileName="ModuleGenerationHolder.java" startLine="190" startPosition="32" endLine="191" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153994975" fileName="ModuleGenerationHolder.java" startLine="192" startPosition="11" endLine="193" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648299012528511861" fileName="ModuleGenerationHolder.java" startLine="198" startPosition="32" endLine="199" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153995015" fileName="ModuleGenerationHolder.java" startLine="200" startPosition="11" endLine="201" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1901124280489778756" fileName="ModuleGenerationHolder.java" startLine="206" startPosition="30" endLine="207" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1901124280489778757" fileName="ModuleGenerationHolder.java" startLine="208" startPosition="7" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3416062119153995050" fileName="ModuleGenerationHolder.java" startLine="209" startPosition="0" endLine="210" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153995056" fileName="ModuleGenerationHolder.java" startLine="210" startPosition="40" endLine="211" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5378512516364166440" fileName="ModuleGenerationHolder.java" startLine="213" startPosition="37" endLine="214" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153995068" fileName="ModuleGenerationHolder.java" startLine="214" startPosition="53" endLine="215" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153995078" fileName="ModuleGenerationHolder.java" startLine="216" startPosition="47" endLine="217" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7984465977408064212" fileName="ModuleGenerationHolder.java" startLine="219" startPosition="16" endLine="220" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153995103" fileName="ModuleGenerationHolder.java" startLine="222" startPosition="14" endLine="223" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3224166544242268089" fileName="ModuleGenerationHolder.java" startLine="228" startPosition="48" endLine="229" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153994301" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="46" endLine="233" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153941740" fileName="ModuleGenerationHolder.java" startLine="233" startPosition="73" endLine="234" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153941748" fileName="ModuleGenerationHolder.java" startLine="235" startPosition="9" endLine="236" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5378512516364166404" fileName="ModuleGenerationHolder.java" startLine="236" startPosition="103" endLine="237" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153994349" fileName="ModuleGenerationHolder.java" startLine="238" startPosition="46" endLine="239" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994325" fileName="ModuleGenerationHolder.java" startLine="241" startPosition="29" endLine="242" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994274" fileName="ModuleGenerationHolder.java" startLine="245" startPosition="13" endLine="246" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994359" fileName="ModuleGenerationHolder.java" startLine="250" startPosition="5" endLine="251" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4128185861943385985" fileName="ModuleGenerationHolder.java" startLine="255" startPosition="150" endLine="256" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4128185861943386030" fileName="ModuleGenerationHolder.java" startLine="256" startPosition="68" endLine="257" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4128185861943386020" fileName="ModuleGenerationHolder.java" startLine="259" startPosition="30" endLine="260" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4128185861943386047" fileName="ModuleGenerationHolder.java" startLine="261" startPosition="16" endLine="262" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932803" fileName="ModuleGenerationHolder.java" startLine="265" startPosition="5" endLine="266" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932795" fileName="ModuleGenerationHolder.java" startLine="266" startPosition="24" endLine="267" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7352662836539759268" fileName="ModuleGenerationHolder.java" startLine="267" startPosition="42" endLine="268" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6607750055058402184" fileName="ModuleGenerationHolder.java" startLine="275" startPosition="58" endLine="276" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6607750055058402186" fileName="ModuleGenerationHolder.java" startLine="278" startPosition="9" endLine="279" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6085445418775290702" fileName="ModuleGenerationHolder.java" startLine="284" startPosition="55" endLine="285" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3767231643656643806" fileName="ModuleGenerationHolder.java" startLine="290" startPosition="41" endLine="291" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6663830059446823701" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="54" endLine="295" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3037398679707966202" fileName="ModuleGenerationHolder.java" startLine="300" startPosition="104" endLine="301" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3730996872184513717" fileName="ModuleGenerationHolder.java" startLine="306" startPosition="46" endLine="307" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3037398679707992883" fileName="ModuleGenerationHolder.java" startLine="314" startPosition="41" endLine="315" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8597743085639790171" fileName="ModuleGenerationHolder.java" startLine="321" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationErrors" />
+    <nodeInfo nodeId="8597743085639790175" fileName="ModuleGenerationHolder.java" startLine="322" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationWarnings" />
+    <nodeInfo nodeId="8597743085639790707" fileName="ModuleGenerationHolder.java" startLine="331" startPosition="43" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8597743085639790712" fileName="ModuleGenerationHolder.java" startLine="332" startPosition="53" endLine="333" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8597743085639790721" fileName="ModuleGenerationHolder.java" startLine="333" startPosition="72" endLine="334" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8597743085639790699" fileName="ModuleGenerationHolder.java" startLine="335" startPosition="18" endLine="336" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8597743085639790730" fileName="ModuleGenerationHolder.java" startLine="337" startPosition="11" endLine="338" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8597743085639790734" fileName="ModuleGenerationHolder.java" startLine="339" startPosition="21" endLine="340" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8597743085639790741" fileName="ModuleGenerationHolder.java" startLine="340" startPosition="50" endLine="341" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8597743085639790745" fileName="ModuleGenerationHolder.java" startLine="342" startPosition="25" endLine="343" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8597743085639790747" fileName="ModuleGenerationHolder.java" startLine="348" startPosition="47" endLine="349" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8597743085639790750" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="49" endLine="353" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8597743085639790753" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="27" endLine="357" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8597743085639790757" fileName="ModuleGenerationHolder.java" startLine="357" startPosition="33" endLine="358" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153933028" fileName="ModuleGenerationHolder.java" startLine="166" startPosition="12" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7984465977408064210" fileName="ModuleGenerationHolder.java" startLine="219" startPosition="14" endLine="221" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3416062119153995101" fileName="ModuleGenerationHolder.java" startLine="222" startPosition="12" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4128185861943386045" fileName="ModuleGenerationHolder.java" startLine="261" startPosition="14" endLine="263" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8597743085639790179" fileName="ModuleGenerationHolder.java" startLine="324" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMessageHandler#()V" />
+    <nodeInfo nodeId="8597743085639790697" fileName="ModuleGenerationHolder.java" startLine="335" startPosition="16" endLine="337" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5294074698114021992" fileName="ModuleGenerationHolder.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="6607750055058019586" fileName="ModuleGenerationHolder.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBuildSucessful#()Z" />
+    <nodeInfo nodeId="7352662836539757550" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildErrors#()Ljava/util/List;" />
+    <nodeInfo nodeId="7352662836539757568" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildWarns#()Ljava/util/List;" />
+    <nodeInfo nodeId="7216969004037110160" fileName="ModuleGenerationHolder.java" startLine="173" startPosition="38" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6648299012528511844" fileName="ModuleGenerationHolder.java" startLine="189" startPosition="38" endLine="192" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6648299012528511859" fileName="ModuleGenerationHolder.java" startLine="197" startPosition="38" endLine="200" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1901124280489778745" fileName="ModuleGenerationHolder.java" startLine="205" startPosition="96" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3243693673213719690" fileName="ModuleGenerationHolder.java" startLine="215" startPosition="69" endLine="218" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3224166544242268084" fileName="ModuleGenerationHolder.java" startLine="228" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ignoredFile#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5378512516364166418" fileName="ModuleGenerationHolder.java" startLine="237" startPosition="18" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6607750055058402180" fileName="ModuleGenerationHolder.java" startLine="274" startPosition="54" endLine="277" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5460949978728582631" fileName="ModuleGenerationHolder.java" startLine="284" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultScriptBuilder#()Ljetbrains/mps/make/script/ScriptBuilder;" />
+    <nodeInfo nodeId="3767231643656643804" fileName="ModuleGenerationHolder.java" startLine="290" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
+    <nodeInfo nodeId="3767231643656643813" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3730996872184513713" fileName="ModuleGenerationHolder.java" startLine="306" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="3037398679707992881" fileName="ModuleGenerationHolder.java" startLine="314" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="8597743085639790187" fileName="ModuleGenerationHolder.java" startLine="348" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationErrors#()Ljava/util/List;" />
+    <nodeInfo nodeId="8597743085639790191" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationWarnings#()Ljava/util/List;" />
+    <nodeInfo nodeId="8597743085639790198" fileName="ModuleGenerationHolder.java" startLine="361" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="6607750055058621913" fileName="ModuleGenerationHolder.java" startLine="93" startPosition="23" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9143630131836949591" fileName="ModuleGenerationHolder.java" startLine="101" startPosition="92" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3416062119153994267" fileName="ModuleGenerationHolder.java" startLine="244" startPosition="23" endLine="248" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8597743085639790195" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cleanUp#()V" />
+    <nodeInfo nodeId="6705512905416954905" fileName="ModuleGenerationHolder.java" startLine="121" startPosition="105" endLine="126" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4128185861943386010" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="38" endLine="263" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6607750055058402173" fileName="ModuleGenerationHolder.java" startLine="273" startPosition="32" endLine="278" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3037398679707966826" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="79" endLine="309" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3037398679707966845" fileName="ModuleGenerationHolder.java" startLine="312" startPosition="7" endLine="317" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153994971" fileName="ModuleGenerationHolder.java" startLine="189" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3416062119153995013" fileName="ModuleGenerationHolder.java" startLine="197" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3416062119153994287" fileName="ModuleGenerationHolder.java" startLine="243" startPosition="15" endLine="249" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6078875650364605976" fileName="ModuleGenerationHolder.java" startLine="80" startPosition="16" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4128185861943386001" fileName="ModuleGenerationHolder.java" startLine="257" startPosition="25" endLine="264" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3037398679707966819" fileName="ModuleGenerationHolder.java" startLine="303" startPosition="25" endLine="310" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8597743085639790691" fileName="ModuleGenerationHolder.java" startLine="330" startPosition="19" endLine="337" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3416062119153994957" fileName="ModuleGenerationHolder.java" startLine="187" startPosition="96" endLine="195" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153995006" fileName="ModuleGenerationHolder.java" startLine="195" startPosition="9" endLine="203" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6607750055058549114" fileName="ModuleGenerationHolder.java" startLine="273" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="3416062119153995066" fileName="ModuleGenerationHolder.java" startLine="212" startPosition="55" endLine="221" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3767231643656643796" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="78" endLine="297" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3037398679707966653" fileName="ModuleGenerationHolder.java" startLine="303" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6078875650364604217" fileName="ModuleGenerationHolder.java" startLine="173" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tmpFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="6607750055058544440" fileName="ModuleGenerationHolder.java" startLine="271" startPosition="64" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153932844" fileName="ModuleGenerationHolder.java" startLine="157" startPosition="40" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4128185861943385956" fileName="ModuleGenerationHolder.java" startLine="254" startPosition="25" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5460949978728589355" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="withGenerators#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3037398679707966652" fileName="ModuleGenerationHolder.java" startLine="301" startPosition="89" endLine="312" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9143630131837001685" fileName="ModuleGenerationHolder.java" startLine="117" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="6607750055058400930" fileName="ModuleGenerationHolder.java" startLine="271" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="needsGeneration#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
+    <nodeInfo nodeId="6607750055057276483" fileName="ModuleGenerationHolder.java" startLine="77" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleGenerationHolder#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="3416062119153995064" fileName="ModuleGenerationHolder.java" startLine="211" startPosition="40" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9143630131837001678" fileName="ModuleGenerationHolder.java" startLine="115" startPosition="0" endLine="129" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153932828" fileName="ModuleGenerationHolder.java" startLine="154" startPosition="72" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3416062119153941762" fileName="ModuleGenerationHolder.java" startLine="234" startPosition="29" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4128185861943385942" fileName="ModuleGenerationHolder.java" startLine="254" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cleanUp#()V" />
+    <nodeInfo nodeId="8597743085639790683" fileName="ModuleGenerationHolder.java" startLine="328" startPosition="38" endLine="345" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3416062119153994947" fileName="ModuleGenerationHolder.java" startLine="186" startPosition="62" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3416062119153932790" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="diff#()Ljava/util/List;" />
+    <nodeInfo nodeId="5460949978728651005" fileName="ModuleGenerationHolder.java" startLine="300" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectResources#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8597743085639790182" fileName="ModuleGenerationHolder.java" startLine="327" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
+    <nodeInfo nodeId="3416062119153995038" fileName="ModuleGenerationHolder.java" startLine="204" startPosition="5" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3416062119153933708" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileToStrings#(Ljava/io/File;)Ljava/util/List;" />
+    <nodeInfo nodeId="9121742173815480872" fileName="ModuleGenerationHolder.java" startLine="112" startPosition="79" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2120492242099858651" fileName="ModuleGenerationHolder.java" startLine="110" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2120492242099858649" fileName="ModuleGenerationHolder.java" startLine="108" startPosition="45" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932835" fileName="ModuleGenerationHolder.java" startLine="184" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="diffDirs#(Ljava/io/File;Ljava/io/File;Ljava/util/List;)V" />
+    <nodeInfo nodeId="8597743085639790165" fileName="ModuleGenerationHolder.java" startLine="93" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#()V" />
+    <scopeInfo nodeId="9121742173815480875" fileName="ModuleGenerationHolder.java" startLine="132" startPosition="0" endLine="132" endPosition="47">
       <varInfo nodeId="9121742173815480876" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="9121742173815480878" fileName="ModuleGenerationHolder.java" startLine="136" startPosition="47" endLine="136" endPosition="47" />
-    <scopeInfo nodeId="9121742173815480881" fileName="ModuleGenerationHolder.java" startLine="137" startPosition="0" endLine="137" endPosition="45">
+    <scopeInfo nodeId="9121742173815480878" fileName="ModuleGenerationHolder.java" startLine="132" startPosition="47" endLine="132" endPosition="47" />
+    <scopeInfo nodeId="9121742173815480881" fileName="ModuleGenerationHolder.java" startLine="133" startPosition="0" endLine="133" endPosition="45">
       <varInfo nodeId="9121742173815480882" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="9121742173815480884" fileName="ModuleGenerationHolder.java" startLine="137" startPosition="45" endLine="137" endPosition="45" />
-    <scopeInfo nodeId="3416062119153994269" fileName="ModuleGenerationHolder.java" startLine="251" startPosition="0" endLine="251" endPosition="38">
+    <scopeInfo nodeId="9121742173815480884" fileName="ModuleGenerationHolder.java" startLine="133" startPosition="45" endLine="133" endPosition="45" />
+    <scopeInfo nodeId="3416062119153994269" fileName="ModuleGenerationHolder.java" startLine="247" startPosition="0" endLine="247" endPosition="38">
       <varInfo nodeId="3416062119153994270" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153994272" fileName="ModuleGenerationHolder.java" startLine="251" startPosition="38" endLine="251" endPosition="38" />
-    <scopeInfo nodeId="8597743085639790681" fileName="ModuleGenerationHolder.java" startLine="328" startPosition="32" endLine="328" endPosition="32" />
-    <scopeInfo nodeId="8597743085639790687" fileName="ModuleGenerationHolder.java" startLine="348" startPosition="16" endLine="348" endPosition="16" />
-    <scopeInfo nodeId="8597743085639790761" fileName="ModuleGenerationHolder.java" startLine="366" startPosition="25" endLine="366" endPosition="25" />
-    <scopeInfo nodeId="6078875650364605979" fileName="ModuleGenerationHolder.java" startLine="84" startPosition="0" endLine="85" endPosition="37">
+    <scopeInfo nodeId="3416062119153994272" fileName="ModuleGenerationHolder.java" startLine="247" startPosition="38" endLine="247" endPosition="38" />
+    <scopeInfo nodeId="8597743085639790681" fileName="ModuleGenerationHolder.java" startLine="324" startPosition="32" endLine="324" endPosition="32" />
+    <scopeInfo nodeId="8597743085639790687" fileName="ModuleGenerationHolder.java" startLine="344" startPosition="16" endLine="344" endPosition="16" />
+    <scopeInfo nodeId="8597743085639790761" fileName="ModuleGenerationHolder.java" startLine="362" startPosition="25" endLine="362" endPosition="25" />
+    <scopeInfo nodeId="6078875650364605979" fileName="ModuleGenerationHolder.java" startLine="85" startPosition="0" endLine="86" endPosition="37">
       <varInfo nodeId="6078875650364605980" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="6078875650364605982" fileName="ModuleGenerationHolder.java" startLine="84" startPosition="30" endLine="85" endPosition="37" />
-    <scopeInfo nodeId="5294074698114021995" fileName="ModuleGenerationHolder.java" startLine="117" startPosition="44" endLine="118" endPosition="33" />
-    <scopeInfo nodeId="6607750055058019589" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="37" endLine="146" endPosition="23" />
-    <scopeInfo nodeId="7352662836539757556" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="37" endLine="150" endPosition="50" />
-    <scopeInfo nodeId="7352662836539757574" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="36" endLine="154" endPosition="52" />
-    <scopeInfo nodeId="3416062119153932846" fileName="ModuleGenerationHolder.java" startLine="162" startPosition="87" endLine="163" endPosition="36" />
-    <scopeInfo nodeId="3416062119153932981" fileName="ModuleGenerationHolder.java" startLine="164" startPosition="56" endLine="165" endPosition="88" />
-    <scopeInfo nodeId="3416062119153932931" fileName="ModuleGenerationHolder.java" startLine="166" startPosition="36" endLine="167" endPosition="68" />
-    <scopeInfo nodeId="3416062119153932956" fileName="ModuleGenerationHolder.java" startLine="168" startPosition="36" endLine="169" endPosition="68" />
-    <scopeInfo nodeId="3416062119153933029" fileName="ModuleGenerationHolder.java" startLine="170" startPosition="14" endLine="171" endPosition="102" />
-    <scopeInfo nodeId="7216969004037110161" fileName="ModuleGenerationHolder.java" startLine="178" startPosition="58" endLine="179" endPosition="93" />
-    <scopeInfo nodeId="6648299012528511845" fileName="ModuleGenerationHolder.java" startLine="194" startPosition="32" endLine="195" endPosition="19" />
-    <scopeInfo nodeId="6648299012528511860" fileName="ModuleGenerationHolder.java" startLine="202" startPosition="32" endLine="203" endPosition="19" />
-    <scopeInfo nodeId="1901124280489778746" fileName="ModuleGenerationHolder.java" startLine="210" startPosition="30" endLine="211" endPosition="17" />
-    <scopeInfo nodeId="3243693673213719691" fileName="ModuleGenerationHolder.java" startLine="220" startPosition="47" endLine="221" endPosition="159" />
-    <scopeInfo nodeId="7984465977408064211" fileName="ModuleGenerationHolder.java" startLine="223" startPosition="16" endLine="224" endPosition="40" />
-    <scopeInfo nodeId="3416062119153995102" fileName="ModuleGenerationHolder.java" startLine="226" startPosition="14" endLine="227" endPosition="104" />
-    <scopeInfo nodeId="3224166544242268088" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="48" endLine="233" endPosition="118" />
-    <scopeInfo nodeId="5378512516364166420" fileName="ModuleGenerationHolder.java" startLine="242" startPosition="46" endLine="243" endPosition="55" />
-    <scopeInfo nodeId="3416062119153941757" fileName="ModuleGenerationHolder.java" startLine="245" startPosition="0" endLine="246" endPosition="26">
+    <scopeInfo nodeId="6078875650364605982" fileName="ModuleGenerationHolder.java" startLine="85" startPosition="30" endLine="86" endPosition="37" />
+    <scopeInfo nodeId="5294074698114021995" fileName="ModuleGenerationHolder.java" startLine="123" startPosition="50" endLine="124" endPosition="39" />
+    <scopeInfo nodeId="6607750055058019589" fileName="ModuleGenerationHolder.java" startLine="141" startPosition="37" endLine="142" endPosition="23" />
+    <scopeInfo nodeId="7352662836539757556" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="37" endLine="146" endPosition="50" />
+    <scopeInfo nodeId="7352662836539757574" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="36" endLine="150" endPosition="52" />
+    <scopeInfo nodeId="3416062119153932846" fileName="ModuleGenerationHolder.java" startLine="158" startPosition="87" endLine="159" endPosition="36" />
+    <scopeInfo nodeId="3416062119153932981" fileName="ModuleGenerationHolder.java" startLine="160" startPosition="56" endLine="161" endPosition="88" />
+    <scopeInfo nodeId="3416062119153932931" fileName="ModuleGenerationHolder.java" startLine="162" startPosition="36" endLine="163" endPosition="68" />
+    <scopeInfo nodeId="3416062119153932956" fileName="ModuleGenerationHolder.java" startLine="164" startPosition="36" endLine="165" endPosition="68" />
+    <scopeInfo nodeId="3416062119153933029" fileName="ModuleGenerationHolder.java" startLine="166" startPosition="14" endLine="167" endPosition="102" />
+    <scopeInfo nodeId="7216969004037110161" fileName="ModuleGenerationHolder.java" startLine="174" startPosition="58" endLine="175" endPosition="93" />
+    <scopeInfo nodeId="6648299012528511845" fileName="ModuleGenerationHolder.java" startLine="190" startPosition="32" endLine="191" endPosition="19" />
+    <scopeInfo nodeId="6648299012528511860" fileName="ModuleGenerationHolder.java" startLine="198" startPosition="32" endLine="199" endPosition="19" />
+    <scopeInfo nodeId="1901124280489778746" fileName="ModuleGenerationHolder.java" startLine="206" startPosition="30" endLine="207" endPosition="17" />
+    <scopeInfo nodeId="3243693673213719691" fileName="ModuleGenerationHolder.java" startLine="216" startPosition="47" endLine="217" endPosition="159" />
+    <scopeInfo nodeId="7984465977408064211" fileName="ModuleGenerationHolder.java" startLine="219" startPosition="16" endLine="220" endPosition="40" />
+    <scopeInfo nodeId="3416062119153995102" fileName="ModuleGenerationHolder.java" startLine="222" startPosition="14" endLine="223" endPosition="104" />
+    <scopeInfo nodeId="3224166544242268088" fileName="ModuleGenerationHolder.java" startLine="228" startPosition="48" endLine="229" endPosition="118" />
+    <scopeInfo nodeId="5378512516364166420" fileName="ModuleGenerationHolder.java" startLine="238" startPosition="46" endLine="239" endPosition="55" />
+    <scopeInfo nodeId="3416062119153941757" fileName="ModuleGenerationHolder.java" startLine="241" startPosition="0" endLine="242" endPosition="26">
       <varInfo nodeId="3416062119153941758" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153941760" fileName="ModuleGenerationHolder.java" startLine="245" startPosition="29" endLine="246" endPosition="26" />
-    <scopeInfo nodeId="3416062119153994268" fileName="ModuleGenerationHolder.java" startLine="249" startPosition="13" endLine="250" endPosition="21" />
-    <scopeInfo nodeId="4128185861943386011" fileName="ModuleGenerationHolder.java" startLine="263" startPosition="30" endLine="264" endPosition="58" />
-    <scopeInfo nodeId="4128185861943386046" fileName="ModuleGenerationHolder.java" startLine="265" startPosition="16" endLine="266" endPosition="27" />
-    <scopeInfo nodeId="6607750055058402183" fileName="ModuleGenerationHolder.java" startLine="279" startPosition="58" endLine="280" endPosition="24" />
-    <scopeInfo nodeId="5460949978728582634" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="55" endLine="289" endPosition="333" />
-    <scopeInfo nodeId="3767231643656643805" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="41" endLine="295" endPosition="38" />
-    <scopeInfo nodeId="3767231643656643814" fileName="ModuleGenerationHolder.java" startLine="298" startPosition="54" endLine="299" endPosition="70" />
-    <scopeInfo nodeId="3730996872184513714" fileName="ModuleGenerationHolder.java" startLine="310" startPosition="46" endLine="311" endPosition="55" />
-    <scopeInfo nodeId="3037398679707992882" fileName="ModuleGenerationHolder.java" startLine="318" startPosition="41" endLine="319" endPosition="49" />
-    <scopeInfo nodeId="8597743085639790698" fileName="ModuleGenerationHolder.java" startLine="339" startPosition="18" endLine="340" endPosition="50" />
-    <scopeInfo nodeId="8597743085639790744" fileName="ModuleGenerationHolder.java" startLine="346" startPosition="25" endLine="347" endPosition="16" />
-    <scopeInfo nodeId="8597743085639790746" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="47" endLine="353" endPosition="32" />
-    <scopeInfo nodeId="8597743085639790749" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="49" endLine="357" endPosition="34" />
-    <scopeInfo nodeId="6607750055058621916" fileName="ModuleGenerationHolder.java" startLine="93" startPosition="37" endLine="95" endPosition="13" />
-    <scopeInfo nodeId="9143630131836949592" fileName="ModuleGenerationHolder.java" startLine="101" startPosition="21" endLine="103" endPosition="16" />
-    <scopeInfo nodeId="9121742173815480873" fileName="ModuleGenerationHolder.java" startLine="133" startPosition="13" endLine="135" endPosition="163">
-      <varInfo nodeId="9122198050634322275" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="8597743085639790179" fileName="ModuleGenerationHolder.java" startLine="328" startPosition="0" endLine="330" endPosition="0" />
-    <scopeInfo nodeId="8597743085639790733" fileName="ModuleGenerationHolder.java" startLine="343" startPosition="21" endLine="345" endPosition="16" />
-    <scopeInfo nodeId="8597743085639790752" fileName="ModuleGenerationHolder.java" startLine="360" startPosition="27" endLine="362" endPosition="35" />
-    <scopeInfo nodeId="6078875650364605977" fileName="ModuleGenerationHolder.java" startLine="80" startPosition="9" endLine="83" endPosition="21" />
-    <scopeInfo nodeId="5294074698114021992" fileName="ModuleGenerationHolder.java" startLine="117" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="3416062119153941760" fileName="ModuleGenerationHolder.java" startLine="241" startPosition="29" endLine="242" endPosition="26" />
+    <scopeInfo nodeId="3416062119153994268" fileName="ModuleGenerationHolder.java" startLine="245" startPosition="13" endLine="246" endPosition="21" />
+    <scopeInfo nodeId="4128185861943386011" fileName="ModuleGenerationHolder.java" startLine="259" startPosition="30" endLine="260" endPosition="58" />
+    <scopeInfo nodeId="4128185861943386046" fileName="ModuleGenerationHolder.java" startLine="261" startPosition="16" endLine="262" endPosition="27" />
+    <scopeInfo nodeId="6607750055058402183" fileName="ModuleGenerationHolder.java" startLine="275" startPosition="58" endLine="276" endPosition="24" />
+    <scopeInfo nodeId="5460949978728582634" fileName="ModuleGenerationHolder.java" startLine="284" startPosition="55" endLine="285" endPosition="333" />
+    <scopeInfo nodeId="3767231643656643805" fileName="ModuleGenerationHolder.java" startLine="290" startPosition="41" endLine="291" endPosition="38" />
+    <scopeInfo nodeId="3767231643656643814" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="54" endLine="295" endPosition="70" />
+    <scopeInfo nodeId="3730996872184513714" fileName="ModuleGenerationHolder.java" startLine="306" startPosition="46" endLine="307" endPosition="55" />
+    <scopeInfo nodeId="3037398679707992882" fileName="ModuleGenerationHolder.java" startLine="314" startPosition="41" endLine="315" endPosition="49" />
+    <scopeInfo nodeId="8597743085639790698" fileName="ModuleGenerationHolder.java" startLine="335" startPosition="18" endLine="336" endPosition="50" />
+    <scopeInfo nodeId="8597743085639790744" fileName="ModuleGenerationHolder.java" startLine="342" startPosition="25" endLine="343" endPosition="16" />
+    <scopeInfo nodeId="8597743085639790746" fileName="ModuleGenerationHolder.java" startLine="348" startPosition="47" endLine="349" endPosition="32" />
+    <scopeInfo nodeId="8597743085639790749" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="49" endLine="353" endPosition="34" />
+    <scopeInfo nodeId="6607750055058621916" fileName="ModuleGenerationHolder.java" startLine="94" startPosition="37" endLine="96" endPosition="13" />
+    <scopeInfo nodeId="9143630131836949592" fileName="ModuleGenerationHolder.java" startLine="102" startPosition="21" endLine="104" endPosition="16" />
+    <scopeInfo nodeId="8597743085639790179" fileName="ModuleGenerationHolder.java" startLine="324" startPosition="0" endLine="326" endPosition="0" />
+    <scopeInfo nodeId="8597743085639790733" fileName="ModuleGenerationHolder.java" startLine="339" startPosition="21" endLine="341" endPosition="16" />
+    <scopeInfo nodeId="8597743085639790752" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="27" endLine="358" endPosition="35" />
+    <scopeInfo nodeId="6078875650364605977" fileName="ModuleGenerationHolder.java" startLine="81" startPosition="9" endLine="84" endPosition="21" />
+    <scopeInfo nodeId="5294074698114021992" fileName="ModuleGenerationHolder.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="5294074698114021992" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="6607750055058019586" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="7352662836539757550" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="7352662836539757568" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="0" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="3224166544242268084" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="0" endLine="235" endPosition="0">
+    <scopeInfo nodeId="6607750055058019586" fileName="ModuleGenerationHolder.java" startLine="141" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="7352662836539757550" fileName="ModuleGenerationHolder.java" startLine="145" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="7352662836539757568" fileName="ModuleGenerationHolder.java" startLine="149" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="3224166544242268084" fileName="ModuleGenerationHolder.java" startLine="228" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="3224166544242268083" varName="fileName" />
     </scopeInfo>
-    <scopeInfo nodeId="6607750055058402179" fileName="ModuleGenerationHolder.java" startLine="278" startPosition="54" endLine="281" endPosition="11" />
-    <scopeInfo nodeId="5460949978728582631" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="0" endLine="291" endPosition="0" />
-    <scopeInfo nodeId="3767231643656643804" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="0" endLine="297" endPosition="0">
+    <scopeInfo nodeId="6607750055058402179" fileName="ModuleGenerationHolder.java" startLine="274" startPosition="54" endLine="277" endPosition="11" />
+    <scopeInfo nodeId="5460949978728582631" fileName="ModuleGenerationHolder.java" startLine="284" startPosition="0" endLine="287" endPosition="0" />
+    <scopeInfo nodeId="3767231643656643804" fileName="ModuleGenerationHolder.java" startLine="290" startPosition="0" endLine="293" endPosition="0">
       <varInfo nodeId="3767231643656643804" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3767231643656643813" fileName="ModuleGenerationHolder.java" startLine="298" startPosition="0" endLine="301" endPosition="0">
+    <scopeInfo nodeId="3767231643656643813" fileName="ModuleGenerationHolder.java" startLine="294" startPosition="0" endLine="297" endPosition="0">
       <varInfo nodeId="3767231643656643813" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3730996872184513713" fileName="ModuleGenerationHolder.java" startLine="310" startPosition="0" endLine="313" endPosition="0">
+    <scopeInfo nodeId="3730996872184513713" fileName="ModuleGenerationHolder.java" startLine="306" startPosition="0" endLine="309" endPosition="0">
       <varInfo nodeId="3730996872184513713" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3037398679707992881" fileName="ModuleGenerationHolder.java" startLine="318" startPosition="0" endLine="321" endPosition="0">
+    <scopeInfo nodeId="3037398679707992881" fileName="ModuleGenerationHolder.java" startLine="314" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="3037398679707992881" varName="smd" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790706" fileName="ModuleGenerationHolder.java" startLine="335" startPosition="43" endLine="338" endPosition="89">
+    <scopeInfo nodeId="8597743085639790706" fileName="ModuleGenerationHolder.java" startLine="331" startPosition="43" endLine="334" endPosition="89">
       <varInfo nodeId="8597743085639790708" varName="writer" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790187" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="0" endLine="355" endPosition="0" />
-    <scopeInfo nodeId="8597743085639790191" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="0" endLine="359" endPosition="0" />
-    <scopeInfo nodeId="8597743085639790198" fileName="ModuleGenerationHolder.java" startLine="365" startPosition="0" endLine="368" endPosition="0" />
-    <scopeInfo nodeId="3416062119153994972" fileName="ModuleGenerationHolder.java" startLine="193" startPosition="38" endLine="197" endPosition="84" />
-    <scopeInfo nodeId="3416062119153995014" fileName="ModuleGenerationHolder.java" startLine="201" startPosition="38" endLine="205" endPosition="84" />
-    <scopeInfo nodeId="3416062119153994288" fileName="ModuleGenerationHolder.java" startLine="248" startPosition="23" endLine="252" endPosition="9" />
-    <scopeInfo nodeId="8597743085639790195" fileName="ModuleGenerationHolder.java" startLine="360" startPosition="0" endLine="364" endPosition="0" />
-    <scopeInfo nodeId="3416062119153995067" fileName="ModuleGenerationHolder.java" startLine="217" startPosition="37" endLine="222" endPosition="11">
+    <scopeInfo nodeId="8597743085639790187" fileName="ModuleGenerationHolder.java" startLine="348" startPosition="0" endLine="351" endPosition="0" />
+    <scopeInfo nodeId="8597743085639790191" fileName="ModuleGenerationHolder.java" startLine="352" startPosition="0" endLine="355" endPosition="0" />
+    <scopeInfo nodeId="8597743085639790198" fileName="ModuleGenerationHolder.java" startLine="361" startPosition="0" endLine="364" endPosition="0" />
+    <scopeInfo nodeId="3416062119153994972" fileName="ModuleGenerationHolder.java" startLine="189" startPosition="38" endLine="193" endPosition="84" />
+    <scopeInfo nodeId="3416062119153995014" fileName="ModuleGenerationHolder.java" startLine="197" startPosition="38" endLine="201" endPosition="84" />
+    <scopeInfo nodeId="3416062119153994288" fileName="ModuleGenerationHolder.java" startLine="244" startPosition="23" endLine="248" endPosition="9" />
+    <scopeInfo nodeId="8597743085639790195" fileName="ModuleGenerationHolder.java" startLine="356" startPosition="0" endLine="360" endPosition="0" />
+    <scopeInfo nodeId="3416062119153995067" fileName="ModuleGenerationHolder.java" startLine="213" startPosition="37" endLine="218" endPosition="11">
       <varInfo nodeId="5378512516364166441" varName="olines" />
       <varInfo nodeId="3416062119153995069" varName="patch" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153941755" fileName="ModuleGenerationHolder.java" startLine="239" startPosition="9" endLine="244" endPosition="7">
+    <scopeInfo nodeId="3416062119153941755" fileName="ModuleGenerationHolder.java" startLine="235" startPosition="9" endLine="240" endPosition="7">
       <varInfo nodeId="5378512516364166405" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4128185861943386002" fileName="ModuleGenerationHolder.java" startLine="262" startPosition="38" endLine="267" endPosition="9" />
-    <scopeInfo nodeId="6607750055058402173" fileName="ModuleGenerationHolder.java" startLine="277" startPosition="32" endLine="282" endPosition="9">
+    <scopeInfo nodeId="4128185861943386002" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="38" endLine="263" endPosition="9" />
+    <scopeInfo nodeId="6607750055058402173" fileName="ModuleGenerationHolder.java" startLine="273" startPosition="32" endLine="278" endPosition="9">
       <varInfo nodeId="6607750055058402177" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3037398679707966820" fileName="ModuleGenerationHolder.java" startLine="308" startPosition="79" endLine="313" endPosition="14" />
-    <scopeInfo nodeId="3416062119153994971" fileName="ModuleGenerationHolder.java" startLine="193" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="3037398679707966820" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="79" endLine="309" endPosition="14" />
+    <scopeInfo nodeId="3416062119153994971" fileName="ModuleGenerationHolder.java" startLine="189" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="3416062119153994971" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153995013" fileName="ModuleGenerationHolder.java" startLine="201" startPosition="0" endLine="207" endPosition="0">
+    <scopeInfo nodeId="3416062119153995013" fileName="ModuleGenerationHolder.java" startLine="197" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="3416062119153995013" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153941763" fileName="ModuleGenerationHolder.java" startLine="247" startPosition="15" endLine="253" endPosition="7" />
-    <scopeInfo nodeId="6607750055058549115" fileName="ModuleGenerationHolder.java" startLine="277" startPosition="32" endLine="283" endPosition="21" />
-    <scopeInfo nodeId="4128185861943386001" fileName="ModuleGenerationHolder.java" startLine="261" startPosition="25" endLine="268" endPosition="7">
+    <scopeInfo nodeId="3416062119153941763" fileName="ModuleGenerationHolder.java" startLine="243" startPosition="15" endLine="249" endPosition="7" />
+    <scopeInfo nodeId="6607750055058549115" fileName="ModuleGenerationHolder.java" startLine="273" startPosition="32" endLine="279" endPosition="21" />
+    <scopeInfo nodeId="4128185861943386001" fileName="ModuleGenerationHolder.java" startLine="257" startPosition="25" endLine="264" endPosition="7">
       <varInfo nodeId="4128185861943386004" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3037398679707966654" fileName="ModuleGenerationHolder.java" startLine="307" startPosition="25" endLine="314" endPosition="9" />
-    <scopeInfo nodeId="3037398679707966819" fileName="ModuleGenerationHolder.java" startLine="307" startPosition="25" endLine="314" endPosition="9">
+    <scopeInfo nodeId="3037398679707966654" fileName="ModuleGenerationHolder.java" startLine="303" startPosition="25" endLine="310" endPosition="9" />
+    <scopeInfo nodeId="3037398679707966819" fileName="ModuleGenerationHolder.java" startLine="303" startPosition="25" endLine="310" endPosition="9">
       <varInfo nodeId="3037398679707966821" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="2120492242099858652" fileName="ModuleGenerationHolder.java" startLine="130" startPosition="25" endLine="138" endPosition="9">
-      <varInfo nodeId="5031229775986953946" varName="context" />
-      <varInfo nodeId="5031229775986953937" varName="scr" />
-    </scopeInfo>
-    <scopeInfo nodeId="6078875650364604220" fileName="ModuleGenerationHolder.java" startLine="177" startPosition="38" endLine="185" endPosition="55">
+    <scopeInfo nodeId="6078875650364604220" fileName="ModuleGenerationHolder.java" startLine="173" startPosition="38" endLine="181" endPosition="55">
       <varInfo nodeId="6078875650364605935" varName="idx" />
       <varInfo nodeId="3416062119153932771" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="6607750055058549114" fileName="ModuleGenerationHolder.java" startLine="277" startPosition="0" endLine="285" endPosition="0" />
-    <scopeInfo nodeId="8597743085639790690" fileName="ModuleGenerationHolder.java" startLine="334" startPosition="19" endLine="342" endPosition="16" />
-    <scopeInfo nodeId="3416062119153995065" fileName="ModuleGenerationHolder.java" startLine="216" startPosition="55" endLine="225" endPosition="9" />
-    <scopeInfo nodeId="4128185861943385957" fileName="ModuleGenerationHolder.java" startLine="259" startPosition="150" endLine="268" endPosition="7">
+    <scopeInfo nodeId="6607750055058549114" fileName="ModuleGenerationHolder.java" startLine="273" startPosition="0" endLine="281" endPosition="0" />
+    <scopeInfo nodeId="8597743085639790690" fileName="ModuleGenerationHolder.java" startLine="330" startPosition="19" endLine="338" endPosition="16" />
+    <scopeInfo nodeId="9143630131837001690" fileName="ModuleGenerationHolder.java" startLine="118" startPosition="54" endLine="127" endPosition="101" />
+    <scopeInfo nodeId="3416062119153995065" fileName="ModuleGenerationHolder.java" startLine="212" startPosition="55" endLine="221" endPosition="9" />
+    <scopeInfo nodeId="4128185861943385957" fileName="ModuleGenerationHolder.java" startLine="255" startPosition="150" endLine="264" endPosition="7">
       <varInfo nodeId="4128185861943385986" varName="dir" />
     </scopeInfo>
-    <scopeInfo nodeId="5460949978728589358" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="78" endLine="301" endPosition="8" />
-    <scopeInfo nodeId="3037398679707966653" fileName="ModuleGenerationHolder.java" startLine="307" startPosition="0" endLine="316" endPosition="0" />
-    <scopeInfo nodeId="2120492242099858651" fileName="ModuleGenerationHolder.java" startLine="130" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="6078875650364604217" fileName="ModuleGenerationHolder.java" startLine="177" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="5460949978728589358" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="78" endLine="297" endPosition="8" />
+    <scopeInfo nodeId="3037398679707966653" fileName="ModuleGenerationHolder.java" startLine="303" startPosition="0" endLine="312" endPosition="0" />
+    <scopeInfo nodeId="6078875650364604217" fileName="ModuleGenerationHolder.java" startLine="173" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="6078875650364604222" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="6607750055058400933" fileName="ModuleGenerationHolder.java" startLine="275" startPosition="64" endLine="285" endPosition="7" />
-    <scopeInfo nodeId="6607750055057276488" fileName="ModuleGenerationHolder.java" startLine="76" startPosition="66" endLine="87" endPosition="44">
+    <scopeInfo nodeId="6607750055058400933" fileName="ModuleGenerationHolder.java" startLine="271" startPosition="64" endLine="281" endPosition="7" />
+    <scopeInfo nodeId="6607750055057276488" fileName="ModuleGenerationHolder.java" startLine="77" startPosition="66" endLine="88" endPosition="44">
       <varInfo nodeId="6078875650364604151" varName="tmpDir" />
     </scopeInfo>
-    <scopeInfo nodeId="4128185861943385956" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="25" endLine="269" endPosition="5">
+    <scopeInfo nodeId="4128185861943385956" fileName="ModuleGenerationHolder.java" startLine="254" startPosition="25" endLine="265" endPosition="5">
       <varInfo nodeId="4128185861943385960" varName="dirs" />
     </scopeInfo>
-    <scopeInfo nodeId="5460949978728589355" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="0" endLine="303" endPosition="0">
+    <scopeInfo nodeId="5460949978728589355" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="5460949978728590562" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="6607750055058400930" fileName="ModuleGenerationHolder.java" startLine="275" startPosition="0" endLine="287" endPosition="0">
+    <scopeInfo nodeId="9143630131837001685" fileName="ModuleGenerationHolder.java" startLine="117" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="9143630131837001686" varName="ppool" />
+    </scopeInfo>
+    <scopeInfo nodeId="6607750055058400930" fileName="ModuleGenerationHolder.java" startLine="271" startPosition="0" endLine="283" endPosition="0">
       <varInfo nodeId="6607750055058402063" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6607750055057276483" fileName="ModuleGenerationHolder.java" startLine="76" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="6607750055057276483" fileName="ModuleGenerationHolder.java" startLine="77" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6607750055057277862" varName="module" />
       <varInfo nodeId="6607750055057277881" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153932829" fileName="ModuleGenerationHolder.java" startLine="159" startPosition="86" endLine="172" endPosition="7">
+    <scopeInfo nodeId="3416062119153932829" fileName="ModuleGenerationHolder.java" startLine="155" startPosition="86" endLine="168" endPosition="7">
       <varInfo nodeId="3416062119153932879" varName="orig" />
       <varInfo nodeId="3416062119153932889" varName="revd" />
     </scopeInfo>
-    <scopeInfo nodeId="4128185861943385945" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="25" endLine="272" endPosition="31" />
-    <scopeInfo nodeId="9143630131837001690" fileName="ModuleGenerationHolder.java" startLine="108" startPosition="48" endLine="123" endPosition="30">
-      <varInfo nodeId="5294074698114021971" varName="makeparams" />
-      <varInfo nodeId="9143630131837001692" varName="params" />
-      <varInfo nodeId="9122198050634715969" varName="tgfi" />
-    </scopeInfo>
-    <scopeInfo nodeId="3416062119153932828" fileName="ModuleGenerationHolder.java" startLine="158" startPosition="72" endLine="173" endPosition="5">
+    <scopeInfo nodeId="4128185861943385945" fileName="ModuleGenerationHolder.java" startLine="254" startPosition="25" endLine="268" endPosition="31" />
+    <scopeInfo nodeId="3416062119153932828" fileName="ModuleGenerationHolder.java" startLine="154" startPosition="72" endLine="169" endPosition="5">
       <varInfo nodeId="3416062119153932830" varName="p2t" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153994948" fileName="ModuleGenerationHolder.java" startLine="191" startPosition="96" endLine="207" endPosition="9" />
-    <scopeInfo nodeId="4128185861943385942" fileName="ModuleGenerationHolder.java" startLine="258" startPosition="0" endLine="274" endPosition="0" />
-    <scopeInfo nodeId="3416062119153932821" fileName="ModuleGenerationHolder.java" startLine="157" startPosition="30" endLine="174" endPosition="17">
+    <scopeInfo nodeId="3416062119153994948" fileName="ModuleGenerationHolder.java" startLine="187" startPosition="96" endLine="203" endPosition="9" />
+    <scopeInfo nodeId="4128185861943385942" fileName="ModuleGenerationHolder.java" startLine="254" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="3416062119153932821" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="30" endLine="170" endPosition="17">
       <varInfo nodeId="3416062119153995140" varName="diffs" />
     </scopeInfo>
-    <scopeInfo nodeId="5460949978728651008" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="104" endLine="321" endPosition="25">
+    <scopeInfo nodeId="5460949978728651008" fileName="ModuleGenerationHolder.java" startLine="300" startPosition="104" endLine="317" endPosition="25">
       <varInfo nodeId="3037398679707966203" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790682" fileName="ModuleGenerationHolder.java" startLine="332" startPosition="38" endLine="349" endPosition="7" />
-    <scopeInfo nodeId="9143630131837001685" fileName="ModuleGenerationHolder.java" startLine="107" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="9143630131837001686" varName="ppool" />
+    <scopeInfo nodeId="8597743085639790682" fileName="ModuleGenerationHolder.java" startLine="328" startPosition="38" endLine="345" endPosition="7" />
+    <scopeInfo nodeId="9121742173815480873" fileName="ModuleGenerationHolder.java" startLine="113" startPosition="13" endLine="131" endPosition="163">
+      <varInfo nodeId="9143630131837001679" varName="ctl" />
+      <varInfo nodeId="9122198050634322275" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153932790" fileName="ModuleGenerationHolder.java" startLine="157" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="3416062119153995039" fileName="ModuleGenerationHolder.java" startLine="209" startPosition="96" endLine="228" endPosition="7">
+    <scopeInfo nodeId="3416062119153932790" fileName="ModuleGenerationHolder.java" startLine="153" startPosition="0" endLine="172" endPosition="0" />
+    <scopeInfo nodeId="3416062119153995039" fileName="ModuleGenerationHolder.java" startLine="205" startPosition="96" endLine="224" endPosition="7">
       <varInfo nodeId="3416062119153995051" varName="onext" />
       <varInfo nodeId="3416062119153995057" varName="rnext" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153933710" fileName="ModuleGenerationHolder.java" startLine="236" startPosition="46" endLine="255" endPosition="18">
+    <scopeInfo nodeId="3416062119153933710" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="46" endLine="251" endPosition="18">
       <varInfo nodeId="3416062119153941741" varName="in" />
       <varInfo nodeId="3416062119153994302" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5460949978728651005" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="0" endLine="323" endPosition="0">
+    <scopeInfo nodeId="5460949978728651005" fileName="ModuleGenerationHolder.java" startLine="300" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="5460949978728691909" varName="context" />
       <varInfo nodeId="5460949978728691913" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790182" fileName="ModuleGenerationHolder.java" startLine="331" startPosition="0" endLine="351" endPosition="0">
+    <scopeInfo nodeId="8597743085639790182" fileName="ModuleGenerationHolder.java" startLine="327" startPosition="0" endLine="347" endPosition="0">
       <varInfo nodeId="8597743085639790185" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153995038" fileName="ModuleGenerationHolder.java" startLine="208" startPosition="5" endLine="229" endPosition="5">
+    <scopeInfo nodeId="3416062119153995038" fileName="ModuleGenerationHolder.java" startLine="204" startPosition="5" endLine="225" endPosition="5">
       <varInfo nodeId="3416062119153995040" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153933708" fileName="ModuleGenerationHolder.java" startLine="236" startPosition="0" endLine="257" endPosition="0">
+    <scopeInfo nodeId="3416062119153933708" fileName="ModuleGenerationHolder.java" startLine="232" startPosition="0" endLine="253" endPosition="0">
       <varInfo nodeId="3416062119153933715" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153932838" fileName="ModuleGenerationHolder.java" startLine="188" startPosition="79" endLine="229" endPosition="5">
+    <scopeInfo nodeId="2120492242099858652" fileName="ModuleGenerationHolder.java" startLine="110" startPosition="25" endLine="134" endPosition="9">
+      <varInfo nodeId="5031229775986953946" varName="context" />
+      <varInfo nodeId="5031229775986953937" varName="scr" />
+    </scopeInfo>
+    <scopeInfo nodeId="2120492242099858651" fileName="ModuleGenerationHolder.java" startLine="110" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="3416062119153932838" fileName="ModuleGenerationHolder.java" startLine="184" startPosition="79" endLine="225" endPosition="5">
       <varInfo nodeId="3416062119153994870" varName="onames" />
       <varInfo nodeId="3416062119153994912" varName="rnames" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153932835" fileName="ModuleGenerationHolder.java" startLine="188" startPosition="0" endLine="231" endPosition="0">
+    <scopeInfo nodeId="3416062119153932835" fileName="ModuleGenerationHolder.java" startLine="184" startPosition="0" endLine="227" endPosition="0">
       <varInfo nodeId="3416062119153933053" varName="diffs" />
       <varInfo nodeId="3416062119153932839" varName="orig" />
       <varInfo nodeId="3416062119153932841" varName="revd" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790669" fileName="ModuleGenerationHolder.java" startLine="92" startPosition="23" endLine="142" endPosition="45">
-      <varInfo nodeId="9143630131837001679" varName="ctl" />
+    <scopeInfo nodeId="8597743085639790669" fileName="ModuleGenerationHolder.java" startLine="93" startPosition="23" endLine="138" endPosition="45">
       <varInfo nodeId="9143630131836949542" varName="isParallel" />
       <varInfo nodeId="921684950837061104" varName="optBuilder" />
       <varInfo nodeId="5031229775986962291" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790165" fileName="ModuleGenerationHolder.java" startLine="92" startPosition="0" endLine="144" endPosition="0" />
-    <unitInfo nodeId="5294074698114021992" fileName="ModuleGenerationHolder.java" startLine="116" startPosition="26" endLine="120" endPosition="9" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$2" />
-    <unitInfo nodeId="3767231643656643804" fileName="ModuleGenerationHolder.java" startLine="293" startPosition="90" endLine="297" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$6" />
-    <unitInfo nodeId="3767231643656643813" fileName="ModuleGenerationHolder.java" startLine="297" startPosition="21" endLine="301" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$7" />
-    <unitInfo nodeId="3730996872184513713" fileName="ModuleGenerationHolder.java" startLine="309" startPosition="138" endLine="313" endPosition="11" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$9" />
-    <unitInfo nodeId="3037398679707992881" fileName="ModuleGenerationHolder.java" startLine="317" startPosition="88" endLine="321" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$9" />
-    <unitInfo nodeId="3416062119153994971" fileName="ModuleGenerationHolder.java" startLine="192" startPosition="89" endLine="199" endPosition="7" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$3" />
-    <unitInfo nodeId="3416062119153995013" fileName="ModuleGenerationHolder.java" startLine="200" startPosition="89" endLine="207" endPosition="7" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$4" />
-    <unitInfo nodeId="6607750055058549114" fileName="ModuleGenerationHolder.java" startLine="276" startPosition="52" endLine="285" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$5" />
-    <unitInfo nodeId="3037398679707966653" fileName="ModuleGenerationHolder.java" startLine="306" startPosition="45" endLine="316" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$8" />
-    <unitInfo nodeId="2120492242099858651" fileName="ModuleGenerationHolder.java" startLine="129" startPosition="41" endLine="140" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$2" />
-    <unitInfo nodeId="9143630131837001683" fileName="ModuleGenerationHolder.java" startLine="106" startPosition="38" endLine="125" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$1" />
-    <unitInfo nodeId="8597743085639790168" fileName="ModuleGenerationHolder.java" startLine="324" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$MyMessageHandler" />
-    <unitInfo nodeId="8597743085639790147" fileName="ModuleGenerationHolder.java" startLine="66" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.testbench.ModuleGenerationHolder" />
+    <scopeInfo nodeId="8597743085639790165" fileName="ModuleGenerationHolder.java" startLine="93" startPosition="0" endLine="140" endPosition="0" />
+    <unitInfo nodeId="5294074698114021992" fileName="ModuleGenerationHolder.java" startLine="122" startPosition="59" endLine="126" endPosition="15" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$3" />
+    <unitInfo nodeId="3767231643656643804" fileName="ModuleGenerationHolder.java" startLine="289" startPosition="90" endLine="293" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$5" />
+    <unitInfo nodeId="3767231643656643813" fileName="ModuleGenerationHolder.java" startLine="293" startPosition="21" endLine="297" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$6" />
+    <unitInfo nodeId="3730996872184513713" fileName="ModuleGenerationHolder.java" startLine="305" startPosition="138" endLine="309" endPosition="11" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$8" />
+    <unitInfo nodeId="3037398679707992881" fileName="ModuleGenerationHolder.java" startLine="313" startPosition="88" endLine="317" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$8" />
+    <unitInfo nodeId="3416062119153994971" fileName="ModuleGenerationHolder.java" startLine="188" startPosition="89" endLine="195" endPosition="7" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$2" />
+    <unitInfo nodeId="3416062119153995013" fileName="ModuleGenerationHolder.java" startLine="196" startPosition="89" endLine="203" endPosition="7" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$3" />
+    <unitInfo nodeId="6607750055058549114" fileName="ModuleGenerationHolder.java" startLine="272" startPosition="52" endLine="281" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$4" />
+    <unitInfo nodeId="3037398679707966653" fileName="ModuleGenerationHolder.java" startLine="302" startPosition="45" endLine="312" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$7" />
+    <unitInfo nodeId="9143630131837001683" fileName="ModuleGenerationHolder.java" startLine="116" startPosition="38" endLine="129" endPosition="11" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$2" />
+    <unitInfo nodeId="2120492242099858651" fileName="ModuleGenerationHolder.java" startLine="109" startPosition="41" endLine="136" endPosition="5" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$1" />
+    <unitInfo nodeId="8597743085639790168" fileName="ModuleGenerationHolder.java" startLine="320" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.testbench.ModuleGenerationHolder$MyMessageHandler" />
+    <unitInfo nodeId="8597743085639790147" fileName="ModuleGenerationHolder.java" startLine="67" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.testbench.ModuleGenerationHolder" />
   </root>
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/9170334376388144449">
     <nodeInfo nodeId="488943251837913500" fileName="ProjectTest.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourContextProject" />
