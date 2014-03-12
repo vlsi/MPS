@@ -28,6 +28,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.make.TextGenFacetInitializer;
 import java.util.Set;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.smodel.IOperationContext;
@@ -168,6 +169,7 @@ public class GenTestWorker extends GeneratorWorker {
       }
     };
 
+    // FIXME feedback reported through IConfigMonitor.Stub goes to nowhere 
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new GenTestWorker.MyJobMonitor(new GenTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
@@ -179,10 +181,7 @@ public class GenTestWorker extends GeneratorWorker {
           }
         });
 
-        Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-        if (tparams != null) {
-          tparams._0(false);
-        }
+        new TextGenFacetInitializer().failNoTextGen(false).populate(ppool);
 
         Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Diff.diff"), Object.class);
         if (dparams != null && isShowDiff()) {
