@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.lang.structure.editor.structure_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -41,7 +40,6 @@ public class IRuleReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_w39r7n_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    structure_StyleSheet.apply_AnnotationNode(style, editorCell);
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "declaration");
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     style.set(StyleAttributes.EDITABLE, false);

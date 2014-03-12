@@ -72,7 +72,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static SNode virtual_getParent_1219419981626(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "styleClass", false);
+    return SLinkOperations.getTarget(thisNode, "parentStyleClass", false);
   }
 
   public static boolean call_isSelectable_1219420196673(SNode thisNode) {

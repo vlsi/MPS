@@ -81,7 +81,7 @@
     <nodeInfo nodeId="9186828658635975749" fileName="QueriesUtil.java" startLine="125" startPosition="5" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1189585833182" fileName="QueriesUtil.java" startLine="94" startPosition="18" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9186828658636904079" fileName="QueriesUtil.java" startLine="149" startPosition="94" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9186828658636980497" fileName="QueriesUtil.java" startLine="157" startPosition="236" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9186828658636980497" fileName="QueriesUtil.java" startLine="157" startPosition="242" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9186828658636954732" fileName="QueriesUtil.java" startLine="156" startPosition="5" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1189585733348" fileName="QueriesUtil.java" startLine="92" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="keyMapActionClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1233319014842" fileName="QueriesUtil.java" startLine="104" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnicName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljava/lang/String;" />
@@ -140,7 +140,7 @@
     <scopeInfo nodeId="1189585833182" fileName="QueriesUtil.java" startLine="94" startPosition="18" endLine="100" endPosition="5">
       <varInfo nodeId="1189585833183" varName="curItem" />
     </scopeInfo>
-    <scopeInfo nodeId="9186828658636954735" fileName="QueriesUtil.java" startLine="157" startPosition="236" endLine="164" endPosition="7" />
+    <scopeInfo nodeId="9186828658636954735" fileName="QueriesUtil.java" startLine="157" startPosition="242" endLine="164" endPosition="7" />
     <scopeInfo nodeId="1189585733351" fileName="QueriesUtil.java" startLine="92" startPosition="64" endLine="101" endPosition="88">
       <varInfo nodeId="1189585806716" varName="index" />
       <varInfo nodeId="1189585802293" varName="keyMapDeclaration" />

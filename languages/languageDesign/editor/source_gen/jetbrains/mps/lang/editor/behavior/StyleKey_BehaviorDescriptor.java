@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.baseLanguage.behavior.StringLiteral_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class StyleKey_BehaviorDescriptor extends StringLiteral_BehaviorDescriptor {
+public class StyleKey_BehaviorDescriptor extends StringLiteral_BehaviorDescriptor implements IStyle_BehaviorDescriptor {
   public StyleKey_BehaviorDescriptor() {
   }
 
