@@ -107,7 +107,9 @@ public class ModuleGenerationHolder {
       @Override
       public void setup(IPropertiesPool ppool) {
         TextGenFacetInitializer tgfi = new TextGenFacetInitializer();
-        tgfi.failNoTextGen(false).generateDebugInfo(false).populate(ppool);
+        // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
+        // fails if we don't generate one here 
+        tgfi.failNoTextGen(false).generateDebugInfo(true).populate(ppool);
 
         // FIXME hide access to parameters behind initializer similar to TextGenFacetInitializer 
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
