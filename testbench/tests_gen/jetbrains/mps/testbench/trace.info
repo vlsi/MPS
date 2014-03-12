@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/4421917191016660666" />
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/6214179127578263953">
     <nodeInfo nodeId="6214179127578268770" fileName="TestMakeService.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
     <nodeInfo nodeId="6214179127578268883" fileName="TestMakeService.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
@@ -114,7 +113,6 @@
     <unitInfo nodeId="6214179127578269027" fileName="TestMakeService.java" startLine="107" startPosition="15" endLine="112" endPosition="5" unitName="jetbrains.mps.testbench.TestMakeService$1" />
     <unitInfo nodeId="6214179127578263953" fileName="TestMakeService.java" startLine="28" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.testbench.TestMakeService" />
   </root>
-  <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/6214179127578269219" />
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/8597743085639790147">
     <nodeInfo nodeId="1202495231125162902" fileName="ModuleGenerationHolder.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ignoredFiles" />
     <nodeInfo nodeId="8981027491094736558" fileName="ModuleGenerationHolder.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
