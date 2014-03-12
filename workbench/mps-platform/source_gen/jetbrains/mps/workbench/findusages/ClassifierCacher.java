@@ -471,19 +471,19 @@ public class ClassifierCacher {
       addTypeParameters(pt.getActualTypeArguments());
     } else if (type instanceof ASMExtendsType) {
       ASMExtendsType e = (ASMExtendsType) type;
-      if (e.getBase() instanceof ASMClassType) {
-        ASMClassType ct = (ASMClassType) e.getBase();
+      if (e.getBound() instanceof ASMClassType) {
+        ASMClassType ct = (ASMClassType) e.getBound();
         if (ct.getName().equals("java.lang.Object")) {
           instance("jetbrains.mps.baseLanguage.structure.WildCardType");
           return;
         }
       }
       instance("jetbrains.mps.baseLanguage.structure.UpperBoundType");
-      getTypeByASMType(e.getBase());
+      getTypeByASMType(e.getBound());
     } else if (type instanceof ASMSuperType) {
       ASMSuperType e = (ASMSuperType) type;
       instance("jetbrains.mps.baseLanguage.structure.LowerBoundType");
-      getTypeByASMType(e.getBase());
+      getTypeByASMType(e.getBound());
     } else if (type instanceof ASMUnboundedType) {
       instance("jetbrains.mps.baseLanguage.structure.WildCardType");
     } else {
