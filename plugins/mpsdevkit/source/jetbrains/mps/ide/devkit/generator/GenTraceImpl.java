@@ -49,11 +49,16 @@ public class GenTraceImpl {
       newTailPhase(input, output);
     }
   }
+
   void dropPhase(SModelReference reference) {
     assert myCurrent != null;
     assert myCurrent.input.equals(reference);
     myCurrent = myCurrent.prev;
-    myCurrent.next = null;
+    if (myCurrent == null) {
+      mySequence = null;
+    } else {
+      myCurrent.next = null;
+    }
   }
   private void newTailPhase(SModelReference in, SModelReference out) {
     assert myCurrent != null;
