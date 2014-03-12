@@ -20738,7 +20738,7 @@
     <property name="name" nameId="tpck.1169194664001" value="IDE" />
     <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="129.1" />
-    <property name="version" nameId="tp4k.5023285075122009369" value="3.0.4" />
+    <property name="version" nameId="tp4k.5023285075122009369" value="3.0.5" />
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2010440180771532928" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="EditGivenNode" />

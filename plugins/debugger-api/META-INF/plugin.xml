@@ -3,7 +3,7 @@
   <id>jetbrains.mps.debugger.api</id>
   <name>Debugger API for MPS</name>
   <description>Provides generic debugger support for MPS</description>
-  <version>3.0.4</version>
+  <version>3.0.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="129.1" until-build="134.1"/>
 
