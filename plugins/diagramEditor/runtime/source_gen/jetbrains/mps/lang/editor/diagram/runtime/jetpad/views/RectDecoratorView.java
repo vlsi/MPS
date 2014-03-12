@@ -47,6 +47,7 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
             super.registerSynchronizers(configuration);
             configuration.add(Synchronizers.forProperty(myInternalsBounds, getTarget().internalsBounds));
             configuration.add(Synchronizers.forProperty(resizable, getTarget().resizable));
+            configuration.add(Synchronizers.forProperty(getTarget().preferredInternalsBounds, myInternalsBounds));
             configuration.add(Synchronizers.forProperty(Properties.ifProp(hasError, AbstractExternalFrameView.getHalfWidth(ERROR_FRAME_WIDTH), AbstractExternalFrameView.getHalfWidth(getTarget().selectionLineWidth.get())), getTarget().frameWidth));
           }
         };

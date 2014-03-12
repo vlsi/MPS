@@ -5,13 +5,13 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.views;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.jetpad.geometry.Rectangle;
 import java.util.ListIterator;
 import jetbrains.jetpad.geometry.Segment;
 
@@ -21,6 +21,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
   public Property<Integer> selectionLineWidth = new ValueProperty<Integer>(1);
   public Property<Color> color = new ValueProperty<Color>(Color.BLACK);
   public Property<Color> backgroundColor = new ValueProperty<Color>(Color.LIGHT_GRAY);
+  public Property<Rectangle> preferredInternalsBounds = new ValueProperty<Rectangle>();
 
   private ObservableList<Vector> myCornerResizeHandlePositions = new ObservableArrayList<Vector>();
   private ObservableList<Vector> mySideResizeHandlePositions = new ObservableArrayList<Vector>();
@@ -31,6 +32,9 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
+        configuration.add(Synchronizers.forProperty(internalsBounds, preferredInternalsBounds));
+
+        // corner resize handle positions 
         configuration.add(Synchronizers.forProperty(resizable, new Runnable() {
           public void run() {
             updateCornerResizeHandlePositions(resizable.get(), frameRectangle.get());
@@ -41,6 +45,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
             updateCornerResizeHandlePositions(resizable.get(), frameRectangle.get());
           }
         }));
+        // side resize handle positions 
         configuration.add(Synchronizers.forProperty(resizable, new Runnable() {
           public void run() {
             updateSideResizeHandlePositions(resizable.get(), showSideHandler.get(), frameRectangle.get());
@@ -56,6 +61,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
             updateSideResizeHandlePositions(resizable.get(), showSideHandler.get(), frameRectangle.get());
           }
         }));
+
         configuration.add(Synchronizers.forConstantRole(this, ResizableSelectionFrameView.this, childSubList(), new MapperFactory<ResizableSelectionFrameView, SelectionFrameView>() {
           public Mapper<? extends ResizableSelectionFrameView, ? extends SelectionFrameView> createMapper(ResizableSelectionFrameView decoratorView) {
             return new Mapper<ResizableSelectionFrameView, SelectionFrameView>(decoratorView, new SelectionFrameView()) {
@@ -70,29 +76,47 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
             };
           }
         }));
+
+        // corner resize handles 
         configuration.add(Synchronizers.forObservableRole(this, myCornerResizeHandlePositions, childSubList(), new MapperFactory<Vector, ResizeHandleView>() {
           public Mapper<? extends Vector, ? extends ResizeHandleView> createMapper(Vector position) {
-            return createResizeHanleMapper(position);
+            int index = myCornerResizeHandlePositions.indexOf(position);
+            switch (index) {
+              case 0:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(true, true), new ResizableSelectionFrameView.RectangleUpdater(true, false));
+              case 1:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(false, true), new ResizableSelectionFrameView.RectangleUpdater(true, false));
+              case 2:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(false, true), new ResizableSelectionFrameView.RectangleUpdater(false, false));
+              case 3:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(true, true), new ResizableSelectionFrameView.RectangleUpdater(false, false));
+              default:
+                assert false : "unexpected index: " + index;
+            }
+            return null;
           }
         }));
+        // side resize handles 
         configuration.add(Synchronizers.forObservableRole(this, mySideResizeHandlePositions, childSubList(), new MapperFactory<Vector, ResizeHandleView>() {
           public Mapper<? extends Vector, ? extends ResizeHandleView> createMapper(Vector position) {
-            return createResizeHanleMapper(position);
+            int index = mySideResizeHandlePositions.indexOf(position);
+            switch (index) {
+              case 0:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(true, false));
+              case 1:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(false, true));
+              case 2:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(false, false));
+              case 3:
+                return new ResizableSelectionFrameView.ResizeHandleMapper(position, new ResizableSelectionFrameView.RectangleUpdater(true, true));
+              default:
+                assert false : "unexpected index: " + index;
+            }
+            return null;
           }
         }));
       }
     }.attachRoot();
-  }
-
-  private Mapper<? extends Vector, ? extends ResizeHandleView> createResizeHanleMapper(Vector position) {
-    return new Mapper<Vector, ResizeHandleView>(position, new ResizeHandleView(position)) {
-      @Override
-      protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-        super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forProperty(color, getTarget().color));
-        configuration.add(Synchronizers.forProperty(backgroundColor, getTarget().backgroundColor));
-      }
-    };
   }
 
   private void updateCornerResizeHandlePositions(boolean resizable, Rectangle rectangle) {
@@ -136,6 +160,67 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
         iterator.remove();
       }
       iterator.add(nextPoint);
+    }
+  }
+
+  private class ResizeHandleMapper extends Mapper<Vector, ResizeHandleView> {
+    private Property<ResizeHandleView.ResizeHandler> myResizeHandler = new ValueProperty<ResizeHandleView.ResizeHandler>();
+
+    private ResizeHandleMapper(Vector position, ResizableSelectionFrameView.RectangleUpdater... updater) {
+      super(position, new ResizeHandleView(position));
+      myResizeHandler.set(new ResizableSelectionFrameView.ResizeHandleMapper.ResizeHandlerImpl(updater));
+    }
+
+    @Override
+    protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+      super.registerSynchronizers(configuration);
+      configuration.add(Synchronizers.forProperty(color, getTarget().color));
+      configuration.add(Synchronizers.forProperty(backgroundColor, getTarget().backgroundColor));
+      configuration.add(Synchronizers.forProperty(myResizeHandler, getTarget().resizeHandler));
+    }
+
+    private class ResizeHandlerImpl implements ResizeHandleView.ResizeHandler {
+      private ResizableSelectionFrameView.RectangleUpdater[] myUpdaters;
+
+
+      private ResizeHandlerImpl(ResizableSelectionFrameView.RectangleUpdater... updaters) {
+        myUpdaters = updaters;
+      }
+
+      public void handleResize(Vector delta) {
+        Rectangle prefBounds = preferredInternalsBounds.get();
+        for (ResizableSelectionFrameView.RectangleUpdater updater : myUpdaters) {
+          prefBounds = updater.updateRect(prefBounds, delta);
+        }
+        preferredInternalsBounds.set(prefBounds);
+      }
+    }
+  }
+
+  private class RectangleUpdater {
+    private boolean myOrigin;
+    private boolean myX;
+
+
+    private RectangleUpdater(boolean origin, boolean x) {
+      myOrigin = origin;
+      myX = x;
+    }
+
+    public Rectangle updateRect(Rectangle rectangle, Vector delta) {
+      Vector origin = rectangle.origin;
+      Vector dimension = rectangle.dimension;
+      if (myOrigin) {
+        origin = updateVector(origin, delta);
+        dimension = updateVector(dimension, delta.negate());
+      } else {
+        dimension = updateVector(dimension, delta);
+      }
+      return new Rectangle(origin, dimension);
+    }
+
+    private Vector updateVector(Vector vector, Vector delta) {
+      return (myX ? new Vector(vector.x + delta.x, vector.y) : new Vector(vector.x, vector.y + delta.y));
     }
   }
 }

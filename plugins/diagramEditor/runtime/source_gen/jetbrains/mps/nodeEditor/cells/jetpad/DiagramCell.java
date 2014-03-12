@@ -203,15 +203,14 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     if (myHandlingTrait == null) {
       this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
         public void handle(View view, MouseEvent event) {
-          if (view.focused().get()) {
-            hidePatternEditor();
-          } else {
-            view.container().focusedView().set(view);
-          }
-          View viewUnderMouse = view.viewAt(event.location());
-          if (viewUnderMouse != getRootMapper().getTarget().root()) {
+          if (view.viewAt(event.location()) != view) {
             return;
           }
+          if (!(view.focused().get())) {
+            view.container().focusedView().set(view);
+          }
+
+          hidePatternEditor();
           createNewDiagramElement(event.x(), event.y());
           event.consume();
         }

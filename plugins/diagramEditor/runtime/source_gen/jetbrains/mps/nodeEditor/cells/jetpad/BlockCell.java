@@ -53,6 +53,22 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
   }
 
+  protected String getContentViewMapperSource() {
+    return getSNode().getNodeId().toString();
+  }
+
+  protected Mapper<SNode, DiagramNodeView> getBlockMapper() {
+    return (Mapper<SNode, DiagramNodeView>) getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
+  }
+
+  protected View getContentView() {
+    Mapper<SNode, DiagramNodeView> blockMapper = getBlockMapper();
+    if (blockMapper == null || blockMapper.getTarget() == null || blockMapper.getTarget().contentView.children().size() == 0) {
+      return null;
+    }
+    return blockMapper.getTarget().contentView.children().get(0);
+  }
+
   protected void syncPortNodes(Iterable<? extends SNode> ports, ListIterator<SNode> portsIterator, Set<SNode> existingPorts) {
     for (SNode nextPort : Sequence.fromIterable(ports)) {
       EditorCell portCell = getContext().createNodeCell(nextPort);

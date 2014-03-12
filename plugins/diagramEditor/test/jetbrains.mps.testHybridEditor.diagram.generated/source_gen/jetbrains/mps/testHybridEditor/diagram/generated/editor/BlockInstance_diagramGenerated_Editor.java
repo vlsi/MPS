@@ -216,7 +216,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             }
           }));
 
-          configuration.add(Synchronizers.forConstantRole(this, getSource().getNodeId().toString(), getTarget().contentView.children(), new MapperFactory<String, PolygonContentView>() {
+          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, PolygonContentView>() {
             public Mapper<? extends String, ? extends PolygonContentView> createMapper(String block) {
               return new Mapper<String, PolygonContentView>(block, new PolygonContentView()) {
                 @Override
@@ -261,13 +261,13 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           if (diagramCell == null) {
             return;
           }
-          final Mapper<? super SNode, ?> descendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
-          if (descendantMapper == null) {
+          Mapper<SNode, DiagramNodeView> blockMapper = getBlockMapper();
+          if (blockMapper == null) {
             return;
           }
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
-          configuration.add(Synchronizers.forProperty(((DiagramNodeView) descendantMapper.getTarget()).focused(), getTarget().isSelected));
-          ReadableProperty<Rectangle> bounds = ((DiagramNodeView) descendantMapper.getTarget()).rect.bounds();
+          configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
+          ReadableProperty<Rectangle> bounds = blockMapper.getTarget().rect.bounds();
           configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(final SNode id) {

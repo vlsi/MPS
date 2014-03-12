@@ -4,6 +4,8 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.projectional.view.ViewPropertyKind;
 import java.awt.Color;
 
 /**
@@ -14,6 +16,7 @@ public class JetpadUtils {
   public static final ViewPropertySpec<SNode> SOURCE = new ViewPropertySpec<SNode>("inputPort");
   public static final ViewPropertySpec<Boolean> CONNECTABLE = new ViewPropertySpec<Boolean>("connectable");
   public static final ViewPropertySpec<Object> ID = new ViewPropertySpec("id");
+  public static final ViewPropertySpec<Vector> PREFERRED_SIZE = new ViewPropertySpec("preferredSize", ViewPropertyKind.RELAYOUT);
 
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {
     return new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
