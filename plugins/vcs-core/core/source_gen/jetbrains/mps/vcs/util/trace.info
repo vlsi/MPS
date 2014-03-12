@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/2874648801266796016" />
   <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237489972135">
     <nodeInfo nodeId="429607733396471353" fileName="MergeDriverBackupUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="backupDirPath" />
     <nodeInfo nodeId="3531370237489972167" fileName="MergeDriverBackupUtil.java" startLine="19" startPosition="34" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

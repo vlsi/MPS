@@ -106,8 +106,6 @@
     </scopeInfo>
     <unitInfo nodeId="4664795093170882986" fileName="RemoveSlot_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix" />
   </root>
-  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233139619" />
-  <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233149391" />
   <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233238129">
     <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2978080762093971534" fileName="check_Slot_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

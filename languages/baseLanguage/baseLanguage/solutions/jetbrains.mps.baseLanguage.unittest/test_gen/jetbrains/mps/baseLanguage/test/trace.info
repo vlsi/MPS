@@ -5010,7 +5010,6 @@
     <unitInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="39" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody" />
     <unitInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8048812996917986501" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170692126565">
     <nodeInfo nodeId="8187342170692126565" fileName="WildcardsInClassDefinition_Test.java" startLine="16" startPosition="90" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8187342170692126565" fileName="WildcardsInClassDefinition_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -2,8 +2,6 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="25" startPosition="49" endLine="47" endPosition="5" unitName="jetbrains.mps.samples.heating.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="22" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.samples.heating.actions.QueriesGenerated" />
-  <root nodeRef="r:e11f72fe-1952-4ec4-b00c-5c30b85f591b(jetbrains.mps.samples.heating.actions)/6167731537415300076" />
-  <root nodeRef="r:e11f72fe-1952-4ec4-b00c-5c30b85f591b(jetbrains.mps.samples.heating.actions)/7103463043749682481" />
   <root nodeRef="r:e11f72fe-1952-4ec4-b00c-5c30b85f591b(jetbrains.mps.samples.heating.actions)/935069066462603543">
     <nodeInfo nodeId="935069066462973859" fileName="QueriesGenerated.java" startLine="26" startPosition="94" endLine="27" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="935069066462974448" fileName="QueriesGenerated.java" startLine="27" startPosition="125" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

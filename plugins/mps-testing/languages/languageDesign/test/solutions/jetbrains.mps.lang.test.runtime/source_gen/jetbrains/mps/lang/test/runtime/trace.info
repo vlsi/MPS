@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/1089663077933518078" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/1215078243118">
     <nodeInfo nodeId="1215612199638" fileName="NodeDataFlowCheckerUtil.java" startLine="32" startPosition="54" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5219682431664851847" fileName="NodeDataFlowCheckerUtil.java" startLine="33" startPosition="74" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -532,8 +531,6 @@
     </scopeInfo>
     <unitInfo nodeId="1302453276762085176" fileName="NodeCheckerUtil.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/1302453276764396571" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/1689495970802515556" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/262412979073677743">
     <nodeInfo nodeId="262412979073677967" fileName="BaseTransformationTest4.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH_MACRO_PREFIX" />
     <nodeInfo nodeId="262412979073677773" fileName="BaseTransformationTest4.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunner" />
@@ -722,7 +719,6 @@
     <unitInfo nodeId="3740508248791186434" fileName="TestsErrorsChecker.java" startLine="68" startPosition="99" endLine="72" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TestsErrorsChecker$2" />
     <unitInfo nodeId="3740508248791186293" fileName="TestsErrorsChecker.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TestsErrorsChecker" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/5219682431666191371" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/7107617965856250727">
     <nodeInfo nodeId="577165239384693854" fileName="TransformationTestRunner.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_CLIPBOARD_CONTENT" />
     <nodeInfo nodeId="7321508538531297252" fileName="TransformationTestRunner.java" startLine="46" startPosition="121" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -144,7 +144,6 @@
     <unitInfo nodeId="2034046503373004478" fileName="ReloadSession.java" startLine="88" startPosition="48" endLine="95" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ReloadSession$3" />
     <unitInfo nodeId="174954467868287275" fileName="ReloadSession.java" startLine="20" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadSession" />
   </root>
-  <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/3049908825235651409" />
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/4774203567222173397">
     <nodeInfo nodeId="4774203567224668508" fileName="ReloadManagerComponent.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
     <nodeInfo nodeId="4774203567222962566" fileName="ReloadManagerComponent.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeService" />

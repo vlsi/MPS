@@ -395,7 +395,6 @@
     </scopeInfo>
     <unitInfo nodeId="1178176661380" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.constraints.typesystem.typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)/1178176661409" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)/1198233312425">
     <nodeInfo nodeId="1198233400249" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="25" startPosition="124" endLine="26" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198949721467" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="111" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

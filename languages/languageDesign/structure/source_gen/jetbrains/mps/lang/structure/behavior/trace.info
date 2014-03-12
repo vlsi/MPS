@@ -407,7 +407,6 @@
     </scopeInfo>
     <unitInfo nodeId="1213877323882" fileName="PrimitiveDataTypeDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877370946" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877394026">
     <nodeInfo nodeId="8360039740498072798" fileName="AbstractConceptDeclaration_Behavior.java" startLine="38" startPosition="103" endLine="39" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8360039740498072806" fileName="AbstractConceptDeclaration_Behavior.java" startLine="40" startPosition="27" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -935,8 +934,6 @@
     </scopeInfo>
     <unitInfo nodeId="1213877397771" fileName="EnumerationDataTypeDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877528561" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877535035" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877540483">
     <nodeInfo nodeId="1213877540483" fileName="ConceptLink_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1213877540485" fileName="ConceptLink_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -1342,6 +1339,5 @@
     <unitInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="84" startPosition="85" endLine="96" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6" />
     <unitInfo nodeId="7588821453550280407" fileName="AttributeDesignTimeOperations.java" startLine="25" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/8080932314785851907" />
 </debugInfo>
 

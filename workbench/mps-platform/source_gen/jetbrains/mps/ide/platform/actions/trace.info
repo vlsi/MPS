@@ -219,8 +219,6 @@
     <unitInfo nodeId="5996241366559061430" fileName="GoToNodeById_Action.java" startLine="87" startPosition="116" endLine="97" endPosition="7" unitName="jetbrains.mps.ide.platform.actions.GoToNodeById_Action$1" />
     <unitInfo nodeId="227146524086541067" fileName="GoToNodeById_Action.java" startLine="25" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" />
   </root>
-  <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/2342514422328561259" />
-  <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/2342514422328561338" />
   <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/2342514422328735233">
     <nodeInfo nodeId="2342514422328735233" fileName="AnalyzeDependencies_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2342514422328735233" fileName="AnalyzeDependencies_Action.java" startLine="28" startPosition="39" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -512,6 +510,5 @@
     <unitInfo nodeId="4221956679902886459" fileName="MPSStackTraceFilter.java" startLine="78" startPosition="79" endLine="87" endPosition="5" unitName="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter$1" />
     <unitInfo nodeId="4221956679900716104" fileName="MPSStackTraceFilter.java" startLine="18" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter" />
   </root>
-  <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/5102590037491954904" />
 </debugInfo>
 

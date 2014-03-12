@@ -299,7 +299,6 @@
     <unitInfo nodeId="3894227536043377004" fileName="ClickableGenerator_Behavior.java" startLine="32" startPosition="50" endLine="82" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_Behavior$1" />
     <unitInfo nodeId="3894227536041893272" fileName="ClickableGenerator_Behavior.java" startLine="24" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_Behavior" />
   </root>
-  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/473081947985174393" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5207260697411458160">
     <nodeInfo nodeId="9053534423437703278" fileName="INodeSetReference_Behavior.java" startLine="15" startPosition="110" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5207260697411458160" fileName="INodeSetReference_Behavior.java" startLine="20" startPosition="107" endLine="21" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -453,7 +452,6 @@
     </scopeInfo>
     <unitInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Make_Behavior" />
   </root>
-  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6147624293055083871" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134025442">
     <nodeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
@@ -744,6 +742,5 @@
     <unitInfo nodeId="1915462833240293956" fileName="ProjectStatisticsTarget_Behavior.java" startLine="55" startPosition="21" endLine="59" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_Behavior$5" />
     <unitInfo nodeId="7490254719530699505" fileName="ProjectStatisticsTarget_Behavior.java" startLine="19" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_Behavior" />
   </root>
-  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/8483375838963280017" />
 </debugInfo>
 

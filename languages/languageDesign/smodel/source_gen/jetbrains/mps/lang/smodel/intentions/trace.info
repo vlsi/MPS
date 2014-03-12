@@ -679,7 +679,6 @@
     <unitInfo nodeId="1238684430905" fileName="ChangeAsCast_Intention.java" startLine="66" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ChangeAsCast_Intention$IntentionImplementation" />
     <unitInfo nodeId="1238684430905" fileName="ChangeAsCast_Intention.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ChangeAsCast_Intention" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)/4726561250374329612" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)/8288233991428663607">
     <nodeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

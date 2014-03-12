@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/1640281869714700106" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/1656966147171140372">
     <nodeInfo nodeId="1656966147171140372" fileName="FixJDKTools_MigrationScript.java" startLine="15" startPosition="74" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1656966147171163222" fileName="FixJDKTools_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1091,8 +1090,6 @@
     <unitInfo nodeId="3430038773575616554" fileName="Mps30ApiMigration_MigrationScript.java" startLine="24" startPosition="28" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps30ApiMigration_MigrationScript$1" />
     <unitInfo nodeId="3430038773575573048" fileName="Mps30ApiMigration_MigrationScript.java" startLine="21" startPosition="0" endLine="646" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps30ApiMigration_MigrationScript" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/4214874532454943783" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/5538333046911349083" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/5606420294479385927">
     <nodeInfo nodeId="5606420294479385927" fileName="FixMPSClasspath_MigrationScript.java" startLine="16" startPosition="78" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5606420294479385928" fileName="FixMPSClasspath_MigrationScript.java" startLine="19" startPosition="31" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1174,7 +1171,6 @@
     </scopeInfo>
     <unitInfo nodeId="756174446849966792" fileName="ReferenceUtil.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ReferenceUtil" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/8954236049244973041" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/930311433812684751">
     <nodeInfo nodeId="930311433812684751" fileName="FixDynamicReferences_MigrationScript.java" startLine="19" startPosition="83" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="930311433812696990" fileName="FixDynamicReferences_MigrationScript.java" startLine="22" startPosition="31" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

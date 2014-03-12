@@ -536,7 +536,6 @@
     <scopeInfo nodeId="7712479415687706041" fileName="ErrorScope.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="7712479415687661167" fileName="ErrorScope.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.scope.ErrorScope" />
   </root>
-  <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/7991563320860101130" />
   <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/8401916545537277014">
     <nodeInfo nodeId="8401916545537277529" fileName="SimpleRoleScope.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="8401916545537277533" fileName="SimpleRoleScope.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLink" />

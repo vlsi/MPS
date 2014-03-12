@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/1117107720588620750" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/176725375005726165" />
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/3449270742160220910">
     <nodeInfo nodeId="3449270742160233220" fileName="ExcludeNested.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="excluded" />
     <nodeInfo nodeId="3449270742160233268" fileName="ExcludeNested.java" startLine="20" startPosition="48" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -394,11 +392,6 @@
     </scopeInfo>
     <unitInfo nodeId="4003657351907886467" fileName="Arg.java" startLine="7" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.ant.Arg" />
   </root>
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907886909" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907888741" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907888830" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907888945" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907889184" />
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907889245">
     <nodeInfo nodeId="4003657351907889248" fileName="MyExecuteStreamHandler.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputReadingThread" />
     <nodeInfo nodeId="4003657351907889251" fileName="MyExecuteStreamHandler.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrorReadingThread" />
@@ -566,7 +559,6 @@
     <scopeInfo nodeId="4003657351907890184" fileName="JvmArgs.java" startLine="32" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="4003657351907890119" fileName="JvmArgs.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.ant.JvmArgs" />
   </root>
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907890261" />
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907890310">
     <nodeInfo nodeId="4003657351907890371" fileName="MpsLoadTask.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFIGURATION_NAME" />
     <nodeInfo nodeId="4003657351907890375" fileName="MpsLoadTask.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BUILD_NUMBER" />
@@ -1042,8 +1034,5 @@
     </scopeInfo>
     <unitInfo nodeId="4003657351907893424" fileName="LibraryDataType.java" startLine="8" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.ant.LibraryDataType" />
   </root>
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907893927" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/5596013162335920060" />
-  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/8638838189258374788" />
 </debugInfo>
 

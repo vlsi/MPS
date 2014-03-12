@@ -93,7 +93,6 @@
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="80" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1215508253864" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1215604006108">
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsAnnotation_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsAnnotation_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -818,8 +817,6 @@
     <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorAnnotation_Intention.java" startLine="83" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorAnnotation_Intention.java" startLine="27" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorAnnotation_Intention" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/6569910239567199409" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/7344575040114344985" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/7796829026680792390">
     <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

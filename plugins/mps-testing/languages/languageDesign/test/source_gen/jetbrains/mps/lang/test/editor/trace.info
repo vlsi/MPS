@@ -5682,8 +5682,6 @@
     </scopeInfo>
     <unitInfo nodeId="428590876651696164" fileName="NodeTypeSystemErrorCheckOperation_Editor.java" startLine="20" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeTypeSystemErrorCheckOperation_Editor" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/4531408400484511855" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/4531408400486526328" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/5097124989038916364">
     <nodeInfo nodeId="5097124989038916364" fileName="TestInfo_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5097124989038916364" fileName="TestInfo_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6181,7 +6179,6 @@
     </scopeInfo>
     <unitInfo nodeId="5773579205429866752" fileName="EditorComponentExpression_Editor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.test.editor.EditorComponentExpression_Editor" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/7835233914436686334" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/8333855927540290728">
     <nodeInfo nodeId="8333855927540290728" fileName="NodeUnknownErrorCheckOperation_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8333855927540290728" fileName="NodeUnknownErrorCheckOperation_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

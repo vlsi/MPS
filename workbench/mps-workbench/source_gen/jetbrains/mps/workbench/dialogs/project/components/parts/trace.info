@@ -86,6 +86,5 @@
     <unitInfo nodeId="1560298786499494352" fileName="CopySupport.java" startLine="47" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$ModelReferenceTransferHandler" />
     <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
   </root>
-  <root nodeRef="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)/4972790448884483620" />
 </debugInfo>
 
