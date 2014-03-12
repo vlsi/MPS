@@ -34,7 +34,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y8xyxm_a");
     editorCell.setBig(true);
-    editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createConstant_y8xyxm_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y8xyxm_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y8xyxm_c0(editorContext, node));
