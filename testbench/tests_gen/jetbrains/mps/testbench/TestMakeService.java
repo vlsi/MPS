@@ -21,30 +21,35 @@ import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.make.GenerateFacetInitializer;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.make.facet.ITarget;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
-  private final IOperationContext context;
-  private final IMessageHandler messageHandler;
+  private IOperationContext context;
+  private IMessageHandler messageHandler;
 
+  @Deprecated
   public TestMakeService(IOperationContext context, IMessageHandler messageHandler) {
     this.context = context;
     this.messageHandler = messageHandler;
   }
 
+  public TestMakeService() {
+  }
+
+
+
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
+    if (session == null) {
+      // FIXME compatibility, tolerance to null session will be dropped 
+      assert context != null : "Either pass non-null session, or use cons with args";
+      assert messageHandler != null;
+      session = new MakeSession(context, messageHandler, true);
+    }
     String scrName = "Build";
     if (Sequence.fromIterable(resources).isEmpty()) {
       String msg = scrName + " aborted: nothing to do";
@@ -56,7 +61,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     makeSeq.prepareClusters(resources);
     makeSeq.prepareScipts(script, session);
 
-    IScriptController ctl = TestMakeService.this.completeController(controller);
+    IScriptController ctl = this.completeController(controller, session);
 
     CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, messageHandler);
     task.run(monitor);
@@ -91,56 +96,31 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     messageHandler.handle(new Message(MessageKind.ERROR, msg));
   }
 
-  private IScriptController completeController(final IScriptController ctl) {
-    final Wrappers._T<IConfigMonitor> cmon2delegate = new Wrappers._T<IConfigMonitor>(null);
-    final IConfigMonitor cmon = new IConfigMonitor.Stub() {
+  private IScriptController completeController(final IScriptController ctl, MakeSession makeSession) {
+    final GenerateFacetInitializer initGenFacet = new GenerateFacetInitializer(makeSession);
+    IConfigMonitor monitor = new AbstractMakeService.DefaultMonitor(makeSession);
+    return new IScriptController.Stub(monitor, monitor) {
       @Override
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        T opt = null;
-        if (cmon2delegate.value != null) {
-          opt = cmon2delegate.value.relayQuery(query);
-        }
-        return (opt != null ? opt : query.defaultOption());
-      }
-    };
-    final IJobMonitor jmon = new IJobMonitor.Stub() {
-      @Override
-      public void reportFeedback(IFeedback fdbk) {
-        new MessageFeedbackStrategy(messageHandler).reportFeedback(fdbk);
-      }
-    };
-
-    return new IScriptController.Stub() {
-      @Override
-      public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
+      public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
-          ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
-            public void invoke(IConfigMonitor c) {
-              try {
-                cmon2delegate.value = c;
-                code.invoke(cmon);
-              } finally {
-                cmon2delegate.value = null;
-              }
-            }
-          });
+          ctl.runConfigWithMonitor(code);
         } else {
-          code.invoke(cmon);
+          super.runConfigWithMonitor(code);
         }
       }
 
       @Override
       public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        code.invoke(jmon);
+        if (ctl != null) {
+          ctl.runJobWithMonitor(code);
+        } else {
+          super.runJobWithMonitor(code);
+        }
       }
 
       @Override
       public void setup(IPropertiesPool pool) {
-        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-        vars._0(TestMakeService.this.context.getProject());
-        vars._1(TestMakeService.this.context);
-        vars._2(true);
-
+        initGenFacet.populate(pool);
         if (ctl != null) {
           ctl.setup(pool);
         }

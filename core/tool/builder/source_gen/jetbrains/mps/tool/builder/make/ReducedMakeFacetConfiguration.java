@@ -78,6 +78,7 @@ public class ReducedMakeFacetConfiguration {
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(pp, toExecute, input);
+        // FIXME replace with GenerateFacetInitializer 
 
         Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         // don't do rebuild all 

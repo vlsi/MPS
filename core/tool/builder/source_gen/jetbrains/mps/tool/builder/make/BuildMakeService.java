@@ -4,8 +4,6 @@ package jetbrains.mps.tool.builder.make;
 
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.IMakeService;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
@@ -22,26 +20,16 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.service.CoreMakeTask;
-import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
+import jetbrains.mps.make.GenerateFacetInitializer;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IProgress;
-import jetbrains.mps.make.script.IFeedback;
 
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
-  private static Logger LOG = LogManager.getLogger(BuildMakeService.class);
-
   public BuildMakeService() {
   }
 
@@ -98,16 +86,42 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     return new FutureValue<IResult>(task.getResult());
   }
 
-  private IScriptController completeController(final MakeSession msess, final IScriptController ctl) {
-    return new BuildMakeService.DelegatingScriptController(ctl, new MessageFeedbackStrategy(msess.getMessageHandler())) {
+  /**
+   * Assume if client supplied IScriptController, he knows what he's doing
+   * and bears full responsibility (except for generator properties initialization, but only for now)
+   * for suppluing correct IConfigMonitor and IJobMonitor instances, if desired (we provide reasonable defaults
+   * for cases when no user-supplied controller present).
+   */
+  private IScriptController completeController(MakeSession msess, final IScriptController ctl) {
+    final GenerateFacetInitializer gfi = new GenerateFacetInitializer(msess);
+    gfi.cleanMake(true);
+    IConfigMonitor monitor = new AbstractMakeService.DefaultMonitor(msess);
+    return new IScriptController.Stub(monitor, monitor) {
       @Override
-      public void setup(IPropertiesPool pool) {
-        super.setup(pool);
-        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-        if (vars != null) {
-          vars._0(msess.getContext().getProject());
-          vars._1(msess.getContext());
-          vars._2(true);
+      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+        if (ctl != null) {
+          ctl.runJobWithMonitor(code);
+        } else {
+          super.runJobWithMonitor(code);
+        }
+      }
+
+      @Override
+      public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
+        if (ctl != null) {
+          ctl.runConfigWithMonitor(code);
+        } else {
+          super.runConfigWithMonitor(code);
+        }
+      }
+
+      @Override
+      public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
+        gfi.populate(pp);
+        if (ctl != null) {
+          ctl.setup(pp, toExecute, input);
+        } else {
+          super.setup(pp, toExecute, input);
         }
       }
     };
@@ -115,131 +129,5 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
 
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
-  }
-
-  private static class DelegatingScriptController extends IScriptController.Stub {
-    private IScriptController delegate;
-    private MessageFeedbackStrategy mfs;
-    private ProgressMonitor currentMonitor;
-
-    public DelegatingScriptController(IScriptController delegate, MessageFeedbackStrategy mfs) {
-      this.delegate = delegate;
-      this.mfs = mfs;
-    }
-
-    @Override
-    public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
-      if (delegate != null) {
-        delegate.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
-          public void invoke(IConfigMonitor cm) {
-            code.invoke(new BuildMakeService.DelegatingScriptController.DelegatingConfigMonitor(cm));
-          }
-        });
-      } else {
-        code.invoke(new BuildMakeService.DelegatingScriptController.DelegatingConfigMonitor(null));
-      }
-    }
-
-    @Override
-    public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      try {
-        if (delegate != null) {
-          delegate.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
-            public void invoke(IJobMonitor jm) {
-              runJobWithMonitor(code, new BuildMakeService.DelegatingScriptController.DelegatingJobMonitor(jm, mfs));
-            }
-          });
-        } else {
-          runJobWithMonitor(code, new BuildMakeService.DelegatingScriptController.DelegatingJobMonitor(null, mfs));
-        }
-      } catch (Throwable e) {
-        BuildMakeService.LOG.error("error running job", e);
-      } finally {
-      }
-    }
-
-    @Override
-    public void setup(IPropertiesPool ppool) {
-      super.setup(ppool);
-      if (delegate != null) {
-        delegate.setup(ppool);
-      }
-    }
-
-    @Override
-    public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
-      super.setup(pp, toExecute, input);
-      if (delegate != null) {
-        delegate.setup(pp, toExecute, input);
-      }
-    }
-
-    @Override
-    public void useMonitor(ProgressMonitor monitor) {
-      super.useMonitor(monitor);
-      if (delegate != null) {
-        delegate.useMonitor(monitor);
-      }
-    }
-
-    protected ProgressMonitor getProgressMonitor() {
-      return currentMonitor;
-    }
-
-    private void setProgressMonitor(ProgressMonitor monitor) {
-      this.currentMonitor = monitor;
-    }
-
-    private void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code, IJobMonitor jm) {
-      setProgressMonitor(new JobProgressMonitorAdapter(jm));
-      try {
-        code.invoke(jm);
-      } finally {
-        setProgressMonitor(null);
-      }
-    }
-
-    private static class DelegatingConfigMonitor extends IConfigMonitor.Stub {
-      private IConfigMonitor delegateConfMon;
-
-      public DelegatingConfigMonitor(IConfigMonitor cm) {
-        this.delegateConfMon = cm;
-      }
-
-      @Override
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        T opt = null;
-        if (delegateConfMon != null) {
-          opt = delegateConfMon.relayQuery(query);
-        }
-        return (opt != null ? opt : query.defaultOption());
-      }
-    }
-
-    public static class DelegatingJobMonitor extends IJobMonitor.Stub {
-      private IJobMonitor delegateJobMon;
-      private MessageFeedbackStrategy mfs;
-
-      public DelegatingJobMonitor(IJobMonitor delegate, MessageFeedbackStrategy mfs) {
-        this.delegateJobMon = delegate;
-        this.mfs = mfs;
-      }
-
-      @Override
-      public IProgress currentProgress() {
-        if (delegateJobMon != null) {
-          return delegateJobMon.currentProgress();
-        }
-        return super.currentProgress();
-      }
-
-      @Override
-      public void reportFeedback(IFeedback fdbk) {
-        if (delegateJobMon != null) {
-          delegateJobMon.reportFeedback(fdbk);
-        }
-        mfs.reportFeedback(fdbk);
-      }
-    }
   }
 }

@@ -20,6 +20,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
+import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.script.IOption;
+import jetbrains.mps.make.script.IQuery;
 
 public abstract class AbstractMakeService implements IMakeService {
   public AbstractMakeService() {
@@ -93,4 +98,26 @@ public abstract class AbstractMakeService implements IMakeService {
   }
 
 
+
+
+  /**
+   * Reasonable defaults when no IScriptController is supplied by client
+   */
+  protected static class DefaultMonitor extends IConfigMonitor.Stub {
+    private MessageFeedbackStrategy myFeedback;
+
+    public DefaultMonitor(MakeSession makeSession) {
+      myFeedback = new MessageFeedbackStrategy(makeSession.getMessageHandler());
+    }
+
+    @Override
+    public void reportFeedback(IFeedback fdbk) {
+      myFeedback.reportFeedback(fdbk);
+    }
+
+    @Override
+    public <T extends IOption> T relayQuery(IQuery<T> query) {
+      return query.defaultOption();
+    }
+  }
 }

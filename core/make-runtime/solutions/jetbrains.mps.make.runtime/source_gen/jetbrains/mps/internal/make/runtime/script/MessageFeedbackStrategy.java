@@ -8,7 +8,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.Message;
 
 public class MessageFeedbackStrategy {
-  private IMessageHandler handler;
+  private final IMessageHandler handler;
 
   public MessageFeedbackStrategy(IMessageHandler handler) {
     this.handler = handler;
