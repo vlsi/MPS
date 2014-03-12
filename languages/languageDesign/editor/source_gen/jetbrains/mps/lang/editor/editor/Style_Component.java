@@ -79,7 +79,7 @@ public class Style_Component implements ConceptEditorComponent {
 
   private EditorCell createRefCell_zdjsuv_a0b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("styleClass");
+    provider.setRole("parentStyleClass");
     provider.setNoTargetText("<no base style>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a0a1a());
@@ -118,7 +118,7 @@ public class Style_Component implements ConceptEditorComponent {
       editorCell.setCellId("SC_property_name");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
-        editorCell.setRole("styleClass");
+        editorCell.setRole("parentStyleClass");
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

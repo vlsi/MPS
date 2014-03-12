@@ -263,7 +263,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 123:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorCellId").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 124:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorCellModel").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleContainer").properties("attractsFocus").references("actionMap", "keyMap", "styleClass").children(new String[]{"renderingCondition", "menuDescriptor", "focusPolicyApplicable", "id"}, new boolean[]{false, false, false, false}).abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorCellModel").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleContainer").properties("attractsFocus").references("actionMap", "keyMap", "parentStyleClass").children(new String[]{"renderingCondition", "menuDescriptor", "focusPolicyApplicable", "id"}, new boolean[]{false, false, false, false}).abstract_().create();
       case 125:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration").super_("jetbrains.mps.lang.editor.structure.BaseEditorComponent").parents("jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"overridenEditorComponent", "contextHints"}, new boolean[]{false, true}).alias("Editor Component", "").create();
       case 126:
@@ -313,7 +313,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 148:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.InlineEditorComponent").super_("jetbrains.mps.lang.editor.structure.BaseEditorComponent").parents("jetbrains.mps.lang.editor.structure.BaseEditorComponent").alias("", "in-line editor component").create();
       case 149:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleContainer").references("parentClass").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleContainer").references("parentStyleClass").create();
       case 150:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("last-position-allowed", "").staticScope(StaticScope.NONE).create();
       case 151:

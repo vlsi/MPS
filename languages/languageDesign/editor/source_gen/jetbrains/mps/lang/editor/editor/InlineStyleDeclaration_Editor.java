@@ -56,8 +56,8 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefCell_tl5ft1_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("parentClass");
-    provider.setNoTargetText("<no parentClass>");
+    provider.setRole("parentStyleClass");
+    provider.setNoTargetText("<no parentStyleClass>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new InlineStyleDeclaration_Editor._Inline_tl5ft1_a0a0());
     editorCell = provider.createEditorCell(editorContext);
@@ -95,7 +95,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_name");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
-        editorCell.setRole("parentClass");
+        editorCell.setRole("parentStyleClass");
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
