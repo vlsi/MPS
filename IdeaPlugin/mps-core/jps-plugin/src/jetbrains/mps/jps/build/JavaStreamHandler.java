@@ -38,46 +38,36 @@ class JavaStreamHandler implements StreamHandler {
 
     private final SModel myModelDescriptor;
     private final IFile myOutputDir;
-    private final IFile myCachesOutputDir;
-    private FileProcessor myProcessor;
+    private final FileProcessor myProcessor;
 
-    JavaStreamHandler(SModel model, IFile outputDir, IFile cachesOutputDir, FileProcessor processor) {
+    JavaStreamHandler(SModel model, IFile outputDir, FileProcessor processor) {
         myModelDescriptor = model;
         myOutputDir = outputDir;
-        myCachesOutputDir = cachesOutputDir;
         myProcessor = processor;
     }
 
     @Override
-    public void saveStream(String name, String content, boolean isCache) {
-        IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    public void saveStream(String name, String content) {
+        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myOutputDir).getDescendant(name);
         myProcessor.saveContent(file, myModelDescriptor, content);
     }
 
     @Override
-    public void saveStream(String name, Element content, boolean isCache) {
-        IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    public void saveStream(String name, Element content) {
+        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myOutputDir).getDescendant(name);
         myProcessor.saveContent(file, myModelDescriptor, content);
     }
 
     @Override
-    public void saveStream(String name, byte[] content, boolean isCache) {
-        IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    public void saveStream(String name, byte[] content) {
+        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myOutputDir).getDescendant(name);
         myProcessor.saveContent(file, myModelDescriptor, content);
     }
 
     @Override
-    public boolean touch(String name, boolean isCache) {
-        IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    public boolean touch(String name) {
+        IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myOutputDir).getDescendant(name);
         return file.exists();
-    }
-
-    @Override
-    public void dispose() {
     }
 
     static class FileProcessor {

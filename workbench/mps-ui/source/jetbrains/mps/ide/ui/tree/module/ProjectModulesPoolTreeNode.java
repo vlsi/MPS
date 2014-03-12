@@ -99,6 +99,11 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     }
   }
 
+  @Override
+  public boolean isLeaf() {
+    return false;
+  }
+
   private class ModulePoolNamespaceBuilder extends DefaultNamespaceTreeBuilder<ProjectModuleTreeNode> {
     @Override
     protected String getNamespace(ProjectModuleTreeNode node) {

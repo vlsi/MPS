@@ -49,15 +49,19 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupListener" />
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
+    <classNode dependClassName="jetbrains.mps.generator.generationTypes.StreamHandler" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.JavaTraceInfoResourceProvider" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfo" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfoBuilder" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -71,6 +75,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.generator.cache.CacheGenerator" />
     <classNode extendsClassName="jetbrains.mps.generator.cache.XmlBasedModelCache" />
   </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoUtil" file="TraceInfoUtil.java">

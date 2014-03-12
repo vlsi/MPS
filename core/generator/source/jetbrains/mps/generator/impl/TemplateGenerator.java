@@ -443,7 +443,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
     if (builder != null) {
       if (builder.isUnchanged()) {
-        if (myDeltaBuilder != null) {
+        if (myDeltaBuilder != null && inputNode != null) {
           // Unchanged roots shall not participate in further generation steps, hence
           // we need to tell DeltaBuilder to forget it.
           SNode inputRoot = inputNode.getContainingRoot();

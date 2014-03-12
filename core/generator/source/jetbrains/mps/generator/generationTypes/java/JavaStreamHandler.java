@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,64 +22,64 @@ import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 /**
+ * XXX this handler has nothing to do with java, despite what it name suggests.
+ * It's merely a wrap of FileProcessor, with streams saved under a path derived from model names
  * Evgeny Gryaznov, Sep 16, 2010
  */
 class JavaStreamHandler implements StreamHandler {
-  private final SModel myModelDescriptor;
+  private final IFile myBaseOutputDir;
   private final IFile myOutputDir;
-  private final IFile myCachesOutputDir;
   private final Set<IFile> mySavedFiles = new HashSet<IFile>();
   private FileProcessor myProcessor;
 
   JavaStreamHandler(SModel modelDescriptor, IFile outputDir, FileProcessor processor) {
-    myModelDescriptor = modelDescriptor;
-    myOutputDir = outputDir;
-    myCachesOutputDir = FileGenerationUtil.getCachesDir(outputDir);
+    myBaseOutputDir = outputDir;
+    myOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, outputDir);
     myProcessor = processor;
   }
 
   @Override
-  public void saveStream(String name, String content, boolean isCache) {
-    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+  public void saveStream(String name, String content) {
+    IFile file = getFile(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
   }
 
   @Override
-  public void saveStream(String name, Element content, boolean isCache) {
-    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+  public void saveStream(String name, Element content) {
+    IFile file = getFile(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
   }
 
   @Override
-  public void saveStream(String name, byte[] content, boolean isCache) {
-    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+  public void saveStream(String name, byte[] content) {
+    IFile file = getFile(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
   }
 
   @Override
-  public boolean touch(String name, boolean isCache) {
-    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+  public boolean touch(String name) {
+    IFile file = getFile(name);
     mySavedFiles.add(file);
     return file.exists();
   }
 
-  @Override
-  public void dispose() {
+  /*
+   * I'm not quite sure this code shouldn't be external to this handler, i.e.
+   * rather a FileProcessor's or of a separate facility that collects stale files.
+   * Otherwise it's an implicit assumption here nobody else writes to myBaseOutputDir
+   */
+  Collection<IFile> getFilesToDelete() {
     Set<IFile> directories = new HashSet<IFile>();
-    directories.add(myOutputDir);
-    directories.add(myCachesOutputDir);
+    directories.add(myBaseOutputDir);
     for (IFile f : mySavedFiles) {
       directories.add(f.getParent());
     }
@@ -93,8 +93,10 @@ class JavaStreamHandler implements StreamHandler {
         filesToDelete.add(outputDirectoryFile);
       }
     }
+    return filesToDelete;
+  }
 
-    myProcessor.filesToDelete(filesToDelete);
-    myProcessor.invalidateModel(myModelDescriptor);
+  private IFile getFile(String name) {
+    return myOutputDir.getDescendant(name);
   }
 }

@@ -15,10 +15,11 @@ import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.make.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,6 +27,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
@@ -104,9 +106,12 @@ public class ModuleGenerationHolder {
     final IScriptController ctl = new IScriptController.Stub() {
       @Override
       public void setup(IPropertiesPool ppool) {
-        Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-        tparams._0(false);
+        TextGenFacetInitializer tgfi = new TextGenFacetInitializer();
+        // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
+        // fails if we don't generate one here 
+        tgfi.failNoTextGen(false).generateDebugInfo(true).populate(ppool);
 
+        // FIXME hide access to parameters behind initializer similar to TextGenFacetInitializer 
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
         makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
@@ -126,7 +131,8 @@ public class ModuleGenerationHolder {
         IOperationContext context = new ProjectOperationContext(project);
         IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
         try {
-          result.value = new TestMakeService(context, myMessageHandler).make(null, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
+          MakeSession session = new MakeSession(context, myMessageHandler, true);
+          result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
         } catch (InterruptedException ignore) {
         } catch (ExecutionException ignore) {
         }

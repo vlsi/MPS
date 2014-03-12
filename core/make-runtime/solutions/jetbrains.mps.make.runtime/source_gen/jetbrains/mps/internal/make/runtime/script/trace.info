@@ -1302,6 +1302,42 @@
     <scopeInfo nodeId="5012541157865001365" fileName="ValidationError.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="6168415856807659041" fileName="ValidationError.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
   </root>
+  <root nodeRef="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)/6214179127578269219">
+    <nodeInfo nodeId="6214179127578269304" fileName="MessageFeedbackStrategy.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="handler" />
+    <nodeInfo nodeId="6214179127578269296" fileName="MessageFeedbackStrategy.java" startLine="13" startPosition="59" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269224" fileName="MessageFeedbackStrategy.java" startLine="17" startPosition="45" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578269231" fileName="MessageFeedbackStrategy.java" startLine="20" startPosition="17" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269235" fileName="MessageFeedbackStrategy.java" startLine="21" startPosition="40" endLine="22" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6214179127578269239" fileName="MessageFeedbackStrategy.java" startLine="23" startPosition="19" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269243" fileName="MessageFeedbackStrategy.java" startLine="24" startPosition="42" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6214179127578269247" fileName="MessageFeedbackStrategy.java" startLine="26" startPosition="16" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269251" fileName="MessageFeedbackStrategy.java" startLine="27" startPosition="46" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6214179127578269256" fileName="MessageFeedbackStrategy.java" startLine="29" startPosition="14" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269260" fileName="MessageFeedbackStrategy.java" startLine="30" startPosition="40" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6214179127578269261" fileName="MessageFeedbackStrategy.java" startLine="32" startPosition="5" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6214179127578269270" fileName="MessageFeedbackStrategy.java" startLine="33" startPosition="65" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269277" fileName="MessageFeedbackStrategy.java" startLine="34" startPosition="45" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269284" fileName="MessageFeedbackStrategy.java" startLine="35" startPosition="43" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6214179127578269292" fileName="MessageFeedbackStrategy.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageFeedbackStrategy#(Ljetbrains/mps/messages/IMessageHandler;)V" />
+    <nodeInfo nodeId="6214179127578269227" fileName="MessageFeedbackStrategy.java" startLine="18" startPosition="28" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="6214179127578269220" fileName="MessageFeedbackStrategy.java" startLine="17" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
+    <scopeInfo nodeId="6214179127578269295" fileName="MessageFeedbackStrategy.java" startLine="13" startPosition="59" endLine="14" endPosition="27" />
+    <scopeInfo nodeId="6214179127578269230" fileName="MessageFeedbackStrategy.java" startLine="20" startPosition="17" endLine="22" endPosition="14" />
+    <scopeInfo nodeId="6214179127578269238" fileName="MessageFeedbackStrategy.java" startLine="23" startPosition="19" endLine="25" endPosition="14" />
+    <scopeInfo nodeId="6214179127578269246" fileName="MessageFeedbackStrategy.java" startLine="26" startPosition="16" endLine="28" endPosition="14" />
+    <scopeInfo nodeId="6214179127578269255" fileName="MessageFeedbackStrategy.java" startLine="29" startPosition="14" endLine="31" endPosition="14" />
+    <scopeInfo nodeId="6214179127578269292" fileName="MessageFeedbackStrategy.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="6214179127578269302" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="6214179127578269223" fileName="MessageFeedbackStrategy.java" startLine="17" startPosition="45" endLine="36" endPosition="28">
+      <varInfo nodeId="6214179127578269262" varName="message" />
+      <varInfo nodeId="6214179127578269225" varName="messageKind" />
+    </scopeInfo>
+    <scopeInfo nodeId="6214179127578269220" fileName="MessageFeedbackStrategy.java" startLine="17" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6214179127578269289" varName="fdk" />
+    </scopeInfo>
+    <unitInfo nodeId="6214179127578269219" fileName="MessageFeedbackStrategy.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy" />
+  </root>
   <root nodeRef="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)/7797884084018533742">
     <nodeInfo nodeId="7797884084018533809" fileName="LoggingProgressStrategy.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7797884084018581584" fileName="LoggingProgressStrategy.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />
