@@ -147,9 +147,9 @@ public class IdeCommandUtil {
       public void visit(SModel it) {
         String outputPath = SModuleOperations.getOutputPathFor(it);
         String cachePath = FileGenerationUtil.getCachesPath(outputPath);
-        IFile ouputDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(outputPath));
+        IFile outputDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(outputPath));
         IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(cachePath));
-        ouputDir.delete();
+        outputDir.delete();
         cachesDir.delete();
       }
     });

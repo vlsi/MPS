@@ -27,10 +27,10 @@
     <nodeInfo nodeId="2840424593984283979" fileName="IdeCommandUtil.java" startLine="143" startPosition="40" endLine="144" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2840424593984283987" fileName="IdeCommandUtil.java" startLine="147" startPosition="36" endLine="148" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2840424593984283992" fileName="IdeCommandUtil.java" startLine="148" startPosition="67" endLine="149" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2840424593984421214" fileName="IdeCommandUtil.java" startLine="149" startPosition="72" endLine="150" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2840424593984324984" fileName="IdeCommandUtil.java" startLine="150" startPosition="120" endLine="151" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2840424593984283997" fileName="IdeCommandUtil.java" startLine="151" startPosition="120" endLine="152" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2840424593984284004" fileName="IdeCommandUtil.java" startLine="152" startPosition="26" endLine="153" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2840424593984421214" fileName="IdeCommandUtil.java" startLine="149" startPosition="72" endLine="150" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2840424593984324984" fileName="IdeCommandUtil.java" startLine="150" startPosition="121" endLine="151" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2840424593984283997" fileName="IdeCommandUtil.java" startLine="151" startPosition="120" endLine="152" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2840424593984284004" fileName="IdeCommandUtil.java" startLine="152" startPosition="27" endLine="153" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5308946314779639396" fileName="IdeCommandUtil.java" startLine="157" startPosition="44" endLine="158" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2840424593983837326" fileName="IdeCommandUtil.java" startLine="158" startPosition="45" endLine="159" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5308946314779672898" fileName="IdeCommandUtil.java" startLine="160" startPosition="32" endLine="161" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -173,7 +173,7 @@
     <scopeInfo nodeId="2840424593984283986" fileName="IdeCommandUtil.java" startLine="147" startPosition="36" endLine="153" endPosition="27">
       <varInfo nodeId="2840424593984283993" varName="cachePath" />
       <varInfo nodeId="2840424593984324985" varName="cachesDir" />
-      <varInfo nodeId="2840424593984421215" varName="ouputDir" />
+      <varInfo nodeId="2840424593984421215" varName="outputDir" />
       <varInfo nodeId="2840424593984283988" varName="outputPath" />
     </scopeInfo>
     <scopeInfo nodeId="5308946314779665853" fileName="IdeCommandUtil.java" startLine="198" startPosition="0" endLine="204" endPosition="0">
