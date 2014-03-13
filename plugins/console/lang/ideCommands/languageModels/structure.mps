@@ -272,8 +272,8 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2840424593984889115" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
-    <property name="name" nameId="tpck.1169194664001" value="CleanSources" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#cleanSources" />
+    <property name="name" nameId="tpck.1169194664001" value="RemoveGenSources" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#removeGenSources" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="2840424593984889498" resolveInfo="AbsractMake" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2840424593984889498" nodeInfo="ig">

@@ -130,7 +130,7 @@ public class IdeCommandUtil {
 
 
 
-  public static void cleanSourcesGen(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+  public static void removeGenSources(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<Iterable<? extends SModule>> _modules = new Wrappers._T<Iterable<? extends SModule>>(modules);
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(_modules.value).isEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -144,13 +144,33 @@ public class IdeCommandUtil {
         return SNodeOperations.isGeneratable(it);
       }
     }).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel it) {
-        String outputPath = SModuleOperations.getOutputPathFor(it);
+      public void visit(SModel model) {
+        String outputPath = SModuleOperations.getOutputPathFor(model);
         String cachePath = FileGenerationUtil.getCachesPath(outputPath);
-        IFile ouputDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(outputPath));
-        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(cachePath));
-        ouputDir.delete();
-        cachesDir.delete();
+        IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(outputPath));
+        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(cachePath));
+
+        Iterable<IFile> outputItems = outputDir.getChildren();
+        Sequence.fromIterable(outputItems).where(new IWhereFilter<IFile>() {
+          public boolean accept(IFile it) {
+            return !(it.isDirectory());
+          }
+        }).visitAll(new IVisitor<IFile>() {
+          public void visit(IFile it) {
+            it.delete();
+          }
+        });
+
+        Iterable<IFile> cachedItems = cachesDir.getChildren();
+        Sequence.fromIterable(cachedItems).where(new IWhereFilter<IFile>() {
+          public boolean accept(IFile it) {
+            return !(it.isDirectory());
+          }
+        }).visitAll(new IVisitor<IFile>() {
+          public void visit(IFile it) {
+            it.delete();
+          }
+        });
       }
     });
     Sequence.fromIterable(_modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {

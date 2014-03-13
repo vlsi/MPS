@@ -1524,7 +1524,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.console.scripts.runtime" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.scripts, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.console.scripts.runtime" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.scripts, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/console/lang/scriptsRuntime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.scripts.runtime" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.scripts.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
@@ -1547,6 +1547,7 @@
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.scripts" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1564,6 +1565,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
@@ -1578,7 +1580,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.console.scripts" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.console.scripts" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/console/lang/scripts/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.scripts" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.scripts" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
@@ -1601,6 +1603,7 @@
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1617,6 +1620,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
@@ -1631,7 +1635,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.console.scripts#1734392475490224704" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.console.scripts#1734392475490224704" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.blCommand.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/console/lang/scripts/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.scripts#1734392475490224704" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.scripts#1734392475490224704" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
@@ -1655,6 +1659,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.scripts" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.scripts.runtime" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
