@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.sample.queryTest.structure.StructureAspectDescriptor" />
-  <root nodeRef="r:3f71a9ca-cfc6-445e-98ca-be6cc5953666(jetbrains.mps.sample.queryTest.structure)/1389772202490487269" />
   <root nodeRef="r:3f71a9ca-cfc6-445e-98ca-be6cc5953666(jetbrains.mps.sample.queryTest.structure)/3868630583602426547">
     <nodeInfo nodeId="3868630583602426547" fileName="MyKind.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="3868630583602426547" fileName="MyKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

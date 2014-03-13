@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489411372" />
-  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489412787" />
   <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489413878">
     <nodeInfo nodeId="5294483648489413881" fileName="PerformanceMessenger.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySingleValues" />
     <nodeInfo nodeId="5294483648489413890" fileName="PerformanceMessenger.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPercentValues" />
@@ -93,7 +91,6 @@
     <scopeInfo nodeId="5294483648489414002" fileName="PerformanceMessenger.java" startLine="50" startPosition="0" endLine="77" endPosition="0" />
     <unitInfo nodeId="5294483648489413878" fileName="PerformanceMessenger.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.testbench.PerformanceMessenger" />
   </root>
-  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489414188" />
   <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/7413225496542992859">
     <nodeInfo nodeId="9085186120774559291" fileName="IdeaEnvironment.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MISC_XML_URI" />
     <nodeInfo nodeId="6132171475558526419" fileName="IdeaEnvironment.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="cachesInvalidated" />
@@ -396,6 +393,5 @@
     <unitInfo nodeId="5294483648489408714" fileName="IdeaEnvironment.java" startLine="219" startPosition="41" endLine="228" endPosition="5" unitName="jetbrains.mps.testbench.IdeaEnvironment$4" />
     <unitInfo nodeId="7413225496542992859" fileName="IdeaEnvironment.java" startLine="49" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.testbench.IdeaEnvironment" />
   </root>
-  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/7781441327978255133" />
 </debugInfo>
 

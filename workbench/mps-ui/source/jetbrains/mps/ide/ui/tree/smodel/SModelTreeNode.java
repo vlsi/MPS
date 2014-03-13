@@ -119,6 +119,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myIcon;
   }
 
+  @Override
+  public SNode getSNode() {
+    return null;
+  }
+
   public boolean hasModelsUnder() {
     return !getSubfolderSModelTreeNodes().isEmpty();
   }

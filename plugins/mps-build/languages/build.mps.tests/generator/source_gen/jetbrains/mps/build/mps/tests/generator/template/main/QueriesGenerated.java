@@ -194,14 +194,14 @@ public class QueriesGenerated {
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0q(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
-    n1.setProperty("path", (String) p0);
+    n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0s(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
-    n1.setProperty("path", (String) p0);
+    n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 

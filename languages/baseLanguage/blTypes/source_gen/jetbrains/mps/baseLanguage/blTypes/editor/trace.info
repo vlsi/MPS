@@ -295,9 +295,5 @@
     <unitInfo nodeId="1159268661796" fileName="PrimitiveTypeRef_Editor.java" startLine="54" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeRef_Editor$_Inline_om7tp_a0a" />
     <unitInfo nodeId="1159268661793" fileName="PrimitiveTypeRef_Editor.java" startLine="23" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeRef_Editor" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1159276917821" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1161696750123" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1162556281717" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1209476308551" />
 </debugInfo>
 

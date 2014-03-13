@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.facet.FacetManager;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -29,6 +30,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.impl.file.PsiJavaDirectoryImpl;
 import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -68,7 +70,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -98,7 +99,13 @@ public class NewRootAction extends AnAction {
 
     if(myConceptFqNameToNodePointerMap.isEmpty()) {
       ImportHelper.addLanguageImport(myProject, myModelDescriptor.getModule(),
-        myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null);
+        myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null, new Runnable() {
+        @Override
+        public void run() {
+          final ProjectView projectView = ProjectView.getInstance(myProject);
+          projectView.refresh();
+        }
+      });
       return;
     }
 
@@ -135,8 +142,8 @@ public class NewRootAction extends AnAction {
   }
 
   private boolean createPerRootModel(AnActionEvent e) {
-    PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+    final PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
+    if (psiElement == null || !(psiElement instanceof PsiJavaDirectoryImpl)) {
       //Can be used only on package
       return true;
     }
@@ -160,8 +167,7 @@ public class NewRootAction extends AnAction {
         }
         if(useModelRoot == null) return null;
 
-        final String prefix = useSourceRoot.endsWith(File.separator) ? useSourceRoot : (useSourceRoot + File.separator);
-        final String modelName = targetDir.getPath().replace(prefix,"").replace("/", ".");
+        final String modelName = ((PsiJavaDirectoryImpl) psiElement).getPresentation().getLocationString();
         EditableSModel model = null;
         try {
           model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot,
@@ -171,6 +177,7 @@ public class NewRootAction extends AnAction {
         }
 
         model.setChanged(true);
+        model.load();
         model.save();
 
         //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.

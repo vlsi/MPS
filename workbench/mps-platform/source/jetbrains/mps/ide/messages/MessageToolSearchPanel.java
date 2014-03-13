@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,11 @@ import jetbrains.mps.ide.search.SearchHistoryStorage;
 
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -50,12 +54,12 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     if (selected != -1) {
       for (int i = myResults.size() - 1; i >= 0; i--) {
         if (selected > myResults.get(i)) {
-          myList.setSelectedIndex(myResults.get(i));
+          selectAndReveal(myResults.get(i));
           return;
         }
       }
     }
-    myList.setSelectedIndex(myResults.get(myResults.size() - 1));
+    selectAndReveal(myResults.get(myResults.size() - 1));
   }
 
   @Override
@@ -66,12 +70,12 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     if (selected != -1) {
       for (Integer index : myResults) {
         if (selected < index) {
-          myList.setSelectedIndex(index);
+          selectAndReveal(index);
           return;
         }
       }
     }
-    myList.setSelectedIndex(myResults.get(0));
+    selectAndReveal(myResults.get(0));
   }
 
   @Override
@@ -100,6 +104,12 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     revalidate();
     myList.setCellRenderer(myOriginalCellRenderer);
     myList.requestFocus();
+  }
+
+
+  private void selectAndReveal(int index) {
+    myList.setSelectedIndex(index);
+    myList.ensureIndexIsVisible(index);
   }
 
   private class MyCellRenderer extends MessagesListCellRenderer {
@@ -152,7 +162,6 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
       if (myText.getText().length() == 0) {
         myFindResult.setText("");
         myText.setBackground(Color.white);
-        return;
       }
     }
 

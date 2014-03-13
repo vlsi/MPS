@@ -51,7 +51,7 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.atLeast(2).of(fct).getName();
-        this.will(returnValue(new IFacet.Name(name)));
+        this.will(Expectations.returnValue(new IFacet.Name(name)));
       }
     });
     return fct;
@@ -61,13 +61,13 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.allowing(fct).extended();
-        this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new IFacet.Name[]{})));
         this.allowing(fct).required();
-        this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new IFacet.Name[]{})));
         this.allowing(fct).optional();
-        this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new IFacet.Name[]{})));
         this.allowing(fct).targets();
-        this.will(returnValue(Sequence.fromArray(new ITarget[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new ITarget[]{})));
       }
     });
   }
@@ -89,17 +89,17 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.atLeast(1).of(trg).getName();
-        this.will(returnValue(tname));
+        this.will(Expectations.returnValue(tname));
       }
     });
     if (expIn != null) {
       context.checking(new Expectations() {
         {
           this.atLeast(1).of(trg).requiresInput();
-          this.will(returnValue(true));
+          this.will(Expectations.returnValue(true));
 
           this.atLeast(1).of(trg).expectedInput();
-          this.will(returnValue(Arrays.asList(expIn)));
+          this.will(Expectations.returnValue(Arrays.asList(expIn)));
         }
       });
 
@@ -111,25 +111,25 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.allowing(trg).before();
-        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{})));
         this.allowing(trg).notBefore();
-        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{})));
         this.allowing(trg).after();
-        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{})));
         this.allowing(trg).notAfter();
-        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{})));
         this.allowing(trg).createJob();
-        this.will(returnValue(Mockups.DefaultJob));
+        this.will(Expectations.returnValue(Mockups.DefaultJob));
         this.allowing(trg).createConfig();
-        this.will(returnValue(Mockups.DefaultConfig));
+        this.will(Expectations.returnValue(Mockups.DefaultConfig));
         this.allowing(trg).requiresInput();
-        this.will(returnValue(false));
+        this.will(Expectations.returnValue(false));
         this.allowing(trg).producesOutput();
-        this.will(returnValue(false));
+        this.will(Expectations.returnValue(false));
         this.allowing(trg).expectedInput();
-        this.will(returnValue(null));
+        this.will(Expectations.returnValue(null));
         this.allowing(trg).expectedOutput();
-        this.will(returnValue(null));
+        this.will(Expectations.returnValue(null));
       }
     });
   }
@@ -143,8 +143,8 @@ public class Mockups {
     final IJob job = context.mock(IJob.class, name);
     context.checking(new Expectations() {
       {
-        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IJobMonitor.class)), this.with(aNonNull(IPropertiesAccessor.class)), this.with(aNonNull(ProgressMonitor.class)));
-        this.will(returnValue(fun.invoke()));
+        this.exactly(1).of(job).execute(this.with(Expectations.aNonNull(Iterable.class)), this.with(Expectations.aNonNull(IJobMonitor.class)), this.with(Expectations.aNonNull(IPropertiesAccessor.class)), this.with(Expectations.aNonNull(ProgressMonitor.class)));
+        this.will(Expectations.returnValue(fun.invoke()));
       }
     });
     return job;
@@ -155,7 +155,7 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.atLeast(1).of(result).isSucessful();
-        this.will(returnValue(res));
+        this.will(Expectations.returnValue(res));
       }
     });
     return result;
@@ -165,7 +165,7 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.allowing(result).output();
-        this.will(returnValue(null));
+        this.will(Expectations.returnValue(null));
       }
     });
   }
@@ -179,7 +179,7 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.allowing(monitor).stopRequested();
-        this.will(returnValue(false));
+        this.will(Expectations.returnValue(false));
       }
     });
     return monitor;
@@ -198,8 +198,8 @@ public class Mockups {
   public static void allowing(Mockery context, final IScriptController mons) {
     context.checking(new Expectations() {
       {
-        this.allowing(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) this.with(aNonNull(Object.class)));
-        this.allowing(mons).runJobWithMonitor((_FunctionTypes._void_P1_E0<? super IJobMonitor>) this.with(aNonNull(Object.class)));
+        this.allowing(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) this.with(Expectations.aNonNull(Object.class)));
+        this.allowing(mons).runJobWithMonitor((_FunctionTypes._void_P1_E0<? super IJobMonitor>) this.with(Expectations.aNonNull(Object.class)));
       }
     });
   }
@@ -208,9 +208,9 @@ public class Mockups {
     context.checking(new Expectations() {
       {
         this.allowing(jmon).currentProgress();
-        this.will(returnValue(new IProgress.Stub()));
+        this.will(Expectations.returnValue(new IProgress.Stub()));
         this.allowing(jmon).stopRequested();
-        this.will(returnValue(false));
+        this.will(Expectations.returnValue(false));
       }
     });
   }

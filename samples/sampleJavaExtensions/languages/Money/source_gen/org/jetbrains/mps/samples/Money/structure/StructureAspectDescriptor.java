@@ -21,17 +21,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.CurrencyUnit").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 3:
-        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.GetAmount").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("amount", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.CurrentStockPrice").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"symbol"}, new boolean[]{false}).alias("current stock price", "").create();
       case 4:
-        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.GetCurrency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("currency", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.GetAmount").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("amount", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.MoneyLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("amount").references("unit").alias("money", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.GetCurrency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("currency", "").staticScope(StaticScope.NONE).create();
       case 6:
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.MoneyLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("amount").references("unit").alias("money", "").staticScope(StaticScope.NONE).create();
+      case 7:
         return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.MoneyType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("Money", "").staticScope(StaticScope.NONE).create();
+      case 8:
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.MovingAverage").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("period").children(new String[]{"symbol"}, new boolean[]{false}).alias("moving average", "").create();
+      case 9:
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.StockSymbol").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("symbol").alias("symbol", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
 }

@@ -7352,7 +7352,6 @@
     <unitInfo nodeId="5571879668402627845" fileName="_FunctionTypes.java" startLine="971" startPosition="0" endLine="974" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes$_return_P10_E10" />
     <unitInfo nodeId="5571879668402581510" fileName="_FunctionTypes.java" startLine="6" startPosition="0" endLine="975" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </root>
-  <root nodeRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)/6756487509510534623" />
   <root nodeRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)/8649343297855554552">
     <nodeInfo nodeId="8649343297855554553" fileName="AdapterClass.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()Ljava/lang/String;" />
     <scopeInfo nodeId="8649343297855554553" fileName="AdapterClass.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.smodel.event;
 
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.vfs.IFile;
 
+@Immutable
 public class SModelFileChangedEvent extends SModelEvent {
-  private IFile myOldFile;
-  private IFile myNewFile;
+  private final IFile myOldFile;
+  private final IFile myNewFile;
 
   public SModelFileChangedEvent(SModel model, IFile oldFile, IFile newFile) {
     super(model);
@@ -39,7 +41,7 @@ public class SModelFileChangedEvent extends SModelEvent {
 
   @Override
   public void accept(SModelEventVisitor visitor) {
-
+    visitor.visitModelFileEvent(this);
   }
 
   @Override

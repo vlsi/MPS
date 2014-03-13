@@ -8,8 +8,8 @@
   <import index="zyb2" modelUID="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" version="0" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
+  <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(jetbrains.mps.openapi.editor@java_stub)" version="-1" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -193,9 +193,9 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1583916890557930443" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1583916890557930028" resolveInfo="ConsoleRoot" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1583916890557947353" nodeInfo="nn">
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="795210086019063127" nodeInfo="ng">
-          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="2491174914160683846" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039364043" nodeInfo="nn">
@@ -225,9 +225,9 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1583916890557947371" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930417" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.DiscardStylePrioriryGroup" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
-          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="4122848433161827169" nodeInfo="ng">
-            <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnapplyStyle" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
+          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="2491174914160683972" nodeInfo="ng">
+            <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
           </node>
         </node>
       </node>
@@ -321,11 +321,12 @@
   </root>
   <root type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="7409036893176441835" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Console_Styles" />
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="7409036893176441979" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7409036893176441979" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="readOnly" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="795210086018976096" nodeInfo="ng">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
+      <node role="dominates" roleId="tpc2.3383245079137422296" type="tpc2.DominatesRecord" typeId="tpc2.2491174914159318432" id="2491174914180457997" nodeInfo="ng" />
     </node>
   </root>
 </model>

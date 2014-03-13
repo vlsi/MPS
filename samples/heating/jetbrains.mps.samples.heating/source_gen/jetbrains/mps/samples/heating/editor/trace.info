@@ -969,7 +969,6 @@
     <unitInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="90" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor$dailyPlansListHandler_16fuhk_d0" />
     <unitInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="28" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor" />
   </root>
-  <root nodeRef="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)/5063359128233376844" />
   <root nodeRef="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)/5726447348463731349">
     <nodeInfo nodeId="5726447348463731349" fileName="Slot_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5726447348463731349" fileName="Slot_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

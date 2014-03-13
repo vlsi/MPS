@@ -1175,7 +1175,6 @@
     <unitInfo nodeId="6599163591527280472" fileName="SModelOperations.java" startLine="46" startPosition="32" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations$1" />
     <unitInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="30" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
   </root>
-  <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6599163591527282020" />
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6599163591527282285">
     <nodeInfo nodeId="6599163591527282308" fileName="SearchScopeOperations.java" startLine="13" startPosition="46" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527282310" fileName="SearchScopeOperations.java" startLine="15" startPosition="5" endLine="16" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

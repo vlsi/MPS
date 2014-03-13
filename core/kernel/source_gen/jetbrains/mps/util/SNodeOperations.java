@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
@@ -319,9 +320,7 @@ public class SNodeOperations {
   }
 
   public static String getModelStereotype(SModel model) {
-    String name = model.getModelName();
-    int index = name.indexOf("@");
-    return (index == -1 ? "" : name.substring(index + 1));
+    return SModelStereotype.getStereotype(model);
   }
 
   public static String getModelLongName(SModel model) {
@@ -350,7 +349,7 @@ public class SNodeOperations {
   }
 
   public static boolean isGeneratable(SModel model) {
-    assert model instanceof SModel;
+    // I wonder why this method doesn't reside in SModelOperations 
     return model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable();
   }
 }

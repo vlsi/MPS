@@ -80,7 +80,7 @@ public class NewSolutionDialog extends DialogWrapper {
 
 
   public Solution getSolution() {
-    return null;
+    return myResult;
   }
 
   @Nullable

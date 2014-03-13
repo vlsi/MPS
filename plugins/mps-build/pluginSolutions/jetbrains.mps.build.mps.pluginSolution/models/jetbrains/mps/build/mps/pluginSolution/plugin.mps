@@ -12848,8 +12848,8 @@
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Comment" typeId="3ior.9126048691954557131" id="6265574260762010966" nodeInfo="ng">
                             <property name="text" nameId="3ior.9126048691954700811" value="optional plugins" />
                           </node>
-                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6265574260762108798" nodeInfo="ng">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.6265574260762011106" />
+                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="7688489240249795379" nodeInfo="ng">
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.7688489240247950220" resolveInfo="mps-make" />
                           </node>
                           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3256085672520562296" nodeInfo="ng">
                             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="3256085672520562297" nodeInfo="ng">
@@ -16275,7 +16275,6 @@
     <property name="name" nameId="tpck.1169194664001" value="ProjectPaneProjectAddition" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8722937377469659544" nodeInfo="ng">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8722937377469659545" nodeInfo="ng" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8722937377469659546" nodeInfo="ng">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8722937377469659497" resolveInfo="GenerateBuildForProjectAction" />
       </node>

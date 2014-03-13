@@ -127,48 +127,204 @@
     <unitInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.RefactoringAdditions_ActionGroup" />
   </root>
   <root nodeRef="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)/7162597690967657585">
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="46" endLine="21" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="14" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="45" endLine="11" endPosition="45" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="22" endPosition="53" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="51" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="46" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="23" startPosition="14" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="59" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="37" endLine="29" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="136" endLine="30" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="37" endLine="30" endPosition="110" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="25" endPosition="53" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
   <root nodeRef="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)/8268629222289297283">
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="46" endLine="21" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="14" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="45" endLine="11" endPosition="45" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="22" endPosition="53" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="51" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="46" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="23" startPosition="14" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="59" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="37" endLine="29" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="136" endLine="30" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="37" endLine="30" endPosition="110" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="25" endPosition="53" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  </root>
+  <root nodeRef="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)/8722937377469659497">
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="37" startPosition="42" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="38" startPosition="39" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="39" startPosition="35" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="52" startPosition="45" endLine="53" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="54" startPosition="7" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="68" startPosition="66" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="71" startPosition="88" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229272978910" fileName="GeneratePluginSolution_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229273024237" fileName="GeneratePluginSolution_Action.java" startLine="77" startPosition="173" endLine="78" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229273034979" fileName="GeneratePluginSolution_Action.java" startLine="78" startPosition="20" endLine="79" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229273056717" fileName="GeneratePluginSolution_Action.java" startLine="80" startPosition="22" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5049109624534878023" fileName="GeneratePluginSolution_Action.java" startLine="82" startPosition="7" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8717707950933280187" fileName="GeneratePluginSolution_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8717707950933293474" fileName="GeneratePluginSolution_Action.java" startLine="86" startPosition="70" endLine="87" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8717707950933339688" fileName="GeneratePluginSolution_Action.java" startLine="87" startPosition="83" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8717707950933327563" fileName="GeneratePluginSolution_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933304017" fileName="GeneratePluginSolution_Action.java" startLine="89" startPosition="150" endLine="90" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3672796063712871687" fileName="GeneratePluginSolution_Action.java" startLine="90" startPosition="168" endLine="91" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3672796063712871692" fileName="GeneratePluginSolution_Action.java" startLine="91" startPosition="161" endLine="92" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933354528" fileName="GeneratePluginSolution_Action.java" startLine="92" startPosition="179" endLine="93" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933354533" fileName="GeneratePluginSolution_Action.java" startLine="93" startPosition="150" endLine="94" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933350588" fileName="GeneratePluginSolution_Action.java" startLine="94" startPosition="168" endLine="95" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933350593" fileName="GeneratePluginSolution_Action.java" startLine="95" startPosition="150" endLine="96" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933347041" fileName="GeneratePluginSolution_Action.java" startLine="96" startPosition="168" endLine="97" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933347033" fileName="GeneratePluginSolution_Action.java" startLine="97" startPosition="151" endLine="98" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="668627994181717060" fileName="GeneratePluginSolution_Action.java" startLine="98" startPosition="169" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8717707950933298910" fileName="GeneratePluginSolution_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8717707950933336685" fileName="GeneratePluginSolution_Action.java" startLine="100" startPosition="92" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8717707950933247360" fileName="GeneratePluginSolution_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="668627994181725980" fileName="GeneratePluginSolution_Action.java" startLine="102" startPosition="69" endLine="103" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5049109624534913359" fileName="GeneratePluginSolution_Action.java" startLine="105" startPosition="9" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8717707950933142393" fileName="GeneratePluginSolution_Action.java" startLine="106" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8717707950933142473" fileName="GeneratePluginSolution_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="333900525730210134" fileName="GeneratePluginSolution_Action.java" startLine="108" startPosition="0" endLine="109" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229273143849" fileName="GeneratePluginSolution_Action.java" startLine="109" startPosition="117" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="112" startPosition="45" endLine="113" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="118" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="120" startPosition="66" endLine="121" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="121" startPosition="63" endLine="122" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="122" startPosition="30" endLine="123" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="122" startPosition="30" endLine="123" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="122" startPosition="30" endLine="123" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="123" startPosition="160" endLine="124" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="59" startPosition="95" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="63" startPosition="94" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="67" startPosition="91" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229273048692" fileName="GeneratePluginSolution_Action.java" startLine="79" startPosition="46" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="111" startPosition="27" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="111" startPosition="27" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratePluginSolution_Action#()V" />
+    <nodeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="120" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ljjiw0_a0a41a0f0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="48" startPosition="89" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="48" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="59" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="8717707950933147159" fileName="GeneratePluginSolution_Action.java" startLine="85" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8717707950933147157" fileName="GeneratePluginSolution_Action.java" startLine="83" startPosition="0" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="75" startPosition="96" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="75" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="43" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="52" startPosition="45" endLine="53" endPosition="97" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="68" startPosition="66" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="88" />
+    <scopeInfo nodeId="1229273048693" fileName="GeneratePluginSolution_Action.java" startLine="80" startPosition="22" endLine="81" endPosition="15" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="112" startPosition="45" endLine="113" endPosition="96" />
+    <scopeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="122" startPosition="30" endLine="123" endPosition="160" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="37" startPosition="42" endLine="40" endPosition="41" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="111" startPosition="0" endLine="114" endPosition="7">
+      <varInfo nodeId="8722937377469659497" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="111" startPosition="27" endLine="114" endPosition="7" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="44">
+      <varInfo nodeId="8722937377469659497" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="51" startPosition="27" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="120" startPosition="66" endLine="124" endPosition="24">
+      <varInfo nodeId="668627994181712912" varName="facade" />
+      <varInfo nodeId="668627994181712912" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="668627994181712912" fileName="GeneratePluginSolution_Action.java" startLine="120" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="48" startPosition="89" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="48" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="8722937377469659497" varName="_params" />
+      <varInfo nodeId="8722937377469659497" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="59" startPosition="95" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="59" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="8722937377469659497" varName="_params" />
+      <varInfo nodeId="8722937377469659497" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8717707950933147161" fileName="GeneratePluginSolution_Action.java" startLine="85" startPosition="27" endLine="103" endPosition="54">
+      <varInfo nodeId="8717707950933280188" varName="defaultRoot" />
+      <varInfo nodeId="8717707950933293475" varName="newModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="8717707950933147159" fileName="GeneratePluginSolution_Action.java" startLine="85" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="76" startPosition="9" endLine="110" endPosition="41">
+      <varInfo nodeId="1229272978911" varName="dialog" />
+      <varInfo nodeId="333900525730210135" varName="projectPane" />
+      <varInfo nodeId="1229273034980" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="75" startPosition="96" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="75" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="8722937377469659497" varName="_params" />
+      <varInfo nodeId="8722937377469659497" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="8717707950933147159" fileName="GeneratePluginSolution_Action.java" startLine="84" startPosition="48" endLine="105" endPosition="7" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.GeneratePluginSolution_Action$1" />
+    <unitInfo nodeId="8722937377469659497" fileName="GeneratePluginSolution_Action.java" startLine="34" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.GeneratePluginSolution_Action" />
+  </root>
+  <root nodeRef="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)/8722937377469659543">
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="51" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="14" startPosition="44" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659546" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPaneProjectAddition_ActionGroup#()V" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="141" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="8722937377469659543" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="51" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup" />
   </root>
 </debugInfo>
 

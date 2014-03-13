@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:50efd6f2-8d02-4682-b313-bd69c46e78df(jetbrains.mps.debugger.java.runtime.state.watchables)/3187167456722645007" />
   <root nodeRef="r:50efd6f2-8d02-4682-b313-bd69c46e78df(jetbrains.mps.debugger.java.runtime.state.watchables)/3187167456722649969">
     <nodeInfo nodeId="3243898559544303652" fileName="JavaWatchpointWatchable.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3187167456722649998" fileName="JavaWatchpointWatchable.java" startLine="22" startPosition="116" endLine="23" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -266,6 +265,5 @@
     </scopeInfo>
     <unitInfo nodeId="3187167456722821378" fileName="EventWatchablesCreator.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.watchables.EventWatchablesCreator" />
   </root>
-  <root nodeRef="r:50efd6f2-8d02-4682-b313-bd69c46e78df(jetbrains.mps.debugger.java.runtime.state.watchables)/6108369403997858554" />
 </debugInfo>
 

@@ -39,16 +39,24 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}" />
+    <mkdir dir="${build.layout}/mps-make" />
+    <mkdir dir="${build.layout}/mps-make/META-INF" />
+    <copy todir="${build.layout}/mps-make/META-INF">
+      <fileset file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/mps-make/lib" />
+    <jar destfile="${build.layout}/mps-make/lib/icons.jar">
+      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
+    </jar>
+    <mkdir dir="${build.layout}/mps-make/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake">
       <fileset dir="${mps_home}/plugins/mpsmake" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-make.jar">
+    <jar destfile="${build.layout}/mps-make/lib/mps-make.jar">
       <fileset dir="${build.tmp}/java/out/mps-make" />
       <zipfileset file="${mps_home}/plugins/mpsmake/jetbrains.mps.ide.make.msd" prefix="modules/jetbrains.mps.ide.make" />
       <zipfileset dir="${mps_home}/plugins/mpsmake" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.make" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake" prefix="modules/jetbrains.mps.ide.make/" />
-      <zipfileset file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -84,6 +92,7 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
+      <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />

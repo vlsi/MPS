@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7zk1m5jcagi65uwxpwwolwrfn65vc59" />
+<dependencies version="2" modelHash="-7zk1m5jcagi65uwxpwwolwrfn65vc59">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <common hash="-5wpr4dvzx6mb98v2p91rb2cq63p07qy" dependsOnNodes="true">
+    <dep root="393299394024627213" />
+    <dep root="954830572075912394" />
+    <dep root="954830572075912399" />
+    <dep root="954830572075998495" />
+    <dep root="954830572075998500" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="393299394024627213" name="UnlessStatement" hash="-5ci777j9vn6zkkw8w4j6e0c7hqp7al2" />
+  <source id="954830572075912394" name="MyIfStatement" hash="-95ctt1mkpnxut6ef75da0x1yd6otd27" />
+  <source id="954830572075912399" name="Flow" hash="-3roregn7nu53vdnwkrtcx8a63fgk82g" />
+  <source id="954830572075998495" name="TrueFlow" hash="-b2vgit111ir5r51wtpr9dqni3eeie2d" />
+  <source id="954830572075998500" name="FalseFlow" hash="68fsmi8spwwk5sleoyhb7n8bj1rjnwj" />
+</dependencies>
 

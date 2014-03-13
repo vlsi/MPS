@@ -103,49 +103,49 @@
     <nodeInfo nodeId="1572058823050148161" fileName="XmlConverter.java" startLine="237" startPosition="94" endLine="238" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="241" startPosition="81" endLine="242" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="242" startPosition="63" endLine="243" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="243" startPosition="122" endLine="244" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="243" startPosition="122" endLine="244" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="245" startPosition="42" endLine="246" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="247" startPosition="5" endLine="248" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="251" startPosition="78" endLine="252" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="252" startPosition="63" endLine="253" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="254" startPosition="40" endLine="255" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="254" startPosition="47" endLine="255" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="258" startPosition="94" endLine="259" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="259" startPosition="63" endLine="260" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="261" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="261" startPosition="42" endLine="262" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="262" startPosition="43" endLine="263" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="261" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="261" startPosition="49" endLine="262" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="262" startPosition="50" endLine="263" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="266" startPosition="67" endLine="267" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="267" startPosition="63" endLine="268" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="269" startPosition="43" endLine="270" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="269" startPosition="50" endLine="270" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="273" startPosition="71" endLine="274" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="274" startPosition="63" endLine="275" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="276" startPosition="46" endLine="277" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="276" startPosition="53" endLine="277" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="280" startPosition="71" endLine="281" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="281" startPosition="63" endLine="282" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="283" startPosition="41" endLine="284" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="283" startPosition="48" endLine="284" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="287" startPosition="74" endLine="288" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="288" startPosition="63" endLine="289" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="290" startPosition="44" endLine="291" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="290" startPosition="51" endLine="291" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="294" startPosition="77" endLine="295" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="295" startPosition="63" endLine="296" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="297" startPosition="46" endLine="298" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="297" startPosition="53" endLine="298" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="301" startPosition="67" endLine="302" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="302" startPosition="63" endLine="303" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="304" startPosition="41" endLine="305" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="304" startPosition="48" endLine="305" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="308" startPosition="58" endLine="309" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="309" startPosition="63" endLine="310" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="310" startPosition="117" endLine="311" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -153,32 +153,32 @@
     <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="311" startPosition="32" endLine="312" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="315" startPosition="74" endLine="316" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="316" startPosition="63" endLine="317" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="318" startPosition="40" endLine="319" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="318" startPosition="47" endLine="319" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="322" startPosition="77" endLine="323" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="323" startPosition="63" endLine="324" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="325" startPosition="44" endLine="326" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="325" startPosition="51" endLine="326" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="329" startPosition="80" endLine="330" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="330" startPosition="63" endLine="331" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="332" startPosition="46" endLine="333" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="332" startPosition="53" endLine="333" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="336" startPosition="70" endLine="337" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="337" startPosition="63" endLine="338" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="339" startPosition="40" endLine="340" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="339" startPosition="47" endLine="340" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="343" startPosition="68" endLine="344" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="344" startPosition="63" endLine="345" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="346" startPosition="5" endLine="347" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="348" startPosition="45" endLine="349" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="348" startPosition="52" endLine="349" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="350" startPosition="5" endLine="351" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="262" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="262" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2518201674535716044" fileName="XmlConverter.java" startLine="47" startPosition="167" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8404865931441664078" fileName="XmlConverter.java" startLine="51" startPosition="92" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4462860465182253947" fileName="XmlConverter.java" startLine="59" startPosition="146" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -193,7 +193,7 @@
     <nodeInfo nodeId="8404865931403294446" fileName="XmlConverter.java" startLine="170" startPosition="7" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8404865931406956210" fileName="XmlConverter.java" startLine="184" startPosition="82" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8404865931406956299" fileName="XmlConverter.java" startLine="211" startPosition="5" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="244" startPosition="44" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="244" startPosition="51" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5867793774239589703" fileName="XmlConverter.java" startLine="95" startPosition="25" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8404865931404097241" fileName="XmlConverter.java" startLine="218" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toHex4#(C)Ljava/lang/String;" />
     <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="243" startPosition="122" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -258,19 +258,19 @@
     <scopeInfo nodeId="8404865931406956237" fileName="XmlConverter.java" startLine="189" startPosition="23" endLine="190" endPosition="105" />
     <scopeInfo nodeId="8404865931406956303" fileName="XmlConverter.java" startLine="212" startPosition="22" endLine="213" endPosition="108" />
     <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="245" startPosition="42" endLine="246" endPosition="30" />
-    <scopeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="40" />
-    <scopeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="43" />
-    <scopeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="46" />
-    <scopeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="41" />
-    <scopeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="44" />
-    <scopeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="46" />
-    <scopeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="41" />
+    <scopeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="47" />
+    <scopeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="50" />
+    <scopeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="53" />
+    <scopeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="48" />
+    <scopeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="51" />
+    <scopeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="53" />
+    <scopeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="48" />
     <scopeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="310" startPosition="117" endLine="311" endPosition="32" />
-    <scopeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="40" />
-    <scopeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="44" />
-    <scopeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="46" />
-    <scopeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="40" />
-    <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="45" />
+    <scopeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="47" />
+    <scopeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="51" />
+    <scopeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="53" />
+    <scopeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="47" />
+    <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="52" />
     <scopeInfo nodeId="4462860465182239599" fileName="XmlConverter.java" startLine="82" startPosition="52" endLine="84" endPosition="118">
       <varInfo nodeId="5054660862256789537" varName="pi" />
     </scopeInfo>
@@ -289,7 +289,7 @@
     <scopeInfo nodeId="8404865931404097244" fileName="XmlConverter.java" startLine="218" startPosition="40" endLine="220" endPosition="44">
       <varInfo nodeId="8404865931404113171" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="262" endPosition="43" />
+    <scopeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="262" endPosition="50" />
     <scopeInfo nodeId="2518201674535716044" fileName="XmlConverter.java" startLine="47" startPosition="167" endLine="50" endPosition="5">
       <varInfo nodeId="2518201674535716046" varName="a" />
     </scopeInfo>
@@ -305,7 +305,7 @@
     <scopeInfo nodeId="5054660862256696865" fileName="XmlConverter.java" startLine="121" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="5054660862256696865" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="244" startPosition="44" endLine="247" endPosition="5">
+    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="244" startPosition="51" endLine="247" endPosition="5">
       <varInfo nodeId="8404865931441854891" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="346" startPosition="5" endLine="349" endPosition="37">

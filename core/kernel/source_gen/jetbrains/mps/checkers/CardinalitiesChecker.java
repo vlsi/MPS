@@ -17,7 +17,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
   }
 
   @Override
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
+  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext context) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
     for (SNode link : ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(concept))) {

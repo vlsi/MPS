@@ -34,7 +34,6 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -79,7 +78,7 @@ public final class TemplateProcessor {
   @NotNull
   public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
-    IGeneratorLogger logger = myGenerator.getLogger();
+    IGeneratorLogger logger = getEnvironment().getLogger();
     if (myGenerator.isIncremental()) {
       // turn off tracing
       NodeReadEventsCaster.setNodesReadListener(null);
@@ -105,7 +104,7 @@ public final class TemplateProcessor {
           logger.error("try to increase JVM stack size (-Xss option)");
           logger.error("to get more diagnostic generate model with the 'save transient models' option");
         }
-        myGenerator.showErrorMessage(context.getInput(), templateNode, "couldn't process template");
+        logger.error(templateNode.getReference(), "couldn't process template", GeneratorUtil.describeInput(context));
         throw new GenerationFailureException(e);
       }
     } finally {
@@ -315,9 +314,6 @@ public final class TemplateProcessor {
     }
     protected final IGeneratorLogger getLogger() {
       return getGenerator().getLogger();
-    }
-    protected final void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-      getGenerator().showErrorMessage(inputNode, templateNode, ruleNode, message);
     }
     protected final TemplateGenerator getGenerator() {
       return myTemplateProcessor.myGenerator;
@@ -617,8 +613,7 @@ public final class TemplateProcessor {
         } catch (TemplateProcessingFailureException ex) {
           throw ex;
         } catch (GenerationException e) {
-          showErrorMessage(null, switchPtr.resolve(MPSModuleRepository.getInstance()), macro,
-              "internal error in switch.applyDefault: " + e.toString());
+          getLogger().error(switchPtr, "internal error in switch.applyDefault: " + e.toString(), GeneratorUtil.describe(macro, "macro"));
         }
         if (collection == null) {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
@@ -659,8 +654,8 @@ public final class TemplateProcessor {
     }
 
     protected abstract SNode getInvokedTemplate(SNode macro);
-    protected abstract TemplateContext prepareContext(SNode macro, SNode invokedTemplate, TemplateContext templateContext,
-        SNode newInputNode);
+    protected abstract TemplateContext prepareContext(@NotNull SNode macro, @NotNull SNode invokedTemplate, @NotNull TemplateContext templateContext,
+        @NotNull SNode newInputNode);
 
     @NotNull
     @Override
@@ -717,16 +712,17 @@ public final class TemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(SNode macro, SNode invokedTemplate, TemplateContext templateContext, SNode newInputNode) {
+    protected TemplateContext prepareContext(@NotNull SNode macro, @NotNull SNode invokedTemplate, @NotNull TemplateContext templateContext, @NotNull SNode newInputNode) {
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(invokedTemplate);
       if (parameterNames == null) {
-        showErrorMessage(newInputNode, null, macro, "error processing $INCLUDE$: target template is broken");
+        getLogger().error(macro.getReference(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describe(newInputNode, "input node"));
         return null;
       }
 
       for (String name : parameterNames) {
         if (!templateContext.hasVariable(name)) {
-          showErrorMessage(newInputNode, null, macro, "error processing $INCLUDE$: parameter `" + name + "' is missing");
+          getLogger().error(macro.getReference(), String.format("error processing $INCLUDE$: parameter '%s' is missing", name),
+              GeneratorUtil.describe(newInputNode, "input node"));
         }
       }
       return templateContext.subContext(newInputNode);
@@ -746,7 +742,7 @@ public final class TemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(SNode macro, SNode invokedTemplate, TemplateContext templateContext, SNode newInputNode) {
+    protected TemplateContext prepareContext(@NotNull SNode macro, @NotNull SNode invokedTemplate, @NotNull TemplateContext templateContext, @NotNull SNode newInputNode) {
       return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
     }
   }

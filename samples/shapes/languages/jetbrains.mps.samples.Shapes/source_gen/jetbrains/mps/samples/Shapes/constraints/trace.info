@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
+  <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/1082824515534700364">
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="28" startPosition="62" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1082824515534702530" fileName="Square_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515534801735" fileName="Square_Constraints.java" startLine="30" startPosition="61" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="29" startPosition="37" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Square_Constraints#()V" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnSetter#()Z" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="20" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" />
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="1082824515534700465" fileName="Square_Constraints.java" startLine="29" startPosition="37" endLine="31" endPosition="102" />
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="28" startPosition="62" endLine="31" endPosition="102">
+      <varInfo nodeId="1082824515534700364" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1082824515534700364" varName="node" />
+      <varInfo nodeId="1082824515534700364" varName="propertyValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="19" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="1082824515534700364" varName="properties" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="21" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.samples.Shapes.constraints.Square_Constraints$1" />
+    <unitInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.Square_Constraints" />
+  </root>
+  <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/1082824515534982564">
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="28" startPosition="62" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1082824515534982627" fileName="Circle_Constraints.java" startLine="29" startPosition="39" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515534988233" fileName="Circle_Constraints.java" startLine="30" startPosition="62" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="29" startPosition="39" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Circle_Constraints#()V" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnSetter#()Z" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="20" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" />
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="1082824515534982619" fileName="Circle_Constraints.java" startLine="29" startPosition="39" endLine="31" endPosition="104" />
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="28" startPosition="62" endLine="31" endPosition="104">
+      <varInfo nodeId="1082824515534982564" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1082824515534982564" varName="node" />
+      <varInfo nodeId="1082824515534982564" varName="propertyValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="19" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="1082824515534982564" varName="properties" />
+    </scopeInfo>
+    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="21" startPosition="33" endLine="33" endPosition="5" unitName="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints$1" />
+    <unitInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints" />
+  </root>
   <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/4191445539799302835">
     <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="25" startPosition="39" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="30" startPosition="83" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -47,6 +113,5 @@
     <unitInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="32" startPosition="32" endLine="57" endPosition="5" unitName="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$1" />
     <unitInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="24" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints" />
   </root>
-  <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/5898776707557564578" />
 </debugInfo>
 

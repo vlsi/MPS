@@ -223,7 +223,6 @@
     <unitInfo nodeId="1036071220598709521" fileName="ModuleSymbolicSuite.java" startLine="102" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite$DelegatingRunner" />
     <unitInfo nodeId="1036071220598694533" fileName="ModuleSymbolicSuite.java" startLine="23" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
   </root>
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/1209415647739046624" />
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/1884528325076767136">
     <nodeInfo nodeId="7535322034160451297" fileName="MpsTestsSuite.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_LIBRARY" />
     <nodeInfo nodeId="149846544987197579" fileName="MpsTestsSuite.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_MACRO_PREFIX" />
@@ -431,7 +430,6 @@
     <unitInfo nodeId="1884528325076767440" fileName="MpsTestsSuite.java" startLine="138" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTestsSuite$DelegatingRunner" />
     <unitInfo nodeId="1884528325076767136" fileName="MpsTestsSuite.java" startLine="37" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTestsSuite" />
   </root>
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/2105519997961403375" />
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/2926331382166450989">
     <nodeInfo nodeId="5294483648489407738" fileName="ProjectTestsSupport.java" startLine="18" startPosition="143" endLine="19" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5294483648489407751" fileName="ProjectTestsSupport.java" startLine="20" startPosition="26" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -874,10 +872,6 @@
     <unitInfo nodeId="4681254579908013070" fileName="ContextProjextSupport.java" startLine="153" startPosition="46" endLine="160" endPosition="5" unitName="jetbrains.mps.testbench.junit.runners.ContextProjextSupport$2" />
     <unitInfo nodeId="4681254579907455600" fileName="ContextProjextSupport.java" startLine="26" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ContextProjextSupport" />
   </root>
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6219666460876673637" />
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6791703723376742374" />
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6791703723376744293" />
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/7906452883299897332" />
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/9085186120773985667">
     <unitInfo nodeId="9085186120773985667" fileName="misc.xml" startLine="1" startPosition="0" endLine="11" endPosition="10" unitName="jetbrains.mps.testbench.junit.runners.misc" />
   </root>

@@ -1066,9 +1066,9 @@
     <nodeInfo nodeId="6984624797025347753" fileName="ModuleFinder.java" startLine="56" startPosition="38" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="62" startPosition="83" endLine="63" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="63" startPosition="63" endLine="64" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="64" startPosition="135" endLine="65" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="64" startPosition="135" endLine="65" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="65" startPosition="40" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="64" startPosition="135" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="64" startPosition="135" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="65" startPosition="47" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6984624797025347797" fileName="ModuleFinder.java" startLine="32" startPosition="61" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2887318893676393411" fileName="ModuleFinder.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2887318893676484798" fileName="ModuleFinder.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -1084,7 +1084,7 @@
     <scopeInfo nodeId="2887318893676393412" fileName="ModuleFinder.java" startLine="48" startPosition="40" endLine="49" endPosition="26" />
     <scopeInfo nodeId="2887318893676484799" fileName="ModuleFinder.java" startLine="52" startPosition="39" endLine="53" endPosition="18" />
     <scopeInfo nodeId="2887318893676526564" fileName="ModuleFinder.java" startLine="56" startPosition="38" endLine="57" endPosition="67" />
-    <scopeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="64" startPosition="135" endLine="65" endPosition="40" />
+    <scopeInfo nodeId="6984624797025347754" fileName="ModuleFinder.java" startLine="64" startPosition="135" endLine="65" endPosition="47" />
     <scopeInfo nodeId="2887318893675885988" fileName="ModuleFinder.java" startLine="23" startPosition="26" endLine="25" endPosition="59" />
     <scopeInfo nodeId="6984624797025347821" fileName="ModuleFinder.java" startLine="36" startPosition="33" endLine="38" endPosition="22" />
     <scopeInfo nodeId="6984624797025347854" fileName="ModuleFinder.java" startLine="41" startPosition="26" endLine="43" endPosition="22" />

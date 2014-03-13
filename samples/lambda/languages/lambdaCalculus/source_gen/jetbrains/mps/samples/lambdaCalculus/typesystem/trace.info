@@ -598,9 +598,6 @@
     </scopeInfo>
     <unitInfo nodeId="6997567109318694516" fileName="typeof_AbstractionVarRef_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_AbstractionVarRef_InferenceRule" />
   </root>
-  <root nodeRef="r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)/8658296822746478469" />
-  <root nodeRef="r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)/8658296822746838466" />
-  <root nodeRef="r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)/8658296822746904422" />
   <root nodeRef="r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)/8658296822747668221">
     <nodeInfo nodeId="8658296822747668239" fileName="typeof_LambdaExpression_InferenceRule.java" startLine="17" startPosition="123" endLine="18" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8658296822747668221" fileName="typeof_LambdaExpression_InferenceRule.java" startLine="21" startPosition="46" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

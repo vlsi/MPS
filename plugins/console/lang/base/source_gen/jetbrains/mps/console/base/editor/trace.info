@@ -63,185 +63,187 @@
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="26" startPosition="97" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="28" startPosition="28" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="30" startPosition="5" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="31" startPosition="44" endLine="32" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="32" startPosition="74" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="34" startPosition="5" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="35" startPosition="40" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="35" startPosition="40" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="30" startPosition="5" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="31" startPosition="23" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="32" startPosition="35" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="33" startPosition="71" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="35" startPosition="5" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="36" startPosition="40" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="36" startPosition="40" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="40" startPosition="80" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="40" startPosition="80" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="45" startPosition="88" endLine="46" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="46" startPosition="132" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="47" startPosition="47" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="48" startPosition="34" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="49" startPosition="58" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="50" startPosition="40" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="51" startPosition="34" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="55" startPosition="88" endLine="56" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="56" startPosition="116" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="57" startPosition="47" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="58" startPosition="34" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="59" startPosition="58" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="60" startPosition="40" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="65" startPosition="88" endLine="66" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="66" startPosition="122" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="67" startPosition="47" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="68" startPosition="34" endLine="69" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="69" startPosition="58" endLine="70" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="70" startPosition="40" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="71" startPosition="34" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="75" startPosition="88" endLine="76" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="76" startPosition="137" endLine="77" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="77" startPosition="47" endLine="78" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="78" startPosition="34" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="79" startPosition="58" endLine="80" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="80" startPosition="40" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="81" startPosition="34" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="85" startPosition="87" endLine="86" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="86" startPosition="81" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="87" startPosition="32" endLine="88" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="88" startPosition="45" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="89" startPosition="26" endLine="90" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="91" startPosition="39" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="93" startPosition="5" endLine="94" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="94" startPosition="73" endLine="95" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="95" startPosition="57" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="97" startPosition="35" endLine="98" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="98" startPosition="72" endLine="99" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="99" startPosition="78" endLine="100" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="101" startPosition="10" endLine="102" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="105" startPosition="87" endLine="106" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="106" startPosition="81" endLine="107" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="107" startPosition="38" endLine="108" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="108" startPosition="51" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="109" startPosition="26" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="111" startPosition="39" endLine="112" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="113" startPosition="5" endLine="114" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="115" startPosition="5" endLine="116" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="116" startPosition="44" endLine="117" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="117" startPosition="74" endLine="118" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="119" startPosition="5" endLine="120" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="120" startPosition="40" endLine="121" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="121" startPosition="73" endLine="122" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="122" startPosition="57" endLine="123" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="124" startPosition="35" endLine="125" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="125" startPosition="72" endLine="126" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="126" startPosition="78" endLine="127" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="128" startPosition="10" endLine="129" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="42" startPosition="80" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="46" startPosition="88" endLine="47" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="47" startPosition="132" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="48" startPosition="47" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="49" startPosition="34" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="50" startPosition="58" endLine="51" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="51" startPosition="40" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="57" startPosition="116" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="58" startPosition="47" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="59" startPosition="34" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="61" startPosition="40" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="62" startPosition="34" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="66" startPosition="88" endLine="67" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="67" startPosition="122" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="68" startPosition="47" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="70" startPosition="58" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="71" startPosition="40" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="76" startPosition="88" endLine="77" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="77" startPosition="137" endLine="78" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="78" startPosition="47" endLine="79" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="79" startPosition="34" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="80" startPosition="58" endLine="81" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="81" startPosition="40" endLine="82" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="82" startPosition="34" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="86" startPosition="87" endLine="87" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="88" startPosition="32" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="89" startPosition="45" endLine="90" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="90" startPosition="26" endLine="91" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="92" startPosition="39" endLine="93" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="94" startPosition="5" endLine="95" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="95" startPosition="73" endLine="96" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="96" startPosition="57" endLine="97" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="98" startPosition="35" endLine="99" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="99" startPosition="72" endLine="100" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="100" startPosition="78" endLine="101" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="102" startPosition="10" endLine="103" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="106" startPosition="87" endLine="107" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="107" startPosition="81" endLine="108" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="108" startPosition="38" endLine="109" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="109" startPosition="51" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="110" startPosition="26" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="112" startPosition="39" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="114" startPosition="5" endLine="115" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="116" startPosition="5" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="117" startPosition="23" endLine="118" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="118" startPosition="35" endLine="119" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="119" startPosition="71" endLine="120" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="121" startPosition="5" endLine="122" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="122" startPosition="40" endLine="123" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="123" startPosition="73" endLine="124" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="124" startPosition="57" endLine="125" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="126" startPosition="35" endLine="127" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="127" startPosition="72" endLine="128" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="128" startPosition="78" endLine="129" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="130" startPosition="10" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="90" startPosition="58" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="110" startPosition="58" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="29" startPosition="34" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="114" startPosition="34" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="96" startPosition="59" endLine="102" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="123" startPosition="59" endLine="129" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="45" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="55" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="65" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="25" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_drvoix_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="85" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_drvoix_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="105" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_drvoix_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="91" startPosition="58" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="111" startPosition="58" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="29" startPosition="34" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="97" startPosition="59" endLine="103" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="115" startPosition="34" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="125" startPosition="59" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="46" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="66" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="76" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drvoix_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="86" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_drvoix_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="25" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_drvoix_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="106" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_drvoix_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="35" startPosition="40" endLine="36" endPosition="81" />
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="81" />
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="36" startPosition="40" endLine="37" endPosition="81" />
     <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="81" />
     <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="81" />
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="80" />
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="40" startPosition="80" endLine="41" endPosition="80" />
-    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="91" startPosition="39" endLine="92" endPosition="36" />
-    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="111" startPosition="39" endLine="112" endPosition="42" />
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="81" />
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="80" />
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="80" />
+    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="92" startPosition="39" endLine="93" endPosition="36" />
+    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="112" startPosition="39" endLine="113" endPosition="42" />
     <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1583916890557930443" varName="editorContext" />
       <varInfo nodeId="1583916890557930443" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="30" startPosition="5" endLine="33" endPosition="34">
-      <varInfo nodeId="1583916890557930443" varName="priorityGroup" />
-    </scopeInfo>
-    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="97" startPosition="35" endLine="100" endPosition="105">
+    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="98" startPosition="35" endLine="101" endPosition="105">
       <varInfo nodeId="1583916890557947366" varName="manager" />
       <varInfo nodeId="1583916890557947366" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="115" startPosition="5" endLine="118" endPosition="37">
-      <varInfo nodeId="1583916890557947371" varName="priorityGroup" />
-    </scopeInfo>
-    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="124" startPosition="35" endLine="127" endPosition="105">
+    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="126" startPosition="35" endLine="129" endPosition="105">
       <varInfo nodeId="1583916890557947371" varName="manager" />
       <varInfo nodeId="1583916890557947371" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="45" startPosition="88" endLine="52" endPosition="22">
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="30" startPosition="5" endLine="34" endPosition="31">
+      <varInfo nodeId="1583916890557930443" varName="styleToPut" />
+    </scopeInfo>
+    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="116" startPosition="5" endLine="120" endPosition="34">
+      <varInfo nodeId="1583916890557947371" varName="styleToPut" />
+    </scopeInfo>
+    <scopeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="46" startPosition="88" endLine="53" endPosition="22">
       <varInfo nodeId="6783870023039364043" varName="editorCell" />
       <varInfo nodeId="6783870023039364043" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="55" startPosition="88" endLine="62" endPosition="22">
+    <scopeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="56" startPosition="88" endLine="63" endPosition="22">
       <varInfo nodeId="6783870023039364047" varName="editorCell" />
       <varInfo nodeId="6783870023039364047" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="65" startPosition="88" endLine="72" endPosition="22">
+    <scopeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="66" startPosition="88" endLine="73" endPosition="22">
       <varInfo nodeId="6783870023039464457" varName="editorCell" />
       <varInfo nodeId="6783870023039464457" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="75" startPosition="88" endLine="82" endPosition="22">
+    <scopeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="76" startPosition="88" endLine="83" endPosition="22">
       <varInfo nodeId="2388219800763587730" varName="editorCell" />
       <varInfo nodeId="2388219800763587730" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="45" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="6783870023039364043" fileName="ConsoleRoot_Editor.java" startLine="46" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="6783870023039364043" varName="editorContext" />
       <varInfo nodeId="6783870023039364043" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="55" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6783870023039364047" fileName="ConsoleRoot_Editor.java" startLine="56" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6783870023039364047" varName="editorContext" />
       <varInfo nodeId="6783870023039364047" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="65" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="6783870023039464457" fileName="ConsoleRoot_Editor.java" startLine="66" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="6783870023039464457" varName="editorContext" />
       <varInfo nodeId="6783870023039464457" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="75" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="2388219800763587730" fileName="ConsoleRoot_Editor.java" startLine="76" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="2388219800763587730" varName="editorContext" />
       <varInfo nodeId="2388219800763587730" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="25" startPosition="89" endLine="42" endPosition="22">
-      <varInfo nodeId="1583916890557930443" varName="editorCell" />
-      <varInfo nodeId="1583916890557930443" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="85" startPosition="87" endLine="102" endPosition="22">
+    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="86" startPosition="87" endLine="103" endPosition="22">
       <varInfo nodeId="1583916890557947366" varName="attributeConcept" />
       <varInfo nodeId="1583916890557947366" varName="attributeKind" />
       <varInfo nodeId="1583916890557947366" varName="editorCell" />
       <varInfo nodeId="1583916890557947366" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="25" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="1583916890557930443" varName="editorContext" />
-      <varInfo nodeId="1583916890557930443" varName="node" />
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="25" startPosition="89" endLine="43" endPosition="22">
+      <varInfo nodeId="1583916890557930443" varName="editorCell" />
+      <varInfo nodeId="1583916890557930443" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="85" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="1583916890557947366" fileName="ConsoleRoot_Editor.java" startLine="86" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="1583916890557947366" varName="editorContext" />
       <varInfo nodeId="1583916890557947366" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="105" startPosition="87" endLine="129" endPosition="22">
+    <scopeInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="25" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1583916890557930443" varName="editorContext" />
+      <varInfo nodeId="1583916890557930443" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="106" startPosition="87" endLine="131" endPosition="22">
       <varInfo nodeId="1583916890557947371" varName="attributeConcept" />
       <varInfo nodeId="1583916890557947371" varName="attributeKind" />
       <varInfo nodeId="1583916890557947371" varName="editorCell" />
       <varInfo nodeId="1583916890557947371" varName="provider" />
       <varInfo nodeId="1583916890557947371" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="105" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="1583916890557947371" fileName="ConsoleRoot_Editor.java" startLine="106" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="1583916890557947371" varName="editorContext" />
       <varInfo nodeId="1583916890557947371" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="20" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.console.base.editor.ConsoleRoot_Editor" />
+    <unitInfo nodeId="1583916890557930443" fileName="ConsoleRoot_Editor.java" startLine="20" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.console.base.editor.ConsoleRoot_Editor" />
   </root>
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/2348043250037292762">
     <nodeInfo nodeId="2348043250037292762" fileName="IClickable_Editor.java" startLine="11" startPosition="79" endLine="12" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

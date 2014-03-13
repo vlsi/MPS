@@ -294,7 +294,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+      getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
     }
   }
 
@@ -332,7 +332,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         } catch (GenerationException e) {
           if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
           if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-          showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+          getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
         }
       }
     }
@@ -345,6 +345,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      environment.getTracer().trace(null, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
       for (SNode outputNode : outputNodes) {
         registerRoot(new GeneratedRootDescriptor(outputNode, rule.getRuleNode()));
         setChanged();
@@ -367,6 +368,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (outputNodes == null) {
         return;
       }
+
+      environment.getTracer().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
 
       final boolean inputIsRoot = inputNode.getParent() == null;
       final boolean preserveInputRoot = inputIsRoot && rule.keepSourceRoot();
@@ -440,7 +443,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
     if (builder != null) {
       if (builder.isUnchanged()) {
-        if (myDeltaBuilder != null) {
+        if (myDeltaBuilder != null && inputNode != null) {
           // Unchanged roots shall not participate in further generation steps, hence
           // we need to tell DeltaBuilder to forget it.
           SNode inputRoot = inputNode.getContainingRoot();
@@ -544,6 +547,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
           Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
           if (outputNodes != null) {
+            IGenerationTracer tracer = env.getTracer();
+            SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
+            tracer.trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
             return outputNodes;
           }
         }
@@ -663,12 +669,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   BlockedReductionsData getBlockedReductionsData() {
     if (myReductionData == null) {
-      Object blockedReductions = getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
-      if (blockedReductions == null) {
-        blockedReductions = new BlockedReductionsData();
-        getGeneratorSessionContext().putStepObject(BlockedReductionsData.KEY, blockedReductions);
-      }
-      myReductionData = (BlockedReductionsData) blockedReductions;
+      myReductionData = BlockedReductionsData.getStepData(getGeneratorSessionContext());
     }
     return myReductionData;
   }
@@ -798,7 +799,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
       String applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) {
-        myEnvironment.getGenerator().showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
+        myEnvironment.getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
         return false;
       }
 
@@ -809,7 +810,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } catch (GenerationFailureException ex) {
         throw ex;
       } catch (GenerationException e) {
-        myEnvironment.getGenerator().showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+        myEnvironment.getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
       }
       return false;
     }
@@ -880,7 +881,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       try {
         visitInputNode(inputRootNode);
       } finally {
-        myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
+        myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
         myDeltaBuilder.leaveInputRoot(inputRootNode);
       }
       // for now, registerRoot shall go *after* leaveInputRoot, as deltaBuilder expects CopyRoot to be full of replacing nodes
@@ -905,7 +906,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             visitInputNode(inputChildNode);
           }
         } finally {
-          myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
+          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
         }
       }
     }

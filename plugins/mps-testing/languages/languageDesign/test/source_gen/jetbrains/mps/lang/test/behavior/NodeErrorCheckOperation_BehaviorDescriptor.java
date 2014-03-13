@@ -4,28 +4,20 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeErrorCheckOperation_BehaviorDescriptor extends NodeRuleCheckOperation_BehaviorDescriptor {
+public class NodeErrorCheckOperation_BehaviorDescriptor extends AbstractNodeErrorCheckOperation_BehaviorDescriptor {
   public NodeErrorCheckOperation_BehaviorDescriptor() {
   }
 
-  public void virtual_attachReference_8489045168660953479(SNode thisNode, SNode reference) {
-    NodeErrorCheckOperation_Behavior.virtual_attachReference_8489045168660953479(thisNode, reference);
+  public void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
+    NodeErrorCheckOperation_Behavior.virtual_attachReference_2893471348147987863(thisNode, reference);
   }
 
-  public boolean virtual_canAttachReference_1334460907022490922(SNode thisNode, SNode reference) {
-    return NodeErrorCheckOperation_Behavior.virtual_canAttachReference_1334460907022490922(thisNode, reference);
+  public boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference) {
+    return NodeErrorCheckOperation_Behavior.virtual_canAttachReference_2893471348147804024(thisNode, reference);
   }
 
-  public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
-    return NodeErrorCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
-  }
-
-  public SNode virtual_getReferencedRuleNode_5872607264946106205(SNode thisNode) {
-    return NodeErrorCheckOperation_Behavior.virtual_getReferencedRuleNode_5872607264946106205(thisNode);
-  }
-
-  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    NodeErrorCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
+  public SNode virtual_getReference_8333855927540237654(SNode thisNode) {
+    return NodeErrorCheckOperation_Behavior.virtual_getReference_8333855927540237654(thisNode);
   }
 
   @Override

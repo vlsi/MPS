@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package jetbrains.mps.messages;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Priority;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Kostik
@@ -25,19 +25,15 @@ import org.jetbrains.annotations.Nullable;
 public enum MessageKind {
   INFORMATION, WARNING, ERROR;
 
-  @Nullable
+  @NotNull
   public static MessageKind fromPriority(Priority level) {
-    if (level.equals(Level.FATAL)) {
-      return MessageKind.ERROR;
-    } else if (level.equals(Level.ERROR)) {
+    if (level.equals(Level.FATAL) || level.equals(Level.ERROR)) {
       return MessageKind.ERROR;
     } else if (level.equals(Level.WARN)) {
       return MessageKind.WARNING;
-    } else if (level.equals(Level.INFO)) {
-      return MessageKind.INFORMATION;
-    } else if (level.equals(Level.DEBUG)) {
+    } else if (level.equals(Level.INFO) || level.equals(Level.DEBUG)) {
       return MessageKind.INFORMATION;
     }
-    return null;
+    return MessageKind.ERROR;
   }
 }

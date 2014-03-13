@@ -700,7 +700,7 @@ public class QueriesGenerated {
   private static SNode createSNotationStyleColor_r28yhp_a0a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationStyleColor", null, false);
-    n1.setProperty("kind", (String) p0);
+    n1.setProperty("kind", String.valueOf(p0));
     return n1;
   }
 
@@ -708,7 +708,7 @@ public class QueriesGenerated {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationStyleContent", null, false);
     {
-      n1.setProperty("kind", (String) p0);
+      n1.setProperty("kind", String.valueOf(p0));
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.notation.structure.SNotationPart", null, false);
       n1.addChild("content", n2);
     }

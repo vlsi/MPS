@@ -406,10 +406,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return false;
   }
 
-  public boolean isTransientModelToKeep(SModel model) {
-    return getModule().isModelToKeep(model);
-  }
-
   public void clearTransientModels() {
     getModule().clearUnused();
   }

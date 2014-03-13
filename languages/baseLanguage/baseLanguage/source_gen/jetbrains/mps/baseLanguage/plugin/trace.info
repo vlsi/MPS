@@ -56,7 +56,5 @@
     <unitInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="12" startPosition="40" endLine="19" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility$1" />
     <unitInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)/6648795410103967073" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)/6648795410103987945" />
 </debugInfo>
 

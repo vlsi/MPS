@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.smodel.event;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
+@Immutable
 public class SModelImportEvent extends SModelEvent {
-  private SModelReference myModelReference;
-  private boolean myAdded;
+  private final SModelReference myModelReference;
+  private final boolean myAdded;
 
   public SModelImportEvent(SModel model, SModelReference modelReference, boolean added) {
     super(model);
@@ -44,7 +46,6 @@ public class SModelImportEvent extends SModelEvent {
 
   @Override
   public void accept(SModelEventVisitor visitor) {
-    //todo add method to the Visitor class
-//    visitor.visitRootEvent(this);
+    visitor.visitImportEvent(this);
   }
 }

@@ -14,15 +14,17 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 
@@ -68,7 +70,7 @@ public class ReducedMakeFacetConfiguration {
     return MapSequence.fromMap(sources).get(filePath);
   }
 
-  public IScriptController configureFacets() {
+  public IScriptController configureFacets(final MakeSession makeSession) {
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
     settings.setIncremental(true);
     settings.setIncrementalUseCache(false);
@@ -79,22 +81,15 @@ public class ReducedMakeFacetConfiguration {
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(pp, toExecute, input);
 
-        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-        // don't do rebuild all 
-        vars._2(rebuild);
-
-        Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
-        params._1(optBuilder);
+        // FIXME rebuild is actually part of MakeSession, not of this RMFC class 
+        new GenerateFacetInitializer(makeSession).cleanMake(rebuild).setGenerationOptions(optBuilder).populate(pp);
 
         Tuples._1<Boolean> skipCopyTraceinfo = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo"), Object.class);
         if (skipCopyTraceinfo != null) {
           skipCopyTraceinfo._0(true);
         }
 
-        Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), Object.class);
-        if (compileProps != null) {
-          compileProps._1(true);
-        }
+        new JavaCompileFacetInitializer().skipCompilation(true).populate(pp);
 
         Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>> report = (Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>>) pp.properties(new ITarget.Name("jetbrains.mps.make.reduced.ReportFiles.report"), Object.class);
         report._0(writtenFiles);
@@ -105,16 +100,15 @@ public class ReducedMakeFacetConfiguration {
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.make.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
 
-        Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), Object.class);
-        skipReconcile._0(true);
-
+        MakeFacetInitializer makeFacetInit = new MakeFacetInitializer();
+        makeFacetInit.skipReconcile(true);
         // override solution's output path 
-        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
-        pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+        makeFacetInit.setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             return outputPathRedirects.getRedirect(path);
           }
         });
+        makeFacetInit.populate(pp);
       }
     };
   }

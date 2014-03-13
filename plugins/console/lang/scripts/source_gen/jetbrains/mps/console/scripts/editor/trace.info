@@ -120,7 +120,6 @@
     <unitInfo nodeId="1734392475491228961" fileName="Execute_Editor.java" startLine="54" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.console.scripts.editor.Execute_Editor$_Inline_7wrlcr_a1a" />
     <unitInfo nodeId="1734392475491228956" fileName="Execute_Editor.java" startLine="17" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.console.scripts.editor.Execute_Editor" />
   </root>
-  <root nodeRef="r:9fe44883-19b9-49f5-b65d-10b7b410436b(jetbrains.mps.console.scripts.editor)/1734392475491521607" />
   <root nodeRef="r:9fe44883-19b9-49f5-b65d-10b7b410436b(jetbrains.mps.console.scripts.editor)/1734392475491521612">
     <nodeInfo nodeId="1734392475491521612" fileName="ConsoleScript_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1734392475491521612" fileName="ConsoleScript_Editor.java" startLine="33" startPosition="89" endLine="34" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

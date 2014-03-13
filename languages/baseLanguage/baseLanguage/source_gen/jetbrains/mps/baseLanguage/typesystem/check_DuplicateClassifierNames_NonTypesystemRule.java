@@ -8,14 +8,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -27,15 +31,44 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
     if ((name == null || name.length() == 0)) {
       return;
     }
-    if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(classifier), "jetbrains.mps.baseLanguage.structure.Classifier")).any(new IWhereFilter<SNode>() {
+    Iterable<SNode> siblingClassifiers;
+    SNode parentClassifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    if ((parentClassifier == null)) {
+      siblingClassifiers = SModelOperations.getRoots(SNodeOperations.getModel(classifier), "jetbrains.mps.baseLanguage.structure.Classifier");
+    } else {
+      if (eq_orvnxv_a0a0a4a1(SPropertyOperations.getString(parentClassifier, "name"), SPropertyOperations.getString(classifier, "name"))) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "The nested type '" + SPropertyOperations.getString(classifier, "name") + "' cannot hide an enclosing type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2654404125184154445", null, errorTarget);
+        }
+      }
+      siblingClassifiers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentClassifier, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+        }
+      });
+    }
+    if (Sequence.fromIterable(siblingClassifiers).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != classifier && SPropertyOperations.hasValue(it, "name", name);
       }
     })) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("name");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Duplicated name of classifier '" + name + "' in model", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7469468981580406086", null, errorTarget);
+      if ((parentClassifier == null)) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget("name");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Duplicated name of classifier '" + name + "' in model", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7469468981580406086", null, errorTarget);
+        }
+      } else {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget("name");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Duplicated name of nested classifier '" + name, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2654404125185755179", null, errorTarget);
+        }
       }
     }
   }
@@ -53,5 +86,9 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_orvnxv_a0a0a4a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,20 @@
  */
 package jetbrains.mps.smodel.event;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author Kostik
  */
+@Immutable
 public class SModelChildEvent extends SModelEvent {
-  private boolean myAdded;
-  private SNode myParent;
-  private SNode myChild;
-  private int myChildIndex;
-  private String myChildRole;
+  private final boolean myAdded;
+  private final SNode myParent;
+  private final SNode myChild;
+  private final int myChildIndex;
+  private final String myChildRole;
 
   public SModelChildEvent(SModel model, boolean added, SNode parent, String role, int childIndex, SNode child) {
     super(model);

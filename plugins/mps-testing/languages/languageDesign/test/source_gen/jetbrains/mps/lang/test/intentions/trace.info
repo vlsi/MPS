@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.IntentionsDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1210673906861">
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -93,7 +93,6 @@
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="80" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1215508253864" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1215604006108">
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsAnnotation_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsAnnotation_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -818,8 +817,95 @@
     <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorAnnotation_Intention.java" startLine="83" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorAnnotation_Intention.java" startLine="27" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorAnnotation_Intention" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/6569910239567199409" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/7344575040114344985" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/7796829026680792390">
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026681032506" fileName="SpecifyRuleReferences_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="59" startPosition="53" endLine="60" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="63" startPosition="35" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="70" startPosition="5" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680839841" fileName="SpecifyRuleReferences_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026681263433" fileName="SpecifyRuleReferences_Intention.java" startLine="82" startPosition="78" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7796829026681250500" fileName="SpecifyRuleReferences_Intention.java" startLine="83" startPosition="43" endLine="84" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SpecifyRuleReferences_Intention#()V" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="48" startPosition="84" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="67" startPosition="99" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="21" startPosition="44" endLine="21" endPosition="44" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="75" startPosition="38" endLine="75" endPosition="38" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="59" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="35" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="80" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="37" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="7796829026680841894" fileName="SpecifyRuleReferences_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="83" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="59" startPosition="53" endLine="60" endPosition="129" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="63" startPosition="35" endLine="64" endPosition="17" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="137" />
+    <scopeInfo nodeId="7796829026680804438" fileName="SpecifyRuleReferences_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="39" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="50" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="7796829026681060747" fileName="SpecifyRuleReferences_Intention.java" startLine="82" startPosition="78" endLine="84" endPosition="54" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="7796829026680792390" varName="editorContext" />
+      <varInfo nodeId="7796829026680792390" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="7796829026680792390" varName="editorContext" />
+      <varInfo nodeId="7796829026680792390" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="48" startPosition="84" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="67" startPosition="99" endLine="71" endPosition="30" />
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="7796829026680792390" varName="editorContext" />
+      <varInfo nodeId="7796829026680792390" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="7796829026680792390" varName="editorContext" />
+      <varInfo nodeId="7796829026680792390" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="7796829026680792390" varName="context" />
+      <varInfo nodeId="7796829026680792390" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="74" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.SpecifyRuleReferences_Intention$IntentionImplementation" />
+    <unitInfo nodeId="7796829026680792390" fileName="SpecifyRuleReferences_Intention.java" startLine="18" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.SpecifyRuleReferences_Intention" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/9057440207251474622">
     <nodeInfo nodeId="9057440207251474622" fileName="AddMessageAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="9057440207251474622" fileName="AddMessageAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -374,7 +374,7 @@ public class QueriesGenerated {
   private static SNode createMqlNodeNoArgOperation_o90ukn_a0a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeNoArgOperation", null, false);
-    n1.setProperty("kind", (String) p0);
+    n1.setProperty("kind", String.valueOf(p0));
     return n1;
   }
 }

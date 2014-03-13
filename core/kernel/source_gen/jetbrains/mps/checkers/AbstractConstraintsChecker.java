@@ -9,5 +9,5 @@ public abstract class AbstractConstraintsChecker {
   public AbstractConstraintsChecker() {
   }
 
-  public abstract void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext);
+  public abstract void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext context);
 }

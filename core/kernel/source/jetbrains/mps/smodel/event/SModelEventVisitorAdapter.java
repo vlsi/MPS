@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,26 @@ public class SModelEventVisitorAdapter implements SModelEventVisitor {
 
   @Override
   public void visitReplacedEvent(SModelReplacedEvent event) {
+  }
+
+  @Override
+  public void visitRenamedEvent(SModelRenamedEvent event) {
+  }
+
+  @Override
+  public void visitImportEvent(SModelImportEvent event) {
+  }
+
+  @Override
+  public void visitLanguageEvent(SModelLanguageEvent event) {
+  }
+
+  @Override
+  public void visitDevKitEvent(SModelDevKitEvent event) {
+  }
+
+  @Override
+  public void visitModelFileEvent(SModelFileChangedEvent event) {
   }
 }
 

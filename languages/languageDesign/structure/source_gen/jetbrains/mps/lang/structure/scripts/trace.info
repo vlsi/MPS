@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)/4095523226919157806" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)/4376713410984067201">
     <nodeInfo nodeId="4376713410984067201" fileName="RemoveBackslashesFromIconPath_MigrationScript.java" startLine="12" startPosition="92" endLine="13" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4376713410984067202" fileName="RemoveBackslashesFromIconPath_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -320,7 +319,5 @@
     <unitInfo nodeId="6066872190921323331" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="77" startPosition="28" endLine="111" endPosition="5" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$3" />
     <unitInfo nodeId="6066872190921237633" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)/7588428831946292583" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)/7588428831960053927" />
 </debugInfo>
 

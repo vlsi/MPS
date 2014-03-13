@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -31,36 +30,11 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class GenerationTaskPool implements IGenerationTaskPool {
 
-  private static class ModelReadThreadFactory implements ThreadFactory {
-    final ThreadGroup group;
-    final AtomicInteger threadNumber = new AtomicInteger(1);
-    final String namePrefix;
-
-    ModelReadThreadFactory() {
-      group = Thread.currentThread().getThreadGroup();
-      namePrefix = "generation-thread-";
-    }
-
-    @Override
-    public Thread newThread(final Runnable original) {
-      Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
-      if (t.isDaemon())
-        t.setDaemon(false);
-      if (t.getPriority() != Thread.NORM_PRIORITY)
-        t.setPriority(Thread.NORM_PRIORITY);
-      return t;
-    }
-  }
-
-  final static AtomicLong seq = new AtomicLong();
-
-  private class GenerationTaskAdapter implements Runnable/*, Comparable<GenerationTaskAdapter>*/ {
-    private GenerationTask myTask;
-//    final long seqNum;
+  private class GenerationTaskAdapter implements Runnable {
+    private final GenerationTask myTask;
 
     private GenerationTaskAdapter(GenerationTask task) {
       myTask = task;
-//      seqNum = seq.getAndIncrement();
     }
 
     private void runInternal() {
@@ -92,11 +66,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
         runInternal();
       }
     }
-
-//    @Override
-//    public int compareTo(GenerationTaskAdapter oth) {
-//      return (seqNum < oth.seqNum ? -1 : 1);
-//    }
   }
 
   private final ProgressMonitor cancellationMonitor;
@@ -104,7 +73,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
   public GenerationTaskPool(ProgressMonitor cancellationMonitor, int numberOfThreads) {
     this.cancellationMonitor = cancellationMonitor;
-    myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
+    myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new NamedThreadFactory("generation-thread-")) {
       @Override
       protected void afterExecute(Runnable r, Throwable t) {
         long tasksLeft = tasksInQueue.decrementAndGet();

@@ -2694,6 +2694,5 @@
     <unitInfo nodeId="7159297221554216078" fileName="SpecialMigrations.java" startLine="38" startPosition="53" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.SpecialMigrations$2" />
     <unitInfo nodeId="8602774279580416019" fileName="SpecialMigrations.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.SpecialMigrations" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/8647043020514320142" />
 </debugInfo>
 

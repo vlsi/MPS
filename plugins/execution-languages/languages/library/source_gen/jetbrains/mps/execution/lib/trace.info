@@ -51,8 +51,6 @@
     </scopeInfo>
     <unitInfo nodeId="1977878056377381089" fileName="ExecutionTool.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.execution.lib.ExecutionTool" />
   </root>
-  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/1977878056377381098" />
-  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/1977878056377381335" />
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/5133679254727507894">
     <nodeInfo nodeId="5133679254727507895" fileName="PointerUtils.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="POINTER_SEPARATOR" />
     <nodeInfo nodeId="5133679254727507911" fileName="PointerUtils.java" startLine="25" startPosition="65" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

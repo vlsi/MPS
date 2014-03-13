@@ -119,7 +119,9 @@
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsExecutionPlugin}" />
     </copy>
-    <copy file="${artifacts.mpsMakePlugin}/mps-make.jar" todir="${build.layout}/plugins" />
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.mpsMakePlugin}" />
+    </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsPlugins}" />
     </copy>

@@ -1085,12 +1085,12 @@
     <nodeInfo nodeId="2843918448603437775" fileName="AspectDependenciesChecker.java" startLine="66" startPosition="7" endLine="67" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2843918448603437782" fileName="AspectDependenciesChecker.java" startLine="69" startPosition="190" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2843918448603437930" fileName="AspectDependenciesChecker.java" startLine="71" startPosition="9" endLine="72" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1802459475176416621" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="36" endLine="76" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="135622418463969190" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="36" endLine="76" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2843918448603437929" fileName="AspectDependenciesChecker.java" startLine="78" startPosition="13" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2843918448603455160" fileName="AspectDependenciesChecker.java" startLine="80" startPosition="9" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2843918448603455168" fileName="AspectDependenciesChecker.java" startLine="81" startPosition="0" endLine="82" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2843918448603455179" fileName="AspectDependenciesChecker.java" startLine="82" startPosition="66" endLine="83" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2843918448603455204" fileName="AspectDependenciesChecker.java" startLine="84" startPosition="37" endLine="85" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2843918448603455204" fileName="AspectDependenciesChecker.java" startLine="84" startPosition="37" endLine="85" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2843918448603437913" fileName="AspectDependenciesChecker.java" startLine="88" startPosition="5" endLine="89" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2843918448603437917" fileName="AspectDependenciesChecker.java" startLine="89" startPosition="19" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4933738972387613379" fileName="AspectDependenciesChecker.java" startLine="93" startPosition="73" endLine="94" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1146,7 +1146,7 @@
     <nodeInfo nodeId="2843918448603455257" fileName="AspectDependenciesChecker.java" startLine="213" startPosition="5" endLine="214" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2843918448603437769" fileName="AspectDependenciesChecker.java" startLine="63" startPosition="86" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2843918448603437780" fileName="AspectDependenciesChecker.java" startLine="68" startPosition="95" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2843918448603437806" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="135622418463969188" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
     <nodeInfo nodeId="2843918448603455192" fileName="AspectDependenciesChecker.java" startLine="83" startPosition="56" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1956465326954302211" fileName="AspectDependenciesChecker.java" startLine="97" startPosition="71" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2065676860593240457" fileName="AspectDependenciesChecker.java" startLine="145" startPosition="51" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1182,8 +1182,8 @@
     <scopeInfo nodeId="2843918448603455230" fileName="AspectDependenciesChecker.java" startLine="212" startPosition="14" endLine="212" endPosition="14" />
     <scopeInfo nodeId="2843918448603437770" fileName="AspectDependenciesChecker.java" startLine="64" startPosition="33" endLine="65" endPosition="14" />
     <scopeInfo nodeId="2843918448603437781" fileName="AspectDependenciesChecker.java" startLine="69" startPosition="190" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="2843918448603437807" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="36" endLine="76" endPosition="84" />
-    <scopeInfo nodeId="2843918448603455193" fileName="AspectDependenciesChecker.java" startLine="84" startPosition="37" endLine="85" endPosition="273" />
+    <scopeInfo nodeId="135622418463969189" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="36" endLine="76" endPosition="84" />
+    <scopeInfo nodeId="2843918448603455193" fileName="AspectDependenciesChecker.java" startLine="84" startPosition="37" endLine="85" endPosition="289" />
     <scopeInfo nodeId="1956465326954302212" fileName="AspectDependenciesChecker.java" startLine="98" startPosition="51" endLine="99" endPosition="21" />
     <scopeInfo nodeId="2843918448603459078" fileName="AspectDependenciesChecker.java" startLine="108" startPosition="23" endLine="109" endPosition="26" />
     <scopeInfo nodeId="2843918448603459090" fileName="AspectDependenciesChecker.java" startLine="110" startPosition="24" endLine="111" endPosition="24" />
@@ -1216,7 +1216,7 @@
     <scopeInfo nodeId="2843918448603455248" fileName="AspectDependenciesChecker.java" startLine="210" startPosition="13" endLine="211" endPosition="27" />
     <scopeInfo nodeId="1956465326954302227" fileName="AspectDependenciesChecker.java" startLine="58" startPosition="29" endLine="60" endPosition="21" />
     <scopeInfo nodeId="2843918448603437378" fileName="AspectDependenciesChecker.java" startLine="46" startPosition="38" endLine="49" endPosition="76" />
-    <scopeInfo nodeId="2843918448603437806" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="135622418463969188" fileName="AspectDependenciesChecker.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="1956465326954290935" fileName="AspectDependenciesChecker.java" startLine="96" startPosition="28" endLine="100" endPosition="7">
       <varInfo nodeId="1956465326954302193" varName="filePath" />
     </scopeInfo>
@@ -1288,7 +1288,7 @@
       <varInfo nodeId="2065676860593241903" varName="model" />
       <varInfo nodeId="2065676860593241905" varName="reference" />
     </scopeInfo>
-    <unitInfo nodeId="2843918448603437806" fileName="AspectDependenciesChecker.java" startLine="74" startPosition="155" endLine="78" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.AspectDependenciesChecker$1" />
+    <unitInfo nodeId="135622418463969188" fileName="AspectDependenciesChecker.java" startLine="74" startPosition="171" endLine="78" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.AspectDependenciesChecker$1" />
     <unitInfo nodeId="2843918448603437373" fileName="AspectDependenciesChecker.java" startLine="37" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.AspectDependenciesChecker" />
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/2843918448603437706">

@@ -13,7 +13,6 @@
       <varInfo nodeId="2087237500476328252" varName="operationContext" />
     </scopeInfo>
   </root>
-  <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2755216049128262286" />
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/5308946314782063423">
     <nodeInfo nodeId="5308946314782064317" fileName="QueriesGenerated.java" startLine="17" startPosition="124" endLine="18" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5308946314782063429" fileName="QueriesGenerated.java" startLine="16" startPosition="151" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

@@ -60,17 +60,17 @@ public class Execute_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(res).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(res).producesOutput();
-        will(returnValue(true));
+        will(Expectations.returnValue(true));
         exactly(1).of(res).createJob();
-        will(returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
+        will(Expectations.returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
           public IResult invoke() {
             return result;
           }
         })));
         atLeast(1).of(result).output();
-        will(onConsecutiveCalls(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)), returnValue(null)));
+        will(Expectations.onConsecutiveCalls(Expectations.returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)), Expectations.returnValue(null)));
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
@@ -79,7 +79,7 @@ public class Execute_Test extends MockTestCase {
             return result;
           }
         };
-        will(returnValue(makejob));
+        will(Expectations.returnValue(makejob));
       }
     });
     Mockups.allowing(context, res);
@@ -115,7 +115,7 @@ public class Execute_Test extends MockTestCase {
             return result;
           }
         };
-        will(returnValue(makejob));
+        will(Expectations.returnValue(makejob));
       }
     });
     Mockups.allowing(context, make);
@@ -145,22 +145,22 @@ public class Execute_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(res).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         exactly(1).of(res).createJob();
-        will(returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
+        will(Expectations.returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
           public IResult invoke() {
             return result;
           }
         })));
         atLeast(1).of(res).producesOutput();
-        will(returnValue(true));
+        will(Expectations.returnValue(true));
         atLeast(1).of(result).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(Expectations.returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(nop).before();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         atLeast(1).of(nop).after();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
@@ -169,7 +169,7 @@ public class Execute_Test extends MockTestCase {
             return result;
           }
         };
-        will(returnValue(makejob));
+        will(Expectations.returnValue(makejob));
 
       }
     });
@@ -205,40 +205,40 @@ public class Execute_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(res).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         exactly(1).of(res).createJob();
-        will(returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
+        will(Expectations.returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
           public IResult invoke() {
             return result;
           }
         })));
         atLeast(1).of(res).producesOutput();
-        will(returnValue(true));
+        will(Expectations.returnValue(true));
         atLeast(1).of(result).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(Expectations.returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(nop).before();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         atLeast(1).of(nop).after();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
 
         atLeast(1).of(nop2).before();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         atLeast(1).of(nop2).after();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
 
         atLeast(1).of(dup).before();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         atLeast(1).of(dup).after();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
         exactly(1).of(dup).createJob();
-        will(returnValue(Mockups.job(context, "resjob2", new _FunctionTypes._return_P0_E0<IResult>() {
+        will(Expectations.returnValue(Mockups.job(context, "resjob2", new _FunctionTypes._return_P0_E0<IResult>() {
           public IResult invoke() {
             return result;
           }
         })));
         atLeast(1).of(dup).producesOutput();
-        will(returnValue(true));
+        will(Expectations.returnValue(true));
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
@@ -247,7 +247,7 @@ public class Execute_Test extends MockTestCase {
             return result;
           }
         };
-        will(returnValue(makejob));
+        will(Expectations.returnValue(makejob));
       }
     });
     Mockups.allowing(context, res);
@@ -281,18 +281,18 @@ public class Execute_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         exactly(1).of(res).createJob();
-        will(returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
+        will(Expectations.returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
           public IResult invoke() {
             return result;
           }
         })));
         atLeast(1).of(res).producesOutput();
-        will(returnValue(true));
+        will(Expectations.returnValue(true));
         atLeast(1).of(result).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(Expectations.returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(nop).after();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
 
       }
     });
@@ -351,8 +351,8 @@ public class Execute_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
-        atLeast(1).of(mons).useMonitor(with(aNonNull(ProgressMonitor.class)));
+        exactly(1).of(mons).setup(with(Expectations.aNonNull(IPropertiesPool.class)), with(Expectations.aNonNull(Iterable.class)), with(Expectations.any(Iterable.class)));
+        atLeast(1).of(mons).useMonitor(with(Expectations.aNonNull(ProgressMonitor.class)));
         exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
           @Override
           public boolean matches(Object o) {
@@ -367,25 +367,25 @@ public class Execute_Test extends MockTestCase {
           public void describeTo(Description p0) {
           }
         }));
-        exactly(1).of(mons).useMonitor(with(aNull(ProgressMonitor.class)));
+        exactly(1).of(mons).useMonitor(with(Expectations.aNull(ProgressMonitor.class)));
 
         atLeast(1).of(res).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(res).producesOutput();
-        will(returnValue(true));
+        will(Expectations.returnValue(true));
         exactly(1).of(res).createJob();
-        will(returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
+        will(Expectations.returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
           public IResult invoke() {
             return okresult;
           }
         })));
         atLeast(1).of(okresult).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(Expectations.returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(gen).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(gen).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
 
         IJob genjob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, ProgressMonitor progressMonitor) {
@@ -394,7 +394,7 @@ public class Execute_Test extends MockTestCase {
           }
         };
         exactly(1).of(gen).createJob();
-        will(returnValue(genjob));
+        will(Expectations.returnValue(genjob));
 
         never(make).createJob();
       }
@@ -431,7 +431,7 @@ public class Execute_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(config).before();
-        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        will(Expectations.returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         exactly(1).of(config).createJob();
         IJob cj = new IJob() {
           public IResult execute(Iterable<IResource> res, IJobMonitor mon, IPropertiesAccessor pa, ProgressMonitor progressMonitor) {
@@ -440,10 +440,10 @@ public class Execute_Test extends MockTestCase {
             return new IResult.SUCCESS(res);
           }
         };
-        will(returnValue(cj));
+        will(Expectations.returnValue(cj));
 
-        exactly(1).of(make).createParameters(with(aNonNull(Class.class)));
-        will(returnValue(vars));
+        exactly(1).of(make).createParameters(with(Expectations.aNonNull(Class.class)));
+        will(Expectations.returnValue(vars));
         exactly(1).of(make).createJob();
         IJob mj = new IJob() {
           public IResult execute(Iterable<IResource> res, IJobMonitor mon, IPropertiesAccessor pa, ProgressMonitor progressMonitor) {
@@ -453,7 +453,7 @@ public class Execute_Test extends MockTestCase {
             return new IResult.SUCCESS(res);
           }
         };
-        will(returnValue(mj));
+        will(Expectations.returnValue(mj));
       }
     });
     Mockups.allowing(context, make);

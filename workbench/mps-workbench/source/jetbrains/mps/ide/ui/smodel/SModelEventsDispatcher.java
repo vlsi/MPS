@@ -31,7 +31,7 @@ public class SModelEventsDispatcher {
   private static SModelEventsDispatcher myInstance;
 
   private EventsCollector myEventsCollector;
-  private Map<SModel, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModel, Set<SModelEventsListener>>();
+  private final Map<SModel, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModel, Set<SModelEventsListener>>();
 
   public static SModelEventsDispatcher getInstance() {
     if (myInstance == null) {
@@ -65,9 +65,16 @@ public class SModelEventsDispatcher {
     }
   }
 
+  public void dispose() {
+    disposeEventsCollector();
+    myDescriptorsToListenersMap.clear();
+  }
+
   private void disposeEventsCollector() {
-    myEventsCollector.dispose();
-    myEventsCollector = null;
+    if (myEventsCollector != null) {
+      myEventsCollector.dispose();
+      myEventsCollector = null;
+    }
   }
 
   private EventsCollector getEventsCollector() {

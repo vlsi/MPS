@@ -381,7 +381,6 @@
     <nodeInfo nodeId="1203119884745" fileName="QueriesGenerated.java" startLine="1165" startPosition="102" endLine="1166" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1170438667881" fileName="QueriesGenerated.java" startLine="1165" startPosition="102" endLine="1166" endPosition="92" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1144109979264" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1144151252418">
     <nodeInfo nodeId="1203105138181" fileName="QueriesGenerated.java" startLine="1169" startPosition="102" endLine="1170" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1170443980568" fileName="QueriesGenerated.java" startLine="1169" startPosition="102" endLine="1170" endPosition="92" />
@@ -412,7 +411,6 @@
     <scopeInfo nodeId="1170443045608" fileName="QueriesGenerated.java" startLine="496" startPosition="106" endLine="497" endPosition="75" />
     <scopeInfo nodeId="1170443028821" fileName="QueriesGenerated.java" startLine="1185" startPosition="102" endLine="1186" endPosition="92" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1146069305540" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1146176981592">
     <nodeInfo nodeId="7376433222636454241" fileName="QueriesGenerated.java" startLine="500" startPosition="106" endLine="501" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7376433222636453713" fileName="QueriesGenerated.java" startLine="501" startPosition="44" endLine="502" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -527,7 +525,6 @@
       <varInfo nodeId="1205530218490" varName="parmConcept" />
     </scopeInfo>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1168984127825" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1171307696664">
     <nodeInfo nodeId="1176946951447" fileName="QueriesGenerated.java" startLine="560" startPosition="106" endLine="561" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3769812235505816480" fileName="QueriesGenerated.java" startLine="564" startPosition="112" endLine="565" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -737,8 +734,6 @@
     <scopeInfo nodeId="1205435517750" fileName="QueriesGenerated.java" startLine="661" startPosition="106" endLine="662" endPosition="132" />
     <scopeInfo nodeId="1205435568236" fileName="QueriesGenerated.java" startLine="1390" startPosition="102" endLine="1391" endPosition="77" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1206021199576" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1206037790971" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1206551858932">
     <nodeInfo nodeId="7376433222636453283" fileName="QueriesGenerated.java" startLine="195" startPosition="104" endLine="196" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1229466221504" fileName="QueriesGenerated.java" startLine="196" startPosition="41" endLine="197" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

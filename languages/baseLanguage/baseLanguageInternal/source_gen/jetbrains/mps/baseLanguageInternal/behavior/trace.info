@@ -23,7 +23,7 @@
   <unitInfo fileName="InternalStaticMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="InternalSuperMethodCallOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalSuperMethodCallOperation_BehaviorDescriptor" />
   <unitInfo fileName="InternalThisExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalThisExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InternalVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
+  <unitInfo fileName="InternalVariableReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="TypeHintExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.TypeHintExpression_BehaviorDescriptor" />
   <unitInfo fileName="WeakClassReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.WeakClassReference_BehaviorDescriptor" />
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/1100832983841311076">
@@ -360,6 +360,20 @@
       <varInfo nodeId="3650511996773376131" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="3650511996773376131" fileName="InternalStaticMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_Behavior" />
+  </root>
+  <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/9122903797335921055">
+    <nodeInfo nodeId="9122903797335921896" fileName="InternalVariableReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9122903797335921055" fileName="InternalVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9122903797335921055" fileName="InternalVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="9122903797335921057" fileName="InternalVariableReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="9122903797335921499" fileName="InternalVariableReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="9122903797335921055" fileName="InternalVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="9122903797335921055" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="9122903797335921055" fileName="InternalVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="9122903797335921055" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="9122903797335921055" fileName="InternalVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_Behavior" />
   </root>
 </debugInfo>
 

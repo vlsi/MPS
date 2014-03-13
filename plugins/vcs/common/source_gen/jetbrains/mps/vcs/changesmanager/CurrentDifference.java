@@ -12,17 +12,17 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class CurrentDifference {
-  private SimpleCommandQueue myCommandQueue;
-  private EditableSModel myModelDescriptor;
-  private ChangesTracking myTracking;
+  private final SimpleCommandQueue myCommandQueue;
+  private final EditableSModel myModelDescriptor;
+  private final ChangesTracking myTracking;
   private ChangeSetImpl myChangeSet;
-  private CurrentDifferenceBroadcaster myBroadcaster;
+  private final CurrentDifferenceBroadcaster myBroadcaster;
   private boolean myEnabled = false;
 
   public CurrentDifference(@NotNull CurrentDifferenceRegistry registry, @NotNull EditableSModel modelDescriptor) {
     myCommandQueue = registry.getCommandQueue();
     myModelDescriptor = modelDescriptor;
-    myTracking = new ChangesTracking(registry.getProject(), this);
+    myTracking = new ChangesTracking(registry, this);
     myBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
     myBroadcaster.addDifferenceListener(registry.getGlobalBroadcaster());
   }

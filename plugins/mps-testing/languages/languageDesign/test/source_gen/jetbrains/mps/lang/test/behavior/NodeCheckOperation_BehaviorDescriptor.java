@@ -28,14 +28,12 @@ public abstract class NodeCheckOperation_BehaviorDescriptor extends BaseConcept_
     return NodeCheckOperation_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
-  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    NodeCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
-  }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeCheckOperation";
   }
 
   public abstract String virtual_getDefaultName_8578280453511146306(SNode thisNode);
+
+  public abstract void virtual_perform_245688835340859348(SNode thisNode, SNode node);
 }

@@ -5,20 +5,9 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
-import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.typesystem.inference.ITypechecking;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeCheckerUtil {
 
@@ -30,77 +19,23 @@ public class NodeCheckerUtil {
 
 
   public static void assertTypesAreTheSame(SNode node, final SNode type1, final SNode type2) {
-    Assert.assertNull("node '" + nodeWithIdToString(node) + "' does not have type '" + nodeWithIdToString(type2) + "'!", NodesMatcher.matchNodes(type1, type2));
+    String errorString = "node '" + nodeWithIdToString(node) + "' does not have type '" + nodeWithIdToString(type2) + "'!";
+    Assert.assertNull(errorString, NodesMatcher.matchNodes(type1, type2));
   }
 
 
 
-  public static boolean nodeHasExpectedTypeSystemMessage(List<IErrorReporter> errorReports) {
-    for (IErrorReporter errorReport : errorReports) {
-      if (SNodeOperations.isInstanceOf(getRuleNode(errorReport), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")) {
-        return true;
-      }
-    }
-    return false;
-
-  }
-
-
-
-
-  public static SNode getRuleNode(IErrorReporter reporter) {
+  public static SNode getRuleNodeFromReporter(IErrorReporter reporter) {
     SNodePointer ref = new SNodePointer(reporter.getRuleModel(), reporter.getRuleId());
-    return SNodeOperations.cast(ref.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.Statement");
+    return ref.resolve(MPSModuleRepository.getInstance());
   }
 
 
 
   public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings) {
-    checkNodeWithCheckingAction(node, new ITypechecking.Action() {
-      @Override
-      public void run(TypeCheckingContext typeCheckingContext) {
-        typeCheckingContext.checkIfNotChecked(node, true);
-        for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-          if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
-            IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
-            if (reporter != null) {
-              String reportError = reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(child) + "'";
-              if (!(allowErrors)) {
-                Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
-              }
-              if (!(allowWarnings)) {
-                Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
-              }
-            }
-          }
-        }
-      }
-    });
+    Runnable checkErrorsAction = new CheckErrorMessagesAction(node, allowWarnings, allowErrors);
+    checkErrorsAction.run();
   }
-
-
-
-  public static void checkNodeWithCheckingAction(final SNode node, ITypechecking.Action checkingAction) {
-    ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
-    SNode containingRoot = node.getContainingRoot();
-    TypeContextManager.getInstance().runTypeCheckingAction(owner, containingRoot, checkingAction);
-  }
-
-
-
-  public static boolean hasErrorOrWarningCheckOperationTag(SNode node) {
-    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) == null) {
-      return false;
-    }
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
-    for (SNode property : SLinkOperations.getTargets(container, "nodeOperations", true)) {
-      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.IAllowsErrors")) {
-        return true;
-      }
-    }
-    return false;
-  }
-
 
 
 }

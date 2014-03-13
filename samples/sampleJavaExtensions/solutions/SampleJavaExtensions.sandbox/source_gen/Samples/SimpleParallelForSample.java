@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import utils.ParallelLoopException;
 
-public abstract class SimpleParallelForSample<T> {
+public class SimpleParallelForSample {
   public SimpleParallelForSample() {
   }
 

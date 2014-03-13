@@ -45,7 +45,7 @@ public class IntroduceField_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("component")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("component")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node")))))) {
+    if (!(EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("component")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("component")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node"))))))) {
       return false;
     }
     return IntroduceFieldRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node")));

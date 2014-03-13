@@ -59,7 +59,6 @@
     </scopeInfo>
     <unitInfo nodeId="2198415040516403108" fileName="check_SNotationMapping_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.core.notation.typesystem.check_SNotationMapping_NonTypesystemRule" />
   </root>
-  <root nodeRef="r:a890372e-633e-4844-8377-f7d3b4a35a63(jetbrains.mps.core.notation.typesystem)/2711998566964092837" />
   <root nodeRef="r:a890372e-633e-4844-8377-f7d3b4a35a63(jetbrains.mps.core.notation.typesystem)/3712611346767566273">
     <nodeInfo nodeId="3712611346767644177" fileName="check_SNotationStylesImport_NonTypesystemRule.java" startLine="24" startPosition="32" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3712611346767657648" fileName="check_SNotationStylesImport_NonTypesystemRule.java" startLine="28" startPosition="9" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -203,7 +202,6 @@
     </scopeInfo>
     <unitInfo nodeId="6373561361597667771" fileName="check_SNotationUnorderedGroup_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.core.notation.typesystem.check_SNotationUnorderedGroup_NonTypesystemRule" />
   </root>
-  <root nodeRef="r:a890372e-633e-4844-8377-f7d3b4a35a63(jetbrains.mps.core.notation.typesystem)/8294198181866508350" />
   <root nodeRef="r:a890372e-633e-4844-8377-f7d3b4a35a63(jetbrains.mps.core.notation.typesystem)/8294198181869971030">
     <nodeInfo nodeId="8294198181870010465" fileName="check_SNotationParentheses_separator_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8294198181870010465" fileName="check_SNotationParentheses_separator_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

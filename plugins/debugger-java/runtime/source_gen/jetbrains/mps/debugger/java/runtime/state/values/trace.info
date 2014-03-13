@@ -44,10 +44,5 @@
     <scopeInfo nodeId="948222233230271679" fileName="FieldWatchpointValue.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <unitInfo nodeId="3187167456722650426" fileName="FieldWatchpointValue.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.values.FieldWatchpointValue" />
   </root>
-  <root nodeRef="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)/6957207478384132498" />
-  <root nodeRef="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)/6957207478384132580" />
-  <root nodeRef="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)/6957207478384132896" />
-  <root nodeRef="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)/6957207478384132938" />
-  <root nodeRef="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)/6957207478384133213" />
 </debugInfo>
 

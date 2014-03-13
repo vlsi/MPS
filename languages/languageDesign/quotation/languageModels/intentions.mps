@@ -1098,7 +1098,7 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8182547171709991155" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8182547171709991158" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8182547171709991159" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Convert to Node Builder" />
+            <property name="value" nameId="tpee.1070475926801" value="Convert to Light Quotation" />
           </node>
         </node>
       </node>

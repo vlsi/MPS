@@ -2149,7 +2149,6 @@
     <scopeInfo nodeId="3161373106581141514" fileName="IClassifiersSearchScope.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="3161373106581141431" fileName="IClassifiersSearchScope.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
   </root>
-  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581141525" />
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581141805">
     <nodeInfo nodeId="3161373106581141809" fileName="AbstractClassifiersScope.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConstraint" />
     <nodeInfo nodeId="3161373106581141817" fileName="AbstractClassifiersScope.java" startLine="24" startPosition="54" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -241,7 +241,7 @@ public class XmlConverter {
   private static SNode createXmlAttribute_h7fa2c_a0a0a5a3(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, false);
-    n1.setProperty("attrName", (String) p0);
+    n1.setProperty("attrName", String.valueOf(p0));
     for (SNode n : (Iterable<SNode>) p1) {
       n1.addChild("value", n);
     }
@@ -251,57 +251,57 @@ public class XmlConverter {
   private static SNode createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCommentLine", null, false);
-    n1.setProperty("text", (String) p0);
+    n1.setProperty("text", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlProcessingInstruction_h7fa2c_a0a1a1a0e(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlProcessingInstruction", null, false);
-    n1.setProperty("target", (String) p0);
-    n1.setProperty("rawData", (String) p1);
+    n1.setProperty("target", String.valueOf(p0));
+    n1.setProperty("rawData", String.valueOf(p1));
     return n1;
   }
 
   private static SNode createXmlCDATA_h7fa2c_a0a1a2a0e(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCDATA", null, false);
-    n1.setProperty("content", (String) p0);
+    n1.setProperty("content", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlEntityRef_h7fa2c_a0a1a4a0e(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlEntityRef", null, false);
-    n1.setProperty("entityName", (String) p0);
+    n1.setProperty("entityName", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlText_h7fa2c_a0a0a0a1a3a1a5(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlText", null, false);
-    n1.setProperty("value", (String) p0);
+    n1.setProperty("value", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlCharRef_h7fa2c_a0a0a2a1a3a1a5(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCharRef", null, false);
-    n1.setProperty("charCode", (String) p0);
+    n1.setProperty("charCode", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlEntityRef_h7fa2c_a0a2a0c0b0d0b0f(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlEntityRef", null, false);
-    n1.setProperty("entityName", (String) p0);
+    n1.setProperty("entityName", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlText_h7fa2c_a0a0a4a1a5(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlText", null, false);
-    n1.setProperty("value", (String) p0);
+    n1.setProperty("value", String.valueOf(p0));
     return n1;
   }
 
@@ -315,28 +315,28 @@ public class XmlConverter {
   private static SNode createXmlTextValue_h7fa2c_a0a0a0a1a3a6(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, false);
-    n1.setProperty("text", (String) p0);
+    n1.setProperty("text", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlCharRefValue_h7fa2c_a0a0a2a1a3a6(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCharRefValue", null, false);
-    n1.setProperty("charCode", (String) p0);
+    n1.setProperty("charCode", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlEntityRefValue_h7fa2c_a0a2a0c0b0d0g(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlEntityRefValue", null, false);
-    n1.setProperty("entityName", (String) p0);
+    n1.setProperty("entityName", String.valueOf(p0));
     return n1;
   }
 
   private static SNode createXmlTextValue_h7fa2c_a0a0a4a6(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, false);
-    n1.setProperty("text", (String) p0);
+    n1.setProperty("text", String.valueOf(p0));
     return n1;
   }
 
@@ -345,7 +345,7 @@ public class XmlConverter {
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDocument", null, false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, false);
-      n2.setProperty("tagName", (String) p0);
+      n2.setProperty("tagName", String.valueOf(p0));
       n1.addChild("rootElement", n2);
     }
     return n1;

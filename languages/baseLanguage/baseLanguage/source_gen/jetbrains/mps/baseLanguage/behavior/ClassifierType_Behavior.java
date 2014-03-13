@@ -202,7 +202,7 @@ public class ClassifierType_Behavior {
             SNode _typeParam = typeParam_var;
             while (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
               SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
-              if (temp != null) {
+              if (temp != null && temp != _myParam) {
                 _myParam = temp;
               } else {
                 break;
@@ -210,7 +210,7 @@ public class ClassifierType_Behavior {
             }
             while (SNodeOperations.isInstanceOf(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
               SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
-              if (temp != null) {
+              if (temp != null && temp != _typeParam) {
                 _typeParam = temp;
               } else {
                 break;
@@ -233,7 +233,7 @@ public class ClassifierType_Behavior {
             }
           }
         }
-        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count()) {
+        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() && !(SNodeOperations.isInstanceOf(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType") && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count())) {
           return false;
         }
         return true;
@@ -262,7 +262,11 @@ public class ClassifierType_Behavior {
 
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    String preparedFQName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{}).replace('.', '/');
+    String fqName = check_hz3823_a0b0o(classifier);
+    if (fqName == null) {
+      return "";
+    }
+    String preparedFQName = fqName.replace('.', '/');
     return "L" + preparedFQName + ";";
   }
 
@@ -582,6 +586,13 @@ public class ClassifierType_Behavior {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
     return quotedNode_1;
+  }
+
+  private static String check_hz3823_a0b0o(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
+    }
+    return null;
   }
 
   private static SNode _quotation_createNode_hz3823_a0a0a1a6a91() {
