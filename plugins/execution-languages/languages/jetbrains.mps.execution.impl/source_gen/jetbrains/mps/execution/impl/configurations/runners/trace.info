@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:8b4f0747-4cce-403c-a9ed-8700a357a916(jetbrains.mps.execution.impl.configurations.runners)/5145867626676109821" />
   <root nodeRef="r:8b4f0747-4cce-403c-a9ed-8700a357a916(jetbrains.mps.execution.impl.configurations.runners)/5145867626676113213">
     <nodeInfo nodeId="5145867626676113224" fileName="MPSProgramRunner.java" startLine="20" startPosition="31" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5145867626676113237" fileName="MPSProgramRunner.java" startLine="26" startPosition="9" endLine="27" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -6,8 +6,6 @@
   <unitInfo fileName="RebuildAspectCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_BehaviorDescriptor" />
   <unitInfo fileName="ReloadClassesCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
   <unitInfo fileName="ShowRepositoryCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
-  <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/2849748491601480820" />
-  <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/473081947985481237" />
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/5582028874770305521">
     <nodeInfo nodeId="5582028874770305527" fileName="ConsoleModelExpression_Behavior.java" startLine="12" startPosition="114" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7185170375692949481" fileName="ConsoleModelExpression_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

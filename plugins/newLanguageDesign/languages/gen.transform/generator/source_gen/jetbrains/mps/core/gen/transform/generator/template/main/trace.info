@@ -863,7 +863,6 @@
     <scopeInfo nodeId="1471063792889890573" fileName="QueriesGenerated.java" startLine="285" startPosition="152" endLine="290" endPosition="140" />
     <scopeInfo nodeId="9164905593970808556" fileName="QueriesGenerated.java" startLine="1155" startPosition="0" endLine="1160" endPosition="0" />
   </root>
-  <root nodeRef="r:3605e140-07e4-4b12-a060-c55e185cd1e2(jetbrains.mps.core.gen.transform.generator.template.main@generator)/9173039802031596568" />
   <root nodeRef="r:3605e140-07e4-4b12-a060-c55e185cd1e2(jetbrains.mps.core.gen.transform.generator.template.main@generator)/9173039802034627821">
     <nodeInfo nodeId="9173039802035086222" fileName="QueriesGenerated.java" startLine="1132" startPosition="168" endLine="1133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9173039802034632482" fileName="QueriesGenerated.java" startLine="1133" startPosition="0" endLine="1134" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

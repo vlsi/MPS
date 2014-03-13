@@ -40,7 +40,6 @@
     </scopeInfo>
     <unitInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.constraints.ActionTestSidetransformTestAncestor_Constraints" />
   </root>
-  <root nodeRef="r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)/4666890483627768763" />
   <root nodeRef="r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)/4942308145798610557">
     <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="15" startPosition="61" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -89,6 +88,5 @@
     </scopeInfo>
     <unitInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.constraints.ActionTestSidetransformTestContainer_Constraints" />
   </root>
-  <root nodeRef="r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)/7308648901269612001" />
 </debugInfo>
 

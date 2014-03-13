@@ -75,8 +75,6 @@
     </scopeInfo>
     <unitInfo nodeId="1185481067857141563" fileName="ChangeEvent_tabular_Editor.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.ChangeEvent_tabular_Editor" />
   </root>
-  <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/1185481067857160734" />
-  <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/1185481067857245148" />
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/2161719505005242389">
     <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="95" endLine="14" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />

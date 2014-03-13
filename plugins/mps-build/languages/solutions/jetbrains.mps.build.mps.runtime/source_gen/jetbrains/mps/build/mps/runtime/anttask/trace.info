@@ -82,7 +82,6 @@
   <root nodeRef="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)/233723665931928522">
     <unitInfo nodeId="233723665931928522" fileName="antlib.xml" startLine="1" startPosition="0" endLine="4" endPosition="9" unitName="jetbrains.mps.build.mps.runtime.anttask.antlib" />
   </root>
-  <root nodeRef="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)/3770557172457097731" />
   <root nodeRef="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)/6690493898470434339">
     <nodeInfo nodeId="535979196343168566" fileName="GenModuleXmlWorker.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDENT_WITH" />
     <nodeInfo nodeId="535979196343168494" fileName="GenModuleXmlWorker.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDENT_INNER_XML" />
@@ -294,6 +293,5 @@
     </scopeInfo>
     <unitInfo nodeId="7799088097575503432" fileName="GenModuleXmlTask.java" startLine="13" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlTask" />
   </root>
-  <root nodeRef="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)/8779166285900255041" />
 </debugInfo>
 

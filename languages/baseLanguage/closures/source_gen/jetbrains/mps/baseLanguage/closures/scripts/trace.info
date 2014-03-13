@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/4836112446988543578" />
   <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/5571879668402512180">
     <nodeInfo nodeId="5571879668402512180" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="28" startPosition="84" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5571879668402512181" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="31" startPosition="31" endLine="32" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

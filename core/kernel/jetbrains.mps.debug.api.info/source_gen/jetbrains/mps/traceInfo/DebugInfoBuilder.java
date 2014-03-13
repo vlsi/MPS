@@ -106,9 +106,10 @@ public class DebugInfoBuilder {
     Set<String> files = SetSequence.fromSetWithValues(new HashSet<String>(), unchangedFiles);
     for (DebugInfoRoot cachedRoot : Sequence.fromIterable(cachedDebugInfo.getRoots())) {
       DebugInfoRoot generatedRoot = generatedDebugInfo.getRootInfo(cachedRoot.getNodeRef());
+      boolean newFromCache = false;
       if (generatedRoot == null) {
         generatedRoot = new DebugInfoRoot(cachedRoot.getNodeRef());
-        generatedDebugInfo.putRootInfo(generatedRoot);
+        newFromCache = true;
       }
       for (TraceablePositionInfo position : SetSequence.fromSet(cachedRoot.getPositions())) {
         if (SetSequence.fromSet(files).contains(position.getFileName())) {
@@ -123,6 +124,15 @@ public class DebugInfoBuilder {
       for (UnitPositionInfo position : SetSequence.fromSet(cachedRoot.getUnitPositions())) {
         if (SetSequence.fromSet(files).contains(position.getFileName())) {
           generatedRoot.addUnitPosition(position);
+        }
+      }
+      if (newFromCache) {
+        // if a node is removed, generatedDebugInfo won't have an entry for it, while cachedDebugInfo has. 
+        // no position from this cached info, however, would pass unchangedFiles filter, and generatedDebugInfo 
+        // would stay empty. Here, we detect this case and drop stale debug info entries 
+        final boolean gotCachedData = SetSequence.fromSet(generatedRoot.getPositions()).isNotEmpty() || SetSequence.fromSet(generatedRoot.getScopePositions()).isNotEmpty() || SetSequence.fromSet(generatedRoot.getUnitPositions()).isNotEmpty();
+        if (gotCachedData) {
+          generatedDebugInfo.putRootInfo(generatedRoot);
         }
       }
     }

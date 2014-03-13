@@ -216,7 +216,6 @@
     <unitInfo nodeId="3316697760692356703" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="38" endLine="76" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
     <unitInfo nodeId="3316697760692356691" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
   </root>
-  <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/4707157387247361035" />
   <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/6793838228148720923">
     <nodeInfo nodeId="6793838228148720926" fileName="WatchedRootsUpdater.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraryManager" />
     <nodeInfo nodeId="6793838228148720929" fileName="WatchedRootsUpdater.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />

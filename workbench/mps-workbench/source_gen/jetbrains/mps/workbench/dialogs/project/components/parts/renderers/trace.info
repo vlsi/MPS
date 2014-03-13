@@ -22,7 +22,6 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499489409" fileName="PathRenderer.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
   </root>
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499489478" />
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499490098">
     <nodeInfo nodeId="1560298786499490101" fileName="ProjectPathRenderer.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="1560298786499490109" fileName="ProjectPathRenderer.java" startLine="17" startPosition="50" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -195,7 +194,6 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499493036" fileName="ManagerRenderer.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" />
   </root>
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499493268" />
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499494305">
     <nodeInfo nodeId="1560298786499494308" fileName="ListRendererAdapter.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCellRenderer" />
     <nodeInfo nodeId="1560298786499494316" fileName="ListRendererAdapter.java" startLine="14" startPosition="61" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -273,8 +271,6 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499494573" fileName="ModuleRenderer.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer" />
   </root>
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499494750" />
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499495877" />
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499498121">
     <nodeInfo nodeId="1560298786499498124" fileName="BooleanRenderer.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckBox" />
     <nodeInfo nodeId="1560298786499498130" fileName="BooleanRenderer.java" startLine="13" startPosition="28" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -296,7 +292,6 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499498121" fileName="BooleanRenderer.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.BooleanRenderer" />
   </root>
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499498265" />
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/262971659834150299">
     <nodeInfo nodeId="262971659834182173" fileName="ModelRootRenderer.java" startLine="17" startPosition="134" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1552421828371757047" fileName="ModelRootRenderer.java" startLine="18" startPosition="69" endLine="19" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

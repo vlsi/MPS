@@ -66,7 +66,6 @@
     </scopeInfo>
     <unitInfo nodeId="6630310702469676828" fileName="IfStatement_DataFlow.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.Kaja.dataFlow.IfStatement_DataFlow" />
   </root>
-  <root nodeRef="r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702469809389" />
   <root nodeRef="r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702469827149">
     <nodeInfo nodeId="4816737345356005354" fileName="RoutineCall_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6630310702469827149" fileName="RoutineCall_DataFlow.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RoutineCall_DataFlow#()V" />
@@ -167,6 +166,5 @@
     </scopeInfo>
     <unitInfo nodeId="6630310702469893529" fileName="Repeat_DataFlow.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.Kaja.dataFlow.Repeat_DataFlow" />
   </root>
-  <root nodeRef="r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702471637947" />
 </debugInfo>
 

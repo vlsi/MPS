@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.actions.QueriesGenerated" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/1180111910664" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/1196932695369">
     <nodeInfo nodeId="1196932700432" fileName="QueriesGenerated.java" startLine="56" startPosition="93" endLine="56" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196932700432" fileName="QueriesGenerated.java" startLine="55" startPosition="211" endLine="56" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -47,7 +46,6 @@
     </scopeInfo>
     <unitInfo nodeId="1196932700432" fileName="QueriesGenerated.java" startLine="61" startPosition="53" endLine="71" endPosition="9" unitName="jetbrains.mps.lang.actions.actions.QueriesGenerated$1" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/2028694650679562294" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/3757480014665236932">
     <nodeInfo nodeId="3757480014665236954" fileName="QueriesGenerated.java" startLine="24" startPosition="132" endLine="25" endPosition="579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2931819695409437982" fileName="QueriesGenerated.java" startLine="26" startPosition="124" endLine="27" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -94,8 +92,5 @@
       <varInfo nodeId="3757480014665236943" varName="operationContext" />
     </scopeInfo>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/5179659504393947245" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/5179659504396628515" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/6400740936050666093" />
 </debugInfo>
 

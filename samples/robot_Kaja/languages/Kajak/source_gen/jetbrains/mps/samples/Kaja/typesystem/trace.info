@@ -288,7 +288,6 @@
     <unitInfo nodeId="1904811872814168254" fileName="LibraryNameUniqueness_NonTypesystemRule.java" startLine="41" startPosition="50" endLine="45" endPosition="5" unitName="jetbrains.mps.samples.Kaja.typesystem.LibraryNameUniqueness_NonTypesystemRule$3" />
     <unitInfo nodeId="1904811872814168197" fileName="LibraryNameUniqueness_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.Kaja.typesystem.LibraryNameUniqueness_NonTypesystemRule" />
   </root>
-  <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/6165009629638007508" />
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/6630310702470230800">
     <nodeInfo nodeId="8249991444799099450" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="26" startPosition="30" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6630310702470719665" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

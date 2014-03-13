@@ -63,6 +63,5 @@
     <unitInfo nodeId="5963210568513216201" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="19" startPosition="28" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.behavior.scripts.MigrateStaticConceptMethodDeclaration_MigrationScript$1" />
     <unitInfo nodeId="5963210568513209363" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.behavior.scripts.MigrateStaticConceptMethodDeclaration_MigrationScript" />
   </root>
-  <root nodeRef="r:94d2957d-c7c1-4065-9834-3b16b5f674fa(jetbrains.mps.lang.behavior.scripts)/7148319044498588900" />
 </debugInfo>
 

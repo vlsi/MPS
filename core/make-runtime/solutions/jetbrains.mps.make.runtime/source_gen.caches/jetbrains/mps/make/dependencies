@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.GenerateFacetInitializer" file="GenerateFacetInitializer.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
-    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
-    <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-  </dependency>
   <dependency className="jetbrains.mps.make.IHName" file="IHName.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
@@ -41,13 +31,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.TextGenFacetInitializer" file="TextGenFacetInitializer.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
-    <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
   </dependency>
 </dependenciesRoot>
 

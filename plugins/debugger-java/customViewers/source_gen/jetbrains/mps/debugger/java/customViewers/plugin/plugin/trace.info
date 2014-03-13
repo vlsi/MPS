@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="CustomViewersInitializer_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
-  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/1136645202385755199" />
   <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2244048449136669030">
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCreators" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="30" startPosition="24" endLine="31" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -891,7 +890,6 @@
     <unitInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="97" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeWatchables$MyWatchable_parent" />
     <unitInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="9" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeWatchables" />
   </root>
-  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/3975590030846720427" />
   <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/5494815557703847191">
     <nodeInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="19" startPosition="9" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

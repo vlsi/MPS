@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6090996390710375685" />
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181927252916">
     <nodeInfo nodeId="6822392181927253279" fileName="StyledTextPrinter.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
     <nodeInfo nodeId="6822392181927254012" fileName="StyledTextPrinter.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />

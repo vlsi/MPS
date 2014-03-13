@@ -229,7 +229,6 @@
     </scopeInfo>
     <unitInfo nodeId="1216860931339" fileName="typeof_GenerationContextOp_GetOutputByLabelAndInput_InferenceRule.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.typesystem.typeof_GenerationContextOp_GetOutputByLabelAndInput_InferenceRule" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)/1217025737327" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)/1217882174994">
     <nodeInfo nodeId="1217882185560" fileName="typeof_GenerationContextOp_GetPrevInputByLabel_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1217882185560" fileName="typeof_GenerationContextOp_GetPrevInputByLabel_InferenceRule.java" startLine="22" startPosition="44" endLine="23" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

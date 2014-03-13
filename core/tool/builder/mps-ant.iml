@@ -23,6 +23,7 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="make-facets" />
   </component>
 </module>
 

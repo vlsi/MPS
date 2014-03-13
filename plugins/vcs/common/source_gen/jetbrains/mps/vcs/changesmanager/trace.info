@@ -1788,7 +1788,6 @@
     <scopeInfo nodeId="6756213824749156032" fileName="CurrentDifferenceAdapter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="6756213824749156025" fileName="CurrentDifferenceAdapter.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </root>
-  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/7224301866898374923" />
   <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/8579517044346265736">
     <nodeInfo nodeId="8579517044346265743" fileName="CurrentDifferenceBroadcaster.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
     <nodeInfo nodeId="8579517044346265897" fileName="CurrentDifferenceBroadcaster.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />

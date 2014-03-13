@@ -21,10 +21,8 @@ import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.make.GenerateFacetInitializer;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
@@ -97,33 +95,19 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
   }
 
   private IScriptController completeController(final IScriptController ctl, MakeSession makeSession) {
+    // client is responsible to populate properties of possible facets, don't do anything if 
+    // client has supplied a conrtoller. If not, create a default controller that expects Generate facet to 
+    // jump in. It's not a nice idea, and we'll drop this soon, as it's MakeService client's responsibility 
+    // to configure scripts, not ours 
+    if (ctl != null) {
+      return ctl;
+    }
     final GenerateFacetInitializer initGenFacet = new GenerateFacetInitializer(makeSession);
     IConfigMonitor monitor = new AbstractMakeService.DefaultMonitor(makeSession);
     return new IScriptController.Stub(monitor, monitor) {
       @Override
-      public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
-        if (ctl != null) {
-          ctl.runConfigWithMonitor(code);
-        } else {
-          super.runConfigWithMonitor(code);
-        }
-      }
-
-      @Override
-      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        if (ctl != null) {
-          ctl.runJobWithMonitor(code);
-        } else {
-          super.runJobWithMonitor(code);
-        }
-      }
-
-      @Override
       public void setup(IPropertiesPool pool) {
         initGenFacet.populate(pool);
-        if (ctl != null) {
-          ctl.setup(pool);
-        }
       }
     };
   }

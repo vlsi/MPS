@@ -103,7 +103,6 @@
     </scopeInfo>
     <unitInfo nodeId="1217012833662768584" fileName="MultipleEditorsTestEditorComponentChild_compactRich.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestEditorComponentChild_compactRich" />
   </root>
-  <root nodeRef="r:a554b43d-e081-43aa-820b-45da05206260(jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor)/6246554009627192648" />
   <root nodeRef="r:a554b43d-e081-43aa-820b-45da05206260(jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor)/6355695904178424145">
     <nodeInfo nodeId="6355695904178424145" fileName="MultipleEditorsTestMostSpecificChild_compact_rich_Editor.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="6355695904178424145" fileName="MultipleEditorsTestMostSpecificChild_compact_rich_Editor.java" startLine="24" startPosition="47" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

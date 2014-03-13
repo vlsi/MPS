@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/1089663077933459099" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/1089663077933459884" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/4098794966557888877">
     <nodeInfo nodeId="4098794966557888877" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="11" startPosition="91" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4098794966557889127" fileName="SpecifyRuleReferencesInTests_MigrationScript.java" startLine="14" startPosition="31" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

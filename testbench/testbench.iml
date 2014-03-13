@@ -69,7 +69,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="mps-ant" exported="" />
     <orderEntry type="module" module-name="ant-mps" />
-    <orderEntry type="module" module-name="make-facets" scope="RUNTIME" />
+    <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="library" name="Commons-httpclient" level="project" />

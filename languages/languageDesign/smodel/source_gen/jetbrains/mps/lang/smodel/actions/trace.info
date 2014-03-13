@@ -489,7 +489,6 @@
       <varInfo nodeId="1179535648215" varName="operationContext" />
     </scopeInfo>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)/1206021156875" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)/1206377804308">
     <nodeInfo nodeId="1206377822467" fileName="ApplicableTypesInfo.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToConcept" />
     <nodeInfo nodeId="1206377824736" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToNode" />
