@@ -235,9 +235,6 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_koy33t_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generation max perm size in mb");
     editorCell.setCellId("Constant_koy33t_a4a");
-    Style style = new StyleImpl();
-    buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -28,10 +28,14 @@
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.AbstractChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ChildSubstituteActionsHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.IChildNodeSetter" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSetupContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext" />
@@ -45,6 +49,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
 </dependenciesRoot>
 

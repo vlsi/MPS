@@ -27,9 +27,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class IStyleSheetMember_Constraints extends BaseConstraintsDescriptor {
-  public IStyleSheetMember_Constraints() {
-    super("jetbrains.mps.lang.editor.structure.IStyleSheetMember");
+public class IStyle_Constraints extends BaseConstraintsDescriptor {
+  public IStyle_Constraints() {
+    super("jetbrains.mps.lang.editor.structure.IStyle");
   }
 
   @Override
@@ -51,7 +51,7 @@ public class IStyleSheetMember_Constraints extends BaseConstraintsDescriptor {
           }
         }
 
-        Iterable<SNode> styleSheets = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
+        Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
           public EditableSModelDescriptor select(Language it) {
             return LanguageAspect.EDITOR.get(it);
           }
@@ -61,19 +61,19 @@ public class IStyleSheetMember_Constraints extends BaseConstraintsDescriptor {
           }
         }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
           public Iterable<SNode> translate(EditableSModelDescriptor it) {
-            return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.IStyleSheetMember");
+            return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.IStyle");
           }
         });
 
-        return Sequence.fromIterable(styleSheets).toListSequence();
+        return Sequence.fromIterable(styles).toListSequence();
       }
 
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_pz2bx0_a0a1a0a0a2;
+        return breakingNode_56bmov_a0a1a0a0a2;
       }
     };
   }
 
-  private static SNodePointer breakingNode_pz2bx0_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
+  private static SNodePointer breakingNode_56bmov_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
 }

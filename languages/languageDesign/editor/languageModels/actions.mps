@@ -5,7 +5,7 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
@@ -30,6 +30,7 @@
   <import index="msyp" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" implicit="yes" />
   <import index="cu2d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
   <import index="k7g4" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
+  <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <root type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1119639069735" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="EDTL_node_substitute" />
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1199894656684" nodeInfo="ng">
@@ -3362,27 +3363,33 @@
     <property name="name" nameId="tpck.1169194664001" value="addExtendedClass" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3383245079143155344" nodeInfo="ng">
       <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3383245079143157182" nodeInfo="ng">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="3383245079143157187" nodeInfo="ng">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="3383245079143157188" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3383245079143157189" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3383245079143157352" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3383245079143175484" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3383245079143158125" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="9122903797276577386" nodeInfo="nn">
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9122903797276577686" nodeInfo="nn">
+                    <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="9122903797276624343" nodeInfo="nn">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9122903797276624344" nodeInfo="in">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.2491174914159318432" resolveInfo="DominatesRecord" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3383245079143158125" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="3383245079143157351" nodeInfo="nn" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3383245079143169395" nodeInfo="nn">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2491174914160584718" nodeInfo="nn">
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.3383245079137422296" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="3383245079143180585" nodeInfo="nn" />
                 </node>
               </node>
             </node>
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="3383245079143157289" nodeInfo="nn">
-            <property name="text" nameId="tpdg.1196433942569" value="extends" />
+            <property name="text" nameId="tpdg.1196433942569" value="dominates" />
           </node>
         </node>
       </node>
@@ -3410,6 +3417,76 @@
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="3383245079143194603" nodeInfo="nn">
             <property name="text" nameId="tpdg.1196433942569" value="extends" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="2491174914161947402" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
+    <property name="name" nameId="tpck.1169194664001" value="addOverlaps" />
+    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="2491174914161947403" nodeInfo="ng">
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpc2.9122903797276194520" resolveInfo="StyleClassReferenceList" />
+      <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="2491174914161947461" nodeInfo="ng">
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.9122903797276194520" resolveInfo="StyleClassReferenceList" />
+        <node role="part" roleId="tpdg.1177333559040" type="tpdg.WrapperSubstituteMenuPart" typeId="tpdg.1177402519659" id="2491174914161949539" nodeInfo="ng">
+          <link role="wrappedConcept" roleId="tpdg.1177402731616" targetNodeId="tpc2.3383245079137422349" resolveInfo="StyleClassReference" />
+          <node role="wrapperBlock" roleId="tpdg.1177402719158" type="tpdg.QueryFunction_SubstituteWrapper" typeId="tpdg.1177402571666" id="2491174914161949540" nodeInfo="nn">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2491174914161949541" nodeInfo="sn">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2491174914162022446" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="2491174914162022444" nodeInfo="nn">
+                  <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="2491174914162022604" nodeInfo="nn">
+                    <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="tpc2.9122903797276194520" resolveInfo="StyleClassReferenceList" />
+                    <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitLink" typeId="tp3r.5455284157994012186" id="2491174914162022751" nodeInfo="ng">
+                      <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="tpc2.9122903797276195161" />
+                      <node role="expression" roleId="tp3r.5455284157993911094" type="tp3r.NodeBuilderExpression" typeId="tp3r.8182547171709752110" id="2491174914162033422" nodeInfo="nn">
+                        <node role="expression" roleId="tp3r.8182547171709752112" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2491174914162033574" nodeInfo="nn">
+                          <node role="creator" roleId="tpee.1145553007750" type="tp2q.SingletonSequenceCreator" typeId="tp2q.1235573135402" id="2491174914162034188" nodeInfo="nn">
+                            <node role="elementType" roleId="tp2q.1235573175711" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2491174914162034383" nodeInfo="in">
+                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079137422349" resolveInfo="StyleClassReference" />
+                            </node>
+                            <node role="singletonValue" roleId="tp2q.1235573187520" type="tpdg.ConceptFunctionParameter_nodeToWrap" typeId="tpdg.1177402641904" id="2491174914162034601" nodeInfo="nn" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="2491174914176590339" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
+    <property name="name" nameId="tpck.1169194664001" value="addCondition" />
+    <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="2491174914176590340" nodeInfo="ng">
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.9122903797336200704" resolveInfo="ApplyStyleClassCondition" />
+      <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="2491174914176590394" nodeInfo="ng">
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.9122903797336200704" resolveInfo="ApplyStyleClassCondition" />
+        <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="2491174914176590396" nodeInfo="ng">
+          <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="2491174914176590397" nodeInfo="nn">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2491174914176590398" nodeInfo="sn">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2491174914176590521" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2491174914176593672" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2491174914176590696" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2491174914176590520" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2491174914176591925" nodeInfo="nn">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.9122903797336200706" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="2491174914176595982" nodeInfo="nn">
+                    <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpc2.1223387125302" resolveInfo="QueryFunction_Boolean" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="2491174914176590482" nodeInfo="nn">
+            <property name="text" nameId="tpdg.1196433942569" value="condition" />
           </node>
         </node>
       </node>

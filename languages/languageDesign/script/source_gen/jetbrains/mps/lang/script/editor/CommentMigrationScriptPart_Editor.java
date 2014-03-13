@@ -9,10 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,7 +26,7 @@ public class CommentMigrationScriptPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_m9vxxb_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_m9vxxb_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_m9vxxb_b0(editorContext, node));
@@ -38,9 +36,7 @@ public class CommentMigrationScriptPart_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_m9vxxb_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -52,9 +48,6 @@ public class CommentMigrationScriptPart_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
