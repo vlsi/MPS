@@ -32,8 +32,6 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forProperty(internalsBounds, preferredInternalsBounds));
-
         // corner resize handle positions 
         configuration.add(Synchronizers.forProperty(resizable, new Runnable() {
           public void run() {
@@ -164,11 +162,11 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
   }
 
   private class ResizeHandleMapper extends Mapper<Vector, ResizeHandleView> {
-    private Property<ResizeHandleView.ResizeHandler> myResizeHandler = new ValueProperty<ResizeHandleView.ResizeHandler>();
+    private Property<DragHandler> myDragHandler = new ValueProperty<DragHandler>();
 
     private ResizeHandleMapper(Vector position, ResizableSelectionFrameView.RectangleUpdater... updater) {
       super(position, new ResizeHandleView(position));
-      myResizeHandler.set(new ResizableSelectionFrameView.ResizeHandleMapper.ResizeHandlerImpl(updater));
+      myDragHandler.set(new ResizableSelectionFrameView.ResizeHandleMapper.DragHandlerImpl(updater));
     }
 
     @Override
@@ -176,23 +174,31 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       super.registerSynchronizers(configuration);
       configuration.add(Synchronizers.forProperty(color, getTarget().color));
       configuration.add(Synchronizers.forProperty(backgroundColor, getTarget().backgroundColor));
-      configuration.add(Synchronizers.forProperty(myResizeHandler, getTarget().resizeHandler));
+      configuration.add(Synchronizers.forProperty(myDragHandler, getTarget().dragHandler));
     }
 
-    private class ResizeHandlerImpl implements ResizeHandleView.ResizeHandler {
+    private class DragHandlerImpl implements DragHandler {
       private ResizableSelectionFrameView.RectangleUpdater[] myUpdaters;
 
 
-      private ResizeHandlerImpl(ResizableSelectionFrameView.RectangleUpdater... updaters) {
+      private DragHandlerImpl(ResizableSelectionFrameView.RectangleUpdater... updaters) {
         myUpdaters = updaters;
       }
 
-      public void handleResize(Vector delta) {
-        Rectangle prefBounds = preferredInternalsBounds.get();
+      public void dragStarted(Vector position) {
+        updatePosition(position);
+      }
+
+      public void updatePosition(Vector position) {
+        Rectangle bounds = internalsBounds.get();
         for (ResizableSelectionFrameView.RectangleUpdater updater : myUpdaters) {
-          prefBounds = updater.updateRect(prefBounds, delta);
+          bounds = updater.updateRect(bounds, position);
         }
-        preferredInternalsBounds.set(prefBounds);
+        internalsBounds.set(bounds);
+      }
+
+      public void dragStopped(Vector position) {
+        preferredInternalsBounds.set(internalsBounds.get());
       }
     }
   }
@@ -207,20 +213,21 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       myX = x;
     }
 
-    public Rectangle updateRect(Rectangle rectangle, Vector delta) {
+    public Rectangle updateRect(Rectangle rectangle, Vector position) {
       Vector origin = rectangle.origin;
       Vector dimension = rectangle.dimension;
       if (myOrigin) {
-        origin = updateVector(origin, delta);
-        dimension = updateVector(dimension, delta.negate());
+        Vector dimensionDelta = origin.sub(position);
+        origin = updateVector(origin, position);
+        dimension = dimension.add(updateVector(Vector.ZERO, dimensionDelta));
       } else {
-        dimension = updateVector(dimension, delta);
+        dimension = updateVector(dimension, position.sub(origin));
       }
       return new Rectangle(origin, dimension);
     }
 
-    private Vector updateVector(Vector vector, Vector delta) {
-      return (myX ? new Vector(vector.x + delta.x, vector.y) : new Vector(vector.x, vector.y + delta.y));
+    private Vector updateVector(Vector value, Vector newValue) {
+      return (myX ? new Vector(newValue.x, value.y) : new Vector(value.x, newValue.y));
     }
   }
 }

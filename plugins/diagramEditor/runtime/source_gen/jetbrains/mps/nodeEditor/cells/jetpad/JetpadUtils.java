@@ -18,6 +18,7 @@ public class JetpadUtils {
   public static final ViewPropertySpec<Object> ID = new ViewPropertySpec("id");
   public static final ViewPropertySpec<Vector> PREFERRED_SIZE = new ViewPropertySpec("preferredSize", ViewPropertyKind.RELAYOUT);
 
+
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {
     return new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
   }

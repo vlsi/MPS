@@ -68,6 +68,9 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" file="DiagramDecoratorView.java">
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" file="DragHandler.java">
+    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" file="NodeDecoratorView.java">
     <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" />
@@ -88,7 +91,9 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" file="RectDecoratorView.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
+    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
@@ -98,6 +103,7 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractExternalFrameView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableSelectionFrameView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" />
@@ -123,7 +129,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" />
     <classNode extendsClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractExternalFrameView" />
-    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandler" />
+    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView" file="ResizeHandleView.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -143,6 +149,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTrait" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" file="SelectionFrameView.java">

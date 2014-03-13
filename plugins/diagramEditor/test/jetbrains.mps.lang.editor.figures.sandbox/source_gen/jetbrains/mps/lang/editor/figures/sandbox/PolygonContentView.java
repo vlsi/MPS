@@ -9,7 +9,6 @@ import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.cell.TextCell;
 import jetbrains.jetpad.projectional.view.TextView;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.cell.view.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
@@ -17,6 +16,7 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.jetpad.geometry.Rectangle;
 
@@ -30,7 +30,6 @@ public class PolygonContentView extends PolygonView {
   private TextView myMetaText = new TextView();
 
   public PolygonContentView() {
-    prop(JetpadUtils.PREFERRED_SIZE).set(new Vector(WIDTH, HEIGHT));
     color().set(Color.LIGHT_BLUE);
     children().add(myPolyLine);
     CellView myCellView = new CellView();
@@ -55,7 +54,9 @@ public class PolygonContentView extends PolygonView {
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
     Vector prefSize = prop(JetpadUtils.PREFERRED_SIZE).get();
-    int width = prefSize.x;
+    int prefWidth = (prefSize != null ? prefSize.x : WIDTH);
+    int prefHeight = (prefSize != null ? prefSize.y : HEIGHT);
+    int width = prefWidth;
     int height = FOLDING_SIZE;
     for (View nextChild : ListSequence.fromList(children())) {
       if (nextChild == myPolyLine || !((nextChild.visible().get()))) {
@@ -65,8 +66,8 @@ public class PolygonContentView extends PolygonView {
       width = Math.max(width, childBounds.dimension.x + FOLDING_SIZE);
       height += childBounds.dimension.y;
     }
-    if (height < prefSize.y) {
-      height = prefSize.y;
+    if (height < prefHeight) {
+      height = prefHeight;
     }
     int yOffset = bounds().get().origin.y + FOLDING_SIZE / 2;
     int xOrigin = bounds().get().origin.x;
@@ -84,7 +85,6 @@ public class PolygonContentView extends PolygonView {
       // myPreferredSize property 
       super.validate();
     }
-    // <node> 
   }
 
   private void adjustPoints(int width, int height) {

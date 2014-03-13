@@ -16,7 +16,7 @@ public abstract class AbstractExternalFrameView extends GroupView {
   public Property<Rectangle> internalsBounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
   public Property<Integer> frameWidth = new ValueProperty<Integer>(1);
 
-  protected Property<Rectangle> frameRectangle = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
+  protected Property<Rectangle> frameRectangle = new ValueProperty<Rectangle>();
 
 
   public AbstractExternalFrameView() {

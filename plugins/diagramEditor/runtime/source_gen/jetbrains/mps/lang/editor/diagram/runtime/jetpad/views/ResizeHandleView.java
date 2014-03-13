@@ -25,9 +25,8 @@ public class ResizeHandleView extends PolyLineView {
   public Property<Color> backgroundColor = new ValueProperty<Color>(Color.LIGHT_GRAY);
   public Property<Integer> halfWidth = new ValueProperty<Integer>(DEFAULT_HALF_WIDTH);
   public Property<Vector> centerLocation = new ValueProperty<Vector>(new Vector(0, 0));
-  public Property<ResizeHandleView.ResizeHandler> resizeHandler = new ValueProperty<ResizeHandleView.ResizeHandler>();
+  public Property<DragHandler> dragHandler = new ValueProperty<DragHandler>();
 
-  private Vector myDragStartLocation = null;
 
   private ResizeHandleView() {
     new Mapper<ResizeHandleView, ResizeHandleView>(this, this) {
@@ -46,10 +45,10 @@ public class ResizeHandleView extends PolyLineView {
             updateLocation(centerLocation.get(), halfWidth.get());
           }
         }));
-        configuration.add(Synchronizers.forProperty(resizeHandler, new WritableProperty<ResizeHandleView.ResizeHandler>() {
+        configuration.add(Synchronizers.forProperty(dragHandler, new WritableProperty<DragHandler>() {
           private Registration myRegistration;
 
-          public void set(ResizeHandleView.ResizeHandler handler) {
+          public void set(DragHandler handler) {
             if (myRegistration != null) {
               myRegistration.remove();
             }
@@ -69,24 +68,22 @@ public class ResizeHandleView extends PolyLineView {
 
   @Override
   protected boolean contains(Vector vector) {
-    return resizeHandler.get() != null;
+    return dragHandler.get() != null;
   }
 
   private ViewTrait getResizeHandlingTrait() {
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
-        myDragStartLocation = event.location();
+        dragHandler.get().dragStarted(event.location());
         event.consume();
       }
     }).on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
-        assert myDragStartLocation != null;
-        resizeHandler.get().handleResize(event.location().sub(myDragStartLocation));
-        myDragStartLocation = event.location();
+        dragHandler.get().updatePosition(event.location());
       }
     }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
-        myDragStartLocation = null;
+        dragHandler.get().dragStopped(event.location());
       }
     }).build();
   }
@@ -98,9 +95,5 @@ public class ResizeHandleView extends PolyLineView {
     points.add(new Vector(location.x + halfWidth, location.y + halfWidth));
     points.add(new Vector(location.x - halfWidth, location.y + halfWidth));
     points.add(new Vector(location.x - halfWidth, location.y - halfWidth));
-  }
-
-  public static interface ResizeHandler {
-    public void handleResize(Vector delta);
   }
 }

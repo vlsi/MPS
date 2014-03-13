@@ -167,12 +167,13 @@
             <property name="value" nameId="tpee.1070475926801" value="preferredSize" />
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4046741574151230573" nodeInfo="nn">
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="4to0.~ViewPropertyKind%dRELAYOUT" resolveInfo="RELAYOUT" />
             <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="4to0.~ViewPropertyKind" resolveInfo="ViewPropertyKind" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="4to0.~ViewPropertyKind%dRELAYOUT" resolveInfo="RELAYOUT" />
           </node>
         </node>
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1585775323796010587" nodeInfo="ngu" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6277411742335784371" nodeInfo="nn" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="6277411742335784384" nodeInfo="ng">
       <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="6277411742335784388" nodeInfo="ng">

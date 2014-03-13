@@ -5,11 +5,13 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.views;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.ValueProperty;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.GroupView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
 
@@ -17,9 +19,11 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
   private static final int ERROR_FRAME_WIDTH = 3;
 
   public Property<Rectangle> bounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
+  public Property<Vector> preferredSize = new ValueProperty<Vector>();
+  public Property<Vector> preferredLocation = new ValueProperty<Vector>();
   public Property<Boolean> resizable = new ValueProperty<Boolean>(false);
 
-  private Property<Rectangle> myInternalsBounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
+  private Property<Rectangle> myInternalsBounds = new ValueProperty<Rectangle>();
 
 
   public RectDecoratorView() {
@@ -45,9 +49,15 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forProperty(myInternalsBounds, getTarget().internalsBounds));
+            configuration.add(Synchronizers.forProperty(new DependentProperty<Rectangle>(myInternalsBounds, preferredLocation, preferredSize), getTarget().internalsBounds));
+            configuration.add(Synchronizers.forProperty(myInternalsBounds, getTarget().preferredInternalsBounds));
+            configuration.add(Synchronizers.forProperty(getTarget().preferredInternalsBounds, new Runnable() {
+              public void run() {
+                preferredLocation.set(getTarget().preferredInternalsBounds.get().origin);
+                preferredSize.set(getTarget().preferredInternalsBounds.get().dimension);
+              }
+            }));
             configuration.add(Synchronizers.forProperty(resizable, getTarget().resizable));
-            configuration.add(Synchronizers.forProperty(getTarget().preferredInternalsBounds, myInternalsBounds));
             configuration.add(Synchronizers.forProperty(Properties.ifProp(hasError, AbstractExternalFrameView.getHalfWidth(ERROR_FRAME_WIDTH), AbstractExternalFrameView.getHalfWidth(getTarget().selectionLineWidth.get())), getTarget().frameWidth));
           }
         };

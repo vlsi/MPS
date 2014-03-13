@@ -32,7 +32,7 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
-import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.geometry.Vector;
@@ -41,7 +41,6 @@ import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -199,8 +198,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           }
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
-          ReadableProperty<Rectangle> bounds = blockMapper.getTarget().rect.bounds();
-          configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
+          View contentView = getContentView();
+          configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
+          configuration.add(Synchronizers.forProperty(getTarget().preferredSize, contentView.prop(JetpadUtils.PREFERRED_SIZE)));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
               return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
