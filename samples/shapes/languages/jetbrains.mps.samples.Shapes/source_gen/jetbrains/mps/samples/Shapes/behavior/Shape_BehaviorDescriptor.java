@@ -10,8 +10,12 @@ public abstract class Shape_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   public Shape_BehaviorDescriptor() {
   }
 
-  public void virtual_interpret_1082824515535573731(SNode thisNode, Graphics graphics) {
-    Shape_Behavior.virtual_interpret_1082824515535573731(thisNode, graphics);
+  public void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
+    Shape_Behavior.virtual_drawShapeAt_4001135958238383544(thisNode, graphics, x, y);
+  }
+
+  public void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
+    Shape_Behavior.virtual_drawShape_1082824515535573731(thisNode, graphics);
   }
 
   @Override

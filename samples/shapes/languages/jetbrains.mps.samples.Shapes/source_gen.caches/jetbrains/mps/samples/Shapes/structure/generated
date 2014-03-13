@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dwgm3c6cgukflkfo7q6oh2ifgmle7kt">
+<dependencies version="2" modelHash="845jbu5kzc9fy5nozojl71jq9x5wwc0">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" hash="11hkwu3uc1k6x7fy66fao5iwpregzpk" />
-  <common hash="ev98adnfnde4htsp5w781fxpj0xnzcc" dependsOnNodes="true">
+  <common hash="3q1ylx0b5po9hf9nuwy7aazfhm9t3xy" dependsOnNodes="true">
     <dep root="4191445539799302575" />
     <dep root="5898776707557467933" />
     <dep root="5898776707557474657" />
@@ -20,7 +20,7 @@
     <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5898776707557467933" name="Canvas" hash="c7x90h62v9x9rbrxw6qyqedr217y2ci" />
+  <source id="5898776707557467933" name="Canvas" hash="-7f2i79jwvcd9x9wdy925f83ihvnhzos" />
   <source id="5898776707557474657" name="Shape" hash="-ajj5el1l7cnovz6dmd9nkg865ofgeqe" />
   <source id="5898776707557474712" name="Circle" hash="-75g490qo6c0uaj7a9zng5oq188x7mly" />
   <source id="5898776707557474722" name="Square" hash="-cyb3ia8vfb6f0fsft2vfr9fzf2xtyvz" />

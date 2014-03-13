@@ -2,510 +2,696 @@
 <debugInfo>
   <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:a6f63b9a-5cc8-4eb8-8222-686d3dfeb45e(jetbrains.mps.samples.Shapes.editor)/4001135958232231213">
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="43" startPosition="88" endLine="44" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="44" startPosition="96" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="45" startPosition="47" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="47" startPosition="80" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="47" startPosition="80" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="49" startPosition="80" endLine="50" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="49" startPosition="80" endLine="50" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="50" startPosition="80" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="50" startPosition="80" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="51" startPosition="80" endLine="52" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="51" startPosition="80" endLine="52" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="52" startPosition="80" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="52" startPosition="80" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="53" startPosition="80" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="53" startPosition="80" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="55" startPosition="82" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="59" startPosition="87" endLine="60" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="60" startPosition="92" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="61" startPosition="46" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="62" startPosition="34" endLine="63" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="63" startPosition="66" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="64" startPosition="40" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="69" startPosition="87" endLine="70" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="70" startPosition="88" endLine="71" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="71" startPosition="46" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="76" startPosition="87" endLine="77" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="77" startPosition="82" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="78" startPosition="26" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="79" startPosition="39" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="80" startPosition="26" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="81" startPosition="58" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="82" startPosition="39" endLine="83" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="83" startPosition="73" endLine="84" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="84" startPosition="57" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="86" startPosition="35" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="87" startPosition="72" endLine="88" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="88" startPosition="78" endLine="89" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="90" startPosition="10" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="94" startPosition="87" endLine="95" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="95" startPosition="88" endLine="96" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="96" startPosition="46" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="97" startPosition="34" endLine="98" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="101" startPosition="87" endLine="102" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="102" startPosition="82" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="103" startPosition="26" endLine="104" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="104" startPosition="39" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="105" startPosition="26" endLine="106" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="106" startPosition="58" endLine="107" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="107" startPosition="39" endLine="108" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="108" startPosition="73" endLine="109" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="109" startPosition="57" endLine="110" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="111" startPosition="35" endLine="112" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="112" startPosition="72" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="113" startPosition="78" endLine="114" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="115" startPosition="10" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="119" startPosition="87" endLine="120" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="120" startPosition="93" endLine="121" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="121" startPosition="46" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="122" startPosition="34" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="126" startPosition="87" endLine="127" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="127" startPosition="82" endLine="128" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="128" startPosition="31" endLine="129" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="129" startPosition="44" endLine="130" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="130" startPosition="26" endLine="131" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="131" startPosition="58" endLine="132" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="132" startPosition="44" endLine="133" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="133" startPosition="73" endLine="134" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="134" startPosition="57" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="136" startPosition="35" endLine="137" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="137" startPosition="72" endLine="138" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="138" startPosition="78" endLine="139" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="140" startPosition="10" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477407" fileName="Circle_IncludingPreview_Editor.java" startLine="144" startPosition="88" endLine="145" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477407" fileName="Circle_IncludingPreview_Editor.java" startLine="145" startPosition="141" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="149" startPosition="89" endLine="150" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="150" startPosition="192" endLine="151" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="151" startPosition="48" endLine="152" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477415" fileName="Circle_IncludingPreview_Editor.java" startLine="157" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foundColor" />
-    <nodeInfo nodeId="4001135958232477419" fileName="Circle_IncludingPreview_Editor.java" startLine="158" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="radius" />
-    <nodeInfo nodeId="4001135958232477426" fileName="Circle_IncludingPreview_Editor.java" startLine="161" startPosition="33" endLine="162" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477442" fileName="Circle_IncludingPreview_Editor.java" startLine="164" startPosition="29" endLine="165" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477450" fileName="Circle_IncludingPreview_Editor.java" startLine="165" startPosition="132" endLine="166" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477466" fileName="Circle_IncludingPreview_Editor.java" startLine="174" startPosition="62" endLine="175" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477469" fileName="Circle_IncludingPreview_Editor.java" startLine="175" startPosition="39" endLine="176" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477473" fileName="Circle_IncludingPreview_Editor.java" startLine="177" startPosition="33" endLine="178" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477477" fileName="Circle_IncludingPreview_Editor.java" startLine="179" startPosition="9" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4001135958232477478" fileName="Circle_IncludingPreview_Editor.java" startLine="180" startPosition="0" endLine="181" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477483" fileName="Circle_IncludingPreview_Editor.java" startLine="181" startPosition="38" endLine="182" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477497" fileName="Circle_IncludingPreview_Editor.java" startLine="188" startPosition="43" endLine="189" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477499" fileName="Circle_IncludingPreview_Editor.java" startLine="189" startPosition="21" endLine="190" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477471" fileName="Circle_IncludingPreview_Editor.java" startLine="176" startPosition="21" endLine="179" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="4001135958232477407" fileName="Circle_IncludingPreview_Editor.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_u9999_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477440" fileName="Circle_IncludingPreview_Editor.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="149" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_u9999_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477493" fileName="Circle_IncludingPreview_Editor.java" startLine="187" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_u9999_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="85" startPosition="59" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="94" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_u9999_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="110" startPosition="59" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_u9999_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="135" startPosition="59" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232477429" fileName="Circle_IncludingPreview_Editor.java" startLine="162" startPosition="25" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="59" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_u9999_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477424" fileName="Circle_IncludingPreview_Editor.java" startLine="161" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initialize#()V" />
-    <nodeInfo nodeId="4001135958232477460" fileName="Circle_IncludingPreview_Editor.java" startLine="173" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="43" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_u9999_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="76" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_u9999_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="101" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_u9999_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="126" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_u9999_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232477411" fileName="Circle_IncludingPreview_Editor.java" startLine="155" startPosition="118" endLine="192" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232477409" fileName="Circle_IncludingPreview_Editor.java" startLine="155" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_u9999_a8a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="62" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="47" startPosition="80" endLine="48" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="49" startPosition="80" endLine="50" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="50" startPosition="80" endLine="51" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="51" startPosition="80" endLine="52" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="52" startPosition="80" endLine="53" endPosition="80" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="53" startPosition="80" endLine="54" endPosition="81" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="82" />
-    <scopeInfo nodeId="4001135958232477472" fileName="Circle_IncludingPreview_Editor.java" startLine="177" startPosition="33" endLine="178" endPosition="17" />
-    <scopeInfo nodeId="4001135958232477407" fileName="Circle_IncludingPreview_Editor.java" startLine="144" startPosition="88" endLine="146" endPosition="22">
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="41" startPosition="89" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="42" startPosition="96" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="43" startPosition="48" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="44" startPosition="28" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="44" startPosition="28" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="53" startPosition="83" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="57" startPosition="88" endLine="58" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="58" startPosition="92" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="59" startPosition="47" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="60" startPosition="34" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="61" startPosition="66" endLine="62" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="62" startPosition="40" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="67" startPosition="88" endLine="68" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="68" startPosition="88" endLine="69" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="69" startPosition="47" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="70" startPosition="34" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="74" startPosition="88" endLine="75" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="75" startPosition="82" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="76" startPosition="26" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="77" startPosition="39" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="78" startPosition="26" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="79" startPosition="58" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="80" startPosition="39" endLine="81" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="81" startPosition="73" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="82" startPosition="57" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="85" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="85" startPosition="72" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="88" startPosition="10" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="92" startPosition="88" endLine="93" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="93" startPosition="88" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="94" startPosition="47" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="95" startPosition="34" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="99" startPosition="88" endLine="100" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="100" startPosition="82" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="101" startPosition="26" endLine="102" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="102" startPosition="39" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="103" startPosition="26" endLine="104" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="104" startPosition="58" endLine="105" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="105" startPosition="39" endLine="106" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="106" startPosition="73" endLine="107" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="107" startPosition="57" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="110" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="110" startPosition="72" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="113" startPosition="10" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="117" startPosition="88" endLine="118" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="118" startPosition="93" endLine="119" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="119" startPosition="47" endLine="120" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="120" startPosition="34" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="124" startPosition="88" endLine="125" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="125" startPosition="82" endLine="126" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="126" startPosition="31" endLine="127" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="127" startPosition="44" endLine="128" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="128" startPosition="26" endLine="129" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="129" startPosition="58" endLine="130" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="130" startPosition="44" endLine="131" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="131" startPosition="73" endLine="132" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="132" startPosition="57" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="135" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="135" startPosition="72" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="138" startPosition="10" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="142" startPosition="89" endLine="143" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="143" startPosition="141" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="147" startPosition="90" endLine="148" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="148" startPosition="190" endLine="149" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="149" startPosition="49" endLine="150" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958237781749" fileName="Circle_ShapePreview_Editor.java" startLine="158" startPosition="62" endLine="159" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477466" fileName="Circle_ShapePreview_Editor.java" startLine="159" startPosition="25" endLine="160" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958237769651" fileName="Circle_ShapePreview_Editor.java" startLine="162" startPosition="29" endLine="163" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477499" fileName="Circle_ShapePreview_Editor.java" startLine="171" startPosition="43" endLine="172" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958237781763" fileName="Circle_ShapePreview_Editor.java" startLine="162" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_347ksb_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477493" fileName="Circle_ShapePreview_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="147" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_347ksb_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958237781752" fileName="Circle_ShapePreview_Editor.java" startLine="160" startPosition="39" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_347ksb_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="83" startPosition="59" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_347ksb_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="108" startPosition="59" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_347ksb_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="133" startPosition="59" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_347ksb_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477460" fileName="Circle_ShapePreview_Editor.java" startLine="157" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="41" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_347ksb_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="74" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_347ksb_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_347ksb_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="124" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_347ksb_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232477411" fileName="Circle_ShapePreview_Editor.java" startLine="153" startPosition="119" endLine="174" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477409" fileName="Circle_ShapePreview_Editor.java" startLine="153" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_347ksb_a8a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="26" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="44" startPosition="28" endLine="45" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="82" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="83" />
+    <scopeInfo nodeId="4001135958237781764" fileName="Circle_ShapePreview_Editor.java" startLine="162" startPosition="29" endLine="163" endPosition="138" />
+    <scopeInfo nodeId="4001135958232477496" fileName="Circle_ShapePreview_Editor.java" startLine="171" startPosition="43" endLine="172" endPosition="135" />
+    <scopeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="142" startPosition="89" endLine="144" endPosition="22">
       <varInfo nodeId="4001135958232477407" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477441" fileName="Circle_IncludingPreview_Editor.java" startLine="164" startPosition="29" endLine="166" endPosition="68" />
-    <scopeInfo nodeId="4001135958232477496" fileName="Circle_IncludingPreview_Editor.java" startLine="188" startPosition="43" endLine="190" endPosition="55" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4001135958232231213" varName="editorContext" />
       <varInfo nodeId="4001135958232231213" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105">
+    <scopeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105">
       <varInfo nodeId="4001135958232477402" varName="manager" />
       <varInfo nodeId="4001135958232477402" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="111" startPosition="35" endLine="114" endPosition="105">
+    <scopeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="105">
       <varInfo nodeId="4001135958232477404" varName="manager" />
       <varInfo nodeId="4001135958232477404" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="136" startPosition="35" endLine="139" endPosition="105">
+    <scopeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="105">
       <varInfo nodeId="4001135958232477406" varName="manager" />
       <varInfo nodeId="4001135958232477406" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="149" startPosition="89" endLine="152" endPosition="22">
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="147" startPosition="90" endLine="150" endPosition="22">
       <varInfo nodeId="4001135958232231213" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="69" startPosition="87" endLine="73" endPosition="22">
+    <scopeInfo nodeId="4001135958237781763" fileName="Circle_ShapePreview_Editor.java" startLine="162" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="67" startPosition="88" endLine="71" endPosition="22">
       <varInfo nodeId="4001135958232477401" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="94" startPosition="87" endLine="98" endPosition="22">
+    <scopeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="92" startPosition="88" endLine="96" endPosition="22">
       <varInfo nodeId="4001135958232477403" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="119" startPosition="87" endLine="123" endPosition="22">
+    <scopeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="117" startPosition="88" endLine="121" endPosition="22">
       <varInfo nodeId="4001135958232477405" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477407" fileName="Circle_IncludingPreview_Editor.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="4001135958232477407" varName="editorContext" />
       <varInfo nodeId="4001135958232477407" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477440" fileName="Circle_IncludingPreview_Editor.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="149" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="4001135958232477493" fileName="Circle_ShapePreview_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="147" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="4001135958232231213" varName="editorContext" />
       <varInfo nodeId="4001135958232231213" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477493" fileName="Circle_IncludingPreview_Editor.java" startLine="187" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="4001135958232477401" fileName="Circle_IncludingPreview_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="4001135958232477401" fileName="Circle_ShapePreview_Editor.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4001135958232477401" varName="editorContext" />
       <varInfo nodeId="4001135958232477401" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477403" fileName="Circle_IncludingPreview_Editor.java" startLine="94" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="4001135958232477403" varName="editorContext" />
       <varInfo nodeId="4001135958232477403" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477405" fileName="Circle_IncludingPreview_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="4001135958232477405" varName="editorContext" />
       <varInfo nodeId="4001135958232477405" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="59" startPosition="87" endLine="66" endPosition="22">
+    <scopeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="57" startPosition="88" endLine="64" endPosition="22">
       <varInfo nodeId="4001135958232477400" varName="editorCell" />
       <varInfo nodeId="4001135958232477400" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477425" fileName="Circle_IncludingPreview_Editor.java" startLine="161" startPosition="33" endLine="168" endPosition="11" />
-    <scopeInfo nodeId="4001135958232477465" fileName="Circle_IncludingPreview_Editor.java" startLine="174" startPosition="62" endLine="182" endPosition="50" />
-    <scopeInfo nodeId="4001135958232477400" fileName="Circle_IncludingPreview_Editor.java" startLine="59" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="4001135958232477465" fileName="Circle_ShapePreview_Editor.java" startLine="158" startPosition="62" endLine="165" endPosition="11" />
+    <scopeInfo nodeId="4001135958232477400" fileName="Circle_ShapePreview_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="4001135958232477400" varName="editorContext" />
       <varInfo nodeId="4001135958232477400" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477424" fileName="Circle_IncludingPreview_Editor.java" startLine="161" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="4001135958232477460" fileName="Circle_IncludingPreview_Editor.java" startLine="173" startPosition="0" endLine="184" endPosition="0">
+    <scopeInfo nodeId="4001135958232477460" fileName="Circle_ShapePreview_Editor.java" startLine="157" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="4001135958232477463" varName="graphics" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="43" startPosition="88" endLine="56" endPosition="22">
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="41" startPosition="89" endLine="54" endPosition="22">
       <varInfo nodeId="4001135958232231213" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="43" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="41" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="4001135958232231213" varName="editorContext" />
       <varInfo nodeId="4001135958232231213" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="76" startPosition="87" endLine="91" endPosition="22">
+    <scopeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="74" startPosition="88" endLine="89" endPosition="22">
       <varInfo nodeId="4001135958232477402" varName="attributeConcept" />
       <varInfo nodeId="4001135958232477402" varName="attributeKind" />
       <varInfo nodeId="4001135958232477402" varName="editorCell" />
       <varInfo nodeId="4001135958232477402" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="101" startPosition="87" endLine="116" endPosition="22">
+    <scopeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="99" startPosition="88" endLine="114" endPosition="22">
       <varInfo nodeId="4001135958232477404" varName="attributeConcept" />
       <varInfo nodeId="4001135958232477404" varName="attributeKind" />
       <varInfo nodeId="4001135958232477404" varName="editorCell" />
       <varInfo nodeId="4001135958232477404" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="126" startPosition="87" endLine="141" endPosition="22">
+    <scopeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="124" startPosition="88" endLine="139" endPosition="22">
       <varInfo nodeId="4001135958232477406" varName="attributeConcept" />
       <varInfo nodeId="4001135958232477406" varName="attributeKind" />
       <varInfo nodeId="4001135958232477406" varName="editorCell" />
       <varInfo nodeId="4001135958232477406" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477402" fileName="Circle_IncludingPreview_Editor.java" startLine="76" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="74" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="4001135958232477402" varName="editorContext" />
       <varInfo nodeId="4001135958232477402" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477404" fileName="Circle_IncludingPreview_Editor.java" startLine="101" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="4001135958232477404" varName="editorContext" />
       <varInfo nodeId="4001135958232477404" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477406" fileName="Circle_IncludingPreview_Editor.java" startLine="126" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="124" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="4001135958232477406" varName="editorContext" />
       <varInfo nodeId="4001135958232477406" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477410" fileName="Circle_IncludingPreview_Editor.java" startLine="155" startPosition="118" endLine="192" endPosition="6" />
-    <scopeInfo nodeId="4001135958232477409" fileName="Circle_IncludingPreview_Editor.java" startLine="155" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="4001135958232477410" fileName="Circle_ShapePreview_Editor.java" startLine="153" startPosition="119" endLine="174" endPosition="6" />
+    <scopeInfo nodeId="4001135958232477409" fileName="Circle_ShapePreview_Editor.java" startLine="153" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="4001135958232477409" varName="editorContext" />
       <varInfo nodeId="4001135958232477409" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4001135958232477440" fileName="Circle_IncludingPreview_Editor.java" startLine="163" startPosition="90" endLine="168" endPosition="9" unitName="jetbrains.mps.samples.Shapes.editor.Circle_IncludingPreview_Editor$2" />
-    <unitInfo nodeId="4001135958232477414" fileName="Circle_IncludingPreview_Editor.java" startLine="156" startPosition="15" endLine="192" endPosition="5" unitName="jetbrains.mps.samples.Shapes.editor.Circle_IncludingPreview_Editor$1" />
-    <unitInfo nodeId="4001135958232231213" fileName="Circle_IncludingPreview_Editor.java" startLine="31" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.Circle_IncludingPreview_Editor" />
+    <unitInfo nodeId="4001135958237781763" fileName="Circle_ShapePreview_Editor.java" startLine="161" startPosition="90" endLine="165" endPosition="9" unitName="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$2" />
+    <unitInfo nodeId="4001135958232477414" fileName="Circle_ShapePreview_Editor.java" startLine="154" startPosition="15" endLine="174" endPosition="5" unitName="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$1" />
+    <unitInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="29" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor" />
   </root>
   <root nodeRef="r:a6f63b9a-5cc8-4eb8-8222-686d3dfeb45e(jetbrains.mps.samples.Shapes.editor)/4001135958232512372">
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="43" startPosition="89" endLine="44" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="44" startPosition="96" endLine="45" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="45" startPosition="48" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="53" startPosition="81" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="53" startPosition="81" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="54" startPosition="82" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="54" startPosition="82" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="55" startPosition="83" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="60" startPosition="92" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="61" startPosition="47" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="62" startPosition="34" endLine="63" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="63" startPosition="66" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="64" startPosition="40" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="70" startPosition="88" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="71" startPosition="47" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="76" startPosition="88" endLine="77" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="77" startPosition="82" endLine="78" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="78" startPosition="35" endLine="79" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="79" startPosition="48" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="80" startPosition="26" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="81" startPosition="58" endLine="82" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="82" startPosition="48" endLine="83" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="83" startPosition="73" endLine="84" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="84" startPosition="57" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="86" startPosition="35" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="87" startPosition="72" endLine="88" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="88" startPosition="78" endLine="89" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="90" startPosition="10" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="94" startPosition="88" endLine="95" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="95" startPosition="88" endLine="96" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="96" startPosition="47" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="97" startPosition="34" endLine="98" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="101" startPosition="88" endLine="102" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="102" startPosition="82" endLine="103" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="103" startPosition="35" endLine="104" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="104" startPosition="48" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="105" startPosition="26" endLine="106" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="106" startPosition="58" endLine="107" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="107" startPosition="48" endLine="108" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="108" startPosition="73" endLine="109" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="109" startPosition="57" endLine="110" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="111" startPosition="35" endLine="112" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="112" startPosition="72" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="113" startPosition="78" endLine="114" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="115" startPosition="10" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="119" startPosition="88" endLine="120" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="120" startPosition="91" endLine="121" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="121" startPosition="47" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="122" startPosition="34" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="126" startPosition="88" endLine="127" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="127" startPosition="82" endLine="128" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="128" startPosition="29" endLine="129" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="129" startPosition="42" endLine="130" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="130" startPosition="26" endLine="131" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="131" startPosition="58" endLine="132" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="132" startPosition="42" endLine="133" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="133" startPosition="73" endLine="134" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="134" startPosition="57" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="136" startPosition="35" endLine="137" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="137" startPosition="72" endLine="138" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="138" startPosition="78" endLine="139" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="140" startPosition="10" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518688" fileName="Square_IncludingPreview_Editor.java" startLine="144" startPosition="89" endLine="145" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518688" fileName="Square_IncludingPreview_Editor.java" startLine="145" startPosition="141" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="149" startPosition="90" endLine="150" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="150" startPosition="194" endLine="151" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="151" startPosition="49" endLine="152" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518696" fileName="Square_IncludingPreview_Editor.java" startLine="157" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foundColor" />
-    <nodeInfo nodeId="4001135958232518700" fileName="Square_IncludingPreview_Editor.java" startLine="158" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="size" />
-    <nodeInfo nodeId="4001135958232518707" fileName="Square_IncludingPreview_Editor.java" startLine="161" startPosition="33" endLine="162" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518723" fileName="Square_IncludingPreview_Editor.java" startLine="164" startPosition="29" endLine="165" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518731" fileName="Square_IncludingPreview_Editor.java" startLine="165" startPosition="132" endLine="166" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518747" fileName="Square_IncludingPreview_Editor.java" startLine="174" startPosition="62" endLine="175" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518750" fileName="Square_IncludingPreview_Editor.java" startLine="175" startPosition="39" endLine="176" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518754" fileName="Square_IncludingPreview_Editor.java" startLine="177" startPosition="33" endLine="178" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518758" fileName="Square_IncludingPreview_Editor.java" startLine="179" startPosition="9" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4001135958232518759" fileName="Square_IncludingPreview_Editor.java" startLine="180" startPosition="0" endLine="181" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518764" fileName="Square_IncludingPreview_Editor.java" startLine="181" startPosition="38" endLine="182" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518778" fileName="Square_IncludingPreview_Editor.java" startLine="188" startPosition="43" endLine="189" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518780" fileName="Square_IncludingPreview_Editor.java" startLine="189" startPosition="21" endLine="190" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518752" fileName="Square_IncludingPreview_Editor.java" startLine="176" startPosition="21" endLine="179" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="4001135958232518688" fileName="Square_IncludingPreview_Editor.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_ri5xoj_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518721" fileName="Square_IncludingPreview_Editor.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="149" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_ri5xoj_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518774" fileName="Square_IncludingPreview_Editor.java" startLine="187" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ri5xoj_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="85" startPosition="59" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="94" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ri5xoj_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="110" startPosition="59" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ri5xoj_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="135" startPosition="59" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958232518710" fileName="Square_IncludingPreview_Editor.java" startLine="162" startPosition="25" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="59" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ri5xoj_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518705" fileName="Square_IncludingPreview_Editor.java" startLine="161" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initialize#()V" />
-    <nodeInfo nodeId="4001135958232518741" fileName="Square_IncludingPreview_Editor.java" startLine="173" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="43" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ri5xoj_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="76" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ri5xoj_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="101" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ri5xoj_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="126" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ri5xoj_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958232518692" fileName="Square_IncludingPreview_Editor.java" startLine="155" startPosition="119" endLine="192" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958232518690" fileName="Square_IncludingPreview_Editor.java" startLine="155" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_ri5xoj_a8a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="63" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="81" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="53" startPosition="81" endLine="54" endPosition="82" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="54" startPosition="82" endLine="55" endPosition="83" />
-    <scopeInfo nodeId="4001135958232518753" fileName="Square_IncludingPreview_Editor.java" startLine="177" startPosition="33" endLine="178" endPosition="17" />
-    <scopeInfo nodeId="4001135958232518688" fileName="Square_IncludingPreview_Editor.java" startLine="144" startPosition="89" endLine="146" endPosition="22">
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="41" startPosition="89" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="42" startPosition="96" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="43" startPosition="48" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="44" startPosition="28" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="44" startPosition="28" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="53" startPosition="83" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="57" startPosition="88" endLine="58" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="58" startPosition="92" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="59" startPosition="47" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="60" startPosition="34" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="61" startPosition="66" endLine="62" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="62" startPosition="40" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="67" startPosition="88" endLine="68" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="68" startPosition="88" endLine="69" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="69" startPosition="47" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="70" startPosition="34" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="74" startPosition="88" endLine="75" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="75" startPosition="82" endLine="76" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="76" startPosition="35" endLine="77" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="77" startPosition="48" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="78" startPosition="26" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="79" startPosition="58" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="80" startPosition="48" endLine="81" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="81" startPosition="73" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="82" startPosition="57" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="85" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="85" startPosition="72" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="88" startPosition="10" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="92" startPosition="88" endLine="93" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="93" startPosition="88" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="94" startPosition="47" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="95" startPosition="34" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="99" startPosition="88" endLine="100" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="100" startPosition="82" endLine="101" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="101" startPosition="35" endLine="102" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="102" startPosition="48" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="103" startPosition="26" endLine="104" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="104" startPosition="58" endLine="105" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="105" startPosition="48" endLine="106" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="106" startPosition="73" endLine="107" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="107" startPosition="57" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="110" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="110" startPosition="72" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="113" startPosition="10" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="117" startPosition="88" endLine="118" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="118" startPosition="91" endLine="119" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="119" startPosition="47" endLine="120" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="120" startPosition="34" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="124" startPosition="88" endLine="125" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="125" startPosition="82" endLine="126" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="126" startPosition="29" endLine="127" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="127" startPosition="42" endLine="128" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="128" startPosition="26" endLine="129" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="129" startPosition="58" endLine="130" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="130" startPosition="42" endLine="131" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="131" startPosition="73" endLine="132" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="132" startPosition="57" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="135" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="135" startPosition="72" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="138" startPosition="10" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="142" startPosition="89" endLine="143" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="143" startPosition="141" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="147" startPosition="90" endLine="148" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="148" startPosition="190" endLine="149" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="149" startPosition="49" endLine="150" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518707" fileName="Square_ShapePreview_Editor.java" startLine="158" startPosition="62" endLine="159" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518747" fileName="Square_ShapePreview_Editor.java" startLine="159" startPosition="25" endLine="160" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958238523860" fileName="Square_ShapePreview_Editor.java" startLine="162" startPosition="29" endLine="163" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518780" fileName="Square_ShapePreview_Editor.java" startLine="171" startPosition="43" endLine="172" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518721" fileName="Square_ShapePreview_Editor.java" startLine="162" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_ukdplt_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518774" fileName="Square_ShapePreview_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="147" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_ukdplt_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518710" fileName="Square_ShapePreview_Editor.java" startLine="160" startPosition="39" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ukdplt_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="83" startPosition="59" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ukdplt_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="108" startPosition="59" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ukdplt_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="133" startPosition="59" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ukdplt_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518741" fileName="Square_ShapePreview_Editor.java" startLine="157" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="41" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ukdplt_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="74" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ukdplt_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ukdplt_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="124" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ukdplt_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958232518692" fileName="Square_ShapePreview_Editor.java" startLine="153" startPosition="119" endLine="174" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518690" fileName="Square_ShapePreview_Editor.java" startLine="153" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_ukdplt_a8a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="26" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="44" startPosition="28" endLine="45" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="81" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="82" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="83" />
+    <scopeInfo nodeId="4001135958232518722" fileName="Square_ShapePreview_Editor.java" startLine="162" startPosition="29" endLine="163" endPosition="138" />
+    <scopeInfo nodeId="4001135958232518777" fileName="Square_ShapePreview_Editor.java" startLine="171" startPosition="43" endLine="172" endPosition="131" />
+    <scopeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="142" startPosition="89" endLine="144" endPosition="22">
       <varInfo nodeId="4001135958232518688" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518722" fileName="Square_IncludingPreview_Editor.java" startLine="164" startPosition="29" endLine="166" endPosition="64" />
-    <scopeInfo nodeId="4001135958232518777" fileName="Square_IncludingPreview_Editor.java" startLine="188" startPosition="43" endLine="190" endPosition="51" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4001135958232512372" varName="editorContext" />
       <varInfo nodeId="4001135958232512372" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105">
+    <scopeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105">
       <varInfo nodeId="4001135958232518683" varName="manager" />
       <varInfo nodeId="4001135958232518683" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="111" startPosition="35" endLine="114" endPosition="105">
+    <scopeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="105">
       <varInfo nodeId="4001135958232518685" varName="manager" />
       <varInfo nodeId="4001135958232518685" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="136" startPosition="35" endLine="139" endPosition="105">
+    <scopeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="105">
       <varInfo nodeId="4001135958232518687" varName="manager" />
       <varInfo nodeId="4001135958232518687" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="149" startPosition="90" endLine="152" endPosition="22">
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="147" startPosition="90" endLine="150" endPosition="22">
       <varInfo nodeId="4001135958232512372" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="69" startPosition="88" endLine="73" endPosition="22">
+    <scopeInfo nodeId="4001135958232518721" fileName="Square_ShapePreview_Editor.java" startLine="162" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="67" startPosition="88" endLine="71" endPosition="22">
       <varInfo nodeId="4001135958232518682" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="94" startPosition="88" endLine="98" endPosition="22">
+    <scopeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="92" startPosition="88" endLine="96" endPosition="22">
       <varInfo nodeId="4001135958232518684" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="119" startPosition="88" endLine="123" endPosition="22">
+    <scopeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="117" startPosition="88" endLine="121" endPosition="22">
       <varInfo nodeId="4001135958232518686" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518688" fileName="Square_IncludingPreview_Editor.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="4001135958232518688" varName="editorContext" />
       <varInfo nodeId="4001135958232518688" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518721" fileName="Square_IncludingPreview_Editor.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="149" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="4001135958232518774" fileName="Square_ShapePreview_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="147" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="4001135958232512372" varName="editorContext" />
       <varInfo nodeId="4001135958232512372" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518774" fileName="Square_IncludingPreview_Editor.java" startLine="187" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="4001135958232518682" fileName="Square_IncludingPreview_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="4001135958232518682" fileName="Square_ShapePreview_Editor.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4001135958232518682" varName="editorContext" />
       <varInfo nodeId="4001135958232518682" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518684" fileName="Square_IncludingPreview_Editor.java" startLine="94" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="4001135958232518684" varName="editorContext" />
       <varInfo nodeId="4001135958232518684" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518686" fileName="Square_IncludingPreview_Editor.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="4001135958232518686" varName="editorContext" />
       <varInfo nodeId="4001135958232518686" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="59" startPosition="88" endLine="66" endPosition="22">
+    <scopeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="57" startPosition="88" endLine="64" endPosition="22">
       <varInfo nodeId="4001135958232518681" varName="editorCell" />
       <varInfo nodeId="4001135958232518681" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518706" fileName="Square_IncludingPreview_Editor.java" startLine="161" startPosition="33" endLine="168" endPosition="11" />
-    <scopeInfo nodeId="4001135958232518746" fileName="Square_IncludingPreview_Editor.java" startLine="174" startPosition="62" endLine="182" endPosition="46" />
-    <scopeInfo nodeId="4001135958232518681" fileName="Square_IncludingPreview_Editor.java" startLine="59" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="4001135958232518746" fileName="Square_ShapePreview_Editor.java" startLine="158" startPosition="62" endLine="165" endPosition="11" />
+    <scopeInfo nodeId="4001135958232518681" fileName="Square_ShapePreview_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="4001135958232518681" varName="editorContext" />
       <varInfo nodeId="4001135958232518681" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518705" fileName="Square_IncludingPreview_Editor.java" startLine="161" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="4001135958232518741" fileName="Square_IncludingPreview_Editor.java" startLine="173" startPosition="0" endLine="184" endPosition="0">
+    <scopeInfo nodeId="4001135958232518741" fileName="Square_ShapePreview_Editor.java" startLine="157" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="4001135958232518744" varName="graphics" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="43" startPosition="89" endLine="56" endPosition="22">
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="41" startPosition="89" endLine="54" endPosition="22">
       <varInfo nodeId="4001135958232512372" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="43" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="41" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="4001135958232512372" varName="editorContext" />
       <varInfo nodeId="4001135958232512372" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="76" startPosition="88" endLine="91" endPosition="22">
+    <scopeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="74" startPosition="88" endLine="89" endPosition="22">
       <varInfo nodeId="4001135958232518683" varName="attributeConcept" />
       <varInfo nodeId="4001135958232518683" varName="attributeKind" />
       <varInfo nodeId="4001135958232518683" varName="editorCell" />
       <varInfo nodeId="4001135958232518683" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="101" startPosition="88" endLine="116" endPosition="22">
+    <scopeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="99" startPosition="88" endLine="114" endPosition="22">
       <varInfo nodeId="4001135958232518685" varName="attributeConcept" />
       <varInfo nodeId="4001135958232518685" varName="attributeKind" />
       <varInfo nodeId="4001135958232518685" varName="editorCell" />
       <varInfo nodeId="4001135958232518685" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="126" startPosition="88" endLine="141" endPosition="22">
+    <scopeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="124" startPosition="88" endLine="139" endPosition="22">
       <varInfo nodeId="4001135958232518687" varName="attributeConcept" />
       <varInfo nodeId="4001135958232518687" varName="attributeKind" />
       <varInfo nodeId="4001135958232518687" varName="editorCell" />
       <varInfo nodeId="4001135958232518687" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518683" fileName="Square_IncludingPreview_Editor.java" startLine="76" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="74" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="4001135958232518683" varName="editorContext" />
       <varInfo nodeId="4001135958232518683" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518685" fileName="Square_IncludingPreview_Editor.java" startLine="101" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="4001135958232518685" varName="editorContext" />
       <varInfo nodeId="4001135958232518685" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518687" fileName="Square_IncludingPreview_Editor.java" startLine="126" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="124" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="4001135958232518687" varName="editorContext" />
       <varInfo nodeId="4001135958232518687" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518691" fileName="Square_IncludingPreview_Editor.java" startLine="155" startPosition="119" endLine="192" endPosition="6" />
-    <scopeInfo nodeId="4001135958232518690" fileName="Square_IncludingPreview_Editor.java" startLine="155" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="4001135958232518691" fileName="Square_ShapePreview_Editor.java" startLine="153" startPosition="119" endLine="174" endPosition="6" />
+    <scopeInfo nodeId="4001135958232518690" fileName="Square_ShapePreview_Editor.java" startLine="153" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="4001135958232518690" varName="editorContext" />
       <varInfo nodeId="4001135958232518690" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4001135958232518721" fileName="Square_IncludingPreview_Editor.java" startLine="163" startPosition="90" endLine="168" endPosition="9" unitName="jetbrains.mps.samples.Shapes.editor.Square_IncludingPreview_Editor$2" />
-    <unitInfo nodeId="4001135958232518695" fileName="Square_IncludingPreview_Editor.java" startLine="156" startPosition="15" endLine="192" endPosition="5" unitName="jetbrains.mps.samples.Shapes.editor.Square_IncludingPreview_Editor$1" />
-    <unitInfo nodeId="4001135958232512372" fileName="Square_IncludingPreview_Editor.java" startLine="31" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.Square_IncludingPreview_Editor" />
+    <unitInfo nodeId="4001135958232518721" fileName="Square_ShapePreview_Editor.java" startLine="161" startPosition="90" endLine="165" endPosition="9" unitName="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$2" />
+    <unitInfo nodeId="4001135958232518695" fileName="Square_ShapePreview_Editor.java" startLine="154" startPosition="15" endLine="174" endPosition="5" unitName="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$1" />
+    <unitInfo nodeId="4001135958232512372" fileName="Square_ShapePreview_Editor.java" startLine="29" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor" />
+  </root>
+  <root nodeRef="r:a6f63b9a-5cc8-4eb8-8222-686d3dfeb45e(jetbrains.mps.samples.Shapes.editor)/4001135958236470107">
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="37" startPosition="47" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="41" startPosition="79" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="45" startPosition="89" endLine="46" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="46" startPosition="96" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="47" startPosition="48" endLine="48" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="48" startPosition="28" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="48" startPosition="28" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="51" startPosition="83" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="55" startPosition="88" endLine="56" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="56" startPosition="94" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="57" startPosition="47" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="58" startPosition="34" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="62" startPosition="88" endLine="63" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="63" startPosition="82" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="64" startPosition="29" endLine="65" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="65" startPosition="42" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="66" startPosition="26" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="67" startPosition="58" endLine="68" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="68" startPosition="42" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="70" startPosition="60" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="71" startPosition="40" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="72" startPosition="73" endLine="73" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="73" startPosition="57" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="75" startPosition="35" endLine="76" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="76" startPosition="72" endLine="77" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="77" startPosition="78" endLine="78" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="79" startPosition="10" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="83" startPosition="90" endLine="84" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="84" startPosition="99" endLine="85" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="85" startPosition="49" endLine="86" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="85" startPosition="49" endLine="86" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="86" startPosition="85" endLine="87" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="86" startPosition="85" endLine="87" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="87" startPosition="84" endLine="88" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="87" startPosition="84" endLine="88" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="88" startPosition="84" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="92" startPosition="92" endLine="93" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="93" startPosition="129" endLine="94" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="94" startPosition="108" endLine="95" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="95" startPosition="47" endLine="96" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="96" startPosition="49" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="101" startPosition="99" endLine="102" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="105" startPosition="66" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="106" startPosition="41" endLine="107" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="110" startPosition="86" endLine="111" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="111" startPosition="80" endLine="112" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="112" startPosition="95" endLine="113" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="116" startPosition="68" endLine="117" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="117" startPosition="34" endLine="118" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="118" startPosition="55" endLine="119" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="119" startPosition="87" endLine="120" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="124" startPosition="96" endLine="125" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="126" startPosition="34" endLine="127" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="129" startPosition="131" endLine="130" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958237243515" fileName="Canvas_ScenePreview_Editor.java" startLine="136" startPosition="91" endLine="137" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958237243515" fileName="Canvas_ScenePreview_Editor.java" startLine="137" startPosition="78" endLine="138" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="141" startPosition="91" endLine="142" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="142" startPosition="97" endLine="143" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="143" startPosition="50" endLine="144" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="143" startPosition="50" endLine="144" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="144" startPosition="85" endLine="145" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="148" startPosition="92" endLine="149" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="149" startPosition="194" endLine="150" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="150" startPosition="51" endLine="151" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958239037083" fileName="Canvas_ScenePreview_Editor.java" startLine="154" startPosition="121" endLine="155" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="shapesListHandler_3bcydw_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="125" startPosition="134" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="128" startPosition="9" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958236471301" fileName="Canvas_ScenePreview_Editor.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_3bcydw_a0c2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4001135958237243515" fileName="Canvas_ScenePreview_Editor.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_3bcydw_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="148" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_3bcydw_a2c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_3bcydw_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="74" startPosition="59" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="116" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="141" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_3bcydw_c2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="92" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_3bcydw_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="83" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_3bcydw_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="45" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_3bcydw_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="123" startPosition="132" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="123" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="62" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_3bcydw_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="37" startPosition="47" endLine="38" endPosition="26" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="41" startPosition="79" endLine="42" endPosition="63" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="48" startPosition="28" endLine="49" endPosition="81" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="49" startPosition="81" endLine="50" endPosition="81" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="83" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="85" startPosition="49" endLine="86" endPosition="85" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="86" startPosition="85" endLine="87" endPosition="84" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="87" startPosition="84" endLine="88" endPosition="84" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="101" startPosition="99" endLine="102" endPosition="50" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="126" startPosition="34" endLine="127" endPosition="95" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="129" startPosition="131" endLine="130" endPosition="139" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="143" startPosition="50" endLine="144" endPosition="85" />
+    <scopeInfo nodeId="4001135958236471303" fileName="Canvas_ScenePreview_Editor.java" startLine="154" startPosition="121" endLine="155" endPosition="44" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="105" startPosition="66" endLine="107" endPosition="93">
+      <varInfo nodeId="4001135958236470107" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958237243515" fileName="Canvas_ScenePreview_Editor.java" startLine="136" startPosition="91" endLine="138" endPosition="22">
+      <varInfo nodeId="4001135958237243515" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="75" startPosition="35" endLine="78" endPosition="105">
+      <varInfo nodeId="4001135958236471271" varName="manager" />
+      <varInfo nodeId="4001135958236471271" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="childRole" />
+      <varInfo nodeId="4001135958236470107" varName="context" />
+      <varInfo nodeId="4001135958236470107" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="110" startPosition="86" endLine="113" endPosition="25">
+      <varInfo nodeId="4001135958236470107" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="148" startPosition="92" endLine="151" endPosition="22">
+      <varInfo nodeId="4001135958236470107" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236471301" fileName="Canvas_ScenePreview_Editor.java" startLine="154" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="4001135958236471301" varName="editorContext" />
+      <varInfo nodeId="4001135958236471301" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="55" startPosition="88" endLine="59" endPosition="22">
+      <varInfo nodeId="4001135958236471270" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="116" startPosition="68" endLine="120" endPosition="23">
+      <varInfo nodeId="4001135958236470107" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958237243515" fileName="Canvas_ScenePreview_Editor.java" startLine="136" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="4001135958237243515" varName="editorContext" />
+      <varInfo nodeId="4001135958237243515" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="141" startPosition="91" endLine="145" endPosition="22">
+      <varInfo nodeId="4001135958236470107" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="92" startPosition="92" endLine="97" endPosition="22">
+      <varInfo nodeId="4001135958236470107" varName="editorCell" />
+      <varInfo nodeId="4001135958236470107" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="110" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="148" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236471270" fileName="Canvas_ScenePreview_Editor.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="4001135958236471270" varName="editorContext" />
+      <varInfo nodeId="4001135958236471270" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="83" startPosition="90" endLine="89" endPosition="22">
+      <varInfo nodeId="4001135958236470107" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="116" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="141" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="45" startPosition="89" endLine="52" endPosition="22">
+      <varInfo nodeId="4001135958236470107" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="92" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="124" startPosition="96" endLine="131" endPosition="9" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="83" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="45" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="123" startPosition="132" endLine="132" endPosition="7" />
+    <scopeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="123" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="4001135958236470107" varName="editorContext" />
+      <varInfo nodeId="4001135958236470107" varName="elementCell" />
+      <varInfo nodeId="4001135958236470107" varName="elementNode" />
+      <varInfo nodeId="4001135958236470107" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="62" startPosition="88" endLine="80" endPosition="22">
+      <varInfo nodeId="4001135958236471271" varName="attributeConcept" />
+      <varInfo nodeId="4001135958236471271" varName="attributeKind" />
+      <varInfo nodeId="4001135958236471271" varName="editorCell" />
+      <varInfo nodeId="4001135958236471271" varName="provider" />
+      <varInfo nodeId="4001135958236471271" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="62" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="4001135958236471271" varName="editorContext" />
+      <varInfo nodeId="4001135958236471271" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="100" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.Canvas_ScenePreview_Editor$shapesListHandler_3bcydw_a2a" />
+    <unitInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="33" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.Canvas_ScenePreview_Editor" />
   </root>
   <root nodeRef="r:a6f63b9a-5cc8-4eb8-8222-686d3dfeb45e(jetbrains.mps.samples.Shapes.editor)/4191445539799468057">
     <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

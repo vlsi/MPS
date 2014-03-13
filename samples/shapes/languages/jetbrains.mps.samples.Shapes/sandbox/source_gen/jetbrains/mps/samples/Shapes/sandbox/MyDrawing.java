@@ -15,13 +15,10 @@ public class MyDrawing extends JFrame {
       super.paintComponent(graphics);
       graphics.setColor(Color.BLUE);
       graphics.drawOval(200, 300, 100, 100);
-
       graphics.setColor(Color.GREEN);
       graphics.drawRect(50, 150, 100, 100);
-
       graphics.setColor(Color.RED);
       graphics.drawRect(350, 150, 100, 100);
-
     }
   };
 

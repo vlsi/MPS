@@ -6,44 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JFrame;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.JPanel;
-import java.awt.Graphics;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.awt.Dimension;
 
 public class Canvas_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static void call_interpret_1082824515535528722(SNode thisNode) {
-    final SNode thisCanvas = thisNode;
-    JFrame frame = new JFrame("Preview: " + SPropertyOperations.getString(thisCanvas, "name"));
-    final JPanel panel = new JPanel() {
-      @Override
-      protected void paintComponent(final Graphics graphics) {
-        super.paintComponent(graphics);
-        SNodeOperations.getModel(thisCanvas).getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            ListSequence.fromList(SLinkOperations.getTargets(thisCanvas, "shapes", true)).visitAll(new IVisitor<SNode>() {
-              public void visit(SNode it) {
-                BehaviorReflection.invokeVirtual(Void.class, it, "virtual_interpret_1082824515535573731", new Object[]{graphics});
-              }
-            });
-          }
-        });
-
-      }
-
-
-
-      @Override
-      public Dimension getPreferredSize() {
-        return new Dimension(500, 500);
-      }
-    };
+    JFrame frame = new JFrame("Preview: " + SPropertyOperations.getString(thisNode, "name"));
+    final JPanel panel = PreviewFactory.createPanel(thisNode);
     frame.add(panel);
     frame.setVisible(true);
     frame.pack();
