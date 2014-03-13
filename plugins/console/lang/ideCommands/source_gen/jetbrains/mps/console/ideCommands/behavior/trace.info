@@ -6,7 +6,6 @@
   <unitInfo fileName="ActionCallParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CallActionExpression_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
-  <unitInfo fileName="CleanSources_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.CleanSources_BehaviorDescriptor" />
   <unitInfo fileName="Clean_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Clean_BehaviorDescriptor" />
   <unitInfo fileName="ClickableGenerator_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_BehaviorDescriptor" />
   <unitInfo fileName="GlobalStatisticTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
@@ -20,6 +19,7 @@
   <unitInfo fileName="NodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" />
   <unitInfo fileName="ProjectStatisticsTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
   <unitInfo fileName="RebuildProjectCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
+  <unitInfo fileName="RemoveGenSources_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources_BehaviorDescriptor" />
   <unitInfo fileName="ShowBrokenReferences_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
   <unitInfo fileName="ShowGenPlan_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" />
   <unitInfo fileName="StatCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
@@ -167,18 +167,18 @@
     <unitInfo nodeId="2840424593984889709" fileName="AbsractMake_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.AbsractMake_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984900719">
-    <nodeInfo nodeId="2840424593984900922" fileName="CleanSources_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2840424593984900719" fileName="CleanSources_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2840424593984900719" fileName="CleanSources_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2840424593984900721" fileName="CleanSources_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="2840424593984900726" fileName="CleanSources_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="65" />
-    <scopeInfo nodeId="2840424593984900719" fileName="CleanSources_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="2840424593984900922" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="2840424593984900721" fileName="RemoveGenSources_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="2840424593984900726" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="65" />
+    <scopeInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="2840424593984900719" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2840424593984900719" fileName="CleanSources_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="2840424593984900719" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="2840424593984900719" fileName="CleanSources_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.CleanSources_Behavior" />
+    <unitInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/3894227536041893272">
     <nodeInfo nodeId="3894227536043377005" fileName="ClickableGenerator_Behavior.java" startLine="64" startPosition="27" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

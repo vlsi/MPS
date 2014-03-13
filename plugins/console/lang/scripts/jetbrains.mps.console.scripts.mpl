@@ -62,6 +62,7 @@
   </runtime>
   <extendedLanguages>
     <extendedLanguage>de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)</extendedLanguage>
+    <extendedLanguage>1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)</extendedLanguage>
   </extendedLanguages>
 </language>
 

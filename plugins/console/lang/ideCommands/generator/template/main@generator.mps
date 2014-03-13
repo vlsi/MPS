@@ -54,9 +54,9 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2840424593984905035" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="caxt.2840424593984889115" resolveInfo="CleanSources" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="caxt.2840424593984889115" resolveInfo="RemoveGenSources" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2840424593984905036" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2840424593984905033" resolveInfo="reduce_CleanSources" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2840424593984905033" resolveInfo="reduce_RemoveGenSources" />
       </node>
     </node>
   </root>
@@ -673,9 +673,9 @@
     </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2840424593984905033" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_CleanSources" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_RemoveGenSources" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
-    <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="caxt.2840424593984889115" resolveInfo="CleanSources" />
+    <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="caxt.2840424593984889115" resolveInfo="RemoveGenSources" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2840424593984918718" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Main" />
@@ -698,7 +698,7 @@
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2840424593984918726" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2840424593984918727" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2840424593984948462" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4olo.2840424593983234456" resolveInfo="cleanSourcesGen" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4olo.2840424593983234456" resolveInfo="removeGenSources" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4olo.5582028874772041165" resolveInfo="IdeCommandUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5308946314782036445" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5308946314782036446" nodeInfo="nn">

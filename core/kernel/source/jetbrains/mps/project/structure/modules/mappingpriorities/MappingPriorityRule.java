@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -68,6 +69,11 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
     result.myType = myType;
 
     return result;
+  }
+
+  @Override
+  public String toString() {
+    return GenerationPartitioningUtil.asString(this, true);
   }
 
   public boolean updateReferences() {
