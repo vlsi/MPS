@@ -39,6 +39,7 @@ import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
+import jetbrains.jetpad.model.property.Properties;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import java.util.Set;
 import jetbrains.jetpad.model.property.ReadableProperty;
@@ -267,9 +268,20 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           }
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
-          View contentView = getContentView();
+          final View contentView = getContentView();
           configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
-          configuration.add(Synchronizers.forProperty(getTarget().preferredSize, contentView.prop(JetpadUtils.PREFERRED_SIZE)));
+          configuration.add(Synchronizers.forProperty(Properties.notNull(contentView.prop(JetpadUtils.PREFERRED_SIZE)), getTarget().resizable));
+          configuration.add(Synchronizers.forProperty(getTarget().boundsDelta, new WritableProperty<Rectangle>() {
+            public void set(Rectangle delta) {
+              Vector prefSize = contentView.prop(JetpadUtils.PREFERRED_SIZE).get();
+              if (delta == null) {
+                return;
+              }
+              Vector positionDelta = delta.origin;
+              Vector sizeDelta = delta.dimension;
+              contentView.prop(JetpadUtils.PREFERRED_SIZE).set(prefSize.add(sizeDelta).add(positionDelta));
+            }
+          }));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
             public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(final SNode id) {
               return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {

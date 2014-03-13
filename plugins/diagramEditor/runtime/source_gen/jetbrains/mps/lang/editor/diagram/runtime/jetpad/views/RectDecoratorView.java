@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.views;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.model.property.ValueProperty;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
@@ -19,8 +18,7 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
   private static final int ERROR_FRAME_WIDTH = 3;
 
   public Property<Rectangle> bounds = new ValueProperty<Rectangle>(new Rectangle(0, 0, 0, 0));
-  public Property<Vector> preferredSize = new ValueProperty<Vector>();
-  public Property<Vector> preferredLocation = new ValueProperty<Vector>();
+  public Property<Rectangle> boundsDelta = new ValueProperty<Rectangle>();
   public Property<Boolean> resizable = new ValueProperty<Boolean>(false);
 
   private Property<Rectangle> myInternalsBounds = new ValueProperty<Rectangle>();
@@ -49,14 +47,8 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forProperty(new DependentProperty<Rectangle>(myInternalsBounds, preferredLocation, preferredSize), getTarget().internalsBounds));
-            configuration.add(Synchronizers.forProperty(myInternalsBounds, getTarget().preferredInternalsBounds));
-            configuration.add(Synchronizers.forProperty(getTarget().preferredInternalsBounds, new Runnable() {
-              public void run() {
-                preferredLocation.set(getTarget().preferredInternalsBounds.get().origin);
-                preferredSize.set(getTarget().preferredInternalsBounds.get().dimension);
-              }
-            }));
+            configuration.add(Synchronizers.forProperty(new DependentProperty<Rectangle>(myInternalsBounds, boundsDelta), getTarget().internalsBounds));
+            configuration.add(Synchronizers.forProperty(getTarget().boundsDelta, boundsDelta));
             configuration.add(Synchronizers.forProperty(resizable, getTarget().resizable));
             configuration.add(Synchronizers.forProperty(Properties.ifProp(hasError, AbstractExternalFrameView.getHalfWidth(ERROR_FRAME_WIDTH), AbstractExternalFrameView.getHalfWidth(getTarget().selectionLineWidth.get())), getTarget().frameWidth));
           }

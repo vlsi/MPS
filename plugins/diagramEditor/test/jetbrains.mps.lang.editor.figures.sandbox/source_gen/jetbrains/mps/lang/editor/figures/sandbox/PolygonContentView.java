@@ -4,11 +4,10 @@ package jetbrains.mps.lang.editor.figures.sandbox;
 
 import jetbrains.jetpad.projectional.view.PolygonView;
 import jetbrains.jetpad.projectional.view.PolyLineView;
-import jetbrains.jetpad.model.property.Property;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.cell.TextCell;
 import jetbrains.jetpad.projectional.view.TextView;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.cell.view.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
@@ -16,20 +15,20 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.jetpad.model.property.Property;
 
 public class PolygonContentView extends PolygonView {
   private static final int FOLDING_SIZE = 6;
   private static final int WIDTH = 40;
   private static final int HEIGHT = 50;
   private PolyLineView myPolyLine = new PolyLineView();
-  private Property<Vector> mySize = new ValueProperty<Vector>(new Vector(0, 0));
   private TextCell myCell = new TextCell();
   private TextView myMetaText = new TextView();
 
   public PolygonContentView() {
+    prop(JetpadUtils.PREFERRED_SIZE).set(new Vector(WIDTH, HEIGHT));
     color().set(Color.LIGHT_BLUE);
     children().add(myPolyLine);
     CellView myCellView = new CellView();
@@ -43,7 +42,7 @@ public class PolygonContentView extends PolygonView {
     children().add(space);
     myMetaText.bold().set(true);
     children().add(myMetaText);
-    mySize.addHandler(new EventHandler<PropertyChangeEvent<Vector>>() {
+    prop(JetpadUtils.PREFERRED_SIZE).addHandler(new EventHandler<PropertyChangeEvent<Vector>>() {
       public void onEvent(PropertyChangeEvent<Vector> event) {
         adjustPoints(event.getNewValue().x, event.getNewValue().y);
       }
@@ -54,9 +53,7 @@ public class PolygonContentView extends PolygonView {
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
     Vector prefSize = prop(JetpadUtils.PREFERRED_SIZE).get();
-    int prefWidth = (prefSize != null ? prefSize.x : WIDTH);
-    int prefHeight = (prefSize != null ? prefSize.y : HEIGHT);
-    int width = prefWidth;
+    int width = prefSize.x;
     int height = FOLDING_SIZE;
     for (View nextChild : ListSequence.fromList(children())) {
       if (nextChild == myPolyLine || !((nextChild.visible().get()))) {
@@ -66,8 +63,8 @@ public class PolygonContentView extends PolygonView {
       width = Math.max(width, childBounds.dimension.x + FOLDING_SIZE);
       height += childBounds.dimension.y;
     }
-    if (height < prefHeight) {
-      height = prefHeight;
+    if (height < prefSize.y) {
+      height = prefSize.y;
     }
     int yOffset = bounds().get().origin.y + FOLDING_SIZE / 2;
     int xOrigin = bounds().get().origin.x;
@@ -79,7 +76,7 @@ public class PolygonContentView extends PolygonView {
       nextChild.moveTo(new Vector(xOrigin + (width - childBounds.dimension.x) / 2, yOffset));
       yOffset += childBounds.dimension.y;
     }
-    mySize.set(new Vector(width, height));
+    prop(JetpadUtils.PREFERRED_SIZE).set(new Vector(width, height));
     if (!(myPolyLine.valid().get())) {
       // Calling super.doValidate() once again because myPolyLine can be invalidated as a result of setting 
       // myPreferredSize property 

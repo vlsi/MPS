@@ -10,7 +10,6 @@ public class NodeDecoratorView extends RectDecoratorView {
 
 
   public NodeDecoratorView() {
-    resizable.set(true);
     children().add(inputPortDecotatorView);
     children().add(outputPortDecotatorView);
   }

@@ -91,9 +91,7 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" file="RectDecoratorView.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
-    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />

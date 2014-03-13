@@ -21,7 +21,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
   public Property<Integer> selectionLineWidth = new ValueProperty<Integer>(1);
   public Property<Color> color = new ValueProperty<Color>(Color.BLACK);
   public Property<Color> backgroundColor = new ValueProperty<Color>(Color.LIGHT_GRAY);
-  public Property<Rectangle> preferredInternalsBounds = new ValueProperty<Rectangle>();
+  public Property<Rectangle> boundsDelta = new ValueProperty<Rectangle>();
 
   private ObservableList<Vector> myCornerResizeHandlePositions = new ObservableArrayList<Vector>();
   private ObservableList<Vector> mySideResizeHandlePositions = new ObservableArrayList<Vector>();
@@ -178,6 +178,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
     }
 
     private class DragHandlerImpl implements DragHandler {
+      private Rectangle myOriginalBounds;
       private ResizableSelectionFrameView.RectangleUpdater[] myUpdaters;
 
 
@@ -186,6 +187,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       }
 
       public void dragStarted(Vector position) {
+        myOriginalBounds = internalsBounds.get();
         updatePosition(position);
       }
 
@@ -198,7 +200,11 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       }
 
       public void dragStopped(Vector position) {
-        preferredInternalsBounds.set(internalsBounds.get());
+        Rectangle finalBounds = internalsBounds.get();
+        Vector originDelta = finalBounds.origin.sub(myOriginalBounds.origin);
+        Vector dimensionDelta = finalBounds.dimension.sub(myOriginalBounds.dimension);
+        boundsDelta.set(new Rectangle(originDelta, dimensionDelta));
+        myOriginalBounds = null;
       }
     }
   }

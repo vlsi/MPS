@@ -34,7 +34,6 @@
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.TextView" />
