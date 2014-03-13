@@ -740,7 +740,7 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2840424593981090764" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2840424593983234456" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="cleanSourcesGen" />
+      <property name="name" nameId="tpck.1169194664001" value="removeGenSources" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2840424593984145280" nodeInfo="ir">

@@ -130,7 +130,7 @@ public class IdeCommandUtil {
 
 
 
-  public static void cleanSourcesGen(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+  public static void removeGenSources(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<Iterable<? extends SModule>> _modules = new Wrappers._T<Iterable<? extends SModule>>(modules);
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(_modules.value).isEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
