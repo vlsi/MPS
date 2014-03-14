@@ -36,18 +36,6 @@ public interface ITemplateGenerator {
 
   SModel getOutputModel();
 
-  /**
-   * @deprecated
-   */
-  @Deprecated
-  SModel getSourceModel();
-
-  /**
-   * @deprecated
-   */
-  @Deprecated
-  SModel getTargetModel();
-
   boolean areMappingsAvailable();
 
   void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode);

@@ -67,11 +67,13 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   @Override
+  @Deprecated
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
     showErrorMessage(inputNode, templateNode, null, message);
   }
 
   @Override
+  @Deprecated
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
     if (ruleNode != null && !myFailedRules.add(ruleNode.getReference())) {
       // do not show duplicating messages
@@ -94,25 +96,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myInputModel;
   }
 
-  /**
-   * @deprecated
-   */
-  @Override
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
 
   @Override
   public SModel getOutputModel() {
     return myOutputModel;
-  }
-
-  /**
-   * @deprecated
-   */
-  @Override
-  public SModel getTargetModel() {
-    return getOutputModel();
   }
 
   GeneratorMappings getMappings() {
