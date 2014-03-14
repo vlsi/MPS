@@ -16,13 +16,14 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -37,7 +38,8 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       myTask = task;
     }
 
-    private void runInternal() {
+    @Override
+    public void run() {
       try {
         TypeChecker.getInstance().generationWorkerStarted();
         myTask.run();
@@ -49,21 +51,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
         reportException(th);
       } finally {
         TypeChecker.getInstance().generationWorkerFinished();
-      }
-    }
-
-    @Override
-    public void run() {
-      if (myTask.requiresReadAccess()) {
-        boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
-        try {
-          runInternal();
-        }
-        finally {
-          ModelAccess.instance().setReadEnabledFlag(oldFlag);
-        }
-      } else {
-        runInternal();
       }
     }
   }

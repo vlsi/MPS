@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -27,8 +29,6 @@ public interface IGenerationTaskPool {
 
   public interface GenerationTask {
     void run() throws GenerationCanceledException, GenerationFailureException;
-
-    boolean requiresReadAccess();
   }
 
   void addTask(GenerationTask r);
@@ -62,8 +62,26 @@ public interface IGenerationTaskPool {
     }
   }
 
-  public interface ITaskPoolProvider {
+  public static final class ModelReadTask implements GenerationTask {
+    @NotNull
+    private final GenerationTask myDelegate;
 
+    public ModelReadTask(@NotNull GenerationTask delegate) {
+      myDelegate = delegate;
+    }
+
+    @Override
+    public void run() throws GenerationCanceledException, GenerationFailureException {
+      boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
+      try {
+        myDelegate.run();
+      } finally {
+        ModelAccess.instance().setReadEnabledFlag(oldFlag);
+      }
+    }
+  }
+
+  public interface ITaskPoolProvider {
     IGenerationTaskPool getTaskPool();
   }
 }
