@@ -33,22 +33,7 @@
   <dep model="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.platform.dependencyViewer)" hash="6w1wndqvnhe7cgrdbtlpk95wldsl8tr" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="-1c6hewtjbjbxmrq5lb6qaud3b5914hn" dependsOnNodes="true">
-    <dep root="1298565956308939928" />
-    <dep root="1784947186835625266" />
-    <dep root="1784947186835625271" />
-    <dep root="1784947186835625272" />
-    <dep root="227146524086541067" />
-    <dep root="2342514422328380743" />
-    <dep root="2342514422328399734" />
-    <dep root="2342514422328399760" />
-    <dep root="2342514422328735233" />
-    <dep root="3137902298078256639" />
-    <dep root="4221956679900716104" />
-    <dep root="5176948551392218541" />
-    <dep root="5176948551392218551" />
-    <dep root="6714826334259354054" />
-  </common>
+  <common hash="-1c6hewtjbjbxmrq5lb6qaud3b5914hn" dependsOnNodes="true" />
   <source id="1784947186835625272" name="Default" hash="7jumjk2t2pi8otvco35m0zkyvmi9sxk" />
   <source id="227146524086541067" name="GoToNodeById" hash="2d3yl7cog0cjwxnv4wcgmbpkmhfen6v" dependsOnNodes="true">
     <dep root="1298565956308939928" />
