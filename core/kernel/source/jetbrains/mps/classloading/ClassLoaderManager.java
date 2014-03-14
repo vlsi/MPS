@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,15 +54,15 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-// Good point: before any actions with module that can lead to classes invalidation do two things:
-// 1) unload classes of this module with save unloaded modules
-// 2) change module
-// 3) load all unloaded classes
-// Make some doModuleChangeAction({ => }) method in ClassLoaderManager?
+// Current workflow: before any actions with module leading to the classes invalidation one should do two things:
+// 1) unload modules and remember successfully unloaded modules (@see unloadClasses)
+// 2) change module(s)
+// 3) load all unloaded modules back (@see loadClasses)
 // Main point: modules && modules repository knows nothing about class loading
-// Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
+//
+// Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
+// to fire some reload (or another) event. (or call some reloadModules method only on the "dirty" modules)
 // todo: move to workbench
-// todo: rewrite!
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
@@ -72,20 +73,22 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   private final Map<SModule, ModuleClassLoader> myClassLoaders = new HashMap<SModule, ModuleClassLoader>();
+
   private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
 
   // this field for checking classes loading (double load from different modules)
+  // todo: move to a new class or remove at all
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
 
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
 
+  // listening for module adding/removing
   private SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
 
   // temporary stuff for profiling
   private Map<String, Long> actionToTime = new HashMap<String, Long>();
 
-  // component stuff
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -100,7 +103,6 @@ public class ClassLoaderManager implements CoreComponent {
         return new DumbIdeaPluginFacet();
       }
     });
-    // todo: add listener on module add? or not?
   }
 
   @Override
@@ -129,15 +131,14 @@ public class ClassLoaderManager implements CoreComponent {
     return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
   }
 
+  @Nullable
   public Class getClass(SModule module, String classFqName) {
     // todo: make version without possible exception and with Language instead of SModule argument?
     // todo: add onlyFromSelf argument?
-    // todo: or even onlyFromSelf by default???
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't be start point for classes loading");
     }
-    // todo: hack for stubs
-    // todo: move it! stub classes should not be managed by ClassLoaderManager
+    // todo: hack for stubs. stub classes should not be managed by ClassLoaderManager
     if (module instanceof Language) {
       if (classFqName.startsWith(module.getModuleName() + ".stubs.")) {
         try {
@@ -166,8 +167,8 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   // main internal method. use getClass instead
-  @Nullable
   // TODO must declare checked exceptions instead of silently throwing IAE
+  @Nullable
   public synchronized ClassLoader getClassLoader(SModule module) {
     CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
     if (customClassLoadingFacet != null) {
@@ -189,27 +190,14 @@ public class ClassLoaderManager implements CoreComponent {
     return myClassLoaders.get(module);
   }
 
-  private ModuleClassLoader createClassLoader(SModule module) {
-    assert ModuleClassLoaderSupport.canCreate(module);
-
-    ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
-    ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
-    // save back references
-    for (SModule dep : support.getCompileDependencies()) {
-      if (!myBackRefs.containsKey(dep)) {
-        myBackRefs.put(dep, new HashSet<SModule>());
-      }
-      myBackRefs.get(dep).add(module);
-    }
-    myClassLoaders.put(module, classLoader);
-    return classLoader;
-  }
-
+  // todo: conceal these two methods (should not be public)
   public Set<SModule> unloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    // todo: hack for now...
-    // move this hack to make facet, it's or reload facet, or i don't know. it's make facet business to understand what we should unload
+    /*
+    ** todo: move this hack to make facets (create new facet?).
+    **  it's make facet business to understand what we should unload
+    */
     Set<SModule> toUnload = new HashSet<SModule>();
     for (SModule module : modules) {
       if (SModuleOperations.isCompileInMps(module)) {
@@ -332,6 +320,7 @@ public class ClassLoaderManager implements CoreComponent {
     return modulesToLoad;
   }
 
+  // todo: review all usages
   public void loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
@@ -342,6 +331,13 @@ public class ClassLoaderManager implements CoreComponent {
     loadClasses(modulesToLoad, monitor);
   }
 
+  /**
+   *  This method is called from ModuleClassLoader
+   *  perform a consistency check for loaded modules
+   *  @link {myLoadedClasses}
+   *  TODO: remove it
+   */
+  @ToRemove(version = 3.2)
   /* package */ void classLoaded(String name, SModuleReference id) {
     synchronized (myLoadedClasses) {
       if (myLoadedClasses.containsKey(name)) {
@@ -370,6 +366,22 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   //---------------private part---------------------
+  private ModuleClassLoader createClassLoader(SModule module) {
+    assert ModuleClassLoaderSupport.canCreate(module);
+
+    ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
+    ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
+    // save back references
+    for (SModule dep : support.getCompileDependencies()) {
+      if (!myBackRefs.containsKey(dep)) {
+        myBackRefs.put(dep, new HashSet<SModule>());
+      }
+      myBackRefs.get(dep).add(module);
+    }
+    myClassLoaders.put(module, classLoader);
+    return classLoader;
+  }
+
   private Set<SModule> collectBackReferences(Iterable<? extends SModule> startModules) {
     Set<SModule> modules = new HashSet<SModule>();
     Set<SModule> queue = new HashSet<SModule>();
@@ -389,6 +401,7 @@ public class ClassLoaderManager implements CoreComponent {
     return Collections.unmodifiableSet(modules);
   }
 
+  // two methods for debug purposes
   private void addStat(String name, long beginTime) {
     long time = System.currentTimeMillis() - beginTime;
     if (!actionToTime.containsKey(name)) {
@@ -397,7 +410,6 @@ public class ClassLoaderManager implements CoreComponent {
     actionToTime.put(name, time + actionToTime.get(name));
   }
 
-  // for debug purposes
   private List<Entry<String, Long>> getStat() {
     List<Entry<String, Long>> entries = new ArrayList<Entry<String, Long>>(actionToTime.entrySet());
     Collections.sort(entries, new Comparator<Entry<String, Long>>() {
@@ -410,7 +422,8 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   //---------------deprecated part------------------
-  @Deprecated
+  // Suggesting that this method should be in the main api of this class. Eager to remove public access to loadClasses/unloadClasses
+  // methods, because it violates the inner organisation of class loading.
   public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     try {
       monitor.start("Reload classes...", 2);
@@ -421,12 +434,16 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  // TODO: there are many users of this method. It is excessive action in the most of the cases.
+  // Usually reloading only the "dirty" modules is enough. Review usages, replace the calls with the calls of reloadClasses method.
   @Deprecated
+  @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     reloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
   }
 
   @Deprecated
+  @ToRemove(version = 3.2)
   public void unloadAll(@NotNull ProgressMonitor monitor) {
     unloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
   }

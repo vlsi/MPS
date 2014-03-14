@@ -97,7 +97,7 @@ public class MpsTestsSupport {
     // why we need it? because some classes loaded before maker - LanguageRuntime and typesystem classes 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().reloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
 
@@ -109,7 +109,7 @@ public class MpsTestsSupport {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (SModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+        for (SModule mod : MPSModuleRepository.getInstance().getModules()) {
           if (!(mod instanceof AbstractModule)) {
             continue;
           }
