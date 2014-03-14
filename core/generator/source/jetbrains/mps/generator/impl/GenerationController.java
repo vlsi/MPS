@@ -18,6 +18,8 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.GenerationTrace;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
@@ -166,8 +168,11 @@ public class GenerationController implements ITaskPoolProvider {
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().generationStarted(traceTypes ? ttrace : null);
 
+    final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl() : new GenerationTrace.NoOp();
+
+    final TransientModelsModule transientModule = myTransientModelsProvider.getModule(module);
     final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
-      myCancellationMonitor, myLogger, myTransientModelsProvider.getModule(module), ttrace, myOptions);
+      myCancellationMonitor, myLogger, transientModule, ttrace, myOptions, genTrace);
 
     monitor.start(inputModel.getModelName(), 10);
     try {
@@ -190,6 +195,10 @@ public class GenerationController implements ITaskPoolProvider {
       currentGenerationOK = status.isOk();
 
       checkMonitorCanceled(monitor);
+
+      if (myOptions.isSaveTransientModels()) {
+        transientModule.publishTrace(inputModel.getReference(), genTrace);
+      }
 
       currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, monitor.subTask(1));
       monitor.advance(0);

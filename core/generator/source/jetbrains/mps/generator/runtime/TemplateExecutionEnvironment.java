@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
@@ -46,6 +47,13 @@ public interface TemplateExecutionEnvironment {
 
   @NotNull
   TemplateGenerator getGenerator();
+
+  /**
+   * Access 2nd-generation trace facility
+   * @return
+   */
+  @NotNull
+  GenerationTrace getTrace();
 
   IGenerationTracer getTracer();
 

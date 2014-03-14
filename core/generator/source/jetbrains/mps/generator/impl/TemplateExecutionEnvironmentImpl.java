@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
@@ -90,6 +91,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public TemplateGenerator getGenerator() {
     return generator;
+  }
+
+
+  @NotNull
+  @Override
+  public GenerationTrace getTrace() {
+    return generator.getTrace();
   }
 
   @Override

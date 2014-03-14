@@ -91,7 +91,9 @@ final class TraceNodeUI {
   public boolean matches(@NotNull SNodeReference node) {
     return node.equals(myTargetNode);
   }
-
+  public boolean hasChildren() {
+    return myChildren != null && !myChildren.isEmpty();
+  }
   public Iterable<TraceNodeUI> getChildren() {
     if (myChildren == null) {
       return Collections.emptyList();

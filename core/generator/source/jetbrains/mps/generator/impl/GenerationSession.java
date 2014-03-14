@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationParametersProvider;
 import jetbrains.mps.generator.GenerationParametersProviderEx;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -30,6 +31,7 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.ModelRefRewriteFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
+import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -89,6 +91,7 @@ class GenerationSession {
   private GenerationPlan myGenerationPlan;
 
   private final ProgressMonitor myProgressMonitor;
+  private final GenerationTrace myNewTrace;
   private MPSAppenderBase myLoggingHandler;
   private final RecordingFactory myLogRecorder;
   private final ModelRefRewriteFactory myMessageModelRefRewrite;
@@ -107,10 +110,11 @@ class GenerationSession {
 
   GenerationSession(@NotNull SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
       ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
-      IPerformanceTracer tracer, GenerationOptions generationOptions) {
+      IPerformanceTracer tracer, GenerationOptions generationOptions, GenerationTrace genTrace) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myProgressMonitor = progressMonitor;
+    myNewTrace = genTrace;
     myLogRecorder = new RecordingFactory(new BasicFactory());
     myMessageModelRefRewrite = new ModelRefRewriteFactory(myLogRecorder);
     myLogger = new GenerationSessionLogger(logger, myMessageModelRefRewrite);
@@ -313,7 +317,7 @@ class GenerationSession {
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, null, inputModel, null, myDependenciesBuilder);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, new StepArguments(null, inputModel, null, myDependenciesBuilder, myNewTrace));
     try {
       LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
       while (it.hasNext()) {
@@ -367,7 +371,7 @@ class GenerationSession {
 
   private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
-    IGenerationTracer tracer = mySessionContext.getGenerationTracer();
+    final IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
     final HashMap<SModelReference, SModelReference> modelRefRewriteMap;
     if (cloneInputModel) {
@@ -399,6 +403,7 @@ class GenerationSession {
             SModelStereotype.getStereotype(currentInputModel), SModelStereotype.getStereotype(currentOutputModel)));
       }
       tracer.startTracing(currentInputModel, currentOutputModel);
+      myNewTrace.nextStep(currentInputModel.getReference(), currentOutputModel.getReference());
 
       final SModel exposedInputModel = currentInputModel;
       if (cloneInputModel) {
@@ -420,6 +425,7 @@ class GenerationSession {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(exposedInputModel, currentOutputModel);
+        myNewTrace.dropStep(exposedInputModel.getReference(), currentOutputModel.getReference());
         recycleWasteModel(currentOutputModel, true);
         if (!isPrimary) {
           // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
@@ -498,17 +504,17 @@ class GenerationSession {
     }
   }
 
-  private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
-      RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+  private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary, RuleManager ruleManager)
+      throws GenerationFailureException, GenerationCanceledException {
     boolean hasChanges;
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
+    StepArguments args = new StepArguments(ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder, myNewTrace);
     final TemplateGenerator tg =
         myGenerationOptions.isGenerateInParallel()
             ?
-            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel,
-                myDependenciesBuilder)
-            : new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder);
+            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, args)
+            : new TemplateGenerator(mySessionContext, myProgressMonitor, args);
 
     hasChanges = tg.apply(isPrimary);
     ttrace.pop();
@@ -545,6 +551,7 @@ class GenerationSession {
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getPreProcessScripts().getScripts());
+      myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel_clone.getReference());
 
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
@@ -552,10 +559,11 @@ class GenerationSession {
       myDependenciesBuilder.scriptApplied(currentInputModel); // scriptApplied for a blank copy to record old root to new root mapping
     } else {
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getPreProcessScripts().getScripts());
+      myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel.getReference());
     }
 
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel,
-        currentInputModel, myDependenciesBuilder);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, new StepArguments(ruleManager, currentInputModel,
+        currentInputModel, myDependenciesBuilder, myNewTrace));
     for (TemplateMappingScript preMappingScript : ruleManager.getPreProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
@@ -592,21 +600,23 @@ class GenerationSession {
       new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone,
-          ruleManager.getPostProcessScripts().getScripts());
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getPostProcessScripts().getScripts());
+      myNewTrace.nextStep(currentModel.getReference(), currentOutputModel_clone.getReference());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
     } else {
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
+      myNewTrace.nextStep(currentModel.getReference(), currentModel.getReference());
       // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
       if (currentModel instanceof SModelInternal) {
         ((SModelInternal) currentModel).disposeFastNodeFinder();
       }
     }
 
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentModel, currentModel,
-        myDependenciesBuilder);
+    // FIXME I don't need ruleManager, nor even DependencyManager to execute a script. Refactor QueryExecutionContext
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor,
+        new StepArguments(ruleManager, currentModel, currentModel, myDependenciesBuilder, myNewTrace));
 
     for (TemplateMappingScript postMappingScript : ruleManager.getPostProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {

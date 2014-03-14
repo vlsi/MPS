@@ -56,8 +56,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-      RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder) {
-    super(operationContext, progressMonitor, ruleManager, inputModel, outputModel, dependenciesBuilder);
+      StepArguments args) {
+    super(operationContext, progressMonitor, args);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();

@@ -46,6 +46,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +67,8 @@ public class TransientModelsModule extends AbstractModule {
   private Set<SModel> myPublished = new ConcurrentHashSet<SModel>();
 
   private Set<SDependency> myCachedDependencies = null;
+
+  private final Map<String,GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
@@ -241,6 +244,14 @@ public class TransientModelsModule extends AbstractModule {
       }
     }
     return myCachedDependencies;
+  }
+
+  public GenerationTrace getTrace(SModelReference model) {
+    return myTraces.get(SModelStereotype.withoutStereotype(model.getModelName()));
+  }
+
+  public void publishTrace(@NotNull SModelReference model, @NotNull GenerationTrace trace) {
+    myTraces.put(SModelStereotype.withoutStereotype(model.getModelName()), trace);
   }
 
   public class TransientSModelDescriptor extends EditableSModelBase {

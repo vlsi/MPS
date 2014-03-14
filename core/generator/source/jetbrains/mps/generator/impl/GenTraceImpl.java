@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
@@ -25,18 +26,132 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @author Artem Tikhomirov
  */
-public class GenTrace {
-  public static final class Element {
+public class GenTraceImpl implements GenerationTrace {
+  private Phase mySequence;
+  private Phase myCurrent;
+
+  @Override
+  public void trace(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
+    if (output.isEmpty()) {
+      return;
+    }
+    myCurrent.add(input, output, templateNode);
+  }
+
+  @Override
+  public void walkForward(SNode inputNode, @NotNull Visitor v) {
+    Phase ph = findPhaseForInput(inputNode);
+    if (ph == null) {
+      return;
+    }
+    ArrayList<SNodeId> nodes = new ArrayList<SNodeId>();
+    nodes.add(inputNode.getNodeId());
+    for (; ph != null && !nodes.isEmpty(); ph = ph.next) {
+      Collection<Element> changes = ph.getChangesWithInput(nodes);
+      if (changes.isEmpty()) {
+        continue;
+      }
+      dispatch(v, ph, changes);
+      LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<SNodeId>();
+      for (Element e : changes) {
+        nextInputs.add(e.output);
+      }
+      nodes.clear();
+      nodes.addAll(nextInputs);
+    }
+  }
+
+  @Override
+  public void walkBackward(SNode node, @NotNull Visitor v) {
+    Phase ph = findPhaseForOutput(node);
+    if (ph == null) {
+      // FIXME proceed with the last phase?
+      return;
+    }
+
+    ArrayList<SNodeId> nodes = new ArrayList<SNodeId>();
+    nodes.add(node.getNodeId());
+    for (; ph != null && !nodes.isEmpty(); ph = ph.prev) {
+      Collection<Element> changes = ph.getChangesWithOutput(nodes);
+      if (changes.isEmpty()) {
+        continue;
+      }
+      dispatch(v, ph, changes);
+      LinkedHashSet<SNodeId> prevOutputs = new LinkedHashSet<SNodeId>();
+      for (Element e : changes) {
+        prevOutputs.add(e.input);
+      }
+      nodes.clear();
+      nodes.addAll(prevOutputs);
+    }
+  }
+
+  @Override
+  public void nextStep(@NotNull SModelReference input, @NotNull SModelReference output) {
+    if (mySequence == null) {
+      mySequence = myCurrent = new Phase(input, output, null);
+    } else {
+      newTailPhase(input, output);
+    }
+  }
+
+  @Override
+  public void dropStep(@NotNull SModelReference input, @NotNull SModelReference output) {
+    assert myCurrent != null;
+    assert myCurrent.input.equals(input);
+    myCurrent = myCurrent.prev;
+    if (myCurrent == null) {
+      mySequence = null;
+    } else {
+      myCurrent.next = null;
+    }
+  }
+
+  private void newTailPhase(SModelReference in, SModelReference out) {
+    assert myCurrent != null;
+    myCurrent = new Phase(in, out, myCurrent);
+    myCurrent.prev.next = myCurrent;
+  }
+
+  private Phase findPhaseForInput(SNode inputNode) {
+    SModelReference mr = inputNode.getReference().getModelReference();
+    for (Phase p = mySequence; p != null; p = p.next) {
+      if (p.input.equals(mr)) {
+        return p;
+      }
+    }
+    return null;
+  }
+
+  private Phase findPhaseForOutput(SNode node) {
+    SModelReference mr = node.getReference().getModelReference();
+    for (Phase p = mySequence; p != null; p = p.next) {
+      if (p.output.equals(mr)) {
+        return p;
+      }
+    }
+    return null;
+  }
+
+  static void dispatch(Visitor v, Phase ph, Collection<Element> changes) {
+    v.step(ph.input, ph.output);
+    for (Element e : changes) {
+      v.change(new SNodePointer(ph.input, e.input), new SNodePointer(ph.output, e.output), e.template);
+    }
+    // might be handy to dispatch v.stepDone() here
+  }
+
+  /*package*/ static final class Element {
     @Nullable
     public final SNodeId input;
     @NotNull
@@ -50,7 +165,7 @@ public class GenTrace {
       template = with;
     }
   }
-  public static class Phase {
+  /*package*/ static class Phase {
     private final ArrayList<Element> myTrace = new ArrayList<Element>();
     public Phase next;
     public final Phase prev;

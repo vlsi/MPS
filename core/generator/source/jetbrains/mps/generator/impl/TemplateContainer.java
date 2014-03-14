@@ -16,8 +16,8 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
@@ -70,7 +70,7 @@ public class TemplateContainer {
   public List<SNode> apply(@NotNull TemplateContext ctx)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    final IGenerationTracer tracer = myTemplateProcessor.getEnvironment().getTracer();
+    final GenerationTrace tracer = myTemplateProcessor.getEnvironment().getTrace();
     for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2;
