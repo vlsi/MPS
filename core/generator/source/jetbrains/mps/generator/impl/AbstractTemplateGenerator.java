@@ -34,7 +34,7 @@ import java.util.Set;
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private GenerationSessionContext myOperationContext;
-  private ProgressMonitor myProgressMonitor;
+  protected ProgressMonitor myProgressMonitor;
 
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
@@ -44,9 +44,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   protected final Set<SNodeReference> myFailedRules = new ConcurrentHashSet<SNodeReference>();
 
-  protected AbstractTemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor, SModel inputModel, SModel outputModel) {
+  protected AbstractTemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel) {
     myOperationContext = operationContext;
-    myProgressMonitor = progressMonitor;
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myValidation = operationContext.getRoleValidationFacility();
@@ -64,11 +63,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   protected void checkMonitorCanceled() throws GenerationCanceledException {
-    if (myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
-  }
-
-  protected boolean isCanceled() {
-    return myProgressMonitor.isCanceled();
+    if (myProgressMonitor != null && myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
   @Override

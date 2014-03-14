@@ -22,7 +22,6 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
@@ -145,8 +144,7 @@ public class GenerationFacade {
     });
 
 
-    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext,
-        new CancellationMonitor(monitor));
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext);
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {

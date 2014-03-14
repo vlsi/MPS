@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,8 +35,6 @@ public interface IGenerationTaskPool {
 
   void waitForCompletion() throws GenerationCanceledException, GenerationFailureException;
 
-  boolean isCancelled();
-
   void dispose();
 
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
@@ -57,11 +55,6 @@ public interface IGenerationTaskPool {
       } finally {
         queue.clear();
       }
-    }
-
-    @Override
-    public boolean isCancelled() {
-      return false;
     }
 
     @Override

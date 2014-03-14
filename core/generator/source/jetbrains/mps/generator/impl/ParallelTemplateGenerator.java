@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -28,10 +27,8 @@ import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,9 +52,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private Map<SNode, DefaultQueryExecutionContext> myRootContext;
   private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
-  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-      StepArguments args) {
-    super(operationContext, progressMonitor, args);
+  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, StepArguments args) {
+    super(operationContext, args);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();
@@ -168,17 +164,6 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     } else {
       task.addGeneratedRoot(rd);
     }
-  }
-
-  @Override
-  protected void checkGenerationCanceledFast() throws GenerationCanceledException {
-    if (myPool.isCancelled()) throw new GenerationCanceledException();
-  }
-
-  @Override
-  protected void checkMonitorCanceled() throws GenerationCanceledException {
-    super.checkMonitorCanceled();
-    if (myPool.isCancelled()) throw new GenerationCanceledException();
   }
 
   public abstract class RootGenerationTask implements GenerationTask {

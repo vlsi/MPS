@@ -127,9 +127,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor, StepArguments stepArgs) {
-
-    super(operationContext, progressMonitor, stepArgs.inputModel, stepArgs.outputModel);
+  public TemplateGenerator(GenerationSessionContext operationContext, StepArguments stepArgs) {
+    super(operationContext, stepArgs.inputModel, stepArgs.outputModel);
     myRuleManager = stepArgs.ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     GenerationOptions options = operationContext.getGenerationOptions();
@@ -146,7 +145,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myNewTrace = stepArgs.genTrace;
   }
 
-  public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+  public boolean apply(@NotNull ProgressMonitor progressMonitor, boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+    myProgressMonitor = progressMonitor;
     checkMonitorCanceled();
     final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     myAreMappingsReady = false;
@@ -281,7 +281,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     // copy roots
-    checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : myInputModel.getRootNodes()) {
       if (rootsConsumed.contains(rootToCopy)) {
@@ -291,9 +290,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (context != null) {
         TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context);
         copyRootInputNode(rootToCopy, rootenv);
+        checkMonitorCanceled();
       }
     }
-    checkMonitorCanceled();
   }
 
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
@@ -306,10 +305,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           myGenerationTracer.closeRule(rule.getRuleNode());
         }
       }
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (GenerationCanceledException ex) {
+      throw ex;
     } catch (GenerationException e) {
-      if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
-      if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
+      getLogger().error(rule.getRuleNode(), String.format("internal error: unexpected exception: %s", e.toString()));
+      throw new GenerationFailureException(e);
     }
   }
 
@@ -544,7 +546,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     assert this == env.getGenerator();
     SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
-    checkGenerationCanceledFast();
+    checkMonitorCanceled();
     // find rule
     TemplateReductionRule[] conceptRules = ruleFinder.findReductionRules(inputNode);
     if (conceptRules == null) {
@@ -592,14 +594,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (GenerationCanceledException ex) {
+      if (getGenerationTracer().isTracing() && getLogger().needsInfo()) {
+        getLogger().info("generation canceled when processing branch:");
+        GeneratorUtil.logCurrentGenerationBranch(getLogger(), getGenerationTracer(), false);
+      }
       throw ex;
     } catch (GenerationException ex) {
       // ignore
     }
     return null;
-  }
-
-  protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
   // in fact, it's reasonable to keep this method in TEEI, to reflect narrowing scope of

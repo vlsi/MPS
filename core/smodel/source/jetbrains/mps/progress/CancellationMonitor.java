@@ -19,8 +19,10 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 /**
+ * @deprecated Dubious added value of the class don't justify its existence, will be removed after 3.1
  * Evgeny Gryaznov, 10/3/11
  */
+@Deprecated
 public class CancellationMonitor implements ProgressMonitor {
 
   private final ProgressMonitor wrapped;

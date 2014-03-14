@@ -90,7 +90,6 @@ class GenerationSession {
   private final IOperationContext myInvokeContext; // initial context the session was initiated within
   private GenerationPlan myGenerationPlan;
 
-  private final ProgressMonitor myProgressMonitor;
   private final GenerationTrace myNewTrace;
   private MPSAppenderBase myLoggingHandler;
   private final RecordingFactory myLogRecorder;
@@ -109,11 +108,10 @@ class GenerationSession {
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<SModel>();
 
   GenerationSession(@NotNull SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
-      ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
+      GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
       IPerformanceTracer tracer, GenerationOptions generationOptions, GenerationTrace genTrace) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
-    myProgressMonitor = progressMonitor;
     myNewTrace = genTrace;
     myLogRecorder = new RecordingFactory(new BasicFactory());
     myMessageModelRefRewrite = new ModelRefRewriteFactory(myLogRecorder);
@@ -238,10 +236,8 @@ class GenerationSession {
           if (myLogger.needsInfo()) {
             myLogger.info("executing step " + (myMajorStep + 1));
           }
-          //ttrace.push("step " + (myMajorStep + 1), false);
-          currOutput = executeMajorStep(currInputModel);
-          monitor.advance(1);
-          //ttrace.pop();
+          currOutput = executeMajorStep(monitor.subTask(1), currInputModel);
+          monitor.advance(0);
           if (currOutput == null || myLogger.getErrorCount() > 0) {
             break;
           }
@@ -297,7 +293,7 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStep(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(
@@ -317,7 +313,7 @@ class GenerationSession {
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, new StepArguments(null, inputModel, null, myDependenciesBuilder, myNewTrace));
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, new StepArguments(null, inputModel, null, myDependenciesBuilder, myNewTrace));
     try {
       LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
       while (it.hasNext()) {
@@ -359,7 +355,7 @@ class GenerationSession {
     RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
     try {
-      SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
+      SModel outputModel = executeMajorStepInternal(inputModel, ruleManager, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
       }
@@ -369,7 +365,7 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+  private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager, ProgressMonitor progress) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
     final IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
@@ -418,7 +414,8 @@ class GenerationSession {
         modelRefRewriteMap.put(inputModelPrim.getReference(), currentInputModel.getReference());
         currentInputModel = inputModelPrim;
       }
-      final Pair<Boolean, SModel> applied = applyRules(currentInputModel, currentOutputModel, isPrimary, ruleManager);
+      final TemplateGenerator tg = prepareToApplyRules(currentInputModel, currentOutputModel, ruleManager);
+      final Pair<Boolean, SModel> applied = applyRules(tg, progress, isPrimary);
       boolean somethingHasBeenGenerated = applied.o1;
       SModel realOutputModel = applied.o2;
       if (!somethingHasBeenGenerated) {
@@ -504,19 +501,19 @@ class GenerationSession {
     }
   }
 
-  private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary, RuleManager ruleManager)
-      throws GenerationFailureException, GenerationCanceledException {
-    boolean hasChanges;
+  @NotNull
+  private TemplateGenerator prepareToApplyRules(SModel currentInputModel, SModel currentOutputModel, RuleManager ruleManager) {
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
-    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
     StepArguments args = new StepArguments(ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder, myNewTrace);
-    final TemplateGenerator tg =
-        myGenerationOptions.isGenerateInParallel()
-            ?
-            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, args)
-            : new TemplateGenerator(mySessionContext, myProgressMonitor, args);
+    return myGenerationOptions.isGenerateInParallel()
+            ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, args)
+            : new TemplateGenerator(mySessionContext, args);
+  }
 
-    hasChanges = tg.apply(isPrimary);
+  private Pair<Boolean, SModel> applyRules(TemplateGenerator tg, ProgressMonitor progress, final boolean isPrimary)
+      throws GenerationFailureException, GenerationCanceledException {
+    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
+    boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
     SModel outputModel = tg.getOutputModel();
     if (myNewCache != null && (isPrimary || hasChanges)) {
@@ -562,11 +559,11 @@ class GenerationSession {
       myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel.getReference());
     }
 
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, new StepArguments(ruleManager, currentInputModel,
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, new StepArguments(ruleManager, currentInputModel,
         currentInputModel, myDependenciesBuilder, myNewTrace));
     for (TemplateMappingScript preMappingScript : ruleManager.getPreProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
-        myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
+        myLogger.info(preMappingScript.getScriptNode(), "pre-process " + preMappingScript.getLongName());
       }
       templateGenerator.executeScript(preMappingScript);
     }
@@ -615,12 +612,12 @@ class GenerationSession {
     }
 
     // FIXME I don't need ruleManager, nor even DependencyManager to execute a script. Refactor QueryExecutionContext
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor,
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext,
         new StepArguments(ruleManager, currentModel, currentModel, myDependenciesBuilder, myNewTrace));
 
     for (TemplateMappingScript postMappingScript : ruleManager.getPostProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
-        myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
+        myLogger.info(postMappingScript.getScriptNode(), "post-process " + postMappingScript.getLongName());
       }
       templateGenerator.executeScript(postMappingScript);
     }

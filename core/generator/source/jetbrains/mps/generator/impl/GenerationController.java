@@ -48,20 +48,18 @@ public class GenerationController implements ITaskPoolProvider {
   protected final IGenerationHandler myGenerationHandler;
   protected GeneratorLoggerAdapter myLogger;
   private GenerationOptions myOptions;
-  private final ProgressMonitor myCancellationMonitor;
   private IGenerationTaskPool myParallelTaskPool;
 
   protected List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
 
   public GenerationController(List<? extends SModel> _inputModels, TransientModelsProvider transientModelsProvider, GenerationOptions options,
-                IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressMonitor cancellationMonitor) {
+                IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
     myTransientModelsProvider = transientModelsProvider;
     myInputModels = _inputModels;
     myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
     myLogger = generatorLogger;
     myOptions = options;
-    myCancellationMonitor = cancellationMonitor;
   }
 
   private void initMaps() {
@@ -142,7 +140,7 @@ public class GenerationController implements ITaskPoolProvider {
     monitor.start(module.getModuleName(), inputModels.size());
 
     // TODO fix context
-    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
+    ModuleContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
     myGenerationHandler.startModule(module, inputModels, myOperationContext);
 
     //++ generation
@@ -171,8 +169,7 @@ public class GenerationController implements ITaskPoolProvider {
     final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl() : new GenerationTrace.NoOp();
 
     final TransientModelsModule transientModule = myTransientModelsProvider.getModule(module);
-    final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
-      myCancellationMonitor, myLogger, transientModule, ttrace, myOptions, genTrace);
+    final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this, myLogger, transientModule, ttrace, myOptions, genTrace);
 
     monitor.start(inputModel.getModelName(), 10);
     try {
@@ -223,12 +220,11 @@ public class GenerationController implements ITaskPoolProvider {
 
   @Override
   public IGenerationTaskPool getTaskPool() {
-    if (myParallelTaskPool != null || !myOptions.isGenerateInParallel()) {
-      return myParallelTaskPool;
+    if (myParallelTaskPool == null) {
+      myParallelTaskPool = myOptions.isGenerateInParallel() && GenerationOptions.USE_PARALLEL_POOL
+        ? new GenerationTaskPool(myOptions.getNumberOfThreads())
+        : new SimpleGenerationTaskPool();
     }
-    myParallelTaskPool = GenerationOptions.USE_PARALLEL_POOL
-      ? new GenerationTaskPool(myCancellationMonitor, myOptions.getNumberOfThreads())
-      : new SimpleGenerationTaskPool();
     return myParallelTaskPool;
   }
 

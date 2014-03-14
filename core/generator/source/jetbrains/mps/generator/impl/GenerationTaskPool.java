@@ -68,11 +68,9 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     }
   }
 
-  private final ProgressMonitor cancellationMonitor;
   private volatile boolean isCancelled = false;
 
-  public GenerationTaskPool(ProgressMonitor cancellationMonitor, int numberOfThreads) {
-    this.cancellationMonitor = cancellationMonitor;
+  public GenerationTaskPool(int numberOfThreads) {
     myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new NamedThreadFactory("generation-thread-")) {
       @Override
       protected void afterExecute(Runnable r, Throwable t) {
@@ -103,7 +101,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
     Throwable th = null;
     synchronized (objectLock) {
-      while (exceptions.size() == 0 && tasksInQueue.get() != 0 && !cancellationMonitor.isCanceled()) {
+      while (exceptions.size() == 0 && tasksInQueue.get() != 0) {
         try {
           objectLock.wait(1000);
         } catch (InterruptedException e) {
@@ -112,8 +110,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       }
       if (exceptions.size() != 0) {
         th = exceptions.get(0);
-      } else if (cancellationMonitor.isCanceled()) {
-        th = new GenerationCanceledException();
       }
 
       if (th != null) {
@@ -149,11 +145,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       exceptions.add(thr);
       objectLock.notifyAll();
     }
-  }
-
-  @Override
-  public boolean isCancelled() {
-    return isCancelled;
   }
 
   @Override
