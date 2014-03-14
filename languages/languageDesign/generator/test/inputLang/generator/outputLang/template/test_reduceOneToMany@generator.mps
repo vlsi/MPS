@@ -175,9 +175,6 @@
       </node>
     </node>
   </root>
-  <root type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="7941504602773316105" nodeInfo="ng">
-    <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
-  </root>
   <root type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="8371596541809066874" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="betterSwitch" />
     <link role="modifiedSwitch" roleId="tpf8.1112820671508" targetNodeId="1892993302480310366" resolveInfo="switch_InputNode_A" />

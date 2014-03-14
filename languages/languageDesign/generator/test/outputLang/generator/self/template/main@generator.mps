@@ -1135,9 +1135,6 @@
       </node>
     </node>
   </root>
-  <root type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="7941504602773316107" nodeInfo="ng">
-    <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
-  </root>
   <root type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="8371596541809088655" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="customStatement" />
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8371596541809088657" nodeInfo="ng">

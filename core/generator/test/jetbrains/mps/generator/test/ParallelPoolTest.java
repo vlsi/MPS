@@ -70,11 +70,6 @@ public class ParallelPoolTest extends TestCase {
       LOG.info("Took " + (end - start) / 1000. + " secs");
       isFinished.set(true);
     }
-
-    @Override
-    public boolean requiresReadAccess() {
-      return false;
-    }
   }
 
   private static class CancelTask extends CustomTask {
