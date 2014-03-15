@@ -8,28 +8,22 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class StyleSheet_StyleSheet {
   public static void apply_InternalKeyword(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void apply_InternalName(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void apply_SquareBracket(Style style, EditorCell editorCell) {
-    {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_Bracket(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
+    BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.SELECTABLE, false);
   }
 
 

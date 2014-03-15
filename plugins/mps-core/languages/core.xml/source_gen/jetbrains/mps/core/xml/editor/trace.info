@@ -3234,28 +3234,28 @@
     <unitInfo nodeId="6666499814681415863" fileName="XmlElement_Editor.java" startLine="36" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.core.xml.editor.XmlElement_Editor" />
   </root>
   <root nodeRef="r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)/6666499814681447910">
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="13" startPosition="75" endLine="14" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="14" startPosition="105" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="18" startPosition="81" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="19" startPosition="107" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="23" startPosition="82" endLine="24" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="27" startPosition="81" endLine="28" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="31" startPosition="82" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="32" startPosition="61" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="36" startPosition="86" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="37" startPosition="60" endLine="38" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="41" startPosition="84" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="42" startPosition="60" endLine="43" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="46" startPosition="77" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="47" startPosition="61" endLine="48" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="51" startPosition="77" endLine="52" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="52" startPosition="109" endLine="53" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="56" startPosition="75" endLine="57" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="57" startPosition="109" endLine="58" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="61" startPosition="75" endLine="62" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="65" startPosition="70" endLine="66" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="69" startPosition="76" endLine="70" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="73" startPosition="74" endLine="74" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="13" startPosition="75" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="14" startPosition="102" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="18" startPosition="81" endLine="19" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="19" startPosition="104" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="23" startPosition="82" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="27" startPosition="81" endLine="28" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="31" startPosition="82" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="32" startPosition="58" endLine="33" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="36" startPosition="86" endLine="37" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="37" startPosition="57" endLine="38" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="41" startPosition="84" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="42" startPosition="57" endLine="43" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="46" startPosition="77" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="47" startPosition="58" endLine="48" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="51" startPosition="77" endLine="52" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="52" startPosition="106" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="56" startPosition="75" endLine="57" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="57" startPosition="106" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="61" startPosition="75" endLine="62" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="65" startPosition="70" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="69" startPosition="76" endLine="70" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="73" startPosition="74" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_xmlTagPunctuation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_xmlAttributeName#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_xmlComment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
@@ -3270,20 +3270,20 @@
     <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_xmlNoNewLine#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_xmlEntityRef#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_xmlCharRef#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="23" startPosition="82" endLine="24" endPosition="109" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="27" startPosition="81" endLine="28" endPosition="105" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="61" startPosition="75" endLine="62" endPosition="109" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="65" startPosition="70" endLine="66" endPosition="62" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="69" startPosition="76" endLine="70" endPosition="62" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="73" startPosition="74" endLine="74" endPosition="62" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="13" startPosition="75" endLine="15" endPosition="60" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="18" startPosition="81" endLine="20" endPosition="60" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="31" startPosition="82" endLine="33" endPosition="107" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="36" startPosition="86" endLine="38" endPosition="107" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="41" startPosition="84" endLine="43" endPosition="107" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="46" startPosition="77" endLine="48" endPosition="109" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="51" startPosition="77" endLine="53" endPosition="60" />
-    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="56" startPosition="75" endLine="58" endPosition="60" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="23" startPosition="82" endLine="24" endPosition="106" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="27" startPosition="81" endLine="28" endPosition="102" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="61" startPosition="75" endLine="62" endPosition="106" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="65" startPosition="70" endLine="66" endPosition="59" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="69" startPosition="76" endLine="70" endPosition="59" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="73" startPosition="74" endLine="74" endPosition="59" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="13" startPosition="75" endLine="15" endPosition="57" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="18" startPosition="81" endLine="20" endPosition="57" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="31" startPosition="82" endLine="33" endPosition="104" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="36" startPosition="86" endLine="38" endPosition="104" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="41" startPosition="84" endLine="43" endPosition="104" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="46" startPosition="77" endLine="48" endPosition="106" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="51" startPosition="77" endLine="53" endPosition="57" />
+    <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="56" startPosition="75" endLine="58" endPosition="57" />
     <scopeInfo nodeId="6666499814681447910" fileName="XmlSS_StyleSheet.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="6666499814681447910" varName="editorCell" />
       <varInfo nodeId="6666499814681447910" varName="style" />

@@ -2331,10 +2331,10 @@
     <unitInfo nodeId="2769948622284574296" fileName="BwfTaskDependency_Editor.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor" />
   </root>
   <root nodeRef="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)/2769948622284574315">
-    <nodeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="13" startPosition="72" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="14" startPosition="60" endLine="15" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="13" startPosition="72" endLine="14" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="14" startPosition="57" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_keyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="13" startPosition="72" endLine="15" endPosition="109" />
+    <scopeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="13" startPosition="72" endLine="15" endPosition="106" />
     <scopeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2769948622284574315" varName="editorCell" />
       <varInfo nodeId="2769948622284574315" varName="style" />

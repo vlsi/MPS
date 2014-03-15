@@ -11,67 +11,67 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class XmlSS_StyleSheet {
   public static void apply_xmlTagName(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(128)));
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(128)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void apply_xmlExtensionName(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(16448)));
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16448)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void apply_xmlTagPunctuation(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(3158064)));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(3158064)));
   }
 
   public static void apply_xmlAttributeName(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(255)));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(255)));
   }
 
   public static void apply_xmlAttributeValue(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
   }
 
   public static void apply_xmlAttrEntityRefValue(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
   }
 
   public static void apply_xmlAttrCharRefValue(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
   }
 
   public static void apply_xmlNoNewLine(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(4210816)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(4210816)));
   }
 
   public static void apply_xmlEntityRef(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(6684672)));
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6684672)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void apply_xmlCharRef(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(6684672)));
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6684672)));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void apply_xmlComment(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(8421504)));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(8421504)));
   }
 
   public static void apply_xmlPI(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
   public static void apply_xmlPITarget(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
   public static void apply_xmlPIData(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
 

@@ -31,7 +31,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4560297596904469721" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4560297596904469722" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="test modules configuration" />
-        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1900280919949785184" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8574011380878860401" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
@@ -68,7 +68,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="927724900262398955" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="halt on failure" />
-          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1900280919949786853" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="927724900262398960" nodeInfo="ng">
           <property name="noTargetText" nameId="tpc2.1139852716018" value="false" />
@@ -105,7 +105,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6647099934206700652" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6647099934206700655" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="module-tests" />
-        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1900280919949821558" resolveInfo="plugin" />
+        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.7389400916848136214" resolveInfo="plugin" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6647099934206700654" nodeInfo="nn" />
     </node>

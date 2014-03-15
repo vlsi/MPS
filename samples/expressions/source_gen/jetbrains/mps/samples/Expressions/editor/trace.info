@@ -77,14 +77,14 @@
     <unitInfo nodeId="2073504467207935114" fileName="NotSimpleMathExpression_Editor.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.Expressions.editor.NotSimpleMathExpression_Editor" />
   </root>
   <root nodeRef="r:e219e784-986b-4445-84f5-19e78ea5a924(jetbrains.mps.samples.Expressions.editor)/2073504467207936506">
-    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="13" startPosition="72" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="14" startPosition="60" endLine="15" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="18" startPosition="69" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="19" startPosition="62" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="13" startPosition="72" endLine="14" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="14" startPosition="57" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="18" startPosition="69" endLine="19" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="19" startPosition="59" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_KeyWord#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_type#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="13" startPosition="72" endLine="15" endPosition="113" />
-    <scopeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="18" startPosition="69" endLine="20" endPosition="111" />
+    <scopeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="13" startPosition="72" endLine="15" endPosition="110" />
+    <scopeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="18" startPosition="69" endLine="20" endPosition="108" />
     <scopeInfo nodeId="2073504467207936506" fileName="SimpleMath_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2073504467207936506" varName="editorCell" />
       <varInfo nodeId="2073504467207936506" varName="style" />

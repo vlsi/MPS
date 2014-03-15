@@ -314,22 +314,22 @@
     <unitInfo nodeId="1206443680940" fileName="EmitNopStatement_Editor.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitNopStatement_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)/1206443695631">
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="76" endLine="13" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="16" startPosition="73" endLine="17" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="20" startPosition="81" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="21" startPosition="69" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="25" startPosition="70" endLine="26" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="29" startPosition="79" endLine="30" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="76" endLine="13" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="16" startPosition="73" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="20" startPosition="81" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="21" startPosition="66" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="25" startPosition="70" endLine="26" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="29" startPosition="79" endLine="30" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_Instruction#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_Position#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_Label#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_InsertPosition#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_MayBeUnreachable#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="76" endLine="13" endPosition="113" />
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="16" startPosition="73" endLine="17" endPosition="105" />
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="25" startPosition="70" endLine="26" endPosition="111" />
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="29" startPosition="79" endLine="30" endPosition="111" />
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="20" startPosition="81" endLine="22" endPosition="110" />
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="76" endLine="13" endPosition="110" />
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="16" startPosition="73" endLine="17" endPosition="102" />
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="25" startPosition="70" endLine="26" endPosition="108" />
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="29" startPosition="79" endLine="30" endPosition="108" />
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="20" startPosition="81" endLine="22" endPosition="107" />
     <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1206443695631" varName="editorCell" />
       <varInfo nodeId="1206443695631" varName="style" />

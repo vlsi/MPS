@@ -8021,45 +8021,31 @@
     <unitInfo nodeId="4759120547780522710" fileName="NegativeSymbolClassRegexp_toPositive.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_toPositive" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/5169131996393625116">
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="13" startPosition="76" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="14" startPosition="113" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="19" startPosition="5" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="20" startPosition="23" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="21" startPosition="35" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="22" startPosition="76" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="24" startPosition="5" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="29" startPosition="5" endLine="30" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="30" startPosition="23" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="31" startPosition="35" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="32" startPosition="76" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="34" startPosition="5" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_RegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="18" startPosition="80" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="28" startPosition="81" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_LeftRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_RightRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="13" startPosition="76" endLine="15" endPosition="64" />
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="12" startPosition="76" endLine="13" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="13" startPosition="110" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="17" startPosition="80" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="18" startPosition="69" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="22" startPosition="81" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="23" startPosition="69" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_RegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_LeftRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_RightRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="12" startPosition="76" endLine="14" endPosition="61" />
+    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="17" startPosition="80" endLine="19" endPosition="55" />
+    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="22" startPosition="81" endLine="24" endPosition="54" />
+    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="5169131996393625116" varName="editorCell" />
       <varInfo nodeId="5169131996393625116" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="19" startPosition="5" endLine="23" endPosition="34">
-      <varInfo nodeId="5169131996393625116" varName="styleToPut" />
-    </scopeInfo>
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="29" startPosition="5" endLine="33" endPosition="34">
-      <varInfo nodeId="5169131996393625116" varName="styleToPut" />
-    </scopeInfo>
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="18" startPosition="80" endLine="25" endPosition="58" />
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="28" startPosition="81" endLine="35" endPosition="57" />
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="18" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="5169131996393625116" varName="editorCell" />
       <varInfo nodeId="5169131996393625116" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5169131996393625116" varName="editorCell" />
       <varInfo nodeId="5169131996393625116" varName="style" />
     </scopeInfo>
-    <unitInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
+    <unitInfo nodeId="5169131996393625116" fileName="RegexpStylesheet_StyleSheet.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/6129327962763255291">
     <nodeInfo nodeId="6129327962763255291" fileName="FindMatchExpression_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

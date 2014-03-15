@@ -11,13 +11,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class StyleSheet_StyleSheet {
   public static void apply_Builder(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
   public static void apply_Parameter(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
 
