@@ -175,11 +175,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   /*package*/ void setExternalTrait(ViewTrait trait) {
+    check_xnhqai_a0a62(myRegistration);
     if (trait == null) {
       myRegistration = getRootMapper().getTarget().root().addTrait(getEventHandlingTrait());
     } else {
-      check_xnhqai_a0a0a0ab(myRegistration);
-      getRootMapper().getTarget().root().addTrait(trait);
+      myRegistration = getRootMapper().getTarget().root().addTrait(trait);
     }
   }
 
@@ -475,6 +475,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     });
     result.root().addTrait(RootTrait.ROOT_TRAIT);
+    check_xnhqai_a4a05(myRegistration);
     this.myRegistration = result.root().addTrait(getEventHandlingTrait());
     return result;
   }
@@ -607,7 +608,14 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  private static void check_xnhqai_a0a0a0ab(Registration checkedDotOperand) {
+  private static void check_xnhqai_a0a62(Registration checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.remove();
+    }
+
+  }
+
+  private static void check_xnhqai_a4a05(Registration checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.remove();
     }
