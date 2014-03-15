@@ -1081,11 +1081,11 @@
     <unitInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="19" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_CreateUniqueName_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)/1218067348270">
-    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="85" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="14" startPosition="46" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="15" startPosition="57" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="85" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="14" startPosition="49" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="15" startPosition="60" endLine="16" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_genContext_operation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="85" endLine="16" endPosition="106" />
+    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="85" endLine="16" endPosition="109" />
     <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1218067348270" varName="editorCell" />
       <varInfo nodeId="1218067348270" varName="style" />

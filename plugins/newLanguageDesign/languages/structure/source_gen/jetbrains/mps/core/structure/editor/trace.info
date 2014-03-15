@@ -1101,26 +1101,26 @@
     <unitInfo nodeId="6195190339581766792" fileName="SConcept_Editor.java" startLine="37" startPosition="0" endLine="483" endPosition="0" unitName="jetbrains.mps.core.structure.editor.SConcept_Editor" />
   </root>
   <root nodeRef="r:2c76ed8c-1870-4201-a5ad-2ff77f655c0b(jetbrains.mps.core.structure.editor)/6195190339581766834">
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="14" startPosition="72" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="15" startPosition="57" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="19" startPosition="76" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="20" startPosition="59" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="24" startPosition="72" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="25" startPosition="59" endLine="26" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="29" startPosition="71" endLine="30" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="30" startPosition="108" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="34" startPosition="72" endLine="35" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="35" startPosition="110" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="14" startPosition="72" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="15" startPosition="60" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="19" startPosition="76" endLine="20" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="20" startPosition="62" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="24" startPosition="72" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="25" startPosition="62" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="29" startPosition="71" endLine="30" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="30" startPosition="111" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="34" startPosition="72" endLine="35" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="35" startPosition="113" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_keyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_punctuation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_comment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_string#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_feature#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="14" startPosition="72" endLine="16" endPosition="107" />
-    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="19" startPosition="76" endLine="21" endPosition="58" />
-    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="24" startPosition="72" endLine="26" endPosition="106" />
-    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="29" startPosition="71" endLine="31" endPosition="57" />
-    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="34" startPosition="72" endLine="36" endPosition="57" />
+    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="14" startPosition="72" endLine="16" endPosition="110" />
+    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="19" startPosition="76" endLine="21" endPosition="61" />
+    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="24" startPosition="72" endLine="26" endPosition="109" />
+    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="29" startPosition="71" endLine="31" endPosition="60" />
+    <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="34" startPosition="72" endLine="36" endPosition="60" />
     <scopeInfo nodeId="6195190339581766834" fileName="default_StyleSheet.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6195190339581766834" varName="editorCell" />
       <varInfo nodeId="6195190339581766834" varName="style" />

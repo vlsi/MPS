@@ -9,17 +9,23 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class structure_StyleSheet {
   public static void apply_AnnotationNode(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.UNDERLINED, 0, true);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void apply_Keyword(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_KeyWord(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
   }
 
 
