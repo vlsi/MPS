@@ -2305,16 +2305,23 @@
     <unitInfo nodeId="7060824959893078090" fileName="Looking_Editor.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.samples.Kaja.editor.Looking_Editor" />
   </root>
   <root nodeRef="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)/7446293342517118457">
-    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="14" startPosition="72" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="15" startPosition="66" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="16" startPosition="110" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_Command#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="14" startPosition="72" endLine="17" endPosition="64" />
-    <scopeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="16" startPosition="5" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="17" startPosition="23" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="18" startPosition="35" endLine="19" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="19" startPosition="73" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="21" startPosition="5" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="22" startPosition="113" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="15" startPosition="72" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="15" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_Command#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="16" startPosition="5" endLine="20" endPosition="34">
+      <varInfo nodeId="7446293342517118457" varName="styleToPut" />
+    </scopeInfo>
+    <scopeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="15" startPosition="72" endLine="23" endPosition="67" />
+    <scopeInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="15" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="7446293342517118457" varName="editorCell" />
       <varInfo nodeId="7446293342517118457" varName="style" />
     </scopeInfo>
-    <unitInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.Kaja.editor.KajakStyles_StyleSheet" />
+    <unitInfo nodeId="7446293342517118457" fileName="KajakStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.samples.Kaja.editor.KajakStyles_StyleSheet" />
   </root>
   <root nodeRef="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)/7446293342517357220">
     <nodeInfo nodeId="7446293342517357220" fileName="RemoveNot.java" startLine="14" startPosition="95" endLine="15" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

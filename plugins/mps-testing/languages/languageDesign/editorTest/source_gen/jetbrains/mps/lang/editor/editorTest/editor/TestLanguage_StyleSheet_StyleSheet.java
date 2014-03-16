@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TestLanguage_StyleSheet_StyleSheet {
   public static void apply_baseStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
 
 

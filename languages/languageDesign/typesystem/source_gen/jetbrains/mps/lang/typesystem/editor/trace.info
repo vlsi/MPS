@@ -15297,16 +15297,16 @@
     <unitInfo nodeId="4778346850551666965" fileName="InequationReference_Editor.java" startLine="27" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InequationReference_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/4778346850551686267">
-    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="12" startPosition="80" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="13" startPosition="114" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="14" startPosition="103" endLine="15" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="18" startPosition="87" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="19" startPosition="116" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="20" startPosition="103" endLine="21" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="12" startPosition="80" endLine="13" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="13" startPosition="117" endLine="14" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="14" startPosition="106" endLine="15" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="18" startPosition="87" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="19" startPosition="119" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="20" startPosition="106" endLine="21" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_InequationLabel#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_InequationsGroupsLabel#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="12" startPosition="80" endLine="15" endPosition="112" />
-    <scopeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="18" startPosition="87" endLine="21" endPosition="112" />
+    <scopeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="12" startPosition="80" endLine="15" endPosition="115" />
+    <scopeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="18" startPosition="87" endLine="21" endPosition="115" />
     <scopeInfo nodeId="4778346850551686267" fileName="TypesystemStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="4778346850551686267" varName="editorCell" />
       <varInfo nodeId="4778346850551686267" varName="style" />
