@@ -9,16 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
-import java.util.Collections;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -73,29 +65,15 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return (SLinkOperations.getTarget(node, "extendedClass", true) == null);
+        return true;
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        final SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleClass", null);
-        SLinkOperations.setTarget(newNode, "dominates", null, true);
-        SPropertyOperations.set(newNode, "name", SPropertyOperations.getString(node, "name"));
-        ListSequence.fromList(SLinkOperations.getTargets(newNode, "styleItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)));
-
-        Set<SReference> usages = FindUsagesManager.getInstance().findUsages(new GlobalScope(), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
-
-        SetSequence.fromSet(usages).visitAll(new IVisitor<SReference>() {
-          public void visit(SReference it) {
-            if (SNodeOperations.hasRole(SNodeOperations.as(it.getSourceNode(), "jetbrains.mps.lang.editor.structure.StyleSheetClassReference"), "jetbrains.mps.lang.editor.structure.StyleSheetClass", "extendedClass")) {
-              SNode usingClass = SNodeOperations.as(SNodeOperations.getParent(SNodeOperations.as(it.getSourceNode(), "jetbrains.mps.lang.editor.structure.StyleSheetClassReference")), "jetbrains.mps.lang.editor.structure.StyleSheetClass");
-              ListSequence.fromList(SLinkOperations.getTargets(usingClass, "styleItem", true)).insertElement(0, createApplyStyleClass_s4lgfb_a0a1a0a0a0h0a3(newNode));
-              SLinkOperations.setTarget(usingClass, "extendedClass", null, true);
-            } else {
-              it.getSourceNode().setReferenceTarget(it.getRole(), newNode);
-            }
-          }
-        });
-        SNodeOperations.replaceWithAnother(node, newNode);
+        as_n8en9w_a0a0a4a0a0a0a4a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass")));
+        if ((SLinkOperations.getTarget(node, "extendedClass", true) != null)) {
+          ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).insertElement(0, createApplyStyleClass_s4lgfb_a0a0a1a0d(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "extendedClass", true), "styleSheetClass", false)));
+          SLinkOperations.setTarget(node, "extendedClass", null, true);
+        }
       }
 
       public boolean isShowAsIntention() {
@@ -111,7 +89,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
     return n1;
   }
 
-  private static SNode createApplyStyleClass_s4lgfb_a0a1a0a0a0h0a3(Object p0) {
+  private static SNode createApplyStyleClass_s4lgfb_a0a0a1a0d(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null, false);
     {
@@ -120,5 +98,9 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       n1.addChild("target", n2);
     }
     return n1;
+  }
+
+  private static <T> T as_n8en9w_a0a0a4a0a0a0a4a0(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
