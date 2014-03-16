@@ -16,7 +16,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3702466984434609598" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6951814850419519043" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="{" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6951814850419519044" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -37,7 +37,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6951814850419519046" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="}" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
       </node>
     </node>
   </root>
@@ -98,7 +98,7 @@
   </root>
   <root type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="7301049412170117872" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TestLanguage_StyleSheet" />
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="7301049412170117873" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7301049412170117873" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="baseStyle" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="7301049412170117874" nodeInfo="nn">
         <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />

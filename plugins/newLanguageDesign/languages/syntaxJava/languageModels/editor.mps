@@ -132,7 +132,7 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="7dda.5989029785192113715" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5989029785192113726" nodeInfo="ng">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ReferencePresentation" typeId="tpc2.625126330682908270" id="5989029785192113728" nodeInfo="ng">
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="5989029785192122170" resolveInfo="SymRef" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="5989029785192122170" resolveInfo="SymRef" />
           </node>
         </node>
       </node>
@@ -141,7 +141,7 @@
   </root>
   <root type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="5989029785192122025" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="SyntaxJavaSS" />
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="5989029785192122170" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="5989029785192122170" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="SymRef" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5989029785192122171" nodeInfo="nn">
         <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
