@@ -2346,68 +2346,64 @@
     <nodeInfo nodeId="1030735486036041560" fileName="HintsDialog.java" startLine="82" startPosition="25" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1030735486036016733" fileName="HintsDialog.java" startLine="85" startPosition="7" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1030735486035406784" fileName="HintsDialog.java" startLine="86" startPosition="0" endLine="87" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887028051" fileName="HintsDialog.java" startLine="95" startPosition="25" endLine="96" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887052135" fileName="HintsDialog.java" startLine="96" startPosition="58" endLine="97" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887623961" fileName="HintsDialog.java" startLine="97" startPosition="38" endLine="98" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887562163" fileName="HintsDialog.java" startLine="100" startPosition="51" endLine="101" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887634908" fileName="HintsDialog.java" startLine="103" startPosition="7" endLine="104" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887595920" fileName="HintsDialog.java" startLine="106" startPosition="51" endLine="107" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887783215" fileName="HintsDialog.java" startLine="109" startPosition="7" endLine="110" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887799109" fileName="HintsDialog.java" startLine="110" startPosition="44" endLine="111" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2886858066281544711" fileName="HintsDialog.java" startLine="111" startPosition="43" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2886858066281809550" fileName="HintsDialog.java" startLine="112" startPosition="0" endLine="113" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2886858066281743864" fileName="HintsDialog.java" startLine="113" startPosition="106" endLine="114" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1665189113170151481" fileName="HintsDialog.java" startLine="114" startPosition="56" endLine="115" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2886858066281903246" fileName="HintsDialog.java" startLine="115" startPosition="52" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="195670132111168202" fileName="HintsDialog.java" startLine="116" startPosition="59" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602803370" fileName="HintsDialog.java" startLine="117" startPosition="0" endLine="118" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602803375" fileName="HintsDialog.java" startLine="118" startPosition="46" endLine="119" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602803381" fileName="HintsDialog.java" startLine="119" startPosition="41" endLine="120" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602803398" fileName="HintsDialog.java" startLine="120" startPosition="50" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602803399" fileName="HintsDialog.java" startLine="121" startPosition="0" endLine="122" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602803405" fileName="HintsDialog.java" startLine="122" startPosition="16" endLine="123" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="195670132110975091" fileName="HintsDialog.java" startLine="123" startPosition="19" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6569848372887827323" fileName="HintsDialog.java" startLine="124" startPosition="0" endLine="125" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4233086722129938507" fileName="HintsDialog.java" startLine="125" startPosition="45" endLine="126" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372888013947" fileName="HintsDialog.java" startLine="126" startPosition="16" endLine="127" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4233086722126621666" fileName="HintsDialog.java" startLine="127" startPosition="44" endLine="128" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4233086722126701875" fileName="HintsDialog.java" startLine="128" startPosition="49" endLine="129" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4136358845934188421" fileName="HintsDialog.java" startLine="129" startPosition="56" endLine="130" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4233086722127516586" fileName="HintsDialog.java" startLine="130" startPosition="75" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6569848372887883501" fileName="HintsDialog.java" startLine="131" startPosition="0" endLine="132" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887025084" fileName="HintsDialog.java" startLine="132" startPosition="298" endLine="133" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887531021" fileName="HintsDialog.java" startLine="137" startPosition="55" endLine="138" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="195670132113571353" fileName="HintsDialog.java" startLine="139" startPosition="44" endLine="140" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804274" fileName="HintsDialog.java" startLine="150" startPosition="45" endLine="151" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6569848372887274707" fileName="HintsDialog.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="6569848372887595914" fileName="HintsDialog.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="195670132113554883" fileName="HintsDialog.java" startLine="138" startPosition="36" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6569848372887028051" fileName="HintsDialog.java" startLine="95" startPosition="25" endLine="96" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="791272924511048072" fileName="HintsDialog.java" startLine="96" startPosition="49" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6569848372887052135" fileName="HintsDialog.java" startLine="97" startPosition="0" endLine="98" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887623961" fileName="HintsDialog.java" startLine="98" startPosition="38" endLine="99" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887562163" fileName="HintsDialog.java" startLine="101" startPosition="51" endLine="102" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887634908" fileName="HintsDialog.java" startLine="104" startPosition="7" endLine="105" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887595920" fileName="HintsDialog.java" startLine="107" startPosition="51" endLine="108" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887783215" fileName="HintsDialog.java" startLine="110" startPosition="7" endLine="111" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887799109" fileName="HintsDialog.java" startLine="111" startPosition="44" endLine="112" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886858066281544711" fileName="HintsDialog.java" startLine="112" startPosition="43" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2886858066281809550" fileName="HintsDialog.java" startLine="113" startPosition="0" endLine="114" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886858066281743864" fileName="HintsDialog.java" startLine="114" startPosition="106" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1665189113170151481" fileName="HintsDialog.java" startLine="115" startPosition="56" endLine="116" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886858066281903246" fileName="HintsDialog.java" startLine="116" startPosition="52" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="195670132110975091" fileName="HintsDialog.java" startLine="117" startPosition="59" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2655378096586107914" fileName="HintsDialog.java" startLine="118" startPosition="0" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2655378096586154253" fileName="HintsDialog.java" startLine="119" startPosition="59" endLine="120" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2655378096586207284" fileName="HintsDialog.java" startLine="120" startPosition="43" endLine="121" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2655378096586264609" fileName="HintsDialog.java" startLine="121" startPosition="42" endLine="122" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="791272924510987105" fileName="HintsDialog.java" startLine="122" startPosition="54" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4136358845934188421" fileName="HintsDialog.java" startLine="123" startPosition="0" endLine="124" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1158798430616267511" fileName="HintsDialog.java" startLine="124" startPosition="87" endLine="125" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2202689853479505599" fileName="HintsDialog.java" startLine="125" startPosition="55" endLine="126" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7461368257677796487" fileName="HintsDialog.java" startLine="126" startPosition="35" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2655378096586318499" fileName="HintsDialog.java" startLine="127" startPosition="0" endLine="128" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887025084" fileName="HintsDialog.java" startLine="128" startPosition="53" endLine="129" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887531021" fileName="HintsDialog.java" startLine="133" startPosition="55" endLine="134" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="195670132113571353" fileName="HintsDialog.java" startLine="135" startPosition="44" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804274" fileName="HintsDialog.java" startLine="146" startPosition="45" endLine="147" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6569848372887274707" fileName="HintsDialog.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="6569848372887595914" fileName="HintsDialog.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="195670132113554883" fileName="HintsDialog.java" startLine="134" startPosition="36" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5724017946447284291" fileName="HintsDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="6569848372887771443" fileName="HintsDialog.java" startLine="75" startPosition="10" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1030735486036017421" fileName="HintsDialog.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6569848372887086619" fileName="HintsDialog.java" startLine="98" startPosition="65" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887595906" fileName="HintsDialog.java" startLine="104" startPosition="64" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887086619" fileName="HintsDialog.java" startLine="99" startPosition="65" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6569848372887595906" fileName="HintsDialog.java" startLine="105" startPosition="64" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1030735486036017412" fileName="HintsDialog.java" startLine="79" startPosition="5" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6569848372887531008" fileName="HintsDialog.java" startLine="136" startPosition="67" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602804268" fileName="HintsDialog.java" startLine="147" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6569848372887531008" fileName="HintsDialog.java" startLine="132" startPosition="67" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602804268" fileName="HintsDialog.java" startLine="143" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
     <nodeInfo nodeId="6569848372887605249" fileName="HintsDialog.java" startLine="72" startPosition="31" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5724017946447285712" fileName="HintsDialog.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HintsDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/nodeEditor/hintsSettings/ConceptEditorHintPreferencesPage;Ljetbrains/mps/nodeEditor/hintsSettings/ConceptEditorHintSettings;Ljetbrains/mps/openapi/editor/EditorComponent;)V" />
     <nodeInfo nodeId="5724017946447343026" fileName="HintsDialog.java" startLine="58" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
-    <nodeInfo nodeId="6569848372887535836" fileName="HintsDialog.java" startLine="136" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPanelEnabled#(Ljavax/swing/JComponent;Z)V" />
+    <nodeInfo nodeId="6569848372887535836" fileName="HintsDialog.java" startLine="132" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPanelEnabled#(Ljavax/swing/JComponent;Z)V" />
     <nodeInfo nodeId="5724017946447343057" fileName="HintsDialog.java" startLine="71" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
-    <nodeInfo nodeId="6569848372887025077" fileName="HintsDialog.java" startLine="94" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="6569848372887025077" fileName="HintsDialog.java" startLine="94" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <scopeInfo nodeId="5724017946447284296" fileName="HintsDialog.java" startLine="52" startPosition="44" endLine="53" endPosition="23" />
     <scopeInfo nodeId="6569848372887605252" fileName="HintsDialog.java" startLine="73" startPosition="44" endLine="74" endPosition="88" />
     <scopeInfo nodeId="1030735486036017423" fileName="HintsDialog.java" startLine="82" startPosition="25" endLine="83" endPosition="43" />
-    <scopeInfo nodeId="6569848372887274713" fileName="HintsDialog.java" startLine="100" startPosition="51" endLine="101" endPosition="71" />
-    <scopeInfo nodeId="6569848372887595919" fileName="HintsDialog.java" startLine="106" startPosition="51" endLine="107" endPosition="70" />
-    <scopeInfo nodeId="195670132113554886" fileName="HintsDialog.java" startLine="139" startPosition="44" endLine="140" endPosition="59" />
-    <scopeInfo nodeId="4507335185602804273" fileName="HintsDialog.java" startLine="150" startPosition="45" endLine="151" endPosition="32" />
+    <scopeInfo nodeId="6569848372887274713" fileName="HintsDialog.java" startLine="101" startPosition="51" endLine="102" endPosition="71" />
+    <scopeInfo nodeId="6569848372887595919" fileName="HintsDialog.java" startLine="107" startPosition="51" endLine="108" endPosition="70" />
+    <scopeInfo nodeId="195670132113554886" fileName="HintsDialog.java" startLine="135" startPosition="44" endLine="136" endPosition="59" />
+    <scopeInfo nodeId="4507335185602804273" fileName="HintsDialog.java" startLine="146" startPosition="45" endLine="147" endPosition="32" />
     <scopeInfo nodeId="6569848372887771444" fileName="HintsDialog.java" startLine="75" startPosition="12" endLine="78" endPosition="109" />
-    <scopeInfo nodeId="6569848372887274707" fileName="HintsDialog.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="6569848372887274707" fileName="HintsDialog.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="6569848372887274711" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6569848372887595914" fileName="HintsDialog.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="6569848372887595914" fileName="HintsDialog.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="6569848372887595917" varName="p0" />
     </scopeInfo>
     <scopeInfo nodeId="5724017946447284291" fileName="HintsDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
@@ -2415,13 +2411,13 @@
       <varInfo nodeId="5724017946447343030" varName="actions" />
     </scopeInfo>
     <scopeInfo nodeId="1030735486036017421" fileName="HintsDialog.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="6569848372887531015" fileName="HintsDialog.java" startLine="137" startPosition="55" endLine="141" endPosition="7" />
+    <scopeInfo nodeId="6569848372887531015" fileName="HintsDialog.java" startLine="133" startPosition="55" endLine="137" endPosition="7" />
     <scopeInfo nodeId="5724017946447285714" fileName="HintsDialog.java" startLine="42" startPosition="150" endLine="48" endPosition="11" />
-    <scopeInfo nodeId="6569848372887531007" fileName="HintsDialog.java" startLine="136" startPosition="67" endLine="142" endPosition="5" />
-    <scopeInfo nodeId="6569848372887531008" fileName="HintsDialog.java" startLine="136" startPosition="67" endLine="142" endPosition="5">
+    <scopeInfo nodeId="6569848372887531007" fileName="HintsDialog.java" startLine="132" startPosition="67" endLine="138" endPosition="5" />
+    <scopeInfo nodeId="6569848372887531008" fileName="HintsDialog.java" startLine="132" startPosition="67" endLine="138" endPosition="5">
       <varInfo nodeId="6569848372887531014" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804268" fileName="HintsDialog.java" startLine="147" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="4507335185602804268" fileName="HintsDialog.java" startLine="143" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="5724017946447285712" fileName="HintsDialog.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1030735486036024459" varName="component" />
       <varInfo nodeId="5724017946447317031" varName="page" />
@@ -2429,23 +2425,22 @@
       <varInfo nodeId="6345921507963409153" varName="settings" />
     </scopeInfo>
     <scopeInfo nodeId="5724017946447343026" fileName="HintsDialog.java" startLine="58" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="6569848372887535836" fileName="HintsDialog.java" startLine="136" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="6569848372887535836" fileName="HintsDialog.java" startLine="132" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="6569848372887576402" varName="enabled" />
       <varInfo nodeId="195670132113455392" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="5724017946447343060" fileName="HintsDialog.java" startLine="72" startPosition="31" endLine="87" endPosition="23" />
     <scopeInfo nodeId="5724017946447343057" fileName="HintsDialog.java" startLine="71" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="6569848372887025081" fileName="HintsDialog.java" startLine="95" startPosition="25" endLine="133" endPosition="17">
-      <varInfo nodeId="4507335185602803371" varName="c" />
-      <varInfo nodeId="4233086722126621667" varName="component" />
+    <scopeInfo nodeId="6569848372887025081" fileName="HintsDialog.java" startLine="95" startPosition="25" endLine="129" endPosition="17">
+      <varInfo nodeId="2655378096586107915" varName="buttonsPanel" />
       <varInfo nodeId="4136358845934188422" varName="scrollPane" />
       <varInfo nodeId="2886858066281809551" varName="useCustomHints" />
     </scopeInfo>
-    <scopeInfo nodeId="6569848372887025077" fileName="HintsDialog.java" startLine="94" startPosition="0" endLine="135" endPosition="0" />
-    <unitInfo nodeId="6569848372887274705" fileName="HintsDialog.java" startLine="99" startPosition="47" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.editor.actions.HintsDialog$2" />
-    <unitInfo nodeId="6569848372887595912" fileName="HintsDialog.java" startLine="105" startPosition="46" endLine="109" endPosition="5" unitName="jetbrains.mps.ide.editor.actions.HintsDialog$3" />
+    <scopeInfo nodeId="6569848372887025077" fileName="HintsDialog.java" startLine="94" startPosition="0" endLine="131" endPosition="0" />
+    <unitInfo nodeId="6569848372887274705" fileName="HintsDialog.java" startLine="100" startPosition="47" endLine="104" endPosition="5" unitName="jetbrains.mps.ide.editor.actions.HintsDialog$2" />
+    <unitInfo nodeId="6569848372887595912" fileName="HintsDialog.java" startLine="106" startPosition="46" endLine="110" endPosition="5" unitName="jetbrains.mps.ide.editor.actions.HintsDialog$3" />
     <unitInfo nodeId="1030735486036017419" fileName="HintsDialog.java" startLine="80" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.ide.editor.actions.HintsDialog$1" />
-    <unitInfo nodeId="5724017946447267512" fileName="HintsDialog.java" startLine="31" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.HintsDialog" />
+    <unitInfo nodeId="5724017946447267512" fileName="HintsDialog.java" startLine="31" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.HintsDialog" />
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/6743831156946309831">
     <nodeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
