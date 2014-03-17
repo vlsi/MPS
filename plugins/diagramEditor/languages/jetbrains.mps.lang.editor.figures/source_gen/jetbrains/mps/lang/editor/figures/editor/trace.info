@@ -516,8 +516,5 @@
     </scopeInfo>
     <unitInfo nodeId="5422656561931607936" fileName="FigureParameterAttribute_Editor.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.editor.FigureParameterAttribute_Editor" />
   </root>
-  <root nodeRef="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)/785823818609032018" />
-  <root nodeRef="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)/785823818609032305" />
-  <root nodeRef="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)/785823818609032376" />
 </debugInfo>
 

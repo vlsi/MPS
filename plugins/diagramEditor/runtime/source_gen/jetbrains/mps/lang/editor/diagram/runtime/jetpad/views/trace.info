@@ -15,7 +15,6 @@
     </scopeInfo>
     <unitInfo nodeId="1585775323792653989" fileName="DragHandler.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" />
   </root>
-  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/1585775323797835173" />
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/1897569136979705831">
     <nodeInfo nodeId="1897569136979718735" fileName="AbstractExternalFrameView.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="internalsBounds" />
     <nodeInfo nodeId="1897569136979718727" fileName="AbstractExternalFrameView.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="frameWidth" />
@@ -528,7 +527,6 @@
     <unitInfo nodeId="1897569136982559118" fileName="SelectionFrameView.java" startLine="22" startPosition="8" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView$1" />
     <unitInfo nodeId="3129755042161427386" fileName="SelectionFrameView.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" />
   </root>
-  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4046741574150080067" />
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874984049021">
     <nodeInfo nodeId="4287318874984049022" fileName="AbstractDecoratorView.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SELECTION_SQUARE_HALF_WIDTH" />
     <nodeInfo nodeId="4287318874984049032" fileName="AbstractDecoratorView.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasError" />

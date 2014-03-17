@@ -268,9 +268,6 @@
     <unitInfo nodeId="1491555030356413376" fileName="AbstractFigureParameter_Editor.java" startLine="71" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameter_Editor$AbstractFigureParameter_generic_cellMenu_ook5es_a0a0" />
     <unitInfo nodeId="1094405431463762976" fileName="AbstractFigureParameter_Editor.java" startLine="29" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameter_Editor" />
   </root>
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1094405431463763158" />
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1094405431463777301" />
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1094405431463819848" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1094405431463844235">
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1322,7 +1319,6 @@
     <unitInfo nodeId="285670992217689799" fileName="ParameterProperty_Editor.java" startLine="54" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.ParameterProperty_Editor$_Inline_pir07_a0a" />
     <unitInfo nodeId="285670992217689760" fileName="ParameterProperty_Editor.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.ParameterProperty_Editor" />
   </root>
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/3229274890672019724" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/3229274890672509255">
     <nodeInfo nodeId="3229274890672509255" fileName="FigureParameterBLQuerySharpActions.java" startLine="13" startPosition="95" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3229274890672509255" fileName="FigureParameterBLQuerySharpActions.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -1675,10 +1671,6 @@
     <unitInfo nodeId="5717188120683436211" fileName="AbstractFigureParameterName_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameterName_Actions$AbstractFigureParameterName_Actions_DELETE" />
     <unitInfo nodeId="5717188120683436211" fileName="AbstractFigureParameterName_Actions.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameterName_Actions" />
   </root>
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/5717188120685101627" />
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/5717188120685311458" />
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/6306886970785336040" />
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/6306886970790145512" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/6306886970791072640">
     <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="31" startPosition="82" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2401,8 +2393,6 @@
     </scopeInfo>
     <unitInfo nodeId="6382742553261744676" fileName="CellModel_DiagramConnector_Editor.java" startLine="22" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor" />
   </root>
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8288068497636527978" />
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8288068497637957392" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8570854907290720927">
     <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2630,7 +2620,6 @@
     <unitInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="95" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementsCreation_Editor$_Inline_a41aw1_a3a" />
     <unitInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="22" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementsCreation_Editor" />
   </root>
-  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8686738938027500511" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/939897302409483932">
     <nodeInfo nodeId="939897302409483932" fileName="DiagramConnectorCreation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="939897302409483932" fileName="DiagramConnectorCreation_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
