@@ -27,9 +27,11 @@ import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -37,6 +39,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import java.awt.Color;
 import java.awt.Component;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -81,9 +84,16 @@ class SelectTabAction extends ToggleAction {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        List<SNode> nodes = myTab.getNodes();
+        List<SNodeReference> nodeRefs = myTab.getEditorNodes();
+        ArrayList<SNode> nodes = new ArrayList<SNode>();
+        for (SNodeReference r : nodeRefs) {
+          SNode n = r.resolve(MPSModuleRepository.getInstance());
+          if (n != null) {
+            nodes.add(n);
+          }
+        }
         if (nodes.size() == 1) {
-          myCallback.changeNode(nodes.get(0).getContainingRoot());
+          myCallback.changeNode(nodes.get(0));
           return;
         }
 
@@ -99,11 +109,9 @@ class SelectTabAction extends ToggleAction {
           for (int i = 0; i < nodes.size(); i++) {
             SNode node = nodes.get(i);
             Component menuItem = popupMenu.getComponents()[i];
-            if (node != null) {
-              Color color = tabColorProvider.getNodeColor(node);
-              if (color != null) {
-                menuItem.setForeground(color);
-              }
+            Color color = tabColorProvider.getNodeColor(node);// WTF - TCP.getAspectColor takes SNodeReference, while TCP.getNodeColor - SNode
+            if (color != null) {
+              menuItem.setForeground(color);
             }
           }
         }

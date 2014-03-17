@@ -19,12 +19,11 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
@@ -37,33 +36,62 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * Describes tab location in tabs component, keeps actions/values associated with the tab
+ * Describes tab location in tabs component, keeps actions/values associated with the tab.
+ * Communicates with outer world using SNodeReference, doesn't resolve anything.
  */
 class ButtonEditorTab {
   private final ButtonTabsComponent myTabComponent;
   private final int myIndex;
   private final RelationDescriptor myDescriptor;
-  private final SNodeReference myBaseNode;
-  private final TabColorProvider myTabColorProvider;
+  private final Collection<TabEditorLayout.Entry> myEntries;
   private SelectTabAction mySelectTabAction;
 
-  public ButtonEditorTab(ButtonTabsComponent tabComponent, int index, RelationDescriptor descriptor, SNodeReference baseNode, TabColorProvider tabColorProvider) {
+  public ButtonEditorTab(ButtonTabsComponent tabComponent, int index, RelationDescriptor descriptor, Collection<TabEditorLayout.Entry> entries) {
     myTabComponent = tabComponent;
     myIndex = index;
     myDescriptor = descriptor;
-    myBaseNode = baseNode;
-    myTabColorProvider = tabColorProvider;
+    myEntries = entries;
+    for (TabEditorLayout.Entry e : entries) {
+      assert e.getDescriptor() == descriptor;
+    }
   }
 
   public RelationDescriptor getDescriptor() {
     return myDescriptor;
   }
 
-  /*package*/ List<SNode> getNodes() {
-    return myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
+
+  public List<SNodeReference> getEditorNodes() {
+    ArrayList<SNodeReference> rv = new ArrayList<SNodeReference>(5);
+    for (TabEditorLayout.Entry e : myEntries) {
+      rv.add(e.getEditNode());
+    }
+    return rv;
+  }
+
+
+  public Collection<SNodeReference> getSelectionNodes(SNodeReference editorNode) {
+    for (TabEditorLayout.Entry e : myEntries) {
+      if (e.getEditNode().equals(editorNode)) {
+        return e.getSelection();
+      }
+    }
+    return Collections.emptyList();
+  }
+
+
+  /*package*/ boolean isEditingTabFor(SNodeReference nodeRef) {
+    for (TabEditorLayout.Entry e : myEntries) {
+      if (e.getEditNode().equals(nodeRef)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /*package*/ ButtonTabsComponent getTabComponent() {
@@ -92,25 +120,16 @@ class ButtonEditorTab {
   }
 
   /*package*/ TabColorProvider getColorProvider() {
-    return myTabColorProvider;
+    return myTabComponent.getColorProvider();
   }
 
   @Nullable
   private Color getButtonForegroundColor() {
-    if (myTabColorProvider != null) {
-      List<SNodeReference> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodeReference>>() {
-        @Override
-        public List<SNodeReference> compute() {
-          List<SNode> nodes = myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
-          List<SNodeReference> nodePointers = new ArrayList<SNodeReference>();
-          for (SNode n : nodes) {
-            nodePointers.add(new jetbrains.mps.smodel.SNodePointer(n));
-          }
-          return nodePointers;
-        }
-      });
+    TabColorProvider tabColorProvider = getColorProvider();
+    if (tabColorProvider != null) {
+      List<SNodeReference> nodePointers = getEditorNodes();
 
-      Color aspectColor = myTabColorProvider.getAspectColor(nodePointers);
+      Color aspectColor = tabColorProvider.getAspectColor(nodePointers);
       if (aspectColor != null) {
         return aspectColor;
       }
@@ -118,6 +137,7 @@ class ButtonEditorTab {
     return UIUtil.getLabelForeground();
   }
 
+  // UI + model read
   private Icon createCompositeTabIcon() {
     Font font = UIUtil.getLabelFont();
     FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
@@ -175,5 +195,4 @@ class ButtonEditorTab {
   public void updateIcon() {
     mySelectTabAction.updateIcon(createCompositeTabIcon());
   }
-
 }

@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
@@ -30,10 +31,10 @@ public class ModelReadAction extends AnAction {
   @NotNull
   private final Runnable myDelegate;
 
-  public ModelReadAction(String text, @NotNull Runnable delegate) {
+  public ModelReadAction(@Nullable String text, @NotNull Runnable delegate) {
     this(text, null, null, delegate);
   }
-  public ModelReadAction(String text, String description, Icon icon, @NotNull Runnable delegate) {
+  public ModelReadAction(@Nullable String text, @Nullable String description, @Nullable Icon icon, @NotNull Runnable delegate) {
     super(text, description, icon);
     myDelegate = delegate;
   }

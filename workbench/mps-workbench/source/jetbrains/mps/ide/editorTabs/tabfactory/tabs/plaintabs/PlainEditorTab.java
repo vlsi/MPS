@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,33 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 class PlainEditorTab {
-  private final SNodeReference myNode;
   private final RelationDescriptor myTab;
+  private final TabEditorLayout.Entry myTabEntry;
 
-  PlainEditorTab(SNodeReference node, RelationDescriptor tab) {
-    myNode = node;
+  PlainEditorTab(RelationDescriptor tab) {
     myTab = tab;
+    myTabEntry = null;
+  }
+
+  PlainEditorTab(@NotNull TabEditorLayout.Entry tabDescriptor) {
+    myTab = tabDescriptor.getDescriptor();
+    myTabEntry = tabDescriptor;
   }
 
   public SNodeReference getNode() {
-    return myNode;
+    return myTabEntry == null ? null : myTabEntry.getEditNode();
   }
 
   public RelationDescriptor getTab() {
     return myTab;
+  }
+  /*package*/ TabEditorLayout.Entry getLayoutEntry() {
+    return myTabEntry;
   }
 }
