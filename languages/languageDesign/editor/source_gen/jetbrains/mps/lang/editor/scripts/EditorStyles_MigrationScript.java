@@ -50,7 +50,6 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
-    // whitespace 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "StyleSheetClass to StyleClass";
@@ -69,9 +68,9 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        as_n8en9w_a0a0a4a0a0a0a4a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass")));
+        as_n8en9w_a0a0a4a0a0a0a2a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass")));
         if ((SLinkOperations.getTarget(node, "extendedClass", true) != null)) {
-          ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).insertElement(0, createApplyStyleClass_s4lgfb_a0a0a1a0d(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "extendedClass", true), "styleSheetClass", false)));
+          ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).insertElement(0, createApplyStyleClass_s4lgfb_a0a0a1a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "extendedClass", true), "styleSheetClass", false)));
           SLinkOperations.setTarget(node, "extendedClass", null, true);
         }
       }
@@ -89,7 +88,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
     return n1;
   }
 
-  private static SNode createApplyStyleClass_s4lgfb_a0a0a1a0d(Object p0) {
+  private static SNode createApplyStyleClass_s4lgfb_a0a0a1a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null, false);
     {
@@ -100,7 +99,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
     return n1;
   }
 
-  private static <T> T as_n8en9w_a0a0a4a0a0a0a4a0(Object o, Class<T> type) {
+  private static <T> T as_n8en9w_a0a0a4a0a0a0a2a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

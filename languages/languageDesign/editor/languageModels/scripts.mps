@@ -1861,10 +1861,6 @@
         </node>
       </node>
     </node>
-    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="5855767309810459565" nodeInfo="ng" />
-    <node role="part" roleId="tp33.1177458178889" type="tp33.CommentMigrationScriptPart" typeId="tp33.6655357163912204546" id="5855767309810457671" nodeInfo="ng">
-      <property name="text" nameId="tp33.6655357163912204547" value="should be run multiple times" />
-    </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="5855767309810128378" nodeInfo="ng">
       <property name="description" nameId="tp33.1177457972041" value="StyleSheetClass to StyleClass" />
       <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
