@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5de01wro72ulah479e5pplrujhj1qkz">
+<dependencies version="2" modelHash="uun23dp0t9fe1nd24f3twuvnkv0dk9">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
@@ -21,11 +21,11 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-4onv91o8y9x2lqujnjyqyswaz2ut4ku" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="ebhxhjc04f0709spqx9tv4ej59e7a3x" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-cvjfgy3hbmgprb35d4uvb1dqys9coz1" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="b76a16jljdk0t25f3o793ktss6o75n0" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-5iqb3tk0keb6d6ox6e5kfjcl0aibp44" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="yi5ugah5g3thu4gze76h530ls5hf5a" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-a6d3ytypfi3pjfrr19d6akdsa3h5fx" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="ck137l8uqtaode5ifiq4sdxhr6f8ju6" />
@@ -192,7 +192,8 @@
     <file name="AbstractPaddingStyleClassItem_BehaviorDescriptor.java" />
     <file name="AbstractStyledTextOperation_BehaviorDescriptor.java" />
     <file name="AppendTextOperation_BehaviorDescriptor.java" />
-    <file name="ApplyStylePriorityGroup_BehaviorDescriptor.java" />
+    <file name="ApplyStyleClassCondition_BehaviorDescriptor.java" />
+    <file name="ApplyStyleClass_BehaviorDescriptor.java" />
     <file name="AutoDeletableStyleClassItem_BehaviorDescriptor.java" />
     <file name="BackgroundColorStyleClassItem_BehaviorDescriptor.java" />
     <file name="BaseEditorComponent_BehaviorDescriptor.java" />
@@ -307,7 +308,7 @@
     <file name="ContextHintsSpecification_BehaviorDescriptor.java" />
     <file name="DefaultBaseLine_BehaviorDescriptor.java" />
     <file name="DefaultCaretPositionStyleClassItem_BehaviorDescriptor.java" />
-    <file name="DiscardStylePrioriryGroup_BehaviorDescriptor.java" />
+    <file name="DominatesRecord_BehaviorDescriptor.java" />
     <file name="DrawBorderStyleClassItem_BehaviorDescriptor.java" />
     <file name="DrawBracketsStyleClassItem_BehaviorDescriptor.java" />
     <file name="EditableStyleClassItem_BehaviorDescriptor.java" />
@@ -324,9 +325,11 @@
     <file name="ForegroundNullColorStyleClassItem_BehaviorDescriptor.java" />
     <file name="HorizontalAlign_BehaviorDescriptor.java" />
     <file name="HorizontalGapStyleClassItem_BehaviorDescriptor.java" />
+    <file name="ICellStyle_BehaviorDescriptor.java" />
     <file name="IQueryFunction_Color_BehaviorDescriptor.java" />
     <file name="IStyleContainer_BehaviorDescriptor.java" />
     <file name="IStyleSheetMember_BehaviorDescriptor.java" />
+    <file name="IStyle_BehaviorDescriptor.java" />
     <file name="IdSelector_BehaviorDescriptor.java" />
     <file name="IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor.java" />
     <file name="IndentLayoutIndentStyleClassItem_BehaviorDescriptor.java" />
@@ -394,10 +397,12 @@
     <file name="SideTransformAnchorTagStyleClassItem_BehaviorDescriptor.java" />
     <file name="StrikeOutStyleSheet_BehaviorDescriptor.java" />
     <file name="StyleClassItem_BehaviorDescriptor.java" />
+    <file name="StyleClassReferenceList_BehaviorDescriptor.java" />
+    <file name="StyleClassReference_BehaviorDescriptor.java" />
+    <file name="StyleClass_BehaviorDescriptor.java" />
     <file name="StyleKeyPack_BehaviorDescriptor.java" />
     <file name="StyleKey_BehaviorDescriptor.java" />
-    <file name="StylePriorityGroupReference_BehaviorDescriptor.java" />
-    <file name="StylePriorityGroup_BehaviorDescriptor.java" />
+    <file name="StyleReference_BehaviorDescriptor.java" />
     <file name="StyleSheetClassReference_BehaviorDescriptor.java" />
     <file name="StyleSheetClass_BehaviorDescriptor.java" />
     <file name="StyleSheet_BehaviorDescriptor.java" />
@@ -409,6 +414,7 @@
     <file name="TransactionPropertyHandler_newValue_BehaviorDescriptor.java" />
     <file name="TransactionPropertyHandler_oldValue_BehaviorDescriptor.java" />
     <file name="TransactionalPropertyHandler_BehaviorDescriptor.java" />
+    <file name="UnapplyStyle_BehaviorDescriptor.java" />
     <file name="UnderlinedStyleClassItem_BehaviorDescriptor.java" />
   </common>
   <source id="1213877183870" name="CellModel_RefCell_Behavior" hash="-7z3yom20k9okokaqpfrid9trzu2z5xq">
@@ -562,7 +568,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="BaseEditorComponent_Behavior.java" />
   </source>
-  <source id="1213877386047" name="EditorCellModel_Behavior" hash="-7gzyx298ttyw4n6x827ozvnkeqdiofb">
+  <source id="1213877386047" name="EditorCellModel_Behavior" hash="-4ob8xdt4bkslfth17x2a9dkkyips3z6">
     <dep root="1219419899728" />
     <dep root="1225463327950" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -1633,12 +1639,21 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ReadOnlyStyleClassItem_Behavior.java" />
   </source>
-  <source id="1938068300780663539" name="StylePriorityGroup_Behavior" hash="5msob1ynp290rxlsaxq21erk0obytx4">
+  <source id="1938068300780663539" name="StyleClass_Behavior" hash="-bj71cy2b2dv0jj7ges5c7111itj9l6h">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StylePriorityGroup_Behavior.java" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="StyleClass_Behavior.java" />
   </source>
   <source id="4052492221165589292" name="Synchronizeable_Behavior" hash="xn9ofcrfdmazjota15kkliy9ktgtor">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

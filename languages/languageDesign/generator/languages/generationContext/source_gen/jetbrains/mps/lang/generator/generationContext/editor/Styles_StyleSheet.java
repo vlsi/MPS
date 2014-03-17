@@ -11,9 +11,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
   public static void apply_genContext_operation(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.EDITABLE, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.EDITABLE, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
 

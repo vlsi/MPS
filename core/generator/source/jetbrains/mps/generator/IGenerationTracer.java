@@ -16,14 +16,11 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Pair;
 
 import java.util.List;
 
@@ -31,7 +28,6 @@ import java.util.List;
  * Evgeny Gryaznov, Feb 17, 2010
  */
 public interface IGenerationTracer {
-  void trace(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode);
 
   void pushInputNode(SNodeReference node);
 

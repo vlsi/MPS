@@ -5100,10 +5100,10 @@
     <unitInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationTokenRef_Editor" />
   </root>
   <root nodeRef="r:da48bdcf-b312-42d5-8f83-648e55453840(jetbrains.mps.core.notation.editor)/65776729176137519">
-    <nodeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="13" startPosition="70" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="14" startPosition="102" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="13" startPosition="70" endLine="14" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="14" startPosition="105" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_token#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="13" startPosition="70" endLine="15" endPosition="57" />
+    <scopeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="13" startPosition="70" endLine="15" endPosition="60" />
     <scopeInfo nodeId="65776729176137519" fileName="notation_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="65776729176137519" varName="editorCell" />
       <varInfo nodeId="65776729176137519" varName="style" />

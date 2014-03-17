@@ -311,8 +311,6 @@
     <unitInfo nodeId="1213104847155" fileName="EnumerationDataTypeDeclaration_Constraints.java" startLine="73" startPosition="40" endLine="95" endPosition="5" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints$2" />
     <unitInfo nodeId="1213104847155" fileName="EnumerationDataTypeDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104847455" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104856836" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104858461">
     <nodeInfo nodeId="1213104858461" fileName="ConceptLink_Constraints.java" startLine="24" startPosition="36" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104858461" fileName="ConceptLink_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -361,7 +359,6 @@
     <unitInfo nodeId="1213104858461" fileName="ConceptLink_Constraints.java" startLine="31" startPosition="49" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.structure.constraints.ConceptLink_Constraints$1" />
     <unitInfo nodeId="1213104858461" fileName="ConceptLink_Constraints.java" startLine="23" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptLink_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104860717" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1227087670687">
     <nodeInfo nodeId="1227087670687" fileName="InterfaceConceptDeclaration_Constraints.java" startLine="21" startPosition="52" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1227087670687" fileName="InterfaceConceptDeclaration_Constraints.java" startLine="26" startPosition="47" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -455,7 +452,6 @@
     </scopeInfo>
     <unitInfo nodeId="1227087698907" fileName="ConstrainedDataTypeDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstrainedDataTypeDeclaration_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1227338266031101182" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1227338266031213197">
     <nodeInfo nodeId="843447540011600764" fileName="ConceptDeclarationExtendedConceptSearchScope.java" startLine="16" startPosition="26" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="843447540011600795" fileName="ConceptDeclarationExtendedConceptSearchScope.java" startLine="17" startPosition="33" endLine="18" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -811,6 +807,5 @@
     <unitInfo nodeId="609408910513951939" fileName="LanguageConceptsScope.java" startLine="67" startPosition="18" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.structure.constraints.LanguageConceptsScope$5" />
     <unitInfo nodeId="609408910513951874" fileName="LanguageConceptsScope.java" startLine="26" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.LanguageConceptsScope" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/8080932314785854315" />
 </debugInfo>
 

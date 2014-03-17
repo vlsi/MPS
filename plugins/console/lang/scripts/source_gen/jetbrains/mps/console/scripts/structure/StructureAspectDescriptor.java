@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.Execute").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand").references("script").alias("#exec", "execute script").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.RefactorOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").children(new String[]{"refactoring"}, new boolean[]{false}).alias("refactor", "perform changes on selected nodes").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.RefactorOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").children(new String[]{"refactoring"}, new boolean[]{false}).alias("refactor", "perform changes on selected nodes").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

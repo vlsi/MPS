@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)/1089557578628083182" />
   <root nodeRef="r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)/1301553664999174713">
     <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="17" startPosition="48" endLine="18" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="18" startPosition="204" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -74,6 +73,5 @@
     <unitInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="46" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody" />
     <unitInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test" />
   </root>
-  <root nodeRef="r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)/360223900462497047" />
 </debugInfo>
 

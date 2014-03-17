@@ -20,18 +20,17 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
+import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.FileUtil;
@@ -40,8 +39,10 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.Assert;
 
 import java.io.IOException;
@@ -57,7 +58,7 @@ import java.util.Map;
  */
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
-  private Map<String, String> generatedContent = new HashMap<String, String>();
+  private final Map<String, String> generatedContent = new HashMap<String, String>();
   private Map<String, String> existingContent;
   private IFile myFilesDir;
   private int timesCalled = 0;
@@ -145,20 +146,19 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     if (status.isOk()) {
       myLastDependencies = status.getDependencies();
       myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
-      IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, FileGenerationUtil.getCachesDir(targetDir));
 
-      StreamHandler streamHandler = new CollectingStreamHandler(cachesDir);
-      try {
-        boolean result = new TextGenerator(streamHandler,
-          //ModelGenerationStatusManager.getInstance().getCacheGenerator(),
-          BLDependenciesCache.getInstance().getGenerator(),
-          //TraceInfoCache.getInstance().getGenerator(),
-          GenerationDependenciesCache.getInstance().getGenerator()
-        ).handleOutput(invocationContext, status);
-        Assert.assertTrue(result);
-      } finally {
-        streamHandler.dispose();
-      }
+      CollectingStreamHandler toStringHandler = new CollectingStreamHandler(generatedContent);
+      TouchHandler touchOnlyHandler = new TouchHandler(getExistingContent());
+
+      TextFacility tf = new TextFacility(status);
+      tf.failNoTextGen(false).generateDebug(false).generateBaseLangDeps(true);
+      tf.produceTextModel();
+      tf.serializeOutcome(toStringHandler);
+      // we don't really need to serialize BL dependencies, but rather check StreamHandler#touch
+      tf.serializeCaches(new CacheGenLayout().register(touchOnlyHandler, BLDependenciesCache.getInstance().getGenerator()));
+      generatedContent.putAll(touchOnlyHandler.getTouched());
+      tf.dispose();
+      Assert.assertTrue(tf.getErrors().isEmpty());
     }
     return true;
   }
@@ -168,51 +168,75 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     return 0;
   }
 
-  public class CollectingStreamHandler implements StreamHandler {
+  static class TouchHandler implements StreamHandler {
+    private final Map<String, String> myCollectedContent = new HashMap<String, String>();
+    private final Map<String, String> myExistingContent;
 
-    public CollectingStreamHandler(IFile caches) {
+    public TouchHandler(@NotNull Map<String, String> existingContent) {
+      myExistingContent = existingContent;
+    }
+
+    public Map<String, String> getTouched() {
+      return myCollectedContent;
     }
 
     @Override
-    public void saveStream(String name, String content, boolean isCache) {
-      if (!isCache) {
-        generatedContent.put(name, content);
+    public void saveStream(String name, String content) {
+    }
+
+    @Override
+    public void saveStream(String name, Element content) {
+    }
+
+    @Override
+    public void saveStream(String name, byte[] content) {
+    }
+
+    @Override
+    public boolean touch(String name) {
+      String value = myExistingContent.get(name);
+      Assert.assertNotNull("non-existing file touched: " + value);
+      myCollectedContent.put(name, value);
+      return true;
+    }
+  }
+
+  static class CollectingStreamHandler implements StreamHandler {
+    private final Map<String, String> myCollectedContent;
+
+    public CollectingStreamHandler(@NotNull Map<String, String> content) {
+      myCollectedContent = content;
+    }
+
+    @Override
+    public void saveStream(String name, String content) {
+      myCollectedContent.put(name, content);
+    }
+
+    @Override
+    public void saveStream(String name, Element content) {
+      try {
+        StringWriter writer = new StringWriter();
+        JDOMUtil.writeDocument(new Document(content), writer);
+        saveStream(name, writer.toString());
+      } catch (IOException e) {
+        Assert.fail(e.toString());
       }
     }
 
     @Override
-    public void saveStream(String name, Element content, boolean isCache) {
-      if (!isCache) {
-        try {
-          StringWriter writer = new StringWriter();
-          JDOMUtil.writeDocument(new Document(content), writer);
-          saveStream(name, writer.toString(), isCache);
-        } catch (IOException e) {
-          Assert.fail(e.toString());
-        }
-      }
-    }
-
-    @Override
-    public void saveStream(String name, byte[] content, boolean isCache) {
+    public void saveStream(String name, byte[] content) {
       Assert.fail("byte stream is not expected");
     }
 
     @Override
-    public boolean touch(String name, boolean isCache) {
-      Assert.assertFalse(isCache);
-      String value = getExistingContent().get(name);
-      Assert.assertNotNull("non-existing file touched: " + value);
-      generatedContent.put(name, value);
-      return true;
-    }
-
-    @Override
-    public void dispose() {
+    public boolean touch(String name) {
+      Assert.fail("touch is not expected");
+      return false;
     }
   }
 
-  private class TestMessageHandler implements IMessageHandler {
+  private static class TestMessageHandler implements IMessageHandler {
 
     @Override
     public void handle(IMessage msg) {

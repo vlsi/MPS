@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.console.internalCommands.generator.template.main.QueriesGenerated" />
-  <root nodeRef="r:445e7307-af0d-43ba-baa4-fce1d9f37357(jetbrains.mps.console.internalCommands.generator.template.main@generator)/2849748491601507469" />
   <root nodeRef="r:445e7307-af0d-43ba-baa4-fce1d9f37357(jetbrains.mps.console.internalCommands.generator.template.main@generator)/5582028874770465405">
     <nodeInfo nodeId="5582028874770465421" fileName="QueriesGenerated.java" startLine="21" startPosition="109" endLine="22" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5582028874770465420" fileName="QueriesGenerated.java" startLine="21" startPosition="109" endLine="22" endPosition="198" />

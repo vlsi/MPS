@@ -17,251 +17,454 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BaseLanguageStyle_StyleSheet {
   public static void apply_KeyWord(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("KEYWORD");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_CompactKeyWord(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_KeyWord(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_CommentPG(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("LINE_COMMENT"), 1);
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("LINE_COMMENT");
+      style.putAll(styleToPut, 1);
+    }
   }
 
   public static void apply_Comment(Style style, EditorCell editorCell) {
     {
-      Style priorityGroup = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_CommentPG(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_CommentPG(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
     }
   }
 
   public static void apply_TODO_PG(Style style, EditorCell editorCell) {
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0e((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
-      style.putAll(StyleRegistry.getInstance().getStyle("TODO"), 2);
+      {
+        Style styleToPut;
+        styleToPut = StyleRegistry.getInstance().getStyle("TODO");
+        style.putAll(styleToPut, 2);
+      }
     }
   }
 
   public static void apply_TODO(Style style, EditorCell editorCell) {
     {
-      Style priorityGroup = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_TODO_PG(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_TODO_PG(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
     }
   }
 
   public static void apply_BlockCommentPG(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("BLOCK_COMMENT"), 1);
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("BLOCK_COMMENT");
+      style.putAll(styleToPut, 1);
+    }
   }
 
   public static void apply_BlockComment(Style style, EditorCell editorCell) {
     {
-      Style priorityGroup = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_BlockCommentPG(priorityGroup, editorCell);
-      style.putAll(priorityGroup);
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_CommentPG(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
     }
   }
 
   public static void apply_JavaDoc(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("DOC_COMMENT"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("DOC_COMMENT");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_JavaDocTag(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("DOC_TAG"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("DOC_TAG");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Field(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("INSTANCE_FIELD");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_LocalVariable(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Parameter(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("PARAMETER"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("PARAMETER");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_StaticField(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_VariableName(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_StringLiteral(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("STRING");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_NumericLiteral(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("NUMBER"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("NUMBER");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_EmptyCell(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("NOT_USED_ELEMENT"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("NOT_USED_ELEMENT");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_InstanceMethod(Style style, EditorCell editorCell) {
   }
 
   public static void apply_StaticMethod(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("STATIC_METHOD");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Annotation(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("ANNOTATION"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("ANNOTATION");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Operator(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("OPERATION_SIGN"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("OPERATION_SIGN");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_AnyBracket(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
 
   public static void apply_Parenthesis(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_AnyBracket(style, editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
-    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("PARENTH");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
 
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
   public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_LeftParen(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
   public static void apply_RightParen(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
   public static void apply_Brace(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_AnyBracket(style, editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("BRACES"));
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("BRACES");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
   }
 
   public static void apply_LeftBrace(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_Brace(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_RightBrace(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_Brace(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Bracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_AnyBracket(style, editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("BRACKETS"));
-    style.set(StyleAttributes.MATCHING_LABEL, "bracket");
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("BRACKETS");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "bracket");
   }
 
   public static void apply_LeftBracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_Bracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
   public static void apply_RightBracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_Bracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
   public static void apply_AngleBracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_AnyBracket(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "angleBracket");
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "angleBracket");
   }
 
   public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_AngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
   public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_AngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
   public static void apply_MethodName(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("METHOD_DECLARATION"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("METHOD_DECLARATION");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_MPSMethodCall(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("METHOD_CALL"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("METHOD_CALL");
+      style.putAll(styleToPut, 0);
+    }
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1kb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
-      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
+      {
+        Style styleToPut;
+        styleToPut = StyleRegistry.getInstance().getStyle("STATIC_METHOD");
+        style.putAll(styleToPut, 0);
+      }
     }
   }
 
   public static void apply_VariableName(Style style, EditorCell editorCell) {
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
-      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD"));
+      {
+        Style styleToPut;
+        styleToPut = StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD");
+        style.putAll(styleToPut, 0);
+      }
     }
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
-      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FIELD"));
+      {
+        Style styleToPut;
+        styleToPut = StyleRegistry.getInstance().getStyle("STATIC_FIELD");
+        style.putAll(styleToPut, 0);
+      }
     }
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
-      style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
+      {
+        Style styleToPut;
+        styleToPut = StyleRegistry.getInstance().getStyle("INSTANCE_FIELD");
+        style.putAll(styleToPut, 0);
+      }
     }
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
-      style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
+      {
+        Style styleToPut;
+        styleToPut = StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE");
+        style.putAll(styleToPut, 0);
+      }
     }
   }
 
   public static void apply_ClassName(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_ConceptName(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_ConceptName(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("CLASS_NAME"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("CLASS_NAME");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Semicolon(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("SEMICOLON"));
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("SEMICOLON");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
   public static void apply_Dot(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("DOT"));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("DOT");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
   }
 
   public static void apply_BaseAngleBracket(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracket");
   }
 
   public static void apply_Matching(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.MATCHING_LABEL, "matching");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "matching");
   }
 
   public static void apply_FoldedCell(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("FOLDED_TEXT"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("FOLDED_TEXT");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Url(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("URL"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("URL");
+      style.putAll(styleToPut, 0);
+    }
   }
 
   public static void apply_Label(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void apply_FirstLevel(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
   public static void apply_SecondLevel(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
 
   public static void apply_ThirdLevel(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
 

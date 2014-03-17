@@ -214,17 +214,29 @@ import java.util.Stack;
         ASMClassType ct = (ASMClassType) myTypes.pop();
         ASMParameterizedType replacement = new ASMParameterizedType(ct, new ArrayList<ASMType>());
         if (!(myTypes.isEmpty())) {
-          ASMParameterizedType parent = (ASMParameterizedType) myTypes.peek();
+          ASMParameterizedType parent = (ASMParameterizedType) unwrap(myTypes.peek());
           parent.removeArgument(ct);
           parent.addArgument(replacement);
         }
         myTypes.push(replacement);
+      } else if (myTypes.peek() instanceof ASMBoundedType) {
+        ASMBoundedType bounded = (ASMBoundedType) myTypes.peek();
+        ASMType bound = bounded.getBound();
+        ASMType wrapped = wrap(type);
+        if (bound instanceof ASMParameterizedType) {
+          ((ASMParameterizedType) bound).addArgument(wrapped);
+        } else {
+          ASMParameterizedType newBound = new ASMParameterizedType(bound, new ArrayList<ASMType>());
+          newBound.addArgument(wrapped);
+          bounded.setBound(newBound);
+        }
       }
+      ASMType wrapped = wrap(type);
       if (myTypes.peek() instanceof ASMParameterizedType) {
-        ((ASMParameterizedType) myTypes.peek()).addArgument(wrap(type));
+        ((ASMParameterizedType) myTypes.peek()).addArgument(wrapped);
       }
       if (type instanceof ASMClassType) {
-        myTypes.push(type);
+        myTypes.push(wrapped);
       }
     }
 
@@ -247,6 +259,14 @@ import java.util.Stack;
         return new ASMSuperType(type);
       }
       return type;
+    }
+
+    private ASMType unwrap(ASMType type) {
+      if (type instanceof ASMBoundedType) {
+        return ((ASMBoundedType) type).getBound();
+      } else {
+        return type;
+      }
     }
 
     @Override

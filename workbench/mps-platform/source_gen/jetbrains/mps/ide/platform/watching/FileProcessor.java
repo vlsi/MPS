@@ -169,8 +169,8 @@ public class FileProcessor extends ReloadParticipant {
   private void printStat(String name, long beginTime) {
     // todo: ideal for AOP in MPS! 
     if (InternalFlag.isInternalMode()) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("FileProcessor: " + name + " -> " + (System.currentTimeMillis() - beginTime) / 1000.0 + "s");
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("FileProcessor: " + name + " -> " + (System.currentTimeMillis() - beginTime) / 1000.0 + "s");
       }
     }
   }

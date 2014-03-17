@@ -78,35 +78,25 @@ public final class TemplateProcessor {
   @NotNull
   public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
-    IGeneratorLogger logger = getEnvironment().getLogger();
     if (myGenerator.isIncremental()) {
       // turn off tracing
       NodeReadEventsCaster.setNodesReadListener(null);
     }
     try {
-      if (myGenerator.getProgressMonitor().isCanceled()) {
-        if (myTracer.isTracing() && logger.needsInfo()) {
-          logger.info("generation canceled when processing branch:");
-          GeneratorUtil.logCurrentGenerationBranch(logger, myTracer, false);
-        }
-        throw new GenerationCanceledException();
+      return applyTemplate(templateNode, context, null);
+    } catch (StackOverflowError e) {
+      // this is critical
+      IGeneratorLogger logger = getEnvironment().getLogger();
+      logger.error("generation thread ran out of stack space :(");
+      if (myTracer.isTracing()) {
+        logger.error("failed branch was:");
+        GeneratorUtil.logCurrentGenerationBranch(logger, myTracer, true);
+      } else {
+        logger.error("try to increase JVM stack size (-Xss option)");
+        logger.error("to get more diagnostic generate model with the 'save transient models' option");
       }
-
-      try {
-        return applyTemplate(templateNode, context, null);
-      } catch (StackOverflowError e) {
-        // this is critical
-        logger.error("generation thread run out of stack space :(");
-        if (myTracer.isTracing()) {
-          logger.error("failed branch was:");
-          GeneratorUtil.logCurrentGenerationBranch(logger, myTracer, true);
-        } else {
-          logger.error("try to increase JVM stack size (-Xss option)");
-          logger.error("to get more diagnostic generate model with the 'save transient models' option");
-        }
-        logger.error(templateNode.getReference(), "couldn't process template", GeneratorUtil.describeInput(context));
-        throw new GenerationFailureException(e);
-      }
+      logger.error(templateNode.getReference(), "couldn't process template", GeneratorUtil.describeInput(context));
+      throw new GenerationFailureException(e);
     } finally {
       if (myGenerator.isIncremental()) {
         // restore tracing

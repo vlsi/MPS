@@ -791,6 +791,94 @@
     <unitInfo nodeId="2176128700705692341" fileName="BoundedTypeOnIllegalPositions_Test.java" startLine="63" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody" />
     <unitInfo nodeId="2176128700705692341" fileName="BoundedTypeOnIllegalPositions_Test.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2654404125187242906">
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="16" startPosition="81" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="22" startPosition="90" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="28" startPosition="90" endLine="29" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="29" startPosition="114" endLine="30" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="34" startPosition="90" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="35" startPosition="114" endLine="36" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="40" startPosition="90" endLine="41" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="41" startPosition="114" endLine="42" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="46" startPosition="90" endLine="47" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="47" startPosition="114" endLine="48" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="52" startPosition="77" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="53" startPosition="114" endLine="54" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="59" startPosition="83" endLine="60" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="60" startPosition="146" endLine="61" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="64" startPosition="92" endLine="65" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="65" startPosition="146" endLine="66" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="69" startPosition="92" endLine="70" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="70" startPosition="146" endLine="71" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="74" startPosition="92" endLine="75" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="75" startPosition="146" endLine="76" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="79" startPosition="92" endLine="80" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="80" startPosition="146" endLine="81" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="84" startPosition="92" endLine="85" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="85" startPosition="146" endLine="86" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="89" startPosition="79" endLine="90" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="90" startPosition="146" endLine="91" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeTheNestedTypeCheck2654404125187272997#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187273794#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187284431#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187284693#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187284994#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187285270#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2654404125187259971#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeTheNestedTypeCheck2654404125187272997#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187273794#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187284431#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187284693#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187284994#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeDuplicatedNameOfNestedCheck2654404125187285270#()V" />
+    <nodeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2654404125187259971#()V" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="16" startPosition="81" endLine="18" endPosition="147" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="22" startPosition="90" endLine="24" endPosition="156" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="28" startPosition="90" endLine="30" endPosition="156" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="34" startPosition="90" endLine="36" endPosition="156" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="40" startPosition="90" endLine="42" endPosition="156" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="46" startPosition="90" endLine="48" endPosition="156" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="52" startPosition="77" endLine="54" endPosition="143" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="59" startPosition="83" endLine="61" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="64" startPosition="92" endLine="66" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="69" startPosition="92" endLine="71" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="74" startPosition="92" endLine="76" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="79" startPosition="92" endLine="81" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="84" startPosition="92" endLine="86" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="89" startPosition="79" endLine="91" endPosition="159">
+      <varInfo nodeId="2654404125187242906" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
+    <unitInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="57" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody" />
+    <unitInfo nodeId="2654404125187242906" fileName="ClassifierNameUniqueness_Test.java" startLine="13" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2702384151996661689">
     <nodeInfo nodeId="2702384151996661689" fileName="SimpleUnreachable_Test.java" startLine="16" startPosition="79" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2702384151996661689" fileName="SimpleUnreachable_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5010,7 +5098,6 @@
     <unitInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="39" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody" />
     <unitInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8048812996917986501" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170692126565">
     <nodeInfo nodeId="8187342170692126565" fileName="WildcardsInClassDefinition_Test.java" startLine="16" startPosition="90" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8187342170692126565" fileName="WildcardsInClassDefinition_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

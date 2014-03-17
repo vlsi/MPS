@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationParametersProvider;
 import jetbrains.mps.generator.GenerationParametersProviderEx;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -30,6 +31,7 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.ModelRefRewriteFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
+import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -46,7 +48,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -89,7 +90,7 @@ class GenerationSession {
   private final IOperationContext myInvokeContext; // initial context the session was initiated within
   private GenerationPlan myGenerationPlan;
 
-  private final ProgressMonitor myProgressMonitor;
+  private final GenerationTrace myNewTrace;
   private MPSAppenderBase myLoggingHandler;
   private final RecordingFactory myLogRecorder;
   private final ModelRefRewriteFactory myMessageModelRefRewrite;
@@ -107,11 +108,11 @@ class GenerationSession {
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<SModel>();
 
   GenerationSession(@NotNull SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
-      ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
-      IPerformanceTracer tracer, GenerationOptions generationOptions) {
+      GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
+      IPerformanceTracer tracer, GenerationOptions generationOptions, GenerationTrace genTrace) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
-    myProgressMonitor = progressMonitor;
+    myNewTrace = genTrace;
     myLogRecorder = new RecordingFactory(new BasicFactory());
     myMessageModelRefRewrite = new ModelRefRewriteFactory(myLogRecorder);
     myLogger = new GenerationSessionLogger(logger, myMessageModelRefRewrite);
@@ -235,10 +236,8 @@ class GenerationSession {
           if (myLogger.needsInfo()) {
             myLogger.info("executing step " + (myMajorStep + 1));
           }
-          //ttrace.push("step " + (myMajorStep + 1), false);
-          currOutput = executeMajorStep(currInputModel);
-          monitor.advance(1);
-          //ttrace.pop();
+          currOutput = executeMajorStep(monitor.subTask(1), currInputModel);
+          monitor.advance(0);
           if (currOutput == null || myLogger.getErrorCount() > 0) {
             break;
           }
@@ -294,7 +293,7 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStep(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(
@@ -314,7 +313,7 @@ class GenerationSession {
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, null, inputModel, null, myDependenciesBuilder);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, new StepArguments(null, inputModel, null, myDependenciesBuilder, myNewTrace));
     try {
       LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
       while (it.hasNext()) {
@@ -356,7 +355,7 @@ class GenerationSession {
     RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
     try {
-      SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
+      SModel outputModel = executeMajorStepInternal(inputModel, ruleManager, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
       }
@@ -366,9 +365,9 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+  private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager, ProgressMonitor progress) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
-    IGenerationTracer tracer = mySessionContext.getGenerationTracer();
+    final IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
     final HashMap<SModelReference, SModelReference> modelRefRewriteMap;
     if (cloneInputModel) {
@@ -400,6 +399,7 @@ class GenerationSession {
             SModelStereotype.getStereotype(currentInputModel), SModelStereotype.getStereotype(currentOutputModel)));
       }
       tracer.startTracing(currentInputModel, currentOutputModel);
+      myNewTrace.nextStep(currentInputModel.getReference(), currentOutputModel.getReference());
 
       final SModel exposedInputModel = currentInputModel;
       if (cloneInputModel) {
@@ -414,13 +414,15 @@ class GenerationSession {
         modelRefRewriteMap.put(inputModelPrim.getReference(), currentInputModel.getReference());
         currentInputModel = inputModelPrim;
       }
-      final Pair<Boolean, SModel> applied = applyRules(currentInputModel, currentOutputModel, isPrimary, ruleManager);
+      final TemplateGenerator tg = prepareToApplyRules(currentInputModel, currentOutputModel, ruleManager);
+      final Pair<Boolean, SModel> applied = applyRules(tg, progress, isPrimary);
       boolean somethingHasBeenGenerated = applied.o1;
       SModel realOutputModel = applied.o2;
       if (!somethingHasBeenGenerated) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(exposedInputModel, currentOutputModel);
+        myNewTrace.dropStep(exposedInputModel.getReference(), currentOutputModel.getReference());
         recycleWasteModel(currentOutputModel, true);
         if (!isPrimary) {
           // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
@@ -499,19 +501,19 @@ class GenerationSession {
     }
   }
 
-  private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
-      RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
-    boolean hasChanges;
+  @NotNull
+  private TemplateGenerator prepareToApplyRules(SModel currentInputModel, SModel currentOutputModel, RuleManager ruleManager) {
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
-    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
-    final TemplateGenerator tg =
-        myGenerationOptions.isGenerateInParallel()
-            ?
-            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel,
-                myDependenciesBuilder)
-            : new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder);
+    StepArguments args = new StepArguments(ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder, myNewTrace);
+    return myGenerationOptions.isGenerateInParallel()
+            ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, args)
+            : new TemplateGenerator(mySessionContext, args);
+  }
 
-    hasChanges = tg.apply(isPrimary);
+  private Pair<Boolean, SModel> applyRules(TemplateGenerator tg, ProgressMonitor progress, final boolean isPrimary)
+      throws GenerationFailureException, GenerationCanceledException {
+    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
+    boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
     SModel outputModel = tg.getOutputModel();
     if (myNewCache != null && (isPrimary || hasChanges)) {
@@ -546,6 +548,7 @@ class GenerationSession {
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getPreProcessScripts().getScripts());
+      myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel_clone.getReference());
 
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
@@ -553,13 +556,14 @@ class GenerationSession {
       myDependenciesBuilder.scriptApplied(currentInputModel); // scriptApplied for a blank copy to record old root to new root mapping
     } else {
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getPreProcessScripts().getScripts());
+      myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel.getReference());
     }
 
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel,
-        currentInputModel, myDependenciesBuilder);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, new StepArguments(ruleManager, currentInputModel,
+        currentInputModel, myDependenciesBuilder, myNewTrace));
     for (TemplateMappingScript preMappingScript : ruleManager.getPreProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
-        myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
+        myLogger.info(preMappingScript.getScriptNode(), "pre-process " + preMappingScript.getLongName());
       }
       templateGenerator.executeScript(preMappingScript);
     }
@@ -593,25 +597,27 @@ class GenerationSession {
       new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone,
-          ruleManager.getPostProcessScripts().getScripts());
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getPostProcessScripts().getScripts());
+      myNewTrace.nextStep(currentModel.getReference(), currentOutputModel_clone.getReference());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
     } else {
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
+      myNewTrace.nextStep(currentModel.getReference(), currentModel.getReference());
       // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
       if (currentModel instanceof SModelInternal) {
         ((SModelInternal) currentModel).disposeFastNodeFinder();
       }
     }
 
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentModel, currentModel,
-        myDependenciesBuilder);
+    // FIXME I don't need ruleManager, nor even DependencyManager to execute a script. Refactor QueryExecutionContext
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext,
+        new StepArguments(ruleManager, currentModel, currentModel, myDependenciesBuilder, myNewTrace));
 
     for (TemplateMappingScript postMappingScript : ruleManager.getPostProcessScripts().getScripts()) {
       if (myLogger.needsInfo()) {
-        myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
+        myLogger.info(postMappingScript.getScriptNode(), "post-process " + postMappingScript.getLongName());
       }
       templateGenerator.executeScript(postMappingScript);
     }
@@ -662,7 +668,7 @@ class GenerationSession {
       }
     }
     if (generationPlan.hasConflictingPriorityRules()) {
-      Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
+      Map<TemplateMappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<TemplateMappingPriorityRule, TemplateModule>();
       for (TemplateModule generator : generationPlan.getGenerators()) {
         Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
         if (priorities == null) {
@@ -670,15 +676,15 @@ class GenerationSession {
         }
 
         for (TemplateMappingPriorityRule rule : priorities) {
-          myRule2Generator.put((MappingPriorityRule) rule, generator);
+          myRule2Generator.put(rule, generator);
         }
       }
 
 
       myLogger.error("Conflicting mapping priority rules encountered:");
-      List<Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
-      for (Pair<MappingPriorityRule, String> error : errors) {
-        MappingPriorityRule rule = error.o1;
+      List<Pair<TemplateMappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
+      for (Pair<TemplateMappingPriorityRule, String> error : errors) {
+        TemplateMappingPriorityRule rule = error.o1;
         String text = error.o2;
 
         TemplateModule templateModule = myRule2Generator.get(rule);

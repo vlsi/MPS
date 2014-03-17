@@ -74,7 +74,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class BaseConsoleTab extends JPanel {
   protected ConsoleTool myTool;
@@ -416,18 +415,24 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
 
-  public void execute(final SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
-    addNodeImports(command);
-    SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
+  public void execute(@Nullable SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
+    final SNode typedCommand = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandHolder", null);
+    if (command != null) {
+      addNodeImports(command);
+      SLinkOperations.setTarget(typedCommand, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", true)), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
+    }
     myTool.selectTab(this);
-    BehaviorReflection.invokeVirtual(Void.class, command, "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
+    BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", true), "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
       public void run() {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a0a0c0a3a65(command));
-        check_6q36mf_a1a0a0c0a3a65(executeBefore);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, "commandHolder", true)));
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", true));
+        check_6q36mf_a2a0a0c0a3a65(executeBefore);
       }
     }, new Runnable() {
       public void run() {
-        check_6q36mf_a0a0a0d0a3a65(executeAfter);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SLinkOperations.getTarget(typedCommand, "command", true), true);
+        check_6q36mf_a1a0a0d0a3a65(executeAfter);
       }
     }});
   }
@@ -502,26 +507,14 @@ public abstract class BaseConsoleTab extends JPanel {
     return null;
   }
 
-  private static SNode _quotation_createNode_6q36mf_a0a0a0a0c0a3a65(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.CommandHolder", null, null, false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("command", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
-  private static void check_6q36mf_a1a0a0c0a3a65(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a2a0a0c0a3a65(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
 
-  private static void check_6q36mf_a0a0a0d0a3a65(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a1a0a0d0a3a65(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }

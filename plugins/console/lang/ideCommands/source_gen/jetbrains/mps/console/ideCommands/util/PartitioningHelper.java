@@ -8,17 +8,16 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import java.util.Map;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import java.util.HashMap;
 import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -34,14 +33,14 @@ public class PartitioningHelper {
     GenerationPlan plan = new GenerationPlan(inputModel);
 
 
-    Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
+    Map<TemplateMappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<TemplateMappingPriorityRule, TemplateModule>();
     for (TemplateModule generator : plan.getGenerators()) {
       Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
       if (priorities == null) {
         continue;
       }
       for (TemplateMappingPriorityRule rule : priorities) {
-        myRule2Generator.put((MappingPriorityRule) rule, generator);
+        myRule2Generator.put(rule, generator);
       }
     }
     MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
@@ -53,9 +52,8 @@ public class PartitioningHelper {
       if (rules == null) {
         continue;
       }
-      List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
-      for (Pair<MappingPriorityRule, String> string : strings) {
-        Message msg = new Message(MessageKind.INFORMATION, " " + string.o2);
+      for (TemplateMappingPriorityRule r : rules) {
+        Message msg = new Message(MessageKind.INFORMATION, r.toString());
         msg.setHintObject(generator.getReference());
         messagesView.add(msg);
       }
@@ -66,8 +64,8 @@ public class PartitioningHelper {
       messagesView.openToolLater(true);
       messagesView.add(new Message(MessageKind.ERROR, PartitioningHelper.class, "Conflicting mapping priority rules encountered:"));
       console.addText("Conflicting mapping priority rules encountered:\n\n");
-      List<Pair<MappingPriorityRule, String>> messagesFull = plan.getConflictingPriorityRulesAsStrings();
-      for (Pair<MappingPriorityRule, String> message : messagesFull) {
+      List<Pair<TemplateMappingPriorityRule, String>> messagesFull = plan.getConflictingPriorityRulesAsStrings();
+      for (Pair<TemplateMappingPriorityRule, String> message : messagesFull) {
         Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, message.o2);
         TemplateModule templateModule = myRule2Generator.get(message.o1);
         msg.setHintObject(templateModule.getReference());

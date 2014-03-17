@@ -858,7 +858,6 @@
     </scopeInfo>
     <unitInfo nodeId="3575782568432720920" fileName="StatisticsRowRenderer.java" startLine="20" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsRowRenderer" />
   </root>
-  <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432721745" />
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432722606">
     <nodeInfo nodeId="3575782568432723391" fileName="TestOutputComponent.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_SIZE" />
     <nodeInfo nodeId="3575782568432723640" fileName="TestOutputComponent.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
@@ -2348,7 +2347,6 @@
     </scopeInfo>
     <unitInfo nodeId="3575782568432726137" fileName="TestCaseRow.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseRow" />
   </root>
-  <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432726186" />
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432726811">
     <nodeInfo nodeId="3575782568432727048" fileName="UnitTestProcessHandler.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDispatcher" />
     <nodeInfo nodeId="3575782568432727051" fileName="UnitTestProcessHandler.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastEvent" />
@@ -2531,7 +2529,6 @@
     <scopeInfo nodeId="3575782568432727279" fileName="TestState.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="3575782568432727278" fileName="TestState.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" />
   </root>
-  <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432727351" />
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3667367438338446327">
     <nodeInfo nodeId="3667367438338474215" fileName="UnitTestOptions.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREFIX" />
     <nodeInfo nodeId="3667367438338457856" fileName="UnitTestOptions.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HIDE_PASSED" />

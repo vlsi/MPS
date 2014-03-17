@@ -13,12 +13,6 @@ import java.util.HashMap;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,6 +20,14 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
+import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
@@ -49,6 +51,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -101,24 +104,6 @@ public class ModuleGenerationHolder {
       // <node> 
     }
 
-    final IScriptController ctl = new IScriptController.Stub() {
-      @Override
-      public void setup(IPropertiesPool ppool) {
-        Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-        tparams._0(false);
-
-        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
-        makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
-          public IFile invoke(String path) {
-            return tmpFile(path);
-          }
-        });
-
-        Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
-        params._1(optBuilder);
-      }
-    };
-
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -126,7 +111,24 @@ public class ModuleGenerationHolder {
         IOperationContext context = new ProjectOperationContext(project);
         IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
         try {
-          result.value = new TestMakeService(context, myMessageHandler).make(null, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
+          final MakeSession session = new MakeSession(context, myMessageHandler, true);
+
+          IScriptController ctl = new IScriptController.Stub() {
+            @Override
+            public void setup(IPropertiesPool ppool) {
+              // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
+              // fails if we don't generate one here 
+              new TextGenFacetInitializer().failNoTextGen(false).generateDebugInfo(true).populate(ppool);
+              new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
+                public IFile invoke(String path) {
+                  return tmpFile(path);
+                }
+              }).populate(ppool);
+              new GenerateFacetInitializer(session).setGenerationOptions(optBuilder).populate(ppool);
+            }
+          };
+
+          result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
         } catch (InterruptedException ignore) {
         } catch (ExecutionException ignore) {
         }

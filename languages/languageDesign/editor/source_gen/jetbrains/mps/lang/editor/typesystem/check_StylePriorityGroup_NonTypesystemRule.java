@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.behavior.StyleClass_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,21 +18,23 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
   }
 
   public void applyRule(final SNode stylePriorityGroup, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode p = stylePriorityGroup;
-    while ((SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedGroup", true), "stylePriorityGroup", false) != null)) {
-      p = SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedGroup", true), "stylePriorityGroup", false);
-      if (p == stylePriorityGroup) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic priority group inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1938068300781546064", null, errorTarget);
-        }
-        return;
+    if (StyleClass_Behavior.call_hasCycles_7417001528577667349(stylePriorityGroup)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic priority group inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2491174914185197927", null, errorTarget);
       }
     }
+    if (StyleClass_Behavior.call_hasApplyCycles_2491174914184428685(stylePriorityGroup)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic style application", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4467412253500708194", null, errorTarget);
+      }
+    }
+
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.structure.StylePriorityGroup";
+    return "jetbrains.mps.lang.editor.structure.StyleClass";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

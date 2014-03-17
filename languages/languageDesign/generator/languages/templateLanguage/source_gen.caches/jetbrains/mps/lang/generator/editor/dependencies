@@ -193,7 +193,6 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.DismissTopMappingRule_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.editor.GeneratorDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.GeneratorMessage_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
@@ -246,19 +245,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.generator.editor.GeneratorDescriptor_Editor" file="GeneratorDescriptor_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.GeneratorMessage_Editor" file="GeneratorMessage_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1023,6 +1009,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.Styles_StyleSheet" file="Styles_StyleSheet.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />

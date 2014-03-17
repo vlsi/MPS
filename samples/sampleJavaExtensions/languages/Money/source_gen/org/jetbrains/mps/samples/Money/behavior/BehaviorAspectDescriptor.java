@@ -12,13 +12,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 5:
-        return new MoneyLiteral_BehaviorDescriptor();
       case 6:
+        return new MoneyLiteral_BehaviorDescriptor();
+      case 7:
         return new MoneyType_BehaviorDescriptor();
-      case 3:
-        return new GetAmount_BehaviorDescriptor();
       case 4:
+        return new GetAmount_BehaviorDescriptor();
+      case 5:
         return new GetCurrency_BehaviorDescriptor();
       case 0:
         return new ConvertTo_BehaviorDescriptor();
@@ -26,10 +26,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CurrencyDefTable_BehaviorDescriptor();
       case 2:
         return new CurrencyUnit_BehaviorDescriptor();
+      case 3:
+        return new CurrentStockPrice_BehaviorDescriptor();
+      case 9:
+        return new StockSymbol_BehaviorDescriptor();
+      case 8:
+        return new MovingAverage_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
 }

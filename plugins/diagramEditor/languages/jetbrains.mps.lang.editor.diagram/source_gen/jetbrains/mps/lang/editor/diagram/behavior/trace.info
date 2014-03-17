@@ -159,9 +159,6 @@
     <unitInfo nodeId="5422656561932112690" fileName="AttributedFigureReference_Behavior.java" startLine="29" startPosition="183" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior$2" />
     <unitInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior" />
   </root>
-  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/6306886970785262220" />
-  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/6306886970790137071" />
-  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/675321057241954783" />
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/7140846024011931670">
     <nodeInfo nodeId="7140846024011931923" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011932139" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

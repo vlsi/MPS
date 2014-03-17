@@ -3,6 +3,5 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="PrimitiveTypeDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="PrimitiveTypeRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeRef_BehaviorDescriptor" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902da(jetbrains.mps.baseLanguage.blTypes.behavior)/1213877253188" />
 </debugInfo>
 

@@ -1,5 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/4001135958234331732">
+    <nodeInfo nodeId="4001135958234332684" fileName="DailyStockPrice.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="date" />
+    <nodeInfo nodeId="4001135958234332696" fileName="DailyStockPrice.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="open" />
+    <nodeInfo nodeId="4001135958234332773" fileName="DailyStockPrice.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="high" />
+    <nodeInfo nodeId="4001135958234332803" fileName="DailyStockPrice.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="low" />
+    <nodeInfo nodeId="4001135958234332736" fileName="DailyStockPrice.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="close" />
+    <nodeInfo nodeId="4001135958234333066" fileName="DailyStockPrice.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="volume" />
+    <nodeInfo nodeId="4001135958234333337" fileName="DailyStockPrice.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="adjustedClose" />
+    <nodeInfo nodeId="4001135958234333762" fileName="DailyStockPrice.java" startLine="19" startPosition="133" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234333772" fileName="DailyStockPrice.java" startLine="20" startPosition="17" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234333782" fileName="DailyStockPrice.java" startLine="21" startPosition="57" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234333792" fileName="DailyStockPrice.java" startLine="22" startPosition="57" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234333802" fileName="DailyStockPrice.java" startLine="23" startPosition="55" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234333812" fileName="DailyStockPrice.java" startLine="24" startPosition="59" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234333822" fileName="DailyStockPrice.java" startLine="25" startPosition="61" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234336131" fileName="DailyStockPrice.java" startLine="31" startPosition="25" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336137" fileName="DailyStockPrice.java" startLine="35" startPosition="31" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336143" fileName="DailyStockPrice.java" startLine="39" startPosition="31" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336149" fileName="DailyStockPrice.java" startLine="43" startPosition="30" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336155" fileName="DailyStockPrice.java" startLine="47" startPosition="32" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336161" fileName="DailyStockPrice.java" startLine="51" startPosition="33" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336167" fileName="DailyStockPrice.java" startLine="55" startPosition="40" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234336127" fileName="DailyStockPrice.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDate#()Ljava/util/Date;" />
+    <nodeInfo nodeId="4001135958234336133" fileName="DailyStockPrice.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpen#()Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958234336139" fileName="DailyStockPrice.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHigh#()Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958234336145" fileName="DailyStockPrice.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLow#()Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958234336151" fileName="DailyStockPrice.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClose#()Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958234336157" fileName="DailyStockPrice.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVolume#()Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958234336163" fileName="DailyStockPrice.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdjustedClose#()Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958234333754" fileName="DailyStockPrice.java" startLine="19" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DailyStockPrice#(Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="4001135958234336130" fileName="DailyStockPrice.java" startLine="31" startPosition="25" endLine="32" endPosition="16" />
+    <scopeInfo nodeId="4001135958234336136" fileName="DailyStockPrice.java" startLine="35" startPosition="31" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="4001135958234336142" fileName="DailyStockPrice.java" startLine="39" startPosition="31" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="4001135958234336148" fileName="DailyStockPrice.java" startLine="43" startPosition="30" endLine="44" endPosition="15" />
+    <scopeInfo nodeId="4001135958234336154" fileName="DailyStockPrice.java" startLine="47" startPosition="32" endLine="48" endPosition="17" />
+    <scopeInfo nodeId="4001135958234336160" fileName="DailyStockPrice.java" startLine="51" startPosition="33" endLine="52" endPosition="18" />
+    <scopeInfo nodeId="4001135958234336166" fileName="DailyStockPrice.java" startLine="55" startPosition="40" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="4001135958234336127" fileName="DailyStockPrice.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4001135958234336133" fileName="DailyStockPrice.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="4001135958234336139" fileName="DailyStockPrice.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4001135958234336145" fileName="DailyStockPrice.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="4001135958234336151" fileName="DailyStockPrice.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4001135958234336157" fileName="DailyStockPrice.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4001135958234336163" fileName="DailyStockPrice.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4001135958234333758" fileName="DailyStockPrice.java" startLine="19" startPosition="133" endLine="26" endPosition="75" />
+    <scopeInfo nodeId="4001135958234333754" fileName="DailyStockPrice.java" startLine="19" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="4001135958234333821" varName="adjustedClose1" />
+      <varInfo nodeId="4001135958234333801" varName="close1" />
+      <varInfo nodeId="4001135958234333761" varName="date1" />
+      <varInfo nodeId="4001135958234333781" varName="high1" />
+      <varInfo nodeId="4001135958234333791" varName="low1" />
+      <varInfo nodeId="4001135958234333771" varName="open1" />
+      <varInfo nodeId="4001135958234333811" varName="volume1" />
+    </scopeInfo>
+    <unitInfo nodeId="4001135958234331732" fileName="DailyStockPrice.java" startLine="8" startPosition="0" endLine="59" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.DailyStockPrice" />
+  </root>
+  <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/4001135958234855014">
+    <nodeInfo nodeId="4001135958234855082" fileName="StockPriceDownloader.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="4001135958234855778" fileName="StockPriceDownloader.java" startLine="26" startPosition="52" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234970127" fileName="StockPriceDownloader.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="priceCache" />
+    <nodeInfo nodeId="4001135958234994538" fileName="StockPriceDownloader.java" startLine="39" startPosition="28" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958235448370" fileName="StockPriceDownloader.java" startLine="45" startPosition="52" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958235026353" fileName="StockPriceDownloader.java" startLine="53" startPosition="11" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958235312362" fileName="StockPriceDownloader.java" startLine="55" startPosition="29" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958233347544" fileName="StockPriceDownloader.java" startLine="56" startPosition="75" endLine="57" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233349324" fileName="StockPriceDownloader.java" startLine="57" startPosition="85" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233419547" fileName="StockPriceDownloader.java" startLine="58" startPosition="55" endLine="59" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233424530" fileName="StockPriceDownloader.java" startLine="59" startPosition="84" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233523151" fileName="StockPriceDownloader.java" startLine="60" startPosition="22" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958234461229" fileName="StockPriceDownloader.java" startLine="61" startPosition="32" endLine="62" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233557228" fileName="StockPriceDownloader.java" startLine="64" startPosition="28" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233577786" fileName="StockPriceDownloader.java" startLine="65" startPosition="44" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233603691" fileName="StockPriceDownloader.java" startLine="68" startPosition="45" endLine="69" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234413420" fileName="StockPriceDownloader.java" startLine="70" startPosition="17" endLine="71" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233562533" fileName="StockPriceDownloader.java" startLine="71" startPosition="141" endLine="72" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234410687" fileName="StockPriceDownloader.java" startLine="72" startPosition="64" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4001135958234652131" fileName="StockPriceDownloader.java" startLine="74" startPosition="42" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4001135958234666987" fileName="StockPriceDownloader.java" startLine="75" startPosition="38" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958233635293" fileName="StockPriceDownloader.java" startLine="77" startPosition="53" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4001135958233621269" fileName="StockPriceDownloader.java" startLine="78" startPosition="38" endLine="79" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958233546085" fileName="StockPriceDownloader.java" startLine="81" startPosition="20" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958235113327" fileName="StockPriceDownloader.java" startLine="84" startPosition="11" endLine="85" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958233645900" fileName="StockPriceDownloader.java" startLine="86" startPosition="9" endLine="87" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958233352220" fileName="StockPriceDownloader.java" startLine="88" startPosition="41" endLine="89" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958233362569" fileName="StockPriceDownloader.java" startLine="90" startPosition="31" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958233830184" fileName="StockPriceDownloader.java" startLine="93" startPosition="12" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="70" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234855897" fileName="StockPriceDownloader.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StockPriceDownloader#()V" />
+    <nodeInfo nodeId="4001135958233544918" fileName="StockPriceDownloader.java" startLine="81" startPosition="18" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958233824459" fileName="StockPriceDownloader.java" startLine="93" startPosition="10" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4001135958234855043" fileName="StockPriceDownloader.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Lorg/jetbrains/mps/samples/money/runtime/StockPriceDownloader;" />
+    <nodeInfo nodeId="4001135958234990791" fileName="StockPriceDownloader.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCache#()V" />
+    <nodeInfo nodeId="4001135958235427774" fileName="StockPriceDownloader.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidStockSymbol#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4001135958233588641" fileName="StockPriceDownloader.java" startLine="67" startPosition="19" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_54jj5w_a0a0a0a2a0a7a1a0a0a21#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4001135958233615363" fileName="StockPriceDownloader.java" startLine="66" startPosition="73" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4001135958233535996" fileName="StockPriceDownloader.java" startLine="63" startPosition="54" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958233422324" fileName="StockPriceDownloader.java" startLine="62" startPosition="75" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4001135958235056085" fileName="StockPriceDownloader.java" startLine="54" startPosition="83" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958233350117" fileName="StockPriceDownloader.java" startLine="52" startPosition="50" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4001135958233295814" fileName="StockPriceDownloader.java" startLine="51" startPosition="47" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001135958234862735" fileName="StockPriceDownloader.java" startLine="51" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentPrice#(Ljava/lang/String;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
+    <scopeInfo nodeId="4001135958234855901" fileName="StockPriceDownloader.java" startLine="32" startPosition="34" endLine="32" endPosition="34" />
+    <scopeInfo nodeId="4001135958234855046" fileName="StockPriceDownloader.java" startLine="26" startPosition="52" endLine="27" endPosition="20" />
+    <scopeInfo nodeId="4001135958234990794" fileName="StockPriceDownloader.java" startLine="39" startPosition="28" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="4001135958235427777" fileName="StockPriceDownloader.java" startLine="45" startPosition="52" endLine="46" endPosition="43" />
+    <scopeInfo nodeId="4001135958233588644" fileName="StockPriceDownloader.java" startLine="68" startPosition="45" endLine="69" endPosition="85" />
+    <scopeInfo nodeId="4001135958233544919" fileName="StockPriceDownloader.java" startLine="81" startPosition="20" endLine="82" endPosition="29" />
+    <scopeInfo nodeId="4001135958233350131" fileName="StockPriceDownloader.java" startLine="88" startPosition="0" endLine="89" endPosition="20">
+      <varInfo nodeId="4001135958233350135" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233350134" fileName="StockPriceDownloader.java" startLine="88" startPosition="41" endLine="89" endPosition="20" />
+    <scopeInfo nodeId="4001135958233350124" fileName="StockPriceDownloader.java" startLine="90" startPosition="0" endLine="91" endPosition="20">
+      <varInfo nodeId="4001135958233350128" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233350127" fileName="StockPriceDownloader.java" startLine="90" startPosition="31" endLine="91" endPosition="20" />
+    <scopeInfo nodeId="4001135958233824460" fileName="StockPriceDownloader.java" startLine="93" startPosition="12" endLine="94" endPosition="18" />
+    <scopeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="70" endLine="101" endPosition="45" />
+    <scopeInfo nodeId="4001135958234855897" fileName="StockPriceDownloader.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4001135958234638627" fileName="StockPriceDownloader.java" startLine="74" startPosition="0" endLine="76" endPosition="28">
+      <varInfo nodeId="4001135958234638628" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958234638630" fileName="StockPriceDownloader.java" startLine="74" startPosition="42" endLine="76" endPosition="28" />
+    <scopeInfo nodeId="4001135958233615365" fileName="StockPriceDownloader.java" startLine="77" startPosition="0" endLine="79" endPosition="28">
+      <varInfo nodeId="4001135958233615366" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233615368" fileName="StockPriceDownloader.java" startLine="77" startPosition="53" endLine="79" endPosition="28" />
+    <scopeInfo nodeId="4001135958234855043" fileName="StockPriceDownloader.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4001135958234990791" fileName="StockPriceDownloader.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4001135958235427774" fileName="StockPriceDownloader.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4001135958235434514" varName="symbol" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233588641" fileName="StockPriceDownloader.java" startLine="67" startPosition="19" endLine="70" endPosition="17">
+      <varInfo nodeId="4001135958233588647" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="4001135958234114568" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233615364" fileName="StockPriceDownloader.java" startLine="67" startPosition="19" endLine="73" endPosition="0">
+      <varInfo nodeId="4001135958234413421" varName="price" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233535999" fileName="StockPriceDownloader.java" startLine="64" startPosition="28" endLine="80" endPosition="15">
+      <varInfo nodeId="4001135958233557229" varName="item" />
+      <varInfo nodeId="4001135958233577787" varName="tokenizer" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233422326" fileName="StockPriceDownloader.java" startLine="63" startPosition="54" endLine="83" endPosition="13" />
+    <scopeInfo nodeId="4001135958235056088" fileName="StockPriceDownloader.java" startLine="55" startPosition="29" endLine="85" endPosition="62">
+      <varInfo nodeId="4001135958234461230" varName="dateFormat" />
+      <varInfo nodeId="4001135958233523154" varName="header" />
+      <varInfo nodeId="4001135958233424533" varName="line" />
+      <varInfo nodeId="4001135958233419548" varName="reader" />
+      <varInfo nodeId="4001135958233349325" varName="stream" />
+      <varInfo nodeId="4001135958233347545" varName="url" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233350118" fileName="StockPriceDownloader.java" startLine="53" startPosition="11" endLine="87" endPosition="96">
+      <varInfo nodeId="4001135958235026354" varName="prices" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233295815" fileName="StockPriceDownloader.java" startLine="52" startPosition="50" endLine="92" endPosition="7" />
+    <scopeInfo nodeId="4001135958233293108" fileName="StockPriceDownloader.java" startLine="51" startPosition="47" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="4001135958234862735" fileName="StockPriceDownloader.java" startLine="51" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="4001135958234868875" varName="symbol" />
+    </scopeInfo>
+    <unitInfo nodeId="4001135958234855014" fileName="StockPriceDownloader.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceDownloader" />
+  </root>
+  <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/4001135958235925037">
+    <nodeInfo nodeId="4001135958235930004" fileName="StockPriceCalculator.java" startLine="12" startPosition="91" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958235981132" fileName="StockPriceCalculator.java" startLine="15" startPosition="52" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958235981141" fileName="StockPriceCalculator.java" startLine="19" startPosition="61" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236004160" fileName="StockPriceCalculator.java" startLine="22" startPosition="7" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958235984470" fileName="StockPriceCalculator.java" startLine="23" startPosition="100" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958235983660" fileName="StockPriceCalculator.java" startLine="24" startPosition="16" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4001135958235928198" fileName="StockPriceCalculator.java" startLine="30" startPosition="91" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958235981130" fileName="StockPriceCalculator.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/samples/money/runtime/DailyStockPrice;)Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958235981139" fileName="StockPriceCalculator.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Ljava/math/BigDecimal;" />
+    <nodeInfo nodeId="4001135958235928366" fileName="StockPriceCalculator.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="retrievePricesWithin#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="4001135958235981124" fileName="StockPriceCalculator.java" startLine="13" startPosition="69" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958235925119" fileName="StockPriceCalculator.java" startLine="12" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="calculateMovingAverage#(Ljava/util/List;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="4001135958235981131" fileName="StockPriceCalculator.java" startLine="15" startPosition="52" endLine="16" endPosition="37" />
+    <scopeInfo nodeId="4001135958235981140" fileName="StockPriceCalculator.java" startLine="19" startPosition="61" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="4001135958235926134" fileName="StockPriceCalculator.java" startLine="30" startPosition="91" endLine="31" endPosition="64" />
+    <scopeInfo nodeId="4001135958235981130" fileName="StockPriceCalculator.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4001135958235981130" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958235981139" fileName="StockPriceCalculator.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4001135958235981139" varName="a" />
+      <varInfo nodeId="4001135958235981139" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958235928366" fileName="StockPriceCalculator.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4001135958235926164" varName="prices" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958235925122" fileName="StockPriceCalculator.java" startLine="12" startPosition="91" endLine="25" endPosition="0">
+      <varInfo nodeId="4001135958236004161" varName="divided" />
+      <varInfo nodeId="4001135958235930005" varName="pricesToUse" />
+      <varInfo nodeId="4001135958235981125" varName="sum" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958235925119" fileName="StockPriceCalculator.java" startLine="12" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="4001135958235925133" varName="prices" />
+    </scopeInfo>
+    <unitInfo nodeId="4001135958235981130" fileName="StockPriceCalculator.java" startLine="14" startPosition="67" endLine="18" endPosition="5" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator$1" />
+    <unitInfo nodeId="4001135958235981139" fileName="StockPriceCalculator.java" startLine="18" startPosition="22" endLine="22" endPosition="5" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator$2" />
+    <unitInfo nodeId="4001135958235925037" fileName="StockPriceCalculator.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator" />
+  </root>
   <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/5447719361346501252">
     <nodeInfo nodeId="5447719361346501289" fileName="Money.java" startLine="8" startPosition="52" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5447719361346501295" fileName="Money.java" startLine="9" startPosition="27" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

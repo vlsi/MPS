@@ -4,6 +4,11 @@ package jetbrains.mps.testbench.junit.runners;
 
 import java.io.File;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
@@ -15,6 +20,12 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class ProjectTestsSupport {
+
+
+  /**
+   * Note:
+   * @param projectName -- can be null or empty in the case of new format (no .mpr file)
+   */
   public static boolean testOnProjectCopy(File source, File destinationDir, String projectName, ProjectTestsSupport.ProjectRunnable runnable) {
     final Project project = startTestOnProjectCopy(source, destinationDir, projectName);
     if (project == null) {
@@ -30,9 +41,37 @@ public class ProjectTestsSupport {
     }
   }
 
+
+
+  private static <T extends SModule> T getModule(String moduleFqName, Class<T> cls) {
+    return ModuleRepositoryFacade.getInstance().getModule(moduleFqName, cls);
+  }
+
+
+
+  public static Solution getSolution(String moduleFqName) {
+    return getModule(moduleFqName, Solution.class);
+  }
+
+
+
+  public static Language getLanguage(String moduleFqName) {
+    return getModule(moduleFqName, Language.class);
+  }
+
+
+
+  public static Generator getGenerator(String moduleFqName) {
+    return getModule(moduleFqName, Generator.class);
+  }
+
+
+
   public static SModel getModel(Project project, String modelName) {
     return project.getScope().resolve(PersistenceFacade.getInstance().createModelReference(modelName));
   }
+
+
 
   /**
    * todo: make this method private

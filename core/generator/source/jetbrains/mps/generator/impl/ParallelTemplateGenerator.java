@@ -19,7 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.ModelReadTask;
 import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -28,10 +28,8 @@ import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,9 +53,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private Map<SNode, DefaultQueryExecutionContext> myRootContext;
   private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
-  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-      RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder) {
-    super(operationContext, progressMonitor, ruleManager, inputModel, outputModel, dependenciesBuilder);
+  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, StepArguments args) {
+    super(operationContext, args);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();
@@ -140,13 +137,13 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     myInputToTask.put(pair, task);
     myTasks.add(task);
     if (executionContext.isMultithreaded()) {
-      myPool.addTask(task);
+      myPool.addTask(new ModelReadTask(task));
     } else {
       runTaskWithContext(task, executionContext);
     }
   }
 
-  private void runTaskWithContext(RootGenerationTask task, QueryExecutionContext executionContext) {
+  private void runTaskWithContext(GenerationTask task, QueryExecutionContext executionContext) {
     CompositeGenerationTask compositeTask;
     synchronized (contextToTask) {
       compositeTask = contextToTask.get(executionContext);
@@ -157,7 +154,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       compositeTask.addTask(task);
       contextToTask.put(executionContext, compositeTask);
     }
-    myPool.addTask(compositeTask);
+    myPool.addTask(new ModelReadTask(compositeTask));
   }
 
   @Override
@@ -170,25 +167,9 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     }
   }
 
-  @Override
-  protected void checkGenerationCanceledFast() throws GenerationCanceledException {
-    if (myPool.isCancelled()) throw new GenerationCanceledException();
-  }
-
-  @Override
-  protected void checkMonitorCanceled() throws GenerationCanceledException {
-    super.checkMonitorCanceled();
-    if (myPool.isCancelled()) throw new GenerationCanceledException();
-  }
-
   public abstract class RootGenerationTask implements GenerationTask {
 
     List<GeneratedRootDescriptor> generated = null;
-
-    @Override
-    public boolean requiresReadAccess() {
-      return true;
-    }
 
     public void addGeneratedRoot(GeneratedRootDescriptor descriptor) {
       if (generated == null) {
@@ -213,17 +194,17 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public static class CompositeGenerationTask implements GenerationTask {
 
-    private Queue<RootGenerationTask> list = new LinkedList<RootGenerationTask>();
+    private Queue<GenerationTask> list = new LinkedList<GenerationTask>();
     private boolean isInShutdownMode = false;
 
-    public synchronized boolean addTask(RootGenerationTask task) {
+    public synchronized boolean addTask(GenerationTask task) {
       if (isInShutdownMode) {
         return false;
       }
       return list.add(task);
     }
 
-    private synchronized RootGenerationTask next() {
+    private synchronized GenerationTask next() {
       if (list.isEmpty()) {
         isInShutdownMode = true;
         return null;
@@ -233,15 +214,10 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
     @Override
     public void run() throws GenerationCanceledException, GenerationFailureException {
-      RootGenerationTask next;
+      GenerationTask next;
       while ((next = next()) != null) {
         next.run();
       }
-    }
-
-    @Override
-    public boolean requiresReadAccess() {
-      return true;
     }
   }
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -50,24 +51,23 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import java.util.Collection;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.event.SModelLanguageEvent;
-import jetbrains.mps.smodel.event.SModelDevKitEvent;
-import jetbrains.mps.smodel.event.SModelImportEvent;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.event.SModelImportEvent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import org.apache.log4j.Logger;
@@ -79,7 +79,7 @@ public class ChangesTracking {
   private final SimpleCommandQueue myQueue;
   private final EditableSModel myModelDescriptor;
   private final CurrentDifferenceRegistry myRegistry;
-  private final ModelEventListener myEventCollector = new ChangesTracking.MyEventsCollector();
+  private final SModelCommandListener myEventCollector = new ChangesTracking.MyEventsCollector();
   private boolean myDisposed = false;
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();
   private Set<ModelChange> myMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
@@ -377,32 +377,21 @@ public class ChangesTracking {
     return null;
   }
 
-  public class MyEventsCollector implements ModelEventListener {
+  public class MyEventsCollector extends SModelEventVisitorAdapter implements SModelCommandListener {
+    private Map<SNode, Set<String>> childChanged;
 
 
     @Override
-    public void handle(Collection<SModelEvent> events) {
-      Map<SNode, Set<String>> chlidChanged = MapSequence.fromMap(new HashMap<SNode, Set<String>>());
-      for (SModelEvent event : CollectionSequence.fromCollection(events)) {
-        if (event instanceof SModelPropertyEvent) {
-          processProperty((SModelPropertyEvent) event);
-        } else if (event instanceof SModelReferenceEvent) {
-          processReference((SModelReferenceEvent) event);
-        } else if (event instanceof SModelChildEvent) {
-          processChild((SModelChildEvent) event, chlidChanged);
-        } else if (event instanceof SModelRootEvent) {
-          processRoot((SModelRootEvent) event);
-        } else if (event instanceof SModelLanguageEvent) {
-          processLanguage((SModelLanguageEvent) event);
-        } else if (event instanceof SModelDevKitEvent) {
-          processDevkit((SModelDevKitEvent) event);
-        } else if (event instanceof SModelImportEvent) {
-          processImport((SModelImportEvent) event);
-        }
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      childChanged = MapSequence.fromMap(new HashMap<SNode, Set<String>>());
+      for (SModelEvent event : ListSequence.fromList(events)) {
+        event.accept(this);
       }
+      childChanged = null;
     }
 
-    private void processProperty(SModelPropertyEvent event) {
+    @Override
+    public void visitPropertyEvent(SModelPropertyEvent event) {
       final SNode node = event.getNode();
       if (node.getModel() == null) {
         return;
@@ -425,7 +414,8 @@ public class ChangesTracking {
       }, node, event);
     }
 
-    private void processReference(SModelReferenceEvent event) {
+    @Override
+    public void visitReferenceEvent(SModelReferenceEvent event) {
       SReference ref = event.getReference();
       final SNode sourceNode = ref.getSourceNode();
       if (sourceNode.getModel() == null) {
@@ -449,7 +439,8 @@ public class ChangesTracking {
       }, event.getReference().getSourceNode(), event);
     }
 
-    private void processChild(SModelChildEvent event, Map<SNode, Set<String>> childChanged) {
+    @Override
+    public void visitChildEvent(SModelChildEvent event) {
       SNode parent = event.getParent();
       if (parent.getModel() == null) {
         return;
@@ -498,7 +489,8 @@ public class ChangesTracking {
       }, parent, event);
     }
 
-    private void processRoot(final SModelRootEvent event) {
+    @Override
+    public void visitRootEvent(final SModelRootEvent event) {
       SNode root = event.getRoot();
       final boolean added = event.isAdded();
       if ((added ? root.getModel() == null : root.getModel() != null)) {
@@ -537,11 +529,13 @@ public class ChangesTracking {
       }, null, event);
     }
 
-    private void processLanguage(SModelLanguageEvent event) {
+    @Override
+    public void visitLanguageEvent(SModelLanguageEvent event) {
       moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, event.isAdded());
     }
 
-    private void processDevkit(SModelDevKitEvent event) {
+    @Override
+    public void visitDevKitEvent(SModelDevKitEvent event) {
       moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, event.isAdded());
     }
 
@@ -559,7 +553,8 @@ public class ChangesTracking {
       }, null, event);
     }
 
-    private void processImport(final SModelImportEvent event) {
+    @Override
+    public void visitImportEvent(final SModelImportEvent event) {
       final SModelReference modelRef = event.getModelUID();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {

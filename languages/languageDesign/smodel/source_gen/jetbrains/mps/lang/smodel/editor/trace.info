@@ -8188,14 +8188,14 @@
     <unitInfo nodeId="1204851941271" fileName="LinkRefQualifier_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkRefQualifier_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1205441004091">
-    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="15" startPosition="78" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="16" startPosition="59" endLine="17" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="17" startPosition="106" endLine="18" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="21" startPosition="83" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="15" startPosition="78" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="16" startPosition="62" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="17" startPosition="109" endLine="18" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="21" startPosition="83" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_operationParameter#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_ref_link_role#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="21" startPosition="83" endLine="22" endPosition="106" />
-    <scopeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="15" startPosition="78" endLine="18" endPosition="79" />
+    <scopeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="21" startPosition="83" endLine="22" endPosition="109" />
+    <scopeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="15" startPosition="78" endLine="18" endPosition="82" />
     <scopeInfo nodeId="1205441004091" fileName="Styles_StyleSheet.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1205441004091" varName="editorCell" />
       <varInfo nodeId="1205441004091" varName="style" />

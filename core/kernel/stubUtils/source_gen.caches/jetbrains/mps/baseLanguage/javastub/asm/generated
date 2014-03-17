@@ -1,3 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3mwi2ozuug0jguu2mju6xi5183150ap" />
+<dependencies version="2" modelHash="loz9ahbbzh4sl55kp5ckbnvcfhingr">
+  <common hash="-7fw1iww88ydy79n1saw1te8iyl8m8d1" dependsOnNodes="true" />
+  <source id="7241381882860002146" name="ASMArrayType" hash="-9ez6hkiojzacyh43cao952gt5v9vidn">
+    <file name="ASMArrayType.java" />
+  </source>
+  <source id="7241381882860002170" name="ASMClassType" hash="-9qe7drso29qf4qeczpjrfks30y9vl42">
+    <file name="ASMClassType.java" />
+  </source>
+  <source id="7241381882860005690" name="ASMMethod" hash="-85hn4h8sv13124rhiqo6bdlfedhm5tt">
+    <file name="ASMMethod.java" />
+  </source>
+  <source id="7241381882860006706" name="ASMPrimitiveType" hash="-e9493wu91lrksmg22rd1v6qhdky3mnq">
+    <file name="ASMPrimitiveType.java" />
+  </source>
+  <source id="7241381882860006793" name="ASMField" hash="-299cp9502r9tz17u9hgxqwpzcrhphtm">
+    <file name="ASMField.java" />
+  </source>
+  <source id="7241381882860001929" name="SignatureVisitorAdapter" hash="apnnhdaxwukwd87vd0l8bwbffoh8mwb">
+    <file name="SignatureVisitorAdapter.java" />
+  </source>
+  <source id="7241381882860007172" name="ASMVarArgType" hash="xmolv2xia457gjxtna6y2n7qn269f5">
+    <file name="ASMVarArgType.java" />
+  </source>
+  <source id="7241381882860007196" name="NullSignatureVisitor" hash="-ba4yfqium0yerwqsarh4oyo2bpu1ted">
+    <file name="NullSignatureVisitor.java" />
+  </source>
+  <source id="7241381882860007300" name="ASMUnboundedType" hash="-55d13it4vopidojyltmqnrv6t5sg6qp">
+    <file name="ASMUnboundedType.java" />
+  </source>
+  <source id="7241381882860007306" name="TypeUtil" hash="cq6abzp3zvthke94z6m8zms0tuz62k0">
+    <file name="TypeUtil.java" />
+  </source>
+  <source id="7241381882860008653" name="ASMType" hash="-8hgt62h7emxbdl617dz44ue4cydrzya">
+    <file name="ASMType.java" />
+  </source>
+  <source id="7241381882860008658" name="ASMEnumValue" hash="7gz1v4nd8jd4277xfkmrr3svy5h9bi7">
+    <file name="ASMEnumValue.java" />
+  </source>
+  <source id="7241381882860008701" name="ASMTypeVariable" hash="-dnxhi9a27kmy5sfxc6bpa7uf5huzq8k">
+    <file name="ASMTypeVariable.java" />
+  </source>
+  <source id="7241381882860008734" name="ASMSuperType" hash="-du67pq7nnx1u2mrjm1ajqzuhbpxitsm">
+    <file name="ASMSuperType.java" />
+  </source>
+  <source id="7241381882860008759" name="ASMFormalTypeParameter" hash="58t26enix0216moyz24gj9ss8bnmb2e">
+    <file name="ASMFormalTypeParameter.java" />
+  </source>
+  <source id="7241381882860008819" name="ASMExtendsType" hash="-ddg13sgd0869xnhawuf9opc79uln8qb">
+    <file name="ASMExtendsType.java" />
+  </source>
+  <source id="7241381882860009267" name="ASMParameterizedType" hash="-epbdza14v2alvxrdasmlsrsq9r3nn1b">
+    <file name="ASMParameterizedType.java" />
+  </source>
+  <source id="7241381882860009362" name="ASMClass" hash="2nah5nm17u065rrc7lmdwvkqk55iy83">
+    <file name="ASMClass.java" />
+  </source>
+  <source id="6849912058625332189" name="ASMAnnotation" hash="-8a0a1doaw1xp1z7poczcfwvpotczlob">
+    <file name="ASMAnnotation.java" />
+  </source>
+  <source id="3275604661365085736" name="ASMBoundedType" hash="78fepfupca57li9xp0sd49spmrmzlx9">
+    <file name="ASMBoundedType.java" />
+  </source>
+</dependencies>
 

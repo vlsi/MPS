@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+// FIXME there's another, pretty much the same jetbrains.mps.internal.make.runtime.java.FileProcessor, get rid of one of them
 class FileProcessor {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
 

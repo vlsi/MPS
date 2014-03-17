@@ -58,8 +58,5 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499490028" fileName="ModuleEditor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
   </root>
-  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499491170" />
-  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499495476" />
-  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499498080" />
 </debugInfo>
 

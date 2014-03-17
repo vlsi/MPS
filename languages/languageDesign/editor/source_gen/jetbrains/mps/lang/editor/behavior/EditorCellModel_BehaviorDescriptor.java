@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class EditorCellModel_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleContainer_BehaviorDescriptor {
+public abstract class EditorCellModel_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ICellStyle_BehaviorDescriptor {
   public EditorCellModel_BehaviorDescriptor() {
   }
 

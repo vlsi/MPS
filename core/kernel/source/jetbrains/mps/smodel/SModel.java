@@ -308,9 +308,10 @@ public class SModel implements SModelData {
 
   private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
+    final SModelDevKitEvent event = new SModelDevKitEvent(getModelDescriptor(), ref, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitAdded(new SModelDevKitEvent(getModelDescriptor(), ref, true));
+        sModelListener.devkitAdded(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -319,9 +320,10 @@ public class SModel implements SModelData {
 
   private void fireDevKitRemovedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
+    final SModelDevKitEvent event = new SModelDevKitEvent(getModelDescriptor(), ref, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitRemoved(new SModelDevKitEvent(getModelDescriptor(), ref, false));
+        sModelListener.devkitRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -330,9 +332,10 @@ public class SModel implements SModelData {
 
   private void fireLanguageAddedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
+    final SModelLanguageEvent event = new SModelLanguageEvent(getModelDescriptor(), ref, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageAdded(new SModelLanguageEvent(getModelDescriptor(), ref, true));
+        sModelListener.languageAdded(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -341,9 +344,10 @@ public class SModel implements SModelData {
 
   private void fireLanguageRemovedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
+    final SModelLanguageEvent event = new SModelLanguageEvent(getModelDescriptor(), ref, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageRemoved(new SModelLanguageEvent(getModelDescriptor(), ref, false));
+        sModelListener.languageRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -352,9 +356,10 @@ public class SModel implements SModelData {
 
   private void fireImportAddedEvent(@NotNull SModelReference modelReference) {
     if (!canFireEvent()) return;
+    final SModelImportEvent event = new SModelImportEvent(getModelDescriptor(), modelReference, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(getModelDescriptor(), modelReference, true));
+        sModelListener.importAdded(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -363,9 +368,10 @@ public class SModel implements SModelData {
 
   private void fireImportRemovedEvent(@NotNull SModelReference modelReference) {
     if (!canFireEvent()) return;
+    final SModelImportEvent event = new SModelImportEvent(getModelDescriptor(), modelReference, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importRemoved(new SModelImportEvent(getModelDescriptor(), modelReference, false));
+        sModelListener.importRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -374,9 +380,10 @@ public class SModel implements SModelData {
 
   private void fireRootAddedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
+    final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), root, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.rootAdded(new SModelRootEvent(getModelDescriptor(), root, true));
+        sModelListener.rootAdded(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -385,9 +392,10 @@ public class SModel implements SModelData {
 
   private void fireRootRemovedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
+    final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), root, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.rootRemoved(new SModelRootEvent(getModelDescriptor(), root, false));
+        sModelListener.rootRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -396,9 +404,10 @@ public class SModel implements SModelData {
 
   private void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
     if (!canFireEvent()) return;
+    final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), node, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.beforeRootRemoved(new SModelRootEvent(getModelDescriptor(), node, false));
+        sModelListener.beforeRootRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -407,9 +416,10 @@ public class SModel implements SModelData {
 
   void firePropertyChangedEvent(@NotNull SNode node, @NotNull String property, @Nullable String oldValue, @Nullable String newValue) {
     if (!canFireEvent()) return;
+    final SModelPropertyEvent event = new SModelPropertyEvent(getModelDescriptor(), property, node, oldValue, newValue);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.propertyChanged(new SModelPropertyEvent(getModelDescriptor(), property, node, oldValue, newValue));
+        sModelListener.propertyChanged(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -419,9 +429,10 @@ public class SModel implements SModelData {
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), true, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.childAdded(new SModelChildEvent(getModelDescriptor(), true, parent, role, childIndex, child));
+        sModelListener.childAdded(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -431,9 +442,10 @@ public class SModel implements SModelData {
   void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.childRemoved(new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child));
+        sModelListener.childRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -443,9 +455,10 @@ public class SModel implements SModelData {
   void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.beforeChildRemoved(new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child));
+        sModelListener.beforeChildRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -454,9 +467,10 @@ public class SModel implements SModelData {
 
   void fireReferenceAddedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
+    final SModelReferenceEvent event = new SModelReferenceEvent(getModelDescriptor(), reference, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.referenceAdded(new SModelReferenceEvent(getModelDescriptor(), reference, true));
+        sModelListener.referenceAdded(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -465,9 +479,10 @@ public class SModel implements SModelData {
 
   void fireReferenceRemovedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
+    final SModelReferenceEvent event = new SModelReferenceEvent(getModelDescriptor(), reference, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.referenceRemoved(new SModelReferenceEvent(getModelDescriptor(), reference, false));
+        sModelListener.referenceRemoved(event);
       } catch (Throwable t) {
         LOG.error(null, t);
       }

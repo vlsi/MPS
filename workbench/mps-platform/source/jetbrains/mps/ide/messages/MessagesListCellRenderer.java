@@ -19,7 +19,6 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
@@ -27,6 +26,8 @@ import javax.swing.JList;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Component;
+import java.util.Date;
+import java.util.Formatter;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
@@ -47,15 +48,29 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
       : CONSOLE_BACKGROUND);
     component.setBorder(EMPTY_BORDER);
 
-    String text = (message instanceof Message) ?
-      ((Message) message).getCreationTimeString() + "\t: " + message :
-      message.getText();
+    StringBuilder sb = new StringBuilder(120);
+    new Formatter(sb).format("%tT\t: ", new Date(message.getCreationTime()));
+    if (message.getSender() != null) {
+      sb.append('[');
+      sb.append(message.getSender());
+      sb.append(']');
+      sb.append(' ');
+    }
+    sb.append(message.getText());
+    if (message.getException() != null) {
+      sb.append(" (right-click to see exception)");
+    }
+    String text = sb.toString();
 
-
-    NavStatus ns = canNavigate(message);
+    final NavStatus ns = canNavigate(message);
+    if (ns == NavStatus.YES) {
+      component.setToolTipText(String.valueOf(message.getHintObject()));
+    } else {
+      component.setToolTipText(null);
+    }
     if (ns == NavStatus.OUTDATED) {
       component.setForeground(EXPIRED_ATTRIBUTES.getForegroundColor());
-      component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
+      text = String.format("[outdated] %s:%s", message.getHintObject().toString(), text);
     } else {
       switch (message.getKind()) {
         case WARNING:
@@ -68,8 +83,8 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
           component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
           break;
       }
-      component.setText(text);
     }
+    component.setText(text);
 
     switch (message.getKind()) {
       case INFORMATION:

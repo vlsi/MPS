@@ -25,21 +25,16 @@ import java.util.List;
 
 public interface ITemplateGenerator {
 
+  /**
+   * @deprecated There's no reason to access progress monitor this way. The monitor is passed as an argument where needed; cancellation is checked by generator impl
+   * The method will be removed after 3.1
+   */
+  @Deprecated
   ProgressMonitor getProgressMonitor();
 
   SModel getInputModel();
 
   SModel getOutputModel();
-
-  /**
-   * @deprecated
-   */
-  SModel getSourceModel();
-
-  /**
-   * @deprecated
-   */
-  SModel getTargetModel();
 
   boolean areMappingsAvailable();
 

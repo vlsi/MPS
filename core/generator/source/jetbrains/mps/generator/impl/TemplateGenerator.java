@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -51,7 +52,6 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -107,21 +107,34 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final DependenciesBuilder myDependenciesBuilder;
 
   private DeltaBuilder myDeltaBuilder;
-  private boolean myInplaceModelChange = false;
+  private boolean myInplaceModelChange = false; // indicates transformation was in-place (even after deltaBuilder was disposed). cries for better approach
   private WeavingProcessor myWeavingProcessor;
-  private final boolean myInplaceChangeEnabled;
+  private final boolean myInplaceChangeEnabled; // FIXME drop
   private final PostponedReferenceUpdate myPostponedRefs;
+  private final GenerationTrace myNewTrace;
 
-  public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-      RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder) {
+  static final class StepArguments {
+    public final SModel inputModel, outputModel;
+    public final DependenciesBuilder dependenciesBuilder;
+    public final RuleManager ruleManager;
+    public final GenerationTrace genTrace;
+    public StepArguments(RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace) {
+      this.inputModel = inputModel;
+      this.outputModel = outputModel;
+      this.dependenciesBuilder = dependenciesBuilder;
+      this.ruleManager = ruleManager;
+      this.genTrace = genTrace;
+    }
+  }
 
-    super(operationContext, progressMonitor, inputModel, outputModel);
-    myRuleManager = ruleManager;
+  public TemplateGenerator(GenerationSessionContext operationContext, StepArguments stepArgs) {
+    super(operationContext, stepArgs.inputModel, stepArgs.outputModel);
+    myRuleManager = stepArgs.ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges();
-    myDependenciesBuilder = dependenciesBuilder;
+    myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
     DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
@@ -129,9 +142,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       : ctx;
     myInplaceChangeEnabled = options.applyTransformationsInplace();
     myPostponedRefs = new PostponedReferenceUpdate(this);
+    myNewTrace = stepArgs.genTrace;
   }
 
-  public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+  public boolean apply(@NotNull ProgressMonitor progressMonitor, boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+    myProgressMonitor = progressMonitor;
     checkMonitorCanceled();
     final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     myAreMappingsReady = false;
@@ -266,7 +281,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     // copy roots
-    checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : myInputModel.getRootNodes()) {
       if (rootsConsumed.contains(rootToCopy)) {
@@ -276,9 +290,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (context != null) {
         TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context);
         copyRootInputNode(rootToCopy, rootenv);
+        checkMonitorCanceled();
       }
     }
-    checkMonitorCanceled();
   }
 
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
@@ -291,10 +305,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           myGenerationTracer.closeRule(rule.getRuleNode());
         }
       }
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (GenerationCanceledException ex) {
+      throw ex;
     } catch (GenerationException e) {
-      if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
-      if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
+      getLogger().error(rule.getRuleNode(), String.format("internal error: unexpected exception: %s", e.toString()));
+      throw new GenerationFailureException(e);
     }
   }
 
@@ -345,7 +362,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
-      environment.getTracer().trace(null, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
+      environment.getTrace().trace(null, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
       for (SNode outputNode : outputNodes) {
         registerRoot(new GeneratedRootDescriptor(outputNode, rule.getRuleNode()));
         setChanged();
@@ -369,7 +386,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
-      environment.getTracer().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
+      environment.getTrace().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
 
       final boolean inputIsRoot = inputNode.getParent() == null;
       final boolean preserveInputRoot = inputIsRoot && rule.keepSourceRoot();
@@ -443,7 +460,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
     if (builder != null) {
       if (builder.isUnchanged()) {
-        if (myDeltaBuilder != null) {
+        if (myDeltaBuilder != null && inputNode != null) {
           // Unchanged roots shall not participate in further generation steps, hence
           // we need to tell DeltaBuilder to forget it.
           SNode inputRoot = inputNode.getContainingRoot();
@@ -529,7 +546,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     assert this == env.getGenerator();
     SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
-    checkGenerationCanceledFast();
+    checkMonitorCanceled();
     // find rule
     TemplateReductionRule[] conceptRules = ruleFinder.findReductionRules(inputNode);
     if (conceptRules == null) {
@@ -547,9 +564,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
           Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
           if (outputNodes != null) {
-            IGenerationTracer tracer = env.getTracer();
             SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
-            tracer.trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
+            env.getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
             return outputNodes;
           }
         }
@@ -578,14 +594,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (GenerationCanceledException ex) {
+      if (getGenerationTracer().isTracing() && getLogger().needsInfo()) {
+        getLogger().info("generation canceled when processing branch:");
+        GeneratorUtil.logCurrentGenerationBranch(getLogger(), getGenerationTracer(), false);
+      }
       throw ex;
     } catch (GenerationException ex) {
       // ignore
     }
     return null;
-  }
-
-  protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
   // in fact, it's reasonable to keep this method in TEEI, to reflect narrowing scope of
@@ -672,6 +689,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myReductionData = BlockedReductionsData.getStepData(getGeneratorSessionContext());
     }
     return myReductionData;
+  }
+
+  @NotNull
+  /*package*/ GenerationTrace getTrace() {
+    return myNewTrace;
   }
 
   IGenerationTracer getGenerationTracer() {

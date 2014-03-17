@@ -1132,7 +1132,6 @@
     </scopeInfo>
     <unitInfo nodeId="5646902138690047680" fileName="PerformUtil.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.PerformUtil" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/5646902138690052674" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/6268941039745707954">
     <nodeInfo nodeId="1977980803835751524" fileName="AnonymousCellAnnotation_Behavior.java" startLine="23" startPosition="178" endLine="24" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1977980803835923808" fileName="AnonymousCellAnnotation_Behavior.java" startLine="24" startPosition="111" endLine="25" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1224,7 +1223,6 @@
     <unitInfo nodeId="2034046503361582462" fileName="AnonymousCellAnnotation_Behavior.java" startLine="26" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$1" />
     <unitInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/7691029917082171421" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/7691029917083872181">
     <nodeInfo nodeId="7691029917083872181" fileName="IRuleReference_Behavior.java" startLine="15" startPosition="73" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7691029917083872181" fileName="IRuleReference_Behavior.java" startLine="20" startPosition="106" endLine="21" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1408,7 +1406,6 @@
     </scopeInfo>
     <unitInfo nodeId="8000313307342972355" fileName="NodeRuleFactory.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleFactory" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8000313307342989592" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8000313307343105680">
     <nodeInfo nodeId="8000313307343107780" fileName="NodeRuleReference.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ruleNode" />
     <nodeInfo nodeId="2893471348148297762" fileName="NodeRuleReference.java" startLine="12" startPosition="44" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1444,7 +1441,6 @@
     <scopeInfo nodeId="2893471348148301793" fileName="NodeRuleReference.java" startLine="18" startPosition="0" endLine="29" endPosition="0" />
     <unitInfo nodeId="8000313307343105680" fileName="NodeRuleReference.java" startLine="8" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8000313307343217511" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8202121391118617645">
     <nodeInfo nodeId="7835233914436761938" fileName="WarningStatementReference_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8202121391118617645" fileName="WarningStatementReference_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

@@ -69,7 +69,11 @@ public class Styles_StyleSheet {
   }
 
   public static void apply_string(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("STRING");
+      style.putAll(styleToPut);
+    }
   }
 
   public static void apply_AnyBracket(Style style, EditorCell editorCell) {

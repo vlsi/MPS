@@ -14,53 +14,56 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
+import jetbrains.mps.make.dependencies.MakeSequence;
+import jetbrains.mps.make.service.CoreMakeTask;
+import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.make.facet.ITarget;
-import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.make.service.CoreMakeTask;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
   private IOperationContext context;
   private IMessageHandler messageHandler;
 
+  @Deprecated
   public TestMakeService(IOperationContext context, IMessageHandler messageHandler) {
     this.context = context;
     this.messageHandler = messageHandler;
   }
 
+  public TestMakeService() {
+  }
+
+
+
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
-    return doMake(resources, script, controller, monitor);
-  }
+    if (session == null) {
+      // FIXME compatibility, tolerance to null session will be dropped 
+      assert context != null : "Either pass non-null session, or use cons with args";
+      assert messageHandler != null;
+      session = new MakeSession(context, messageHandler, true);
+    }
+    String scrName = "Build";
+    if (Sequence.fromIterable(resources).isEmpty()) {
+      String msg = scrName + " aborted: nothing to do";
+      this.showError(msg);
+      return new FutureValue<IResult>(new IResult.FAILURE(null));
+    }
 
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return make(session, resources, script, controller, new EmptyProgressMonitor());
-  }
+    MakeSequence makeSeq = new MakeSequence();
+    makeSeq.prepareClusters(resources);
+    makeSeq.prepareScipts(script, session);
 
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return make(session, resources, script, null, new EmptyProgressMonitor());
-  }
+    IScriptController ctl = this.completeController(controller, session);
 
-  @Override
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return make(session, resources, null, null, new EmptyProgressMonitor());
+    CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, messageHandler);
+    task.run(monitor);
+    return new FutureValue<IResult>(task.getResult());
   }
 
   @Override
@@ -87,111 +90,25 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     throw new UnsupportedOperationException();
   }
 
-  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-    String scrName = "Build";
-
-    if (Sequence.fromIterable(inputRes).isEmpty()) {
-      String msg = scrName + " aborted: nothing to do";
-      this.showError(msg);
-      return new FutureValue(new IResult.FAILURE(null));
-    }
-
-    return new TestMakeService.TaskRunner(scrName, messageHandler).runTask(inputRes, defaultScript, controller, monitor);
-  }
-
   private void showError(String msg) {
     messageHandler.handle(new Message(MessageKind.ERROR, msg));
   }
 
-  private IScriptController completeController(final IScriptController ctl) {
-    final Wrappers._T<IConfigMonitor> cmon2delegate = new Wrappers._T<IConfigMonitor>(null);
-    final IConfigMonitor cmon = new IConfigMonitor.Stub() {
-      @Override
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        T opt = null;
-        if (cmon2delegate.value != null) {
-          opt = cmon2delegate.value.relayQuery(query);
-        }
-        return (opt != null ? opt : query.defaultOption());
-      }
-    };
-    final IJobMonitor jmon = new IJobMonitor.Stub() {
-      @Override
-      public void reportFeedback(IFeedback fdbk) {
-        new MessageFeedbackStrategy(messageHandler).reportFeedback(fdbk);
-      }
-    };
-
-    return new IScriptController.Stub() {
-      @Override
-      public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
-        if (ctl != null) {
-          ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
-            public void invoke(IConfigMonitor c) {
-              try {
-                cmon2delegate.value = c;
-                code.invoke(cmon);
-              } finally {
-                cmon2delegate.value = null;
-              }
-            }
-          });
-        } else {
-          code.invoke(cmon);
-        }
-      }
-
-      @Override
-      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        code.invoke(jmon);
-      }
-
+  private IScriptController completeController(final IScriptController ctl, MakeSession makeSession) {
+    // client is responsible to populate properties of possible facets, don't do anything if 
+    // client has supplied a conrtoller. If not, create a default controller that expects Generate facet to 
+    // jump in. It's not a nice idea, and we'll drop this soon, as it's MakeService client's responsibility 
+    // to configure scripts, not ours 
+    if (ctl != null) {
+      return ctl;
+    }
+    final GenerateFacetInitializer initGenFacet = new GenerateFacetInitializer(makeSession);
+    IConfigMonitor monitor = new AbstractMakeService.DefaultMonitor(makeSession);
+    return new IScriptController.Stub(monitor, monitor) {
       @Override
       public void setup(IPropertiesPool pool) {
-        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-        vars._0(TestMakeService.this.context.getProject());
-        vars._1(TestMakeService.this.context);
-        vars._2(true);
-
-        if (ctl != null) {
-          ctl.setup(pool);
-        }
+        initGenFacet.populate(pool);
       }
     };
-  }
-
-  public void disposeComponent() {
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return null;
-  }
-
-  public void initComponent() {
-  }
-
-  private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
-    private String taskName;
-    private IMessageHandler mh;
-
-    private TaskRunner(String taskName, IMessageHandler mh) {
-      this.taskName = taskName;
-      this.mh = mh;
-    }
-
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      return processRawInput(inputRes, defaultScript, controller, monitor);
-    }
-
-    @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      IScriptController ctl = TestMakeService.this.completeController(controller);
-
-      CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, mh);
-      task.run(monitor);
-      return new FutureValue(task.getResult());
-    }
   }
 }

@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -261,10 +262,14 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();
         }
+        // FIXME: we should invalidate caches only in specific modules
+        for (SModule m : getModules()) {
+          SearchScope moduleScope = ((AbstractModule) m).getScope();
+          ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
+        }
         SModelUtil.clearCaches();
 
-        // FIXME temporary workaround: modelReplaced event is delivered in EDT, so Language caches
-        // are not cleared properly
+        // FIXME temporary workaround: modelReplaced event is delivered in EDT, so Language caches are not cleared properly
         for (SModule m : getModules()) {
           if (m instanceof Language) {
             ((Language) m).invalidateConceptDeclarationsCache();

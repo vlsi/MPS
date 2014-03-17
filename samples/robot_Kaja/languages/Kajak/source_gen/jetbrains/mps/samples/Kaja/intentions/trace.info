@@ -95,6 +95,5 @@
     <unitInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="71" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.Kaja.intentions.ExtractRoutine_Intention$IntentionImplementation" />
     <unitInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.samples.Kaja.intentions.ExtractRoutine_Intention" />
   </root>
-  <root nodeRef="r:c23df2a3-084e-497b-b2a5-1671f4fbf9de(jetbrains.mps.samples.Kaja.intentions)/859008965969467883" />
 </debugInfo>
 

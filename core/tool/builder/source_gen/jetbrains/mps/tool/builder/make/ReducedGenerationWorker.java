@@ -92,7 +92,7 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
     final List<String> deletedFiles = facetConf.getDeletedFiles();
     final Map<String, String> fileHashes = facetConf.getFileHashes();
 
-    IScriptController scriptCtl = facetConf.configureFacets();
+    IScriptController scriptCtl = facetConf.configureFacets(ms);
 
     try {
       res = bms.make(ms, resources, null, scriptCtl);

@@ -10,9 +10,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -37,7 +37,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -45,14 +45,14 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
-  public static void make(Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
+  public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
     ProjectOperationContext context = new ProjectOperationContext(project);
 
     final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
-          modelsToGenerate.value = SModelRepository.getInstance().getModelDescriptors();
+          modelsToGenerate.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
         } else {
           modelsToGenerate.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SModel>(), models)).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
             public Iterable<SModel> translate(SModule it) {
@@ -101,12 +101,12 @@ public class IdeCommandUtil {
 
 
 
-  public static void cleanCaches(Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+  public static void cleanCaches(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          modelsToClean.value = SModelRepository.getInstance().getModelDescriptors();
+          modelsToClean.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
         }
       });
     } else {
@@ -130,7 +130,7 @@ public class IdeCommandUtil {
 
 
 
-  public static void cleanSourcesGen(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+  public static void removeGenSources(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<Iterable<? extends SModule>> _modules = new Wrappers._T<Iterable<? extends SModule>>(modules);
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(_modules.value).isEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -144,13 +144,33 @@ public class IdeCommandUtil {
         return SNodeOperations.isGeneratable(it);
       }
     }).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel it) {
-        String outputPath = SModuleOperations.getOutputPathFor(it);
+      public void visit(SModel model) {
+        String outputPath = SModuleOperations.getOutputPathFor(model);
         String cachePath = FileGenerationUtil.getCachesPath(outputPath);
-        IFile ouputDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(outputPath));
-        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(it, FileSystem.getInstance().getFileByPath(cachePath));
-        ouputDir.delete();
-        cachesDir.delete();
+        IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(outputPath));
+        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(cachePath));
+
+        Iterable<IFile> outputItems = outputDir.getChildren();
+        Sequence.fromIterable(outputItems).where(new IWhereFilter<IFile>() {
+          public boolean accept(IFile it) {
+            return !(it.isDirectory());
+          }
+        }).visitAll(new IVisitor<IFile>() {
+          public void visit(IFile it) {
+            it.delete();
+          }
+        });
+
+        Iterable<IFile> cachedItems = cachesDir.getChildren();
+        Sequence.fromIterable(cachedItems).where(new IWhereFilter<IFile>() {
+          public boolean accept(IFile it) {
+            return !(it.isDirectory());
+          }
+        }).visitAll(new IVisitor<IFile>() {
+          public void visit(IFile it) {
+            it.delete();
+          }
+        });
       }
     });
     Sequence.fromIterable(_modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
@@ -184,7 +204,7 @@ public class IdeCommandUtil {
 
 
   public static void callAction(final SNode actionDeclaration, final Map<String, Object> parameters) {
-    AnAction action = ActionManager.getInstance().getAction(BehaviorReflection.invokeNonVirtual(String.class, actionDeclaration, "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "call_getGeneratedClassFQName_1213877371952", new Object[]{}));
+    AnAction action = ActionManager.getInstance().getAction(ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(actionDeclaration));
     ActionUtils.updateAndPerformAction(action, ActionUtils.createEvent(ActionPlaces.UNKNOWN, new DataContext() {
       @Nullable
       public Object getData(@NonNls String key) {

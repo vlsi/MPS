@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,15 @@ package jetbrains.mps.generator.generationTypes;
 import org.jdom.Element;
 
 /**
- * Evgeny Gryaznov, Sep 15, 2010
+ * Abstraction for serialization layer, so that generated text files may get piped wherever needed.
  */
 public interface StreamHandler {
 
-  void saveStream(String name, String content, boolean isCache);
+  void saveStream(String name, String content);
 
-  void saveStream(String name, Element content, boolean isCache);
+  void saveStream(String name, Element content);
 
-  void saveStream(String name, byte[] content, boolean isCache);
+  void saveStream(String name, byte[] content);
 
-  boolean touch(String name, boolean isCache);
-
-  void dispose();
+  boolean touch(String name);
 }

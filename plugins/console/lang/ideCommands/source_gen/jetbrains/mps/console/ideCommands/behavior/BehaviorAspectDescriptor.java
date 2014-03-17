@@ -14,23 +14,23 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 16:
         return new StatCommand_BehaviorDescriptor();
-      case 6:
+      case 5:
         return new GlobalStatisticTarget_BehaviorDescriptor();
-      case 13:
+      case 12:
         return new ProjectStatisticsTarget_BehaviorDescriptor();
-      case 10:
+      case 9:
         return new ModelStatisticsTarget_BehaviorDescriptor();
       case 14:
         return new ShowBrokenReferences_BehaviorDescriptor();
       case 17:
         return new SubtreeStatisticsTarget_BehaviorDescriptor();
-      case 9:
+      case 8:
         return new ModelReference_BehaviorDescriptor();
-      case 12:
+      case 11:
         return new NodeReference_BehaviorDescriptor();
       case 15:
         return new ShowGenPlan_BehaviorDescriptor();
-      case 5:
+      case 4:
         return new ClickableGenerator_BehaviorDescriptor();
       case 0:
         return new ActionCallDeclaredParameter_BehaviorDescriptor();
@@ -38,22 +38,22 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionCallGlobalParameter_BehaviorDescriptor();
       case 2:
         return new CallActionExpression_BehaviorDescriptor();
-      case 8:
-        return new ModelProperties_BehaviorDescriptor();
-      case 11:
-        return new ModuleProperties_BehaviorDescriptor();
       case 7:
+        return new ModelProperties_BehaviorDescriptor();
+      case 10:
+        return new ModuleProperties_BehaviorDescriptor();
+      case 6:
         return new Make_BehaviorDescriptor();
       case 18:
         return new WithDependencies_BehaviorDescriptor();
       case 3:
         return new Clean_BehaviorDescriptor();
-      case 4:
-        return new CleanSources_BehaviorDescriptor();
+      case 13:
+        return new RemoveGenSources_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.Clean", "jetbrains.mps.console.ideCommands.structure.CleanSources", "jetbrains.mps.console.ideCommands.structure.ClickableGenerator", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.Make", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.WithDependencies"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.Clean", "jetbrains.mps.console.ideCommands.structure.ClickableGenerator", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.Make", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.RemoveGenSources", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.WithDependencies"};
 }

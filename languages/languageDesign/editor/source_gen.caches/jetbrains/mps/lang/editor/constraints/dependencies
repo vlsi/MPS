@@ -355,7 +355,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.ConceptEditorHintDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.EditorComponentDeclaration_Constraints" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.IStyleSheetMember_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.IStyle_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.RGBColor_Constraints" />
@@ -376,7 +376,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.constraints.IStyleSheetMember_Constraints" file="IStyleSheetMember_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.constraints.IStyle_Constraints" file="IStyle_Constraints.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

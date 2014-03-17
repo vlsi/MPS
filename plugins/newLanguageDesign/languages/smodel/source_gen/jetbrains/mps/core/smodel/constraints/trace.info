@@ -341,7 +341,6 @@
     </scopeInfo>
     <unitInfo nodeId="7737135436000553889" fileName="IsInstanceOf_Constraints.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.core.smodel.constraints.IsInstanceOf_Constraints" />
   </root>
-  <root nodeRef="r:a3118036-be6c-4f13-a069-b1078aa590d5(jetbrains.mps.core.smodel.constraints)/803795786414391702" />
   <root nodeRef="r:a3118036-be6c-4f13-a069-b1078aa590d5(jetbrains.mps.core.smodel.constraints)/8148106577659855792">
     <nodeInfo nodeId="8148106577659855792" fileName="OfConceptSelector_Constraints.java" startLine="16" startPosition="42" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8148106577659855792" fileName="OfConceptSelector_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

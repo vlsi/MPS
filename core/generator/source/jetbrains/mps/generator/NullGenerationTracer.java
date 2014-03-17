@@ -35,11 +35,6 @@ public class NullGenerationTracer implements IGenerationTracer {
   public final static IGenerationTracer INSTANCE = new NullGenerationTracer();
 
   @Override
-  public void trace(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
-
-  }
-
-  @Override
   public void pushInputNode(SNodeReference node) {
   }
 
