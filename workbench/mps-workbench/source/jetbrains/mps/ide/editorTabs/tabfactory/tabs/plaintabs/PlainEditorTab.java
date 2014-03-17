@@ -19,8 +19,8 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 class PlainEditorTab {
-  private SNodeReference myNode;
-  private RelationDescriptor myTab;
+  private final SNodeReference myNode;
+  private final RelationDescriptor myTab;
 
   PlainEditorTab(SNodeReference node, RelationDescriptor tab) {
     myNode = node;
