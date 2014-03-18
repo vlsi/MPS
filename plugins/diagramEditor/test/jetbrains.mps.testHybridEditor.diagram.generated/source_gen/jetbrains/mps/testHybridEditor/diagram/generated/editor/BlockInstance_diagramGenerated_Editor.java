@@ -75,6 +75,8 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private class BlockCellImpl_gju6mh_a extends BlockCell {
     private final PropertyMapperCell<String> myPropertyCell_gju6mh_a0a;
     private final ReadableModelProperty<String> myProperty_gju6mh_a1a;
+    private final PropertyMapperCell<Integer> myPropertyCell_gju6mh_a2a;
+    private final PropertyMapperCell<Integer> myPropertyCell_gju6mh_a3a;
     private final ReadableModelProperty<Integer> myXProperty;
     private final ReadableModelProperty<Integer> myYProperty;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
@@ -99,6 +101,28 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       };
       addModelProperty(myProperty_gju6mh_a1a);
+      myPropertyCell_gju6mh_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
+        protected Integer getModelPropertyValueImpl() {
+          return SPropertyOperations.getInteger(node, "height");
+        }
+
+        protected void setModelPropertyValueImpl(Integer value) {
+          SPropertyOperations.set(node, "height", "" + (value));
+        }
+      };
+      addEditorCell(myPropertyCell_gju6mh_a2a);
+      myPropertyCell_gju6mh_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_gju6mh_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
+      myPropertyCell_gju6mh_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
+        protected Integer getModelPropertyValueImpl() {
+          return SPropertyOperations.getInteger(node, "width");
+        }
+
+        protected void setModelPropertyValueImpl(Integer value) {
+          SPropertyOperations.set(node, "width", "" + (value));
+        }
+      };
+      addEditorCell(myPropertyCell_gju6mh_a3a);
+      myPropertyCell_gju6mh_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_gju6mh_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       myXProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
         protected Integer getModelPropertyValue() {
           return SPropertyOperations.getInteger(node, "x");
@@ -126,6 +150,8 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_gju6mh_a0a.synchronize();
+      myPropertyCell_gju6mh_a2a.synchronize();
+      myPropertyCell_gju6mh_a3a.synchronize();
       syncPortObjects(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "inMetaPorts", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
       syncPortObjects(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "outMetaPorts", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
@@ -225,6 +251,8 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                   super.registerSynchronizers(configuration);
                   myPropertyCell_gju6mh_a0a.registerSynchronizers(configuration, getTarget().text());
                   configuration.add(Synchronizers.forProperty(myProperty_gju6mh_a1a, getTarget().metaText()));
+                  myPropertyCell_gju6mh_a2a.registerSynchronizers(configuration, getTarget().modelHeight());
+                  myPropertyCell_gju6mh_a3a.registerSynchronizers(configuration, getTarget().modelWidth());
                 }
               };
             }

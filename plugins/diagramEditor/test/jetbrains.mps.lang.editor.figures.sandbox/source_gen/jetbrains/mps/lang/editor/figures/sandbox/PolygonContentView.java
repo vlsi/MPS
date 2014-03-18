@@ -6,18 +6,20 @@ import jetbrains.jetpad.projectional.view.PolygonView;
 import jetbrains.jetpad.projectional.view.PolyLineView;
 import jetbrains.jetpad.cell.TextCell;
 import jetbrains.jetpad.projectional.view.TextView;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.cell.view.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
 import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.model.event.EventHandler;
-import jetbrains.jetpad.model.property.PropertyChangeEvent;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.jetpad.model.property.Property;
 
 public class PolygonContentView extends PolygonView {
   private static final int FOLDING_SIZE = 6;
@@ -26,6 +28,8 @@ public class PolygonContentView extends PolygonView {
   private PolyLineView myPolyLine = new PolyLineView();
   private TextCell myCell = new TextCell();
   private TextView myMetaText = new TextView();
+  private Property<Integer> myModelWidth = new ValueProperty<Integer>();
+  private Property<Integer> myModelHeight = new ValueProperty<Integer>();
 
   public PolygonContentView() {
     prop(JetpadUtils.PREFERRED_SIZE).set(new Vector(WIDTH, HEIGHT));
@@ -42,11 +46,45 @@ public class PolygonContentView extends PolygonView {
     children().add(space);
     myMetaText.bold().set(true);
     children().add(myMetaText);
-    prop(JetpadUtils.PREFERRED_SIZE).addHandler(new EventHandler<PropertyChangeEvent<Vector>>() {
-      public void onEvent(PropertyChangeEvent<Vector> event) {
-        adjustPoints(event.getNewValue().x, event.getNewValue().y);
+    new Mapper<PolygonContentView, PolygonContentView>(this, this) {
+      @Override
+      protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+        super.registerSynchronizers(configuration);
+        configuration.add(Synchronizers.forProperty(myModelWidth, new WritableProperty<Integer>() {
+          public void set(Integer value) {
+            if (value == null) {
+              return;
+            }
+            Property<Vector> prop = prop(JetpadUtils.PREFERRED_SIZE);
+            int x = value;
+            int y = (prop.get() != null ? prop.get().y : 0);
+            prop.set(new Vector(x, y));
+          }
+        }));
+        configuration.add(Synchronizers.forProperty(myModelHeight, new WritableProperty<Integer>() {
+          public void set(Integer value) {
+            if (value == null) {
+              return;
+            }
+            Property<Vector> prop = prop(JetpadUtils.PREFERRED_SIZE);
+            int x = (prop.get() != null ? prop.get().x : 0);
+            int y = value;
+            prop.set(new Vector(x, y));
+          }
+        }));
+        configuration.add(Synchronizers.forProperty(prop(JetpadUtils.PREFERRED_SIZE), new WritableProperty<Vector>() {
+          public void set(Vector prefSize) {
+            myModelWidth.set(prefSize.x);
+            myModelHeight.set(prefSize.y);
+          }
+        }));
+        configuration.add(Synchronizers.forProperty(prop(JetpadUtils.PREFERRED_SIZE), new WritableProperty<Vector>() {
+          public void set(Vector prefSize) {
+            adjustPoints(prefSize.x, prefSize.y);
+          }
+        }));
       }
-    });
+    }.attachRoot();
   }
 
   @Override
@@ -107,5 +145,13 @@ public class PolygonContentView extends PolygonView {
 
   public Property<String> metaText() {
     return myMetaText.text();
+  }
+
+  public Property<Integer> modelWidth() {
+    return myModelWidth;
+  }
+
+  public Property<Integer> modelHeight() {
+    return myModelHeight;
   }
 }
