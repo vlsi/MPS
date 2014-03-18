@@ -30,9 +30,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CopyPluginXml_Facet extends IFacet.Stub {
@@ -70,7 +70,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
   public static class Target_copyPluginXml implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
 
     public Target_copyPluginXml() {
     }
@@ -87,7 +87,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
               progressMonitor.step("plugin.xml");
               try {
                 for (TResource tres : Sequence.fromIterable(input)) {
-                  String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
+                  String dest = vars(pa.forResource(tres)).pluginRoot();
 
                   if (dest != null) {
                     final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) tres.module()).expandPath(dest));
@@ -196,6 +196,10 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 10;
+    }
+
+    public static CopyPluginXml_Facet.Target_copyPluginXml.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<String> {

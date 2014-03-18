@@ -19,9 +19,10 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure.Variables;
+import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
@@ -29,7 +30,6 @@ import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.script.IFeedback;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Sample_Facet extends IFacet.Stub {
@@ -68,7 +68,7 @@ public class Sample_Facet extends IFacet.Stub {
   public static class Target_readParams implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{MResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
+    private static final ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
 
     public Target_readParams() {
     }
@@ -83,22 +83,22 @@ public class Sample_Facet extends IFacet.Stub {
             case 0:
               for (IResource resource : input) {
                 MResource mres = (MResource) resource;
-                String paramVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).SomeParam();
-                Integer countVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).Count();
-                String sarch = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).arch();
+                String paramVal = vars(pa.forResource(mres)).SomeParam();
+                Integer countVal = vars(pa.forResource(mres)).Count();
+                String sarch = vars(pa.forResource(mres)).arch();
                 for (SModel smd : mres.models()) {
                   if (paramVal != null) {
-                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "sample.parameter", paramVal);
+                    Target_configure.vars(pa.global()).parametersProvider().addParameter(smd, "sample.parameter", paramVal);
                   }
                   if (countVal != null) {
-                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "count", countVal);
+                    Target_configure.vars(pa.global()).parametersProvider().addParameter(smd, "count", countVal);
                   }
                   if (sarch != null) {
-                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.arch", sarch);
+                    Target_configure.vars(pa.global()).parametersProvider().addParameter(smd, "r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.arch", sarch);
                   }
                 }
               }
-              pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter("count", 100500);
+              Target_configure.vars(pa.global()).parametersProvider().addParameter("count", 100500);
             default:
               return new IResult.SUCCESS(_output_kf1bs5_a0a);
           }
@@ -166,6 +166,10 @@ public class Sample_Facet extends IFacet.Stub {
       return 1;
     }
 
+    public static Sample_Facet.Target_readParams.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, Sample_Facet.Target_readParams.Parameters.class);
+    }
+
     public static class Parameters extends MultiTuple._3<String, Integer, String> {
       public Parameters() {
         super();
@@ -209,7 +213,7 @@ public class Sample_Facet extends IFacet.Stub {
   public static class Target_reportFiles implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("sampleFacet.Sample.reportFiles");
+    private static final ITarget.Name name = new ITarget.Name("sampleFacet.Sample.reportFiles");
 
     public Target_reportFiles() {
     }

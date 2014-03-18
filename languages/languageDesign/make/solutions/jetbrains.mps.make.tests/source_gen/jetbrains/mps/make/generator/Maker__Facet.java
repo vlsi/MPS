@@ -56,7 +56,7 @@ public class Maker__Facet extends IFacet.Stub {
   public static class Target_Make implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make");
 
     public Target_Make() {
     }

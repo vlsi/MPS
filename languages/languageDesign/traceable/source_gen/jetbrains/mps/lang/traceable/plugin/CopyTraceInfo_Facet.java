@@ -30,8 +30,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
-import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CopyTraceInfo_Facet extends IFacet.Stub {
@@ -69,7 +69,7 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
   public static class Target_copyTraceInfo implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo");
 
     public Target_copyTraceInfo() {
     }
@@ -82,7 +82,7 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (Boolean.TRUE.equals(pa.global().properties(Target_copyTraceInfo.this.getName(), CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters.class).skipCopying())) {
+              if (Boolean.TRUE.equals(vars(pa.global()).skipCopying())) {
                 return new IResult.SUCCESS(_output_zgz0lb_a0a);
               }
               progressMonitor.start("Copying resources", 2);
@@ -205,6 +205,10 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 30;
+    }
+
+    public static CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<Boolean> {

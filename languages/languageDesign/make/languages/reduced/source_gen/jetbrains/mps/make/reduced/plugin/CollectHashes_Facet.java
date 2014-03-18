@@ -27,9 +27,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 
 public class CollectHashes_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -66,7 +66,7 @@ public class CollectHashes_Facet extends IFacet.Stub {
   public static class Target_collect implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{GResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.reduced.CollectHashes.collect");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.reduced.CollectHashes.collect");
 
     public Target_collect() {
     }
@@ -86,7 +86,7 @@ public class CollectHashes_Facet extends IFacet.Stub {
                   String outputDir = FileGenerationUtil.getDefaultOutputDir(gres.model(), FileSystem.getInstance().getFileByPath(outputRoot)).getPath();
                   for (GenerationRootDependencies grd : status.getDependencies().getRootDependencies()) {
                     for (String file : grd.getFiles()) {
-                      MapSequence.fromMap(pa.global().properties(Target_collect.this.getName(), CollectHashes_Facet.Target_collect.Parameters.class).fileHashes()).put(new File(new File(outputDir), file).getAbsolutePath(), grd.getHash());
+                      MapSequence.fromMap(vars(pa.global()).fileHashes()).put(new File(new File(outputDir), file).getAbsolutePath(), grd.getHash());
                     }
                   }
                 }
@@ -156,6 +156,10 @@ public class CollectHashes_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 10;
+    }
+
+    public static CollectHashes_Facet.Target_collect.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, CollectHashes_Facet.Target_collect.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<Map<String, String>> {

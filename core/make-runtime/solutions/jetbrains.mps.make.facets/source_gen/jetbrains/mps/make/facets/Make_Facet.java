@@ -28,11 +28,11 @@ import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Make_Facet extends IFacet.Stub {
@@ -71,7 +71,7 @@ public class Make_Facet extends IFacet.Stub {
   public static class Target_reconcile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{DResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile");
 
     public Target_reconcile() {
     }
@@ -84,7 +84,7 @@ public class Make_Facet extends IFacet.Stub {
           final Iterable<DResource> input = (Iterable<DResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (Boolean.TRUE.equals(pa.global().properties(Target_reconcile.this.getName(), Make_Facet.Target_reconcile.Parameters.class).skipReconcile())) {
+              if (Boolean.TRUE.equals(vars(pa.global()).skipReconcile())) {
                 _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
                 return new IResult.SUCCESS(_output_pm9z_a0a);
               }
@@ -201,6 +201,10 @@ public class Make_Facet extends IFacet.Stub {
       return 200;
     }
 
+    public static Make_Facet.Target_reconcile.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, Make_Facet.Target_reconcile.Parameters.class);
+    }
+
     public static class Parameters extends MultiTuple._1<Boolean> {
       public Parameters() {
         super();
@@ -228,7 +232,7 @@ public class Make_Facet extends IFacet.Stub {
   public static class Target_make implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.make");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.make");
 
     public Target_make() {
     }
@@ -254,8 +258,8 @@ public class Make_Facet extends IFacet.Stub {
         public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa) {
           switch (0) {
             case 0:
-              if (pa.global().properties(Target_make.this.getName(), Make_Facet.Target_make.Parameters.class).pathToFile() == null) {
-                pa.global().properties(Target_make.this.getName(), Make_Facet.Target_make.Parameters.class).pathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
+              if (vars(pa.global()).pathToFile() == null) {
+                vars(pa.global()).pathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
                   public IFile invoke(String p) {
                     return FileSystem.getInstance().getFileByPath(p);
                   }
@@ -322,6 +326,10 @@ public class Make_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 1;
+    }
+
+    public static Make_Facet.Target_make.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, Make_Facet.Target_make.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {

@@ -63,7 +63,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
   public static class Target_reloadClasses implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.ReloadClasses.reloadClasses");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.ReloadClasses.reloadClasses");
 
     public Target_reloadClasses() {
     }

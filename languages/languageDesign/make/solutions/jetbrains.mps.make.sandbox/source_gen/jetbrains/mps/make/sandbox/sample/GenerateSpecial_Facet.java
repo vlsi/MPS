@@ -20,9 +20,9 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class GenerateSpecial_Facet extends IFacet.Stub {
@@ -60,7 +60,7 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
   public static class Target_GenerateSpecialTarget implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget");
 
     public Target_GenerateSpecialTarget() {
     }
@@ -73,8 +73,8 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).foo("asdasdsd");
-              pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).FooFoo();
+              vars(pa.global()).foo("asdasdsd");
+              vars(pa.global()).FooFoo();
               return new IResult.SUCCESS(_output_i03q2a_a0a);
             default:
               return new IResult.SUCCESS(_output_i03q2a_a0a);
@@ -91,13 +91,13 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
             case 0:
               switch (cmonitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
-                  pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
+                  vars(pa.global()).baz(false);
                   break;
                 case IGNORE_i03q2a_c0a0a:
-                  pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
+                  vars(pa.global()).baz(false);
                   break;
                 case RETRY_i03q2a_b0a0a:
-                  pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(true);
+                  vars(pa.global()).baz(true);
                   break;
                 default:
               }
@@ -158,6 +158,10 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
         ((Tuples._6) t).assign((Tuples._6) copyFrom);
       }
       return t;
+    }
+
+    public static GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables vars(IPropertiesPool ppool) {
+      return ppool.properties(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
     }
 
     public static class Variables extends MultiTuple._6<String, Integer, Boolean, String, Integer, Boolean> {

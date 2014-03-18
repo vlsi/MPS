@@ -57,7 +57,7 @@ public class TextGen__Facet extends IFacet.Stub {
   public static class Target_ConditionallyGenerate implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.TextGen_.ConditionallyGenerate");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.TextGen_.ConditionallyGenerate");
 
     public Target_ConditionallyGenerate() {
     }
