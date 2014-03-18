@@ -300,7 +300,7 @@ public class QueriesGenerated {
     return ((Boolean) _context.getVariable("isInput"));
   }
 
-  public static boolean ifMacro_Condition_6981942132932723321(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_526297864813675030(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(((Boolean) _context.getVariable("isInput")));
   }
 

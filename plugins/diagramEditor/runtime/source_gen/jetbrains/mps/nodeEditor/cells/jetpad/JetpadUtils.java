@@ -13,8 +13,9 @@ import java.awt.Color;
  */
 public class JetpadUtils {
   public static final ViewPropertySpec<SNode> SOURCE = new ViewPropertySpec<SNode>("inputPort");
-  public static final ViewPropertySpec<Boolean> CONNECTABLE = new ViewPropertySpec<Boolean>("connectable");
   public static final ViewPropertySpec<Object> ID = new ViewPropertySpec("id");
+  public static final ViewPropertySpec<Boolean> CONNECTABLE = new ViewPropertySpec<Boolean>("connectable");
+  public static final ViewPropertySpec<Boolean> CONNECTION_SOURCE = new ViewPropertySpec<Boolean>("connectionSource");
   public static final ViewPropertySpec<Vector> PREFERRED_SIZE = new ViewPropertySpec("preferredSize");
 
 

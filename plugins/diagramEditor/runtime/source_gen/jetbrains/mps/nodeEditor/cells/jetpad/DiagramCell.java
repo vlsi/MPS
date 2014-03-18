@@ -234,6 +234,27 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           getEditor().processKeyTyped(getAWTKeyEvent(event, false));
           event.consume();
         }
+      }).on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
+        @Override
+        public void handle(View view, MouseEvent event) {
+          if (!(hasConnectionDragFeedback())) {
+            View sourceView = view.viewAt(event.location());
+            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0fb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+              return;
+            }
+            showConnectionDragFeedback(sourceView);
+          }
+          updateConnectionDragFeedback(event.location());
+        }
+      }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+        @Override
+        public void handle(View view, MouseEvent event) {
+          if (!(hasConnectionDragFeedback())) {
+            return;
+          }
+          updateConnectionDragFeedback(event.location());
+          createNewDiagramElement(event.location().x, event.location().y);
+        }
       }).build();
     }
     return this.myHandlingTrait;
@@ -612,5 +633,12 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       checkedDotOperand.remove();
     }
 
+  }
+
+  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0fb(Boolean checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.booleanValue();
+    }
+    return false;
   }
 }

@@ -13,20 +13,16 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
-import jetbrains.jetpad.projectional.view.ViewEvents;
-import jetbrains.jetpad.projectional.view.ViewEventHandler;
-import jetbrains.jetpad.event.MouseEvent;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -61,29 +57,7 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
           super.registerSynchronizers(configuration);
           getTarget().background().set(Color.GRAY);
           getTarget().dimension().set(new Vector(10, 10));
-          getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
-            @Override
-            public void handle(View view, MouseEvent e) {
-              DiagramCell diagramCell = getDiagramCell();
-              if (diagramCell == null) {
-                return;
-              }
-              if (!(diagramCell.hasConnectionDragFeedback())) {
-                diagramCell.showConnectionDragFeedback(getTarget());
-              }
-              diagramCell.updateConnectionDragFeedback(e.location());
-            }
-          }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-            @Override
-            public void handle(View view, MouseEvent e) {
-              DiagramCell diagramCell = getDiagramCell();
-              if (diagramCell == null || !(diagramCell.hasConnectionDragFeedback())) {
-                return;
-              }
-              diagramCell.updateConnectionDragFeedback(e.location());
-              diagramCell.createNewDiagramElement(e.location().x, e.location().y);
-            }
-          }).build());
+          getTarget().prop(JetpadUtils.CONNECTION_SOURCE).set(Boolean.TRUE);
           getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
