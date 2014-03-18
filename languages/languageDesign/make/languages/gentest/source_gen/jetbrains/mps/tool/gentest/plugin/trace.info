@@ -588,38 +588,38 @@
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="62" startPosition="43" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="66" startPosition="32" endLine="67" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="70" startPosition="57" endLine="71" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="85" startPosition="173" endLine="86" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="86" startPosition="54" endLine="87" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3705898146943255863" fileName="Diff_Facet.java" startLine="90" startPosition="59" endLine="91" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3705898146943255997" fileName="Diff_Facet.java" startLine="92" startPosition="70" endLine="93" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3705898146943256025" fileName="Diff_Facet.java" startLine="93" startPosition="121" endLine="94" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7226636334567080099" fileName="Diff_Facet.java" startLine="94" startPosition="75" endLine="95" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7226636334567097818" fileName="Diff_Facet.java" startLine="95" startPosition="74" endLine="96" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7226636334567097827" fileName="Diff_Facet.java" startLine="99" startPosition="59" endLine="100" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7226636334567097842" fileName="Diff_Facet.java" startLine="100" startPosition="113" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8491193474825069427" fileName="Diff_Facet.java" startLine="103" startPosition="21" endLine="104" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="297656254802945038" fileName="Diff_Facet.java" startLine="104" startPosition="101" endLine="105" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2007210557414378216" fileName="Diff_Facet.java" startLine="105" startPosition="67" endLine="106" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5443024688829587529" fileName="Diff_Facet.java" startLine="106" startPosition="109" endLine="107" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5443024688829587528" fileName="Diff_Facet.java" startLine="107" startPosition="175" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5443024688829587507" fileName="Diff_Facet.java" startLine="109" startPosition="136" endLine="110" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3705898146943255019" fileName="Diff_Facet.java" startLine="112" startPosition="44" endLine="113" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3705898146943256183" fileName="Diff_Facet.java" startLine="114" startPosition="19" endLine="115" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3705898146943255870" fileName="Diff_Facet.java" startLine="116" startPosition="17" endLine="117" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="119" startPosition="20" endLine="120" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="126" startPosition="35" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="130" startPosition="46" endLine="131" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="134" startPosition="43" endLine="135" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="138" startPosition="47" endLine="139" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="142" startPosition="44" endLine="143" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="146" startPosition="35" endLine="147" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="150" startPosition="33" endLine="151" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="154" startPosition="36" endLine="155" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="158" startPosition="37" endLine="159" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="162" startPosition="65" endLine="163" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="83" startPosition="173" endLine="84" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="84" startPosition="54" endLine="85" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3705898146943255863" fileName="Diff_Facet.java" startLine="88" startPosition="59" endLine="89" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3705898146943255997" fileName="Diff_Facet.java" startLine="90" startPosition="70" endLine="91" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3705898146943256025" fileName="Diff_Facet.java" startLine="91" startPosition="121" endLine="92" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7226636334567080099" fileName="Diff_Facet.java" startLine="92" startPosition="75" endLine="93" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7226636334567097818" fileName="Diff_Facet.java" startLine="93" startPosition="74" endLine="94" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7226636334567097827" fileName="Diff_Facet.java" startLine="97" startPosition="59" endLine="98" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7226636334567097842" fileName="Diff_Facet.java" startLine="98" startPosition="113" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8491193474825069427" fileName="Diff_Facet.java" startLine="101" startPosition="21" endLine="102" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="297656254802945038" fileName="Diff_Facet.java" startLine="102" startPosition="101" endLine="103" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2007210557414378216" fileName="Diff_Facet.java" startLine="103" startPosition="67" endLine="104" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5443024688829587529" fileName="Diff_Facet.java" startLine="104" startPosition="109" endLine="105" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5443024688829587528" fileName="Diff_Facet.java" startLine="105" startPosition="175" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5443024688829587507" fileName="Diff_Facet.java" startLine="107" startPosition="136" endLine="108" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3705898146943255019" fileName="Diff_Facet.java" startLine="110" startPosition="44" endLine="111" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3705898146943256183" fileName="Diff_Facet.java" startLine="112" startPosition="19" endLine="113" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3705898146943255870" fileName="Diff_Facet.java" startLine="114" startPosition="17" endLine="115" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="117" startPosition="20" endLine="118" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="124" startPosition="35" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="128" startPosition="46" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="132" startPosition="43" endLine="133" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="136" startPosition="47" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="140" startPosition="44" endLine="141" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="144" startPosition="35" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="148" startPosition="33" endLine="149" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="152" startPosition="36" endLine="153" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="156" startPosition="37" endLine="157" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="160" startPosition="65" endLine="161" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="161" startPosition="111" endLine="162" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="162" startPosition="60" endLine="163" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="166" startPosition="66" endLine="167" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="170" startPosition="49" endLine="171" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="174" startPosition="61" endLine="175" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -642,7 +642,7 @@
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="240" startPosition="87" endLine="241" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="242" startPosition="106" endLine="243" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="245" startPosition="109" endLine="246" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_diff#()V" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_diff#()V" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="223" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Diff_Facet#()V" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
@@ -651,18 +651,17 @@
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="5443024688829587505" fileName="Diff_Facet.java" startLine="108" startPosition="0" endLine="111" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="297656254802945059" fileName="Diff_Facet.java" startLine="111" startPosition="19" endLine="114" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="138" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="142" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="162" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5443024688829587505" fileName="Diff_Facet.java" startLine="106" startPosition="0" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="297656254802945059" fileName="Diff_Facet.java" startLine="109" startPosition="19" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="166" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="170" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="175" startPosition="34" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -677,22 +676,23 @@
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="241" startPosition="121" endLine="244" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="244" startPosition="11" endLine="247" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/tool/gentest/plugin/Diff_Facet/Target_diff/Parameters;" />
-    <nodeInfo nodeId="7226636334567097807" fileName="Diff_Facet.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptKept#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="7226636334567097807" fileName="Diff_Facet.java" startLine="96" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptKept#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="160" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="228" startPosition="85" endLine="233" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7226636334567080110" fileName="Diff_Facet.java" startLine="96" startPosition="95" endLine="103" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7226636334567080110" fileName="Diff_Facet.java" startLine="94" startPosition="95" endLine="101" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="226" startPosition="84" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="226" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="238" startPosition="11" endLine="248" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="237" startPosition="83" endLine="250" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="237" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="4902420589297986438" fileName="Diff_Facet.java" startLine="91" startPosition="145" endLine="116" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3705898146943254963" fileName="Diff_Facet.java" startLine="89" startPosition="19" endLine="118" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="87" startPosition="86" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="84" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="82" startPosition="29" endLine="123" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="82" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="79" startPosition="26" endLine="79" endPosition="26" />
+    <nodeInfo nodeId="4902420589297986438" fileName="Diff_Facet.java" startLine="89" startPosition="145" endLine="114" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3705898146943254963" fileName="Diff_Facet.java" startLine="87" startPosition="19" endLine="116" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="85" startPosition="86" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="82" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="80" startPosition="29" endLine="121" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="80" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="77" startPosition="26" endLine="77" endPosition="26" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="223" startPosition="31" endLine="223" endPosition="31" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="249" startPosition="0" endLine="249" endPosition="37">
       <varInfo nodeId="3705898146943254769" varName="re" />
@@ -705,19 +705,18 @@
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="62" startPosition="43" endLine="63" endPosition="16" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="66" startPosition="32" endLine="67" endPosition="21" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="70" startPosition="57" endLine="71" endPosition="45" />
-    <scopeInfo nodeId="5443024688829587506" fileName="Diff_Facet.java" startLine="109" startPosition="136" endLine="110" endPosition="53" />
-    <scopeInfo nodeId="297656254802945060" fileName="Diff_Facet.java" startLine="112" startPosition="44" endLine="113" endPosition="117" />
-    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="119" startPosition="20" endLine="120" endPosition="59" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="126" startPosition="35" endLine="127" endPosition="18" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="130" startPosition="46" endLine="131" endPosition="18" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="134" startPosition="43" endLine="135" endPosition="114" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="138" startPosition="47" endLine="139" endPosition="18" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="142" startPosition="44" endLine="143" endPosition="109" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="146" startPosition="35" endLine="147" endPosition="18" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="150" startPosition="33" endLine="151" endPosition="19" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="154" startPosition="36" endLine="155" endPosition="18" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="158" startPosition="37" endLine="159" endPosition="18" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="162" startPosition="65" endLine="163" endPosition="48" />
+    <scopeInfo nodeId="5443024688829587506" fileName="Diff_Facet.java" startLine="107" startPosition="136" endLine="108" endPosition="53" />
+    <scopeInfo nodeId="297656254802945060" fileName="Diff_Facet.java" startLine="110" startPosition="44" endLine="111" endPosition="117" />
+    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="117" startPosition="20" endLine="118" endPosition="59" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="124" startPosition="35" endLine="125" endPosition="18" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="128" startPosition="46" endLine="129" endPosition="18" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="132" startPosition="43" endLine="133" endPosition="114" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="136" startPosition="47" endLine="137" endPosition="18" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="140" startPosition="44" endLine="141" endPosition="109" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="144" startPosition="35" endLine="145" endPosition="18" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="148" startPosition="33" endLine="149" endPosition="19" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="152" startPosition="36" endLine="153" endPosition="18" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="156" startPosition="37" endLine="157" endPosition="18" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="166" startPosition="66" endLine="167" endPosition="18" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="170" startPosition="49" endLine="171" endPosition="40" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="176" startPosition="22" endLine="177" endPosition="53" />
@@ -732,8 +731,8 @@
     <scopeInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="216" startPosition="149" endLine="217" endPosition="70" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="242" startPosition="106" endLine="243" endPosition="35" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="245" startPosition="109" endLine="246" endPosition="38" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="79" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="7226636334567097812" fileName="Diff_Facet.java" startLine="99" startPosition="59" endLine="101" endPosition="34" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="7226636334567097812" fileName="Diff_Facet.java" startLine="97" startPosition="59" endLine="99" endPosition="34" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="223" startPosition="0" endLine="225" endPosition="0" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
@@ -742,19 +741,21 @@
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5443024688829587505" fileName="Diff_Facet.java" startLine="108" startPosition="0" endLine="111" endPosition="19">
+    <scopeInfo nodeId="5443024688829587505" fileName="Diff_Facet.java" startLine="106" startPosition="0" endLine="109" endPosition="19">
       <varInfo nodeId="5443024688829587515" varName="diff" />
     </scopeInfo>
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="134" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="138" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="142" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="146" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="150" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="154" startPosition="0" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="158" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="162" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="128" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="132" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="136" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="144" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="148" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="152" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="156" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="160" startPosition="65" endLine="163" endPosition="16">
+      <varInfo nodeId="3705898146943254774" varName="rv" />
+    </scopeInfo>
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="166" startPosition="0" endLine="169" endPosition="0" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="170" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="3705898146943254774" varName="cls" />
@@ -782,9 +783,10 @@
     <scopeInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="215" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="3705898146943254947" varName="from" />
     </scopeInfo>
-    <scopeInfo nodeId="7226636334567097807" fileName="Diff_Facet.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="7226636334567097807" fileName="Diff_Facet.java" startLine="96" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="7226636334567097808" varName="file" />
     </scopeInfo>
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="160" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="174" startPosition="61" endLine="179" endPosition="15">
       <varInfo nodeId="3705898146943254774" varName="t" />
     </scopeInfo>
@@ -810,7 +812,7 @@
       <varInfo nodeId="3705898146943254769" varName="properties" />
       <varInfo nodeId="3705898146943254769" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420589297986444" fileName="Diff_Facet.java" startLine="92" startPosition="70" endLine="115" endPosition="76">
+    <scopeInfo nodeId="4902420589297986444" fileName="Diff_Facet.java" startLine="90" startPosition="70" endLine="113" endPosition="76">
       <varInfo nodeId="8491193474825069428" varName="differ" />
       <varInfo nodeId="7226636334567080100" varName="dr" />
       <varInfo nodeId="297656254802945039" varName="errors" />
@@ -819,27 +821,27 @@
       <varInfo nodeId="5443024688829587530" varName="outDirPath" />
       <varInfo nodeId="7226636334567097819" varName="retainedPaths" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420589297986438" fileName="Diff_Facet.java" startLine="91" startPosition="145" endLine="116" endPosition="17">
+    <scopeInfo nodeId="4902420589297986438" fileName="Diff_Facet.java" startLine="89" startPosition="145" endLine="114" endPosition="17">
       <varInfo nodeId="4902420589297986440" varName="tgres" />
     </scopeInfo>
-    <scopeInfo nodeId="3705898146943254965" fileName="Diff_Facet.java" startLine="90" startPosition="59" endLine="117" endPosition="64" />
-    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="89" startPosition="19" endLine="118" endPosition="15" />
-    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="85" startPosition="173" endLine="121" endPosition="11">
+    <scopeInfo nodeId="3705898146943254965" fileName="Diff_Facet.java" startLine="88" startPosition="59" endLine="115" endPosition="64" />
+    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="87" startPosition="19" endLine="116" endPosition="15" />
+    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="83" startPosition="173" endLine="119" endPosition="11">
       <varInfo nodeId="3705898146943254776" varName="_output_mtqq_a0a" />
       <varInfo nodeId="3705898146943254776" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="84" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="82" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="3705898146943254776" varName="monitor" />
       <varInfo nodeId="3705898146943254776" varName="pa" />
       <varInfo nodeId="3705898146943254776" varName="progressMonitor" />
       <varInfo nodeId="3705898146943254776" varName="rawInput" />
     </scopeInfo>
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="82" startPosition="29" endLine="123" endPosition="8" />
-    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="82" startPosition="0" endLine="125" endPosition="0" />
-    <unitInfo nodeId="7226636334567097805" fileName="Diff_Facet.java" startLine="97" startPosition="34" endLine="103" endPosition="19" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$2" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="80" startPosition="29" endLine="121" endPosition="8" />
+    <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="80" startPosition="0" endLine="123" endPosition="0" />
+    <unitInfo nodeId="7226636334567097805" fileName="Diff_Facet.java" startLine="95" startPosition="34" endLine="101" endPosition="19" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$2" />
     <unitInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="190" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$Target_diff$Parameters" />
     <unitInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="222" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$TargetProperties" />
-    <unitInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="83" startPosition="17" endLine="123" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$1" />
+    <unitInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="81" startPosition="17" endLine="121" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$1" />
     <unitInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="74" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet$Target_diff" />
     <unitInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="42" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Diff_Facet" />
   </root>
@@ -854,60 +856,60 @@
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="57" startPosition="43" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="61" startPosition="32" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="65" startPosition="57" endLine="66" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="80" startPosition="173" endLine="81" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="81" startPosition="54" endLine="82" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3638565609602523641" fileName="Test_Facet.java" startLine="85" startPosition="71" endLine="86" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361624284" fileName="Test_Facet.java" startLine="88" startPosition="37" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361624292" fileName="Test_Facet.java" startLine="89" startPosition="67" endLine="90" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509659279" fileName="Test_Facet.java" startLine="93" startPosition="70" endLine="94" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="97" startPosition="20" endLine="98" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="104" startPosition="35" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="108" startPosition="46" endLine="109" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="112" startPosition="43" endLine="113" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="116" startPosition="47" endLine="117" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="120" startPosition="44" endLine="121" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="124" startPosition="35" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="128" startPosition="33" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="132" startPosition="36" endLine="133" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="136" startPosition="37" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="140" startPosition="65" endLine="141" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="78" startPosition="173" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="79" startPosition="54" endLine="80" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3638565609602523641" fileName="Test_Facet.java" startLine="83" startPosition="71" endLine="84" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361624284" fileName="Test_Facet.java" startLine="86" startPosition="37" endLine="87" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361624292" fileName="Test_Facet.java" startLine="87" startPosition="67" endLine="88" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509659279" fileName="Test_Facet.java" startLine="91" startPosition="70" endLine="92" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="95" startPosition="20" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="102" startPosition="35" endLine="103" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="106" startPosition="46" endLine="107" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="110" startPosition="43" endLine="111" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="114" startPosition="47" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="118" startPosition="44" endLine="119" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="122" startPosition="35" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="126" startPosition="33" endLine="127" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="130" startPosition="36" endLine="131" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="134" startPosition="37" endLine="135" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="138" startPosition="65" endLine="139" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="139" startPosition="111" endLine="140" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="140" startPosition="60" endLine="141" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="144" startPosition="66" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="148" startPosition="49" endLine="149" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="152" startPosition="61" endLine="153" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="153" startPosition="34" endLine="154" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="157" startPosition="31" endLine="158" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="163" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="164" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="165" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="173" startPosition="173" endLine="174" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="174" startPosition="54" endLine="175" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="522536331982351688" fileName="Test_Facet.java" startLine="178" startPosition="61" endLine="179" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="522536331982351693" fileName="Test_Facet.java" startLine="179" startPosition="115" endLine="180" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509691371" fileName="Test_Facet.java" startLine="181" startPosition="15" endLine="182" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7023749036024105797" fileName="Test_Facet.java" startLine="183" startPosition="75" endLine="184" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509691387" fileName="Test_Facet.java" startLine="184" startPosition="66" endLine="185" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509691285" fileName="Test_Facet.java" startLine="185" startPosition="73" endLine="186" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509691306" fileName="Test_Facet.java" startLine="187" startPosition="21" endLine="188" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509691315" fileName="Test_Facet.java" startLine="188" startPosition="47" endLine="189" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509691362" fileName="Test_Facet.java" startLine="189" startPosition="116" endLine="190" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852346936509743910" fileName="Test_Facet.java" startLine="191" startPosition="38" endLine="192" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509743902" fileName="Test_Facet.java" startLine="194" startPosition="43" endLine="195" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509691391" fileName="Test_Facet.java" startLine="196" startPosition="17" endLine="197" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509743917" fileName="Test_Facet.java" startLine="198" startPosition="15" endLine="199" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="200" startPosition="20" endLine="201" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="207" startPosition="35" endLine="208" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="211" startPosition="46" endLine="212" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="215" startPosition="43" endLine="216" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="219" startPosition="47" endLine="220" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="223" startPosition="44" endLine="224" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="227" startPosition="35" endLine="228" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="231" startPosition="33" endLine="232" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="235" startPosition="36" endLine="236" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="239" startPosition="37" endLine="240" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="243" startPosition="65" endLine="244" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="163" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="171" startPosition="173" endLine="172" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="172" startPosition="54" endLine="173" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="522536331982351688" fileName="Test_Facet.java" startLine="176" startPosition="61" endLine="177" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="522536331982351693" fileName="Test_Facet.java" startLine="177" startPosition="115" endLine="178" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509691371" fileName="Test_Facet.java" startLine="179" startPosition="15" endLine="180" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7023749036024105797" fileName="Test_Facet.java" startLine="181" startPosition="75" endLine="182" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509691387" fileName="Test_Facet.java" startLine="182" startPosition="66" endLine="183" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509691285" fileName="Test_Facet.java" startLine="183" startPosition="73" endLine="184" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509691306" fileName="Test_Facet.java" startLine="185" startPosition="21" endLine="186" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509691315" fileName="Test_Facet.java" startLine="186" startPosition="47" endLine="187" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509691362" fileName="Test_Facet.java" startLine="187" startPosition="116" endLine="188" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509743910" fileName="Test_Facet.java" startLine="189" startPosition="38" endLine="190" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509743902" fileName="Test_Facet.java" startLine="192" startPosition="43" endLine="193" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509691391" fileName="Test_Facet.java" startLine="194" startPosition="17" endLine="195" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509743917" fileName="Test_Facet.java" startLine="196" startPosition="15" endLine="197" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="198" startPosition="20" endLine="199" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="205" startPosition="35" endLine="206" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="209" startPosition="46" endLine="210" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="213" startPosition="43" endLine="214" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="217" startPosition="47" endLine="218" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="221" startPosition="44" endLine="222" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="225" startPosition="35" endLine="226" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="229" startPosition="33" endLine="230" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="233" startPosition="36" endLine="234" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="237" startPosition="37" endLine="238" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="241" startPosition="65" endLine="242" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="242" startPosition="111" endLine="243" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="243" startPosition="64" endLine="244" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="247" startPosition="66" endLine="248" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="251" startPosition="49" endLine="252" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="255" startPosition="61" endLine="256" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -925,8 +927,8 @@
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="307" startPosition="9" endLine="308" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="308" startPosition="91" endLine="309" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="310" startPosition="112" endLine="311" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_collectTest#()V" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="167" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_runTests#()V" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_collectTest#()V" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="165" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_runTests#()V" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="292" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
@@ -934,31 +936,29 @@
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="7023749036024105758" fileName="Test_Facet.java" startLine="92" startPosition="19" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7023749036024105758" fileName="Test_Facet.java" startLine="90" startPosition="19" endLine="93" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="157" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workEstimate#()I" />
-    <nodeInfo nodeId="8852346936509691348" fileName="Test_Facet.java" startLine="190" startPosition="48" endLine="193" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="207" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="211" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="219" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="223" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="227" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="231" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="235" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="243" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509691348" fileName="Test_Facet.java" startLine="188" startPosition="48" endLine="191" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="221" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="225" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="229" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="233" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="237" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="247" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="251" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="256" startPosition="34" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -969,31 +969,33 @@
     <nodeInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="280" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testListener#()Ljetbrains/mps/tool/builder/unittest/UnitTestListener;" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="309" startPosition="129" endLine="312" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Test_Facet#()V" />
-    <nodeInfo nodeId="2034046503361624282" fileName="Test_Facet.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361624282" fileName="Test_Facet.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="522536331982330387" fileName="Test_Facet.java" startLine="177" startPosition="19" endLine="181" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="522536331982330387" fileName="Test_Facet.java" startLine="175" startPosition="19" endLine="179" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="284" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/tool/gentest/plugin/Test_Facet/Target_runTests/Parameters;" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="297" startPosition="89" endLine="301" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361624278" fileName="Test_Facet.java" startLine="86" startPosition="88" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="138" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="241" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2034046503361624278" fileName="Test_Facet.java" startLine="84" startPosition="88" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="255" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="295" startPosition="84" endLine="302" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="306" startPosition="11" endLine="313" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="295" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="8852346936509691292" fileName="Test_Facet.java" startLine="186" startPosition="84" endLine="196" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8852346936509691292" fileName="Test_Facet.java" startLine="184" startPosition="84" endLine="194" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="305" startPosition="83" endLine="315" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4902420589298658213" fileName="Test_Facet.java" startLine="84" startPosition="19" endLine="96" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4902420589298658213" fileName="Test_Facet.java" startLine="82" startPosition="19" endLine="94" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="305" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="4902420589299144925" fileName="Test_Facet.java" startLine="182" startPosition="143" endLine="198" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="82" startPosition="86" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="79" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="77" startPosition="29" endLine="101" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="77" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="175" startPosition="94" endLine="202" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="172" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="170" startPosition="29" endLine="204" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="170" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="74" startPosition="33" endLine="74" endPosition="33" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="167" startPosition="30" endLine="167" endPosition="30" />
+    <nodeInfo nodeId="4902420589299144925" fileName="Test_Facet.java" startLine="180" startPosition="143" endLine="196" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="80" startPosition="86" endLine="97" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="77" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="75" startPosition="29" endLine="99" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="75" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="173" startPosition="94" endLine="200" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="170" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="168" startPosition="29" endLine="202" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="168" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="72" startPosition="33" endLine="72" endPosition="33" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="165" startPosition="30" endLine="165" endPosition="30" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="292" startPosition="31" endLine="292" endPosition="31" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="314" startPosition="0" endLine="314" endPosition="37">
       <varInfo nodeId="8852346936509564326" varName="re" />
@@ -1005,37 +1007,35 @@
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="57" startPosition="43" endLine="58" endPosition="16" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="61" startPosition="32" endLine="62" endPosition="21" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="65" startPosition="57" endLine="66" endPosition="45" />
-    <scopeInfo nodeId="7023749036024105759" fileName="Test_Facet.java" startLine="93" startPosition="70" endLine="94" endPosition="176" />
-    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="97" startPosition="20" endLine="98" endPosition="59" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="104" startPosition="35" endLine="105" endPosition="18" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="108" startPosition="46" endLine="109" endPosition="18" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="112" startPosition="43" endLine="113" endPosition="115" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="116" startPosition="47" endLine="117" endPosition="18" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="120" startPosition="44" endLine="121" endPosition="113" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="124" startPosition="35" endLine="125" endPosition="18" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="128" startPosition="33" endLine="129" endPosition="19" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="132" startPosition="36" endLine="133" endPosition="18" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="136" startPosition="37" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="140" startPosition="65" endLine="141" endPosition="48" />
+    <scopeInfo nodeId="7023749036024105759" fileName="Test_Facet.java" startLine="91" startPosition="70" endLine="92" endPosition="176" />
+    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="95" startPosition="20" endLine="96" endPosition="59" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="102" startPosition="35" endLine="103" endPosition="18" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="106" startPosition="46" endLine="107" endPosition="18" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="110" startPosition="43" endLine="111" endPosition="115" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="114" startPosition="47" endLine="115" endPosition="18" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="118" startPosition="44" endLine="119" endPosition="113" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="122" startPosition="35" endLine="123" endPosition="18" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="126" startPosition="33" endLine="127" endPosition="19" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="130" startPosition="36" endLine="131" endPosition="18" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="134" startPosition="37" endLine="135" endPosition="18" />
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="144" startPosition="66" endLine="145" endPosition="18" />
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="148" startPosition="49" endLine="149" endPosition="18" />
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="157" startPosition="31" endLine="158" endPosition="18" />
-    <scopeInfo nodeId="8852346936509691349" fileName="Test_Facet.java" startLine="191" startPosition="38" endLine="192" endPosition="120" />
-    <scopeInfo nodeId="8852346936509691295" fileName="Test_Facet.java" startLine="194" startPosition="0" endLine="195" endPosition="96">
+    <scopeInfo nodeId="8852346936509691349" fileName="Test_Facet.java" startLine="189" startPosition="38" endLine="190" endPosition="120" />
+    <scopeInfo nodeId="8852346936509691295" fileName="Test_Facet.java" startLine="192" startPosition="0" endLine="193" endPosition="96">
       <varInfo nodeId="8852346936509691296" varName="ioe" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509691298" fileName="Test_Facet.java" startLine="194" startPosition="43" endLine="195" endPosition="96" />
-    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="200" startPosition="20" endLine="201" endPosition="59" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="207" startPosition="35" endLine="208" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="211" startPosition="46" endLine="212" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="215" startPosition="43" endLine="216" endPosition="117" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="219" startPosition="47" endLine="220" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="223" startPosition="44" endLine="224" endPosition="109" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="227" startPosition="35" endLine="228" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="231" startPosition="33" endLine="232" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="235" startPosition="36" endLine="236" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="239" startPosition="37" endLine="240" endPosition="18" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="243" startPosition="65" endLine="244" endPosition="48" />
+    <scopeInfo nodeId="8852346936509691298" fileName="Test_Facet.java" startLine="192" startPosition="43" endLine="193" endPosition="96" />
+    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="198" startPosition="20" endLine="199" endPosition="59" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="205" startPosition="35" endLine="206" endPosition="18" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="209" startPosition="46" endLine="210" endPosition="18" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="213" startPosition="43" endLine="214" endPosition="117" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="217" startPosition="47" endLine="218" endPosition="18" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="221" startPosition="44" endLine="222" endPosition="109" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="225" startPosition="35" endLine="226" endPosition="18" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="229" startPosition="33" endLine="230" endPosition="18" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="233" startPosition="36" endLine="234" endPosition="18" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="237" startPosition="37" endLine="238" endPosition="18" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="247" startPosition="66" endLine="248" endPosition="18" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="251" startPosition="49" endLine="252" endPosition="40" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="257" startPosition="22" endLine="258" endPosition="53" />
@@ -1047,15 +1047,15 @@
     <scopeInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="285" startPosition="97" endLine="286" endPosition="74" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="310" startPosition="112" endLine="311" endPosition="37" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="40" startPosition="23" endLine="42" endPosition="80" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="2034046503361624283" fileName="Test_Facet.java" startLine="88" startPosition="37" endLine="90" endPosition="145">
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="72" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="2034046503361624283" fileName="Test_Facet.java" startLine="86" startPosition="37" endLine="88" endPosition="145">
       <varInfo nodeId="2034046503361624285" varName="outModel" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="152" startPosition="61" endLine="154" endPosition="15">
       <varInfo nodeId="8852346936509564329" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="167" startPosition="0" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="522536331982330388" fileName="Test_Facet.java" startLine="178" startPosition="61" endLine="180" endPosition="61" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="165" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="522536331982330388" fileName="Test_Facet.java" startLine="176" startPosition="61" endLine="178" endPosition="61" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="292" startPosition="0" endLine="294" endPosition="0" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="298" startPosition="45" endLine="300" endPosition="104">
       <varInfo nodeId="8852346936509564326" varName="props" />
@@ -1066,31 +1066,35 @@
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="104" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="108" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="112" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="128" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="132" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="136" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="102" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="118" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="134" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="138" startPosition="65" endLine="141" endPosition="16">
+      <varInfo nodeId="8852346936509564329" varName="rv" />
+    </scopeInfo>
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="144" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="148" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="8852346936509564329" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="157" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="207" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="211" startPosition="0" endLine="214" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="215" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="219" startPosition="0" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="223" startPosition="0" endLine="226" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="227" startPosition="0" endLine="230" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="231" startPosition="0" endLine="234" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="235" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="243" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="205" startPosition="0" endLine="208" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="209" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="217" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="221" startPosition="0" endLine="224" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="225" startPosition="0" endLine="228" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="229" startPosition="0" endLine="232" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="233" startPosition="0" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="237" startPosition="0" endLine="240" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="241" startPosition="65" endLine="244" endPosition="16">
+      <varInfo nodeId="8852346936509659263" varName="rv" />
+    </scopeInfo>
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="247" startPosition="0" endLine="250" endPosition="0" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="251" startPosition="0" endLine="254" endPosition="0">
       <varInfo nodeId="8852346936509659263" varName="cls" />
@@ -1107,7 +1111,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="280" startPosition="0" endLine="283" endPosition="0" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="2034046503361624282" fileName="Test_Facet.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="2034046503361624282" fileName="Test_Facet.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="8852346936509564329" varName="cls" />
       <varInfo nodeId="8852346936509564329" varName="copyFrom" />
@@ -1115,6 +1119,8 @@
     <scopeInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="284" startPosition="0" endLine="288" endPosition="0">
       <varInfo nodeId="8852346936509691323" varName="from" />
     </scopeInfo>
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="138" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="241" startPosition="0" endLine="246" endPosition="0" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="255" startPosition="61" endLine="260" endPosition="15">
       <varInfo nodeId="8852346936509659263" varName="t" />
     </scopeInfo>
@@ -1125,7 +1131,7 @@
       <varInfo nodeId="8852346936509564326" varName="name" />
       <varInfo nodeId="8852346936509564326" varName="props" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509691293" fileName="Test_Facet.java" startLine="187" startPosition="21" endLine="193" endPosition="19">
+    <scopeInfo nodeId="8852346936509691293" fileName="Test_Facet.java" startLine="185" startPosition="21" endLine="191" endPosition="19">
       <varInfo nodeId="8852346936509691363" varName="exitCode" />
       <varInfo nodeId="8852346936509691307" varName="process" />
       <varInfo nodeId="8852346936509691316" varName="reader" />
@@ -1140,55 +1146,55 @@
       <varInfo nodeId="8852346936509564326" varName="properties" />
       <varInfo nodeId="8852346936509564326" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420589298658219" fileName="Test_Facet.java" startLine="85" startPosition="71" endLine="95" endPosition="17">
+    <scopeInfo nodeId="4902420589298658219" fileName="Test_Facet.java" startLine="83" startPosition="71" endLine="93" endPosition="17">
       <varInfo nodeId="3638565609602523642" varName="tests" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="305" startPosition="83" endLine="315" endPosition="7" />
-    <scopeInfo nodeId="4902420589298658213" fileName="Test_Facet.java" startLine="84" startPosition="19" endLine="96" endPosition="15">
+    <scopeInfo nodeId="4902420589298658213" fileName="Test_Facet.java" startLine="82" startPosition="19" endLine="94" endPosition="15">
       <varInfo nodeId="4902420589298658215" varName="gr" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="84" startPosition="19" endLine="96" endPosition="15" />
+    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="82" startPosition="19" endLine="94" endPosition="15" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="305" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="8852346936509564326" varName="properties" />
       <varInfo nodeId="8852346936509564326" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420589299144931" fileName="Test_Facet.java" startLine="183" startPosition="75" endLine="197" endPosition="74">
+    <scopeInfo nodeId="4902420589299144931" fileName="Test_Facet.java" startLine="181" startPosition="75" endLine="195" endPosition="74">
       <varInfo nodeId="7023749036024105798" varName="fqn" />
       <varInfo nodeId="8852346936509691286" varName="pb" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420589299144925" fileName="Test_Facet.java" startLine="182" startPosition="143" endLine="198" endPosition="15">
+    <scopeInfo nodeId="4902420589299144925" fileName="Test_Facet.java" startLine="180" startPosition="143" endLine="196" endPosition="15">
       <varInfo nodeId="4902420589299144927" varName="resource" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="80" startPosition="173" endLine="99" endPosition="11">
+    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="78" startPosition="173" endLine="97" endPosition="11">
       <varInfo nodeId="8852346936509564331" varName="_output_rwbd_a0a" />
       <varInfo nodeId="8852346936509564331" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="79" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="77" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="8852346936509564331" varName="monitor" />
       <varInfo nodeId="8852346936509564331" varName="pa" />
       <varInfo nodeId="8852346936509564331" varName="progressMonitor" />
       <varInfo nodeId="8852346936509564331" varName="rawInput" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="177" startPosition="19" endLine="199" endPosition="62" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="77" startPosition="29" endLine="101" endPosition="8" />
-    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="77" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="173" startPosition="173" endLine="202" endPosition="11">
+    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="175" startPosition="19" endLine="197" endPosition="62" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="75" startPosition="29" endLine="99" endPosition="8" />
+    <scopeInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="75" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="171" startPosition="173" endLine="200" endPosition="11">
       <varInfo nodeId="8852346936509659265" varName="_output_rwbd_a0b" />
       <varInfo nodeId="8852346936509659265" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="172" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="170" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="8852346936509659265" varName="monitor" />
       <varInfo nodeId="8852346936509659265" varName="pa" />
       <varInfo nodeId="8852346936509659265" varName="progressMonitor" />
       <varInfo nodeId="8852346936509659265" varName="rawInput" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="170" startPosition="29" endLine="204" endPosition="8" />
-    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="170" startPosition="0" endLine="206" endPosition="0" />
-    <unitInfo nodeId="2034046503361624282" fileName="Test_Facet.java" startLine="87" startPosition="57" endLine="92" endPosition="17" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$2" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="168" startPosition="29" endLine="202" endPosition="8" />
+    <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="168" startPosition="0" endLine="204" endPosition="0" />
+    <unitInfo nodeId="2034046503361624282" fileName="Test_Facet.java" startLine="85" startPosition="57" endLine="90" endPosition="17" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$2" />
     <unitInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="267" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_runTests$Parameters" />
-    <unitInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="78" startPosition="17" endLine="101" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$1" />
+    <unitInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="76" startPosition="17" endLine="99" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$1" />
     <unitInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="291" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$TargetProperties" />
-    <unitInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="171" startPosition="17" endLine="204" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$1" />
+    <unitInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="169" startPosition="17" endLine="202" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$1" />
     <unitInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="69" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_collectTest" />
     <unitInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="162" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_runTests" />
     <unitInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="36" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Test_Facet" />

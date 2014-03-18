@@ -197,7 +197,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "ParametersDeclaration_class");
   }
 
-  public static Object referenceMacro_GetReferent_1330985609386428780(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_7764221452833388116(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
 
@@ -385,7 +385,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "targetDeclaration", true);
   }
 
-  public static Iterable sourceNodesQuery_1330985609386428769(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7764221452833380237(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "input", true), "resourceType", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);

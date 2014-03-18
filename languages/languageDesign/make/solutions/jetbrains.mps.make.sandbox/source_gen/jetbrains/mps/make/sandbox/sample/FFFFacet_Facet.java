@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
@@ -59,8 +59,6 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public static class Target_QQQ implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ");
 
     public Target_QQQ() {
@@ -122,7 +120,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -170,8 +169,6 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public static class Target_qweqwe implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.qweqwe");
 
     public Target_qweqwe() {
@@ -234,7 +231,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -252,8 +250,6 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public static class Target_Nanana implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.Nanana");
 
     public Target_Nanana() {
@@ -311,7 +307,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
