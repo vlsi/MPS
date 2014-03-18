@@ -12,7 +12,6 @@
       <varInfo nodeId="1497735617372820937" varName="operationContext" />
     </scopeInfo>
   </root>
-  <root nodeRef="r:955ebbcf-4887-40d1-b99b-8243cf12e6a2(jetbrains.mps.lang.editor.diagram.actions)/1497735617373457370" />
   <root nodeRef="r:955ebbcf-4887-40d1-b99b-8243cf12e6a2(jetbrains.mps.lang.editor.diagram.actions)/285670992217709791">
     <nodeInfo nodeId="285670992217709792" fileName="QueriesGenerated.java" startLine="73" startPosition="215" endLine="74" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="285670992217709792" fileName="QueriesGenerated.java" startLine="75" startPosition="5" endLine="76" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
