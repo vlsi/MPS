@@ -17,10 +17,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import java.util.Set;
@@ -82,7 +84,7 @@ public class AbstractConceptDeclaration_Behavior {
     }
   }
 
-  public static List<SNode> call_findGeneratorFragments_6409339300305625383(final SNode thisNode) {
+  public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode) {
     Language language = SModelUtil.getDeclaringLanguage(thisNode);
     List<SNode> result = new ArrayList<SNode>();
     if (language == null) {
@@ -94,13 +96,18 @@ public class AbstractConceptDeclaration_Behavior {
         for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "applicableConcept", false) == thisNode) {
             ListSequence.fromList(result).addElement(node);
-          } else if (ListSequence.fromList(SNodeOperations.getChildren(node)).any(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false) == thisNode || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.DropRootRule") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false) == thisNode;
-            }
-          })) {
+          } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MappingConfiguration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
             // generator rules 
-            ListSequence.fromList(result).addElement(node);
+            for (SNode r : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, new String[]{}))) {
+              if (SLinkOperations.getTarget(r, "applicableConcept", false) == thisNode || (SPropertyOperations.getBoolean(r, "applyToConceptInheritors") && Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(thisNode, false)).contains(SLinkOperations.getTarget(r, "applicableConcept", false)))) {
+                ListSequence.fromList(result).addElement(r);
+              }
+            }
+            for (SNode r : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.generator.structure.DropRootRule", false, new String[]{}))) {
+              if (Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(thisNode, true)).contains(SLinkOperations.getTarget(r, "applicableConcept", false))) {
+                ListSequence.fromList(result).addElement(r);
+              }
+            }
           }
         }
       }
@@ -113,7 +120,11 @@ public class AbstractConceptDeclaration_Behavior {
     for (LanguageAspect aspect : LanguageAspect.values()) {
       ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, aspect));
     }
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.getContainingRoot(it);
+      }
+    }).distinct());
 
     while (ListSequence.fromList(result).contains(null)) {
       ListSequence.fromList(result).removeElement(null);
