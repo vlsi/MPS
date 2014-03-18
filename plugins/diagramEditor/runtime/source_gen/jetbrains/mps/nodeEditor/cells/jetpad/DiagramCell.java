@@ -475,8 +475,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     });
     result.root().addTrait(RootTrait.ROOT_TRAIT);
-    check_xnhqai_a4a05(myRegistration);
-    this.myRegistration = result.root().addTrait(getEventHandlingTrait());
+    myRegistration = result.root().addTrait(getEventHandlingTrait());
     return result;
   }
 
@@ -609,13 +608,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
   private static void check_xnhqai_a0a62(Registration checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.remove();
-    }
-
-  }
-
-  private static void check_xnhqai_a4a05(Registration checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.remove();
     }

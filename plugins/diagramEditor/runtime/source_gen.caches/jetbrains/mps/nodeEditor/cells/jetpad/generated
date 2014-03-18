@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bl58bkclwtf97938n1k25ohk3eworve">
+<dependencies version="2" modelHash="-urzprv4lrp7oe1xlci8h3ofzgiik6r">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -33,7 +33,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590281(jetbrains.mps.lang.core.actions)" hash="cyacg266c7qwykzpshcrwgliyyzurlg" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
-  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="5tzv6cf2f7icacxnez0r6gwfuklllnk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="-5zy2thozsv3ds3q3yn17aqchsyea5ma" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -48,17 +48,10 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="JetpadUtils.java" />
   </source>
-  <source id="6365639112243194472" name="OutputPortCell" hash="10w8khby7nh2sbkahd3mjgjf4hukkkv">
-    <file name="OutputPortCell.java" />
-  </source>
-  <source id="6365639112243901492" name="AbstractJetpadEditor" hash="-6jtlnsf4mad3kz3w58n6nb1azcr2uk3">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <file name="AbstractJetpadEditor.java" />
-  </source>
   <source id="6365639112244092433" name="ConnectorCell" hash="8ij5264ffmt6hnnect3htixvfc80b8t">
     <file name="ConnectorCell.java" />
   </source>
-  <source id="8327142480058313300" name="DiagramCell" hash="7yk5u9mszqkhg0qv9z8q80y1xi4pwp5">
+  <source id="8327142480058313300" name="DiagramCell" hash="ae07mkl7sotgm91kohwkhiuectkbzr8">
     <dep root="5374841768509702453" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
@@ -108,9 +101,6 @@
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BlockCell.java" />
-  </source>
-  <source id="6365639112243173471" name="InputPortCell" hash="5ni18q9wdzowno6m7509w0hcgzr994u">
-    <file name="InputPortCell.java" />
   </source>
   <source id="285670992208410529" name="PropertyMapperCell" hash="akafetftdw15g15h748r1o65l8dkido">
     <dep root="1755573558911655916" />
