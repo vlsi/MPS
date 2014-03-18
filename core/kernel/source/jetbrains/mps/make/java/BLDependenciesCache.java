@@ -98,7 +98,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
   private class CacheGen implements CacheGenerator {
     @Override
     public void generateCache(GenerationStatus status, StreamHandler handler) {
-      final ModelDependencies deps = updateUnchanged(status, handler);
+      final ModelDependencies deps = updateUnchanged(status);
       if (deps == null) {
         return;
       }
@@ -107,7 +107,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
       handler.saveStream(getCacheFileName(), deps.toXml());
     }
 
-    private ModelDependencies updateUnchanged(GenerationStatus genStatus, StreamHandler streamHandler) {
+    private ModelDependencies updateUnchanged(GenerationStatus genStatus) {
       final ModelDependencies newDeps = genStatus.getBLDependencies();
       if (newDeps == null) {
         return null;
@@ -119,9 +119,6 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
       SModel originalInputModel = genStatus.getOriginalInputModel();
       for (GenerationRootDependencies rdep : genStatus.getUnchangedDependencies()) {
         for (String filename : rdep.getFiles()) {
-          if (!streamHandler.touch(filename)) {
-            continue;
-          }
           // re-register baseLanguage dependencies
           if (modelDep == null) {
             modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
