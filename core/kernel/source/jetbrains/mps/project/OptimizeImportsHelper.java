@@ -197,7 +197,7 @@ public class OptimizeImportsHelper {
     if (dep.isReexport()) return null;
     if (dep.getModuleRef().equals(current)) return dep;
 
-    SModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(dep.getModuleRef());
     if (module == null) return null;
 
     boolean used = false;

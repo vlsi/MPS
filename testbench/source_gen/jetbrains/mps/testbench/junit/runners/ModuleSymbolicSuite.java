@@ -11,7 +11,7 @@ import org.junit.runners.model.InitializationError;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.junit.runner.notification.Failure;
@@ -68,7 +68,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     MpsTestsSupport.initEnv(true);
     ContextProjextSupport.getContextProject();
 
-    SModule mod = MPSModuleRepository.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myModuleRef));
+    SModule mod = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myModuleRef));
     for (Runner child : myRunners) {
       ((ModuleSymbolicSuite.DelegatingRunner) child).init(mod, myBuilder);
     }

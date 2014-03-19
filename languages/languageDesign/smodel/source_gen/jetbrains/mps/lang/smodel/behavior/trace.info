@@ -2388,11 +2388,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/4040588429969043134">
     <nodeInfo nodeId="2240889477919504544" fileName="ModuleReferenceExpression_Behavior.java" startLine="30" startPosition="70" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4040588429969066445" fileName="ModuleReferenceExpression_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4040588429969066445" fileName="ModuleReferenceExpression_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969394462" fileName="ModuleReferenceExpression_Behavior.java" startLine="37" startPosition="93" endLine="38" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969394435" fileName="ModuleReferenceExpression_Behavior.java" startLine="42" startPosition="104" endLine="43" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="559557797392947583" fileName="ModuleReferenceExpression_Behavior.java" startLine="43" startPosition="75" endLine="44" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4040588429969394449" fileName="ModuleReferenceExpression_Behavior.java" startLine="44" startPosition="118" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559557797392947583" fileName="ModuleReferenceExpression_Behavior.java" startLine="43" startPosition="75" endLine="44" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4040588429969394449" fileName="ModuleReferenceExpression_Behavior.java" startLine="44" startPosition="117" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969043134" fileName="ModuleReferenceExpression_Behavior.java" startLine="49" startPosition="90" endLine="50" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969043134" fileName="ModuleReferenceExpression_Behavior.java" startLine="54" startPosition="123" endLine="55" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969043134" fileName="ModuleReferenceExpression_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2413,7 +2413,7 @@
     <scopeInfo nodeId="4040588429969394434" fileName="ModuleReferenceExpression_Behavior.java" startLine="42" startPosition="104" endLine="45" endPosition="18">
       <varInfo nodeId="4040588429969394436" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4040588429969043140" fileName="ModuleReferenceExpression_Behavior.java" startLine="29" startPosition="76" endLine="33" endPosition="133" />
+    <scopeInfo nodeId="4040588429969043140" fileName="ModuleReferenceExpression_Behavior.java" startLine="29" startPosition="76" endLine="33" endPosition="129" />
     <scopeInfo nodeId="4040588429969043134" fileName="ModuleReferenceExpression_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4040588429969043134" varName="thisNode" />
     </scopeInfo>

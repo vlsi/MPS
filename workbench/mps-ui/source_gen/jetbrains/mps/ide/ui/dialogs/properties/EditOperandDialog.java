@@ -11,7 +11,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import javax.swing.tree.DefaultTreeModel;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.tree.TreePath;
@@ -29,6 +29,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.ArrayList;
 import jetbrains.mps.util.Computable;
 
@@ -49,7 +50,7 @@ public class EditOperandDialog extends DialogWrapper {
         } else {
           addGeneratorModels(currentGen, root);
           for (SModuleReference ref : depGenerators) {
-            Generator gen = (Generator) MPSModuleRepository.getInstance().getModule(ref);
+            Generator gen = (Generator) ModuleRepositoryFacade.getInstance().getModule(ref);
             if (gen != null) {
               addGeneratorModels(gen, root);
             }

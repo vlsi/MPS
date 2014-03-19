@@ -77,7 +77,7 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText_internal(String parameterObject) {
-      return MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(parameterObject)).getModuleName();
+      return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(parameterObject)).getModuleName();
     }
   }
 }

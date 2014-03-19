@@ -25,6 +25,8 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -40,6 +42,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ModuleRepositoryFacade implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
   private static ModuleRepositoryFacade INSTANCE;
 
   private final MPSModuleRepository REPO;
@@ -84,7 +87,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
 
   public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
     List<T> result = new ArrayList<T>();
-    for (SModule module : REPO.getAllModules()) {
+    for (SModule module : REPO.getModules()) {
       if (cls.isInstance(module)) result.add((T) module);
     }
     return result;
@@ -148,6 +151,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
+//    LOG.debug("Creating a module " + handle);
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
       return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {

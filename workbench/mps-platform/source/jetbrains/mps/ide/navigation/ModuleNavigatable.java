@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.navigation;
 
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
@@ -35,7 +36,7 @@ public class ModuleNavigatable extends BaseNavigatable {
 
   @Override
   protected void doNavigate(boolean focus) {
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
     if (module == null) return;
 
     ModuleContext context = new ModuleContext(module, project);

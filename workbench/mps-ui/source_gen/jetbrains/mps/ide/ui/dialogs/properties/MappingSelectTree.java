@@ -19,12 +19,13 @@ import java.awt.event.ItemEvent;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MappingSelectTree extends Tree {
   public MappingSelectTree(boolean isLeft) {
@@ -162,7 +163,7 @@ public class MappingSelectTree extends Tree {
 
     @Override
     public String getText() {
-      Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(getObject());
+      Generator generator = (Generator) ModuleRepositoryFacade.getInstance().getModule(getObject());
       if (generator == null) {
         return "unknown generator";
       }

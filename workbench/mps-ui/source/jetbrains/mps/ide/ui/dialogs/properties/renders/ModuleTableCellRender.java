@@ -33,7 +33,7 @@ public class ModuleTableCellRender extends ColoredTableCellRenderer {
       SModuleReference moduleReference = (SModuleReference) value;
       setIcon(
         IconManager.getIconFor(
-          MPSModuleRepository.getInstance().getModuleById(moduleReference.getModuleId())
+          MPSModuleRepository.getInstance().getModule(moduleReference.getModuleId())
         )
       );
 

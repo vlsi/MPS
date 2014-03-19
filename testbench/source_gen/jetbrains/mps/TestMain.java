@@ -41,12 +41,15 @@ public class TestMain {
 
     public Project getProject(String name) {
       if (isLastProject(name)) {
+        if (LOG.isInfoEnabled()) {
+          LOG.info("Using the last created project");
+        }
         return this.lastProject;
       } else {
         if (LOG.isInfoEnabled()) {
-          LOG.info("Opening project");
+          LOG.info("Opening a new project");
         }
-        Project p = IdeaEnvironment.openProjectInIdeaEnvironment(new File(name));
+        Project currentProject = IdeaEnvironment.openProjectInIdeaEnvironment(new File(name));
         if (this.lastProject != null) {
           try {
             SwingUtilities.invokeAndWait(new Runnable() {
@@ -58,11 +61,13 @@ public class TestMain {
             e.printStackTrace();
           }
         }
-        this.lastProject = p;
+        this.lastProject = currentProject;
         this.projectName = name;
-        return p;
+        return currentProject;
       }
     }
+
+
 
     private boolean isLastProject(String name) {
       return ((name != null ? name.equals(this.projectName) : name == this.projectName));

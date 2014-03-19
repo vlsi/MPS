@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -30,7 +30,7 @@ public class ModuleReferenceExpression_Behavior {
     if (SPropertyOperations.getString(thisNode, "moduleId") == null) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(thisNode, "moduleId")));
+    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, "moduleId")));
   }
 
   @NotNull
@@ -41,7 +41,7 @@ public class ModuleReferenceExpression_Behavior {
   @NotNull
   public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
-    ListSequence.fromList(result).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
     return result;
   }
 

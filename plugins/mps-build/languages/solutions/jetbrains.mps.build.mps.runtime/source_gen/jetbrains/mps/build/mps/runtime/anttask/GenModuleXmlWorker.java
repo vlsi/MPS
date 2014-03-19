@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.PrintWriter;
@@ -63,7 +63,7 @@ public class GenModuleXmlWorker extends MpsWorker {
     final SModuleReference moduleRef = PersistenceFacade.getInstance().createModuleReference(params.getRef());
     SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
       public SModule compute() {
-        return MPSModuleRepository.getInstance().getModule(moduleRef);
+        return ModuleRepositoryFacade.getInstance().getModule(moduleRef);
       }
     });
     IFile xmlfile = FileSystem.getInstance().getFileByPath(params.getDestfile());

@@ -149,6 +149,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   // public for tests only!
   public void init(final ProjectDescriptor projectDescriptor) {
+    LOG.info("Initializing project");
     if (myProject.isDefault()) return;
 
     assert !isDisposed();
@@ -197,6 +198,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   protected void readModules() {
+    LOG.info("Reading modules");
     myErrors = null;
 
     // load solutions

@@ -35,7 +35,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
 
   @Override
   public MPSTreeNode getTreeNode(IOperationContext context) {
-    SModule module = MPSModuleRepository.getInstance().getModule(getValue());
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(getValue());
     if (module == null) return null;
     Project mpsProject = context.getProject();
     if (mpsProject == null) return null;
@@ -46,7 +46,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
   @Override
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
-    SModule module = MPSModuleRepository.getInstance().getModule(getValue());
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(getValue());
     if (module == null) return result;
     for (final SModel md : module.getModels()) {
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {

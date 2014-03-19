@@ -142,17 +142,6 @@ public class ModuleUtil {
     return result;
   }
 
-  @Deprecated
-  public static List<SModule> depsToModules(Iterable<Dependency> deps) {
-    List<SModule> result = new ArrayList<SModule>();
-    for (Dependency dep : deps) {
-      SModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m == null) continue;
-      result.add(m);
-    }
-    return result;
-  }
-
   public static ModelRoot findModelRoot(SModule module, String path) {
     for (ModelRoot root : module.getModelRoots()) {
       if (root instanceof FolderModelRootBase && path.equals(((FolderModelRootBase) root).getPath())) return root;
@@ -160,16 +149,4 @@ public class ModuleUtil {
     return null;
   }
 
-  @Deprecated
-  public static List<SModule> refsToModules(Iterable<SModuleReference> refs) {
-    List<SModule> result = new ArrayList<SModule>();
-
-    for (SModuleReference ref : refs) {
-      SModule dk = ModuleRepositoryFacade.getInstance().getModule(ref, SModule.class);
-      if (dk == null) continue;
-      result.add(dk);
-    }
-
-    return result;
-  }
 }

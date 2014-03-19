@@ -25,6 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -93,7 +94,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
     assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + ((AbstractModule) module).getDescriptorFile();
 
-    SModule existing = getModuleById(moduleId);
+    SModule existing = getModule(moduleId);
     if (existing != null) {
       myModuleToOwners.addLink(existing, owner);
       return (T) existing;
@@ -185,12 +186,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return myGlobalModelAccess;
   }
 
-  @Deprecated  //3.0, use getModules
-  public Set<SModule> getAllModules() {
-    ModelAccess.assertLegalRead();
-    return Collections.unmodifiableSet(myModules);
-  }
-
   public Set<SModule> getModules(MPSModuleOwner moduleOwner) {
     //todo assertCanRead();
 
@@ -198,7 +193,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   public Set<MPSModuleOwner> getOwners(SModule module) {
-    assertCanRead();
+    ModelAccess.assertLegalRead();
 
     return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
@@ -217,7 +212,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public SModule getModule(SModuleId id) {
-    assertCanRead();
+    ModelAccess.assertLegalRead();
 
     if (id == null) return null;
     return myIdToModuleMap.get(id);
@@ -225,7 +220,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public Iterable<SModule> getModules() {
-    return (Set) getAllModules();
+    ModelAccess.assertLegalRead();
+    return Collections.unmodifiableSet(myModules);
   }
 
   @Override
@@ -244,8 +240,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     };
   }
 
-  @Deprecated //in 3.0
-  //use getModule()
+  @Deprecated
+  @ToRemove(version = 3.0)
+  // use getModule()
   public SModule getModuleById(SModuleId moduleId) {
     //todo assertCanRead();
 
@@ -277,11 +274,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         }
       }
     });
-  }
-
-  private void assertCanRead() {
-    if (ModelAccess.instance().canRead()) return;
-    throw new IllegalStateException("Can't read");
   }
 
   //------------------listeners--------------------

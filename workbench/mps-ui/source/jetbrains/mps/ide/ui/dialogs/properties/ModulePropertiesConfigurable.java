@@ -921,7 +921,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (tableModel.getUsedLanguages().contains(bl.getModuleReference()))
         return true;
       for (SModuleReference reference : tableModel.getUsedDevkits()) {
-        SModule module = MPSModuleRepository.getInstance().getModuleById(reference.getModuleId());
+        SModule module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
         if (module instanceof DevKit && ((DevKit) module).getAllExportedLanguages().contains(bl))
           return true;
       }

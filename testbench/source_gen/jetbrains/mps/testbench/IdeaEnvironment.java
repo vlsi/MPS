@@ -9,9 +9,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.tool.environment.EnvironmentUtils;
 import java.io.File;
@@ -38,10 +35,14 @@ import java.io.FileOutputStream;
 import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.make.ModuleMaker;
-import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.tool.common.util.PathUtil;
 import com.intellij.openapi.application.PathMacros;
@@ -57,15 +58,11 @@ public class IdeaEnvironment implements Environment {
 
   public IdeaEnvironment(EnvironmentConfig config) {
     this.config = config;
-
-    // todo: if creationg of environment fails? is it publication before we need it? 
+    // todo: if creating of environment fails? is it publication before we need it? 
     ActiveEnvironment.activateEnvironment(this);
 
     // todo: use plugins and libs 
 
-    // part from ProjectTest 
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.ERROR);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
 
     // todo: ? 
@@ -80,7 +77,7 @@ public class IdeaEnvironment implements Environment {
     // do not overwrite plugin.path if set 
     if (isEmptyString(System.getProperty("plugin.path"))) {
       StringBuffer pluginPath = new StringBuffer();
-      File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
+      File pluginDir = new File(PathManager.getPreInstalledPluginsPath());
       if (pluginDir.listFiles() != null) {
         for (File pluginFolder : pluginDir.listFiles()) {
           if (pluginPath.length() > 0) {
@@ -100,6 +97,9 @@ public class IdeaEnvironment implements Environment {
       FSRecords.invalidateCaches();
       cachesInvalidated = true;
     }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Creating IdeaTestApplication");
+    }
     try {
       IdeaTestApplication.getInstance(null);
     } catch (Exception e) {
@@ -111,6 +111,10 @@ public class IdeaEnvironment implements Environment {
 
     // todo: copy-paste from mps-env. should be or 1) more workbench-like or 2) base/util class? 
     // todo: dispose lib contributors like in mps-env 
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Initializing libraries");
+    }
+
     LibraryInitializer.getInstance().addContributor(EnvironmentUtils.createLibContributor(false, config.libs()));
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
@@ -137,16 +141,19 @@ public class IdeaEnvironment implements Environment {
 
 
 
+  @Override
   public EnvironmentConfig getConfig() {
     return config;
   }
 
+  @Override
   public boolean hasIdeaInstance() {
     return true;
   }
 
 
 
+  @Override
   public Project openProject(File projectFile) {
     Project project = openProjectInIdeaEnvironment(projectFile);
     // todo: from TestMain#startTestOnProjectCopy 
@@ -156,6 +163,7 @@ public class IdeaEnvironment implements Environment {
     return SetSequence.fromSet(openedProjects).addElement(project);
   }
 
+  @Override
   public Project createDummyProject() {
     // todo: for dumb idea env? 
     // <node> 
@@ -177,12 +185,14 @@ public class IdeaEnvironment implements Environment {
 
 
 
+  @Override
   public Iterable<Project> openedProjects() {
     return ListSequence.fromListWithValues(new ArrayList<Project>(), openedProjects);
   }
 
 
 
+  @Override
   public void disposeProject(final Project project) {
     ((MPSProject) project).projectClosed();
 
@@ -205,6 +215,7 @@ public class IdeaEnvironment implements Environment {
     SetSequence.fromSet(openedProjects).removeElement(project);
   }
 
+  @Override
   public void disposeEnvironment() {
     // from ModuleTestSuite 
     TestMain.PROJECT_CONTAINER.clear();
@@ -268,6 +279,9 @@ public class IdeaEnvironment implements Environment {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
+          if (LOG.isInfoEnabled()) {
+            LOG.info("Load and open the project with path " + filePath);
+          }
           project[0] = projectManager.loadAndOpenProject(filePath);
         } catch (Throwable e) {
           exc[0] = e;
@@ -280,7 +294,11 @@ public class IdeaEnvironment implements Environment {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        new ModuleMaker().make(new LinkedHashSet<SModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        Set<SModule> moduleSet = SetSequence.fromSet(new HashSet<SModule>());
+        SetSequence.fromSet(moduleSet).addSequence(Sequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
+        final IMessageHandler logHandler = new IMessageHandler.LogHandler(Logger.wrap(LogManager.getLogger(IdeaEnvironment.class)));
+        final ModuleMaker maker = new ModuleMaker(logHandler, MessageKind.INFORMATION);
+        maker.make(moduleSet, new EmptyProgressMonitor());
       }
     });
     projectManager.openProject(project[0]);
@@ -297,6 +315,8 @@ public class IdeaEnvironment implements Environment {
       PathMacros.getInstance().setMacro(macroName, canonicalPath);
     }
   }
+
+  protected static org.apache.log4j.Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
 
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

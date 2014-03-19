@@ -20,6 +20,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -97,7 +98,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
   private static class MyDefaultListCellRenderer extends DefaultListCellRenderer {
     public String getItemLabel(Object value) {
       SModuleReference moduleReference = (SModuleReference) value;
-      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+      final SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
       if (module == null) {
         String moduleName = moduleReference.getModuleName();
         return (moduleName.equals("") ?
@@ -115,7 +116,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
       if (moduleReference == null) return result;
       setText(getItemLabel(value));
       setIcon(FileIcons.PROJECT_LANGUAGE_ICON);
-      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+      final SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
       if (module == null && !(isSelected)) {
         setForeground(Color.RED);
       }

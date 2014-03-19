@@ -64,7 +64,7 @@ public class InternalActionsUtils {
     final Wrappers._T<Iterable<SModelReference>> modelReferences = new Wrappers._T<Iterable<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = MPSModuleRepository.getInstance().getAllModules();
+        Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
         if (LOG.isEnabledFor(Priority.WARN)) {
           LOG.warn("Modules: " + Sequence.fromIterable(modules).count());
         }

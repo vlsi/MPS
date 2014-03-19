@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -119,7 +120,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
-      SModule m = MPSModuleRepository.getInstance().getModule(mr);
+      SModule m = ModuleRepositoryFacade.getInstance().getModule(mr);
       if (m == null || m == myLanguage) continue;
       languageRuntime.add(createFor(myProject, m));
     }

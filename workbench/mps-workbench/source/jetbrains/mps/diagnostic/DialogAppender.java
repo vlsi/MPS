@@ -23,7 +23,7 @@ import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.ui.update.Update;
 import org.apache.log4j.AppenderSkeleton;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 
@@ -42,7 +42,7 @@ public class DialogAppender extends AppenderSkeleton {
 
   @Override
   protected synchronized void append(final LoggingEvent event) {
-    if (!event.level.isGreaterOrEqual(Priority.ERROR)) return;
+    assert event.getLevel().isGreaterOrEqual(Level.ERROR);
     myEventsQueue.add(event);
 
     DiagnosticUpdater.queue(new Update(myUpdateIdentity) {

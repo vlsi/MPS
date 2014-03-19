@@ -69,8 +69,8 @@
     <nodeInfo nodeId="4315758333761728129" fileName="NewModuleUtil.java" startLine="188" startPosition="56" endLine="189" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8978606230572474873" fileName="NewModuleUtil.java" startLine="189" startPosition="54" endLine="190" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4315758333761965528" fileName="NewModuleUtil.java" startLine="190" startPosition="20" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4315758333762020194" fileName="NewModuleUtil.java" startLine="191" startPosition="0" endLine="192" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4315758333761995929" fileName="NewModuleUtil.java" startLine="192" startPosition="124" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4315758333762020194" fileName="NewModuleUtil.java" startLine="191" startPosition="0" endLine="192" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4315758333761995929" fileName="NewModuleUtil.java" startLine="192" startPosition="120" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1613125646032873264" fileName="NewModuleUtil.java" startLine="193" startPosition="0" endLine="194" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1613125646032873279" fileName="NewModuleUtil.java" startLine="196" startPosition="63" endLine="197" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032873283" fileName="NewModuleUtil.java" startLine="197" startPosition="40" endLine="198" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />

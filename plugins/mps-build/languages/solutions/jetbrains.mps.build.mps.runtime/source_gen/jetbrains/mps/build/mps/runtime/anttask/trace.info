@@ -97,7 +97,7 @@
     <nodeInfo nodeId="6690493898470495661" fileName="GenModuleXmlWorker.java" startLine="60" startPosition="67" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6690493898470434438" fileName="GenModuleXmlWorker.java" startLine="61" startPosition="58" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6690493898470434439" fileName="GenModuleXmlWorker.java" startLine="62" startPosition="0" endLine="63" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6690493898470434454" fileName="GenModuleXmlWorker.java" startLine="65" startPosition="32" endLine="66" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6690493898470434454" fileName="GenModuleXmlWorker.java" startLine="65" startPosition="32" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6690493898470434465" fileName="GenModuleXmlWorker.java" startLine="68" startPosition="7" endLine="69" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6690493898470434472" fileName="GenModuleXmlWorker.java" startLine="69" startPosition="81" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6690493898470497953" fileName="GenModuleXmlWorker.java" startLine="70" startPosition="0" endLine="71" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -146,7 +146,7 @@
     <scopeInfo nodeId="6690493898470434344" fileName="GenModuleXmlWorker.java" startLine="31" startPosition="46" endLine="32" endPosition="20" />
     <scopeInfo nodeId="6690493898470441745" fileName="GenModuleXmlWorker.java" startLine="35" startPosition="74" endLine="36" endPosition="28" />
     <scopeInfo nodeId="6690493898470439155" fileName="GenModuleXmlWorker.java" startLine="53" startPosition="41" endLine="54" endPosition="43" />
-    <scopeInfo nodeId="6690493898470434453" fileName="GenModuleXmlWorker.java" startLine="65" startPosition="32" endLine="66" endPosition="70" />
+    <scopeInfo nodeId="6690493898470434453" fileName="GenModuleXmlWorker.java" startLine="65" startPosition="32" endLine="66" endPosition="73" />
     <scopeInfo nodeId="6690493898470501161" fileName="GenModuleXmlWorker.java" startLine="87" startPosition="38" endLine="88" endPosition="111" />
     <scopeInfo nodeId="6690493898470503444" fileName="GenModuleXmlWorker.java" startLine="96" startPosition="0" endLine="97" endPosition="50">
       <varInfo nodeId="6690493898470503445" varName="e" />

@@ -4,20 +4,21 @@ package jetbrains.mps.lang.test.runtime;
 
 import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.ide.IdeMain;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectManager;
-import junit.framework.Assert;
-import jetbrains.mps.util.MacrosFactory;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import junit.framework.Assert;
 import java.util.Arrays;
+import jetbrains.mps.project.ProjectManager;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.TestMain;
+import org.apache.log4j.BasicConfigurator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.awt.GraphicsEnvironment;
@@ -48,34 +49,22 @@ public class TransformationTestRunner {
   }
 
   public void initTest(final TransformationTest test, @NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
+    initLoggingSystem();
     if (reOpenProject) {
-      // close all projects before run test 
-      TestMain.PROJECT_CONTAINER.clear();
+      closeProjectsBeforeRunningTest();
     }
     if (LOG.isInfoEnabled()) {
-      LOG.info("Initializing mps environment");
+      LOG.info("Initializing MPS environment");
     }
+
     MpsTestsSupport.initEnv(true);
-    //  MpsTestsSupport.initEnv(true) instantiates IdeaEnvironment which set test mode to CORE_TEST, override if needed 
+    // MpsTestsSupport.initEnv(true) instantiates IdeaEnvironment which sets test mode to CORE_TEST, override if needed 
     IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
-    // we do not want to save our project, see MPS-13352 
+
     ApplicationManagerEx.getApplicationEx().doNotSave();
     clearSystemClipboard();
-    // see MPS-10568 
     readSystemMacro();
-    if ((projectName == null || projectName.length() == 0)) {
-      for (Project project : ProjectManager.getInstance().getOpenProjects()) {
-        if (project != null) {
-          test.setProject(project);
-          break;
-        }
-      }
-      if (test.getProject() == null) {
-        Assert.fail("MPS Project was not specified in test class, no currently open project were found.");
-      }
-    } else {
-      test.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.getGlobal().expandPath(projectName)));
-    }
+    setProjectForTest(projectName, test);
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
@@ -89,11 +78,44 @@ public class TransformationTestRunner {
             test.setModelDescriptor(modelDescriptor);
             test.init();
           }
-        });
+        }, test.getProject());
       }
     });
     ModelAccess.instance().flushEventQueue();
   }
+
+
+
+  private void setProjectForTest(String projectName, final TransformationTest test) {
+    if ((projectName == null || projectName.length() == 0)) {
+      for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+        if (project != null) {
+          test.setProject(project);
+          break;
+        }
+      }
+      if (test.getProject() == null) {
+        Assert.fail("MPS Project was not specified in test class, no currently open project were found.");
+      }
+    } else {
+      String expandPath = MacrosFactory.getGlobal().expandPath(projectName);
+      test.setProject(TestMain.PROJECT_CONTAINER.getProject(expandPath));
+    }
+  }
+
+
+
+  private void closeProjectsBeforeRunningTest() {
+    TestMain.PROJECT_CONTAINER.clear();
+  }
+
+
+
+  private void initLoggingSystem() {
+    BasicConfigurator.configure();
+  }
+
+
 
   public void runTest(final TransformationTest projectTest, final String className, final String methodName, final boolean runInCommand) throws Throwable {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
@@ -117,7 +139,7 @@ public class TransformationTestRunner {
             public void run() {
               exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
             }
-          });
+          }, projectTest.getProject());
         }
       });
     } else {
@@ -140,11 +162,16 @@ public class TransformationTestRunner {
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(TransformationTestRunner.EMPTY_CLIPBOARD_CONTENT, TransformationTestRunner.EMPTY_CLIPBOARD_CONTENT);
   }
 
+
+
+  /**
+   * see MPS-10568
+   */
   private void readSystemMacro() {
     final Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
     for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
       if (property.key() instanceof String) {
-        String key = (((String) property.key()));
+        String key = (String) property.key();
         if ((key != null && key.length() > 0) && key.startsWith(BaseTransformationTest4.PATH_MACRO_PREFIX)) {
           if (property.value() instanceof String) {
             String canonicalPath = PathUtil.getCanonicalPath(((String) property.value()));
@@ -180,6 +207,8 @@ public class TransformationTestRunner {
       }
     });
   }
+
+
 
   private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
     Throwable exception = null;

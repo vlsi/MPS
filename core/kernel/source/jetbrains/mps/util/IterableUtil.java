@@ -36,6 +36,14 @@ public class IterableUtil {
     return new FlattenIterable<T>(Arrays.asList(its));
   }
 
+  public static <T> Set<T> asSet(Iterable<? extends T> iter) {
+    if (iter instanceof Set) return (Set<T>) iter;
+    Set<T> result = new HashSet<T>();
+    for (T o : iter)
+      result.add(o);
+    return result;
+  }
+
   public static <T> Collection<T> asCollection(Iterable<? extends T> iter) {
     if (iter instanceof Collection) return (Collection<T>) iter;
     return asList(iter);

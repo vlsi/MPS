@@ -41,7 +41,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
             return null;
           }
 
-          SModule module = MPSModuleRepository.getInstance().getModuleById(moduleId);
+          SModule module = MPSModuleRepository.getInstance().getModule(moduleId);
           if (module == null) {
             return moduleId.toString();
           }

@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -83,7 +84,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
         return new JLabel("NOT FOUND: <bad generator reference>");
       }
       SModuleReference moduleRef = generatorReference;
-      Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(moduleRef);
+      Generator generator = (Generator) ModuleRepositoryFacade.getInstance().getModule(moduleRef);
       if (generator == null) {
         String genString = generatorReference.getModuleName();
         return new JLabel("NOT FOUND: " + genString);

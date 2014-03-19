@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="35gm9nkpi2pbnrpno36couy3se3u89p">
+<dependencies version="2" modelHash="-epmzjx669fvyr95yw2f1u9xdmd0sxiu">
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <common hash="-3qhwuubssu7incvqe862zf6gylqmwcw" dependsOnNodes="true" />
-  <source id="5294483648489405947" name="TestMain" hash="21ryrtedufgulqt7hcob65kbhkk087q">
+  <source id="5294483648489405947" name="TestMain" hash="-a8bcrju9tc7yozftws45w0f8bky69gm">
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="TestMain.java" />

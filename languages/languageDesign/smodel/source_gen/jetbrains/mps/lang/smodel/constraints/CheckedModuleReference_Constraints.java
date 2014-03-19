@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class CheckedModuleReference_Constraints extends BaseConstraintsDescriptor {
@@ -37,7 +38,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
             return original;
           }
           SModuleReference moduleReference = PersistenceFacade.getInstance().createModuleReference(original);
-          SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+          SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
           return (module != null ? module.getModuleName() : moduleReference.getModuleName());
         }
       }

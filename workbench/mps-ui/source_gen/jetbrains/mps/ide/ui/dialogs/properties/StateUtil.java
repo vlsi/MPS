@@ -5,7 +5,7 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
@@ -20,7 +20,7 @@ public class StateUtil {
   }
 
   public static boolean isAvailable(SModuleReference moduleReference) {
-    return MPSModuleRepository.getInstance().getModule(moduleReference) != null;
+    return ModuleRepositoryFacade.getInstance().getModule(moduleReference) != null;
   }
 
   public static boolean isAvailable(String path) {

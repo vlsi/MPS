@@ -88,7 +88,7 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
     List<SModuleReference> list = new ArrayList<SModuleReference>();
     MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
     for(SModuleReference tableItem : myTableItems)
-      if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof Language)
+      if(moduleRepository.getModule(tableItem.getModuleId()) instanceof Language)
         list.add(tableItem);
 
     return list;
@@ -98,7 +98,7 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
     List<SModuleReference> list = new ArrayList<SModuleReference>();
     MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
     for(SModuleReference tableItem : myTableItems)
-      if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof DevKit)
+      if(moduleRepository.getModule(tableItem.getModuleId()) instanceof DevKit)
         list.add(tableItem);
 
     return list;
