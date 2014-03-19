@@ -301,8 +301,11 @@ public class GenerationOptions {
     }
 
     public OptionsBuilder tracing(int tracingMode, IGenerationTracer generationTracer) {
-      myTracingMode = tracingMode;
       myGenerationTracer = generationTracer;
+      return tracing(tracingMode);
+    }
+    public OptionsBuilder tracing(int tracingMode) {
+      myTracingMode = tracingMode;
       return this;
     }
 

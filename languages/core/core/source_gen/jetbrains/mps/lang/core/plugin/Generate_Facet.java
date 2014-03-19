@@ -29,6 +29,7 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
@@ -49,7 +50,6 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
@@ -243,12 +243,19 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-              vars(pa.global()).generationOptions((vars(pa.global()).generationOptions() != null ? vars(pa.global()).generationOptions() : GenerationOptions.fromSettings(settings)));
+              if (vars(pa.global()).generationOptions() == null) {
+                vars(pa.global()).generationOptions(GenerationOptions.fromSettings(settings));
+              }
               Iterable<GenerationCacheContainer> caches = ExtensionPoint.<GenerationCacheContainer>generify(new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache", GenerationCacheContainer.class)).getObjects();
               GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
               vars(pa.global()).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ? cacheContainer : null), settings.isIncremental()));
-              IGenerationTracer tracer = (vars(pa.global()).saveTransient() ? Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(IGenerationTracer.class) : new NullGenerationTracer());
-              vars(pa.global()).generationOptions(vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(Generate_Facet.Target_checkParameters.vars(pa.global()).cleanMake()).keepOutputModel(true));
+              if (GenerationFacade.isLegacyGenTraceEnabled()) {
+                IGenerationTracer tracer = (vars(pa.global()).saveTransient() ? Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(IGenerationTracer.class) : new NullGenerationTracer());
+                vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel(), tracer);
+              } else {
+                vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel());
+              }
+              vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).rebuildAll(Generate_Facet.Target_checkParameters.vars(pa.global()).cleanMake()).keepOutputModel(true);
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());
 

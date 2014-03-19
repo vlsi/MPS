@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -185,60 +186,27 @@ public class GeneratorUIFacade {
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
       @Override
       public void run(@NotNull ProgressMonitor monitor) {
-        if (!saveTransientModels) {
-          IGenerationTracer component = ideaProject.getComponent(IGenerationTracer.class);
-          if (component != null) {
-            component.discardTracing();
+        final OptionsBuilder options = GenerationOptions.getDefaults()
+            .saveTransientModels(saveTransientModels)
+            .strictMode(settings.isStrictMode())
+            .rebuildAll(rebuildAll)
+            .incremental(new Strategy(settings))
+            .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
+            .tracing(settings.getPerformanceTracingLevel())
+            .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep());
+
+        if (GenerationFacade.isLegacyGenTraceEnabled()) {
+          IGenerationTracer tracer = ideaProject.getComponent(IGenerationTracer.class);
+          if (!saveTransientModels && tracer != null) {
+              tracer.discardTracing();
           }
+          if (saveTransientModels && tracer == null) {
+            tracer = new NullGenerationTracer();
+          }
+          options.tracing(settings.getPerformanceTracingLevel(), tracer);
         }
 
-        IGenerationTracer tracer = saveTransientModels
-          ? ideaProject.getComponent(IGenerationTracer.class)
-          : null;
-
-        if (tracer == null) {
-          tracer = new NullGenerationTracer();
-        }
-
-        final boolean incremental = settings.isIncremental();
-        final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
-        IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
-          @Override
-          public Map<String, String> getModelHashes(SModel md, IOperationContext operationContext) {
-            if (!(md instanceof GeneratableSModel)) return null;
-            GeneratableSModel sm = (GeneratableSModel) md;
-            if (!sm.isGeneratable()) return null;
-
-            return sm.getGenerationHashes();
-          }
-
-          @Override
-          public GenerationCacheContainer getContainer() {
-            return cache;
-          }
-
-          @Override
-          public GenerationDependencies getDependencies(SModel sm) {
-            return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
-          }
-
-          @Override
-          public boolean isIncrementalEnabled() {
-            return incremental;
-          }
-        };
-
-        GenerationOptions options = GenerationOptions.getDefaults()
-          .saveTransientModels(saveTransientModels)
-          .strictMode(settings.isStrictMode())
-          .rebuildAll(rebuildAll)
-          .incremental(strategy)
-          .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
-          .tracing(settings.getPerformanceTracingLevel(), tracer)
-          .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
-          .create();
-
-        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options, ideaProject.getComponent(TransientModelsComponent.class));
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options.create(), ideaProject.getComponent(TransientModelsComponent.class));
       }
     }, "Generation", true, invocationContext.getProject());
 
@@ -278,5 +246,38 @@ public class GeneratorUIFacade {
     }
 
     return GenerationFacade.getModifiedModels(result, new ProjectOperationContext(project));
+  }
+
+  private static class Strategy implements IncrementalGenerationStrategy {
+    private final boolean myIncremental;
+    private final GenerationCacheContainer myCache;
+
+    public Strategy(GenerationSettings settings) {
+      myIncremental = settings.isIncremental();
+      myCache = myIncremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
+    }
+    @Override
+    public Map<String, String> getModelHashes(SModel md, IOperationContext operationContext) {
+      if (!(md instanceof GeneratableSModel)) return null;
+      GeneratableSModel sm = (GeneratableSModel) md;
+      if (!sm.isGeneratable()) return null;
+
+      return sm.getGenerationHashes();
+    }
+
+    @Override
+    public GenerationCacheContainer getContainer() {
+      return myCache;
+    }
+
+    @Override
+    public GenerationDependencies getDependencies(SModel sm) {
+      return myIncremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
+    }
+
+    @Override
+    public boolean isIncrementalEnabled() {
+      return myIncremental;
+    }
   }
 }

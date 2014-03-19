@@ -13,8 +13,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.devkit.generator.GenerationTracer;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -45,7 +43,6 @@ public class ShowGenerationTraceback_Action extends BaseAction {
           disable(event.getPresentation());
         }
         GenerationTracerViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(GenerationTracerViewTool.class);
-        GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
         event.getPresentation().setVisible(tool.hasTracingData());
         event.getPresentation().setEnabled(tool.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
       }
