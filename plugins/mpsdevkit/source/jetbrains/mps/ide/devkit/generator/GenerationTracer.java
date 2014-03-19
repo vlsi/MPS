@@ -16,9 +16,7 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
@@ -36,7 +34,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
@@ -62,10 +59,7 @@ public class GenerationTracer implements IGenerationTracer {
   private SModelReference myCurrentInputModel;
   private SModelReference myCurrentOutputModel;
 
-  private final boolean enableNewTrace;
-
   public GenerationTracer(Project project) {
-    enableNewTrace = Boolean.parseBoolean(System.getProperty("mps.internal.newgentrace", Boolean.toString(true)));
   }
 
   void setTracerViewTool(GenerationTracerViewTool tool) {
@@ -334,16 +328,6 @@ public class GenerationTracer implements IGenerationTracer {
     for (TracerNode rootTracerNode : rootTracerNodes) {
       rootTracerNode.findAllTopmost(Kind.INPUT, nodeRef, tracerNodes);
     }
-    final TraceNodeUI newTracer;
-    final GenerationTrace ngt = getNewGenTrace(node);
-    if (ngt != null) {
-      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION, nodeRef);
-      for (TraceNodeUI n : TraceBuilderUI.buildTrace(ngt, node)) {
-        newTracer.addChild(n);
-      }
-    } else {
-      newTracer = null;
-    }
 
     if (!tracerNodes.isEmpty()) {
       TraceNodeUI resultTracerNode;
@@ -357,11 +341,7 @@ public class GenerationTracer implements IGenerationTracer {
       for (TracerNode tracerNode : tracerNodes) {
         resultTracerNode.addChild(create(tracerNode));
       }
-      if (newTracer != null) {
-        return group(resultTracerNode, newTracer);
-      } else {
-        return resultTracerNode;
-      }
+      return resultTracerNode;
     }
 
     // may be input is processed by scripts?
@@ -391,18 +371,7 @@ public class GenerationTracer implements IGenerationTracer {
         traceNode.addChild(new TraceNodeUI(Kind.APPROXIMATE_OUTPUT, new jetbrains.mps.smodel.SNodePointer(outputNode)));
       }
     }
-    if (newTracer != null) {
-      return group(traceNode, newTracer);
-    }
     return traceNode;
-  }
-
-  private static TraceNodeUI group(TraceNodeUI... elements) {
-    TraceNodeUI rv = new TraceNodeUI("", Icons.COLLECTION, elements[0].getNavigateTarget());
-    for (TraceNodeUI e : elements) {
-      rv.addChild(e);
-    }
-    return rv;
   }
 
   private static TraceNodeUI create(TracerNode tn) {
@@ -424,17 +393,6 @@ public class GenerationTracer implements IGenerationTracer {
     final SNodeReference nodeRef = node.getReference();
     List<TracerNode> rootTracerNodes = getRootsOfOutputModel(nodeRef.getModelReference());
 
-    final TraceNodeUI newTracer;
-    final GenerationTrace ngt = getNewGenTrace(node);
-    if (ngt != null) {
-      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION, nodeRef);
-      for (TraceNodeUI n : TraceBuilderUI.buildBackTrace(ngt, node)) {
-        newTracer.addChild(n);
-      }
-    } else {
-      newTracer = null;
-    }
-
     TracerNode tracerNode = null;
     for (TracerNode rootTracerNode : rootTracerNodes) {
       tracerNode = rootTracerNode.find(Kind.OUTPUT, nodeRef);
@@ -444,8 +402,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
 
     if (tracerNode != null) {
-      final TraceNodeUI tbt = buildTracebackTree(tracerNode, 0);
-      return newTracer == null ? tbt : group(tbt, newTracer);
+      return buildTracebackTree(tracerNode, 0);
     }
 
     // may be output is produced by scripts?
@@ -478,9 +435,6 @@ public class GenerationTracer implements IGenerationTracer {
       }
     }
 
-    if (newTracer != null) {
-      return group(outputTracerNode, newTracer);
-    }
     return outputTracerNode;
   }
 
@@ -562,14 +516,6 @@ public class GenerationTracer implements IGenerationTracer {
   public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> postMappingScripts) {
     if (!myActive) return;
     myModelsProcessedByScripts.put(scriptsInputModel, scriptsOutputModel, postMappingScripts);
-  }
-
-  private GenerationTrace getNewGenTrace(@NotNull SNode node) {
-    SModule m;
-    if (enableNewTrace && node.getModel() != null && ((m = node.getModel().getModule()) instanceof TransientModelsModule)) {
-      return ((TransientModelsModule) m).getTrace(node.getModel().getReference());
-    }
-    return null;
   }
 
   private static class ModelsProcessedByScripts {
