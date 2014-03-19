@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,8 @@ public class StartupModuleMaker extends AbstractProjectComponent {
         public void run() {
           monitor.advance(1);
 
-          final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
+          MessagesViewTool mvt = myProject.getComponent(MessagesViewTool.class);
+          final ModuleMaker maker = new ModuleMaker(mvt.newHandler(), MessageKind.ERROR);
 
           myReloadManager.computeNoReload(new Computable<Object>() {
             @Override
@@ -116,23 +117,4 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       });
     }
   }
-
-  private class MessageHandler implements IMessageHandler {
-    private MessagesViewTool mvt;
-
-    public MessageHandler() {
-      this.mvt = myProject.getComponent(MessagesViewTool.class);
-    }
-
-    @Override
-    public void clear() {
-      this.mvt.clear();
-    }
-
-    @Override
-    public void handle(IMessage message) {
-      this.mvt.add(message);
-    }
-  }
-
 }

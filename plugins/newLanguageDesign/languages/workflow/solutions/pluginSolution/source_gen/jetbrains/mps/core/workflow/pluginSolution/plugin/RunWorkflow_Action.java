@@ -15,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -69,15 +67,7 @@ public class RunWorkflow_Action extends BaseAction {
     try {
       final MessagesViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MessagesViewTool.class);
       if (tool != null) {
-        new WorkflowRunner(new IMessageHandler() {
-          public void handle(IMessage p0) {
-            tool.add(p0, "Workflow");
-          }
-
-          public void clear() {
-            tool.clear("Workflow");
-          }
-        }, ((SModule) MapSequence.fromMap(_params).get("langModule"))).run(((SNode) MapSequence.fromMap(_params).get("workflow")));
+        new WorkflowRunner(tool.newHandler("Workflow"), ((SModule) MapSequence.fromMap(_params).get("langModule"))).run(((SNode) MapSequence.fromMap(_params).get("workflow")));
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

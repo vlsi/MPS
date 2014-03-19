@@ -19,8 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -60,15 +58,7 @@ public class ConsoleUtil {
     final String messagesListName = "Console Make";
     mvt.getAvailableList(messagesListName, true).setWarningsEnabled(false);
     mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
-    MakeSession session = new MakeSession(projectOperationContext, new IMessageHandler() {
-      public void handle(IMessage message) {
-        mvt.add(message, messagesListName);
-      }
-
-      public void clear() {
-        mvt.clear(messagesListName);
-      }
-    }, true);
+    MakeSession session = new MakeSession(projectOperationContext, mvt.newHandler(messagesListName), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
       Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(projectOperationContext, Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
       try {

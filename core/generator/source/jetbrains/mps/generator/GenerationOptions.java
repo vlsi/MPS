@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -241,7 +241,7 @@ public class GenerationOptions {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
-        myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
+        myGenerationTracer == null ? new NullGenerationTracer() : myGenerationTracer,
         myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
         myCustomPlans, myDebugIncrementalDependencies);
     }

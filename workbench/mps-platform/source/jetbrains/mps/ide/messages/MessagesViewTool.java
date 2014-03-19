@@ -34,6 +34,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.ide.messages.MessagesViewTool.MessageViewToolState;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
@@ -179,6 +180,34 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
    */
   public void resetAutoscrollOption() {
     getDefaultList().resetAutoscrollOption();
+  }
+
+  public IMessageHandler newHandler() {
+    return new IMessageHandler() {
+      @Override
+      public void handle(IMessage msg) {
+        MessagesViewTool.this.add(msg);
+      }
+
+      @Override
+      public void clear() {
+        MessagesViewTool.this.clear();
+      }
+    };
+  }
+
+  public IMessageHandler newHandler(@NotNull final String name) {
+    return new IMessageHandler() {
+      @Override
+      public void handle(IMessage msg) {
+        MessagesViewTool.this.add(msg, name);
+      }
+
+      @Override
+      public void clear() {
+        MessagesViewTool.this.clear(name);
+      }
+    };
   }
 
   private synchronized void addList(String name, MessageList list) {
