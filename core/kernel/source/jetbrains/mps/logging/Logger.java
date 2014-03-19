@@ -16,57 +16,11 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
 
 public abstract class Logger {
 
-  /**
-   * Use constructor from org.apache.log4j.Logger
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static synchronized Logger getLogger(Class cls) {
-    return getLogger(cls.getName());
-  }
-
-
-  /**
-   * Use constructor from org.apache.log4j.Logger
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static synchronized Logger getLogger(String name) {
-    return wrap(LogManager.getLogger(name));
-  }
-
   public static synchronized Logger wrap(org.apache.log4j.Logger logger) {
     return new Log4jLogger(logger);
-  }
-
-  /**
-   * Use log4j appenders
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static void addLoggingHandler(ILoggingHandler lh) {
-    MPSAppender.getInstance().addAppender(lh);
-  }
-
-  /**
-   * Use log4j appenders
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static void removeLoggingHandler(ILoggingHandler lh) {
-    MPSAppender.getInstance().removeAppender(lh);
-  }
-
-  /**
-   * @param "OFF", "FATAL", "ERROR", "WARN" ...
-   */
-  public static String setThreshold(String threshold) {
-    return Log4jUtil.setThreshold(threshold);
   }
 
   //--------------------------

@@ -6,6 +6,8 @@ import jetbrains.mps.project.Project;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.testbench.IdeaEnvironment;
 import java.io.File;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestMain {
   public static TestMain.ProjectContainer PROJECT_CONTAINER = new TestMain.ProjectContainer();
@@ -16,6 +18,8 @@ public class TestMain {
 
     public ProjectContainer() {
     }
+
+
 
     public void clear() {
       try {
@@ -33,10 +37,15 @@ public class TestMain {
       }
     }
 
+
+
     public Project getProject(String name) {
-      if (((name != null ? name.equals(this.projectName) : name == this.projectName))) {
+      if (isLastProject(name)) {
         return this.lastProject;
       } else {
+        if (LOG.isInfoEnabled()) {
+          LOG.info("Opening project");
+        }
         Project p = IdeaEnvironment.openProjectInIdeaEnvironment(new File(name));
         if (this.lastProject != null) {
           try {
@@ -54,5 +63,11 @@ public class TestMain {
         return p;
       }
     }
+
+    private boolean isLastProject(String name) {
+      return ((name != null ? name.equals(this.projectName) : name == this.projectName));
+    }
   }
+
+  protected static Logger LOG = LogManager.getLogger(TestMain.class);
 }

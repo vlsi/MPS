@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7xvckw17jw57tu7g1vconzrvtpahvwb">
-  <common hash="9exjxpbv2jwuhwcvr9pdjx7bdjify43" dependsOnNodes="true" />
-  <source id="5294483648489405947" name="TestMain" hash="2vce118ook97mjlr3a7n3d7vr1igje3">
+<dependencies version="2" modelHash="35gm9nkpi2pbnrpno36couy3se3u89p">
+  <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
+  <common hash="-3qhwuubssu7incvqe862zf6gylqmwcw" dependsOnNodes="true" />
+  <source id="5294483648489405947" name="TestMain" hash="21ryrtedufgulqt7hcob65kbhkk087q">
+    <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="TestMain.java" />
   </source>
   <source id="5294483648489409013" name="MPSLaunch" hash="3con8wpie69n3atzfiyob3e8x4cxh2m">

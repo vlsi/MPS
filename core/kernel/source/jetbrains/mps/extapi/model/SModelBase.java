@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -44,7 +45,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
-  private static Logger LOG = Logger.getLogger(SModelBase.class);
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(SModelBase.class));
 
   private final List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
   private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();

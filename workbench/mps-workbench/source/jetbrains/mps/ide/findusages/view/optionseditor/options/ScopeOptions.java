@@ -24,13 +24,14 @@ import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.log4j.LogManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ScopeOptions extends BaseOptions {
-  private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ScopeOptions.class));
   private static final String SCOPE_TYPE = "scope_type";
   private static final String MODEL = "model";
   private static final String MODULE = "module";

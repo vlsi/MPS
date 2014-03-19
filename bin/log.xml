@@ -52,8 +52,6 @@
         </layout>
     </appender>
 
-    <appender name="MPS" class="jetbrains.mps.logging.MPSAppender"/>
-
     <category name="jetbrains.mps.vcs" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
@@ -71,6 +69,5 @@
         <appender-ref ref="DIALOG"/>
         <appender-ref ref="CONSOLE-WARN"/>
         <appender-ref ref="FILE"/>
-        <appender-ref ref="MPS"/>
     </root>
 </log4j:configuration>

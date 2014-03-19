@@ -52,6 +52,9 @@ public class TransformationTestRunner {
       // close all projects before run test 
       TestMain.PROJECT_CONTAINER.clear();
     }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Initializing mps environment");
+    }
     MpsTestsSupport.initEnv(true);
     //  MpsTestsSupport.initEnv(true) instantiates IdeaEnvironment which set test mode to CORE_TEST, override if needed 
     IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));

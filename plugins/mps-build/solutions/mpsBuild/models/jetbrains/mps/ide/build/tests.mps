@@ -823,7 +823,7 @@
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="7206546315286636746" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps.junit.haltonfailure" />
+      <property name="name" nameId="tpck.1169194664001" value="mps.junit.haltogitnfailure" />
       <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7206546315287211181" nodeInfo="ng">
         <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7206546315287211180" nodeInfo="ng">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7206546315287211179" nodeInfo="ng">
@@ -854,7 +854,7 @@
       </node>
       <node role="haltonfailure" roleId="5tjl.7206546315286874030" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7206546315287211118" nodeInfo="ng">
         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="191102385150821705" nodeInfo="ng">
-          <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="7206546315286636746" resolveInfo="mps.junit.haltonfailure" />
+          <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="7206546315286636746" resolveInfo="mps.junit.haltogitnfailure" />
         </node>
       </node>
     </node>
