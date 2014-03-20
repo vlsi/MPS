@@ -23,7 +23,6 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
-import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
@@ -75,32 +74,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   @Override
   public MyState getState() {
     MyState persistentState = new MyState();
-    persistentState.mySaveTransientModels = myState.isSaveTransientModels();
-    persistentState.myCheckModelsBeforeGeneration = myState.isCheckModelsBeforeGeneration();
-    persistentState.myParallelGenerator = myState.isParallelGenerator();
-    persistentState.myStrictMode = myState.isStrictMode();
-    persistentState.myNumberOfParallelThreads = myState.getNumberOfParallelThreads();
-    persistentState.myPerformanceTracingLevel = myState.getPerformanceTracingLevel();
-    persistentState.myNumberOfModelsToKeep = myState.getNumberOfModelsToKeep();
-    persistentState.myShowInfo = myState.isShowInfo();
-    persistentState.myShowWarnings = myState.isShowWarnings();
-    persistentState.myKeepModelsWithWarnings = myState.isKeepModelsWithWarnings();
-    persistentState.myIncremental = myState.isIncremental();
-    persistentState.myIncrementalUseCache = myState.isIncrementalUseCache();
-    persistentState.myFailOnMissingTextGen = myState.isFailOnMissingTextGen();
-    persistentState.myGenerateDebugInfo = myState.isGenerateDebugInfo();
-    persistentState.myShowBadChildWarning = myState.isShowBadChildWarning();
-    persistentState.myDebugIncrementalDependencies = myState.isDebugIncrementalDependencies();
-    persistentState.myActiveInplaceTransform = myState.useInplaceTransofrmations();
-    GenTraceSettings gts = myState.getTraceSettings();
-    if (gts != null) {
-      persistentState.myTraceUseLegacy = false;
-      persistentState.myTraceCompactTemplates = gts.isCompactTemplates();
-      persistentState.myTraceGroupSteps = gts.isGroupByStep();
-      persistentState.myTraceShowEmptySteps = gts.isShowEmptySteps();
-    } else {
-      persistentState.myTraceUseLegacy = true;
-    }
+    persistentState.fromSettings(myState);
     return persistentState;
   }
 
@@ -237,25 +211,60 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   public static class MyState {
     public boolean mySaveTransientModels;
-    public boolean myCheckModelsBeforeGeneration = true;
-    public boolean myParallelGenerator = false;
-    public boolean myStrictMode = true;
-    public int myNumberOfParallelThreads = 2;
-    public int myPerformanceTracingLevel = GenerationOptions.TRACE_OFF;
-    public int myNumberOfModelsToKeep = -1;
-    public boolean myShowInfo = false;
-    public boolean myShowWarnings = true;
-    public boolean myKeepModelsWithWarnings = true;
-    public boolean myIncremental = true;
-    public boolean myIncrementalUseCache = false;
-    public boolean myFailOnMissingTextGen = false;
-    public boolean myGenerateDebugInfo = true;
-    public boolean myShowBadChildWarning = true;
-    public boolean myDebugIncrementalDependencies = false;
-    public boolean myActiveInplaceTransform = true;
+    public boolean myCheckModelsBeforeGeneration;
+    public boolean myParallelGenerator;
+    public boolean myStrictMode;
+    public int myNumberOfParallelThreads;
+    public int myPerformanceTracingLevel;
+    public int myNumberOfModelsToKeep;
+    public boolean myShowInfo;
+    public boolean myShowWarnings;
+    public boolean myKeepModelsWithWarnings;
+    public boolean myIncremental;
+    public boolean myIncrementalUseCache;
+    public boolean myFailOnMissingTextGen;
+    public boolean myGenerateDebugInfo;
+    public boolean myShowBadChildWarning;
+    public boolean myDebugIncrementalDependencies;
+    public boolean myActiveInplaceTransform;
     public boolean myTraceUseLegacy = false;
-    public boolean myTraceGroupSteps = true;
-    public boolean myTraceCompactTemplates = false;
-    public boolean myTraceShowEmptySteps = false;
+    public boolean myTraceGroupSteps;
+    public boolean myTraceCompactTemplates;
+    public boolean myTraceShowEmptySteps;
+
+    public MyState() {
+      // use defaults from a single place. PersistentStateComponent demands no-arg cons with default values set (case: no xml file yet)
+      fromSettings(new DefaultModifiableGenerationSettings());
+    }
+
+    // IModifiableGenerationSettings, not IGenerationSettins as #isCheckModelsBeforeGeneration and #isGenerateDebugInfo are located improperly
+    /*package*/ void fromSettings(IModifiableGenerationSettings s) {
+      mySaveTransientModels = s.isSaveTransientModels();
+      myCheckModelsBeforeGeneration = s.isCheckModelsBeforeGeneration();
+      myParallelGenerator = s.isParallelGenerator();
+      myStrictMode = s.isStrictMode();
+      myNumberOfParallelThreads = s.getNumberOfParallelThreads();
+      myPerformanceTracingLevel = s.getPerformanceTracingLevel();
+      myNumberOfModelsToKeep = s.getNumberOfModelsToKeep();
+      myShowInfo = s.isShowInfo();
+      myShowWarnings = s.isShowWarnings();
+      myKeepModelsWithWarnings = s.isKeepModelsWithWarnings();
+      myIncremental = s.isIncremental();
+      myIncrementalUseCache = s.isIncrementalUseCache();
+      myFailOnMissingTextGen = s.isFailOnMissingTextGen();
+      myGenerateDebugInfo = s.isGenerateDebugInfo();
+      myShowBadChildWarning = s.isShowBadChildWarning();
+      myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
+      myActiveInplaceTransform = s.useInplaceTransofrmations();
+      GenTraceSettings gts = s.getTraceSettings();
+      if (gts != null) {
+        myTraceUseLegacy = false;
+        myTraceCompactTemplates = gts.isCompactTemplates();
+        myTraceGroupSteps = gts.isGroupByStep();
+        myTraceShowEmptySteps = gts.isShowEmptySteps();
+      } else {
+        myTraceUseLegacy = true;
+      }
+    }
   }
 }

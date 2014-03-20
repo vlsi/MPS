@@ -52,6 +52,9 @@ public interface IGenerationSettings {
   boolean useInplaceTransofrmations();
 
   /**
+   * Presentation options of the new generation tracer. At the moment, they affect the way trace is represented, not collected, and as such
+   * might not fit IGenerationSettings, but (a) trace functionality is inherently generator-related; (b) I don't want to introduce another location for settings
+   *
    * Meanwhile, we use <code>null</code> to indicate use of legacy gentrace (as it doesn't support any of the option)
    * and there's no reason to expose 'useLegacy' option in the API just to drop it in the next release.
    * Once there's no legacy gentrace, this method shall become NotNull
@@ -60,9 +63,9 @@ public interface IGenerationSettings {
   GenTraceSettings getTraceSettings();
 
   public static class GenTraceSettings {
-    public boolean myGroupSteps = true;
-    public boolean myCompactTemplates = false;
-    public boolean myShowEmptySteps = false;
+    private boolean myGroupSteps = true;
+    private boolean myCompactTemplates = false;
+    private boolean myShowEmptySteps = false;
 
     public boolean isGroupByStep() {
       return myGroupSteps;
