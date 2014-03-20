@@ -143,26 +143,26 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5332171957773708943" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5332171957773708944" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="settings" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5332171957773708945" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6284898925924710080" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y5py.~IModifiableGenerationSettings" resolveInfo="IModifiableGenerationSettings" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5332171957773708946" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
             </node>
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5332171957773708947" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5332171957773708948" nodeInfo="nn">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5332171957773708949" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dsetCheckModelsBeforeGeneration(boolean)%cvoid" resolveInfo="setCheckModelsBeforeGeneration" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IModifiableGenerationSettings%dsetCheckModelsBeforeGeneration(boolean)%cvoid" resolveInfo="setCheckModelsBeforeGeneration" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5332171957773708950" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5332171957773708951" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363080095" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5332171957773708944" resolveInfo="settings" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5332171957773708953" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%disCheckModelsBeforeGeneration()%cboolean" resolveInfo="isCheckModelsBeforeGeneration" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IModifiableGenerationSettings%disCheckModelsBeforeGeneration()%cboolean" resolveInfo="isCheckModelsBeforeGeneration" />
                   </node>
                 </node>
               </node>
@@ -182,11 +182,11 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5332171957773708959" nodeInfo="in" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5332171957773708960" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5332171957773708961" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5332171957773708962" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%disCheckModelsBeforeGeneration()%cboolean" resolveInfo="isCheckModelsBeforeGeneration" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IModifiableGenerationSettings%disCheckModelsBeforeGeneration()%cboolean" resolveInfo="isCheckModelsBeforeGeneration" />
               </node>
             </node>
           </node>
@@ -5808,11 +5808,11 @@
                             <property name="name" nameId="tpck.1169194664001" value="saveTransientModels" />
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="321200956998476251" nodeInfo="nn">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="321200956998476253" nodeInfo="nn">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IGenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="321200956998476252" nodeInfo="nn">
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
                               </node>
                             </node>
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="321200956998476250" nodeInfo="in" />
@@ -5822,10 +5822,10 @@
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="321200956998476255" nodeInfo="nn">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="321200956998476256" nodeInfo="nn">
                               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="321200956998476257" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dsetSaveTransientModels(boolean)%cvoid" resolveInfo="setSaveTransientModels" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IModifiableGenerationSettings%dsetSaveTransientModels(boolean)%cvoid" resolveInfo="setSaveTransientModels" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NotExpression" typeId="tpee.1081516740877" id="321200956998476258" nodeInfo="nn">
                                 <node role="expression" roleId="tpee.1081516765348" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363101941" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="321200956998476249" resolveInfo="saveTransientModels" />
@@ -6210,10 +6210,10 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="321200956998476201" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="321200956998476202" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="321200956998476203" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IGenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
             </node>
           </node>
         </node>
@@ -6351,10 +6351,10 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5285710378702826211" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5285710378702826212" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5285710378702826213" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IGenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
             </node>
           </node>
         </node>
@@ -6496,14 +6496,14 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5285710378702826267" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5285710378702826268" nodeInfo="nn">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5285710378702826270" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dsetSaveTransientModels(boolean)%cvoid" resolveInfo="setSaveTransientModels" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IModifiableGenerationSettings%dsetSaveTransientModels(boolean)%cvoid" resolveInfo="setSaveTransientModels" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150326437" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5285710378702826264" resolveInfo="state" />
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5285710378702826269" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
             </node>
           </node>
         </node>
@@ -7164,11 +7164,11 @@
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="8689724042318038815" nodeInfo="nn">
               <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8689724042318038816" nodeInfo="nn">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8689724042318038818" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5py.~IGenerationSettings%disSaveTransientModels()%cboolean" resolveInfo="isSaveTransientModels" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8689724042318038817" nodeInfo="nn">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xjo9.~GenerationSettings" resolveInfo="GenerationSettings" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationSettings" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xjo9.~GenerationSettings%dgetInstance()%cjetbrains%dmps%dgenerator%dIModifiableGenerationSettings" resolveInfo="getInstance" />
                 </node>
               </node>
             </node>

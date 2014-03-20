@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-81uqnuf3m3kfriom1zaojbd9jqxcd0c">
+<dependencies version="2" modelHash="-das9egpyth2lxhexz8e36zpjujlzku6">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -131,7 +131,7 @@
     <file name="Make_PluginInitializer.java" />
     <file name="plugin.xml" />
   </source>
-  <source id="5332171957773708940" name="CheckModelsBeforeGeneration" hash="chgc0gv0s56brhrbzazq9v4jkk7c92" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="5332171957773708940" name="CheckModelsBeforeGeneration" hash="-6koue96jokijkcf94s9ulfxjad97on1" dependsOnCreated="true" dependsOnNodes="true">
     <dep root="1815980786159353546" />
     <dep root="2017614408232613001" />
     <dep root="2017614408232613007" />
@@ -1409,17 +1409,17 @@
     <dep model="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" />
     <file name="WidgetSettingsPanel.java" />
   </source>
-  <source id="321200956998476185" name="TransientModelsWidget" hash="-z4tnx7zlv9cga6h1omsru3crnr4ze6">
+  <source id="321200956998476185" name="TransientModelsWidget" hash="-5ykhfp3ffchdquiv73lc5ibc7wt8qs9" dependsOnCreated="true">
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="TransientModelsWidget.java" />
   </source>
-  <source id="5285710378702826195" name="SaveTransientModelsAction" hash="dco5o9avf642aq6gd84nmfitz1lcx51">
+  <source id="5285710378702826195" name="SaveTransientModelsAction" hash="6q8rn3g1mvlvgrkw60boa2sqczeb0yn">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="SaveTransientModelsAction.java" />
   </source>
-  <source id="721478377485341571" name="TransientModelBallonDisplayer" hash="5z79qv7rwk22x1w5wpxloq9vtdxen0e">
+  <source id="721478377485341571" name="TransientModelBallonDisplayer" hash="apc6m91sk32xa5jb592b66kogzkkn5w">
     <dep root="321200956998476185" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -1438,7 +1438,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TransientModelBallonDisplayer.java" />
   </source>
-  <source id="6613699149169331484" name="TransientModelsPanel" hash="-6bfsi6057nh7vvvurxnva8173v24vze">
+  <source id="6613699149169331484" name="TransientModelsPanel" hash="-6bfsi6057nh7vvvurxnva8173v24vze" dependsOnCreated="true">
     <dep root="321200956998476185" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.wm(MPS.IDEA/com.intellij.openapi.wm@java_stub)" />

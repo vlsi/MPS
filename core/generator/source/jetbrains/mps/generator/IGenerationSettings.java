@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * fyodor, 4/11/11
  */
@@ -48,4 +50,41 @@ public interface IGenerationSettings {
   boolean isSaveTransientModels();
 
   boolean useInplaceTransofrmations();
+
+  /**
+   * Meanwhile, we use <code>null</code> to indicate use of legacy gentrace (as it doesn't support any of the option)
+   * and there's no reason to expose 'useLegacy' option in the API just to drop it in the next release.
+   * Once there's no legacy gentrace, this method shall become NotNull
+   */
+  @Nullable
+  GenTraceSettings getTraceSettings();
+
+  public static class GenTraceSettings {
+    public boolean myGroupSteps = true;
+    public boolean myCompactTemplates = false;
+    public boolean myShowEmptySteps = false;
+
+    public boolean isGroupByStep() {
+      return myGroupSteps;
+    }
+    public void setGroupByStep(boolean groupSteps) {
+      myGroupSteps = groupSteps;
+    }
+
+    public boolean isCompactTemplates() {
+      return myCompactTemplates;
+    }
+
+    public void setCompactTemplates(boolean compactTemplates) {
+      myCompactTemplates = compactTemplates;
+    }
+
+    public boolean isShowEmptySteps() {
+      return myShowEmptySteps;
+    }
+
+    public void setShowEmptySteps(boolean showEmptySteps) {
+      myShowEmptySteps = showEmptySteps;
+    }
+  }
 }

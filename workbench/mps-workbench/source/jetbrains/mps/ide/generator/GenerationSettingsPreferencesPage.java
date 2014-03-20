@@ -18,15 +18,14 @@ package jetbrains.mps.ide.generator;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -36,7 +35,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultFormatter;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ItemEvent;
@@ -46,7 +44,6 @@ import java.text.ParseException;
 class GenerationSettingsPreferencesPage {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
-  private JComboBox myGenerateRequirementsComboBox = new JComboBox(GenerationSettings.GenerateRequirementsPolicy.values());
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
@@ -78,10 +75,10 @@ class GenerationSettingsPreferencesPage {
     }
   };
 
-  private GenerationSettings myGenerationSettings;
+  private IModifiableGenerationSettings myGenerationSettings;
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
-    myGenerationSettings = settings;
+    myGenerationSettings = settings.getModifiableSettings();
     update();
     myPage = createComponent();
   }
@@ -166,13 +163,6 @@ class GenerationSettingsPreferencesPage {
     mySaveTransientModelsCheckBox.addItemListener(myStatusUpdater);
     myInplaceTransform.addItemListener(myStatusUpdater);
     return optionsPanel;
-  }
-
-  private JPanel createGenerateRequirementsPolicyGroup() {
-    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    panel.add(new JLabel("Regenerate models required for generation:"));
-    panel.add(myGenerateRequirementsComboBox);
-    return panel;
   }
 
   private JPanel createParallelGenerationGroup() {
@@ -281,7 +271,6 @@ class GenerationSettingsPreferencesPage {
 
   public void commit() {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
-    myGenerationSettings.setGenerateRequirementsPolicy(((GenerateRequirementsPolicy) myGenerateRequirementsComboBox.getSelectedItem()));
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
     myGenerationSettings.setParallelGenerator(myUseNewGenerator.isSelected());
     myGenerationSettings.setStrictMode(myStrictMode.isSelected());
@@ -316,7 +305,6 @@ class GenerationSettingsPreferencesPage {
 
   public boolean isModified() {
     return !(myGenerationSettings.isSaveTransientModels() == mySaveTransientModelsCheckBox.isSelected() &&
-      myGenerationSettings.getGenerateRequirementsPolicy() == myGenerateRequirementsComboBox.getSelectedItem() &&
       myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected() &&
       myGenerationSettings.isParallelGenerator() == myUseNewGenerator.isSelected() &&
       myGenerationSettings.isShowInfo() == myShowInfo.isSelected() &&
@@ -324,7 +312,7 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.isKeepModelsWithWarnings() == myKeepModelsWithWarnings.isSelected() &&
       myGenerationSettings.isShowBadChildWarning() == myShowBadChildWarnings.isSelected() &&
       myGenerationSettings.getNumberOfModelsToKeep() == getNumberOfModelsToKeep() &&
-      myGenerationSettings.getNumberOfParallelThreads() == ((Integer) myNumberOfParallelThreads.getValue()).intValue() &&
+      myGenerationSettings.getNumberOfParallelThreads() == ((Integer) myNumberOfParallelThreads.getValue()) &&
       myGenerationSettings.getPerformanceTracingLevel() == getTracingLevel() &&
       myGenerationSettings.isStrictMode() == myStrictMode.isSelected() &&
       myGenerationSettings.isIncremental() == myIncremental.isSelected() &&
@@ -338,7 +326,6 @@ class GenerationSettingsPreferencesPage {
 
   public void update() {
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
-    myGenerateRequirementsComboBox.setSelectedItem(myGenerationSettings.getGenerateRequirementsPolicy());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
     myIncremental.setSelected(myGenerationSettings.isIncremental());

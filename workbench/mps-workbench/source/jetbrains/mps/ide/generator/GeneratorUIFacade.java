@@ -17,11 +17,16 @@ package jetbrains.mps.ide.generator;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCacheContainer;
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
+import jetbrains.mps.generator.IGenerationSettings;
+import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
+import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -31,17 +36,28 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import javax.swing.*;
-import java.util.*;
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, Aug 24, 2010
@@ -64,111 +80,63 @@ public class GeneratorUIFacade {
    * @return false if canceled
    */
   public boolean generateModels(final IOperationContext operationContext,
-                  final List<? extends SModel> inputModels,
-                  final IGenerationHandler generationHandler,
-                  boolean rebuildAll,
-                  boolean skipRequirementsGeneration) {
-    return generateModelsWithProgressWindow(operationContext, inputModels, generationHandler, rebuildAll, skipRequirementsGeneration);
-  }
+      final List<? extends SModel> inputModels,
+      final IGenerationHandler generationHandler,
+      boolean rebuildAll,
+      boolean skipRequirementsGeneration) {
 
-  /**
-   * @return false if canceled
-   */
-  private boolean generateModelsWithProgressWindow(final IOperationContext invocationContext,
-                           final List<? extends SModel> inputModels,
-                           final IGenerationHandler generationHandler,
-                           final boolean rebuildAll, boolean skipRequirementsGeneration) {
     if (inputModels.isEmpty()) return true;
 
-    final Project project = invocationContext.getProject();
+    final Project project = operationContext.getProject();
     assert project != null : "Cannot generate models without a project";
 
     final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
-    final DefaultMessageHandler messages = new DefaultMessageHandler(ideaProject);
-    final GenerationSettings settings = GenerationSettings.getInstance();
-
-    // confirm saving transient models
-    final boolean saveTransientModels;
-    if (settings.isSaveTransientModels()) {
-      Object[] options = {
-        "Save Transient Models",
-        "Not this time",
-        "No, and cancel saving"};
-      int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(project),
-        "Would you like to save transient models?",
-        "",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        options,
-        options[0]);
-
-      if (option == 0) {
-        saveTransientModels = true;
-      } else {
-        saveTransientModels = false;
-        if (option == 2) {
-          settings.setSaveTransientModels(false);
-        }
-        if (option == -1) {
-          return false;
-        }
-      }
-    } else {
-      saveTransientModels = false;
-    }
 
     if (DumbService.getInstance(ideaProject).isDumb()) {
       DumbService.getInstance(ideaProject).showDumbModeNotification("Generation is not available until indices are built.");
       return false;
     }
 
-    if (!skipRequirementsGeneration && generateRequirements(settings)) {
-      boolean wasSaveTransientModels = settings.isSaveTransientModels();
-      try {
-        final Set<SModel> requirements = new LinkedHashSet<SModel>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            for (SModel inputModel : inputModels) {
-              requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel, project));
-            }
-          }
-        });
+    final IModifiableGenerationSettings settings = GenerationSettings.getInstance();
 
-        for (SModel inputModel : inputModels) {
-          requirements.remove(inputModel);
+    // confirm saving transient models
+    if (settings.isSaveTransientModels()) {
+      Object[] options = {
+          "Save Transient Models",
+          "Not this time",
+      };
+      int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(project),
+          "Would you like to save transient models?",
+          "",
+          JOptionPane.YES_NO_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null,
+          options,
+          options[0]);
+
+      if (option != 0) {
+        if (option == -1) {
+          return false;
         }
-
-        if (!requirements.isEmpty()) {
-          int result = 2;
-
-          if (false && settings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
-            final StringBuffer message = new StringBuffer("The following models might be required for generation\n" +
-              "but aren't generated. Do you want to generate them?\n");
-            for (SModel sm : requirements) {
-              message.append("\n").append(sm.getModelName());
-            }
-
-            if (!MPSCore.getInstance().isTestMode()) {
-              DialogWrapper questionDialog = new GenerateRequirementsDialog(ideaProject, settings, message.toString());
-              questionDialog.show();
-              result = questionDialog.getExitCode();
-            }
-          } else {
-            result = 0; // Answer YES implicitly
-          }
-
-          // dialog cancelled
-          if (result == 1) return false;
-          // answer was "yes"
-          if (result == 0) {
-            generateModels(invocationContext, new ArrayList<SModel>(requirements), getDefaultGenerationHandler(), rebuildAll, true);
-          }
-        }
-      } finally {
-        settings.setSaveTransientModels(wasSaveTransientModels);
+        settings.setSaveTransientModels(false);
       }
+    }
+
+    if (!skipRequirementsGeneration) {
+      final Set<SModel> requirements = new LinkedHashSet<SModel>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          for (SModel inputModel : inputModels) {
+            requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel, project));
+          }
+        }
+      });
+
+      for (SModel inputModel : inputModels) {
+        requirements.remove(inputModel);
+      }
+      generateModelsWithProgressWindow(operationContext, new ArrayList<SModel>(requirements), getDefaultGenerationHandler(), rebuildAll, settings);
     }
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -178,35 +146,49 @@ public class GeneratorUIFacade {
       }
     });
 
+
+    return generateModelsWithProgressWindow(operationContext, inputModels, generationHandler, rebuildAll, settings);
+  }
+
+  /**
+   * @return false if canceled
+   */
+  private boolean generateModelsWithProgressWindow(final IOperationContext invocationContext,
+      final List<? extends SModel> inputModels,
+      final IGenerationHandler generationHandler,
+      final boolean rebuildAll, final IGenerationSettings settings) {
+    if (inputModels.isEmpty()) return true;
+
+    final Project project = invocationContext.getProject();
+    assert project != null : "Cannot generate models without a project";
+
+    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
+
+
     showMessageView(ideaProject);
     IdeEventQueue.getInstance().flushQueue();
 
     final boolean[] result = new boolean[]{false};
+    final DefaultMessageHandler messages = new DefaultMessageHandler(ideaProject);
 
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
       @Override
       public void run(@NotNull ProgressMonitor monitor) {
-        final OptionsBuilder options = GenerationOptions.getDefaults()
-            .saveTransientModels(saveTransientModels)
-            .strictMode(settings.isStrictMode())
-            .rebuildAll(rebuildAll)
-            .incremental(new Strategy(settings))
-            .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
-            .tracing(settings.getPerformanceTracingLevel())
-            .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep());
+        final OptionsBuilder options = GenerationOptions.fromSettings(settings).incremental(new Strategy(settings));
 
         if (GenerationFacade.isLegacyGenTraceEnabled()) {
           IGenerationTracer tracer = ideaProject.getComponent(IGenerationTracer.class);
-          if (!saveTransientModels && tracer != null) {
-              tracer.discardTracing();
+          if (!settings.isSaveTransientModels() && tracer != null) {
+            tracer.discardTracing();
           }
-          if (saveTransientModels && tracer == null) {
+          if (settings.isSaveTransientModels() && tracer == null) {
             tracer = new NullGenerationTracer();
           }
           options.tracing(settings.getPerformanceTracingLevel(), tracer);
         }
 
-        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options.create(), ideaProject.getComponent(TransientModelsComponent.class));
+        final TransientModelsComponent tmc = ideaProject.getComponent(TransientModelsComponent.class);
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options.create(), tmc);
       }
     }, "Generation", true, invocationContext.getProject());
 
@@ -218,10 +200,6 @@ public class GeneratorUIFacade {
     if (messagesView != null) {
       messagesView.openToolLater(false);
     }
-  }
-
-  private boolean generateRequirements(GenerationSettings settings) {
-    return false && settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
   }
 
   private Collection<SModel> getModelsToGenerateBeforeGeneration(SModel model, Project project) {
@@ -252,10 +230,11 @@ public class GeneratorUIFacade {
     private final boolean myIncremental;
     private final GenerationCacheContainer myCache;
 
-    public Strategy(GenerationSettings settings) {
+    public Strategy(IGenerationSettings settings) {
       myIncremental = settings.isIncremental();
       myCache = myIncremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
     }
+
     @Override
     public Map<String, String> getModelHashes(SModel md, IOperationContext operationContext) {
       if (!(md instanceof GeneratableSModel)) return null;

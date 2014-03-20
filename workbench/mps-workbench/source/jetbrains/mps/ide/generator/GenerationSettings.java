@@ -22,9 +22,12 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
+import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -43,13 +46,14 @@ import javax.swing.JComponent;
     )
   }
 )
-public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IModifiableGenerationSettings {
+public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable {
 
-  public static GenerationSettings getInstance() {
-    return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
+  public static IModifiableGenerationSettings getInstance() {
+    final GenerationSettings gs = ApplicationManager.getApplication().getComponent(GenerationSettings.class);
+    return gs.getModifiableSettings();
   }
 
-  private MyState myState = new MyState();
+  private final DefaultModifiableGenerationSettings myState = new DefaultModifiableGenerationSettings();
   private GenerationSettingsPreferencesPage myPreferences;
 
   @Override
@@ -70,12 +74,64 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   @Override
   public MyState getState() {
-    return myState;
+    MyState persistentState = new MyState();
+    persistentState.mySaveTransientModels = myState.isSaveTransientModels();
+    persistentState.myCheckModelsBeforeGeneration = myState.isCheckModelsBeforeGeneration();
+    persistentState.myParallelGenerator = myState.isParallelGenerator();
+    persistentState.myStrictMode = myState.isStrictMode();
+    persistentState.myNumberOfParallelThreads = myState.getNumberOfParallelThreads();
+    persistentState.myPerformanceTracingLevel = myState.getPerformanceTracingLevel();
+    persistentState.myNumberOfModelsToKeep = myState.getNumberOfModelsToKeep();
+    persistentState.myShowInfo = myState.isShowInfo();
+    persistentState.myShowWarnings = myState.isShowWarnings();
+    persistentState.myKeepModelsWithWarnings = myState.isKeepModelsWithWarnings();
+    persistentState.myIncremental = myState.isIncremental();
+    persistentState.myIncrementalUseCache = myState.isIncrementalUseCache();
+    persistentState.myFailOnMissingTextGen = myState.isFailOnMissingTextGen();
+    persistentState.myGenerateDebugInfo = myState.isGenerateDebugInfo();
+    persistentState.myShowBadChildWarning = myState.isShowBadChildWarning();
+    persistentState.myDebugIncrementalDependencies = myState.isDebugIncrementalDependencies();
+    persistentState.myActiveInplaceTransform = myState.useInplaceTransofrmations();
+    GenTraceSettings gts = myState.getTraceSettings();
+    if (gts != null) {
+      persistentState.myTraceUseLegacy = false;
+      persistentState.myTraceCompactTemplates = gts.isCompactTemplates();
+      persistentState.myTraceGroupSteps = gts.isGroupByStep();
+      persistentState.myTraceShowEmptySteps = gts.isShowEmptySteps();
+    } else {
+      persistentState.myTraceUseLegacy = true;
+    }
+    return persistentState;
   }
 
   @Override
   public void loadState(MyState state) {
-    myState = state;
+    myState.setSaveTransientModels(state.mySaveTransientModels);
+    myState.setCheckModelsBeforeGeneration(state.myCheckModelsBeforeGeneration);
+    myState.setParallelGenerator(state.myParallelGenerator);
+    myState.setStrictMode(state.myStrictMode);
+    myState.setNumberOfParallelThreads(state.myNumberOfParallelThreads);
+    myState.setPerformanceTracingLevel(state.myPerformanceTracingLevel);
+    myState.setNumberOfModelsToKeep(state.myNumberOfModelsToKeep);
+    myState.setShowInfo(state.myShowInfo);
+    myState.setShowWarnings(state.myShowWarnings);
+    myState.setKeepModelsWithWarnings(state.myKeepModelsWithWarnings);
+    myState.setIncremental(state.myIncremental);
+    myState.setIncrementalUseCache(state.myIncrementalUseCache);
+    myState.setFailOnMissingTextGen(state.myFailOnMissingTextGen);
+    myState.setGenerateDebugInfo(state.myGenerateDebugInfo);
+    myState.setShowBadChildWarning(state.myShowBadChildWarning);
+    myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
+    myState.enableInplaceTransformations(state.myActiveInplaceTransform);
+    if (state.myTraceUseLegacy) {
+      GenTraceSettings gts = new GenTraceSettings();
+      gts.setCompactTemplates(state.myTraceCompactTemplates);
+      gts.setGroupByStep(state.myTraceGroupSteps);
+      gts.setShowEmptySteps(state.myTraceShowEmptySteps);
+      myState.setTraceSettings(gts);
+    } else {
+      myState.setTraceSettings(null);
+    }
   }
 
   @Override
@@ -121,6 +177,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myPreferences = null;
   }
 
+  @NotNull
   @Override
   public String getId() {
     return "generator.manager";
@@ -138,195 +195,32 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myPreferences;
   }
 
-
-  @Override
-  public boolean isSaveTransientModels() {
-    return myState.mySaveTransientModels;
+  public IModifiableGenerationSettings getModifiableSettings() {
+    return myState;
   }
 
-  @Override
-  public void setSaveTransientModels(boolean saveTransientModels) {
-    myState.mySaveTransientModels = saveTransientModels;
-  }
-
+  /**
+   * @deprecated This option is not in use since Make is in the game, 3 years now
+   */
   @Deprecated
-  public boolean isGenerateRequirements() {
-    return myState.myGenerateRequirements;
-  }
-
-  @Deprecated
-  public void setGenerateRequirements(boolean generateRequirements) {
-    myState.myGenerateRequirements = generateRequirements;
-  }
-
+  @ToRemove(version = 3.1)
   public GenerateRequirementsPolicy getGenerateRequirementsPolicy() {
-    return myState.myGenerateRequirementsPolicy;
+    return GenerateRequirementsPolicy.NEVER;
   }
 
+  /**
+   * @deprecated This option is not in use since Make is in the game, 3 years now
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public void setGenerateRequirementsPolicy(GenerateRequirementsPolicy generateRequirementsPolicy) {
-    myState.myGenerateRequirementsPolicy = generateRequirementsPolicy;
+    // no-op
   }
 
-  @Override
-  public boolean isCheckModelsBeforeGeneration() {
-    return myState.myCheckModelsBeforeGeneration;
-  }
-
-  @Override
-  public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
-    myState.myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
-  }
-
-  @Override
-  public boolean isParallelGenerator() {
-    return myState.myParallelGenerator;
-  }
-
-  @Override
-  public void setParallelGenerator(boolean useNewGenerator) {
-    myState.myParallelGenerator = useNewGenerator;
-  }
-
-  @Override
-  public boolean isStrictMode() {
-    return myState.myStrictMode;
-  }
-
-  @Override
-  public void setStrictMode(boolean strictMode) {
-    myState.myStrictMode = strictMode;
-  }
-
-  @Override
-  public int getNumberOfParallelThreads() {
-    return myState.myNumberOfParallelThreads;
-  }
-
-  @Override
-  public void setNumberOfParallelThreads(int coreNumber) {
-    myState.myNumberOfParallelThreads = coreNumber;
-  }
-
-  @Override
-  public int getPerformanceTracingLevel() {
-    return myState.myPerformanceTracingLevel;
-  }
-
-  @Override
-  public void setPerformanceTracingLevel(int performanceTracingLevel) {
-    myState.myPerformanceTracingLevel = performanceTracingLevel;
-  }
-
-  @Override
-  public int getNumberOfModelsToKeep() {
-    return myState.myNumberOfModelsToKeep;
-  }
-
-  @Override
-  public void setNumberOfModelsToKeep(int numberOfModelsToKeep) {
-    myState.myNumberOfModelsToKeep = numberOfModelsToKeep;
-  }
-
-  @Override
-  public boolean isShowInfo() {
-    return myState.myShowInfo;
-  }
-
-  @Override
-  public void setShowInfo(boolean showInfo) {
-    myState.myShowInfo = showInfo;
-  }
-
-  @Override
-  public boolean isShowWarnings() {
-    return myState.myShowWarnings;
-  }
-
-  @Override
-  public void setShowWarnings(boolean showWarnings) {
-    myState.myShowWarnings = showWarnings;
-  }
-
-  @Override
-  public boolean isKeepModelsWithWarnings() {
-    return myState.myKeepModelsWithWarnings;
-  }
-
-  @Override
-  public void setKeepModelsWithWarnings(boolean keepModelsWithWarnings) {
-    myState.myKeepModelsWithWarnings = keepModelsWithWarnings;
-  }
-
-  @Override
-  public boolean isIncremental() {
-    return myState.myIncremental;
-  }
-
-  @Override
-  public void setIncremental(boolean isIncremental) {
-    myState.myIncremental = isIncremental;
-  }
-
-  @Override
-  public boolean isIncrementalUseCache() {
-    return myState.myIncrementalUseCache;
-  }
-
-  @Override
-  public void setIncrementalUseCache(boolean incrementalUseCache) {
-    myState.myIncrementalUseCache = incrementalUseCache;
-  }
-
-  @Override
-  public boolean isDebugIncrementalDependencies() {
-    return myState.myDebugIncrementalDependencies;
-  }
-
-  @Override
-  public void setDebugIncrementalDependencies(boolean value) {
-    myState.myDebugIncrementalDependencies = value;
-  }
-
-  @Override
-  public boolean isFailOnMissingTextGen() {
-    return myState.myFailOnMissingTextGen;
-  }
-
-  @Override
-  public void setFailOnMissingTextGen(boolean fail) {
-    myState.myFailOnMissingTextGen = fail;
-  }
-
-  @Override
-  public boolean isGenerateDebugInfo() {
-    return myState.myGenerateDebugInfo;
-  }
-
-  @Override
-  public void setGenerateDebugInfo(boolean generateDebugInfo) {
-    myState.myGenerateDebugInfo = generateDebugInfo;
-  }
-
-  @Override
-  public boolean isShowBadChildWarning() {
-    return myState.myShowBadChildWarning;
-  }
-
-  @Override
-  public void setShowBadChildWarning(boolean showBadChildWarning) {
-    myState.myShowBadChildWarning = showBadChildWarning;
-  }
-
-  @Override
-  public void enableInplaceTransformations(boolean enabled) {
-    myState.myActiveInplaceTransform = enabled;
-  }
-
-  @Override
-  public boolean useInplaceTransofrmations() {
-    return myState.myActiveInplaceTransform;
-  }
-
+  /**
+   * @deprecated This option is not in use since Make is in the game, 3 years now
+   */
+  @Deprecated
   public enum GenerateRequirementsPolicy {
     ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
 
@@ -343,11 +237,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   public static class MyState {
     public boolean mySaveTransientModels;
-    public boolean myShowErrorsOnly;
-    // This is and outdated
-    @Deprecated
-    public boolean myGenerateRequirements = true;
-    public GenerateRequirementsPolicy myGenerateRequirementsPolicy = GenerateRequirementsPolicy.ASK;
     public boolean myCheckModelsBeforeGeneration = true;
     public boolean myParallelGenerator = false;
     public boolean myStrictMode = true;
@@ -364,5 +253,9 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myShowBadChildWarning = true;
     public boolean myDebugIncrementalDependencies = false;
     public boolean myActiveInplaceTransform = true;
+    public boolean myTraceUseLegacy = false;
+    public boolean myTraceGroupSteps = true;
+    public boolean myTraceCompactTemplates = false;
+    public boolean myTraceShowEmptySteps = false;
   }
 }
