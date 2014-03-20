@@ -144,11 +144,11 @@ public class GenTraceImpl implements GenerationTrace {
   }
 
   static void dispatch(Visitor v, Phase ph, Collection<Element> changes) {
-    v.step(ph.input, ph.output);
+    v.beginStep(ph.input, ph.output);
     for (Element e : changes) {
       v.change(new SNodePointer(ph.input, e.input), new SNodePointer(ph.output, e.output), e.template);
     }
-    // might be handy to dispatch v.stepDone() here
+    v.endStep(ph.input, ph.output);
   }
 
   /*package*/ static final class Element {
