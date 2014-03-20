@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.core.query.editor.MqlSS_StyleSheet;
 import jetbrains.mps.core.query.editor.delete_cachedProperty;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -40,11 +39,11 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dk6jhu_a");
     editorCell.setBig(true);
-    if (renderingCondition_dk6jhu_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_dk6jhu_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_dk6jhu_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_dk6jhu_b0(editorContext, node));
-    if (renderingCondition_dk6jhu_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_dk6jhu_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_dk6jhu_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createProperty_dk6jhu_d0(editorContext, node));
@@ -60,14 +59,14 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cached");
     editorCell.setCellId("Constant_dk6jhu_a0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_cachedProperty.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_dk6jhu_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_dk6jhu_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isCached");
   }
 
@@ -75,7 +74,7 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
     editorCell.setCellId("Constant_dk6jhu_b0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -93,7 +92,7 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_dk6jhu_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_dk6jhu_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "contextNode", true) != null);
   }
 
@@ -122,7 +121,7 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "::");
     editorCell.setCellId("Constant_dk6jhu_b2a");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -168,7 +167,7 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_dk6jhu_a4a");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -252,7 +251,7 @@ public class MqlModelQuery_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_dk6jhu_c4a");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil;
@@ -44,7 +43,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }
@@ -53,7 +52,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }
@@ -64,7 +63,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0a0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
       quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
       return quotedNode_1;
     }
@@ -72,7 +71,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0b0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
       quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
       return quotedNode_1;
     }

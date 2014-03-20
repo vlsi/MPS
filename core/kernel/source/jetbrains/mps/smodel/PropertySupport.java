@@ -38,21 +38,21 @@ public abstract class PropertySupport {
   /**
    * new validation method
    */
-  public boolean canSetValue(SNode node, String propertyName, String value, IScope scope, boolean nullsAlwaysAllowed) {
+  public boolean canSetValue(SNode node, String propertyName, String value, boolean nullsAlwaysAllowed) {
     if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
     if (value == null) value = "";
     if (!canSetValue(value)) return false;
     PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(propertyName);
-    return canSetValue(descriptor, node, propertyName, value, scope);
+    return canSetValue(descriptor, node, propertyName, value);
   }
 
-  public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, String propertyName, String value, IScope scope) {
+  public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, String propertyName, String value) {
     if (value == null) value = "";
-    return descriptor.validateValue(node, value, scope);
+    return descriptor.validateValue(node, value);
   }
 
-  public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
-    return canSetValue(node, propertyName, value, scope, true);
+  public boolean canSetValue(SNode node, String propertyName, String value) {
+    return canSetValue(node, propertyName, value, true);
   }
 
   /**

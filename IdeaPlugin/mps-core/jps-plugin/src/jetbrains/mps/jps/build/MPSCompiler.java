@@ -3,13 +3,15 @@ package jetbrains.mps.jps.build;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
-import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.impl.textgen.TextFacility;
+import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,7 +22,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.jps.incremental.messages.BuildMessage;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.module.JpsModule;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
@@ -91,31 +92,35 @@ public class MPSCompiler {
                 JpsModule jpsModule = solution.getModule();
 
                 // TODO targetDir
-                IFile targetDir = FileSystem.getInstance().getFileByPath(solution.getOutputFor(inputModel));
+                IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
                 // TODO caches in temp folder
                 IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
 
                 long startJobTime = System.currentTimeMillis();
 
-                boolean result = false;
                 if (status.isOk()) {
-                    JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, cachesDir, myProcessor);
-                    try {
-                        result = new TextGenerator(javaStreamHandler,
-                                BLDependenciesCache.getInstance().getGenerator(),
-                                TraceInfoCache.getInstance().getGenerator(),
-                                GenerationDependenciesCache.getInstance().getGenerator()
-                        ).handleOutput(invocationContext, status);
-                    } finally {
-                        javaStreamHandler.dispose();
-                    }
+                  JavaStreamHandler javaSourcesLocation = new JavaStreamHandler(inputModel, targetDir, myProcessor);
+                  JavaStreamHandler cachesLocation = new JavaStreamHandler(inputModel, cachesDir, myProcessor);
+                  TextFacility tf = new TextFacility(status);
+                  try {
+                    tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
+                    tf.produceTextModel();
+                    tf.serializeOutcome(javaSourcesLocation);
+                    CacheGenLayout cgl = new CacheGenLayout();
+                    cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
+                    cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
+                    cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
+                    tf.serializeCaches(cgl);
                     myContext.getCompileContext().processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, BuildMessage.Kind.INFO, "saving " + inputModel.getModelName() + " into " + targetDir.getPath()));
+                    if (!tf.getErrors().isEmpty()) {
+                      info("there were errors.");
+                      return false;
+                    }
+                  } finally {
+                    tf.dispose();
+                  }
                 }
 
-                if (!result) {
-                    info("there were errors.");
-                    return false;
-                }
                 if (myLogger.needsInfo()) {
                     myLogger.info("output generated in " + (System.currentTimeMillis() - startJobTime) + " ms");
                 }

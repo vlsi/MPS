@@ -71,19 +71,18 @@ public class any_type_subtypeOf_UpperBoundType_InequationReplacementRule extends
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_any_type_subtypeOf_UpperBoundType_m07fcb_a0a;
-        nodeToMatch_any_type_subtypeOf_UpperBoundType_m07fcb_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_any_type_subtypeOf_UpperBoundType_m07fcb_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_m07fcb_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_m07fcb_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_any_type_subtypeOf_UpperBoundType_m07fcb_ = "bound";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_any_type_subtypeOf_UpperBoundType_m07fcb_a0a, childRole_any_type_subtypeOf_UpperBoundType_m07fcb_, 1))) {
+          String childRole_m07fcb_ = "bound";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_m07fcb_a0a, childRole_m07fcb_, 1))) {
             return false;
           }
           {
-            SNode childVar_any_type_subtypeOf_UpperBoundType_m07fcb_a0a0 = IterableUtil.get(nodeToMatch_any_type_subtypeOf_UpperBoundType_m07fcb_a0a.getChildren(childRole_any_type_subtypeOf_UpperBoundType_m07fcb_), 0);
-            this.patternVar_TYPE = childVar_any_type_subtypeOf_UpperBoundType_m07fcb_a0a0;
+            SNode childVar_m07fcb_a0a0 = IterableUtil.get(nodeToMatch_m07fcb_a0a.getChildren(childRole_m07fcb_), 0);
+            this.patternVar_TYPE = childVar_m07fcb_a0a0;
           }
         }
       }

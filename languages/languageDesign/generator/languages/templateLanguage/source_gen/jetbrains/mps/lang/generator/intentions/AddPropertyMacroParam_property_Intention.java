@@ -6,10 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -17,8 +14,10 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -61,11 +60,10 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node);
-    if (sm == null || !(sm.getModule() instanceof Generator)) {
+    if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
-    return QueriesUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
+    return EditingUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -92,17 +90,21 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     if (sourceNode == null) {
       return null;
     }
-    String propertyName = QueriesUtil.getEditedPropertyName(editorContext.getSelectedCell());
+    final String propertyName = EditingUtil.getEditedPropertyName(editorContext.getSelectedCell());
     if (propertyName == null) {
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)) {
-      SNode propertyDeclaration = SNodeOperations.cast(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-      if (propertyDeclaration == null) {
-        continue;
+    SNode propertyDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getConceptDeclaration(node), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return propertyName.equals(SPropertyOperations.getString(it, "name"));
       }
-      SNode property = SLinkOperations.getTarget(propertyDeclaration, "dataType", false);
+    }).first();
+    if (propertyDeclaration == null) {
+      return result;
+    }
+    SNode property = SLinkOperations.getTarget(propertyDeclaration, "dataType", false);
+    for (SNode propertySource : SLinkOperations.getTargets(sourceNode, "propertyDeclaration", true)) {
       if (property == SLinkOperations.getTarget(propertySource, "dataType", false)) {
         ListSequence.fromList(result).addElement(propertySource);
       }
@@ -122,7 +124,7 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
+      SNode propertyMacro = EditingUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       SNode propertyValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", null);
       SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode propertyAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SPropertyAccess", null);

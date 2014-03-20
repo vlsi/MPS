@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -38,7 +37,7 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name") + "$anonymous";
       }
@@ -49,7 +48,7 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
         return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9$.[_]]*");
       }

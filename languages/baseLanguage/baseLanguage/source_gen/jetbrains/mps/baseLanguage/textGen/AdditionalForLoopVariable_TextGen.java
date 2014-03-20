@@ -6,14 +6,13 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class AdditionalForLoopVariable_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append(SPropertyOperations.getString(node, "name"));
     if ((SLinkOperations.getTarget(node, "initializer", true) != null)) {
       this.append(" = ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "initializer", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "initializer", true));
     }
   }
 }

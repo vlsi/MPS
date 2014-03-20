@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -34,11 +33,11 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_xoe8gq_a");
     editorCell.setBig(true);
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
-    if (renderingCondition_xoe8gq_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xoe8gq_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_xoe8gq_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_xoe8gq_b0(editorContext, node));
-    if (renderingCondition_xoe8gq_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xoe8gq_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_xoe8gq_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_xoe8gq_d0(editorContext, node));
@@ -49,13 +48,13 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xoe8gq_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
@@ -83,20 +82,20 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xoe8gq_c0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
   private EditorCell createComponent_xoe8gq_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.SELECTABLE, true);

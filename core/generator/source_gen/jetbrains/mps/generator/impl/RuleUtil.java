@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
-public class RuleUtil {
+public final class RuleUtil {
   public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
   public static final String concept_ITemplateCall = "jetbrains.mps.lang.generator.structure.ITemplateCall";
   public static final String concept_NodeMacro = "jetbrains.mps.lang.generator.structure.NodeMacro";
@@ -82,14 +82,12 @@ public class RuleUtil {
     NodeMacroConcepts.add(concept_NodeMacro);
   }
 
-
-  public RuleUtil() {
+  public static boolean isNodeMacro(SNode n) {
+    return isNodeMacro(n.getConcept().getQualifiedName());
   }
 
-
-
-  public static boolean isNodeMacro(SNode n) {
-    return NodeMacroConcepts.contains(n.getConcept().getQualifiedName());
+  public static boolean isNodeMacro(String conceptQualifiedName) {
+    return NodeMacroConcepts.contains(conceptQualifiedName);
   }
 
   private static String getMappingLabelName(SNode mappingLabelDeclaration) {

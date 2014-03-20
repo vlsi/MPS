@@ -12,9 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class MqlListLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -31,12 +31,12 @@ public class MqlListLiteral_Behavior {
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
     SNode inner = (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).count() > 0 ? SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).first(), "virtual_getType_228266671027861783", new Object[]{})) : SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlNullType", null));
-    return createMqlListType_j7h8uc_a1a1(inner);
+    return createMqlListType_j7h8uc_a1a1(SNodeOperations.cast(HUtil.copyIfNecessary(inner), "jetbrains.mps.core.query.structure.MqlType"));
   }
 
   private static SNode createMqlListType_j7h8uc_a1a1(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlListType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlListType", null, false);
     n1.addChild("inner", (SNode) p0);
     return n1;
   }

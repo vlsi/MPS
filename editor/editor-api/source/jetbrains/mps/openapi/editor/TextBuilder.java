@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.openapi.editor;
 
-import java.util.List;
-
 /**
  * Semen Alperovich
  * 02 21, 2013

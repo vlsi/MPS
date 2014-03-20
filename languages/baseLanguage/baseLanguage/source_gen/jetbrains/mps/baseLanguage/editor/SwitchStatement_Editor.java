@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -41,10 +40,10 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nmr9ig_a");
     editorCell.setBig(true);
-    if (renderingCondition_nmr9ig_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nmr9ig_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_nmr9ig_a0(editorContext, node));
     }
-    if (renderingCondition_nmr9ig_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nmr9ig_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_nmr9ig_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_nmr9ig_c0(editorContext, node));
@@ -69,7 +68,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nmr9ig_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nmr9ig_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -81,7 +80,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLabel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Label(style, editorCell);
     editorCell.getStyle().putAll(style);
     AbstractLoopStatement_Label_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -117,7 +116,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nmr9ig_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nmr9ig_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "switchLabel", true) != null);
   }
 
@@ -152,7 +151,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "switch");
     editorCell.setCellId("Constant_nmr9ig_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -163,7 +162,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_nmr9ig_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -193,7 +192,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_nmr9ig_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -203,7 +202,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_nmr9ig_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -276,7 +275,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_nmr9ig_a8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -320,7 +319,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_nmr9ig_j0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

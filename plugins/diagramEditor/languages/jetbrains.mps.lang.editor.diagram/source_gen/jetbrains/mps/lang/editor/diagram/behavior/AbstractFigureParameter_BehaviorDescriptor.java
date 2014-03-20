@@ -8,7 +8,7 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public abstract class AbstractFigureParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class AbstractFigureParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public AbstractFigureParameter_BehaviorDescriptor() {
   }
 

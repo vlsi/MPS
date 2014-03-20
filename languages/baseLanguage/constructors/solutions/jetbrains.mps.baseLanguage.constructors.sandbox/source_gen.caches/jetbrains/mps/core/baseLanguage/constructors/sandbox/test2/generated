@@ -1,18 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-co219tf1r7ts2k36r48dvnt2i188c9q">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:4585c4f5-78b3-42ea-9ce3-0cb556c61190(jetbrains.mps.baseLanguage.constructors.generator.template.main@generator)" hash="-7qxdvz10k9rplmj6io72wylf33cxam0" />
-  <common hash="bk8u6lk326x49hq7z27sgrxyfnhhmsm" />
-  <source id="3391577739832808340" name="test" hash="-56f88rt94hzhr17s3u0zlbqsf2w4gns">
-    <dep root="4413962600136177711" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:4585c4f5-78b3-42ea-9ce3-0cb556c61190(jetbrains.mps.baseLanguage.constructors.generator.template.main@generator)" />
-    <file name="test.java" />
-  </source>
-  <source id="4413962600136177711" name="Rectangle" hash="88jpr6wpx8uz7ul7w2ianuu85v14nt1">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:4585c4f5-78b3-42ea-9ce3-0cb556c61190(jetbrains.mps.baseLanguage.constructors.generator.template.main@generator)" />
-    <file name="Rectangle.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-co219tf1r7ts2k36r48dvnt2i188c9q" />
 

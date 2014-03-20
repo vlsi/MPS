@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -49,7 +48,7 @@ public class SConceptAnnotationType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept annotation");
     editorCell.setCellId("Constant_qbpxbr_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -75,7 +74,7 @@ public class SConceptAnnotationType_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_qbpxbr_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SConceptAnnotationType_Editor.renderingCondition_qbpxbr_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SConceptAnnotationType_Editor.renderingCondition_qbpxbr_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_qbpxbr_a2a(editorContext, node);
@@ -85,7 +84,7 @@ public class SConceptAnnotationType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qbpxbr_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qbpxbr_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "members", true)).isNotEmpty();
   }
 
@@ -93,7 +92,7 @@ public class SConceptAnnotationType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qbpxbr_a2a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
@@ -106,7 +105,7 @@ public class SConceptAnnotationType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qbpxbr_a2a_0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -182,7 +181,7 @@ public class SConceptAnnotationType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_qbpxbr_e0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

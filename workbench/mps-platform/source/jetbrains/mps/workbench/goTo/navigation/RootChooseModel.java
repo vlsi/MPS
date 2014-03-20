@@ -25,7 +25,6 @@ import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -56,7 +55,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   }
 
   @Override
-  public NavigationTarget[] find(final IScope scope) {
+  public NavigationTarget[] find(final SearchScope scope) {
     Collection<NavigationTarget> nodes = GotoNavigationUtil.getNavigationTargets(TargetKind.ROOT, scope, new EmptyProgressMonitor());
     return nodes.toArray(new NavigationTarget[nodes.size()]);
   }

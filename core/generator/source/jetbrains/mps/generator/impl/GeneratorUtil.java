@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
@@ -47,14 +46,14 @@ public class GeneratorUtil {
     return args.toArray(new SNode[args.size()]);
   }
 
-  private static String[] getParameters(SNode templateCall, ITemplateGenerator generator) {
+  private static String[] getParameters(SNode templateCall, IGeneratorLogger log) {
     final SNode template = RuleUtil.getTemplateCall_Template(templateCall);
     if (template == null) {
       return null;
     }
     String[] templateDeclarationParameterNames = RuleUtil.getTemplateDeclarationParameterNames(template);
     if(templateDeclarationParameterNames == null) {
-      generator.showErrorMessage(null, template, "broken template");
+      log.error(template.getReference(), "broken template");
       return null;
     }
     return templateDeclarationParameterNames.length == 0 ? null : templateDeclarationParameterNames;
@@ -72,15 +71,15 @@ public class GeneratorUtil {
   @NotNull
   static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
     final SNode[] arguments = getArguments(templateCall);
-    final ITemplateGenerator generator = env.getGenerator();
-    final String[] parameters = getParameters(templateCall, generator);
+    final IGeneratorLogger log = env.getLogger();
+    final String[] parameters = getParameters(templateCall, log);
 
     if (arguments == null && parameters == null) {
-      return outerContext.subContext(null, newInputNode);
+      return outerContext.subContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
-      generator.showErrorMessage(outerContext.getInput(), templateCall, "number of arguments doesn't match template");
-      return outerContext.subContext(null, newInputNode);
+      log.error(templateCall.getReference(), "number of arguments doesn't match template", GeneratorUtil.describeInput(outerContext));
+      return outerContext.subContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
@@ -89,17 +88,19 @@ public class GeneratorUtil {
       String name = parameters[i];
       Object value = null;
 
-      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression)) && outerContext != null) {
+      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
         SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
         if (parameter == null) {
-          generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
+          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference",
+              GeneratorUtil.describeInput(outerContext));
         } else {
           value = outerContext.getVariable(parameter.getName());
         }
-      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef)) && outerContext != null) {
+      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
         String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
         if (patternVar == null) {
-          generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
+          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference",
+              GeneratorUtil.describeInput(outerContext));
         } else {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(patternVar);
@@ -112,14 +113,16 @@ public class GeneratorUtil {
           try {
             value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
           } catch(IllegalArgumentException ex) {
-            generator.showErrorMessage(outerContext.getInput(), templateCall, "cannot evaluate template argument #" + (i + 1));
+            log.error(templateCall.getReference(), String.format("cannot evaluate template argument #%d: %s", i + 1, ex.toString()),
+                GeneratorUtil.describeInput(outerContext));
           }
         }
       }
 
       vars.put(name, value);
     }
-    return new DefaultTemplateContext(null, vars, newInputNode);
+    // variables drop mapping label, hence need to reinstall it
+    return outerContext.subContext(vars).subContext(outerContext.getInputName(), newInputNode);
   }
 
 
@@ -129,10 +132,11 @@ public class GeneratorUtil {
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
       String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + SNodeUtil.getDebugText(pair.o1) : "");
+      SNodeReference nr = pair.o1 == null ? null : pair.o1.getReference();
       if (error) {
-        logger.error(pair.o1, logMessage);
+        logger.error(nr, logMessage);
       } else {
-        logger.info(pair.o1, logMessage);
+        logger.info(nr, logMessage);
       }
       if (indentInc && indent.length() >= 80) {
         indentInc = false;
@@ -148,12 +152,55 @@ public class GeneratorUtil {
     }
   }
 
+  public static ProblemDescription describeInput(TemplateContext ctx) {
+    return ctx == null ? null : describeIfExists(ctx.getInput(), "input node");
+  }
+
   public static ProblemDescription describe(SNode node, String nodeRole) {
-    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : SNodeUtil.getDebugText(node)));
+    SNodeReference nr;
+    String msg;
+    if (node == null) {
+      nr = null;
+      msg = "null";
+    } else {
+      nr = node.getReference();
+      msg = SNodeUtil.getDebugText(node);
+    }
+    return new ProblemDescription(nr, String.format("was %s: %s", nodeRole, msg));
+  }
+
+  public static ProblemDescription describe(@Nullable SNodeReference node, String nodeRole) {
+    String msg;
+    if (node == null) {
+      msg = String.format("was %s: <unknown node reference>", nodeRole);
+    } else {
+      msg = String.format("was %s: %s", nodeRole, node.toString());
+    }
+    return new ProblemDescription(node, msg);
+  }
+  public static ProblemDescription describeIfExists(@Nullable SNodeReference node, String nodeRole) {
+    if (node == null) {
+      return null;
+    }
+    return describe(node, nodeRole);
   }
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
-    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + SNodeUtil.getDebugText(node)) : null;
+    if (node != null) {
+      return new ProblemDescription(node.getReference(), String.format("-- was %s: %s", nodeRole, SNodeUtil.getDebugText(node)));
+    }
+    return null;
+  }
+
+  public static void log(@NotNull IGeneratorLogger log, @NotNull SNodeReference templateNode, @Nullable MessageType messageType, @Nullable String text,
+      @Nullable ProblemDescription... extra) {
+    if (messageType == MessageType.error) {
+      log.error(templateNode, String.valueOf(text), extra);
+    } else if (messageType == MessageType.warning) {
+      log.warning(templateNode, String.valueOf(text), extra);
+    } else {
+      log.info(templateNode, String.valueOf(text));
+    }
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {
@@ -162,35 +209,6 @@ public class GeneratorUtil {
     T[] result = Arrays.copyOf(arr1, arr1.length + arr2.length);
     System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
     return result;
-  }
-
-  public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
-    if (ModelAccess.instance().canRead() && !ModelAccess.instance().canWrite()) {
-      return c.compute();
-    }
-    throw new UnsupportedOperationException("no read from write");
-//    try {
-//      return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {
-//        @Override
-//        public T compute() {
-//          try {
-//            return c.compute();
-//          } catch (GenerationFailureException e) {
-//            throw new RuntimeException(e);
-//          } catch (GenerationCanceledException e) {
-//            throw new RuntimeException(e);
-//          }
-//        }
-//      });
-//    } catch (RuntimeException th) {
-//      Throwable inner = th.getCause();
-//      if (inner instanceof GenerationFailureException) {
-//        throw (GenerationFailureException) inner;
-//      } else if (inner instanceof GenerationCanceledException) {
-//        throw (GenerationCanceledException) inner;
-//      }
-//      throw th;
-//    }
   }
 
   public static String getTemplateNodeId(SNode templateNode) {

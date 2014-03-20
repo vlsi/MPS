@@ -4,243 +4,138 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
-  @Deprecated
-  public static Style getRootCellModelStyle(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    return style;
+  public static void apply_rootCellModelStyle(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
 
-  @Deprecated
-  public static Style getStyle(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
+  public static void apply_style(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  @Deprecated
-  public static Style getReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
+  public static void apply_reference(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
   }
 
-  @Deprecated
-  public static Style getItem(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
+  public static void apply_item(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  @Deprecated
-  public static Style getHeader(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
+  public static void apply_header(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.UNDERLINED, 0, true);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  @Deprecated
-  public static Style getProperty(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    return style;
+  public static void apply_property(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  @Deprecated
-  public static Style getBordered(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    return style;
+  public static void apply_bordered(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
 
-  @Deprecated
-  public static Style getBorderedCollection(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    return style;
+  public static void apply_borderedCollection(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
 
-  @Deprecated
-  public static Style getTag(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "tag");
-    return style;
+  public static void apply_tag(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "tag");
   }
 
-  @Deprecated
-  public static Style getAttributedCellLabel(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    return style;
+  public static void apply_attributedCellLabel(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.UNDERLINED, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
   }
 
-  @Deprecated
-  public static Style getString(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
-    return style;
+  public static void apply_string(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("STRING");
+      style.putAll(styleToPut, 0);
+    }
   }
 
-  @Deprecated
-  public static Style getAnyBracket(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    return style;
+  public static void apply_AnyBracket(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
 
-  @Deprecated
-  public static Style getParenthesis(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getAnyBracket(editorCell));
-    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
-    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
-    return style;
+  public static void apply_Parenthesis(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Styles_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("PARENTH");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
 
-  @Deprecated
-  public static Style getLeftParen(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    return style;
+  public static void apply_LeftParen(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Styles_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
-  @Deprecated
-  public static Style getRightParen(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    return style;
+  public static void apply_RightParen(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Styles_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
-  @Deprecated
-  public static Style getLeftParenAfterName(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getLeftParen(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    return style;
+  public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Styles_StyleSheet.apply_LeftParen(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
-  @Deprecated
-  public static Style getKeyWord(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
-    return style;
+  public static void apply_KeyWord(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("KEYWORD");
+      style.putAll(styleToPut, 0);
+    }
   }
 
-  public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.DRAW_BORDER, true);
-  }
 
-  public static void applyStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-  }
-
-  public static void applyReference(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-  }
-
-  public static void applyItem(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-  }
-
-  public static void applyHeader(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-  }
-
-  public static void applyProperty(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-  }
-
-  public static void applyBordered(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.DRAW_BORDER, true);
-  }
-
-  public static void applyBorderedCollection(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.DRAW_BORDER, true);
-  }
-
-  public static void applyTag(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.MATCHING_LABEL, "tag");
-  }
-
-  public static void applyAttributedCellLabel(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-  }
-
-  public static void applyString(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
-  }
-
-  public static void applyAnyBracket(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-  }
-
-  public static void applyParenthesis(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyAnyBracket(style, editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
-    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
-  }
-
-  public static void applyLeftParen(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyParenthesis(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-  }
-
-  public static void applyRightParen(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyParenthesis(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-  }
-
-  public static void applyLeftParenAfterName(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyLeftParen(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-  }
-
-  public static void applyKeyWord(Style style, EditorCell editorCell) {
-    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
-  }
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {

@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGen;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -210,7 +210,7 @@ public class GenerationDependencies {
 
   public static String getFileName(SNode outputRootNode) {
     // TODO refactor, use DefaultFileGenerator.getFileName
-    String extension = TextGenManager.instance().getExtension(outputRootNode);
+    String extension = TextGen.getExtension(outputRootNode);
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 

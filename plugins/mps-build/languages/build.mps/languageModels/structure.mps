@@ -800,6 +800,10 @@
       <property name="name" nameId="tpck.1169194664001" value="generationMaxHeapSizeInMb" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="353547257300482730" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="generationMaxPermSizeInMb" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469340766" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSourcePath" />
@@ -892,6 +896,31 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631452" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="tests" />
       <property name="internalValue" nameId="tpce.1083923523171" value="tests" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4297162197620964123" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
+    <property name="name" nameId="tpck.1169194664001" value="BuildMps_GeneratorOptions" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generator options" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197620978188" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="strict" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197620978190" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="parallel" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197620978193" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="parallelThreads" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197621031140" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="inplace" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4297162197621031138" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
 </model>

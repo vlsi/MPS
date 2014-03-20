@@ -76,19 +76,18 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_list_covariant_with_extends_l7cfoj_a0a;
-        nodeToMatch_list_covariant_with_extends_l7cfoj_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_l7cfoj_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_l7cfoj_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_list_covariant_with_extends_l7cfoj_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a, childRole_list_covariant_with_extends_l7cfoj_, 1))) {
+          String childRole_l7cfoj_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_l7cfoj_a0a, childRole_l7cfoj_, 1))) {
             return false;
           }
           {
-            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0 = IterableUtil.get(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a.getChildren(childRole_list_covariant_with_extends_l7cfoj_), 0);
-            this.patternVar_sub = childVar_list_covariant_with_extends_l7cfoj_a0a0;
+            SNode childVar_l7cfoj_a0a0 = IterableUtil.get(nodeToMatch_l7cfoj_a0a.getChildren(childRole_l7cfoj_), 0);
+            this.patternVar_sub = childVar_l7cfoj_a0a0;
           }
         }
       }
@@ -124,32 +123,30 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0;
-        nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_l7cfoj_a0a_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_l7cfoj_a0a_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_list_covariant_with_extends_l7cfoj__0 = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0, childRole_list_covariant_with_extends_l7cfoj__0, 1))) {
+          String childRole_l7cfoj__0 = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_l7cfoj_a0a_0, childRole_l7cfoj__0, 1))) {
             return false;
           }
           {
-            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0_0 = IterableUtil.get(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0.getChildren(childRole_list_covariant_with_extends_l7cfoj__0), 0);
+            SNode childVar_l7cfoj_a0a0_0 = IterableUtil.get(nodeToMatch_l7cfoj_a0a_0.getChildren(childRole_l7cfoj__0), 0);
             {
-              SNode nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0;
-              nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0 = childVar_list_covariant_with_extends_l7cfoj_a0a0_0;
-              if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_l7cfoj_a0a0 = childVar_l7cfoj_a0a0_0;
+              if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_l7cfoj_a0a0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
-                String childRole_list_covariant_with_extends_l7cfoj__1 = "bound";
-                if (!(PatternUtil.hasNChildren(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0, childRole_list_covariant_with_extends_l7cfoj__1, 1))) {
+                String childRole_l7cfoj__1 = "bound";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_l7cfoj_a0a0, childRole_l7cfoj__1, 1))) {
                   return false;
                 }
                 {
-                  SNode childVar_list_covariant_with_extends_l7cfoj_a0a0a = IterableUtil.get(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getChildren(childRole_list_covariant_with_extends_l7cfoj__1), 0);
-                  this.patternVar_super = childVar_list_covariant_with_extends_l7cfoj_a0a0a;
+                  SNode childVar_l7cfoj_a0a0a = IterableUtil.get(nodeToMatch_l7cfoj_a0a0.getChildren(childRole_l7cfoj__1), 0);
+                  this.patternVar_super = childVar_l7cfoj_a0a0a;
                 }
               }
             }

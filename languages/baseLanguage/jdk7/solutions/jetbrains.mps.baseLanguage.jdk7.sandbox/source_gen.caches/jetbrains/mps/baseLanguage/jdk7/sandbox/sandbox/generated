@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-45w55b1bviojxmjvu71r2fgntb9an08">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="73s04imxenyleu8p45seh4qi9cxhbfa" />
-  <source id="616711547385063562" name="TestClass" hash="-2z9cx10scamp97ynblagk4l1gycuoy1">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="TestClass.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-45w55b1bviojxmjvu71r2fgntb9an08" />
 

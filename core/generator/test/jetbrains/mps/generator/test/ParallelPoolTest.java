@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GenerationTaskPool;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.apache.log4j.LogManager;
@@ -38,27 +37,19 @@ public class ParallelPoolTest extends TestCase {
 
   private static class CustomTask implements GenerationTask {
     private AtomicBoolean isFinished = new AtomicBoolean(false);
-    private AtomicBoolean isCancelled = new AtomicBoolean(false);
 
     private final long amountOfWork;
-    private final GenerationTaskPool taskPool;
 
-    private CustomTask(long amountOfWork, GenerationTaskPool taskPool) {
+    private CustomTask(long amountOfWork) {
       this.amountOfWork = amountOfWork;
-      this.taskPool = taskPool;
     }
 
     public boolean isFinished() {
       return isFinished.get();
     }
 
-    public boolean isCancelled() {
-      return isCancelled.get();
-    }
-
     @Override
     public void run() throws GenerationCanceledException, GenerationFailureException {
-      isCancelled.set(true);
       isFinished.set(false);
       long localCounter = amountOfWork;
       long fract = 1;
@@ -74,17 +65,22 @@ public class ParallelPoolTest extends TestCase {
           fractCounter--;
         }
         localCounter -= fract;
-        if (taskPool.isCancelled()) return;
       }
       long end = System.currentTimeMillis();
       LOG.info("Took " + (end - start) / 1000. + " secs");
-      isCancelled.set(false);
       isFinished.set(true);
+    }
+  }
+
+  private static class CancelTask extends CustomTask {
+    public CancelTask(long delay) {
+      super(delay);
     }
 
     @Override
-    public boolean requiresReadAccess() {
-      return false;
+    public void run() throws GenerationCanceledException, GenerationFailureException {
+      super.run();
+      throw new GenerationCanceledException();
     }
   }
 
@@ -113,10 +109,10 @@ public class ParallelPoolTest extends TestCase {
     return amountOfWork;
   }
 
-  private CustomTask[] createTasks(long amountOfWork, int numberOfTasks, GenerationTaskPool taskPool) {
-    List<GenerationTask> tasks = new ArrayList<GenerationTask>();
+  private static CustomTask[] createTasks(long amountOfWork, int numberOfTasks) {
+    List<CustomTask> tasks = new ArrayList<CustomTask>();
     for (int i = 0; i < numberOfTasks; i++) {
-      tasks.add(new CustomTask(amountOfWork, taskPool));
+      tasks.add(new CustomTask(amountOfWork));
     }
     return tasks.toArray(new CustomTask[numberOfTasks]);
   }
@@ -132,8 +128,8 @@ public class ParallelPoolTest extends TestCase {
     LOG.info("Work amount: " + amountFor2secs + " ticks");
 
     long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressMonitor(), 4);
-    final CustomTask[] generationTasks = createTasks(amountFor2secs, 4, pool);
+    GenerationTaskPool pool = new GenerationTaskPool(4);
+    final CustomTask[] generationTasks = createTasks(amountFor2secs, 4);
     for (GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
@@ -165,40 +161,10 @@ public class ParallelPoolTest extends TestCase {
     }
 
     long amountFor2secs = get2SecsOperation();
+    long duration = doCancelTest(amountFor2secs * 4, 0, 1000);
 
-    long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressMonitor() {
-      @Override
-      public boolean isCanceled() {
-        return true;
-      }
-    }, 4);
-    final CustomTask[] generationTasks = createTasks(amountFor2secs * 4, 4, pool);
-    for (GenerationTask t : generationTasks) {
-      pool.addTask(t);
-    }
-
-    boolean canceledExc = false;
-    try {
-      Thread.sleep(1000);
-      pool.waitForCompletion();
-    } catch (GenerationCanceledException e) {
-      canceledExc = true;
-    } catch (GenerationFailureException e) {
-    } catch (InterruptedException e) {
-    }
-    Assert.assertTrue(canceledExc);
-
-    long end = System.currentTimeMillis();
-
-    for (CustomTask t : generationTasks) {
-      Assert.assertTrue("task should be cancelled", t.isCancelled());
-      Assert.assertFalse("task should not be finished", t.isFinished());
-    }
-
-    LOG.info("Total " + (end - start) / 1000. + " seconds, when cancelled after 1 sec.");
-    Assert.assertTrue((end - start) < 1500 && (end - start) > 970);
-    pool.dispose();
+    LOG.info("Total " + duration / 1000. + " seconds, when cancelled after 1 sec.");
+    Assert.assertTrue(duration < 1500 && duration > 970);
   }
 
   public void testPoolCancelling2() {
@@ -209,36 +175,42 @@ public class ParallelPoolTest extends TestCase {
     }
 
     long amountFor2secs = get2SecsOperation();
+    long duration = doCancelTest(amountFor2secs * 4, Math.round(amountFor2secs * 0.8), 0);
+
+    LOG.info("Total " + duration / 1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");
+    Assert.assertTrue(duration < 2300 && duration > 1700);
+  }
+
+  private long doCancelTest(long taskWork, long cancelDelayWork, long msPoolWaitDelay) {
+
     final long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressMonitor() {
-      @Override
-      public boolean isCanceled() {
-        return (System.currentTimeMillis() - start > 1600);
-      }
-    }, 4);
-    final CustomTask[] generationTasks = createTasks(amountFor2secs * 4, 4, pool);
+    GenerationTaskPool pool = new GenerationTaskPool(4);
+    final CustomTask[] generationTasks = createTasks(taskWork, 4);
+    pool.addTask(new CancelTask(cancelDelayWork));
     for (GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
 
     boolean canceledExc = false;
     try {
+      if (msPoolWaitDelay > 0) {
+        // let the pool detect cancellation after specified delay
+        Thread.sleep(msPoolWaitDelay);
+      }
       pool.waitForCompletion();
     } catch (GenerationCanceledException e) {
       canceledExc = true;
     } catch (GenerationFailureException e) {
+    } catch (InterruptedException ex) {
     }
+    pool.dispose();
     Assert.assertTrue(canceledExc);
 
     long end = System.currentTimeMillis();
 
     for (CustomTask t : generationTasks) {
-      Assert.assertTrue("task should be cancelled", t.isCancelled());
       Assert.assertFalse("task should not be finished", t.isFinished());
     }
-
-    LOG.info("Total " + (end - start) / 1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");
-    Assert.assertTrue((end - start) < 2300 && (end - start) > 1700);
-    pool.dispose();
+    return end - start;
   }
 }

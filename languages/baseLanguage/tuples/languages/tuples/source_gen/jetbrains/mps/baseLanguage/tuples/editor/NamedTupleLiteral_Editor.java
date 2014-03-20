@@ -72,7 +72,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ulpguu_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -162,7 +162,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ulpguu_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

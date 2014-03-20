@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
@@ -47,7 +46,7 @@ public final class TextGenBuffer {
   private int myCurrBuffer = 1;
   private HashMap myUserObjects = new HashMap();
 
-  private int myIndent = 2;
+  private final int myIndent = 2;
   private int myDepth = 0;
   private boolean myContainsErrors = false;
   private List<IMessage> myErrors = new ArrayList<IMessage>();
@@ -95,14 +94,7 @@ public final class TextGenBuffer {
 
   public void foundError(String error, @Nullable SNode node, @Nullable Throwable t) {
     myContainsErrors = true;
-    if (t != null) {
-      error += " (right-click to see exception)";
-    }
-    Message m = prepare(MessageKind.ERROR, error, node);
-    if (t != null) {
-      m.setException(t);
-    }
-    myErrors.add(m);
+    myErrors.add(prepare(MessageKind.ERROR, error, node).setException(t));
   }
 
   private Message prepare(MessageKind kind, String text, @Nullable SNode node) {

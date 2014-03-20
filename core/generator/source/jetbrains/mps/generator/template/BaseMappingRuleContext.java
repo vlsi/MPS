@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,11 @@ public class BaseMappingRuleContext extends TemplateQueryContextWithRule {
   public BaseMappingRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
-  public BaseMappingRuleContext(SNode inputNode, TemplateContext context, SNode ruleNode, ITemplateGenerator generator) {
-    super(inputNode, context, ruleNode, generator);
-  }
-
   public BaseMappingRuleContext(SNode inputNode, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 
-  public BaseMappingRuleContext(SNode inputNode, TemplateContext context, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(inputNode, context, ruleNode, generator);
+  public BaseMappingRuleContext(@NotNull TemplateContext context, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
+    super(context, ruleNode, generator);
   }
 }

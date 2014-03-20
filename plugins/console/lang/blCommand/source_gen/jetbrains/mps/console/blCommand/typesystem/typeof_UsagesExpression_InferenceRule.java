@@ -11,7 +11,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 
 public class typeof_UsagesExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_UsagesExpression_InferenceRule() {
@@ -51,8 +50,8 @@ public class typeof_UsagesExpression_InferenceRule extends AbstractInferenceRule
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CollectionType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SReferenceType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CollectionType", null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SReferenceType", null, null, false);
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
@@ -60,7 +59,7 @@ public class typeof_UsagesExpression_InferenceRule extends AbstractInferenceRule
   private static SNode _quotation_createNode_qth3vr_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
 }

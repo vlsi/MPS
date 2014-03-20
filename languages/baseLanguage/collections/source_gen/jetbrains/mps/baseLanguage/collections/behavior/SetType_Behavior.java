@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 
@@ -32,13 +31,13 @@ public class SetType_Behavior {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "set");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
             ListSequence.fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }
@@ -87,7 +86,7 @@ public class SetType_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
@@ -99,7 +98,7 @@ public class SetType_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
@@ -110,7 +109,7 @@ public class SetType_Behavior {
   private static SNode _quotation_createNode_q66uze_a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Set")));
     return quotedNode_1;
   }

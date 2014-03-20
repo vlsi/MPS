@@ -58,15 +58,11 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * evgeny, 3/18/11
- */
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
 
   private static final String MODULE_REF = "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)";
@@ -224,22 +220,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  protected ModuleScope createScope() {
-    return new ProjectStructureModuleScope();
-  }
-
-  @Override
   protected void collectFacetTypes(Set<String> types) {
     // none
-  }
-
-  public class ProjectStructureModuleScope extends ModuleScope {
-    @Override
-    protected Set<SModule> getInitialModules() {
-      Set<SModule> result = new HashSet<SModule>();
-      result.add(ProjectStructureModule.this);
-      return result;
-    }
   }
 
   @Override
@@ -257,7 +239,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     @Override
     protected ProjectStructureSModel createModel() {
-      final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
+      final ProjectStructureSModel model = new ProjectStructureSModel(getReference());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
 
@@ -310,11 +292,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           }
         });
       }
-    }
-
-    @Override
-    public SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported since 3.0");
     }
   }
 

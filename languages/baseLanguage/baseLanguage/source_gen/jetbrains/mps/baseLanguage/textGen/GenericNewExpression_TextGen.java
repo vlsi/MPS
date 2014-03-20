@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class GenericNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -14,7 +13,7 @@ public class GenericNewExpression_TextGen extends SNodeTextGen {
       this.foundError("incomplete new expression");
       this.append("???");
     } else {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "creator", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "creator", true));
     }
   }
 }

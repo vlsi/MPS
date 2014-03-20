@@ -13,11 +13,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import java.util.Set;
+import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathManager;
 import java.io.File;
 import com.intellij.util.lang.UrlClassLoader;
@@ -26,10 +26,10 @@ import java.net.URI;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
@@ -83,11 +83,12 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       return super.getTestRunParameters();
     }
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(Sequence.fromIterable(CollectionSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
-        public String invoke(String key) {
-          return "-D" + "path.macro." + key + "=\"" + PathMacros.getInstance().getValue(key) + "\"";
+      Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
+      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
+        public String select(String key) {
+          return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
         }
-      }))).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
+      })).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
     }
     return super.getTestRunParameters();
   }

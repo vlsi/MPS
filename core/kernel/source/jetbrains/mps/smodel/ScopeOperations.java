@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -72,7 +73,7 @@ public class ScopeOperations {
   @Deprecated
   public static SModel getModelDescriptor(SearchScope scope, SModelReference modelReference) {
     org.jetbrains.mps.openapi.model.SModel model = scope.resolve(modelReference);
-    if (model != null && !(model instanceof SModelDescriptor)) {
+    if (model != null && !(model instanceof SModelBase)) {
       throw new IllegalStateException();
     }
     return model;
@@ -81,7 +82,7 @@ public class ScopeOperations {
   @Deprecated
   public static Iterable<SModel> getModelDescriptors(SearchScope scope) {
     for (org.jetbrains.mps.openapi.model.SModel model : scope.getModels()) {
-      if (!(model instanceof SModelDescriptor)) {
+      if (!(model instanceof SModelBase)) {
         throw new IllegalStateException();
       }
     }

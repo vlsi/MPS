@@ -31,7 +31,7 @@ public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAw
     try {
       environment.getTracer().pushTemplateNode(templateNode_nu2nvy_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218740073391");
-      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "_text_", propertyMacro_nu2nvy_c0b0c0c0b0c, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(new PropertyMacroContext(context, "_text_", propertyMacro_nu2nvy_c0a0c0c0b0c, environment.getGenerator()))));
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -52,6 +52,6 @@ public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAw
   }
 
   private static SNodePointer templateNode_nu2nvy_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740073391");
-  private static SNodePointer propertyMacro_nu2nvy_c0b0c0c0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
+  private static SNodePointer propertyMacro_nu2nvy_c0a0c0c0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
   private static SNodePointer weaveTfConst_nu2nvy_a0b0e = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740112298");
 }

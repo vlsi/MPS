@@ -43,7 +43,7 @@ public class BuildLayout_CustomCopy_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy");
     editorCell.setCellId("Constant_6lrdv3_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_CustomCopy.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

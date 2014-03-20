@@ -17,12 +17,9 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -33,7 +30,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
@@ -42,7 +38,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * TODO move listeners to openapi
  */
-public abstract class SModelDescriptorStub implements SModelDescriptor {
+public abstract class SModelDescriptorStub implements SModelInternal, SModel {
 
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
@@ -59,21 +55,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
    */
   public void replace(SModelData modelData) {
     throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public SModel resolveModel(SModelReference reference) {
-    throw new UnsupportedOperationException("not supported since 3.0");
-  }
-
-  @Override
-  public boolean isTransient() {
-    return false;
-  }
-
-  @Override
-  public jetbrains.mps.smodel.SModel getSModel() {
-    return getSModelInternal();
   }
 
   @Override
@@ -99,7 +80,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     myModelListeners.clear();
   }
 
-  @Override
   public boolean isGeneratable() {
     return false;
   }
@@ -182,23 +162,8 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     }
   }
 
-  /**
-   * use getReference()
-   */
-  @Override
-  @Deprecated
-  public jetbrains.mps.smodel.SModelReference getSModelReference() {
-    return ((jetbrains.mps.smodel.SModelReference) getReference());
-  }
-
-  @Override
-  public String getLongName() {
-    return SModelStereotype.withoutStereotype(getReference().getModelName());
-  }
-
-  @Override
-  public String getStereotype() {
-    return SModelStereotype.getStereotype(getReference().getModelName());
+  public jetbrains.mps.smodel.SModel getSModel() {
+    return getSModelInternal();
   }
 
   //
@@ -284,16 +249,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public final void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    getSModelInternal().addAdditionalModelVersion(modelReference, usedVersion);
-  }
-
-  @Override
-  public final void addAdditionalModelVersion(@NotNull ImportElement element) {
-    getSModelInternal().addAdditionalModelVersion(element);
-  }
-
-  @Override
   public int getVersion() {
     return getSModelInternal().getVersion();
   }
@@ -306,11 +261,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public final StackTraceElement[] getDisposedStacktrace() {
     return getSModelInternal().getDisposedStacktrace();
-  }
-
-  @Override
-  public final void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    getSModelInternal().setModelDescriptor(modelDescriptor);
   }
 
   @Override
@@ -351,10 +301,5 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public void changeModelReference(SModelReference newModelReference) {
     getSModelInternal().changeModelReference(newModelReference);
-  }
-
-  @Override
-  public final void copyPropertiesTo(SModelInternal to) {
-    getSModelInternal().copyPropertiesTo(to);
   }
 }

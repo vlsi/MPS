@@ -1,52 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:74ea17b8-4df0-45ea-b42a-e8bc07b3a0ab(jetbrains.mps.lang.typesystem.scripts)/6587431012884472434">
-    <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="89" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="25" startPosition="59" endLine="26" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6587431012884664043" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="536" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6587431012884593136" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884633271" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="34" startPosition="96" endLine="35" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884633284" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="35" startPosition="97" endLine="36" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884633297" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="36" startPosition="93" endLine="37" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884633310" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="37" startPosition="94" endLine="38" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884633323" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="38" startPosition="93" endLine="39" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884663059" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="39" startPosition="71" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="43" startPosition="42" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="15" startPosition="42" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="15" startPosition="42" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveInequalityPriorities_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="21" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="21" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="25" startPosition="59" endLine="26" endPosition="85" />
-    <scopeInfo nodeId="6587431012884664042" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="536" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="43" startPosition="42" endLine="44" endPosition="21" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="6587431012884472437" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6587431012884472439" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="52" endLine="40" endPosition="70" />
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="6587431012884472437" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="15" startPosition="42" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="89" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="6587431012884472434" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="6587431012884472437" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript$1" />
-    <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript" />
-  </root>
   <root nodeRef="r:74ea17b8-4df0-45ea-b42a-e8bc07b3a0ab(jetbrains.mps.lang.typesystem.scripts)/7286989617095153002">
     <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="12" startPosition="81" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7286989617095153003" fileName="RemoveDependencies_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

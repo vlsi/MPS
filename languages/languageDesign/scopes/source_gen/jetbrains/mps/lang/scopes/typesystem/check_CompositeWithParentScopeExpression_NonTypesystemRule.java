@@ -15,7 +15,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -58,8 +57,8 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
@@ -67,7 +66,7 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
   private static SNode _quotation_createNode_f3933j_b0a0a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)"), facade.createNodeId("3734116213129862372")));
     return quotedNode_1;
   }
@@ -75,7 +74,7 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
   private static SNode _quotation_createNode_f3933j_b0a0a0d0b_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
 }

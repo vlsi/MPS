@@ -38,7 +38,7 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "table-component");
     editorCell.setCellId("Constant_gkkov5_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TableComponentStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_gkkov5_a0a0()}));

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-6mzioo19p272jluskuvyi0keofcr4un">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="9x34utno9d6lex2gvlmphxopxidauiu" />
+  <common hash="9x34utno9d6lex2gvlmphxopxidauiu" dependsOnNodes="true" />
   <source id="7841036633975757760" name="ConvertToBinaryWorker" hash="-1dvkqms0296f2wd5we8fwoagbdewsyo">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConvertToBinaryWorker.java" />
   </source>
 </dependencies>

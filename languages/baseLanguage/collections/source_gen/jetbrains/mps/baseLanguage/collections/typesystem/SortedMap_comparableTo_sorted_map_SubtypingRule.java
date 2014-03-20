@@ -14,7 +14,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -54,29 +53,28 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a;
-        nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_1q5lf6_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1q5lf6_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_nagdzg_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_nagdzg_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1q5lf6_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_SortedMap_comparableTo_sorted_map_1q5lf6_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a, childRole_SortedMap_comparableTo_sorted_map_1q5lf6_, 2))) {
+          String childRole_1q5lf6_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_1q5lf6_a0a, childRole_1q5lf6_, 2))) {
             return false;
           }
           {
-            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = IterableUtil.get(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_), 0);
-            this.patternVar_KEY = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0;
+            SNode childVar_1q5lf6_a0a0 = IterableUtil.get(nodeToMatch_1q5lf6_a0a.getChildren(childRole_1q5lf6_), 0);
+            this.patternVar_KEY = childVar_1q5lf6_a0a0;
           }
           {
-            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0 = IterableUtil.get(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_), 1);
-            this.patternVar_VALUE = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0;
+            SNode childVar_1q5lf6_b0a0 = IterableUtil.get(nodeToMatch_1q5lf6_a0a.getChildren(childRole_1q5lf6_), 1);
+            this.patternVar_VALUE = childVar_1q5lf6_b0a0;
           }
         }
       }
@@ -113,7 +111,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedMapType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedMapType", null, null, false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("valueType", HUtil.copyIfNecessary(quotedNode_4));
@@ -125,5 +123,5 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
     return quotedNode_3;
   }
 
-  private static SNodePointer SNODE_POINTER_nagdzg_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedMap");
+  private static SNodePointer SNODE_POINTER_nagdzg_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedMap");
 }

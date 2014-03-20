@@ -14,12 +14,14 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddCellAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMessageAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMockAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasErrorMark_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddOperationsMark_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddPropertiesMark_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasErrorAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasWarningAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddOperationsAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddScopeExpectedNodes_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddScopeTestAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddTestAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SpecifyRuleReferences_Intention());
   }
 }

@@ -16,12 +16,10 @@
 package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
-import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
-import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
 
 import java.util.Map;
@@ -38,12 +36,17 @@ public class CachingTypecheckingContext extends TargetTypecheckingContext {
   }
 
   @Override
-  public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+  public SNode getTypeOf_resolveMode(final SNode node, TypeChecker typeChecker) {
     Pair <SNode, Boolean> pair = getTypeComputed(node);
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = getTypechecking().computeTypesForNodeDuringResolving(node);
+    SNode resultType = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return getTypechecking().computeTypesForNodeDuringResolving(node);
+      }
+    });
     putTypeComputed(node, resultType);
     return resultType;
   }

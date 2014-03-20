@@ -5,9 +5,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
@@ -22,21 +20,22 @@ public class IfStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.indentBuffer();
     this.append("if (");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "condition", true));
     this.append(") {");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "ifTrue", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "ifTrue", true));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "elsifClauses", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "elsifClauses", true);
+      for (SNode item : collection) {
+        appendNode(item);
       }
     }
     if ((SLinkOperations.getTarget(node, "ifFalseStatement", true) != null)) {
       this.append(" else");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "ifFalseStatement", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
     }
     if (getBuffer().hasPositionsSupport()) {
       {

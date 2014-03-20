@@ -670,10 +670,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
     public void relayout() {
-      Component component = myEditorComponent;
-      Point anchor = component.getLocationOnScreen();
-      Point location =
-          new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInset(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+      Point location = myPatternEditor.getLeftBottomPosition();
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
@@ -696,7 +693,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       pack();
 
       if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
+        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
       }
 
       if (getWidth() >= deviceBounds.width) {

@@ -23,44 +23,58 @@
     <copy todir="${build.layout}/jetpad/META-INF">
       <fileset file="${mps_home}/plugins/jetpad/META-INF/plugin.xml" />
     </copy>
+    <mkdir dir="${build.layout}/jetpad/languages" />
+    <mkdir dir="${build.layout}/jetpad/languages/jetpad" />
+    <mkdir dir="${build.tmp}/default/jetbrains.jetpad.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.jetpad.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.jetpad.jar/META-INF/module.xml">
+      <module namespace="jetbrains.jetpad" type="solution" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6">
+        <dependencies />
+        <library jar="../../lib/geometry-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/model-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/diagram-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/view-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/mapper-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/base-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/values-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/grammar-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/domUtil-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/event-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/dataflow-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/otmodel-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/gwt-util-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/json-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/test-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/cell-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/completion-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/gwt-framework-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/websocket-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/persistence-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/projectional-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/hybrid-1.0-SNAPSHOT.jar" />
+        <sources jar="jetbrains.jetpad-src.jar" descriptor="jetbrains.jetpad.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/jetpad/languages/jetpad/jetbrains.jetpad.jar">
+      <fileset dir="${mps_home}/plugins/jetpad/solutions/jetbrains.jetpad" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.jetpad.jar" />
+    </jar>
+    <jar destfile="${build.layout}/jetpad/languages/jetpad/jetbrains.jetpad-src.jar">
+      <zipfileset file="${mps_home}/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" prefix="module" />
+    </jar>
     <mkdir dir="${build.layout}/jetpad/lib" />
     <jar destfile="${build.layout}/jetpad/lib/icons.jar">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
-    </jar>
-    <mkdir dir="${build.layout}/jetpad/solutions" />
-    <mkdir dir="${build.tmp}/default/jetpad.jar" />
-    <mkdir dir="${build.tmp}/default/jetpad.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetpad.jar/META-INF/module.xml">
-      <module namespace="jetpad" type="solution" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6">
-        <dependencies />
-        <library jar="../lib/geometry-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/model-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/diagram-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/view-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/core-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/mapper-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/base-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/values-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/grammar-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/domUtil-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/event-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/dataflow-1.0-SNAPSHOT.jar" />
-        <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/jetpad/solutions/jetpad.jar">
-      <fileset dir="${mps_home}/plugins/jetpad/solutions/jetpad" includes="icons/**, resources/**" />
-      <fileset dir="${build.tmp}/default/jetpad.jar" />
-    </jar>
-    <jar destfile="${build.layout}/jetpad/solutions/jetpad-src.jar">
-      <zipfileset file="${mps_home}/plugins/jetpad/solutions/jetpad/jetpad.msd" prefix="module" />
     </jar>
     <mkdir dir="${build.layout}/jetpad/lib" />
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+      <fileset file="${mps_home}/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
@@ -81,6 +95,9 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
@@ -93,7 +110,13 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
+      <fileset file="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
@@ -103,6 +126,12 @@
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/jetpadBuildNumber.txt" />
@@ -136,14 +165,14 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate parallelMode="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
       <chunk>
-        <module file="${mps_home}/plugins/jetpad/solutions/jetpad/jetpad.msd" />
+        <module file="${mps_home}/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />

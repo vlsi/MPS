@@ -60,25 +60,24 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a;
-        nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_plg4lh_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_plg4lh_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_3k2v7g_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_3k2v7g_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_plg4lh_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_set_type_comparableWith_Set_plg4lh_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a, childRole_set_type_comparableWith_Set_plg4lh_, 1))) {
+          String childRole_plg4lh_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_plg4lh_a0a, childRole_plg4lh_, 1))) {
             return false;
           }
           {
-            SNode childVar_set_type_comparableWith_Set_plg4lh_a0a0 = IterableUtil.get(nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getChildren(childRole_set_type_comparableWith_Set_plg4lh_), 0);
-            this.patternVar_ELEMENT = childVar_set_type_comparableWith_Set_plg4lh_a0a0;
+            SNode childVar_plg4lh_a0a0 = IterableUtil.get(nodeToMatch_plg4lh_a0a.getChildren(childRole_plg4lh_), 0);
+            this.patternVar_ELEMENT = childVar_plg4lh_a0a0;
           }
         }
       }
@@ -106,5 +105,5 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
     }
   }
 
-  private static SNodePointer SNODE_POINTER_3k2v7g_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
+  private static SNodePointer SNODE_POINTER_3k2v7g_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
 }

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_NodeCondition_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +21,6 @@ public class QueryFunction_NodeCondition_Behavior {
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"));
-    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"));
     return result;
   }
@@ -30,7 +28,7 @@ public class QueryFunction_NodeCondition_Behavior {
   private static SNode _quotation_createNode_dlnvzf_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
 }

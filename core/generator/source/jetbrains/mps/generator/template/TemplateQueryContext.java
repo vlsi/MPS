@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,17 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 
@@ -27,16 +35,34 @@ import java.util.List;
  */
 public class TemplateQueryContext {
 
+  @Nullable
   private final SNode myInputNode;
-  private final SNode myTemplateNode;
+  @Nullable
+  private final SNodeReference myTemplateNode;
+  @NotNull
   private final ITemplateGenerator myGenerator;
+  @Nullable
   protected TemplateContext myContext;
 
-  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+  // cons with less restrictions (null/notnull) implied. shall not become public
+  protected TemplateQueryContext(SNode inputNode, SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
     myInputNode = inputNode;
+    myContext = context;
     myTemplateNode = templateNode;
     myGenerator = generator;
-    myContext = context;
+  }
+
+  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+    this(inputNode, templateNode == null ? null : templateNode.getReference(), context, generator);
+  }
+
+  // protected for the time being, unless decided to expose it (seems to be nice idea, after all)
+  protected TemplateQueryContext(@Nullable SNode templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    this(context.getInput(), templateNode == null ? null : templateNode.getReference(), context, generator);
+  }
+
+  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    this(context.getInput(), templateNode, context, generator);
   }
 
   /**
@@ -49,10 +75,6 @@ public class TemplateQueryContext {
 
   public SNode getInputNode() {
     return myInputNode;
-  }
-
-  public SNode getTemplateNode() {
-    return myTemplateNode;
   }
 
   public SNode getOutputNode() {
@@ -91,16 +113,9 @@ public class TemplateQueryContext {
     return myGenerator;
   }
 
-  /**
-   * 'scope' mapping
-   */
-  public IScope getScope() {
-    return myGenerator.getGeneratorSessionContext().getScope();
-  }
-
   public SNode getOutputNodeByMappingLabel(String label) {
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeRef(), "'get output by label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
   }
@@ -108,7 +123,7 @@ public class TemplateQueryContext {
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by input and label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeRef(), "'get output by input and label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
@@ -122,14 +137,14 @@ public class TemplateQueryContext {
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get all output by input and label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeRef(), "'get all output by input and label' cannot be used here");
     }
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
 
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
     if (myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "cannot register label anymore");
+      myGenerator.getLogger().error(getTemplateNodeRef(), "cannot register label anymore");
     }
     myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
   }
@@ -141,7 +156,7 @@ public class TemplateQueryContext {
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
     if (inputNode == null) return null;
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get copied node for input' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeRef(), "'get copied node for input' cannot be used here");
     }
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
@@ -161,7 +176,10 @@ public class TemplateQueryContext {
   }
 
   public IOperationContext getInvocationContext() {
-    return myGenerator.getGeneratorSessionContext().getInvocationContext();
+    // according to doc: Operation context associated with module - owner of the original input model
+    SModule originalModule = getOriginalInputModel().getModule();
+    final Project project = myGenerator.getGeneratorSessionContext().getProject();
+    return new ModuleContext(originalModule, project);
   }
 
   // user objects
@@ -215,15 +233,34 @@ public class TemplateQueryContext {
 
   public void showErrorMessage(SNode node, String message) {
     SNode inputNode = (node != null) ? node : getInputNode();
-    myGenerator.showErrorMessage(inputNode, getTemplateNode(), getRuleNodeForLogging(), message);
+    SNodeReference tn = getTemplateNodeRef();
+    SNodeReference rnr = getRuleNode();
+    myGenerator.getLogger().error(rnr == null ? tn : rnr, message,
+        GeneratorUtil.describeIfExists(inputNode, "input node"), GeneratorUtil.describeIfExists(tn, "template node"));
   }
 
-  public SNode getTemplateNodeForLogging() {
-    return getTemplateNode();
+  /**
+   * Node in template model most close to the query being evaluated. For macro nodes, however
+   * shall point to macro's parent node (genContext.templateNode op contract)
+   */
+  public SNode getTemplateNode() {
+    SNodeReference tnr = getTemplateNodeRef();
+    return tnr == null ? null : tnr.resolve(MPSModuleRepository.getInstance());
   }
 
-  public SNode getRuleNodeForLogging() {
+  /**
+   * @return context template node where the query is evaluated
+   */
+  @Nullable
+  protected SNodeReference getTemplateNodeRef() {
+    return myTemplateNode;
+  }
+
+  /**
+   * @return context rule, where query is being evaluated, if available
+   */
+  @Nullable
+  protected SNodeReference getRuleNode() {
     return null;
   }
-
 }

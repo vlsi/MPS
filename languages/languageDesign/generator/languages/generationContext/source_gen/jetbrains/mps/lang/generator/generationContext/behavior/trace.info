@@ -100,18 +100,18 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620114789">
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="15" startPosition="74" endLine="16" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="25" startPosition="107" endLine="26" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="20" startPosition="107" endLine="21" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="30" startPosition="120" endLine="31" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1758784108620114791" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="15" startPosition="74" endLine="16" endPosition="150" />
-    <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="122" />
-    <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="25" startPosition="107" endLine="26" endPosition="319" />
+    <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="20" startPosition="107" endLine="21" endPosition="319" />
+    <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="122" />
     <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="30" startPosition="120" endLine="31" endPosition="304" />
     <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1758784108620114789" varName="thisNode" />
@@ -120,11 +120,11 @@
       <varInfo nodeId="1758784108620114789" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1758784108620254538" varName="target" />
+      <varInfo nodeId="1758784108620114789" varName="callerConceptFqName" />
       <varInfo nodeId="1758784108620114789" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1758784108620114789" varName="callerConceptFqName" />
+      <varInfo nodeId="1758784108620254538" varName="target" />
       <varInfo nodeId="1758784108620114789" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
@@ -138,22 +138,22 @@
     <nodeInfo nodeId="1758784108620115427" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1758784108620254546" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTarget_1758784108620115401#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254540#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620115401#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620115401#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254540#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setTarget_1758784108620254540#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1758784108620115400" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1758784108620115403" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="72" />
     <scopeInfo nodeId="1758784108620254542" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="71" />
     <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="150" />
-    <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="122" />
-    <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="323" />
+    <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="323" />
+    <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="122" />
     <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" />
     <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1758784108620115398" varName="thisNode" />
@@ -169,11 +169,11 @@
       <varInfo nodeId="1758784108620115398" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1758784108620254543" varName="target" />
+      <varInfo nodeId="1758784108620115398" varName="callerConceptFqName" />
       <varInfo nodeId="1758784108620115398" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1758784108620115398" varName="callerConceptFqName" />
+      <varInfo nodeId="1758784108620254543" varName="target" />
       <varInfo nodeId="1758784108620115398" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
@@ -187,22 +187,22 @@
     <nodeInfo nodeId="1758784108620115420" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1758784108620254563" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTarget_1758784108620115416#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254557#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620115416#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620115416#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254557#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setTarget_1758784108620254557#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1758784108620115415" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1758784108620115418" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="72" />
     <scopeInfo nodeId="1758784108620254559" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="71" />
     <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="150" />
-    <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="122" />
-    <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="323" />
+    <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="323" />
+    <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="122" />
     <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" />
     <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1758784108620115413" varName="thisNode" />
@@ -218,11 +218,11 @@
       <varInfo nodeId="1758784108620115413" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1758784108620254560" varName="target" />
+      <varInfo nodeId="1758784108620115413" varName="callerConceptFqName" />
       <varInfo nodeId="1758784108620115413" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1758784108620115413" varName="callerConceptFqName" />
+      <varInfo nodeId="1758784108620254560" varName="target" />
       <varInfo nodeId="1758784108620115413" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
@@ -236,22 +236,22 @@
     <nodeInfo nodeId="1758784108620115436" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1758784108620254584" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTarget_1758784108620115432#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254578#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620115432#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTarget_1758784108620115432#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setTarget_1758784108620254578#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setTarget_1758784108620254578#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1758784108620115431" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1758784108620115434" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="76" />
     <scopeInfo nodeId="1758784108620254580" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="75" />
     <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="150" />
-    <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="122" />
-    <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="327" />
+    <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="327" />
+    <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="122" />
     <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="312" />
     <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1758784108620115429" varName="thisNode" />
@@ -267,11 +267,11 @@
       <varInfo nodeId="1758784108620115429" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1758784108620254581" varName="target" />
+      <varInfo nodeId="1758784108620115429" varName="callerConceptFqName" />
       <varInfo nodeId="1758784108620115429" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1758784108620115429" varName="callerConceptFqName" />
+      <varInfo nodeId="1758784108620254581" varName="target" />
       <varInfo nodeId="1758784108620115429" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">

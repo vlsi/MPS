@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,25 +18,25 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.impl.*;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
+import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.WeaveTemplateContainer;
+import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
+import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.QueryMethodGenerated;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
@@ -46,11 +46,14 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   private final SNode ruleNode;
   private final String applicableConcept;
   private final String conditionMethod;
+  private final String myContentNodeMethod;
   private final Consequence consequence;
   private final SNode consequenceNode;
   private final SNode template;
-  private final List<SNode> templateFragments;
   private final String ruleMappingName;
+  private WeaveTemplateContainer myWeaveTemplates;
+  private WeaveRuleCondition myCondition;
+  private WeaveRuleQuery myContentNodeQuery;
 
   public TemplateWeavingRuleInterpreted(SNode rule) {
     ruleNode = rule;
@@ -58,6 +61,8 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
     SNode condition = RuleUtil.getBaseRuleCondition(ruleNode);
     conditionMethod = condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
+    SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(ruleNode);
+    myContentNodeMethod = contextQuery == null ? null : TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(contextQuery);
 
     consequenceNode = RuleUtil.getWeaving_Consequence(ruleNode);
     if (consequenceNode == null) {
@@ -76,8 +81,6 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         template = null;
       }
     }
-
-    templateFragments = template != null ? GeneratorUtilEx.getTemplateFragments(template) : null;
     ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
   }
 
@@ -98,23 +101,16 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
   @Override
   public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-    SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(ruleNode);
-    if (contextQuery == null) {
+    if (myContentNodeMethod == null) {
       return null;
     }
-
-    String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(contextQuery);
     try {
-      return (SNode) QueryMethodGenerated.invoke(
-        methodName,
-        environment.getGenerator().getGeneratorSessionContext(),
-        new WeavingMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
-        ruleNode.getModel());
-    } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(ruleNode, "cannot find context node query '" + methodName + "' : evaluate to null");
-      return null;
+      if (myContentNodeQuery == null) {
+        myContentNodeQuery = environment.getQueryProvider(getRuleNode()).getWeaveRuleQuery(myContentNodeMethod);
+      }
+      return myContentNodeQuery.contextNode(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
     } catch (Exception e) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "cannot evaluate rule context query");
+      environment.getLogger().error(getRuleNode(), "cannot evaluate rule context query", GeneratorUtil.describeInput(context));
       environment.getLogger().handleException(e);
     }
     return null;
@@ -125,30 +121,22 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     if (conditionMethod == null) {
       return true;
     }
-
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        conditionMethod,
-        environment.getGenerator().getGeneratorSessionContext(),
-        new BaseMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      if (myCondition == null) {
+        myCondition = environment.getQueryProvider(getRuleNode()).getWeaveRuleCondition(conditionMethod);
+      }
+      return myCondition.check(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", conditionMethod));
       throw new GenerationFailureException(t);
     }
-    return false;
   }
 
   @Override
   public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
     if (consequence == null) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "weaving rule: no rule consequence");
+      environment.getLogger().error(getRuleNode(), "weaving rule: no rule consequence", GeneratorUtil.describeInput(context));
       return false;
     }
 
@@ -156,62 +144,30 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     return consequence.apply(environment, context, outputContextNode);
   }
 
-  private void weaveTemplateDeclaration(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
-    throws GenerationFailureException, GenerationCanceledException {
+  void weaveTemplateDeclaration(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
+      throws GenerationFailureException, GenerationCanceledException {
 
+    if (template == null) {
+      environment.getLogger().error(getRuleNode(), "couldn't evaluate weaving rule: no template");
+      return;
+    }
     environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
     try {
-      weaveTemplateDeclaration_intern(outputContextNode, context, environment);
+      WeaveTemplateContainer wtc = getWeavingTemplateContainer(environment.getLogger());
+      wtc.apply(outputContextNode, context.subContext(ruleMappingName), environment);
     } finally {
       environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
     }
   }
 
-  private void weaveTemplateDeclaration_intern(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
-    throws GenerationFailureException, GenerationCanceledException {
-
-    if (templateFragments == null) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "couldn't evaluate weaving rule: no template");
-      return;
+  @NotNull
+  private WeaveTemplateContainer getWeavingTemplateContainer(IGeneratorLogger log) {
+    if (myWeaveTemplates == null) {
+      assert template != null;
+      myWeaveTemplates = new WeaveTemplateContainer(template);
+      myWeaveTemplates.initialize(log);
     }
-    if (templateFragments.isEmpty()) {
-      environment.getGenerator().showErrorMessage(context.getInput(), template, ruleNode, "nothing to weave: no template fragments found in template");
-      return;
-    }
-
-    // check fragments: all fragments with <default context> should have the same parent
-    checkTemplateFragmentsForWeaving(template, templateFragments, environment.getLogger());
-
-    // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment);
-    for (SNode templateFragment : templateFragments) {
-      SNode templateFragmentNode = templateFragment.getParent();
-      SNode contextParentNode = null;
-      try {
-        contextParentNode = environment.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
-      } catch (Exception e) {
-        environment.getLogger().handleException(e);
-      }
-      if (contextParentNode != null) {
-        try {
-          List<SNode> outputNodesToWeave = templateProcessor.apply(
-            GeneratorUtilEx.getMappingName(templateFragment, ruleMappingName),
-            templateFragmentNode, context);
-          String childRole = templateFragmentNode.getRoleInParent();
-          for (SNode outputNodeToWeave : outputNodesToWeave) {
-            environment.weaveNode(contextParentNode, childRole, outputNodeToWeave, new jetbrains.mps.smodel.SNodePointer(templateFragment), context.getInput());
-          }
-        } catch (DismissTopMappingRuleException e) {
-          environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "wrong template: dismission of weaving rule is not supported");
-        } catch (TemplateProcessingFailureException e) {
-          // FIXME
-          environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "error processing template fragment");
-          environment.getLogger().info(contextParentNode, " -- was output context node:");
-        }
-      } else {
-        environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "couldn't define 'context' for template fragment");
-      }
-    }
+    return myWeaveTemplates;
   }
 
   /**
@@ -226,7 +182,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
    *   &lt;TF public AAA field; TF&gt;
    * }
    * </pre>
-   *
+   * <p/>
    * To resolve AAA reference correctly, we need to know mapping of weaving rule's context to AAA template node. While in
    * TemplateProcessor, we create a PostponedReference with ReferenceInfo_Template (reference to AAA classifier is reference inside template model).
    * During resolution step, however, it's not clear how to find output node that corresponds to AAA template reference.
@@ -235,7 +191,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
    * was found, and corresponding output node was treated as proper target. This was bit too much of assumption about output model structure, imo.
    * Proposed alternative is not perfect, but at least clearly binds context of weaving rule to content node in weaving template, so that developers
    * won't need to rely on parent walking heuristics.
-   *
+   * <p/>
    * Note, neither approach deals with reference target that is not in ancestry or content node respectively, e.g.:
    * <pre>
    * content node:
@@ -249,41 +205,13 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
    * Here, former approach of ReferenceInfo_TemplateNode would fail to find AAA cons as it's not in ancestry of field declaration. The mapping
    * from the method below won't help either. I feel the case above is handled via indirect mapping and input history, but not sure.
    *
-   * @param environment
+   * @param environment       enironment for the rule
    * @param outputContextNode node from context query of WeavingMappingRule, element of output model we inject into
-   * @param inputNode source model element this weaving is applicable to (instance of WeavingMappingRule.applicableConcept)
+   * @param inputNode         source model element this weaving is applicable to (instance of WeavingMappingRule.applicableConcept)
    */
   void mapWeaveContentNodeToTemplateDeclarationContentNode(TemplateExecutionEnvironment environment, SNode outputContextNode, SNode inputNode) {
     SNode contentNode = RuleUtil.getTemplateDeclaration_ContentNode(template);
     environment.getGenerator().addOutputNodeByInputAndTemplateNode(inputNode, GeneratorUtil.getTemplateNodeId(contentNode), outputContextNode);
-  }
-
-  public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, IGeneratorLogger logger) {
-
-    // all fragments with <default context> should have the same parent
-    boolean sameParent = true;
-    SNode defaultContext = null;
-    for (SNode templateFragment : templateFragments) {
-      if (RuleUtil.getTemplateFragment_ContextNodeQuery(templateFragment) == null) { // uses <default context>
-        SNode fragmentContextNode = templateFragment.getParent().getParent();
-        if (defaultContext == null) {
-          defaultContext = fragmentContextNode;
-        } else if (defaultContext != fragmentContextNode) {
-          sameParent = false;
-          break;
-        }
-      }
-    }
-    if (!sameParent) {
-      List<ProblemDescription> list = new ArrayList<ProblemDescription>();
-      for (SNode templateFragment : templateFragments) {
-        if (RuleUtil.getTemplateFragment_ContextNodeQuery(templateFragment) == null) { // uses <default context>
-          list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
-        }
-      }
-      logger.error(template, "all fragments with <default context> should have the same parent",
-        list.toArray(new ProblemDescription[list.size()]));
-    }
   }
 
   private interface Consequence {
@@ -291,8 +219,6 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   }
 
   private class TemplateDeclarationConsequence implements Consequence {
-
-
     public TemplateDeclarationConsequence() {
     }
 
@@ -300,11 +226,10 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       weaveTemplateDeclaration(outputContextNode,
-        GeneratorUtil.createConsequenceContext(context, environment, consequenceNode), environment);
+          GeneratorUtil.createConsequenceContext(context, environment, consequenceNode), environment);
       return true;
     }
   }
-
 
   private class ForeachConsequence implements Consequence {
 
@@ -317,7 +242,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       if (query == null) {
-        environment.getGenerator().showErrorMessage(context.getInput(), ruleNode, "weaving rule: cannot create list of source nodes");
+        environment.getLogger().error(getRuleNode(), "weaving rule: cannot create list of source nodes", GeneratorUtil.describeInput(context));
         return false;
       }
       Collection<SNode> queryNodes = environment.getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
@@ -327,7 +252,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       for (SNode queryNode : queryNodes) {
         weaveTemplateDeclaration(outputContextNode,
-          GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(queryNode), environment, consequenceNode), environment);
+            GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(queryNode), environment, consequenceNode), environment);
       }
 
       return true;
@@ -338,7 +263,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, consequenceNode, "weaving rule: unsupported rule consequence");
+      environment.getLogger().error(getRuleNode(), "weaving rule: unsupported rule consequence", GeneratorUtil.describeIfExists(consequenceNode, "rule consequence"));
       return false;
     }
   }

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,12 +38,12 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
       }
 
       @Override
-      public boolean validate(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, final IScope scope) {
+      public boolean validate(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         return true;
       }
 
       @Override
-      public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, final IScope scope) {
+      public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         if (newReferentNode != null && referenceNode != null) {
           for (SNode p : SLinkOperations.getTargets(referenceNode, "parameter", true)) {
             SNodeOperations.deleteNode(p);
@@ -69,7 +68,7 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
-            List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(concept, operationContext.getScope());
+            List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(concept);
             return ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SLinkOperations.getTarget(it, "overriddenMethod", false) == null;

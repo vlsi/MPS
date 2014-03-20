@@ -14,7 +14,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -28,7 +27,7 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_c4v0tm_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_c4v0tm_a0(editorContext, node));
-    if (renderingCondition_c4v0tm_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_c4v0tm_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_c4v0tm_b0(editorContext, node));
     }
     return editorCell;
@@ -69,7 +68,7 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_c4v0tm_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_c4v0tm_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "reexport");
   }
 
@@ -87,7 +86,7 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport");
     editorCell.setCellId("Constant_c4v0tm_b1a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

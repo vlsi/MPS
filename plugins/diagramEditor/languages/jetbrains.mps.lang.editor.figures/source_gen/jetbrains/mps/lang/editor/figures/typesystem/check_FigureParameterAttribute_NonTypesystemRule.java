@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,10 +20,10 @@ public class check_FigureParameterAttribute_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode figureParameterAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(FigureParameterAttribute_Behavior.call_getParameterField_5422656561931910498(figureParameterAttribute), "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(FigureParameterAttribute_Behavior.call_getParameterField_5422656561931910498(figureParameterAttribute), "Non-public field specified as @FigureParemter", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9026300686792786362", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "Non-public member specified as @FigureParemter", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9026300686792786362", null, errorTarget);
       }
     }
   }

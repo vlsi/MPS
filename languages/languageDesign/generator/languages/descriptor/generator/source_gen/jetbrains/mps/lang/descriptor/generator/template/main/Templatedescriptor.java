@@ -35,7 +35,7 @@ public class Templatedescriptor implements TemplateDeclaration {
         SNode tnode2 = null;
         try {
           environment.getTracer().pushMacro(insertMacro_e20rlw_a0a0a1a3a1a2);
-          final SNode insertInput2 = QueriesGenerated.insertMacro_Query_1509962061695074412(environment.getOperationContext(), new TemplateQueryContextWithMacro(context.getInput(), insertMacro_e20rlw_a0a0a1a3a1a2, context, environment.getGenerator()));
+          final SNode insertInput2 = QueriesGenerated.insertMacro_Query_1509962061695074412(new TemplateQueryContextWithMacro(context, insertMacro_e20rlw_a0a0a1a3a1a2, environment.getGenerator()));
           tnode2 = environment.insertNode(insertInput2, insertMacro_e20rlw_a0a0a1a3a1a2, context);
           if (tnode2 != null) {
           }

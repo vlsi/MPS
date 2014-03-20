@@ -136,7 +136,7 @@ public class TreeFileChooser {
     descriptor.setTitle(myTitle == null ? "Select File" : myTitle);
     descriptor.setShowFileSystemRoots(true);
 
-    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, owner);
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, null, owner);
 
     VirtualFile selection = VirtualFileUtils.getVirtualFile(ourInitialSelectedFile);
     for (VirtualFile file : dialog.choose(selection, null)) {

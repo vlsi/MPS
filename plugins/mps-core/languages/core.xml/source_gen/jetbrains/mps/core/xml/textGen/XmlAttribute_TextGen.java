@@ -6,9 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class XmlAttribute_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -19,9 +17,10 @@ public class XmlAttribute_TextGen extends SNodeTextGen {
     }
     this.append(SPropertyOperations.getString(node, "attrName"));
     this.append("=\"");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "value", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "value", true);
+      for (SNode item : collection) {
+        appendNode(item);
       }
     }
     this.append("\"");

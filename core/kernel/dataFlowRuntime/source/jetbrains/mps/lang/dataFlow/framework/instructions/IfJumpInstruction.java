@@ -17,8 +17,6 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder.Position;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.List;
 

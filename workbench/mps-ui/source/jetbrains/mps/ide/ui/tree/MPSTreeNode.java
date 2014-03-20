@@ -39,7 +39,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -50,7 +50,7 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
+public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
   private IOperationContext myOperationContext;
@@ -71,6 +71,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private final Object myTreeMessagesLock = new Object();
   private List<TreeMessage> myTreeMessages = null;
   private Map<TextAttribute, Object> myFontAttributes = new HashMap<TextAttribute, Object>();
+  private int myToggleClickCount = 2;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -88,22 +89,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   @Override
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {
-      return new Iterator<MPSTreeNode>() {
-        @Override
-        public boolean hasNext() {
-          return false;
-        }
-
-        @Override
-        public MPSTreeNode next() {
-          throw new IllegalStateException();
-        }
-
-        @Override
-        public void remove() {
-          throw new IllegalStateException();
-        }
-      };
+      return Collections.<MPSTreeNode>emptySet().iterator();
     }
     return children.iterator();
   }
@@ -275,11 +261,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-  @Override
-  public boolean isLeaf() {
-    return false;
-  }
-
   public MPSTreeNode findExactChildWith(Object userObject) {
     for (MPSTreeNode child : this) {
       if (child.getUserObject() == userObject) return child;
@@ -321,8 +302,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
+  /**
+   * Default value is: 2
+   */
   public int getToggleClickCount() {
-    return 2;
+    return myToggleClickCount;
+  }
+
+  public void setToggleClickCount(int clickCount) {
+    myToggleClickCount = clickCount;
   }
 
   //updates and refreshes tree
@@ -409,37 +397,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
         myTreeMessages = new ArrayList<TreeMessage>(1);
       }
       myTreeMessages.add(message);
-      treeMessagesChanged(updatePresentation);
-    }
-  }
-
-  public void addTreeMessages(TreeMessage... messages) {
-    addTreeMessages(true, messages);
-  }
-
-  public void addTreeMessages(boolean updatePresentation, @NotNull TreeMessage... messages) {
-    if (messages.length == 0) return;
-    synchronized (myTreeMessagesLock) {
-      if (myTreeMessages == null) {
-        myTreeMessages = new ArrayList<TreeMessage>(1);
-      }
-      myTreeMessages.addAll(Arrays.asList(messages));
-      treeMessagesChanged(updatePresentation);
-    }
-  }
-
-  public void removeTreeMessage(TreeMessage message) {
-    removeTreeMessage(message, true);
-  }
-
-  public void removeTreeMessage(@NotNull TreeMessage message, boolean updatePresentation) {
-    final boolean[] b = new boolean[]{false};
-    synchronized (myTreeMessagesLock) {
-      if (myTreeMessages != null) {
-        b[0] = myTreeMessages.remove(message);
-      }
-    }
-    if (b[0]) {
       treeMessagesChanged(updatePresentation);
     }
   }

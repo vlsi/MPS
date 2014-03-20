@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,16 +21,16 @@ public class TryStatement_TextGen extends SNodeTextGen {
     this.indentBuffer();
     this.append("try {");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "body", true));
     this.decreaseDepth();
     this.appendNewLine();
     for (SNode clause : SLinkOperations.getTargets(node, "catchClause", true)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), clause, this.getSNode());
+      appendNode(clause);
       this.appendNewLine();
     }
     this.appendWithIndent("} finally {");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "finallyBody", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "finallyBody", true));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");

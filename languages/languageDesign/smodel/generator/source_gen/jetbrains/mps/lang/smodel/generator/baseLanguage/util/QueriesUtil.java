@@ -9,12 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
 
@@ -56,39 +54,7 @@ public class QueriesUtil {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root")) != null;
   }
 
-  public static SNode get_SConceptPropertyAccess_GetMethod(SNode operation, IScope scope) {
-    String methodName = "getString";
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
-      methodName = "getInteger";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
-      methodName = "getBoolean";
-    }
-    SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527282020");
-    for (SNode method : Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(operationClass))) {
-      if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
-        return method;
-      }
-    }
-    return null;
-  }
-
-  public static SNode get_SConceptPropertyAccess_SetMethod(SNode operation, IScope scope) {
-    String methodName = "setString";
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
-      methodName = "setInteger";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
-      methodName = "setBoolean";
-    }
-    SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527282020");
-    for (SNode method : Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(operationClass))) {
-      if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
-        return method;
-      }
-    }
-    return null;
-  }
-
-  public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation, IScope scope) {
+  public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     String methodName = "getString";
     if (SNodeOperations.isInstanceOf(datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
@@ -108,7 +74,7 @@ public class QueriesUtil {
     return null;
   }
 
-  public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation, IScope scope) {
+  public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "memberDataType", false);
     String methodName = "getString_def";
@@ -139,13 +105,13 @@ public class QueriesUtil {
     return parm == null;
   }
 
-  public static boolean isProperty_hasValueEnum_notNullDefaultValue(SNode op, ITemplateGenerator generator) {
+  public static boolean isProperty_hasValueEnum_notNullDefaultValue(SNode op) {
     SNode dataTypeDeclaration = jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(op);
     SNode defMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(dataTypeDeclaration, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     return SPropertyOperations.getString(defMember, "internalValue") != null;
   }
 
-  public static boolean isProperty_hasValueEnum_nullDefaultValue(SNode op, ITemplateGenerator generator) {
+  public static boolean isProperty_hasValueEnum_nullDefaultValue(SNode op) {
     SNode datatype = jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(op);
     SNode defMemberNode = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     return SPropertyOperations.getString(defMemberNode, "internalValue") == null;

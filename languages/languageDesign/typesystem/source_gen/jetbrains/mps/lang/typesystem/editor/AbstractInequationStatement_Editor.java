@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -42,10 +41,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ka3b3c_a");
     editorCell.setBig(true);
-    if (renderingCondition_ka3b3c_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ka3b3c_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ka3b3c_a0(editorContext, node));
     }
-    if (renderingCondition_ka3b3c_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ka3b3c_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ka3b3c_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ka3b3c_c0(editorContext, node));
@@ -70,7 +69,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ka3b3c_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ka3b3c_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "checkOnly");
   }
 
@@ -93,7 +92,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ka3b3c_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0b0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -164,7 +163,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ka3b3c_f0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0f0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -189,7 +188,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ka3b3c_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ka3b3c_a1a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "checkOnly"));
   }
 
@@ -269,7 +268,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ka3b3c_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -284,7 +283,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");
     Style style = new StyleImpl();
-    TypesystemStyles_StyleSheet.applyInequationLabel(style, editorCell);
+    TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -304,7 +303,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ka3b3c_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ka3b3c_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ka3b3c_c0(editorContext, node));
-    if (renderingCondition_ka3b3c_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ka3b3c_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ka3b3c_d0(editorContext, node));
     }
     return editorCell;
@@ -326,7 +325,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label_1");
     Style style = new StyleImpl();
-    TypesystemStyles_StyleSheet.applyInequationLabel(style, editorCell);
+    TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -361,7 +360,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ka3b3c_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ka3b3c_a3a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
   }
 

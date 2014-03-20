@@ -39,7 +39,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.GenerationUtil;
-import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class CopyGeneratedScripts_Facet extends IFacet.Stub {
@@ -229,7 +229,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
                     // calculate output file name and map it to scripts dir 
                     for (SNode descendant : Sequence.fromIterable(buildScriptDescendants)) {
-                      String fileName = TextGenerator.getFileName(descendant);
+                      String fileName = TextGen.getFileName(descendant);
                       String targetXml = ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY));
                       if (!(fileName.endsWith(".xml"))) {
                         String ext = Utils.getExtensionWithDot(fileName);

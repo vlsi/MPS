@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("helpURL", "conceptAlias", "conceptShortDescription", "abstract", "final").children(new String[]{"linkDeclaration", "propertyDeclaration", "conceptProperty", "conceptLink", "conceptPropertyDeclaration", "conceptLinkDeclaration"}, new boolean[]{true, true, true, true, true, true}).abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("helpURL", "conceptAlias", "conceptShortDescription", "abstract", "final").children(new String[]{"linkDeclaration", "propertyDeclaration", "conceptLink", "conceptLinkDeclaration"}, new boolean[]{true, true, true, true}).abstract_().create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AggregationConceptLink").super_("jetbrains.mps.lang.structure.structure.ConceptLink").parents("jetbrains.mps.lang.structure.structure.ConceptLink").references("aggregationConceptLinkDeclaration").children(new String[]{"target"}, new boolean[]{false}).create();
       case 2:
@@ -22,71 +22,47 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind").interface_().create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("role", "stereotype", "sourceCardinality").references("source", "target").alias("Annotation Link", "").create();
-      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AttributeInfo").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").properties("role").children(new String[]{"multiple", "attributed"}, new boolean[]{false, true}).alias("@attribute info", "").create();
-      case 6:
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("concept").create();
-      case 7:
+      case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").create();
-      case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.BooleanConceptProperty").super_("jetbrains.mps.lang.structure.structure.ConceptProperty").parents("jetbrains.mps.lang.structure.structure.ConceptProperty").references("booleanConceptPropertyDeclaration").final_().create();
-      case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration").super_("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").parents("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").final_().alias("boolean", "").create();
-      case 10:
+      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ConceptDeclaration").super_("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").parents("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").properties("rootable", "iconPath", "staticScope").references("extends").children(new String[]{"implements"}, new boolean[]{true}).final_().alias("Concept", "").create();
-      case 11:
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ConceptLink").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("conceptLinkDeclaration").abstract_().create();
-      case 12:
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").references("targetType").abstract_().create();
-      case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ConceptProperty").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("conceptPropertyDeclaration").abstract_().create();
-      case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("inheritable").abstract_().create();
-      case 15:
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration").super_("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").parents("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").properties("constraint").alias("Constrained Data Type", "").create();
-      case 16:
+      case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.BaseConcept").create();
-      case 17:
+      case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart").properties("build", "comment").create();
-      case 18:
+      case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration").super_("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").parents("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").properties("memberIdentifierPolicy", "hasNoDefaultMember", "noValueText").references("memberDataType", "defaultMember").children(new String[]{"member"}, new boolean[]{true}).alias("Enum Data Type", "").create();
-      case 19:
+      case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.core.structure.BaseConcept").properties("internalValue", "externalValue", "javaIdentifier").create();
-      case 20:
+      case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.IConceptAspect").interface_().create();
-      case 21:
+      case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.IStructureDeprecatable").interface_().parents("jetbrains.mps.lang.core.structure.IDeprecatable").create();
-      case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.IntegerConceptProperty").super_("jetbrains.mps.lang.structure.structure.ConceptProperty").parents("jetbrains.mps.lang.structure.structure.ConceptProperty").properties("value").references("integerConceptPropertyDeclaration").final_().create();
-      case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration").super_("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").parents("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").final_().alias("integer", "").create();
-      case 24:
+      case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration").super_("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").parents("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").children(new String[]{"extends"}, new boolean[]{true}).final_().alias("Interface Concept", "").create();
-      case 25:
+      case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.InterfaceConceptReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("intfc").create();
-      case 26:
+      case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.LinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("role", "metaClass", "sourceCardinality", "unordered", "doNotGenerate").references("specializedLink", "target").final_().create();
-      case 27:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.InterfacePart").references("method").create();
-      case 28:
+      case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration").super_("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").parents("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").final_().create();
-      case 29:
+      case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.PropertyDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("doNotGenerate").references("dataType").final_().create();
-      case 30:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ReferenceConceptLink").super_("jetbrains.mps.lang.structure.structure.ConceptLink").parents("jetbrains.mps.lang.structure.structure.ConceptLink").references("referenceConceptLinkDeclaration", "target").alias("<{referenceConceptLinkDeclaration}>", "").create();
-      case 31:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration").super_("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration").parents("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration").alias("reference", "").create();
-      case 32:
+      case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind").interface_().create();
-      case 33:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.StringConceptProperty").super_("jetbrains.mps.lang.structure.structure.ConceptProperty").parents("jetbrains.mps.lang.structure.structure.ConceptProperty").properties("value").references("stringConceptPropertyDeclaration").final_().create();
-      case 34:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration").super_("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").parents("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration").final_().alias("string", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.IntegerConceptProperty", "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink", "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind", "jetbrains.mps.lang.structure.structure.StringConceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind", "jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"};
 }

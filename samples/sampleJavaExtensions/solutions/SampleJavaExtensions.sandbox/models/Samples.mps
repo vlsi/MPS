@@ -2400,8 +2400,8 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4120418308310980273" nodeInfo="ig">
+    <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="SimpleParallelForSample" />
-    <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4120418308310980274" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4120418308310980275" nodeInfo="igu">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4120418308310980276" nodeInfo="in" />
@@ -2585,9 +2585,6 @@
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4120418308311047826" nodeInfo="in" />
         </node>
       </node>
-    </node>
-    <node role="typeVariableDeclaration" roleId="tpee.1109279881614" type="tpee.TypeVariableDeclaration" typeId="tpee.1109279763828" id="1879781745550833513" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="T" />
     </node>
   </root>
 </model>

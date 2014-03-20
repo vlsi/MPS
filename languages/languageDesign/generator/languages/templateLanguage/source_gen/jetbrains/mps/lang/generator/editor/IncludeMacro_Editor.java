@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -50,7 +49,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8okfes_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_8okfes_a0(editorContext, node));
-    if (renderingCondition_8okfes_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_8okfes_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_8okfes_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_8okfes_c0(editorContext, node));
@@ -61,7 +60,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$INCLUDE$");
     editorCell.setCellId("Constant_8okfes_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -100,14 +99,14 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_8okfes_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyReference(style, editorCell);
+    Styles_StyleSheet.apply_reference(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "includeTemplate");
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
-  private static boolean renderingCondition_8okfes_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_8okfes_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "includeTemplate", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "includeTemplate", false), "name"));
   }
 
@@ -287,7 +286,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -442,7 +441,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("includeTemplate");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyReference(style, editorCell);
+      Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

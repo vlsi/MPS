@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -48,7 +47,7 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module qualified name");
     editorCell.setCellId("Constant_e6mmbg_a0");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -88,7 +87,7 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
     public CheckedModuleQualifiedName_generic_cellMenu_e6mmbg_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> res = ListSequence.fromList(new ArrayList<String>());
       for (SModule m : MPSModuleRepository.getInstance().getModules()) {
         ListSequence.fromList(res).addElement(m.getModuleName());
@@ -96,11 +95,11 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
       return res;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "moduleId", parameterObject);
     }
 

@@ -18,7 +18,6 @@ import java.util.HashSet;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -114,7 +113,7 @@ public class CopyPasteUtil {
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = new jetbrains.mps.smodel.SNode(sourceNode.getConcept().getQualifiedName());
     ((jetbrains.mps.smodel.SNode) targetNode).setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
-    for (String name : Sequence.fromIterable(sourceNode.getPropertyNames())) {
+    for (String name : sourceNode.getPropertyNames()) {
       targetNode.setProperty(name, sourceNode.getProperty(name));
     }
     sourceNodesToNewNodes.put(sourceNode, targetNode);
@@ -307,7 +306,7 @@ public class CopyPasteUtil {
       @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
-        for (SModel sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
+        for (SModel sm : SModelOperations.allImportedModels(targetModel)) {
           allImportedModels.add(sm.getReference());
         }
         for (SModelReference modelReference : necessaryImports) {

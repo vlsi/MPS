@@ -9,7 +9,8 @@ import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class AttributedFigureReference_Behavior {
@@ -19,7 +20,7 @@ public class AttributedFigureReference_Behavior {
   public static List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
     return ListSequence.fromList(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, "figureAttribute", false))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(FigureParameterAttribute_Behavior.call_getParameterField_5422656561931910498(it), "name");
+        return SPropertyOperations.getString(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }
     }).toListSequence();
   }
@@ -27,7 +28,7 @@ public class AttributedFigureReference_Behavior {
   public static SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, final String name) {
     return ListSequence.fromList(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, "figureAttribute", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_godh5_a0a0a0a0a0a0c(SPropertyOperations.getString(FigureParameterAttribute_Behavior.call_getParameterField_5422656561931910498(it), "name"), name);
+        return eq_godh5_a0a0a0a0a0a0c(SPropertyOperations.getString(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), name);
       }
     });
   }

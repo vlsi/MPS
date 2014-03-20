@@ -65,7 +65,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.generator.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-tests-models">
-      <fileset dir="${basedir}/languages/languageDesign/generator-tests/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/generator-tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/generator/jetbrains.mps.generator.tests-src.jar">
       <zipfileset file="${basedir}/languages/languageDesign/generator-tests/jetbrains.mps.generator.tests.msd" prefix="module" />
@@ -87,7 +87,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-overloadedOperators-solutions-jetbrains.mps.baseLanguage.overloadedOperators.sandbox-jetbrains">
-      <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/generator/jetbrains.mps.baseLanguage.overloadedOperators.sandbox-src.jar">
       <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" includes="**/*.java" />
@@ -119,7 +119,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeaving.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-jetbrains.mps.traceInfo.testWeaving-models">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeaving-src.jar">
       <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" includes="**/*.java" />
@@ -155,10 +155,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingGenerated.data-generator-template">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingGenerated.data-languageModels">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingGenerated.data-src.jar">
       <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" includes="**/*.java" />
@@ -196,10 +196,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingInterpreted.data#2819311507031176971" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingInterpreted.data-generator-template">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingInterpreted.data-languageModels">
-      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data-src.jar">
       <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/source_gen" includes="**/*.java" />
@@ -234,7 +234,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate parallelMode="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -386,9 +386,9 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
@@ -436,9 +436,9 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
@@ -484,8 +484,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -529,8 +529,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingGenerated.data" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -573,8 +573,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -618,8 +618,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingInterpreted.data" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -726,7 +726,7 @@
       <pathelement location="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
-    <junit showoutput="true" fork="true">
+    <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
       <jvmarg value="-Xmx1024m" />

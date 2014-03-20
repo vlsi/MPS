@@ -41,7 +41,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class EvaluationContainer implements IEvaluationContainer {
   protected final Project myProject;
@@ -184,10 +183,10 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   private static SNode createInternalVariableReference_jbng3m_a0a1cb(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, false);
     {
-      n1.setProperty("name", (String) p0);
-      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+      n1.setProperty("name", String.valueOf(p0));
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
       n2.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", n2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
       n1.addChild("type", n2);
     }

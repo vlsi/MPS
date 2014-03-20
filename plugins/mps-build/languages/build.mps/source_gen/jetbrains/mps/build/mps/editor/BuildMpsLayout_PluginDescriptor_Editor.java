@@ -34,7 +34,7 @@ public class BuildMpsLayout_PluginDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_bzzv1n_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

@@ -82,7 +82,7 @@ public class LocalBehaviorMethodCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("baseMethodDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyMPSMethodCall(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

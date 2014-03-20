@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,24 +22,42 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ListenersFactory;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ListenersFactory.NodeListeners;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ModuleNodeListeners;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.SModelNodeListeners;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeNodeVisitor;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class ProjectPaneTreeHighlighter {
-  private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
-  private MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
+  private final ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
+  private final ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
+  private final ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
+  private final TreeNodeUpdater myUpdater = new TreeNodeUpdater();
+  private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+
+  private final MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
   private ProjectPaneTree myTree;
+  // containers that control listeners of module and model respectively
+  private ModuleNodeListeners myModuleListeners;
+  private SModelNodeListeners myModelListeners;
 
   public void init(ProjectPaneTree tree) {
     myTree = tree;
+
+    myGenStatusVisitor.setUpdater(myUpdater).setExecutor(myExecutor);
+    myErrorVisitor.setUpdater(myUpdater).setExecutor(myExecutor);
+    myModifiedMarker.setUpdater(myUpdater).setExecutor(myExecutor);
 
     myTree.addTreeNodeListener(myNodeListener);
 
@@ -50,13 +68,58 @@ public class ProjectPaneTreeHighlighter {
 
   public void dispose() {
     myTree.removeTreeNodeListener(myNodeListener);
+    if (myModuleListeners != null) {
+      myModuleListeners.stopListening();
+      myModuleListeners = null;
+    }
+    if (myModelListeners != null) {
+      myModelListeners.stopListening();
+      myModelListeners = null;
+    }
+    myGenStatusVisitor.setUpdater(null).setExecutor(null);
+    myErrorVisitor.setUpdater(null).setExecutor(null);
+    myModifiedMarker.setUpdater(null).setExecutor(null);
   }
+
+  private SModelNodeListeners getModelListeners() {
+    if (myModelListeners == null) {
+      myModelListeners = new SModelNodeListeners(myGenStatusVisitor, myErrorVisitor, myModifiedMarker);
+      myModelListeners.startListening();
+    }
+    return myModelListeners;
+  }
+
+  private ModuleNodeListeners getModuleListeners() {
+    if (myModuleListeners == null) {
+      myModuleListeners = new ModuleNodeListeners(myErrorVisitor);
+      myModuleListeners.startListening();
+    }
+    return myModuleListeners;
+  }
+  /*package*/ void moduleNodeAdded(@NotNull ProjectModuleTreeNode node) {
+    getModuleListeners().attach(node);
+  }
+  /*package*/ void moduleNodeRemoved(@NotNull ProjectModuleTreeNode node) {
+    assert myModuleListeners != null;
+    getModuleListeners().detach(node);
+  }
+
+  /*package*/ void modelNodeAdded(SModelTreeNode modelNode) {
+    getModelListeners().attach(modelNode);
+
+  }
+
+  /*package*/ void modelNodeRemoved(SModelTreeNode modelNode) {
+    assert myModelListeners != null;
+    getModelListeners().detach(modelNode);
+  }
+
 
   private class MyDumbModeListener implements DumbModeListener {
     @Override
     public void enteredDumbMode() {
       if (!ProjectPane.isShowGenStatus()) return;
-      visit(myTree.getRootNode(), myGenStatusVisitor);
+      myGenStatusVisitor.dispatchForHierarchy(myTree.getRootNode());
     }
 
     @Override
@@ -66,34 +129,34 @@ public class ProjectPaneTreeHighlighter {
       Project p = myTree.getProject();
       if (p.isDisposed()) return;
 
-      visit(myTree.getRootNode(), myGenStatusVisitor);
-    }
-
-    private void visit(MPSTreeNode rootNode, TreeNodeVisitor visitor) {
-      //todo width-first will be better because we normally see upper level first
-      visitor.visitNode(rootNode);
-      for (MPSTreeNode node : rootNode) {
-        visit(node, visitor);
-      }
+      myGenStatusVisitor.dispatchForHierarchy(myTree.getRootNode());
     }
   }
 
   private class MyMPSTreeNodeListener implements MPSTreeNodeListener {
-    private Map<MPSTreeNode, NodeListeners> myListeners = new HashMap<MPSTreeNode, NodeListeners>();
 
     @Override
     public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
-      NodeListeners l = ListenersFactory.createListenersFor(treeNode);
-      if (l == null) return;
-      myListeners.put(treeNode, l);
-      l.startListening();
+      if (treeNode instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) treeNode;
+        if (modelNode.getModel() != null) {
+          modelNodeAdded(modelNode);
+        }
+      } else if (treeNode instanceof ProjectModuleTreeNode) {
+        moduleNodeAdded((ProjectModuleTreeNode) treeNode);
+      }
     }
 
     @Override
     public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
-      NodeListeners l = myListeners.remove(treeNode);
-      if (l == null) return;
-      l.stopListening();
+      if (treeNode instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) treeNode;
+        if (modelNode.getModel() != null) {
+          modelNodeRemoved(modelNode);
+        }
+      } else if (treeNode instanceof ProjectModuleTreeNode) {
+        moduleNodeRemoved((ProjectModuleTreeNode) treeNode);
+      }
     }
 
     @Override

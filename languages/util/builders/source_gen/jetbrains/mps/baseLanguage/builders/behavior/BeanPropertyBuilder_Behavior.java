@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -56,23 +55,23 @@ public class BeanPropertyBuilder_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getCreatorExpression_2679357232284060737(SNode thisNode, SNode parentRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
-  }
-
-  @Deprecated
-  public static SNode call_getAttachStatementChild_4797501453850342017(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{parentBuilder, parentRef, childRef});
-  }
-
-  @Deprecated
   public static SNode callSuper_getResultType_2679357232284060725(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static SNode call_getCreatorExpression_2679357232284060737(SNode thisNode, SNode parentRef) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
+  }
+
+  @Deprecated
   public static SNode callSuper_getCreatorExpression_2679357232284060737(SNode thisNode, String callerConceptFqName, SNode parentRef) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
+  }
+
+  @Deprecated
+  public static SNode call_getAttachStatementChild_4797501453850342017(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{parentBuilder, parentRef, childRef});
   }
 
   @Deprecated
@@ -87,13 +86,13 @@ public class BeanPropertyBuilder_Behavior {
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("operand", HUtil.copyIfNecessary(quotedNode_6));
     }
-    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
+    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_7, "baseMethodDeclaration", (SNode) parameter_3);
     quotedNode_8 = (SNode) parameter_2;
     if (quotedNode_8 != null) {

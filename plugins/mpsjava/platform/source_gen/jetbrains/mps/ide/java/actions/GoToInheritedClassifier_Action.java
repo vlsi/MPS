@@ -137,7 +137,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
         public void run(@NotNull final ProgressIndicator p) {
           modelAccess.runReadAction(new Runnable() {
             public void run() {
-              for (String finderClass : ListSequence.fromList(finderClasses)) {
+              for (String finderClass : finderClasses) {
                 List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
                 ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
                   public SNodePointer select(SNode it) {

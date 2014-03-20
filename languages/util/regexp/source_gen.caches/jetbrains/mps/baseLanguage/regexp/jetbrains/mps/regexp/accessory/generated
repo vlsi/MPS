@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5wdv9bpyjzuw6k6w31hjme5qyqtqtk1">
-  <common hash="-bke4upbk0bwjj30ievugbaqil4yb84e" />
-  <source id="1174554673597" hash="5s1pscb7q461p0j1753ggplzojapmea" />
-  <source id="1174662820983" name="Common" hash="lzap7go8y38ac5fc8i4e0sbdojbndl" />
-</dependencies>
+<dependencies version="2" modelHash="-5wdv9bpyjzuw6k6w31hjme5qyqtqtk1" />
 

@@ -14,7 +14,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -87,12 +86,12 @@ public class BuildProject_Behavior {
 
   public static Scope call_getScope_1224588814561808649(SNode thisNode, SNode kind, String role) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildExternalLayout")) {
-      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, ((AbstractModule) SNodeOperations.getModel(thisNode).getModule()).getScope(), NameUtil.nodeFQName(kind));
+      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind));
     }
 
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildProject")) {
       final SNode _this = thisNode;
-      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, ((AbstractModule) SNodeOperations.getModel(thisNode).getModule()).getScope(), NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
           return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, "jetbrains.mps.build.structure.BuildProject"), false)).contains(_this));
         }

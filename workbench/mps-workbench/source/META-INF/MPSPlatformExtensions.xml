@@ -7,7 +7,7 @@
   <projectService serviceInterface="com.intellij.ide.projectView.ProjectView"
                   serviceImplementation="com.intellij.ide.projectView.impl.ProjectViewImpl"/>
   <!--MPS Patch: enable project view-->
-  <toolWindow id="Project" anchor="left" icon="AllIcons.Toolwindows.ToolWindowProject"
+  <toolWindow id="Project" anchor="left" icon="MPSToolWindowIcons.ToolWindows.ToolWindowProject"
               factoryClass="jetbrains.mps.ide.projectPane.MPSProjectViewToolWindowFactory"/>
   <!--MPS Patch Start: project view tool tabs-->
   <projectViewPane implementation="jetbrains.mps.ide.projectPane.ProjectPane"/>

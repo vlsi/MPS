@@ -14,7 +14,6 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 
 public class check_SNotationPredicate_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SNotationPredicate_NonTypesystemRule() {
@@ -47,7 +46,7 @@ public class check_SNotationPredicate_NonTypesystemRule extends AbstractNonTypes
 
   private static SNode createMqlBoolType_1y4mja_a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlBoolType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlBoolType", null, false);
     return n1;
   }
 }

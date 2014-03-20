@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -33,6 +32,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 
 public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -114,7 +115,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       IFile file = FileSystem.getInstance().getFileByPath(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
       if (!(file.exists())) {
         return ListSequence.fromList(new ArrayList<String>());
@@ -135,15 +136,16 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       }, true).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if ((SLinkOperations.getTarget(node, "compositePart", true) == null)) {
         SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
       }
       SPropertyOperations.set(SLinkOperations.getTarget(node, "compositePart", true), "head", parameterObject);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, "compositePart", true), CellIdManager.createPropertyId("head"), -1);
     }
 
     public boolean isReferentPresentation() {

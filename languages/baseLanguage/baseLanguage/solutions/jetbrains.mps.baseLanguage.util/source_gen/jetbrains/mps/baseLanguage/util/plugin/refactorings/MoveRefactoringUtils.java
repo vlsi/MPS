@@ -13,8 +13,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class MoveRefactoringUtils {
   public MoveRefactoringUtils() {
@@ -42,6 +45,17 @@ public class MoveRefactoringUtils {
       return;
     }
     ((SModelInternal) model).addModelImport(ref, false);
+
+    SModule module = model.getModule();
+    if (module instanceof Language) {
+      Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
+      for (SDependency dependency : Sequence.fromIterable(declaredDependencies)) {
+        if (dependency.getTarget() == toImport.getModule()) {
+          return;
+        }
+      }
+      ((Language) module).addDependency(toImport.getModule().getModuleReference(), false);
+    }
   }
 
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {

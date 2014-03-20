@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class FieldDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -104,7 +103,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    if (!((context.isElementVisible(thisNode)))) {
+    if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, "name") == null) {
       return;
     }
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
@@ -117,28 +116,13 @@ public class FieldDeclaration_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getSuffix_3012473318495506736(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
-  }
-
-  @Deprecated
-  public static String call_getPrefix_3012473318495506730(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPrefix_3012473318495495520", new Object[]{project});
-  }
-
-  @Deprecated
-  public static String call_getTraceableProperty_2496361171403550861(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
-  }
-
-  @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541377970(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
   }
 
   @Deprecated
@@ -147,13 +131,28 @@ public class FieldDeclaration_Behavior {
   }
 
   @Deprecated
+  public static String call_getSuffix_3012473318495506736(SNode thisNode, Project project) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
+  }
+
+  @Deprecated
   public static String callSuper_getSuffix_3012473318495506736(SNode thisNode, String callerConceptFqName, Project project) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, new Object[]{project});
   }
 
   @Deprecated
+  public static String call_getPrefix_3012473318495506730(SNode thisNode, Project project) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPrefix_3012473318495495520", new Object[]{project});
+  }
+
+  @Deprecated
   public static String callSuper_getPrefix_3012473318495506730(SNode thisNode, String callerConceptFqName, Project project) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, new Object[]{project});
+  }
+
+  @Deprecated
+  public static String call_getTraceableProperty_2496361171403550861(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
   }
 
   @Deprecated
@@ -164,7 +163,7 @@ public class FieldDeclaration_Behavior {
   private static SNode _quotation_createNode_dh5t54_b0a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
 }

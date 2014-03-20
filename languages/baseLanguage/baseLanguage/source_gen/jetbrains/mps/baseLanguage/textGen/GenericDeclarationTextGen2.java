@@ -6,16 +6,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
   public static void typeDeclarations(SNode generic, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {
       textGen.append("<");
-      if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)) {
-          TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).last()) {
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(generic, "typeVariableDeclaration", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          textGen.appendNode(item);
+          if (item != lastItem) {
             textGen.append(", ");
           }
         }

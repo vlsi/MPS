@@ -70,7 +70,7 @@ public class SSymbolRefExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("ref");
       }
       Style style = new StyleImpl();
-      SyntaxJavaSS_StyleSheet.applySymRef(style, editorCell);
+      SyntaxJavaSS_StyleSheet.apply_SymRef(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       return editorCell;

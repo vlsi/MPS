@@ -12,7 +12,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -41,7 +40,7 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tclrnl_a");
     editorCell.setBig(true);
-    if (renderingCondition_tclrnl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tclrnl_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_tclrnl_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_tclrnl_b0(editorContext, node));
@@ -53,13 +52,13 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_tclrnl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputFolders_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0()}));
     return editorCell;
   }
 
-  private static boolean renderingCondition_tclrnl_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tclrnl_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildSourceSetContainer"));
   }
 
@@ -76,7 +75,7 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_tclrnl_b0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

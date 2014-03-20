@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -26,15 +25,19 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TemplateArgumentContext extends TemplateQueryContext {
 
-  private final SNodeReference myTemplateNode;
-
-  public TemplateArgumentContext(SNode inputNode, @NotNull SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, null, context, generator);
-    myTemplateNode = templateNode;
+  /**
+   * @deprecated use {@link #TemplateArgumentContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
+  public TemplateArgumentContext(SNode inputNode, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    super(inputNode, templateNode, context, generator);
   }
 
-  @Override
-  public SNode getTemplateNode() {
-    return myTemplateNode.resolve(MPSModuleRepository.getInstance());
+  /**
+   * @since 3.1
+   */
+  public TemplateArgumentContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
+    super(templateNode, context, generator);
   }
 }

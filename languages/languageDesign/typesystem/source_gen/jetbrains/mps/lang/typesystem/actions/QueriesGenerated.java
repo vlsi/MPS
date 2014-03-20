@@ -21,13 +21,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.typesystem.typesystem.RulesUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -89,9 +89,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -125,7 +125,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final String item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode rule = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
                 if ((item).equals("check typeof")) {
@@ -142,7 +142,15 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_7750890258733139493(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null);
+    if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null)) {
+      return true;
+    }
+
+    SNode method = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    if ((method != null) && BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(method, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)", "1196177069451"))) {
+      return true;
+    }
+    return false;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -150,11 +158,10 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), _context.getModel(), operationContext.getScope());
-          final IScope scope = operationContext.getScope();
+          List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), _context.getModel());
           return ListSequence.fromList(subconcepts).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), scope);
+              return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"));
             }
           }).toListSequence();
         }

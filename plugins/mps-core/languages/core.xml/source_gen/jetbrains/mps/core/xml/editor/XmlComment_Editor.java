@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -43,7 +42,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!--");
     editorCell.setCellId("Constant_5fx40y_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlComment(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlComment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -56,7 +55,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_5fx40y_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlComment_Editor.renderingCondition_5fx40y_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlComment_Editor.renderingCondition_5fx40y_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_5fx40y_a1a(editorContext, node);
@@ -66,7 +65,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_5fx40y_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_5fx40y_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).count() <= 1;
   }
 
@@ -197,7 +196,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_5fx40y_c0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlComment(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlComment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

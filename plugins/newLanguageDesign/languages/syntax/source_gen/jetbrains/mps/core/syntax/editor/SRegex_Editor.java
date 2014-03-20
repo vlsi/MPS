@@ -35,7 +35,7 @@ public class SRegex_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_4irjng_a0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyRegex(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Regex(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -50,7 +50,7 @@ public class SRegex_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_regexp");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyRegex(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Regex(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -67,7 +67,7 @@ public class SRegex_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_4irjng_c0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyRegex(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Regex(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

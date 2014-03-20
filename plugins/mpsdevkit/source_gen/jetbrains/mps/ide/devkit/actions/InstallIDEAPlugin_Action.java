@@ -131,11 +131,11 @@ public class InstallIDEAPlugin_Action extends BaseAction {
       }
     };
     descriptor.setTitle("Select IntelliJ IDEA configuration folder");
-    descriptor.setRoot(ideaConfigRoot);
+    descriptor.setRoots(ideaConfigRoot);
 
     String oldShowHiddenValue = PropertiesComponent.getInstance().getValue("FileChooser.showHiddens");
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", Boolean.TRUE.toString());
-    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ((Frame) MapSequence.fromMap(_params).get("frame")));
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, null, ((Frame) MapSequence.fromMap(_params).get("frame")));
     VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
     assert files.length <= 1;

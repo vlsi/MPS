@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import java.util.List;
 

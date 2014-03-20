@@ -16,7 +16,6 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -54,27 +53,25 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a;
-        nodeToMatch_ObjectArraySupertypes_mvbroc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_mvbroc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_mvbroc_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_ObjectArraySupertypes_mvbroc_ = "componentType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a, childRole_ObjectArraySupertypes_mvbroc_, 1))) {
+          String childRole_mvbroc_ = "componentType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_mvbroc_a0a, childRole_mvbroc_, 1))) {
             return false;
           }
           {
-            SNode childVar_ObjectArraySupertypes_mvbroc_a0a0 = IterableUtil.get(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_), 0);
+            SNode childVar_mvbroc_a0a0 = IterableUtil.get(nodeToMatch_mvbroc_a0a.getChildren(childRole_mvbroc_), 0);
             {
-              SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0;
-              nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_ObjectArraySupertypes_mvbroc_a0a0;
-              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_mvbroc_a0a0 = childVar_mvbroc_a0a0;
+              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_mvbroc_a0a0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
-                SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0e;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferenceTarget("classifier")))) {
+                SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0a0a0a0a0e;
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferenceTarget("classifier")))) {
                   return false;
                 }
               }
@@ -103,7 +100,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   private static SNode _quotation_createNode_gqfgxi_a0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
@@ -111,7 +108,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   private static SNode _quotation_createNode_gqfgxi_b0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~Serializable")));
     return quotedNode_1;
   }
@@ -119,10 +116,10 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   private static SNode _quotation_createNode_gqfgxi_c0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Cloneable")));
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

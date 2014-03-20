@@ -9,16 +9,16 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 @MPSLaunch
@@ -52,7 +52,11 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qttyfe_a6a2c()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_ds"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qttyfe_a6a2c());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_ds"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
       return true;
     }
 
@@ -66,57 +70,54 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_OrPattern_7ozj7q_a0;
-          nodeToMatch_OrPattern_7ozj7q_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_OrPattern_7ozj7q_a0.getConcept().getQualifiedName()))) {
+          SNode nodeToMatch_7ozj7q_a0 = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_7ozj7q_a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
-            String childRole_OrPattern_7ozj7q_ = "ifTrue";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a0, childRole_OrPattern_7ozj7q_, 1))) {
+            String childRole_7ozj7q_ = "ifTrue";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a0, childRole_7ozj7q_, 1))) {
               return false;
             }
             {
-              SNode childVar_OrPattern_7ozj7q_a0a = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0.getChildren(childRole_OrPattern_7ozj7q_), 0);
+              SNode childVar_7ozj7q_a0a = IterableUtil.get(nodeToMatch_7ozj7q_a0.getChildren(childRole_7ozj7q_), 0);
               {
-                SNode nodeToMatch_OrPattern_7ozj7q_a0a;
-                nodeToMatch_OrPattern_7ozj7q_a0a = childVar_OrPattern_7ozj7q_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_OrPattern_7ozj7q_a0a.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_7ozj7q_a0a = childVar_7ozj7q_a0a;
+                if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_7ozj7q_a0a.getConcept().getQualifiedName()))) {
                   return false;
                 }
                 {
-                  String childRole_OrPattern_7ozj7q__0 = "statement";
-                  if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a0a, childRole_OrPattern_7ozj7q__0, 1))) {
+                  String childRole_7ozj7q__0 = "statement";
+                  if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a0a, childRole_7ozj7q__0, 1))) {
                     return false;
                   }
                   {
-                    SNode childVar_OrPattern_7ozj7q_a0a0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0a.getChildren(childRole_OrPattern_7ozj7q__0), 0);
-                    this.patternVar_body = childVar_OrPattern_7ozj7q_a0a0;
+                    SNode childVar_7ozj7q_a0a0 = IterableUtil.get(nodeToMatch_7ozj7q_a0a.getChildren(childRole_7ozj7q__0), 0);
+                    this.patternVar_body = childVar_7ozj7q_a0a0;
                   }
                 }
               }
             }
           }
           {
-            String childRole_OrPattern_7ozj7q__1 = "condition";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a0, childRole_OrPattern_7ozj7q__1, 1))) {
+            String childRole_7ozj7q__1 = "condition";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a0, childRole_7ozj7q__1, 1))) {
               return false;
             }
             {
-              SNode childVar_OrPattern_7ozj7q_a0a_0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0.getChildren(childRole_OrPattern_7ozj7q__1), 0);
+              SNode childVar_7ozj7q_a0a_0 = IterableUtil.get(nodeToMatch_7ozj7q_a0.getChildren(childRole_7ozj7q__1), 0);
               {
-                SNode nodeToMatch_OrPattern_7ozj7q_a0a_0;
-                nodeToMatch_OrPattern_7ozj7q_a0a_0 = childVar_OrPattern_7ozj7q_a0a_0;
+                SNode nodeToMatch_7ozj7q_a0a_0 = childVar_7ozj7q_a0a_0;
                 {
                   boolean orMatches = false;
                   GeneratedMatchingPattern orPattern;
-                  orPattern = new PatternOrPattern_Test.TestBody.Pattern_qttyfe_a0a1a2c.Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a2c();
-                  if (orPattern.match(nodeToMatch_OrPattern_7ozj7q_a0a_0)) {
+                  orPattern = new PatternOrPattern_Test.TestBody.Pattern_qttyfe_a0a1a2c.Pattern_qttyfe_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c();
+                  if (orPattern.match(nodeToMatch_7ozj7q_a0a_0)) {
                     orMatches = true;
                     myOrPattern_7ozj7q_a0a = orPattern;
                   }
-                  orPattern = new PatternOrPattern_Test.TestBody.Pattern_qttyfe_a0a1a2c.Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a2c();
-                  if (orPattern.match(nodeToMatch_OrPattern_7ozj7q_a0a_0)) {
+                  orPattern = new PatternOrPattern_Test.TestBody.Pattern_qttyfe_a0a1a2c.Pattern_qttyfe_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c();
+                  if (orPattern.match(nodeToMatch_7ozj7q_a0a_0)) {
                     orMatches = true;
                     myOrPattern_7ozj7q_a0a = orPattern;
                   }
@@ -155,42 +156,39 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
       public void performActions(Object o) {
       }
 
-      public class Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
-        public Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a2c() {
+      public class Pattern_qttyfe_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
+        public Pattern_qttyfe_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
 
         public boolean match(SNode nodeToMatch) {
           {
-            SNode nodeToMatch_OrPattern_7ozj7q_a0a0a;
-            nodeToMatch_OrPattern_7ozj7q_a0a0a = nodeToMatch;
-            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_OrPattern_7ozj7q_a0a0a.getConcept().getQualifiedName()))) {
+            SNode nodeToMatch_7ozj7q_a0a0a = nodeToMatch;
+            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_7ozj7q_a0a0a.getConcept().getQualifiedName()))) {
               return false;
             }
             {
-              String childRole_OrPattern_7ozj7q__2 = "leftExpression";
-              if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a0a0a, childRole_OrPattern_7ozj7q__2, 1))) {
+              String childRole_7ozj7q__2 = "leftExpression";
+              if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a0a0a, childRole_7ozj7q__2, 1))) {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0a0a0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0a0a.getChildren(childRole_OrPattern_7ozj7q__2), 0);
+                SNode childVar_7ozj7q_a0a0a0 = IterableUtil.get(nodeToMatch_7ozj7q_a0a0a.getChildren(childRole_7ozj7q__2), 0);
                 {
-                  SNode nodeToMatch_OrPattern_7ozj7q_a0a0a0;
-                  nodeToMatch_OrPattern_7ozj7q_a0a0a0 = childVar_OrPattern_7ozj7q_a0a0a0;
-                  patternVar_ds = nodeToMatch_OrPattern_7ozj7q_a0a0a0;
+                  SNode nodeToMatch_7ozj7q_a0a0a0 = childVar_7ozj7q_a0a0a0;
+                  patternVar_ds = nodeToMatch_7ozj7q_a0a0a0;
                 }
               }
             }
             {
-              String childRole_OrPattern_7ozj7q__3 = "rightExpression";
-              if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a0a0a, childRole_OrPattern_7ozj7q__3, 1))) {
+              String childRole_7ozj7q__3 = "rightExpression";
+              if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a0a0a, childRole_7ozj7q__3, 1))) {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0a0a0_0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0a0a.getChildren(childRole_OrPattern_7ozj7q__3), 0);
+                SNode childVar_7ozj7q_a0a0a0_0 = IterableUtil.get(nodeToMatch_7ozj7q_a0a0a.getChildren(childRole_7ozj7q__3), 0);
                 {
-                  SNode nodeToMatch_OrPattern_7ozj7q_a0a0a0_0;
-                  nodeToMatch_OrPattern_7ozj7q_a0a0a0_0 = childVar_OrPattern_7ozj7q_a0a0a0_0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_OrPattern_7ozj7q_a0a0a0_0.getConcept().getQualifiedName()))) {
+                  SNode nodeToMatch_7ozj7q_a0a0a0_0 = childVar_7ozj7q_a0a0a0_0;
+                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_7ozj7q_a0a0a0_0.getConcept().getQualifiedName()))) {
                     return false;
                   }
                 }
@@ -215,44 +213,41 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
         }
       }
 
-      public class Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
-        public Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a2c() {
+      public class Pattern_qttyfe_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
+        public Pattern_qttyfe_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
 
         public boolean match(SNode nodeToMatch) {
           {
-            SNode nodeToMatch_OrPattern_7ozj7q_a1a0a;
-            nodeToMatch_OrPattern_7ozj7q_a1a0a = nodeToMatch;
-            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_OrPattern_7ozj7q_a1a0a.getConcept().getQualifiedName()))) {
+            SNode nodeToMatch_7ozj7q_a1a0a = nodeToMatch;
+            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_7ozj7q_a1a0a.getConcept().getQualifiedName()))) {
               return false;
             }
             {
-              String childRole_OrPattern_7ozj7q__4 = "leftExpression";
-              if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a1a0a, childRole_OrPattern_7ozj7q__4, 1))) {
+              String childRole_7ozj7q__4 = "leftExpression";
+              if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a1a0a, childRole_7ozj7q__4, 1))) {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0b0a0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a1a0a.getChildren(childRole_OrPattern_7ozj7q__4), 0);
+                SNode childVar_7ozj7q_a0b0a0 = IterableUtil.get(nodeToMatch_7ozj7q_a1a0a.getChildren(childRole_7ozj7q__4), 0);
                 {
-                  SNode nodeToMatch_OrPattern_7ozj7q_a0b0a0;
-                  nodeToMatch_OrPattern_7ozj7q_a0b0a0 = childVar_OrPattern_7ozj7q_a0b0a0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_OrPattern_7ozj7q_a0b0a0.getConcept().getQualifiedName()))) {
+                  SNode nodeToMatch_7ozj7q_a0b0a0 = childVar_7ozj7q_a0b0a0;
+                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_7ozj7q_a0b0a0.getConcept().getQualifiedName()))) {
                     return false;
                   }
                 }
               }
             }
             {
-              String childRole_OrPattern_7ozj7q__5 = "rightExpression";
-              if (!(PatternUtil.hasNChildren(nodeToMatch_OrPattern_7ozj7q_a1a0a, childRole_OrPattern_7ozj7q__5, 1))) {
+              String childRole_7ozj7q__5 = "rightExpression";
+              if (!(PatternUtil.hasNChildren(nodeToMatch_7ozj7q_a1a0a, childRole_7ozj7q__5, 1))) {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0b0a0_0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a1a0a.getChildren(childRole_OrPattern_7ozj7q__5), 0);
+                SNode childVar_7ozj7q_a0b0a0_0 = IterableUtil.get(nodeToMatch_7ozj7q_a1a0a.getChildren(childRole_7ozj7q__5), 0);
                 {
-                  SNode nodeToMatch_OrPattern_7ozj7q_a0b0a0_0;
-                  nodeToMatch_OrPattern_7ozj7q_a0b0a0_0 = childVar_OrPattern_7ozj7q_a0b0a0_0;
-                  patternVar_ds = nodeToMatch_OrPattern_7ozj7q_a0b0a0_0;
+                  SNode nodeToMatch_7ozj7q_a0b0a0_0 = childVar_7ozj7q_a0b0a0_0;
+                  patternVar_ds = nodeToMatch_7ozj7q_a0b0a0_0;
                 }
               }
             }
@@ -284,15 +279,15 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", null, null, false);
       quotedNode_2.addChild("statement", quotedNode_4);
       quotedNode_1.addChild("ifTrue", quotedNode_2);
-      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
-      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, false);
+      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
       quotedNode_3.addChild("rightExpression", quotedNode_5);
-      quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
       quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~BufferedOutputStream")));
       quotedNode_3.addChild("leftExpression", quotedNode_6);
       quotedNode_1.addChild("condition", quotedNode_3);
@@ -302,7 +297,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_qttyfe_a6a2c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
       quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~BufferedOutputStream")));
       return quotedNode_1;
     }

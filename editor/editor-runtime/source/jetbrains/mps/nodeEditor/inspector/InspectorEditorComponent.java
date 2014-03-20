@@ -27,6 +27,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
+
+  private SNode myContainingRoot;
+
   public InspectorEditorComponent(@NotNull SRepository p) {
     this(p, false);
   }
@@ -35,6 +38,7 @@ public class InspectorEditorComponent extends EditorComponent {
     super(repository, false, rightToLeft);
     myNode = null;
     myNodePointer = null;
+    myContainingRoot = null;
     setNoVirtualFile(true);
     setEditorContext(new EditorContext(this, null, repository));
     rebuildEditorContent();
@@ -44,6 +48,7 @@ public class InspectorEditorComponent extends EditorComponent {
     if (myNode == node) {
       return;
     }
+    myContainingRoot = node == null ? null : node.getContainingRoot();
     super.editNode(node);
   }
 
@@ -57,11 +62,16 @@ public class InspectorEditorComponent extends EditorComponent {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
-    return getEditorContext().createInspectedCell(getEditedNode(), events);
+    pushCellContext();
+    EditorCell inspectedCell = getEditorContext().createInspectedCell(getEditedNode(), events);
+    popCellContext();
+    return inspectedCell;
   }
 
   @Override
   protected SNode getNodeForTypechecking(SNode editedNode) {
-    return editedNode == null ? null : editedNode.getContainingRoot();
+    if (editedNode == null) return null;
+    // assuming the parameter is always a descendant of the current containing root, but may have been detached from the model
+    return editedNode.getModel() != null ? editedNode.getContainingRoot() : myContainingRoot;
   }
 }

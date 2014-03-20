@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.GeneratorUtilEx;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateContainer;
 import jetbrains.mps.generator.impl.TemplateProcessor;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Evgeny Gryaznov, 12/13/10
@@ -63,31 +66,24 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
 
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    TemplateContext applyContext = myArguments.length == 0 ? context : context.subContext(getArgumentsAsMap());
+    TemplateContext applyContext = new DefaultTemplateContext(context.getInput());
+    if (myArguments.length > 0) {
+      applyContext = applyContext.subContext(getArgumentsAsMap());
+    }
 
     if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
-      List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(myTemplateNode);
-      if (!GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, myTemplateNode, context.getInput(), null, environment.getGenerator())) {
-        environment.getGenerator().showErrorMessage(context.getInput(), myTemplateNode, "error processing template declaration");
-        return null;
-      }
+      TemplateContainer tc = new TemplateContainer(new TemplateProcessor(environment), myTemplateNode);
+      tc.initialize();
 
-      environment.getTracer().pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(myTemplateNode));
-
-      Collection<SNode> outputNodes = new ArrayList<SNode>();
-      for (SNode fragment : fragments) {
-        SNode templateForInclude = fragment.getParent();
-        String mappingName = GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null);
-        TemplateProcessor p = new TemplateProcessor(environment);
-        try {
-          outputNodes.addAll(p.apply(mappingName, templateForInclude, context.subContext(mappingName)));
-        } catch (TemplateProcessingFailureException ex) {
-          /* ignore */
-        }
+      final SNodePointer templateNodeRef = new SNodePointer(myTemplateNode);
+      environment.getTracer().pushTemplateNode(templateNodeRef);
+      try {
+        return tc.apply(context);
+      } finally {
+        environment.getTracer().closeTemplateNode(templateNodeRef);
       }
-      return outputNodes;
     } else {
-      return new TemplateProcessor(environment).apply(null, myTemplateNode, applyContext);
+      return new TemplateProcessor(environment).apply(myTemplateNode, applyContext);
     }
   }
 

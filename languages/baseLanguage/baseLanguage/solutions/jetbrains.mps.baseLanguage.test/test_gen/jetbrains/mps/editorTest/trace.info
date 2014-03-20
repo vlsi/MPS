@@ -1093,7 +1093,6 @@
     <unitInfo nodeId="1236090523881" fileName="SideDeleteAtEndWithBackSpace_Test.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test$TestBody" />
     <unitInfo nodeId="1236090523881" fileName="SideDeleteAtEndWithBackSpace_Test.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1236160248682540373" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1236160248682577253">
     <nodeInfo nodeId="1236160248682577253" fileName="PasteStatement_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236160248682577253" fileName="PasteStatement_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2144,83 +2143,111 @@
     <unitInfo nodeId="3727822333335494274" fileName="NodeAfterSubstitutionHasNoErrorCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.NodeAfterSubstitutionHasNoErrorCell_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3852894662483077199">
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="21" startPosition="107" endLine="22" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="26" startPosition="65" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="32" startPosition="52" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="39" startPosition="59" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="40" startPosition="46" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="21" startPosition="57" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="22" startPosition="107" endLine="23" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="27" startPosition="65" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="33" startPosition="52" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="40" startPosition="59" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="41" startPosition="46" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="42" startPosition="46" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="43" startPosition="46" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="44" startPosition="46" endLine="45" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077216" fileName="SurrondWithParenthesisTest_Test.java" startLine="45" startPosition="46" endLine="46" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3852894662483077222" fileName="SurrondWithParenthesisTest_Test.java" startLine="46" startPosition="180" endLine="47" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="50" startPosition="67" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="51" startPosition="46" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="52" startPosition="46" endLine="53" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="53" startPosition="46" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="54" startPosition="46" endLine="55" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="55" startPosition="46" endLine="56" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230176" fileName="SurrondWithParenthesisTest_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483230169" fileName="SurrondWithParenthesisTest_Test.java" startLine="57" startPosition="165" endLine="58" endPosition="413" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="61" startPosition="54" endLine="62" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="62" startPosition="46" endLine="63" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="63" startPosition="46" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="64" startPosition="46" endLine="65" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="65" startPosition="46" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="66" startPosition="46" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240435" fileName="SurrondWithParenthesisTest_Test.java" startLine="67" startPosition="46" endLine="68" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483240439" fileName="SurrondWithParenthesisTest_Test.java" startLine="68" startPosition="166" endLine="69" endPosition="413" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_noBinaryOperation#()V" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_thereIsAlreadyParenthesis#()V" />
-    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_treeRotation#()V" />
-    <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_noBinaryOperation#()V" />
-    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="50" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_thereIsAlreadyParenthesis#()V" />
-    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="61" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_treeRotation#()V" />
-    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="20" startPosition="57" endLine="22" endPosition="118" />
-    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="26" startPosition="65" endLine="28" endPosition="126" />
-    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="32" startPosition="52" endLine="34" endPosition="113" />
-    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="39" startPosition="59" endLine="47" endPosition="302">
+    <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="45" startPosition="46" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077216" fileName="SurrondWithParenthesisTest_Test.java" startLine="46" startPosition="46" endLine="47" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483077222" fileName="SurrondWithParenthesisTest_Test.java" startLine="48" startPosition="7" endLine="49" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483077222" fileName="SurrondWithParenthesisTest_Test.java" startLine="49" startPosition="215" endLine="50" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483077222" fileName="SurrondWithParenthesisTest_Test.java" startLine="50" startPosition="95" endLine="51" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="55" startPosition="67" endLine="56" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="57" startPosition="46" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="58" startPosition="46" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="59" startPosition="46" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="60" startPosition="46" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230176" fileName="SurrondWithParenthesisTest_Test.java" startLine="61" startPosition="46" endLine="62" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483230169" fileName="SurrondWithParenthesisTest_Test.java" startLine="63" startPosition="7" endLine="64" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483230169" fileName="SurrondWithParenthesisTest_Test.java" startLine="64" startPosition="211" endLine="65" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483230169" fileName="SurrondWithParenthesisTest_Test.java" startLine="65" startPosition="210" endLine="66" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="70" startPosition="54" endLine="71" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="71" startPosition="46" endLine="72" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="72" startPosition="46" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="73" startPosition="46" endLine="74" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="74" startPosition="46" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="75" startPosition="46" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240435" fileName="SurrondWithParenthesisTest_Test.java" startLine="76" startPosition="46" endLine="77" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483240439" fileName="SurrondWithParenthesisTest_Test.java" startLine="78" startPosition="7" endLine="79" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483240439" fileName="SurrondWithParenthesisTest_Test.java" startLine="79" startPosition="211" endLine="80" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483240439" fileName="SurrondWithParenthesisTest_Test.java" startLine="80" startPosition="210" endLine="81" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_noBinaryOperation#()V" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_thereIsAlreadyParenthesis#()V" />
+    <nodeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_treeRotation#()V" />
+    <nodeInfo nodeId="3852894662483077222" fileName="SurrondWithParenthesisTest_Test.java" startLine="47" startPosition="180" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3852894662483230169" fileName="SurrondWithParenthesisTest_Test.java" startLine="62" startPosition="165" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3852894662483240439" fileName="SurrondWithParenthesisTest_Test.java" startLine="77" startPosition="166" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="40" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_noBinaryOperation#()V" />
+    <nodeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="55" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_thereIsAlreadyParenthesis#()V" />
+    <nodeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="70" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_treeRotation#()V" />
+    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="21" startPosition="57" endLine="23" endPosition="118" />
+    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="27" startPosition="65" endLine="29" endPosition="126" />
+    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="33" startPosition="52" endLine="35" endPosition="113" />
+    <scopeInfo nodeId="3852894662483077222" fileName="SurrondWithParenthesisTest_Test.java" startLine="48" startPosition="7" endLine="51" endPosition="146">
+      <varInfo nodeId="3852894662483077222" varName="nodesAfter" />
+      <varInfo nodeId="3852894662483077222" varName="nodesBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="3852894662483230169" fileName="SurrondWithParenthesisTest_Test.java" startLine="63" startPosition="7" endLine="66" endPosition="146">
+      <varInfo nodeId="3852894662483230169" varName="nodesAfter" />
+      <varInfo nodeId="3852894662483230169" varName="nodesBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="3852894662483240439" fileName="SurrondWithParenthesisTest_Test.java" startLine="78" startPosition="7" endLine="81" endPosition="146">
+      <varInfo nodeId="3852894662483240439" varName="nodesAfter" />
+      <varInfo nodeId="3852894662483240439" varName="nodesBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="40" startPosition="59" endLine="52" endPosition="7">
       <varInfo nodeId="3852894662483077217" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="50" startPosition="67" endLine="58" endPosition="413" />
-    <scopeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="61" startPosition="54" endLine="69" endPosition="413" />
-    <scopeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="39" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="50" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="61" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="37" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody" />
-    <unitInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test" />
+    <scopeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="55" startPosition="67" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="70" startPosition="54" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="3852894662483077213" fileName="SurrondWithParenthesisTest_Test.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3852894662483230160" fileName="SurrondWithParenthesisTest_Test.java" startLine="55" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="3852894662483240393" fileName="SurrondWithParenthesisTest_Test.java" startLine="70" startPosition="0" endLine="84" endPosition="0" />
+    <unitInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="38" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody" />
+    <unitInfo nodeId="3852894662483077199" fileName="SurrondWithParenthesisTest_Test.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3852894662483397197">
-    <nodeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="23" startPosition="52" endLine="24" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="24" startPosition="107" endLine="25" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="30" startPosition="54" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="31" startPosition="46" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483449727" fileName="PriorityCheckTest_Test.java" startLine="32" startPosition="46" endLine="33" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3852894662483493968" fileName="PriorityCheckTest_Test.java" startLine="33" startPosition="111" endLine="34" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3852894662483493976" fileName="PriorityCheckTest_Test.java" startLine="34" startPosition="118" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483493950" fileName="PriorityCheckTest_Test.java" startLine="35" startPosition="59" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483493995" fileName="PriorityCheckTest_Test.java" startLine="36" startPosition="70" endLine="37" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483494009" fileName="PriorityCheckTest_Test.java" startLine="37" startPosition="163" endLine="38" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483494029" fileName="PriorityCheckTest_Test.java" startLine="38" startPosition="179" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483494025" fileName="PriorityCheckTest_Test.java" startLine="39" startPosition="52" endLine="40" endPosition="413" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
-    <nodeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
-    <scopeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="23" startPosition="52" endLine="25" endPosition="104" />
-    <scopeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="30" startPosition="54" endLine="40" endPosition="413">
+    <nodeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="24" startPosition="52" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="25" startPosition="107" endLine="26" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="31" startPosition="54" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="32" startPosition="46" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483449727" fileName="PriorityCheckTest_Test.java" startLine="33" startPosition="46" endLine="34" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483493968" fileName="PriorityCheckTest_Test.java" startLine="34" startPosition="111" endLine="35" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483493976" fileName="PriorityCheckTest_Test.java" startLine="35" startPosition="118" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483493950" fileName="PriorityCheckTest_Test.java" startLine="36" startPosition="59" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483493995" fileName="PriorityCheckTest_Test.java" startLine="37" startPosition="70" endLine="38" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483494009" fileName="PriorityCheckTest_Test.java" startLine="38" startPosition="163" endLine="39" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483494029" fileName="PriorityCheckTest_Test.java" startLine="39" startPosition="179" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483494025" fileName="PriorityCheckTest_Test.java" startLine="41" startPosition="7" endLine="42" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483494025" fileName="PriorityCheckTest_Test.java" startLine="42" startPosition="211" endLine="43" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3852894662483494025" fileName="PriorityCheckTest_Test.java" startLine="43" startPosition="210" endLine="44" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
+    <nodeInfo nodeId="3852894662483494025" fileName="PriorityCheckTest_Test.java" startLine="40" startPosition="52" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="31" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
+    <scopeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="24" startPosition="52" endLine="26" endPosition="104" />
+    <scopeInfo nodeId="3852894662483494025" fileName="PriorityCheckTest_Test.java" startLine="41" startPosition="7" endLine="44" endPosition="146">
+      <varInfo nodeId="3852894662483494025" varName="nodesAfter" />
+      <varInfo nodeId="3852894662483494025" varName="nodesBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="31" startPosition="54" endLine="45" endPosition="7">
       <varInfo nodeId="3852894662483493969" varName="constant" />
       <varInfo nodeId="3852894662483449728" varName="op" />
     </scopeInfo>
-    <scopeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="28" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTest_Test$TestBody" />
-    <unitInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="20" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTest_Test" />
+    <scopeInfo nodeId="3852894662483449723" fileName="PriorityCheckTest_Test.java" startLine="31" startPosition="0" endLine="47" endPosition="0" />
+    <unitInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="29" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTest_Test$TestBody" />
+    <unitInfo nodeId="3852894662483397197" fileName="PriorityCheckTest_Test.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTest_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3891087596588926733">
     <nodeInfo nodeId="3891087596588926733" fileName="AddingParameterThroughtWrapper_Test.java" startLine="18" startPosition="70" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2367,7 +2394,6 @@
     <unitInfo nodeId="3956753173913394401" fileName="LT_SNodeTypeCast_with_PlusExpression_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_SNodeTypeCast_with_PlusExpression_Test$TestBody" />
     <unitInfo nodeId="3956753173913394401" fileName="LT_SNodeTypeCast_with_PlusExpression_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_SNodeTypeCast_with_PlusExpression_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4172912343885056959" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4246727699196031257">
     <nodeInfo nodeId="4246727699196031257" fileName="RT_toStaticFieldReference_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246727699196031257" fileName="RT_toStaticFieldReference_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3259,8 +3285,6 @@
     <unitInfo nodeId="6042072087468738470" fileName="LT_DotExpression_with_PrefixDecrement_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_PrefixDecrement_Test$TestBody" />
     <unitInfo nodeId="6042072087468738470" fileName="LT_DotExpression_with_PrefixDecrement_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_PrefixDecrement_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134259009" />
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134288774" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134300552">
     <nodeInfo nodeId="6181413376134300552" fileName="MethodAddGenericCaret_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6181413376134300552" fileName="MethodAddGenericCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4750,7 +4774,6 @@
     <unitInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodToAnonymousClass_Test$TestBody" />
     <unitInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodToAnonymousClass_Test" />
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9138276493804605319" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/938834323431398136">
     <nodeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="18" startPosition="48" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -52,7 +52,7 @@ public class ForEach_Test extends Util_Test {
   public void test_mps14282() throws Exception {
     List<int[]> lints = ListSequence.fromListAndArray(new ArrayList<int[]>(), new int[]{1001}, new int[]{1001, 1002}, new int[]{1001, 1002, 1003});
     int sum = 0;
-    for (int[] ints : ListSequence.fromList(lints)) {
+    for (int[] ints : lints) {
       sum += Sequence.fromIterable(ArrayUtils.fromIntegerArray(ints)).reduceLeft(new ILeftCombinator<Integer, Integer>() {
         public Integer combine(Integer a, Integer b) {
           return a + b;

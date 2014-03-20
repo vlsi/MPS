@@ -4,16 +4,16 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CheckDataFlowOperation_BehaviorDescriptor extends NodeOperation_BehaviorDescriptor {
+public class CheckDataFlowOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
   public CheckDataFlowOperation_BehaviorDescriptor() {
   }
 
-  public String virtual_getName_1217435265700(SNode thisNode) {
-    return CheckDataFlowOperation_Behavior.virtual_getName_1217435265700(thisNode);
+  public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
+    return CheckDataFlowOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
 
-  public void virtual_perform_1215601182156(SNode thisNode, SNode node) {
-    CheckDataFlowOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
+  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
+    CheckDataFlowOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }
 
   @Override

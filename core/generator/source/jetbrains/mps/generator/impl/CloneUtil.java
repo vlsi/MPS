@@ -36,11 +36,16 @@ public class CloneUtil {
   private final SModel myOutputModel;
   private final SModelReference myOutputModelRef;
   private boolean myTraceOriginalInput = false;
+  private final Factory myFactory;
 
   public CloneUtil(SModel inputModel, SModel outputModel) {
+    this(inputModel, outputModel, new RegularSModelFactory());
+  }
+  public CloneUtil(SModel inputModel, SModel outputModel, Factory factory) {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myOutputModelRef = outputModel.getReference();
+    myFactory = factory;
   }
 
   /**
@@ -80,11 +85,8 @@ public class CloneUtil {
   }
 
   public SNode clone(SNode inputNode) {
-    // new jetbrains.mps.smodel.SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
-    // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
-    final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
+    SNode outputNode = myFactory.create(inputNode);
 
-    outputNode.setId(inputNode.getNodeId());
     jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
@@ -94,29 +96,9 @@ public class CloneUtil {
     for (SReference reference : inputNode.getReferences()) {
       boolean ext = inputNode.getModel() == null || !inputNode.getModel().getReference().equals(reference.getTargetSModelReference());
       SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : myOutputModelRef;
-      if (reference instanceof StaticReference) {
-        if (targetModelReference == null) {
-          LOG.warning("broken reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);
-        } else {
-          StaticReference outputReference = new StaticReference(
-            reference.getRole(),
-            outputNode,
-            targetModelReference,
-            reference.getTargetNodeId(),
-            ((StaticReference) reference).getResolveInfo());
-          outputNode.setReference(outputReference.getRole(), outputReference);
-        }
-      } else if (reference instanceof DynamicReference) {
-        DynamicReference outputReference = new DynamicReference(
-          reference.getRole(),
-          outputNode,
-          targetModelReference,
-          ((DynamicReference) reference).getResolveInfo());
-        outputReference.setOrigin(((DynamicReference) reference).getOrigin());
-        outputNode.setReference(outputReference.getRole(), outputReference);
-      } else {
-        LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);
-        LOG.error(" -- was reference class : " + reference.getClass().getName());
+      SReference outRef = myFactory.create(reference, outputNode, targetModelReference);
+      if (outRef != null) {
+        outputNode.setReference(outRef.getRole(), outRef);
       }
     }
 
@@ -126,5 +108,58 @@ public class CloneUtil {
       outputNode.addChild(role, clone(child));
     }
     return outputNode;
+  }
+
+  public static DynamicReference create(SNode outputNode, SModelReference targetModelRef, DynamicReference prototype) {
+    DynamicReference outputReference = new DynamicReference(
+        prototype.getRole(),
+        outputNode,
+        targetModelRef,
+        prototype.getResolveInfo());
+    outputReference.setOrigin(prototype.getOrigin());
+    return outputReference;
+  }
+
+  public interface Factory {
+    SNode create(SNode prototype);
+    SReference create(SReference prototype, SNode outputNode, SModelReference targetModelRef);
+  }
+
+  public static class RegularSModelFactory implements Factory {
+
+    @Override
+    public SNode create(SNode prototype) {
+      // new jetbrains.mps.smodel.SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
+      // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
+      final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(prototype.getConcept().getQualifiedName());
+
+      outputNode.setId(prototype.getNodeId());
+      return outputNode;
+    }
+
+    @Override
+    public SReference create(SReference prototype, SNode outputNode, SModelReference targetModelRef) {
+      // [model] clone mechanism in smodel.SReference or elsewhere not to perform instanceof
+      // Besides, what if there's custom openapi.SReference impl (GenSReference) I'm not aware of? How am I supposed to clone it here?
+      if (prototype instanceof StaticReference) {
+        if (targetModelRef == null) {
+          LOG.warning("broken reference '" + prototype.getRole() + "' in " + SNodeUtil.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
+        } else {
+          StaticReference outputReference = new StaticReference(
+              prototype.getRole(),
+              outputNode,
+              targetModelRef,
+              prototype.getTargetNodeId(),
+              ((StaticReference) prototype).getResolveInfo());
+          return outputReference;
+        }
+      } else if (prototype instanceof DynamicReference) {
+        return CloneUtil.create(outputNode, targetModelRef, (DynamicReference) prototype);
+      } else {
+        LOG.error("internal error: can't clone reference '" + prototype.getRole() + "' in " + SNodeUtil.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
+        LOG.error(" -- was reference class : " + prototype.getClass().getName());
+      }
+      return null;
+    }
   }
 }

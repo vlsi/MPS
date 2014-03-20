@@ -71,10 +71,10 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.impl.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-jetbrains">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-models">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.execution.impl.tests-src.jar">
       <zipfileset file="${basedir}/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" prefix="module" />
@@ -100,7 +100,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.impl.tests.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests.data-jetbrains">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests.data/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/plugins/execution-languages/languages/tests.data/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.execution.impl.tests.sandbox-src.jar">
       <zipfileset file="${basedir}/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" prefix="module" />
@@ -132,7 +132,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.runtime.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-solutions-jetbrains.mps.debugger.java.runtime.tests-jetbrains">
-      <fileset dir="${basedir}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime.tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime.tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.debugger.java.runtime.tests-src.jar">
       <zipfileset file="${basedir}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime.tests/jetbrains.mps.debugger.java.runtime.tests.msd" prefix="module" />
@@ -164,7 +164,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate parallelMode="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -314,10 +314,10 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -373,9 +373,9 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
@@ -496,7 +496,7 @@
       <pathelement location="${build.layout}/jetbrains.mps.execution.impl.tests.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
-    <junit showoutput="true" fork="true">
+    <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
       <jvmarg value="-Xmx1024m" />

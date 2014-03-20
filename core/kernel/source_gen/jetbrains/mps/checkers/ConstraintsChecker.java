@@ -8,13 +8,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
@@ -46,8 +45,8 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   @Override
-  public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
-    final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+  public void checkNode(final SNode node, LanguageErrorsComponent component, IOperationContext context) {
+    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
 
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
@@ -62,7 +61,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeChild(newDescriptor, node.getConcept().getQualifiedName(), operationContext, SNodeOperations.getParent(node), link, node, checkingNodeContext);
+          return ModelConstraints.canBeChild(node.getConcept().getQualifiedName(), SNodeOperations.getParent(node), link, node, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
@@ -74,7 +73,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeRoot(newDescriptor, operationContext, node.getConcept().getQualifiedName(), SNodeOperations.getModel(node), checkingNodeContext);
+          return ModelConstraints.canBeRoot(node.getConcept().getQualifiedName(), SNodeOperations.getModel(node), checkingNodeContext);
         }
       });
       if (!(canBeRoot)) {
@@ -95,7 +94,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeParent(newDescriptor, node, childConcept, childLink, operationContext, child, checkingNodeContext);
+          return ModelConstraints.canBeParent(node, childConcept, childLink, child, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {
@@ -104,7 +103,12 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
 
       // todo: do it right, with runCheckingAction! 
-      if (!(ModelConstraintsManager.canBeAncestor(node, child, childConcept, operationContext, checkingNodeContext))) {
+      boolean canBeAncestor = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return ModelConstraints.canBeAncestor(node, child, childConcept, checkingNodeContext);
+        }
+      });
+      if (!(canBeAncestor)) {
         SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
         component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) + " cannot be ancestor of node " + child, rule);
       }
@@ -135,7 +139,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
       boolean canSetValue = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ps.canSetValue(propertyDescriptor, node, propertyName, value, operationContext.getScope());
+          return ps.canSetValue(propertyDescriptor, node, propertyName, value);
         }
       });
       if (!(canSetValue)) {

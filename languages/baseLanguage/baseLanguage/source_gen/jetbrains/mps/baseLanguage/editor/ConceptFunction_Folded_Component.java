@@ -25,7 +25,7 @@ public class ConceptFunction_Folded_Component implements ConceptEditorComponent 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
     editorCell.setCellId("Constant_hl0bni_a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFoldedCell(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FoldedCell(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

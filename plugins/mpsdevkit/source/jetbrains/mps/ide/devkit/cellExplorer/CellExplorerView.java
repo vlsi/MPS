@@ -236,6 +236,7 @@ public class CellExplorerView extends BaseProjectTool {
       super(cell, null);
       myCell = cell;
       setNodeIdentifier(calculateNodeIdentifier());
+      setToggleClickCount(-1);
     }
 
     @Override
@@ -263,11 +264,6 @@ public class CellExplorerView extends BaseProjectTool {
     @Override
     public boolean isInitialized() {
       return myInitialized;
-    }
-
-    @Override
-    public int getToggleClickCount() {
-      return -1;
     }
 
     private void showCell() {

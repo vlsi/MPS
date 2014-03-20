@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -23,10 +23,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * @author Kostik
  */
+@Immutable
 public class SModelRootEvent extends SModelEvent {
-  private SNode myRoot;
-  private SNodeReference myRootRef;
-  private boolean myAdded;
+  private final SNode myRoot;
+  private final SNodeReference myRootRef;
+  private final boolean myAdded;
 
   public SModelRootEvent(SModel model, SNode root, boolean added) {
     super(model);

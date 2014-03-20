@@ -34,13 +34,13 @@ public class IMainClass_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isNodeRunnable_4666195181811081448", new Object[]{});
+  public static String callSuper_getUnitName_4666195181811081431(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_getUnitName_4666195181811081431", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getUnitName_4666195181811081431(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_getUnitName_4666195181811081431", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_isNodeRunnable_4666195181811081448(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isNodeRunnable_4666195181811081448", new Object[]{});
   }
 
   @Deprecated

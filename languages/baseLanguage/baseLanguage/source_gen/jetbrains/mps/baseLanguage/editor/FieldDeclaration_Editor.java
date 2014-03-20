@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -44,18 +43,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_2sbeba_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2sbeba_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2sbeba_c0(editorContext, node));
-    if (renderingCondition_2sbeba_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2sbeba_d0(editorContext, node));
     }
-    if (renderingCondition_2sbeba_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2sbeba_e0(editorContext, node));
     }
-    if (renderingCondition_2sbeba_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2sbeba_f0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_2sbeba_g0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2sbeba_h0(editorContext, node));
-    if (renderingCondition_2sbeba_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2sbeba_i0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_2sbeba_j0(editorContext, node));
@@ -81,14 +80,14 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_2sbeba_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteFinalInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
@@ -96,14 +95,14 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_2sbeba_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
@@ -111,14 +110,14 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_2sbeba_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     DeleteVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
@@ -145,7 +144,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_2sbeba_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -161,7 +160,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a8a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
@@ -169,7 +168,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_2sbeba_a8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -202,7 +201,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2sbeba_j0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);

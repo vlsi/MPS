@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -27,7 +26,7 @@ public class BuildLayout_NamedContainer_Constraints extends BaseConstraintsDescr
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(node, "containerName", true), null);
       }

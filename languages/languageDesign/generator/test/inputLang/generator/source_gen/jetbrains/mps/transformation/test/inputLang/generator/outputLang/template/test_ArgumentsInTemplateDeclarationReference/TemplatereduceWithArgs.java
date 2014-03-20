@@ -43,7 +43,7 @@ public class TemplatereduceWithArgs implements TemplateDeclarationWeavingAware {
     try {
       environment.getTracer().pushTemplateNode(templateNode_d0bcmp_a0a0a1a4);
       environment.nodeCopied(context, tnode1, "tpl/r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37/7496726876599873034");
-      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7496726876599876334(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), null, propertyMacro_d0bcmp_c0b0c0c0b0e, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7496726876599876334(new PropertyMacroContext(context, null, propertyMacro_d0bcmp_c0a0c0c0b0e, environment.getGenerator()))));
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -66,6 +66,6 @@ public class TemplatereduceWithArgs implements TemplateDeclarationWeavingAware {
   }
 
   private static SNodePointer templateNode_d0bcmp_a0a0a1a4 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599873034");
-  private static SNodePointer propertyMacro_d0bcmp_c0b0c0c0b0e = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599876333");
+  private static SNodePointer propertyMacro_d0bcmp_c0a0c0c0b0e = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599876333");
   private static SNodePointer weaveTfConst_d0bcmp_a0c0g = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599873037");
 }

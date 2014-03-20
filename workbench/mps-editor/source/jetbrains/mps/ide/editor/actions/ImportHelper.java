@@ -26,10 +26,12 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
@@ -51,6 +53,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
@@ -64,6 +67,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ImportHelper {
+
   public static void addModelImport(final Project project, final SModule module, final SModel model,
       @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
@@ -73,7 +77,7 @@ public class ImportHelper {
       }
 
       @Override
-      public SModelReference[] find(IScope scope) {
+      public SModelReference[] find(SearchScope scope) {
         Condition<SModel> cond = new Condition<SModel>() {
           @Override
           public boolean met(SModel modelDescriptor) {
@@ -83,7 +87,7 @@ public class ImportHelper {
             return rightStereotype && hasModule;
           }
         };
-        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
         List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
         for (SModel md : iter) {
           filteredModelRefs.add(md.getReference());
@@ -113,7 +117,11 @@ public class ImportHelper {
   }
 
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
-      @Nullable BaseAction parentAction) {
+                                       @Nullable BaseAction parentAction) {
+    addLanguageImport(project, contextModule, model, parentAction, null);
+  }
+  public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
+      @Nullable BaseAction parentAction, @Nullable final Runnable onClose) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
@@ -121,10 +129,11 @@ public class ImportHelper {
       }
 
       @Override
-      public SModuleReference[] find(IScope scope) {
+      public SModuleReference[] find(SearchScope scope) {
         ArrayList<SModuleReference> res = new ArrayList<SModuleReference>();
-        for (Language l : scope.getVisibleLanguages()) {
-          res.add(l.getModuleReference());
+        for (SModule m : scope.getModules()) {
+          if (!(m instanceof Language)) continue;
+          res.add(m.getModuleReference());
         }
         return res.toArray(new SModuleReference[res.size()]);
       }
@@ -141,6 +150,9 @@ public class ImportHelper {
       @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
+        if(onClose != null) {
+          onClose.run();
+        }
       }
 
       @Override
@@ -179,7 +191,7 @@ public class ImportHelper {
           langs.remove(BootstrapLanguages.coreLanguage());
 
           for (Language l : langs) {
-            if(myModel != null) {
+            if (myModel != null) {
               Collection<SModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
               if (impLangs.contains(l.getModuleReference())) continue;
             }
@@ -204,15 +216,20 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
-            if(myContextModule instanceof DevKit) {
+            if (myContextModule instanceof DevKit) {
               ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
-            } else if (((AbstractModule) myContextModule).getScope().getLanguage(ref) == null) {
-              ((AbstractModule) myContextModule).addUsedLanguage((SModuleReference) ref);
-              reload = true;
+            } else {
+              Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
+              if (lang == null) continue;
+              if (!new GlobalModuleDependenciesManager(myContextModule).getUsedLanguages().contains(lang)) {
+                ((AbstractModule) myContextModule).addUsedLanguage(ref);
+                reload = true;
+              }
             }
-            if(myModel != null)
-              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((SModuleReference) ref);
+            if (myModel != null) {
+              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(ref);
+            }
           }
           if (reload) {
             ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myContextModule), new EmptyProgressMonitor());
@@ -307,7 +324,7 @@ public class ImportHelper {
             dependency[0] = false;
           }
 
-          if (((AbstractModule) myModule).getScope().getModelDescriptor(mrefToImport) == null) {
+          if (!VisibilityUtil.isVisible(myModule, myModel)) {
             module[0] = moduleToImport.getModuleReference();
           }
         }

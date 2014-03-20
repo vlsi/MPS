@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class TypeVariableReference_Behavior {
@@ -71,7 +70,6 @@ public class TypeVariableReference_Behavior {
 
   public static SNode virtual_expandGenerics_4122274986016348613(final SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
-      SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
       if (ListSequence.fromList(expTrace).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return MatchingUtil.matchNodes(thisNode, it);
@@ -79,6 +77,7 @@ public class TypeVariableReference_Behavior {
       })) {
         return thisNode;
       }
+      SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
       if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         ListSequence.fromList(expTrace).addElement(thisNode);
         exp = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
@@ -88,10 +87,39 @@ public class TypeVariableReference_Behavior {
     return thisNode;
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    SNode myResolvedType = thisNode;
+    SNode resolvedT = t;
+    while (SNodeOperations.isInstanceOf(myResolvedType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(myResolvedType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+      if (temp != null) {
+        myResolvedType = temp;
+      } else {
+        break;
+      }
+    }
+    while (SNodeOperations.isInstanceOf(resolvedT, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(resolvedT, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+      if (temp != null) {
+        resolvedT = temp;
+      } else {
+        break;
+      }
+    }
+
+    if (myResolvedType != thisNode || resolvedT != t) {
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, myResolvedType, "virtual_isSupersetOf_9029841626175335449", new Object[]{resolvedT, substitutions});
+    } else {
+      boolean supersetOf = BehaviorReflection.invokeVirtual(Boolean.TYPE, myResolvedType, "virtual_isSupersetOf_1220438914705", new Object[]{resolvedT});
+      return supersetOf;
+    }
+
+  }
+
   private static SNode _quotation_createNode_6i211a_a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }

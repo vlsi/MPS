@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.search;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,9 +15,9 @@ public class VisibleThrowablesScope extends VisibleClassifiersScope {
   private static String THROWABLE_FQ_NAME = "java.lang.Throwable";
 
   @Deprecated
-  public VisibleThrowablesScope(@NotNull SNode contextNode, int constraint, IScope scope) {
+  public VisibleThrowablesScope(@NotNull SNode contextNode, int constraint) {
     // use ClassifierScopes.getThrowablesScope instead 
-    super(contextNode, constraint, scope);
+    super(contextNode, constraint);
   }
 
   @NotNull

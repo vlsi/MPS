@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FigureParameterBLQuerySharpActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,8 +26,7 @@ public class FigureParameterBLQuerySharpActions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter");
-      SPropertyOperations.set(abstractParameter, "name", SPropertyOperations.getString(node, "name"));
+      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter");
     }
   }
 }

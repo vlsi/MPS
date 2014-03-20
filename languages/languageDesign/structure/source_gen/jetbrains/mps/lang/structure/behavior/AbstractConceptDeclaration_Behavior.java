@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
@@ -164,7 +163,7 @@ public class AbstractConceptDeclaration_Behavior {
     return methods;
   }
 
-  public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode, IScope scope) {
+  public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(thisNode, false)) {
       SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
@@ -179,7 +178,7 @@ public class AbstractConceptDeclaration_Behavior {
     return methods;
   }
 
-  public static List<SNode> call_getNotImplementedConceptMethods_1213877394339(SNode thisNode, IScope scope) {
+  public static List<SNode> call_getNotImplementedConceptMethods_1213877394339(SNode thisNode) {
     List<SNode> abstractMethods = new ArrayList<SNode>();
     List<SNode> implementedMethods = new ArrayList<SNode>();
     List<SNode> concepts = SConceptOperations.getAllSuperConcepts(thisNode, false);
@@ -235,10 +234,6 @@ public class AbstractConceptDeclaration_Behavior {
     return SNodeOperations.cast(p, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
-  public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {
-    return (List<SNode>) SModelSearchUtil.getConceptPropertyDeclarations(thisNode);
-  }
-
   public static List<SNode> call_getConceptLinkDeclarations_1213877394578(SNode thisNode) {
     return (List<SNode>) IterableUtil.asList(SModelSearchUtil.getConceptLinkDeclarations(thisNode));
   }
@@ -266,7 +261,7 @@ public class AbstractConceptDeclaration_Behavior {
     return !(SPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptOperations.isSubConceptOf(((SNode) thisNode), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"));
   }
 
-  public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept, IScope scope) {
+  public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept) {
     if (AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(thisNode)) {
       return SConceptOperations.isSuperConceptOf(expectedConcept, NameUtil.nodeFQName(thisNode));
     }

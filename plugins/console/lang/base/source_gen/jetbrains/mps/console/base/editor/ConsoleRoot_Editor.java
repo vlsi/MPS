@@ -7,9 +7,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -26,11 +26,20 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_drvoix_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Console_Styles_StyleSheet.apply_readOnly(styleToPut, editorCell);
+      style.putAll(styleToPut);
+    }
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_drvoix_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drvoix_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drvoix_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_drvoix_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_drvoix_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_drvoix_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_drvoix_f0(editorContext, node));
     return editorCell;
   }
 
@@ -64,7 +73,17 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_drvoix_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_drvoix_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Use Ctrl+M and Ctrl+L to add imports and languages.");
+    editorCell.setCellId("Constant_drvoix_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_drvoix_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("history");
     provider.setNoTargetText("<no history>");
@@ -84,7 +103,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_drvoix_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_drvoix_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commandHolder");
     provider.setNoTargetText("<no commandHolder>");
@@ -93,6 +112,14 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("commandHolder");
     }
+    Style style = new StyleImpl();
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Console_Styles_StyleSheet.apply_readOnly(styleToPut, editorCell);
+      style.removeAll(styleToPut);
+    }
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

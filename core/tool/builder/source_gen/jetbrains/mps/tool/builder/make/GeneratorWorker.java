@@ -5,13 +5,12 @@ package jetbrains.mps.tool.builder.make;
 import jetbrains.mps.tool.common.util.UrlClassLoader;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
+import org.apache.log4j.Logger;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.environment.Environment;
-import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import java.util.LinkedHashSet;
@@ -53,18 +52,22 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   public void work() {
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
-    for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
-      config = config.addLib(jar, new File(jar));
+    for (String jar : myWhatToDo.getLibraryJars()) {
+      File jarFile = new File(jar);
+      if (!(jarFile.exists())) {
+        warning("Library " + jar + " does not exist.");
+      }
+      config = config.addLib(jar, jarFile);
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }
 
     Environment environment = new GeneratorWorker.MyEnvironment(config);
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-
     setupEnvironment();
     setGenerationProperties();
     boolean doneSomething = false;
@@ -74,7 +77,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     for (IMapping<List<String>, Boolean> chunk : MapSequence.fromMap(myWhatToDo.getChunks())) {
       List<String> modulePaths = chunk.key();
       LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
-      for (String modulePath : ListSequence.fromList(modulePaths)) {
+      for (String modulePath : modulePaths) {
         processModuleFile(new File(modulePath), modules);
       }
       Boolean bootstrap = chunk.value();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,13 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.*;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -25,18 +30,15 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.Collection;
 
-/**
- * Evgeny Gryaznov, Nov 30, 2010
- */
 public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule {
 
   private final SNode ruleNode;
   private final String conditionMethod;
   private final String ruleMappingName;
+  private CreateRootCondition myCondition;
 
   public TemplateCreateRootRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
@@ -55,33 +57,25 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
     if (conditionMethod == null) {
       return true;
     }
-
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        conditionMethod,
-        environment.getGenerator().getGeneratorSessionContext(),
-        new CreateRootRuleContext(ruleNode, environment.getGenerator()),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      if (myCondition == null) {
+        myCondition = environment.getQueryProvider(getRuleNode()).getCreateRootRuleCondition(conditionMethod);
+      }
+      return myCondition.check(new CreateRootRuleContext(ruleNode, environment.getGenerator()));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", conditionMethod));
       throw new GenerationFailureException(t);
     }
-    return false;
   }
 
   @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = RuleUtil.getCreateRootRuleTemplateNode(ruleNode);
     if (templateNode != null) {
-      return new TemplateProcessor(environment).apply(ruleMappingName, templateNode, new DefaultTemplateContext(null));
+      return new TemplateProcessor(environment).apply(templateNode, new DefaultTemplateContext(ruleMappingName, null));
     } else {
-      environment.getGenerator().showErrorMessage(null, null, ruleNode, "'create root' rule has no template");
+      environment.getLogger().error(getRuleNode(), "'create root' rule has no template");
       return null;
     }
   }

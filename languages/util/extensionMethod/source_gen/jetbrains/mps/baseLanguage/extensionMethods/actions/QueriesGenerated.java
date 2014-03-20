@@ -43,7 +43,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false);
@@ -80,7 +80,7 @@ public class QueriesGenerated {
         }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);

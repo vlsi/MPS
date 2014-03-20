@@ -15,18 +15,22 @@
  */
 package jetbrains.mps.project.validation;
 
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 public class LanguageValidator extends BaseModuleValidator<Language> {
   public LanguageValidator(Language module) {
@@ -83,7 +87,12 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     for (SModelReference accessory : myModule.getModuleDescriptor().getAccessoryModels()) {
-      if (myModule.getScope().getModelDescriptor(accessory) == null) {
+      //this check is wrong in common as we don't know what the user wants to do with the acc model in build.
+      //but I'll not delete it until accessories removal just to have some warning on project consistency
+      org.jetbrains.mps.openapi.model.SModel accModel = accessory.resolve(MPSModuleRepository.getInstance());
+      if (accModel == null) continue;
+
+      if (!VisibilityUtil.isVisible(myModule, accModel)) {
         errors.add("Can't find accessory model: " + SModelStereotype.withoutStereotype(accessory.getModelName()));
       }
     }

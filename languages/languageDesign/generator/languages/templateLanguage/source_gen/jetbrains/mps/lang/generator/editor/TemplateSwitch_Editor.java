@@ -138,7 +138,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
         editorCell.setRole("modifiedSwitch");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyReference(style, editorCell);
+      Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -163,7 +163,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
     editorCell.setCellId("Constant_q42gqn_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

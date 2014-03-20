@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -81,10 +80,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_ueqr71_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ueqr71_a0a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ueqr71_a0a(editorContext, node));
     }
-    if (renderingCondition_ueqr71_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ueqr71_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ueqr71_b0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ueqr71_c0a(editorContext, node));
@@ -97,7 +96,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_ueqr71_a0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     _ConceptDeclaration_DeleteAbstract_Action.setCellActions(editorCell, node, editorContext);
@@ -105,7 +104,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a0a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "abstract") == true;
   }
 
@@ -113,14 +112,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_ueqr71_b0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     _ConceptDeclaration_DeleteFinal_Action.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a1a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "final") == true;
   }
 
@@ -128,7 +127,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_ueqr71_c0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, ConceptDeclaration_Editor._StyleParameter_QueryFunction_ueqr71_a0c0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
@@ -168,7 +167,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_ueqr71_d0a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no name>");
       editorCell.setCommitInCommand(false);
@@ -210,7 +209,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_ueqr71_a0e0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -261,7 +260,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("extends");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -290,7 +289,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implements");
     editorCell.setCellId("Constant_ueqr71_a1e0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -302,7 +301,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_implements");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -392,7 +391,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ueqr71_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ueqr71_b1c0(editorContext, node));
-    if (renderingCondition_ueqr71_a2b2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ueqr71_a2b2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ueqr71_c1c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ueqr71_d1c0(editorContext, node));
@@ -408,8 +407,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ueqr71_n1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ueqr71_o1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ueqr71_p1c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ueqr71_q1c0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_ueqr71_r1c0(editorContext, node));
     return editorCell;
   }
 
@@ -417,7 +414,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instance can be root:");
     editorCell.setCellId("Constant_ueqr71_a1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -455,7 +452,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a2b2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a2b2a(SNode node, EditorContext editorContext) {
     // todo: temporary disabled, see MPS-18470 
     return false;
   }
@@ -464,7 +461,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scope:");
     editorCell.setCellId("Constant_ueqr71_a2b2a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -495,7 +492,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alias:");
     editorCell.setCellId("Constant_ueqr71_d1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -510,7 +507,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_conceptAlias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -529,7 +526,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "short description:");
     editorCell.setCellId("Constant_ueqr71_f1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -544,7 +541,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_conceptShortDescription");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -573,7 +570,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties:");
     editorCell.setCellId("Constant_ueqr71_i1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -646,7 +643,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_ueqr71_l1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -705,7 +702,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public boolean filter(SNode childNode, IScope scope) {
+    public boolean filter(SNode childNode) {
       return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
     }
   }
@@ -714,7 +711,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public ConceptDeclaration_generic_cellMenu_ueqr71_a0m1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -740,7 +737,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "references:");
     editorCell.setCellId("Constant_ueqr71_o1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -799,7 +796,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public boolean filter(SNode childNode, IScope scope) {
+    public boolean filter(SNode childNode) {
       return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
     }
   }
@@ -808,7 +805,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public ConceptDeclaration_generic_cellMenu_ueqr71_a0p1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -817,22 +814,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "new reference";
     }
-  }
-
-  private EditorCell createConstant_ueqr71_q1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_ueqr71_q1c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createComponent_ueqr71_r1c0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff");
-    return editorCell;
   }
 
   private EditorCell createCollection_ueqr71_a_0(EditorContext editorContext, SNode node) {
@@ -872,7 +853,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_helpURL");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyUrl(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Url(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -887,7 +868,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_ueqr71_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ConceptDeclaration_Editor.renderingCondition_ueqr71_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ConceptDeclaration_Editor.renderingCondition_ueqr71_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createImage_ueqr71_a1a(editorContext, node);
@@ -897,7 +878,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ueqr71_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ueqr71_a1a(SNode node, EditorContext editorContext) {
     Language l = SModelUtil.getDeclaringLanguage(node);
     if (l == null) {
       return false;
@@ -956,7 +937,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_iconPath");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

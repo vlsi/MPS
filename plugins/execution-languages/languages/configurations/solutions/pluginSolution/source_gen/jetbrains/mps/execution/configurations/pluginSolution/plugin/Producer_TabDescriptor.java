@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class Producer_TabDescriptor extends RelationDescriptor {
   public Producer_TabDescriptor() {
@@ -69,7 +68,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
 
   private static SNode createPersistentConfigurationType_rqzr2x_a0b0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, false);
     n1.setReferenceTarget("persistentConfiguration", (SNode) p0);
     return n1;
   }

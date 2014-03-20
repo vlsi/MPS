@@ -53,13 +53,13 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jdom.Element;
@@ -72,6 +72,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -178,10 +179,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       init();
     }
 
-    protected IScope getScope() {
-      return ((AbstractModule) myModelDescriptor.getModule()).getScope();
-    }
-
     protected boolean confirmRemove(final Object value) {
       if (value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference) value;
@@ -217,19 +214,27 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setModel(myImportedModels);
 
       importedModelsTable.setDefaultRenderer(SModelReference.class,
-          new ModelTableCellRender(getScope()) {
+          new ModelTableCellRender() {
             @Override
-            protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-              if (!StateUtil.isAvailable(modelReference)) {
-                return DependencyCellState.NOT_AVALIABLE;
-              }
-              if (!StateUtil.isInScope(myScope, modelReference)) {
-                return DependencyCellState.NOT_IN_SCOPE;
-              }
-              if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
-                return DependencyCellState.UNUSED;
-              }
+            protected DependencyCellState getDependencyCellState(final org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+              DependencyCellState res = ModelAccess.instance().runReadAction(new Computable<DependencyCellState>() {
+                @Override
+                public DependencyCellState compute() {
+                  if (!StateUtil.isAvailable(modelReference)) {
+                    return DependencyCellState.NOT_AVALIABLE;
+                  }
+                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
+                    return DependencyCellState.NOT_IN_SCOPE;
+                  }
+                  if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
+                    return DependencyCellState.UNUSED;
+                  }
 
+                  return null;
+                }
+              });
+
+              if (res != null) return res;
               return super.getDependencyCellState(modelReference);
             }
           }
@@ -263,7 +268,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+          final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -386,7 +391,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected void findUsages(final Object value) {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+      final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -408,7 +413,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+          final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {

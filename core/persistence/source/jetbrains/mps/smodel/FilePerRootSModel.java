@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
       result = FilePerRootFormatUtil.readModel(myHeader, source, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
+      DefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -146,7 +146,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate();
   }
 
   @Override

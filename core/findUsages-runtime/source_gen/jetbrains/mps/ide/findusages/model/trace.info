@@ -31,7 +31,7 @@
   </root>
   <root nodeRef="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)/847291649004063466">
     <nodeInfo nodeId="847291649004063470" fileName="IResultProvider.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResults#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="847291649004063478" fileName="IResultProvider.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEstimatedTime#(Ljetbrains/mps/smodel/IScope;)J" />
+    <nodeInfo nodeId="847291649004063478" fileName="IResultProvider.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEstimatedTime#(Lorg/jetbrains/mps/openapi/module/SearchScope;)J" />
     <scopeInfo nodeId="847291649004063470" fileName="IResultProvider.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="847291649004063474" varName="monitor" />
       <varInfo nodeId="847291649004063472" varName="query" />

@@ -19,7 +19,7 @@ public class NodesTestCase_Behavior {
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
       ListSequence.fromList(result).addElement(method);
     }
-    for (SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))) {
+    for (SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{}))) {
       ListSequence.fromList(result).addElement(operation);
     }
     return result;
@@ -30,7 +30,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(thisNode, "testMethods", true))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))).toListSequence();
+    return ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(thisNode, "testMethods", true))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{}))).toListSequence();
   }
 
   public static boolean call_isIntentionApplicable_1217250498008(SAbstractConcept thisConcept, SNode node) {

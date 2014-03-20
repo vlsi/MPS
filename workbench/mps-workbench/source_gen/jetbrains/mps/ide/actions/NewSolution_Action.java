@@ -15,7 +15,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
@@ -66,19 +65,12 @@ public class NewSolution_Action extends BaseAction {
     try {
       NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
       dialog.show();
-      final Solution s = dialog.getSolution();
+      Solution s = dialog.getSolution();
       if (s == null) {
         return;
       }
 
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
-        public void run() {
-          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ? "" : ((String) MapSequence.fromMap(_params).get("namespace"))));
-        }
-      });
-
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
-      projectPane.rebuildTree();
       projectPane.selectModule(s, false);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

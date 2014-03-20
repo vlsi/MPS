@@ -29,7 +29,7 @@ public class MqlNullLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_mnptk6_a0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

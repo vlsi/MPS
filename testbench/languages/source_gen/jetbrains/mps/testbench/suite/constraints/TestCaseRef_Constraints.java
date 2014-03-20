@@ -12,9 +12,6 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,8 +36,7 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            IScope ms = ModuleSuite_Behavior.call_scope_1280144168199518341(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
-            return new ModelAndImportedModelsScope(_context.getModel(), true, (ms != null ? ms : operationContext.getScope()));
+            return new ModelAndImportedModelsScope(_context.getModel(), true);
           }
 
           @Override

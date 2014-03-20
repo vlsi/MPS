@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,10 +20,10 @@ public class AssertStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.indentBuffer();
     this.append("assert ");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "condition", true));
     if ((SLinkOperations.getTarget(node, "message", true) != null)) {
       this.append(" : ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "message", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "message", true));
     }
     this.append(";");
     if (getBuffer().hasPositionsSupport()) {

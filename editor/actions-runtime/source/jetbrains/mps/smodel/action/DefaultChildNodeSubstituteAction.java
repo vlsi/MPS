@@ -19,7 +19,6 @@ import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -32,37 +31,32 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentChild;
   private SNode myOldChild;
-  private IScope myScope;
   private IChildNodeSetter mySetter;
 
   /**
    * To be used from generated code.  There is no output concept specified here. Subclasses should implement createChildNode() method.
    */
-  protected DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+  protected DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
     super(null, parameterObject, parentNode);
     myCurrentChild = currentChild;
     setupOldChild();
-    myScope = scope;
     mySetter = setter;
   }
 
   /**
    * @param concept instanceof AbstractConceptDeclaration
    */
-  public DefaultChildNodeSubstituteAction(SNode concept, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+  public DefaultChildNodeSubstituteAction(SNode concept, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
     super(concept, concept, parentNode);
     myCurrentChild = currentChild;
     setupOldChild();
-    myScope = scope;
     mySetter = setter;
   }
 
-  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter,
-      IScope scope) {
+  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
     super(outputConcept, parameterObject, parentNode);
     myCurrentChild = currentChild;
     myOldChild = myCurrentChild;
-    myScope = scope;
     mySetter = setter;
   }
 
@@ -74,16 +68,12 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     }
   }
 
-  public IScope getScope() {
-    return myScope;
-  }
-
   @Override
   public final SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
     if (newChild != null) {
-      SNode result = mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
+      SNode result = mySetter.execute(parentNode, myCurrentChild, newChild, editorContext);
       if (result != newChild) {
         // node was wrapped by mySetter
         return result;
@@ -102,7 +92,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     if (conceptDeclaration == null) {
       throw new RuntimeException("Couldn't create child node. Concept declaration was not specified. Parameter object: " + getParameterObject());
     }
-    return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model, getScope());
+    return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model);
   }
 
   @Override

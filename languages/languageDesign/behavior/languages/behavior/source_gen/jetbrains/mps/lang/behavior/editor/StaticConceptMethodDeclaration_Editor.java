@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -107,7 +106,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_gggi92_b2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -167,7 +166,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_gggi92_e2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -177,7 +176,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new StaticConceptMethodDeclaration_Editor.parameterListHandler_gggi92_f2a(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_gggi92_a5c0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_gggi92_a5c0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -245,7 +244,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_gggi92_a5c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gggi92_a5c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
@@ -253,16 +252,16 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_gggi92_g2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_gggi92_a6c0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_gggi92_a6c0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_gggi92_a6c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gggi92_a6c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 

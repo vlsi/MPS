@@ -4,10 +4,10 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="7dda" modelUID="r:94fba536-f338-4285-a58a-19c4a5f53519(jetbrains.mps.core.syntax.java.structure)" version="-1" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
+  <import index="zvqu" modelUID="r:d0dfddbb-a939-4a44-b1d9-0b2ff7fa1ba6(jetbrains.mps.core.syntax.java.behavior)" version="-1" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
-  <import index="zvqu" modelUID="r:d0dfddbb-a939-4a44-b1d9-0b2ff7fa1ba6(jetbrains.mps.core.syntax.java.behavior)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4242261035235111173" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="7dda.4242261035235111171" resolveInfo="SJavaType" />
@@ -132,7 +132,7 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="7dda.5989029785192113715" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5989029785192113726" nodeInfo="ng">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ReferencePresentation" typeId="tpc2.625126330682908270" id="5989029785192113728" nodeInfo="ng">
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="5989029785192122170" resolveInfo="SymRef" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="5989029785192122170" resolveInfo="SymRef" />
           </node>
         </node>
       </node>
@@ -141,7 +141,7 @@
   </root>
   <root type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="5989029785192122025" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="SyntaxJavaSS" />
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="5989029785192122170" nodeInfo="ng">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="5989029785192122170" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="SymRef" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5989029785192122171" nodeInfo="nn">
         <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />

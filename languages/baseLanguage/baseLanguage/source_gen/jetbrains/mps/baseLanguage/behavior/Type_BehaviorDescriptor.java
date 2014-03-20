@@ -10,6 +10,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
+import java.util.Map;
 
 public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public Type_BehaviorDescriptor() {
@@ -78,6 +79,10 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
 
   public boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return Type_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
+  }
+
+  public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return Type_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
   }
 
   public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {

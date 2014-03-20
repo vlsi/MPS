@@ -60,6 +60,9 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    if (SPropertyOperations.getString(thisNode, "name") == null) {
+      return;
+    }
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
@@ -69,7 +72,7 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
-    if ((SNodeOperations.getParent(thisNode) == null)) {
+    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
     }
 
@@ -93,7 +96,7 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
-    if ((SNodeOperations.getParent(thisNode) == null)) {
+    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
     }
 
@@ -140,23 +143,13 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isStatic_8986964027630472402(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
-  }
-
-  @Deprecated
-  public static Icon call_getAdditionalIcon_8884554759541376072(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getFqName_7448855087283424807(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
-  }
-
-  @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633083396(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isStatic_8986964027630472402(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
   }
 
   @Deprecated
@@ -165,8 +158,18 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   @Deprecated
+  public static Icon call_getAdditionalIcon_8884554759541376072(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
+  }
+
+  @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541376072(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static String call_getFqName_7448855087283424807(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   @Deprecated

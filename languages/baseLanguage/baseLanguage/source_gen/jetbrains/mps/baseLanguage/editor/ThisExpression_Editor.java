@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -33,7 +32,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_xaaxob_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ThisExpression_Editor.renderingCondition_xaaxob_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ThisExpression_Editor.renderingCondition_xaaxob_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_xaaxob_a0(editorContext, node);
@@ -44,7 +43,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xaaxob_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xaaxob_a0(SNode node, EditorContext editorContext) {
     return SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null;
   }
 
@@ -105,7 +104,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("classConcept");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -123,7 +122,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_xaaxob_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -133,7 +132,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_xaaxob_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -148,7 +147,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_xaaxob_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -217,7 +216,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("classConcept");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

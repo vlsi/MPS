@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -39,7 +38,7 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_adikco_a");
     editorCell.addEditorCell(this.createComponent_adikco_a0(editorContext, node));
-    if (renderingCondition_adikco_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_adikco_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_adikco_b0(editorContext, node));
     }
     return editorCell;
@@ -73,7 +72,7 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_adikco_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_adikco_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "parameter", true), "parameter", true)).isNotEmpty();
   }
 
@@ -81,7 +80,7 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_adikco_a1a");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    Collections_Style_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -111,7 +110,7 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_adikco_c1a");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyRightAngleBracket(style, editorCell);
+    Collections_Style_StyleSheet.apply_RightAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     QueryExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

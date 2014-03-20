@@ -16,6 +16,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
+import jetbrains.mps.make.dependencies.MakeSequence;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -24,22 +25,24 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import jetbrains.mps.logging.MPSAppenderBase;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.apache.log4j.Priority;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
-  private CountDownLatch myLatch = new CountDownLatch(1);
-  private AtomicReference<MakeTask.TaskState> myState = new AtomicReference<MakeTask.TaskState>(MakeTask.TaskState.NOT_STARTED);
-  private CoreMakeTask coreTask;
+  private final CountDownLatch myLatch = new CountDownLatch(1);
+  private final AtomicReference<MakeTask.TaskState> myState = new AtomicReference<MakeTask.TaskState>(MakeTask.TaskState.NOT_STARTED);
+  private final CoreMakeTask coreTask;
   private boolean isCanceled = false;
 
+  @Deprecated
   public MakeTask(@Nullable Project project, @NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
     super(project, title, true, bgoption);
     coreTask = new MakeTask.WorkbenchMakeTask(title, scripts, scrName, clInput, ctl, mh);
+  }
+
+  public MakeTask(@Nullable Project project, @NotNull String title, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
+    super(project, title, true, bgoption);
+    // XXX might be nice to pass CoreMakeTask here, instead of long list of arguments to construct one. 
+    // however not it's too much of refactoring for WorkbenchMakeTask 
+    coreTask = new MakeTask.WorkbenchMakeTask(title, makeSeq, ctl, mh);
   }
 
   @Override
@@ -60,10 +63,9 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       public void run() {
         CoreMakeTask.RelayingLoggingHandler rlh = new CoreMakeTask.RelayingLoggingHandler(coreTask.getMessageHandler());
         try {
-          rlh.startRelaying();
           coreTask.run(monitor);
         } finally {
-          rlh.stopRelaying();
+          rlh.dispose();
         }
       }
     }, "MPS Make Thread");
@@ -124,8 +126,13 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   }
 
   public class WorkbenchMakeTask extends CoreMakeTask {
+    @Deprecated
     public WorkbenchMakeTask(@NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh) {
       super(title, scripts, scrName, clInput, ctl, mh);
+    }
+
+    public WorkbenchMakeTask(@NotNull String title, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh) {
+      super(title, makeSeq, ctl, mh);
     }
 
     @Override
@@ -167,39 +174,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     INDETERMINATE();
 
     TaskState() {
-    }
-
-    public static class RelayingLoggingHandler extends MPSAppenderBase {
-      private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
-      private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
-        @Override
-        protected IMessageHandler initialValue() {
-          return (MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ? MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._1() : null);
-        }
-      };
-
-      public RelayingLoggingHandler(IMessageHandler mh) {
-        this.messageHandler.set(mh);
-        GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
-      }
-
-      public void startRelaying() {
-        this.register();
-      }
-
-      public void stopRelaying() {
-        this.unregister();
-      }
-
-      @Override
-      protected void append(@NotNull Priority priority, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
-        IMessageHandler mh = messageHandler.get();
-        if (mh != null) {
-          Message message = new Message(MessageKind.fromPriority(priority), messageText);
-          message.setHintObject(object);
-          mh.handle(message);
-        }
-      }
     }
   }
 }

@@ -15,22 +15,22 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.style.AttributeCalculator;
+import jetbrains.mps.editor.runtime.style.StyleAttributeMap.DiscardValue;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleListener;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.containers.EmptyIterator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -42,38 +42,31 @@ import java.util.Set;
 public class StyleImpl implements Style {
   private static final Logger LOG = LogManager.getLogger(StyleImpl.class);
 
-  private final EditorCell myEditorCell;
   private Style myParent;
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
-  private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
 
-  private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
-    return Collections.singleton(sa);
-  }
-
-  public StyleImpl() {
-    this(null);
-  }
-
-  public StyleImpl(EditorCell contextCell) {
-    myEditorCell = contextCell;
-  }
-
-  @Override
-  public void apply(@NotNull EditorCell cell) {
-    cell.getStyle().putAll(this);
-  }
+  private TopLevelStyleMap myAttributes = new TopLevelStyleMap();
+  private TopLevelStyleMap myCachedAttributes = new TopLevelStyleMap();
 
   @Override
   public void putAll(@NotNull Style style) {
+    putAll(style, 0);
+  }
+
+  @Override
+  public void putAll(@NotNull Style style, int selfPriority) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
-    for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
-      myAttributeValues[attribute.getIndex()] = style.rawGet(attribute);
+    for (StyleAttribute<Object> attribute : style.getSpecifiedAttributes()) {
+      Collection<IntPair<Object>> putAttributes = style.getAll(attribute);
+      if (putAttributes != null) {
+        int attributePointer = myAttributes.search(attribute.getIndex());
+        for (IntPair<Object> value : putAttributes) {
+          attributePointer = myAttributes.setValue(attribute, attributePointer, Math.max(value.index, selfPriority), value.value == null ? DiscardValue.getInstance() : value.value);
+        }
+      }
       if (StyleAttributes.isSimple(attribute)) {
-        myCachedAttributeValues[attribute.getIndex()] = null;
         addedSimple.add(attribute);
       } else {
         addedNotSimple.add(attribute);
@@ -84,11 +77,32 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public <T> void set(StyleAttribute<T> attribute, T value) {
-    myAttributeValues[attribute.getIndex()] = value;
-    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
+  public void removeAll(@NotNull Style style) {
+    Set<StyleAttribute> addedSimple = new StyleAttributeSet();
+    Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
+    for (StyleAttribute<Object> attribute : style.getSpecifiedAttributes()) {
+      Collection<IntPair<Object>> putAttributes = style.getAll(attribute);
+      if (putAttributes != null) {
+        int attributePointer = myAttributes.search(attribute.getIndex());
+        for (IntPair<Object> value : putAttributes) {
+          attributePointer = myAttributes.setValue(attribute, attributePointer, value.index, DiscardValue.getInstance());
+        }
+      }
+      if (StyleAttributes.isSimple(attribute)) {
+        addedSimple.add(attribute);
+      } else {
+        addedNotSimple.add(attribute);
+      }
+    }
+    updateCache(addedNotSimple);
+    fireStyleChanged(new StyleChangeEvent(this, addedSimple));
+  }
+
+  @Override
+  public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
+    myAttributes.setValue(attribute, priority, value);
+    Set<StyleAttribute> attributeSet = Collections.<StyleAttribute>singleton(attribute);
     if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributeValues[attribute.getIndex()] = null;
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
     } else {
       updateCache(attributeSet);
@@ -96,65 +110,66 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
-    myAttributeValues[attribute.getIndex()] = valueCalculator;
-    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
-    if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributeValues[attribute.getIndex()] = null;
-      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
+  public <T> void set(StyleAttribute<T> attribute, T value) {
+    set(attribute, 0, value);
+  }
+
+  @Override
+  public <T> int getHighestPriority(StyleAttribute<T> attribute) {
+    int cachedAttributePointer = myCachedAttributes.search(attribute.getIndex());
+    if (TopLevelStyleMap.isEmpty(cachedAttributePointer)) {
+      return -1;
     } else {
-      updateCache(attributeSet);
+      return myCachedAttributes.getTopPair(attribute, cachedAttributePointer).index;
     }
   }
 
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
-    final int index = attribute.getIndex();
     if (StyleAttributes.isSimple(attribute)) {
-      if (myCachedAttributeValues[index] == null) {
-        T value;
-        if (myAttributeValues[index] instanceof AttributeCalculator) {
-          value = ModelAccess.instance().runReadAction(new Computable<T>() {
-            @Override
-            public T compute() {
-              return (T) ((AttributeCalculator) myAttributeValues[index]).calculate(myEditorCell);
-            }
-          });
-        } else {
-          value = (T) myAttributeValues[index];
-        }
-        myCachedAttributeValues[index] = attribute.combine(null, value);
-      }
-      return (T) myCachedAttributeValues[index];
-    }
-    T value = (T) myCachedAttributeValues[index];
-    if (value != null) {
-      return value;
+      IntPair<T> topPair = myAttributes.getTopPair(attribute);
+      return topPair == null ? attribute.combine(null, null) : topPair.value;
     } else {
-      return attribute.combine(null, null);
+      IntPair<T> topPair = myCachedAttributes.getTopPair(attribute);
+      return topPair == null ? attribute.combine(null, null) : topPair.value;
+    }
+  }
+
+  @Override
+  @Nullable
+  public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
+    int attributePointer = myAttributes.search(attribute.getIndex());
+    return TopLevelStyleMap.isEmpty(attributePointer) ? null : myAttributes.getDiscardNullReplaced(attribute, attributePointer);
+  }
+
+  @Override
+  @Nullable
+  public <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute) {
+    if (StyleAttributes.isSimple(attribute)) {
+      int attributePointer = myAttributes.search(attribute.getIndex());
+      return TopLevelStyleMap.isEmpty(attributePointer) ? null : (Collection) myAttributes.getAll(attribute, attributePointer);
+    } else {
+      int cachedAttributePointer = myCachedAttributes.search(attribute.getIndex());
+      return TopLevelStyleMap.isEmpty(cachedAttributePointer) ? null : (Collection) myCachedAttributes.getAll(attribute, cachedAttributePointer);
     }
   }
 
   @Override
   public <T> boolean isSpecified(StyleAttribute<T> attribute) {
-    return myAttributeValues[attribute.getIndex()] != null;
+    return !TopLevelStyleMap.isEmpty(myAttributes.search(attribute.getIndex()));
   }
 
   @Override
   public Iterable<StyleAttribute> getSpecifiedAttributes() {
-    ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(myAttributeValues.length);
-    for (int i = 0; i < myAttributeValues.length; i++) {
-      if (myAttributeValues[i] == null) {
+    int maxSize = myAttributes.getSize();
+    ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(maxSize);
+    for (int i = 0; i < StyleAttributes.getAttributesCount(); i++) {
+      if (! isSpecified(StyleAttributes.getAttribute(i))) {
         continue;
       }
       result.add(StyleAttributes.getAttribute(i));
     }
     return result;
-  }
-
-  @Override
-  public Object rawGet(StyleAttribute attribute) {
-    return myAttributeValues[attribute.getIndex()];
   }
 
   @Override
@@ -216,7 +231,7 @@ public class StyleImpl implements Style {
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
     Set<StyleAttribute> result = new StyleAttributeSet();
     for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
-      if (myCachedAttributeValues[attribute.getIndex()] != null) {
+      if (! TopLevelStyleMap.isEmpty(myCachedAttributes.search(attribute.getIndex()))) {
         result.add(attribute);
       }
     }
@@ -233,24 +248,61 @@ public class StyleImpl implements Style {
     }
 
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
-    for (StyleAttribute attribute : attributes) {
-      Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
-      Object currentValue = myAttributeValues[attribute.getIndex()];
-      Object oldValue = myCachedAttributeValues[attribute.getIndex()];
+    for (StyleAttribute<Object> attribute : attributes) {
+      assert !StyleAttributes.isSimple(attribute);
 
-      if (parentValue != null || currentValue != null || oldValue != null) {
-        if (currentValue instanceof AttributeCalculator) {
-          currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
+      int attributePointer = myAttributes.search(attribute.getIndex());
+      int cachedAttributePointer = myCachedAttributes.search(attribute.getIndex());
+
+      Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAllCached(attribute);
+      Collection<IntPair<Object>> currentValues = TopLevelStyleMap.isEmpty(attributePointer) ? null : myAttributes.getAll(attribute, attributePointer);
+      Collection<IntPair<Object>> oldValues = TopLevelStyleMap.isEmpty(cachedAttributePointer) ? null : myCachedAttributes.getAll(attribute, cachedAttributePointer);
+
+      Iterator<IntPair<Object>> parentIterator = parentValues == null ? new EmptyIterator<IntPair<Object>>() : parentValues.iterator();
+      Iterator<IntPair<Object>> currentIterator = currentValues == null ? new EmptyIterator<IntPair<Object>>() : currentValues.iterator();
+
+      IntPair<Object> parentValue;
+      IntPair<Object> currentValue;
+
+      parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+      currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+
+      StyleAttributeMap<Object> newValues = new StyleAttributeMap<Object>();
+      while (parentValue != null || currentValue != null ) {
+
+        if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index)) {
+          if (!(currentValue.value instanceof DiscardValue)) {
+            newValues.setValue(currentValue.index, attribute.combine(null, currentValue.value));
+          }
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+        } else if (currentValue == null || parentValue.index < currentValue.index) {
+          newValues.setValue(parentValue.index, attribute.combine(parentValue.value, null));
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+        } else {
+          if (!(currentValue.value instanceof DiscardValue)) {
+            newValues.setValue(currentValue.index, attribute.combine(parentValue.value, currentValue.value));
+          }
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
         }
-
-        Object newValue = attribute.combine(parentValue, currentValue);
-
-        if (!EqualUtil.equals(newValue, oldValue)) {
-          changedAttributes.add(attribute);
-        }
-
-        myCachedAttributeValues[attribute.getIndex()] = newValue;
       }
+
+      Iterator<IntPair<Object>> oldIterator = oldValues == null ? new EmptyIterator<IntPair<Object>>() : oldValues.iterator();
+
+      Iterator<IntPair<Object>> newIterator = newValues.getAll().iterator();
+      while (oldIterator.hasNext() || newIterator.hasNext()) {
+        if (newIterator.hasNext() ^ oldIterator.hasNext()) {
+          changedAttributes.add(attribute);
+          break;
+        }
+        IntPair<Object> newValue = newIterator.next();
+        IntPair<Object> oldValue = oldIterator.next();
+        if (newValue.index != oldValue.index || !EqualUtil.equals(newValue.value, oldValue.value)) {
+          changedAttributes.add(attribute);
+          break;
+        }
+      }
+      myCachedAttributes.set(attribute.getIndex(), cachedAttributePointer, newValues);
     }
 
     if (!changedAttributes.isEmpty()) {

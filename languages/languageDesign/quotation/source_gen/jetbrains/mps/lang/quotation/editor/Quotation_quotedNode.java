@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,19 +27,19 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
     public Quotation_generic_cellMenu_61vnku_a0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      for (SNode nextConcept : ListSequence.fromList(SModelSearchUtil.createConceptsFromModelLanguagesScope(SNodeOperations.getModel(node), true, operationContext.getScope()).getNodes())) {
+      for (SNode nextConcept : ListSequence.fromList(SModelSearchUtil.createConceptsFromModelLanguagesScope(SNodeOperations.getModel(node), true).getNodes())) {
         ListSequence.fromList(result).addElement((SNode) nextConcept);
       }
       return result;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode oldInstance = SLinkOperations.getTarget(node, "quotedNode", true);
       SLinkOperations.setTarget(node, "quotedNode", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), null), true);
       if (oldInstance != null) {

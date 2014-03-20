@@ -4,7 +4,6 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -27,8 +26,8 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
   }
 
   @Override
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
-    if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
+  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext context) {
+    if (node == null || SNodeOperations.getModel(node) == null) {
       return;
     }
     SModule module = check_bt3k2y_a0b0b(SNodeOperations.getModel(node));
@@ -60,7 +59,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         if (scopeProvider != null) {
           ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ? ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) : null);
         }
-        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), new RefScopeChecker.ResolveReferenceQuickFix(ref, operationContext));
+        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), new RefScopeChecker.ResolveReferenceQuickFix(ref, context));
       }
     }
   }

@@ -26,7 +26,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -131,23 +130,25 @@ public class SModelUtil_new implements CoreComponent {
     return new ConceptAndSuperConceptsScope(topConcept).getConcepts();
   }
 
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(String conceptFQName, SModel model, IScope scope) {
-    return instantiateConceptDeclaration(conceptFQName, model, scope, true);
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(String conceptFQName, SModel model) {
+    return instantiateConceptDeclaration(conceptFQName, model, true);
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model) {
-    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance());
+    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model);
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance(), fullNodeStructure);
+    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, fullNodeStructure);
   }
 
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(conceptFqName, model, null, scope, fullNodeStructure);
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model,
+      boolean fullNodeStructure) {
+    return instantiateConceptDeclaration(conceptFqName, model, null, fullNodeStructure);
   }
 
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId,
+      boolean fullNodeStructure) {
     boolean isNotProjectModel = model==null || !TemporaryModels.isTemporary(model);
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
@@ -164,7 +165,7 @@ public class SModelUtil_new implements CoreComponent {
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used
       //before project language is loaded
-      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName);
       createNodeStructure(conceptDeclaration, newNode, model);
     }
     return newNode;
@@ -200,16 +201,6 @@ public class SModelUtil_new implements CoreComponent {
 
   public static String getAlias(SNode conceptDeclaration) {
     return SPropertyOperations.getString(conceptDeclaration, "conceptAlias");
-  }
-
-  public static String getStringConceptProperty(SNode conceptDeclaration, String propertyName) {
-    SNode property = SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-
-    Object value = SNodeUtil.getConceptPropertyValue(property);
-    if (value instanceof String) {
-      return (String) value;
-    }
-    return null;
   }
 
   public static boolean isEmptyPropertyValue(String s) {

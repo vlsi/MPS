@@ -17,7 +17,6 @@ import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -81,7 +80,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     IHolder holder = query.getObjectHolder();
     assert holder instanceof NodeHolder;
     SNode node = ((NodeHolder) holder).getObject();
-    if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName((SNode) SModelUtil.findConceptDeclaration(getConcept(), GlobalScope.getInstance()))) && isApplicable(node)) {
+    if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName((SNode) SModelUtil.findConceptDeclaration(getConcept()))) && isApplicable(node)) {
       List<SNode> resSN = ListSequence.fromList(new ArrayList<SNode>());
       getSearchedNodes(node, query.getScope(), resSN);
       for (SNode resnode : resSN) {

@@ -6,9 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -18,7 +16,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -61,8 +58,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node);
-    if (sm == null || !(sm.getModule() instanceof Generator)) {
+    if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
@@ -89,10 +85,9 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
   }
 
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(selectedNodeConcept, SNodeOperations.getModel(node), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(it), "abstract"));
+        return !(SPropertyOperations.getBoolean(it, "abstract"));
       }
     }).toListSequence();
   }

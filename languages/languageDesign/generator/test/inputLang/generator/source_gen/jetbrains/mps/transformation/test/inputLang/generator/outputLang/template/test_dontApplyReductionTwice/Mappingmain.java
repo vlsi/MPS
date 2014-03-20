@@ -102,7 +102,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1209604575152(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a5p, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1209604575152(new BaseMappingRuleContext(context, rootMappingRule_417xrn_b0a0a0a5p, environment.getGenerator())))) {
         return false;
       }
       return true;
@@ -115,5 +115,5 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   private static SNodePointer rootMappingRule_417xrn_a0a1p = new SNodePointer("r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)", "1209604563573");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a0a5p = new SNodePointer("r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)", "1209604563573");
+  private static SNodePointer rootMappingRule_417xrn_b0a0a0a5p = new SNodePointer("r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)", "1209604563573");
 }

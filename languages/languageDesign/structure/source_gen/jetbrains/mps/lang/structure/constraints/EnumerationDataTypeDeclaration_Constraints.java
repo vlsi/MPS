@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -57,7 +56,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
       }
 
       @Override
-      public void setValue(SNode node, String propertyValue, IScope scope) {
+      public void setValue(SNode node, String propertyValue) {
         String propertyName = "hasNoDefaultMember";
         SPropertyOperations.set(node, "hasNoDefaultMember", "" + ((SPropertyOperations.getBoolean(propertyValue))));
         if ((SPropertyOperations.getBoolean(propertyValue)) == true) {

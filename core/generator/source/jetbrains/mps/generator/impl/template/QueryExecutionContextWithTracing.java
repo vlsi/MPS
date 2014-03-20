@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
-import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -166,7 +164,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
+  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("evaluate template argument query", query), true);
       return wrapped.evaluateArgumentQuery(inputNode, query, context);
@@ -176,7 +174,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Object evaluateVariableQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
+  public Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("evaluate variable value query", query), true);
       return wrapped.evaluateVariableQuery(inputNode, query, context);

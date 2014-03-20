@@ -55,11 +55,9 @@
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.SideBorder" />
-    <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="com.intellij.ui.SpeedSearchComparator" />
     <classNode dependClassName="com.intellij.ui.popup.AbstractPopup" />
     <classNode dependClassName="com.intellij.ui.popup.PopupUpdateProcessor" />
-    <classNode dependClassName="com.intellij.ui.speedSearch.SpeedSearchUtil" />
     <classNode dependClassName="com.intellij.ui.treeStructure.Tree" />
     <classNode dependClassName="com.intellij.ui.treeStructure.filtered.FilteringTreeBuilder" />
     <classNode dependClassName="com.intellij.ui.treeStructure.filtered.FilteringTreeStructure" />
@@ -111,7 +109,6 @@
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" />
-    <classNode dependClassName="org.jetbrains.annotations.Nls" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -137,7 +134,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel" />
@@ -146,6 +142,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" file="NodeTreeModel.java">

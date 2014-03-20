@@ -46,7 +46,7 @@ public class DisposedRepository implements SRepository {
   }
 
   @Override
-  public ModelAccess getModelAccess() {
+  public org.jetbrains.mps.openapi.module.ModelAccess getModelAccess() {
     return new ModelAccess() {
       @Override
       public boolean canRead() {

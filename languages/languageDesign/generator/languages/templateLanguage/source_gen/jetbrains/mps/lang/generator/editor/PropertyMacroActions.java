@@ -8,10 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.editor.runtime.cells.CellIdManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PropertyMacroActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -31,7 +31,7 @@ public class PropertyMacroActions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode attributedNode = SNodeOperations.getParent(node);
-      SNode propertyDeclaration = AttributeOperations.getPropertyDeclaration(node);
+      SNode propertyDeclaration = AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(SNodeOperations.getConceptDeclaration(attributedNode), SPropertyOperations.getString(node, "propertyName"));
       SNodeOperations.deleteNode(node);
       SelectionUtil.selectCell(editorContext, attributedNode, CellIdManager.createPropertyId(SPropertyOperations.getString(propertyDeclaration, "name")));
     }

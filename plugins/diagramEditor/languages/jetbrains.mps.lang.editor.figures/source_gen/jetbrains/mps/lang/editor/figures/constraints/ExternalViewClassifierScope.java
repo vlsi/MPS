@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.figures.constraints;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +17,7 @@ public class ExternalViewClassifierScope extends FilteringScope {
   private SModel myModel;
 
   public ExternalViewClassifierScope(SModel model) {
-    super(new ModelPlusImportedScope(model, false, ((AbstractModule) model.getModule()).getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    super(new ModelPlusImportedScope(model, false, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     myModel = model;
   }
 
@@ -34,6 +33,6 @@ public class ExternalViewClassifierScope extends FilteringScope {
     if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, classConcept, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
       return true;
     }
-    return !(ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(classConcept)).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~View")));
+    return !(ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(classConcept)).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~View")));
   }
 }

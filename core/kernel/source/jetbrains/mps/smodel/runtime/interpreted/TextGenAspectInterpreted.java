@@ -19,7 +19,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -44,7 +43,7 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
 
   @Override
   public TextGenDescriptor getDescriptor(@NotNull String conceptFqName) {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (concept == null) {
       LOG.error("Can't find concept node for concept: " + conceptFqName);
       return new DefaultTextGenDescriptor();

@@ -4,60 +4,40 @@ package jetbrains.mps.baseLanguage.collections.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class Collections_Style_StyleSheet {
-  @Deprecated
-  public static Style getOperation(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
+  public static void apply_Operation(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
   }
 
-  @Deprecated
-  public static Style getAngleBracket(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    return style;
+  public static void apply_AngleBracket(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracket");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
   }
 
-  @Deprecated
-  public static Style getLeftAngleBracket(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Collections_Style_StyleSheet.getAngleBracket(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    return style;
+  public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
-  @Deprecated
-  public static Style getRightAngleBracket(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Collections_Style_StyleSheet.getAngleBracket(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    return style;
+  public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
-  public static void applyOperation(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-  }
 
-  public static void applyAngleBracket(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-  }
-
-  public static void applyLeftAngleBracket(Style style, EditorCell editorCell) {
-    Collections_Style_StyleSheet.applyAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-  }
-
-  public static void applyRightAngleBracket(Style style, EditorCell editorCell) {
-    Collections_Style_StyleSheet.applyAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-  }
 }

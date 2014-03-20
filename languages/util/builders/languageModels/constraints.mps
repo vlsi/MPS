@@ -19,7 +19,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
+  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7288041816792309049" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="pmg0.7288041816792292064" resolveInfo="ResultExpression" />
@@ -170,7 +170,6 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8969040284892333309" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j8l.8969040284892300232" resolveInfo="getPossibleChildren" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="5199967550912567378" nodeInfo="nn" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="5199967550912567353" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
@@ -298,7 +297,6 @@
                       <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="7782956297805865807" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="7782956297805865808" nodeInfo="nn">
                         <link role="concept" roleId="tp25.1176109685394" targetNodeId="pmg0.7288041816792374843" resolveInfo="SimpleBuilders" />
-                        <node role="scope" roleId="tp25.1176109762787" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="7782956297805865809" nodeInfo="nn" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkImplicitSelect" typeId="tp25.3562215692195599741" id="7782956297805865810" nodeInfo="nn">
@@ -558,7 +556,6 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6666322667909634558" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.3024565449487117761" resolveInfo="VisibleClassConstructorsScope" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_contextNode" typeId="tp1t.8966504967485224688" id="3671207155728838951" nodeInfo="nn" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="6666322667909634560" nodeInfo="nn" />
               </node>
             </node>
           </node>
@@ -734,7 +731,6 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="3436597452201051219" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="3436597452201051217" nodeInfo="nn">
                     <link role="concept" roleId="tp25.1176109685394" targetNodeId="pmg0.7288041816792374843" resolveInfo="SimpleBuilders" />
-                    <node role="scope" roleId="tp25.1176109762787" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="3436597452201051220" nodeInfo="nn" />
                   </node>
                 </node>
               </node>

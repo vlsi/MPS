@@ -39,7 +39,7 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_errt5h_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySecondLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_SecondLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -68,7 +68,7 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_errt5h_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -21,10 +20,10 @@ public class CatchClause_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createScopeInfo(this, node);
     }
     this.appendWithIndent("} catch (");
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "throwable", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "throwable", true));
     this.append(") {");
     this.increaseDepth();
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "catchBody", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "catchBody", true));
     this.decreaseDepth();
     if (getBuffer().hasPositionsSupport()) {
       {

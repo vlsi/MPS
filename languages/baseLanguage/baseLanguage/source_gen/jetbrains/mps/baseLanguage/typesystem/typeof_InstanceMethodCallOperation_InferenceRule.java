@@ -22,9 +22,9 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import java.util.Iterator;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
@@ -84,6 +84,17 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                 MapSequence.fromMap(subs).put(tvd, typeCheckingContext.getRepresentative(T_typevar_4837286298389112296));
               }
             }
+            for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true))) {
+              if ((SLinkOperations.getTarget(tvd, "bound", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tvd, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+                BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SLinkOperations.getTarget(tvd, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+                {
+                  SNode _nodeToCheck_1029348928467 = mcallop;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1636362938497524944", 0, null);
+                  typeCheckingContext.createLessThanInequality((SNode) MapSequence.fromMap(subs).get(tvd), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true)), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), false, false, _info_12389875345);
+                }
+              }
+            }
+
           } else {
             {
               Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).iterator();
@@ -123,6 +134,9 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
             typeCheckingContext.createLessThanInequality((SNode) retType, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099497685", true), false, true, _info_12389875345);
           }
 
+          List<SNode> actualArguments = ListSequence.fromList(new ArrayList<SNode>());
+          ListSequence.fromList(actualArguments).addSequence(ListSequence.fromList(SLinkOperations.getTargets(mcallop, "actualArgument", true)));
+
           {
             Iterator<SNode> type_it = ListSequence.fromList(typel).iterator();
             Iterator<SNode> argt_it = ListSequence.fromList(argTypes).iterator();
@@ -131,6 +145,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
             while (type_it.hasNext() && argt_it.hasNext()) {
               type_var = type_it.next();
               argt_var = argt_it.next();
+              final SNode actualArgument = ListSequence.fromList(actualArguments).removeElementAt(0);
               final SNode _type = type_var;
               if (SNodeOperations.isInstanceOf(_type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
                 {
@@ -140,6 +155,13 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                       {
                         SNode _nodeToCheck_1029348928467 = mcallop;
                         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522921", 0, null);
+                        {
+                          BaseQuickFixProvider intentionProvider = null;
+                          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix", false);
+                          intentionProvider.putArgument("desiredType", _type);
+                          intentionProvider.putArgument("expression", actualArgument);
+                          _info_12389875345.addIntentionProvider(intentionProvider);
+                        }
                         typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                       }
                     }
@@ -150,12 +172,21 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                   {
                     SNode _nodeToCheck_1029348928467 = argt_var;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522937", 0, null);
+                    {
+                      BaseQuickFixProvider intentionProvider = null;
+                      intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix", false);
+                      intentionProvider.putArgument("desiredType", _type);
+                      intentionProvider.putArgument("expression", actualArgument);
+                      _info_12389875345.addIntentionProvider(intentionProvider);
+                    }
                     typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522939", true), true, true, _info_12389875345);
                   }
                 }
               }
             }
           }
+
+          TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, mcallop, subs);
         }
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4107091686347739849", false, false);
     }
@@ -179,7 +210,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
   private static SNode _quotation_createNode_ecn83h_a0h0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
@@ -187,7 +218,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
   private static SNode _quotation_createNode_ecn83h_a0a1a0a5a31a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }

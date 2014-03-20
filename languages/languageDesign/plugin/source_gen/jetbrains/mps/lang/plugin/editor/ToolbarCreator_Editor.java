@@ -39,7 +39,7 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toolbar");
     editorCell.setCellId("Constant_5tw6n1_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -49,7 +49,7 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5tw6n1_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -104,7 +104,7 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5tw6n1_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

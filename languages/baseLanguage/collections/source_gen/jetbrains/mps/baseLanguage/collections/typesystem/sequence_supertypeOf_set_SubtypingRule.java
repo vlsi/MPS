@@ -13,7 +13,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -51,19 +50,18 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_sequence_supertypeOf_set_twopzc_a0a;
-        nodeToMatch_sequence_supertypeOf_set_twopzc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_twopzc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_twopzc_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_sequence_supertypeOf_set_twopzc_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a, childRole_sequence_supertypeOf_set_twopzc_, 1))) {
+          String childRole_twopzc_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_twopzc_a0a, childRole_twopzc_, 1))) {
             return false;
           }
           {
-            SNode childVar_sequence_supertypeOf_set_twopzc_a0a0 = IterableUtil.get(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getChildren(childRole_sequence_supertypeOf_set_twopzc_), 0);
-            this.patternVar_elementType = childVar_sequence_supertypeOf_set_twopzc_a0a0;
+            SNode childVar_twopzc_a0a0 = IterableUtil.get(nodeToMatch_twopzc_a0a.getChildren(childRole_twopzc_), 0);
+            this.patternVar_elementType = childVar_twopzc_a0a0;
           }
         }
       }
@@ -95,7 +93,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));

@@ -12,4 +12,5 @@
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
   </extensions>
+
 </idea-plugin>

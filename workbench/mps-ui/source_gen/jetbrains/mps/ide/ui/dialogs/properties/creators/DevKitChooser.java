@@ -5,11 +5,11 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
@@ -19,17 +19,17 @@ public class DevKitChooser implements Computable<List<SModuleReference>> {
 
   @Override
   public List<SModuleReference> compute() {
-    final Wrappers._T<List<SModuleReference>> dkRefs = new Wrappers._T<List<SModuleReference>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<DevKit> devkits = new FilteredGlobalScope().getVisibleDevkits();
-        dkRefs.value = Sequence.fromIterable(devkits).select(new ISelector<DevKit, SModuleReference>() {
-          public SModuleReference select(DevKit it) {
-            return it.getModuleReference();
-          }
-        }).toListSequence();
+    Iterable<Language> langs = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+    List<SModuleReference> refs = Sequence.fromIterable(langs).where(new IWhereFilter<Language>() {
+      public boolean accept(Language it) {
+        return VisibleModuleRegistry.getInstance().isVisible(it);
       }
-    });
-    return CommonChoosers.showDialogModuleCollectionChooser(null, "devkit", dkRefs.value, null);
+    }).select(new ISelector<Language, SModuleReference>() {
+      public SModuleReference select(Language lang) {
+        return lang.getModuleReference();
+      }
+    }).toListSequence();
+
+    return CommonChoosers.showDialogModuleCollectionChooser(null, "devkit", refs, null);
   }
 }

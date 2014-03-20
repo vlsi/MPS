@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -55,7 +54,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_th2ud5_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_th2ud5_b0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_th2ud5_c0a(editorContext, node));
-    if (renderingCondition_th2ud5_a3a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_th2ud5_a3a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_th2ud5_d0a(editorContext, node));
     }
     return editorCell;
@@ -115,7 +114,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_th2ud5_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_th2ud5_a3a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "type", "migration", "enhancement");
   }
 

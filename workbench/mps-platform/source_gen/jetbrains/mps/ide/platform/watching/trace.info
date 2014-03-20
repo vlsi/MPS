@@ -144,7 +144,6 @@
     <unitInfo nodeId="2034046503373004478" fileName="ReloadSession.java" startLine="88" startPosition="48" endLine="95" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ReloadSession$3" />
     <unitInfo nodeId="174954467868287275" fileName="ReloadSession.java" startLine="20" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadSession" />
   </root>
-  <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/3049908825235651409" />
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/4774203567222173397">
     <nodeInfo nodeId="4774203567224668508" fileName="ReloadManagerComponent.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
     <nodeInfo nodeId="4774203567222962566" fileName="ReloadManagerComponent.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeService" />
@@ -528,7 +527,7 @@
     <nodeInfo nodeId="6069288648217272993" fileName="FileProcessor.java" startLine="161" startPosition="50" endLine="162" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6069288648217278523" fileName="FileProcessor.java" startLine="163" startPosition="9" endLine="164" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5968086934301299062" fileName="FileProcessor.java" startLine="169" startPosition="55" endLine="170" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5968086934301096908" fileName="FileProcessor.java" startLine="172" startPosition="32" endLine="173" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5968086934301096908" fileName="FileProcessor.java" startLine="172" startPosition="33" endLine="173" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4237144640466281298" fileName="FileProcessor.java" startLine="179" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="added" />
     <nodeInfo nodeId="4237144640466284707" fileName="FileProcessor.java" startLine="180" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="removed" />
     <nodeInfo nodeId="4237144640466326561" fileName="FileProcessor.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="changed" />
@@ -591,7 +590,7 @@
     <scopeInfo nodeId="4237144640466340740" fileName="FileProcessor.java" startLine="135" startPosition="56" endLine="136" endPosition="28" />
     <scopeInfo nodeId="6069288648217298368" fileName="FileProcessor.java" startLine="145" startPosition="56" endLine="146" endPosition="30" />
     <scopeInfo nodeId="7799350397879242136" fileName="FileProcessor.java" startLine="152" startPosition="28" endLine="153" endPosition="50" />
-    <scopeInfo nodeId="5968086934301096908" fileName="FileProcessor.java" startLine="172" startPosition="32" endLine="173" endPosition="110" />
+    <scopeInfo nodeId="5968086934301096908" fileName="FileProcessor.java" startLine="172" startPosition="33" endLine="173" endPosition="111" />
     <scopeInfo nodeId="4989082803905157466" fileName="FileProcessor.java" startLine="188" startPosition="41" endLine="189" endPosition="19" />
     <scopeInfo nodeId="4989082803905157474" fileName="FileProcessor.java" startLine="193" startPosition="41" endLine="194" endPosition="21" />
     <scopeInfo nodeId="4989082803905157482" fileName="FileProcessor.java" startLine="198" startPosition="41" endLine="199" endPosition="21" />

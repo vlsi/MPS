@@ -6,8 +6,10 @@ package jetbrains.mps.tool.common;
 public class ScriptProperties {
 
   public static final String COMPILE = "COMPILE";
-  public static final String STRICT_MODE = "STRICT_MODE";
-  public static final String PARALLEL_MODE = "PARALLEL_MODE";
+  @Deprecated
+  public static final String STRICT_MODE = GeneratorProperties.STRICT_MODE;
+  @Deprecated
+  public static final String PARALLEL_MODE = GeneratorProperties.PARALLEL_MODE;
   public static final String PLUGIN_PATHS = "plugin.path";
 
   public static final String INVOKE_TESTS = "INVOKE_TESTS";

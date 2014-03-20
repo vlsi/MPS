@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,17 +24,24 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Dependencies collector. Created once per model generation.
@@ -157,6 +164,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public void registerRoot(SNode outputRoot, SNode inputNode) {
+    // XXX in fact, not sure there's need to keep this map if I can use TracingUtil and userobjects with original input?
     if (nextStepToOriginalMap == null) {
       nextStepToOriginalMap = new HashMap<SNode, SNode>();
     }
@@ -165,9 +173,6 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       return;
     }
     SNode originalRoot = currentToOriginalMap.get(inputNode.getContainingRoot());
-//    if(originalRoot == null && !currentToOriginalMap.containsKey(inputNode.getTopmostAncestor())) {
-//      LOG.warn("consistency problem in dependencies map");
-//    }
     nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
@@ -183,13 +188,6 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   public void updateModel(SModel newInputModel) {
     if (nextStepToOriginalMap != null) {
       currentToOriginalMap = nextStepToOriginalMap;
-
-//      for(SNode newroot : newInputModel.roots()) {
-//        if(!currentToOriginalMap.containsKey(newroot)) {
-//          LOG.warn("unknown root in model " + newInputModel);
-//        }
-//      }
-
       nextStepToOriginalMap = null;
     } else {
       currentToOriginalMap = new HashMap<SNode, SNode>();
@@ -230,9 +228,10 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
-    if (inputNode == null || !(inputNode.getModel() != null)) {
+    if (inputNode == null || inputNode.getModel() == null) {
       return myConditionalsBuilder;
     }
+    final SNode initial = inputNode;
     inputNode = inputNode.getContainingRoot();
     SNode originalRoot = currentToOriginalMap.get(inputNode);
     if (originalRoot != null) {
@@ -242,6 +241,14 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     }
     // shouldn't happen
     LOG.error("consistency problem in dependencies map", new IllegalStateException());
+    LOG.error("INPUT: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode));
+    if (initial != inputNode) {
+      LOG.error("getRootBuilder invoked for: " + SNodeUtil.getDebugText(initial));
+    }
+    LOG.error("current to original map:");
+    for (SNode n : currentToOriginalMap.keySet()) {
+      LOG.error(String.format("%s --> %s", SNodeUtil.getDebugText(n), SNodeUtil.getDebugText(currentToOriginalMap.get(n))));
+    }
     return null;
   }
 

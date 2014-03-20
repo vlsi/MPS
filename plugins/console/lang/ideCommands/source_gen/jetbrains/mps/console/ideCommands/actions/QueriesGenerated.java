@@ -5,9 +5,17 @@ package jetbrains.mps.console.ideCommands.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_SubtreeStatisticsTarget_2087237500476328252(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "target", "jetbrains.mps.console.ideCommands.structure.NodeReference");
+  }
+
+  public static void nodeFactory_NodeSetup_AbsractMake_5308946314782063425(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.ideCommands.structure.AbsractMake")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.ideCommands.structure.AbsractMake"), "argument", true), true);
+    }
   }
 }

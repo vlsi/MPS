@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 
 public class MPS10313<T> {
-  private List<List<T>> myValues;
+  /*package*/ List<List<T>> myValues;
 
   public MPS10313() {
   }

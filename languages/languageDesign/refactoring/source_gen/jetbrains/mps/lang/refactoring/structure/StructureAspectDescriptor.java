@@ -21,157 +21,111 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression").abstract_().staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().staticScope(StaticScope.NONE).create();
-      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("affected nodes", "").staticScope(StaticScope.NONE).create();
-      case 5:
+      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction").children(new String[]{"feature", "newConceptFQName", "newFeatureName"}, new boolean[]{false, false, false}).alias("changeFeatureName", "").staticScope(StaticScope.NONE).create();
-      case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.refactoring.structure.RefactoringAction").children(new String[]{"feature", "newConceptFQName", "newFeatureName"}, new boolean[]{false, false, false}).alias("changeFeatureName", "").staticScope(StaticScope.NONE).create();
-      case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 8:
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("model", "").staticScope(StaticScope.NONE).create();
-      case 9:
+      case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("module", "").staticScope(StaticScope.NONE).create();
-      case 10:
+      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("model", "").staticScope(StaticScope.NONE).create();
-      case 11:
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("node", "").staticScope(StaticScope.NONE).create();
-      case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("argument", "").staticScope(StaticScope.NONE).create();
-      case 13:
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").abstract_().staticScope(StaticScope.NONE).create();
-      case 14:
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ContextType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("refcontext", "").staticScope(StaticScope.NONE).create();
-      case 15:
+      case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("refactoring").children(new String[]{"target", "parameters", "project"}, new boolean[]{false, true, false}).alias("create refcontext", "").staticScope(StaticScope.NONE).create();
-      case 16:
+      case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction").children(new String[]{"feature"}, new boolean[]{false}).alias("deleteFeature", "").staticScope(StaticScope.NONE).create();
-      case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.refactoring.structure.RefactoringAction").children(new String[]{"feature"}, new boolean[]{false}).alias("deleteFeature", "").staticScope(StaticScope.NONE).create();
-      case 18:
+      case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.DoRefactorClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("refactor", "").staticScope(StaticScope.NONE).create();
-      case 19:
+      case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("doWhenDone", "").staticScope(StaticScope.NONE).create();
-      case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"finders", "searchNode", "searchScope"}, new boolean[]{true, false, false}).alias("executeFinders", "").staticScope(StaticScope.NONE).create();
-      case 21:
+      case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").references("refactoring").children(new String[]{"target", "parameters", "project"}, new boolean[]{false, true, false}).alias("execute refactoring", "").staticScope(StaticScope.NONE).create();
-      case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.FinderReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo").references("finderDeclaration").create();
-      case 24:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("models to generate", "").staticScope(StaticScope.NONE).create();
-      case 25:
+      case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("additional models to update", "").staticScope(StaticScope.NONE).create();
-      case 26:
+      case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.InitClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("init", "").staticScope(StaticScope.NONE).create();
-      case 27:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.InitialValueClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 28:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.IsApplicableClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").staticScope(StaticScope.NONE).create();
-      case 29:
+      case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicableToModel", "").staticScope(StaticScope.NONE).create();
-      case 30:
+      case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicableToModule", "").staticScope(StaticScope.NONE).create();
-      case 31:
+      case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicableToNode", "").staticScope(StaticScope.NONE).create();
-      case 32:
+      case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("refactoring").children(new String[]{"target"}, new boolean[]{false}).alias("is applicable refactoring", "").staticScope(StaticScope.NONE).create();
-      case 33:
+      case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.MainProjectOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("project", "").staticScope(StaticScope.NONE).create();
-      case 34:
+      case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression").alias("mergeNode", "merge node with another node").staticScope(StaticScope.NONE).create();
-      case 35:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("modelDescriptor", "").staticScope(StaticScope.NONE).create();
-      case 36:
+      case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("modelDescriptor", "").staticScope(StaticScope.NONE).create();
-      case 37:
+      case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModelTarget").super_("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").parents("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").children(new String[]{"isApplicableBlock"}, new boolean[]{false}).alias("model", "").create();
-      case 38:
+      case 26:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("models from usages", "").staticScope(StaticScope.NONE).create();
-      case 39:
+      case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("models to generate", "").staticScope(StaticScope.NONE).create();
-      case 40:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModuleExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("module", "").staticScope(StaticScope.NONE).create();
-      case 41:
+      case 28:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModuleOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("module", "").staticScope(StaticScope.NONE).create();
-      case 42:
+      case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ModuleTarget").super_("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").parents("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").children(new String[]{"moduleType", "isApplicableBlock"}, new boolean[]{false, false}).alias("module", "").create();
-      case 43:
+      case 30:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression").alias("moveNode", "move node to model").staticScope(StaticScope.NONE).create();
-      case 44:
+      case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression").children(new String[]{"roleInTarget"}, new boolean[]{false}).alias("moveNode", "move node to another node").staticScope(StaticScope.NONE).create();
-      case 45:
+      case 32:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression").alias("moveNodes", "move nodes to model").staticScope(StaticScope.NONE).create();
-      case 46:
+      case 33:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression").children(new String[]{"roleInTarget"}, new boolean[]{false}).alias("moveNodes", "move nodes to another node").staticScope(StaticScope.NONE).create();
-      case 47:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.NodeExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("node", "").staticScope(StaticScope.NONE).create();
-      case 48:
+      case 34:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.NodeOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("node", "").staticScope(StaticScope.NONE).create();
-      case 49:
+      case 35:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.NodeTarget").super_("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").parents("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").references("concept").children(new String[]{"isApplicableBlock"}, new boolean[]{false}).alias("node", "").create();
-      case 50:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.NodesExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("nodes", "").staticScope(StaticScope.NONE).create();
-      case 51:
+      case 36:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.NodesOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("nodes", "").staticScope(StaticScope.NONE).create();
-      case 52:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("nodes to open", "").staticScope(StaticScope.NONE).create();
-      case 53:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.OldRefactoring").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("userFriendlyName", "refactoringTargetKind", "oneTargetOnly", "refactorImmediatelyIfNoUsages").references("applicableConcept", "overrides").children(new String[]{"keystroke", "arguments", "internalArguments", "isApplicableClause", "isApplicableToModelClause", "affectedNodesClause", "doRefactorClause", "getModelsToGenerateClause", "getModelsToUpdateClause", "nodesToOpenClause", "updateModelClause"}, new boolean[]{false, true, true, false, false, false, false, false, false, false, false}).create();
-      case 54:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.OperationContextExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("operationContext", "").staticScope(StaticScope.NONE).create();
-      case 55:
+      case 37:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.OperationContextOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("operationContext", "").staticScope(StaticScope.NONE).create();
-      case 56:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ProjectExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("project", "").staticScope(StaticScope.NONE).create();
-      case 57:
+      case 38:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ProjectOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("mpsProject", "").staticScope(StaticScope.NONE).create();
-      case 58:
+      case 39:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.Refactoring").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").properties("userFriendlyName").references("overrides").children(new String[]{"target", "parameter", "field", "initBlock", "doRefactorBlock", "modelsToGenerateBlock", "doWhenDoneBlock", "affectedNodesBlock", "updateModelBlock"}, new boolean[]{false, true, true, false, false, false, false, false, false}).create();
-      case 59:
+      case 40:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringAction").interface_().create();
-      case 60:
+      case 41:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringArgument").interface_().create();
-      case 61:
+      case 42:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference").interface_().create();
-      case 62:
+      case 43:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("refactoringContext", "").staticScope(StaticScope.NONE).create();
-      case 63:
+      case 44:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringField").super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument").create();
-      case 64:
+      case 45:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference").super_("jetbrains.mps.baseLanguage.structure.BaseVariableReference").parents("jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference").references("refactoringField").staticScope(StaticScope.NONE).create();
-      case 65:
+      case 46:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringParameter").super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument").create();
-      case 66:
+      case 47:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference").references("refactoringParameter").staticScope(StaticScope.NONE).create();
-      case 67:
+      case 48:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringTarget").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("allowMultiple").children(new String[]{"isApplicableBlock"}, new boolean[]{false}).abstract_().create();
-      case 68:
+      case 49:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RepositoryOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("repository", "").staticScope(StaticScope.NONE).create();
-      case 69:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("presentation").children(new String[]{"argumentType"}, new boolean[]{false}).create();
-      case 70:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("argument").staticScope(StaticScope.NONE).create();
-      case 71:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument").super_("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument").parents("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument").children(new String[]{"filterClause", "chooseComponentClause", "initialValue"}, new boolean[]{false, false, false}).create();
-      case 72:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ScopeExpression").super_("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").parents("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression").alias("scope", "").staticScope(StaticScope.NONE).create();
-      case 73:
+      case 50:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.ScopeOperation").super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").parents("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation").alias("scope", "").staticScope(StaticScope.NONE).create();
-      case 74:
+      case 51:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("updateModelByDefault", "").staticScope(StaticScope.NONE).create();
-      case 75:
+      case 52:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.UpdateModelClause").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("updateModel", "").staticScope(StaticScope.NONE).create();
-      case 76:
+      case 53:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"argument"}, new boolean[]{false}).alias("updateModel(...)", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ChooseComponentClause", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.DoRefactorClause", "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.FilterArgumentClause", "jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause", "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause", "jetbrains.mps.lang.refactoring.structure.InitClause", "jetbrains.mps.lang.refactoring.structure.InitialValueClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MainProjectOperation", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression", "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", "jetbrains.mps.lang.refactoring.structure.ModuleExpression", "jetbrains.mps.lang.refactoring.structure.ModuleOperation", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeOperation", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.NodesExpression", "jetbrains.mps.lang.refactoring.structure.NodesOperation", "jetbrains.mps.lang.refactoring.structure.NodesToOpenClause", "jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.OperationContextExpression", "jetbrains.mps.lang.refactoring.structure.OperationContextOperation", "jetbrains.mps.lang.refactoring.structure.ProjectExpression", "jetbrains.mps.lang.refactoring.structure.ProjectOperation", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringField", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget", "jetbrains.mps.lang.refactoring.structure.RepositoryOperation", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.ScopeExpression", "jetbrains.mps.lang.refactoring.structure.ScopeOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DoRefactorClause", "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause", "jetbrains.mps.lang.refactoring.structure.InitClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MainProjectOperation", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", "jetbrains.mps.lang.refactoring.structure.ModuleOperation", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeOperation", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.NodesOperation", "jetbrains.mps.lang.refactoring.structure.OperationContextOperation", "jetbrains.mps.lang.refactoring.structure.ProjectOperation", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringField", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget", "jetbrains.mps.lang.refactoring.structure.RepositoryOperation", "jetbrains.mps.lang.refactoring.structure.ScopeOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -125,7 +124,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_3jn7ig_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = NodeBuilderNode_Editor.renderingCondition_3jn7ig_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = NodeBuilderNode_Editor.renderingCondition_3jn7ig_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_3jn7ig_a1a(editorContext, node);
@@ -135,7 +134,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_3jn7ig_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_3jn7ig_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "values", true)).count() > 1;
   }
 
@@ -143,7 +142,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_3jn7ig_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -156,7 +155,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_3jn7ig_a1a_0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -243,7 +242,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_3jn7ig_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -262,7 +261,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept:");
     editorCell.setCellId("Constant_3jn7ig_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyCompactKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_CompactKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

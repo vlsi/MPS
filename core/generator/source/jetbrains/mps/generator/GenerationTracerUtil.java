@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,14 @@
 package jetbrains.mps.generator;
 
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class GenerationTracerUtil {
   public static SNodeReference getSNodePointer(SNode node) {
@@ -31,4 +36,18 @@ public class GenerationTracerUtil {
     return new jetbrains.mps.smodel.SNodePointer(model == null ? null : model.getReference(), node.getNodeId());
   }
 
+  public static List<SNodeId> translateOutput(Collection<SNode> output) {
+    if (output.isEmpty()) {
+      return Collections.emptyList();
+    }
+    if (output.size() == 1) {
+      return Collections.singletonList(output.iterator().next().getNodeId());
+    }
+    SNodeId[] rv = new SNodeId[output.size()];
+    int i = 0;
+    for (SNode n : output) {
+      rv[i++] = n.getNodeId();
+    }
+    return Arrays.asList(rv);
+  }
 }

@@ -22,6 +22,8 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.extapi.model.SModelBase;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -74,6 +76,11 @@ public class Utils {
 
       SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
       SModelOperations.addRootNode(mdl, result);
+      if (mdl instanceof SModelBase && SNodeOperations.getModel(expected) instanceof SModelBase) {
+        for (SModuleReference langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguages()) {
+          ((SModelBase) mdl).addLanguage(langref);
+        }
+      }
 
       if (onlyStubs) {
         NodePatcher.removeStatements(expected);
@@ -118,7 +125,11 @@ public class Utils {
     // <node> 
     // <node> 
 
-    Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
+    {
+      List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), expected);
+      List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), result);
+      Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+    }
 
   }
 
@@ -251,7 +262,7 @@ public class Utils {
 
     // constructing the map of corresponding nodes 
     Map<SNode, SNode> classMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for (String name : SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())) {
+    for (String name : MapSequence.fromMap(leftModelMap).keySet()) {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 
@@ -262,7 +273,7 @@ public class Utils {
 
     boolean errors = false;
 
-    for (String name : SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())) {
+    for (String name : MapSequence.fromMap(leftModelMap).keySet()) {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 

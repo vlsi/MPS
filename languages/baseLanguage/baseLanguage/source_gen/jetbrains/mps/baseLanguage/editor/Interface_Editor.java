@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -47,18 +46,18 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4hcgjd_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_4hcgjd_b0(editorContext, node));
-    if (renderingCondition_4hcgjd_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4hcgjd_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_4hcgjd_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_4hcgjd_d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4hcgjd_e0(editorContext, node));
-    if (renderingCondition_4hcgjd_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4hcgjd_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_4hcgjd_f0(editorContext, node));
     }
-    if (renderingCondition_4hcgjd_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4hcgjd_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_4hcgjd_g0(editorContext, node));
     }
-    if (renderingCondition_4hcgjd_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4hcgjd_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_4hcgjd_h0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_4hcgjd_i0(editorContext, node));
@@ -82,7 +81,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_4hcgjd_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     Classifier_StaticKeyWord.setCellActions(editorCell, node, editorContext);
@@ -90,7 +89,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4hcgjd_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a2a(SNode node, EditorContext editorContext) {
     return Classifier_Behavior.call_isInner_521412098689998677(node) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isStatic_7405920559687241224", new Object[]{});
   }
 
@@ -98,7 +97,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface");
     editorCell.setCellId("interfaceKeyword");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -116,7 +115,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_4hcgjd_a4a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_4hcgjd_a4a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -130,7 +129,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4hcgjd_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a4a(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "name"));
   }
 
@@ -142,7 +141,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4hcgjd_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
@@ -150,7 +149,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_4hcgjd_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     _Interface_Extends_Delete.setCellActions(editorCell, node, editorContext);
@@ -158,7 +157,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4hcgjd_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a6a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
 
@@ -237,7 +236,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_4hcgjd_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a7a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
 
@@ -247,18 +246,18 @@ public class Interface_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_4hcgjd_a8a(node, editorContext, editorContext.getOperationContext().getScope()));
+    editorCell.setCanBeFolded(renderingCondition_4hcgjd_a8a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_4hcgjd_a8a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4hcgjd_a8a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_4hcgjd_b8a(editorContext, node));
-    if (renderingCondition_4hcgjd_a2i0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4hcgjd_a2i0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_4hcgjd_c8a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_4hcgjd_d8a(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_4hcgjd_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a8a(SNode node, EditorContext editorContext) {
     return (SNodeOperations.getParent(node) != null);
   }
 
@@ -266,7 +265,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_4hcgjd_a8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a0a8a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a1a8a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -304,7 +303,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4hcgjd_a2i0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4hcgjd_a2i0(SNode node, EditorContext editorContext) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))).isNotEmpty();
   }
 
@@ -562,7 +561,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_4hcgjd_d8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

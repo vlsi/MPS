@@ -22,7 +22,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -79,7 +78,7 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qc0q19_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_qc0q19_b0(editorContext, node));
-    if (renderingCondition_qc0q19_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qc0q19_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_qc0q19_c0(editorContext, node));
     }
     return editorCell;
@@ -143,7 +142,7 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qc0q19_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qc0q19_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "checkingReference", false) != null;
   }
 

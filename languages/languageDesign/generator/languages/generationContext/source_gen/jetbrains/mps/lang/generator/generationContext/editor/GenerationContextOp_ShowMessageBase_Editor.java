@@ -39,7 +39,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
   private EditorCell createComponent_53ih5o_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenerationContextOp_ShowMessageBase_Editor.ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_53ih5o_a0a0()}));
     return editorCell;
@@ -78,7 +78,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_53ih5o_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

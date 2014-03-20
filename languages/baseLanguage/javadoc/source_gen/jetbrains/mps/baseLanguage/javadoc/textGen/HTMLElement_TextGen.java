@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class HTMLElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -19,9 +18,10 @@ public class HTMLElement_TextGen extends SNodeTextGen {
       this.append("<");
       this.append(SPropertyOperations.getString(node, "name"));
       this.append(">");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "line", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "line", true);
+        for (SNode item : collection) {
+          appendNode(item);
         }
       }
       this.append("</");

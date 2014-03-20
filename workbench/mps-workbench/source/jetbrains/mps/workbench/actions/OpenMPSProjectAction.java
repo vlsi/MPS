@@ -30,7 +30,6 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
-import com.intellij.util.Consumer;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/jetbrains.mps.samples.heating.tabular/jetbrains.mps.samples.heating.tabular.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/jetbrains.mps.samples.heating/jetbrains.mps.samples.heating.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/jetbrains.mps.samples.heating/sandbox/jetbrains.mps.samples.heating.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
+

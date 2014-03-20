@@ -42,7 +42,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pick output");
     editorCell.setCellId("Constant_m29bq_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -56,7 +56,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor._Inline_m29bq_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -110,7 +110,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_m29bq_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -121,7 +121,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_m29bq_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -151,7 +151,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_m29bq_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

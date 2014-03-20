@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -30,10 +29,10 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_idzzzw_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_idzzzw_a0(editorContext, node));
-    if (renderingCondition_idzzzw_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_idzzzw_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_idzzzw_b0(editorContext, node));
     }
-    if (renderingCondition_idzzzw_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_idzzzw_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_idzzzw_c0(editorContext, node));
     }
     return editorCell;
@@ -63,13 +62,13 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_idzzzw_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_idzzzw_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_idzzzw_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{});
   }
 
@@ -85,7 +84,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_idzzzw_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_idzzzw_a2a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{}));
   }
 
@@ -93,7 +92,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_idzzzw_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -127,7 +126,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_idzzzw_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

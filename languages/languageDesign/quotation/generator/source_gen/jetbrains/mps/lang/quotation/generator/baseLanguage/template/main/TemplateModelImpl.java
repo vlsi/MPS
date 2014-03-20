@@ -24,7 +24,7 @@ public class TemplateModelImpl implements TemplateModel {
   private final SModelReference model;
 
   public TemplateModelImpl(TemplateModule module) {
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this), new Mappingpreprocess(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     templateModule = module;
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)");

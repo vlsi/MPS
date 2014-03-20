@@ -10,14 +10,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -37,7 +36,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9o3sb9_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9o3sb9_a0(editorContext, node));
-    if (renderingCondition_9o3sb9_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_9o3sb9_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_9o3sb9_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createAttributedLinkCell_9o3sb9_c0(editorContext, node));
@@ -48,8 +47,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->$");
     editorCell.setCellId("Constant_9o3sb9_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -65,7 +63,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_comment");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroDescriptionText(style, editorCell);
+    Styles_StyleSheet.apply_macroDescriptionText(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -78,7 +76,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9o3sb9_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9o3sb9_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 
@@ -87,7 +85,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyNodeUnderMacro(style, editorCell);
+    Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

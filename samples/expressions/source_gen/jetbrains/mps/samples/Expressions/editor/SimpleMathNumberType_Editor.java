@@ -20,7 +20,7 @@ public class SimpleMathNumberType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_23gx7r_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    SimpleMath_StyleSheet.applyType(style, editorCell);
+    SimpleMath_StyleSheet.apply_type(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

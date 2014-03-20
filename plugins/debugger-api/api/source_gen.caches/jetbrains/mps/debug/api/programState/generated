@@ -1,28 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b6f59t293haekb6irskuqs1h67va1v0">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-dnz827tuql5lrvfuvj89m7ljy6bjqn1" />
-  <source id="4474271214082913243" name="IThread" hash="-17do2ndujk5d44g3p1n3wea8l4yfma9">
-    <file name="IThread.java" />
-  </source>
-  <source id="4474271214082913347" name="NullLocation" hash="81dev5mt4i22mobue2qew4y0lerjmid">
-    <file name="NullLocation.java" />
-  </source>
-  <source id="4474271214082913394" name="WatchablesCategory" hash="4menku82ys5kvhs3cfwhbmb20ixrps8">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="WatchablesCategory.java" />
-  </source>
-  <source id="4474271214082914121" name="IStackFrame" hash="-7mjck65nia74m0bq0jo148cr6bywns">
-    <file name="IStackFrame.java" />
-  </source>
-  <source id="4474271214082914148" name="ILocation" hash="-bp9413wxhxgh61nftwqggv3cx4fkrnm">
-    <file name="ILocation.java" />
-  </source>
-  <source id="4474271214082915199" name="IValue" hash="br9490vooy34b64qwxwmt5rj9l65k1v">
-    <file name="IValue.java" />
-  </source>
-  <source id="4474271214082916598" name="IWatchable" hash="-5yntt63uxcy0u0oxh3tz94lod5fotcw">
-    <file name="IWatchable.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="b6f59t293haekb6irskuqs1h67va1v0" />
 

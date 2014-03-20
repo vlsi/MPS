@@ -94,7 +94,7 @@ public class SMetadataNodeRefExpression_Constraints extends BaseConstraintsDescr
                     LOG.error("ok: for " + SAbstractConcept_Behavior.call_getQualifiedName_7891765471710491510(type));
                   }
 
-                  return new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), SAbstractConcept_Behavior.call_getQualifiedName_7891765471710491510(type));
+                  return new ModelPlusImportedScope(_context.getModel(), false, SAbstractConcept_Behavior.call_getQualifiedName_7891765471710491510(type));
                 }
               }
               return new EmptyScope();

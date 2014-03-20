@@ -1,18 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-hv43tr0ttbnev0q6v79xfv96uucdyz">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="3qcudt4pt5kkp5iw6u6p0hapzdhu9af" />
-  <source id="1560298786499491521" name="ValidateableBoundPanel" hash="-4hz8gkb0h6r5r34209g0juwpda0wdo2">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ValidateableBoundPanel.java" />
-  </source>
-  <source id="1560298786499492437" name="BoundListPanel" hash="-dxbapxbl720of69ootuozuxy7bere1i">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="BoundListPanel.java" />
-  </source>
-  <source id="1560298786499497595" name="BoundTablePanel" hash="-5fzusngygzmz22bxvd1kvk0rdfwbvl3">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="BoundTablePanel.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-hv43tr0ttbnev0q6v79xfv96uucdyz" />
 

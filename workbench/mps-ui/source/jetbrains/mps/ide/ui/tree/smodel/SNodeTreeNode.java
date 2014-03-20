@@ -21,7 +21,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodeOperations;
 import org.apache.log4j.LogManager;
@@ -63,6 +62,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     } else {
       setNodeIdentifier(myNode.getNodeId().toString());
     }
+    setToggleClickCount(-1);
   }
 
   @Override
@@ -129,11 +129,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     return null;
-  }
-
-  @Override
-  public int getToggleClickCount() {
-    return -1;
   }
 
   @Override

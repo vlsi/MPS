@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -49,7 +48,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_qbcy69_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qbcy69_b0(editorContext, node));
-    if (renderingCondition_qbcy69_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qbcy69_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_qbcy69_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_qbcy69_d0(editorContext, node));
@@ -175,7 +174,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qbcy69_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qbcy69_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "overridenEditorComponent", true) != null;
   }
 
@@ -391,7 +390,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("conceptDeclaration");
       }
       Style style = new StyleImpl();
-      SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
+      SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

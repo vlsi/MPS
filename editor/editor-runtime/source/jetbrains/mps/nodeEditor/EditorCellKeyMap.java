@@ -17,10 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 
 import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
-import jetbrains.mps.openapi.editor.cells.KeyMap;
-import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-
-import java.util.Collection;
 
 /**
  * was replaced with KeyMapImpl

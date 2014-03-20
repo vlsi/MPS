@@ -37,7 +37,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_xnhqer_a0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
     style.set(StyleAttributes.SELECTABLE, true);
@@ -51,7 +51,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_xnhqer_b0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, true);
@@ -85,7 +85,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_xnhqer_d0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "brace");

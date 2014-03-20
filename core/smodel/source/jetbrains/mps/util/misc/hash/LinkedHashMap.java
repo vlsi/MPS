@@ -17,6 +17,11 @@ package jetbrains.mps.util.misc.hash;
 
 import java.util.Map;
 
+/**
+ * This class is scheduled for removal in next release
+ * @deprecated There's hardly anything this class could do what regular java collections could not.
+ */
+@Deprecated
 public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
 
   private Entry<K, V>[] table;

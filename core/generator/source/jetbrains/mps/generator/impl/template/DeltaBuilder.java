@@ -21,10 +21,14 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
+import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.TreeIterator;
@@ -43,10 +47,15 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public abstract class DeltaBuilder {
-  private final List<CopyRoot> roots;
+  private final List<DeltaRoot> myDelta = new ArrayList<DeltaRoot>();
+  private final List<ReplacedRoot> myReplacedRoots = new ArrayList<ReplacedRoot>(); // view: myDelta.select(ReplacedRoot)
+  private final List<NewRoot> myNewRoots = new ArrayList<NewRoot>(); // view: myDelta.select(NewRoot)
+  private final List<CopyRoot> myCopyRoots; // view: myDelta.select(CopyRoot)
+  private final List<DeletedRoot> myDeletedRoots = new ArrayList<DeletedRoot>(); // view: myDelta.select(DeletedRoot)
+  private final UniversalOptimizedNodeIdMap myNewNodes = new UniversalOptimizedNodeIdMap();
 
   protected DeltaBuilder(List<CopyRoot> rootsStorage) {
-    roots = rootsStorage;
+    myCopyRoots = rootsStorage;
   }
 
   public static DeltaBuilder newSingleThreadDeltaBuilder() {
@@ -141,23 +150,20 @@ public abstract class DeltaBuilder {
     final CopyRoot r = new CopyRoot(node);
     setCurrentRoot(r);
     initCurrentFragments();
-    roots.add(r);
+    myCopyRoots.add(r);
   }
 
   public void deleteInputRoot(@NotNull SNode node) {
-    assert getCurrentRoot() != null;
-    assert getCurrentFragments().isEmpty();
-    if (getCurrentRoot().myRoot != node || !getCurrentFragments().isEmpty()) {
-      throw new IllegalStateException();
+    DeletedRoot r = new DeletedRoot(node);
+    synchronized (myDelta) { // XXX synchronize here is just quick-n-dirty guard, revisit multi-threading and use of ThreadLocals
+      myDeletedRoots.add(r);
+      myDelta.add(r); // we don't care about order of deletions
     }
-    getCurrentRoot().deleted = true;
   }
 
   public void leaveInputRoot(@NotNull SNode node) {
     assert getCurrentRoot() != null;
-    if (getCurrentRoot().myRoot != node) {
-      throw new IllegalStateException();
-    }
+    assert getCurrentRoot().myRoot == node;
 
     final List<SubTree> fragments = getCurrentFragments();
     getCurrentRoot().mySubTrees = fragments.toArray(new SubTree[fragments.size()]);
@@ -177,7 +183,6 @@ public abstract class DeltaBuilder {
   }
 
   public void leaveNestedCopySrc(@NotNull SNode node) {
-    assert node != null;
     if (!isInsideCopyRoot()) {
       return;
     }
@@ -205,41 +210,143 @@ public abstract class DeltaBuilder {
     }
   }
 
-  public boolean hasChanges() {
-    for (CopyRoot root : roots) {
-      if (root.deleted) {
-        return true;
-      }
-      for (SubTree tree : root.mySubTrees) {
-        if (!tree.isCopySrcRoot()) {
-          return true;
+  /*
+   * Invoked from the single thread
+   */
+  public void registerRoot(@Nullable SNode oldRoot, @NotNull SNode newRoot) {
+    if (oldRoot == null) {
+      NewRoot r = new NewRoot(newRoot);
+      myDelta.add(r);
+      myNewRoots.add(r);
+      fillNodeMap(newRoot);
+    } else if (oldRoot == newRoot) {
+      CopyRoot cr = null;
+      for (CopyRoot r : myCopyRoots) {
+        if (r.myRoot == newRoot) {
+          cr = r;
+          break;
         }
+      }
+      if (cr == null) {
+        throw new IllegalStateException();
+      }
+      myDelta.add(cr);
+      cr.fillNodeMap(myNewNodes);
+    } else {
+      ReplacedRoot rr = null;
+      for (ReplacedRoot r : myReplacedRoots) {
+        if (r.myReplacedRoot == oldRoot) {
+          rr = r;
+          break;
+        }
+      }
+      if (rr == null) {
+        myDelta.add(rr = new ReplacedRoot(oldRoot, newRoot));
+        myReplacedRoots.add(rr);
+      } else {
+        rr.myReplacements.add(newRoot);
+      }
+      fillNodeMap(newRoot);
+    }
+  }
+
+  /**
+   * Delayed/postponed changes may replace nodes created earlier, and we shall update
+   * delta accordingly.
+   */
+  public void replacePlaceholderNode(@NotNull SNode placeholder, @NotNull SNode actual) {
+    clearNodeMap(placeholder);
+    fillNodeMap(actual);
+    if (placeholder.getParent() == null) {
+      // e.g. MAP-SRC with mapper function at root node in CreateRootRule or MapRootRule
+      for (NewRoot r : myNewRoots) {
+        if (r.myRoot == placeholder) {
+          myNewRoots.remove(r);
+          int i = myDelta.indexOf(r);
+          myDelta.set(i, new NewRoot(actual));
+          return;
+        }
+      }
+      for (ReplacedRoot r : myReplacedRoots) {
+        int i = r.myReplacements.indexOf(placeholder);
+        if (i != -1) {
+          r.myReplacements.set(i, actual);
+          return;
+        }
+      }
+      // mapper func in MAP-SRC for top node of in-place change
+      for (CopyRoot r : myCopyRoots) {
+        for (SubTree t : r.mySubTrees) {
+          if (t.isSourceCopy()) {
+            continue;
+          }
+          int i = t.myReplacement.indexOf(placeholder);
+          if (i != -1) {
+            t.myReplacement.set(i, actual);
+            return;
+          }
+        }
+      }
+    } else {
+      // it's a child, go ahead and replace it. Once delta is applied, actual would get where expected.
+      SNodeUtil.replaceWithAnother(placeholder, actual);
+    }
+  }
+
+  void fillNodeMap(@NotNull SNode newNode) {
+    for (SNode n : SNodeUtil.getDescendants(newNode)) {
+      myNewNodes.put(n.getNodeId(), n);
+    }
+  }
+
+  void clearNodeMap(@NotNull SNode newNode) {
+    for (SNode n : SNodeUtil.getDescendants(newNode)) {
+      myNewNodes.remove(n.getNodeId());
+    }
+  }
+
+  @Nullable
+  public SNode findOutputNodeById(@NotNull SNodeId nodeId) {
+    return myNewNodes.get(nodeId);
+  }
+
+  public boolean hasChanges() {
+    for (DeltaRoot dr : myDelta) {
+      if (false == dr instanceof CopyRoot) {
+        return true; // both new and replaced root do constitute a change
+      }
+      if (((CopyRoot) dr).bringsChanges()) {
+        return true;
       }
     }
     return false;
   }
 
-  public void applyInplace(SModel inputModel, TemplateGenerator generator) {
+  public void prepareReferences(SModel inputModel, TemplateGenerator generator) {
     HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
-    for (CopyRoot root : roots) {
-      if (!root.deleted) {
-        allReplacedNodes.addAll(root.getReplacedNodes());
-      }
+    for (CopyRoot root : myCopyRoots) {
+      allReplacedNodes.addAll(root.getReplacedNodes());
+    }
+    // reference target under deleted root needs update, too
+    for (DeletedRoot root : myDeletedRoots) {
+      allReplacedNodes.add(root.myRoot);
+    }
+    for (ReplacedRoot rr : myReplacedRoots) {
+      allReplacedNodes.add(rr.myReplacedRoot);
     }
     // FastNodeFinder update mechanism performs poorly (badly, in fact) with massive in-place updates.
     // It's faster to rebuild FNF completely than to update it. E.g step 4 for lang.editor/editor
     // spent 90 seconds out of 105 in replace of 9k children
+    // TODO make use of standalone FNF
     if (inputModel instanceof SModelInternal) {
-      ((SModelInternal) inputModel).getFastNodeFinder().dispose();
+      ((SModelInternal) inputModel).disposeFastNodeFinder();
     }
+    final SModelReference inputModelRef = inputModel.getReference();
     // update references between changed model elements
-    for (CopyRoot root : roots) {
-      if (root.deleted) {
-        continue;
-      }
-      final SModelReference inputModelRef = inputModel.getReference();
-      final Set<SNode> replacedNodes = root.getReplacedNodes();
-      TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
+    for (CopyRoot root : myCopyRoots) {
+      final Set<SNode> replacedNodes;
+      replacedNodes = root.getReplacedNodes();
+      TreeIterator<SNode> it = root.iterateOrigin();
       while (it.hasNext()) {
         SNode next = it.next();
         if (replacedNodes.contains(next)) {
@@ -248,109 +355,107 @@ public abstract class DeltaBuilder {
           continue;
         }
         for (SReference reference : next.getReferences()) {
-          if (reference instanceof PostponedReference) {
-            System.out.println("!!! unexpected PostponedReference in the input model");
-          }
+          assert reference instanceof PostponedReference == false : "!!! unexpected PostponedReference in the input model";
           if (!inputModelRef.equals(reference.getTargetSModelReference())) {
             continue;
           }
-          SNode target = reference.getTargetNode();
-          while (target != null) {
-            if (allReplacedNodes.contains(target)) {
+          final SNode referenceTarget = reference.getTargetNode();
+          SNode outputTarget = referenceTarget;
+          while (outputTarget != null) {
+            if (allReplacedNodes.contains(outputTarget)) {
               // reference points elsewhere in this model under a replaced node.
-              // reference needs update, its target is among replaced nodes
-              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), target);
-              PostponedReference pr = new PostponedReference(refInfo, generator);
-              next.setReference(pr.getRole(), pr);
-              break; // while target
+              // reference needs update, its outputTarget is among replaced nodes
+              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), referenceTarget);
+              PostponedReference pr = generator.register(new PostponedReference(refInfo));
+              pr.setReferenceInOutputSourceNode();
+              break; // while outputTarget
             }
-            target = target.getParent();
-          }
-        }
-      }
-      // make references to point to node directly, not (ModelId+NodeId)
-      // as it would be impossible to resolve model once root is detached
-      for (SNode rn : replacedNodes) {
-        for (SNode n : SNodeUtil.getDescendants(rn)) {
-          for (SReference r : n.getReferences()) {
-            if (!inputModelRef.equals(r.getTargetSModelReference()) || ! (r instanceof StaticReference)) {
-              continue;
-            }
-            ((StaticReference) r).makeDirect();
+            outputTarget = outputTarget.getParent();
           }
         }
       }
     }
-    // make the structure change, at last
-    for (CopyRoot root : roots) {
-      if (root.deleted) {
-        assert root.myRoot.getModel() == inputModel;
-        inputModel.removeRootNode(root.myRoot);
-        continue;
-      }
-      // replace nodes
-      for (SubTree tree : root.mySubTrees) {
-        if (tree.isCopySrcRoot()) {
-          continue;
-        }
-        assert tree.myInputNode.getModel() == inputModel;
-        SNode inputParentNode = tree.myInputNode.getParent();
-        SNode anchor = tree.myInputNode.getNextSibling();
-        inputParentNode.removeChild(tree.myInputNode);
-        for (SNode replacement : tree.mySubTree) {
-          inputParentNode.insertChildBefore(tree.myRoleInParent, replacement, anchor);
+    // make references to point to node directly, not (ModelId+NodeId)
+    // as it would be impossible to resolve model once root is detached
+    for (SNode rn : allReplacedNodes) {
+      for (SNode n : SNodeUtil.getDescendants(rn)) {
+        for (SReference r : n.getReferences()) {
+          if (!inputModelRef.equals(r.getTargetSModelReference()) || ! (r instanceof StaticReference)) {
+            continue;
+          }
+          ((StaticReference) r).makeDirect();
         }
       }
     }
   }
 
-  public void dump() {
-    for (CopyRoot root : roots) {
-      char c = root.deleted ? '-' : (root.mySubTrees.length > 0 ? '+' : '~');
-      System.out.printf("%c%s\n", c, SNodeUtil.getDebugText(root.myRoot));
-      for (SubTree tree : root.mySubTrees) {
-        if (tree.isCopySrcRoot()) {
-          System.out.printf("    copysrc %s\n", tree.myInputNode);
-        } else {
-          System.out.printf("    %s - %d - %s\n", tree.myRoleInParent, tree.mySubTree.size(), tree.myInputNode);
+  public void applyInplace(SModel inputModel) {
+    // make the structure change, at last
+    for (DeltaRoot dr : myDelta) {
+      // additions from NewRoot and ReplacedRoot come in the order they were scheduled to be applied
+      // not the order they were ready - to get same order in parallel gen. Although additions from replaced
+      // come to the tail of root nodes list as there's no way to keep index of root node.
+      if (dr instanceof NewRoot) {
+        inputModel.addRootNode(((NewRoot) dr).myRoot);
+      } else if (dr instanceof ReplacedRoot) {
+        ReplacedRoot rr = (ReplacedRoot) dr;
+        // XXX Seems there's no way to replace root node in its original position ?!
+        inputModel.removeRootNode(rr.myReplacedRoot);
+        for (SNode replacement : rr.myReplacements) {
+          inputModel.addRootNode(replacement);
+        }
+      } else if (dr instanceof DeletedRoot) {
+        DeletedRoot root = (DeletedRoot) dr;
+        SModel rootModel = root.myRoot.getModel();
+        if (rootModel != null) {
+          // it's possible for the root to be deleted already, e.g. when there are rootMapRules with keepSourceRoot==true and
+          // a drop rule to clear origin root once all desired targets have been created.
+          assert root.myRoot.getModel() == inputModel;
+          inputModel.removeRootNode(root.myRoot);
+        }
+      } else {
+        CopyRoot root = (CopyRoot) dr;
+        // replace nodes
+        for (SubTree tree : root.mySubTrees) {
+          if (tree.isSourceCopy()) {
+            continue;
+          }
+          assert tree.myInputNode.getModel() == inputModel;
+          SNode inputParentNode = tree.myInputNode.getParent();
+          SNode anchor = tree.myInputNode.getNextSibling();
+          inputParentNode.removeChild(tree.myInputNode);
+          for (SNode replacement : tree.myReplacement) {
+            inputParentNode.insertChildBefore(tree.myRoleInParent, replacement, anchor);
+          }
         }
       }
     }
-    if (hasChanges()) {
-      HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
-      for (CopyRoot root : roots) {
-        if (!root.deleted) {
-          allReplacedNodes.addAll(root.getReplacedNodes());
-        }
-      }
-      for (CopyRoot root : roots) {
-        if (root.deleted) {
-          continue;
-        }
-        final SModelReference inputModelRef = root.myRoot.getModel().getReference();
-        final Set<SNode> replacedNodes = root.getReplacedNodes();
-        TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
-        while (it.hasNext()) {
-          SNode next = it.next();
-          if (replacedNodes.contains(next)) {
-            it.skipChildren();
-            continue;
-          }
-          for (SReference reference : next.getReferences()) {
-            if (reference instanceof PostponedReference) {
-              System.out.println("!!! unexpected PostponedReference in the input model");
+  }
+
+  @SuppressWarnings("unused")
+  public void dump() {
+    for (DeltaRoot dr : myDelta) {
+      if (dr instanceof NewRoot) {
+        System.out.printf("+%s\n", SNodeUtil.getDebugText(((NewRoot) dr).myRoot));
+      } else if (dr instanceof ReplacedRoot) {
+        ReplacedRoot rr = (ReplacedRoot) dr;
+        System.out.printf("R%s - %d\n", SNodeUtil.getDebugText(rr.myReplacedRoot), rr.myReplacements.size());
+      } else if (dr instanceof DeletedRoot) {
+        System.out.printf("-%s\n", SNodeUtil.getDebugText(((DeletedRoot) dr).myRoot));
+      } else {
+        CopyRoot root = (CopyRoot) dr;
+        char c = root.mySubTrees.length > 0 ? '*' : '~';
+        System.out.printf("%c%s\n", c, SNodeUtil.getDebugText(root.myRoot));
+        for (SubTree tree : root.mySubTrees) {
+          if (tree.isSourceCopy()) {
+            System.out.printf("    copysrc %s\n", tree.myInputNode);
+          } else {
+            StringBuilder sb = new StringBuilder();
+            for (SNode r : tree.myReplacement) {
+              sb.append(r.toString());
+              sb.append(',');
             }
-            if (!inputModelRef.equals(reference.getTargetSModelReference())) {
-              continue;
-            }
-            SNode target = reference.getTargetNode();
-            while (target != null) {
-              if (allReplacedNodes.contains(target)) {
-                System.out.printf("--> Reference in '%s' needs update, its target %s is among replaced nodes\n", reference.getRole(), target.getName());
-                break;
-              }
-              target = target.getParent();
-            }
+            System.out.printf("    %s - %d - %s -> (%s)\n", tree.myRoleInParent, tree.myReplacement.size(), tree.myInputNode, sb);
           }
         }
       }
@@ -365,13 +470,75 @@ public abstract class DeltaBuilder {
   protected abstract void initCurrentFragments();
   protected abstract void clearCurrentFragments();
 
-  private static class CopyRoot {
-    private final SNode myRoot;
-    private boolean deleted = false;
+  private interface DeltaRoot {
+  }
+
+  private static class NewRoot implements DeltaRoot {
+    public final SNode myRoot;
+    public NewRoot(@NotNull SNode newRoot) {
+      myRoot = newRoot;
+    }
+  }
+  private static class DeletedRoot implements DeltaRoot {
+    public final SNode myRoot;
+    public DeletedRoot(@NotNull SNode root) {
+      myRoot = root;
+    }
+  }
+  private static class ReplacedRoot implements DeltaRoot {
+    public final SNode myReplacedRoot;
+    public final List<SNode> myReplacements;
+    public ReplacedRoot(@NotNull SNode oldRoot, @NotNull SNode newRoot) {
+      myReplacedRoot = oldRoot;
+      myReplacements = new ArrayList<SNode>(4);
+      myReplacements.add(newRoot);
+    }
+  }
+  private static class CopyRoot implements DeltaRoot {
+    public final SNode myRoot;
     private SubTree[] mySubTrees;
 
     CopyRoot(SNode root) {
       myRoot = root;
+    }
+
+    public boolean bringsChanges() {
+      for (SubTree tree : mySubTrees) {
+        if (!tree.isSourceCopy()) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    /**
+     * walk over input root
+     */
+    public TreeIterator<SNode> iterateOrigin() {
+      return (TreeIterator<SNode>) SNodeUtil.getDescendants(myRoot).iterator();
+    }
+
+    // get to know nodes about to be injected
+    public void fillNodeMap(INodeIdToNodeMap map) {
+      if (mySubTrees == null) {
+        return;
+      }
+      Set<SNode> replacedNodes = getReplacedNodes();
+      TreeIterator<SNode> it = iterateOrigin();
+      while (it.hasNext()) {
+        SNode next = it.next();
+        if (replacedNodes.contains(next)) {
+          it.skipChildren();
+          continue;
+        }
+        map.put(next.getNodeId(), next);
+      }
+      for (SubTree t : mySubTrees) {
+        if (t.isSourceCopy()) {
+          continue;
+        }
+        t.fillNodeMap(map);
+      }
     }
 
     public Set<SNode> getReplacedNodes() {
@@ -380,7 +547,7 @@ public abstract class DeltaBuilder {
       }
       HashSet<SNode> rv = new HashSet<SNode>(mySubTrees.length);
       for (SubTree tree : mySubTrees) {
-        if (!tree.isCopySrcRoot()) {
+        if (!tree.isSourceCopy()) {
           rv.add(tree.myInputNode);
         }
       }
@@ -392,22 +559,31 @@ public abstract class DeltaBuilder {
     @NotNull
     private final SNode myInputNode;
     private final String myRoleInParent;
-    private final Collection<SNode> mySubTree;
+    private final List<SNode> myReplacement; // we need to ensure order doesn't change if we later alter new nodes (MAP-SRC replacements)
 
     public SubTree(@NotNull SNode inputNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
       myInputNode = inputNode;
       myRoleInParent = roleInParent;
-      mySubTree = subTree;
+      myReplacement = subTree instanceof List ? (List<SNode>) subTree : new ArrayList<SNode>(subTree);
     }
 
     public SubTree(@NotNull SNode inputNode) {
       myInputNode = inputNode;
       myRoleInParent = null;
-      mySubTree = null;
+      myReplacement = null;
     }
 
-    public boolean isCopySrcRoot() {
+    public boolean isSourceCopy() {
       return myRoleInParent == null;
+    }
+
+    public void fillNodeMap(INodeIdToNodeMap map) {
+      assert !isSourceCopy();
+      for (SNode r : myReplacement) {
+        for (SNode n : SNodeUtil.getDescendants(r)) {
+          map.put(n.getNodeId(), n);
+        }
+      }
     }
   }
 

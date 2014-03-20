@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
@@ -33,7 +32,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xcgn7z_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_xcgn7z_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xcgn7z_c0(editorContext, node));
-    if (renderingCondition_xcgn7z_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xcgn7z_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_xcgn7z_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_xcgn7z_e0(editorContext, node));
@@ -44,7 +43,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ref");
     editorCell.setCellId("Constant_xcgn7z_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -113,7 +112,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    default_StyleSheet.applyFeature(style, editorCell);
+    default_StyleSheet.apply_feature(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -135,7 +134,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xcgn7z_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xcgn7z_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "cardinality", true) != null);
   }
 
@@ -143,7 +142,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_xcgn7z_e0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

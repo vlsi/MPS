@@ -8,6 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -17,8 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.make.TextPreviewUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -41,7 +40,7 @@ public class TextPreviewModel_Action extends BaseAction {
       return false;
     }
     SModel md = TextPreviewModel_Action.this.modelToGenerate(_params);
-    return md != null && TextPreviewModel_Action.this.isUserEditableModel(md, _params);
+    return md != null && SNodeOperations.isGeneratable(md);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -96,14 +95,6 @@ public class TextPreviewModel_Action extends BaseAction {
       md = ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0);
     }
     return md;
-  }
-
-  private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
-    // TODO SModelDescriptor cast 
-    if (!(SModelStereotype.isUserModel(md))) {
-      return false;
-    }
-    return md instanceof EditableSModel && !(md.isReadOnly());
   }
 
   protected static Logger LOG = LogManager.getLogger(TextPreviewModel_Action.class);

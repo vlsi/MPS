@@ -53,7 +53,7 @@ public class PointerUtils {
 
   public static List<SNodeReference> clonableListToNodes(ClonableList<String> clonableList) {
     List<SNodeReference> list = ListSequence.fromList(new ArrayList<SNodeReference>());
-    for (String string : ListSequence.fromList(clonableList)) {
+    for (String string : clonableList) {
       ListSequence.fromList(list).addElement(stringToPointer(string));
     }
     return list;

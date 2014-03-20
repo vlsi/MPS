@@ -30,7 +30,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_zca0xt_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_zca0xt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zca0xt_b0(editorContext, node));
@@ -117,7 +117,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell provider");
     editorCell.setCellId("Constant_zca0xt_a0d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

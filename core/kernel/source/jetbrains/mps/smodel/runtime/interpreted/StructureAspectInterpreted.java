@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -48,6 +47,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class StructureAspectInterpreted implements StructureAspectDescriptor, CoreComponent {
   private Map<String, ConceptDescriptor> descriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
 
+  //StructureAspectInterpreted is a singleton, so we can omit remove() here though the field is not static
   private ThreadLocal<Set<String>> inLoad = new ThreadLocal<Set<String>>() {
     @Override
     protected Set<String> initialValue() {
@@ -152,7 +152,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
       NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
         @Override
         public void run() {
-          SNode declaration = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
+          SNode declaration = SModelUtil.findConceptDeclaration(fqName);
           if (declaration == null || !SNodeUtil.isInstanceOfAbstractConceptDeclaration(declaration)) {
             // todo: ?
             isLegal = false;

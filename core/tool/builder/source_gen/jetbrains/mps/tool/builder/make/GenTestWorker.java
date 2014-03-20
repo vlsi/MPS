@@ -11,7 +11,6 @@ import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.tool.environment.Environment;
 import org.apache.log4j.Logger;
@@ -27,8 +26,10 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.smodel.IOperationContext;
@@ -103,7 +104,7 @@ public class GenTestWorker extends GeneratorWorker {
 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
-    for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
+    for (String jar : myWhatToDo.getLibraryJars()) {
       config = config.addLib(jar, new File(jar));
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
@@ -169,21 +170,17 @@ public class GenTestWorker extends GeneratorWorker {
       }
     };
 
+    // FIXME feedback reported through IConfigMonitor.Stub goes to nowhere 
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new GenTestWorker.MyJobMonitor(new GenTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(ppool, toExecute, input);
-        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
-        makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+        new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             return tmpFile(path);
           }
-        });
-
-        Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-        if (tparams != null) {
-          tparams._0(false);
-        }
+        }).populate(ppool);
+        new TextGenFacetInitializer().failNoTextGen(false).populate(ppool);
 
         Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Diff.diff"), Object.class);
         if (dparams != null && isShowDiff()) {

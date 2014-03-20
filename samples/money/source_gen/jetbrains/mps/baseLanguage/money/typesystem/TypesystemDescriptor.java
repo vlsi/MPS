@@ -8,7 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -57,21 +56,21 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0a0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a1b() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
   }
@@ -94,21 +93,21 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0a0a2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a1c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
   }
@@ -131,21 +130,21 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0a0a3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a1d() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
   }
@@ -168,21 +167,21 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0a0a4() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a4() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a1e() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
   }
@@ -205,21 +204,21 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     private static SNode _quotation_createNode_3ist9o_a0a0a5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a1f() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
   }

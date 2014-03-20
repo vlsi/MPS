@@ -145,8 +145,5 @@
       </node>
     </node>
   </root>
-  <root type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="7941504602773316106" nodeInfo="ng">
-    <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
-  </root>
 </model>
 

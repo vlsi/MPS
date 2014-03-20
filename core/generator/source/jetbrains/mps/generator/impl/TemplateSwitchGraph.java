@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public class TemplateSwitchGraph {
 
   private Map<SNodeReference, Node> mySwitchToNode = new HashMap<SNodeReference, Node>();
 
-  public TemplateSwitchGraph(Collection<TemplateModel> templateModels) {
+  public TemplateSwitchGraph(Collection<TemplateModel> templateModels) throws GenerationFailureException {
     for (TemplateModel templateModel : templateModels) {
       for (TemplateSwitchMapping root : templateModel.getSwitches()) {
         mySwitchToNode.put(root.getSwitchNode(), new Node(root));
@@ -55,7 +55,7 @@ public class TemplateSwitchGraph {
       if (node != bottom) {
         node.myModified = bottom;
         if (i == 0) {
-          throw new RuntimeException("Template switch loop in: " + node);     // TODO handle correctly
+          throw new GenerationFailureException("Template switch loop in: " + node);
         }
       }
       bottom.myRules.add(node.mySwitch);

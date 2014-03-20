@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -49,15 +48,22 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(creator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1216200944338", null, errorTarget);
       }
     }
+    boolean creatingRawClass = ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isNotEmpty();
 
     for (SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_4w0o2k_a1a0a0a7a1(), "descriptor", false), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_4w0o2k_a1a0a0a8a1(), "descriptor", false), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1212781606006", null, errorTarget);
       }
     }
 
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    if (creatingRawClass) {
+      for (SNode tvd : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
+        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_4w0o2k_a0a0a0l0b());
+      }
+    }
+
     for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(cdecl, "typeVariableDeclaration", true))) {
       if (!(MapSequence.fromMap(subs).containsKey(tvd))) {
         final SNode T_typevar_4690171080787098805 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -78,7 +84,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         return tmp;
       }
     }).toListSequence();
-    SNode newType = _quotation_createNode_4w0o2k_a0o0b(classifier, typeParam);
+    SNode newType = _quotation_createNode_4w0o2k_a0r0b(classifier, typeParam);
     BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
     List<SNode> argl = SLinkOperations.getTargets(creator, "actualArgument", true);
@@ -136,19 +142,27 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     return true;
   }
 
-  private static SNode _quotation_createNode_4w0o2k_a1a0a0a7a1() {
+  private static SNode _quotation_createNode_4w0o2k_a1a0a0a8a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, false);
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_4w0o2k_a0o0b(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_4w0o2k_a0a0a0l0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_4w0o2k_a0r0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;

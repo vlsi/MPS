@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -27,15 +29,11 @@ public interface IGenerationTaskPool {
 
   public interface GenerationTask {
     void run() throws GenerationCanceledException, GenerationFailureException;
-
-    boolean requiresReadAccess();
   }
 
   void addTask(GenerationTask r);
 
   void waitForCompletion() throws GenerationCanceledException, GenerationFailureException;
-
-  boolean isCancelled();
 
   void dispose();
 
@@ -60,17 +58,30 @@ public interface IGenerationTaskPool {
     }
 
     @Override
-    public boolean isCancelled() {
-      return false;
-    }
-
-    @Override
     public void dispose() {
     }
   }
 
-  public interface ITaskPoolProvider {
+  public static final class ModelReadTask implements GenerationTask {
+    @NotNull
+    private final GenerationTask myDelegate;
 
+    public ModelReadTask(@NotNull GenerationTask delegate) {
+      myDelegate = delegate;
+    }
+
+    @Override
+    public void run() throws GenerationCanceledException, GenerationFailureException {
+      boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
+      try {
+        myDelegate.run();
+      } finally {
+        ModelAccess.instance().setReadEnabledFlag(oldFlag);
+      }
+    }
+  }
+
+  public interface ITaskPoolProvider {
     IGenerationTaskPool getTaskPool();
   }
 }

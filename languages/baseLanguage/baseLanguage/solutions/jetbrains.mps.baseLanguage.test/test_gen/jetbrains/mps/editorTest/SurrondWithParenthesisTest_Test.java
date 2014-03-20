@@ -9,10 +9,11 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
@@ -44,7 +45,11 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483240397");
       this.addNodeById("3852894662483240422");
       SNode result = ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483077204"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), true);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483077210"), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483077210"), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), result);
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
 
     public void test_thereIsAlreadyParenthesis() throws Exception {
@@ -55,7 +60,11 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483240397");
       this.addNodeById("3852894662483240422");
       ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), true);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
 
     public void test_treeRotation() throws Exception {
@@ -66,7 +75,11 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483240397");
       this.addNodeById("3852894662483240422");
       ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483240405"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), false);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240425"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240400"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240425"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240400"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

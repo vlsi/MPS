@@ -26,7 +26,6 @@ public class CopyNode_Action extends BaseAction {
     super("Copy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
-    this.addPlace(null);
   }
 
   @Override

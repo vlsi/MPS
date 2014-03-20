@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -49,14 +48,13 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a;
-        nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_6v72fr_a0a = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_6v72fr_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getReferenceTarget("concept")))) {
+          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v72fr_a0a.getReferenceTarget("concept")))) {
             return false;
           }
         }
@@ -82,9 +80,9 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
   private static SNode _quotation_createNode_2cenap_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, false);
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 }

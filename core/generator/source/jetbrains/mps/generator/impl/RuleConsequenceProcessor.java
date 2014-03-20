@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,14 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,9 +33,8 @@ import java.util.List;
  */
 public class RuleConsequenceProcessor {
   private final TemplateProcessor myTemplateProcessor;
-  private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
+  private TemplateContainer myTemplateContainer;
   private TemplateContext myConsequenceContext;
-  private SNode myRuleNode;
 
   public RuleConsequenceProcessor(TemplateExecutionEnvironment env) {
     this(new TemplateProcessor(env));
@@ -51,49 +44,31 @@ public class RuleConsequenceProcessor {
     myTemplateProcessor = templateProcessor;
   }
 
-  // XXX GenerationFailureException is thrown from GeneratorUtilEx.getTNFRC to check query in inline switch cases - perhaps,
+  // XXX GenerationFailureException is thrown from QueryExecutionContext.checkCondition to check query in inline switch cases - perhaps,
   // can extract switch and perform case selection in {@link #processRuleConsequence()} later?
-  public boolean prepare(SNode ruleConsequence, SNode ruleNode, TemplateContext templateContext) throws DismissTopMappingRuleException,
-      AbandonRuleInputException, GenerationFailureException {
-    myRuleNode = ruleNode;
+  public void prepare(@NotNull SNode ruleConsequence, @NotNull TemplateContext templateContext)
+      throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, TemplateProcessingFailureException {
+    // the reason why the method is left here is described in TemplateContainer#initialize()
     ConsequenceHandler h = new ConsequenceHandler(templateContext);
     h.dispatch(ruleConsequence);
     h.checkExceptions();
     myConsequenceContext = h.getUltimateContext();
-    myNodeAndMappingNamePairs = h.getNodeAndMappingNamePairs();
-    return h.actualRuleConsequence() != null && myNodeAndMappingNamePairs != null;
+    myTemplateContainer = h.getNodeAndMappingNamePairs();
+    if (h.actualRuleConsequence() != null && myTemplateContainer != null) {
+      myTemplateContainer.initialize();
+    }
   }
 
   // XXX Does DismissTopMappingRuleException get thrown from within TemplateProcessor, or it's solely GeneratorUtilEx realm (i.e. whether it's rule
   // level or lower, template level). Remove from throws here if can't happen from within TP (the only suspicious location is switch.tryDefault (macro).
-  public List<SNode> processRuleConsequence(@Nullable String mappingName) throws DismissTopMappingRuleException,
-      GenerationFailureException, GenerationCanceledException {
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-      try {
-        List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, myConsequenceContext.subContext(innerMappingName), null);
-        if (_outputNodes != null) {
-          outputNodes.addAll(_outputNodes);
-        }
-      } catch (TemplateProcessingFailureException ex) {
-        TemplateExecutionEnvironment env = myTemplateProcessor.getEnvironment();
-        env.getGenerator().showErrorMessage(myConsequenceContext.getInput(), myRuleNode, "error processing template fragment");
-      } catch (Throwable t) {
-        // XXX I got no idea why Throwable was catched in Reduction[Pattern]RuleInterpreted
-        // but silently propagated in IfMacro.else and in switch.default. Use it here
-        // for consistency (and likely for later removal)
-        TemplateExecutionEnvironment env = myTemplateProcessor.getEnvironment();
-        env.getLogger().handleException(t);
-        env.getGenerator().showErrorMessage(myConsequenceContext.getInput(), templateNode, myRuleNode, "error processing template fragment");
-      }
-    }
-    return outputNodes;
+  @NotNull
+  public List<SNode> processRuleConsequence() throws DismissTopMappingRuleException,
+      GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    return myTemplateContainer.apply(myConsequenceContext);
   }
 
   private class ConsequenceHandler implements ConsequenceDispatch {
-    private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
+    private TemplateContainer myTemplateContainer;
     private AbandonRuleInputException myAbandonRuleException;
     private DismissTopMappingRuleException myDismissRuleException;
     private GenerationFailureException myFailureException;
@@ -117,8 +92,8 @@ public class RuleConsequenceProcessor {
       return myTemplateContext;
     }
 
-    public List<Pair<SNode, String>> getNodeAndMappingNamePairs() {
-      return myNodeAndMappingNamePairs;
+    public TemplateContainer getNodeAndMappingNamePairs() {
+      return myTemplateContainer;
     }
 
     @Override
@@ -152,7 +127,7 @@ public class RuleConsequenceProcessor {
     public void inlineTemplate(SNode ruleConsequence) {
       SNode templateNode = RuleUtil.getInlineTemplate_templateNode(ruleConsequence);
       if (templateNode != null) {
-        myNodeAndMappingNamePairs = Collections.singletonList(new Pair<SNode, String>(templateNode, null));
+        myTemplateContainer = new TemplateContainer(myTemplateProcessor, new Pair<SNode, String>(templateNode, null));
       } else {
         showErrorMessage(ruleConsequence, "no template node");
       }
@@ -160,6 +135,7 @@ public class RuleConsequenceProcessor {
 
     @Override
     public void templateDeclarationReference(SNode ruleConsequence) {
+      // XXX for unknown reason we don't use TemplateDeclarationInterpreted here.
       myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, getEnvironment(), ruleConsequence);
       processTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
     }
@@ -169,14 +145,7 @@ public class RuleConsequenceProcessor {
         showErrorMessage(ruleConsequence, "error processing template consequence: no 'template'");
         return;
       }
-      List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(templateContainer);
-      if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, myTemplateContext.getInput(), myRuleNode, getGenerator())) {
-        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
-        for (SNode fragment : fragments) {
-          result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
-        }
-        myNodeAndMappingNamePairs = result;
-      }
+      myTemplateContainer = new TemplateContainer(myTemplateProcessor, templateContainer);
     }
 
     @Override
@@ -194,16 +163,10 @@ public class RuleConsequenceProcessor {
       SNode message = RuleUtil.getDismissTopRule_message(ruleConsequence);
       DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);
       String text = GeneratorUtilEx.getGeneratorMessage_text(message);
-      if (messageType != null) {
-        if (messageType == MessageType.error) {
-          showErrorMessage(ruleConsequence, text);
-        } else if (messageType == MessageType.warning) {
-          getGenerator().getLogger().warning(myTemplateContext.getInput(), text);
-        } else {
-          getGenerator().getLogger().info(myTemplateContext.getInput(), text);
-        }
+      if (message != null) {
+        GeneratorUtil.log(getLog(),ruleConsequence.getReference(), messageType, text, GeneratorUtil.describeIfExists(myTemplateContext.getInput(), "input node"));
       }
-      myDismissRuleException = new DismissTopMappingRuleException(messageType); // TODO pass message text as well
+      myDismissRuleException = new DismissTopMappingRuleException(messageType, text);
     }
 
     @Override
@@ -225,11 +188,11 @@ public class RuleConsequenceProcessor {
     }
 
     private void showErrorMessage(SNode templateNode, String message) {
-      getGenerator().showErrorMessage(myTemplateContext.getInput(), templateNode, myRuleNode, message);
+      getLog().error(templateNode.getReference(), message, GeneratorUtil.describeIfExists(myTemplateContext.getInput(), "input node"));
     }
 
-    private ITemplateGenerator getGenerator() {
-      return getEnvironment().getGenerator();
+    private IGeneratorLogger getLog() {
+      return getEnvironment().getLogger();
     }
 
     private TemplateExecutionEnvironment getEnvironment() {

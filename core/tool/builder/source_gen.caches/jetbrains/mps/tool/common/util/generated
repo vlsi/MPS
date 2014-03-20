@@ -1,59 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="5dy7tjgpp7425gfbheffm898j3rl6p">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="7uk7xdtukppepi2whi0amhk5dd73buq" />
+  <common hash="7uk7xdtukppepi2whi0amhk5dd73buq" dependsOnNodes="true" />
   <source id="6740693110299850048" name="UrlClassLoader" hash="-2wi0scamkstn0of5lmcgnvy5ltifydg">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="UrlClassLoader.java" />
   </source>
   <source id="6740693110299850542" name="ClassPath" hash="ei0ehytabpp227s2hg1winic37zz9gc">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ClassPath.java" />
   </source>
   <source id="6740693110299868256" name="Loader" hash="-9pvpjxhb7h93tb3iwqkhij6mkxn6lll">
     <file name="Loader.java" />
   </source>
   <source id="6740693110299868293" name="ClasspathCache" hash="4o9xj8gptdc4zh2eh06p9gtah9ctswi">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ClasspathCache.java" />
   </source>
   <source id="5198178184416561107" name="FileLoader" hash="7pkkrj2kbkv0gwe24ou0g24t8kibfxh">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FileLoader.java" />
   </source>
   <source id="5198178184416572441" name="JarLoader" hash="-ax3gya010qd8cg32l5xrvxh1l80d309">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JarLoader.java" />
   </source>
   <source id="5198178184416573141" name="FileUtil" hash="-bh2doc4d00dfiyqb93dxzs1npf8f31z">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FileUtil.java" />
   </source>
   <source id="5198178184416573167" name="URLUtil" hash="-4y9jj1a2yn041rn0qkshad0gyeoyofe">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="URLUtil.java" />
   </source>
   <source id="5198178184416573444" name="Timed" hash="-7d67n9734z0gd6jdvsg6u0a6d7e887m">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Timed.java" />
   </source>
   <source id="5198178184416574646" name="TimedComputable" hash="-5cfspnl2oaehgl2vq2tsd8xst35bs9h">
     <file name="TimedComputable.java" />
   </source>
   <source id="5198178184416574735" name="ConcurrencyUtil" hash="5560v2x6zdnx6klowmd7ml6vbla494a">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConcurrencyUtil.java" />
   </source>
   <source id="1631042080099114865" name="StringUtil" hash="-e44q7mr9gn9dzknv8ul8nmeu8t0qc9t">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StringUtil.java" />
   </source>
   <source id="8638838189258348895" name="PathUtil" hash="-1tl8vtd4woh7h8xgsjf7o9oeyjavyt3">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PathUtil.java" />
   </source>
   <source id="8638838189258387911" name="SystemInfo" hash="-7w0uek8ijjy5ka8es18nrzjg6yg43kj">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SystemInfo.java" />
   </source>
 </dependencies>

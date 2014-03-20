@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -40,7 +41,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
 
   @Override
   public SubtypingCache createSubtypingCache() {
-    return null;
+    return new ConcurrentSubtypingCache();
   }
 
   @Override
@@ -80,7 +81,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
                   }
                 };
               }
-              addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
+              SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
             }
           }
         });

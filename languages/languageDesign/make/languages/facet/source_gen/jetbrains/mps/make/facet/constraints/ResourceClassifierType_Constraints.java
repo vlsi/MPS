@@ -15,21 +15,17 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import java.util.List;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -79,9 +75,9 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return (List<SNode>) new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.ANYTHING, operationContext.getScope()).getNodes(new Condition<SNode>() {
-              public boolean met(SNode cls) {
-                return BehaviorReflection.invokeVirtual(Boolean.TYPE, (SNodeOperations.as(cls, "jetbrains.mps.baseLanguage.structure.Classifier")), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_ymgo28_a0a0a0a0a0a0a0a(), "classifier", false)}) || Sequence.fromIterable((ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), "implements", true)).where(new IWhereFilter<SNode>() {
+            return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getEnclosingNode(), false).getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_ymgo28_a0a0a0a0a0a0a0(), "classifier", false)}) || Sequence.fromIterable((ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), "implements", true)).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return (SLinkOperations.getTarget(it, "classifier", false) != null);
                   }
@@ -90,8 +86,8 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
                     return SLinkOperations.getTarget(it, "classifier", false);
                   }
                 }))).any(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_ymgo28_a0a0a0a0a0a0a0a0a0a0(), "classifier", false)});
+                  public boolean accept(SNode it2) {
+                    return BehaviorReflection.invokeVirtual(Boolean.TYPE, it2, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_ymgo28_a0a0a0a0a0a0a0a0a0a(), "classifier", false)});
                   }
                 });
               }
@@ -112,18 +108,18 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration");
   }
 
-  private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0a() {
+  private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0a0a0a0() {
+  private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
     return quotedNode_1;
   }

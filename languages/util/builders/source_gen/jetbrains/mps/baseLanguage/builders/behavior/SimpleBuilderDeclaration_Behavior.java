@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,10 +23,10 @@ public class SimpleBuilderDeclaration_Behavior {
     return thisNode == b || (SLinkOperations.getTarget(thisNode, "extends", false) != null) && SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SLinkOperations.getTarget(thisNode, "extends", false), b);
   }
 
-  public static List<SNode> call_getDescendants_3816167865390609214(SNode thisNode, SModel model, IScope scope) {
+  public static List<SNode> call_getDescendants_3816167865390609214(SNode thisNode, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", false, false);
-    for (SNode builder : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model, scope)) {
+    for (SNode builder : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model)) {
       for (SNode dcl : SLinkOperations.getTargets(builder, "builder", true)) {
         if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration") && SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"), thisNode)) {
           ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
@@ -47,11 +46,11 @@ public class SimpleBuilderDeclaration_Behavior {
     return result;
   }
 
-  public static List<SNode> call_getExtensions_7782956297805903915(SNode thisNode, SModel model, IScope scope) {
+  public static List<SNode> call_getExtensions_7782956297805903915(SNode thisNode, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> ancestors = SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode);
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", true, false);
-    for (SNode sb : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model, scope)) {
+    for (SNode sb : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model)) {
       for (SNode dcl : SLinkOperations.getTargets(sb, "builder", true)) {
         if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration") && ListSequence.fromList(ancestors).contains(SLinkOperations.getTarget(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), "extended", false))) {
           ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
@@ -61,23 +60,23 @@ public class SimpleBuilderDeclaration_Behavior {
     return result;
   }
 
-  public static List<SNode> call_getChildren_3816167865390856298(SNode thisNode, SModel model, IScope scope) {
+  public static List<SNode> call_getChildren_3816167865390856298(SNode thisNode, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode a : SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(a, "child", true)));
     }
-    for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model, scope)) {
+    for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(ext, "child", true)));
     }
     return result;
   }
 
-  public static List<SNode> call_getProperties_5389689214217081373(SNode thisNode, SModel model, IScope scope) {
+  public static List<SNode> call_getProperties_5389689214217081373(SNode thisNode, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode a : SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(a, "property", true)));
     }
-    for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model, scope)) {
+    for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(ext, "property", true)));
     }
     return result;

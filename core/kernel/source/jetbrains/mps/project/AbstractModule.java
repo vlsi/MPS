@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -23,23 +22,17 @@ import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -47,15 +40,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRepository;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -72,6 +62,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -89,7 +80,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
 public abstract class AbstractModule extends SModuleBase implements EditableSModule, FileSystemListener {
@@ -103,11 +93,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
-  private ModuleScope myScope = createScope();
+  private ModuleScope myScope = new ModuleScope();
 
   protected boolean myChanged = false;
-
-  private static Set<String> ourErroredModules = new ConcurrentHashSet<String>();
 
   //----model creation
 
@@ -367,29 +355,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
   }
 
-  public Collection<SModuleReference> getUsedDevkitReferences() {
-    assertCanRead();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return Collections.unmodifiableCollection(descriptor.getUsedDevkits());
-  }
-
   //----stubs
-
-
-  @Deprecated
-  public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
-    if (descriptor != null) {
-      return descriptor.getAdditionalJavaStubPaths();
-    }
-
-    return Collections.emptySet();
-  }
-
-  @Deprecated
-  public Collection<String> getStubPaths() {
-    return getStubPaths(getModuleDescriptor());
-  }
 
   // todo: remove, should be done in module packing
   protected void updatePackagedDescriptor() {
@@ -610,11 +576,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
-  public final List<SModel> getOwnModelDescriptors() {
-    assertCanRead();
-    return getModels();
-  }
-
   /**
    * Module sources folder
    * In case of working on sources == dir with module descriptor
@@ -632,7 +593,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   @NotNull
-  public IScope getScope() {
+  public SearchScope getScope() {
     assertCanRead();
     return myScope;
   }
@@ -755,25 +716,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
-  @Deprecated
-  public IFile getBundleHome() {
-    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
-  }
-
-  public final boolean needReloading() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return SModuleOperations.needReloading(AbstractModule.this);
-      }
-    });
-  }
-
-  @Deprecated
-  public final void reloadFromDisk(boolean reloadClasses) {
-    SModuleOperations.reloadFromDisk(this, reloadClasses);
-  }
-
   public static void handleReadProblem(AbstractModule module, Exception e, boolean isInConflict) {
     SuspiciousModelHandler.getHandler().handleSuspiciousModule(module, isInConflict);
     LOG.error(e.getMessage());
@@ -809,10 +751,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   protected ModuleDescriptor loadDescriptor() {
     return null;
-  }
-
-  protected ModuleScope createScope() {
-    return new ModuleScope();
   }
 
   @Override
@@ -876,54 +814,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
 
-  // deprecated part
-  @Deprecated
-  public final void invalidateCaches() {
-    dependenciesChanged();
-  }
-
-  @Deprecated
-  public final void invalidateDependencies() {
-    dependenciesChanged();
-  }
-
-  @Deprecated
-  public final String getModuleFqName() {
-    return getModuleName();
-  }
-
-  @Deprecated
-  public final Collection<String> getIndexablePaths() {
-    return SModuleOperations.getIndexablePaths(this);
-  }
-
-  /**
-   * Do nothing. If you need it please vote and add comment to MPS-17524
-   */
-  @Deprecated
-  public static void registerModelCreationListener(ModelCreationListener listener) {
-  }
-
-  /**
-   * Do nothing. If you need it please vote and add comment to MPS-17524
-   */
-  @Deprecated
-  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
-  }
-
-  /**
-   * @see SModuleOperations#createModelWithAdjustments
-   */
-  @Deprecated
-  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Deprecated
-  public final String getOutputFor(SModel model) {
-    return SModuleOperations.getOutputPathFor(model);
-  }
-
   @Deprecated
   public final String getGeneratorOutputPath() {
     IFile outputPath = getOutputPath();
@@ -943,78 +833,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return testsOutputPath.getPath();
   }
 
-  @Deprecated
-  public final Collection<SModel> getImplicitlyImportedModelsFor(SModel sm) {
-    return Collections.emptyList();
-  }
-
-  @Deprecated
-  public final Collection<Language> getImplicitlyImportedLanguages(SModel sm) {
-    return Collections.emptyList();
-  }
-
-  // JavaModuleFacet
-  @Deprecated
-  public final boolean isCompileInMPS() {
-    return SModuleOperations.isCompileInMps(this);
-  }
-
-  @Deprecated
-  public final IClassPathItem getClassPathItem() {
-    return JavaModuleOperations.createClassPathItem(getJavaFacet(this).getClassPath(), getModuleName());
-  }
-
-  @Deprecated
-  public final Collection<String> getClassPath() {
-    return getJavaFacet(this).getClassPath();
-  }
-
-  @Deprecated
-  public final Collection<String> getAdditionalClassPath() {
-    return getJavaFacet(this).getLibraryClassPath();
-  }
-
-  @Deprecated
-  public final Collection<String> getOwnClassPath() {
-    IFile classesGen = getJavaFacet(this).getClassesGen();
-    return classesGen != null ? Collections.singleton(classesGen.getPath()) : Collections.<String>emptySet();
-  }
-
-  @Deprecated
-  public static IClassPathItem getDependenciesClasspath(Set<SModule> modules, boolean includeStubSolutions) {
-    return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
-  }
-
-  @Deprecated
-  public final IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
-  }
-
-  @Deprecated
-  public final boolean reloadClassesAfterGeneration() {
-    return ClassLoaderManager.getInstance().canLoad(this);
-  }
-
-  @Deprecated
-  public final Class getClass(String className) {
-    return ClassLoaderManager.getInstance().getClass(this, className);
-  }
-
-  /**
-   * This method do nothing actually
-   */
-  @Deprecated
-  protected final void invalidateClassPath() {
-  }
-
-  @Deprecated
-  public final IFile getClassesGen() {
-    return getJavaFacet(this).getClassesGen();
-  }
-
-  private void showDisposedMessage() {
-    if (ourErroredModules.add(getModuleName())) {
-      LOG.error(new IllegalModelAccessError("Accessing disposed model " + getModuleName()));
-    }
+  //todo make it clear what is "bundle home" and then remove this method
+  public IFile getBundleHome() {
+    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
 }

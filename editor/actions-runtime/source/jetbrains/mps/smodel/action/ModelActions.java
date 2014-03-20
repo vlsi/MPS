@@ -22,25 +22,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
-/**
- * Igor Alshannikov
- * Mar 29, 2005
- */
 public class ModelActions {
   //-------------------
   // child substitute
   //-------------------
-
-  /**
-   * Method should be removed after MPS 3.0
-   *
-   * @deprecated since MPS 3.0 use createChildNodeSubstituteActions() instead
-   */
-  @Deprecated
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
-      IOperationContext context) {
-    return (List) ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
-  }
 
   public static List<SubstituteAction> createChildNodeSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
       IOperationContext context) {
@@ -62,17 +47,6 @@ public class ModelActions {
 
   public static boolean canCreateSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
     return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).canCreateActions();
-  }
-
-  /**
-   * Method should be removed after MPS 3.0
-   *
-   * @deprecated since MPS 3.0 use createSideTransformHintSubstituteActions() instead
-   */
-  @Deprecated
-  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag,
-      IOperationContext context) {
-    return (List) createSideTransformHintSubstituteActions(sourceNode, side, transformTag, context);
   }
 
   public static List<SubstituteAction> createSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag,

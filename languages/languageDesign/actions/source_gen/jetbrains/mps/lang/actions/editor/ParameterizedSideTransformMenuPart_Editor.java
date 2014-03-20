@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -40,7 +39,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterized item");
     editorCell.setCellId("Constant_r514zz_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -75,7 +74,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createCollection_r514zz_e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_f1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_g1b0(editorContext, node));
-    if (renderingCondition_r514zz_a7b1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_r514zz_a7b1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_r514zz_h1b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_r514zz_i1b0(editorContext, node));
@@ -103,7 +102,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter type");
     editorCell.setCellId("Constant_r514zz_a0b1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -140,7 +139,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
     editorCell.setCellId("Constant_r514zz_b1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -186,7 +185,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_r514zz_d1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -232,7 +231,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_r514zz_f1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -285,7 +284,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private static boolean renderingCondition_r514zz_a7b1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_r514zz_a7b1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "icon", true) != null;
   }
 
@@ -314,7 +313,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_r514zz_b0h1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -360,7 +359,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon node");
     editorCell.setCellId("Constant_r514zz_i1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -406,7 +405,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_r514zz_k1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -452,7 +451,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
     editorCell.setCellId("Constant_r514zz_m1b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

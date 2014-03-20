@@ -1,16 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="buc2c4sb1xq10sh4g2m7racsvrtzj1b">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="7cf5mbs6r7l7w6l3mzm1xim6xwzt321" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-zttxhpc4iix3xpfv1j0msfpvjln643" />
-  <common hash="6yai5f7oylymgx4i9sotr0rxowcv7g2" />
-  <source id="7016215775330902578" name="BytecodeVsSourceStubs" hash="-8dmevj7235zda6pdem9txlr5pl4jtrj" dependsOnNodes="true">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <file name="BytecodeVsSourceStubs_Test.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="buc2c4sb1xq10sh4g2m7racsvrtzj1b" />
 

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -42,7 +41,7 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "className";
         return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(node, "constant", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }
@@ -65,7 +64,7 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (SLinkOperations.getTarget(it, "initializer", true) != null) && SPropertyOperations.getBoolean(it, "isFinal");
               }

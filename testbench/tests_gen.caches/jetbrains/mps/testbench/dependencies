@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.MessageFeedbackStrategy" file="MessageFeedbackStrategy.java">
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.messages.Message" />
-    <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.ModuleGenerationHolder" file="ModuleGenerationHolder.java">
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
@@ -19,7 +13,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -36,7 +29,6 @@
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
@@ -50,6 +42,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
+    <classNode dependClassName="jetbrains.mps.internal.make.cfg.MakeFacetInitializer" />
+    <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
+    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -102,28 +98,21 @@
     <classNode dependClassName="org.junit.runners.Parameterized" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.TestMakeService" file="TestMakeService.java">
-    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.concurrent.Future" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
-    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.dependencies.MakeSequence" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IOption" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
-    <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
@@ -131,15 +120,10 @@
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.testbench.MessageFeedbackStrategy" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
-    <classNode extendsClassName="jetbrains.mps.make.service.AbstractInputProcessor" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractMakeService" />
   </dependency>
 </dependenciesRoot>

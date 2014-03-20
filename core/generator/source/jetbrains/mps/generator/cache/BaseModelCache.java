@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,7 @@
 package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.util.containers.BidirectionalMap;
@@ -37,30 +35,20 @@ public abstract class BaseModelCache<T> implements CoreComponent {
 
   protected final Map<SModel, T> myCache = new WeakHashMap<SModel, T>();
   protected final BidirectionalMap<IFile, SModel> myFilesToModels = new BidirectionalMap<IFile, SModel>();
-  private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
-  private SModelRepository myModelRepository;
+  private final SModelRepository myModelRepository;
   private final SModelRepositoryAdapter myModelRepositoryListener = new MyModelRepositoryListener();
 
   @Nullable
   protected abstract T readCache(SModel model);
 
-  protected abstract void saveCache(@NotNull T t, SModel model, StreamHandler handler);
-
-  protected abstract T generateCache(GenerationStatus status);
-
   @NotNull
   public abstract String getCacheFileName();
 
   @Nullable
-  protected abstract IFile getCacheFile(SModel modelDescriptor);
+  public abstract IFile getCacheFile(SModel modelDescriptor);
 
   protected BaseModelCache(SModelRepository modelRepository) {
     myModelRepository = modelRepository;
-    myCacheGenerator = new MyCacheGenerator();
-  }
-
-  public CacheGenerator getGenerator() {
-    return myCacheGenerator;
   }
 
   @Override
@@ -146,19 +134,12 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(outputPath));
   }
 
-  protected class MyCacheGenerator implements CacheGenerator {
-    @Override
-    public void generateCache(GenerationStatus status, StreamHandler handler) {
-      T cache = BaseModelCache.this.generateCache(status);
-      if (cache == null) return;
-
-      SModel model = status.getOriginalInputModel();
-
-      synchronized (myCache) {
-        myCache.put(model, cache);
-      }
-
-      saveCache(cache, model, handler);
+  /**
+   * Invoke to set new cached value
+   */
+  protected final void update(SModel model, T cache) {
+    synchronized (myCache) {
+      myCache.put(model, cache);
     }
   }
 

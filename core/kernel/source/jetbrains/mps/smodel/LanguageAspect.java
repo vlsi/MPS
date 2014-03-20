@@ -212,7 +212,7 @@ public enum LanguageAspect {
     }
   },;
 
-  private static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD25/";
+  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD31/";
 
   private String myName;
 
@@ -243,7 +243,6 @@ public enum LanguageAspect {
   }
 
   public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {
-    assert sm instanceof SModelDescriptor;//temporary
     return Language.getModelAspect(sm) == this;
   }
 

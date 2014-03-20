@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,24 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.ide.projectPane.logicalview.PresentationUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.HashSet;
@@ -83,24 +89,18 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     super.onAdd();
     if (myEventsListener != null) return;
     myEventsListener = new MyEventsListener(getModelDescriptor());
-    mySNodeModelListener = new SimpleModelListener(this) {
+    final PresentationUpdater<SNodeTreeNode> updater = new PresentationUpdater<SNodeTreeNode>(this) {
       @Override
-      public boolean isValid() {
-        return super.isValid() && !jetbrains.mps.util.SNodeOperations.isDisposed(getSNode());
+      protected boolean isValid(SNodeTreeNode treeNode) {
+        return super.isValid(treeNode) && !SNodeOperations.isDisposed(treeNode.getSNode());
       }
     };
+    mySNodeModelListener = new SimpleModelListener(updater);
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
       public void modelsReplaced(Set<SModel> replacedModels) {
         if (replacedModels.contains(getModelDescriptor())) {
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            @Override
-            public void run() {
-              if (mySNodeModelListener.isValid()) {
-                UpdatableSNodeTreeNode.this.updatePresentation(true, true);
-              }
-            }
-          });
+          updater.update(true, true);
         }
       }
     };

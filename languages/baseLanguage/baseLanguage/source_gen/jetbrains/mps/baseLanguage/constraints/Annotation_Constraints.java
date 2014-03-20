@@ -32,7 +32,7 @@ public class Annotation_Constraints extends BaseConstraintsDescriptor {
 
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return ClassifierScopes.getAnnotationClassifiersScope(_context.getContextNode(), operationContext.getScope());
+        return ClassifierScopes.getAnnotationClassifiersScope(_context.getContextNode());
       }
     };
   }

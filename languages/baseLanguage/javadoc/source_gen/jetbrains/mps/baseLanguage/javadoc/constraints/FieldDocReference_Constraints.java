@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class FieldDocReference_Constraints extends BaseConstraintsDescriptor {
@@ -43,7 +42,7 @@ public class FieldDocReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SLinkOperations.getTarget(it, "visibility", true) == _quotation_createNode_z69vxe_a0a0a0a0a0a();
               }
@@ -63,7 +62,7 @@ public class FieldDocReference_Constraints extends BaseConstraintsDescriptor {
   private static SNode _quotation_createNode_z69vxe_a0a0a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, false);
     return quotedNode_1;
   }
 

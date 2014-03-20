@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +57,7 @@ public class SNodeOperations {
   public static List<SNode> getConceptLinks(final SNode node, final String linkName, boolean lookupHierarchy) {
     SNode conceptDeclaration = node;
     if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclaration))) {
-      conceptDeclaration = ((jetbrains.mps.smodel.SNode) conceptDeclaration).getConceptDeclarationNode();
+      conceptDeclaration = SModelUtil.findConceptDeclaration(conceptDeclaration.getConcept().getQualifiedName());
     }
 
     if (lookupHierarchy) {

@@ -19,11 +19,11 @@ public class BaseTestBody {
   public SModel myModel;
   public Project myProject;
   protected Map<SNode, SNode> myMap;
-  private List<SNode> myCopyes;
+  private List<SNode> myCopies;
 
   public BaseTestBody() {
     this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    this.myCopyes = ListSequence.fromList(new ArrayList<SNode>());
+    this.myCopies = ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public void addNodeById(final String id) throws Exception {
@@ -31,11 +31,11 @@ public class BaseTestBody {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
         SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>) BaseTestBody.this.myMap), true);
-        for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
+        for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotation", false, new String[]{}))) {
           SNodeOperations.deleteNode(a);
         }
         BaseTestBody.this.myModel.addRootNode(copy);
-        ListSequence.fromList(BaseTestBody.this.myCopyes).addElement(copy);
+        ListSequence.fromList(BaseTestBody.this.myCopies).addElement(copy);
       }
     });
   }

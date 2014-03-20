@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import org.jetbrains.annotations.NotNull;
@@ -52,15 +50,6 @@ public class ModuleOperationContext extends StandaloneMPSContext {
   @Override
   public boolean isValid() {
     return getModule() != null;
-  }
-
-  @Override
-  @NotNull
-  public IScope getScope() {
-    SModule module = getModule();
-    if (module == null)
-      throw new IllegalStateException("Mostly happens when some actions are performed 'later'. Look for 'later' invocations in stacktrace");
-    return ((AbstractModule)module).getScope();
   }
 
   public String toString() {

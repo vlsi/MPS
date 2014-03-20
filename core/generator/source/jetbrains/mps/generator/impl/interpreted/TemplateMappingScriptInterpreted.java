@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,14 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
@@ -32,9 +31,13 @@ import jetbrains.mps.util.QueryMethodGenerated;
 public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   private final SNode scriptNode;
+  private final String myCodeBlockMethod;
+  private ScriptCodeBlock myCodeBlock;
 
   public TemplateMappingScriptInterpreted(SNode scriptNode) {
     this.scriptNode = scriptNode;
+    SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(scriptNode);
+    myCodeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
   }
 
   @Override
@@ -57,25 +60,14 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   @Override
   public void apply(SModel model, ITemplateGenerator generator) {
-    SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(scriptNode);
-    if (codeBlock == null) {
-      generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no code-block");
+    if (myCodeBlockMethod == null) {
+      generator.getLogger().warning(getScriptNode(), String.format("cannot run script '%s' : no code-block", scriptNode.getName()));
       return;
     }
-
-    String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
-    try {
-      QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new MappingScriptContext(model, scriptNode, generator),
-        scriptNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no generated code found");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no generated code found");
+    if (myCodeBlock == null) {
+      myCodeBlock = generator.getGeneratorSessionContext().getQueryProvider(getScriptNode()).getScriptCodeBlock(myCodeBlockMethod);
     }
+    myCodeBlock.invoke(new MappingScriptContext(model, getScriptNode(), generator));
   }
 
   @Override

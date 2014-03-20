@@ -39,7 +39,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -80,7 +79,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface concept");
     editorCell.setCellId("Constant_7v1nzk_a0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -141,7 +140,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7v1nzk_a2a0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -247,8 +246,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7v1nzk_g1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7v1nzk_h1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7v1nzk_i1c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7v1nzk_j1c0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_7v1nzk_k1c0(editorContext, node));
     return editorCell;
   }
 
@@ -267,7 +264,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties:");
     editorCell.setCellId("Constant_7v1nzk_b1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -339,7 +336,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_7v1nzk_e1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -397,7 +394,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public boolean filter(SNode childNode, IScope scope) {
+    public boolean filter(SNode childNode) {
       return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
     }
   }
@@ -406,7 +403,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0f1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -432,7 +429,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "references:");
     editorCell.setCellId("Constant_7v1nzk_h1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -490,7 +487,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public boolean filter(SNode childNode, IScope scope) {
+    public boolean filter(SNode childNode) {
       return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
     }
   }
@@ -499,7 +496,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0i1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -508,22 +505,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "new reference";
     }
-  }
-
-  private EditorCell createConstant_7v1nzk_j1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7v1nzk_j1c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createComponent_7v1nzk_k1c0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff");
-    return editorCell;
   }
 
   private EditorCell createCollection_7v1nzk_a_0(EditorContext editorContext, SNode node) {

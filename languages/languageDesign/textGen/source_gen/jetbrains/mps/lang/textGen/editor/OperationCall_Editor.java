@@ -27,7 +27,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -89,7 +88,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("function");
       }
       Style style = new StyleImpl();
-      TextGenStyles_StyleSheet.applyTextGenOperation(style, editorCell);
+      TextGenStyles_StyleSheet.apply_TextGenOperation(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -107,7 +106,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new OperationCall_Editor.parameterListHandler_hquq1v_b0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_hquq1v_a1a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_hquq1v_a1a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -179,7 +178,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_hquq1v_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_hquq1v_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isNotEmpty();
   }
 }

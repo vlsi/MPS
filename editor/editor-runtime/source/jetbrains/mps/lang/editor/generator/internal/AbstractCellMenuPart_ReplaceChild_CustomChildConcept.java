@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -49,7 +48,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
 
 
     IOperationContext context = editorContext.getOperationContext();
-    SNode childNodeConcept = getConceptOfChild(parentNode, currentChild, defaultConceptOfChild, context.getScope(), context, editorContext);
+    SNode childNodeConcept = getConceptOfChild(parentNode, currentChild, defaultConceptOfChild, context, editorContext);
     if (childNodeConcept == null) {
       return Collections.emptyList();
     }
@@ -62,20 +61,6 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>getConceptOfChild(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext context) {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * should become abstract after MPS 3.0
-   */
-  protected SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext context,
-      EditorContext editorContext) {
-    return getConceptOfChild(node, currentChild, defaultConceptOfChild, scope, context);
-  }
+  protected abstract SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext context,
+      EditorContext editorContext);
 }

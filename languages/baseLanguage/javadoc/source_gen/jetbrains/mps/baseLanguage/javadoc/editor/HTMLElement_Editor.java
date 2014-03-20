@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -40,7 +39,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_h096ql_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = HTMLElement_Editor.renderingCondition_h096ql_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = HTMLElement_Editor.renderingCondition_h096ql_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_h096ql_a0(editorContext, node);
@@ -51,7 +50,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
   }
 
@@ -68,7 +67,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_h096ql_a0a");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -84,7 +83,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_h096ql_a0b0a()}));
@@ -102,7 +101,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     public HTMLElement_name_cellMenu_h096ql_a0b0a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
@@ -111,7 +110,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " />");
     editorCell.setCellId("Constant_h096ql_c0a");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -136,7 +135,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_h096ql_a0a_0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -152,7 +151,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_h096ql_a0b0a_0()}));
@@ -170,7 +169,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     public HTMLElement_name_cellMenu_h096ql_a0b0a_0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
@@ -179,7 +178,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_h096ql_c0a_0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -239,7 +238,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</");
     editorCell.setCellId("Constant_h096ql_e0a");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -255,7 +254,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_2");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -273,7 +272,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_h096ql_g0a");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);

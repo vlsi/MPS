@@ -25,7 +25,6 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -112,7 +111,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
         if (conceptFqName == null) {
           return null;
         }
-        SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName, ProjectHelper.toMPSProject(project).getScope());
+        SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName);
 
         return createBreakpoint(concept, node, project);
       }

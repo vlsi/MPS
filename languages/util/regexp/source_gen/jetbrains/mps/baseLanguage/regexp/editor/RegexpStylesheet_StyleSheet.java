@@ -4,48 +4,36 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class RegexpStylesheet_StyleSheet {
-  @Deprecated
-  public static Style getRegexpBrace(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    style.set(StyleAttributes.MATCHING_LABEL, "regexpBrace");
-    return style;
+  public static void apply_RegexpBrace(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "regexpBrace");
   }
 
-  @Deprecated
-  public static Style getLeftRegexpBrace(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    return style;
+  public static void apply_LeftRegexpBrace(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      RegexpStylesheet_StyleSheet.apply_RegexpBrace(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
 
-  @Deprecated
-  public static Style getRightRegexpBrace(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    return style;
+  public static void apply_RightRegexpBrace(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      RegexpStylesheet_StyleSheet.apply_RegexpBrace(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
-  public static void applyRegexpBrace(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    style.set(StyleAttributes.MATCHING_LABEL, "regexpBrace");
-  }
 
-  public static void applyLeftRegexpBrace(Style style, EditorCell editorCell) {
-    RegexpStylesheet_StyleSheet.applyRegexpBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-  }
-
-  public static void applyRightRegexpBrace(Style style, EditorCell editorCell) {
-    RegexpStylesheet_StyleSheet.applyRegexpBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-  }
 }

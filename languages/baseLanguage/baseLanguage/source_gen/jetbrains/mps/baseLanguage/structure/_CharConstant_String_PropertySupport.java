@@ -12,6 +12,6 @@ public class _CharConstant_String_PropertySupport extends PropertySupport {
     } else {
       testValue = value;
     }
-    return testValue.matches("[^\\\\]|(\\\\([btnfr\"'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))");
+    return testValue.matches("[^\\\\'\"]|(\\\\([btnfr\"'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))");
   }
 }

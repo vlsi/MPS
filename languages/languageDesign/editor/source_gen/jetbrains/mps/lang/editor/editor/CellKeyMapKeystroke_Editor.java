@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
@@ -35,7 +34,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y8xyxm_a");
     editorCell.setBig(true);
-    editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createConstant_y8xyxm_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y8xyxm_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y8xyxm_c0(editorContext, node));
@@ -82,7 +80,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     public CellKeyMapKeystroke_modifiers_cellMenu_y8xyxm_a0b0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidModifiers()));
       return result;
@@ -127,7 +125,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     public CellKeyMapKeystroke_keycode_cellMenu_y8xyxm_a0d0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidKeyCodes()));
       return result;

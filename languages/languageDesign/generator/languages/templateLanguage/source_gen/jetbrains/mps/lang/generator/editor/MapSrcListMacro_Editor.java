@@ -50,7 +50,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$MAP_SRCL$");
     editorCell.setCellId("Constant_pr8n4z_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -249,7 +249,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -298,7 +298,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pr8n4z_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodesQuery");
-    provider.setNoTargetText("<none>");
+    provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -353,7 +353,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pr8n4z_c3c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("mapperFunction");
-    provider.setNoTargetText("<default>");
+    provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -405,7 +405,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pr8n4z_c4c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("postMapperFunction");
-    provider.setNoTargetText("<default>");
+    provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

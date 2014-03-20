@@ -27,7 +27,6 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class BuildMPSPlugin_Behavior {
@@ -128,7 +127,7 @@ public class BuildMPSPlugin_Behavior {
 
   private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, false);
     n1.setReference("target", SReference.create("target", n1, facade.createModelReference("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), facade.createNodeId("398731435597190701")));
     return n1;
   }

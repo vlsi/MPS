@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class AttributeAccess_Behavior {
@@ -59,23 +58,23 @@ public class AttributeAccess_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isAggregation_6960953357954063547(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAggregation_4024382256428848854", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetConcept_4024382256428848859", new Object[]{});
-  }
-
-  @Deprecated
   public static boolean callSuper_isSingularCardinality_6960953357954063537(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static boolean call_isAggregation_6960953357954063547(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAggregation_4024382256428848854", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isAggregation_6960953357954063547(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetConcept_4024382256428848859", new Object[]{});
   }
 
   @Deprecated
@@ -86,7 +85,7 @@ public class AttributeAccess_Behavior {
   private static SNode _quotation_createNode_q663c8_a0b0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1133920641626")));
     return quotedNode_1;
   }

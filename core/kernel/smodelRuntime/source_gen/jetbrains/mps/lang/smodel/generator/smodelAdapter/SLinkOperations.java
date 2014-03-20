@@ -4,13 +4,11 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.Iterator;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -21,7 +19,7 @@ public class SLinkOperations {
   }
 
   public static SNode findLinkDeclaration(String conceptFqName, String linkRole) {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
   }
@@ -74,7 +72,7 @@ public class SLinkOperations {
     if (node != null && role != null) {
       return (child ? new AbstractSNodeList.AggregatedSNodesList(node, role) : new AbstractSNodeList.LinkedSNodesList(node, role));
     }
-    return new ArrayList<SNode>();
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
   }
 
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
@@ -129,9 +127,9 @@ public class SLinkOperations {
     return null;
   }
 
-  public static List removeAllChildren(SNode parent, String role) {
+  public static List<SNode> removeAllChildren(SNode parent, String role) {
     if (parent == null) {
-      return new ArrayList<SNode>(1);
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
     }
     Iterable<? extends SNode> children = parent.getChildren(role);
     for (SNode child : children) {
@@ -142,7 +140,7 @@ public class SLinkOperations {
 
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {
     if (node == null) {
-      return new ArrayList<SNode>();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
     }
     return jetbrains.mps.smodel.SNodeOperations.getConceptLinkTargets(node, linkName, true);
   }

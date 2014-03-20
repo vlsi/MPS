@@ -45,7 +45,6 @@ import jetbrains.mps.smodel.SReference;
 import com.intellij.psi.PsiTypeElement;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -114,7 +113,7 @@ public class ASTConverter {
     addAnnotations(x, classifier.value);
 
 
-    if (needToSetId() && isNotEmpty_rbndtb_a0a21a61(SPropertyOperations.getString(classifier.value, "name"))) {
+    if (needToSetId() && isNotEmptyString(SPropertyOperations.getString(classifier.value, "name"))) {
       ((jetbrains.mps.smodel.SNode) classifier.value).setId(JavaForeignIdBuilder.computeNodeId(x));
     }
 
@@ -269,7 +268,7 @@ public class ASTConverter {
 
     final ASTConverter currConverter = addTypeParams(x, method);
 
-    SLinkOperations.setTarget(method, "returnType", currConverter.convertType(x.getReturnTypeNoResolve()), true);
+    SLinkOperations.setTarget(method, "returnType", currConverter.convertType(x.getReturnType()), true);
     ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getParameterList().getParameters())).select(new ISelector<PsiParameter, SNode>() {
       public SNode select(PsiParameter it) {
         SNode param = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
@@ -538,20 +537,14 @@ public class ASTConverter {
 
     protected SNode resolveTypeVar(String name) {
       if (myTypeVars == null) {
-        return (parentState == null ?
-          null :
-          parentState.resolveTypeVar(name)
-        );
+        return (parentState == null ? null : parentState.resolveTypeVar(name));
       }
 
       if (myTypeVars == null || !(MapSequence.fromMap(myTypeVars).containsKey(name))) {
         // Either type var map is not initialized, this means that this State object was created with something else: 
         // e.g. with id prefix. 
         // Or type var is not part of this state 
-        return (parentState == null ?
-          null :
-          parentState.resolveTypeVar(name)
-        );
+        return (parentState == null ? null : parentState.resolveTypeVar(name));
 
       } else {
         // we have this var name 
@@ -600,7 +593,7 @@ public class ASTConverter {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
@@ -612,7 +605,7 @@ public class ASTConverter {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
@@ -623,12 +616,12 @@ public class ASTConverter {
   private static SNode _quotation_createNode_rbndtb_a0a1a0a12(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  public static boolean isNotEmpty_rbndtb_a0a21a61(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

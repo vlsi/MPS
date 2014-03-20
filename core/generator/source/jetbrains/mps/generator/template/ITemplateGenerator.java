@@ -18,7 +18,6 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -26,21 +25,16 @@ import java.util.List;
 
 public interface ITemplateGenerator {
 
+  /**
+   * @deprecated There's no reason to access progress monitor this way. The monitor is passed as an argument where needed; cancellation is checked by generator impl
+   * The method will be removed after 3.1
+   */
+  @Deprecated
   ProgressMonitor getProgressMonitor();
 
   SModel getInputModel();
 
   SModel getOutputModel();
-
-  /**
-   * @deprecated
-   */
-  SModel getSourceModel();
-
-  /**
-   * @deprecated
-   */
-  SModel getTargetModel();
 
   boolean areMappingsAvailable();
 
@@ -54,19 +48,21 @@ public interface ITemplateGenerator {
 
   GenerationSessionContext getGeneratorSessionContext();
 
-  /**
-   * @deprecated This method is no longer used, and needs to be removed
-   */
-  @Deprecated
-  IScope getScope();
-
   boolean isStrict();
 
   boolean isDirty(SNode node);
 
   IGeneratorLogger getLogger();
 
+  /**
+   * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
+   */
+  @Deprecated
   void showErrorMessage(SNode inputNode, SNode templateNode, String message);
 
+  /**
+   * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
+   */
+  @Deprecated
   void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 }

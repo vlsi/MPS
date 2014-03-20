@@ -8,7 +8,6 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,7 +38,7 @@ public class SNotationPartListBody implements ConceptEditorComponent {
 
   private EditorCell createAlternation_2lgk78_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SNotationPartListBody.renderingCondition_2lgk78_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SNotationPartListBody.renderingCondition_2lgk78_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNodeList_2lgk78_a0(editorContext, node);
@@ -49,7 +48,7 @@ public class SNotationPartListBody implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2lgk78_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2lgk78_a0(SNode node, EditorContext editorContext) {
     return (int) ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).count() == 0 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.notation.structure.SNotationParentheses") && (int) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.notation.structure.SNotationParentheses"), "alternatives", true)).count() == 1 && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.notation.structure.SNotationParentheses"), "alternatives", true)).first() == node;
   }
 

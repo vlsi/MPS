@@ -48,7 +48,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_hr8njl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -57,7 +57,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -73,7 +73,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ExtensionPointExpression_Editor._Inline_hr8njl_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -112,7 +112,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("extensionPoint");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -130,7 +130,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

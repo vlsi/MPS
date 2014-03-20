@@ -16,13 +16,16 @@
 package jetbrains.mps.icons;
 
 import com.intellij.icons.AllIcons;
-import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.LayeredIcon;
 
 import javax.swing.Icon;
 
 public class MPSIcons {
+  public static class Ant {
+    public static final Icon Build = IconLoader.getIcon("/ant/build.png");
+  }
+
   public static class Actions {
     public static final Icon AddToVCS = IconLoader.getIcon("/actions/addToVcs.png");
     public static final Icon GroupByCategory = IconLoader.getIcon("/actions/groupByCategory.png");
@@ -160,6 +163,7 @@ public class MPSIcons {
     public static final Icon ModelRepositoryViewer = IconLoader.getIcon("/toolWindows/modelRepositoryViewer.png");
     public static final Icon OpenTerminal_13x13 =  IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.png");
     public static final Icon OutputView = IconLoader.getIcon("/toolWindows/outputView.png");
+    public static final Icon ToolWindowProject = IconLoader.getIcon("/toolWindows/toolWindowProject.png");
     public static final Icon TypeTraceView = IconLoader.getIcon("/toolWindows/typeTraceView.png");
   }
 

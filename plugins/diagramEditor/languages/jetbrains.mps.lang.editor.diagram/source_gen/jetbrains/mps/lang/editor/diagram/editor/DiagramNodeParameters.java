@@ -58,7 +58,7 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
       }
     }
 
-    for (String nextDefinedParameter : ListSequence.fromList(definedParameters)) {
+    for (String nextDefinedParameter : definedParameters) {
       this.appendParameter(nextDefinedParameter, styledText, isEmpty, false);
       isEmpty = false;
     }

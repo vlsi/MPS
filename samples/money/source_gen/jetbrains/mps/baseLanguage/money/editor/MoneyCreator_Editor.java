@@ -45,7 +45,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ccfkrk_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -102,7 +102,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ccfkrk_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

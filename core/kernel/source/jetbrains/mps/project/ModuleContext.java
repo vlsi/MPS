@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -66,15 +66,6 @@ public class ModuleContext extends StandaloneMPSContext {
   public boolean isValid() {
     if (myProject.isDisposed()) return false;
     return getModule() != null;
-  }
-
-  @Override
-  @NotNull
-  public IScope getScope() {
-    SModule module = getModule();
-    if (module == null)
-      throw new IllegalStateException("Mostly happens when some actions are performed 'later'. Look for 'later' invocations in stacktrace");
-    return ((AbstractModule) module).getScope();
   }
 
   public String toString() {

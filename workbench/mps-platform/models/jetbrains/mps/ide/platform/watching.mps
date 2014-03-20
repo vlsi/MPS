@@ -2699,7 +2699,7 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5968086934301084020" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="5968086934301096908" nodeInfo="nn">
-              <property name="severity" nameId="tpib.1167245565795" value="info" />
+              <property name="severity" nameId="tpib.1167245565795" value="debug" />
               <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5968086934301112908" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5968086934301112917" nodeInfo="nn">
                   <property name="value" nameId="tpee.1070475926801" value="s" />

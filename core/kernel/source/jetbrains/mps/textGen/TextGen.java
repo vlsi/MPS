@@ -16,7 +16,6 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
@@ -55,8 +54,13 @@ public class TextGen {
     return !(getTextGenForNode(node) instanceof DefaultTextGenDescriptor);
   }
 
-  public static String getExtension(SNode node) {
+  public static String getExtension(@NotNull SNode node) {
     return getTextGenForNode(node).getExtension(node);
+  }
+
+  public static String getFileName(@NotNull SNode node) {
+    String extension = getExtension(node);
+    return (extension == null) ? node.getName() : node.getName() + '.' + extension;
   }
 
   public static TextGenerationResult generateText(SNode node, boolean failIfNoTextgen, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {

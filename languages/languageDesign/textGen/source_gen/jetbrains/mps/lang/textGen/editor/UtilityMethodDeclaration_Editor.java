@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -47,7 +46,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4607in_a");
     editorCell.setBig(true);
-    if (renderingCondition_4607in_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4607in_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_4607in_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_4607in_b0(editorContext, node));
@@ -71,7 +70,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4607in_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4607in_a0a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getIndexInParent(node) != 0;
   }
 
@@ -84,7 +83,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "protected");
     editorCell.setCellId("Constant_4607in_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -121,7 +120,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UtilityMethodDeclaration_Editor.UtilityMethodDeclaration_name_postfixCellMenu_4607in_a0e0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -138,7 +137,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     public UtilityMethodDeclaration_name_postfixCellMenu_4607in_a0e0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if (nodeType != null) {
@@ -154,7 +153,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_4607in_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -239,7 +238,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_4607in_h0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

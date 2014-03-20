@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Concept_NewInstance_Editor extends DefaultNodeEditor {
@@ -29,7 +28,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_bwihhz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bwihhz_b0(editorContext, node));
-    if (renderingCondition_bwihhz_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bwihhz_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_bwihhz_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_bwihhz_d0(editorContext, node));
@@ -45,7 +44,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_bwihhz_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -71,7 +70,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bwihhz_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bwihhz_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
 
@@ -79,7 +78,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_bwihhz_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

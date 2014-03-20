@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -50,7 +49,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_7t32xl_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -93,7 +92,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_7t32xl_a0d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_7t32xl_a0d0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefCell_7t32xl_a3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_7t32xl_b3a(editorContext, node));
@@ -144,7 +143,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("label");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -158,7 +157,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_7t32xl_a0d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_7t32xl_a0d0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "label", false) != null;
   }
 
@@ -289,7 +288,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_7t32xl_a2a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -349,7 +348,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("label");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

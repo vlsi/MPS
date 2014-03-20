@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
@@ -53,7 +52,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
     editorCell.setCellId("Constant_ql48ef_b0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyEditorOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -87,7 +86,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ql48ef_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ql48ef_e0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_ql48ef_f0(editorContext, node));
-    if (renderingCondition_ql48ef_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ql48ef_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ql48ef_g0(editorContext, node));
     }
     return editorCell;
@@ -158,7 +157,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_ql48ef_f0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = AnonymousCellAnnotation_Editor.renderingCondition_ql48ef_a5a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = AnonymousCellAnnotation_Editor.renderingCondition_ql48ef_a5a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_ql48ef_a5a(editorContext, node);
@@ -171,7 +170,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ql48ef_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ql48ef_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isLastPosition");
   }
 
@@ -215,7 +214,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ql48ef_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ql48ef_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "useLabelSelection");
   }
 

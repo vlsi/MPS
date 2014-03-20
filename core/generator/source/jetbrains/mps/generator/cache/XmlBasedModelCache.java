@@ -16,19 +16,16 @@
 package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.SModuleOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.JDOMParseException;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -44,8 +41,6 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   protected XmlBasedModelCache(SModelRepository modelRepository) {
     super(modelRepository);
   }
-
-  protected abstract Element toXml(T t);
 
   protected abstract T fromXml(Element e);
 
@@ -79,14 +74,12 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     return null;
   }
 
-  @Override
-  protected void saveCache(@NotNull T cache, SModel model, StreamHandler handler) {
-    handler.saveStream(getCacheFileName(), toXml(cache), isCache());
-  }
-
   /**
    * Returns true iff this cache should be stored in source_gen.caches
+   * @deprecated cache file location is controlled from outside now, appropriately configured
+   * StreamHandler is passed to saveCache(). This method will be removed after MPS 3.1.
    */
+  @Deprecated
   protected boolean isCache() {
     return true;
   }
@@ -102,7 +95,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
 
   @Override
   @Nullable
-  protected IFile getCacheFile(SModel modelDescriptor) {
+  public IFile getCacheFile(SModel modelDescriptor) {
     SModule m = modelDescriptor.getModule();
     IFile cachesModuleDir = getCachesDirInternal(m, SModuleOperations.getOutputPathFor(modelDescriptor));
     if (cachesModuleDir == null) return null;

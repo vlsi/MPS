@@ -14,7 +14,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -39,7 +38,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_bfm5ok_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_bfm5ok_a0(editorContext, node));
-    if (renderingCondition_bfm5ok_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bfm5ok_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bfm5ok_b0(editorContext, node));
     }
     return editorCell;
@@ -76,13 +75,13 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_bfm5ok_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bfm5ok_b1a(editorContext, node));
-    if (renderingCondition_bfm5ok_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bfm5ok_a2b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bfm5ok_c1a(editorContext, node));
     }
     return editorCell;
   }
 
-  private static boolean renderingCondition_bfm5ok_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bfm5ok_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "bound", true) != null);
   }
 
@@ -90,7 +89,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_bfm5ok_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -129,7 +128,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bfm5ok_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bfm5ok_a2b0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
   }
 

@@ -24,7 +24,11 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236701346034" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1997029474304170758" nodeInfo="nn">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1997029474304170759" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="2omo.FoundErrorOperation" typeId="2omo.1234794705341" id="1997029474304170771" nodeInfo="nn" />
+            <node role="statement" roleId="tpee.1068581517665" type="2omo.FoundErrorOperation" typeId="2omo.1234794705341" id="1997029474304170771" nodeInfo="nn">
+              <node role="text" roleId="2omo.1237470722868" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3073008691743981420" nodeInfo="nn">
+                <property name="value" nameId="tpee.1070475926801" value="Class name is undefined" />
+              </node>
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="1997029474304170774" nodeInfo="nn">
               <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="1997029474304170776" nodeInfo="ng">
                 <property name="value" nameId="2omo.1237305576108" value="???" />

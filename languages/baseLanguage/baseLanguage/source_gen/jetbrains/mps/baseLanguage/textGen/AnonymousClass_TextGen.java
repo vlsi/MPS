@@ -8,7 +8,7 @@ import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
@@ -22,11 +22,13 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier")), this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
-            this.append(", ");
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "typeParameter", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }
@@ -34,22 +36,26 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("(");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
-            this.append(", ");
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }
       this.append(")");
     } else {
       this.append("(");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
-            this.append(", ");
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }

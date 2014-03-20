@@ -10,7 +10,6 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 
 /**
@@ -71,12 +70,11 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.editor").addPlugin("jetbrains.mps.ide.make");
-    // todo: add Git4Idea as default plugin? 
+    return addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.vcs");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
-    for (String bpath : CollectionSequence.fromCollection(PathManager.getBootstrapPaths())) {
+    for (String bpath : PathManager.getBootstrapPaths()) {
       addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(bpath));
     }
     return addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(PathManager.getLanguagesPath()));

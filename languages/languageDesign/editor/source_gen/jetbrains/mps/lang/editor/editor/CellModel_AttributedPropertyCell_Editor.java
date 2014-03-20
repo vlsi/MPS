@@ -27,7 +27,7 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6qfxmi_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_6qfxmi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6qfxmi_b0(editorContext, node));
@@ -51,7 +51,7 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed property");
     editorCell.setCellId("Constant_6qfxmi_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyAttributedCellLabel(style, editorCell);
+    Styles_StyleSheet.apply_attributedCellLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

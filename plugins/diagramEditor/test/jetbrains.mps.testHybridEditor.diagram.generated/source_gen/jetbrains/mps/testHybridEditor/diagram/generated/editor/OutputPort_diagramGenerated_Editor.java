@@ -8,13 +8,22 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
 import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -25,35 +34,97 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createDiagramNode_16y7ix_a(editorContext, node);
+    return this.createDiagramPort_16y7ix_a(editorContext, node);
   }
 
-  private EditorCell createDiagramNode_16y7ix_a(final EditorContext editorContext, final SNode node) {
-    final RectView view = new RectView();
-    GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
-    view.background().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    view.dimension().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
-      public void run() {
-        new Mapper<View, SNode>(view, node) {
-          @Override
-          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-          }
-        }.attachRoot();
-      }
-    }, editorContext.getOperationContext().getProject());
-    view.visible().set(true);
-    editorCell.setCellId("DiagramNode_16y7ix_a");
+  private EditorCell createDiagramPort_16y7ix_a(final EditorContext editorContext, final SNode node) {
+    final EditorCell editorCell = new OutputPort_diagramGenerated_Editor.PortCellImpl_16y7ix_a(editorContext, node);
+    editorCell.setCellId("DiagramPort_16y7ix_a");
     editorCell.setBig(true);
     return editorCell;
-
   }
 
-  private static Color _StyleParameter_QueryFunction_16y7ix_a0a(EditorContext editorContext, SNode node) {
-    return Color.BLUE;
-  }
+  private class PortCellImpl_16y7ix_a extends PortCell {
+    private PortCellImpl_16y7ix_a(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+      synchronize();
+    }
 
-  private static Vector _StyleParameter_QueryFunction_16y7ix_a1a(EditorContext editorContext, SNode node) {
-    return new Vector(10, 10);
+    public Mapper<SNode, RectView> createMapper() {
+      return new Mapper<SNode, RectView>(getSNode(), createPortView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          getTarget().background().set(Color.GRAY);
+          getTarget().dimension().set(new Vector(10, 10));
+          getTarget().prop(JetpadUtils.CONNECTION_SOURCE).set(Boolean.TRUE);
+          getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+            public void run() {
+              if (getTarget().focused().get()) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+            public void set(Rectangle rect) {
+              DiagramCell diagramCell = getDiagramCell();
+              if (diagramCell == null) {
+                return;
+              }
+              setX(rect.origin.x + diagramCell.getX());
+              setY(rect.origin.y + diagramCell.getY());
+              setWidth(rect.dimension.x);
+              setHeight(rect.dimension.y);
+            }
+          }));
+
+        }
+      };
+    }
+
+    public void synchronize() {
+    }
+
+    private RectView createPortView() {
+      RectView portView = new RectView();
+      AbstractJetpadCell.configureView(portView, PortCellImpl_16y7ix_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return true;
+        }
+      });
+      portView.prop(JetpadUtils.SOURCE).set(getSNode());
+      portView.focusable().set(true);
+      return portView;
+    }
+
+
+
+    public Mapper<SNode, PortDecoratorView> createDecorationMapper() {
+      return new Mapper<SNode, PortDecoratorView>(getSNode(), new PortDecoratorView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          DiagramCell diagramCell = getDiagramCell();
+          if (diagramCell == null) {
+            return;
+          }
+          final Mapper<? super SNode, ?> descendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
+          if (descendantMapper == null) {
+            return;
+          }
+          {
+            configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
+            configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
+            ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
+            configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
+
+
+          }
+        }
+      };
+    }
+
+
   }
 }

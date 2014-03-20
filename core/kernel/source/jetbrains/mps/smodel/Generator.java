@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -28,8 +27,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
@@ -75,37 +72,7 @@ public class Generator extends AbstractModule {
     SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
 
-    upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
-  }
-
-  private void upgradeGeneratorDescriptor() {
-    for (MappingPriorityRule mappingPriorityRule : myGeneratorDescriptor.getPriorityRules()) {
-      MappingConfig_AbstractRef lesser = mappingPriorityRule.getRight();
-      MappingConfig_AbstractRef greater = mappingPriorityRule.getLeft();
-      if (upgradeMappingConfigRef(lesser)) {
-      }
-      if (upgradeMappingConfigRef(greater)) {
-      }
-    }
-  }
-
-  private boolean upgradeMappingConfigRef(MappingConfig_AbstractRef ref) {
-    boolean descriptorChanged = false;
-    if (ref instanceof MappingConfig_RefSet) {
-      for (MappingConfig_AbstractRef simpleRef : ((MappingConfig_RefSet) ref).getMappingConfigs()) {
-        if (upgradeMappingConfigRef(simpleRef)) {
-          descriptorChanged = true;
-        }
-      }
-    }
-    if (ref instanceof MappingConfig_ExternalRef) {
-      MappingConfig_ExternalRef extRef = (MappingConfig_ExternalRef) ref;
-      if (upgradeMappingConfigRef(extRef.getMappingConfig())) {
-        descriptorChanged = true;
-      }
-    }
-    return descriptorChanged;
   }
 
   @Override
@@ -211,17 +178,12 @@ public class Generator extends AbstractModule {
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
     for (SModuleReference guid : getReferencedGeneratorUIDs()) {
-      SModule module = MPSModuleRepository.getInstance().getModule(guid);
+      SModule module = guid.resolve(MPSModuleRepository.getInstance());
       if (module instanceof Generator) {
         result.add((Generator) module);
       }
     }
     return result;
-  }
-
-  @Override
-  public IFile getBundleHome() {
-    return null;
   }
 
   public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
@@ -236,20 +198,6 @@ public class Generator extends AbstractModule {
       }
     }
     return descriptorChanged[0];
-  }
-
-  public List<SModel> getGeneratorModels() {
-    List<SModel> result = new ArrayList<SModel>();
-    List<SModel> ownModels = this.getModels();
-    for (SModel ownModel : ownModels) {
-      if (SModelStereotype.isGeneratorModel(ownModel)) {
-        result.add((ownModel));
-      } else if (SModelStereotype.isUserModel(ownModel)) {
-        // normal model goes first
-        result.add(0, ownModel);
-      }
-    }
-    return result;
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

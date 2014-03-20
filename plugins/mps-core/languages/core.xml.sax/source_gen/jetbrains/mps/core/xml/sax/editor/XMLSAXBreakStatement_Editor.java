@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -28,7 +27,7 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_898x9g_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_898x9g_a0(editorContext, node));
-    if (renderingCondition_898x9g_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_898x9g_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_898x9g_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_898x9g_c0(editorContext, node));
@@ -49,7 +48,7 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_898x9g_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_898x9g_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "result", true) != null);
   }
 

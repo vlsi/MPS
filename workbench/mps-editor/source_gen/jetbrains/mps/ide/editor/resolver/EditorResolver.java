@@ -17,6 +17,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -33,7 +34,7 @@ public class EditorResolver implements IResolver {
     if (resolveInfo == null) {
       return false;
     }
-    final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), operationContext);
+    final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), operationContext.getProject());
     try {
       EditorCell cellWithRole = fakeEditor.findNodeCellWithRole(sourceNode, reference.getRole());
       if (cellWithRole == null) {
@@ -82,10 +83,10 @@ public class EditorResolver implements IResolver {
   }
 
   private class FakeEditorComponent extends EditorComponent {
-    public FakeEditorComponent(SNode node, IOperationContext operationContext) {
-      super(operationContext.getProject().getRepository());
-      setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), operationContext.getProject().getRepository()));
-      editNode(node, operationContext);
+    public FakeEditorComponent(SNode node, Project project) {
+      super(project.getRepository());
+      setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), project.getRepository()));
+      editNode(node);
     }
 
     @Override

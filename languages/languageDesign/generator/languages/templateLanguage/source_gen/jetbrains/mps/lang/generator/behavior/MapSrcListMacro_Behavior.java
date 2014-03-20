@@ -34,25 +34,23 @@ public class MapSrcListMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0;
-        nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_wn5chh_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_wn5chh_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_MapSrcListMacro_Behavior_wn5chh_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0, childRole_MapSrcListMacro_Behavior_wn5chh_, 1))) {
+          String childRole_wn5chh_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_wn5chh_a0a0a0, childRole_wn5chh_, 1))) {
             return false;
           }
           {
-            SNode childVar_MapSrcListMacro_Behavior_wn5chh_a0a0a0a = IterableUtil.get(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0.getChildren(childRole_MapSrcListMacro_Behavior_wn5chh_), 0);
+            SNode childVar_wn5chh_a0a0a0a = IterableUtil.get(nodeToMatch_wn5chh_a0a0a0.getChildren(childRole_wn5chh_), 0);
             {
-              SNode nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a;
-              nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a = childVar_MapSrcListMacro_Behavior_wn5chh_a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_wn5chh_a0a0a0a = childVar_wn5chh_a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wn5chh_a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_wn5chh_a0a0a0a.getReferenceTarget("concept");
             }
           }
         }

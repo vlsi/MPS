@@ -9,6 +9,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
+  <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <root type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="4307205004138627839" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <property name="name" nameId="tpck.1169194664001" value="QueryExpression_NodeFactories" />
@@ -174,7 +175,7 @@
     </node>
   </root>
   <root type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="3492877759608901704" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.parameter" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query.parameter" />
     <property name="name" nameId="tpck.1169194664001" value="ScopeParameterLiteral_factories" />
     <node role="nodeFactory" roleId="tpdg.1158700779049" type="tpdg.NodeFactory" typeId="tpdg.1158700725281" id="3492877759608901705" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpdg.1158700943156" targetNodeId="3xdn.2755216049126692157" resolveInfo="ModulesScope" />
@@ -230,6 +231,47 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="3492877759611886786" nodeInfo="nn">
                 <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpee.1145552977093" resolveInfo="GenericNewExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tpdg.PasteWrappers" typeId="tpdg.1221135252814" id="4615018937607083682" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
+    <property name="name" nameId="tpck.1169194664001" value="blExpression" />
+    <node role="wrapper" roleId="tpdg.1221135321084" type="tpdg.PasteWrapper" typeId="tpdg.1221135315536" id="4615018937607083683" nodeInfo="ng">
+      <link role="sourceConcept" roleId="tpdg.1221135563864" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <link role="targetConcept" roleId="tpdg.1221137152191" targetNodeId="eynw.6854397602732214175" resolveInfo="Command" />
+      <node role="wrapperFunction" roleId="tpdg.1221137217490" type="tpdg.QueryFunction_PasteWrapper" typeId="tpdg.1221137293320" id="4615018937607083684" nodeInfo="nn">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4615018937607083685" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4615018937607084454" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="4615018937607084452" nodeInfo="nn">
+              <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="4615018937607084632" nodeInfo="nn">
+                <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="3xdn.7656298970878093785" resolveInfo="BLExpression" />
+                <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitLink" typeId="tp3r.5455284157994012186" id="4615018937607084877" nodeInfo="ng">
+                  <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="3xdn.7656298970878093890" />
+                  <node role="expression" roleId="tp3r.5455284157993911094" type="tp3r.NodeBuilderExpression" typeId="tp3r.8182547171709752110" id="4615018937607085086" nodeInfo="nn">
+                    <node role="expression" roleId="tp3r.8182547171709752112" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="4615018937607085303" nodeInfo="nn" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="wrapper" roleId="tpdg.1221135321084" type="tpdg.PasteWrapper" typeId="tpdg.1221135315536" id="6081287228602305633" nodeInfo="ng">
+      <link role="sourceConcept" roleId="tpdg.1221135563864" targetNodeId="3xdn.7656298970878093785" resolveInfo="BLExpression" />
+      <link role="targetConcept" roleId="tpdg.1221137152191" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <node role="wrapperFunction" roleId="tpdg.1221137217490" type="tpdg.QueryFunction_PasteWrapper" typeId="tpdg.1221137293320" id="6081287228602305837" nodeInfo="nn">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6081287228602317649" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6081287228602343236" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6081287228602343585" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="6081287228602343235" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6081287228602350169" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.7656298970878093890" />
               </node>
             </node>
           </node>

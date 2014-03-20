@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -31,39 +31,15 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class GenerationTaskPool implements IGenerationTaskPool {
 
-  private static class ModelReadThreadFactory implements ThreadFactory {
-    final ThreadGroup group;
-    final AtomicInteger threadNumber = new AtomicInteger(1);
-    final String namePrefix;
-
-    ModelReadThreadFactory() {
-      group = Thread.currentThread().getThreadGroup();
-      namePrefix = "generation-thread-";
-    }
-
-    @Override
-    public Thread newThread(final Runnable original) {
-      Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
-      if (t.isDaemon())
-        t.setDaemon(false);
-      if (t.getPriority() != Thread.NORM_PRIORITY)
-        t.setPriority(Thread.NORM_PRIORITY);
-      return t;
-    }
-  }
-
-  final static AtomicLong seq = new AtomicLong();
-
-  private class GenerationTaskAdapter implements Runnable/*, Comparable<GenerationTaskAdapter>*/ {
-    private GenerationTask myTask;
-//    final long seqNum;
+  private class GenerationTaskAdapter implements Runnable {
+    private final GenerationTask myTask;
 
     private GenerationTaskAdapter(GenerationTask task) {
       myTask = task;
-//      seqNum = seq.getAndIncrement();
     }
 
-    private void runInternal() {
+    @Override
+    public void run() {
       try {
         TypeChecker.getInstance().generationWorkerStarted();
         myTask.run();
@@ -77,34 +53,12 @@ public class GenerationTaskPool implements IGenerationTaskPool {
         TypeChecker.getInstance().generationWorkerFinished();
       }
     }
-
-    @Override
-    public void run() {
-      if (myTask.requiresReadAccess()) {
-        boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
-        try {
-          runInternal();
-        }
-        finally {
-          ModelAccess.instance().setReadEnabledFlag(oldFlag);
-        }
-      } else {
-        runInternal();
-      }
-    }
-
-//    @Override
-//    public int compareTo(GenerationTaskAdapter oth) {
-//      return (seqNum < oth.seqNum ? -1 : 1);
-//    }
   }
 
-  private final ProgressMonitor cancellationMonitor;
   private volatile boolean isCancelled = false;
 
-  public GenerationTaskPool(ProgressMonitor cancellationMonitor, int numberOfThreads) {
-    this.cancellationMonitor = cancellationMonitor;
-    myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
+  public GenerationTaskPool(int numberOfThreads) {
+    myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new NamedThreadFactory("generation-thread-")) {
       @Override
       protected void afterExecute(Runnable r, Throwable t) {
         long tasksLeft = tasksInQueue.decrementAndGet();
@@ -134,7 +88,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
     Throwable th = null;
     synchronized (objectLock) {
-      while (exceptions.size() == 0 && tasksInQueue.get() != 0 && !cancellationMonitor.isCanceled()) {
+      while (exceptions.size() == 0 && tasksInQueue.get() != 0) {
         try {
           objectLock.wait(1000);
         } catch (InterruptedException e) {
@@ -143,8 +97,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       }
       if (exceptions.size() != 0) {
         th = exceptions.get(0);
-      } else if (cancellationMonitor.isCanceled()) {
-        th = new GenerationCanceledException();
       }
 
       if (th != null) {
@@ -180,11 +132,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       exceptions.add(thr);
       objectLock.notifyAll();
     }
-  }
-
-  @Override
-  public boolean isCancelled() {
-    return isCancelled;
   }
 
   @Override

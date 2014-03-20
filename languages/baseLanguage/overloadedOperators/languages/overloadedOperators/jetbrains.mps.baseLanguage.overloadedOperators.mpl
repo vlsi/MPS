@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.baseLanguage.overloadedOperators#6677452554239623057" uuid="cb490d2e-5c25-4e4e-8701-ba03dee6dbd8">
+    <generator name="" generatorUID="jetbrains.mps.baseLanguage.overloadedOperators#6677452554239623057" uuid="cb490d2e-5c25-4e4e-8701-ba03dee6dbd8" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -32,7 +32,9 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+    <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</dependency>
   </dependencies>
   <usedLanguages>

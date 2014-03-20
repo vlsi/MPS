@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3087arak6w969o3hz482zxztgxf450p">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-6c4c6dtc576n22hve8fux84enpy6pai">
+<dependencies version="2" modelHash="k1a9j0p28ybdjllhyc6s74a97omsn9">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <common hash="-6c4c6dtc576n22hve8fux84enpy6pai" dependsOnNodes="true">
     <dep root="2353136177973871304" />
     <dep root="2353136177973886045" />
     <dep root="2353136177974080669" />
     <dep root="2353136177974088982" />
+    <dep root="320213057867540364" />
     <dep root="5288989961863963745" />
     <dep root="725186580883451585" />
     <dep root="725186580883451800" />
     <dep root="725186580883451809" />
     <dep root="725186580883451828" />
     <dep root="725186580883451839" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="725186580883451585" name="Diagram" hash="7axddohlt6cuq0vznkqa22998nusvds" />
-  <source id="725186580883451800" name="Block" hash="-9im4lzx8fvj5xqnc42q0qdlpamh1tsm" />
-  <source id="725186580883451809" name="Connector" hash="-4bf84yr6guzlnhpallyhc8suh53d6kw" />
+  <source id="725186580883451800" name="Block" hash="esmawurhqxgvs12nh270c7c5k038j0a" />
+  <source id="725186580883451809" name="Connector" hash="-cjgeq9sx0uvb28jw40yzl5pka9xmcx0" />
   <source id="725186580883451828" name="InputPort" hash="1blk4chty3vzde1b5sf7541c8m2j3su" />
   <source id="725186580883451839" name="OutputPort" hash="-2enr97pvyf9ic4n09f3qq5394q7u6q3" />
-  <source id="2353136177973871304" name="MetaBlock" hash="nnmi68lw0ugrvqiawsl9ucgrt0u6q2" />
+  <source id="2353136177973871304" name="MetaBlock" hash="8djy4fa89ll0pbeu3z1kw4xz0mfkstj" />
   <source id="2353136177973886045" name="MetaPort" hash="90qfldjsj02nwyy2czaw1mv2i199nom" />
-  <source id="2353136177974080669" name="BlockInstance" hash="2gkm78dfk7gpmzservrd57kb8fcm6ip" />
-  <source id="2353136177974088982" name="ConnectorInstance" hash="dzrl36sebwdgxryagqs357lqehwmkz6" />
+  <source id="2353136177974080669" name="BlockInstance" hash="-3tuy9gbggz1lu5fussua0n8nj5ss2pv" />
+  <source id="2353136177974088982" name="ConnectorInstance" hash="aghccuy624e8un3h2lr4dd7o3wnlnbm" />
   <source id="5288989961863963745" name="ConnectorEndInstance" hash="-e4kxcb16u3q3e9np92d8y8opu7dc4g6" />
+  <source id="320213057867540364" name="BlockExt" hash="9gxg5a8fk3rme0nlz7kw8f8ixyhq4el" />
 </dependencies>
 

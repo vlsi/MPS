@@ -23,7 +23,7 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyOperation(style, editorCell);
+    Collections_Style_StyleSheet.apply_Operation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NoArgumentsSequenceOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_6d3m25_a0a()}));

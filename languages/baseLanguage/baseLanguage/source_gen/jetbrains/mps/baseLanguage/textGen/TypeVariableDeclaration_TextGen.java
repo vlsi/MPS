@@ -6,17 +6,16 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class TypeVariableDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append(SPropertyOperations.getString(node, "name"));
     if ((SLinkOperations.getTarget(node, "bound", true) != null)) {
       this.append(" extends ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "bound", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "bound", true));
       for (SNode clsType : SLinkOperations.getTargets(node, "auxBounds", true)) {
         this.append(" & ");
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), clsType, this.getSNode());
+        appendNode(clsType);
       }
     }
   }

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -54,29 +53,28 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a;
-        nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_6v7ed2_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6v7ed2_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v7ed2_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a, childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_, 2))) {
+          String childRole_6v7ed2_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_6v7ed2_a0a, childRole_6v7ed2_, 2))) {
             return false;
           }
           {
-            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0 = IterableUtil.get(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_), 0);
-            this.patternVar_KEY = childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0;
+            SNode childVar_6v7ed2_a0a0 = IterableUtil.get(nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_), 0);
+            this.patternVar_KEY = childVar_6v7ed2_a0a0;
           }
           {
-            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0 = IterableUtil.get(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_), 1);
-            this.patternVar_VALUE = childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0;
+            SNode childVar_6v7ed2_b0a0 = IterableUtil.get(nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_), 1);
+            this.patternVar_VALUE = childVar_6v7ed2_b0a0;
           }
         }
       }
@@ -113,7 +111,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingType", null, null, false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("keyType", HUtil.copyIfNecessary(quotedNode_4));
@@ -125,5 +123,5 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     return quotedNode_3;
   }
 
-  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
+  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
 }

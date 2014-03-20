@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -74,25 +73,24 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a;
-        nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_gn1qzs_a0a2a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_gn1qzs_a0a2a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0b;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0b0a0a0a0a0c0b;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_gn1qzs_a0a2a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_check_ForeachWithErasure_gn1qzs_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a, childRole_check_ForeachWithErasure_gn1qzs_, 1))) {
+          String childRole_gn1qzs_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_gn1qzs_a0a2a, childRole_gn1qzs_, 1))) {
             return false;
           }
           {
-            SNode childVar_check_ForeachWithErasure_gn1qzs_a0a0c0 = IterableUtil.get(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_), 0);
-            this.patternVar_p = childVar_check_ForeachWithErasure_gn1qzs_a0a0c0;
+            SNode childVar_gn1qzs_a0a0c0 = IterableUtil.get(nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_gn1qzs_), 0);
+            this.patternVar_p = childVar_gn1qzs_a0a0c0;
           }
         }
       }
@@ -123,10 +121,10 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
   private static SNode _quotation_createNode_aftnu9_a0a2a0c0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0b = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_aftnu9_a0a0a0a0b0b0a0a0a0a0c0b = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

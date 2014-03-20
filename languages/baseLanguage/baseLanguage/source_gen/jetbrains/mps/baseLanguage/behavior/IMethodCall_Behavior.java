@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class IMethodCall_Behavior {
@@ -78,10 +77,11 @@ public class IMethodCall_Behavior {
       return _quotation_createNode_fq0410_a0a1a2();
     }
     SNode concreteType;
-    if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier) {
-      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
+    int index = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false));
+    if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier && ListSequence.fromList(parameters).count() > index) {
+      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(index));
     } else {
-      concreteType = _quotation_createNode_fq0410_a0a0a3a2();
+      concreteType = _quotation_createNode_fq0410_a0a0a4a2();
     }
     return concreteType;
   }
@@ -128,28 +128,13 @@ public class IMethodCall_Behavior {
   }
 
   @Deprecated
-  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), thisNode, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
-  }
-
-  @Deprecated
-  public static boolean call_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{});
-  }
-
-  @Deprecated
   public static SNode callSuper_getInstanceType_8008512149545154471(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), thisNode, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
   }
 
   @Deprecated
@@ -158,13 +143,28 @@ public class IMethodCall_Behavior {
   }
 
   @Deprecated
+  public static Iterable<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+  }
+
+  @Deprecated
   public static Iterable<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, new Object[]{methodName});
   }
 
   @Deprecated
+  public static boolean call_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isInTypeInferenceContext_4837286298388660615(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_isInTypeInferenceContext_4837286298388660615", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{});
   }
 
   @Deprecated
@@ -183,23 +183,22 @@ public class IMethodCall_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1;
-        nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_fq0410_a0a5a2a1a1 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_fq0410_a0a5a2a1a1.getConcept().getQualifiedName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_fq0410_a0a5a2a1a1.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_IMethodCall_Behavior_fq0410_ = "parameter";
+          String childRole_fq0410_ = "parameter";
           this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignore = null;
-          for (SNode childVar : nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getChildren(childRole_IMethodCall_Behavior_fq0410_)) {
+          for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
             patternVar_ignore = childVar;
             ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }
@@ -236,15 +235,15 @@ public class IMethodCall_Behavior {
   private static SNode _quotation_createNode_fq0410_a0a1a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_fq0410_a0a0a3a2() {
+  private static SNode _quotation_createNode_fq0410_a0a0a4a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }

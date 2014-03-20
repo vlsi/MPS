@@ -42,7 +42,11 @@ public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest4 
       ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903093"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       ref.setUsages(ussages);
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903080"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903111"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903080"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903111"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class ExecuteCommandPart_Behavior {
@@ -71,23 +70,23 @@ public class ExecuteCommandPart_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getBody_558680274511380765(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getExpectedRetType_558680274511380775(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedRetType_1239354342632", new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> callSuper_getThrowableTypes_558680274511380755(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static SNode call_getBody_558680274511380765(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getBody_558680274511380765(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getBody_1239354440022", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getExpectedRetType_558680274511380775(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedRetType_1239354342632", new Object[]{});
   }
 
   @Deprecated
@@ -98,7 +97,7 @@ public class ExecuteCommandPart_Behavior {
   private static SNode _quotation_createNode_qal9w4_a0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)"), facade.createNodeId("~ExecutionException")));
     return quotedNode_1;
   }
@@ -108,10 +107,10 @@ public class ExecuteCommandPart_Behavior {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, null, false);
     quotedNode_1.addChild("argument", quotedNode_2);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)"), facade.createNodeId("~ProcessHandler")));
     quotedNode_1.addChild("argument", quotedNode_3);
     return quotedNode_1;

@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_InstanceOf_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -24,6 +26,18 @@ public class check_InstanceOf_NonTypesystemRule extends AbstractNonTypesystemRul
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, classifierType, "virtual_isReifiable_2817265908000464118", new Object[]{}))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifierType, "parameterized type in instanceof is not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8918460683225653154", null, errorTarget);
+      }
+    }
+    SNode foundRoot = PrecedenceUtil.findDesiredInstanceOfExpressionRoot(instanceOfExpression);
+    if ((foundRoot != null)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instanceOfExpression, "Invalid operator precedences for the instanceOf operator", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2643065713351096827", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.FixInstanceOfExpressionPrecedences_QuickFix", true);
+          intentionProvider.putArgument("expressionRoot", foundRoot);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
   }

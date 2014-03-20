@@ -10,16 +10,15 @@ import junit.framework.TestCase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import java.util.List;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -57,9 +56,17 @@ public class Patternv1_Test extends BaseTransformationTest4 {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("patternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a2c())));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a2c());
+          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        }
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a2c())));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a2c());
+          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        }
         i++;
       }
       return true;
@@ -77,48 +84,45 @@ public class Patternv1_Test extends BaseTransformationTest4 {
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_v1_1fh_a0;
-          nodeToMatch_v1_1fh_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_v1_1fh_a0.getConcept().getQualifiedName()))) {
+          SNode nodeToMatch_1fh_a0 = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1fh_a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
-            String childRole_v1_1fh_ = "operand";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_v1_1fh_a0, childRole_v1_1fh_, 1))) {
+            String childRole_1fh_ = "operand";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_1fh_a0, childRole_1fh_, 1))) {
               return false;
             }
             {
-              SNode childVar_v1_1fh_a0a = IterableUtil.get(nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh_), 0);
+              SNode childVar_1fh_a0a = IterableUtil.get(nodeToMatch_1fh_a0.getChildren(childRole_1fh_), 0);
               {
-                SNode nodeToMatch_v1_1fh_a0a;
-                nodeToMatch_v1_1fh_a0a = childVar_v1_1fh_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v1_1fh_a0a.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_1fh_a0a = childVar_1fh_a0a;
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1fh_a0a.getConcept().getQualifiedName()))) {
                   return false;
                 }
-                patternVar_className = nodeToMatch_v1_1fh_a0a.getReferenceTarget("classifier");
-                patternVar_field = nodeToMatch_v1_1fh_a0a.getReferenceTarget("variableDeclaration");
+                patternVar_className = nodeToMatch_1fh_a0a.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_1fh_a0a.getReferenceTarget("variableDeclaration");
               }
             }
           }
           {
-            String childRole_v1_1fh__0 = "operation";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_v1_1fh_a0, childRole_v1_1fh__0, 1))) {
+            String childRole_1fh__0 = "operation";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_1fh_a0, childRole_1fh__0, 1))) {
               return false;
             }
             {
-              SNode childVar_v1_1fh_a0a_0 = IterableUtil.get(nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh__0), 0);
+              SNode childVar_1fh_a0a_0 = IterableUtil.get(nodeToMatch_1fh_a0.getChildren(childRole_1fh__0), 0);
               {
-                SNode nodeToMatch_v1_1fh_a0a_0;
-                nodeToMatch_v1_1fh_a0a_0 = childVar_v1_1fh_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v1_1fh_a0a_0.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_1fh_a0a_0 = childVar_1fh_a0a_0;
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_1fh_a0a_0.getConcept().getQualifiedName()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_v1_1fh_a0a_0.getReferenceTarget("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_1fh_a0a_0.getReferenceTarget("baseMethodDeclaration");
                 {
-                  String childRole_v1_1fh__1 = "actualArgument";
+                  String childRole_1fh__1 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
-                  for (SNode childVar : nodeToMatch_v1_1fh_a0a_0.getChildren(childRole_v1_1fh__1)) {
+                  for (SNode childVar : nodeToMatch_1fh_a0a_0.getChildren(childRole_1fh__1)) {
                     patternVar_ignore = childVar;
                     ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }
@@ -174,17 +178,17 @@ public class Patternv1_Test extends BaseTransformationTest4 {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
       quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~System")));
       quotedNode_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~System.out")));
       quotedNode_1.addChild("operand", quotedNode_2);
-      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, false);
       quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object.wait(long,int):void")));
-      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
       SNodeAccessUtil.setProperty(quotedNode_4, "value", "10");
       quotedNode_3.addChild("actualArgument", quotedNode_4);
-      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
       SNodeAccessUtil.setProperty(quotedNode_5, "value", "10");
       quotedNode_3.addChild("actualArgument", quotedNode_5);
       quotedNode_1.addChild("operation", quotedNode_3);
@@ -194,7 +198,7 @@ public class Patternv1_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_o71ow3_a0a2a6a2c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
       SNodeAccessUtil.setProperty(quotedNode_1, "value", "10");
       return quotedNode_1;
     }
@@ -202,7 +206,7 @@ public class Patternv1_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_o71ow3_a0a3a6a2c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
       SNodeAccessUtil.setProperty(quotedNode_1, "value", "10");
       return quotedNode_1;
     }

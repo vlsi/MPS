@@ -13,6 +13,7 @@
 /IdeaPlugin/mps-core/lib
 /IdeaPlugin/mps-core/languages
 /IdeaPlugin/mps-java/lib
+/IdeaPlugin/mps-testing
 /IdeaPlugin/tests/blProject/.idea/workspace.xml
 /IdeaPlugin/tests/psiProject/.idea/workspace.xml
 /IdeaPlugin/tests/multiModulesProject/.idea/workspace.xml

@@ -5,9 +5,6 @@ package jetbrains.mps.console.blCommand.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class UsagesExpression_Behavior {
@@ -15,38 +12,10 @@ public class UsagesExpression_Behavior {
   }
 
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return Sequence.fromClosure(new ISequenceClosure<SNode>() {
-      public Iterable<SNode> iterable() {
-        return new Iterable<SNode>() {
-          public Iterator<SNode> iterator() {
-            return new YieldingIterator<SNode>() {
-              private int __CP__ = 0;
+    return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"));
+  }
 
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 2:
-                      this.__CP__ = 1;
-                      this.yield(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"));
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
-      }
-    });
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "usages of node (find usages mechanism)";
   }
 }

@@ -102,7 +102,7 @@ lCompare:
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
 lfind:
     while (MapSequence.fromMap(graph).isNotEmpty()) {
-      for (final int k : SetSequence.fromSet(MapSequence.fromMap(graph).keySet())) {
+      for (final int k : MapSequence.fromMap(graph).keySet()) {
         if (SetSequence.fromSet(MapSequence.fromMap(graph).get(k)).isEmpty()) {
           ListSequence.fromList(result).addElement(ListSequence.fromList(list).getElement(k));
           MapSequence.fromMap(graph).removeKey(k);

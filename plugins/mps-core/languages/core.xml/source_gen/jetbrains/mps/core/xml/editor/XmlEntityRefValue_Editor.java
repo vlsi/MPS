@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 
@@ -43,7 +42,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
     editorCell.setCellId("Constant_poez2y_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttrEntityRefValue(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
@@ -64,7 +63,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_entityName");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttrEntityRefValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRefValue_Editor.XmlEntityRefValue_entityName_cellMenu_poez2y_a0b0()}));
@@ -82,7 +81,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     public XmlEntityRefValue_entityName_cellMenu_poez2y_a0b0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Sequence.fromIterable(Sequence.fromArray(XmlNameUtil.getDefaultEntities())).toListSequence();
     }
   }
@@ -91,7 +90,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_poez2y_c0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttrEntityRefValue(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);

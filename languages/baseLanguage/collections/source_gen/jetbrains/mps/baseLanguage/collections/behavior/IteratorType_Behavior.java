@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class IteratorType_Behavior {
@@ -28,13 +27,13 @@ public class IteratorType_Behavior {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "itr");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
             ListSequence.fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }
@@ -53,7 +52,7 @@ public class IteratorType_Behavior {
   private static SNode _quotation_createNode_cgg16c_a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Iterator")));
     return quotedNode_1;
   }

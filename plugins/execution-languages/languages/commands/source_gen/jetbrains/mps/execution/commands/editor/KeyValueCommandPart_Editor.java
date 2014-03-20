@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -37,7 +36,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4797dc_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4797dc_a0(editorContext, node));
-    if (renderingCondition_4797dc_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4797dc_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_4797dc_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_4797dc_c0(editorContext, node));
@@ -50,7 +49,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4797dc_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -68,7 +67,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4797dc_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4797dc_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "dash");
   }
 
@@ -116,7 +115,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4797dc_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

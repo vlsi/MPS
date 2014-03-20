@@ -34,7 +34,7 @@ public class DebuggerType_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_z9qmjc_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -55,7 +55,7 @@ public class DebuggerType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_z9qmjc_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -84,7 +84,7 @@ public class DebuggerType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_z9qmjc_c1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

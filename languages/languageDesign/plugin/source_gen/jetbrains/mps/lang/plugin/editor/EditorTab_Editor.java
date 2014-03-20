@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -44,7 +43,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_gp0hv6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_gp0hv6_b0(editorContext, node));
-    if (renderingCondition_gp0hv6_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gp0hv6_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_gp0hv6_c0(editorContext, node));
     }
     return editorCell;
@@ -57,7 +56,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_gp0hv6_a0a(editorContext, node));
-    if (renderingCondition_gp0hv6_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gp0hv6_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_gp0hv6_b0a(editorContext, node));
     }
     return editorCell;
@@ -111,7 +110,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp0hv6_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gp0hv6_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -195,7 +194,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gp0hv6_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gp0hv6_b1b1a(editorContext, node));
-    if (renderingCondition_gp0hv6_a2b1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gp0hv6_a2b1b0(node, editorContext)) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_gp0hv6_c1b1a(editorContext, node));
     }
     return editorCell;
@@ -243,12 +242,12 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_gp0hv6_c1b1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "shortcutChar"));
   }
 
@@ -483,7 +482,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 

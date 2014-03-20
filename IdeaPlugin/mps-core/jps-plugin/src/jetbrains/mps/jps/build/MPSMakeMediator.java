@@ -183,7 +183,7 @@ public class MPSMakeMediator {
 
     ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(
       myRedirects, !myContext.getCompileContext().isMake(), new Stub(), new IJobMonitor.Stub());
-    IScriptController scriptCtl = makeFacetConfiguration.configureFacets();
+    IScriptController scriptCtl = makeFacetConfiguration.configureFacets(ms);
     boolean success;
 
     try {

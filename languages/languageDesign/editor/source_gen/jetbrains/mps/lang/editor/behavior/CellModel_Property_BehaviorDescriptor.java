@@ -4,8 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellModel_Property_BehaviorDescriptor extends CellModel_WithRole_BehaviorDescriptor {
+public class CellModel_Property_BehaviorDescriptor extends CellModel_WithRole_BehaviorDescriptor implements Synchronizeable_BehaviorDescriptor {
   public CellModel_Property_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
+    return CellModel_Property_Behavior.virtual_canBeSynchronized_4052492221165595783(thisNode);
   }
 
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
@@ -22,6 +26,10 @@ public class CellModel_Property_BehaviorDescriptor extends CellModel_WithRole_Be
 
   public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return CellModel_Property_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
+  }
+
+  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+    return CellModel_Property_Behavior.virtual_shellBeSynchronized_4500758155551546553(thisNode);
   }
 
   @Override

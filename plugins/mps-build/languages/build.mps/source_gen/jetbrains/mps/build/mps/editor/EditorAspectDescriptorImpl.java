@@ -55,58 +55,60 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 19:
         return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
       case 20:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor());
       case 21:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
       case 22:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
       case 23:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
       case 24:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
       case 25:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
       case 26:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
       case 27:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
       case 28:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
       case 29:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
       case 30:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
       case 31:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
       case 32:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
       case 33:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
       case 34:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
       case 35:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
       case 36:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJarRuntime_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
       case 37:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJarRuntime_Editor());
       case 38:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
       case 39:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
       case 40:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
       case 41:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
       case 42:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
       case 43:
-        return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
       case 44:
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
       case 45:
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
       case 46:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
+      case 47:
         return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
       default:
     }
@@ -132,6 +134,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Solution"};
 }

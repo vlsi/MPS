@@ -50,7 +50,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpco" modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="-1" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
@@ -845,8 +845,14 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841903254" nodeInfo="nn">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4xk.~BrowserUtil" resolveInfo="BrowserUtil" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4xk.~BrowserUtil%dlaunchBrowser(java%dlang%dString)%cvoid" resolveInfo="launchBrowser" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5487985028841903255" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="http://confluence.jetbrains.com/display/MPSD2/Generator#Generator-aboutgenerator" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2091704536956086821" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2091704536956086891" nodeInfo="nn">
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="cu2c.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="cu2c.~LanguageAspect%dCONFLUENCE_BASE" resolveInfo="CONFLUENCE_BASE" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5487985028841903255" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1070475926801" value="Generator#Generator-aboutgenerator" />
+                    </node>
                   </node>
                 </node>
               </node>

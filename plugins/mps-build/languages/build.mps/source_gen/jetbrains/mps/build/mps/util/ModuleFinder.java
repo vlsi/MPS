@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class ModuleFinder {
   public static Iterable<SNode> findModules(Iterable<SNode> modules, final TemplateQueryContext genContext, final SNode node) {
@@ -34,7 +33,6 @@ public class ModuleFinder {
         if (layoutNode == null && SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
           layoutNode = helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true));
         }
-
         if (layoutNode == null) {
           genContext.showErrorMessage(node, "mps module " + SPropertyOperations.getString(module, "name") + " was not found in the layout of `" + SPropertyOperations.getString(project, "name") + "'");
           return null;
@@ -63,8 +61,8 @@ public class ModuleFinder {
 
   private static SNode createGeneratorInternal_String_8pqt49_a0a0a0e0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
-    n1.setProperty("path", (String) p0);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
+    n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 }

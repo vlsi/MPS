@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -50,7 +49,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_6wnsz8_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6wnsz8_b0(editorContext, node));
-    if (renderingCondition_6wnsz8_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6wnsz8_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_6wnsz8_c0(editorContext, node));
     }
     return editorCell;
@@ -63,7 +62,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_6wnsz8_a0a(editorContext, node));
-    if (renderingCondition_6wnsz8_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6wnsz8_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_6wnsz8_b0a(editorContext, node));
     }
     return editorCell;
@@ -95,7 +94,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -120,7 +119,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6wnsz8_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6wnsz8_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -564,7 +563,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6wnsz8_b9b1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -617,7 +616,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6wnsz8_f9b1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -832,7 +831,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6wnsz8_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6wnsz8_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

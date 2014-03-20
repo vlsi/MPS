@@ -97,26 +97,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention" file="AddMainMethod_Intention.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.AddModifiers_Intention" file="AddModifiers_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -146,7 +126,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -171,7 +150,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -452,7 +430,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -638,7 +615,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddElsifClause_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddFieldForUnUsedParameter_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddModifiers_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddOverrideAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddRuntimeExceptionToMethodSignature_Intention" />
@@ -684,7 +660,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.MakeStaticFieldVolatile_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.MakeSynchronized_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.MergeStringConcatenation_Intention" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.MigrateString_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.MoveInitializerToConstructor_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.OrToAndAndBack_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.RemoveArrayType_Intention" />
@@ -718,6 +693,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithWhile_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SwapTernaryBranches_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SwitchToCustomConstructorPropertyImplementation_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SwitchToCustomPropertyImplementation_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SwitchToDefaultPropertyImplementation_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" />
@@ -1034,23 +1012,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.intentions.MigrateString_Intention" file="MigrateString_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.MoveInitializerToConstructor_Intention" file="MoveInitializerToConstructor_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -1148,7 +1109,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -1207,7 +1167,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -1251,7 +1210,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
@@ -1621,7 +1579,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
@@ -1650,6 +1607,54 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.SwapTernaryBranches_Intention" file="SwapTernaryBranches_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.intentions.SwitchToCustomConstructorPropertyImplementation_Intention" file="SwitchToCustomConstructorPropertyImplementation_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.intentions.SwitchToCustomPropertyImplementation_Intention" file="SwitchToCustomPropertyImplementation_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.intentions.SwitchToDefaultPropertyImplementation_Intention" file="SwitchToDefaultPropertyImplementation_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />

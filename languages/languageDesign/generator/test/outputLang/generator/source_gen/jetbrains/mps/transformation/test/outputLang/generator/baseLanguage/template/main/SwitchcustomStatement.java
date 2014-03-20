@@ -12,10 +12,10 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.ReductionRuleBase;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import jetbrains.mps.generator.impl.AbandonRuleInputException;
-import java.util.Collections;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -46,105 +46,61 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 
-  public class ReductionRule0 implements TemplateReductionRule {
+  public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088657"), "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", false);
     }
 
-    public boolean applyToInheritors() {
-      return false;
+    @Override
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_8371596541809088659(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
-    public String getApplicableConcept() {
-      return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
-    }
-
-    public SNodeReference getRuleNode() {
-      return reductionRule_68cped_a0a3h;
-    }
-
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809088659(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3h, environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(reductionRule_68cped_a0a3h);
-      try {
-        return apply(context, environment.getEnvironment(context.getInput(), this));
-      } catch (AbandonRuleInputException e) {
-        return Collections.emptyList();
-      } finally {
-        environment.getTracer().closeRule(reductionRule_68cped_a0a3h);
-      }
-
-    }
-
-    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a5h);
+    @Override
+    protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a2h);
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a5h);
+        environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a2h);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090602");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-        environment.getTracer().closeTemplateNode(templateNode_68cped_a0a0a2a5h);
+        environment.getTracer().closeTemplateNode(templateNode_68cped_a0a0a2a2h);
       }
       return TemplateUtil.singletonList(tnode1);
     }
   }
 
-  public class ReductionRule1 implements TemplateReductionRule {
+  public final class ReductionRule1 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule1() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090603"), "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", false);
     }
 
-    public boolean applyToInheritors() {
-      return false;
+    @Override
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_8371596541809090605(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
-    public String getApplicableConcept() {
-      return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
-    }
-
-    public SNodeReference getRuleNode() {
-      return reductionRule_68cped_a0a3i;
-    }
-
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809090605(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3i, environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(reductionRule_68cped_a0a3i);
-      try {
-        return apply(context, environment.getEnvironment(context.getInput(), this));
-      } catch (AbandonRuleInputException e) {
-        return Collections.emptyList();
-      } finally {
-        environment.getTracer().closeRule(reductionRule_68cped_a0a3i);
-      }
-
-    }
-
-    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a5i);
+    @Override
+    protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a2i);
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       try {
-        environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a5i);
+        environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a2i);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090625");
         SNodeAccessUtil.setProperty(tnode1, "value", "1");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-        environment.getTracer().closeTemplateNode(templateNode_68cped_a0a0a2a5i);
+        environment.getTracer().closeTemplateNode(templateNode_68cped_a0a0a2a2i);
       }
       return TemplateUtil.singletonList(tnode1);
     }
   }
 
-  private static SNodePointer reductionRule_68cped_a0a3h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088657");
-  private static SNodePointer conseq_68cped_a0a0a5h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600");
-  private static SNodePointer templateNode_68cped_a0a0a2a5h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090602");
-  private static SNodePointer reductionRule_68cped_a0a3i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090603");
-  private static SNodePointer conseq_68cped_a0a0a5i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622");
-  private static SNodePointer templateNode_68cped_a0a0a2a5i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090625");
+  private static SNodePointer conseq_68cped_a0a0a2h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600");
+  private static SNodePointer templateNode_68cped_a0a0a2a2h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090602");
+  private static SNodePointer conseq_68cped_a0a0a2i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622");
+  private static SNodePointer templateNode_68cped_a0a0a2a2i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090625");
 }

@@ -22,9 +22,9 @@ import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavi
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -37,7 +37,7 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_ook5es_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ook5es_b0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_ook5es_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ook5es_c0(editorContext, node));
     return editorCell;
   }
 
@@ -72,15 +72,15 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     public AbstractFigureParameter_generic_cellMenu_ook5es_a0a0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(node), "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "name", parameterObject);
     }
 
@@ -101,8 +101,23 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_ook5es_c0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameterPresentation");
+  private EditorCell createRefNode_ook5es_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("parameter");
+    provider.setNoTargetText("<no parameter>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parameter");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 }

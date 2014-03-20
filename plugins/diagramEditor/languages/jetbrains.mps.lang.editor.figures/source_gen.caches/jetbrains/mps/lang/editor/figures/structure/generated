@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1pf919n50pbr1hc82xj24qmrayxrgt8">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-zr89n3xw4t70hmji53xxjw6o26e1gr">
+<dependencies version="2" modelHash="bos6slooq8j7y9jfh6ootr4jj0rvquh">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <common hash="-zr89n3xw4t70hmji53xxjw6o26e1gr" dependsOnNodes="true">
+    <dep root="2084788800270473556" />
+    <dep root="2084788800270473590" />
     <dep root="2178507174411801538" />
     <dep root="2178507174411801606" />
     <dep root="5422656561926747556" />
     <dep root="5422656561929884641" />
     <dep root="785823818609017605" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
@@ -24,6 +22,8 @@
   <source id="2178507174411801538" name="ExternalViewFigure" hash="-5a0el6sn1o7cnvl3swbc2ilk897xhdo" />
   <source id="2178507174411801606" name="ExternalViewFigureParameter" hash="-6652mlfhv3hkbd6a5ui05tl0norf9c0" />
   <source id="5422656561926747556" name="FigureAttribute" hash="ar224lbpbvumxsvbq64l5fwwyssc2sq" />
-  <source id="5422656561929884641" name="FigureParameterAttribute" hash="-71mvup063hv6wys89wfvgjhogcp5yv8" />
+  <source id="5422656561929884641" name="FigureParameterAttribute" hash="3hg2z5olzi0vvfeubigci3wrbuqisu1" />
+  <source id="2084788800270473556" name="FigureParameterAttributeMethod" hash="320dczpuu3mx5im42z29a4ra9myz9lz" />
+  <source id="2084788800270473590" name="FigureParameterAttributeField" hash="-79nfe3ffamki3pa0n6otzq1ift5eb1m" />
 </dependencies>
 

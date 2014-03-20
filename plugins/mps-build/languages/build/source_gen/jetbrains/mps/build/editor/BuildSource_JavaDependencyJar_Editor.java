@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -32,7 +31,7 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_tvqbfe_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_tvqbfe_a0(editorContext, node));
-    if (renderingCondition_tvqbfe_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tvqbfe_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_tvqbfe_b0(editorContext, node));
     }
     return editorCell;
@@ -62,14 +61,14 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_tvqbfe_b0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_reexport_inJavaDependencyJar.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_tvqbfe_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tvqbfe_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "reexport");
   }
 
@@ -86,7 +85,7 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
     editorCell.setCellId("Constant_tvqbfe_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

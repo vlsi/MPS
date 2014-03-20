@@ -295,7 +295,7 @@ public class MergeSession {
     // clear UnregisteredNodes pool to avoid a lot of ERRORs in log: 
     UnregisteredNodes.instance().clear();
 
-    CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
+    CopyUtil.copyModelProperties(((SModelBase) stateCopy.myResultModel).getSModel(), ((SModelBase) myResultModel).getSModel());
     ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SModelOperations.addRootNode(myResultModel, r);

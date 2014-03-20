@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -45,13 +44,13 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ths2vx_a");
     editorCell.setBig(true);
-    if (renderingCondition_ths2vx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ths2vx_a0(editorContext, node));
     }
-    if (renderingCondition_ths2vx_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ths2vx_b0(editorContext, node));
     }
-    if (renderingCondition_ths2vx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ths2vx_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ths2vx_d0(editorContext, node));
@@ -64,7 +63,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ths2vx_k0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ths2vx_l0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ths2vx_m0(editorContext, node));
-    if (renderingCondition_ths2vx_a31a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ths2vx_a31a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ths2vx_n0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ths2vx_o0(editorContext, node));
@@ -79,13 +78,13 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_ths2vx_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "root");
   }
 
@@ -93,13 +92,13 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "leaf");
     editorCell.setCellId("Constant_ths2vx_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "leaf");
   }
 
@@ -107,13 +106,13 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_ths2vx_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
   }
 
@@ -121,7 +120,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "builder");
     editorCell.setCellId("Constant_ths2vx_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -149,7 +148,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ths2vx_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -232,7 +231,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ths2vx_h0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -242,7 +241,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_ths2vx_i0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -307,7 +306,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ths2vx_k0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -318,7 +317,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type:");
     editorCell.setCellId("Constant_ths2vx_l0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -361,7 +360,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ths2vx_a31a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ths2vx_a31a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "isAbstract")) || (SLinkOperations.getTarget(node, "creator", true) != null);
   }
 
@@ -369,7 +368,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create:");
     editorCell.setCellId("Constant_ths2vx_a31a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -534,7 +533,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ths2vx_r0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

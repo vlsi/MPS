@@ -330,9 +330,6 @@
       <node role="type" roleId="tpf8.650531548511609557" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2507865635201740151" nodeInfo="in" />
     </node>
   </root>
-  <root type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="5023471013036366740" nodeInfo="ng">
-    <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
-  </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8417539822878724212" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="weave_InputRoot" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />

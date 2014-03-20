@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -52,11 +51,11 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_bqk3nx_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bqk3nx_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bqk3nx_d0(editorContext, node));
-    if (renderingCondition_bqk3nx_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bqk3nx_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bqk3nx_e0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_bqk3nx_f0(editorContext, node));
-    if (renderingCondition_bqk3nx_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bqk3nx_a6a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_bqk3nx_g0(editorContext, node));
     }
     return editorCell;
@@ -66,7 +65,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_bqk3nx_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -150,7 +149,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_bqk3nx_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -190,7 +189,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bqk3nx_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bqk3nx_a4a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
@@ -198,7 +197,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " throws");
     editorCell.setCellId("Constant_bqk3nx_a4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -266,7 +265,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_bqk3nx_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -285,7 +284,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bqk3nx_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bqk3nx_a6a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "runtimeIface", false) != null);
   }
 

@@ -32,23 +32,13 @@ public class ITestCase_Behavior {
   }
 
   @Deprecated
-  public static String call_getClassName_1216136193905(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClassName_1216136193905", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getSimpleClassName_1229278847513(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getTestMethods_2148145109766218395(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTestMethods_2148145109766218395", new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> callSuper_getTestSet_1216130724401(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestSet_1216130724401", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static String call_getClassName_1216136193905(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClassName_1216136193905", new Object[]{});
   }
 
   @Deprecated
@@ -57,8 +47,18 @@ public class ITestCase_Behavior {
   }
 
   @Deprecated
+  public static String call_getSimpleClassName_1229278847513(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getSimpleClassName_1229278847513(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> call_getTestMethods_2148145109766218395(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTestMethods_2148145109766218395", new Object[]{});
   }
 
   @Deprecated

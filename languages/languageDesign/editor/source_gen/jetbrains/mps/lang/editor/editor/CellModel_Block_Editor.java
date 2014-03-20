@@ -33,7 +33,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_paqmtn_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_paqmtn_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_paqmtn_b0(editorContext, node));

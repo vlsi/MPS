@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -39,7 +38,7 @@ public class SConceptAnnotationArgument_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hdpymd_a");
     editorCell.setBig(true);
-    if (renderingCondition_hdpymd_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_hdpymd_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_hdpymd_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_hdpymd_b0(editorContext, node));
@@ -57,7 +56,7 @@ public class SConceptAnnotationArgument_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_hdpymd_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_hdpymd_a0a(SNode node, EditorContext editorContext) {
     return neq_hdpymd_a0a0a3(SPropertyOperations.getString(node, "name"), "value") || SNodeOperations.getIndexInParent(node) > 0;
   }
 
@@ -83,7 +82,7 @@ public class SConceptAnnotationArgument_Editor extends DefaultNodeEditor {
     public SConceptAnnotationArgument_name_cellMenu_hdpymd_a0a0a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       SNode instance = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.core.metadata.structure.SConceptAnnotationInstance");
       if ((instance != null)) {
         SNode type = SLinkOperations.getTarget(instance, "type", false);
@@ -107,7 +106,7 @@ public class SConceptAnnotationArgument_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_hdpymd_b0a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

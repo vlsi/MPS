@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,7 +41,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gp4zyx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_gp4zyx_b0(editorContext, node));
-    if (renderingCondition_gp4zyx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gp4zyx_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_gp4zyx_c0(editorContext, node));
     }
     return editorCell;
@@ -51,7 +50,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_gp4zyx_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
+    buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_ModuleSources_Editor.ReplaceWith_BuildLayout_Node_cellMenu_gp4zyx_a0a0()}));
@@ -126,14 +125,14 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(models only)");
     editorCell.setCellId("Constant_gp4zyx_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_ModuleSources_modelsOnly.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp4zyx_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gp4zyx_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "modelsOnly");
   }
 
@@ -142,7 +141,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_gp4zyx_a_0");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_gp4zyx_a0(editorContext, node));
-    if (renderingCondition_gp4zyx_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gp4zyx_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gp4zyx_b0(editorContext, node));
     }
     return editorCell;
@@ -163,7 +162,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_gp4zyx_a0a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -195,7 +194,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp4zyx_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gp4zyx_a1a(SNode node, EditorContext editorContext) {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
 
@@ -203,7 +202,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models only:");
     editorCell.setCellId("Constant_gp4zyx_a1a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

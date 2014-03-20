@@ -36,7 +36,7 @@ public class BuildInputSingleFolder_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_cend0t_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputSingleFolder_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_cend0t_a0a0()}));
     return editorCell;

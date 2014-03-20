@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.dependency;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
@@ -83,7 +82,7 @@ public class GlobalModuleDependenciesManager {
       collect(neighbour, result, depType);
     }
 
-    return (Collection) result;
+    return result;
   }
 
   private Set<SModule> collectNeighbours(Deptype depType) {

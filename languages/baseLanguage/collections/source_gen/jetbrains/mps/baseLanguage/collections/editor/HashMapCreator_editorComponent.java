@@ -26,7 +26,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -47,13 +46,13 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s4nv53_a");
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_s4nv53_a0(editorContext, node));
-    if (renderingCondition_s4nv53_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_s4nv53_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_s4nv53_b0(editorContext, node));
     }
-    if (renderingCondition_s4nv53_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_s4nv53_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_s4nv53_c0(editorContext, node));
     }
-    if (renderingCondition_s4nv53_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_s4nv53_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_s4nv53_d0(editorContext, node));
     }
     return editorCell;
@@ -76,7 +75,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HashMapCreator_editorComponent.ReplaceWith_HashMapCreator_cellMenu_s4nv53_a0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_s4nv53_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
@@ -106,7 +105,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s4nv53_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_s4nv53_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "keyType", true) != null) || (SLinkOperations.getTarget(node, "valueType", true) != null);
   }
 
@@ -114,7 +113,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_s4nv53_a1a");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    Collections_Style_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -174,7 +173,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_s4nv53_e1a");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyRightAngleBracket(style, editorCell);
+    Collections_Style_StyleSheet.apply_RightAngleBracket(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
@@ -202,7 +201,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s4nv53_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_s4nv53_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initializer", true) != null);
   }
 
@@ -218,7 +217,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s4nv53_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_s4nv53_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 
@@ -226,7 +225,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_s4nv53_a3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -256,7 +255,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_s4nv53_c3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

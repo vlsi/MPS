@@ -206,7 +206,6 @@
     <scopeInfo nodeId="5294483648489409923" fileName="Output.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
     <unitInfo nodeId="5294483648489409912" fileName="Output.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.testbench.util.Output" />
   </root>
-  <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489409936" />
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410428">
     <nodeInfo nodeId="5294483648489410433" fileName="CachingAppender.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="events" />
     <nodeInfo nodeId="5294483648489410437" fileName="CachingAppender.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messages" />

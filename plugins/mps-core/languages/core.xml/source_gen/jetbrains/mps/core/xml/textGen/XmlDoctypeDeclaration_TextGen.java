@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
 
 public class XmlDoctypeDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -22,7 +21,7 @@ public class XmlDoctypeDeclaration_TextGen extends SNodeTextGen {
     this.append(SPropertyOperations.getString(node, "doctypeName"));
     if ((SLinkOperations.getTarget(node, "externalId", true) != null)) {
       this.append(" ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "externalId", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "externalId", true));
     }
     this.append(">");
   }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)/5164231775618799303" />
   <root nodeRef="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)/5164231775618799743">
     <nodeInfo nodeId="5164231775618799754" fileName="FacetDescriptorsIO_Test.java" startLine="28" startPosition="48" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5164231775618799759" fileName="FacetDescriptorsIO_Test.java" startLine="29" startPosition="56" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

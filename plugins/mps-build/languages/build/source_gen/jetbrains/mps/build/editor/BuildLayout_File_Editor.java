@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildLayout_File_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -45,7 +44,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1ol6d0_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1ol6d0_b0(editorContext, node));
-    if (renderingCondition_1ol6d0_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1ol6d0_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1ol6d0_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createAlternation_1ol6d0_d0(editorContext, node));
@@ -55,7 +54,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_1ol6d0_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_File_Editor.ReplaceWith_BuildLayout_Node_cellMenu_1ol6d0_a0a0()}));
     return editorCell;
@@ -102,7 +101,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1ol6d0_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1ol6d0_a2a(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "filemode")) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
   }
 
@@ -110,7 +109,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1ol6d0_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -140,7 +139,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1ol6d0_c2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -149,7 +148,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_1ol6d0_d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = BuildLayout_File_Editor.renderingCondition_1ol6d0_a3a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = BuildLayout_File_Editor.renderingCondition_1ol6d0_a3a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNodeList_1ol6d0_a3a(editorContext, node);
@@ -159,7 +158,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1ol6d0_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1ol6d0_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true)).isEmpty();
   }
 

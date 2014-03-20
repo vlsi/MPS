@@ -57,7 +57,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
               public List<SNode> getNodes(Condition<SNode> p0) {
                 List<SNode> result = new ArrayList<SNode>();
                 SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-                for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
+                for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
                   if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(extension, "type", true), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())}))) {
                     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true))) {
                       if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
@@ -66,7 +66,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
                     }
                   }
                 }
-                for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
+                for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
                   for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
                     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(method, "extendedType", true), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())}))) {
                       if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {

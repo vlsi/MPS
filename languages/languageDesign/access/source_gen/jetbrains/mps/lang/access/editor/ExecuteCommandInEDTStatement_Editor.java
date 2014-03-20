@@ -39,7 +39,7 @@ public class ExecuteCommandInEDTStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_5nmyvv_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -82,7 +82,7 @@ public class ExecuteCommandInEDTStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_5nmyvv_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -117,7 +117,7 @@ public class ExecuteCommandInEDTStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_5nmyvv_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

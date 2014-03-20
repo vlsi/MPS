@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
@@ -32,7 +31,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gmlwwp_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gmlwwp_d0(editorContext, node));
-    if (renderingCondition_gmlwwp_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gmlwwp_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gmlwwp_e0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_gmlwwp_f0(editorContext, node));
@@ -106,13 +105,13 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gmlwwp_a4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_b4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gmlwwp_c4a(editorContext, node));
-    if (renderingCondition_gmlwwp_a3e0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gmlwwp_a3e0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gmlwwp_d4a(editorContext, node));
     }
     return editorCell;
   }
 
-  private static boolean renderingCondition_gmlwwp_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gmlwwp_a4a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "cellSelector", true) != null);
   }
 
@@ -170,13 +169,13 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gmlwwp_a3e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_b3e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gmlwwp_c3e0(editorContext, node));
-    if (renderingCondition_gmlwwp_a3d4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_gmlwwp_a3d4a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_gmlwwp_d3e0(editorContext, node));
     }
     return editorCell;
   }
 
-  private static boolean renderingCondition_gmlwwp_a3e0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gmlwwp_a3e0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "selectionStart", true) != null);
   }
 
@@ -240,7 +239,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gmlwwp_a3d4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gmlwwp_a3d4a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "selectionEnd", true) != null;
   }
 

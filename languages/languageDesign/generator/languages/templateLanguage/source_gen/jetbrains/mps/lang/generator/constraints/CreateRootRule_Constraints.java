@@ -35,7 +35,7 @@ public class CreateRootRule_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new MappingRuleTemplateNodeSearchScope(_context.getModel(), operationContext.getScope());
+            return new MappingRuleTemplateNodeSearchScope(_context.getModel());
           }
 
           @Override

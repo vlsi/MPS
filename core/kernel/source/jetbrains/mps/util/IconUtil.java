@@ -17,7 +17,6 @@ package jetbrains.mps.util;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import sun.reflect.Reflection;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;

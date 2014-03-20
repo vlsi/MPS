@@ -10,7 +10,6 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -58,39 +56,39 @@ public class SModelOperations {
     return list;
   }
 
-  public static List<SNode> getRootsIncludingImported(SModel model, IScope scope, String conceptFqName) {
+  public static List<SNode> getRootsIncludingImported(SModel model, String conceptFqName) {
     if (model == null) {
       return Collections.emptyList();
     }
     if (conceptFqName == null) {
-      return allNodesIncludingImported(model, scope, true, null);
+      return allNodesIncludingImported(model, true, null);
     }
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (concept == null) {
       return Collections.emptyList();
     }
 
-    return allNodesIncludingImported(model, scope, true, concept);
+    return allNodesIncludingImported(model, true, concept);
   }
 
-  public static List<SNode> getNodesIncludingImported(SModel model, IScope scope, String conceptFqName) {
+  public static List<SNode> getNodesIncludingImported(SModel model, String conceptFqName) {
     if (model == null) {
       return Collections.emptyList();
     }
     if (conceptFqName == null) {
-      return allNodesIncludingImported(model, scope, false, null);
+      return allNodesIncludingImported(model, false, null);
     }
-    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (concept == null) {
       return Collections.emptyList();
     }
-    return allNodesIncludingImported(model, scope, false, concept);
+    return allNodesIncludingImported(model, false, concept);
   }
 
-  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable final SNode concept) {
+  private static List<SNode> allNodesIncludingImported(SModel sModel, boolean roots, @Nullable final SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
-    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel);
     for (SModel descriptor : modelDescriptors) {
       modelsList.add(descriptor);
     }
@@ -126,38 +124,38 @@ public class SModelOperations {
     return result;
   }
 
-  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, String conceptFqName) {
+  public static SNode createNewNode(SModel model, String conceptFqName) {
     return createNewNode(model, null, conceptFqName);
   }
 
-  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
+  public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     if (conceptFqName == null) {
       return null;
     }
 
-    SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (jetbrains.mps.smodel.SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
+      SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
       if (id != null) {
         ((jetbrains.mps.smodel.SNode) node).setId(id);
       }
       return node;
     }
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, false);
     if (result == null) {
       return null;
     }
     BehaviorReflection.initNode(result);
-    return ((jetbrains.mps.smodel.SNode) result);
+    return ((SNode) result);
   }
 
   @Deprecated
-  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
+  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
     return createNewNode(model, conceptFqName);
   }
 
-  public static jetbrains.mps.smodel.SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
+  public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
+    SNode newNode = createNewNode(model, conceptFqName);
     model.addRootNode(newNode);
     return newNode;
 

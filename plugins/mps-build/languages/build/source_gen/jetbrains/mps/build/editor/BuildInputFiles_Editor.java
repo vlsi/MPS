@@ -13,7 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -41,7 +40,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1i9du0_a");
     editorCell.setBig(true);
-    if (renderingCondition_1i9du0_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_1i9du0_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_1i9du0_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_1i9du0_b0(editorContext, node));
@@ -54,14 +53,14 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "files");
     editorCell.setCellId("Constant_1i9du0_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputFiles_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_1i9du0_a0a0()}));
     return editorCell;
   }
 
-  private static boolean renderingCondition_1i9du0_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1i9du0_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildSourceSetContainer"));
   }
 
@@ -78,7 +77,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_1i9du0_b0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

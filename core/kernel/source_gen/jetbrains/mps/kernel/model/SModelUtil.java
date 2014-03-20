@@ -7,10 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -54,10 +54,10 @@ public class SModelUtil {
   }
 
   @Deprecated
-  public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
+  public static SNode findNodeByFQName(String nodeFQName, SNode concept) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModel descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
+    for (SModel descriptor : Sequence.fromIterable(GlobalScope.getInstance().getModels())) {
       if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
         continue;
       }
@@ -74,7 +74,7 @@ public class SModelUtil {
     return null;
   }
 
-  public static SNode findConceptDeclaration(@NotNull final String conceptFQName, final IScope scope) {
+  public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
     SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
     if (cd != null) {
       return cd;
@@ -101,9 +101,6 @@ public class SModelUtil {
   }
 
   public static SNode getConceptLinkTarget(SNode link) {
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
-      return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
-    }
     return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
   }
 

@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -42,7 +41,7 @@ public class Script_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Script");
     editorCell.setCellId("Constant_udqu28_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -56,7 +55,7 @@ public class Script_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -71,7 +70,7 @@ public class Script_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_udqu28_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Script_Editor.renderingCondition_udqu28_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = Script_Editor.renderingCondition_udqu28_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_udqu28_a2a(editorContext, node);
@@ -81,7 +80,7 @@ public class Script_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_udqu28_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_udqu28_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
   }
 
@@ -89,7 +88,7 @@ public class Script_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runs as");
     editorCell.setCellId("Constant_udqu28_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "script_block");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -101,7 +100,7 @@ public class Script_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runs as");
     editorCell.setCellId("Constant_udqu28_a2a_0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "script_block");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -136,7 +135,7 @@ public class Script_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_udqu28_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.MATCHING_LABEL, "script_block");
     editorCell.getStyle().putAll(style);

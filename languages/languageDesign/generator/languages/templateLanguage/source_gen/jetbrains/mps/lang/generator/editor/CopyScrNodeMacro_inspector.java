@@ -201,7 +201,7 @@ public class CopyScrNodeMacro_inspector implements ConceptEditorComponent {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -250,7 +250,7 @@ public class CopyScrNodeMacro_inspector implements ConceptEditorComponent {
   private EditorCell createRefNode_m1raju_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodeQuery");
-    provider.setNoTargetText("<none>");
+    provider.setNoTargetText("<current source node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

@@ -10,7 +10,7 @@
     <model modelUID="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" />
   </accessoryModels>
   <generators>
-    <generator name="main" generatorUID="jetbrains.mps.build.mps#3189788309732033979" uuid="9b03dd0d-f0d2-42fc-8909-d7710e678ca3">
+    <generator name="main" generatorUID="jetbrains.mps.build.mps#3189788309732033979" uuid="9b03dd0d-f0d2-42fc-8909-d7710e678ca3" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -114,6 +114,7 @@
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>
     <usedLanguage>aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</usedLanguage>
     <usedLanguage>d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)</usedLanguage>
   </usedLanguages>

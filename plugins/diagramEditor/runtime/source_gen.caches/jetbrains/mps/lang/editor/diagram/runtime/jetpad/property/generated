@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="1czpyjrutfn9nrvzpze296evdj238yu">
+  <common hash="-9r1hi721ouxnkn4gqn5ahsdby2q6has" dependsOnNodes="true" />
+  <source id="1585775323800152131" name="DependentProperty" hash="44weehfxdjtxb5ru8t7gb2k79pb9j61">
+    <file name="DependentProperty.java" />
+  </source>
+</dependencies>
+

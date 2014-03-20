@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -48,7 +47,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_vablur_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vablur_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vablur_d0(editorContext, node));
-    if (renderingCondition_vablur_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vablur_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_vablur_e0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_vablur_f0(editorContext, node));
@@ -59,7 +58,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_vablur_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -142,7 +141,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==>");
     editorCell.setCellId("Constant_vablur_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -179,7 +178,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vablur_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vablur_a4a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
@@ -187,7 +186,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_vablur_a4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -255,7 +254,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_vablur_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

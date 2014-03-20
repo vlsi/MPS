@@ -1,37 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2p3fuv0kxcvosqbdole11pjvlqrl67s">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="dnrzrdat3z4f1z5phzp79g4ui4l3es" dependsOnNodes="true">
-    <dep root="1550313277221324859" />
-    <dep root="1550313277222152185" />
-    <dep root="1894531970723270160" />
-    <dep root="1973189701690850247" />
-    <dep root="1973189701691027447" />
-    <dep root="3316739663067157299" />
-    <dep root="7685333756920172912" />
-    <dep root="8022092943109322131" />
-    <dep root="8022092943110829337" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="1894531970723270160" name="TypeExtension" hash="-dsvcvvlrpignw28uj445nnl6q92dlat" />
-  <source id="1550313277221324859" name="ExtensionMethodCall" hash="8k0rrmy8735jlz54ixm0boxdwgbj3la" />
-  <source id="1550313277222152185" name="ExtensionMethodDeclaration" hash="-b8euso5xcfjje1o7247w7zzvz7it1d1" />
-  <source id="3316739663067157299" name="ThisExtensionExpression" hash="-544om8847gunrm68uch7x88e74x4qki" />
-  <source id="8022092943109322131" name="SimpleExtensionMethodsContainer" hash="-1pri6iarkjl7w7ugl5s5dgq31y3lk5z" />
-  <source id="8022092943110829337" name="BaseExtensionMethodContainer" hash="2k44y0ycmipjjfagsq8e3iptb4uspt8" />
-  <source id="1973189701690850247" name="ExtensionStaticFieldReference" hash="3dp8ioehchxmiw6770eqwo9ywjo0qtu" />
-  <source id="1973189701691027447" name="ExtensionStaticFieldDeclaration" hash="bu5i05d9lfh82sf42dak9ob8wo6pqrb" />
-  <source id="7685333756920172912" name="LocalExtendedMethodCall" hash="-2b9nugb4q3hfmjvozwjdlmbc3zohzvf" />
-</dependencies>
+<dependencies version="2" modelHash="2p3fuv0kxcvosqbdole11pjvlqrl67s" />
 

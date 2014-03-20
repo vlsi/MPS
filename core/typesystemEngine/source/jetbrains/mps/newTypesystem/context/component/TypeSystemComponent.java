@@ -53,10 +53,6 @@ import java.util.*;
     myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
   }
 
-  @Override
-  public void dispose() {
-  }
-
   //returns true if something was invalidated
   @Override
   protected boolean doInvalidate() {

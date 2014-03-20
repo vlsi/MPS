@@ -12,12 +12,15 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -53,7 +56,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_53xyyk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_53xyyk_b0(editorContext, node));
-    if (renderingCondition_53xyyk_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_53xyyk_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_53xyyk_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_53xyyk_d0(editorContext, node));
@@ -78,7 +81,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ClassCreator_Editor.ReplaceWith_DefaultClassCreator_cellMenu_53xyyk_a0b0(), new ClassCreator_Editor.ClassCreator_constructorDeclaration_cellMenu_53xyyk_b0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -113,6 +116,20 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
   }
 
+  public static class ReplaceWith_DefaultClassCreator_cellMenu_53xyyk_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_DefaultClassCreator_cellMenu_53xyyk_a0b0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.DefaultClassCreator";
+    }
+  }
+
+  public static class ClassCreator_constructorDeclaration_cellMenu_53xyyk_b0b0 extends PrimaryReferentMenuCellMenuPart {
+    public ClassCreator_constructorDeclaration_cellMenu_53xyyk_b0b0() {
+    }
+  }
+
   private EditorCell createCollection_53xyyk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_53xyyk_c0");
@@ -125,7 +142,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_53xyyk_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_53xyyk_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }
 
@@ -133,7 +150,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_53xyyk_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -204,7 +221,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_53xyyk_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);

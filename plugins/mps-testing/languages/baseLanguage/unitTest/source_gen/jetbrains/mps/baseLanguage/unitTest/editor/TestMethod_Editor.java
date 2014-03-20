@@ -18,7 +18,6 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +36,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ml6tu4_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ml6tu4_d0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ml6tu4_e0(editorContext, node));
-    if (renderingCondition_ml6tu4_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ml6tu4_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ml6tu4_f0(editorContext, node));
     }
     return editorCell;
@@ -60,7 +59,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test");
     editorCell.setCellId("Constant_ml6tu4_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -103,7 +102,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext) {
     List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
     return ListSequence.fromList(nextSiblings).isNotEmpty();
   }

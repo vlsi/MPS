@@ -50,8 +50,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$MAP_SRC$");
     editorCell.setCellId("Constant_dms3bp_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -250,7 +249,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -354,7 +353,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_dms3bp_c3c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("mapperFunction");
-    provider.setNoTargetText("<default>");
+    provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -406,7 +405,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_dms3bp_c4c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("postMapperFunction");
-    provider.setNoTargetText("<default>");
+    provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

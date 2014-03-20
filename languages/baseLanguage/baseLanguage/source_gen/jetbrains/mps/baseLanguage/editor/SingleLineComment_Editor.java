@@ -7,9 +7,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -30,6 +30,9 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5ng77o_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5ng77o_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5ng77o_b0(editorContext, node));
     return editorCell;
@@ -39,7 +42,6 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
     editorCell.setCellId("Constant_5ng77o_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     editorCell.getStyle().putAll(style);
     UncommentSingleLineComment.setCellActions(editorCell, node, editorContext);

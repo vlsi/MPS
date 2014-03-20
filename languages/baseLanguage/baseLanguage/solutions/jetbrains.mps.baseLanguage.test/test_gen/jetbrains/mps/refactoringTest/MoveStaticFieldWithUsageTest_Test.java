@@ -8,11 +8,12 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class MoveStaticFieldWithUsageTest_Test extends BaseTransformationTest4 {
@@ -32,7 +33,11 @@ public class MoveStaticFieldWithUsageTest_Test extends BaseTransformationTest4 {
       MoveStaticFieldRefactoring refactoring = new MoveStaticFieldRefactoring(SNodeOperations.cast(this.getNodeById("8495840634675243980"), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       refactoring.doRefactoring();
       refactoring.replaceSingleUsage(SNodeOperations.cast(this.getNodeById("8495840634675645880"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675243979"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675645396"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675299897"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675243979"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675645396"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675299897"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

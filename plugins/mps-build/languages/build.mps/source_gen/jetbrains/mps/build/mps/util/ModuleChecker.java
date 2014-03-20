@@ -42,7 +42,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class ModuleChecker {
   private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
@@ -828,7 +827,7 @@ public class ModuleChecker {
 
   private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a11a92(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null, false);
     n1.setProperty("reexport", "" + false);
     n1.setReferenceTarget("module", (SNode) p0);
     return n1;

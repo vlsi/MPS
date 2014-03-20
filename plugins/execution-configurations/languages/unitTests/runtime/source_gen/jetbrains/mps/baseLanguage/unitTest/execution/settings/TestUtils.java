@@ -19,7 +19,6 @@ import org.jetbrains.annotations.Nls;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -58,7 +57,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_pointerString_it = Sequence.fromIterable(strings).iterator();
+                      this._2_pointerString_it = strings.iterator();
                     case 3:
                       if (!(this._2_pointerString_it.hasNext())) {
                         this.__CP__ = 1;
@@ -157,7 +156,7 @@ __switch__:
     if (nodeName == null) {
       return null;
     }
-    SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), GlobalScope.getInstance());
+    SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
     if (node == null) {
       return null;
     }

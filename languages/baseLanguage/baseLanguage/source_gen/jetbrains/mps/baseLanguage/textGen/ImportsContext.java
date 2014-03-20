@@ -13,10 +13,10 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGen;
 
 public class ImportsContext {
-  private static String USER_OBJECT_KEY = "CLASS_IMPORTS_CONTEXT";
+  private static final String USER_OBJECT_KEY = "CLASS_IMPORTS_CONTEXT";
   private final TextGenBuffer buffer;
   private final String packageName;
   private final Set<String> packageSimpleNames;
@@ -108,7 +108,7 @@ public class ImportsContext {
   public static ImportsContext getInstance(TextGenBuffer buffer) {
     ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);
     if (instance == null) {
-      SNode rootNode = (SNode) buffer.getUserObject(TextGenManager.ROOT_NODE);
+      SNode rootNode = (SNode) buffer.getUserObject(TextGen.ROOT_NODE);
       if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
         throw new IllegalStateException();
       }

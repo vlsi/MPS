@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -52,10 +51,10 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_vsmugd_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vsmugd_a0a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_vsmugd_a0a(editorContext, node));
     }
-    if (renderingCondition_vsmugd_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_vsmugd_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_vsmugd_b0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_vsmugd_c0a(editorContext, node));
@@ -73,7 +72,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vsmugd_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vsmugd_a0a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
@@ -125,14 +124,14 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_vsmugd_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_vsmugd_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vsmugd_a1a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 

@@ -505,15 +505,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="1209604217076" nodeInfo="ng">
           <property name="text" nameId="tq1l.1195170441111" value="wrapper created by reduction 1" />
           <node role="outputChild" roleId="tq1l.1202327114879" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="1209604251671" nodeInfo="ng">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1209604320454" nodeInfo="nn">
-              <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1209604320455" nodeInfo="nn">
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209604320456" nodeInfo="sn">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1209660466337" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1209660466338" nodeInfo="nn" />
-                  </node>
-                </node>
-              </node>
-            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1209604320454" nodeInfo="nn" />
           </node>
         </node>
       </node>
@@ -586,15 +578,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="1209662301917" nodeInfo="ng">
           <property name="text" nameId="tq1l.1195170441111" value="wrapper created by reduction 2" />
           <node role="outputChild" roleId="tq1l.1202327114879" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="1209662301918" nodeInfo="ng">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1209662301919" nodeInfo="nn">
-              <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1209662301920" nodeInfo="nn">
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209662301921" nodeInfo="sn">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1209662301922" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1209662301923" nodeInfo="nn" />
-                  </node>
-                </node>
-              </node>
-            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1209662301919" nodeInfo="nn" />
           </node>
         </node>
       </node>
@@ -770,13 +754,13 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4146564171992617065" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="convertMult" />
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="4146564171992617091" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="4146564171992617091" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="left" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4146564171992617093" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
       </node>
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="4146564171992617094" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="4146564171992617094" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="right" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4146564171992617096" nodeInfo="in" />
     </node>
@@ -833,25 +817,25 @@
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2681305894288695007" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="processStatement" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2681305894288695009" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2681305894288695009" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="name" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tpee.StringType" typeId="tpee.1225271177708" id="2681305894288695011" nodeInfo="in" />
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2163819695913278979" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2163819695913278979" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="name2" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tpee.StringType" typeId="tpee.1225271177708" id="2163819695913280740" nodeInfo="in" />
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2681305894288695012" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2681305894288695012" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="expr" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2681305894288695014" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
       </node>
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2681305894288695036" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="2681305894288695036" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="i" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2681305894288695038" nodeInfo="in" />
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="6266395626234057755" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="6266395626234057755" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="b" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6266395626234059516" nodeInfo="in" />
     </node>
@@ -995,7 +979,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5857536350883030947" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="process42" />
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5857536350883032716" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5857536350883032716" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5857536350883032718" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tq1l.2681305894288486346" resolveInfo="CustomStatement" />
@@ -1049,7 +1033,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="933643154466320524" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="aaaaa" />
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="933643154466320526" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="933643154466320526" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="nnnn" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="933643154466320528" nodeInfo="in" />
     </node>
@@ -1150,9 +1134,6 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5955416080080987358" nodeInfo="ng" />
       </node>
     </node>
-  </root>
-  <root type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="7941504602773316107" nodeInfo="ng">
-    <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
   </root>
   <root type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="8371596541809088655" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="customStatement" />

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a8(jetbrains.mps.ide.devkit.newDevkitDialog)/1204026592280" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a8(jetbrains.mps.ide.devkit.newDevkitDialog)/1204026656767" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a8(jetbrains.mps.ide.devkit.newDevkitDialog)/6249396921771873248">
     <nodeInfo nodeId="6249396921771873252" fileName="NewDevKitDialog.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentPane" />
     <nodeInfo nodeId="6249396921772398005" fileName="NewDevKitDialog.java" startLine="21" startPosition="43" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

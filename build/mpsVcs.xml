@@ -94,7 +94,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels">
-      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/*.java" />
@@ -138,7 +138,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate parallelMode="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -300,7 +300,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
         <path refid="path.java.library.idea-vcs" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -339,8 +339,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />

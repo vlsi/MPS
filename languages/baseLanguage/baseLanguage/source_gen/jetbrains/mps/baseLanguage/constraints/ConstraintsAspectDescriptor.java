@@ -14,7 +14,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 18:
         return new ClosureParameterReference_Constraints();
-      case 48:
+      case 47:
         return new StaticMethodCall_Constraints();
       case 39:
         return new LocalVariableReference_Constraints();
@@ -24,15 +24,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new Annotation_Constraints();
       case 13:
         return new ClassCreator_Constraints();
-      case 53:
+      case 52:
         return new TypeVariableReference_Constraints();
       case 14:
         return new Classifier_Constraints();
-      case 52:
+      case 51:
         return new ThisExpression_Constraints();
-      case 49:
+      case 48:
         return new SuperConstructorInvocation_Constraints();
-      case 47:
+      case 46:
         return new StaticFieldReference_Constraints();
       case 43:
         return new Property_Constraints();
@@ -40,11 +40,11 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new Interface_Constraints();
       case 12:
         return new ClassConcept_Constraints();
-      case 50:
+      case 49:
         return new SuperMethodCall_Constraints();
       case 38:
         return new LocalVariableDeclaration_Constraints();
-      case 51:
+      case 50:
         return new ThisConstructorInvocation_Constraints();
       case 19:
         return new ConstructorDeclaration_Constraints();
@@ -64,12 +64,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new LocalStaticFieldReference_Constraints();
       case 37:
         return new LocalStaticMethodCall_Constraints();
-      case 45:
+      case 44:
         return new PropertyReference_Constraints();
       case 25:
         return new FieldReferenceOperation_Constraints();
-      case 44:
-        return new PropertyImplementation_Constraints();
       case 7:
         return new ArrayLengthOperation_Constraints();
       case 4:
@@ -82,7 +80,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new PlaceholderMethodDeclaration_Constraints();
       case 15:
         return new ClassifierClassExpression_Constraints();
-      case 46:
+      case 45:
         return new StaticFieldDeclaration_Constraints();
       case 40:
         return new LoopLabelReference_Constraints();
@@ -112,7 +110,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseVariableDeclaration_Constraints();
       case 35:
         return new LocalPropertyReference_Constraints();
-      case 54:
+      case 53:
         return new VariableReference_Constraints();
       case 34:
         return new LocalMethodCall_Constraints();
@@ -128,5 +126,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseStringOperation", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.LocalMethodCall", "jetbrains.mps.baseLanguage.structure.LocalPropertyReference", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyImplementation", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.VariableReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseStringOperation", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.LocalMethodCall", "jetbrains.mps.baseLanguage.structure.LocalPropertyReference", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.VariableReference"};
 }

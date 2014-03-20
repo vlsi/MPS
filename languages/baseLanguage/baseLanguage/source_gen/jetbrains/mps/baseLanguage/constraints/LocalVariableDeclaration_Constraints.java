@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 
 public class LocalVariableDeclaration_Constraints extends BaseConstraintsDescriptor {
   public LocalVariableDeclaration_Constraints() {
@@ -25,7 +24,7 @@ public class LocalVariableDeclaration_Constraints extends BaseConstraintsDescrip
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         return "local variable";
       }

@@ -32,7 +32,7 @@ public class ThisEditorNodeExpression_Constraints extends BaseConstraintsDescrip
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestorsWhereConceptInList(parentNode, new String[]{"jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery"}, true) != null;
+    return SNodeOperations.getAncestorsWhereConceptInList(parentNode, new String[]{"jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery"}, true) != null;
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1220375669567134127");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,6 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
@@ -29,6 +26,8 @@ import javax.swing.JList;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Component;
+import java.util.Date;
+import java.util.Formatter;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
@@ -37,7 +36,6 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final TextAttributes WARNING_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_WARNING_OUTPUT_KEY);
   private static final TextAttributes EXPIRED_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_EXPIRED_ENTRY);
   private static final Color CONSOLE_BACKGROUND = EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
-
 
   @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -50,20 +48,30 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
       : CONSOLE_BACKGROUND);
     component.setBorder(EMPTY_BORDER);
 
-    String text = (message instanceof Message) ?
-      ((Message) message).getCreationTimeString() + "\t: " + message :
-      message.getText();
+    StringBuilder sb = new StringBuilder(120);
+    new Formatter(sb).format("%tT\t: ", new Date(message.getCreationTime()));
+    if (message.getSender() != null) {
+      sb.append('[');
+      sb.append(message.getSender());
+      sb.append(']');
+      sb.append(' ');
+    }
+    sb.append(message.getText());
+    if (message.getException() != null) {
+      sb.append(" (right-click to see exception)");
+    }
+    String text = sb.toString();
 
-
-    NavStatus ns = canNavigate(message);
-    if (ns == NavStatus.NO) {
-      component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
-      component.setText(text);
-    } else if (ns == NavStatus.OUTDATED) {
+    final NavStatus ns = canNavigate(message);
+    if (ns == NavStatus.YES) {
+      component.setToolTipText(String.valueOf(message.getHintObject()));
+    } else {
+      component.setToolTipText(null);
+    }
+    if (ns == NavStatus.OUTDATED) {
       component.setForeground(EXPIRED_ATTRIBUTES.getForegroundColor());
-      component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
-    } else if (ns == NavStatus.YES) {
-      component.setForeground(Color.BLUE);
+      text = String.format("[outdated] %s:%s", message.getHintObject().toString(), text);
+    } else {
       switch (message.getKind()) {
         case WARNING:
           component.setForeground(WARNING_ATTRIBUTES.getForegroundColor());
@@ -75,8 +83,8 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
           component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
           break;
       }
-      component.setText(text);
     }
+    component.setText(text);
 
     switch (message.getKind()) {
       case INFORMATION:
@@ -89,7 +97,6 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
         component.setIcon(Icons.ERROR_ICON);
         break;
     }
-
     return component;
   }
 

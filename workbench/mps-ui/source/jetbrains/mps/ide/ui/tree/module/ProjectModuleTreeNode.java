@@ -40,11 +40,6 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
     return null;
   }
 
-  @Override
-  public void setUserObject(Object userObject) {
-    super.setUserObject(userObject);
-  }
-
   protected ProjectModuleTreeNode(IOperationContext operationContext) {
     super(operationContext);
     setUserObject(operationContext.getModule().getModuleName());

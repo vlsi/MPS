@@ -4,11 +4,13 @@ package jetbrains.mps.console.actions.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -17,8 +19,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.console.tool.ConsoleTool;
@@ -39,9 +39,16 @@ public class ShowGenerationPlan_Action extends BaseAction {
     return true;
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return SNodeOperations.isGeneratable(((SModel) MapSequence.fromMap(_params).get("model")));
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationPlan", t);
@@ -77,7 +84,7 @@ public class ShowGenerationPlan_Action extends BaseAction {
           SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "stereotype", SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
         }
       });
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value, null);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowGenerationPlan", t);

@@ -49,8 +49,5 @@
       <property name="text" nameId="tq1l.1195170441111" value="this is OutputNode_forDontApplyReductionTwice_test actually" />
     </node>
   </root>
-  <root type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="7941504602773316101" nodeInfo="ng">
-    <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
-  </root>
 </model>
 

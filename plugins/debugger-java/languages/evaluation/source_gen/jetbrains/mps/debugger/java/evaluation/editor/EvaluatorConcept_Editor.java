@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -42,7 +41,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6rl195_a");
     editorCell.setBig(true);
-    if (renderingCondition_6rl195_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6rl195_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_6rl195_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_6rl195_b0(editorContext, node));
@@ -62,7 +61,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6rl195_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6rl195_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isShowContext");
   }
 
@@ -70,7 +69,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_6rl195_a0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyHeader(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_Header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +107,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static context type");
     editorCell.setCellId("Constant_6rl195_b0b0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyContextKeyword(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_ContextKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -152,7 +151,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this type");
     editorCell.setCellId("Constant_6rl195_b1b0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyContextKeyword(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_ContextKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -196,7 +195,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "visible variables");
     editorCell.setCellId("Constant_6rl195_b2b0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyContextKeyword(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_ContextKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -273,7 +272,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statements to evaluate");
     editorCell.setCellId("Constant_6rl195_b0");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyHeader(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_Header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -320,7 +319,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show context:");
     editorCell.setCellId("Constant_6rl195_a0");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyHeader(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_Header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

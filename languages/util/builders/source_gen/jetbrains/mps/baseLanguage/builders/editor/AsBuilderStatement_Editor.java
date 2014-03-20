@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -32,7 +31,7 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_a75gvn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a75gvn_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a75gvn_c0(editorContext, node));
-    if (renderingCondition_a75gvn_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_a75gvn_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_a75gvn_d0(editorContext, node));
     }
     return editorCell;
@@ -62,7 +61,7 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_a75gvn_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -100,7 +99,7 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_a75gvn_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_a75gvn_a3a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{}));
   }
 
@@ -108,7 +107,7 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_a75gvn_a3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -142,7 +141,7 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_a75gvn_c3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

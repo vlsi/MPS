@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -41,7 +40,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_q1hswy_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_q1hswy_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_q1hswy_a0(editorContext, node));
     }
     return editorCell;
@@ -59,7 +58,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_q1hswy_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_q1hswy_a0a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isNotEmpty();
   }
 
@@ -67,7 +66,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_q1hswy_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -152,7 +151,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_q1hswy_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
     editorCell.getStyle().putAll(style);
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);

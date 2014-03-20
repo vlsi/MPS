@@ -10,19 +10,37 @@
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
   
+  <path id="path.javac2.classpath">
+    <fileset dir="${idea_home}/lib">
+      <include name="javac2.jar" />
+      <include name="jdom.jar" />
+      <include name="asm4-all.jar" />
+      <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
+  <path id="path.jdk.classpath">
+    <pathelement path="${java.home}/../Classes/classes.jar" />
+    <fileset dir="${java.home}">
+      <include name="lib/*.jar" />
+    </fileset>
+  </path>
+  
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
     <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
   </path>
   
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models">
-      <fileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models">
-      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/lib/mps-java-common.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-common" />
@@ -61,7 +79,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate parallelMode="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -139,7 +157,7 @@
     <mkdir dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
     <mkdir dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-java-common" />
-    <javac destdir="${build.tmp}/java/out/mps-java-common" fork="true" includeantruntime="false">
+    <javac2 destdir="${build.tmp}/java/out/mps-java-common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
@@ -165,8 +183,13 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <path refid="path.jdk.classpath" />
       </classpath>
-    </javac>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/mps-java-common">
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="cleanSources">

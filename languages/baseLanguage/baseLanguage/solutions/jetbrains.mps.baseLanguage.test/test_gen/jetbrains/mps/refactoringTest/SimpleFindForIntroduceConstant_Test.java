@@ -9,11 +9,12 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class SimpleFindForIntroduceConstant_Test extends BaseTransformationTest4 {
@@ -34,7 +35,11 @@ public class SimpleFindForIntroduceConstant_Test extends BaseTransformationTest4
       refactoring.setReplacingAll(true);
       refactoring.setVisibilityLevel(VisibilityLevel.PRIVATE);
       refactoring.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7568753874916187327"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7568753874916187375"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7568753874916187327"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7568753874916187375"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

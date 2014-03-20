@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.core.structure.behavior.SConstraints_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -34,7 +33,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAlternation_un4bzo_a0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_un4bzo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_un4bzo_c0(editorContext, node));
-    if (renderingCondition_un4bzo_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_un4bzo_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_un4bzo_d0(editorContext, node));
     }
     return editorCell;
@@ -42,7 +41,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_un4bzo_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SConstraints_Editor.renderingCondition_un4bzo_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SConstraints_Editor.renderingCondition_un4bzo_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_un4bzo_a0a(editorContext, node);
@@ -52,7 +51,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_un4bzo_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_un4bzo_a0a(SNode node, EditorContext editorContext) {
     return SConstraints_Behavior.call_isMultiline_2223786200032678198(node);
   }
 
@@ -60,7 +59,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_un4bzo_a0a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -73,7 +72,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_un4bzo_a0a_0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -84,7 +83,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_un4bzo_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SConstraints_Editor.renderingCondition_un4bzo_a1a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SConstraints_Editor.renderingCondition_un4bzo_a1a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNodeList_un4bzo_a1a(editorContext, node);
@@ -94,7 +93,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_un4bzo_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_un4bzo_a1a(SNode node, EditorContext editorContext) {
     return SConstraints_Behavior.call_isMultiline_2223786200032678198(node);
   }
 
@@ -225,7 +224,7 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_un4bzo_c0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);
     SConstraints_delete.setCellActions(editorCell, node, editorContext);
@@ -237,14 +236,14 @@ public class SConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_un4bzo_d0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_un4bzo_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_un4bzo_a3a(SNode node, EditorContext editorContext) {
     return !(SConstraints_Behavior.call_isMultiline_2223786200032678198(node));
   }
 }

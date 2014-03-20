@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -22,7 +21,7 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createPositionInfo(this, node);
     }
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), this.getSNode());
+      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
     }
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
@@ -35,12 +34,12 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
       this.append("final ");
     }
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
+    appendNode(SLinkOperations.getTarget(node, "type", true));
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));
     if ((SLinkOperations.getTarget(node, "initializer", true) != null)) {
       this.append(" = ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "initializer", true), this.getSNode());
+      appendNode(SLinkOperations.getTarget(node, "initializer", true));
     }
     this.append(";");
     this.appendNewLine();

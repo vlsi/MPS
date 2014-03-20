@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,39 +16,28 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
-import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.progress.CancellationMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -63,8 +52,6 @@ import java.util.Set;
  */
 public class GenerationFacade {
 
-  private static final Logger LOG = LogManager.getLogger(GenerationFacade.class);
-
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
@@ -74,10 +61,6 @@ public class GenerationFacade {
       mappings.addAll(nodes);
     }
     return mappings;
-  }
-
-  public static Collection<TemplateModule> getPossiblyEngagedGenerators(SModel model) {
-    return GenerationPartitioningUtil.getTemplateModules(model);
   }
 
   public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models, IOperationContext context) {
@@ -125,24 +108,8 @@ public class GenerationFacade {
     return result;
   }
 
-  public static List<List<SNode/*MappingConfiguration*/>> getPlan(Collection<TemplateModule> generators) {
-    GenerationPartitioner partitioner = new GenerationPartitioner(generators);
-    List<List<TemplateMappingConfiguration>> mappingSets = partitioner.createMappingSets();
-
-    // convert
-    List<List<SNode>> result = new ArrayList<List<SNode>>(mappingSets.size());
-    for (List<TemplateMappingConfiguration> configurations : mappingSets) {
-      List<SNode> step = new ArrayList<SNode>(configurations.size());
-      for (TemplateMappingConfiguration c : configurations) {
-        step.add(c.getMappingNode().resolve(MPSModuleRepository.getInstance()));
-      }
-      result.add(step);
-    }
-    return result;
-  }
-
   public static boolean canGenerate(SModel sm) {
-    return sm instanceof GeneratableSModel && ((GeneratableSModel) sm).isGeneratable();
+    return SNodeOperations.isGeneratable(sm);
   }
 
   public static boolean generateModels(final Project p,
@@ -161,23 +128,23 @@ public class GenerationFacade {
 
     options.getGenerationTracer().startTracing();
 
+    final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings());
+
     ModelAccess.instance().requireWrite(new Runnable() {
       @Override
       public void run() {
         for (SModel d : inputModels) {
           if (d instanceof EditableSModel && ((EditableSModel) d).needsReloading()) {
             ((EditableSModel) d).reloadFromSource();
-            LOG.info("Model " + d + " reloaded from disk.");
+            logger.info("Model " + d + " reloaded from disk.");
           }
           transientModelsComponent.createModule(d.getModule());
         }
       }
     });
 
-    GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext,
-        new CancellationMonitor(monitor));
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext);
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {
@@ -196,18 +163,6 @@ public class GenerationFacade {
       }
     });
 
-    if (result[0]) {
-      try {
-        ModelAccess.instance().requireWrite(new Runnable() {
-          @Override
-          public void run() {
-            //fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
-          }
-        });
-      } catch (RuntimeException e) {
-        LOG.error(null, e);
-      }
-    }
 
     options.getGenerationTracer().finishTracing();
 
@@ -222,20 +177,5 @@ public class GenerationFacade {
 
     generationHandler.generationCompleted();
     return result[0];
-  }
-
-  public static ModelGenerationPlan getGenerationPlan(@NotNull SModel inputModel, @Nullable Collection<String> additionalLanguages) {
-    GenerationPlan generationPlan = new GenerationPlan(inputModel, additionalLanguages);
-    final List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>(generationPlan.getStepCount());
-    for (int i = 0; i < generationPlan.getStepCount(); i++) {
-      List<TemplateMappingConfiguration> oneStep = new ArrayList<TemplateMappingConfiguration>(generationPlan.getMappingConfigurations(i));
-      result.add(oneStep);
-    }
-    return new ModelGenerationPlan() {
-      @Override
-      public List<List<TemplateMappingConfiguration>> getSteps() {
-        return result;
-      }
-    };
   }
 }

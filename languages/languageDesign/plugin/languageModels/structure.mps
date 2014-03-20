@@ -1638,7 +1638,7 @@
     <property name="name" nameId="tpck.1169194664001" value="ActionDeclaration" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Action" />
-    <property name="helpURL" nameId="tpce.2465654535473034588" value="http://confluence.jetbrains.com/display/MPSD2/Plugin#Plugin-actionsandactiongroups" />
+    <property name="helpURL" nameId="tpce.2465654535473034588" value="http://confluence.jetbrains.com/display/MPSD31/Plugin#Plugin-actionsandactiongroups" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203083196627" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
@@ -35,7 +34,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_jumb3f_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_jumb3f_a0(editorContext, node));
-    if (renderingCondition_jumb3f_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_jumb3f_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_jumb3f_b0(editorContext, node));
     }
     return editorCell;
@@ -112,7 +111,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_jumb3f_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_jumb3f_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "script", false) != null) && ((SLinkOperations.getTarget(node, "artifacts", true) != null) || BuildProject_Behavior.call_isPackaged_4129895186893455885(SLinkOperations.getTarget(node, "script", false), Context.defaultContext()));
   }
 
@@ -131,7 +130,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "artifacts location");
     editorCell.setCellId("Constant_jumb3f_b1a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

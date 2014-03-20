@@ -14,17 +14,33 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.mapper.MapperFactory;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.jetpad.projectional.diagram.view.Connection;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.ListIterator;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
-import java.util.List;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
-import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -40,6 +56,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createCollection_tb7paq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_tb7paq_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tb7paq_a0(editorContext, node));
@@ -47,7 +64,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createDiagram_tb7paq_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tb7paq_d0(editorContext, node));
     editorCell.addEditorCell(this.createDiagram_tb7paq_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_tb7paq_f0(editorContext, node));
     return editorCell;
   }
 
@@ -91,47 +107,127 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, SNode node) {
-    DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
-    DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.addEditorCell(blockCollection);
-    editorCell.addEditorCell(connectorCollection);
-    List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
-    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "blocks", true), editorContext, connectorCellList, blockCollection, view);
-    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "connectors", true), editorContext, connectorCellList, blockCollection, view);
-    for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
-      if (connectorCell.updateConnectionEnds(editorCell)) {
-        view.connections.add(connectorCell.getConnection());
-        connectorCollection.addEditorCell(connectorCell);
-      }
-    }
+  private EditorCell createDiagram_tb7paq_c0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_c0(editorContext, node);
     editorCell.setCellId("Diagram_tb7paq_c0");
     return editorCell;
-
   }
 
-  public static void createDiagram_tb7paq_c0_0(List<SNode> nlist, EditorContext editorContext, List<ConnectorViewCell> connectorCellList, jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection, DiagramView view) {
-    for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent().get();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
+  private class DiagramCellImpl_tb7paq_c0 extends DiagramCell {
+    private DiagramCellImpl_tb7paq_c0(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        public void invoke(SNode node, Integer x, Integer y) {
+          SNode a = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
+          SNodeFactoryOperations.addNewChild(a, "inputPorts", "jetbrains.mps.testHybridEditor.structure.InputPort");
+          SNodeFactoryOperations.addNewChild(a, "outputPorts", "jetbrains.mps.testHybridEditor.structure.OutputPort");
+          SPropertyOperations.set(a, "x", "" + (x));
+          SPropertyOperations.set(a, "y", "" + (y));
         }
-        view.itemsView.children().add(blockView);
-      }
+      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Connector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "connectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+        public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.OutputPort") && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.InputPort");
+        }
+      }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
+        public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
+          SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Connector");
+          SLinkOperations.setTarget(connector, "outputPort", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.OutputPort"), false);
+          SLinkOperations.setTarget(connector, "inputPort", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.InputPort"), false);
+        }
+      })}));
+      synchronize();
+    }
+
+
+
+    protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        public void invoke(SNode node, Integer x, Integer y) {
+          SNode a = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
+          SNodeFactoryOperations.addNewChild(a, "inputPorts", "jetbrains.mps.testHybridEditor.structure.InputPort");
+          SNodeFactoryOperations.addNewChild(a, "outputPorts", "jetbrains.mps.testHybridEditor.structure.OutputPort");
+          SPropertyOperations.set(a, "x", "" + (x));
+          SPropertyOperations.set(a, "y", "" + (y));
+        }
+      })};
+    }
+
+    protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Connector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "connectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+        public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.OutputPort") && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.InputPort");
+        }
+      }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
+        public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
+          SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Connector");
+          SLinkOperations.setTarget(connector, "outputPort", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.OutputPort"), false);
+          SLinkOperations.setTarget(connector, "inputPort", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.InputPort"), false);
+        }
+      })};
+    }
+
+    public Mapper<SNode, DiagramView> createMapper(SNode node) {
+      return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+              return ((BlockCell) getDirectChildCell(node)).createMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
+            public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
+              return ((ConnectorCell) getDirectChildCell(node)).createMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(myIsShowingDragFeedBack, new WritableProperty<Boolean>() {
+            public void set(Boolean showDragFeedBack) {
+              if (showDragFeedBack) {
+                getTarget().connections.add(myDragConnection);
+              } else {
+                getTarget().connections.remove(myDragConnection);
+              }
+            }
+          }));
+
+        }
+      };
+    }
+
+    public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
+      return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsDecotatorView.children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+              return ((BlockCell) getDirectChildCell(node)).createDecorationMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connectorsDecotatorView.children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+              return ((ConnectorCell) getDirectChildCell(node)).createDecorationMapper();
+            }
+          }));
+        }
+      };
+    }
+
+    public void synchronize() {
+      Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
+      ListIterator<SNode> blocksIterator = myBlocks.listIterator();
+      Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
+      ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "blocks", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "connectors", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      purgeTailNodes(blocksIterator);
+      purgeTailNodes(connectorsIterator);
+    }
+
+    private DiagramView createDiagramView() {
+      ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
+      return diagramView;
     }
   }
 
@@ -142,54 +238,153 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, SNode node) {
-    DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
-    DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.addEditorCell(blockCollection);
-    editorCell.addEditorCell(connectorCollection);
-    List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
-    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, connectorCellList, blockCollection, view);
-    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, connectorCellList, blockCollection, view);
-    for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
-      if (connectorCell.updateConnectionEnds(editorCell)) {
-        view.connections.add(connectorCell.getConnection());
-        connectorCollection.addEditorCell(connectorCell);
-      }
-    }
+  private EditorCell createDiagram_tb7paq_e0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0(editorContext, node);
     editorCell.setCellId("Diagram_tb7paq_e0");
     return editorCell;
-
   }
 
-  public static void createDiagram_tb7paq_e0_0(List<SNode> nlist, EditorContext editorContext, List<ConnectorViewCell> connectorCellList, jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection, DiagramView view) {
-    for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent().get();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
+  private class DiagramCellImpl_tb7paq_e0 extends DiagramCell {
+    private DiagramCellImpl_tb7paq_e0(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        public void invoke(SNode node, Integer x, Integer y) {
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "name", "block");
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "x", "" + (x));
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "y", "" + (y));
         }
-        view.itemsView.children().add(blockView);
-      }
+      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+        public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode && eq_tb7paq_a0a0a0a0d1a2a0a1a0m(SNodeOperations.getContainingLinkDeclaration(((SNode) toId)), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"));
+        }
+      }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
+        public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
+          SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance");
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "block", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
+          final SNode port = ((SNode) fromId);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "metaPort", ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "metaBlock", false), "outMetaPorts", true)).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_tb7paq_a0a0a0a0a2a3a0a0e1a2a0a1a0m(it, port);
+            }
+          }), false);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "block", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "metaPort", (SNode) toId, false);
+        }
+      })}));
+      synchronize();
+    }
+
+
+
+    protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        public void invoke(SNode node, Integer x, Integer y) {
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "name", "block");
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "x", "" + (x));
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "y", "" + (y));
+        }
+      })};
+    }
+
+    protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+        public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode && eq_tb7paq_a0a0a0a0d0a0a0d21(SNodeOperations.getContainingLinkDeclaration(((SNode) toId)), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"));
+        }
+      }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
+        public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
+          SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance");
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "block", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
+          final SNode port = ((SNode) fromId);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "metaPort", ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "metaBlock", false), "outMetaPorts", true)).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_tb7paq_a0a0a0a0a2a3a0a0e0a0a0d21(it, port);
+            }
+          }), false);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "block", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "metaPort", (SNode) toId, false);
+        }
+      })};
+    }
+
+    public Mapper<SNode, DiagramView> createMapper(SNode node) {
+      return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+              return ((BlockCell) getDirectChildCell(node)).createMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
+            public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
+              return ((ConnectorCell) getDirectChildCell(node)).createMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(myIsShowingDragFeedBack, new WritableProperty<Boolean>() {
+            public void set(Boolean showDragFeedBack) {
+              if (showDragFeedBack) {
+                getTarget().connections.add(myDragConnection);
+              } else {
+                getTarget().connections.remove(myDragConnection);
+              }
+            }
+          }));
+
+        }
+      };
+    }
+
+    public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
+      return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsDecotatorView.children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+              return ((BlockCell) getDirectChildCell(node)).createDecorationMapper();
+            }
+          }));
+          configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connectorsDecotatorView.children(), new MapperFactory<SNode, View>() {
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+              return ((ConnectorCell) getDirectChildCell(node)).createDecorationMapper();
+            }
+          }));
+        }
+      };
+    }
+
+    public void synchronize() {
+      Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
+      ListIterator<SNode> blocksIterator = myBlocks.listIterator();
+      Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
+      ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "newBlocks", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "newConnectors", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      purgeTailNodes(blocksIterator);
+      purgeTailNodes(connectorsIterator);
+    }
+
+    private DiagramView createDiagramView() {
+      ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
+      return diagramView;
     }
   }
 
-  private EditorCell createConstant_tb7paq_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "blablabla");
-    editorCell.setCellId("Constant_tb7paq_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
+  private static boolean eq_tb7paq_a0a0a0a0d1a2a0a1a0m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e1a2a0a1a0m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_tb7paq_a0a0a0a0d0a0a0d21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e0a0a0d21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

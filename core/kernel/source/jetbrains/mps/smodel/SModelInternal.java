@@ -19,7 +19,6 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -36,8 +35,6 @@ public interface SModelInternal {
 
   //todo cast if can be
   StackTraceElement[] getDisposedStacktrace();
-
-  void setModelDescriptor(SModel modelDescriptor);
 
   boolean canFireEvent();
 
@@ -82,10 +79,6 @@ public interface SModelInternal {
 
   List<ImportElement> getAdditionalModelVersions();
 
-  void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion);
-
-  void addAdditionalModelVersion(@NotNull ImportElement element);
-
   int getVersion();
 
   void setVersion(int version);
@@ -99,6 +92,4 @@ public interface SModelInternal {
   void changeModelReference(SModelReference newModelReference);
 
   boolean updateModuleReferences();
-
-  void copyPropertiesTo(SModelInternal to);
 }

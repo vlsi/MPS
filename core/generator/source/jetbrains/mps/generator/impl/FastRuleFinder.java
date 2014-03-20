@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,24 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Igor Alshannikov
@@ -31,33 +43,51 @@ public class FastRuleFinder {
   private Map<String, TemplateReductionRule[]> myApplicableRules = new HashMap<String, TemplateReductionRule[]>();
 
   public FastRuleFinder(Iterable<TemplateReductionRule> reductionRules) {
-    Map<String, List<TemplateReductionRule>> applicableRules = new HashMap<String, List<TemplateReductionRule>>();
+    // rules exactly for the given concept, in the order they come from MC
+    Map<String, List<TemplateReductionRule>> specificRules = new HashMap<String, List<TemplateReductionRule>>();
+    // rules applicable based on concept hierarchy - has lower priority than more specific rules
+    // map concept to rules that come from ancestors of the given concept.
+    Map<String, List<TemplateReductionRule>> inheritedRules = new HashMap<String, List<TemplateReductionRule>>();
 
     for (TemplateReductionRule rule : reductionRules) {
       String applicableConceptFqName = rule.getApplicableConcept();
 
-      List<TemplateReductionRule> rules = applicableRules.get(applicableConceptFqName);
+      List<TemplateReductionRule> rules = specificRules.get(applicableConceptFqName);
       if (rules == null) {
         rules = new LinkedList<TemplateReductionRule>();
-        applicableRules.put(applicableConceptFqName, rules);
+        specificRules.put(applicableConceptFqName, rules);
       }
       rules.add(rule);
 
       if (rule.applyToInheritors()) {
         for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
-          rules = applicableRules.get(conceptFqName);
+          rules = inheritedRules.get(conceptFqName);
           if (rules == null) {
             rules = new LinkedList<TemplateReductionRule>();
-            applicableRules.put(conceptFqName, rules);
+            inheritedRules.put(conceptFqName, rules);
           }
           rules.add(rule);
         }
       }
     }
 
-    for (Entry<String, List<TemplateReductionRule>> entry : applicableRules.entrySet()) {
-      List<TemplateReductionRule> rules = entry.getValue();
+    for (Entry<String, List<TemplateReductionRule>> entry : specificRules.entrySet()) {
+      List<TemplateReductionRule> exact = entry.getValue();
+      List<TemplateReductionRule> inherited = inheritedRules.remove(entry.getKey());
+      List<TemplateReductionRule> rules;
+      if (inherited == null) {
+        rules = exact;
+      } else {
+        ArrayList<TemplateReductionRule> l = new ArrayList<TemplateReductionRule>(exact.size() + inherited.size());
+        l.addAll(exact);
+        l.addAll(inherited);
+        rules = l;
+      }
       myApplicableRules.put(entry.getKey(), rules.toArray(new TemplateReductionRule[rules.size()]));
+    }
+    for (Entry<String, List<TemplateReductionRule>> entry : inheritedRules.entrySet()) {
+      List<TemplateReductionRule> inherited = entry.getValue();
+      myApplicableRules.put(entry.getKey(), inherited.toArray(new TemplateReductionRule[inherited.size()]));
     }
   }
 
@@ -66,9 +96,26 @@ public class FastRuleFinder {
   }
 
   public static class BlockedReductionsData {
-    public static final Object KEY = new Object();
-    private Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
-    private Map<SNode, Object> myNextReductionData = new HashMap<SNode, Object>();
+    private static final Object KEY = new Object();
+    // reduction data for this micro step is read-only
+    private final Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
+    // can be modified by several threads FIXME we can block rules on a per-root (i.e. per thread) basis, so no synchronization is really needed here
+    private final Map<SNode, Object> myNextReductionData = new ConcurrentHashMap<SNode, Object>();
+    // although not quite nice, keep weavings separate from reductions but do it the same way - reductionData needs refactoring anyway
+    // and once changed, weaving rules would go through refactoring as well
+    private final Map<SNode, Collection<TemplateWeavingRule>> myCurrentWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
+    // weavings are executed from the single thread
+    private final Map<SNode, Collection<TemplateWeavingRule>> myNextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
+
+    @NotNull
+    public static BlockedReductionsData getStepData(GenerationSessionContext sessionContext) {
+      Object blockedReductions = sessionContext.getStepObject(BlockedReductionsData.KEY);
+      if (blockedReductions == null) {
+        blockedReductions = new BlockedReductionsData();
+        sessionContext.putStepObject(BlockedReductionsData.KEY, blockedReductions);
+      }
+      return (BlockedReductionsData) blockedReductions;
+    }
 
     public boolean isReductionBlocked(SNode node, TemplateReductionRule rule, ReductionContext reductionContext) {
       return isReductionBlocked(node, rule)
@@ -85,22 +132,72 @@ public class FastRuleFinder {
       return false;
     }
 
-    public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionContext reductionContext) {
-      Object o;
-      if (reductionContext != null) {
-        o = ReductionContext.combineRuleSets(myCurrentReductionData.get(inputNode), reductionContext.getBlockedRules(inputNode));
-      } else {
-        o = myCurrentReductionData.get(inputNode);
+    public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, @NotNull ReductionContext reductionContext) {
+      Object o = ReductionContext.combineRuleSets(myCurrentReductionData.get(inputNode), reductionContext.getBlockedRules(inputNode));
+      if (o == null) {
+        return;
       }
-      if (o == null) return;
-      synchronized (myNextReductionData) {
-        myNextReductionData.put(outputNode, o);
+      myNextReductionData.put(outputNode, o);
+    }
+
+    public boolean isWeavingBlocked(@NotNull SNode node, @NotNull TemplateWeavingRule rule) {
+      return myCurrentWeaveData.containsKey(node) && myCurrentWeaveData.get(node).contains(rule);
+    }
+
+    public void blockWeaving(@NotNull SNode inputNode, @NotNull TemplateWeavingRule rule) {
+      Collection<TemplateWeavingRule> nxt = myNextWeaveData.get(inputNode);
+      if (nxt == null) {
+        nxt = new ArrayList<TemplateWeavingRule>(5);
+        Collection<TemplateWeavingRule> cur = myCurrentWeaveData.get(inputNode);
+        if (cur != null) {
+          nxt.addAll(cur);
+        }
+        myNextWeaveData.put(inputNode, nxt);
       }
+      if (nxt.contains(rule)) {
+        return;
+      }
+      nxt.add(rule);
+    }
+
+    /**
+     * Update blocked rules to apply for nodes in cloned model, assuming present nodes were cloned into clonedModel with nodeid preserved.
+     * Single-thread.
+     */
+    public void advanceForModelClone(@NotNull SModel clonedModel, @NotNull IGeneratorLogger log) {
+      HashMap<SNode, Object> nextReductionData = new HashMap<SNode, Object>(myCurrentReductionData.size() * 4 / 3);
+      for (Map.Entry<SNode,Object> e : myCurrentReductionData.entrySet()) {
+        final SNode clonedNode = clonedModel.getNode(e.getKey().getNodeId());
+        if (clonedNode != null) {
+          nextReductionData.put(clonedNode, e.getValue());
+        } else {
+          log.warning(e.getKey().getReference(), "Node copied in one of previous microsteps is not found in cloned model");
+        }
+      }
+      myCurrentReductionData.clear();
+      myCurrentReductionData.putAll(nextReductionData);
+      //
+      HashMap<SNode, Collection<TemplateWeavingRule>> nextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>(myCurrentWeaveData.size() * 4 / 3);
+      for (Map.Entry<SNode, Collection<TemplateWeavingRule>> e : myCurrentWeaveData.entrySet()) {
+        final SNode clonedNode = clonedModel.getNode(e.getKey().getNodeId());
+        if (clonedNode != null) {
+          nextWeaveData.put(clonedNode, e.getValue());
+        } else {
+          log.warning(e.getKey().getReference(), "Node copied in one of previous microsteps is not found in cloned model");
+        }
+      }
+      myCurrentWeaveData.clear();
+      myCurrentWeaveData.putAll(nextWeaveData);
     }
 
     public void advanceStep() {
-      myCurrentReductionData = myNextReductionData;
-      myNextReductionData = new HashMap<SNode, Object>();
+      myCurrentReductionData.clear();
+      myCurrentReductionData.putAll(myNextReductionData);
+      myNextReductionData.clear();
+      //
+      myCurrentWeaveData.clear();
+      myCurrentWeaveData.putAll(myNextWeaveData);
+      myNextWeaveData.clear();
     }
   }
 }

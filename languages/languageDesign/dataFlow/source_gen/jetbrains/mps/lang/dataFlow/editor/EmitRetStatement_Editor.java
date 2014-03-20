@@ -20,7 +20,7 @@ public class EmitRetStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_kzxe6t_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

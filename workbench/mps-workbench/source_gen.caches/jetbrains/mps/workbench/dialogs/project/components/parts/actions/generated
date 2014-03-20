@@ -1,34 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-25px63h3kz1jjtqmr8852agvdno4xkr">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-1azyd7gcsjvecc86bcpy6ze7dhf6r7t" />
-  <source id="1560298786499490203" name="ListAddAction" hash="9twy1ksszy61pa5jylre61es84jlie7">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ListAddAction.java" />
-  </source>
-  <source id="1560298786499490464" name="BaseAddAction" hash="9c8p985v8km0nbmmihchthy152zg8r5">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="BaseAddAction.java" />
-  </source>
-  <source id="1560298786499493326" name="TableAddAction" hash="clushkuoy3xoewnmdceb0wp7js3gyqd">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="TableAddAction.java" />
-  </source>
-  <source id="1560298786499493338" name="ListRemoveAction" hash="azrp5emn4pzsj4a8jamtfk2yok0vtxm">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ListRemoveAction.java" />
-  </source>
-  <source id="1560298786499494244" name="BaseValidatedAction" hash="-54mpxvdfhr0zcuf8dtyx611yxymuzzs">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="BaseValidatedAction.java" />
-  </source>
-  <source id="1560298786499495342" name="TableRemoveAction" hash="-66kpn9g7341uwpbvgemw3451co8z1gm">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="TableRemoveAction.java" />
-  </source>
-  <source id="1560298786499497503" name="ListEditAction" hash="84lwwg9v0binayuo2lrb5udz5r3oc71">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ListEditAction.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-25px63h3kz1jjtqmr8852agvdno4xkr" />
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,30 +16,32 @@
 package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
-import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.IOException;
 import java.util.List;
@@ -54,11 +56,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   private FileProcessor myProcessor;
 
   public JavaGenerationHandler() {
-  }
-
-  @Override
-  public boolean canHandle(SModel inputModel) {
-    return SModelStereotype.isUserModel(inputModel);
   }
 
   @Override
@@ -77,24 +74,34 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
       long startJobTime = System.currentTimeMillis();
 
-      boolean result = false;
       if (status.isOk()) {
-        JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
+        JavaStreamHandler javaSourcesLocation = new JavaStreamHandler(inputModel, targetDir, myProcessor);
+        JavaStreamHandler cachesLocation = new JavaStreamHandler(inputModel, FileGenerationUtil.getCachesDir(targetDir), myProcessor);
+        TextFacility tf = new TextFacility(status);
         try {
-          result = new TextGenerator(javaStreamHandler,
-              BLDependenciesCache.getInstance().getGenerator(),
-              TraceInfoCache.getInstance().getGenerator(),
-              GenerationDependenciesCache.getInstance().getGenerator()
-          ).handleOutput(invocationContext, status);
+          tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
+          tf.produceTextModel();
+          tf.serializeOutcome(javaSourcesLocation);
+          CacheGenLayout cgl = new CacheGenLayout();
+          cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
+          cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
+          cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());
+          tf.serializeCaches(cgl);
+          if (!tf.getErrors().isEmpty()) {
+            info("there were errors:");
+            for (IMessage m : tf.getErrors()) {
+              myLogger.info(m.getText());
+            }
+            return false;
+          }
         } finally {
-          javaStreamHandler.dispose();
+          tf.dispose();
         }
+        myProcessor.filesToDelete(javaSourcesLocation.getFilesToDelete());
+        myProcessor.filesToDelete(cachesLocation.getFilesToDelete());
+        myProcessor.invalidateModel(inputModel);
       }
 
-      if (!result) {
-        info("there were errors.");
-        return false;
-      }
       if (myLogger.needsInfo()) {
         myLogger.info("output generated in " + (System.currentTimeMillis() - startJobTime) + " ms");
       }

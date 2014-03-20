@@ -36,7 +36,7 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "load");
     editorCell.setCellId("Constant_xxatue_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -64,7 +64,7 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_xxatue_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

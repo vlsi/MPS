@@ -83,9 +83,4 @@ public class ModelValidator {
 
     return errors;
   }
-
-  @Deprecated
-  public List<String> validate(IScope scope) {
-    return validate();
-  }
 }

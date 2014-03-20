@@ -51,6 +51,9 @@ public class StaticMethodCall_Behavior {
     for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
     }
+    for (SNode actualTypeArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "typeArgument", true)).addElement(actualTypeArgument);
+    }
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {

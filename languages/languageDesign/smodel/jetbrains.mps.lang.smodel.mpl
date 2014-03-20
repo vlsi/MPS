@@ -12,7 +12,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   </accessoryModels>
   <generators>
-    <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
+    <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090" needs-opctx="false">
       <models>
         <modelRoot contentPath="${module}" type="java_classes">
           <sourceRoot location="classes_gen" />
@@ -95,12 +95,6 @@
                 </mapping-set-element>
                 <mapping-set-element>
                   <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" nodeID="1143235821620" />
-                </mapping-set-element>
-                <mapping-set-element>
-                  <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" nodeID="1146069305540" />
-                </mapping-set-element>
-                <mapping-set-element>
-                  <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" nodeID="1168908126680" />
                 </mapping-set-element>
                 <mapping-set-element>
                   <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" nodeID="1172328557997" />

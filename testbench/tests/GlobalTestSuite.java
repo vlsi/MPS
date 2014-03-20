@@ -31,10 +31,10 @@ import org.junit.runners.Suite;
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
+    jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
-    jetbrains.mps.project.DependenciesTests.class,
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
     jetbrains.mps.make.dependencies.GraphTestCase.class,
     jetbrains.mps.packaged.PackagedLanguageTest.class,
@@ -46,7 +46,8 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
-    jetbrains.mps.smodel.language.ExtensionRegistryTest.class
+    jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
+    jetbrains.mps.editor.runtime.style.StyleTests.class
 })
 public class GlobalTestSuite extends TestSuite {
 }

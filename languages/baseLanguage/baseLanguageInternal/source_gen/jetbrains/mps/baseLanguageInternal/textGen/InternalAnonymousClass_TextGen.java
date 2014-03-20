@@ -8,7 +8,7 @@ import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,22 +24,26 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
-            this.append(", ");
+      {
+        Iterable<SNode> collection = SLinkOperations.getTargets(node, "typeParameter", true);
+        final SNode lastItem = Sequence.fromIterable(collection).last();
+        for (SNode item : collection) {
+          appendNode(item);
+          if (item != lastItem) {
+            append(", ");
           }
         }
       }
       this.append(">");
     }
     this.append("(");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructorArgument", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "constructorArgument", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "constructorArgument", true)).last()) {
-          this.append(", ");
+    {
+      Iterable<SNode> collection = SLinkOperations.getTargets(node, "constructorArgument", true);
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        appendNode(item);
+        if (item != lastItem) {
+          append(", ");
         }
       }
     }

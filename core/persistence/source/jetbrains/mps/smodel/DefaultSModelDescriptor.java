@@ -43,7 +43,6 @@ import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
 
-
   private SModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
@@ -87,7 +86,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
       result = ModelPersistence.readModel(myHeader, source, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
+      DefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -108,7 +107,6 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
             "Make sure that all project's roots and/or the model namespace is correct");
     return result;
   }
-
 
   public int getPersistenceVersion() {
     return getModelHeader().getPersistenceVersion();
@@ -147,7 +145,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate();
   }
 
   @Override
@@ -237,5 +235,4 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   public SModelHeader getHeaderCopy() {
     return myHeader.createCopy();
   }
-
 }

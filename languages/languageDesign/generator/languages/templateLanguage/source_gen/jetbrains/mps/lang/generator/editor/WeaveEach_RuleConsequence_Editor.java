@@ -162,7 +162,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
         editorCell.setRole("template");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyReference(style, editorCell);
+      Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -49,14 +48,13 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_double_unboxing_31y3xb_a0a;
-        nodeToMatch_double_unboxing_31y3xb_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_double_unboxing_31y3xb_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_31y3xb_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_31y3xb_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_jy4zax_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_double_unboxing_31y3xb_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_jy4zax_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_31y3xb_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -82,9 +80,9 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
   private static SNode _quotation_createNode_jy4zax_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_jy4zax_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Double");
+  private static SNodePointer SNODE_POINTER_jy4zax_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Double");
 }

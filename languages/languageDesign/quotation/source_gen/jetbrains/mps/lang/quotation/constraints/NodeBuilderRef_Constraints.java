@@ -71,7 +71,7 @@ public class NodeBuilderRef_Constraints extends BaseConstraintsDescriptor {
               if (lval == null) {
                 return new EmptyScope();
               }
-              return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), false, operationContext.getScope(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(lval, "link", false), "target", false), "virtual_getFqName_1213877404258", new Object[]{})));
+              return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), false, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(lval, "link", false), "target", false), "virtual_getFqName_1213877404258", new Object[]{})));
             }
           }
         };

@@ -12,7 +12,7 @@ import com.intellij.openapi.extensions.PluginId;
 public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ProjectNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup";
-  public static final String LABEL_ID_end = ID + "end";
+  public static final String LABEL_ID_languageExt = ID + "languageExt";
 
   public ProjectNewActions_ActionGroup() {
     super("New", ID);
@@ -21,11 +21,12 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
     try {
       ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSolution_Action");
       {
-        LabelledAnchor action = new LabelledAnchor(ProjectNewActions_ActionGroup.LABEL_ID_end);
+        LabelledAnchor action = new LabelledAnchor(ProjectNewActions_ActionGroup.LABEL_ID_languageExt);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         ProjectNewActions_ActionGroup.this.addAction(action);
       }
+      ProjectNewActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
 public class SPropertyAdapter implements SProperty {
@@ -19,7 +18,7 @@ public class SPropertyAdapter implements SProperty {
 
 
   public SPropertyAdapter(String conceptName, String name) {
-    this.conceptName = name;
+    this.conceptName = conceptName;
     this.propertyName = name;
   }
 
@@ -54,7 +53,7 @@ public class SPropertyAdapter implements SProperty {
   }
 
   protected final SNode getPropertyNode() {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if ((concept == null)) {
       return null;
     }

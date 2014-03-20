@@ -4,9 +4,18 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class BLExpression_BehaviorDescriptor extends GeneratedCommand_BehaviorDescriptor implements IWrapper_BehaviorDescriptor {
   public BLExpression_BehaviorDescriptor() {
+  }
+
+  public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
+    return BLExpression_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
+  }
+
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return BLExpression_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
 
   @Override

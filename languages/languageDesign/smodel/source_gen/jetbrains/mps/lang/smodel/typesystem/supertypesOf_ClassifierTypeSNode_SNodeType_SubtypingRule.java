@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -49,14 +48,13 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a;
-        nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_semtjk_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_semtjk_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_semtjk_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -82,9 +80,9 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
   private static SNode _quotation_createNode_qc0dd6_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SNode");
+  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SNode");
 }

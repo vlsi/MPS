@@ -18,13 +18,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.uiDesigner.core.GridLayoutManager;
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import com.intellij.uiDesigner.core.GridConstraints;
-import java.awt.Dimension;
+import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
+import javax.swing.border.EmptyBorder;
 import java.awt.Component;
 import org.jetbrains.annotations.NonNls;
 
@@ -93,7 +93,8 @@ public class HintsDialog extends DialogWrapper {
 
   @Override
   protected void init() {
-    myMainPanel = new JPanel(new GridLayoutManager(3, 1));
+    myMainPanel = new JPanel(new BorderLayout());
+
     myButtonGroup = new ButtonGroup();
     myDefaultRadioButton = new JRadioButton("Use default hints");
     myDefaultRadioButton.addActionListener(new ActionListener() {
@@ -115,21 +116,16 @@ public class HintsDialog extends DialogWrapper {
     myCustomRadioButton.setSelected(useCustomHints);
     setPanelEnabled(myPage.getComponent(), useCustomHints);
 
-    GridConstraints c = new GridConstraints();
-    c.setFill(GridConstraints.FILL_BOTH);
-    c.setAnchor(GridConstraints.ANCHOR_NORTHWEST);
+    JPanel buttonsPanel = new JPanel(new GridLayout(2, 1));
+    buttonsPanel.add(myDefaultRadioButton);
+    buttonsPanel.add(myCustomRadioButton);
+    myMainPanel.add(buttonsPanel, BorderLayout.NORTH);
 
-    c.setRow(0);
-    c.setColumn(0);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myPage.getComponent());
+    scrollPane.setBorder(new EmptyBorder(0, 30, 0, 0));
+    scrollPane.setBackground(null);
 
-    myMainPanel.add(myDefaultRadioButton, c);
-    c.setRow(1);
-    myMainPanel.add(myCustomRadioButton, c);
-    JComponent component = myPage.getComponent();
-    component.setPreferredSize(new Dimension(330, 250));
-    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(component);
-
-    myMainPanel.add(scrollPane, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+    myMainPanel.add(scrollPane, BorderLayout.CENTER);
     super.init();
   }
 

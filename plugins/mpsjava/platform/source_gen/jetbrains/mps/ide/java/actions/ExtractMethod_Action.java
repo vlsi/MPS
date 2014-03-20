@@ -6,15 +6,18 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
+import jetbrains.mps.ide.editor.actions.EditorActionUtils;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -43,7 +46,11 @@ public class ExtractMethod_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).select(new ISelector<SNode, EditorCell>() {
+      public EditorCell select(SNode it) {
+        return (EditorCell) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(it);
+      }
+    })) && ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

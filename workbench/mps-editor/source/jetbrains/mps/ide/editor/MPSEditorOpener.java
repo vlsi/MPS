@@ -28,12 +28,9 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.*;
@@ -132,7 +129,8 @@ public class MPSEditorOpener {
       //open inspector (if no cell is selected in editor, inspector won't be opened)
       DataContext dataContext = DataManager.getInstance().getDataContext((Component) nodeEditor.getCurrentEditorComponent());
       FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor);
+      NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
+      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUseCustomHints() ? nec.getEnabledHints() : null);
     }
 
 
@@ -270,7 +268,7 @@ public class MPSEditorOpener {
 
     DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUseCustomHints() ? nec.getEnabledHints() : null);
     return true;
   }
 }

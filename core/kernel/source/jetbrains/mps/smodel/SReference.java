@@ -15,19 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -191,44 +189,41 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
       Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
       log.error("\ncouldn't resolve reference '" + getRole() + "' from " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode()),
-          validNode(getSourceNode()));
+          validNode(getSourceNode().getReference()));
       if (message != null) log.error(" -- " + message);
       if (problems != null) {
         for (ProblemDescription pd : problems) {
-          log.error(pd.getMessage(), validNode(pd.getNode().resolve(MPSModuleRepository.getInstance())));
+          log.error(pd.getMessage(), validNode(pd.getNode()));
         }
       }
     }
   }
 
-  protected static SNodeReference validNode(SNode node) {
-    if (node == null) {
+  protected static SNodeReference validNode(SNodeReference node) {
+    if (node == null || node.getModelReference() == null) {
       return null;
     }
 
-    SModel model = node.getModel();
+    SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
     if (model == null) {
       return null;
     }
-    if (!(model.getModule() instanceof TransientModelsModule)) {
-      return new jetbrains.mps.smodel.SNodePointer(node);
-    }
-
-    SModule module = model.getModule();
-    if (module instanceof TransientModelsModule) {
-      if (((TransientModelsModule) module).addModelToKeep(model, false)) {
-        return new jetbrains.mps.smodel.SNodePointer(node);
+    if (model.getModule() instanceof  TransientModelsModule) {
+      if (((TransientModelsModule) model.getModule()).addModelToKeep(node.getModelReference(), false)) {
+        return node;
       }
+      return null;
     }
-    return null;
+    return node;
   }
 
-  public static class ProblemDescription {
+  @Immutable
+  public static final class ProblemDescription {
 
-    private SNodeReference myNode;
-    private String myMessage;
+    private final SNodeReference myNode;
+    private final String myMessage;
 
-    public ProblemDescription(@NotNull SNodeReference node, String message) {
+    public ProblemDescription(@NotNull SNodeReference node, @NotNull String message) {
       myNode = node;
       myMessage = message;
     }

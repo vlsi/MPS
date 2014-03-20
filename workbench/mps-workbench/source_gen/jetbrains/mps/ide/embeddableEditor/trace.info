@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)/1219405202223" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)/1219411663047" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)/1220433141274" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)/1757086175614073066">
     <nodeInfo nodeId="1757086175615021510" fileName="EmbeddableEditor.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
     <nodeInfo nodeId="1757086175615723166" fileName="EmbeddableEditor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="repository" />
@@ -109,6 +106,5 @@
     <unitInfo nodeId="1757086175615580941" fileName="EmbeddableEditor.java" startLine="123" startPosition="51" endLine="127" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$1" />
     <unitInfo nodeId="1757086175614073066" fileName="EmbeddableEditor.java" startLine="28" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)/1757086175614080164" />
 </debugInfo>
 

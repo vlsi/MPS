@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
@@ -28,6 +29,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
 
 class AutoValidator {
+  private boolean mySuppressSelectionChanges = false;
+
   AutoValidator(EditorComponent editorComponent) {
     editorComponent.getSelectionManager().addSelectionListener(new MyCellSelectionListener());
   }
@@ -35,7 +38,7 @@ class AutoValidator {
   private class MyCellSelectionListener implements SelectionListener {
     @Override
     public void selectionChanged(final jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-      if (oldSelection == newSelection) {
+      if (mySuppressSelectionChanges || oldSelection == newSelection) {
         return;
       }
       final EditorComponent editorComponentInternal = (EditorComponent) editorComponent;
@@ -70,15 +73,19 @@ class AutoValidator {
                 EditorCell cell = cellInfo.findCell(editorComponentInternal);
                 if (cell != null) {
                   Object memento = editorComponent.getEditorContext().createMemento();
-                  APICellAdapter.validate(cell, true, false);
-                  editorComponentInternal.flushEvents();
-                  editorComponent.getEditorContext().setMemento(memento);
+                  mySuppressSelectionChanges = true;
+                  try {
+                    APICellAdapter.validate(cell, true, false);
+                    editorComponentInternal.flushEvents();
+                    editorComponent.getEditorContext().setMemento(memento);
+                  } finally {
+                    mySuppressSelectionChanges = false;
+                  }
                 }
               }
 
               if (editorCell instanceof EditorCell_STHint) {
-                SNodeEditorUtil.removeRightTransformHint(node);
-                SNodeEditorUtil.removeLeftTransformHint(node);
+                STHintUtil.removeTransformHints(node);
               }
             }
           });

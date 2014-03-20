@@ -42,7 +42,7 @@ public class check_CellModel_DiagramNode_NonTypesystemRule extends AbstractNonTy
       if (SetSequence.fromSet(parameterNames).contains(SPropertyOperations.getString(parameter, "name"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "Parameter with this name was aalready specified", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "4088443785018451028", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "Parameter with this name was already specified", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "4088443785018451028", null, errorTarget);
         }
       } else {
         SetSequence.fromSet(parameterNames).addElement(SPropertyOperations.getString(parameter, "name"));

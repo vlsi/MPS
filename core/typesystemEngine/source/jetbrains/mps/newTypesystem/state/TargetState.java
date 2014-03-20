@@ -16,13 +16,10 @@
 package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.state.blocks.TargetBlock;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.util.containers.ManyToManyMap;
 
 import java.util.Set;
 
@@ -71,8 +68,13 @@ public class TargetState extends State {
     return myTargetTypeCalculated;
   }
 
+  @Deprecated
   public void expandTargetNode() {
-    getNodeMaps().expandNode(myTargetNode, true);
+    expandTargetNode(true);
+  }
+
+  public void expandTargetNode(boolean finalExpansion) {
+    getNodeMaps().expandNode(myTargetNode, finalExpansion);
     if (!TypesUtil.hasVariablesInside(getNodeMaps().getType(myTargetNode))) {
       setTargetTypeCalculated();
     }
@@ -80,7 +82,6 @@ public class TargetState extends State {
 
   @Override
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
-    expandTargetNode();
-    return;
+    expandTargetNode(finalExpansion);
   }
 }

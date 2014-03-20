@@ -81,13 +81,13 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-generator-template">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-languageAccessories">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-languageModels">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" includes="**/*.java" />
@@ -117,7 +117,7 @@
       <fileset dir="${build.tmp}/default/collections_trove.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-runtime-jetbrains">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-trove/languages/collections_trove.runtime-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/*.java" />
@@ -161,7 +161,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate parallelMode="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -265,8 +265,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
@@ -310,8 +310,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />

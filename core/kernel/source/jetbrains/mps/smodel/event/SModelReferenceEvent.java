@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.event;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -22,9 +23,10 @@ import org.jetbrains.mps.openapi.model.SReference;
 /**
  * @author Kostik
  */
+@Immutable
 public class SModelReferenceEvent extends SModelEvent {
-  private SReference myReference;
-  private boolean myAdded;
+  private final SReference myReference;
+  private final boolean myAdded;
 
   public SModelReferenceEvent(SModel model, SReference reference, boolean added) {
     super(model);

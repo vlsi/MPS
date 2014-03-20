@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,16 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
+import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -30,11 +33,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -45,7 +49,6 @@ import java.util.Map;
 public class GenerationTracer implements IGenerationTracer {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(GenerationTracer.class));
 
-  private Project myProject;
   private boolean myActive = false;
 
   private List<TracerNode> myCurrentTracingData;
@@ -55,13 +58,18 @@ public class GenerationTracer implements IGenerationTracer {
   private ModelsProcessedByScripts myModelsProcessedByScripts;
 
   private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
+  private GenerationTracerViewTool myTool;
+  private SModelReference myCurrentInputModel;
+  private SModelReference myCurrentOutputModel;
+
+  private final boolean enableNewTrace;
 
   public GenerationTracer(Project project) {
-    myProject = project;
+    enableNewTrace = Boolean.parseBoolean(System.getProperty("mps.internal.newgentrace", Boolean.toString(true)));
   }
 
-  private GenerationTracerViewTool getTracerViewTool() {
-    return myProject.getComponent(GenerationTracerViewTool.class);
+  void setTracerViewTool(GenerationTracerViewTool tool) {
+    myTool = tool;
   }
 
   @Override
@@ -72,22 +80,20 @@ public class GenerationTracer implements IGenerationTracer {
     myModelsProcessedByScripts = new ModelsProcessedByScripts();
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
+    myCurrentOutputModel = null;
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        getTracerViewTool().setTracingDataIsAvailable(false);
-      }
-    });
+    if (myTool != null) {
+      myTool.setTracingDataIsAvailable(false);
+    }
   }
 
   @Override
   public void finishTracing() {
     myActive = false;
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        getTracerViewTool().setTracingDataIsAvailable(hasTracingData());
-      }
-    });
+    if (myTool != null) {
+      myTool.setTracingDataIsAvailable(hasTracingData());
+    }
   }
 
   @Override
@@ -98,12 +104,12 @@ public class GenerationTracer implements IGenerationTracer {
     myModelsProcessedByScripts = null;
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
+    myCurrentOutputModel = null;
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        getTracerViewTool().setTracingDataIsAvailable(false);
-      }
-    });
+    if (myTool != null) {
+      myTool.setTracingDataIsAvailable(false);
+    }
   }
 
   @Override
@@ -115,8 +121,10 @@ public class GenerationTracer implements IGenerationTracer {
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
-    myTracingDataByInputModel.put(inputModel.getReference().toString(), myCurrentTracingData);
-    myTracingDataByOutputModel.put(outputModel.getReference().toString(), myCurrentTracingData);
+    myCurrentInputModel = inputModel.getReference();
+    myCurrentOutputModel = outputModel.getReference();
+    myTracingDataByInputModel.put(myCurrentInputModel.toString(), myCurrentTracingData);
+    myTracingDataByOutputModel.put(myCurrentOutputModel.toString(), myCurrentTracingData);
     myCurrentTraceNode = null;
   }
 
@@ -127,23 +135,39 @@ public class GenerationTracer implements IGenerationTracer {
     myTracingDataByOutputModel.remove(outputModel.getReference().toString());
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
+    myCurrentInputModel = null;
+    myCurrentOutputModel = null;
+  }
+
+  private SNodeReference adoptToModel(SModelReference desiredModel, SNodeReference node) {
+    if (!desiredModel.equals(node.getModelReference())) {
+      SNodeId nodeId = node instanceof SNodePointer ? ((SNodePointer) node).getNodeId() : null;
+      if (nodeId != null) {
+        node = new SNodePointer(desiredModel, nodeId);
+      }
+      // fall-through
+    }
+    return node;
   }
 
   @Override
   public void pushInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     push(new TracerNode(TracerNode.Kind.INPUT, node));
   }
 
   @Override
   public void closeInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     closeBranch(TracerNode.Kind.INPUT, node);
   }
 
   @Override
   public void popInputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentInputModel, node);
     pop(TracerNode.Kind.INPUT, node);
   }
 
@@ -186,6 +210,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushOutputNode(SNodeReference node) {
     if (!myActive) return;
+    node = adoptToModel(myCurrentOutputModel, node);
     push(new TracerNode(TracerNode.Kind.OUTPUT, node));
   }
 
@@ -294,38 +319,49 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   public boolean hasTraceInputData(SModelReference modelReference) {
-    if (getRootTracerNodes(Kind.INPUT, modelReference) != null) {
+    if (!getRootsOfInputModel(modelReference).isEmpty()) {
       return true;
     }
     return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(modelReference);
   }
 
-  public boolean showTraceInputData(@NotNull SNode node) {
-    int index = getTracerViewTool().getTabIndex(Kind.INPUT, node);
-    if (index > -1) {
-      getTracerViewTool().selectIndex(index);
-      getTracerViewTool().openToolLater(true);
-      return true;
+  @Nullable
+  public TraceNodeUI buildTraceInputTree(@NotNull SNode node) {
+    final SNodeReference nodeRef = node.getReference();
+    List<TracerNode> rootTracerNodes = getRootsOfInputModel(nodeRef.getModelReference());
+
+    List<TracerNode> tracerNodes = new ArrayList<TracerNode>();
+    for (TracerNode rootTracerNode : rootTracerNodes) {
+      rootTracerNode.findAllTopmost(Kind.INPUT, nodeRef, tracerNodes);
+    }
+    final TraceNodeUI newTracer;
+    final GenerationTrace ngt = getNewGenTrace(node);
+    if (ngt != null) {
+      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION, nodeRef);
+      for (TraceNodeUI n : TraceBuilderUI.buildTrace(ngt, node)) {
+        newTracer.addChild(n);
+      }
+    } else {
+      newTracer = null;
     }
 
-    TracerNode tracerNode = buildTraceInputTree(node);
-    if (tracerNode == null) return false;
-    getTracerViewTool().showTraceView(tracerNode);
-    return true;
-  }
-
-  @Nullable
-  private TracerNode buildTraceInputTree(@NotNull SNode node) {
-    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, node.getReference());
     if (!tracerNodes.isEmpty()) {
-      TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
-      for (TracerNode tracerNode : tracerNodes) {
-        List<TracerNode> childrensCopy = tracerNode.getChildrenCopy();
-        for (TracerNode childCopy : childrensCopy) {
-          resultTracerNode.addChild(childCopy);
-        }
+      TraceNodeUI resultTracerNode;
+      if (tracerNodes.size() == 1) {
+        TracerNode theOne = tracerNodes.get(0);
+        resultTracerNode = new TraceNodeUI(theOne);
+        tracerNodes = theOne.getChildren();
+      } else {
+        resultTracerNode = new TraceNodeUI("Multiple use of same input node", Icons.COLLECTION, nodeRef);
       }
-      return resultTracerNode;
+      for (TracerNode tracerNode : tracerNodes) {
+        resultTracerNode.addChild(create(tracerNode));
+      }
+      if (newTracer != null) {
+        return group(resultTracerNode, newTracer);
+      } else {
+        return resultTracerNode;
+      }
     }
 
     // may be input is processed by scripts?
@@ -333,64 +369,83 @@ public class GenerationTracer implements IGenerationTracer {
     if (mappingScripts == null) return null;
     SModelReference reference = myModelsProcessedByScripts.getOutputForInput(node.getModel());
     if (reference == null) return null;
-    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
-    if (descriptor == null) return null;
-    SModel outputModel = descriptor;
+    SModel outputModel = SModelRepository.getInstance().getModelDescriptor(reference);
+    if (outputModel == null) return null;
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
-      SNodeId nodeId = SNodeId.fromString(inputNode.getNodeId().toString());
-      assert nodeId != null : "wrong node id string";
-      outputNode = outputModel.getNode(nodeId);
+      outputNode = outputModel.getNode(inputNode.getNodeId());
       if (outputNode != null) break;
       inputNode = inputNode.getParent();
     }
 
-    TracerNode inputTracerNode = new TracerNode(Kind.INPUT, new jetbrains.mps.smodel.SNodePointer(node));
-    TracerNode tracerNode = inputTracerNode;
+    final TraceNodeUI traceNode = new TraceNodeUI(Kind.INPUT, new jetbrains.mps.smodel.SNodePointer(node));
     for (TemplateMappingScript mappingScript : mappingScripts) {
-      TracerNode childTracerNode = new TracerNode(Kind.MAPPING_SCRIPT, mappingScript.getScriptNode());
-      tracerNode.addChild(childTracerNode);
-      tracerNode = childTracerNode;
+      TraceNodeUI childTracerNode = new TraceNodeUI(Kind.MAPPING_SCRIPT, mappingScript.getScriptNode());
+      traceNode.addChild(childTracerNode);
     }
     if (outputNode != null) {
       if (inputNode == node) {
-        tracerNode.addChild(new TracerNode(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(outputNode)));
+        traceNode.addChild(new TraceNodeUI(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(outputNode)));
       } else {
-        tracerNode.addChild(new TracerNode(Kind.APPROXIMATE_OUTPUT, new jetbrains.mps.smodel.SNodePointer(outputNode)));
+        traceNode.addChild(new TraceNodeUI(Kind.APPROXIMATE_OUTPUT, new jetbrains.mps.smodel.SNodePointer(outputNode)));
       }
     }
+    if (newTracer != null) {
+      return group(traceNode, newTracer);
+    }
+    return traceNode;
+  }
 
-    return inputTracerNode;
+  private static TraceNodeUI group(TraceNodeUI... elements) {
+    TraceNodeUI rv = new TraceNodeUI("", Icons.COLLECTION, elements[0].getNavigateTarget());
+    for (TraceNodeUI e : elements) {
+      rv.addChild(e);
+    }
+    return rv;
+  }
+
+  private static TraceNodeUI create(TracerNode tn) {
+    TraceNodeUI rv = new TraceNodeUI(tn);
+    for (TracerNode child : tn.getChildren()) {
+      rv.addChild(create(child));
+    }
+    return rv;
   }
 
   public boolean hasTracebackData(SModelReference modelReference) {
-    if (getRootTracerNodes(Kind.OUTPUT, modelReference) != null) {
+    if (!getRootsOfOutputModel(modelReference).isEmpty()) {
       return true;
     }
     return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(modelReference);
   }
 
-  public boolean showTracebackData(SNode node) {
-    int index = getTracerViewTool().getTabIndex(Kind.OUTPUT, node);
-    if (index > -1) {
-      getTracerViewTool().selectIndex(index);
-      getTracerViewTool().openToolLater(true);
-      return true;
+  public TraceNodeUI buildTracebackTree(SNode node) {
+    final SNodeReference nodeRef = node.getReference();
+    List<TracerNode> rootTracerNodes = getRootsOfOutputModel(nodeRef.getModelReference());
+
+    final TraceNodeUI newTracer;
+    final GenerationTrace ngt = getNewGenTrace(node);
+    if (ngt != null) {
+      newTracer = new TraceNodeUI("New gen tracer", Icons.COLLECTION, nodeRef);
+      for (TraceNodeUI n : TraceBuilderUI.buildBackTrace(ngt, node)) {
+        newTracer.addChild(n);
+      }
+    } else {
+      newTracer = null;
     }
 
-    TracerNode tracerNode = buildTracebackTree(node);
-    if (tracerNode == null) return false;
-    getTracerViewTool().showTraceView(tracerNode);
-    return true;
-  }
-
-  private TracerNode buildTracebackTree(SNode node) {
-    {
-      TracerNode tracerNode = findTracerNode(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(node));
+    TracerNode tracerNode = null;
+    for (TracerNode rootTracerNode : rootTracerNodes) {
+      tracerNode = rootTracerNode.find(Kind.OUTPUT, nodeRef);
       if (tracerNode != null) {
-        return buildTracebackTree(tracerNode, 0);
+        break;
       }
+    }
+
+    if (tracerNode != null) {
+      final TraceNodeUI tbt = buildTracebackTree(tracerNode, 0);
+      return newTracer == null ? tbt : group(tbt, newTracer);
     }
 
     // may be output is produced by scripts?
@@ -398,82 +453,51 @@ public class GenerationTracer implements IGenerationTracer {
     if (mappingScripts == null) return null;
     SModelReference reference = myModelsProcessedByScripts.getInputForOutput(node.getModel());
     if (reference == null) return null;
-    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
-    if (descriptor == null) return null;
-    SModel inputModel = descriptor;
+    SModel inputModel = SModelRepository.getInstance().getModelDescriptor(reference);
+    if (inputModel == null) return null;
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
-      SNodeId nodeId = SNodeId.fromString(outputNode.getNodeId().toString());
-      assert nodeId != null : "wrong node id string";
-      inputNode = inputModel.getNode(nodeId);
+      inputNode = inputModel.getNode(outputNode.getNodeId());
       if (inputNode != null) break;
       outputNode = outputNode.getParent();
     }
 
-    TracerNode outputTracerNode = new TracerNode(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(node));
-    TracerNode tracerNode = outputTracerNode;
+    TraceNodeUI outputTracerNode = new TraceNodeUI(Kind.OUTPUT, new jetbrains.mps.smodel.SNodePointer(node));
     List<TemplateMappingScript> mappingScripts_reversed = new ArrayList<TemplateMappingScript>(mappingScripts);
     Collections.reverse(mappingScripts_reversed);
     for (TemplateMappingScript mappingScript : mappingScripts_reversed) {
-      TracerNode childTracerNode = new TracerNode(Kind.MAPPING_SCRIPT, mappingScript.getScriptNode());
-      tracerNode.addChild(childTracerNode);
-      tracerNode = childTracerNode;
+      TraceNodeUI childTracerNode = new TraceNodeUI(Kind.MAPPING_SCRIPT, mappingScript.getScriptNode());
+      outputTracerNode.addChild(childTracerNode);
     }
     if (inputNode != null) {
       if (outputNode == node) {
-        tracerNode.addChild(new TracerNode(Kind.INPUT, new jetbrains.mps.smodel.SNodePointer(inputNode)));
+        outputTracerNode.addChild(new TraceNodeUI(Kind.INPUT, new jetbrains.mps.smodel.SNodePointer(inputNode)));
       } else {
-        tracerNode.addChild(new TracerNode(Kind.APPROXIMATE_INPUT, new jetbrains.mps.smodel.SNodePointer(inputNode)));
+        outputTracerNode.addChild(new TraceNodeUI(Kind.APPROXIMATE_INPUT, new jetbrains.mps.smodel.SNodePointer(inputNode)));
       }
     }
 
+    if (newTracer != null) {
+      return group(outputTracerNode, newTracer);
+    }
     return outputTracerNode;
   }
 
   @NotNull
-  private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNodeReference node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModelReference());
-    if (rootTracerNodes == null) return new ArrayList<TracerNode>();
-
-    List<TracerNode> result = new ArrayList<TracerNode>();
-    for (TracerNode rootTracerNode : rootTracerNodes) {
-      rootTracerNode.findAllTopmost(kind, node, result);
-    }
-    return result;
+  private List<TracerNode> getRootsOfInputModel(SModelReference modelReference) {
+    final List<TracerNode> tn = myTracingDataByInputModel == null ? null : myTracingDataByInputModel.get(modelReference.toString());
+    return tn == null ? Collections.<TracerNode>emptyList() : tn;
   }
 
-  @Nullable
-  private List<TracerNode> getRootTracerNodes(Kind kind, SModelReference modelReference) {
-    if (myTracingDataByInputModel == null) return null;
-
-    if (kind == Kind.INPUT) {
-      String inputModelUID = modelReference.toString();
-      return myTracingDataByInputModel.get(inputModelUID);
-    } else if (kind == Kind.OUTPUT) {
-      String outputModelUID = modelReference.toString();
-      return myTracingDataByOutputModel.get(outputModelUID);
-    }
-
-    LOG.errorWithTrace("unexpected trace node kind: " + kind);
-    return null;
+  @NotNull
+  private List<TracerNode> getRootsOfOutputModel(SModelReference modelReference) {
+    final List<TracerNode> tn = myTracingDataByOutputModel == null ? null : myTracingDataByOutputModel.get(modelReference.toString());
+    return tn == null ? Collections.<TracerNode>emptyList() : tn;
   }
 
-  private TracerNode findTracerNode(Kind kind, SNodeReference node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModelReference());
-    if (rootTracerNodes == null) return null;
-
-    for (TracerNode rootTracerNode : rootTracerNodes) {
-      TracerNode tracerNode = rootTracerNode.find(kind, node);
-      if (tracerNode != null) {
-        return tracerNode;
-      }
-    }
-    return null;
-  }
-
-  private TracerNode buildTracebackTree(TracerNode tracerNode, int depth) {
-    TracerNode tracebackNode = new TracerNode(tracerNode.getKind(), tracerNode.getNodePointer());
+  private TraceNodeUI buildTracebackTree(TracerNode tracerNode, int depth) {
+    TraceNodeUI tracebackNode = new TraceNodeUI(tracerNode);
     if (depth >= 200) {
       // its enough
       return tracebackNode;
@@ -489,22 +513,21 @@ public class GenerationTracer implements IGenerationTracer {
    * util
    */
   @Override
-  public List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference) {
-    List<TracerNode> list = myTracingDataByOutputModel.get(outputModelReference.toString());
+  public List<Pair<SNodeReference, SNodeReference>> getAllAppliedRulesWithInputNodes(SModelReference outputModelReference) {
+    List<TracerNode> list = getRootsOfOutputModel(outputModelReference);
     List<TracerNode> ruleNodes = new ArrayList<TracerNode>();
     for (TracerNode tracerNode : list) {
       tracerNode.findAll(Kind.RULE, ruleNodes);
     }
 
-    List<Pair<SNode, SNode>> result = new ArrayList<Pair<SNode, SNode>>();
+    List<Pair<SNodeReference, SNodeReference>> result = new ArrayList<Pair<SNodeReference, SNodeReference>>();
     for (TracerNode ruleNode : ruleNodes) {
       // find input for rule
       TracerNode inputNode = ruleNode.getParent();
       while (inputNode != null && inputNode.getKind() != Kind.INPUT) {
         inputNode = inputNode.getParent();
       }
-      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().resolve(MPSModuleRepository.getInstance()),
-          inputNode != null ? inputNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) : null));
+      result.add(new Pair<SNodeReference, SNodeReference>(ruleNode.getNodePointer(), inputNode != null ? inputNode.getNodePointer() : null));
     }
 
     return result;
@@ -539,6 +562,14 @@ public class GenerationTracer implements IGenerationTracer {
   public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> postMappingScripts) {
     if (!myActive) return;
     myModelsProcessedByScripts.put(scriptsInputModel, scriptsOutputModel, postMappingScripts);
+  }
+
+  private GenerationTrace getNewGenTrace(@NotNull SNode node) {
+    SModule m;
+    if (enableNewTrace && node.getModel() != null && ((m = node.getModel().getModule()) instanceof TransientModelsModule)) {
+      return ((TransientModelsModule) m).getTrace(node.getModel().getReference());
+    }
+    return null;
   }
 
   private static class ModelsProcessedByScripts {

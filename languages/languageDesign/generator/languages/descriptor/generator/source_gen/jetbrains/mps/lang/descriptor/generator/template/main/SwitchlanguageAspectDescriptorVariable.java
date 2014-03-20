@@ -14,8 +14,9 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collections;
+import jetbrains.mps.generator.runtime.ReductionRuleBase;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -51,59 +52,38 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 
-  public class ReductionRule0 implements TemplateReductionRule {
+  public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
+      super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314546852"), "jetbrains.mps.lang.project.structure.ModelReference", false);
     }
 
-    public boolean applyToInheritors() {
-      return false;
+    @Override
+    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_4565427742314546853(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
     }
 
-    public String getApplicableConcept() {
-      return "jetbrains.mps.lang.project.structure.ModelReference";
-    }
-
-    public SNodeReference getRuleNode() {
-      return reductionRule_mjol5z_a0a3h;
-    }
-
-    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_4565427742314546853(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_mjol5z_a0a3h, environment.getGenerator())))) {
-        return null;
-      }
-
-      environment.getTracer().pushRule(reductionRule_mjol5z_a0a3h);
-      try {
-        return apply(context, environment.getEnvironment(context.getInput(), this));
-      } catch (AbandonRuleInputException e) {
-        return Collections.emptyList();
-      } finally {
-        environment.getTracer().closeRule(reductionRule_mjol5z_a0a3h);
-      }
-
-    }
-
-    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_mjol5z_a0a0a5h);
+    @Override
+    protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(conseq_mjol5z_a0a0a2h);
       Collection<SNode> tlist1 = null;
       try {
-        environment.getTracer().pushMacro(nodeMacroRef_mjol5z_a0a0a2a5h);
+        environment.getTracer().pushMacro(nodeMacroRef_mjol5z_a0a0a2a2h);
         TemplateContext context1 = context.subContext("aspect.descriptor.field");
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         try {
-          environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a3a2a5h);
+          environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a3a2a2h);
           environment.nodeCopied(context1, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314559519");
           SNodeAccessUtil.setProperty(tnode2, "name", "myEditorAspectDescriptor");
 
           {
             final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a4a3a2a5h);
+              environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a4a3a2a2h);
               environment.nodeCopied(context1, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314559520");
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
-              environment.getTracer().closeTemplateNode(templateNode_mjol5z_a0a0a1a4a3a2a5h);
+              environment.getTracer().closeTemplateNode(templateNode_mjol5z_a0a0a1a4a3a2a2h);
             }
             if (tnode3 != null) {
               tnode2.addChild("visibility", tnode3);
@@ -113,14 +93,14 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
           {
             final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a5a3a2a5h);
+              environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a5a3a2a2h);
               environment.nodeCopied(context1, tnode4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314907605");
-              SNodeAccessUtil.setProperty(tnode4, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742314939782(environment.getOperationContext(), new PropertyMacroContext(context1.getInput(), "EditorAspectDescriptor", propertyMacro_mjol5z_c0b0c0c0b0f0d0c0f7, context1, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode4, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742314939782(new PropertyMacroContext(context1, "EditorAspectDescriptor", propertyMacro_mjol5z_c0a0c0c0b0f0d0c0c7, environment.getGenerator()))));
               tnode4.setReference("classifier", SReference.create("classifier", tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
-              environment.getTracer().closeTemplateNode(templateNode_mjol5z_a0a0a1a5a3a2a5h);
+              environment.getTracer().closeTemplateNode(templateNode_mjol5z_a0a0a1a5a3a2a2h);
             }
             if (tnode4 != null) {
               tnode2.addChild("type", tnode4);
@@ -129,23 +109,22 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
           }
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
-          environment.getTracer().closeTemplateNode(templateNode_mjol5z_a0a0a3a2a5h);
+          environment.getTracer().closeTemplateNode(templateNode_mjol5z_a0a0a3a2a2h);
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
         environment.registerLabel(context.getInput(), tnode2, "aspect.descriptor.field");
       } finally {
-        environment.getTracer().closeMacro(nodeMacroRef_mjol5z_a0a0a2a5h);
+        environment.getTracer().closeMacro(nodeMacroRef_mjol5z_a0a0a2a2h);
       }
       return tlist1;
     }
   }
 
   private static SNodePointer conseq_mjol5z_a0a0a5 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1570228009930757907");
-  private static SNodePointer reductionRule_mjol5z_a0a3h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314546852");
-  private static SNodePointer conseq_mjol5z_a0a0a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314558294");
-  private static SNodePointer nodeMacroRef_mjol5z_a0a0a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314580776");
-  private static SNodePointer templateNode_mjol5z_a0a0a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314559519");
-  private static SNodePointer templateNode_mjol5z_a0a0a1a4a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314559520");
-  private static SNodePointer templateNode_mjol5z_a0a0a1a5a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314907605");
-  private static SNodePointer propertyMacro_mjol5z_c0b0c0c0b0f0d0c0f7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314939781");
+  private static SNodePointer conseq_mjol5z_a0a0a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314558294");
+  private static SNodePointer nodeMacroRef_mjol5z_a0a0a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314580776");
+  private static SNodePointer templateNode_mjol5z_a0a0a3a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314559519");
+  private static SNodePointer templateNode_mjol5z_a0a0a1a4a3a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314559520");
+  private static SNodePointer templateNode_mjol5z_a0a0a1a5a3a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314907605");
+  private static SNodePointer propertyMacro_mjol5z_c0a0c0c0b0f0d0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314939781");
 }
