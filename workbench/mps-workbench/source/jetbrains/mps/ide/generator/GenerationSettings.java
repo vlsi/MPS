@@ -23,6 +23,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
@@ -97,15 +98,11 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setShowBadChildWarning(state.myShowBadChildWarning);
     myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
     myState.enableInplaceTransformations(state.myActiveInplaceTransform);
-    if (state.myTraceUseLegacy) {
-      GenTraceSettings gts = new GenTraceSettings();
-      gts.setCompactTemplates(state.myTraceCompactTemplates);
-      gts.setGroupByStep(state.myTraceGroupSteps);
-      gts.setShowEmptySteps(state.myTraceShowEmptySteps);
-      myState.setTraceSettings(gts);
-    } else {
-      myState.setTraceSettings(null);
-    }
+    GenTraceSettings gts = new GenTraceSettings();
+    gts.setCompactTemplates(state.myTraceCompactTemplates);
+    gts.setGroupByStep(state.myTraceGroupSteps);
+    gts.setShowEmptySteps(state.myTraceShowEmptySteps);
+    myState.setTraceSettings(gts);
   }
 
   @Override
@@ -257,14 +254,10 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
       myActiveInplaceTransform = s.useInplaceTransofrmations();
       GenTraceSettings gts = s.getTraceSettings();
-      if (gts != null) {
-        myTraceUseLegacy = false;
-        myTraceCompactTemplates = gts.isCompactTemplates();
-        myTraceGroupSteps = gts.isGroupByStep();
-        myTraceShowEmptySteps = gts.isShowEmptySteps();
-      } else {
-        myTraceUseLegacy = true;
-      }
+      myTraceUseLegacy = GenerationFacade.isLegacyGenTraceEnabled();
+      myTraceCompactTemplates = gts.isCompactTemplates();
+      myTraceGroupSteps = gts.isGroupByStep();
+      myTraceShowEmptySteps = gts.isShowEmptySteps();
     }
   }
 }

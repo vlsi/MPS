@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * fyodor, 4/11/11
@@ -54,12 +54,8 @@ public interface IGenerationSettings {
   /**
    * Presentation options of the new generation tracer. At the moment, they affect the way trace is represented, not collected, and as such
    * might not fit IGenerationSettings, but (a) trace functionality is inherently generator-related; (b) I don't want to introduce another location for settings
-   *
-   * Meanwhile, we use <code>null</code> to indicate use of legacy gentrace (as it doesn't support any of the option)
-   * and there's no reason to expose 'useLegacy' option in the API just to drop it in the next release.
-   * Once there's no legacy gentrace, this method shall become NotNull
    */
-  @Nullable
+  @NotNull
   GenTraceSettings getTraceSettings();
 
   public static class GenTraceSettings {

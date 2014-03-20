@@ -16,8 +16,10 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import jetbrains.mps.generator.GenerationTrace;
+import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -42,6 +44,8 @@ import java.util.LinkedHashMap;
  *   trace.walkForward(builder);
  *   myViewComponent.show(builder.getResult());
  * </pre>
+ *
+ * Default builders resort to values from {@link jetbrains.mps.generator.IGenerationSettings}.
  *
  * Note, the builder assumes current thread holds read lock.
  * @author Artem Tikhomirov
@@ -100,7 +104,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
   }
 
   @Override
-  public void change(SNodeReference input, SNodeReference output, SNodeReference template) {
+  public void change(@NotNull SNodeReference input, @NotNull SNodeReference output, SNodeReference template) {
     myGroupedChanges.putValue(new Pair<SNodeReference, SNodeReference>(input, output), new TraceNodeUI(Kind.TEMPLATE, template));
   }
 
@@ -177,6 +181,12 @@ L1:   for (TraceNodeUI n : templateNodes) {
     return v.getResult();
   }
   public static TraceBuilderUI defaults() {
-    return new TraceBuilderUI().excludeEmptySteps(true).compactTemplates(true).groupByStep(false);
+    GenTraceSettings s = GenerationSettings.getInstance().getTraceSettings();
+    if (s == null) {
+      s = new GenTraceSettings(); // FIXME temp unless we drop legacy gentrace and #getTraceSettings above become @NotNull
+      // FIXME replace with:
+      // assert s != null : "if we got this far, new trace has to be turned on, and settings present";
+    }
+    return new TraceBuilderUI().excludeEmptySteps(!s.isShowEmptySteps()).compactTemplates(s.isCompactTemplates()).groupByStep(s.isGroupByStep());
   }
 }

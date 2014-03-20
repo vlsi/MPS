@@ -35,7 +35,7 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myGenerateDebugInfo = true;
   private boolean myShowBadChildWarning = true;
   private boolean myActiveInplaceTransorm = true;
-  private GenTraceSettings myTraceSettings;
+  private GenTraceSettings myTraceSettings = new GenTraceSettings();
 
   @Override
   public boolean isSaveTransientModels() {
