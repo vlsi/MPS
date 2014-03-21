@@ -69,5 +69,13 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5058522826399262785" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="Specializes" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="79242395703884499" resolveInfo="Relationship" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5058522826399342676" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="CoreThrought" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="79242395703884488" resolveInfo="Thought" />
+  </root>
 </model>
 

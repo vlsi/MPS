@@ -14,17 +14,21 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.MindMap").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"thoughts", "relationships"}, new boolean[]{true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.CoreThrought").super_("jetbrains.mps.samples.mindmaps.structure.Thought").parents("jetbrains.mps.samples.mindmaps.structure.Thought").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Relationship").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("source", "target").alias("relationship", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.MindMap").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"thoughts", "relationships"}, new boolean[]{true, true}).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Thought").super_("jetbrains.mps.samples.mindmaps.structure.VisualBox").parents("jetbrains.mps.samples.mindmaps.structure.VisualBox", "jetbrains.mps.lang.core.structure.INamedConcept").alias("throught", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Relationship").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("source", "target").alias("relationship", "").create();
       case 3:
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Specializes").super_("jetbrains.mps.samples.mindmaps.structure.Relationship").parents("jetbrains.mps.samples.mindmaps.structure.Relationship").create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Thought").super_("jetbrains.mps.samples.mindmaps.structure.VisualBox").parents("jetbrains.mps.samples.mindmaps.structure.VisualBox", "jetbrains.mps.lang.core.structure.INamedConcept").alias("throught", "").create();
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.VisualBox").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y", "myIsClicked").abstract_().create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Thought", "jetbrains.mps.samples.mindmaps.structure.VisualBox"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought", "jetbrains.mps.samples.mindmaps.structure.VisualBox"};
 }

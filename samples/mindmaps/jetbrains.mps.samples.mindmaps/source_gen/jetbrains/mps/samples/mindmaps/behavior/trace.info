@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="CoreThrought_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.CoreThrought_BehaviorDescriptor" />
   <unitInfo fileName="MindMap_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.MindMap_BehaviorDescriptor" />
   <unitInfo fileName="Relationship_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.Relationship_BehaviorDescriptor" />
+  <unitInfo fileName="Specializes_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.Specializes_BehaviorDescriptor" />
   <unitInfo fileName="Thought_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.Thought_BehaviorDescriptor" />
   <unitInfo fileName="VisualBox_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.behavior.VisualBox_BehaviorDescriptor" />
 </debugInfo>

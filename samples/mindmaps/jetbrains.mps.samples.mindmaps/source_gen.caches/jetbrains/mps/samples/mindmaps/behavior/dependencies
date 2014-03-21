@@ -3,12 +3,20 @@
   <dependency className="jetbrains.mps.samples.mindmaps.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.CoreThrought_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.MindMap_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.Relationship_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.Specializes_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.Thought_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.mindmaps.behavior.CoreThrought_BehaviorDescriptor" file="CoreThrought_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.Thought_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.behavior.MindMap_BehaviorDescriptor" file="MindMap_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -24,6 +32,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.mindmaps.behavior.Specializes_BehaviorDescriptor" file="Specializes_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.mindmaps.behavior.Relationship_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.behavior.Thought_BehaviorDescriptor" file="Thought_BehaviorDescriptor.java">

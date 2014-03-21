@@ -18,10 +18,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new MindMap_diagram_Editor());
+        return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new Relationship_diagram_Editor());
+        return Collections.<ConceptEditor>singletonList(new MindMap_diagram_Editor());
       case 2:
+        return Collections.<ConceptEditor>singletonList(new Relationship_diagram_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Specializes_diagram_Editor());
+      case 4:
         return Collections.<ConceptEditor>singletonList(new Thought_diagram_Editor());
       default:
     }
@@ -39,5 +43,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Thought"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought"};
 }

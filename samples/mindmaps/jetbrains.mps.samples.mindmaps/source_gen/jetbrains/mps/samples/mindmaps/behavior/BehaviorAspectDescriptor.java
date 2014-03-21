@@ -12,16 +12,20 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 0:
-        return new MindMap_BehaviorDescriptor();
-      case 2:
-        return new Thought_BehaviorDescriptor();
       case 1:
+        return new MindMap_BehaviorDescriptor();
+      case 4:
+        return new Thought_BehaviorDescriptor();
+      case 2:
         return new Relationship_BehaviorDescriptor();
+      case 3:
+        return new Specializes_BehaviorDescriptor();
+      case 0:
+        return new CoreThrought_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Thought"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought"};
 }
