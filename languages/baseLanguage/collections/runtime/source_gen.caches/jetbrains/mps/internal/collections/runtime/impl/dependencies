@@ -8,6 +8,7 @@
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.BasicSequence" file="BasicSequence.java">
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
