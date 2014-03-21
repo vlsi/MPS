@@ -36,6 +36,7 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
 import jetbrains.jetpad.model.property.Properties;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import java.util.Set;
 import jetbrains.jetpad.model.property.ReadableProperty;
@@ -228,8 +229,8 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                   super.registerSynchronizers(configuration);
                   myPropertyCell_gju6mh_a0a.registerSynchronizers(configuration, getTarget().text());
                   configuration.add(Synchronizers.forProperty(myProperty_gju6mh_a1a, getTarget().metaText()));
-                  myPropertyCell_gju6mh_a2a.registerSynchronizers(configuration, getTarget().modelHeight());
-                  myPropertyCell_gju6mh_a3a.registerSynchronizers(configuration, getTarget().modelWidth());
+                  myPropertyCell_gju6mh_a2a.registerSynchronizers(configuration, getTarget().contentHeight());
+                  myPropertyCell_gju6mh_a3a.registerSynchronizers(configuration, getTarget().contentWidth());
                 }
               };
             }
@@ -273,18 +274,17 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           }
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
-          final View contentView = getContentView();
+          final PolygonContentView contentView = (PolygonContentView) getContentView();
           configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
-          configuration.add(Synchronizers.forProperty(Properties.notNull(contentView.prop(JetpadUtils.PREFERRED_SIZE)), getTarget().resizable));
+          configuration.add(Synchronizers.forProperty(Properties.constant(Boolean.TRUE), getTarget().resizable));
           configuration.add(Synchronizers.forProperty(getTarget().boundsDelta, new WritableProperty<Rectangle>() {
             public void set(Rectangle delta) {
-              Vector prefSize = contentView.prop(JetpadUtils.PREFERRED_SIZE).get();
               if (delta == null) {
                 return;
               }
               Vector positionDelta = delta.origin;
               Vector sizeDelta = delta.dimension;
-              contentView.prop(JetpadUtils.PREFERRED_SIZE).set(prefSize.add(sizeDelta).add(positionDelta));
+              contentView.prop(ResizableContentView.PREFERRED_SIZE).set(contentView.prop(ResizableContentView.PREFERRED_SIZE).get().add(sizeDelta).add(positionDelta));
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {

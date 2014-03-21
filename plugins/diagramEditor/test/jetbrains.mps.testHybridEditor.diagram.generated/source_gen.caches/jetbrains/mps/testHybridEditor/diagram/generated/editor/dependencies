@@ -48,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -86,7 +87,6 @@
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
-    <classNode dependClassName="jetbrains.jetpad.model.property.Properties" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.MoveHandler" />

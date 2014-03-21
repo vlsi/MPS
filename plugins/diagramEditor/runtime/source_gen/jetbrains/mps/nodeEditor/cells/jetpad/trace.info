@@ -529,18 +529,17 @@
     <unitInfo nodeId="5374841768510233685" fileName="WritableModelProperty.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784369">
-    <nodeInfo nodeId="718530200791455140" fileName="JetpadUtils.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE" />
-    <nodeInfo nodeId="7171441290058222215" fileName="JetpadUtils.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="5204867329724218985" fileName="JetpadUtils.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONNECTABLE" />
-    <nodeInfo nodeId="526297864813637091" fileName="JetpadUtils.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONNECTION_SOURCE" />
-    <nodeInfo nodeId="4046741574143191138" fileName="JetpadUtils.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREFERRED_SIZE" />
-    <nodeInfo nodeId="6277411742335784376" fileName="JetpadUtils.java" startLine="23" startPosition="71" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6277411742335784372" fileName="JetpadUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toAwtColor#(Ljetbrains/jetpad/values/Color;)Ljava/awt/Color;" />
-    <scopeInfo nodeId="6277411742335784375" fileName="JetpadUtils.java" startLine="23" startPosition="71" endLine="24" endPosition="90" />
-    <scopeInfo nodeId="6277411742335784372" fileName="JetpadUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <nodeInfo nodeId="718530200791455140" fileName="JetpadUtils.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE" />
+    <nodeInfo nodeId="7171441290058222215" fileName="JetpadUtils.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="5204867329724218985" fileName="JetpadUtils.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONNECTABLE" />
+    <nodeInfo nodeId="526297864813637091" fileName="JetpadUtils.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONNECTION_SOURCE" />
+    <nodeInfo nodeId="6277411742335784376" fileName="JetpadUtils.java" startLine="20" startPosition="71" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6277411742335784372" fileName="JetpadUtils.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toAwtColor#(Ljetbrains/jetpad/values/Color;)Ljava/awt/Color;" />
+    <scopeInfo nodeId="6277411742335784375" fileName="JetpadUtils.java" startLine="20" startPosition="71" endLine="21" endPosition="90" />
+    <scopeInfo nodeId="6277411742335784372" fileName="JetpadUtils.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6277411742335784373" varName="color" />
     </scopeInfo>
-    <unitInfo nodeId="6277411742335784369" fileName="JetpadUtils.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
+    <unitInfo nodeId="6277411742335784369" fileName="JetpadUtils.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6365639112244092433">
     <nodeInfo nodeId="6365639112244137339" fileName="ConnectorCell.java" startLine="12" startPosition="65" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

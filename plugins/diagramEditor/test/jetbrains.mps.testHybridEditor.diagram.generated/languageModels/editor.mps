@@ -610,15 +610,15 @@
           </node>
         </node>
       </node>
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="7493754406618252265" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="modelHeight" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="7493754406618256742" nodeInfo="ng">
+      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="4115105161237828625" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="contentHeight" />
+        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="4115105161237830314" nodeInfo="ng">
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.3175567003993184686" resolveInfo="height" />
         </node>
       </node>
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="7493754406618256745" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="modelWidth" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="7493754406618258044" nodeInfo="ng">
+      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="4115105161237834475" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="contentWidth" />
+        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="4115105161237836204" nodeInfo="ng">
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.3175567003993184638" resolveInfo="width" />
         </node>
       </node>
