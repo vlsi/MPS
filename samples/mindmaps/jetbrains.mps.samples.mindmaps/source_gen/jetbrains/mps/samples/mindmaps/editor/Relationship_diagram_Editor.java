@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -158,7 +157,7 @@ public class Relationship_diagram_Editor extends DefaultNodeEditor {
 
 
     public void synchronize() {
-      myInputPort.set(MultiTuple.<SNode>from(SNodeOperations.getParent(getSNode())));
+      myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "source", false)));
       myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "target", false)));
     }
 

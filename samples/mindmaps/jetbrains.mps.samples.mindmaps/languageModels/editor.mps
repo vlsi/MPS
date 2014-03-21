@@ -40,6 +40,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="79242395703911248" nodeInfo="ng">
         <node role="connectorCreation" roleId="gbdf.939897302409114961" type="gbdf.DiagramConnectorCreation" typeId="gbdf.939897302409084996" id="5871420002487614336" nodeInfo="ng">
+          <link role="concept" roleId="gbdf.939897302409084997" targetNodeId="3g6l.79242395703884499" resolveInfo="Relationship" />
           <node role="query" roleId="gbdf.939897302409084998" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5871420002487615146" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="5871420002487615024" nodeInfo="ng" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5871420002487616744" nodeInfo="nn">
@@ -211,9 +212,11 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramConnector" typeId="gbdf.6382742553261733065" id="5871420002487302238" nodeInfo="ng">
       <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="5871420002487929742" resolveInfo="DeleteRelationship" />
       <node role="input" roleId="gbdf.1220375669566529919" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="5871420002487302247" nodeInfo="ng">
-        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5871420002487303343" nodeInfo="nn">
-          <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="5871420002487302253" nodeInfo="ng" />
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="5871420002487343524" nodeInfo="nn" />
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5058522826399204021" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="5058522826399203911" nodeInfo="ng" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5058522826399205069" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="3g6l.5871420002487876254" />
+          </node>
         </node>
       </node>
       <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="5871420002487343550" nodeInfo="ng">

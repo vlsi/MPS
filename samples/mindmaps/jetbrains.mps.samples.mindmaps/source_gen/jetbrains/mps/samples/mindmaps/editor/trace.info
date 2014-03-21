@@ -2,189 +2,189 @@
 <debugInfo>
   <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5871420002487302234">
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="107" endLine="44" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="44" startPosition="117" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="45" startPosition="54" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="47" startPosition="71" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputPort" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputPort" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="81" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="56" startPosition="33" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="63" startPosition="95" endLine="64" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="67" startPosition="55" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="52" endLine="74" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="63" endLine="78" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="79" startPosition="45" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="81" startPosition="15" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="52" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="88" startPosition="95" endLine="89" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="89" startPosition="49" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="63" endLine="95" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="96" startPosition="45" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="98" startPosition="15" endLine="99" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="45" endLine="104" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="105" startPosition="40" endLine="106" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="107" startPosition="15" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="108" startPosition="55" endLine="109" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="109" startPosition="55" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="110" startPosition="41" endLine="111" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="113" startPosition="14" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="124" startPosition="95" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="125" startPosition="53" endLine="126" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="127" startPosition="36" endLine="128" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="129" startPosition="11" endLine="130" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="131" startPosition="41" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="133" startPosition="11" endLine="134" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="134" startPosition="90" endLine="135" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="135" startPosition="149" endLine="136" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="136" startPosition="111" endLine="137" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="137" startPosition="85" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="67" endLine="144" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="144" startPosition="83" endLine="145" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="146" startPosition="32" endLine="147" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="148" startPosition="7" endLine="149" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="150" startPosition="37" endLine="151" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="152" startPosition="7" endLine="153" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="153" startPosition="108" endLine="154" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="31" endLine="161" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="161" startPosition="85" endLine="162" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="51" endLine="166" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="33" endLine="169" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="171" startPosition="9" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="172" startPosition="0" endLine="173" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="31" endLine="69" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="78" startPosition="101" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="95" startPosition="101" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="104" startPosition="57" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="126" startPosition="53" endLine="129" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="130" startPosition="125" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="145" startPosition="49" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="149" startPosition="115" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorCellImpl_nydcps_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="87" startPosition="62" endLine="91" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronize#()V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="166" startPosition="63" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagramConnector_nydcps_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="64" startPosition="53" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetView#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/jetpad/projectional/view/View;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetView#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/jetpad/projectional/view/View;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConnection#()Ljetbrains/jetpad/projectional/diagram/view/PolyLineConnection;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="101" startPosition="14" endLine="113" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="71" startPosition="14" endLine="84" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConnectorDecoratorView#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/views/ConnectorDecoratorView;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="84" startPosition="14" endLine="101" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="123" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="75" endLine="140" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDecorationMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="62" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="61" endLine="116" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="69" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="67" startPosition="55" endLine="68" endPosition="80" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="52" endLine="74" endPosition="60" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="79" startPosition="45" endLine="80" endPosition="28" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="96" startPosition="45" endLine="97" endPosition="28" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="105" startPosition="40" endLine="106" endPosition="23" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="127" startPosition="36" endLine="128" endPosition="19" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="131" startPosition="41" endLine="132" endPosition="19" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="146" startPosition="32" endLine="147" endPosition="38" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="150" startPosition="37" endLine="151" endPosition="38" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="33" endLine="169" endPosition="22" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="81" endLine="57" endPosition="20" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="88" startPosition="95" endLine="90" endPosition="47" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="31" endLine="162" endPosition="103" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="34" startPosition="47" endLine="35" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="38" startPosition="79" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="42" startPosition="107" endLine="43" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="117" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="44" startPosition="54" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="45" startPosition="28" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="46" startPosition="71" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputPort" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputPort" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="62" startPosition="95" endLine="63" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="55" endLine="67" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="72" startPosition="52" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="76" startPosition="63" endLine="77" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="78" startPosition="45" endLine="79" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="80" startPosition="15" endLine="81" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="85" startPosition="52" endLine="86" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="87" startPosition="95" endLine="88" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="88" startPosition="49" endLine="89" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="93" startPosition="63" endLine="94" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="95" startPosition="45" endLine="96" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="97" startPosition="15" endLine="98" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="102" startPosition="45" endLine="103" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="104" startPosition="40" endLine="105" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="106" startPosition="15" endLine="107" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="107" startPosition="55" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="108" startPosition="55" endLine="109" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="109" startPosition="41" endLine="110" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="112" startPosition="14" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="123" startPosition="95" endLine="124" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="124" startPosition="53" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="126" startPosition="36" endLine="127" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="128" startPosition="11" endLine="129" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="130" startPosition="41" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="132" startPosition="11" endLine="133" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="133" startPosition="90" endLine="134" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="134" startPosition="149" endLine="135" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="135" startPosition="111" endLine="136" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="136" startPosition="85" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="142" startPosition="67" endLine="143" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="83" endLine="144" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="145" startPosition="32" endLine="146" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="147" startPosition="7" endLine="148" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="149" startPosition="37" endLine="150" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="151" startPosition="7" endLine="152" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="152" startPosition="108" endLine="153" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="159" startPosition="31" endLine="160" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="102" endLine="161" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="164" startPosition="51" endLine="165" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="167" startPosition="33" endLine="168" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="170" startPosition="9" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="171" startPosition="0" endLine="172" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="65" startPosition="31" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="101" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="101" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="57" endLine="106" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="125" startPosition="53" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="129" startPosition="125" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="144" startPosition="49" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="148" startPosition="115" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="167" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorCellImpl_nydcps_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="62" endLine="90" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="159" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronize#()V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="63" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagramConnector_nydcps_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="63" startPosition="53" endLine="70" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetView#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetView#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="102" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="164" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConnection#()Ljetbrains/jetpad/projectional/diagram/view/PolyLineConnection;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="100" startPosition="14" endLine="112" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="70" startPosition="14" endLine="83" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="142" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConnectorDecoratorView#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/views/ConnectorDecoratorView;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="83" startPosition="14" endLine="100" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="122" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="120" startPosition="75" endLine="139" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="120" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDecorationMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="61" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="59" startPosition="61" endLine="115" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="59" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="34" startPosition="47" endLine="35" endPosition="26" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="38" startPosition="79" endLine="39" endPosition="69" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="55" endLine="67" endPosition="80" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="72" startPosition="52" endLine="73" endPosition="60" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="78" startPosition="45" endLine="79" endPosition="28" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="95" startPosition="45" endLine="96" endPosition="28" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="104" startPosition="40" endLine="105" endPosition="23" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="126" startPosition="36" endLine="127" endPosition="19" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="130" startPosition="41" endLine="131" endPosition="19" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="145" startPosition="32" endLine="146" endPosition="38" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="149" startPosition="37" endLine="150" endPosition="38" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="167" startPosition="33" endLine="168" endPosition="22" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="54" startPosition="81" endLine="56" endPosition="20" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="87" startPosition="95" endLine="89" endPosition="47" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="159" startPosition="31" endLine="161" endPosition="103" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="editorContext" />
       <varInfo nodeId="5871420002487302234" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="31" endLine="69" endPosition="15" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="65" startPosition="31" endLine="68" endPosition="15" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="port" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="167" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="editorContext" />
       <varInfo nodeId="5871420002487302234" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="107" endLine="48" endPosition="22">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="159" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="42" startPosition="107" endLine="47" endPosition="22">
       <varInfo nodeId="5871420002487302234" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="63" endLine="82" endPosition="57">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="76" startPosition="63" endLine="81" endPosition="57">
       <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="52" endLine="91" endPosition="15" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="63" endLine="99" endPosition="57">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="85" startPosition="52" endLine="90" endPosition="15" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="93" startPosition="63" endLine="98" endPosition="57">
       <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="editorContext" />
       <varInfo nodeId="5871420002487302234" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="port" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="85" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="port" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="93" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="port" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="45" endLine="111" endPosition="42">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="102" startPosition="45" endLine="110" endPosition="42">
       <varInfo nodeId="5871420002487302234" varName="diagramCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="51" endLine="173" endPosition="24">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="164" startPosition="51" endLine="172" endPosition="24">
       <varInfo nodeId="5871420002487302234" varName="connection" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="102" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="rect" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="0" endLine="175" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="67" endLine="154" endPosition="36">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="164" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="142" startPosition="67" endLine="153" endPosition="36">
       <varInfo nodeId="5871420002487302234" varName="connectorDecoratorView" />
       <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
       <varInfo nodeId="5871420002487302234" varName="diagramCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="0" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="124" startPosition="95" endLine="138" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="142" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="123" startPosition="95" endLine="137" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
       <varInfo nodeId="5871420002487302234" varName="diagramCell" />
       <varInfo nodeId="5871420002487302234" varName="valid" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="123" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="122" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="75" endLine="140" endPosition="8" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="63" startPosition="95" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="62" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="120" startPosition="75" endLine="139" endPosition="8" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="120" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="62" startPosition="95" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="61" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="5871420002487302234" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="61" endLine="116" endPosition="8" />
-    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="0" endLine="118" endPosition="0" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="167" startPosition="95" endLine="171" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$3" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="65" startPosition="88" endLine="71" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="102" startPosition="87" endLine="113" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="72" startPosition="71" endLine="84" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="85" startPosition="72" endLine="101" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="122" startPosition="17" endLine="140" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="61" startPosition="17" endLine="116" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$1" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="51" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$ConnectorCellImpl_nydcps_a" />
-    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="31" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="59" startPosition="61" endLine="115" endPosition="8" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="59" startPosition="0" endLine="117" endPosition="0" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="166" startPosition="95" endLine="170" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$3" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="64" startPosition="88" endLine="70" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="101" startPosition="87" endLine="112" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="71" startPosition="71" endLine="83" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="84" startPosition="72" endLine="100" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="17" endLine="139" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="17" endLine="115" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$1" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="50" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$ConnectorCellImpl_nydcps_a" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="30" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor" />
   </root>
   <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5871420002487709759">
     <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="17" startPosition="95" endLine="18" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
