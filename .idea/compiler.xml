@@ -480,6 +480,12 @@
       <directory url="file://$PROJECT_DIR$/samples/math/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/math/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/math/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/money/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/money/runtimeSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/money/runtimeSolution/test_gen" includeSubdirectories="true" />
