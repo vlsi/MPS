@@ -28,8 +28,7 @@ public class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = NameUtil.getModelLongName(myModel.getReference().getModelName());
-      ClassifierUpdater updater = new ClassifierUpdater(mySkipPrivate, new SReferenceCreator(myModule, myModel));
-      ClassifierLoader loader = new ClassifierLoader(myCpItem, updater);
+      ClassifierLoader loader = new ClassifierLoader(myCpItem, new SReferenceCreator(myModule, myModel), mySkipPrivate);
 
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNode(ASMNodeId.createId(name)) != null) {
