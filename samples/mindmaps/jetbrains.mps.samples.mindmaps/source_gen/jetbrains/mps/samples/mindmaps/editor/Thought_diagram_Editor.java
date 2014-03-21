@@ -20,7 +20,7 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
@@ -129,9 +129,9 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
 
-          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, BlockContentView>() {
-            public Mapper<? extends String, ? extends BlockContentView> createMapper(String block) {
-              return new Mapper<String, BlockContentView>(block, new BlockContentView()) {
+          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, MindMapThoughtView>() {
+            public Mapper<? extends String, ? extends MindMapThoughtView> createMapper(String block) {
+              return new Mapper<String, MindMapThoughtView>(block, new MindMapThoughtView()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);

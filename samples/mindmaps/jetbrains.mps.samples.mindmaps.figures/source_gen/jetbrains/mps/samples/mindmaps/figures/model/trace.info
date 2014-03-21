@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:6d38fe6e-f6cc-41c3-b2ff-e720f8912474(jetbrains.mps.samples.mindmaps.figures.model)/5058522826399835001">
+    <nodeInfo nodeId="2084788800270123500" fileName="MindMapCentralThoughtView.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCell" />
+    <nodeInfo nodeId="6111547859873264701" fileName="MindMapCentralThoughtView.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRectView" />
+    <nodeInfo nodeId="6111547859871819499" fileName="MindMapCentralThoughtView.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isClicked" />
+    <nodeInfo nodeId="3606070010581564940" fileName="MindMapCentralThoughtView.java" startLine="27" startPosition="38" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6365639112246684682" fileName="MindMapCentralThoughtView.java" startLine="28" startPosition="17" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981942132920454367" fileName="MindMapCentralThoughtView.java" startLine="29" startPosition="35" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2682505046536240535" fileName="MindMapCentralThoughtView.java" startLine="30" startPosition="0" endLine="31" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8848989721972207475" fileName="MindMapCentralThoughtView.java" startLine="31" startPosition="39" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2084788800270139322" fileName="MindMapCentralThoughtView.java" startLine="32" startPosition="43" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112241852854" fileName="MindMapCentralThoughtView.java" startLine="33" startPosition="47" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981942132920460191" fileName="MindMapCentralThoughtView.java" startLine="34" startPosition="29" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6365639112245891810" fileName="MindMapCentralThoughtView.java" startLine="35" startPosition="0" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112245947741" fileName="MindMapCentralThoughtView.java" startLine="36" startPosition="31" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112246020665" fileName="MindMapCentralThoughtView.java" startLine="37" startPosition="45" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859872846585" fileName="MindMapCentralThoughtView.java" startLine="41" startPosition="51" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400313366" fileName="MindMapCentralThoughtView.java" startLine="44" startPosition="16" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5058522826400216494" fileName="MindMapCentralThoughtView.java" startLine="45" startPosition="0" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5058522826400515857" fileName="MindMapCentralThoughtView.java" startLine="46" startPosition="35" endLine="47" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400228780" fileName="MindMapCentralThoughtView.java" startLine="47" startPosition="39" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400178735" fileName="MindMapCentralThoughtView.java" startLine="48" startPosition="26" endLine="49" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258661285996" fileName="MindMapCentralThoughtView.java" startLine="49" startPosition="36" endLine="50" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="615329258661310675" fileName="MindMapCentralThoughtView.java" startLine="50" startPosition="41" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258661383649" fileName="MindMapCentralThoughtView.java" startLine="51" startPosition="50" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258661467683" fileName="MindMapCentralThoughtView.java" startLine="52" startPosition="52" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209188" fileName="MindMapCentralThoughtView.java" startLine="53" startPosition="31" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209143" fileName="MindMapCentralThoughtView.java" startLine="60" startPosition="93" endLine="61" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209156" fileName="MindMapCentralThoughtView.java" startLine="64" startPosition="34" endLine="65" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209168" fileName="MindMapCentralThoughtView.java" startLine="66" startPosition="20" endLine="67" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2084788800270216816" fileName="MindMapCentralThoughtView.java" startLine="77" startPosition="34" endLine="78" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6111547859873209166" fileName="MindMapCentralThoughtView.java" startLine="66" startPosition="18" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2084788800270022743" fileName="MindMapCentralThoughtView.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="text#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="6111547859871838554" fileName="MindMapCentralThoughtView.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/MouseEvent;)V" />
+    <nodeInfo nodeId="6111547859873209154" fileName="MindMapCentralThoughtView.java" startLine="63" startPosition="29" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6111547859871838541" fileName="MindMapCentralThoughtView.java" startLine="38" startPosition="52" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209152" fileName="MindMapCentralThoughtView.java" startLine="63" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6111547859873209146" fileName="MindMapCentralThoughtView.java" startLine="61" startPosition="51" endLine="70" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209137" fileName="MindMapCentralThoughtView.java" startLine="59" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="6111547859873209127" fileName="MindMapCentralThoughtView.java" startLine="57" startPosition="36" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6111547859873209179" fileName="MindMapCentralThoughtView.java" startLine="57" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSynchronizers#()V" />
+    <nodeInfo nodeId="6365639112241851334" fileName="MindMapCentralThoughtView.java" startLine="27" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MindMapCentralThoughtView#()V" />
+    <scopeInfo nodeId="6111547859871838560" fileName="MindMapCentralThoughtView.java" startLine="41" startPosition="51" endLine="42" endPosition="42" />
+    <scopeInfo nodeId="6111547859873209155" fileName="MindMapCentralThoughtView.java" startLine="64" startPosition="34" endLine="65" endPosition="56" />
+    <scopeInfo nodeId="6111547859873209167" fileName="MindMapCentralThoughtView.java" startLine="66" startPosition="20" endLine="67" endPosition="54" />
+    <scopeInfo nodeId="2084788800270022746" fileName="MindMapCentralThoughtView.java" startLine="77" startPosition="34" endLine="78" endPosition="25" />
+    <scopeInfo nodeId="2084788800270022743" fileName="MindMapCentralThoughtView.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="6111547859871838554" fileName="MindMapCentralThoughtView.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="6111547859871838558" varName="e" />
+      <varInfo nodeId="6111547859871838556" varName="view" />
+    </scopeInfo>
+    <scopeInfo nodeId="6111547859873209153" fileName="MindMapCentralThoughtView.java" startLine="63" startPosition="29" endLine="68" endPosition="13" />
+    <scopeInfo nodeId="6111547859873209152" fileName="MindMapCentralThoughtView.java" startLine="63" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="6111547859873209142" fileName="MindMapCentralThoughtView.java" startLine="60" startPosition="93" endLine="70" endPosition="12" />
+    <scopeInfo nodeId="6111547859873209137" fileName="MindMapCentralThoughtView.java" startLine="59" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="6111547859873209140" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="6111547859873209126" fileName="MindMapCentralThoughtView.java" startLine="57" startPosition="36" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="6111547859873209179" fileName="MindMapCentralThoughtView.java" startLine="57" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="6365639112241851338" fileName="MindMapCentralThoughtView.java" startLine="27" startPosition="38" endLine="54" endPosition="24">
+      <varInfo nodeId="615329258661285997" varName="bottomRect" />
+      <varInfo nodeId="2682505046536240536" varName="cellView" />
+      <varInfo nodeId="5058522826400216495" varName="view" />
+    </scopeInfo>
+    <scopeInfo nodeId="6365639112241851334" fileName="MindMapCentralThoughtView.java" startLine="27" startPosition="0" endLine="56" endPosition="0" />
+    <unitInfo nodeId="6111547859871838552" fileName="MindMapCentralThoughtView.java" startLine="39" startPosition="80" endLine="44" endPosition="5" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapCentralThoughtView$1" />
+    <unitInfo nodeId="6111547859873209152" fileName="MindMapCentralThoughtView.java" startLine="62" startPosition="67" endLine="70" endPosition="9" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapCentralThoughtView$3" />
+    <unitInfo nodeId="6111547859873209131" fileName="MindMapCentralThoughtView.java" startLine="58" startPosition="8" endLine="72" endPosition="5" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapCentralThoughtView$2" />
+    <unitInfo nodeId="5058522826399835001" fileName="MindMapCentralThoughtView.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapCentralThoughtView" />
+  </root>
+  <root nodeRef="r:6d38fe6e-f6cc-41c3-b2ff-e720f8912474(jetbrains.mps.samples.mindmaps.figures.model)/5058522826400320875">
+    <nodeInfo nodeId="5058522826400333677" fileName="MindMapThoughtView.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCell" />
+    <nodeInfo nodeId="5058522826400333682" fileName="MindMapThoughtView.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRectView" />
+    <nodeInfo nodeId="5058522826400333687" fileName="MindMapThoughtView.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isClicked" />
+    <nodeInfo nodeId="5058522826400333700" fileName="MindMapThoughtView.java" startLine="27" startPosition="31" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5058522826400333702" fileName="MindMapThoughtView.java" startLine="28" startPosition="17" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333707" fileName="MindMapThoughtView.java" startLine="29" startPosition="35" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5058522826400333708" fileName="MindMapThoughtView.java" startLine="30" startPosition="0" endLine="31" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5058522826400333713" fileName="MindMapThoughtView.java" startLine="31" startPosition="39" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333720" fileName="MindMapThoughtView.java" startLine="32" startPosition="49" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333725" fileName="MindMapThoughtView.java" startLine="33" startPosition="47" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333732" fileName="MindMapThoughtView.java" startLine="34" startPosition="30" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333737" fileName="MindMapThoughtView.java" startLine="35" startPosition="29" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5058522826400333738" fileName="MindMapThoughtView.java" startLine="36" startPosition="0" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333743" fileName="MindMapThoughtView.java" startLine="37" startPosition="31" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333750" fileName="MindMapThoughtView.java" startLine="38" startPosition="45" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333781" fileName="MindMapThoughtView.java" startLine="42" startPosition="51" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333793" fileName="MindMapThoughtView.java" startLine="45" startPosition="16" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5058522826400333824" fileName="MindMapThoughtView.java" startLine="46" startPosition="0" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5058522826400333829" fileName="MindMapThoughtView.java" startLine="47" startPosition="41" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333836" fileName="MindMapThoughtView.java" startLine="48" startPosition="50" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333846" fileName="MindMapThoughtView.java" startLine="49" startPosition="52" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333851" fileName="MindMapThoughtView.java" startLine="50" startPosition="31" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333873" fileName="MindMapThoughtView.java" startLine="57" startPosition="93" endLine="58" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333886" fileName="MindMapThoughtView.java" startLine="61" startPosition="34" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333898" fileName="MindMapThoughtView.java" startLine="63" startPosition="20" endLine="64" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333910" fileName="MindMapThoughtView.java" startLine="74" startPosition="34" endLine="75" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5058522826400333896" fileName="MindMapThoughtView.java" startLine="63" startPosition="18" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5058522826400333908" fileName="MindMapThoughtView.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="text#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="5058522826400333774" fileName="MindMapThoughtView.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/MouseEvent;)V" />
+    <nodeInfo nodeId="5058522826400333884" fileName="MindMapThoughtView.java" startLine="60" startPosition="29" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5058522826400333760" fileName="MindMapThoughtView.java" startLine="39" startPosition="52" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333882" fileName="MindMapThoughtView.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5058522826400333876" fileName="MindMapThoughtView.java" startLine="58" startPosition="51" endLine="67" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333867" fileName="MindMapThoughtView.java" startLine="56" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="5058522826400333857" fileName="MindMapThoughtView.java" startLine="54" startPosition="36" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5058522826400333853" fileName="MindMapThoughtView.java" startLine="54" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSynchronizers#()V" />
+    <nodeInfo nodeId="5058522826400333696" fileName="MindMapThoughtView.java" startLine="27" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MindMapThoughtView#()V" />
+    <scopeInfo nodeId="5058522826400333780" fileName="MindMapThoughtView.java" startLine="42" startPosition="51" endLine="43" endPosition="42" />
+    <scopeInfo nodeId="5058522826400333885" fileName="MindMapThoughtView.java" startLine="61" startPosition="34" endLine="62" endPosition="56" />
+    <scopeInfo nodeId="5058522826400333897" fileName="MindMapThoughtView.java" startLine="63" startPosition="20" endLine="64" endPosition="54" />
+    <scopeInfo nodeId="5058522826400333909" fileName="MindMapThoughtView.java" startLine="74" startPosition="34" endLine="75" endPosition="25" />
+    <scopeInfo nodeId="5058522826400333908" fileName="MindMapThoughtView.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5058522826400333774" fileName="MindMapThoughtView.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="5058522826400333778" varName="e" />
+      <varInfo nodeId="5058522826400333776" varName="view" />
+    </scopeInfo>
+    <scopeInfo nodeId="5058522826400333883" fileName="MindMapThoughtView.java" startLine="60" startPosition="29" endLine="65" endPosition="13" />
+    <scopeInfo nodeId="5058522826400333882" fileName="MindMapThoughtView.java" startLine="60" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5058522826400333872" fileName="MindMapThoughtView.java" startLine="57" startPosition="93" endLine="67" endPosition="12" />
+    <scopeInfo nodeId="5058522826400333867" fileName="MindMapThoughtView.java" startLine="56" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="5058522826400333870" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5058522826400333856" fileName="MindMapThoughtView.java" startLine="54" startPosition="36" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="5058522826400333853" fileName="MindMapThoughtView.java" startLine="54" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="5058522826400333699" fileName="MindMapThoughtView.java" startLine="27" startPosition="31" endLine="51" endPosition="24">
+      <varInfo nodeId="5058522826400333825" varName="bottomRect" />
+      <varInfo nodeId="5058522826400333709" varName="cellView" />
+    </scopeInfo>
+    <scopeInfo nodeId="5058522826400333696" fileName="MindMapThoughtView.java" startLine="27" startPosition="0" endLine="53" endPosition="0" />
+    <unitInfo nodeId="5058522826400333772" fileName="MindMapThoughtView.java" startLine="40" startPosition="80" endLine="45" endPosition="5" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView$1" />
+    <unitInfo nodeId="5058522826400333882" fileName="MindMapThoughtView.java" startLine="59" startPosition="67" endLine="67" endPosition="9" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView$3" />
+    <unitInfo nodeId="5058522826400333861" fileName="MindMapThoughtView.java" startLine="55" startPosition="8" endLine="69" endPosition="5" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView$2" />
+    <unitInfo nodeId="5058522826400320875" fileName="MindMapThoughtView.java" startLine="22" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView" />
+  </root>
+</debugInfo>
+
