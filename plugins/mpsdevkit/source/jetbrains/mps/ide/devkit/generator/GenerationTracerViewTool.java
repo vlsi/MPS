@@ -28,8 +28,8 @@ import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationTrace;
+import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
 import jetbrains.mps.smodel.ModelAccess;
@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -62,7 +63,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
 
   public GenerationTracerViewTool(Project project, GenerationTracer tracer, TransientModelsComponent transientModels) {
-    super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Generation Tracer", -1, jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
     myTracer = tracer;
     myTransientModelsOwner = transientModels;
     myNoTabsComponent = new NoTabsComponent(this);
@@ -233,8 +234,8 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   void showTraceView(GenerationTracerView.Kind viewToken, TraceNodeUI tracerNode, SNode node) {
     GenerationTracerView tracerView = new GenerationTracerView(this, node.getReference(), viewToken, tracerNode);
     myTracerViews.add(tracerView);
-
-    Content content = addContent(tracerView.getComponent(), node.getPresentation(), tracerNode.getIcon(), true);
+    Icon i = Icons.getIcon(tracerView.isForwardTraceView() ? TracerNode.Kind.INPUT : TracerNode.Kind.OUTPUT, node);
+    Content content = addContent(tracerView.getComponent(), node.getPresentation(), i, true);
     getContentManager().setSelectedContent(content);
 
     Content noTabsContent = getContentManager().getContent(myNoTabsComponent);

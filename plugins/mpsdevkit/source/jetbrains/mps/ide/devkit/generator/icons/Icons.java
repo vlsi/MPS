@@ -23,6 +23,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,17 +51,22 @@ public class Icons {
     return new CompositeIcon(mainIcon, kindIcon);
   }
 
-  private static Icon getMainIcon(@Nullable SNodeReference nodePointer) {
-    if (nodePointer != null) {
-      SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-      if (node != null) {
-        Icon icon = IconManager.getIconFor(node);
-        if (icon != null) {
-          return icon;
-        }
-      }
+  public static Icon getIcon(@Nullable Kind kind, @NotNull SNode node) {
+    Icon mainIcon = getNodeIcon(node);
+    if (kind == null) {
+      return mainIcon;
     }
-    return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
+    return new CompositeIcon(mainIcon, getKindIcon(kind));
+  }
+
+  private static Icon getMainIcon(@Nullable SNodeReference nodePointer) {
+    SNode node = nodePointer == null ? null : nodePointer.resolve(MPSModuleRepository.getInstance());
+    return getNodeIcon(node);
+  }
+
+  private static Icon getNodeIcon(@Nullable SNode node) {
+    Icon icon = node == null ? null : IconManager.getIconFor(node);
+    return icon != null ? icon : jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
   }
 
   private static Icon getKindIcon(Kind kind) {
