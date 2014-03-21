@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" />
+  <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5871420002487302234">
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="107" endLine="44" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="44" startPosition="117" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="45" startPosition="54" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="46" startPosition="28" endLine="47" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="47" startPosition="71" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputPort" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputPort" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="81" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="56" startPosition="33" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="63" startPosition="95" endLine="64" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="67" startPosition="55" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="52" endLine="74" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="63" endLine="78" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="79" startPosition="45" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="81" startPosition="15" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="52" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="88" startPosition="95" endLine="89" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="89" startPosition="49" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="63" endLine="95" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="96" startPosition="45" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="98" startPosition="15" endLine="99" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="45" endLine="104" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="105" startPosition="40" endLine="106" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="107" startPosition="15" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="108" startPosition="55" endLine="109" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="109" startPosition="55" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="110" startPosition="41" endLine="111" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="113" startPosition="14" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="124" startPosition="95" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="125" startPosition="53" endLine="126" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="127" startPosition="36" endLine="128" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="129" startPosition="11" endLine="130" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="131" startPosition="41" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="133" startPosition="11" endLine="134" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="134" startPosition="90" endLine="135" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="135" startPosition="149" endLine="136" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="136" startPosition="111" endLine="137" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="137" startPosition="85" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="67" endLine="144" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="144" startPosition="83" endLine="145" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="146" startPosition="32" endLine="147" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="148" startPosition="7" endLine="149" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="150" startPosition="37" endLine="151" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="152" startPosition="7" endLine="153" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="153" startPosition="108" endLine="154" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="31" endLine="161" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="161" startPosition="85" endLine="162" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="51" endLine="166" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="33" endLine="169" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="171" startPosition="9" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="172" startPosition="0" endLine="173" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="31" endLine="69" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="78" startPosition="101" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="95" startPosition="101" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="104" startPosition="57" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="126" startPosition="53" endLine="129" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="130" startPosition="125" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="145" startPosition="49" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="149" startPosition="115" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorCellImpl_nydcps_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="87" startPosition="62" endLine="91" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronize#()V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="166" startPosition="63" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagramConnector_nydcps_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="64" startPosition="53" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetView#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetView#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConnection#()Ljetbrains/jetpad/projectional/diagram/view/PolyLineConnection;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="101" startPosition="14" endLine="113" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="71" startPosition="14" endLine="84" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConnectorDecoratorView#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/views/ConnectorDecoratorView;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="84" startPosition="14" endLine="101" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="123" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="75" endLine="140" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDecorationMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="62" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="61" endLine="116" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="69" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="67" startPosition="55" endLine="68" endPosition="80" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="52" endLine="74" endPosition="60" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="79" startPosition="45" endLine="80" endPosition="28" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="96" startPosition="45" endLine="97" endPosition="28" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="105" startPosition="40" endLine="106" endPosition="23" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="127" startPosition="36" endLine="128" endPosition="19" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="131" startPosition="41" endLine="132" endPosition="19" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="146" startPosition="32" endLine="147" endPosition="38" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="150" startPosition="37" endLine="151" endPosition="38" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="33" endLine="169" endPosition="22" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="81" endLine="57" endPosition="20" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="88" startPosition="95" endLine="90" endPosition="47" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="31" endLine="162" endPosition="103" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="editorContext" />
+      <varInfo nodeId="5871420002487302234" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="31" endLine="69" endPosition="15" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="port" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="168" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="editorContext" />
+      <varInfo nodeId="5871420002487302234" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="107" endLine="48" endPosition="22">
+      <varInfo nodeId="5871420002487302234" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="63" endLine="82" endPosition="57">
+      <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="52" endLine="91" endPosition="15" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="63" endLine="99" endPosition="57">
+      <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="editorContext" />
+      <varInfo nodeId="5871420002487302234" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="77" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="port" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="port" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="94" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="port" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="45" endLine="111" endPosition="42">
+      <varInfo nodeId="5871420002487302234" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="51" endLine="173" endPosition="24">
+      <varInfo nodeId="5871420002487302234" varName="connection" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="103" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="rect" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="165" startPosition="0" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="67" endLine="154" endPosition="36">
+      <varInfo nodeId="5871420002487302234" varName="connectorDecoratorView" />
+      <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
+      <varInfo nodeId="5871420002487302234" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="143" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="124" startPosition="95" endLine="138" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="descendantMapper" />
+      <varInfo nodeId="5871420002487302234" varName="diagramCell" />
+      <varInfo nodeId="5871420002487302234" varName="valid" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="123" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="75" endLine="140" endPosition="8" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="121" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="63" startPosition="95" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="62" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="5871420002487302234" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="61" endLine="116" endPosition="8" />
+    <scopeInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="60" startPosition="0" endLine="118" endPosition="0" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="167" startPosition="95" endLine="171" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$3" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="65" startPosition="88" endLine="71" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="102" startPosition="87" endLine="113" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="72" startPosition="71" endLine="84" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="85" startPosition="72" endLine="101" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="122" startPosition="17" endLine="140" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="61" startPosition="17" endLine="116" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$1" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="51" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor$ConnectorCellImpl_nydcps_a" />
+    <unitInfo nodeId="5871420002487302234" fileName="Relationship_diagram_Editor.java" startLine="31" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor" />
+  </root>
+  <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5871420002487709759">
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="17" startPosition="95" endLine="18" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="24" startPosition="45" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487711447" fileName="DeleteThought.java" startLine="32" startPosition="81" endLine="33" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487880640" fileName="DeleteThought.java" startLine="33" startPosition="122" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5871420002487723162" fileName="DeleteThought.java" startLine="36" startPosition="41" endLine="37" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487733615" fileName="DeleteThought.java" startLine="40" startPosition="37" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487768476" fileName="DeleteThought.java" startLine="43" startPosition="9" endLine="44" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487919504" fileName="DeleteThought.java" startLine="47" startPosition="75" endLine="48" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487727657" fileName="DeleteThought.java" startLine="51" startPosition="77" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteThought_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5871420002487722659" fileName="DeleteThought.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5871420002487732876" fileName="DeleteThought.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5871420002487919504" fileName="DeleteThought.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_tcgyjr_a0a0a0a0a0a0c0d1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5871420002487727657" fileName="DeleteThought.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_tcgyjr_a0a0a0a0a0a0c0d1_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5871420002487709873" fileName="DeleteThought.java" startLine="34" startPosition="0" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="32" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="17" startPosition="95" endLine="18" endPosition="94" />
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="24" startPosition="45" endLine="25" endPosition="25" />
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="28" startPosition="54" endLine="29" endPosition="56" />
+    <scopeInfo nodeId="5871420002487722660" fileName="DeleteThought.java" startLine="36" startPosition="41" endLine="37" endPosition="184" />
+    <scopeInfo nodeId="5871420002487732877" fileName="DeleteThought.java" startLine="40" startPosition="37" endLine="41" endPosition="41" />
+    <scopeInfo nodeId="5871420002487919504" fileName="DeleteThought.java" startLine="47" startPosition="75" endLine="48" endPosition="48" />
+    <scopeInfo nodeId="5871420002487727657" fileName="DeleteThought.java" startLine="51" startPosition="77" endLine="52" endPosition="48" />
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="5871420002487709759" varName="context" />
+      <varInfo nodeId="5871420002487709759" varName="editorCell" />
+      <varInfo nodeId="5871420002487709759" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="5871420002487709759" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5871420002487709759" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487722659" fileName="DeleteThought.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="5871420002487722659" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487732876" fileName="DeleteThought.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5871420002487732876" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487919504" fileName="DeleteThought.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5871420002487919504" varName="a" />
+      <varInfo nodeId="5871420002487919504" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487727657" fileName="DeleteThought.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="5871420002487727657" varName="a" />
+      <varInfo nodeId="5871420002487727657" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487709762" fileName="DeleteThought.java" startLine="32" startPosition="81" endLine="44" endPosition="39">
+      <varInfo nodeId="5871420002487711448" varName="mindMap" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="32" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="5871420002487709759" varName="editorContext" />
+      <varInfo nodeId="5871420002487709759" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5871420002487722659" fileName="DeleteThought.java" startLine="35" startPosition="98" endLine="39" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.DeleteThought$1" />
+    <unitInfo nodeId="5871420002487732876" fileName="DeleteThought.java" startLine="39" startPosition="22" endLine="43" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.DeleteThought$2" />
+    <unitInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="21" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.DeleteThought$DeleteThought_DELETE" />
+    <unitInfo nodeId="5871420002487709759" fileName="DeleteThought.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.DeleteThought" />
+  </root>
+  <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5871420002487929742">
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="13" startPosition="95" endLine="14" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="20" startPosition="50" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487929750" fileName="DeleteRelationship.java" startLine="28" startPosition="75" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteRelationship_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="13" startPosition="95" endLine="14" endPosition="104" />
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="20" startPosition="50" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
+    <scopeInfo nodeId="5871420002487929745" fileName="DeleteRelationship.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="5871420002487929742" varName="context" />
+      <varInfo nodeId="5871420002487929742" varName="editorCell" />
+      <varInfo nodeId="5871420002487929742" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="5871420002487929742" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="5871420002487929742" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5871420002487929742" varName="editorContext" />
+      <varInfo nodeId="5871420002487929742" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.DeleteRelationship$DeleteRelationship_DELETE" />
+    <unitInfo nodeId="5871420002487929742" fileName="DeleteRelationship.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.DeleteRelationship" />
+  </root>
+  <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/79242395703887343">
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="53" startPosition="79" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="57" startPosition="89" endLine="58" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="58" startPosition="96" endLine="59" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="59" startPosition="42" endLine="60" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="60" startPosition="48" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="61" startPosition="28" endLine="62" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="61" startPosition="28" endLine="62" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="62" startPosition="81" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="62" startPosition="81" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="64" startPosition="81" endLine="65" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="64" startPosition="81" endLine="65" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="65" startPosition="80" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="70" startPosition="94" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="71" startPosition="47" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="76" startPosition="88" endLine="77" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="77" startPosition="82" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="78" startPosition="29" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="79" startPosition="42" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="80" startPosition="26" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="81" startPosition="58" endLine="82" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="82" startPosition="42" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="83" startPosition="34" endLine="84" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="84" startPosition="60" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="85" startPosition="40" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="86" startPosition="73" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="87" startPosition="57" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="89" startPosition="35" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="90" startPosition="72" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="91" startPosition="78" endLine="92" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="93" startPosition="10" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="97" startPosition="88" endLine="98" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="98" startPosition="86" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="99" startPosition="47" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="100" startPosition="34" endLine="101" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="101" startPosition="60" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="102" startPosition="40" endLine="103" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="103" startPosition="34" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="107" startPosition="87" endLine="108" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="108" startPosition="103" endLine="109" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="109" startPosition="46" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="114" startPosition="80" endLine="115" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5871420002487610749" fileName="MindMap_diagram_Editor.java" startLine="117" startPosition="62" endLine="118" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487610533" fileName="MindMap_diagram_Editor.java" startLine="118" startPosition="105" endLine="119" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487616827" fileName="MindMap_diagram_Editor.java" startLine="122" startPosition="81" endLine="123" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487646661" fileName="MindMap_diagram_Editor.java" startLine="126" startPosition="90" endLine="127" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487995882" fileName="MindMap_diagram_Editor.java" startLine="127" startPosition="144" endLine="128" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="130" startPosition="12" endLine="131" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487610749" fileName="MindMap_diagram_Editor.java" startLine="138" startPosition="62" endLine="139" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5871420002487610533" fileName="MindMap_diagram_Editor.java" startLine="139" startPosition="105" endLine="140" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487616827" fileName="MindMap_diagram_Editor.java" startLine="147" startPosition="81" endLine="148" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487646661" fileName="MindMap_diagram_Editor.java" startLine="151" startPosition="90" endLine="152" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5871420002487995882" fileName="MindMap_diagram_Editor.java" startLine="152" startPosition="144" endLine="153" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="161" startPosition="95" endLine="162" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="164" startPosition="85" endLine="165" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="169" startPosition="91" endLine="170" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="175" startPosition="37" endLine="176" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="177" startPosition="22" endLine="178" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="181" startPosition="14" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="190" startPosition="95" endLine="191" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="193" startPosition="85" endLine="194" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="198" startPosition="85" endLine="199" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="206" startPosition="31" endLine="207" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="207" startPosition="63" endLine="208" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="208" startPosition="67" endLine="209" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="209" startPosition="71" endLine="210" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703911259" fileName="MindMap_diagram_Editor.java" startLine="210" startPosition="75" endLine="211" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703952482" fileName="MindMap_diagram_Editor.java" startLine="211" startPosition="156" endLine="212" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="212" startPosition="161" endLine="213" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="213" startPosition="37" endLine="214" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="217" startPosition="45" endLine="218" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="218" startPosition="92" endLine="219" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="223" startPosition="77" endLine="224" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="227" startPosition="74" endLine="228" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="177" startPosition="20" endLine="179" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="147" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="193" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="198" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="223" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_e8klwn_a0a0a0a0d1a2a0a1a0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="227" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_e8klwn_a0a0a0a0d0a0a0d8#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="5871420002487602664" fileName="MindMap_diagram_Editor.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Integer;Ljava/lang/Integer;)V" />
+    <nodeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="5871420002487602664" fileName="MindMap_diagram_Editor.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Integer;Ljava/lang/Integer;)V" />
+    <nodeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagramView#()Ljetbrains/jetpad/projectional/diagram/view/DiagramView;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagram_e8klwn_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="162" startPosition="53" endLine="167" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="167" startPosition="14" endLine="172" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="174" startPosition="55" endLine="179" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="191" startPosition="53" endLine="196" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="196" startPosition="14" endLine="201" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_e8klwn_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="88" startPosition="59" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="136" startPosition="82" endLine="142" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljava/lang/Boolean;)V" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="136" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPaletteBlockSubstituteInfoPartExts#()[Ljetbrains/mps/nodeEditor/cellMenu/SubstituteInfoPartExt;" />
+    <nodeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="97" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_e8klwn_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="172" startPosition="14" endLine="181" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="145" startPosition="86" endLine="155" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="206" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronize#()V" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_e8klwn_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="145" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPaletteConnectorSubstituteInfoPartExts#()[Ljetbrains/mps/nodeEditor/cellMenu/SubstituteInfoPartExt;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="189" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="115" startPosition="33" endLine="130" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="187" startPosition="83" endLine="203" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="187" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDecorationMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="114" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiagramCellImpl_e8klwn_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="76" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_e8klwn_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="160" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="158" startPosition="64" endLine="184" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="158" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="26" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="53" startPosition="79" endLine="54" endPosition="63" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="61" startPosition="28" endLine="62" endPosition="81" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="62" startPosition="81" endLine="63" endPosition="81" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="81" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="64" startPosition="81" endLine="65" endPosition="80" />
+    <scopeInfo nodeId="5871420002487614339" fileName="MindMap_diagram_Editor.java" startLine="122" startPosition="81" endLine="123" endPosition="236" />
+    <scopeInfo nodeId="5871420002487614339" fileName="MindMap_diagram_Editor.java" startLine="147" startPosition="81" endLine="148" endPosition="233" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="164" startPosition="85" endLine="165" endPosition="75" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="169" startPosition="91" endLine="170" endPosition="79" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="175" startPosition="37" endLine="176" endPosition="62" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="177" startPosition="22" endLine="178" endPosition="65" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="193" startPosition="85" endLine="194" endPosition="85" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="198" startPosition="85" endLine="199" endPosition="89" />
+    <scopeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="223" startPosition="77" endLine="224" endPosition="49" />
+    <scopeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="227" startPosition="74" endLine="228" endPosition="49" />
+    <scopeInfo nodeId="5871420002487602667" fileName="MindMap_diagram_Editor.java" startLine="117" startPosition="62" endLine="119" endPosition="66">
+      <varInfo nodeId="5871420002487610750" varName="thought" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487614341" fileName="MindMap_diagram_Editor.java" startLine="126" startPosition="90" endLine="128" endPosition="142" />
+    <scopeInfo nodeId="5871420002487602667" fileName="MindMap_diagram_Editor.java" startLine="138" startPosition="62" endLine="140" endPosition="66">
+      <varInfo nodeId="5871420002487610750" varName="thought" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487614341" fileName="MindMap_diagram_Editor.java" startLine="151" startPosition="90" endLine="153" endPosition="142" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="217" startPosition="45" endLine="219" endPosition="25">
+      <varInfo nodeId="79242395703887343" varName="diagramView" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="editorContext" />
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105">
+      <varInfo nodeId="79242395703887923" varName="manager" />
+      <varInfo nodeId="79242395703887923" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="107" startPosition="87" endLine="110" endPosition="22">
+      <varInfo nodeId="79242395703887343" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="122" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="5871420002487614336" varName="from" />
+      <varInfo nodeId="5871420002487614336" varName="fromId" />
+      <varInfo nodeId="5871420002487614336" varName="to" />
+      <varInfo nodeId="5871420002487614336" varName="toId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="147" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="5871420002487614336" varName="from" />
+      <varInfo nodeId="5871420002487614336" varName="fromId" />
+      <varInfo nodeId="5871420002487614336" varName="to" />
+      <varInfo nodeId="5871420002487614336" varName="toId" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="164" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="169" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="193" startPosition="0" endLine="196" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="198" startPosition="0" endLine="201" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="223" startPosition="0" endLine="226" endPosition="0">
+      <varInfo nodeId="5871420002487625978" varName="a" />
+      <varInfo nodeId="5871420002487625978" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487625978" fileName="MindMap_diagram_Editor.java" startLine="227" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="5871420002487625978" varName="a" />
+      <varInfo nodeId="5871420002487625978" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="69" startPosition="88" endLine="73" endPosition="22">
+      <varInfo nodeId="79242395703887913" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487602664" fileName="MindMap_diagram_Editor.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="5871420002487602664" varName="node" />
+      <varInfo nodeId="5871420002487602664" varName="x" />
+      <varInfo nodeId="5871420002487602664" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="126" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="5871420002487614336" varName="from" />
+      <varInfo nodeId="5871420002487614336" varName="fromId" />
+      <varInfo nodeId="5871420002487614336" varName="node" />
+      <varInfo nodeId="5871420002487614336" varName="to" />
+      <varInfo nodeId="5871420002487614336" varName="toId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487602664" fileName="MindMap_diagram_Editor.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="5871420002487602664" varName="node" />
+      <varInfo nodeId="5871420002487602664" varName="x" />
+      <varInfo nodeId="5871420002487602664" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="151" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="5871420002487614336" varName="from" />
+      <varInfo nodeId="5871420002487614336" varName="fromId" />
+      <varInfo nodeId="5871420002487614336" varName="node" />
+      <varInfo nodeId="5871420002487614336" varName="to" />
+      <varInfo nodeId="5871420002487614336" varName="toId" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="217" startPosition="0" endLine="221" endPosition="0" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="107" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="editorContext" />
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="174" startPosition="55" endLine="179" endPosition="15" />
+    <scopeInfo nodeId="79242395703887913" fileName="MindMap_diagram_Editor.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="79242395703887913" varName="editorContext" />
+      <varInfo nodeId="79242395703887913" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="136" startPosition="82" endLine="142" endPosition="10" />
+    <scopeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="97" startPosition="88" endLine="104" endPosition="22">
+      <varInfo nodeId="79242395703887934" varName="editorCell" />
+      <varInfo nodeId="79242395703887934" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="174" startPosition="0" endLine="181" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="showDragFeedBack" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="136" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="206" startPosition="31" endLine="214" endPosition="41">
+      <varInfo nodeId="79242395703887343" varName="blocksIterator" />
+      <varInfo nodeId="79242395703887343" varName="connectorsIterator" />
+      <varInfo nodeId="79242395703887343" varName="existingBlocks" />
+      <varInfo nodeId="79242395703887343" varName="existingConnectors" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="57" startPosition="89" endLine="66" endPosition="22">
+      <varInfo nodeId="79242395703887343" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887934" fileName="MindMap_diagram_Editor.java" startLine="97" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="79242395703887934" varName="editorContext" />
+      <varInfo nodeId="79242395703887934" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="145" startPosition="86" endLine="155" endPosition="10" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="206" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="editorContext" />
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="190" startPosition="95" endLine="201" endPosition="14" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="145" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="189" startPosition="0" endLine="203" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="187" startPosition="83" endLine="203" endPosition="8" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="114" startPosition="80" endLine="131" endPosition="20" />
+    <scopeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="76" startPosition="88" endLine="94" endPosition="22">
+      <varInfo nodeId="79242395703887923" varName="attributeConcept" />
+      <varInfo nodeId="79242395703887923" varName="attributeKind" />
+      <varInfo nodeId="79242395703887923" varName="editorCell" />
+      <varInfo nodeId="79242395703887923" varName="provider" />
+      <varInfo nodeId="79242395703887923" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="187" startPosition="0" endLine="205" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="114" startPosition="0" endLine="133" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="editorContext" />
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887923" fileName="MindMap_diagram_Editor.java" startLine="76" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="79242395703887923" varName="editorContext" />
+      <varInfo nodeId="79242395703887923" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="161" startPosition="95" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="160" startPosition="0" endLine="184" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="158" startPosition="64" endLine="184" endPosition="8" />
+    <scopeInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="158" startPosition="0" endLine="186" endPosition="0">
+      <varInfo nodeId="79242395703887343" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="121" startPosition="265" endLine="125" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$2" />
+    <unitInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="146" startPosition="296" endLine="150" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$5" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="163" startPosition="114" endLine="167" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$8" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="168" startPosition="109" endLine="172" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$8" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="192" startPosition="123" endLine="196" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$9" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="197" startPosition="132" endLine="201" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$9" />
+    <unitInfo nodeId="5871420002487602664" fileName="MindMap_diagram_Editor.java" startLine="116" startPosition="363" endLine="121" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$1" />
+    <unitInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="125" startPosition="13" endLine="130" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$3" />
+    <unitInfo nodeId="5871420002487602664" fileName="MindMap_diagram_Editor.java" startLine="137" startPosition="281" endLine="142" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$4" />
+    <unitInfo nodeId="5871420002487614336" fileName="MindMap_diagram_Editor.java" startLine="150" startPosition="13" endLine="155" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$6" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="173" startPosition="83" endLine="181" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$8" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="188" startPosition="17" endLine="203" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$8" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="159" startPosition="17" endLine="184" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$7" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="113" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor$DiagramCellImpl_e8klwn_d0" />
+    <unitInfo nodeId="79242395703887343" fileName="MindMap_diagram_Editor.java" startLine="45" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor" />
+  </root>
+  <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/79242395703954207">
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="50" startPosition="47" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="54" startPosition="79" endLine="55" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="58" startPosition="102" endLine="59" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="59" startPosition="98" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="60" startPosition="49" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="61" startPosition="28" endLine="62" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="62" startPosition="66" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyCell_a6gtrz_a0a" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyCell_a6gtrz_a1a" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myXProperty" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myYProperty" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="72" startPosition="83" endLine="73" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="75" startPosition="54" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="79" startPosition="64" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="82" startPosition="8" endLine="83" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="83" startPosition="47" endLine="84" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="86" startPosition="55" endLine="87" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="90" startPosition="65" endLine="91" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="93" startPosition="8" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="94" startPosition="47" endLine="95" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="97" startPosition="51" endLine="98" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="101" startPosition="61" endLine="102" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="104" startPosition="8" endLine="105" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="107" startPosition="51" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="111" startPosition="61" endLine="112" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="114" startPosition="8" endLine="115" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="115" startPosition="118" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="116" startPosition="59" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="120" startPosition="31" endLine="121" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="121" startPosition="39" endLine="122" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="122" startPosition="46" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="129" startPosition="95" endLine="130" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="130" startPosition="53" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="136" startPosition="103" endLine="137" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="137" startPosition="61" endLine="138" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="138" startPosition="101" endLine="139" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="145" startPosition="45" endLine="146" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="147" startPosition="40" endLine="148" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="149" startPosition="15" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="150" startPosition="55" endLine="151" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="151" startPosition="55" endLine="152" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="152" startPosition="41" endLine="153" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="155" startPosition="14" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="159" startPosition="48" endLine="160" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="171" startPosition="95" endLine="172" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="172" startPosition="53" endLine="173" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="174" startPosition="36" endLine="175" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="176" startPosition="11" endLine="177" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="178" startPosition="36" endLine="179" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="180" startPosition="11" endLine="181" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="181" startPosition="90" endLine="182" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="182" startPosition="114" endLine="183" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="183" startPosition="52" endLine="184" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="184" startPosition="97" endLine="185" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="187" startPosition="46" endLine="188" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="189" startPosition="34" endLine="190" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="191" startPosition="15" endLine="192" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="192" startPosition="50" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="193" startPosition="49" endLine="194" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="196" startPosition="14" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="202" startPosition="53" endLine="203" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="203" startPosition="50" endLine="204" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="204" startPosition="54" endLine="205" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="205" startPosition="57" endLine="206" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="206" startPosition="33" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="207" startPosition="0" endLine="208" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="210" startPosition="40" endLine="211" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="211" startPosition="55" endLine="212" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="216" startPosition="33" endLine="217" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="219" startPosition="9" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="220" startPosition="0" endLine="221" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="221" startPosition="64" endLine="222" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="226" startPosition="45" endLine="227" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="229" startPosition="28" endLine="230" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="231" startPosition="54" endLine="232" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="235" startPosition="18" endLine="236" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelPropertyValueImpl#()Ljava/lang/String;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValueImpl#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelPropertyValueImpl#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValueImpl#(Ljava/lang/Boolean;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelPropertyValue#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(Ljava/lang/Integer;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelPropertyValue#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(Ljava/lang/Integer;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="146" startPosition="57" endLine="149" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="158" startPosition="31" endLine="161" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="173" startPosition="53" endLine="176" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="177" startPosition="72" endLine="180" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="188" startPosition="83" endLine="191" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="216" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="225" startPosition="51" endLine="228" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="210" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="move#(Ljetbrains/jetpad/geometry/Vector;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="120" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronize#()V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="158" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="214" startPosition="9" endLine="219" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="228" startPosition="11" endLine="233" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="135" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="208" startPosition="73" endLine="214" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagramNode_a6gtrz_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="156" startPosition="0" endLine="163" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="133" startPosition="100" endLine="141" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="73" startPosition="33" endLine="82" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="84" startPosition="168" endLine="93" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="95" startPosition="175" endLine="104" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="105" startPosition="118" endLine="114" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="187" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="133" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#(Ljava/lang/String;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="145" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="185" startPosition="144" endLine="196" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="224" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/KeyEvent;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="131" startPosition="0" endLine="143" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="143" startPosition="14" endLine="155" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="222" startPosition="62" endLine="235" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="170" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="168" startPosition="70" endLine="199" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="168" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDecorationMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="202" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDiagramNodeView#()Ljetbrains/jetpad/projectional/diagram/view/DiagramNodeView;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="128" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="126" startPosition="58" endLine="165" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="126" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="72" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockCellImpl_a6gtrz_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="50" startPosition="47" endLine="51" endPosition="26" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="54" startPosition="79" endLine="55" endPosition="64" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="75" startPosition="54" endLine="76" endPosition="61" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="79" startPosition="64" endLine="80" endPosition="55" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="86" startPosition="55" endLine="87" endPosition="69" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="90" startPosition="65" endLine="91" endPosition="69" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="97" startPosition="51" endLine="98" endPosition="59" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="101" startPosition="61" endLine="102" endPosition="59" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="107" startPosition="51" endLine="108" endPosition="59" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="111" startPosition="61" endLine="112" endPosition="59" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="147" startPosition="40" endLine="148" endPosition="23" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="159" startPosition="48" endLine="160" endPosition="80" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="174" startPosition="36" endLine="175" endPosition="19" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="178" startPosition="36" endLine="179" endPosition="19" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="189" startPosition="34" endLine="190" endPosition="23" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="216" startPosition="33" endLine="217" endPosition="22" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="226" startPosition="45" endLine="227" endPosition="19" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="229" startPosition="28" endLine="230" endPosition="87" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="231" startPosition="54" endLine="232" endPosition="94" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="210" startPosition="40" endLine="212" endPosition="55" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="editorContext" />
+      <varInfo nodeId="79242395703954207" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="111" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="120" startPosition="31" endLine="123" endPosition="46" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="136" startPosition="103" endLine="139" endPosition="104" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="158" startPosition="31" endLine="161" endPosition="15" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="216" startPosition="0" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="210" startPosition="0" endLine="214" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="delta" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="58" startPosition="102" endLine="63" endPosition="22">
+      <varInfo nodeId="79242395703954207" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="120" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="158" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="135" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="editorContext" />
+      <varInfo nodeId="79242395703954207" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="187" startPosition="46" endLine="194" endPosition="107">
+      <varInfo nodeId="79242395703954207" varName="positionDelta" />
+      <varInfo nodeId="79242395703954207" varName="prefSize" />
+      <varInfo nodeId="79242395703954207" varName="sizeDelta" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="133" startPosition="100" endLine="141" endPosition="16" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="145" startPosition="45" endLine="153" endPosition="42">
+      <varInfo nodeId="79242395703954207" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="225" startPosition="51" endLine="233" endPosition="11" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="187" startPosition="0" endLine="196" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="delta" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="133" startPosition="0" endLine="143" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="block" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="145" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="rect" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="224" startPosition="0" endLine="235" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="e" />
+      <varInfo nodeId="79242395703954207" varName="view" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="171" startPosition="95" endLine="197" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="blockMapper" />
+      <varInfo nodeId="79242395703954207" varName="contentView" />
+      <varInfo nodeId="79242395703954207" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="170" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="168" startPosition="70" endLine="199" endPosition="8" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="168" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="129" startPosition="95" endLine="163" endPosition="14" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="202" startPosition="53" endLine="236" endPosition="23">
+      <varInfo nodeId="79242395703954207" varName="blockView" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="202" startPosition="0" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="128" startPosition="0" endLine="165" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="126" startPosition="58" endLine="165" endPosition="8" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="126" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="72" startPosition="83" endLine="117" endPosition="20" />
+    <scopeInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="72" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="79242395703954207" varName="editorContext" />
+      <varInfo nodeId="79242395703954207" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="215" startPosition="83" endLine="219" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$8" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="209" startPosition="65" endLine="214" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$7" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="157" startPosition="81" endLine="163" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$6" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="134" startPosition="25" endLine="141" endPosition="15" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$7" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="74" startPosition="38" endLine="82" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$1" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="85" startPosition="38" endLine="93" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$2" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="96" startPosition="24" endLine="104" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$3" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="106" startPosition="24" endLine="114" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$4" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="186" startPosition="83" endLine="196" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$7" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="132" startPosition="134" endLine="143" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$6" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="144" startPosition="80" endLine="155" endPosition="11" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$6" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="223" startPosition="79" endLine="235" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$9" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="169" startPosition="17" endLine="199" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$6" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="127" startPosition="17" endLine="165" endPosition="7" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$5" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="66" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor$BlockCellImpl_a6gtrz_a" />
+    <unitInfo nodeId="79242395703954207" fileName="Thought_diagram_Editor.java" startLine="46" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor" />
+  </root>
+</debugInfo>
+
