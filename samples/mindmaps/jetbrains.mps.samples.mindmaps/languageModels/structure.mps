@@ -28,7 +28,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="79242395703884488" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Thought" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="throught" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="thought" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="79242395703953958" resolveInfo="VisualBox" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5871420002488059916" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />

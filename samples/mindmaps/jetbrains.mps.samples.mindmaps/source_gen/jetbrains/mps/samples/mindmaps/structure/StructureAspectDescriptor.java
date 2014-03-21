@@ -22,7 +22,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Specializes").super_("jetbrains.mps.samples.mindmaps.structure.Relationship").parents("jetbrains.mps.samples.mindmaps.structure.Relationship").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Thought").super_("jetbrains.mps.samples.mindmaps.structure.VisualBox").parents("jetbrains.mps.samples.mindmaps.structure.VisualBox", "jetbrains.mps.lang.core.structure.INamedConcept").alias("throught", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.Thought").super_("jetbrains.mps.samples.mindmaps.structure.VisualBox").parents("jetbrains.mps.samples.mindmaps.structure.VisualBox", "jetbrains.mps.lang.core.structure.INamedConcept").alias("thought", "").create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.mindmaps.structure.VisualBox").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y", "myIsClicked").abstract_().create();
       default:

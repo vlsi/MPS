@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4lq0wb8ucha5tev88tvdxollsmm06pt">
+<dependencies version="2" modelHash="9rfv98384rnelt2ra0khd4lp28rak4l">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -20,7 +20,7 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="79242395703866767" name="MindMap" hash="50w2gteh67liydgtclp96d01oiv7dti" />
-  <source id="79242395703884488" name="Thought" hash="-3kmd3qxofr1hpq61engeu24inj50mbp" />
+  <source id="79242395703884488" name="Thought" hash="4w6qsrqrjrbhjinioqsezre5dus7sdo" />
   <source id="79242395703884499" name="Relationship" hash="-7umz5l7vp82zem8h7xlvw9as4qsfc1h" />
   <source id="79242395703953958" name="VisualBox" hash="u10wqw1wit242sxmud3pxvsjvsz3sh" />
   <source id="5058522826399262785" name="Specializes" hash="d4gaxatnbxd4qfl1mqqv8hpr36o77uf" />
