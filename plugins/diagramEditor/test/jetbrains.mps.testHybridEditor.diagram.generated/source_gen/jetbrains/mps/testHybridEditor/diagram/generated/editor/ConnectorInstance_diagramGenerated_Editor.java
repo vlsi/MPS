@@ -44,7 +44,6 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
     final ConnectorCell editorCell = new ConnectorInstance_diagramGenerated_Editor.ConnectorCellImpl_5733l5_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_5733l5_a");
     editorCell.setBig(true);
-    ConnectorActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

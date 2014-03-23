@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338861444">
+    <nodeInfo nodeId="6619018968340142816" fileName="DiagramPalette.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainActionGroup" />
+    <nodeInfo nodeId="6619018968338861486" fileName="DiagramPalette.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiagramCell" />
+    <nodeInfo nodeId="6619018968338861503" fileName="DiagramPalette.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedToggleAction" />
+    <nodeInfo nodeId="6619018968338861510" fileName="DiagramPalette.java" startLine="26" startPosition="50" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6619018968338861515" fileName="DiagramPalette.java" startLine="27" startPosition="39" endLine="28" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861660" fileName="DiagramPalette.java" startLine="35" startPosition="39" endLine="36" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968338861670" fileName="DiagramPalette.java" startLine="43" startPosition="59" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861676" fileName="DiagramPalette.java" startLine="44" startPosition="55" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682495384948" fileName="DiagramPalette.java" startLine="47" startPosition="12" endLine="48" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861688" fileName="DiagramPalette.java" startLine="52" startPosition="53" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339756842" fileName="DiagramPalette.java" startLine="58" startPosition="46" endLine="59" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340151094" fileName="DiagramPalette.java" startLine="62" startPosition="60" endLine="63" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682494215535" fileName="DiagramPalette.java" startLine="66" startPosition="33" endLine="67" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682494535318" fileName="DiagramPalette.java" startLine="70" startPosition="44" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340213351" fileName="DiagramPalette.java" startLine="74" startPosition="34" endLine="75" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6619018968340204229" fileName="DiagramPalette.java" startLine="75" startPosition="214" endLine="76" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6619018968340204250" fileName="DiagramPalette.java" startLine="76" startPosition="131" endLine="77" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340204256" fileName="DiagramPalette.java" startLine="77" startPosition="60" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6619018968340226304" fileName="DiagramPalette.java" startLine="78" startPosition="60" endLine="79" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="87" startPosition="36" endLine="88" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="89" startPosition="5" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2981172682495383798" fileName="DiagramPalette.java" startLine="47" startPosition="10" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6619018968338861658" fileName="DiagramPalette.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDiagramCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;" />
+    <nodeInfo nodeId="6619018968338861685" fileName="DiagramPalette.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unselectActionWhichWasSelected#()V" />
+    <nodeInfo nodeId="6619018968339729346" fileName="DiagramPalette.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTrait#(Ljetbrains/jetpad/projectional/view/ViewTrait;)V" />
+    <nodeInfo nodeId="6619018968338861790" fileName="DiagramPalette.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPaletteElement#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;)V" />
+    <nodeInfo nodeId="2981172682494200123" fileName="DiagramPalette.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSeparator#()V" />
+    <nodeInfo nodeId="2981172682494535316" fileName="DiagramPalette.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSeparator#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="86" startPosition="78" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968338861506" fileName="DiagramPalette.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiagramPalette#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
+    <nodeInfo nodeId="6619018968338861668" fileName="DiagramPalette.java" startLine="42" startPosition="55" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_1eehpg_a0a0a0a01#(Lcom/intellij/openapi/actionSystem/ToggleAction;)V" />
+    <nodeInfo nodeId="6619018968340197195" fileName="DiagramPalette.java" startLine="74" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPalette#()V" />
+    <nodeInfo nodeId="2981172682495377134" fileName="DiagramPalette.java" startLine="41" startPosition="82" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968338861665" fileName="DiagramPalette.java" startLine="41" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unselectActionWhichWasSelected#(Lcom/intellij/openapi/actionSystem/AnAction;)V" />
+    <scopeInfo nodeId="6619018968338861659" fileName="DiagramPalette.java" startLine="35" startPosition="39" endLine="36" endPosition="25" />
+    <scopeInfo nodeId="2981172682495383799" fileName="DiagramPalette.java" startLine="47" startPosition="12" endLine="48" endPosition="39" />
+    <scopeInfo nodeId="6619018968338861687" fileName="DiagramPalette.java" startLine="52" startPosition="53" endLine="53" endPosition="34" />
+    <scopeInfo nodeId="6619018968339729349" fileName="DiagramPalette.java" startLine="58" startPosition="46" endLine="59" endPosition="42" />
+    <scopeInfo nodeId="6619018968338861791" fileName="DiagramPalette.java" startLine="62" startPosition="60" endLine="63" endPosition="92" />
+    <scopeInfo nodeId="2981172682494200126" fileName="DiagramPalette.java" startLine="66" startPosition="33" endLine="67" endPosition="43" />
+    <scopeInfo nodeId="2981172682494535317" fileName="DiagramPalette.java" startLine="70" startPosition="44" endLine="71" endPosition="47" />
+    <scopeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="87" startPosition="36" endLine="88" endPosition="49" />
+    <scopeInfo nodeId="6619018968338861509" fileName="DiagramPalette.java" startLine="26" startPosition="50" endLine="28" endPosition="32" />
+    <scopeInfo nodeId="6619018968338861669" fileName="DiagramPalette.java" startLine="43" startPosition="59" endLine="45" endPosition="71" />
+    <scopeInfo nodeId="6619018968338861658" fileName="DiagramPalette.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6619018968338861685" fileName="DiagramPalette.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="6619018968339729346" fileName="DiagramPalette.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="6619018968339744232" varName="trait" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968338861790" fileName="DiagramPalette.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="6619018968338861794" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="2981172682494200123" fileName="DiagramPalette.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="2981172682494535316" fileName="DiagramPalette.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="2981172682494540831" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968338861506" fileName="DiagramPalette.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6619018968340076621" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2981172682495377137" fileName="DiagramPalette.java" startLine="42" startPosition="55" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="86" startPosition="78" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="6619018968340197198" fileName="DiagramPalette.java" startLine="74" startPosition="34" endLine="79" endPosition="38">
+      <varInfo nodeId="6619018968340204257" varName="actionPanel" />
+      <varInfo nodeId="6619018968340204230" varName="elementsToolbar" />
+      <varInfo nodeId="6619018968340213352" varName="gridConstraints" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968338861671" fileName="DiagramPalette.java" startLine="86" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="6619018968338861671" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340197195" fileName="DiagramPalette.java" startLine="74" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="6619018968338861667" fileName="DiagramPalette.java" startLine="41" startPosition="82" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="6619018968338861665" fileName="DiagramPalette.java" startLine="41" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="6619018968338861683" varName="actionWhisIsSelected" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968338861444" fileName="DiagramPalette.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338861816">
+    <nodeInfo nodeId="6619018968338861817" fileName="DiagramPaletteToggleAction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="6619018968338861820" fileName="DiagramPaletteToggleAction.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPalette" />
+    <nodeInfo nodeId="6619018968338861838" fileName="DiagramPaletteToggleAction.java" startLine="13" startPosition="90" endLine="14" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6619018968338861842" fileName="DiagramPaletteToggleAction.java" startLine="14" startPosition="67" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861891" fileName="DiagramPaletteToggleAction.java" startLine="20" startPosition="50" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968338861905" fileName="DiagramPaletteToggleAction.java" startLine="26" startPosition="40" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861917" fileName="DiagramPaletteToggleAction.java" startLine="28" startPosition="47" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861922" fileName="DiagramPaletteToggleAction.java" startLine="31" startPosition="5" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861935" fileName="DiagramPaletteToggleAction.java" startLine="35" startPosition="25" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861949" fileName="DiagramPaletteToggleAction.java" startLine="39" startPosition="27" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968338861885" fileName="DiagramPaletteToggleAction.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="6619018968338861926" fileName="DiagramPaletteToggleAction.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#()V" />
+    <nodeInfo nodeId="6619018968338861945" fileName="DiagramPaletteToggleAction.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unselect#()V" />
+    <nodeInfo nodeId="6619018968338861835" fileName="DiagramPaletteToggleAction.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiagramPaletteToggleAction#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/DiagramPalette;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;)V" />
+    <nodeInfo nodeId="6619018968338861903" fileName="DiagramPaletteToggleAction.java" startLine="25" startPosition="24" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968338861901" fileName="DiagramPaletteToggleAction.java" startLine="24" startPosition="68" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968338861893" fileName="DiagramPaletteToggleAction.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <scopeInfo nodeId="6619018968338861890" fileName="DiagramPaletteToggleAction.java" startLine="20" startPosition="50" endLine="21" endPosition="22" />
+    <scopeInfo nodeId="6619018968338861904" fileName="DiagramPaletteToggleAction.java" startLine="26" startPosition="40" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="6619018968338861916" fileName="DiagramPaletteToggleAction.java" startLine="28" startPosition="47" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="6619018968338861929" fileName="DiagramPaletteToggleAction.java" startLine="35" startPosition="25" endLine="36" endPosition="51" />
+    <scopeInfo nodeId="6619018968338861948" fileName="DiagramPaletteToggleAction.java" startLine="39" startPosition="27" endLine="40" endPosition="47" />
+    <scopeInfo nodeId="6619018968338861837" fileName="DiagramPaletteToggleAction.java" startLine="13" startPosition="90" endLine="15" endPosition="24" />
+    <scopeInfo nodeId="6619018968338861885" fileName="DiagramPaletteToggleAction.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="6619018968338861888" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968338861926" fileName="DiagramPaletteToggleAction.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6619018968338861945" fileName="DiagramPaletteToggleAction.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6619018968338861835" fileName="DiagramPaletteToggleAction.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="2981172682495315964" varName="element" />
+      <varInfo nodeId="6619018968338861874" varName="palette" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968338861902" fileName="DiagramPaletteToggleAction.java" startLine="25" startPosition="24" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="6619018968338861900" fileName="DiagramPaletteToggleAction.java" startLine="24" startPosition="68" endLine="32" endPosition="28" />
+    <scopeInfo nodeId="6619018968338861893" fileName="DiagramPaletteToggleAction.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6619018968338861896" varName="event" />
+      <varInfo nodeId="6619018968338861898" varName="isSelected" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968338861816" fileName="DiagramPaletteToggleAction.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPaletteToggleAction" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338862055">
+    <unitInfo nodeId="6619018968338862055" fileName="PaletteAction.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteAction" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338862066">
+    <nodeInfo nodeId="6619018968338982794" fileName="PaletteActionGroup.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultElement#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;" />
+    <nodeInfo nodeId="6619018968338862067" fileName="PaletteActionGroup.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElements#()[Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;" />
+    <nodeInfo nodeId="6619018968338862072" fileName="PaletteActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPopup#()Z" />
+    <scopeInfo nodeId="6619018968338982794" fileName="PaletteActionGroup.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
+    <scopeInfo nodeId="6619018968338862067" fileName="PaletteActionGroup.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
+    <scopeInfo nodeId="6619018968338862072" fileName="PaletteActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
+    <unitInfo nodeId="6619018968338862066" fileName="PaletteActionGroup.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteActionGroup" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338862079">
+    <nodeInfo nodeId="6619018968340620227" fileName="PopupPaletteActionGroupAdapter.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPaletteActionGroup" />
+    <nodeInfo nodeId="6619018968339021221" fileName="PopupPaletteActionGroupAdapter.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActionGroup" />
+    <nodeInfo nodeId="6619018968338956023" fileName="PopupPaletteActionGroupAdapter.java" startLine="18" startPosition="91" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6619018968338862097" fileName="PopupPaletteActionGroupAdapter.java" startLine="19" startPosition="26" endLine="20" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6619018968340623176" fileName="PopupPaletteActionGroupAdapter.java" startLine="20" startPosition="27" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339044353" fileName="PopupPaletteActionGroupAdapter.java" startLine="21" startPosition="33" endLine="22" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340608227" fileName="PopupPaletteActionGroupAdapter.java" startLine="25" startPosition="36" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339111827" fileName="PopupPaletteActionGroupAdapter.java" startLine="27" startPosition="71" endLine="28" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339009720" fileName="PopupPaletteActionGroupAdapter.java" startLine="33" startPosition="68" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682494047200" fileName="PopupPaletteActionGroupAdapter.java" startLine="35" startPosition="24" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340628640" fileName="PopupPaletteActionGroupAdapter.java" startLine="37" startPosition="5" endLine="38" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339440275" fileName="PopupPaletteActionGroupAdapter.java" startLine="38" startPosition="24" endLine="39" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2981172682494007265" fileName="PopupPaletteActionGroupAdapter.java" startLine="39" startPosition="124" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2981172682494007277" fileName="PopupPaletteActionGroupAdapter.java" startLine="40" startPosition="50" endLine="41" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2981172682494007281" fileName="PopupPaletteActionGroupAdapter.java" startLine="41" startPosition="14" endLine="42" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2981172682494007290" fileName="PopupPaletteActionGroupAdapter.java" startLine="43" startPosition="43" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682494007299" fileName="PopupPaletteActionGroupAdapter.java" startLine="44" startPosition="43" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682494006483" fileName="PopupPaletteActionGroupAdapter.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6619018968339480879" fileName="PopupPaletteActionGroupAdapter.java" startLine="47" startPosition="0" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339032408" fileName="PopupPaletteActionGroupAdapter.java" startLine="26" startPosition="30" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2981172682494043923" fileName="PopupPaletteActionGroupAdapter.java" startLine="34" startPosition="41" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2981172682494007284" fileName="PopupPaletteActionGroupAdapter.java" startLine="42" startPosition="14" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968338862093" fileName="PopupPaletteActionGroupAdapter.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PopupPaletteActionGroupAdapter#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/DiagramPalette;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteActionGroup;)V" />
+    <nodeInfo nodeId="6619018968340602636" fileName="PopupPaletteActionGroupAdapter.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateActionGroup#()V" />
+    <nodeInfo nodeId="6619018968339009682" fileName="PopupPaletteActionGroupAdapter.java" startLine="32" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <scopeInfo nodeId="6619018968339032414" fileName="PopupPaletteActionGroupAdapter.java" startLine="27" startPosition="71" endLine="28" endPosition="95" />
+    <scopeInfo nodeId="2981172682494043926" fileName="PopupPaletteActionGroupAdapter.java" startLine="35" startPosition="24" endLine="36" endPosition="13" />
+    <scopeInfo nodeId="2981172682494007289" fileName="PopupPaletteActionGroupAdapter.java" startLine="43" startPosition="43" endLine="45" endPosition="43" />
+    <scopeInfo nodeId="6619018968339032408" fileName="PopupPaletteActionGroupAdapter.java" startLine="26" startPosition="30" endLine="29" endPosition="5">
+      <varInfo nodeId="6619018968339032410" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968338862096" fileName="PopupPaletteActionGroupAdapter.java" startLine="18" startPosition="91" endLine="22" endPosition="33" />
+    <scopeInfo nodeId="6619018968340602639" fileName="PopupPaletteActionGroupAdapter.java" startLine="25" startPosition="36" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="6619018968338862093" fileName="PopupPaletteActionGroupAdapter.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="6619018968338862101" varName="group" />
+      <varInfo nodeId="6619018968338956031" varName="palette" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340602636" fileName="PopupPaletteActionGroupAdapter.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6619018968339009715" fileName="PopupPaletteActionGroupAdapter.java" startLine="33" startPosition="68" endLine="48" endPosition="47">
+      <varInfo nodeId="2981172682494007264" varName="inputEvent" />
+      <varInfo nodeId="6619018968339440276" varName="menu" />
+      <varInfo nodeId="2981172682494007276" varName="x" />
+      <varInfo nodeId="2981172682494007280" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968339009682" fileName="PopupPaletteActionGroupAdapter.java" startLine="32" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6619018968339009685" varName="event" />
+      <varInfo nodeId="6619018968339009687" varName="isSelected" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968338862079" fileName="PopupPaletteActionGroupAdapter.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PopupPaletteActionGroupAdapter" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338862107">
+    <nodeInfo nodeId="6619018968338862056" fileName="PaletteElement.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6619018968338862060" fileName="PaletteElement.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <scopeInfo nodeId="6619018968338862056" fileName="PaletteElement.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
+    <scopeInfo nodeId="6619018968338862060" fileName="PaletteElement.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
+    <unitInfo nodeId="6619018968338862107" fileName="PaletteElement.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElement" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338862109">
+    <nodeInfo nodeId="6619018968338862110" fileName="PaletteSimpleAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClick#()V" />
+    <scopeInfo nodeId="6619018968338862110" fileName="PaletteSimpleAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
+    <unitInfo nodeId="6619018968338862109" fileName="PaletteSimpleAction.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteSimpleAction" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968338862116">
+    <nodeInfo nodeId="6619018968338862117" fileName="PaletteToggleAction.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTrait#()Ljetbrains/jetpad/projectional/view/ViewTrait;" />
+    <scopeInfo nodeId="6619018968338862117" fileName="PaletteToggleAction.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
+    <unitInfo nodeId="6619018968338862116" fileName="PaletteToggleAction.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteToggleAction" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968339049881">
+    <nodeInfo nodeId="6619018968339130404" fileName="PaletteElementFactory.java" startLine="9" startPosition="48" endLine="10" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6619018968339121872" fileName="PaletteElementFactory.java" startLine="11" startPosition="28" endLine="12" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968339641865" fileName="PaletteElementFactory.java" startLine="13" startPosition="14" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968339646321" fileName="PaletteElementFactory.java" startLine="16" startPosition="56" endLine="17" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968339652749" fileName="PaletteElementFactory.java" startLine="18" startPosition="56" endLine="19" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968339654592" fileName="PaletteElementFactory.java" startLine="20" startPosition="5" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968339121827" fileName="PaletteElementFactory.java" startLine="13" startPosition="12" endLine="15" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6619018968339120899" fileName="PaletteElementFactory.java" startLine="10" startPosition="64" endLine="15" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968339127256" fileName="PaletteElementFactory.java" startLine="8" startPosition="102" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968339118523" fileName="PaletteElementFactory.java" startLine="8" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPaletteElementAdapter#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/DiagramPalette;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;)Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <scopeInfo nodeId="6619018968339120902" fileName="PaletteElementFactory.java" startLine="11" startPosition="28" endLine="12" endPosition="66" />
+    <scopeInfo nodeId="6619018968339121828" fileName="PaletteElementFactory.java" startLine="13" startPosition="14" endLine="14" endPosition="61" />
+    <scopeInfo nodeId="6619018968339645274" fileName="PaletteElementFactory.java" startLine="16" startPosition="56" endLine="17" endPosition="86" />
+    <scopeInfo nodeId="6619018968339651342" fileName="PaletteElementFactory.java" startLine="18" startPosition="56" endLine="19" endPosition="86" />
+    <scopeInfo nodeId="6619018968339127259" fileName="PaletteElementFactory.java" startLine="9" startPosition="48" endLine="15" endPosition="7">
+      <varInfo nodeId="6619018968339130405" varName="group" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968339063763" fileName="PaletteElementFactory.java" startLine="8" startPosition="102" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="6619018968339118523" fileName="PaletteElementFactory.java" startLine="8" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="6619018968339063776" varName="element" />
+      <varInfo nodeId="6619018968339066427" varName="palette" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968339049881" fileName="PaletteElementFactory.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementFactory" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968339340050">
+    <nodeInfo nodeId="6619018968339593606" fileName="PaletteActionGroupAdapter.java" startLine="9" startPosition="56" endLine="10" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339593603" fileName="PaletteActionGroupAdapter.java" startLine="8" startPosition="86" endLine="11" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6619018968339593573" fileName="PaletteActionGroupAdapter.java" startLine="8" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PaletteActionGroupAdapter#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/DiagramPalette;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteActionGroup;)V" />
+    <scopeInfo nodeId="6619018968339593605" fileName="PaletteActionGroupAdapter.java" startLine="9" startPosition="56" endLine="10" endPosition="84" />
+    <scopeInfo nodeId="6619018968339593576" fileName="PaletteActionGroupAdapter.java" startLine="8" startPosition="86" endLine="11" endPosition="5" />
+    <scopeInfo nodeId="6619018968339593603" fileName="PaletteActionGroupAdapter.java" startLine="8" startPosition="86" endLine="11" endPosition="5">
+      <varInfo nodeId="6619018968339593604" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968339593573" fileName="PaletteActionGroupAdapter.java" startLine="8" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="6619018968339593618" varName="group" />
+      <varInfo nodeId="6619018968339593616" varName="palette" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968339340050" fileName="PaletteActionGroupAdapter.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteActionGroupAdapter" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968339625837">
+    <nodeInfo nodeId="6619018968339633215" fileName="PaletteSimpleActionAdapter.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAction" />
+    <nodeInfo nodeId="6619018968339625969" fileName="PaletteSimpleActionAdapter.java" startLine="10" startPosition="89" endLine="11" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6619018968339634685" fileName="PaletteSimpleActionAdapter.java" startLine="11" startPosition="27" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339629841" fileName="PaletteSimpleActionAdapter.java" startLine="19" startPosition="68" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339639166" fileName="PaletteSimpleActionAdapter.java" startLine="21" startPosition="21" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339640886" fileName="PaletteSimpleActionAdapter.java" startLine="23" startPosition="5" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339638694" fileName="PaletteSimpleActionAdapter.java" startLine="20" startPosition="41" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968339625888" fileName="PaletteSimpleActionAdapter.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PaletteSimpleActionAdapter#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteSimpleAction;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/DiagramPalette;)V" />
+    <nodeInfo nodeId="6619018968339629803" fileName="PaletteSimpleActionAdapter.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <scopeInfo nodeId="6619018968339638697" fileName="PaletteSimpleActionAdapter.java" startLine="21" startPosition="21" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="6619018968339625892" fileName="PaletteSimpleActionAdapter.java" startLine="10" startPosition="89" endLine="12" endPosition="22" />
+    <scopeInfo nodeId="6619018968339625888" fileName="PaletteSimpleActionAdapter.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6619018968339625909" varName="action" />
+      <varInfo nodeId="6619018968339625931" varName="palette" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968339629836" fileName="PaletteSimpleActionAdapter.java" startLine="19" startPosition="68" endLine="24" endPosition="29" />
+    <scopeInfo nodeId="6619018968339629803" fileName="PaletteSimpleActionAdapter.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="6619018968339629806" varName="event" />
+      <varInfo nodeId="6619018968339629808" varName="isSelected" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968339625837" fileName="PaletteSimpleActionAdapter.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteSimpleActionAdapter" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968339656571">
+    <nodeInfo nodeId="6619018968339656572" fileName="PaletteToggleActionAdapter.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAction" />
+    <nodeInfo nodeId="6619018968339656579" fileName="PaletteToggleActionAdapter.java" startLine="10" startPosition="89" endLine="11" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6619018968339656590" fileName="PaletteToggleActionAdapter.java" startLine="11" startPosition="27" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339666069" fileName="PaletteToggleActionAdapter.java" startLine="20" startPosition="21" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968339976762" fileName="PaletteToggleActionAdapter.java" startLine="19" startPosition="68" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968339656575" fileName="PaletteToggleActionAdapter.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PaletteToggleActionAdapter#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteToggleAction;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/DiagramPalette;)V" />
+    <nodeInfo nodeId="6619018968339656600" fileName="PaletteToggleActionAdapter.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <scopeInfo nodeId="6619018968339976765" fileName="PaletteToggleActionAdapter.java" startLine="20" startPosition="21" endLine="21" endPosition="46" />
+    <scopeInfo nodeId="6619018968339656578" fileName="PaletteToggleActionAdapter.java" startLine="10" startPosition="89" endLine="12" endPosition="22" />
+    <scopeInfo nodeId="6619018968339656607" fileName="PaletteToggleActionAdapter.java" startLine="19" startPosition="68" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="6619018968339656575" fileName="PaletteToggleActionAdapter.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6619018968339656594" varName="action" />
+      <varInfo nodeId="6619018968339656596" varName="palette" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968339656600" fileName="PaletteToggleActionAdapter.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="6619018968339656603" varName="event" />
+      <varInfo nodeId="6619018968339656605" varName="isSelected" />
+    </scopeInfo>
+    <unitInfo nodeId="6619018968339656571" fileName="PaletteToggleActionAdapter.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteToggleActionAdapter" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968340245319">
+    <nodeInfo nodeId="2981172682491539846" fileName="PaletteElementsCreationActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubstituteInfoPartExt" />
+    <nodeInfo nodeId="2981172682491848503" fileName="PaletteElementsCreationActionGroup.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubstituteInfo" />
+    <nodeInfo nodeId="6619018968340633538" fileName="PaletteElementsCreationActionGroup.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />
+    <nodeInfo nodeId="2981172682491823661" fileName="PaletteElementsCreationActionGroup.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
+    <nodeInfo nodeId="2981172682492150412" fileName="PaletteElementsCreationActionGroup.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainer" />
+    <nodeInfo nodeId="2981172682492167027" fileName="PaletteElementsCreationActionGroup.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChildConcept" />
+    <nodeInfo nodeId="2981172682492174151" fileName="PaletteElementsCreationActionGroup.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLink" />
+    <nodeInfo nodeId="2981172682492181582" fileName="PaletteElementsCreationActionGroup.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCallback" />
+    <nodeInfo nodeId="2981172682491837418" fileName="PaletteElementsCreationActionGroup.java" startLine="29" startPosition="244" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682492184134" fileName="PaletteElementsCreationActionGroup.java" startLine="30" startPosition="36" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682492185586" fileName="PaletteElementsCreationActionGroup.java" startLine="31" startPosition="28" endLine="32" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682492188598" fileName="PaletteElementsCreationActionGroup.java" startLine="32" startPosition="38" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682492192267" fileName="PaletteElementsCreationActionGroup.java" startLine="33" startPosition="28" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682492233629" fileName="PaletteElementsCreationActionGroup.java" startLine="34" startPosition="41" endLine="35" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340672354" fileName="PaletteElementsCreationActionGroup.java" startLine="38" startPosition="45" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2981172682492140518" fileName="PaletteElementsCreationActionGroup.java" startLine="42" startPosition="41" endLine="43" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340681680" fileName="PaletteElementsCreationActionGroup.java" startLine="43" startPosition="84" endLine="44" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340246170" fileName="PaletteElementsCreationActionGroup.java" startLine="47" startPosition="28" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340629943" fileName="PaletteElementsCreationActionGroup.java" startLine="51" startPosition="25" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340630941" fileName="PaletteElementsCreationActionGroup.java" startLine="55" startPosition="27" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2981172682492126025" fileName="PaletteElementsCreationActionGroup.java" startLine="59" startPosition="253" endLine="60" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682491595107" fileName="PaletteElementsCreationActionGroup.java" startLine="63" startPosition="226" endLine="64" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2981172682492073405" fileName="PaletteElementsCreationActionGroup.java" startLine="64" startPosition="138" endLine="65" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="74" startPosition="36" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="76" startPosition="5" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="81" startPosition="36" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="83" startPosition="5" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340245780" fileName="PaletteElementsCreationActionGroup.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultElement#()Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;" />
+    <nodeInfo nodeId="6619018968340245793" fileName="PaletteElementsCreationActionGroup.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPopup#()Z" />
+    <nodeInfo nodeId="6619018968340245800" fileName="PaletteElementsCreationActionGroup.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6619018968340245808" fileName="PaletteElementsCreationActionGroup.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="73" startPosition="137" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="80" startPosition="139" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968340245787" fileName="PaletteElementsCreationActionGroup.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElements#()[Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;" />
+    <nodeInfo nodeId="2981172682491595104" fileName="PaletteElementsCreationActionGroup.java" startLine="62" startPosition="25" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2981172682492401278" fileName="PaletteElementsCreationActionGroup.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ipwmos_a0a21#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElementsCreationActionGroup;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ipwmos_a0a31#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElement;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/PaletteElementsCreationActionGroup;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6619018968340260576" fileName="PaletteElementsCreationActionGroup.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PaletteElementsCreationActionGroup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P3_E0;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2981172682492397332" fileName="PaletteElementsCreationActionGroup.java" startLine="60" startPosition="45" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="639949279720498684" fileName="PaletteElementsCreationActionGroup.java" startLine="59" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P3_E0;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="6619018968340245784" fileName="PaletteElementsCreationActionGroup.java" startLine="38" startPosition="45" endLine="39" endPosition="52" />
+    <scopeInfo nodeId="6619018968340245797" fileName="PaletteElementsCreationActionGroup.java" startLine="47" startPosition="28" endLine="48" endPosition="16" />
+    <scopeInfo nodeId="6619018968340245805" fileName="PaletteElementsCreationActionGroup.java" startLine="51" startPosition="25" endLine="52" endPosition="57" />
+    <scopeInfo nodeId="6619018968340245813" fileName="PaletteElementsCreationActionGroup.java" startLine="55" startPosition="27" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="74" startPosition="36" endLine="75" endPosition="41" />
+    <scopeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="81" startPosition="36" endLine="82" endPosition="41" />
+    <scopeInfo nodeId="6619018968340245792" fileName="PaletteElementsCreationActionGroup.java" startLine="42" startPosition="41" endLine="44" endPosition="86" />
+    <scopeInfo nodeId="2981172682491595106" fileName="PaletteElementsCreationActionGroup.java" startLine="63" startPosition="226" endLine="65" endPosition="69">
+      <varInfo nodeId="2981172682491595108" varName="paletteAction" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340245780" fileName="PaletteElementsCreationActionGroup.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="6619018968340245793" fileName="PaletteElementsCreationActionGroup.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6619018968340245800" fileName="PaletteElementsCreationActionGroup.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6619018968340245808" fileName="PaletteElementsCreationActionGroup.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6619018968340245787" fileName="PaletteElementsCreationActionGroup.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="2981172682491595104" fileName="PaletteElementsCreationActionGroup.java" startLine="62" startPosition="25" endLine="66" endPosition="9">
+      <varInfo nodeId="2981172682491595105" varName="action" />
+    </scopeInfo>
+    <scopeInfo nodeId="2981172682492401279" fileName="PaletteElementsCreationActionGroup.java" startLine="62" startPosition="25" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="73" startPosition="137" endLine="77" endPosition="16" />
+    <scopeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="80" startPosition="139" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="6619018968340260580" fileName="PaletteElementsCreationActionGroup.java" startLine="29" startPosition="244" endLine="35" endPosition="84" />
+    <scopeInfo nodeId="2981172682492401278" fileName="PaletteElementsCreationActionGroup.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6619018968340712706" fileName="PaletteElementsCreationActionGroup.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="6619018968340712706" varName="checkedDotOperand" />
+      <varInfo nodeId="6619018968340712706" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340713032" fileName="PaletteElementsCreationActionGroup.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="6619018968340713032" varName="checkedDotOperand" />
+      <varInfo nodeId="6619018968340713032" varName="checkedDotThisExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340260576" fileName="PaletteElementsCreationActionGroup.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2809327089714647387" varName="childNodeConcept" />
+      <varInfo nodeId="2809327089714639703" varName="container" />
+      <varInfo nodeId="2809327089714648639" varName="containingLink" />
+      <varInfo nodeId="6619018968340655918" varName="editorContext" />
+      <varInfo nodeId="2809327089714649909" varName="setNodePositionCallback" />
+    </scopeInfo>
+    <scopeInfo nodeId="639949279720498697" fileName="PaletteElementsCreationActionGroup.java" startLine="59" startPosition="253" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="639949279720498684" fileName="PaletteElementsCreationActionGroup.java" startLine="59" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="639949279720498687" varName="childNodeConcept" />
+      <varInfo nodeId="639949279720498685" varName="container" />
+      <varInfo nodeId="639949279720498689" varName="containingLink" />
+      <varInfo nodeId="2981172682492059595" varName="editorContext" />
+      <varInfo nodeId="639949279720498691" varName="setNodePositionCallback" />
+    </scopeInfo>
+    <unitInfo nodeId="2981172682492401278" fileName="PaletteElementsCreationActionGroup.java" startLine="61" startPosition="45" endLine="68" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationActionGroup$1" />
+    <unitInfo nodeId="6619018968340245319" fileName="PaletteElementsCreationActionGroup.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationActionGroup" />
+  </root>
+  <root nodeRef="r:7e753a2c-1063-48ee-910b-7561db818f48(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette)/6619018968340261581">
+    <nodeInfo nodeId="6619018968340263057" fileName="PaletteElementsCreationAction.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubstituteAction" />
+    <nodeInfo nodeId="6619018968340542283" fileName="PaletteElementsCreationAction.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
+    <nodeInfo nodeId="2809327089714831023" fileName="PaletteElementsCreationAction.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myX" />
+    <nodeInfo nodeId="2809327089714836180" fileName="PaletteElementsCreationAction.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myY" />
+    <nodeInfo nodeId="2981172682493620290" fileName="PaletteElementsCreationAction.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
+    <nodeInfo nodeId="2981172682493620293" fileName="PaletteElementsCreationAction.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresentation" />
+    <nodeInfo nodeId="2809327089714651598" fileName="PaletteElementsCreationAction.java" startLine="37" startPosition="79" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2809327089714651604" fileName="PaletteElementsCreationAction.java" startLine="38" startPosition="57" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2809327089714651611" fileName="PaletteElementsCreationAction.java" startLine="39" startPosition="57" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340546644" fileName="PaletteElementsCreationAction.java" startLine="42" startPosition="6" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682493634595" fileName="PaletteElementsCreationAction.java" startLine="45" startPosition="25" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682493634601" fileName="PaletteElementsCreationAction.java" startLine="46" startPosition="35" endLine="47" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682493625557" fileName="PaletteElementsCreationAction.java" startLine="49" startPosition="7" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2981172682491687926" fileName="PaletteElementsCreationAction.java" startLine="53" startPosition="54" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4046741574135174289" fileName="PaletteElementsCreationAction.java" startLine="60" startPosition="52" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4046741574135041708" fileName="PaletteElementsCreationAction.java" startLine="63" startPosition="38" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2809327089714844704" fileName="PaletteElementsCreationAction.java" startLine="65" startPosition="9" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2809327089714869955" fileName="PaletteElementsCreationAction.java" startLine="66" startPosition="24" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7492671827826733368" fileName="PaletteElementsCreationAction.java" startLine="67" startPosition="24" endLine="68" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7492671827826733392" fileName="PaletteElementsCreationAction.java" startLine="70" startPosition="29" endLine="71" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2809327089715883149" fileName="PaletteElementsCreationAction.java" startLine="74" startPosition="27" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7492671827826733403" fileName="PaletteElementsCreationAction.java" startLine="78" startPosition="29" endLine="79" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340500771" fileName="PaletteElementsCreationAction.java" startLine="81" startPosition="63" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="639949279726829807" fileName="PaletteElementsCreationAction.java" startLine="82" startPosition="0" endLine="83" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682493692395" fileName="PaletteElementsCreationAction.java" startLine="90" startPosition="25" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9168054762590139541" fileName="PaletteElementsCreationAction.java" startLine="94" startPosition="34" endLine="95" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9168054762590127413" fileName="PaletteElementsCreationAction.java" startLine="95" startPosition="14" endLine="96" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6619018968340356709" fileName="PaletteElementsCreationAction.java" startLine="97" startPosition="27" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9168054762590127423" fileName="PaletteElementsCreationAction.java" startLine="98" startPosition="0" endLine="99" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9168054762590127441" fileName="PaletteElementsCreationAction.java" startLine="100" startPosition="12" endLine="101" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2981172682492713572" fileName="PaletteElementsCreationAction.java" startLine="102" startPosition="5" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2981172682493696940" fileName="PaletteElementsCreationAction.java" startLine="106" startPosition="27" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9168054762590127439" fileName="PaletteElementsCreationAction.java" startLine="100" startPosition="10" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2981172682491646845" fileName="PaletteElementsCreationAction.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubstituteAction#()Ljetbrains/mps/openapi/editor/cells/SubstituteAction;" />
+    <nodeInfo nodeId="4046741574135014163" fileName="PaletteElementsCreationAction.java" startLine="59" startPosition="55" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4046741574134996124" fileName="PaletteElementsCreationAction.java" startLine="62" startPosition="9" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7492671827826733388" fileName="PaletteElementsCreationAction.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7492671827826733401" fileName="PaletteElementsCreationAction.java" startLine="73" startPosition="11" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2540221764966853151" fileName="PaletteElementsCreationAction.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2981172682493685734" fileName="PaletteElementsCreationAction.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6619018968340261643" fileName="PaletteElementsCreationAction.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2981172682493634577" fileName="PaletteElementsCreationAction.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7492671827826733376" fileName="PaletteElementsCreationAction.java" startLine="68" startPosition="54" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2540221764966815847" fileName="PaletteElementsCreationAction.java" startLine="76" startPosition="9" endLine="81" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2809327089714651589" fileName="PaletteElementsCreationAction.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="substitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2981172682493634573" fileName="PaletteElementsCreationAction.java" startLine="43" startPosition="36" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9168054762590127417" fileName="PaletteElementsCreationAction.java" startLine="96" startPosition="56" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6619018968340263318" fileName="PaletteElementsCreationAction.java" startLine="34" startPosition="201" endLine="42" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6619018968340261634" fileName="PaletteElementsCreationAction.java" startLine="94" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconInternal#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6619018968340261931" fileName="PaletteElementsCreationAction.java" startLine="34" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PaletteElementsCreationAction#(Ljetbrains/mps/openapi/editor/cells/SubstituteAction;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P3_E0;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="639949279726829754" fileName="PaletteElementsCreationAction.java" startLine="59" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/MouseEvent;)V" />
+    <nodeInfo nodeId="6619018968340457087" fileName="PaletteElementsCreationAction.java" startLine="57" startPosition="31" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619018968340261627" fileName="PaletteElementsCreationAction.java" startLine="57" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTrait#()Ljetbrains/jetpad/projectional/view/ViewTrait;" />
+    <scopeInfo nodeId="2981172682491646848" fileName="PaletteElementsCreationAction.java" startLine="53" startPosition="54" endLine="54" endPosition="30" />
+    <scopeInfo nodeId="4046741574135014164" fileName="PaletteElementsCreationAction.java" startLine="60" startPosition="52" endLine="61" endPosition="17" />
+    <scopeInfo nodeId="4046741574134996127" fileName="PaletteElementsCreationAction.java" startLine="63" startPosition="38" endLine="64" endPosition="51" />
+    <scopeInfo nodeId="7492671827826733391" fileName="PaletteElementsCreationAction.java" startLine="70" startPosition="29" endLine="71" endPosition="61" />
+    <scopeInfo nodeId="7492671827826733402" fileName="PaletteElementsCreationAction.java" startLine="74" startPosition="27" endLine="75" endPosition="17" />
+    <scopeInfo nodeId="2540221764966853152" fileName="PaletteElementsCreationAction.java" startLine="78" startPosition="29" endLine="79" endPosition="63" />
+    <scopeInfo nodeId="2981172682493685740" fileName="PaletteElementsCreationAction.java" startLine="90" startPosition="25" endLine="91" endPosition="18" />
+    <scopeInfo nodeId="9168054762590127440" fileName="PaletteElementsCreationAction.java" startLine="100" startPosition="12" endLine="101" endPosition="35" />
+    <scopeInfo nodeId="6619018968340261649" fileName="PaletteElementsCreationAction.java" startLine="106" startPosition="27" endLine="107" endPosition="26" />
+    <scopeInfo nodeId="2981172682493634578" fileName="PaletteElementsCreationAction.java" startLine="45" startPosition="25" endLine="47" endPosition="64" />
+    <scopeInfo nodeId="9168054762590127422" fileName="PaletteElementsCreationAction.java" startLine="97" startPosition="27" endLine="99" endPosition="224" />
+    <scopeInfo nodeId="2809327089714651597" fileName="PaletteElementsCreationAction.java" startLine="37" startPosition="79" endLine="40" endPosition="22">
+      <varInfo nodeId="2809327089714651599" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2981172682491646845" fileName="PaletteElementsCreationAction.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="7492671827826733388" fileName="PaletteElementsCreationAction.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2540221764966853151" fileName="PaletteElementsCreationAction.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="2981172682493685734" fileName="PaletteElementsCreationAction.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="6619018968340261643" fileName="PaletteElementsCreationAction.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="2981172682493634577" fileName="PaletteElementsCreationAction.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2809327089714651589" fileName="PaletteElementsCreationAction.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="2809327089714651592" varName="context" />
+      <varInfo nodeId="2809327089714651595" varName="string" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340261640" fileName="PaletteElementsCreationAction.java" startLine="94" startPosition="34" endLine="103" endPosition="16">
+      <varInfo nodeId="9168054762590139542" varName="icon" />
+      <varInfo nodeId="9168054762590127412" varName="iconNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340261634" fileName="PaletteElementsCreationAction.java" startLine="94" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="6619018968340261935" fileName="PaletteElementsCreationAction.java" startLine="34" startPosition="201" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6619018968340261931" fileName="PaletteElementsCreationAction.java" startLine="34" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="6619018968340262174" varName="action" />
+      <varInfo nodeId="6619018968340524627" varName="editorContext" />
+      <varInfo nodeId="2809327089714774003" varName="setNodePositionCallback" />
+    </scopeInfo>
+    <scopeInfo nodeId="639949279726829759" fileName="PaletteElementsCreationAction.java" startLine="59" startPosition="55" endLine="83" endPosition="24">
+      <varInfo nodeId="7492671827826733369" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="639949279726829754" fileName="PaletteElementsCreationAction.java" startLine="59" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="639949279726829754" varName="event" />
+      <varInfo nodeId="639949279726829754" varName="view" />
+    </scopeInfo>
+    <scopeInfo nodeId="6619018968340261631" fileName="PaletteElementsCreationAction.java" startLine="57" startPosition="31" endLine="85" endPosition="15" />
+    <scopeInfo nodeId="6619018968340261627" fileName="PaletteElementsCreationAction.java" startLine="57" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="7492671827826733386" fileName="PaletteElementsCreationAction.java" startLine="69" startPosition="75" endLine="73" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationAction$4" />
+    <unitInfo nodeId="2540221764966853151" fileName="PaletteElementsCreationAction.java" startLine="77" startPosition="50" endLine="81" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationAction$4" />
+    <unitInfo nodeId="2981172682493634577" fileName="PaletteElementsCreationAction.java" startLine="44" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationAction$2" />
+    <unitInfo nodeId="2809327089714651588" fileName="PaletteElementsCreationAction.java" startLine="35" startPosition="29" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationAction$1" />
+    <unitInfo nodeId="639949279726829754" fileName="PaletteElementsCreationAction.java" startLine="58" startPosition="67" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationAction$3" />
+    <unitInfo nodeId="6619018968340261581" fileName="PaletteElementsCreationAction.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationAction" />
+  </root>
+</debugInfo>
+

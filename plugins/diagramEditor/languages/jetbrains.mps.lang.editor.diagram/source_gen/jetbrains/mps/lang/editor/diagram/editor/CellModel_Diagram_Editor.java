@@ -22,6 +22,10 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -45,7 +49,8 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7br2q0_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7br2q0_e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7br2q0_f0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_7br2q0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7br2q0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_7br2q0_h0(editorContext, node));
     return editorCell;
   }
 
@@ -151,15 +156,40 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7br2q0_f0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_RightParen(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createComponent_7br2q0_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7br2q0_g0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("paletteDeclaration");
+    provider.setNoTargetText("<no paletteDeclaration>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("paletteDeclaration");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createComponent_7br2q0_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

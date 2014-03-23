@@ -41,6 +41,8 @@ import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.PaletteElementsCreationActionGroup;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -271,6 +273,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
           SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "metaPort", (SNode) toId, false);
         }
       })}));
+      setPalette(new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0.DiagramPaletteImpl_tb7paq_a4a(this));
       synchronize();
     }
 
@@ -369,6 +372,28 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
+    }
+
+    private class DiagramPaletteImpl_tb7paq_a4a extends DiagramPalette {
+      private DiagramPaletteImpl_tb7paq_a4a(DiagramCell diagramCell) {
+        super(diagramCell);
+        addPaletteElement(new PaletteElementsCreationActionGroup(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+          public void invoke(SNode node, Integer x, Integer y) {
+            SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "name", "block");
+            SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "x", "" + (x));
+            SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "y", "" + (y));
+          }
+        }, diagramCell.getContext()));
+        addSeparator("\"ssdfsdfsdfdsf");
+        addPaletteElement(new PaletteElementsCreationActionGroup(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+          public void invoke(SNode node, Integer x, Integer y) {
+            SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "name", "block");
+            SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "x", "" + (x));
+            SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "y", "" + (y));
+          }
+        }, diagramCell.getContext()));
+        createPalette();
+      }
     }
   }
 

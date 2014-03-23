@@ -9,15 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -29,24 +29,54 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_g2kbx5_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_g2kbx5_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_g2kbx5_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_g2kbx5_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g2kbx5_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_g2kbx5_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_g2kbx5_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g2kbx5_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_g2kbx5_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_g2kbx5_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g2kbx5_g0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_g2kbx5_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_g2kbx5_i0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_g2kbx5_j0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_g2kbx5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
     editorCell.setCellId("Constant_g2kbx5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_g2kbx5_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_g2kbx5_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_g2kbx5_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container:");
+    editorCell.setCellId("Constant_g2kbx5_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_g2kbx5_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -69,19 +99,19 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_g2kbx5_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_g2kbx5_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept:");
-    editorCell.setCellId("Constant_g2kbx5_c0");
+    editorCell.setCellId("Constant_g2kbx5_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_g2kbx5_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_g2kbx5_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
     provider.setNoTargetText("<no specialized concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DiagramConnectorCreation_Editor._Inline_g2kbx5_a3a());
+    provider.setAuxiliaryCellProvider(new DiagramConnectorCreation_Editor._Inline_g2kbx5_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -94,8 +124,8 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_g2kbx5_a3a extends InlineCellProvider {
-    public _Inline_g2kbx5_a3a() {
+  public static class _Inline_g2kbx5_a5a extends InlineCellProvider {
+    public _Inline_g2kbx5_a5a() {
       super();
     }
 
@@ -104,17 +134,17 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_g2kbx5_a0d0(editorContext, node);
+      return this.createProperty_g2kbx5_a0f0(editorContext, node);
     }
 
-    private EditorCell createProperty_g2kbx5_a0d0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_g2kbx5_a0f0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("concept");
@@ -131,9 +161,9 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_g2kbx5_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_g2kbx5_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can create:");
-    editorCell.setCellId("Constant_g2kbx5_e0");
+    editorCell.setCellId("Constant_g2kbx5_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -141,7 +171,7 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_g2kbx5_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_g2kbx5_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("canCreate");
     provider.setNoTargetText("<no canCreate>");
@@ -161,9 +191,9 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_g2kbx5_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_g2kbx5_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on create:");
-    editorCell.setCellId("Constant_g2kbx5_g0");
+    editorCell.setCellId("Constant_g2kbx5_i0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -171,7 +201,7 @@ public class DiagramConnectorCreation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_g2kbx5_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_g2kbx5_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("handler");
     provider.setNoTargetText("<no handler>");

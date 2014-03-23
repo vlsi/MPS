@@ -17,7 +17,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="902273atmrd8nhnqts5ootv5bmwc50j" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="3sx6zwhs4zti2v83h2qpdrwso12xc7c" />
   <dep model="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)" hash="6827xetxh49c7q11dfgr0to39vopxmd" />
-  <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="2smj18tjd6jw4b6ux432xi2v1bm4icn" />
+  <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="-6d8sd882wtl7w4bwqptzqh8jsrf5x11" />
   <dep model="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" hash="bos6slooq8j7y9jfh6ootr4jj0rvquh" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
@@ -49,6 +49,10 @@
     <file name="AbstractFigureParameter_BehaviorDescriptor.java" />
     <file name="AbstractFigureReference_BehaviorDescriptor.java" />
     <file name="AbstractParameter_BehaviorDescriptor.java" />
+    <file name="ActionDeclarationReference_BehaviorDescriptor.java" />
+    <file name="ActionDeclaration_BehaviorDescriptor.java" />
+    <file name="ActionGroup_BehaviorDescriptor.java" />
+    <file name="ActionReference_BehaviorDescriptor.java" />
     <file name="AttributedFigureReference_BehaviorDescriptor.java" />
     <file name="BehaviorAspectDescriptor.java" />
     <file name="CellModel_DiagramConnector_BehaviorDescriptor.java" />
@@ -57,9 +61,14 @@
     <file name="CellModel_Diagram_BehaviorDescriptor.java" />
     <file name="ConnectionEndBLQuery_BehaviorDescriptor.java" />
     <file name="ConnectionEnd_BehaviorDescriptor.java" />
+    <file name="CreationActionReference_BehaviorDescriptor.java" />
+    <file name="CustomActionGroupReference_BehaviorDescriptor.java" />
+    <file name="CustomActionReference_BehaviorDescriptor.java" />
+    <file name="CustomElementReference_BehaviorDescriptor.java" />
     <file name="DiagramConnectorCanCreateHandler_BehaviorDescriptor.java" />
     <file name="DiagramConnectorCreationHandler_BehaviorDescriptor.java" />
     <file name="DiagramConnectorCreation_BehaviorDescriptor.java" />
+    <file name="DiagramCreationBlock_BehaviorDescriptor.java" />
     <file name="DiagramElementBLQuery_BehaviorDescriptor.java" />
     <file name="DiagramElementCreationHandler_BehaviorDescriptor.java" />
     <file name="DiagramElement_BehaviorDescriptor.java" />
@@ -68,12 +77,17 @@
     <file name="FromIdFunctionParameter_BehaviorDescriptor.java" />
     <file name="FromNodeFunctionParameter_BehaviorDescriptor.java" />
     <file name="NodeFunctionParameter_BehaviorDescriptor.java" />
+    <file name="PaletteElement_BehaviorDescriptor.java" />
+    <file name="Palette_BehaviorDescriptor.java" />
     <file name="ParameterBLQuery_BehaviorDescriptor.java" />
     <file name="ParameterLink_BehaviorDescriptor.java" />
     <file name="ParameterProperty_BehaviorDescriptor.java" />
+    <file name="Separator_BehaviorDescriptor.java" />
+    <file name="SimpleActionDeclaration_BehaviorDescriptor.java" />
     <file name="ThisEditorNodeExpression_BehaviorDescriptor.java" />
     <file name="ToIdFunctionParameter_BehaviorDescriptor.java" />
     <file name="ToNodeFunctionParameter_BehaviorDescriptor.java" />
+    <file name="ToggleActionDeclaration_BehaviorDescriptor.java" />
     <file name="XFunctionParameter_BehaviorDescriptor.java" />
     <file name="YFunctionParameter_BehaviorDescriptor.java" />
   </common>
