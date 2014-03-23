@@ -109,7 +109,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DeltaBuilder myDeltaBuilder;
   private boolean myInplaceModelChange = false; // indicates transformation was in-place (even after deltaBuilder was disposed). cries for better approach
   private WeavingProcessor myWeavingProcessor;
-  private final boolean myInplaceChangeEnabled; // FIXME drop
   private final PostponedReferenceUpdate myPostponedRefs;
   private final GenerationTrace myNewTrace;
 
@@ -140,7 +139,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
       : ctx;
-    myInplaceChangeEnabled = options.applyTransformationsInplace();
     myPostponedRefs = new PostponedReferenceUpdate(this);
     myNewTrace = stepArgs.genTrace;
   }
@@ -247,7 +245,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
-    if (myInplaceChangeEnabled) {
+    if (isInplaceChangeEnabled()) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         getLogger().info("Could have had delta builder here, but can't due to active weavings");
       } else {
@@ -785,6 +783,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public boolean isIncremental() {
     return myDependenciesBuilder instanceof IncrementalDependenciesBuilder;
+  }
+
+  private boolean isInplaceChangeEnabled() {
+    return getGeneratorSessionContext().getGenerationOptions().applyTransformationsInplace();
   }
 
   private abstract static class NodeCopyFacility {

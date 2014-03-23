@@ -23,9 +23,9 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -50,15 +50,15 @@ final class GenerationTracerView {
   private final JPanel myPanel;
   private final GenerationTracerTree myTree;
   private final GenerationTracerViewTool myTool;
-  private final TraceNodeUI myRootTracerNode;
+  private final SNodeReference myInputNode;
   private final Kind myViewToken;
 
-  public GenerationTracerView(GenerationTracerViewTool tool, Kind viewToken, TraceNodeUI tracerNode, Project project) {
+  public GenerationTracerView(GenerationTracerViewTool tool, SNodeReference inputNode, Kind viewToken, TraceNodeUI tracerNode) {
     myTool = tool;
+    myInputNode = inputNode;
     myViewToken = viewToken;
-    myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
-    myTree = new GenerationTracerTree(this, tracerNode, project);
+    myTree = new GenerationTracerTree(this, tracerNode, ProjectHelper.toMPSProject(tool.getProject()));
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     myPanel.add(createActionsToolbar(), BorderLayout.WEST);
 
@@ -90,7 +90,7 @@ final class GenerationTracerView {
   }
 
   boolean isViewFor(Kind kind, SNodeReference node) {
-    return myViewToken == kind && myRootTracerNode.matches(node);
+    return myViewToken == kind && myInputNode.equals(node);
   }
 
   @Nullable

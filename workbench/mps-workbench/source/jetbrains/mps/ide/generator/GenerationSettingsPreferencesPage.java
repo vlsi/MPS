@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,16 @@ package jetbrains.mps.ide.generator;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -36,17 +37,17 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultFormatter;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.ParseException;
+import java.util.HashMap;
+import java.util.Map;
 
 class GenerationSettingsPreferencesPage {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
-  private JComboBox myGenerateRequirementsComboBox = new JComboBox(GenerationSettings.GenerateRequirementsPolicy.values());
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
@@ -70,6 +71,11 @@ class GenerationSettingsPreferencesPage {
 
   private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
   private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
+
+  private JCheckBox myTraceGroupSteps = new JCheckBox("Group changes by step");
+  private JCheckBox myTraceCompactTemplates = new JCheckBox("Show change-specific templates only");
+  private JCheckBox myTraceShowEmptySteps = new JCheckBox("Show steps without changes");
+
   private JLabel myStatusLabel;
   private final ItemListener myStatusUpdater = new ItemListener() {
     @Override
@@ -78,12 +84,14 @@ class GenerationSettingsPreferencesPage {
     }
   };
 
-  private GenerationSettings myGenerationSettings;
+  private final IModifiableGenerationSettings myGenerationSettings;
+  private final ButtonSelectStateTracker myButtonState = new ButtonSelectStateTracker();
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
-    myGenerationSettings = settings;
+    myGenerationSettings = settings.getModifiableSettings();
     update();
     myPage = createComponent();
+    myButtonState.reset();
   }
 
   public String getName() {
@@ -108,16 +116,19 @@ class GenerationSettingsPreferencesPage {
     c.gridy = 0;
     myMainPanel.add(createOptionsPanel(), c);
 
-    c.gridy = 1;
+    c.gridy++;
     myMainPanel.add(createReportingPanel(), c);
 
-    c.gridy = 2;
-    myMainPanel.add(createTracingPanel(), c);
+    c.gridy++;
+    myMainPanel.add(createTraceLevelPanel(), c);
 
-    c.gridy = 3;
+    c.gridy++;
+    myMainPanel.add(createTraceOptionsPanel(), c);
+
+    c.gridy++;
     myMainPanel.add(createTextGenPanel(), c);
 
-    c.gridy = 4;
+    c.gridy++;
     c.weighty = 1;
     myMainPanel.add(new JPanel(), c);
     c.gridy = 5;
@@ -149,6 +160,10 @@ class GenerationSettingsPreferencesPage {
     }
     c.insets.left = 0;
     optionsPanel.add(myInplaceTransform, c);
+
+    myButtonState.track(mySaveTransientModelsCheckBox, myCheckModelsBeforeGenerationCheckBox, myStrictMode, myInplaceTransform);
+    myButtonState.track(myDebugIncrementalDependencies, myIncremental, myIncrementalCache);
+
     final ChangeListener listener = new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent e) {
@@ -166,13 +181,6 @@ class GenerationSettingsPreferencesPage {
     mySaveTransientModelsCheckBox.addItemListener(myStatusUpdater);
     myInplaceTransform.addItemListener(myStatusUpdater);
     return optionsPanel;
-  }
-
-  private JPanel createGenerateRequirementsPolicyGroup() {
-    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    panel.add(new JLabel("Regenerate models required for generation:"));
-    panel.add(myGenerateRequirementsComboBox);
-    return panel;
   }
 
   private JPanel createParallelGenerationGroup() {
@@ -198,6 +206,11 @@ class GenerationSettingsPreferencesPage {
     parallelGen.add(new JLabel("cores"), c);
     c.weightx = 1;
     parallelGen.add(new JPanel(), c);
+
+    parallelGen.setToolTipText(String.format("This computer has %d processors", Runtime.getRuntime().availableProcessors()));
+
+    myButtonState.track(myUseNewGenerator);
+
     return parallelGen;
   }
 
@@ -213,7 +226,8 @@ class GenerationSettingsPreferencesPage {
     c.insets.left = 16;
     panel.add(myKeepModelsWithWarnings, c);
     panel.add(myShowBadChildWarnings, c);
-    c.insets.left = 0;
+    myButtonState.track(myShowInfo, myShowWarnings, myKeepModelsWithWarnings, myShowBadChildWarnings);
+
     final ChangeListener listener = new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent e) {
@@ -222,6 +236,8 @@ class GenerationSettingsPreferencesPage {
       }
     };
     myShowWarnings.addChangeListener(listener);
+
+    c.insets.left = 0;
     c.ipady = 0;
     panel.add(createLinkErrorsGroup(), c);
     panel.setBorder(IdeBorderFactory.createTitledBorder("Error reporting"));
@@ -246,15 +262,18 @@ class GenerationSettingsPreferencesPage {
     group.add(myNumberOfModelsToKeep, c);
     c.weightx = 1;
     group.add(new JPanel(), c);
+    myButtonState.track(myLimitNumberOfModels);
     return group;
   }
 
-  private JPanel createTracingPanel() {
+  private JPanel createTraceLevelPanel() {
     final ButtonGroup group = new ButtonGroup();
     group.add(myTraceNone);
     group.add(myTraceSteps);
     group.add(myTraceLanguages);
     group.add(myTraceTypes);
+
+    myButtonState.track(myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes);
 
     JPanel gotoPanel = new JPanel();
     gotoPanel.setLayout(new BoxLayout(gotoPanel, BoxLayout.Y_AXIS));
@@ -266,12 +285,25 @@ class GenerationSettingsPreferencesPage {
     return gotoPanel;
   }
 
+  private JPanel createTraceOptionsPanel() {
+    JPanel p = new JPanel();
+    p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
+    p.setBorder(IdeBorderFactory.createTitledBorder("Generation trace"));
+    p.add(myTraceGroupSteps);
+    p.add(myTraceCompactTemplates);
+    p.add(myTraceShowEmptySteps);
+
+    myButtonState.track(myTraceGroupSteps, myTraceCompactTemplates, myTraceShowEmptySteps);
+    return p;
+  }
+
   private JPanel createTextGenPanel() {
     JPanel textgenPanel = new JPanel();
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
     textgenPanel.add(myFailOnMissingTextgen);
     textgenPanel.add(myGenerateDebugInfo);
     textgenPanel.setBorder(IdeBorderFactory.createTitledBorder("TextGen options"));
+    myButtonState.track(myFailOnMissingTextgen, myGenerateDebugInfo);
     return textgenPanel;
   }
 
@@ -281,7 +313,6 @@ class GenerationSettingsPreferencesPage {
 
   public void commit() {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
-    myGenerationSettings.setGenerateRequirementsPolicy(((GenerateRequirementsPolicy) myGenerateRequirementsComboBox.getSelectedItem()));
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
     myGenerationSettings.setParallelGenerator(myUseNewGenerator.isSelected());
     myGenerationSettings.setStrictMode(myStrictMode.isSelected());
@@ -300,6 +331,11 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.enableInplaceTransformations(myInplaceTransform.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
+
+    final GenTraceSettings gts = myGenerationSettings.getTraceSettings();
+    gts.setShowEmptySteps(myTraceShowEmptySteps.isSelected());
+    gts.setGroupByStep(myTraceGroupSteps.isSelected());
+    gts.setCompactTemplates(myTraceCompactTemplates.isSelected());
   }
 
   private int getTracingLevel() {
@@ -315,30 +351,13 @@ class GenerationSettingsPreferencesPage {
   }
 
   public boolean isModified() {
-    return !(myGenerationSettings.isSaveTransientModels() == mySaveTransientModelsCheckBox.isSelected() &&
-      myGenerationSettings.getGenerateRequirementsPolicy() == myGenerateRequirementsComboBox.getSelectedItem() &&
-      myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected() &&
-      myGenerationSettings.isParallelGenerator() == myUseNewGenerator.isSelected() &&
-      myGenerationSettings.isShowInfo() == myShowInfo.isSelected() &&
-      myGenerationSettings.isShowWarnings() == myShowWarnings.isSelected() &&
-      myGenerationSettings.isKeepModelsWithWarnings() == myKeepModelsWithWarnings.isSelected() &&
-      myGenerationSettings.isShowBadChildWarning() == myShowBadChildWarnings.isSelected() &&
-      myGenerationSettings.getNumberOfModelsToKeep() == getNumberOfModelsToKeep() &&
-      myGenerationSettings.getNumberOfParallelThreads() == ((Integer) myNumberOfParallelThreads.getValue()).intValue() &&
-      myGenerationSettings.getPerformanceTracingLevel() == getTracingLevel() &&
-      myGenerationSettings.isStrictMode() == myStrictMode.isSelected() &&
-      myGenerationSettings.isIncremental() == myIncremental.isSelected() &&
-      myGenerationSettings.isIncrementalUseCache() == myIncrementalCache.isSelected() &&
-      (!InternalFlag.isInternalMode() || myGenerationSettings.isDebugIncrementalDependencies() == myDebugIncrementalDependencies.isSelected()) &&
-      myGenerationSettings.isFailOnMissingTextGen() == myFailOnMissingTextgen.isSelected() &&
-      myGenerationSettings.isGenerateDebugInfo() == myGenerateDebugInfo.isSelected() &&
-      myGenerationSettings.useInplaceTransofrmations() == myInplaceTransform.isSelected()
-    );
+    return myButtonState.isStateModified() ||
+      myGenerationSettings.getNumberOfModelsToKeep() != getNumberOfModelsToKeep() ||
+      myGenerationSettings.getNumberOfParallelThreads() != (Integer) myNumberOfParallelThreads.getValue();
   }
 
   public void update() {
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
-    myGenerateRequirementsComboBox.setSelectedItem(myGenerationSettings.getGenerateRequirementsPolicy());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
     myIncremental.setSelected(myGenerationSettings.isIncremental());
@@ -369,8 +388,15 @@ class GenerationSettingsPreferencesPage {
     myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
     myGenerateDebugInfo.setSelected(myGenerationSettings.isGenerateDebugInfo());
 
+    final GenTraceSettings gts = myGenerationSettings.getTraceSettings();
+    myTraceGroupSteps.setSelected(gts.isGroupByStep());
+    myTraceShowEmptySteps.setSelected(gts.isShowEmptySteps());
+    myTraceCompactTemplates.setSelected(gts.isCompactTemplates());
+
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);
+
+    myButtonState.reset(); // memorize the new state
   }
 
   void updateStatus() {
@@ -412,6 +438,32 @@ class GenerationSettingsPreferencesPage {
     public String valueToString(@Nullable Object value) throws ParseException {
       if (value == null) return null;
       return Integer.toString((Integer) value);
+    }
+  }
+
+  private static class ButtonSelectStateTracker {
+    private final Map<AbstractButton,Boolean> myButtonStates = new HashMap<AbstractButton, Boolean>();
+
+    public ButtonSelectStateTracker track(AbstractButton... buttons) {
+      for (AbstractButton btn : buttons) {
+        myButtonStates.put(btn, btn.isSelected());
+      }
+      return this;
+    }
+
+    public void reset() {
+      for (Map.Entry<AbstractButton, Boolean> e : myButtonStates.entrySet()) {
+        e.setValue(e.getKey().isSelected());
+      }
+    }
+
+    public boolean isStateModified() {
+      for (Map.Entry<AbstractButton, Boolean> e : myButtonStates.entrySet()) {
+        if (e.getKey().isSelected() != e.getValue()) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 }

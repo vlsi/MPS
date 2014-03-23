@@ -10,19 +10,19 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import junit.framework.Assert;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Generator__Facet extends IFacet.Stub {
@@ -59,9 +59,7 @@ public class Generator__Facet extends IFacet.Stub {
   }
 
   public static class Target_Configure implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Generator_.Configure");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Generator_.Configure");
 
     public Target_Configure() {
     }
@@ -74,7 +72,7 @@ public class Generator__Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              pa.global().properties(Target_Configure.this.getName(), Generator__Facet.Target_Configure.Variables.class).value("uninitialized");
+              vars(pa.global()).value("uninitialized");
             default:
               return new IResult.SUCCESS(_output_j0fmyu_a0a);
           }
@@ -119,7 +117,8 @@ public class Generator__Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -136,6 +135,10 @@ public class Generator__Facet extends IFacet.Stub {
         ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
+    }
+
+    public static Generator__Facet.Target_Configure.Variables vars(IPropertiesPool ppool) {
+      return ppool.properties(name, Generator__Facet.Target_Configure.Variables.class);
     }
 
     public static class Variables extends MultiTuple._1<String> {
@@ -163,9 +166,7 @@ public class Generator__Facet extends IFacet.Stub {
   }
 
   public static class Target_Generate implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Generator_.Generate");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Generator_.Generate");
 
     public Target_Generate() {
     }
@@ -178,9 +179,9 @@ public class Generator__Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              Assert.assertEquals("uninitialized", pa.global().properties(new ITarget.Name("jetbrains.mps.make.tests.Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value());
+              Assert.assertEquals("uninitialized", Generator__Facet.Target_Configure.vars(pa.global()).value());
               monitor.currentProgress().beginWork("GENERATE", 100, monitor.currentProgress().workLeft());
-              pa.global().properties(new ITarget.Name("jetbrains.mps.make.tests.Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
+              Generator__Facet.Target_Configure.vars(pa.global()).value("VALUE");
               for (IResource resource : input) {
                 _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
@@ -232,7 +233,8 @@ public class Generator__Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

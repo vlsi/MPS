@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,34 +18,34 @@ package jetbrains.mps.ide.messages;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import org.apache.log4j.LogManager;
 
 /**
  * Igor Alshannikov
  * Jul 27, 2007
  */
 public class DefaultMessageHandler implements IMessageHandler {
-  private Project myProject;
-  private MessagesViewTool myMessagesViewTool;
+  private final IMessageHandler myDelegate;
 
   public DefaultMessageHandler(Project project) {
-    myProject = project;
-    myMessagesViewTool = myProject.getComponent(MessagesViewTool.class);
-    if (myMessagesViewTool != null) {
-      myMessagesViewTool.resetAutoscrollOption();
+    MessagesViewTool tool = project.getComponent(MessagesViewTool.class);
+    if (tool != null) {
+      tool.resetAutoscrollOption();
+      myDelegate = tool.newHandler();
+    } else {
+      //it might happen if we haven't opened IDE yet
+      myDelegate = IMessageHandler.NULL_HANDLER;
     }
   }
 
 
   @Override
   public void handle(IMessage msg) {
-    if (myMessagesViewTool != null) {
-      //it might happen if we haven't opened IDE yet
-      myMessagesViewTool.add(msg);
-    }
+    myDelegate.handle(msg);
   }
 
   @Override
   public void clear() {
-    myMessagesViewTool.clear();
+    myDelegate.clear();
   }
 }

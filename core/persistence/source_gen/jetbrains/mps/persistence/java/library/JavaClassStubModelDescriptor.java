@@ -52,10 +52,15 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   }
 
   @Override
-  public synchronized SModel getSModelInternal() {
+  public SModel getSModelInternal() {
     if (myModel == null) {
-      myModel = createModel();
-      myModel.setModelDescriptor(this);
+      synchronized (this) {
+        if (myModel != null) {
+          return myModel;
+        }
+        myModel = createModel();
+        myModel.setModelDescriptor(this);
+      }
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
     return myModel;

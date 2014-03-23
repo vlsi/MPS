@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.StubModelsResolver;
@@ -22,17 +22,19 @@ import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 
 public class SReferenceCreator implements SReferenceHandler {
   private static final String JAVA_STUB_STEREOTYPE = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-  private SModule module;
-  private SModel model;
+  private final SModule module;
+  private final SModel model;
+  private final String modelLongName;
 
   public SReferenceCreator(SModule module, SModel model) {
     this.module = module;
     this.model = model;
+    modelLongName = NameUtil.getModelLongName(model.getReference().getModelName());
   }
 
   @Override
   public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
-    if (pack.equals(NameUtil.getModelLongName(model.getReference().getModelName()))) {
+    if (pack.equals(modelLongName)) {
       SNode nodeInSameModel = model.getNode(targetNodeId);
       if (nodeInSameModel != null) {
         return jetbrains.mps.smodel.SReference.create(role, source, model.getReference(), targetNodeId, resolveInfo);

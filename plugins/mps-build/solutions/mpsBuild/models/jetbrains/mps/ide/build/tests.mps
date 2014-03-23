@@ -822,6 +822,16 @@
         <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7210153263370654628" resolveInfo="mps_home" />
       </node>
     </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="7206546315286636746" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="mps.junit.haltonfailure" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7206546315287211181" nodeInfo="ng">
+        <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7206546315287211180" nodeInfo="ng">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7206546315287211179" nodeInfo="ng">
+            <property name="text" nameId="3ior.4903714810883755350" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="7210153263370654633" nodeInfo="ng">
       <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="ffeo.7181125477683264500" resolveInfo="IDEA" />
       <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="7210153263370654634" nodeInfo="ng">
@@ -841,6 +851,11 @@
       </node>
       <node role="modules" roleId="5tjl.4560297596904469360" type="5tjl.BuildMpsLayout_TestModuleGroup" typeId="5tjl.4560297596904469355" id="3197190366567977560" nodeInfo="ng">
         <link role="group" roleId="5tjl.4560297596904469356" targetNodeId="15329820522043422" resolveInfo="closures-tests" />
+      </node>
+      <node role="haltonfailure" roleId="5tjl.7206546315286874030" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7206546315287211118" nodeInfo="ng">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="191102385150821705" nodeInfo="ng">
+          <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="7206546315286636746" resolveInfo="mps.junit.haltonfailure" />
+        </node>
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="7210153263370654639" nodeInfo="ng">

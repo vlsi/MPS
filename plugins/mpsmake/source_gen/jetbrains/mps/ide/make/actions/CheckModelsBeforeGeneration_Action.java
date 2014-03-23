@@ -11,6 +11,7 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.icons.AllIcons;
 import com.intellij.util.ui.EmptyIcon;
 import org.apache.log4j.Priority;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -55,7 +56,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GenerationSettings settings = GenerationSettings.getInstance();
+      IModifiableGenerationSettings settings = GenerationSettings.getInstance();
       settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

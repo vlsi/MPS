@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.IdeActions;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.PrevNextActionsDescriptor;
@@ -28,13 +25,15 @@ import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout.Entry;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -46,9 +45,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class PlainTabsComponent extends BaseTabsComponent {
@@ -65,11 +64,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   };
 
   public PlainTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
-      CreateModeCallback createModeCallback, IOperationContext operationContext) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, operationContext);
-
-    DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
-    Project project = PlatformDataKeys.PROJECT.getData(dataContext);
+      CreateModeCallback createModeCallback, Project project) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, project);
 
     PrevNextActionsDescriptor navigation = new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB);
     myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
@@ -128,6 +124,17 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     if (myLastEmptyTab != null) return myLastEmptyTab;
     return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
+  }
+
+  @NotNull
+  @Override
+  public Collection<SNodeReference> getSelectionFor(RelationDescriptor tabDescriptor, SNodeReference editedNode) {
+    for (PlainEditorTab t : myRealTabs) {
+      if (t.getTab() == tabDescriptor && editedNode.equals(t.getNode())) {
+        return t.getLayoutEntry().getSelection();
+      }
+    }
+    return Collections.emptyList();
   }
 
   @Override
@@ -193,19 +200,20 @@ public class PlainTabsComponent extends BaseTabsComponent {
       ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
       Collections.sort(tabs, new RelationComparator());
 
-      Map<RelationDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
+      TabEditorLayout newContent = updateDocumentsAndNodes();
 
       //todo sort nodes inside aspect
       JLabel fill = new JLabel("");
       for (RelationDescriptor tab : tabs) {
-        List<SNode> nodes = newContent.get(tab);
-        if (nodes != null) {
-          for (SNode node : nodes) {
-            myRealTabs.add(new PlainEditorTab(new jetbrains.mps.smodel.SNodePointer(node), tab));
+        if (newContent.covers(tab)) {
+          for (Entry tabDescriptor : newContent.get(tab)) {
+            final PlainEditorTab pet = new PlainEditorTab(tabDescriptor);
+            myRealTabs.add(pet);
+            SNode node = pet.getNode().resolve(MPSModuleRepository.getInstance());
             myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
           }
         } else if (myShowGrayed) {
-          myRealTabs.add(new PlainEditorTab(null, tab));
+          myRealTabs.add(new PlainEditorTab(tab));
           myJbTabs.addTab(tab.getTitle(), fill);
           myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
         }

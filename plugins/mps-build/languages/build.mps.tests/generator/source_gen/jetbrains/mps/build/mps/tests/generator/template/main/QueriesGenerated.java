@@ -8,9 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.build.util.MacroHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -46,8 +48,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
-  public static Object propertyMacro_GetPropertyValue_2978710270754140283(final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "haltonfailure") + "";
+  public static Object propertyMacro_GetPropertyValue_7206546315287713492(final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.build.structure.BuildProject");
+    MacroHelper macros = new MacroHelper.MacroContext(project, _context).getMacros(_context.getNode());
+    if ((SLinkOperations.getTarget(_context.getNode(), "haltonfailure", true) == null)) {
+      return "false";
+    }
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "haltonfailure", true), macros);
   }
 
   public static Object propertyMacro_GetPropertyValue_185990153988622954(final PropertyMacroContext _context) {

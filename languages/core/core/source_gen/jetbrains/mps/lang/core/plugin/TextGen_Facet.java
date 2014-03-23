@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.project.SModuleOperations;
@@ -32,6 +32,7 @@ import jetbrains.mps.make.delta.IDelta;
 import java.util.Collections;
 import java.util.HashMap;
 import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.messages.IMessage;
@@ -52,6 +53,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import org.apache.log4j.Priority;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -59,7 +61,6 @@ import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.make.script.IPropertiesPool;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -97,9 +98,7 @@ public class TextGen_Facet extends IFacet.Stub {
   }
 
   public static class Target_textGen implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{GResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
 
     public Target_textGen() {
     }
@@ -133,8 +132,8 @@ public class TextGen_Facet extends IFacet.Stub {
               });
 
               // configure 
-              final boolean _generateDebugInfo = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
-              final boolean _failIfNoTextgen = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen();
+              final boolean _generateDebugInfo = vars(pa.global()).generateDebugInfo() == null || vars(pa.global()).generateDebugInfo();
+              final boolean _failIfNoTextgen = vars(pa.global()).failIfNoTextgen() != null && vars(pa.global()).failIfNoTextgen();
 
               int MAX_ROOTS_COUNT = 1000;
               // batch resources ready for textgen. currentInput is a slice of resourcesWithOutput 
@@ -175,12 +174,12 @@ public class TextGen_Facet extends IFacet.Stub {
                       public boolean accept(SModel smd) {
                         return GenerationFacade.canGenerate(smd);
                       }
-                    }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile());
+                    }), resource.module(), Target_make.vars(pa.global()).pathToFile());
                     Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
                       public boolean accept(SModel smd) {
                         return GenerationFacade.canGenerate(smd);
                       }
-                    }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile());
+                    }), resource.module(), Target_make.vars(pa.global()).pathToFile());
                     MapSequence.fromMap(deltas).put(resource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), Sequence.fromIterable(retainedCachesDelta).concat(Sequence.fromIterable(retainedFilesDelta))));
                   }
 
@@ -201,8 +200,8 @@ public class TextGen_Facet extends IFacet.Stub {
                       public void run() {
                         String output = SModuleOperations.getOutputPathFor(inputResource.model());
 
-                        final IFile javaOutputDir = TextGenUtil.getOutputDir(pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), inputResource.model(), TextGenUtil.getOverriddenOutputDir(inputResource.model()));
-                        final IFile cacheOutputDir = TextGenUtil.getOutputDir(pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)), inputResource.model(), null);
+                        final IFile javaOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(output), inputResource.model(), TextGenUtil.getOverriddenOutputDir(inputResource.model()));
+                        final IFile cacheOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)), inputResource.model(), null);
                         FilesDelta d1 = new FilesDelta(javaOutputDir, cacheOutputDir);
                         FilesDelta d2 = new FilesDelta(cacheOutputDir);
                         FileProcessor fp = new FileProcessor();
@@ -263,7 +262,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     public void run() {
                       ModelAccess.instance().requireWrite(new Runnable() {
                         public void run() {
-                          if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
+                          if (!(Boolean.TRUE.equals(Generate_Facet.Target_configure.vars(pa.global()).saveTransient()))) {
                             for (GResource resource : ListSequence.fromList(currentInput)) {
                               SModel outputMD = resource.status().getOutputModelDescriptor();
                               if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
@@ -336,7 +335,9 @@ public class TextGen_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(GResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -357,6 +358,10 @@ public class TextGen_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 400;
+    }
+
+    public static TextGen_Facet.Target_textGen.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
@@ -392,9 +397,7 @@ public class TextGen_Facet extends IFacet.Stub {
   }
 
   public static class Target_textGenToMemory implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{GResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory");
 
     public Target_textGenToMemory() {
     }
@@ -497,7 +500,9 @@ public class TextGen_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(GResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

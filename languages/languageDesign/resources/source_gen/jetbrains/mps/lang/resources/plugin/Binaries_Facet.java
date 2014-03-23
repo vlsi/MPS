@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
@@ -28,7 +28,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.Collections;
-import jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters;
+import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -82,9 +82,7 @@ public class Binaries_Facet extends IFacet.Stub {
   }
 
   public static class Target_copyBinaries implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{MResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.resources.Binaries.copyBinaries");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.resources.Binaries.copyBinaries");
 
     public Target_copyBinaries() {
     }
@@ -113,7 +111,7 @@ public class Binaries_Facet extends IFacet.Stub {
                           return Sequence.fromIterable(Collections.<Tuples._2<IFile, IFile>>emptyList());
                         }
 
-                        IFile outputRoot = pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Parameters.class).pathToFile().invoke(output);
+                        IFile outputRoot = Target_make.vars(pa.global()).pathToFile().invoke(output);
                         final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                         final FilesDelta fd = new FilesDelta(outputDir);
                         ListSequence.fromList(deltaList).addElement(fd);
@@ -220,7 +218,9 @@ public class Binaries_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(MResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

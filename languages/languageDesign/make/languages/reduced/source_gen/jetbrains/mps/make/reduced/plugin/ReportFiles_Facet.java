@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
@@ -26,9 +26,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 
 public class ReportFiles_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -63,9 +63,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
   }
 
   public static class Target_report implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.reduced.ReportFiles.report");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.reduced.ReportFiles.report");
 
     public Target_report() {
     }
@@ -85,22 +83,22 @@ public class ReportFiles_Facet extends IFacet.Stub {
                     new DeltaReconciler(itr.delta()).visitAll(new FilesDelta.Visitor() {
                       @Override
                       public boolean acceptWritten(IFile file) {
-                        ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).writtenFiles()).addElement(file.getPath());
-                        MapSequence.fromMap(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).sourceModels()).put(file.getPath(), md);
+                        ListSequence.fromList(vars(pa.global()).writtenFiles()).addElement(file.getPath());
+                        MapSequence.fromMap(vars(pa.global()).sourceModels()).put(file.getPath(), md);
                         return true;
                       }
 
                       @Override
                       public boolean acceptKept(IFile file) {
-                        ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).keptFiles()).addElement(file.getPath());
-                        MapSequence.fromMap(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).sourceModels()).put(file.getPath(), md);
+                        ListSequence.fromList(vars(pa.global()).keptFiles()).addElement(file.getPath());
+                        MapSequence.fromMap(vars(pa.global()).sourceModels()).put(file.getPath(), md);
                         return true;
                       }
 
                       @Override
                       public boolean acceptDeleted(IFile file) {
-                        ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).deletedFiles()).addElement(file.getPath());
-                        MapSequence.fromMap(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).sourceModels()).put(file.getPath(), md);
+                        ListSequence.fromList(vars(pa.global()).deletedFiles()).addElement(file.getPath());
+                        MapSequence.fromMap(vars(pa.global()).sourceModels()).put(file.getPath(), md);
                         return true;
                       }
                     });
@@ -152,7 +150,9 @@ public class ReportFiles_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(TResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -173,6 +173,10 @@ public class ReportFiles_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 100;
+    }
+
+    public static ReportFiles_Facet.Target_report.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, ReportFiles_Facet.Target_report.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._4<List<String>, List<String>, List<String>, Map<String, SModel>> {

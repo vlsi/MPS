@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -51,6 +52,19 @@ import java.util.Set;
  * Evgeny Gryaznov, 1/25/11
  */
 public class GenerationFacade {
+  private static Boolean ourLegacyGenTraceEnabled;
+
+  /**
+   * This is a temporary support for both legacy and new generation trace facilities. Once the old one gone, there'd be no need for this property.
+   * @return <code>true</code> if system property <code>"mps.internal.gentrace.old"</code> is set to true. Default value: <code>false</code>
+   */
+  @ToRemove(version = 3.1)
+  public static boolean isLegacyGenTraceEnabled() {
+    if (ourLegacyGenTraceEnabled == null) {
+      ourLegacyGenTraceEnabled = Boolean.getBoolean("mps.internal.gentrace.old");
+    }
+    return ourLegacyGenTraceEnabled;
+  }
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();

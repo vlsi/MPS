@@ -19,9 +19,11 @@ import com.intellij.openapi.editor.Document;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,9 +44,10 @@ public class EmptyTabsComponent implements TabsComponent {
 
   }
 
+  @NotNull
   @Override
-  public List<SNodeReference> getAllEditedNodes() {
-    return Collections.singletonList(myNode);
+  public Collection<SNodeReference> getSelectionFor(RelationDescriptor tabDescriptor, SNodeReference editedNode) {
+    return Collections.emptyList();
   }
 
   @Override

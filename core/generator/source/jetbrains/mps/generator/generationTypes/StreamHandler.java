@@ -28,5 +28,9 @@ public interface StreamHandler {
 
   void saveStream(String name, byte[] content);
 
+  /**
+   * Tells the named stream wasn't modified since last generation
+   * @return <code>true</code> if touched stream/file exists
+   */
   boolean touch(String name);
 }

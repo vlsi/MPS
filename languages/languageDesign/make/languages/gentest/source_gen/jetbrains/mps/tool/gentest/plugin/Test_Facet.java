@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -27,10 +27,10 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.tool.builder.unittest.UnitTestOutputReader;
 import java.io.IOException;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Test_Facet extends IFacet.Stub {
@@ -67,9 +67,7 @@ public class Test_Facet extends IFacet.Stub {
   }
 
   public static class Target_collectTest implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{GResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.tool.gentest.Test.collectTest");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.tool.gentest.Test.collectTest");
 
     public Target_collectTest() {
     }
@@ -138,7 +136,9 @@ public class Test_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(GResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -160,9 +160,7 @@ public class Test_Facet extends IFacet.Stub {
   }
 
   public static class Target_runTests implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITestResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests");
 
     public Target_runTests() {
     }
@@ -175,7 +173,7 @@ public class Test_Facet extends IFacet.Stub {
           final Iterable<ITestResource> input = (Iterable<ITestResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (pa.global().properties(Target_runTests.this.getName(), Test_Facet.Target_runTests.Parameters.class).testListener() == null) {
+              if (vars(pa.global()).testListener() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("No test listener provided, stopping")));
                 return new IResult.FAILURE(_output_rwbd_a0b);
               }
@@ -186,7 +184,7 @@ public class Test_Facet extends IFacet.Stub {
                 ProcessBuilder pb = new ProcessBuilder(resource.buildCommandLine());
                 try {
                   Process process = pb.start();
-                  UnitTestOutputReader reader = new UnitTestOutputReader(process, pa.global().properties(Target_runTests.this.getName(), Test_Facet.Target_runTests.Parameters.class).testListener());
+                  UnitTestOutputReader reader = new UnitTestOutputReader(process, vars(pa.global()).testListener());
                   int exitCode = reader.start();
                   if (exitCode != 0) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Process Exited With Code " + exitCode)));
@@ -241,7 +239,9 @@ public class Test_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(ITestResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -258,6 +258,10 @@ public class Test_Facet extends IFacet.Stub {
         ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
+    }
+
+    public static Test_Facet.Target_runTests.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, Test_Facet.Target_runTests.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<UnitTestListener> {
