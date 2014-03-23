@@ -1314,7 +1314,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return createRootCell(null);
   }
 
-  protected final void pushCellContext() {
+  protected void pushCellContext() {
     if (myUseCustomHints) {
       getEditorContext().getCellFactory().pushCellContext();
       Object[] hints = myEnabledHints.toArray();
@@ -1330,7 +1330,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  protected final void popCellContext() {
+  protected void popCellContext() {
     getEditorContext().getCellFactory().popCellContext();
   }
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
