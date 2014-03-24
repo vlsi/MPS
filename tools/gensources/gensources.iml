@@ -933,6 +933,7 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="typesystemUi" />
+    <orderEntry type="module" module-name="testbench" />
   </component>
 </module>
 
