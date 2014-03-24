@@ -26,7 +26,7 @@ public class MindMapCentralThoughtView extends CenterVerticalLayoutView {
 
   public MindMapCentralThoughtView() {
     super(false);
-    background().set(Color.YELLOW);
+    background().set(Color.LIGHT_GRAY);
 
     CellView cellView = new CellView();
     cellView.background().set(Color.WHITE);

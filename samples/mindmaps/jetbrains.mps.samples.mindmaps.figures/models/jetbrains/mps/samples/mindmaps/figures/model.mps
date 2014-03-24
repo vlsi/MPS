@@ -94,7 +94,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctj7.~WritableProperty%dset(java%dlang%dObject)%cvoid" resolveInfo="set" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="6365639112246717335" nodeInfo="nn">
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ew17.~Color" resolveInfo="Color" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ew17.~Color%dYELLOW" resolveInfo="YELLOW" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ew17.~Color%dLIGHT_GRAY" resolveInfo="LIGHT_GRAY" />
               </node>
             </node>
           </node>

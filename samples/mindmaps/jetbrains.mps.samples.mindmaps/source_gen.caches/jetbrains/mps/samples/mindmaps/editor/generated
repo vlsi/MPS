@@ -33,7 +33,7 @@
   <dep model="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)" hash="64z6nbdqdmdzhkpdoh0m26wb80scp25" />
   <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" hash="8unhjzmnhaf77u3sl9bm8ocdpq896st" />
   <dep model="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)" hash="-cro4lkelb8i02v7187mz3pvigcxa1ql" />
-  <dep model="r:6d38fe6e-f6cc-41c3-b2ff-e720f8912474(jetbrains.mps.samples.mindmaps.figures.model)" hash="8ka5uf21q978ijwpv3smxhe6o6wrawy" />
+  <dep model="r:6d38fe6e-f6cc-41c3-b2ff-e720f8912474(jetbrains.mps.samples.mindmaps.figures.model)" hash="35onua02l6m339gp6sgmuvuqxrl0hk4" />
   <dep model="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" hash="9didmdwx61yug7ur6pux70o8yl5i7qu" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-7a2zmkcp5ccf48jfyjin69be8kewauf" />
