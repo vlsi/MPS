@@ -9,6 +9,8 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.jetpad.projectional.view.ViewTrait;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -38,7 +40,7 @@ public class DiagramPalette extends JPanel {
 
 
 
-  /*package*/ void unselectActionWhichWasSelected(AnAction actionWhisIsSelected) {
+  public void unselectActionWhichWasSelected(AnAction actionWhisIsSelected) {
     if (actionWhisIsSelected instanceof ToggleAction) {
       if (mySelectedToggleAction != actionWhisIsSelected) {
         check_1eehpg_a0a0a0a01(mySelectedToggleAction);
@@ -49,13 +51,13 @@ public class DiagramPalette extends JPanel {
     }
   }
 
-  /*package*/ void unselectActionWhichWasSelected() {
+  public void unselectActionWhichWasSelected() {
     mySelectedToggleAction = null;
   }
 
 
 
-  /*package*/ void setTrait(ViewTrait trait) {
+  public void setTrait(ViewTrait trait) {
     myDiagramCell.setExternalTrait(trait);
   }
 

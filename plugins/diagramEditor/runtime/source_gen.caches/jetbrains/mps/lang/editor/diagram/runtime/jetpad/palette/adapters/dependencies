@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.DiagramPaletteToggleAction" file="DiagramPaletteToggleAction.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteActionGroupAdapter" file="PaletteActionGroupAdapter.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory" file="PaletteElementFactory.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteActionGroupAdapter" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteSimpleActionAdapter" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteToggleActionAdapter" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PopupPaletteActionGroupAdapter" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteSimpleActionAdapter" file="PaletteSimpleActionAdapter.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.event.InputEvent" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteToggleActionAdapter" file="PaletteToggleActionAdapter.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
+    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.DiagramPaletteToggleAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PopupPaletteActionGroupAdapter" file="PopupPaletteActionGroupAdapter.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.Toggleable" />
+  </dependency>
+</dependenciesRoot>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-axuuz0ynf9gicd343bjbgnhk7eza9aw">
+  <common hash="eorepxlp7hza1at4fprj9e2ixhpiihy" dependsOnNodes="true" />
+  <source id="121824560294376345" name="PaletteElement" hash="-89hhue3gpw3eboh30m7i8zig6yoks3l">
+    <file name="PaletteElement.java" />
+  </source>
+  <source id="121824560294376355" name="PaletteActionGroup" hash="5w63j6pf9wfqfjvxfoi3xd6sf3iyaq1">
+    <file name="PaletteActionGroup.java" />
+  </source>
+  <source id="121824560294376372" name="PaletteAction" hash="-7yo695n4hovo6t979h6wiy1lot67b6p">
+    <file name="PaletteAction.java" />
+  </source>
+  <source id="121824560294376375" name="PaletteSimpleAction" hash="45dqk2tzatwp4d662ln6u0s3ofwrmgm">
+    <file name="PaletteSimpleAction.java" />
+  </source>
+  <source id="121824560294376382" name="PaletteToggleAction" hash="bjxlfj6frcjvcb5bxoo359s1no3qsh5">
+    <file name="PaletteToggleAction.java" />
+  </source>
+</dependencies>
+
