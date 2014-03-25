@@ -1573,5 +1573,46 @@
     <unitInfo nodeId="1238584067087" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="75" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$3" />
     <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032d(jetbrains.mps.baseLanguage.collections.scripts)/3600688056589376389">
+    <nodeInfo nodeId="3600688056589376389" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="12" startPosition="92" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3600688056589481538" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="3600688056589376389" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="13" startPosition="35" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="13" startPosition="35" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3600688056589376389" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="12" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationToUpdateAllConstants_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="87" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="87" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="78" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="3600688056589481514" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="114" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="3600688056589481510" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="3600688056589481510" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="13" startPosition="35" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="3600688056589376389" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="12" startPosition="92" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="3600688056589376389" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="12" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="3600688056589376389" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="3600688056589481510" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToUpdateAllConstants_MigrationScript$1" />
+    <unitInfo nodeId="3600688056589376389" fileName="MigrationToUpdateAllConstants_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToUpdateAllConstants_MigrationScript" />
+  </root>
 </debugInfo>
 

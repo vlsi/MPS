@@ -4240,5 +4240,25 @@
       </node>
     </node>
   </root>
+  <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="3600688056589376389" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="MigrationToUpdateAllConstants" />
+    <property name="title" nameId="tp33.1177457669450" value="AllConstantsMigration" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="3600688056589481510" nodeInfo="ng">
+      <property name="description" nameId="tp33.1177457972041" value="Re-inserts the AllConstants concept to fix the missing value property" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp2q.1237783176940" resolveInfo="AllConstant" />
+      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="3600688056589481512" nodeInfo="nn">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3600688056589481514" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3600688056589481538" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3600688056589481697" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3600688056589481537" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="3600688056589522921" nodeInfo="nn">
+                <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp2q.1237783176940" resolveInfo="AllConstant" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
 </model>
 
