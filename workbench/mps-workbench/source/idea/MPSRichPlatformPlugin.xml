@@ -3,20 +3,16 @@
   <module value="com.intellij.modules.platform"/>
   <module value="com.intellij.modules.lang"/>
   <module value="com.intellij.modules.vcs"/>
-  <!--<module value="com.intellij.modules.xdebugger"/>
-  <module value="com.intellij.modules.xml"/>-->
+  <!--
+  <module value="com.intellij.modules.xdebugger"/>
+  <module value="com.intellij.modules.xml"/>
+  -->
 
   <xi:include href="/componentSets/MPSIdeaComponents.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/idea/MPSRichPlatformActions.xml" xpointer="xpointer(/component/*)"/>
 
-  <application-components>
-    <component>
-      <interface-class>com.intellij.ide.RecentProjectsManagerBase</interface-class>
-      <implementation-class>jetbrains.mps.workbench.recent.RecentMPSProjectsManager</implementation-class>
-    </component>
-  </application-components>
-
-  <!--<project-components>
+  <!--
+  <project-components>
     <component>
       <implementation-class>com.intellij.framework.detection.impl.FrameworkDetectionManager</implementation-class>
     </component>
@@ -24,7 +20,8 @@
       <interface-class>com.intellij.ide.impl.convert.ProjectFileVersion</interface-class>
       <implementation-class>com.intellij.ide.impl.convert.ProjectFileVersionImpl</implementation-class>
     </component>
-  </project-components>-->
+  </project-components>
+  -->
 
   <extensionPoints>
     <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/idea-plugin/extensionPoints/*)"/>
@@ -63,7 +60,9 @@
                     interface="com.intellij.execution.runners.JavaProgramPatcher"/>
 
     <extensionPoint name="OrderRootTypeUI"
-                    beanClass="com.intellij.openapi.extensions.KeyedFactoryEPBean"/>
+                    beanClass="com.intellij.openapi.extensions.KeyedFactoryEPBean">
+      <with attribute="implementationClass" implements="com.intellij.openapi.roots.ui.OrderRootTypeUIFactory"/>
+    </extensionPoint>
 
     <extensionPoint name="packaging.elementType" interface="com.intellij.packaging.elements.PackagingElementType"/>
     <extensionPoint name="packaging.artifactPropertiesProvider" interface="com.intellij.packaging.artifacts.ArtifactPropertiesProvider"/>
@@ -81,13 +80,16 @@
     <extensionPoint name="projectImportBuilder" interface="com.intellij.projectImport.ProjectImportBuilder"/>
     <extensionPoint name="projectStructureDetector" interface="com.intellij.ide.util.projectWizard.importSources.ProjectStructureDetector"/>
 
-    <extensionPoint name="codeInsight.wordCompletionFilter" beanClass="com.intellij.lang.LanguageExtensionPoint"/>
+    <extensionPoint name="codeInsight.wordCompletionFilter" beanClass="com.intellij.lang.LanguageExtensionPoint">
+      <with attribute="implementationClass" implements="com.intellij.lang.WordCompletionElementFilter"/>
+    </extensionPoint>
 
     <extensionPoint name="projectStructureConfigurableFilter" interface="com.intellij.openapi.roots.ui.configuration.ProjectStructureConfigurableFilter"/>
     <extensionPoint name="projectStructureConfigurableAdder" interface="com.intellij.openapi.roots.ui.configuration.ProjectStructureConfigurableContributor"/>
 
     <extensionPoint name="compiler" area="IDEA_PROJECT" interface="com.intellij.openapi.compiler.Compiler"/>
     <extensionPoint name="compilerFactory" area="IDEA_PROJECT" interface="com.intellij.openapi.compiler.CompilerFactory"/>
+    <extensionPoint name="compiler.task" area="IDEA_PROJECT" beanClass="com.intellij.compiler.CompileTaskBean"/>
     <extensionPoint name="compilerSettingsFactory" area="IDEA_PROJECT" interface="com.intellij.compiler.CompilerSettingsFactory"/>
     <extensionPoint name="compileServer.plugin" beanClass="com.intellij.compiler.server.CompileServerPlugin"/>
     <extensionPoint name="buildProcess.parametersProvider" area="IDEA_PROJECT" interface="com.intellij.compiler.server.BuildProcessParametersProvider"/>
@@ -132,6 +134,11 @@
     <compiler.buildTargetScopeProvider implementation="com.intellij.packaging.impl.compiler.ArtifactBuildTargetScopeProvider"/>
     <compiler implementation="com.intellij.packaging.impl.compiler.ArtifactsCompiler" id="artifactsCompiler"/>
     <gotoRelatedProvider implementation="com.intellij.testIntegration.GotoTestRelatedProvider"/>
+
+    -->
+    <applicationService serviceInterface="com.intellij.ide.RecentProjectsManagerBase"
+                        serviceImplementation="jetbrains.mps.workbench.recent.RecentMPSProjectsManager"/>
+    <!--
 
     <applicationService serviceInterface="com.intellij.util.descriptors.ConfigFileFactory"
                         serviceImplementation="com.intellij.util.descriptors.impl.ConfigFileFactoryImpl"/>
@@ -319,8 +326,6 @@
     <projectTemplatesFactory implementation="com.intellij.platform.templates.PlainModuleTemplatesFactory"/>
     <projectTemplateFileProcessor implementation="com.intellij.platform.templates.SystemFileProcessor"/>
 
-    <projectWizard.projectCategory implementation="com.intellij.ide.projectWizard.BuilderBasedProjectType$Empty"/>
-
     <applicationService serviceImplementation="com.intellij.ide.util.newProjectWizard.SelectTemplateSettings"/>
 
     <gotoFileContributor implementation="com.intellij.ide.util.gotoByName.ProjectBaseDirNavigationContributor"/>
@@ -390,6 +395,10 @@
     <applicationService serviceInterface="com.intellij.openapi.roots.ui.configuration.projectRoot.daemon.ProjectStructureProblemsSettings"
                         serviceImplementation="com.intellij.openapi.roots.ui.configuration.projectRoot.daemon.GlobalProjectStructureProblemsSettings"/>
     <moduleRendererFactory implementation="com.intellij.ide.util.DefaultModuleRendererFactory" order="last"/>
+    <projectStructure.sourceRootEditHandler implementation="com.intellij.openapi.roots.ui.configuration.JavaResourceRootEditHandler"/>
+    <projectStructure.sourceRootEditHandler implementation="com.intellij.openapi.roots.ui.configuration.JavaTestResourceRootEditHandler"/>
+
+    <buildProcess.parametersProvider implementation="com.intellij.compiler.classFilesIndex.api.index.ClassFilesIndexerBuilderParametersProvider"/>
     -->
   </extensions>
 
