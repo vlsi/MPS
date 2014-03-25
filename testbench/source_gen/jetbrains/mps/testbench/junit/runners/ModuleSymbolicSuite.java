@@ -66,7 +66,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
 
   private void initialize() {
     MpsTestsSupport.initEnv(true);
-    ContextProjextSupport.getContextProject();
+    ContextProjectSupport.loadContextProject();
 
     SModule mod = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myModuleRef));
     for (Runner child : myRunners) {

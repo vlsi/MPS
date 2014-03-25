@@ -5,6 +5,9 @@ package jetbrains.mps.testbench.junit.suites;
 import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSuite;
 
+/**
+ * * This suite used to run the tests, specified in the ant-xml junit task
+ */
 @RunWith(MpsTestsSuite.class)
-public class ModuleTestSuite {
+public class AntModuleTestSuite {
 }

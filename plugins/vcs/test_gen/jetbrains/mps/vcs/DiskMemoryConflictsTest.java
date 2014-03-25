@@ -307,7 +307,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModel = ((EditableSModel) SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));
+          myModel = (SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));
           myModel.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModel.save();
         }

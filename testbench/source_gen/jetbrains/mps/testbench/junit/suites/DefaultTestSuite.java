@@ -8,7 +8,6 @@ import org.junit.runners.model.InitializationError;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -49,9 +48,8 @@ public class DefaultTestSuite {
     MpsTestsSupport.initEnv(true);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     initPathMacros();
-    // todo: check opened mps projects here 
-    // <node> 
-    Project project = TestMain.PROJECT_CONTAINER.getProject(projectPath);
+    Project project = null;
+    assert false;
 
     // TODO: 
     // 
@@ -73,6 +71,7 @@ public class DefaultTestSuite {
       if ((propertyKey == null || propertyKey.length() == 0) || !(propertyKey.startsWith(PROPERTY_PREFIX_PATH_MACRO))) {
         continue;
       }
+
       String canonicalPath = PathUtil.getCanonicalPath(propertyValue);
       File file = new File(canonicalPath);
       if (file.exists() && file.isDirectory()) {

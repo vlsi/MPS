@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-51ife5mhletzr1jfx2a7xuy3vxsioh4">
-  <common hash="1n8ukx82e37tc09hpdgr4vwqr2nrii3" dependsOnNodes="true" />
+<dependencies version="2" modelHash="-87qqkwnwcmxs866obft0kdxps37hlfb">
+  <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
+  <common hash="dgd9ld7eyo9n5jaxs1h2dr4342cwdms" dependsOnNodes="true" />
   <source id="4774692914340655529" name="PathManager" hash="-37nrsuuc6ewpx71bdl9zaswma2it6cf">
     <file name="PathManager.java" />
   </source>
-  <source id="5900076103425047615" name="MapPathMacrosProvider" hash="45ujam7cqefxpsq8plmc9csddn31sou">
+  <source id="5900076103425047615" name="MapPathMacrosProvider" hash="-stvb8259166qd51v7mc71mzg327nfz">
+    <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="MapPathMacrosProvider.java" />
   </source>
   <source id="5900076103425675110" name="SetLibraryContributor" hash="6xyo8v8nhu2tijcj8v1w4k370rsyjh0">

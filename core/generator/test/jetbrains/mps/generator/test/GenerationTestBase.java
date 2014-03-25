@@ -71,7 +71,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * Evgeny Gryaznov, Oct 6, 2010
+ * @author Evgeny Gryaznov, Oct 6, 2010
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
@@ -315,7 +315,7 @@ public class GenerationTestBase {
 
   protected static void cleanup(final Project p) {
     if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
+      CREATED_ENV.dispose();
     }
   }
 

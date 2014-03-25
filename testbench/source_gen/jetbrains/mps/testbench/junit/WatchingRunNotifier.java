@@ -98,7 +98,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     this.oldLevel = org.apache.log4j.Logger.getRootLogger().getLevel();
     org.apache.log4j.Logger.getRootLogger().setLevel(WATCH_LEVEL);
     initCaches();
-    this.app = new CachingAppender();
+    this.app = new CachingAppender(WATCH_LEVEL);
     org.apache.log4j.Logger.getRootLogger().addAppender(app);
     ExpectLogEvent ignoreEvent = desc.getAnnotation(ExpectLogEvent.class);
     if (ignoreEvent != null) {

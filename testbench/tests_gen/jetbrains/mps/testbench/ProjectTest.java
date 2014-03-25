@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -43,7 +43,7 @@ public class ProjectTest {
 
   public static void initTestEnvironment() throws InvocationTargetException, InterruptedException {
     MpsTestsSupport.initEnv(false);
-    ourContextProject = ContextProjextSupport.getContextProject();
+    ourContextProject = ContextProjectSupport.loadContextProject();
   }
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {

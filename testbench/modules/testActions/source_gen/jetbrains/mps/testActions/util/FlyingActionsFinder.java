@@ -32,6 +32,9 @@ public class FlyingActionsFinder {
     IdeaPluginDescriptor descriptor = PluginManager.getPlugin(pluginId);
     Set<String> ideaCoreActions = new HashSet<String>();
 
+    if (descriptor == null) {
+      return ideaCoreActions;
+    }
     for (Element element : descriptor.getActionsDescriptionElements()) {
       ideaCoreActions.add(element.getAttributeValue("id"));
     }
@@ -42,7 +45,7 @@ public class FlyingActionsFinder {
     myFlyingActions = new HashSet<String>(Arrays.asList(myActionManager.getActionIds("")));
     Set<String> childrenOrSortCutActionsSet = new HashSet<String>();
 
-    AnAction anAction = null;
+    AnAction anAction;
     for (String id : myFlyingActions) {
       anAction = myActionManager.getAction(id);
       if (anAction.getShortcutSet().getShortcuts().length > 0) {

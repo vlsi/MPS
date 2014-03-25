@@ -17,8 +17,8 @@ import org.junit.runner.notification.RunListener;
 import org.junit.runner.Description;
 import org.junit.runner.notification.Failure;
 
-public class TestRunner {
-  public TestRunner() {
+public class TestExecutor {
+  public TestExecutor() {
   }
 
   private void loadTests(String[] argv, List<Request> requests) throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -62,7 +62,7 @@ public class TestRunner {
     CommandOutputStream err = new CommandOutputStream(System.err);
     System.setOut(new PrintStream(out));
     System.setErr(new PrintStream(err));
-    core.addListener(new TestRunner.MyRunListener(out, err));
+    core.addListener(new TestExecutor.MyRunListener(out, err));
 
     List<Request> requests = ListSequence.fromList(new ArrayList<Request>());
     loadTests(args, requests);
@@ -72,9 +72,13 @@ public class TestRunner {
     }
   }
 
-  public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, IOException {
-    new TestRunner().executeTestsFromArguments(args);
+
+
+  public static void main(String[] args) throws ClassNotFoundException, IOException {
+    new TestExecutor().executeTestsFromArguments(args);
   }
+
+
 
   private static class MyRunListener extends RunListener {
     private final CommandOutputStream myOutput;

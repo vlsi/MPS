@@ -4,120 +4,147 @@ package jetbrains.mps.lang.test.runtime;
 
 import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.ide.IdeMain;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import javax.swing.SwingUtilities;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import java.lang.reflect.InvocationTargetException;
+import javax.swing.SwingUtilities;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
 import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import org.apache.log4j.Priority;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.TestMain;
-import org.apache.log4j.BasicConfigurator;
+import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.awt.GraphicsEnvironment;
+import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
+import jetbrains.mps.project.PathMacrosProvider;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import com.intellij.util.PathUtil;
-import java.io.File;
+import jetbrains.mps.tool.common.util.CanonicalPath;
+import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import jetbrains.mps.project.PathMacros;
-import jetbrains.mps.project.PathMacrosProvider;
-import java.util.Set;
-import java.util.Collections;
-import org.apache.log4j.Priority;
-import java.lang.reflect.InvocationTargetException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class TransformationTestRunner {
-  private static StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
+  private static final String PATH_MACRO_PREFIX = "path.macro.";
+  private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
+
 
   public TransformationTestRunner() {
   }
+
+
 
   public void initTest(final TransformationTest test, @NotNull String projectName, final String model) throws Exception {
     initTest(test, projectName, model, false, false);
   }
 
-  public void initTest(final TransformationTest test, @NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    initLoggingSystem();
-    if (reOpenProject) {
-      closeProjectsBeforeRunningTest();
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Initializing MPS environment");
-    }
 
-    MpsTestsSupport.initEnv(true);
-    // MpsTestsSupport.initEnv(true) instantiates IdeaEnvironment which sets test mode to CORE_TEST, override if needed 
+
+  public void initTest(final TransformationTest test, @NotNull String projectPath, final String modelName, boolean uiTest, boolean reopenProject) throws Exception {
     IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
+    MpsTestsSupport.initEnv(true);
 
-    ApplicationManagerEx.getApplicationEx().doNotSave();
+    // <node> 
     clearSystemClipboard();
     readSystemMacro();
-    setProjectForTest(projectName, test);
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(model));
-            if (modelDescriptor == null) {
-              Assert.fail("Can't find model " + model + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
-            }
-
-            test.setModelDescriptor(modelDescriptor);
-            test.init();
-          }
-        }, test.getProject());
-      }
-    });
+    final Project testProject = openTestProject(projectPath, reopenProject);
+    doInitTest(test, testProject, modelName);
     ModelAccess.instance().flushEventQueue();
   }
 
 
 
-  private void setProjectForTest(String projectName, final TransformationTest test) {
-    if ((projectName == null || projectName.length() == 0)) {
-      for (Project project : ProjectManager.getInstance().getOpenProjects()) {
-        if (project != null) {
-          test.setProject(project);
-          break;
+  private void doInitTest(final TransformationTest test, final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
+    test.setProject(testProject);
+    SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SModel modelDescriptor = findModel(modelName);
+            test.setModelDescriptor(modelDescriptor);
+            test.init();
+          }
+        }, testProject);
+      }
+
+
+
+      private SModel findModel(final String modelName) {
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
+
+        if (modelDescriptor == null) {
+          Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
+        }
+        return modelDescriptor;
+      }
+    });
+  }
+
+
+
+  private Project openTestProject(String projectPathName, boolean reopenProject) {
+    // <node> 
+    // <node> 
+    if (reopenProject) {
+      for (final Project project : ActiveEnvironment.get().openedProjects()) {
+        try {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+              project.dispose();
+            }
+          });
+        } catch (Exception e) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("", e);
+          }
         }
       }
-      if (test.getProject() == null) {
-        Assert.fail("MPS Project was not specified in test class, no currently open project were found.");
+    }
+    if ((projectPathName == null || projectPathName.length() == 0)) {
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Project path is empty");
       }
+      return anyOpenedProject();
     } else {
-      String expandPath = MacrosFactory.getGlobal().expandPath(projectName);
-      test.setProject(TestMain.PROJECT_CONTAINER.getProject(expandPath));
+      String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
+      File projectPath = new File(expandedProjectPath);
+
+      Project project = ActiveEnvironment.get().openProject(projectPath);
+      return project;
     }
   }
 
 
 
-  private void closeProjectsBeforeRunningTest() {
-    TestMain.PROJECT_CONTAINER.clear();
-  }
-
-
-
-  private void initLoggingSystem() {
-    BasicConfigurator.configure();
+  private Project anyOpenedProject() {
+    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+      if (project != null) {
+        return project;
+      }
+    }
+    Assert.fail("MPS Project was not specified in the test class, no opened project was found.");
+    return null;
   }
 
 
 
   public void runTest(final TransformationTest projectTest, final String className, final String methodName, final boolean runInCommand) throws Throwable {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Running test " + className);
+    }
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -155,57 +182,38 @@ public class TransformationTestRunner {
     }
   }
 
-  private void clearSystemClipboard() {
+
+
+  private static void clearSystemClipboard() {
     if (GraphicsEnvironment.isHeadless()) {
       return;
     }
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(TransformationTestRunner.EMPTY_CLIPBOARD_CONTENT, TransformationTestRunner.EMPTY_CLIPBOARD_CONTENT);
+    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+    clipboard.setContents(EMPTY_CLIPBOARD_CONTENT, EMPTY_CLIPBOARD_CONTENT);
   }
 
 
 
   /**
-   * see MPS-10568
+   * to enable such macros as ${charisma}; see MPS-10568
    */
-  private void readSystemMacro() {
+  private static PathMacrosProvider readSystemMacro() {
     final Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
     for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
-      if (property.key() instanceof String) {
+      if (property.key() instanceof String && property.value() instanceof String) {
         String key = (String) property.key();
-        if ((key != null && key.length() > 0) && key.startsWith(BaseTransformationTest4.PATH_MACRO_PREFIX)) {
-          if (property.value() instanceof String) {
-            String canonicalPath = PathUtil.getCanonicalPath(((String) property.value()));
-            File file = new File(canonicalPath);
-            if (file.exists() && file.isDirectory()) {
-              MapSequence.fromMap(macros).put(key.substring(BaseTransformationTest4.PATH_MACRO_PREFIX.length()), canonicalPath);
-            }
+        String value = (String) property.value();
+        if ((key != null && key.length() > 0) && key.startsWith(PATH_MACRO_PREFIX)) {
+          CanonicalPath path = new CanonicalPath(value);
+          if (path.isValidDirectory()) {
+            MapSequence.fromMap(macros).put(key.substring(PATH_MACRO_PREFIX.length()), path.getValue());
           }
         }
       }
     }
-    PathMacros.getInstance().addMacrosProvider(new PathMacrosProvider() {
-      @Override
-      public Set<String> getNames() {
-        return Collections.unmodifiableSet(MapSequence.fromMap(macros).keySet());
-      }
-
-      @Override
-      public Set<String> getUserNames() {
-        return Collections.unmodifiableSet(MapSequence.fromMap(macros).keySet());
-      }
-
-      @Override
-      public String getValue(String p0) {
-        return MapSequence.fromMap(macros).get(p0);
-      }
-
-      @Override
-      public void report(String macro, String message) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
-          LOG.error("Undefined macro: " + macro + ". " + message);
-        }
-      }
-    });
+    MapPathMacrosProvider provider = new MapPathMacrosProvider(macros);
+    PathMacros.getInstance().addMacrosProvider(provider);
+    return provider;
   }
 
 

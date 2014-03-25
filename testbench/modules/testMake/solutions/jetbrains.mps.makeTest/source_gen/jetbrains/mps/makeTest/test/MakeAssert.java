@@ -20,9 +20,6 @@ import jetbrains.mps.tool.environment.ActiveEnvironment;
 import java.io.File;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 
-/**
- * todo: this class doesn't executed anymore, check test and add to some test suite
- */
 public class MakeAssert extends WorkbenchMpsTest {
   private static final String MESSAGE_COMPILATION_FAILED = "Compilation failed";
   private static final String MESSAGE_DEPENDENCY_NOT_CHECKED = "Compilation finished with Unchecked Dependencies";
@@ -39,7 +36,7 @@ public class MakeAssert extends WorkbenchMpsTest {
     boolean baseIsOk = changeModelProcessor.changeStep(genType);
     boolean newIsOk = changeModelProcessor.revertStep(genType);
     changeModelProcessor.generateModelToChange(genType);
-    disposeProject(project.getComponent(MPSProject.class));
+    WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
     assertNoProblems(baseIsOk);
     assertDependenciesChecked(newIsOk);
   }
@@ -69,13 +66,13 @@ public class MakeAssert extends WorkbenchMpsTest {
           changeModelProcessor.revertStep(filesGenHandler);
           changeModelProcessor.generateModelToChange(filesGenHandler);
         } catch (Throwable t) {
-          disposeProject(project.getComponent(MPSProject.class));
+          WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
           t.printStackTrace();
           Assert.fail("Exception: " + t);
         }
       }
     });
-    disposeProject(project.getComponent(MPSProject.class));
+    WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
     Assert.assertFalse(MESSAGE_DEPENDENCY_NOT_CHECKED, returnValue[0]);
   }
 

@@ -132,7 +132,7 @@ public class GenTestWorker extends GeneratorWorker {
       error("Could not find anything to test.");
     }
 
-    environment.disposeEnvironment();
+    environment.dispose();
     dispose();
     showStatistic();
 

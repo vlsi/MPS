@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8n6rt4lag74xv5k3hrqd1wdjsuqlwx7" />
+<dependencies version="2" modelHash="-8q4zzr3xrgqrob2r7qlo0mfjsccjdgj">
+  <common hash="-cstmdm490ia1w6w71lbtwidd21modh6" dependsOnNodes="true" />
+  <source id="7314351270975463225" name="DiskMemoryConflictsTest" hash="-b7gct41zjp332xqk9lprs5p5difdatq">
+    <file name="DiskMemoryConflictsTest.java" />
+  </source>
+</dependencies>
 

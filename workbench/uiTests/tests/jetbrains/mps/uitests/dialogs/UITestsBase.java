@@ -99,43 +99,6 @@ public abstract class UITestsBase extends JFCTestCase {
   public abstract static class NoProjectUITestsBase extends UITestsBase {
   }
 
-  public abstract static class ProjectUITestsBase extends UITestsBase {
-    private String myProjectPath;
-    private Project myProject;
-
-    protected ProjectUITestsBase(String projectPath) throws InterruptedException {
-      myProjectPath = projectPath;
-      myProject = initProject();
-    }
-
-    public Project getProject() {
-      return myProject;
-    }
-
-    protected Project initProject() throws InterruptedException {
-      TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
-        public Boolean compute() {
-          return false;//IdeMain.isUILoaded();
-        }
-      });
-
-      final jetbrains.mps.project.Project[] project = new jetbrains.mps.project.Project[1];
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          project[0] = IdeaEnvironment.openProjectInIdeaEnvironment(new File(myProjectPath));
-        }
-      });
-
-      TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
-        public Boolean compute() {
-          return project[0] != null && ProjectHelper.toIdeaProject(project[0]) != null;
-        }
-      });
-
-      return ProjectHelper.toIdeaProject(project[0]);
-    }
-  }
-
   protected final String checkTextField(String name) {
     JTextField field = findTextField(name);
     String text = field.getText();

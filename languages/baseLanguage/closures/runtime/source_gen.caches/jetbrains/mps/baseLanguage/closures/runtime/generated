@@ -1,3 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dm75q7vc5em4qh6zjrvka04g9q7s08c" />
+<dependencies version="2" modelHash="dm75q7vc5em4qh6zjrvka04g9q7s08c">
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="902273atmrd8nhnqts5ootv5bmwc50j" />
+  <common hash="-4lyzera2rs9lxiro8vl1t7uqfyxbank" dependsOnNodes="true">
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="_UnrestrictedClosures.java" />
+  </common>
+  <source id="8649343297855554552" name="AdapterClass" hash="b229pq4ggwb0mrho8yaypvqjfnxqp7r">
+    <file name="AdapterClass.java" />
+  </source>
+  <source id="3812443517665722597" name="Outcome" hash="-a3j8xx34ld029hcifbg80nd3r322f6r">
+    <file name="Outcome.java" />
+  </source>
+  <source id="3812443517665722609" name="Nothing" hash="3193k62s78v27kgnzzuw6aeh668heb2">
+    <file name="Nothing.java" />
+  </source>
+  <source id="3812443517665722615" name="Wrappers" hash="bfwnqqadurgjh8lav8abm3bhuudp5e6">
+    <file name="Wrappers.java" />
+  </source>
+  <source id="3812443517665722868" name="DelayedException" hash="40c1w3awapoagibm017erla3i41gwu0">
+    <file name="DelayedException.java" />
+  </source>
+  <source id="3812443517665722916" name="YieldingIterator" hash="85xc6fylxjupm5tvtu3rk9m4am5brej">
+    <file name="YieldingIterator.java" />
+  </source>
+  <source id="4914003190800642467" name="Result" hash="7qceq1s5hc6oenpu6lenv5iib4e4s1l">
+    <file name="Result.java" />
+  </source>
+  <source id="5571879668402581510" name="_FunctionTypes" hash="-rf62m0rz4cxwkj82w3iwc2qg8t2jml">
+    <file name="_FunctionTypes.java" />
+  </source>
+  <source id="3216938209400119778" name="_UnrestrictedFunctionTypes" hash="-9ip2nn9obwmpth5oi8obbt0hrebfjjr">
+    <file name="_UnrestrictedFunctionTypes.java" />
+  </source>
+</dependencies>
 

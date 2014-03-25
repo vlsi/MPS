@@ -6,10 +6,9 @@ import jetbrains.mps.project.Project;
 import java.io.File;
 
 public /**
- * Environment impl MUST call ActiveEnvironment.activateEnvironment at the beginning of the constructor and ActiveEnvrionment.deactivateEnvironment at the end of disposeEnvironment()
+ * Environment impl MUST call ActiveEnvironment.activateEnvironment at the beginning of the constructor and ActiveEnvrionment.deactivateEnvironment at the end of dispose()
  */
 interface Environment {
-  public EnvironmentConfig getConfig();
   public boolean hasIdeaInstance();
 
   /**
@@ -21,5 +20,5 @@ interface Environment {
   public Iterable<Project> openedProjects();
 
   public void disposeProject(Project project);
-  public void disposeEnvironment();
+  public void dispose();
 }

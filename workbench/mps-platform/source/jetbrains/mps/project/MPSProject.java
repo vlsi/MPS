@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import com.intellij.openapi.components.ProjectComponent;
@@ -36,10 +37,14 @@ public class MPSProject extends Project implements ProjectComponent {
     myProject = project;
   }
 
+  /**
+   * This method is a copy of Project.getModules() returning List<SModule>
+   * @deprecated
+   */
+  @ToRemove(version = 3.0)
   @Override
   @NotNull
   public List<SModule> getModules() {
-    // TODO remove after 3.0, this method is a copy of Project.getModules() returning List<SModule>
     List<SModule> result = new ArrayList<SModule>();
     for (SModuleReference ref : myModules) {
       SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);

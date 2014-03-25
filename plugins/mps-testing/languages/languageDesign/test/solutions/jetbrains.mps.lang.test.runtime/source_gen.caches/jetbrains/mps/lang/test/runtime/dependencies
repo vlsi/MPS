@@ -70,8 +70,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" file="BaseTransformationTest4.java">
-    <classNode dependClassName="com.intellij.idea.LoggerFactory" />
-    <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -181,15 +179,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
-    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
-    <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.awt.GraphicsEnvironment" />
     <classNode dependClassName="java.awt.Toolkit" />
+    <classNode dependClassName="java.awt.datatransfer.Clipboard" />
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -199,18 +197,14 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
@@ -219,9 +213,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.CanonicalPath" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />

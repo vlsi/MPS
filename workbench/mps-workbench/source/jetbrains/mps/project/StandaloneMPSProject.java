@@ -124,6 +124,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void projectOpened() {
+    LOG.info("Project opened");
     super.projectOpened();
     initProject();
   }
@@ -295,7 +296,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     //todo hack
     if (myProject != null) {
       if (MPSCore.getInstance().isTestMode() && !(myProject.isDisposed())) {
-        //second check if for MPS-12881, we invoked this method reqursively and tried to dispose a disposed project
+        //second check if for MPS-12881, we invoked this method recursively and tried to dispose a disposed project
         ProjectUtil.closeAndDispose(myProject);
       }
     }

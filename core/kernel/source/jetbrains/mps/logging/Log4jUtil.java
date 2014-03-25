@@ -78,14 +78,14 @@ public class Log4jUtil {
   }
 
   /**
-   * @param "OFF", "FATAL", "ERROR", "WARN" ...
+   * @param threshold "OFF", "FATAL", "ERROR", "WARN" ...
    */
-  public static String setThreshold(String threshhold) {
+  public static String setThreshold(String threshold) {
     Level wasThresholdLevel = org.apache.log4j.Logger.getRootLogger().getLoggerRepository().getThreshold();
-    String wasThreshhold = wasThresholdLevel.toString();
-    Level newThreshholdLevel = Level.toLevel(threshhold);
-    org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThreshholdLevel);
-    return wasThreshhold;
+    String wasThreshold = wasThresholdLevel.toString();
+    Level newThresholdLevel = Level.toLevel(threshold);
+    org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThresholdLevel);
+    return wasThreshold;
   }
 
   public static void error(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {

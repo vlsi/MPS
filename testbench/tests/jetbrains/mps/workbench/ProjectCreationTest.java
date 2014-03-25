@@ -84,14 +84,13 @@ public class ProjectCreationTest {
 
   @BeforeClass
   public static void init() {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
     CREATED_ENV = MpsTestsSupport.initEnv(true);
   }
 
   @AfterClass
   public static void dispose() {
     if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
+      CREATED_ENV.dispose();
     }
   }
 

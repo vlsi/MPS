@@ -6,39 +6,39 @@ import java.util.Set;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
+import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.tool.builder.util.MpsPlatform;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import jetbrains.mps.project.PathMacros;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import jetbrains.mps.tool.builder.FileMPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MpsEnvironment implements Environment {
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
-  private final EnvironmentConfig config;
 
-  private final MapPathMacrosProvider macroProvider;
-  private final Iterable<LibraryContributor> libContributors;
+  private final PathMacrosProvider macrosProvider;
+  private final Set<LibraryContributor> libContributors;
 
 
   public MpsEnvironment(EnvironmentConfig config) {
-    this.config = config;
-
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Creating MPS environment");
+    }
     ActiveEnvironment.activateEnvironment(this);
-
     MpsPlatform.init();
-    MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
     try {
@@ -48,16 +48,28 @@ public class MpsEnvironment implements Environment {
       throw new RuntimeException(ex);
     }
 
+    libContributors = initLibs(config);
+    macrosProvider = initMacros(config);
+  }
+
+
+
+  private PathMacrosProvider initMacros(EnvironmentConfig config) {
     Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
     for (String name : MapSequence.fromMap(config.macros()).keySet()) {
       MapSequence.fromMap(macros).put(name, MapSequence.fromMap(config.macros()).get(name).getAbsolutePath());
     }
-    macroProvider = EnvironmentUtils.createMapMacrosProvider(macros);
-    PathMacros.getInstance().addMacrosProvider(macroProvider);
+    MapPathMacrosProvider macrosProvider = EnvironmentUtils.createMapMacrosProvider(macros);
+    PathMacros.getInstance().addMacrosProvider(macrosProvider);
+    return macrosProvider;
+  }
 
-    libContributors = SetSequence.fromSetWithValues(new HashSet<LibraryContributor>(), createLibContributors(config));
-    for (LibraryContributor libContributor : Sequence.fromIterable(libContributors)) {
-      LibraryInitializer.getInstance().addContributor(libContributor);
+
+
+  private Set<LibraryContributor> initLibs(EnvironmentConfig config) {
+    final Set<LibraryContributor> libContribs = SetSequence.fromSetWithValues(new HashSet<LibraryContributor>(), createLibContributors(config));
+    for (LibraryContributor libContrib : SetSequence.fromSet(libContribs)) {
+      LibraryInitializer.getInstance().addContributor(libContrib);
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
@@ -65,14 +77,12 @@ public class MpsEnvironment implements Environment {
         LibraryInitializer.getInstance().update();
       }
     });
+    return libContribs;
   }
 
 
 
-  public EnvironmentConfig getConfig() {
-    return config;
-  }
-
+  @Override
   public boolean hasIdeaInstance() {
     return false;
   }
@@ -85,13 +95,23 @@ public class MpsEnvironment implements Environment {
 
 
 
+  /**
+   * FIXME: Lazy open
+   */
+  @Override
   public Project openProject(File projectFile) {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Opening project");
+    }
     FileMPSProject project = new FileMPSProject(projectFile);
     project.init(new FileMPSProject.ProjectDescriptor(projectFile));
     SetSequence.fromSet(openedProjects).addElement(project);
     return project;
   }
 
+
+
+  @Override
   public Project createDummyProject() {
     Project project = EnvironmentUtils.createDummyFileProject();
     SetSequence.fromSet(openedProjects).addElement(project);
@@ -100,25 +120,30 @@ public class MpsEnvironment implements Environment {
 
 
 
+  @Override
   public Iterable<Project> openedProjects() {
     return ListSequence.fromListWithValues(new ArrayList<Project>(), openedProjects);
   }
 
 
 
+  @Override
   public void disposeProject(final Project project) {
     project.dispose();
   }
 
-  public void disposeEnvironment() {
+
+
+  @Override
+  public void dispose() {
     ModelAccess.instance().flushEventQueue();
 
     for (Project project : SetSequence.fromSetWithValues(new HashSet<Project>(), openedProjects)) {
       disposeProject(project);
     }
 
-    PathMacros.getInstance().removeMacrosProvider(macroProvider);
-    for (LibraryContributor libContributor : Sequence.fromIterable(libContributors)) {
+    PathMacros.getInstance().removeMacrosProvider(macrosProvider);
+    for (LibraryContributor libContributor : SetSequence.fromSet(libContributors)) {
       LibraryInitializer.getInstance().removeContributor(libContributor);
     }
 
@@ -126,4 +151,6 @@ public class MpsEnvironment implements Environment {
 
     ActiveEnvironment.deactivateEnvironment(this);
   }
+
+  protected static Logger LOG = LogManager.getLogger(MpsEnvironment.class);
 }

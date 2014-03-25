@@ -7,6 +7,7 @@
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.persistent.FSRecords" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
@@ -20,30 +21,20 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.TestMain" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
+    <classNode dependClassName="jetbrains.mps.ProjectContainer" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
-    <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.PathUtil" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.CanonicalPath" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentUtils" />
@@ -51,7 +42,6 @@
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.PerformanceMessenger" file="PerformanceMessenger.java">

@@ -6,24 +6,23 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
 import java.io.File;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
-import java.io.IOException;
 import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.util.Set;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
-public class ContextProjextSupport {
+public class ContextProjectSupport {
   public static final String PROJECT_PATH_PROPERTY = "mps.junit.project";
   public static final String MODULES_PATHS_PROPERTY = "mps.test.modules";
   public static final String MODULES_ROOT_PROPERTY = "mps.junit.modules.root";
@@ -35,23 +34,24 @@ public class ContextProjextSupport {
    * @return compiled and reloaded context mps project
    */
   @NotNull
-  public static Project getContextProject() {
-    Project project = getProjectFromProjectPath();
-    if (project != null) {
-      return project;
+  public static Project loadContextProject() {
+    // TODO make three separate classes here 
+    final String projectPath = System.getProperty(PROJECT_PATH_PROPERTY);
+    if (projectPath != null) {
+      return loadProjectFromProjectPath(projectPath);
     }
 
-    project = getProjectFromModulesList();
-    if (project != null) {
-      return project;
+    final String modulePath = System.getProperty(MODULES_PATHS_PROPERTY);
+    if (modulePath != null) {
+      return loadProjectFromModulesList(modulePath);
     }
 
-    project = getProjectFromDirectoryWithModules();
-    if (project != null) {
-      return project;
+    final String moduleRoot = System.getProperty(MODULES_ROOT_PROPERTY);
+    if (moduleRoot != null) {
+      return loadProjectFromDirectoryWithModules(moduleRoot);
     }
 
-    throw new IllegalStateException("can't load context project");
+    throw new IllegalStateException("Could not load context project");
   }
 
 
@@ -73,57 +73,38 @@ public class ContextProjextSupport {
     return (previous != null ? new File(previous) : null);
   }
 
-  @Nullable
-  private static Project getProjectFromProjectPath() {
-    if (System.getProperty(PROJECT_PATH_PROPERTY) == null) {
-      return null;
-    }
 
-    File projectToOpen = new File(System.getProperty(PROJECT_PATH_PROPERTY));
-    try {
-      for (Project project : Sequence.fromIterable(ActiveEnvironment.get().openedProjects())) {
-        if (project.getProjectFile() != null && project.getProjectFile().getCanonicalPath().equals(projectToOpen.getCanonicalPath())) {
-          return project;
-        }
-      }
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
 
-    return firstTimeOpened(ActiveEnvironment.get().openProject(projectToOpen));
+  @NotNull
+  private static Project loadProjectFromProjectPath(String projectPath) {
+    File projectFile = new File(projectPath);
+    final Project openedProject = ActiveEnvironment.get().openProject(projectFile);
+    return makeOnFirstTimeOpened(openedProject);
   }
 
 
 
-  @Nullable
-  private static Project getProjectFromDirectoryWithModules() {
-    if (System.getProperty(MODULES_ROOT_PROPERTY) == null) {
-      return null;
-    }
-
-    List<ModulesMiner.ModuleHandle> modules = collectHandles(new File(System.getProperty(MODULES_ROOT_PROPERTY)));
-    return getProjectFromModuleHandles(modules);
+  @NotNull
+  private static Project loadProjectFromDirectoryWithModules(String modulesRootPath) {
+    List<ModulesMiner.ModuleHandle> moduleHandles = collectHandles(new File(modulesRootPath));
+    return loadProjectFromModuleHandles(moduleHandles);
   }
 
 
 
-  @Nullable
-  private static Project getProjectFromModulesList() {
+  @NotNull
+  private static Project loadProjectFromModulesList(String modulesString) {
     // todo: merge with "modules collected from dir", or specify here paths to msd/mpl files 
-    if (System.getProperty(MODULES_PATHS_PROPERTY) == null) {
-      return null;
-    }
-
     List<ModulesMiner.ModuleHandle> handles = ListSequence.fromList(new ArrayList<ModulesMiner.ModuleHandle>());
-    String modulesString = System.getProperty(MODULES_PATHS_PROPERTY);
     if ((modulesString == null || modulesString.length() == 0)) {
-      return getProjectFromModuleHandles(handles);
+      return loadProjectFromModuleHandles(handles);
     }
-    String[] modules = modulesString.split(File.pathSeparator);
+    final String[] modules = modulesString.split(File.pathSeparator);
     for (String modulePath : modules) {
-      ListSequence.fromList(handles).addSequence(ListSequence.fromList(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(modulePath), false)));
+      IFile fileByPath = FileSystem.getInstance().getFileByPath(modulePath);
+      ListSequence.fromList(handles).addSequence(ListSequence.fromList(ModulesMiner.getInstance().collectModules(fileByPath, false)));
     }
-    return getProjectFromModuleHandles(handles);
+    return loadProjectFromModuleHandles(handles);
   }
 
 
@@ -146,25 +127,26 @@ public class ContextProjextSupport {
 
 
 
-  @Nullable
-  private static Project getProjectFromModuleHandles(final Iterable<ModulesMiner.ModuleHandle> handles) {
+  @NotNull
+  private static Project loadProjectFromModuleHandles(final Iterable<ModulesMiner.ModuleHandle> moduleHandles) {
     // todo: check currently opened projects 
     final Project project = ActiveEnvironment.get().createDummyProject();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        for (ModulesMiner.ModuleHandle moduleHandle : Sequence.fromIterable(handles)) {
+        for (ModulesMiner.ModuleHandle moduleHandle : Sequence.fromIterable(moduleHandles)) {
           SModule module = ModuleRepositoryFacade.createModule(moduleHandle, project);
           project.addModule(module.getModuleReference());
         }
       }
     });
 
-    return firstTimeOpened(project);
+    return makeOnFirstTimeOpened(project);
   }
 
 
 
-  private static Project firstTimeOpened(Project project) {
+  @NotNull
+  private static Project makeOnFirstTimeOpened(@NotNull Project project) {
     // todo: check result of making, throw checked MakeException 
     MpsTestsSupport.makeAllInCreatedEnvironment();
     try {

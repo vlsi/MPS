@@ -9,7 +9,6 @@ import org.junit.runner.Runner;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import java.util.Collections;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.io.File;
@@ -27,14 +26,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.junit.runner.notification.RunNotifier;
-import org.junit.runner.Description;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.classloading.ClassLoaderManager;
 
 /**
+ * Currently used for ant tests
  * todo: WatchingSuite?
  */
 public class MpsTestsSuite extends Suite {
@@ -47,25 +41,18 @@ public class MpsTestsSuite extends Suite {
 
   public MpsTestsSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     super(klass, Collections.<Runner>emptyList());
-
     // todo: read config from annotations before start (project / ?) 
-    // for this kind of tests we want everything-in-file possibility to run 
-    initEnvironment();
-    contextProject = ContextProjextSupport.getContextProject();
-    TestMain.PROJECT_CONTAINER = new MpsTestsSuite.DummyProjectContainer(contextProject);
-
+    // todo: dispose env at the end 
+    initIdeaEnvironment();
+    contextProject = ContextProjectSupport.loadContextProject();
+    ContextProjectSupport.setContextProjectPath(contextProject.getProjectFile());
     children = createChildRunners(builder);
   }
 
 
 
-  private static void initEnvironment() {
-    // plugins are already loaded into plugin.path property used by idea plugin manager 
-    // so we do not do anything with plugins here 
-    // I know that this is so incredibly breakable 
-    // it already broke once, it will break again 
-    // this is why MPS is not a "product" after all these years 
-    // I'm sorry for that, it's all my fault:( 
+  private static void initIdeaEnvironment() {
+    // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     for (IMapping<String, File> lib : MapSequence.fromMap(loadLibraries())) {
       config = config.addLib(lib.key(), lib.value());
@@ -74,8 +61,9 @@ public class MpsTestsSuite extends Suite {
       config = config.addMacro(macro.key(), macro.value());
     }
     MpsTestsSupport.initEnv(true, config);
-    // todo: ! dispose env at the end? 
   }
+
+
 
   private static Map<String, File> loadLibraries() {
     Map<String, File> result = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
@@ -93,19 +81,20 @@ public class MpsTestsSuite extends Suite {
     return result;
   }
 
+
+
   private static Map<String, File> loadMacros() {
     Map<String, File> result = MapSequence.fromMap(new HashMap<String, File>());
     for (Map.Entry<Object, Object> property : SetSequence.fromSet(System.getProperties().entrySet())) {
-      if (!(property.getKey() instanceof String && property.getValue() instanceof String)) {
-        continue;
-      }
-      String key = (String) property.getKey();
-      String value = (String) property.getValue();
+      if (property.getKey() instanceof String && property.getValue() instanceof String) {
+        String key = (String) property.getKey();
+        String value = (String) property.getValue();
 
-      if (!(key.startsWith(MPS_MACRO_PREFIX) && key.length() > MPS_MACRO_PREFIX.length())) {
-        continue;
+        if (key.startsWith(MPS_MACRO_PREFIX) && key.length() > MPS_MACRO_PREFIX.length()) {
+          String macroSuffix = key.substring(MPS_MACRO_PREFIX.length());
+          MapSequence.fromMap(result).put(macroSuffix, new File(value));
+        }
       }
-      MapSequence.fromMap(result).put(key.substring(MPS_MACRO_PREFIX.length()), new File(value));
     }
     return result;
   }
@@ -126,7 +115,7 @@ public class MpsTestsSuite extends Suite {
         for (SModule module : Sequence.fromIterable(contextProject.getModules())) {
           for (SModel model : Sequence.fromIterable(module.getModels())) {
             for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) model), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-              result.add(new MpsTestsSuite.DelegatingRunner(builder, module.getModuleReference(), BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{})));
+              result.add(new DelegatingRunner(builder, module.getModuleReference(), BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{})));
             }
           }
         }
@@ -135,69 +124,6 @@ public class MpsTestsSuite extends Suite {
     return result;
   }
 
-  public static class DelegatingRunner extends Runner {
-    private RunnerBuilder myBuilder;
-    private String myClassName;
-    private SModuleReference myModuleReference;
-
-    public DelegatingRunner(RunnerBuilder builder, SModuleReference moduleRef, String klassName) {
-      myBuilder = builder;
-      myModuleReference = moduleRef;
-      myClassName = klassName;
-    }
-
-    @Override
-    public void run(RunNotifier notifier) {
-      // todo: runner should be created only twice: in #run and #getDescription 
-      myBuilder.safeRunnerForClass(getTestClass()).run(notifier);
-    }
-
-    @Override
-    public Description getDescription() {
-      return myBuilder.safeRunnerForClass(getTestClass()).getDescription();
-    }
-
-    private Class getTestClass() {
-      return ModelAccess.instance().runReadAction(new Computable<Class>() {
-        public Class compute() {
-          return getTestClass(myModuleReference.resolve(MPSModuleRepository.getInstance()), myClassName);
-        }
-      });
-    }
-
-    private static Class getTestClass(SModule module, String className) {
-      // todo: warning on null class loader and ClassNotFoundException? 
-      // todo: execute only MPS tests here. move all unit tests to ant task 
-      try {
-        ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader(module);
-        if (classLoader == null) {
-          return null;
-        }
-        return classLoader.loadClass(className);
-      } catch (ClassNotFoundException e) {
-        return null;
-      }
-    }
-  }
-
-  private static class DummyProjectContainer extends TestMain.ProjectContainer {
-    private final Project project;
-
-    public DummyProjectContainer(Project project) {
-      // todo: should be removed after introducing context project in editor/nodes tests 
-      this.project = project;
-    }
-
-    @Override
-    public Project getProject(String string) {
-      return project;
-    }
-
-    @Override
-    public void clear() {
-      // do nothing 
-    }
-  }
 
 
 }

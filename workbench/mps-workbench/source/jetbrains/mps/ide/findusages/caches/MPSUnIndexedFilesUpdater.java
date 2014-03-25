@@ -29,17 +29,19 @@ import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexingStamp;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Set;
 
-public class MPSUnindexedFilesUpdater implements CacheUpdater {
+public class MPSUnIndexedFilesUpdater implements CacheUpdater {
+  private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSUnIndexedFilesUpdater.class);
   private final FileBasedIndexImpl myIndex;
   private ProjectRootManagerEx myManager;
   private final Project myProject;
 
-  public MPSUnindexedFilesUpdater(FileBasedIndexImpl index, ProjectRootManagerEx manager, @NotNull Project project) {
+  public MPSUnIndexedFilesUpdater(FileBasedIndexImpl index, ProjectRootManagerEx manager, @NotNull Project project) {
     myIndex = index;
     myManager = manager;
     myProject = project;
@@ -108,7 +110,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   @Override
   public void updatingDone() {
-
+    LOG.debug("Updating index is done");
   }
 
   @Override

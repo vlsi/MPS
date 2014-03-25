@@ -8,7 +8,6 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.EnvironmentConfig" file="EnvironmentConfig.java">
     <classNode dependClassName="java.io.File" />
@@ -22,7 +21,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.EnvironmentUtils" file="EnvironmentUtils.java">
     <classNode dependClassName="java.io.File" />
@@ -33,13 +31,15 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.PathUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.CanonicalPath" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.MpsEnvironment" file="MpsEnvironment.java">
@@ -55,7 +55,6 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -65,6 +64,7 @@
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
+    <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
@@ -73,6 +73,8 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentUtils" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
 </dependenciesRoot>

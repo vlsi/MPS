@@ -1986,7 +1986,7 @@
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4201170947328891620" nodeInfo="ng">
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="6420745394460165035" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ivbl.6420745394459121798" resolveInfo="DefultEditorComponent" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ivbl.6420745394459121798" resolveInfo="DefaultEditorComponent" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="6420745394460165094" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ivbl.6420745394459130152" resolveInfo="EditorComponentSpecifiedBy_context_hint" />

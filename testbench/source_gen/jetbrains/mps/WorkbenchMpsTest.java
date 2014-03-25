@@ -6,20 +6,23 @@ import jetbrains.mps.tool.environment.Environment;
 import org.junit.BeforeClass;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import org.junit.AfterClass;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 
 public class WorkbenchMpsTest {
   private static Environment CREATED_ENV;
 
+
   @BeforeClass
-  public static void setup() {
+  public static void setUpEnvironment() {
     CREATED_ENV = MpsTestsSupport.initEnv(true);
     if (CREATED_ENV != null) {
       MpsTestsSupport.makeAllInCreatedEnvironment();
     }
   }
+
+
 
   @AfterClass
   public static void cleanup() {
@@ -27,11 +30,23 @@ public class WorkbenchMpsTest {
     // <node> 
   }
 
+
+
+  private static void checkEnvironmentExists() {
+    assert ActiveEnvironment.get() != null;
+  }
+
+
+
   public static Project openProject(File projectFile) {
+    checkEnvironmentExists();
     return ActiveEnvironment.get().openProject(projectFile);
   }
 
+
+
   public static void disposeProject(Project project) {
+    checkEnvironmentExists();
     ActiveEnvironment.get().disposeProject(project);
   }
 }

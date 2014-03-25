@@ -6,6 +6,8 @@ import org.apache.log4j.AppenderSkeleton;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.util.Pair;
+import org.apache.log4j.Level;
+import org.apache.log4j.varia.LevelRangeFilter;
 import org.apache.log4j.spi.LoggingEvent;
 import java.util.Arrays;
 import org.apache.log4j.Priority;
@@ -19,7 +21,10 @@ public class CachingAppender extends AppenderSkeleton implements Output {
   private List<Pair<Integer, String>> expectedEvents = new ArrayList<Pair<Integer, String>>();
   private List<Pair<Integer, String>> receivedExpectedEvents = new ArrayList<Pair<Integer, String>>();
 
-  public CachingAppender() {
+  public CachingAppender(Level watchLevel) {
+    final LevelRangeFilter newFilter = new LevelRangeFilter();
+    newFilter.setLevelMin(watchLevel);
+    this.addFilter(newFilter);
   }
 
   @Override

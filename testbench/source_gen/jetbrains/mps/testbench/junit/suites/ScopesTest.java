@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import org.junit.Test;
@@ -56,7 +56,7 @@ public class ScopesTest {
 
   public static Project initTestEnvironmentAndLoadContextProject() throws InvocationTargetException, InterruptedException {
     MpsTestsSupport.initEnv(false);
-    return ContextProjextSupport.getContextProject();
+    return ContextProjectSupport.loadContextProject();
   }
 
 

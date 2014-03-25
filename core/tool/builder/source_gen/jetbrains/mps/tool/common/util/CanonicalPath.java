@@ -7,19 +7,25 @@ import java.io.File;
 import java.util.StringTokenizer;
 import java.util.Stack;
 
-public class PathUtil {
-  public PathUtil() {
+public class CanonicalPath {
+  private final String canonicalPath;
+
+
+  public CanonicalPath(@NonNls String path) {
+    canonicalPath = convertToCanonical(path);
   }
 
-  public static String getCanonicalPath(@NonNls String path) {
+
+
+  private static String convertToCanonical(@NonNls String path) {
     if (path == null || path.length() == 0) {
       return path;
     }
     path = path.replace(File.separatorChar, '/');
-    final StringTokenizer tok = new StringTokenizer(path, "/");
+    final StringTokenizer tokenizer = new StringTokenizer(path, "/");
     final Stack<String> stack = new Stack<String>();
-    while (tok.hasMoreTokens()) {
-      final String token = tok.nextToken();
+    while (tokenizer.hasMoreTokens()) {
+      final String token = tokenizer.nextToken();
       if ("..".equals(token)) {
         if (stack.isEmpty()) {
           return null;
@@ -42,5 +48,21 @@ public class PathUtil {
       result.append(str);
     }
     return result.toString();
+  }
+
+
+
+  public boolean isValidDirectory() {
+    File file = new File(canonicalPath);
+    if (file.exists() && file.isDirectory()) {
+      return true;
+    }
+    return false;
+  }
+
+
+
+  public String getValue() {
+    return canonicalPath;
   }
 }

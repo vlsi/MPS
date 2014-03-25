@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -28,6 +28,8 @@ public class BaseCheckModulesTest {
     this.myModule = module;
   }
 
+
+
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation? 
@@ -37,13 +39,17 @@ public class BaseCheckModulesTest {
     return createTestParametersFromModules(ourContextProject.getModules());
   }
 
+
+
   public static void initTestEnvironment(boolean withIdea) throws InvocationTargetException, InterruptedException {
     // todo: dispose env? 
     MpsTestsSupport.initEnv(withIdea);
 
     ourStatistic = new CheckingTestStatistic();
-    ourContextProject = ContextProjextSupport.getContextProject();
+    ourContextProject = ContextProjectSupport.loadContextProject();
   }
+
+
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
@@ -59,6 +65,8 @@ public class BaseCheckModulesTest {
     return res;
   }
 
+
+
   public static Set<SModule> excludeModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
     Set<SModule> result = new HashSet<SModule>();
     for (SModule module : modules) {
@@ -69,13 +77,19 @@ public class BaseCheckModulesTest {
     return result;
   }
 
+
+
   public static Project getContextProject() {
     return ourContextProject;
   }
 
+
+
   public static CheckingTestStatistic getStatistic() {
     return ourStatistic;
   }
+
+
 
   @AfterClass
   public static void cleanUp() {

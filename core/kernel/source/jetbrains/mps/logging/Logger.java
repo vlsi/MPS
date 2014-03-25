@@ -16,8 +16,30 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
 
 public abstract class Logger {
+
+  /**
+   * These two methods we need for a migration script
+   * Use constructor from org.apache.log4j.Logger
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static synchronized Logger getLogger(Class cls) {
+    return getLogger(cls.getName());
+  }
+
+
+  /**
+   * Use constructor from org.apache.log4j.Logger
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static synchronized Logger getLogger(String name) {
+    return wrap(LogManager.getLogger(name));
+  }
 
   public static synchronized Logger wrap(org.apache.log4j.Logger logger) {
     return new Log4jLogger(logger);

@@ -109,7 +109,7 @@ public abstract class MpsWorker {
 
   protected void dispose() {
     if (myEnvironment != null) {
-      myEnvironment.disposeEnvironment();
+      myEnvironment.dispose();
     }
   }
 

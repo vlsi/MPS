@@ -514,7 +514,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3310779261129403176" fileName="LanguageTestWrapper.java" startLine="96" startPosition="0" endLine="127" endPosition="0" />
     <unitInfo nodeId="2024340988248532370" fileName="LanguageTestWrapper.java" startLine="71" startPosition="272" endLine="75" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$1" />
-    <unitInfo nodeId="1906922135947947058" fileName="LanguageTestWrapper.java" startLine="87" startPosition="309" endLine="91" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2" />
+    <unitInfo nodeId="1906922135947947058" fileName="LanguageTestWrapper.java" startLine="87" startPosition="311" endLine="91" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2" />
     <unitInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="35" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper" />
   </root>
   <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248532422">
@@ -805,7 +805,7 @@
     <nodeInfo nodeId="2034046503361585702" fileName="AbstractTestWrapper.java" startLine="124" startPosition="27" endLine="125" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690179269" fileName="AbstractTestWrapper.java" startLine="128" startPosition="5" endLine="129" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6504487988305050411" fileName="AbstractTestWrapper.java" startLine="132" startPosition="89" endLine="133" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3310779261129582176" fileName="AbstractTestWrapper.java" startLine="133" startPosition="255" endLine="134" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3310779261129582176" fileName="AbstractTestWrapper.java" startLine="133" startPosition="255" endLine="134" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5881102044690179018" fileName="AbstractTestWrapper.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodePointer" />
     <nodeInfo nodeId="4055524022176337868" fileName="AbstractTestWrapper.java" startLine="98" startPosition="10" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4055524022176337847" fileName="AbstractTestWrapper.java" startLine="113" startPosition="12" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -850,7 +850,7 @@
     <scopeInfo nodeId="4055524022176337822" fileName="AbstractTestWrapper.java" startLine="111" startPosition="98" endLine="112" endPosition="132" />
     <scopeInfo nodeId="4055524022176337848" fileName="AbstractTestWrapper.java" startLine="113" startPosition="14" endLine="114" endPosition="147" />
     <scopeInfo nodeId="2034046503361585701" fileName="AbstractTestWrapper.java" startLine="124" startPosition="27" endLine="125" endPosition="33" />
-    <scopeInfo nodeId="3310779261129582149" fileName="AbstractTestWrapper.java" startLine="132" startPosition="89" endLine="134" endPosition="189">
+    <scopeInfo nodeId="3310779261129582149" fileName="AbstractTestWrapper.java" startLine="132" startPosition="89" endLine="134" endPosition="191">
       <varInfo nodeId="6504487988305050412" varName="startupPath" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690179026" fileName="AbstractTestWrapper.java" startLine="28" startPosition="0" endLine="31" endPosition="0">

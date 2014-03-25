@@ -539,7 +539,7 @@
     <nodeInfo nodeId="115383379929303713" fileName="ProjectTest.java" startLine="37" startPosition="104" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386357087" fileName="ProjectTest.java" startLine="38" startPosition="26" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="115383379929692771" fileName="ProjectTest.java" startLine="44" startPosition="99" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9170334376386357102" fileName="ProjectTest.java" startLine="45" startPosition="35" endLine="46" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9170334376386357102" fileName="ProjectTest.java" startLine="45" startPosition="35" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386357123" fileName="ProjectTest.java" startLine="49" startPosition="101" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170334376386357133" fileName="ProjectTest.java" startLine="51" startPosition="36" endLine="52" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386357159" fileName="ProjectTest.java" startLine="56" startPosition="52" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -568,7 +568,7 @@
     <scopeInfo nodeId="9170334376386357158" fileName="ProjectTest.java" startLine="56" startPosition="52" endLine="57" endPosition="70" />
     <scopeInfo nodeId="9170334376388144511" fileName="ProjectTest.java" startLine="31" startPosition="79" endLine="33" endPosition="45" />
     <scopeInfo nodeId="9170334376386357086" fileName="ProjectTest.java" startLine="37" startPosition="104" endLine="39" endPosition="75" />
-    <scopeInfo nodeId="9170334376386357097" fileName="ProjectTest.java" startLine="44" startPosition="99" endLine="46" endPosition="66" />
+    <scopeInfo nodeId="9170334376386357097" fileName="ProjectTest.java" startLine="44" startPosition="99" endLine="46" endPosition="67" />
     <scopeInfo nodeId="9170334376386357130" fileName="ProjectTest.java" startLine="50" startPosition="56" endLine="53" endPosition="5">
       <varInfo nodeId="9170334376386357139" varName="module" />
     </scopeInfo>

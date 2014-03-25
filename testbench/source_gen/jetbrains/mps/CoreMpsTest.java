@@ -22,7 +22,7 @@ public class CoreMpsTest {
   @AfterClass
   public static void cleanup() {
     if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
+      CREATED_ENV.dispose();
     }
   }
 }

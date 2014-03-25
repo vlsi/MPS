@@ -4,34 +4,29 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
-import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.idea.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
 
 public abstract class BaseTransformationTest4 implements TransformationTest {
-  public static final String PATH_MACRO_PREFIX = "path.macro.";
   private TransformationTestRunner myRunner = new TransformationTestRunner();
   private SModel myModel;
   private SModel myTransientModel;
   private Project myProject;
 
   public BaseTransformationTest4() {
-    Logger.setFactory(LoggerFactory.class);
   }
 
   public BaseTransformationTest4(Project project, SModel modelDescriptor) {
     this();
-    // todo: ever used? 
     myProject = project;
     myModel = modelDescriptor;
   }
 
   @Override
-  public void setTestRunner(TransformationTestRunner ttr) {
-    this.myRunner = ttr;
+  public void setTestRunner(TransformationTestRunner testRunner) {
+    this.myRunner = testRunner;
   }
 
   @Override
@@ -50,6 +45,8 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
     myRunner.runTest(this, className, methodName, runInCommand);
   }
+
+
 
   @Override
   public void init() {

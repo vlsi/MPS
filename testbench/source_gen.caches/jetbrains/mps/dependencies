@@ -12,16 +12,21 @@
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
   </dependency>
-  <dependency className="jetbrains.mps.TestMain" file="TestMain.java">
+  <dependency className="jetbrains.mps.ProjectContainer" file="ProjectContainer.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.testbench.IdeaEnvironment" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.WorkbenchMpsTest" file="WorkbenchMpsTest.java">
     <classNode dependClassName="java.io.File" />

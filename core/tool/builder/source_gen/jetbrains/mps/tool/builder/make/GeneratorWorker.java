@@ -101,7 +101,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       error("Could not find anything to generate.");
     }
 
-    environment.disposeEnvironment();
+    environment.dispose();
     dispose();
     showStatistic();
   }
@@ -127,6 +127,8 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       }
       return Sequence.<LibraryContributor>singleton(new SetLibraryContributor(libraryPaths));
     }
+
+
 
     private void registerFactory() {
       FacetsFacade.FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);

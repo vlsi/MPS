@@ -327,7 +327,7 @@
     <nodeInfo nodeId="878521226300773838" fileName="MpsWorker.java" startLine="99" startPosition="13" endLine="100" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226300773849" fileName="MpsWorker.java" startLine="104" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
     <nodeInfo nodeId="878521226300773896" fileName="MpsWorker.java" startLine="106" startPosition="42" endLine="107" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6132171475560905849" fileName="MpsWorker.java" startLine="111" startPosition="32" endLine="112" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6132171475560905849" fileName="MpsWorker.java" startLine="111" startPosition="32" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6132171475560697915" fileName="MpsWorker.java" startLine="117" startPosition="42" endLine="118" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226300773926" fileName="MpsWorker.java" startLine="119" startPosition="5" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226300773947" fileName="MpsWorker.java" startLine="126" startPosition="25" endLine="127" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -526,7 +526,7 @@
     <scopeInfo nodeId="6132171475562756886" fileName="MpsWorker.java" startLine="88" startPosition="46" endLine="89" endPosition="47" />
     <scopeInfo nodeId="878521226300773849" fileName="MpsWorker.java" startLine="104" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="878521226300773895" fileName="MpsWorker.java" startLine="106" startPosition="42" endLine="107" endPosition="56" />
-    <scopeInfo nodeId="6132171475560891566" fileName="MpsWorker.java" startLine="111" startPosition="32" endLine="112" endPosition="41" />
+    <scopeInfo nodeId="6132171475560891566" fileName="MpsWorker.java" startLine="111" startPosition="32" endLine="112" endPosition="30" />
     <scopeInfo nodeId="6132171475560637017" fileName="MpsWorker.java" startLine="117" startPosition="42" endLine="118" endPosition="49" />
     <scopeInfo nodeId="878521226300773977" fileName="MpsWorker.java" startLine="137" startPosition="25" endLine="138" endPosition="79" />
     <scopeInfo nodeId="878521226300773984" fileName="MpsWorker.java" startLine="143" startPosition="0" endLine="144" endPosition="0">

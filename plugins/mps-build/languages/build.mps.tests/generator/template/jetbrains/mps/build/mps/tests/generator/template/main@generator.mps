@@ -1023,13 +1023,13 @@
                   <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7459197473273016251" nodeInfo="ng">
                     <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                     <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7459197473273100185" nodeInfo="ng">
-                      <property name="text" nameId="iuxj.6666499814681541920" value="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" />
+                      <property name="text" nameId="iuxj.6666499814681541920" value="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" />
                     </node>
                   </node>
                   <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="8568272520041580546" nodeInfo="ng">
                     <property name="attrName" nameId="iuxj.6666499814681447926" value="outfile" />
                     <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="8568272520041595721" nodeInfo="ng">
-                      <property name="text" nameId="iuxj.6666499814681541920" value="TEST-jetbrains.mps.testbench.junit.suites.ModuleTestSuite" />
+                      <property name="text" nameId="iuxj.6666499814681541920" value="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8568272520041595725" nodeInfo="nn">
                         <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
                         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8568272520041595726" nodeInfo="nn">

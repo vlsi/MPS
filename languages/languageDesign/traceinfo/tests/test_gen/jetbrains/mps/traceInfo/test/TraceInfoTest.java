@@ -22,6 +22,7 @@ import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import com.intellij.ide.IdeEventQueue;
 
 public class TraceInfoTest extends WorkbenchMpsTest {
@@ -128,7 +129,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
   }
 
   private void invokeTest(final _FunctionTypes._void_P0_E0 test) {
-    Project project = openProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
+    Project project = WorkbenchMpsTest.openProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -157,7 +158,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        p.dispose();
+        ActiveEnvironment.get().disposeProject(p);
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }

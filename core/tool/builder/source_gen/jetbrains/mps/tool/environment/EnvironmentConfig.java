@@ -12,9 +12,6 @@ import java.util.HashMap;
 import java.util.Collections;
 import jetbrains.mps.tool.builder.util.PathManager;
 
-/**
- * todo: make class immutable
- */
 public class EnvironmentConfig {
   public static final String BOOTSTRAP_LIBRARIES_LIB_NAME = "bootstrap";
 
@@ -32,9 +29,13 @@ public class EnvironmentConfig {
     return SetSequence.fromSet(plugins).asUnmodifiable();
   }
 
+
+
   public Map<String, File> macros() {
     return Collections.unmodifiableMap(macros);
   }
+
+
 
   public Map<String, File> libs() {
     return Collections.unmodifiableMap(libs);
@@ -47,20 +48,18 @@ public class EnvironmentConfig {
     return this;
   }
 
+
+
   public EnvironmentConfig addMacro(String macroName, File macroValue) {
     MapSequence.fromMap(macros).put(macroName, macroValue);
     return this;
   }
 
+
+
   public EnvironmentConfig addLib(String libName, File libPath) {
     MapSequence.fromMap(libs).put(libName, libPath);
     return this;
-  }
-
-
-
-  public Environment build(boolean withIdeaInstance) {
-    return null;
   }
 
 
@@ -74,8 +73,8 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
-    for (String bpath : PathManager.getBootstrapPaths()) {
-      addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(bpath));
+    for (String path : PathManager.getBootstrapPaths()) {
+      addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(path));
     }
     return addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(PathManager.getLanguagesPath()));
   }
@@ -83,9 +82,10 @@ public class EnvironmentConfig {
 
 
   public static EnvironmentConfig defaultEnvironment() {
-    // todo: default plugins, default etc 
     return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries();
   }
+
+
 
   public static EnvironmentConfig emptyEnvironment() {
     return new EnvironmentConfig();

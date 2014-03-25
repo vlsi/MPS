@@ -3514,8 +3514,8 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="488943251837913500" resolveInfo="ourContextProject" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9170334376386357534" nodeInfo="nn">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oh7r.4681254579907455600" resolveInfo="ContextProjextSupport" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oh7r.4681254579907514465" resolveInfo="getContextProject" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oh7r.4681254579907455600" resolveInfo="ContextProjectSupport" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oh7r.4681254579907514465" resolveInfo="loadContextProject" />
             </node>
           </node>
         </node>
@@ -3762,9 +3762,7 @@
                 <property name="name" nameId="tpck.1169194664001" value="errors" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9170334376388144594" nodeInfo="in">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-                  <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9170334376388144595" nodeInfo="in">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-                  </node>
+                  <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="6151449412874728892" nodeInfo="in" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6607750055058172538" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6607750055058172028" nodeInfo="nn">
@@ -3811,9 +3809,7 @@
                 <property name="name" nameId="tpck.1169194664001" value="warns" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9170334376388144608" nodeInfo="in">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-                  <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9170334376388144609" nodeInfo="in">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-                  </node>
+                  <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="6151449412874763595" nodeInfo="in" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6607750055058178102" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6607750055058177846" nodeInfo="nn">
@@ -3886,9 +3882,7 @@
             <property name="name" nameId="tpck.1169194664001" value="diffReport" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9170334376388144637" nodeInfo="in">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9170334376388144638" nodeInfo="in">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-              </node>
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="6151449412874764662" nodeInfo="in" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6607750055058186165" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6607750055058185909" nodeInfo="nn">

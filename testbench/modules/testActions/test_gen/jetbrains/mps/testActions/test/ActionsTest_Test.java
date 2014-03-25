@@ -21,19 +21,20 @@ public class ActionsTest_Test extends BaseTransformationTest4 {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_checkRoots() throws Exception {
-      Set<String> flyingActions = FlyingActionsFinder.getAllFlyingActions();
+      final String lineSeparator = System.getProperty("line.separator");
 
+      Set<String> flyingActions = FlyingActionsFinder.getAllFlyingActions();
       StringBuilder error = new StringBuilder("List of actions without parent or shortcut:");
-      error.append(System.getProperty("line.separator"));
+      error.append(lineSeparator);
       for (String s : flyingActions) {
         error.append(s);
-        error.append(System.getProperty("line.separator"));
+        error.append(lineSeparator);
       }
       error.append("To avoid error You can add shortcut, join action to some group or add to exception list of flying actions:");
-      error.append(System.getProperty("line.separator"));
+      error.append(lineSeparator);
       for (String s : FlyingActionsFinder.getMPSRootActionIds()) {
         error.append(s);
-        error.append(System.getProperty("line.separator"));
+        error.append(lineSeparator);
       }
 
       Assert.assertTrue(error.toString(), flyingActions.isEmpty());

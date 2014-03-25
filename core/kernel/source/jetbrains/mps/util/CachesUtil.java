@@ -29,6 +29,8 @@ public class CachesUtil {
     // we need to check that caches dirs are writable
     // idea does not have the necessary api, so, alas, doing checks by ourselves
     // see PathManager class
+//    System.setProperty(PROPERTY_CONFIG_PATH, "/home/alexeyka/.MPSSRC31/mpstmp_pel/config");
+//    System.setProperty(PROPERTY_SYSTEM_PATH, "/home/alexeyka/.MPSSRC31/mpstmp_pel/system");
     useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
     useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
   }

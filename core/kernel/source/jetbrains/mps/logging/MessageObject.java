@@ -42,7 +42,7 @@ public class MessageObject {
     if (myHintObject == null) {
       return myMessage;
     }
-    String hint = "";
+    String hint;
     if (myHintObject instanceof SNode) {
       String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String>() {
         @Override

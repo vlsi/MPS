@@ -6,6 +6,9 @@ import jetbrains.mps.project.PathMacrosProvider;
 import java.util.Map;
 import java.util.Set;
 import java.util.Collections;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MapPathMacrosProvider implements PathMacrosProvider {
   private Map<String, String> macros;
@@ -31,6 +34,10 @@ public class MapPathMacrosProvider implements PathMacrosProvider {
 
   @Override
   public void report(String message, String macro) {
-    System.out.println("Undefined macro: " + macro + ". " + message);
+    if (LOG.isEnabledFor(Priority.WARN)) {
+      LOG.warn("Undefined macro: " + macro + ". " + message);
+    }
   }
+
+  protected static Logger LOG = LogManager.getLogger(MapPathMacrosProvider.class);
 }
