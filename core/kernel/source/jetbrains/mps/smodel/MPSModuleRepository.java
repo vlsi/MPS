@@ -243,6 +243,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   @Deprecated
   @ToRemove(version = 3.0)
   // use getModule()
+  // not always legal -- sometimes assertCanRead fails!!
   public SModule getModuleById(SModuleId moduleId) {
     //todo assertCanRead();
 

@@ -8,11 +8,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.SimpleLayout;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.MpsPlatform;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -40,16 +35,9 @@ public class MpsEnvironment implements Environment {
   public MpsEnvironment(EnvironmentConfig config) {
     this.config = config;
 
-    // todo: if creationg of environment fails? is it publication before we need it? 
     ActiveEnvironment.activateEnvironment(this);
 
-    // todo: plugins, libs 
-
-    BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
-    Logger.getRootLogger().setLevel(Level.INFO);
-
     MpsPlatform.init();
-    // todo: =( 
     MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 

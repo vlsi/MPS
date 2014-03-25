@@ -49,8 +49,8 @@
     <appender name="FILE-LOCAL" class="org.apache.log4j.RollingFileAppender">
         <param name="MaxFileSize" value="1Mb"/>
         <param name="MaxBackupIndex" value="3"/>
-        <param name="file" value="../mps.log"/>
-        <param name="append" value="false"/>
+        <param name="file" value="$APPLICATION_DIR$/mps.log"/>
+        <param name="append" value="true"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
         </layout>
@@ -74,9 +74,8 @@
         <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
-    <category name="jetbrains.mps" additivity="false">
+    <category name="jetbrains.mps" additivity="true">
         <priority value="INFO"/>
-        <appender-ref ref="FILE-LOCAL"/>
         <appender-ref ref="CONSOLE-ALL"/>
     </category>
 
@@ -90,7 +89,6 @@
         <priority value="INFO"/>
         <appender-ref ref="DIALOG"/>
         <appender-ref ref="FILE-LOCAL"/>
-        <appender-ref ref="CONSOLE-WARN"/>
         <appender-ref ref="FILE"/>
     </root>
 </log4j:configuration>

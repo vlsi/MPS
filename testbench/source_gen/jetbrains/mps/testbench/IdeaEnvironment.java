@@ -4,22 +4,20 @@ package jetbrains.mps.testbench;
 
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.EnvironmentUtils;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.tool.environment.EnvironmentUtils;
-import java.io.File;
-import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
-import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.library.LibraryInitializer;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.idea.IdeaTestApplication;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
@@ -50,67 +48,56 @@ import com.intellij.openapi.application.PathMacros;
 public class IdeaEnvironment implements Environment {
   private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
 
-  private static boolean cachesInvalidated = false;
+  private void invalidateIdeaCaches() {
+    if (!(cachesInvalidated)) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Invalidating caches");
+      }
+      // <node> 
+      cachesInvalidated = true;
+    }
+  }
 
+  private void setIdeaPluginsToLoad(EnvironmentConfig config) {
+    if (isEmptyString(System.getProperty("plugin.path"))) {
+      EnvironmentUtils.setPluginPath();
+      // Value of this property is comma-separated list of plugin IDs intended to load by platform 
+      if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
+        System.setProperty("idea.load.plugins.id", IterableUtils.join(config.plugins(), ","));
+      }
+    }
+  }
+
+  private void initMacros(EnvironmentConfig config) {
+    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
+      setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
+    }
+  }
+
+
+  private static boolean cachesInvalidated = false;
   private final EnvironmentConfig config;
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
 
 
   public IdeaEnvironment(EnvironmentConfig config) {
     this.config = config;
-    // todo: if creating of environment fails? is it publication before we need it? 
     ActiveEnvironment.activateEnvironment(this);
-
-    // todo: use plugins and libs 
-
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-
-    // todo: ? 
     EnvironmentUtils.setSystemProperties(true);
+    setIdeaPluginsToLoad(config);
+    invalidateIdeaCaches();
 
-    String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
-    System.setProperty("idea.no.jre.check", "true");
-    // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
-    System.setProperty("idea.platform.prefix", "Idea");
+    createIdeaTestApp();
 
-    // do not overwrite plugin.path if set 
-    if (isEmptyString(System.getProperty("plugin.path"))) {
-      StringBuffer pluginPath = new StringBuffer();
-      File pluginDir = new File(PathManager.getPreInstalledPluginsPath());
-      if (pluginDir.listFiles() != null) {
-        for (File pluginFolder : pluginDir.listFiles()) {
-          if (pluginPath.length() > 0) {
-            pluginPath.append(File.pathSeparator);
-          }
-          pluginPath.append(pluginFolder.getPath());
-        }
-      }
-      System.setProperty("plugin.path", pluginPath.toString());
-      // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-      if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
-        System.setProperty("idea.load.plugins.id", IterableUtils.join(config.plugins(), ","));
-      }
-    }
+    // TODO: dispose lib contributors like in the MpsEnvironment class TODO: is it the right place? 
+    initLibraries();
+    initMacros(config);
+  }
 
-    if (!(cachesInvalidated)) {
-      FSRecords.invalidateCaches();
-      cachesInvalidated = true;
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Creating IdeaTestApplication");
-    }
-    try {
-      IdeaTestApplication.getInstance(null);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
 
-    // todo: IdeaTestEnvironment - default plugins: jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make 
-    // todo: IdeaTestEnv - setMacro from Environment 
 
-    // todo: copy-paste from mps-env. should be or 1) more workbench-like or 2) base/util class? 
-    // todo: dispose lib contributors like in mps-env 
+  private void initLibraries() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing libraries");
     }
@@ -130,13 +117,15 @@ public class IdeaEnvironment implements Environment {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
+  }
 
-    // todo: is it right place? 
-    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
-      setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
+
+
+  private IdeaTestApplication createIdeaTestApp() {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Creating IdeaTestApplication");
     }
-
-    // todo: load libs like MpsEnv ? 
+    return IdeaTestApplication.getInstance(null);
   }
 
 
@@ -156,25 +145,11 @@ public class IdeaEnvironment implements Environment {
   @Override
   public Project openProject(File projectFile) {
     Project project = openProjectInIdeaEnvironment(projectFile);
-    // todo: from TestMain#startTestOnProjectCopy 
-    // <node> 
-    // assert projectVirtualDir != null 
-    // projectVirtualDir.refresh(false, true) 
     return SetSequence.fromSet(openedProjects).addElement(project);
   }
 
   @Override
   public Project createDummyProject() {
-    // todo: for dumb idea env? 
-    // <node> 
-    // from CheckProjectStructureHelper 
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-
     File dummyProjectFile = createDummyProjectFile();
     Project dummyProject = IdeaEnvironment.openProjectInIdeaEnvironment(dummyProjectFile);
     dummyProjectFile.deleteOnExit();

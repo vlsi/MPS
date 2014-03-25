@@ -17,6 +17,9 @@ import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
 
 public class EnvironmentUtils {
+  public static void initLogging() {
+  }
+
   public static void setSystemProperties(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
@@ -30,7 +33,7 @@ public class EnvironmentUtils {
 
 
   public static void setPluginPath() {
-    StringBuffer pluginPath = new StringBuffer();
+    StringBuilder pluginPath = new StringBuilder();
     File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
     if (pluginDir.exists()) {
       for (File pluginFolder : pluginDir.listFiles()) {

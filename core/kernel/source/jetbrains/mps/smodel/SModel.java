@@ -998,6 +998,8 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
+
+
     boolean changed = false;
 
     if (updateRefs(myDevKits)) {

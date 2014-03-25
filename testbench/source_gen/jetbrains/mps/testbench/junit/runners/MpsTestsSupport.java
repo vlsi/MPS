@@ -38,9 +38,9 @@ public class MpsTestsSupport {
   private static final String[] EXCLUDES = new String[]{"IdeaPlugin"};
   private static final Set<IFile> EXCLUDE_SET = new HashSet<IFile>();
   static {
-    String mpsDir = System.getProperty("user.dir");
+    String userDir = System.getProperty("user.dir");
     for (String e : EXCLUDES) {
-      EXCLUDE_SET.add(FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e));
+      EXCLUDE_SET.add(FileSystem.getInstance().getFileByPath(userDir + File.separator + e));
     }
   }
 
