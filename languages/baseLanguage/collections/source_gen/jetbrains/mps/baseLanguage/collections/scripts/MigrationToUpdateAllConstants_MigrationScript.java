@@ -25,7 +25,7 @@ public class MigrationToUpdateAllConstants_MigrationScript extends BaseMigration
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return true;
+        return node.getProperty("value") != null;
       }
 
       public void doUpdateInstanceNode(SNode node) {
