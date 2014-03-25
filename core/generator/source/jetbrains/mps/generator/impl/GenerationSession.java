@@ -710,7 +710,7 @@ class GenerationSession {
     myLogger.info(title);
     List<Pair<String, TemplateMappingConfiguration>> messages = GenerationPartitioningUtil.toStrings(mc);
     for (Pair<String, TemplateMappingConfiguration> message : messages) {
-      myLogger.info(String.format("    %s", message.o1));
+      myLogger.info(message.o2.getMappingNode(), String.format("    %s", message.o1));
     }
   }
 
