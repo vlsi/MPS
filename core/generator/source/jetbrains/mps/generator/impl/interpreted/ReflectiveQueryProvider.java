@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
-import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
@@ -31,6 +32,7 @@ import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -44,7 +46,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  *
  * @author Artem Tikhomirov
  */
-public class ReflectiveQueryProvider implements GeneratorQueryProvider {
+public class ReflectiveQueryProvider extends QueryProviderBase {
   private final SNodeReference myRuleNode;
 
   public ReflectiveQueryProvider(@NotNull SNodeReference ruleNode) {
@@ -53,56 +55,102 @@ public class ReflectiveQueryProvider implements GeneratorQueryProvider {
 
   @NotNull
   @Override
-  public CreateRootCondition getCreateRootRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule) {
+    SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(rule);
+    String conditionMethod = conditionFunction == null ? null : TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
+    if (conditionMethod != null) {
+      return new Impl(myRuleNode, conditionMethod);
+    }
+    return super.getCreateRootRuleCondition(rule);
   }
 
   @NotNull
   @Override
-  public MapRootRuleCondition getMapRootRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule) {
+    String conditionMethod = getBaseRuleConditionMethod(rule);
+    if (conditionMethod != null) {
+      return new Impl(myRuleNode, conditionMethod);
+    }
+    return super.getMapRootRuleCondition(rule);
   }
 
   @NotNull
   @Override
-  public ReductionRuleCondition getReductionRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
+    String conditionMethod = getBaseRuleConditionMethod(rule);
+    if (conditionMethod != null) {
+      return new Impl(myRuleNode, conditionMethod);
+    }
+    return super.getReductionRuleCondition(rule);
   }
 
   @NotNull
   @Override
-  public PatternRuleQuery getPatternRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule) {
+    String methodName = TemplateFunctionMethodName.patternRule_Condition(rule);
+    if (methodName != null) {
+      return new Impl(myRuleNode, methodName);
+    }
+    return super.getPatternRuleCondition(rule);
   }
 
   @NotNull
   @Override
-  public DropRuleCondition getDropRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName, true);
+  public DropRuleCondition getDropRuleCondition(@NotNull SNode rule) {
+    SNode condition = RuleUtil.getDropRuleCondition(rule);
+    String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
+    if (conditionMethod != null) {
+      return new Impl(myRuleNode, conditionMethod, true);
+    }
+    return super.getDropRuleCondition(rule);
   }
 
   @NotNull
   @Override
-  public WeaveRuleCondition getWeaveRuleCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule) {
+    String conditionMethod = getBaseRuleConditionMethod(rule);
+    if (conditionMethod != null) {
+      return new Impl(myRuleNode, conditionMethod);
+    }
+    return super.getWeaveRuleCondition(rule);
   }
 
   @NotNull
   @Override
-  public WeaveRuleQuery getWeaveRuleQuery(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule) {
+    SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(rule);
+    String contentNodeMethod = contextQuery == null ? null : TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(contextQuery);
+    if (contentNodeMethod != null) {
+      return new Impl(myRuleNode, contentNodeMethod);
+    }
+    return super.getWeaveRuleQuery(rule);
   }
 
   @NotNull
   @Override
-  public ScriptCodeBlock getScriptCodeBlock(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName);
+  public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
+    SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(script);
+    String codeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
+    if (codeBlockMethod != null) {
+      return new Impl(myRuleNode, codeBlockMethod);
+    }
+    return super.getScriptCodeBlock(script);
   }
 
   @NotNull
   @Override
-  public MapConfigurationCondition getMapConfigurationCondition(@NotNull String methodName) {
-    return new Impl(myRuleNode, methodName, true);
+  public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
+    SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(mapCfg);
+    String conditionMethod = condition == null ? null : TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
+    if (conditionMethod != null) {
+      return new Impl(myRuleNode, conditionMethod, true);
+    }
+    return super.getMapConfigurationCondition(mapCfg);
+  }
+
+  private String getBaseRuleConditionMethod(SNode rule) {
+    SNode condition = RuleUtil.getBaseRuleCondition(rule);
+    return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
   }
 
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
@@ -196,7 +244,7 @@ public class ReflectiveQueryProvider implements GeneratorQueryProvider {
     }
 
     @Override
-    public boolean check(TemplateQueryContext ctx) {
+    public boolean check(@NotNull TemplateQueryContext ctx) {
       return invokeBoolean(ctx);
     }
   }

@@ -26,7 +26,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.PatternRuleContext;
-import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +41,6 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   private final SNode myRuleNode;
   private final SNodePointer mySNodePointer;
-  private final String myMethodName;
   private final String myRuleMappingName;
   private final SNode myRuleConsequence;
   private final String myApplicableConcept;
@@ -51,7 +49,6 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
   public TemplateReductionPatternRuleInterpreted(SNode ruleNode) {
     myRuleNode = ruleNode;
     mySNodePointer = new SNodePointer(myRuleNode);
-    myMethodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
     myRuleMappingName = RuleUtil.getPatternReductionRuleLabel(ruleNode);
     myRuleConsequence = RuleUtil.getPatternReductionRuleConsequence(ruleNode);
     SNode patternNode = RuleUtil.getPatternReductionRulePatternNode(ruleNode);
@@ -91,15 +88,9 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   public GeneratedMatchingPattern checkIfApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
     if (myQuery == null) {
-      myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(myMethodName);
+      myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(myRuleNode);
     }
-    try {
-      return myQuery.pattern(new PatternRuleContext(context.getInput(), myRuleNode, env.getGenerator()));
-    } catch (Throwable t) {
-      env.getLogger().handleException(t);
-      env.getLogger().error(getRuleNode(), String.format("error executing pattern/condition %s (see exception)", myMethodName));
-      throw new GenerationFailureException(t);
-    }
+    return myQuery.pattern(new PatternRuleContext(context.getInput(), myRuleNode, env.getGenerator()));
   }
 
   @NotNull

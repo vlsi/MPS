@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,8 +23,5 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface ReductionRuleCondition extends Query {
-  boolean check(@NotNull ReductionRuleQueryContext ctx);
-  interface Factory {
-    ReductionRuleCondition getReductionRuleCondition(String methodName);
-  }
+  boolean check(@NotNull ReductionRuleQueryContext ctx) throws GenerationFailureException;
 }

@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.MappingScriptContext;
 
 /**
  * @author Artem Tikhomirov
  */
 public interface ScriptCodeBlock extends Query {
-  void invoke(MappingScriptContext ctx);
+  void invoke(MappingScriptContext ctx) throws GenerationFailureException;
 }

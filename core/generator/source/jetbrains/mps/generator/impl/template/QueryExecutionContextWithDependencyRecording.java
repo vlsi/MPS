@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.List;
@@ -244,7 +243,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.getContextNode(rule, environment, context);
@@ -254,7 +253,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       wrapped.executeScript(mappingScript, model);

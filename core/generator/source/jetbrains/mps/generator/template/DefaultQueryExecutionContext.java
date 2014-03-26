@@ -390,13 +390,29 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return rule.tryToApply(environment, context);
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment env, TemplateContext context) throws GenerationException {
+    try {
+      return rule.tryToApply(env, context);
+    } catch (GenerationException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      env.getLogger().handleException(t);
+      env.getLogger().error(rule.getRuleNode(), "error executing pattern/condition (see exception)");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return rule.isApplicable(environment, context);
+    try {
+      return rule.isApplicable(environment, context);
+    } catch (GenerationException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      environment.getLogger().handleException(t);
+      environment.getLogger().error(rule.getRuleNode(), "error executing condition (see exception)");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override
@@ -410,12 +426,20 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
-    return rule.getContextNode(environment, context);
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    try {
+      return rule.getContextNode(environment, context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable e) {
+      environment.getLogger().handleException(e);
+      environment.getLogger().error(rule.getRuleNode(), "cannot evaluate rule context query ", GeneratorUtil.describeInput(context));
+      throw new GenerationFailureException(e);
+    }
   }
 
   @Override
-  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException {
     mappingScript.apply(model, myGenerator);
   }
 
