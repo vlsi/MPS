@@ -560,13 +560,12 @@
         </node>
         <node role="paletteDeclaration" roleId="gbdf.6619018968336658044" type="gbdf.Palette" typeId="gbdf.526297864816328068" id="2981172682493798335" nodeInfo="ng">
           <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="2981172682493798381" nodeInfo="ng">
+            <property name="iconPath" nameId="gbdf.4394877045815574157" value="${mps_home}/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png" />
             <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="8570854907291277223" resolveInfo="newBlocks" />
           </node>
-          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.Separator" typeId="gbdf.526297864816328070" id="2981172682494299219" nodeInfo="ng">
-            <property name="text" nameId="gbdf.2981172682494547033" value="&quot;ssdfsdfsdfdsf" />
-          </node>
-          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="2981172682494454058" nodeInfo="ng">
-            <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="8570854907291277223" resolveInfo="newBlocks" />
+          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.Separator" typeId="gbdf.526297864816328070" id="4394877045819570045" nodeInfo="ng" />
+          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="4394877045819570053" nodeInfo="ng">
+            <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="939897302409476764" resolveInfo="connectors" />
           </node>
         </node>
       </node>

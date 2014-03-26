@@ -80,5 +80,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.VisibleReferencesScope" file="VisibleReferencesScope.java" />
 </dependenciesRoot>
 

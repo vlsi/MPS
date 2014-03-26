@@ -362,7 +362,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  /*package*/ DiagramCell.ConnectionInfo getConnectionInfo() {
+  public DiagramCell.ConnectionInfo getConnectionInfo() {
     return new DiagramCell.ConnectionInfo();
   }
 
@@ -520,7 +520,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     myDragConnection.toLocation().set(toLocation);
   }
 
-  private void hideConnectionDragFeedback() {
+  public void hideConnectionDragFeedback() {
     myIsShowingDragFeedBack.set(false);
   }
 
@@ -554,7 +554,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  /*package*/ class ConnectionInfo {
+  public class ConnectionInfo {
 
 
     public ConnectionInfo() {

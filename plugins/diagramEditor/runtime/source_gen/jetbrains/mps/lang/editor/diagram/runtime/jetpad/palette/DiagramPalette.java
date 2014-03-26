@@ -63,14 +63,7 @@ public class DiagramPalette extends JPanel {
 
   protected void addPaletteElement(PaletteElement element) {
     myMainActionGroup.add(PaletteElementFactory.createPaletteElementAdapter(this, element));
-  }
-
-  protected void addSeparator() {
-    myMainActionGroup.add(new Separator());
-  }
-
-  protected void addSeparator(String text) {
-    myMainActionGroup.add(new Separator(text));
+    myMainActionGroup.add(new Separator("hello"));
   }
 
   protected void createPalette() {

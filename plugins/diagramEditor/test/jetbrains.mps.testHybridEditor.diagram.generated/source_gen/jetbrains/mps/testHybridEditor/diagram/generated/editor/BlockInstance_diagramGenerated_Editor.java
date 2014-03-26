@@ -67,6 +67,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     BlockCell editorCell = new BlockInstance_diagramGenerated_Editor.BlockCellImpl_gju6mh_a(editorContext, node);
     editorCell.setCellId("DiagramNode_gju6mh_a");
     editorCell.setBig(true);
+    BlockActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

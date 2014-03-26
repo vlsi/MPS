@@ -15,6 +15,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory" file="PaletteElementFactory.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Separator" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteActionGroupAdapter" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteSimpleActionAdapter" />
@@ -22,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PopupPaletteActionGroupAdapter" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSeparator" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
   </dependency>
@@ -42,13 +44,17 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PopupPaletteActionGroupAdapter" file="PopupPaletteActionGroupAdapter.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.Toggleable" />
   </dependency>
 </dependenciesRoot>

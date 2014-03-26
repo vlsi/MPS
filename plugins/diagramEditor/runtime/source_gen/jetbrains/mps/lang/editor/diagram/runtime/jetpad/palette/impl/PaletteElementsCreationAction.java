@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.jetpad.projectional.view.ViewTrait;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -55,7 +56,7 @@ public class PaletteElementsCreationAction implements PaletteToggleAction {
     return mySubstituteAction;
   }
 
-  public ViewTrait getTrait() {
+  public ViewTrait getTrait(DiagramCell diagramCell) {
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
         if (view.viewAt(event.location()) != view) {

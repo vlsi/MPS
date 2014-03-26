@@ -14,10 +14,29 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import jetbrains.mps.ide.editor.util.EditorUtil;
 
 public class CreationActionReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3ry26z_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_3ry26z_a_0(editorContext, node);
   }
 
   private EditorCell createCollection_3ry26z_a(EditorContext editorContext, SNode node) {
@@ -89,5 +108,108 @@ public class CreationActionReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private EditorCell createCollection_3ry26z_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_3ry26z_a_0");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createAlternation_3ry26z_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_3ry26z_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createAlternation_3ry26z_a0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = CreationActionReference_Editor.renderingCondition_3ry26z_a0a(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createImage_3ry26z_a0a(editorContext, node);
+    } else {
+      editorCell = this.createConstant_3ry26z_a0a(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_3ry26z_a0a(SNode node, EditorContext editorContext) {
+    SModule module = SNodeOperations.getModel(node).getModule();
+    if (!(module instanceof AbstractModule)) {
+      return false;
+    }
+    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, "iconPath"));
+    if (s == null) {
+      return false;
+    }
+    return FileSystem.getInstance().getFileByPath(s).exists();
+  }
+
+  private EditorCell createImage_3ry26z_a0a(final EditorContext editorContext, final SNode node) {
+    EditorCell_Image editorCell;
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return SPropertyOperations.getString(node, "iconPath");
+      }
+    }.invoke());
+    editorCell.setCellId("Image_3ry26z_a0a");
+    editorCell.setDescent(0);
+    return editorCell;
+  }
+
+  private EditorCell createConstant_3ry26z_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
+    editorCell.setCellId("Constant_3ry26z_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_3ry26z_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_3ry26z_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_3ry26z_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3ry26z_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createJComponent_3ry26z_c1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_3ry26z_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
+    editorCell.setCellId("Constant_3ry26z_a1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_3ry26z_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("iconPath");
+    provider.setNoTargetText("<no icon>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_iconPath");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createJComponent_3ry26z_c1a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CreationActionReference_Editor._QueryFunction_JComponent_3ry26z_a2b0(node, editorContext), "_3ry26z_c1a");
+    editorCell.setCellId("JComponent_3ry26z_c1a");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_3ry26z_a2b0(final SNode node, final EditorContext editorContext) {
+    return EditorUtil.createSelectIconButton(node, editorContext);
   }
 }

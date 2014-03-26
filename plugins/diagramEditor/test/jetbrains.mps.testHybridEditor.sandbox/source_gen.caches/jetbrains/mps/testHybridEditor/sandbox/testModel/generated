@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-crmh0kfilu0swqkmfm68ax2ydaxhaf9">
+<dependencies version="2" modelHash="-a0aplf0668hy2e1rw9qjzano8j1qj2g">
   <common hash="-am5hepfakquzbutnp77fiisao0zgalb" />
-  <source id="725186580883618058" name="myDiagram" hash="5vf4cqca3vvh41timokxdfchmscuo0s">
+  <source id="725186580883618058" name="myDiagram" hash="f5950pjqs07zi31kfwi9mserlb4hxa">
     <file name="myDiagram" />
   </source>
-  <source id="1220375669565734590" name="Consumer" hash="-25j8w95zy01c0b3llz0sbja7bf0znq7">
+  <source id="1220375669565734590" name="Consumer" hash="37vm19kgns34xpetncrrx8re29214yn">
     <file name="Consumer" />
   </source>
-  <source id="3229274890675234713" name="Producer" hash="-4sesk92s4fs5n1j6j5iaod89w7bn1ly">
+  <source id="3229274890675234713" name="Producer" hash="37sdxis2q4ce4ez92rrkl3ug7vrzdp3">
     <file name="Producer" />
   </source>
 </dependencies>
