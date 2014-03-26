@@ -45,8 +45,10 @@ public interface GenerationTrace {
   void walkBackward(SNode node, @NotNull Visitor v);
 
   public interface Visitor {
-    void step(@NotNull SModelReference input, @NotNull SModelReference output);
-    void change(SNodeReference input, SNodeReference output, SNodeReference template);
+    void beginStep(@NotNull SModelReference input, @NotNull SModelReference output);
+    // added, removed (although latter is hard to detect)?
+    void change(@NotNull SNodeReference input, @NotNull SNodeReference output, @NotNull SNodeReference template);
+    void endStep(@NotNull SModelReference input, @NotNull SModelReference output);
   }
 
   public class NoOp implements GenerationTrace {

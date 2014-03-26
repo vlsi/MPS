@@ -80,21 +80,27 @@ public interface IFeedback {
   }
 
   public static class Default extends IFeedback.Stub implements IFeedback {
-    private String message;
-    private Throwable throwable;
+    private final String message;
+    private final Throwable throwable;
+    private final IFeedback.Severity severity;
 
     public Default(String message) {
-      this.message = message;
+      this(message, null);
     }
 
     public Default(String message, Throwable throwable) {
+      this(message, throwable, IFeedback.Severity.ERROR);
+    }
+
+    public Default(String message, Throwable throwable, IFeedback.Severity severity) {
       this.message = message;
       this.throwable = throwable;
+      this.severity = severity;
     }
 
     @Override
     public IFeedback.Severity getSeverity() {
-      return IFeedback.Severity.ERROR;
+      return severity;
     }
 
     @Override
@@ -116,46 +122,31 @@ public interface IFeedback {
 
   public static class ERROR extends IFeedback.Default implements IFeedback {
     public ERROR(String message) {
-      super(message);
+      super(message, null, IFeedback.Severity.ERROR);
     }
 
     public ERROR(String message, Throwable throwable) {
-      super(message, throwable);
-    }
-
-    @Override
-    public IFeedback.Severity getSeverity() {
-      return IFeedback.Severity.ERROR;
+      super(message, throwable, IFeedback.Severity.ERROR);
     }
   }
 
   public static class WARNING extends IFeedback.Default implements IFeedback {
     public WARNING(String message) {
-      super(message);
+      super(message, null, IFeedback.Severity.WARNING);
     }
 
     public WARNING(String message, Throwable throwable) {
-      super(message, throwable);
-    }
-
-    @Override
-    public IFeedback.Severity getSeverity() {
-      return IFeedback.Severity.WARNING;
+      super(message, throwable, IFeedback.Severity.WARNING);
     }
   }
 
   public static class INFORMATION extends IFeedback.Default implements IFeedback {
     public INFORMATION(String message) {
-      super(message);
+      super(message, null, IFeedback.Severity.INFO);
     }
 
     public INFORMATION(String message, Throwable throwable) {
-      super(message, throwable);
-    }
-
-    @Override
-    public IFeedback.Severity getSeverity() {
-      return IFeedback.Severity.INFO;
+      super(message, throwable, IFeedback.Severity.INFO);
     }
   }
 }

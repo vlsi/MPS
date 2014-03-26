@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.MacrosFactory;
@@ -30,9 +30,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CopyPluginXml_Facet extends IFacet.Stub {
@@ -68,9 +68,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
   }
 
   public static class Target_copyPluginXml implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
 
     public Target_copyPluginXml() {
     }
@@ -87,7 +85,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
               progressMonitor.step("plugin.xml");
               try {
                 for (TResource tres : Sequence.fromIterable(input)) {
-                  String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
+                  String dest = vars(pa.forResource(tres)).pluginRoot();
 
                   if (dest != null) {
                     final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) tres.module()).expandPath(dest));
@@ -98,7 +96,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                         new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                           @Override
                           public boolean acceptWritten(IFile file) {
-                            if (eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a4j(file.getName(), "plugin.xml")) {
+                            if (eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a2j(file.getName(), "plugin.xml")) {
                               pluginXml[0] = file;
                               monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + file + " to " + metaInf + " directory.")));
                               return false;
@@ -175,7 +173,9 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(TResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -196,6 +196,10 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 10;
+    }
+
+    public static CopyPluginXml_Facet.Target_copyPluginXml.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<String> {
@@ -221,7 +225,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       }
     }
 
-    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a4j(Object a, Object b) {
+    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a2j(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

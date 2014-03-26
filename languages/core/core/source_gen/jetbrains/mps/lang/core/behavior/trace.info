@@ -6,19 +6,19 @@
   <unitInfo fileName="ExportScopeModule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
   <unitInfo fileName="ExportScopeNamespace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
   <unitInfo fileName="ExportScopePublic_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
-  <unitInfo fileName="ExportScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+  <unitInfo fileName="ExportScope_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
   <unitInfo fileName="IAntisuppressErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="ICanSuppressErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="IContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
-  <unitInfo fileName="IDeprecatable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
+  <unitInfo fileName="IDeprecatable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
   <unitInfo fileName="IDontSubstituteByDefault_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-  <unitInfo fileName="IMetaLevelChanger_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
-  <unitInfo fileName="INamedConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+  <unitInfo fileName="IMetaLevelChanger_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
+  <unitInfo fileName="INamedConcept_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
   <unitInfo fileName="IResolveInfo_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
-  <unitInfo fileName="ISuppressErrors_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
+  <unitInfo fileName="ISuppressErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="IType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
   <unitInfo fileName="IWrapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
-  <unitInfo fileName="ImplementationContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
+  <unitInfo fileName="ImplementationContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
   <unitInfo fileName="ImplementationPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
   <unitInfo fileName="ImplementationWithStubPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor" />
   <unitInfo fileName="InterfacePart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
@@ -26,7 +26,7 @@
   <unitInfo fileName="NodeAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
   <unitInfo fileName="PropertyAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
   <unitInfo fileName="ScopeFacade_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
-  <unitInfo fileName="ScopeProvider_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
+  <unitInfo fileName="ScopeProvider_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
   <unitInfo fileName="SuppressErrorsAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_BehaviorDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1213877396626">
     <nodeInfo nodeId="1218237543864" fileName="BaseConcept_Behavior.java" startLine="22" startPosition="74" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

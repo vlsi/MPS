@@ -16,11 +16,10 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -76,20 +75,20 @@ final class GenerationTracerTree extends MPSTree {
   @Override
   protected void autoscroll(@NotNull MPSTreeNode node) {
     TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
-    ModelAccess.instance().runWriteInEDT(new Navigate(ProjectHelper.toMPSProject(myProject), traceNode.getNavigateTarget()));
+    ModelAccess.instance().runWriteInEDT(new Navigate(myProject, traceNode.getNavigateTarget()));
   }
 
   @Override
   protected void doubleClick(@NotNull MPSTreeNode node) {
     TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
-    ModelAccess.instance().runWriteInEDT(new Navigate(ProjectHelper.toMPSProject(myProject), traceNode.getNavigateTarget()));
+    ModelAccess.instance().runWriteInEDT(new Navigate(myProject, traceNode.getNavigateTarget()));
   }
 
   private static final class Navigate implements Runnable {
-    private final jetbrains.mps.project.Project myProject;
+    private final Project myProject;
     private final SNodeReference myNode;
 
-    public Navigate(jetbrains.mps.project.Project mpsProject, SNodeReference node) {
+    public Navigate(Project mpsProject, SNodeReference node) {
       myProject = mpsProject;
       myNode = node;
     }

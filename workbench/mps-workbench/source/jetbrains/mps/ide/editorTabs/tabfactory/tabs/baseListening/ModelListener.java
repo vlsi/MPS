@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,22 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class ModelListener {
   private SModelRepositoryListener myModelRemovedListener = new ModelRemovedAdapter();
-  private SModelListener myRootRemovedListener = new RootRemovedAdapter();
-  private ImportantNodes myImportantNodes = new ImportantNodes();
+  private final SModelListener myRootRemovedListener = new RootRemovedAdapter();
+  private final ImportantNodes myImportantNodes = new ImportantNodes();
 
   //------start-stop------
 
@@ -35,7 +41,7 @@ public abstract class ModelListener {
   public void stopListening() {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRemovedListener);
 
-    for (SModelReference r : myImportantNodes.keySet()) {
+    for (SModelReference r : myImportantNodes.allTracked()) {
       SModel d = SModelRepository.getInstance().getModelDescriptor(r);
       if (d == null) continue;
       ((SModelInternal) d).removeModelListener(myRootRemovedListener);
@@ -50,12 +56,12 @@ public abstract class ModelListener {
     startListening();
   }
 
-  public void aspectAdded(SNode node) {
-    SModel descriptor = node.getModel();
-    if (!myImportantNodes.containsKey(descriptor.getReference())) {
+  public void aspectAdded(SNodeReference node) {
+    if (!myImportantNodes.tracked(node.getModelReference())) {
+      SModel descriptor = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
       ((SModelInternal) descriptor).addModelListener(myRootRemovedListener);
     }
-    myImportantNodes.add(new jetbrains.mps.smodel.SNodePointer(node));
+    myImportantNodes.add(node);
   }
 
   protected abstract void onImportantRootRemoved(SNodeReference node);
@@ -80,12 +86,12 @@ public abstract class ModelListener {
     @Override
     public void beforeModelRemoved(SModel modelDescriptor) {
       SModelReference ref = modelDescriptor.getReference();
-      if (!myImportantNodes.containsKey(ref)) return;
+      if (!myImportantNodes.tracked(ref)) return;
 
       for (SNodeReference node : myImportantNodes.get(ref)) {
         onImportantRootRemoved(node);
       }
-      myImportantNodes.remove(ref);
+      myImportantNodes.forget(ref);
     }
   }
 }

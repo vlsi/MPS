@@ -16,7 +16,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -88,15 +87,7 @@ public class MigrateStructure_Action extends BaseAction {
           LOG.error("cannot get message view tool");
         }
       }
-      IMessageHandler mh = new IMessageHandler() {
-        public void handle(IMessage p0) {
-          tool.add(p0, "Migrate structure");
-        }
-
-        public void clear() {
-          tool.clear("Migrate structure");
-        }
-      };
+      IMessageHandler mh = tool.newHandler("Migrate structure");
       final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
       mh.handle(new Message(MessageKind.INFORMATION, "converting " + language.getModuleName()));
       SNode converted = new LanguageConverter(language, mh).convert();

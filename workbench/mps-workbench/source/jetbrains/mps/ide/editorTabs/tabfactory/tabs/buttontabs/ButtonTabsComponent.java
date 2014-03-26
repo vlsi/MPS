@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,31 +16,44 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
   private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
   private ActionToolbar myToolbar = null;
 
-  public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
+  public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, Project project) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed, null, project);
 
     getComponent().addHierarchyListener(new HierarchyListener() {
       @Override
@@ -67,15 +80,26 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return myToolbar.getComponent().getComponent(index);
   }
 
+  @NotNull
+  @Override
+  public Collection<SNodeReference> getSelectionFor(RelationDescriptor tabDescriptor, SNodeReference editedNode) {
+    for (ButtonEditorTab bet : myRealTabs) {
+      if (bet.isEditingTabFor(editedNode)) {
+        return bet.getSelectionNodes(editedNode);
+      }
+    }
+    return Collections.emptyList();
+  }
+
   @Override
   public RelationDescriptor getCurrentTabAspect() {
-    SNode currentAspect = getLastNode().resolve(MPSModuleRepository.getInstance());
+    SNodeReference currentAspect = getLastNode();
     assert currentAspect != null;
 
-    for (final ButtonEditorTab bet : myRealTabs) {
-      RelationDescriptor d = bet.getDescriptor();
-      List<SNode> nodes = d.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
-      if (nodes.contains(currentAspect)) return d;
+    for (ButtonEditorTab bet : myRealTabs) {
+      if (bet.isEditingTabFor(getLastNode())) {
+        return bet.getDescriptor();
+      }
     }
 
     return null;
@@ -94,18 +118,23 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
     Collections.sort(tabs, new RelationComparator());
 
-    Map<RelationDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
-    for (RelationDescriptor tab : tabs) {
-      List<SNode> nodes = newContent.get(tab);
-      if (nodes != null) {
-        myRealTabs.add(new ButtonEditorTab(this, new NodeChangeCallback() {
-          @Override
-          public void changeNode(SNode newNode) {
-            onNodeChange(newNode);
-          }
-        }, myRealTabs.size(), tab, myBaseNode, getColorProvider(), myEditor));
+    final NodeChangeCallback callback = new NodeChangeCallback() {
+      @Override
+      public void changeNode(SNode newNode) {
+        onNodeChange(newNode);
+      }
+    };
+    TabEditorLayout newContent = updateDocumentsAndNodes();
+    for (RelationDescriptor tabDescriptor : tabs) {
+      if (newContent.covers(tabDescriptor)) {
+        final ButtonEditorTab tab = new ButtonEditorTab(this, myRealTabs.size(), tabDescriptor, newContent.get(tabDescriptor));
+        final SelectTabAction action = new SelectTabAction(tab, callback);
+        tab.setSelectTabAction(action);
+        action.registerShortcut(myEditor);
+        myRealTabs.add(tab);
       }
     }
+    updateTabColors();
 
     DefaultActionGroup group = new DefaultActionGroup();
     for (ButtonEditorTab tab : myRealTabs) {
@@ -124,50 +153,35 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   public void nextTab() {
     for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
-      int index = myRealTabs.indexOf(tab);
-      if (index == myRealTabs.size() - 1) {
-        performTabAction(0);
-        return;
-      }
-
-      performTabAction(index + 1);
+      int index = myRealTabs.indexOf(tab) + 1;
+      performTabAction(myRealTabs.get(index % myRealTabs.size()).getSelectTabAction());
       return;
     }
   }
 
   public boolean isCurrent(ButtonEditorTab tab) {
-    boolean current = false;
-    for (SNode aspect : tab.getDescriptor().getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()))) {
-      if (getLastNode() == null) continue;
-      if (aspect.getContainingRoot().equals(getLastNode().resolve(MPSModuleRepository.getInstance()))) {
-        current = true;
-        break;
-      }
+    if (getLastNode() == null) {
+      return false;
     }
-    return current;
+    return tab.isEditingTabFor(getLastNode());
   }
 
   @Override
   public void prevTab() {
     for (ButtonEditorTab tab : myRealTabs) {
-      if (!isCurrent(tab)) continue;
-
-      int index = myRealTabs.indexOf(tab);
-      if (index == 0) {
-        performTabAction(myRealTabs.size() - 1);
+      if (isCurrent(tab)) {
+        int index = myRealTabs.indexOf(tab);
+        index += myRealTabs.size() - 1;
+        performTabAction(myRealTabs.get(index % myRealTabs.size()).getSelectTabAction());
         return;
       }
-
-      performTabAction(index - 1);
-      return;
     }
   }
 
-  private void performTabAction(final int index) {
+  private void performTabAction(AnAction tabAction) {
     final DataContext context = DataManager.getInstance().getDataContext(getComponent());
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
-
-    myRealTabs.get(index).getSelectTabAction().actionPerformed(event);
+    tabAction.actionPerformed(event);
   }
 
   @Override

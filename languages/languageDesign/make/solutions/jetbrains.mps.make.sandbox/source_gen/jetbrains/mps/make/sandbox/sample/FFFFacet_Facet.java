@@ -10,18 +10,18 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class FFFFacet_Facet extends IFacet.Stub {
@@ -59,9 +59,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public static class Target_QQQ implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ");
 
     public Target_QQQ() {
     }
@@ -74,9 +72,9 @@ public class FFFFacet_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              pa.forResource(Sequence.fromIterable(input).first()).properties(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              vars(pa.forResource(Sequence.fromIterable(input).first())).text();
               new IFacet.Name("jetbrains.mps.make.sandbox.FFFFacet");
-              pa.global().properties(new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
+              GenerateSpecial_Facet.Target_GenerateSpecialTarget.vars(pa.global()).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);
@@ -122,7 +120,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -139,6 +138,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
         ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
+    }
+
+    public static FFFFacet_Facet.Target_QQQ.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._1<String> {
@@ -166,9 +169,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public static class Target_qweqwe implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.qweqwe");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.qweqwe");
 
     public Target_qweqwe() {
     }
@@ -181,7 +182,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              pa.global().properties(new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              FFFFacet_Facet.Target_QQQ.vars(pa.global()).text();
               monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Foobar", 10);
               monitor.currentProgress().finishWork("Foobar");
@@ -230,7 +231,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -248,9 +250,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public static class Target_Nanana implements ITargetEx {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.Nanana");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.Nanana");
 
     public Target_Nanana() {
     }
@@ -307,7 +307,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

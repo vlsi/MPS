@@ -324,7 +324,7 @@ public class ImportHelper {
             dependency[0] = false;
           }
 
-          if (!VisibilityUtil.isVisible(myModule, myModel)) {
+          if (!VisibilityUtil.isVisible(myModule, modelToImport)) {
             module[0] = moduleToImport.getModuleReference();
           }
         }

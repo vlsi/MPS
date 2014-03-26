@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.textgen;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine.GenerateCallback;
 import jetbrains.mps.make.java.ModelDependencies;
@@ -149,6 +150,12 @@ public final class TextFacility {
         streamHandler.saveStream(name, (String) contents);
       } else {
         streamHandler.saveStream(name, (byte[]) contents);
+      }
+    }
+    // let the world know unchanged files are still in use
+    for (GenerationRootDependencies rdep : myGenStatus.getUnchangedDependencies()) {
+      for (String fname : rdep.getFiles()) {
+        streamHandler.touch(fname);
       }
     }
     return success ? Status.NO_ERRORS : new Status.ERROR("Failed to serialize textgen outcome");

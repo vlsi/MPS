@@ -275,6 +275,16 @@
         <property name="text" nameId="tpc2.1073389577007" value="version-2:" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="675321057248179573" nodeInfo="ng">
+        <node role="paletteDeclaration" roleId="gbdf.6619018968336658044" type="gbdf.Palette" typeId="gbdf.526297864816328068" id="2981172682493798335" nodeInfo="ng">
+          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="2981172682493798381" nodeInfo="ng">
+            <property name="iconPath" nameId="gbdf.4394877045815574157" value="${mps_home}/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png" />
+            <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="8570854907291277223" resolveInfo="newBlocks" />
+          </node>
+          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.Separator" typeId="gbdf.526297864816328070" id="4394877045819570045" nodeInfo="ng" />
+          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="4394877045819570053" nodeInfo="ng">
+            <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="939897302409476764" resolveInfo="connectors" />
+          </node>
+        </node>
         <node role="connectorCreation" roleId="gbdf.939897302409114961" type="gbdf.DiagramConnectorCreation" typeId="gbdf.939897302409084996" id="939897302409476764" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="connectors" />
           <link role="concept" roleId="gbdf.939897302409084997" targetNodeId="adck.2353136177974088982" resolveInfo="ConnectorInstance" />
@@ -558,16 +568,6 @@
             </node>
           </node>
         </node>
-        <node role="paletteDeclaration" roleId="gbdf.6619018968336658044" type="gbdf.Palette" typeId="gbdf.526297864816328068" id="2981172682493798335" nodeInfo="ng">
-          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="2981172682493798381" nodeInfo="ng">
-            <property name="iconPath" nameId="gbdf.4394877045815574157" value="${mps_home}/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png" />
-            <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="8570854907291277223" resolveInfo="newBlocks" />
-          </node>
-          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.Separator" typeId="gbdf.526297864816328070" id="4394877045819570045" nodeInfo="ng" />
-          <node role="elements" roleId="gbdf.526297864816428346" type="gbdf.CreationActionReference" typeId="gbdf.6619018968335599081" id="4394877045819570053" nodeInfo="ng">
-            <link role="elementsCreation" roleId="gbdf.6619018968336102388" targetNodeId="939897302409476764" resolveInfo="connectors" />
-          </node>
-        </node>
       </node>
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="6306886970791123620" nodeInfo="ig">
@@ -624,15 +624,15 @@
           </node>
         </node>
       </node>
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="7493754406618252265" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="modelHeight" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="7493754406618256742" nodeInfo="ng">
+      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="4115105161237828625" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="contentHeight" />
+        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="4115105161237830314" nodeInfo="ng">
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.3175567003993184686" resolveInfo="height" />
         </node>
       </node>
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="7493754406618256745" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="modelWidth" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="7493754406618258044" nodeInfo="ng">
+      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="4115105161237834475" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="contentWidth" />
+        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="4115105161237836204" nodeInfo="ng">
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.3175567003993184638" resolveInfo="width" />
         </node>
       </node>

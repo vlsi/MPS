@@ -17,7 +17,6 @@ package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -29,6 +28,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editor.BaseNodeEditor;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -41,16 +41,12 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -60,22 +56,24 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
 public class TabbedEditor extends BaseNodeEditor {
   private TabsComponent myTabsComponent;
-  private SModelListener myModelListener = new MyNameListener();
-  private SNodeReference myBaseNode;
-  private Set<RelationDescriptor> myPossibleTabs;
-  private IOperationContext myContext;
-  private BaseNavigationAction myNextTabAction;
-  private BaseNavigationAction myPrevTabAction;
+  private final SModelListener myModelListener = new MyNameListener();
+  private final SNodeReference myBaseNode;
+  private final Set<RelationDescriptor> myPossibleTabs;
+  private final Project myProject;
+  private final ShadowAction myNextTabAction, myPrevTabAction;
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
@@ -97,7 +95,7 @@ public class TabbedEditor extends BaseNodeEditor {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
-    myContext = context;
+    myProject = ProjectHelper.toIdeaProject(context.getProject());
 
     myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
 
@@ -105,28 +103,18 @@ public class TabbedEditor extends BaseNodeEditor {
 
     showNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), false);
 
-    myNextTabAction = new BaseNavigationAction(IdeActions.ACTION_NEXT_EDITOR_TAB, getComponent()) {
+    myNextTabAction = new ShadowAction(new BaseNavigationAction(new Runnable() {
       @Override
-      public void actionPerformed(AnActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            myTabsComponent.nextTab();
-          }
-        });
+      public void run() {
+        myTabsComponent.nextTab();
       }
-    };
-    myPrevTabAction = new BaseNavigationAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB, getComponent()) {
+    }), ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent());
+    myPrevTabAction = new ShadowAction(new BaseNavigationAction(new Runnable() {
       @Override
-      public void actionPerformed(AnActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            myTabsComponent.prevTab();
-          }
-        });
+      public void run() {
+        myTabsComponent.prevTab();
       }
-    };
+    }), ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent());
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
   }
@@ -150,7 +138,7 @@ public class TabbedEditor extends BaseNodeEditor {
         public void enterCreateMode(JComponent replace) {
           showComponent(replace);
         }
-      }, myContext
+      }, myProject
     );
 
     JComponent c = myTabsComponent.getComponent();
@@ -189,20 +177,20 @@ public class TabbedEditor extends BaseNodeEditor {
 
   @Override
   public void showNode(SNode node, boolean select) {
-    showNodeInternal(node, select, false);
+    SNode containingRoot = node.getModel() != null && node.getParent() == null ? node : node.getContainingRoot();
+    showNodeInternal(containingRoot, select, false);
   }
 
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
-    SNode containingRoot = node.getModel() != null && node.getParent() == null ? node : node.getContainingRoot();
-    SNodeReference currentlyEditedNode = getCurrentlyEditedNode();
     if (getCurrentEditorComponent() == null) {
       showEditor();
     }
-
-    boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.resolve(MPSModuleRepository.getInstance()));
+    final SNodeReference currentlyEditedNode = getCurrentlyEditedNode();
+    final SNodeReference nodeRef = node.getReference();
+    boolean rootChange = currentlyEditedNode == null || !currentlyEditedNode.equals(nodeRef);
 
     if (!fromTabs) {
-      myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
+      myTabsComponent.setLastNode(nodeRef);
     }
 
     if (rootChange) {
@@ -211,10 +199,19 @@ public class TabbedEditor extends BaseNodeEditor {
         ((SModelInternal) model).removeModelListener(myModelListener);
       }
 
-      SModel md = containingRoot.getModel();
+      SModel md = node.getModel();
       SModule module = md.getModule();
       assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
-      editNode(new SNodePointer(containingRoot), new ModuleContext(module, myContext.getProject()), select);
+      SNodeReference selection = select ? nodeRef : null;
+      if (myTabsComponent.getCurrentTabAspect() != null) {
+        Collection<SNodeReference> a = myTabsComponent.getSelectionFor(myTabsComponent.getCurrentTabAspect(), nodeRef);
+        selection = a.isEmpty() ? selection : a.iterator().next();
+      }
+      if (!select && nodeRef.equals(selection)) {
+        // drop selection if it's the same as edited node and we are not forced to show it
+        selection = null;
+      }
+      editNode(nodeRef, selection);
 
       model = getCurrentNodeModel();
       assert model != null;
@@ -359,16 +356,10 @@ public class TabbedEditor extends BaseNodeEditor {
     }
   }
 
-  private abstract static class BaseNavigationAction extends AnAction {
-    private final ShadowAction myShadow;
-
-    protected BaseNavigationAction(String copyFromID, JComponent component) {
-      myShadow = new ShadowAction(this, ActionManager.getInstance().getAction(copyFromID), component);
+  private static class BaseNavigationAction extends ModelReadAction {
+    public BaseNavigationAction(Runnable delegate) {
+      super(null, delegate);
       setEnabledInModalContext(true);
-    }
-
-    public void dispose() {
-      myShadow.dispose();
     }
   }
 }

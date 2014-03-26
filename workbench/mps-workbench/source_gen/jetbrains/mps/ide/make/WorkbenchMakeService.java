@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
@@ -59,8 +60,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
-import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.messages.IMessage;
 
 public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
   private static Logger LOG = LogManager.getLogger(WorkbenchMakeService.class);
@@ -76,7 +75,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   @Deprecated
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
-    this.currentSessionStickyMark.set(new MakeSession(context, new WorkbenchMakeService.MessageHandler("Make", context), cleanMake), false);
+    this.currentSessionStickyMark.set(new MakeSession(context, context.getComponent(MessagesViewTool.class).newHandler("Make"), cleanMake), false);
   }
 
   @Override
@@ -214,7 +213,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     String scrName = ((this.getSession().isCleanMake() ? "Rebuild" : "Make"));
     IMessageHandler mh = this.getSession().getMessageHandler();
     if (mh == null) {
-      mh = new WorkbenchMakeService.MessageHandler("Make", this.getSession().getContext());
+      MessagesViewTool mvt = this.getSession().getContext().getComponent(MessagesViewTool.class);
+      mh = mvt.newHandler("Make");
     }
     mh.clear();
 
@@ -419,26 +419,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
           return pmps.currentProgress();
         }
       };
-    }
-  }
-
-  private class MessageHandler implements IMessageHandler {
-    private String name;
-    private MessagesViewTool mvt;
-
-    public MessageHandler(String name, IOperationContext context) {
-      this.name = name;
-      this.mvt = context.getProject().getComponent(MessagesViewTool.class);
-    }
-
-    @Override
-    public void clear() {
-      this.mvt.clear(name);
-    }
-
-    @Override
-    public void handle(IMessage message) {
-      this.mvt.add(message, name);
     }
   }
 }

@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * FIXME This class cries for refactoring - methods #esimateCompilationMillis() and #compile(...List<Pair<SModule, List<SModel>>> input).
  * Evgeny Gryaznov, Jan 20, 2010
  */
 public interface IGenerationHandler {

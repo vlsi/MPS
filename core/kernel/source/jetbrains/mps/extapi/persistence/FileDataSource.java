@@ -81,7 +81,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @Override
   public boolean isReadOnly() {
-    return FileSystem.getInstance().isPackaged(myFile);
+    return FileSystem.getInstance().isPackaged(myFile) || myFile.isReadOnly();
   }
 
   @NotNull

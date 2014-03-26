@@ -22,12 +22,10 @@ import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
-import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
@@ -147,16 +145,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       myLastDependencies = status.getDependencies();
       myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
 
-      CollectingStreamHandler toStringHandler = new CollectingStreamHandler(generatedContent);
-      TouchHandler touchOnlyHandler = new TouchHandler(getExistingContent());
+      CollectingStreamHandler toStringHandler = new CollectingStreamHandler(generatedContent, getExistingContent());
 
       TextFacility tf = new TextFacility(status);
       tf.failNoTextGen(false).generateDebug(false).generateBaseLangDeps(true);
       tf.produceTextModel();
       tf.serializeOutcome(toStringHandler);
-      // we don't really need to serialize BL dependencies, but rather check StreamHandler#touch
-      tf.serializeCaches(new CacheGenLayout().register(touchOnlyHandler, BLDependenciesCache.getInstance().getGenerator()));
-      generatedContent.putAll(touchOnlyHandler.getTouched());
       tf.dispose();
       Assert.assertTrue(tf.getErrors().isEmpty());
     }
@@ -168,44 +162,13 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     return 0;
   }
 
-  static class TouchHandler implements StreamHandler {
-    private final Map<String, String> myCollectedContent = new HashMap<String, String>();
-    private final Map<String, String> myExistingContent;
-
-    public TouchHandler(@NotNull Map<String, String> existingContent) {
-      myExistingContent = existingContent;
-    }
-
-    public Map<String, String> getTouched() {
-      return myCollectedContent;
-    }
-
-    @Override
-    public void saveStream(String name, String content) {
-    }
-
-    @Override
-    public void saveStream(String name, Element content) {
-    }
-
-    @Override
-    public void saveStream(String name, byte[] content) {
-    }
-
-    @Override
-    public boolean touch(String name) {
-      String value = myExistingContent.get(name);
-      Assert.assertNotNull("non-existing file touched: " + value);
-      myCollectedContent.put(name, value);
-      return true;
-    }
-  }
-
   static class CollectingStreamHandler implements StreamHandler {
     private final Map<String, String> myCollectedContent;
+    private final Map<String, String> myExistingContent;
 
-    public CollectingStreamHandler(@NotNull Map<String, String> content) {
+    public CollectingStreamHandler(@NotNull Map<String, String> content, @NotNull Map<String, String> existingContent) {
       myCollectedContent = content;
+      myExistingContent = existingContent;
     }
 
     @Override
@@ -231,8 +194,10 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     @Override
     public boolean touch(String name) {
-      Assert.fail("touch is not expected");
-      return false;
+      String value = myExistingContent.get(name);
+      Assert.assertNotNull("non-existing file touched: " + value);
+      myCollectedContent.put(name, value);
+      return true;
     }
   }
 

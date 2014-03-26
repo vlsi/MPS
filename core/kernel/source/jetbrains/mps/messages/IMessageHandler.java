@@ -27,6 +27,11 @@ public interface IMessageHandler {
     public void clear() {
     }
   };
+
+  /**
+   * @deprecated jetbrains.mps.logging.Logger is abandoned in favor of apache's log4j or native java.util.logging.Logger.
+   */
+  @Deprecated
   public final static class LogHandler implements IMessageHandler {
     @NotNull
     private final Logger myLog;

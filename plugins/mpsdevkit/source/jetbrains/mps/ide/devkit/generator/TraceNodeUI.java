@@ -88,9 +88,6 @@ final class TraceNodeUI {
     return myIcon;
   }
 
-  public boolean matches(@NotNull SNodeReference node) {
-    return node.equals(myTargetNode);
-  }
   public boolean hasChildren() {
     return myChildren != null && !myChildren.isEmpty();
   }

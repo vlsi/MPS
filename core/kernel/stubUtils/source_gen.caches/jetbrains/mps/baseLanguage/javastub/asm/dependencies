@@ -34,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" />
+    <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="org.jetbrains.asm4.ClassReader" />
     <classNode dependClassName="org.jetbrains.asm4.Opcodes" />
     <classNode dependClassName="org.jetbrains.asm4.signature.SignatureReader" />

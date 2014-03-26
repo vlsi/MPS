@@ -239,10 +239,15 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
 
   @Deprecated
-  public synchronized SModel getSModelInternal() {
+  public SModel getSModelInternal() {
     if (myModel == null) {
-      myModel = createModel();
-      myModel.setModelDescriptor(this);
+      synchronized (this) {
+        if (myModel != null) {
+          return myModel;
+        }
+        myModel = createModel();
+        myModel.setModelDescriptor(this);
+      }
     }
     return myModel;
   }
