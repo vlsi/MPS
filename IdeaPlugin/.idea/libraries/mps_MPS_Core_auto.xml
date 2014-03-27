@@ -12,7 +12,7 @@
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/diffutils-1.2.1.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-core.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-collections.jar!/" />
-      <root url="jar://$APPLICATION_HOME_DIR$/lib/ecj-4.2.1.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/ecj-4.3.2.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-tuples.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/guava-14.0.1.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/log4j.jar!/" />
