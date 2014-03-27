@@ -4328,11 +4328,11 @@ __switch__:
     return false;
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1235993905117(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7251340091277279374(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return ParenthesisUtil.createParenthesis(_context.getSourceNode(), false);
+        return ParenthesisUtil.createParenthesisNewRight(_context.getSourceNode());
       }
 
       public String getMatchingText(String pattern) {
@@ -4344,7 +4344,7 @@ __switch__:
       }
 
       public String getDescriptionText(String pattern) {
-        return "Surround with parenthesis";
+        return "Complete parens";
       }
 
       @Override
@@ -4362,7 +4362,7 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return ParenthesisUtil.createParenthesis(_context.getSourceNode(), true);
+        return ParenthesisUtil.createParenthesisNewLeft(_context.getSourceNode());
       }
 
       public String getMatchingText(String pattern) {
@@ -4374,7 +4374,7 @@ __switch__:
       }
 
       public String getDescriptionText(String pattern) {
-        return "Surrond with parenthesis";
+        return "Left paren";
       }
 
       @Override

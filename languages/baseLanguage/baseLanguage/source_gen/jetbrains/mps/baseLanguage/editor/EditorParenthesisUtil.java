@@ -16,7 +16,10 @@ public class EditorParenthesisUtil {
   public EditorParenthesisUtil() {
   }
 
+
+
   public static void addClosingParenthesis(@NotNull SNode expression, boolean opening, EditorContext context) {
+    // todo remove the method 
     SNode newExpr = ParenthesisUtil.createParenthesis(expression, opening);
     selectNode(context, newExpr, !(opening));
   }

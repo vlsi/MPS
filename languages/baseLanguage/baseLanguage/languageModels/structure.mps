@@ -3796,5 +3796,19 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1201476912089" resolveInfo="SetAccessor" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7251340091268481742" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="LeftParen" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="(" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7251340091268483294" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="left paren" />
+      <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="7251340091268488912" nodeInfo="ng">
+        <property name="value" nameId="tpce.6054523464626875854" value="false" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="7251340091268488952" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1068431790191" resolveInfo="Expression" />
+      </node>
+    </node>
+  </root>
 </model>
 
