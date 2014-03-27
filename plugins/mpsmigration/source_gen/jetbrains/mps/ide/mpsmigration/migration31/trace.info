@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:6c553c79-19b2-42b4-84f8-d7c675cd6e2f(jetbrains.mps.ide.mpsmigration.migration31)/6856864117646528335">
+    <unitInfo nodeId="6856864117646528335" fileName="Migration31Actions.xml" startLine="1" startPosition="0" endLine="7" endPosition="13" unitName="jetbrains.mps.ide.mpsmigration.migration31.Migration31Actions" />
+  </root>
   <root nodeRef="r:6c553c79-19b2-42b4-84f8-d7c675cd6e2f(jetbrains.mps.ide.mpsmigration.migration31)/7146110783103312448">
     <unitInfo nodeId="7146110783103312448" fileName="Main.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ide.mpsmigration.migration31.Main" />
   </root>

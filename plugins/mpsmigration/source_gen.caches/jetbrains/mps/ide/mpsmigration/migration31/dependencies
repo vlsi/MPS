@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration31.Main" file="Main.java" />
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration31.Migration31Actions" file="Migration31Actions.xml" />
 </dependenciesRoot>
 

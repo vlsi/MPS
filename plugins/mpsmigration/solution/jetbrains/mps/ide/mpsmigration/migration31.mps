@@ -7,6 +7,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="3xdn" modelUID="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" version="3" implicit="yes" />
@@ -14,6 +15,8 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="eynw" modelUID="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" version="1" implicit="yes" />
+  <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <root type="eynw.ConsoleRoot" typeId="eynw.1583916890557930028" id="7146110783103312448" nodeInfo="ng">
     <node role="history" roleId="eynw.1583916890557930415" type="eynw.History" typeId="eynw.757553790980850366" id="7146110783103312449" nodeInfo="ng">
       <node role="item" roleId="eynw.7195119950189425818" type="eynw.CommandHolder" typeId="eynw.351968380916615243" id="7146110783103258662" nodeInfo="ng">
@@ -138,6 +141,25 @@
       </node>
     </node>
     <node role="commandHolder" roleId="eynw.1583916890557930417" type="eynw.CommandHolder" typeId="eynw.351968380916615243" id="7146110783103312450" nodeInfo="ng" />
+  </root>
+  <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="9056562259284885831" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="Migrations31" />
+    <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
+    <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
+    <property name="caption" nameId="tp4k.1204991940915" value="Migration 3.1" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="9056562259285025195" nodeInfo="ng" />
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="9056562259285025198" nodeInfo="ng">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1215012161252" resolveInfo="IDEATools" />
+    </node>
+  </root>
+  <root type="tp4k.IdeaConfigurationXml" typeId="tp4k.3205778618063718746" id="6856864117646528335" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="Migration31Actions" />
+    <node role="actions" roleId="tp4k.3205778618063718748" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="6856864117646543120" nodeInfo="ng">
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="9056562259285387587" nodeInfo="ng">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="9056562259284885831" resolveInfo="Migrations31" />
+      </node>
+    </node>
   </root>
 </model>
 
