@@ -114,19 +114,28 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    return getSourceNode(macroNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
     try {
-      tracer.push(taskName("evaluate source node", macroNode), true);
-      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+      tracer.push(taskName("evaluate source node", query), true);
+      return wrapped.getSourceNode(templateNode, query, context);
     } finally {
       tracer.pop();
     }
   }
 
-  @Override
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("evaluate source nodes", query), true);
-      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
+      return wrapped.getSourceNodes(templateNode, query, context);
     } finally {
       tracer.pop();
     }

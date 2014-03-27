@@ -218,15 +218,20 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    return getSourceNode(macroNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query);
     try {
       return (SNode) QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new SourceSubstituteMacroNodeContext(context, macroNode.getReference(), myGenerator),
+          new SourceSubstituteMacroNodeContext(context, templateNode.getReference(), myGenerator),
           query.getModel());
     } catch (NoSuchMethodException e) {
-      getLog().warning(macroNode.getReference(), String.format("cannot find nodes query '%s' : evaluate to null", methodName));
+      getLog().warning(templateNode.getReference(), String.format("cannot find nodes query '%s' : evaluate to null", methodName));
       return null;
     } catch (Exception e) {
       getLog().handleException(e);
@@ -234,6 +239,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return null;
     }
   }
+
+
 
   @Override
   public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
@@ -277,28 +284,28 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
   @Override
-  @SuppressWarnings("unchecked")
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
     try {
       Object result = QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, context, myGenerator),
+          new SourceSubstituteMacroNodesContext(context, templateNode.getReference(), myGenerator),
           query.getModel());
 
-      List<SNode> resultList;
-      if (result instanceof List) {
-        resultList = (List<SNode>) result;
-      } else {
-        resultList = new ArrayList<SNode>(IterableUtil.asCollection((Iterable<SNode>) result));
-      }
+      @SuppressWarnings("unchecked")
+      List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(IterableUtil.asCollection((Iterable<SNode>) result));
 
       CollectionUtil.checkForNulls(resultList);
 
       return resultList;
     } catch (NoSuchMethodException e) {
-      getLog().warning(macroNode.getReference(), String.format("cannot find nodes query '%s' : evaluate to empty list", methodName));
+      getLog().warning(templateNode.getReference(), String.format("cannot find nodes query '%s' : evaluate to empty list", methodName));
       return new ArrayList<SNode>();
     } catch (Exception e) {
       getLog().handleException(e);

@@ -219,7 +219,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         environment.getLogger().error(getRuleNode(), "weaving rule: cannot create list of source nodes", GeneratorUtil.describeInput(context));
         return false;
       }
-      Collection<SNode> queryNodes = environment.getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), myRuleNode, null, query, context);
+      Collection<SNode> queryNodes = environment.getQueryExecutor().getSourceNodes(myRuleNode, query, context);
       if (queryNodes.isEmpty()) {
         return false;
       }

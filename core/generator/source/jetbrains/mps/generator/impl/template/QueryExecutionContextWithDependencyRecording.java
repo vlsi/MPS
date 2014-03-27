@@ -104,9 +104,14 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
-    try {
+    return getSourceNode(macroNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
+  try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+      return wrapped.getSourceNode(templateNode, query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -134,9 +139,14 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
-    try {
+    return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
+  try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
+      return wrapped.getSourceNodes(templateNode, query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
