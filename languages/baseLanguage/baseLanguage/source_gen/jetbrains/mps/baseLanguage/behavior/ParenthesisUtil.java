@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
@@ -228,9 +229,10 @@ public class ParenthesisUtil {
 
 
   private static List<SNode> parentPath(SNode leaf) {
-    SNode currentNode = leaf;
+    SNode currentNode = SNodeOperations.getParent(leaf);
     List<SNode> path = new ArrayList<SNode>();
-    while (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Expression") && !(SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
+    ListSequence.fromList(path).addElement(leaf);
+    while (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression") && PrecedenceUtil.isHigherPriority(SNodeOperations.getParent(currentNode), currentNode)))) {
       ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
       currentNode = SNodeOperations.getParent(currentNode);
     }
