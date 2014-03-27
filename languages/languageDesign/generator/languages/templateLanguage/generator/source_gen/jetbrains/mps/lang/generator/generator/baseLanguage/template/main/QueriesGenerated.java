@@ -1487,10 +1487,6 @@ public class QueriesGenerated {
     return name;
   }
 
-  public static Object referenceMacro_GetReferent_8371596541809104755(final ReferenceMacroContext _context) {
-    return TemplateFunctionMethodName.patternRule_Condition(_context.getNode());
-  }
-
   public static Object referenceMacro_GetReferent_9191117361655049707(final ReferenceMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
     return name;
@@ -1777,7 +1773,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IfMacroContext _context) {
-    return eq_x583g4_a0a0xo(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0wo(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IfMacroContext _context) {
@@ -4232,7 +4228,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0xo(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0wo(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

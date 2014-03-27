@@ -90,7 +90,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
     if (myQuery == null) {
       myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(myRuleNode);
     }
-    return myQuery.pattern(new PatternRuleContext(context.getInput(), myRuleNode, env.getGenerator()));
+    return myQuery.pattern(new PatternRuleContext(context, getRuleNode(), env.getGenerator()));
   }
 
   @NotNull
