@@ -69,23 +69,23 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "expectedType", true);
   }
 
-  public static Iterable sourceNodesQuery_3863300516938168918(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3863300516938168918(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedLVDs_3863300516938155424(_context.getNode())).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_3863300516938168959(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3863300516938168959(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_3863300516938155488(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3863300516938155488(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedLVDs_3863300516938155424(_context.getNode())).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_3863300516938159683(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3863300516938159683(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_3863300516938171067(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3863300516938171067(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> rowHeaders = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false), "rowHeaders", true);
     ListSequence.fromList(rowHeaders).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -95,7 +95,7 @@ public class QueriesGenerated {
     return rowHeaders;
   }
 
-  public static Iterable sourceNodesQuery_3863300516938170992(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3863300516938170992(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "colHeaders", true);
   }
 

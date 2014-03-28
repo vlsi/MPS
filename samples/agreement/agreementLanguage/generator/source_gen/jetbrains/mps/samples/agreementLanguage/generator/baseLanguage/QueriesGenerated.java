@@ -250,15 +250,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "valueIfFalse", true);
   }
 
-  public static Iterable sourceNodesQuery_1197662961260(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197662961260(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
   }
 
-  public static Iterable sourceNodesQuery_1197663210559(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197663210559(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "value", true);
   }
 
-  public static Iterable sourceNodesQuery_1197663295186(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197663295186(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> values = SLinkOperations.getTargets(_context.getNode(), "value", true);
     return ListSequence.fromList(values).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode value) {
@@ -311,7 +311,7 @@ __switch__:
     }).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_1197659602870(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197659602870(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> events = SLinkOperations.getTargets(_context.getNode(), "event", true);
     return ListSequence.fromList(events).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode event) {
@@ -364,7 +364,7 @@ __switch__:
     }).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_1197659458874(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197659458874(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
   }
 

@@ -106,11 +106,11 @@ public class QueriesGenerated {
     return _quotation_createNode_x583g4_a0a91();
   }
 
-  public static Iterable sourceNodesQuery_3391577739833431906(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3391577739833431906(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.IVariableReference", false, new String[]{});
   }
 
-  public static Iterable sourceNodesQuery_5837079428841717746(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5837079428841717746(final SourceSubstituteMacroNodesContext _context) {
     SNode operation = SLinkOperations.getTarget(_context.getNode(), "operation", true);
     SNode declaration;
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
@@ -121,15 +121,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(declaration, "throwsItem", true);
   }
 
-  public static Iterable sourceNodesQuery_131924539844672796(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_131924539844672796(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "typeVariableDeclaration", true);
   }
 
-  public static Iterable sourceNodesQuery_3391577739833596041(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3391577739833596041(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.IVariableReference", false, new String[]{});
   }
 
-  public static Iterable sourceNodesQuery_4741735385321357379(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4741735385321357379(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 

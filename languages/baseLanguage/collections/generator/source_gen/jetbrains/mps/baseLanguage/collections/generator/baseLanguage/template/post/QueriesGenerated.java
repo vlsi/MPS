@@ -16,6 +16,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
+import java.util.Map;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import java.util.HashMap;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -240,6 +246,94 @@ public class QueriesGenerated extends QueryProviderBase {
 
   public static SNode sourceNodeQuery_1269198486696305052(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "inputSequence", true);
+  }
+
+  private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
+
+  {
+    int i = 0;
+    snqMethods.put("1269198486696304632", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1187962225387685387", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304725", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304764", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304786", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1187962225387685229", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304848", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304857", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1187962225387685262", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304879", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("2021770776238986595", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("2021770776238986604", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("2021770776238986625", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("2021770776238986633", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696304931", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1187962225387685314", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696305013", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1269198486696305052", new QueriesGenerated.SNQ(i++));
+  }
+
+  @NotNull
+  @Override
+  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
+    final String id = query.getNodeId().toString();
+    if (!(snqMethods.containsKey(id))) {
+      return super.getSourceNodeQuery(query);
+    }
+    return snqMethods.get(id);
+  }
+
+  private static class SNQ implements SourceNodeQuery {
+    private final int methodKey;
+
+    public SNQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+
+
+    @Nullable
+    public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304632(ctx);
+        case 1:
+          return QueriesGenerated.sourceNodeQuery_1187962225387685387(ctx);
+        case 2:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304725(ctx);
+        case 3:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304764(ctx);
+        case 4:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304786(ctx);
+        case 5:
+          return QueriesGenerated.sourceNodeQuery_1187962225387685229(ctx);
+        case 6:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304848(ctx);
+        case 7:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304857(ctx);
+        case 8:
+          return QueriesGenerated.sourceNodeQuery_1187962225387685262(ctx);
+        case 9:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304879(ctx);
+        case 10:
+          return QueriesGenerated.sourceNodeQuery_2021770776238986595(ctx);
+        case 11:
+          return QueriesGenerated.sourceNodeQuery_2021770776238986604(ctx);
+        case 12:
+          return QueriesGenerated.sourceNodeQuery_2021770776238986625(ctx);
+        case 13:
+          return QueriesGenerated.sourceNodeQuery_2021770776238986633(ctx);
+        case 14:
+          return QueriesGenerated.sourceNodeQuery_1269198486696304931(ctx);
+        case 15:
+          return QueriesGenerated.sourceNodeQuery_1187962225387685314(ctx);
+        case 16:
+          return QueriesGenerated.sourceNodeQuery_1269198486696305013(ctx);
+        case 17:
+          return QueriesGenerated.sourceNodeQuery_1269198486696305052(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0b0b0c0a0d() {

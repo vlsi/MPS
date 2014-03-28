@@ -70,15 +70,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "builder", true);
   }
 
-  public static Iterable sourceNodesQuery_5157691191963265878(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5157691191963265878(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_5157691191963264583(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5157691191963264583(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_5157691191963262385(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5157691191963262385(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 

@@ -24,13 +24,26 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author Artem Tikhomirov
  */
 public interface GeneratorQueryProvider {
+  @NotNull
   CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule);
+  @NotNull
   MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule);
+  @NotNull
   ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule);
+  @NotNull
   PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule);
+  @NotNull
   DropRuleCondition getDropRuleCondition(@NotNull SNode rule);
+  @NotNull
   WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule);
+  @NotNull
   WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule);
+  @NotNull
   ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script);
+  @NotNull
   MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg);
+  @NotNull
+  SourceNodeQuery getSourceNodeQuery(@NotNull SNode query);
+  @NotNull
+  SourceNodesQuery getSourceNodesQuery(@NotNull SNode query);
 }

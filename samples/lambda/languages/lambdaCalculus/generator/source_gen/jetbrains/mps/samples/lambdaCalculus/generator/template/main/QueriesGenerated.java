@@ -304,51 +304,51 @@ public class QueriesGenerated {
     return LambdaAbstraction_Behavior.call_getInnerBody_5066394162984540354(LambdaApplication_Behavior.call_getLambdaAbstraction_4976946798230781575(_context.getNode()));
   }
 
-  public static Iterable sourceNodesQuery_199058371937626104(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_199058371937626104(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "argument", true);
   }
 
-  public static Iterable sourceNodesQuery_6139750523307920929(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6139750523307920929(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2985097847315884660(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2985097847315884660(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2985097847315908583(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2985097847315908583(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2985097847315916699(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2985097847315916699(final SourceSubstituteMacroNodesContext _context) {
     return LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2167053794906731193(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2167053794906731193(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2167053794906731209(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2167053794906731209(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2985097847315884751(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2985097847315884751(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_816130369292752585(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_816130369292752585(final SourceSubstituteMacroNodesContext _context) {
     return LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(LambdaApplication_Behavior.call_getLambdaAbstraction_4976946798230781575(_context.getNode()));
   }
 
-  public static Iterable sourceNodesQuery_816130369292752622(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_816130369292752622(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_816130369292752673(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_816130369292752673(final SourceSubstituteMacroNodesContext _context) {
     return LambdaApplication_Behavior.call_getArguments_5066394162984555451(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_2985097847315884712(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2985097847315884712(final SourceSubstituteMacroNodesContext _context) {
     return LambdaExpression_Behavior.call_getOuterVariables_5249919352014727828(_context.getNode());
   }
 

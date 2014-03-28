@@ -16,10 +16,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
   </dependency>
 </dependenciesRoot>
 

@@ -12,10 +12,10 @@
   <root nodeRef="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)/1494751830319065468">
     <nodeInfo nodeId="1494751830319065480" fileName="QueriesGenerated.java" startLine="23" startPosition="112" endLine="24" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1494751830319065489" fileName="QueriesGenerated.java" startLine="27" startPosition="112" endLine="28" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1494751830319065515" fileName="QueriesGenerated.java" startLine="43" startPosition="113" endLine="44" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1494751830319065515" fileName="QueriesGenerated.java" startLine="43" startPosition="120" endLine="44" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1494751830319065479" fileName="QueriesGenerated.java" startLine="23" startPosition="112" endLine="24" endPosition="69" />
     <scopeInfo nodeId="1494751830319065488" fileName="QueriesGenerated.java" startLine="27" startPosition="112" endLine="28" endPosition="69" />
-    <scopeInfo nodeId="1494751830319065514" fileName="QueriesGenerated.java" startLine="43" startPosition="113" endLine="44" endPosition="77" />
+    <scopeInfo nodeId="1494751830319065514" fileName="QueriesGenerated.java" startLine="43" startPosition="120" endLine="44" endPosition="77" />
   </root>
   <root nodeRef="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)/3990190717072400634">
     <nodeInfo nodeId="1077635873539584878" fileName="QueriesGenerated.java" startLine="31" startPosition="109" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

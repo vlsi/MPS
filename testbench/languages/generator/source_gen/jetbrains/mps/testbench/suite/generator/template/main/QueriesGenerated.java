@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 
@@ -43,11 +44,11 @@ public class QueriesGenerated {
     return _context.getTemplateValue() + "_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
-  public static Iterable sourceNodesQuery_2956932267233365615(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2956932267233365615(final SourceSubstituteMacroNodesContext _context) {
     return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_4089647634161018289(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4089647634161018289(final SourceSubstituteMacroNodesContext _context) {
     return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());
   }
 }

@@ -6,9 +6,9 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -54,19 +54,19 @@ public class QueriesGenerated {
     return _context.createUniqueName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "name"), null);
   }
 
-  public static Iterable sourceNodesQuery_6186432342008490342(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6186432342008490342(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.<SNode>singleton(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_6186432342008522532(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6186432342008522532(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "weaveEach", true);
   }
 
-  public static Iterable sourceNodesQuery_6186432342008533377(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6186432342008533377(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.<SNode>singleton(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_6186432342008533362(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6186432342008533362(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "weaveEachMany", true);
   }
 
