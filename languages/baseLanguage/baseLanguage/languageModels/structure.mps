@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4">
+<model modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5">
   <persistence version="8" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AssignmentExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
@@ -3797,15 +3797,29 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7251340091268481742" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="LeftParen" />
+    <property name="name" nameId="tpck.1169194664001" value="IncompleteLeftParen" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="(" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7251340091268483294" nodeInfo="ng">
-      <property name="role" nameId="tpce.7588428831955550663" value="left paren" />
+      <property name="role" nameId="tpce.7588428831955550663" value="incomplete left paren" />
       <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="7251340091268488912" nodeInfo="ng">
         <property name="value" nameId="tpce.6054523464626875854" value="false" />
       </node>
       <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="7251340091268488952" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1068431790191" resolveInfo="Expression" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2329139813954029793" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="IncompleteRightParen" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value=")" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2329139813954041499" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="incomplete right paren" />
+      <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="2329139813954041501" nodeInfo="ng">
+        <property name="value" nameId="tpce.6054523464626875854" value="false" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2329139813954041503" nodeInfo="ng">
         <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1068431790191" resolveInfo="Expression" />
       </node>
     </node>
