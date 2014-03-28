@@ -303,7 +303,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
-  public static Iterable sourceNodesQuery_7048923897763033580(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7048923897763033580(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Flags.REGEXP_NEED_VAR.isFlagged(it);
@@ -311,7 +311,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_7048923897763033509(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7048923897763033509(final SourceSubstituteMacroNodesContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")) {
       return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).tailListSequence(1);
     }

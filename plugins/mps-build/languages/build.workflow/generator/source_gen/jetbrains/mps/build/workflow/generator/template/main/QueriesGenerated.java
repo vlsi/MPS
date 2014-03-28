@@ -328,7 +328,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
   }
 
-  public static Iterable sourceNodesQuery_7385586609667799717(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7385586609667799717(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> subTasks = new ArrayList<SNode>();
     ListSequence.fromList(subTasks).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "subTasks", true)));
     for (SNode part : ((List<SNode>) _context.getVariable("var:taskParts"))) {
@@ -338,35 +338,35 @@ public class QueriesGenerated {
     return subTasks;
   }
 
-  public static Iterable sourceNodesQuery_2769948622284791216(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2769948622284791216(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statements", true);
   }
 
-  public static Iterable sourceNodesQuery_244868996532671668(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_244868996532671668(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "elements", true);
   }
 
-  public static Iterable sourceNodesQuery_6647099934207210805(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6647099934207210805(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "content", true);
   }
 
-  public static Iterable sourceNodesQuery_6984624797023890547(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6984624797023890547(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "attributes", true);
   }
 
-  public static Iterable sourceNodesQuery_4005526075839273244(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4005526075839273244(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "attributes", true);
   }
 
-  public static Iterable sourceNodesQuery_6984624797023801344(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6984624797023801344(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "attributes", true);
   }
 
-  public static Iterable sourceNodesQuery_6984624797023872812(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6984624797023872812(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "attributes", true);
   }
 
-  public static Iterable sourceNodesQuery_1959471031855450829(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1959471031855450829(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
         return BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_getPriority_2059109515400548718", new Object[]{});
@@ -374,35 +374,35 @@ public class QueriesGenerated {
     }, true);
   }
 
-  public static Iterable sourceNodesQuery_733309334558903305(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_733309334558903305(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "prepareStatements", true);
   }
 
-  public static Iterable sourceNodesQuery_7926701909975490209(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7926701909975490209(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "sources", true), "elements", true);
   }
 
-  public static Iterable sourceNodesQuery_7926701909975675863(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7926701909975675863(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
   }
 
-  public static Iterable sourceNodesQuery_1659807394254493257(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1659807394254493257(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "resources", true), "elements", true);
   }
 
-  public static Iterable sourceNodesQuery_6647099934207240075(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6647099934207240075(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
   }
 
-  public static Iterable sourceNodesQuery_6520682027041170543(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6520682027041170543(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "taskDeps", true);
   }
 
-  public static Iterable sourceNodesQuery_144710003695502544(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_144710003695502544(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "classpath", true);
   }
 
-  public static Iterable sourceNodesQuery_6647099934207244997(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6647099934207244997(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
@@ -414,7 +414,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_6896005762093592258(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6896005762093592258(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfMacro") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfMacro"), "exportToProperiesFile");

@@ -56,28 +56,28 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static Iterable sourceNodesQuery_1233603475878(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1233603475878(final SourceSubstituteMacroNodesContext _context) {
     _context.showInformationMessage(_context.getNode(), "MAP LEVEL1 " + SPropertyOperations.getString(_context.getNode(), "name"));
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static Iterable sourceNodesQuery_1202256587517(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1202256587517(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static Iterable sourceNodesQuery_1202256594380(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1202256594380(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static Iterable sourceNodesQuery_1202338467105(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1202338467105(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static Iterable sourceNodesQuery_1202338467112(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1202338467112(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static Iterable sourceNodesQuery_1202338467119(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1202338467119(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 

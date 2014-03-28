@@ -458,15 +458,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "oldClassifier", true);
   }
 
-  public static Iterable sourceNodesQuery_2598676492883202965(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2598676492883202965(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }
 
-  public static Iterable sourceNodesQuery_6720970695615073439(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6720970695615073439(final SourceSubstituteMacroNodesContext _context) {
     return Classifier_Behavior.call_staticFields_5292274854859223538(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false));
   }
 
-  public static Iterable sourceNodesQuery_2037769997942432796(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2037769997942432796(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "oldMethodSpecification", true), "jetbrains.mps.lang.script.structure.DirectMethodSpecification") && SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
@@ -474,7 +474,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_2037769997942615698(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2037769997942615698(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "oldMethodSpecification", true), "jetbrains.mps.lang.script.structure.FQNameMethodSpecification");
@@ -482,7 +482,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_2037769997942619499(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2037769997942619499(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "oldMethodSpecification", true) == null;
@@ -490,7 +490,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_2037769997941926928(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2037769997941926928(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "oldMethodSpecification", true), "jetbrains.mps.lang.script.structure.DirectMethodSpecification") && SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
@@ -502,7 +502,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_2037769997942149187(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2037769997942149187(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "oldMethodSpecification", true), "jetbrains.mps.lang.script.structure.FQNameMethodSpecification");
@@ -514,7 +514,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_2037769997942335851(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2037769997942335851(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "oldMethodSpecification", true) == null;
@@ -522,7 +522,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_627956582045756081(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_627956582045756081(final SourceSubstituteMacroNodesContext _context) {
     return Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false));
   }
 

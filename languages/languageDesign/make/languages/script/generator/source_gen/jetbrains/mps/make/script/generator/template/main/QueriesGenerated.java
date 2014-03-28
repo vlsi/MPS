@@ -330,15 +330,15 @@ public class QueriesGenerated {
     return (rct != null ? _quotation_createNode_x583g4_a0b0uc_0(SLinkOperations.getTarget(rct, "classifier", false)) : _quotation_createNode_x583g4_a0b0uc());
   }
 
-  public static Iterable sourceNodesQuery_7877690107352923852(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7877690107352923852(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "option", true);
   }
 
-  public static Iterable sourceNodesQuery_3353120829256508438(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3353120829256508438(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_5537134633111724471(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5537134633111724471(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
