@@ -24,7 +24,7 @@ public class check_LeftParen_NonTypesystemRule extends AbstractNonTypesystemRule
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.LeftParen";
+    return "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
