@@ -22718,6 +22718,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2329139813954041781" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
         <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1215088010675" resolveInfo="RightParen" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="2329139813954041914" resolveInfo="DeleteIncompleteRightParen" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="2329139813954041887" nodeInfo="nn">
           <property name="color" nameId="tpc2.1186403713874" value="red" />
         </node>

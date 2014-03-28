@@ -2889,6 +2889,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.IncompleteRightParen_Editor" file="IncompleteRightParen_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteIncompleteRightParen" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
