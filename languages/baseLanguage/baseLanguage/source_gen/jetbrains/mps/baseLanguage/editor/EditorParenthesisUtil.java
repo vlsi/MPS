@@ -91,7 +91,7 @@ public class EditorParenthesisUtil {
     selectNode(context, expr, false);
   }
 
-  private static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
+  public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
     if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return root;
     }
