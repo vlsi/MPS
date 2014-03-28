@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.List;
@@ -115,19 +114,28 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    return getSourceNode(macroNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
     try {
-      tracer.push(taskName("evaluate source node", macroNode), true);
-      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+      tracer.push(taskName("evaluate source node", query), true);
+      return wrapped.getSourceNode(templateNode, query, context);
     } finally {
       tracer.pop();
     }
   }
 
-  @Override
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+  }
+
+  @Override
+  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("evaluate source nodes", query), true);
-      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
+      return wrapped.getSourceNodes(templateNode, query, context);
     } finally {
       tracer.pop();
     }
@@ -246,7 +254,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("context for weaving", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.getContextNode(rule, environment, context);
@@ -256,7 +264,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException {
     try {
       tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
       wrapped.executeScript(mappingScript, model);

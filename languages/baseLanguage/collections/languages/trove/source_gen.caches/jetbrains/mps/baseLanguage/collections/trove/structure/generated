@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cwlf9h823mlhc4auxb6ugycpi6n49v4" />
+<dependencies version="2" modelHash="-cwlf9h823mlhc4auxb6ugycpi6n49v4">
+  <common hash="-cwlf9h823mlhc4auxb6ugycpi6n49v4" />
+</dependencies>
 

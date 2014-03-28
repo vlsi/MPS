@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -42,6 +43,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
    * will be removed after 3.1
    */
   @Deprecated
+  @ToRemove(version=3.1)
   public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;

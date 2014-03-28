@@ -12,6 +12,9 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
@@ -99,5 +102,9 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_5211959367043582912(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static boolean mappingConfiguration_Condition_2948912184536575088(final TemplateQueryContext _context) {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier")).isNotEmpty();
   }
 }

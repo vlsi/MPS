@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,5 +23,5 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface WeaveRuleCondition extends Query {
-  boolean check(@NotNull WeavingMappingRuleContext ctx);
+  boolean check(@NotNull WeavingMappingRuleContext ctx) throws GenerationFailureException;
 }

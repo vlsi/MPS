@@ -113,11 +113,11 @@ public class InputQueryUtil {
   }
 
   private static SNode getNewInputNode(SNode macro, @NotNull SNode query, @NotNull TemplateContext context, @NotNull QueryExecutionContext qeContext) throws GenerationFailureException {
-    return qeContext.evaluateSourceNodeQuery(context.getInput(), macro, query, context);
+    return qeContext.getSourceNode(macro, query, context);
   }
 
   private static List<SNode> getNewInputNodes(SNode macro, @NotNull SNode query, @NotNull TemplateContext context, @NotNull QueryExecutionContext qeContext) throws GenerationFailureException {
-    List<SNode> list = qeContext.evaluateSourceNodesQuery(context.getInput(), null, macro, query, context);
+    List<SNode> list = qeContext.getSourceNodes(macro, query, context);
     return list != null ? list : Collections.<SNode>emptyList();
   }
 }

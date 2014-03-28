@@ -2803,9 +2803,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237784447483" resolveInfo="test" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.TakeOperation" typeId="tp2q.1172664342967" id="1237784498721" nodeInfo="nn">
-                  <node role="elementsToTake" roleId="tp2q.1172664372046" type="tp2q.AllConstant" typeId="tp2q.1237783176940" id="1237786144004" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1068580320021" value="2147483647" />
-                  </node>
+                  <node role="elementsToTake" roleId="tp2q.1172664372046" type="tp2q.AllConstant" typeId="tp2q.1237783176940" id="1237786144004" nodeInfo="nn" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetSizeOperation" typeId="tp2q.1162935959151" id="1237786158288" nodeInfo="nn" />

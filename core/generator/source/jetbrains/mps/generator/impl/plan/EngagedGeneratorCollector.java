@@ -55,7 +55,7 @@ final class EngagedGeneratorCollector {
   public EngagedGeneratorCollector(@NotNull SModel model, Collection<String> additionalLanguages) {
     myModel = model;
     myAdditionalLanguages = additionalLanguages == null ? Collections.<String>emptyList() : new ArrayList<String>(additionalLanguages);
-    myUseLanguagesFromExtendedGenerators = false;
+    myUseLanguagesFromExtendedGenerators = true;
   }
 
   /**

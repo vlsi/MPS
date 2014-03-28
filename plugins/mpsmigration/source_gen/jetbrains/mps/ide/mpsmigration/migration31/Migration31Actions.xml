@@ -1,0 +1,9 @@
+<components>
+  <actions>
+    <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToUpdateAllConstants_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToUpdateAllConstants_Action"></action>
+    <group id="jetbrains.mps.ide.mpsmigration.migration31.Migrations31_ActionGroup" text="Migration 3.1" popup="true">
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToUpdateAllConstants_Action" />
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </group>
+  </actions>
+</components>
