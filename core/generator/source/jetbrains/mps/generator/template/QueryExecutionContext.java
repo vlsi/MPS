@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
@@ -27,6 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,10 +39,11 @@ import java.util.List;
 /**
  * XXX this is not a context, rather QueryExecutionFacility/QueryExecutor, utility to provide extra indirection
  * when invoking conditions/rules. It doesn't keep any 'context' information.
+ * Note, this facility is relevant to interpreted templates only, generated templates invoke corresponding generated query methods directly
  * FIXME get rid of inputNode where templateContext is available
  * Evgeny Gryaznov, Feb 24, 2010
  */
-public interface QueryExecutionContext {
+public interface QueryExecutionContext extends QueryExecutor {
 
   /**
    * @return true if nodes using this context can be generated in parallel. When false, all nodes that use this context
@@ -48,8 +51,14 @@ public interface QueryExecutionContext {
    */
   boolean isMultithreaded();
 
+  /**
+   * Not in use, alternative #checkCondition that takes TemplateContext is available
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 
+  // FIXME inlineSwitch is the only place where we use this, rather drop?
   boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException;
 
   boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
@@ -60,12 +69,22 @@ public interface QueryExecutionContext {
 
   void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
+  /**
+   * @deprecated replaced with QueryExecutor#getSourceNode() methods
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
   Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
 
   Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
 
+  /**
+   * @deprecated replaced with QueryExecutor#getSourceNodes() methods
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
   SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
@@ -86,7 +105,7 @@ public interface QueryExecutionContext {
 
   Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException;
 
-  SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context);
+  SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
 
-  void executeScript(TemplateMappingScript mappingScript, SModel model);
+  void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException;
 }

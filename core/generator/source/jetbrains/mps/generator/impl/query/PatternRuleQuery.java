@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
@@ -23,5 +24,5 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface PatternRuleQuery extends Query {
-  GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx);
+  GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx) throws GenerationFailureException;
 }

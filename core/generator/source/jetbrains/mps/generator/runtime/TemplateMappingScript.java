@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -33,7 +34,7 @@ public interface TemplateMappingScript {
 
   int getKind();
 
-  void apply(SModel model, ITemplateGenerator generator);
+  void apply(SModel model, ITemplateGenerator generator) throws GenerationFailureException;
 
   boolean modifiesModel();
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,5 +23,5 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface DropRuleCondition extends Query {
-  boolean check(@NotNull DropRootRuleContext ctx);
+  boolean check(@NotNull DropRootRuleContext ctx) throws GenerationFailureException;
 }

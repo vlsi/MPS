@@ -141,7 +141,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_1218738863685(new WeavingMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a1r, environment.getGenerator()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_1218738863685(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
