@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class LT_DotExpression_with_Parenthesis_Test extends BaseTransformationTest4 {
@@ -32,8 +30,10 @@ public class LT_DotExpression_with_Parenthesis_Test extends BaseTransformationTe
       final Editor editor = TestBody.this.initEditor("6042072087468737362", "6042072087468737385");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "(");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      for (int i = 0; i < 12; i++) {
+        BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      }
+      BaseEditorTestBody.typeString(editorComponent, ")");
     }
   }
 }

@@ -6,10 +6,10 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import junit.framework.Assert;
@@ -29,12 +29,6 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody", "test_thereIsAlreadyParenthesis", true);
   }
 
-  @Test
-  public void test_treeRotation() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody", "test_treeRotation", true);
-  }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_noBinaryOperation() throws Exception {
@@ -42,12 +36,12 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483077206");
       this.addNodeById("3852894662483228699");
       this.addNodeById("3852894662483230132");
-      this.addNodeById("3852894662483240397");
-      this.addNodeById("3852894662483240422");
-      SNode result = ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483077204"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), true);
+      ParenthesisUtil.createParenthesisNewLeft(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createParenthesisNewRight(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483077210"), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), result);
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2329139814027569571"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2329139814027568774"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
@@ -57,27 +51,11 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483077206");
       this.addNodeById("3852894662483228699");
       this.addNodeById("3852894662483230132");
-      this.addNodeById("3852894662483240397");
-      this.addNodeById("3852894662483240422");
-      ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), true);
+      ParenthesisUtil.createParenthesisNewLeft(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createParenthesisNewRight(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
-      }
-    }
-
-    public void test_treeRotation() throws Exception {
-      this.addNodeById("3852894662483077200");
-      this.addNodeById("3852894662483077206");
-      this.addNodeById("3852894662483228699");
-      this.addNodeById("3852894662483230132");
-      this.addNodeById("3852894662483240397");
-      this.addNodeById("3852894662483240422");
-      ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483240405"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), false);
-      {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240425"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240400"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
