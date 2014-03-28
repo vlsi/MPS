@@ -240,8 +240,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return q.evaluate(new SourceSubstituteMacroNodeContext(context, templateNode.getReference(), myGenerator));
     } catch (GenerationFailureException ex) {
       throw ex;
-    } catch (Exception e) {
-      getLog().handleException(e);
+    } catch (Throwable th) {
+      getLog().handleException(th);
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return null;
     }
@@ -291,12 +291,15 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
       GenerationFailureException {
-    return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+    Collection<SNode> result = getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+    @SuppressWarnings("unchecked")
+    List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(result);
+    return resultList;
   }
 
   @NotNull
   @Override
-  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
+  public Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       final SNodeReference qr = query.getReference();
       SourceNodesQuery q = myNodesQueries.get(qr);
@@ -307,13 +310,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, templateNode.getReference(), myGenerator));
 
       CollectionUtil.checkForNulls(result, "null values in source nodes");
-
-      @SuppressWarnings("unchecked")
-      List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(result);
-      return resultList;
+      return result;
     } catch (GenerationFailureException ex) {
       throw ex;
-    } catch (Exception e) {
+    } catch (Throwable e) {
       getLog().handleException(e);
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return Collections.emptyList();
@@ -334,8 +334,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (NoSuchMethodException e) {
       getLog().warning(macroNode.getReference(), String.format("cannot find query '%s' : evaluate to null", methodName));
       return null;
-    } catch (Exception e) {
-      getLog().handleException(e);
+    } catch (Throwable th) {
+      getLog().handleException(th);
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return null;
     }

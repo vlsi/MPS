@@ -25,6 +25,7 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -129,12 +130,12 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
       GenerationFailureException {
-    return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
+    return new ArrayList<SNode>(getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode)));
   }
 
   @NotNull
   @Override
-  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
+  public Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("evaluate source nodes", query), true);
       return wrapped.getSourceNodes(templateNode, query, context);
