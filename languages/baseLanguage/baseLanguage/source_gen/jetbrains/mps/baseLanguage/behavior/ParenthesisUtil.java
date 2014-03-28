@@ -215,7 +215,7 @@ public class ParenthesisUtil {
     SLinkOperations.setTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", rightAccumulator, true);
     SLinkOperations.setTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", leftAccumulator, true);
     SLinkOperations.setTarget(parens, "expression", firstCommon, true);
-    return myExpression;
+    return parens;
   }
 
 

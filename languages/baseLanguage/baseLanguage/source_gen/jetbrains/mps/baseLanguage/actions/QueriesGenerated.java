@@ -4332,7 +4332,9 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return ParenthesisUtil.createParenthesisNewRight(_context.getSourceNode());
+        SNode node = ParenthesisUtil.createParenthesisNewRight(_context.getSourceNode());
+        editorContext.selectWRTFocusPolicy(node);
+        return node;
       }
 
       public String getMatchingText(String pattern) {
@@ -4362,7 +4364,9 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return ParenthesisUtil.createParenthesisNewLeft(_context.getSourceNode());
+        SNode node = ParenthesisUtil.createParenthesisNewLeft(_context.getSourceNode());
+        editorContext.selectWRTFocusPolicy(node);
+        return node;
       }
 
       public String getMatchingText(String pattern) {

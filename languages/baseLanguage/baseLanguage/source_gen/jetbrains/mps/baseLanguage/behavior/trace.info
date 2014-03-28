@@ -13526,7 +13526,7 @@
     <nodeInfo nodeId="2329139813973413844" fileName="ParenthesisUtil.java" startLine="214" startPosition="0" endLine="215" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2329139813973413852" fileName="ParenthesisUtil.java" startLine="215" startPosition="164" endLine="216" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2329139813973413860" fileName="ParenthesisUtil.java" startLine="216" startPosition="162" endLine="217" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973413867" fileName="ParenthesisUtil.java" startLine="217" startPosition="71" endLine="218" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329139813973413867" fileName="ParenthesisUtil.java" startLine="217" startPosition="71" endLine="218" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2329139813973165874" fileName="ParenthesisUtil.java" startLine="224" startPosition="33" endLine="225" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2329139813973173002" fileName="ParenthesisUtil.java" startLine="226" startPosition="12" endLine="227" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7251340091287918931" fileName="ParenthesisUtil.java" startLine="233" startPosition="65" endLine="234" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -13966,7 +13966,7 @@
       <varInfo nodeId="4830579082340999882" varName="expression" />
       <varInfo nodeId="4830579082340999885" varName="opening" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813972819157" fileName="ParenthesisUtil.java" startLine="84" startPosition="112" endLine="218" endPosition="24">
+    <scopeInfo nodeId="2329139813972819157" fileName="ParenthesisUtil.java" startLine="84" startPosition="112" endLine="218" endPosition="18">
       <varInfo nodeId="2329139813973092177" varName="firstCommon" />
       <varInfo nodeId="2329139813973092161" varName="index" />
       <varInfo nodeId="2329139813973413589" varName="leftAccumulator" />
