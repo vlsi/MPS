@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
@@ -47,6 +46,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -59,10 +59,7 @@ import java.util.Collections;
  * @author Artem Tikhomirov
  */
 public class ReflectiveQueryProvider extends QueryProviderBase {
-  private final SNodeReference myRuleNode;
-
-  public ReflectiveQueryProvider(@NotNull SNodeReference ruleNode) {
-    myRuleNode = ruleNode;
+  public ReflectiveQueryProvider() {
   }
 
   @NotNull
@@ -71,7 +68,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(rule);
     String conditionMethod = conditionFunction == null ? null : TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
     if (conditionMethod != null) {
-      return new Impl(myRuleNode, conditionMethod);
+      return new Impl(rule.getReference(), conditionMethod);
     }
     return super.getCreateRootRuleCondition(rule);
   }
@@ -81,7 +78,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule) {
     String conditionMethod = getBaseRuleConditionMethod(rule);
     if (conditionMethod != null) {
-      return new Impl(myRuleNode, conditionMethod);
+      return new Impl(rule.getReference(), conditionMethod);
     }
     return super.getMapRootRuleCondition(rule);
   }
@@ -91,7 +88,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
     String conditionMethod = getBaseRuleConditionMethod(rule);
     if (conditionMethod != null) {
-      return new Impl(myRuleNode, conditionMethod);
+      return new Impl(rule.getReference(), conditionMethod);
     }
     return super.getReductionRuleCondition(rule);
   }
@@ -101,7 +98,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule) {
     String methodName = TemplateFunctionMethodName.patternRule_Condition(rule);
     if (methodName != null) {
-      return new Impl(myRuleNode, methodName);
+      return new Impl(rule.getReference(), methodName);
     }
     return super.getPatternRuleCondition(rule);
   }
@@ -112,7 +109,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode condition = RuleUtil.getDropRuleCondition(rule);
     String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
     if (conditionMethod != null) {
-      return new Impl(myRuleNode, conditionMethod, true);
+      return new Impl(rule.getReference(), conditionMethod, true);
     }
     return super.getDropRuleCondition(rule);
   }
@@ -122,7 +119,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule) {
     String conditionMethod = getBaseRuleConditionMethod(rule);
     if (conditionMethod != null) {
-      return new Impl(myRuleNode, conditionMethod);
+      return new Impl(rule.getReference(), conditionMethod);
     }
     return super.getWeaveRuleCondition(rule);
   }
@@ -133,7 +130,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(rule);
     String contentNodeMethod = contextQuery == null ? null : TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(contextQuery);
     if (contentNodeMethod != null) {
-      return new Impl(myRuleNode, contentNodeMethod);
+      return new Impl(rule.getReference(), contentNodeMethod);
     }
     return super.getWeaveRuleQuery(rule);
   }
@@ -144,7 +141,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(script);
     String codeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
     if (codeBlockMethod != null) {
-      return new Impl(myRuleNode, codeBlockMethod);
+      return new Impl(script.getReference(), codeBlockMethod);
     }
     return super.getScriptCodeBlock(script);
   }
@@ -155,7 +152,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(mapCfg);
     String conditionMethod = condition == null ? null : TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
     if (conditionMethod != null) {
-      return new Impl(myRuleNode, conditionMethod, true);
+      return new Impl(mapCfg.getReference(), conditionMethod, true);
     }
     return super.getMapConfigurationCondition(mapCfg);
   }
@@ -186,25 +183,25 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     private final String myMethodName;
     private final boolean myDefValue;
     @NotNull
-    private final SNodeReference myRuleNode;
+    private final SNodeReference myTemplateNode;
 
-    Impl(@NotNull SNodeReference ruleNode, @NotNull String methodName) {
-      this(ruleNode, methodName, false);
+    Impl(@NotNull SNodeReference templateNode, @NotNull String methodName) {
+      this(templateNode, methodName, false);
     }
 
-    Impl(@NotNull SNodeReference ruleNode, @NotNull String methodName, boolean defValue) {
-      myRuleNode = ruleNode;
+    Impl(@NotNull SNodeReference templateNode, @NotNull String methodName, boolean defValue) {
+      myTemplateNode = templateNode;
       myMethodName = methodName;
       myDefValue = defValue;
     }
 
     private boolean invokeBoolean(TemplateQueryContext ctx) {
       try {
-        return QueryMethodGenerated.<Boolean>invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        return QueryMethodGenerated.<Boolean>invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
       }
       return myDefValue;
     }
@@ -227,11 +224,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx) {
       try {
-        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
       }
       return null;
     }
@@ -249,11 +246,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public SNode contextNode(WeavingMappingRuleContext ctx) {
       try {
-        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       } catch (ClassNotFoundException ex) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       }
       return null;
     }
@@ -261,11 +258,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public void invoke(MappingScriptContext ctx) {
       try {
-        QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
+        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
       }
     }
 
@@ -292,13 +289,10 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
         return QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
       } catch (NoSuchMethodException e) {
         context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
-        return null;
-      } catch (Exception e) {
-        context.getGenerator().getLogger().handleException(e);
-        context.getGenerator().getLogger().error(myQuery, "cannot evaluate query, exception was thrown", GeneratorUtil.describeIfExists(context.getInputNode(),
-            "input node"));
-        return null;
+      } catch (ClassNotFoundException ex) {
+        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
       }
+      return null;
     }
 
     @NotNull
@@ -306,20 +300,14 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
       try {
         Iterable<SNode> result = QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
-
-        CollectionUtil.checkForNulls(result);
-
         return IterableUtil.asCollection(result);
 
       } catch (NoSuchMethodException e) {
         context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
-        return Collections.emptyList();
-      } catch (Exception e) {
-        context.getGenerator().getLogger().handleException(e);
-        context.getGenerator().getLogger().error(myQuery, "cannot evaluate query, exception was thrown", GeneratorUtil.describeIfExists(context.getInputNode(),
-            "input node"));
-        return Collections.emptyList();
+      } catch (ClassNotFoundException e) {
+        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
       }
+      return Collections.emptyList();
     }
   }
 }

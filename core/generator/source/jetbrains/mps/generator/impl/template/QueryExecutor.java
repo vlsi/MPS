@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.generator.impl.template;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -27,6 +29,8 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public interface QueryExecutor {
-  List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context);
-  SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context);
+  @NotNull
+  List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
+  @Nullable
+  SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
 }

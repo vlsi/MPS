@@ -19,6 +19,8 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
@@ -32,17 +34,19 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Evgeny Gryaznov, Feb 10, 2010
@@ -51,6 +55,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   private final ITemplateGenerator myGenerator;
   private final boolean myIsMultithread;
+  private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
+  private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
 
   public DefaultQueryExecutionContext(ITemplateGenerator generator) {
     this(generator, true);
@@ -163,7 +169,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
           mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       getLog().handleException(t);
-      getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: mapping func failed, exception was thrown", GeneratorUtil.describeInput(context));
+      getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: mapping func failed, exception was thrown", GeneratorUtil.describeInput(
+          context));
       throw new GenerationFailureException(t);
     }
   }
@@ -177,10 +184,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction);
     try {
       QueryMethodGenerated.invoke(
-        methodName,
-        myGenerator.getGeneratorSessionContext(),
-        new MapSrcMacroPostProcContext(context, outputNode, mapSrcNodeOrListMacro.getReference(), myGenerator),
-        mapSrcNodeOrListMacro.getModel());
+          methodName,
+          myGenerator.getGeneratorSessionContext(),
+          new MapSrcMacroPostProcContext(context, outputNode, mapSrcNodeOrListMacro.getReference(), myGenerator),
+          mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       getLog().handleException(t);
       getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: post-processing failed, exception was thrown",
@@ -217,30 +224,28 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     return getSourceNode(macroNode, query, context.subContext(inputNode));
   }
 
   @Override
-  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query);
+  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      return (SNode) QueryMethodGenerated.invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new SourceSubstituteMacroNodeContext(context, templateNode.getReference(), myGenerator),
-          query.getModel());
-    } catch (NoSuchMethodException e) {
-      getLog().warning(templateNode.getReference(), String.format("cannot find nodes query '%s' : evaluate to null", methodName));
-      return null;
+      final SNodeReference qr = query.getReference();
+      SourceNodeQuery q = myNodeQueries.get(qr);
+      if (q == null) {
+        q = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getSourceNodeQuery(query);
+        myNodeQueries.put(qr, q);
+      }
+      return q.evaluate(new SourceSubstituteMacroNodeContext(context, templateNode.getReference(), myGenerator));
+    } catch (GenerationFailureException ex) {
+      throw ex;
     } catch (Exception e) {
       getLog().handleException(e);
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return null;
     }
   }
-
-
 
   @Override
   public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
@@ -284,33 +289,34 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
+      GenerationFailureException {
     return getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
   }
 
+  @NotNull
   @Override
-  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
+  public List<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      Object result = QueryMethodGenerated.invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new SourceSubstituteMacroNodesContext(context, templateNode.getReference(), myGenerator),
-          query.getModel());
+      final SNodeReference qr = query.getReference();
+      SourceNodesQuery q = myNodesQueries.get(qr);
+      if (q == null) {
+        q = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getSourceNodesQuery(query);
+        myNodesQueries.put(qr, q);
+      }
+      final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, templateNode.getReference(), myGenerator));
+
+      CollectionUtil.checkForNulls(result, "null values in source nodes");
 
       @SuppressWarnings("unchecked")
-      List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(IterableUtil.asCollection((Iterable<SNode>) result));
-
-      CollectionUtil.checkForNulls(resultList);
-
+      List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(result);
       return resultList;
-    } catch (NoSuchMethodException e) {
-      getLog().warning(templateNode.getReference(), String.format("cannot find nodes query '%s' : evaluate to empty list", methodName));
-      return new ArrayList<SNode>();
+    } catch (GenerationFailureException ex) {
+      throw ex;
     } catch (Exception e) {
       getLog().handleException(e);
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
-      return new LinkedList<SNode>();
+      return Collections.emptyList();
     }
   }
 
