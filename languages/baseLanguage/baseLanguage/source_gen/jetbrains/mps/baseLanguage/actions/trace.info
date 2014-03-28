@@ -4960,7 +4960,7 @@
     <nodeInfo nodeId="2643065713350985382" fileName="PrecedenceUtil.java" startLine="104" startPosition="147" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2643065713350951718" fileName="PrecedenceUtil.java" startLine="106" startPosition="483" endLine="107" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2643065713350965574" fileName="PrecedenceUtil.java" startLine="108" startPosition="5" endLine="109" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8763293761094492863" fileName="PrecedenceUtil.java" startLine="114" startPosition="89" endLine="115" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8763293761094492863" fileName="PrecedenceUtil.java" startLine="114" startPosition="90" endLine="115" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8425917838863473628" fileName="PrecedenceUtil.java" startLine="121" startPosition="15" endLine="122" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8425917838863473630" fileName="PrecedenceUtil.java" startLine="122" startPosition="16" endLine="123" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8425917838863473635" fileName="PrecedenceUtil.java" startLine="124" startPosition="15" endLine="125" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -5061,7 +5061,7 @@
     <scopeInfo nodeId="5331479185384520813" fileName="PrecedenceUtil.java" startLine="67" startPosition="87" endLine="68" endPosition="151" />
     <scopeInfo nodeId="2643065713350791519" fileName="PrecedenceUtil.java" startLine="101" startPosition="602" endLine="102" endPosition="18" />
     <scopeInfo nodeId="2643065713350861459" fileName="PrecedenceUtil.java" startLine="106" startPosition="483" endLine="107" endPosition="136" />
-    <scopeInfo nodeId="8763293761094492856" fileName="PrecedenceUtil.java" startLine="114" startPosition="89" endLine="115" endPosition="170" />
+    <scopeInfo nodeId="8763293761094492856" fileName="PrecedenceUtil.java" startLine="114" startPosition="90" endLine="115" endPosition="170" />
     <scopeInfo nodeId="577599984096486256" fileName="PrecedenceUtil.java" startLine="156" startPosition="120" endLine="157" endPosition="51" />
     <scopeInfo nodeId="577599984096428054" fileName="PrecedenceUtil.java" startLine="161" startPosition="791" endLine="162" endPosition="73" />
     <scopeInfo nodeId="1302191354693906916" fileName="PrecedenceUtil.java" startLine="164" startPosition="110" endLine="165" endPosition="54" />

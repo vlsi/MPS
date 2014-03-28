@@ -111,7 +111,7 @@ public class PrecedenceUtil {
 
 
 
-  public static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
+  private static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
     return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() < getPriority(SNodeOperations.getConceptDeclaration(secondExpression)).ordinal();
   }
 
