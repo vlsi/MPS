@@ -73,7 +73,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
     String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
+      return QueryMethodGenerated.<Boolean>invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
           new BaseMappingRuleContext(inputNode, ruleNode, myGenerator),
@@ -103,7 +103,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
     String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
+      return QueryMethodGenerated.<Boolean>invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
           new ReductionRuleQueryContext(templateContext, ruleNode, myGenerator),
@@ -131,7 +131,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
     String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
+      return QueryMethodGenerated.<Boolean>invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
           new IfMacroContext(inputNode, ifMacro, context, myGenerator),

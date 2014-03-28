@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
@@ -24,6 +26,8 @@ import jetbrains.mps.generator.impl.query.PatternRuleQuery;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
@@ -32,14 +36,22 @@ import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Access to QueriesGenerated methods via reflection
@@ -148,6 +160,20 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     return super.getMapConfigurationCondition(mapCfg);
   }
 
+  @NotNull
+  @Override
+  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query);
+    return new SourceNodes(query.getReference(), methodName);
+  }
+
+  @NotNull
+  @Override
+  public SourceNodesQuery getSourceNodesQuery(@NotNull SNode query) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
+    return new SourceNodes(query.getReference(), methodName);
+  }
+
   private String getBaseRuleConditionMethod(SNode rule) {
     SNode condition = RuleUtil.getBaseRuleCondition(rule);
     return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
@@ -174,7 +200,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     private boolean invokeBoolean(TemplateQueryContext ctx) {
       try {
-        return (Boolean) QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        return QueryMethodGenerated.<Boolean>invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
         ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
       } catch (NoSuchMethodException e) {
@@ -201,7 +227,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx) {
       try {
-        return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
         ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
       } catch (NoSuchMethodException e) {
@@ -223,7 +249,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public SNode contextNode(WeavingMappingRuleContext ctx) {
       try {
-        return (SNode) QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
+        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myRuleNode.getModelReference(), true);
       } catch (NoSuchMethodException e) {
         ctx.getGenerator().getLogger().warning(myRuleNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       } catch (ClassNotFoundException ex) {
@@ -246,6 +272,54 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public boolean check(@NotNull TemplateQueryContext ctx) {
       return invokeBoolean(ctx);
+    }
+  }
+
+
+  private static final class SourceNodes implements SourceNodeQuery, SourceNodesQuery {
+    private final SNodeReference myQuery;
+    private final String myMethodName;
+
+    public SourceNodes(@NotNull SNodeReference query, @NotNull String methodName) {
+      myQuery = query;
+      myMethodName = methodName;
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
+      try {
+        return QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
+      } catch (NoSuchMethodException e) {
+        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
+        return null;
+      } catch (Exception e) {
+        context.getGenerator().getLogger().handleException(e);
+        context.getGenerator().getLogger().error(myQuery, "cannot evaluate query, exception was thrown", GeneratorUtil.describeIfExists(context.getInputNode(),
+            "input node"));
+        return null;
+      }
+    }
+
+    @NotNull
+    @Override
+    public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
+      try {
+        Iterable<SNode> result = QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
+
+        CollectionUtil.checkForNulls(result);
+
+        return IterableUtil.asCollection(result);
+
+      } catch (NoSuchMethodException e) {
+        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
+        return Collections.emptyList();
+      } catch (Exception e) {
+        context.getGenerator().getLogger().handleException(e);
+        context.getGenerator().getLogger().error(myQuery, "cannot evaluate query, exception was thrown", GeneratorUtil.describeIfExists(context.getInputNode(),
+            "input node"));
+        return Collections.emptyList();
+      }
     }
   }
 }
