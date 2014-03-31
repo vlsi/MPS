@@ -150,7 +150,7 @@ public class QueryMethodGenerated implements CoreComponent {
     return invoke(methodName, context, contextObject, sourceModel, false);
   }
   public static <T> T invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    return invoke(methodName, context, contextObject, sourceModel.getReference(), suppressErrorLogging);
+    return QueryMethodGenerated.<T>invoke(methodName, context, contextObject, sourceModel.getReference(), suppressErrorLogging);
   }
 
   public static <T> T invoke(String methodName, IOperationContext context, Object contextObject, SModelReference sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
