@@ -163,6 +163,12 @@ public class TransientModelsModule extends AbstractModule {
     }
   }
 
+  /**
+   * TransientModelsModule now support models with identical names/references (unless published)
+   * @deprecated Use {@link #createTransientModel(org.jetbrains.mps.openapi.model.SModelReference)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public SModel createTransientModel(@NotNull String longName, @NotNull String stereotype) {
     String modelName = longName + "@" + stereotype;
     while (!isValidName(modelName)) {
@@ -240,6 +246,11 @@ public class TransientModelsModule extends AbstractModule {
 
   public void publishTrace(@NotNull SModelReference model, @NotNull GenerationTrace trace) {
     myTraces.put(SModelStereotype.withoutStereotype(model.getModelName()), trace);
+  }
+
+  public void changeModelReference(@NotNull SModel transientModel, @NotNull SModelReference newRef) {
+    assert isMyTransientModel(transientModel.getReference());
+    ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
   public class TransientSModelDescriptor extends EditableSModelBase {
