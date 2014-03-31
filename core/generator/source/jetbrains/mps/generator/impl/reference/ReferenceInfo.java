@@ -119,17 +119,17 @@ public abstract class ReferenceInfo {
     if (referentNodeModel != myOutputSourceNode.getModel()) {
       if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
         // references to template nodes are not acceptable
-        generator.getLogger().error(myOutputSourceNode,
-            "bad reference, cannot refer to a generator model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + myReferenceRole + "' in " +
-                SNodeUtil.getDebugText(myOutputSourceNode),
+        String msg = "bad reference, cannot refer to a generator model: %s for role '%s' in %s";
+        generator.getLogger().error(myOutputSourceNode.getReference(), String.format(msg,
+            SNodeUtil.getDebugText(outputTargetNode), myReferenceRole, SNodeUtil.getDebugText(myOutputSourceNode)),
             getErrorDescriptions());
         return false;
       }
       if (referentNodeModel .getModule() instanceof TransientModelsModule) {
         // references to transient nodes are not acceptable
-        generator.getLogger().error(myOutputSourceNode,
-            "bad reference, cannot refer to a transient model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + myReferenceRole + "' in " +
-                SNodeUtil.getDebugText(myOutputSourceNode),
+        String msg = "bad reference, cannot refer to a transient model: %s  for role '%s' in %s";
+        generator.getLogger().error(myOutputSourceNode.getReference(), String.format(msg,
+            SNodeUtil.getDebugText(outputTargetNode), myReferenceRole, SNodeUtil.getDebugText(myOutputSourceNode)),
             getErrorDescriptions());
         return false;
       }

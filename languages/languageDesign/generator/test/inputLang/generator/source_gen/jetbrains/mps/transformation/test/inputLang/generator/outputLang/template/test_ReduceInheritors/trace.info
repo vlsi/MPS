@@ -229,85 +229,85 @@
     <nodeInfo nodeId="7612440128092282169" fileName="QueriesGenerated.java" startLine="64" startPosition="131" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8417539822878724200" fileName="QueriesGenerated.java" startLine="46" startPosition="120" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="27" startPosition="43" endLine="28" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="31" startPosition="158" endLine="32" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="33" startPosition="9" endLine="34" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="34" startPosition="77" endLine="35" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="35" startPosition="106" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="36" startPosition="64" endLine="37" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="37" startPosition="102" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="39" startPosition="7" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="41" startPosition="13" endLine="42" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="42" startPosition="79" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="44" startPosition="15" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="45" startPosition="81" endLine="46" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="46" startPosition="201" endLine="47" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="48" startPosition="33" endLine="49" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="51" startPosition="21" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="53" startPosition="11" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="55" startPosition="35" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="56" startPosition="63" endLine="57" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="59" startPosition="36" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="61" startPosition="15" endLine="62" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="64" startPosition="36" endLine="65" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="66" startPosition="17" endLine="67" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="67" startPosition="109" endLine="68" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="68" startPosition="82" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="69" startPosition="100" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="72" startPosition="36" endLine="73" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="76" startPosition="13" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="78" startPosition="41" endLine="79" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="81" startPosition="19" endLine="82" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="84" startPosition="61" endLine="85" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="86" startPosition="9" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="89" startPosition="7" endLine="90" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="91" startPosition="13" endLine="92" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="92" startPosition="82" endLine="93" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="93" startPosition="211" endLine="94" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="95" startPosition="19" endLine="96" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="98" startPosition="61" endLine="99" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="100" startPosition="9" endLine="101" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="103" startPosition="7" endLine="104" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="105" startPosition="13" endLine="106" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="106" startPosition="85" endLine="107" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="107" startPosition="116" endLine="108" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="108" startPosition="257" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="110" startPosition="19" endLine="111" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="111" startPosition="125" endLine="112" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="114" startPosition="29" endLine="115" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="116" startPosition="9" endLine="117" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="119" startPosition="15" endLine="120" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="120" startPosition="121" endLine="121" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="122" startPosition="5" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="126" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_q702qm_a0a1" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="127" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_q702qm_a0a0a1a2" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="128" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveMacroRef_q702qm_a0a0a1a5a1a2" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="129" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="insertMacro_q702qm_a0a0a2a1a5a1a2" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="130" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveMacroConsequence_q702qm_a0a1a2a2a4a1a5a1a2" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="131" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="copySrcListMacro_q702qm_a0a0a1a6a1a2" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="132" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_q702qm_a0a0a1a7a1a2" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="133" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="propertyMacro_q702qm_c0a0c0c0b0h0b0c" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemplateOutputRoot#()V" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="47" startPosition="102" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="58" startPosition="46" endLine="61" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="63" startPosition="19" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="71" startPosition="25" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="83" startPosition="9" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="97" startPosition="9" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="113" startPosition="9" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="90" startPosition="40" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="104" startPosition="127" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="43" startPosition="30" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="62" startPosition="68" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="88" startPosition="7" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="102" startPosition="7" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="57" startPosition="212" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="54" startPosition="54" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="40" startPosition="40" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="38" startPosition="0" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="32" startPosition="123" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="31" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="28" startPosition="43" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="32" startPosition="158" endLine="33" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="34" startPosition="9" endLine="35" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="35" startPosition="77" endLine="36" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="36" startPosition="106" endLine="37" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="37" startPosition="64" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="38" startPosition="102" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="40" startPosition="7" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="42" startPosition="13" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="43" startPosition="79" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="45" startPosition="15" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="46" startPosition="81" endLine="47" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="47" startPosition="201" endLine="48" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="49" startPosition="33" endLine="50" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="52" startPosition="21" endLine="53" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="54" startPosition="11" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="56" startPosition="35" endLine="57" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="57" startPosition="63" endLine="58" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="60" startPosition="36" endLine="61" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="62" startPosition="15" endLine="63" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="65" startPosition="36" endLine="66" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="67" startPosition="17" endLine="68" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="68" startPosition="109" endLine="69" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="69" startPosition="82" endLine="70" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="70" startPosition="100" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="73" startPosition="36" endLine="74" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="77" startPosition="13" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="79" startPosition="41" endLine="80" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="82" startPosition="19" endLine="83" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="85" startPosition="61" endLine="86" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="87" startPosition="9" endLine="88" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="90" startPosition="7" endLine="91" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="92" startPosition="13" endLine="93" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="93" startPosition="82" endLine="94" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="94" startPosition="211" endLine="95" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="96" startPosition="19" endLine="97" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="99" startPosition="61" endLine="100" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="101" startPosition="9" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="104" startPosition="7" endLine="105" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="106" startPosition="13" endLine="107" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="107" startPosition="85" endLine="108" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="108" startPosition="116" endLine="109" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="109" startPosition="257" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="111" startPosition="19" endLine="112" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="112" startPosition="125" endLine="113" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="115" startPosition="29" endLine="116" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="117" startPosition="9" endLine="118" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="120" startPosition="15" endLine="121" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="121" startPosition="121" endLine="122" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="123" startPosition="5" endLine="124" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="127" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_q702qm_a0a1" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="128" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_q702qm_a0a0a1a2" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="129" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveMacroRef_q702qm_a0a0a1a5a1a2" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="130" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="insertMacro_q702qm_a0a0a2a1a5a1a2" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="131" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveMacroConsequence_q702qm_a0a1a2a2a4a1a5a1a2" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="132" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="copySrcListMacro_q702qm_a0a0a1a6a1a2" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="133" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_q702qm_a0a0a1a7a1a2" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="134" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="propertyMacro_q702qm_c0a0c0c0b0h0b0c" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemplateOutputRoot#()V" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="48" startPosition="102" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="59" startPosition="46" endLine="62" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="64" startPosition="19" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="72" startPosition="25" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="84" startPosition="9" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="98" startPosition="9" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="114" startPosition="9" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="91" startPosition="40" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="105" startPosition="127" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="44" startPosition="30" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="63" startPosition="68" endLine="76" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="89" startPosition="7" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="103" startPosition="7" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="58" startPosition="212" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="55" startPosition="54" endLine="81" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="41" startPosition="40" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="39" startPosition="0" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="33" startPosition="123" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="32" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="8014813979421777302" fileName="QueriesGenerated.java" startLine="42" startPosition="112" endLine="43" endPosition="128" />
     <scopeInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="48" startPosition="50" endLine="49" endPosition="66" />
     <scopeInfo nodeId="1206460249787" fileName="QueriesGenerated.java" startLine="54" startPosition="114" endLine="55" endPosition="78" />
@@ -318,72 +318,72 @@
       <varInfo nodeId="7612440128092282154" varName="inode" />
     </scopeInfo>
     <scopeInfo nodeId="8417539822878722926" fileName="QueriesGenerated.java" startLine="46" startPosition="120" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="24" startPosition="31" endLine="24" endPosition="31" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="27" startPosition="43" endLine="28" endPosition="32" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="48" startPosition="33" endLine="49" endPosition="82" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="51" startPosition="21" endLine="52" endPosition="82" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="59" startPosition="36" endLine="60" endPosition="25" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="64" startPosition="36" endLine="65" endPosition="103" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="72" startPosition="36" endLine="73" endPosition="104" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="78" startPosition="41" endLine="79" endPosition="120" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="81" startPosition="19" endLine="82" endPosition="80" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="84" startPosition="61" endLine="85" endPosition="49" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="95" startPosition="19" endLine="96" endPosition="83" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="98" startPosition="61" endLine="99" endPosition="49" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="114" startPosition="29" endLine="115" endPosition="49" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="110" startPosition="19" endLine="112" endPosition="86" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="119" startPosition="15" endLine="121" endPosition="78" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="71" startPosition="25" endLine="74" endPosition="17" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="83" startPosition="9" endLine="86" endPosition="9">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="25" startPosition="31" endLine="25" endPosition="31" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="28" startPosition="43" endLine="29" endPosition="32" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="49" startPosition="33" endLine="50" endPosition="82" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="52" startPosition="21" endLine="53" endPosition="82" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="60" startPosition="36" endLine="61" endPosition="25" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="65" startPosition="36" endLine="66" endPosition="103" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="73" startPosition="36" endLine="74" endPosition="104" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="79" startPosition="41" endLine="80" endPosition="158" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="82" startPosition="19" endLine="83" endPosition="80" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="85" startPosition="61" endLine="86" endPosition="49" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="96" startPosition="19" endLine="97" endPosition="83" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="99" startPosition="61" endLine="100" endPosition="49" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="115" startPosition="29" endLine="116" endPosition="49" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="111" startPosition="19" endLine="113" endPosition="86" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="120" startPosition="15" endLine="122" endPosition="78" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="72" startPosition="25" endLine="75" endPosition="17" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="84" startPosition="9" endLine="87" endPosition="9">
       <varInfo nodeId="1206460153890" varName="child4" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="91" startPosition="13" endLine="94" endPosition="170">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="92" startPosition="13" endLine="95" endPosition="170">
       <varInfo nodeId="1206460153890" varName="copyListInput5" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="97" startPosition="9" endLine="100" endPosition="9">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="98" startPosition="9" endLine="101" endPosition="9">
       <varInfo nodeId="1206460153890" varName="child6" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="105" startPosition="13" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="44" startPosition="15" endLine="50" endPosition="13">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="106" startPosition="13" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="45" startPosition="15" endLine="51" endPosition="13">
       <varInfo nodeId="1206460153890" varName="insertInput3" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="63" startPosition="19" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="64" startPosition="19" endLine="71" endPosition="0">
       <varInfo nodeId="1206460153890" varName="weaveContext3" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="89" startPosition="7" endLine="101" endPosition="31">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="90" startPosition="7" endLine="102" endPosition="31">
       <varInfo nodeId="1206460153890" varName="tlist5" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="103" startPosition="7" endLine="117" endPosition="31">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="104" startPosition="7" endLine="118" endPosition="31">
       <varInfo nodeId="1206460153890" varName="tnode7" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="58" startPosition="46" endLine="75" endPosition="15">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="59" startPosition="46" endLine="76" endPosition="15">
       <varInfo nodeId="1206460153890" varName="inputChanged3" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="57" startPosition="212" endLine="76" endPosition="13">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="58" startPosition="212" endLine="77" endPosition="13">
       <varInfo nodeId="1206460153890" varName="itnode3" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="55" startPosition="35" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="56" startPosition="35" endLine="78" endPosition="0">
       <varInfo nodeId="1206460153890" varName="outputContextVar3" />
       <varInfo nodeId="1206460153890" varName="weaveList3" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="41" startPosition="13" endLine="80" endPosition="11">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="42" startPosition="13" endLine="81" endPosition="11">
       <varInfo nodeId="1206460153890" varName="tnode3" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="39" startPosition="7" endLine="87" endPosition="31">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="40" startPosition="7" endLine="88" endPosition="31">
       <varInfo nodeId="1206460153890" varName="tlist2" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="33" startPosition="9" endLine="118" endPosition="7" />
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="31" startPosition="158" endLine="123" endPosition="46">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="34" startPosition="9" endLine="119" endPosition="7" />
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="32" startPosition="158" endLine="124" endPosition="46">
       <varInfo nodeId="1206460153890" varName="tnode1" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="31" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="32" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="1206460153890" varName="context" />
       <varInfo nodeId="1206460153890" varName="environment" />
     </scopeInfo>
     <unitInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="47" startPosition="175" endLine="51" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated$1" />
-    <unitInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="22" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateOutputRoot" />
+    <unitInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="23" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateOutputRoot" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)/8417539822878724212">
     <nodeInfo nodeId="8417539822878724212" fileName="Templateweave__InputRoot.java" startLine="24" startPosition="43" endLine="25" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

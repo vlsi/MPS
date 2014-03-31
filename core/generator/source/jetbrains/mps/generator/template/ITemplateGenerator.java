@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -58,11 +59,13 @@ public interface ITemplateGenerator {
    * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
    */
   @Deprecated
+  @ToRemove(version=3.1)
   void showErrorMessage(SNode inputNode, SNode templateNode, String message);
 
   /**
    * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
    */
   @Deprecated
+  @ToRemove(version=3.1)
   void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 }

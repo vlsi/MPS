@@ -619,7 +619,7 @@
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="41" startPosition="199" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="42" startPosition="70" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="43" startPosition="55" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="29" endLine="53" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="57" startPosition="131" endLine="58" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="62" startPosition="147" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -641,7 +641,7 @@
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="29" startPosition="41" endLine="30" endPosition="199" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="33" startPosition="45" endLine="34" endPosition="199" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="37" startPosition="62" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="90" />
+    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="71" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="29" endLine="53" endPosition="277" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="57" startPosition="131" endLine="58" endPosition="151" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
