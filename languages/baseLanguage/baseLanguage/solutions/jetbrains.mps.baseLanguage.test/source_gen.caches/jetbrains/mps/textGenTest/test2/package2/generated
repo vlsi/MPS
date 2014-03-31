@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="cv6cdbctaccfw50ka5x7oj1end095ra">
-  <common hash="4ury2xvkfz9ktxg8t8emyelpsw1ccjh" dependsOnNodes="true" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
+  <common hash="4ury2xvkfz9ktxg8t8emyelpsw1ccjh" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
   <source id="1440921264474787839" name="Class3" hash="a592z1k35zm3e0q2zl8iwgyj5u9faon">
     <file name="Class3.java" />
   </source>
