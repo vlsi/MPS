@@ -23,13 +23,13 @@ import java.awt.Frame;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MigrationScript_MigrationToUpdateAllConstants_Action extends BaseAction {
+public class MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public MigrationScript_MigrationToUpdateAllConstants_Action() {
-    super("AllConstants Property Update Migration", "Re-inserts the AllConstants concept to fix the missing value property", ICON);
+  public MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action() {
+    super("Replace PlaceholderMethodDeclaration with PlaceholderMember", "Find and replace empty lines in Interfaces represented by PlaceholderMethodDeclaration", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
@@ -42,7 +42,7 @@ public class MigrationScript_MigrationToUpdateAllConstants_Action extends BaseAc
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_MigrationToUpdateAllConstants", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_MigrationToRemovePlaceholderMethodDeclarations", t);
       }
       this.disable(event.getPresentation());
     }
@@ -68,7 +68,7 @@ public class MigrationScript_MigrationToUpdateAllConstants_Action extends BaseAc
     try {
       SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c8959032d(jetbrains.mps.baseLanguage.collections.scripts)", "3600688056589376389");
 
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "AllConstantsMigration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "ReplacePlaceholderMethodDeclaration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (ModelAccess.instance().canWrite()) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
@@ -76,10 +76,10 @@ public class MigrationScript_MigrationToUpdateAllConstants_Action extends BaseAc
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MigrationScript_MigrationToUpdateAllConstants", t);
+        LOG.error("User's action execute method failed. Action:" + "MigrationScript_MigrationToRemovePlaceholderMethodDeclarations", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToUpdateAllConstants_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action.class);
 }

@@ -16,11 +16,11 @@ public class UpdateCastExpressionParens_MigrationScript extends BaseMigrationScr
     super("Add missing parentheses to CastExpressions");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "Find CaseExpressions with required but missing parens around their nested expressions adn add them";
+        return "Find CastExpressions with required but missing parens around their nested expressions and add them";
       }
 
       public String getAdditionalInfo() {
-        return "Find CaseExpressions with required but missing parens around their nested expressions adn add them";
+        return "Find CastExpressions with required but missing parens around their nested expressions and add them";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
