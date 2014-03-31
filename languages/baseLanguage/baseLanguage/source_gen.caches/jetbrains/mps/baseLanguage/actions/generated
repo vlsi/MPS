@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9gx8nbi8s1fbymxtfp81bmyevcr7nah">
+<dependencies version="2" modelHash="-j8tzid9ucx9zbeu074md38yetl0rc7">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -218,12 +218,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExpectedType_FactoryUtil.java" />
   </source>
-  <source id="1177334745415" name="constants" hash="-9cfdancyolls0qlnt7l2zcs8tiuwy6a">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1177334745415" name="constants" hash="-9cfdancyolls0qlnt7l2zcs8tiuwy6a" />
   <source id="1177362978256" name="instanceMembers" hash="169vojssu293riyovcr82l9lqq6h8yh" />
   <source id="1177397776787" name="conceptFunctionParameters" hash="-4kx9wht3m6yfpctf7zmfenoftjr357o" />
   <source id="1177400730676" name="loopStatements" hash="4xol8kqhdxjhfgm80djjll3yqv5ml9d" />
@@ -418,7 +417,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PrecedenceUtil.java" />
   </source>
   <source id="4592306222112729713" name="assert" hash="-8qhl27a6dkko13n6ts5jztzxf13w8mx">
@@ -500,7 +498,7 @@
   <source id="5695707814672712007" name="LocalVariable2ArrayClassExpression" hash="e3dxiiyekmjakxkd8lsa0cpi77l2tx7">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1778214689153983413" name="ParensAroundEmptyExpression" hash="-1fxbthx4ln9fs6nl0isltp60rpevq3j">
+  <source id="1778214689153983413" name="ParensAroundEmptyExpression" hash="86jzboo8n12y6wfwzlo95my0nrzc4cu">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

@@ -2341,10 +2341,9 @@ public class QueriesGenerated {
               int value;
               try {
                 value = Integer.parseInt(intent);
+                SPropertyOperations.set(constant, "value", "" + (value));
               } catch (NumberFormatException e) {
-                value = 0;
               }
-              SPropertyOperations.set(constant, "value", "" + (value));
             }
             return parens;
           }
