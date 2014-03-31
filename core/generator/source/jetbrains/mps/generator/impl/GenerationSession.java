@@ -39,7 +39,6 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
@@ -312,28 +311,17 @@ class GenerationSession {
     mySessionContext = new GenerationSessionContext(mySessionContext);
 
     // -- filter mapping configurations
-    Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, new StepArguments(null, inputModel, null, myDependenciesBuilder, myNewTrace));
-    try {
-      LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
-      while (it.hasNext()) {
-        TemplateMappingConfiguration c = it.next();
-          if (!c.isApplicable(templateGenerator)) {
-            drop.add(c);
-            it.remove();
-          }
+    LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
+    for (TemplateMappingConfiguration c : mappingConfigurations) {
+      if (!c.isApplicable(templateGenerator)) {
+        drop.add(c);
       }
-      if (!drop.isEmpty()) {
-        printMappingConfigurations("drop mapping configurations (not applicable):", drop);
-      }
-    } catch (GenerationFailureException ex) {
-      throw ex;
-    } catch (GenerationException ex) {
-      myLogger.handleException(ex);
-      myLogger.error("Failed to evaluate MappingConfiguration.isApplicable");
-      throw new GenerationFailureException(ex);
     }
-
+    if (!drop.isEmpty()) {
+      printMappingConfigurations("drop mapping configurations (not applicable):", drop);
+    }
+    mappingConfigurations.removeAll(drop);
     if (mappingConfigurations.isEmpty()) {
       // no applicable configurations found
       return inputModel;
@@ -641,6 +629,18 @@ class GenerationSession {
     TransientModelsModule module = mySessionContext.getModule();
     String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
     return module.createTransientModel(longName, stereotype);
+  }
+
+  /**
+   * makes an identical copy of transient model, preserving model reference
+   */
+  private SModel cloneTransientModel(SModel transientModel) {
+    TransientModelsModule module = mySessionContext.getModule();
+    final SModelReference mr = transientModel.getReference();
+    assert module.isMyTransientModel(mr);
+    SModel newModel = module.createTransientModel(mr);
+    new CloneUtil(transientModel, newModel).cloneModelWithImports();
+    return newModel;
   }
 
   /**
