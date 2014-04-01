@@ -109,20 +109,20 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static Iterable sourceNodesQuery_2379134940430025802(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2379134940430025802(final SourceSubstituteMacroNodesContext _context) {
     // first class is already handled in the first if branch 
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:methods"))).skip(1);
   }
 
-  public static Iterable sourceNodesQuery_2379134940430020121(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2379134940430020121(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_2323553266848914943(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2323553266848914943(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).skip(1);
   }
 
-  public static Iterable sourceNodesQuery_2323553266848914918(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2323553266848914918(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).skip(1);
   }
 

@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
@@ -100,6 +102,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   @Override
+  @NotNull
   public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
     final String id = rule.getNodeId().toString();
     if (!(rrcMethods.containsKey(id))) {
@@ -136,6 +139,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   @Override
+  @NotNull
   public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
     final String id = mapCfg.getNodeId().toString();
     if (!(mccMethods.containsKey(id))) {
@@ -158,6 +162,58 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.mappingConfiguration_Condition_6847351214607238415(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for map configuration %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
+
+  {
+    int i = 0;
+    snqMethods.put("5233164016162060926", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("5233164016162060935", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("5233164016162060943", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("5233164016162061046", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("5233164016162061054", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("5233164016162061064", new QueriesGenerated.SNQ(i++));
+  }
+
+  @NotNull
+  @Override
+  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
+    final String id = query.getNodeId().toString();
+    if (!(snqMethods.containsKey(id))) {
+      return super.getSourceNodeQuery(query);
+    }
+    return snqMethods.get(id);
+  }
+
+  private static class SNQ implements SourceNodeQuery {
+    private final int methodKey;
+
+    public SNQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+
+
+    @Nullable
+    public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.sourceNodeQuery_5233164016162060926(ctx);
+        case 1:
+          return QueriesGenerated.sourceNodeQuery_5233164016162060935(ctx);
+        case 2:
+          return QueriesGenerated.sourceNodeQuery_5233164016162060943(ctx);
+        case 3:
+          return QueriesGenerated.sourceNodeQuery_5233164016162061046(ctx);
+        case 4:
+          return QueriesGenerated.sourceNodeQuery_5233164016162061054(ctx);
+        case 5:
+          return QueriesGenerated.sourceNodeQuery_5233164016162061064(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
     }
   }

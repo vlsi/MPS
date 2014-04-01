@@ -321,15 +321,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "workingDirectory", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840232945(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840232945(final SourceSubstituteMacroNodesContext _context) {
     return CommandDeclaration_Behavior.call_getDistinctByNameAndTypeFieldParameters_3754131050835964183(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_3754131050835964017(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3754131050835964017(final SourceSubstituteMacroNodesContext _context) {
     return CommandDeclaration_Behavior.call_getDistinctByNameAndTypeFieldParameters_3754131050835964183(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_865001690840233061(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233061(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_generateField_8478830098674441876", new Object[]{}));
@@ -337,31 +337,31 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_6129022259108621705(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6129022259108621705(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "executePart", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840233131(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233131(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840233162(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233162(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "method", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840233177(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233177(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "throwsItem", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840233203(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233203(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840233293(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233293(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "argument", true);
   }
 
-  public static Iterable sourceNodesQuery_865001690840233303(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_865001690840233303(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, "parameterDeclaration", false), "virtual_generateField_8478830098674441876", new Object[]{}));
@@ -377,15 +377,15 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_2168104298250591276(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2168104298250591276(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "items", true);
   }
 
-  public static Iterable sourceNodesQuery_2168104298250591286(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2168104298250591286(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "items", true);
   }
 
-  public static Iterable sourceNodesQuery_8980950851470008479(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8980950851470008479(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "commandPart", true);
   }
 

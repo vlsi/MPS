@@ -100,15 +100,15 @@ public class QueriesGenerated {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "path");
   }
 
-  public static Iterable sourceNodesQuery_1731640411964947374(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1731640411964947374(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_1731640411965079018(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1731640411965079018(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).skip(1);
   }
 
-  public static Iterable sourceNodesQuery_1731640411967575305(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1731640411967575305(final SourceSubstituteMacroNodesContext _context) {
     String[] options = MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(_context.getNode()).split("\\s");
     List<SNode> lines = ListSequence.fromList(new ArrayList<SNode>());
     for (String option : options) {
@@ -121,11 +121,11 @@ public class QueriesGenerated {
     return lines;
   }
 
-  public static Iterable sourceNodesQuery_4487788881657789666(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4487788881657789666(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_4487788881657835967(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4487788881657835967(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
   }
 

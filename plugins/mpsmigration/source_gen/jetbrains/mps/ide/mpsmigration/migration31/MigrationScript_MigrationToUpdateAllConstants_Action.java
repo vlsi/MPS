@@ -27,7 +27,7 @@ public class MigrationScript_MigrationToUpdateAllConstants_Action extends BaseAc
   private static final Icon ICON = null;
 
   public MigrationScript_MigrationToUpdateAllConstants_Action() {
-    super("Re-inserts the AllConstants concept to fix the missing value property", "", ICON);
+    super("AllConstants Property Update Migration", "Re-inserts the AllConstants concept to fix the missing value property", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

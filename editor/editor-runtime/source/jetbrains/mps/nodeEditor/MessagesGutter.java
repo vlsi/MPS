@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.ColorUtil;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
@@ -58,12 +61,17 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   private boolean myStatusIsDirty = false;
   private Set<SimpleEditorMessage> myMessagesToRemove = new HashSet<SimpleEditorMessage>();
   private boolean myRightToLeft;
+  private MergingUpdateQueue myUpdateQueue;
+  private Object myUpdateIdentity = new Object();
 
   public MessagesGutter(EditorComponent editorComponent, boolean rightToLeft) {
     myEditorComponent = editorComponent;
     myRightToLeft = rightToLeft;
 
     myEditorComponent.getVerticalScrollBar().setPersistentUI(this);
+    myUpdateQueue = new MergingUpdateQueue("MessagesGutter", 500, true, editorComponent, null, null, true);
+    myUpdateQueue.setRestartTimerOnAdd(true);
+    // TODO add update queue to the disposables tree
   }
 
   @Override
@@ -176,7 +184,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   private void validateStatus() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    myUpdateQueue.queue(new Update(myUpdateIdentity) {
       @Override
       public void run() {
         GutterStatus status = GutterStatus.OK;
@@ -267,6 +275,8 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   public void dispose() {
+    // TODO unsure if this is the right way to dispose the queue
+    myUpdateQueue.dispose();
   }
 
   private void drawMarks(Graphics graphics) {

@@ -29,7 +29,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "code", true);
   }
 
-  public static Iterable sourceNodesQuery_1496492112286760828(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1496492112286760828(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "variables", true);
   }
 }

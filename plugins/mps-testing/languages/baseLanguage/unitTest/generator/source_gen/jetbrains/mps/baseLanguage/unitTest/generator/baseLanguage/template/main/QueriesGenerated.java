@@ -161,27 +161,27 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
-  public static Iterable sourceNodesQuery_9110034126561014534(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_9110034126561014534(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 
-  public static Iterable sourceNodesQuery_1711796806179938519(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1711796806179938519(final SourceSubstituteMacroNodesContext _context) {
     return Classifier_Behavior.call_staticFields_5292274854859223538(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_1711796806179939504(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1711796806179939504(final SourceSubstituteMacroNodesContext _context) {
     return ClassConcept_Behavior.call_fields_5292274854859383272(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_1171932074411(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1171932074411(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "testMethodList", true), "testMethod", true);
   }
 
-  public static Iterable sourceNodesQuery_1171985035236(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1171985035236(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(_context.getNode())).subtract(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(_context.getNode()))).subtract(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(_context.getNode())));
   }
 
-  public static Iterable sourceNodesQuery_9110034126561076473(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_9110034126561076473(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 

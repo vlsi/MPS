@@ -45,7 +45,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
   }
 
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
-    environment.getGenerator().getLogger().info(context.getInput(), "Hmm, input is null");
+    environment.getLogger().info(templateSwitch, "Hmm, input is null");
   }
 
   public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {

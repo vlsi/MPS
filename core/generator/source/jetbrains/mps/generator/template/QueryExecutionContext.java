@@ -74,7 +74,7 @@ public interface QueryExecutionContext extends QueryExecutor {
    */
   @Deprecated
   @ToRemove(version=3.1)
-  SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
+  SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
 
   Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
 
@@ -85,7 +85,8 @@ public interface QueryExecutionContext extends QueryExecutor {
    */
   @Deprecated
   @ToRemove(version=3.1)
-  List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
+  List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
+      GenerationFailureException;
 
   SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
