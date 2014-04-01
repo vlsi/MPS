@@ -98,4 +98,14 @@ public class EditorParenthesisUtil {
     SNode binOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), rightmost);
   }
+
+
+
+  public static SNode findRightmostOrLeftmostLeafExpressionIgnoringParens(SNode root, boolean rightmost) {
+    SNode currentRoot = root;
+    while (SNodeOperations.isInstanceOf(currentRoot, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+      currentRoot = findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(SNodeOperations.cast(currentRoot, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), rightmost);
+    }
+    return currentRoot;
+  }
 }

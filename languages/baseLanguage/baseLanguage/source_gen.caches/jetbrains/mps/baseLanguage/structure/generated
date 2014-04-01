@@ -529,6 +529,7 @@
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue" hash="bnhe8sj7ibnqiui9g2fi4t7zpifqwoe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="_FloatNumberValue_PropertySupport.java" />
   </source>
