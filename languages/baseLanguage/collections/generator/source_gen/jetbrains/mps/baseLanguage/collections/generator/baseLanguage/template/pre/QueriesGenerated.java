@@ -195,8 +195,6 @@ public class QueriesGenerated extends QueryProviderBase {
       this.methodKey = methodKey;
     }
 
-
-
     @Nullable
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {

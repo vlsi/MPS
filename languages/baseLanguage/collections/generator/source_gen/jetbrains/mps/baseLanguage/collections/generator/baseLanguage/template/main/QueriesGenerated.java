@@ -41,6 +41,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
@@ -2613,6 +2614,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   @Override
+  @NotNull
   public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
     final String id = script.getNodeId().toString();
     if (!(mscbMethods.containsKey(id))) {
@@ -2969,8 +2971,6 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNQ(int methodKey) {
       this.methodKey = methodKey;
     }
-
-
 
     @Nullable
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
@@ -3639,8 +3639,6 @@ public class QueriesGenerated extends QueryProviderBase {
       this.methodKey = methodKey;
     }
 
-
-
     @NotNull
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext ctx) throws GenerationFailureException {
       switch (methodKey) {
@@ -3686,6 +3684,71 @@ public class QueriesGenerated extends QueryProviderBase {
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_5187796033879438854(ctx));
         case 20:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_5187796033879438922(ctx));
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
+
+  {
+    int i = 0;
+    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++));
+  }
+
+  @NotNull
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode macro) {
+    final String id = macro.getNodeId().toString();
+    if (!(pvqMethods.containsKey(id))) {
+      return super.getPropertyValueQuery(macro);
+    }
+    return pvqMethods.get(id);
+  }
+
+  private static class PVQ implements PropertyValueQuery {
+    private final int methodKey;
+
+    public PVQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Nullable
+    public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_4100552184032705876(ctx);
+        case 1:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_4100552184032705898(ctx);
+        case 2:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_6651873253983907049(ctx);
+        case 3:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_6651873253983907103(ctx);
+        case 4:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_8293956702610522455(ctx);
+        case 5:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_8293956702610522739(ctx);
+        case 6:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033875769913(ctx);
+        case 7:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033877735985(ctx);
+        case 8:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033878715843(ctx);
+        case 9:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033879074559(ctx);
+        case 10:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033879438915(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
