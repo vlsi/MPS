@@ -36,8 +36,8 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483077206");
       this.addNodeById("3852894662483228699");
       this.addNodeById("3852894662483230132");
-      ParenthesisUtil.createParenthesisNewLeft(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
-      ParenthesisUtil.createParenthesisNewRight(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedLeftParenthesis(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedRightParenthesis(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
 
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2329139814027569571"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
@@ -51,8 +51,8 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483077206");
       this.addNodeById("3852894662483228699");
       this.addNodeById("3852894662483230132");
-      ParenthesisUtil.createParenthesisNewLeft(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
-      ParenthesisUtil.createParenthesisNewRight(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedLeftParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedRightParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
