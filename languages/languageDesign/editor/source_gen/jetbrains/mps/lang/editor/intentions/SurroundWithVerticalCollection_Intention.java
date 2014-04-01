@@ -18,10 +18,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurrondWithVerticalCollection_Intention implements IntentionFactory {
+public class SurroundWithVerticalCollection_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public SurrondWithVerticalCollection_Intention() {
+  public SurroundWithVerticalCollection_Intention() {
   }
 
   public String getConcept() {
@@ -29,11 +29,11 @@ public class SurrondWithVerticalCollection_Intention implements IntentionFactory
   }
 
   public String getPresentation() {
-    return "SurrondWithVerticalCollection";
+    return "SurroundWithVerticalCollection";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.editor.intentions.SurrondWithVerticalCollection_Intention";
+    return "jetbrains.mps.lang.editor.intentions.SurroundWithVerticalCollection_Intention";
   }
 
   public String getLanguageFqName() {
@@ -69,7 +69,7 @@ public class SurrondWithVerticalCollection_Intention implements IntentionFactory
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurrondWithVerticalCollection_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithVerticalCollection_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -93,7 +93,7 @@ public class SurrondWithVerticalCollection_Intention implements IntentionFactory
     }
 
     public IntentionDescriptor getDescriptor() {
-      return SurrondWithVerticalCollection_Intention.this;
+      return SurroundWithVerticalCollection_Intention.this;
     }
   }
 }
