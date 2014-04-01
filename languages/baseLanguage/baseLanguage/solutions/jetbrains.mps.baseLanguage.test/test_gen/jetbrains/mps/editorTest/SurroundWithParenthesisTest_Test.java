@@ -16,17 +16,17 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
-public class SurrondWithParenthesisTest_Test extends BaseTransformationTest4 {
+public class SurroundWithParenthesisTest_Test extends BaseTransformationTest4 {
   @Test
   public void test_noBinaryOperation() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody", "test_noBinaryOperation", true);
+    this.runTest("jetbrains.mps.editorTest.SurroundWithParenthesisTest_Test$TestBody", "test_noBinaryOperation", true);
   }
 
   @Test
   public void test_thereIsAlreadyParenthesis() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody", "test_thereIsAlreadyParenthesis", true);
+    this.runTest("jetbrains.mps.editorTest.SurroundWithParenthesisTest_Test$TestBody", "test_thereIsAlreadyParenthesis", true);
   }
 
   @MPSLaunch
