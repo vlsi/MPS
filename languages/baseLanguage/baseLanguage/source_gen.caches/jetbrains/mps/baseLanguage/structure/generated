@@ -523,7 +523,6 @@
   <source id="1241540912639" name="ConstructorInvocationStatement" hash="-816zxb2159jf8s6i0kxtx4utfwn0b1g" />
   <source id="4269842503726207818" name="_LongType_String" hash="b4d3v7hxcqgt51bfg6mb9eh3vygjlz2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="_LongType_String_PropertySupport.java" />
   </source>
