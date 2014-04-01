@@ -339,16 +339,16 @@ public class QueriesGenerated extends QueryProviderBase {
 
   {
     int i = 0;
-    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++, "label", "label"));
   }
 
   @NotNull
@@ -361,10 +361,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return pvqMethods.get(id);
   }
 
-  private static class PVQ implements PropertyValueQuery {
+  private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
 
-    public PVQ(int methodKey) {
+    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
+      super(propertyName, templateValue);
       this.methodKey = methodKey;
     }
 

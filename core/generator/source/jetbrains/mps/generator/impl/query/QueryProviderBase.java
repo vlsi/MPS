@@ -112,7 +112,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
-    return new Defaults();
+    return new PropertyQuery();
   }
 
   /**
@@ -121,7 +121,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
    * another set of defaults for cases when condition failed to evaluate ({@link jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider.Impl}.
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery, PropertyValueQuery {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -177,6 +177,19 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Override
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
       return Collections.emptyList();
+    }
+  }
+
+  private static class PropertyQuery implements PropertyValueQuery {
+    @NotNull
+    @Override
+    public String getPropertyName() {
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public Object getTemplateValue() {
+      return null;
     }
 
     @Nullable

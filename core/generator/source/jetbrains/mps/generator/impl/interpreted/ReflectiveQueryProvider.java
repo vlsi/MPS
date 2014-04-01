@@ -180,11 +180,14 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   @Override
   public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
     SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    if (function == null) {
+    final String propertyName = AttributeOperations.getPropertyName(propertyMacro);
+    if (function == null || propertyName == null) {
       return super.getPropertyValueQuery(propertyMacro);
     }
     String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
-    return new Macros(propertyMacro.getReference(), methodName);
+    SNode templateNode = propertyMacro.getParent();
+    final Object templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
+    return new Macros(propertyMacro.getReference(), methodName, propertyName, templateValue);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -327,11 +330,12 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     }
   }
 
-  private static final class Macros implements PropertyValueQuery {
+  private static final class Macros extends PropertyValueQuery.Base {
     private final SNodeReference myMacro;
     private final String myMethodName;
 
-    public Macros(@NotNull SNodeReference macro, @NotNull String methodName) {
+    public Macros(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
+      super(propertyName, templateValue);
       myMacro = macro;
       myMethodName = methodName;
     }

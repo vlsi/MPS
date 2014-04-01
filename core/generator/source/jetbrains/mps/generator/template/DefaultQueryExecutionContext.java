@@ -35,7 +35,6 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -60,7 +59,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
   private final Map<SNodeReference,PropertyValueQuery> myPropertyQueries = new ConcurrentHashMap<SNodeReference, PropertyValueQuery>();
-  private final Map<PropertyValueQuery, Pair<String,String>> myPropertyNameValue = new ConcurrentHashMap<PropertyValueQuery, Pair<String, String>>();
 
   public DefaultQueryExecutionContext(ITemplateGenerator generator) {
     this(generator, true);
@@ -209,24 +207,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         pvq = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getPropertyValueQuery(propertyMacro);
         myPropertyQueries.put(qr, pvq);
       }
-      final String propertyName;
-      final String templateValue;
-      Pair<String,String> propNameValue = myPropertyNameValue.get(pvq);
-      if (propNameValue == null) {
-        propertyName = AttributeOperations.getPropertyName(propertyMacro);
-        if (propertyName == null) {
-          getLog().error(qr, "cannot evaluate property macro: no property name", GeneratorUtil.describeInput(context));
-          throw new GenerationFailureException("cannot evaluate property macro: no property name");
-        }
-        templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
-        myPropertyNameValue.put(pvq, new Pair<String, String>(propertyName, templateValue));
-      } else {
-        propertyName = propNameValue.o1;
-        templateValue = propNameValue.o2;
-      }
-      Object macroValue = pvq.evaluate(new PropertyMacroContext(context, templateValue, qr, myGenerator));
+      final Object templateValue = pvq.getTemplateValue();
+      Object macroValue = pvq.evaluate(new PropertyMacroContext(context, templateValue == null ? null : String.valueOf(templateValue), qr, myGenerator));
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      SNodeAccessUtil.setProperty(outputNode, propertyName, propertyValue);
+      SNodeAccessUtil.setProperty(outputNode, pvq.getPropertyName(), propertyValue);
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {

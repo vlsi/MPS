@@ -24,6 +24,27 @@ import org.jetbrains.annotations.Nullable;
  * @author Artem Tikhomirov
  */
 public interface PropertyValueQuery extends Query {
+  @NotNull
+  public String getPropertyName();
+  public Object getTemplateValue();
   @Nullable
   Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException;
+
+  public abstract class Base implements PropertyValueQuery {
+    private final String myPropertyName;
+    private final Object myTemplateValue;
+
+    protected Base(@NotNull String propertyName, Object templateValue) {
+      myPropertyName = propertyName;
+      myTemplateValue = templateValue;
+    }
+    @NotNull
+    public String getPropertyName() {
+      return myPropertyName;
+    }
+
+    public Object getTemplateValue() {
+      return myTemplateValue;
+    }
+  }
 }

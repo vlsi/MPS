@@ -3694,17 +3694,17 @@ public class QueriesGenerated extends QueryProviderBase {
 
   {
     int i = 0;
-    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++));
-    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++));
+    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++, "value", "false"));
+    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++, "value", "false"));
+    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++, "name", "it"));
+    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++, "name", "var"));
+    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++, "fqClassName", "Sequence"));
+    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
+    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++, "fqClassName", "SortedMapSequence"));
+    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
+    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
   }
 
   @NotNull
@@ -3717,10 +3717,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return pvqMethods.get(id);
   }
 
-  private static class PVQ implements PropertyValueQuery {
+  private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
 
-    public PVQ(int methodKey) {
+    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
+      super(propertyName, templateValue);
       this.methodKey = methodKey;
     }
 

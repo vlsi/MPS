@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
@@ -48,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
