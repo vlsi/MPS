@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class CompexTransformTest_Test extends BaseTransformationTest4 {
-  public CompexTransformTest_Test() {
+public class ComplexTransformTest_Test extends BaseTransformationTest4 {
+  public ComplexTransformTest_Test() {
   }
 
   @Test
-  public void test_CompexTransformTest() throws Throwable {
+  public void test_ComplexTransformTest() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CompexTransformTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.ComplexTransformTest_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -41,6 +41,12 @@ public class CompexTransformTest_Test extends BaseTransformationTest4 {
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
       BaseEditorTestBody.typeString(editorComponent, ")");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.typeString(editorComponent, "!");

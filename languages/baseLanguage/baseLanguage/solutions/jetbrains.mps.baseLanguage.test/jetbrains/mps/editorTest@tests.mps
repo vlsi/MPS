@@ -2287,7 +2287,7 @@
     </node>
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1236013278645" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="CompexTransformTest" />
+    <property name="name" nameId="tpck.1169194664001" value="ComplexTransformTest" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1236013323503" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="method" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1236013323504" nodeInfo="in" />
@@ -2418,6 +2418,36 @@
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2329139814024742410" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2329139814024742411" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7640611121852165402" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7640611121852165403" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7640611121852165435" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7640611121852165436" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7640611121852165470" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7640611121852165471" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7640611121852165507" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7640611121852165508" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7640611121852165546" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7640611121852165547" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7640611121852165587" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7640611121852165588" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
         </node>
       </node>
