@@ -16,13 +16,13 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.runtime.PropertyMacro;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * This is not an attempt to make new and nice replacement for QueryExecutionContext, rather an attempt to fix
@@ -34,4 +34,6 @@ public interface QueryExecutor {
   Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
   @Nullable
   SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
+  @NotNull
+  PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro);
 }

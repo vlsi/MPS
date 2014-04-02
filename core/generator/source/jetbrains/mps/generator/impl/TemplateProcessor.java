@@ -28,6 +28,7 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.PropertyMacro;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
@@ -165,7 +166,8 @@ public final class TemplateProcessor {
       String templateChildNodeConcept = templateChildNode.getConcept().getQualifiedName();
       if (GeneratorUtilEx.isTemplateLanguageElement(templateChildNodeConcept)) {
         if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
-          myEnv.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
+          final PropertyMacro pm = myEnv.getQueryExecutor().getPropertyMacro(templateChildNode);
+          pm.expand(context, outputNode);
         } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
           final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
           linksHandledWithMacro.add(refMacroRole);

@@ -35,8 +35,8 @@ import java.util.List;
  */
 public class QueryExecutionContextWithDependencyRecording implements QueryExecutionContext {
 
-  private QueryExecutionContext wrapped;
-  private DependenciesReadListener listener;
+  private final QueryExecutionContext wrapped;
+  private final DependenciesReadListener listener;
 
   public QueryExecutionContextWithDependencyRecording(QueryExecutionContext wrapped, DependenciesReadListener listener) {
     this.wrapped = wrapped;
@@ -95,12 +95,24 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
+    wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+  }
+
+  @NotNull
+  @Override
+  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
+    final PropertyMacro delegate = wrapped.getPropertyMacro(propertyMacro);
+    return new PropertyMacro() {
+      @Override
+      public void expand(@NotNull TemplateContext context, @NotNull SNode outputNode) throws GenerationFailureException {
+        try {
+          NodeReadEventsCaster.setNodesReadListener(listener);
+          delegate.expand(context, outputNode);
+        } finally {
+          NodeReadEventsCaster.removeNodesReadListener();
+        }
+      }
+    };
   }
 
   @Override
