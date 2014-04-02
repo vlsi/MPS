@@ -24,5 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author Artem Tikhomirov
  */
 public interface PropertyMacro {
+  // FIXME seems I shall move property name and template value here from PropertyValueQuery. Besides, it might be reasonable to have query here, and
+  // perform setProperty from generator's code
   void expand(@NotNull TemplateContext context, @NotNull SNode outputNode) throws GenerationFailureException;
 }
