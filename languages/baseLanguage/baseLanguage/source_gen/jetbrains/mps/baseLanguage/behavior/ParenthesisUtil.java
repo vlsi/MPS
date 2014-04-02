@@ -24,19 +24,19 @@ public class ParenthesisUtil {
 
 
 
-  public static SNode createParenthesisNewLeft(@NotNull SNode leftExpression) {
-    return createParenthesisNew(leftExpression, false);
+  public static SNode createUnmatchedLeftParenthesis(@NotNull SNode leftExpression) {
+    return createUnmatchedParenthesis(leftExpression, false);
   }
 
 
 
-  public static SNode createParenthesisNewRight(@NotNull SNode rightExpression) {
-    return createParenthesisNew(rightExpression, true);
+  public static SNode createUnmatchedRightParenthesis(@NotNull SNode rightExpression) {
+    return createUnmatchedParenthesis(rightExpression, true);
   }
 
 
 
-  private static SNode createParenthesisNew(@NotNull SNode myExpression, final boolean completingByRightParen) {
+  private static SNode createUnmatchedParenthesis(@NotNull SNode myExpression, final boolean completingByRightParen) {
     List<SNode> myParentPath = parentPath(myExpression);
     SNode topExp = ListSequence.fromList(myParentPath).last();
     List<SNode> otherParentedNodes = ListSequence.fromList(SNodeOperations.getDescendants(topExp, "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {

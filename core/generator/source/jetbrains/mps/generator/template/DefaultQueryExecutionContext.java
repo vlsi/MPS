@@ -16,14 +16,17 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.interpreted.PropertyMacroInterpreted;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.runtime.PropertyMacro;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -38,7 +41,6 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -57,6 +59,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final boolean myIsMultithread;
   private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
+  private final Map<SNodeReference,PropertyMacroInterpreted> myPropertyQueries = new ConcurrentHashMap<SNodeReference, PropertyMacroInterpreted>();
 
   public DefaultQueryExecutionContext(ITemplateGenerator generator) {
     this(generator, true);
@@ -69,32 +72,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
-    if (condition == null) {
-      if (required) {
-        getLog().error(ruleNode.getReference(), "rule condition required", GeneratorUtil.describeIfExists(inputNode, "input node"));
-        return false;
-      }
-      return true;
-    }
-
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
-    try {
-      return QueryMethodGenerated.<Boolean>invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new BaseMappingRuleContext(inputNode, ruleNode, myGenerator),
-          ruleNode.getModel(),
-          true);
-    } catch (ClassNotFoundException e) {
-      getLog().warning(condition.getReference(), String.format("cannot find condition method '%s' : evaluate to FALSE", methodName));
-    } catch (NoSuchMethodException e) {
-      getLog().warning(condition.getReference(), String.format("cannot find condition method '%s' : evaluate to FALSE", methodName));
-    } catch (Throwable t) {
-      getLog().handleException(t);
-      getLog().error(condition.getReference(), String.format("error executing condition '%s', exception was thrown", methodName));
-      throw new GenerationFailureException(t);
-    }
-    return false;
+    return checkCondition(condition, required, new DefaultTemplateContext(inputNode), ruleNode);
   }
 
   @Override
@@ -140,7 +118,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return QueryMethodGenerated.<Boolean>invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new IfMacroContext(inputNode, ifMacro, context, myGenerator),
+          new IfMacroContext(context.subContext(inputNode), ifMacro.getReference(), myGenerator),
           ifMacro.getModel(),
           true);
     } catch (ClassNotFoundException e) {
@@ -198,29 +176,27 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    String propertyName = AttributeOperations.getPropertyName(propertyMacro);
-
-    SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    if (propertyName == null || function == null) {
-      getLog().error(propertyMacro.getReference(), "cannot evaluate property macro", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException("cannot evaluate property macro");
-    }
-
-    String templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
-    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     try {
-      Object macroValue = QueryMethodGenerated.invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new PropertyMacroContext(context, templateValue, propertyMacro.getReference(), myGenerator),
-          propertyMacro.getModel());
-      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      SNodeAccessUtil.setProperty(outputNode, propertyName, propertyValue);
+      getPropertyMacro(propertyMacro).expand(context.subContext(inputNode), outputNode);
+    } catch (GenerationFailureException ex) {
+      throw ex;
     } catch (Throwable t) {
       getLog().handleException(t);
       getLog().error(propertyMacro.getReference(), "cannot evaluate property macro, exception was thrown", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(t);
     }
+  }
+
+  @NotNull
+  @Override
+  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
+    final SNodeReference qr = propertyMacro.getReference();
+    PropertyMacroInterpreted pm = myPropertyQueries.get(qr);
+    if (pm == null) {
+      pm = new PropertyMacroInterpreted(propertyMacro, myGenerator);
+      myPropertyQueries.put(qr, pm);
+    }
+    return pm;
   }
 
   @Override

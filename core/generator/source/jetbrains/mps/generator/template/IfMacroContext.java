@@ -26,6 +26,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public class IfMacroContext extends TemplateQueryContextWithMacro {
 
+  /**
+   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead.  This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public IfMacroContext(SNode node, SNode ifMacro, TemplateContext context, ITemplateGenerator generator) {
     super(node, ifMacro, context, generator);
   }

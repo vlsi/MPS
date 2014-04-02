@@ -22,6 +22,7 @@ import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -289,8 +290,6 @@ public class QueriesGenerated extends QueryProviderBase {
       this.methodKey = methodKey;
     }
 
-
-
     @Nullable
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
@@ -330,6 +329,69 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.sourceNodeQuery_1269198486696305013(ctx);
         case 17:
           return QueriesGenerated.sourceNodeQuery_1269198486696305052(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
+
+  {
+    int i = 0;
+    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++, "name", null));
+    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++, "label", "label"));
+  }
+
+  @NotNull
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode macro) {
+    final String id = macro.getNodeId().toString();
+    if (!(pvqMethods.containsKey(id))) {
+      return super.getPropertyValueQuery(macro);
+    }
+    return pvqMethods.get(id);
+  }
+
+  private static class PVQ extends PropertyValueQuery.Base {
+    private final int methodKey;
+
+    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
+      super(propertyName, templateValue);
+      this.methodKey = methodKey;
+    }
+
+    @Nullable
+    public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696304715(ctx);
+        case 1:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696304732(ctx);
+        case 2:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696304792(ctx);
+        case 3:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696304802(ctx);
+        case 4:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696304869(ctx);
+        case 5:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696304886(ctx);
+        case 6:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_2021770776238986616(ctx);
+        case 7:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_2021770776238986640(ctx);
+        case 8:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696305003(ctx);
+        case 9:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696305020(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }

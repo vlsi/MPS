@@ -65,6 +65,7 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
@@ -4379,9 +4380,10 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = ParenthesisUtil.createParenthesisNewRight(_context.getSourceNode());
-        editorContext.selectWRTFocusPolicy(node);
-        return node;
+        ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
+        SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(_context.getSourceNode(), true);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+        return rightMostNode;
       }
 
       public String getMatchingText(String pattern) {
@@ -4411,9 +4413,8 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = ParenthesisUtil.createParenthesisNewLeft(_context.getSourceNode());
-        editorContext.selectWRTFocusPolicy(node);
-        return node;
+        ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
+        return _context.getSourceNode();
       }
 
       public String getMatchingText(String pattern) {

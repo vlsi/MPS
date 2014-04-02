@@ -224,4 +224,22 @@ public class GeneratorUtil {
   public static String getTemplateNodeId(SNode templateNode) {
     return "tpl/" + templateNode.getModel().getModelId() + "/" + templateNode.getNodeId();
   }
+
+  public static String compactNamespace(String ns) {
+    final String[] parts = ns.split("\\.");
+    if (parts.length < 5) {
+      return ns;
+    }
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 3; i++) {
+      sb.append(parts[i].charAt(0));
+      sb.append('.');
+    }
+    for (int i = 3; i < parts.length; i++) {
+      sb.append(parts[i]);
+      sb.append('.');
+    }
+    sb.setLength(sb.length() - 1);
+    return sb.toString();
+  }
 }

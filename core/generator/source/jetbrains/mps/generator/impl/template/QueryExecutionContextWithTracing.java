@@ -105,12 +105,25 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
-      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
-    } finally {
-      tracer.pop();
-    }
+    wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+  }
+
+  @NotNull
+  @Override
+  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
+    final SNode templateNode = propertyMacro.getParent();
+    final PropertyMacro delegate = wrapped.getPropertyMacro(propertyMacro);
+    return new PropertyMacro() {
+      @Override
+      public void expand(@NotNull TemplateContext context, @NotNull SNode outputNode) throws GenerationFailureException {
+        try {
+          tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
+          delegate.expand(context, outputNode);
+        } finally {
+          tracer.pop();
+        }
+      }
+    };
   }
 
   @Override

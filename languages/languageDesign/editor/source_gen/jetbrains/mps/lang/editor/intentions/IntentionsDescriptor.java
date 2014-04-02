@@ -37,9 +37,9 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveOnNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SplitConstantCellIntoWords_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithHorizontalCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithIndentCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithVerticalCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithHorizontalCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithIndentCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithVerticalCollection_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new TrimConstantCell_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInCollection_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInRefNodeList_Intention());
