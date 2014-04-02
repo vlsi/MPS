@@ -22,8 +22,6 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -33,15 +31,11 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -156,52 +150,8 @@ public final class TemplateProcessor {
 
     rtTemplateNode.apply(context, outputNode);
 
-    SModel templateModel = templateNode.getModel();
-    for (SReference reference : rtTemplateNode.getReferences()) {
-
-      if (reference instanceof StaticReference) {
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference != null && !(templateModel.getReference().equals(targetModelReference))) {
-          // optimization for external static references (do not resolve them)
-          SReference newReference = new StaticReference(
-              reference.getRole(),
-              outputNode,
-              targetModelReference,
-              reference.getTargetNodeId(),
-              ((StaticReference) reference).getResolveInfo());
-          outputNode.setReference(reference.getRole(), newReference);
-          continue;
-        }
-      }
-
-      SNode templateReferentNode = reference.getTargetNode();
-      if (templateReferentNode == null) {
-        myGenerator.getLogger().error(templateNode.getReference(),
-            "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-                templateNode));
-        continue;
-      }
-      if (templateReferentNode.getModel() == templateModel) { // internal reference
-        // XXX same code is in TEEI.resolveInTemplateLater, needs refactoring
-        String resolveInfo = SNodeOperations.getResolveInfo(templateReferentNode);
-        // The right way to get string representation of the reference (aka resolveInfo) is to ask scope about it
-        // However, it doesn't work now (e.g. regenerate BL fails with NodeCastException in VisibleClassConstructorScope:59,
-        // String resolveInfo = ModelConstraints.getScope(reference).getReferenceText(reference.getSourceNode(), templateReferentNode);
-        ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
-            outputNode, reference.getRole(),
-            rtTemplateNode.getTemplateNodeReference(),
-            GeneratorUtil.getTemplateNodeId(templateReferentNode),
-            resolveInfo,
-            context);
-        PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
-        postponedReference.setReferenceInOutputSourceNode();
-      } else {
-        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
-      }
-    }
-
     // process children
-    context = context.subContext();
+    context = context.subContext(); // drop label
     try {
       for (SNode templateChildNode : rtTemplateNode.getChildTemplates()) {
         List<SNode> outputChildNodes = applyTemplate(templateChildNode, context, null);

@@ -18,13 +18,19 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.PropertyMacro;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -42,10 +48,12 @@ import java.util.Map;
  */
 class TemplateNode {
   private final List<SNode> myChildTemplates;
-  private final List<SReference> myNonMacroRefs;
-  private final String[] myTemplateProperties;
+  private final String[] myTemplateProperties; // (name, value) sequence
   private final PropertyMacro[] myMacroProperties;
-  private final Map<String, MacroResolver> myMacroRefs; // map isn't nice
+  private final Map<String, MacroResolver> myMacroRefs; // map isn't nice, don't need once MacroResolver (or replacement thereof) has role name
+  private final RefInfo[] myStaticRefs;
+  private final RefInfo[] myInnerRefs;
+  private final RefInfo[] myOtherRefs;
   @NotNull
   private final TemplateGenerator myGenerator; // XXX I don't like TG here, pending a better way to track added postponed references
   private final SNodePointer myTemplateNodeReference;
@@ -77,15 +85,6 @@ class TemplateNode {
       }
     }
     myChildTemplates = templateChildNodes.isEmpty() ? Collections.<SNode>emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
-    ArrayList<SReference> nonMacroRefs = new ArrayList<SReference>();
-    for (SReference reference : templateNode.getReferences()) {
-      if (refMacros.containsKey(reference.getRole())) {
-        // reference has been handled with the ReferenceMacro already
-        continue;
-      }
-      nonMacroRefs.add(reference);
-    }
-    myNonMacroRefs = nonMacroRefs.isEmpty() ? Collections.<SReference>emptyList() : Arrays.asList(nonMacroRefs.toArray(new SReference[nonMacroRefs.size()]));
     myMacroRefs = refMacros.isEmpty() ? Collections.<String,MacroResolver>emptyMap() : refMacros;
     myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
     final ArrayList<String> templateProps = new ArrayList<String>();
@@ -97,10 +96,58 @@ class TemplateNode {
       templateProps.add(templateNode.getProperty(name));
     }
     myTemplateProperties = templateProps.toArray(new String[templateProps.size()]);
+    //
+    // prepare references
+    final ArrayList<RefInfo> externalStaticRefs = new ArrayList<RefInfo>();
+    final ArrayList<RefInfo> internalRefs = new ArrayList<RefInfo>();
+    final ArrayList<RefInfo> otherRefs = new ArrayList<RefInfo>();
+    final SModel templateModel = templateNode.getModel();
+    final SModelReference templateModelReference = templateModel.getReference();
+
+    for (SReference reference : templateNode.getReferences()) {
+      if (refMacros.containsKey(reference.getRole())) {
+        // reference has been handled with the ReferenceMacro already
+        continue;
+      }
+      if (reference instanceof StaticReference) {
+        SModelReference targetModelReference = reference.getTargetSModelReference();
+        if (targetModelReference != null && !(templateModelReference.equals(targetModelReference))) {
+          // optimization for external static references (do not resolve them)
+          externalStaticRefs.add(new RefInfo(reference.getRole(), ((StaticReference) reference).getResolveInfo(), targetModelReference, reference.getTargetNodeId()));
+          continue;
+        }
+      }
+
+      SNode templateReferentNode = reference.getTargetNode();
+      if (templateReferentNode == null) {
+        String msg = "cannot resolve reference in template model; role: %s in %s";
+        myGenerator.getLogger().error(templateNode.getReference(), String.format(msg, reference.getRole(),
+            org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(templateNode)));
+        continue;
+      }
+      if (templateReferentNode.getModel() == templateModel) { // internal reference
+        // XXX same code is in TEEI.resolveInTemplateLater, needs refactoring
+        String resolveInfo = SNodeOperations.getResolveInfo(templateReferentNode);
+        // The right way to get string representation of the reference (aka resolveInfo) is to ask scope about it
+        // However, it doesn't work now (e.g. regenerate BL fails with NodeCastException in VisibleClassConstructorScope:59,
+        // String resolveInfo = ModelConstraints.getScope(reference).getReferenceText(reference.getSourceNode(), templateReferentNode);
+        internalRefs.add(new RefInfo(reference.getRole(), resolveInfo, templateReferentNode));
+      } else {
+        otherRefs.add(new RefInfo(reference.getRole(), null, templateReferentNode));
+      }
+    }
+    myStaticRefs = externalStaticRefs.toArray(new RefInfo[externalStaticRefs.size()]);
+    myInnerRefs = internalRefs.toArray(new RefInfo[internalRefs.size()]);
+    myOtherRefs = otherRefs.toArray(new RefInfo[otherRefs.size()]);
+
+    // the rest
     myTemplateNodeReference = new SNodePointer(templateNode);
     myTemplateNodeId = GeneratorUtil.getTemplateNodeId(templateNode);
   }
 
+  /**
+   * configure new output node according to template
+   */
   public void apply(TemplateContext context, SNode outputNode) throws GenerationFailureException {
     // jetbrains.mps.util.SNodeOperations.copyProperties(myTemplateNode, outputNode);
     for (int i = 0; i < myTemplateProperties.length;) {
@@ -116,6 +163,21 @@ class TemplateNode {
       PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
       postponedReference.setReferenceInOutputSourceNode();
     }
+    for (RefInfo r : myStaticRefs) {
+      // optimization for external static references (do not resolve them)
+      SReference newReference = new StaticReference(r.role, outputNode, r.targetModel, r.targetId, r.resolveInfo);
+      outputNode.setReference(r.role, newReference);
+    }
+    for (RefInfo r : myInnerRefs) {
+      // XXX it's not a nice idea to pass output node to ReferenceInfo, need refactoring
+      ReferenceInfo_Template refInfo = new ReferenceInfo_Template(outputNode, r.role, getTemplateNodeReference(),
+          GeneratorUtil.getTemplateNodeId(r.targetNode), r.resolveInfo, context);
+      PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
+      postponedReference.setReferenceInOutputSourceNode();
+    }
+    for (RefInfo r : myOtherRefs) {
+      outputNode.setReferenceTarget(r.role, r.targetNode);
+    }
   }
 
   /**
@@ -125,13 +187,6 @@ class TemplateNode {
    */
   public Iterable<SNode> getChildTemplates() {
     return myChildTemplates;
-  }
-
-  /**
-   * References from template node to other nodes, not covered by reference macro
-   */
-  public Iterable<SReference> getReferences() {
-    return myNonMacroRefs;
   }
 
   public SNodeReference getTemplateNodeReference() {
@@ -144,5 +199,30 @@ class TemplateNode {
   @NotNull
   public String getTemplateNodeId() {
     return myTemplateNodeId;
+  }
+
+
+  private static class RefInfo {
+    public final String role;
+    public final String resolveInfo;
+    public final SNode targetNode;
+    public final SModelReference targetModel;
+    public final SNodeId targetId;
+
+    public RefInfo(String role, String resolveInfo, SNode targetNode) {
+      this.role = role;
+      this.resolveInfo = resolveInfo;
+      this.targetNode = targetNode;
+      this.targetModel = null;
+      this.targetId = null;
+    }
+
+    public RefInfo(String role, String resolveInfo, SModelReference targetModel, SNodeId targetId) {
+      this.role = role;
+      this.resolveInfo = resolveInfo;
+      this.targetNode = null;
+      this.targetModel = targetModel;
+      this.targetId = targetId;
+    }
   }
 }
