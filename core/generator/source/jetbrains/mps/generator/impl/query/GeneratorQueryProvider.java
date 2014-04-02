@@ -46,4 +46,6 @@ public interface GeneratorQueryProvider {
   SourceNodeQuery getSourceNodeQuery(@NotNull SNode query);
   @NotNull
   SourceNodesQuery getSourceNodesQuery(@NotNull SNode query);
+  @NotNull
+  PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro);
 }

@@ -16,12 +16,14 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
@@ -34,6 +36,7 @@ import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -41,6 +44,7 @@ import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -48,6 +52,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
@@ -171,6 +176,20 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     return new SourceNodes(query.getReference(), methodName);
   }
 
+  @NotNull
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
+    SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
+    final String propertyName = AttributeOperations.getPropertyName(propertyMacro);
+    if (function == null || propertyName == null) {
+      return super.getPropertyValueQuery(propertyMacro);
+    }
+    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
+    SNode templateNode = propertyMacro.getParent();
+    final Object templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
+    return new Macros(propertyMacro.getReference(), methodName, propertyName, templateValue);
+  }
+
   private String getBaseRuleConditionMethod(SNode rule) {
     SNode condition = RuleUtil.getBaseRuleCondition(rule);
     return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
@@ -248,9 +267,9 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       try {
         return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
+        ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       } catch (ClassNotFoundException ex) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
+        ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       }
       return null;
     }
@@ -260,9 +279,9 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       try {
         QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
       } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
+        ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
       } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot run script '%s' : no generated code found", myMethodName));
+        ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
       }
     }
 
@@ -288,9 +307,9 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       try {
         return QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
       } catch (NoSuchMethodException e) {
-        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
+        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
       } catch (ClassNotFoundException ex) {
-        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
+        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
       }
       return null;
     }
@@ -303,11 +322,38 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
         return IterableUtil.asCollection(result);
 
       } catch (NoSuchMethodException e) {
-        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
+        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
       } catch (ClassNotFoundException e) {
-        context.getGenerator().getLogger().warning(myQuery, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
+        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
       }
       return Collections.emptyList();
+    }
+  }
+
+  private static final class Macros extends PropertyValueQuery.Base {
+    private final SNodeReference myMacro;
+    private final String myMethodName;
+
+    public Macros(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
+      super(propertyName, templateValue);
+      myMacro = macro;
+      myMethodName = methodName;
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
+      try {
+        return QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myMacro.getModelReference(), true);
+      } catch (NoSuchMethodException e) {
+        final String m = String.format("cannot find method '%s' for property macro", myMethodName);
+        context.showErrorMessage(null, m);
+        throw new GenerationFailureException(m);
+      } catch (ClassNotFoundException e) {
+        final String m = String.format("cannot find method '%s' for property macro", myMethodName);
+        context.showErrorMessage(null, m);
+        throw new GenerationFailureException(m);
+      }
     }
   }
 }

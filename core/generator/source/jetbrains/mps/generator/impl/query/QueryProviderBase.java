@@ -16,11 +16,13 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -107,6 +109,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     return new Defaults();
   }
 
+  @NotNull
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
+    return new PropertyQuery();
+  }
+
   /**
    * Reasonable default values for all conditions and queries.
    * Note, these default values represent the case when no condition/query was specified. There's
@@ -169,6 +177,26 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Override
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
       return Collections.emptyList();
+    }
+  }
+
+  private static class PropertyQuery implements PropertyValueQuery {
+    @NotNull
+    @Override
+    public String getPropertyName() {
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public Object getTemplateValue() {
+      return null;
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
+      context.showErrorMessage(null, "cannot evaluate property macro");
+      throw new GenerationFailureException("cannot evaluate property macro");
     }
   }
 }

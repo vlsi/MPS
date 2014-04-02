@@ -19,6 +19,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -57,6 +58,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final boolean myIsMultithread;
   private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
+  private final Map<SNodeReference,PropertyValueQuery> myPropertyQueries = new ConcurrentHashMap<SNodeReference, PropertyValueQuery>();
 
   public DefaultQueryExecutionContext(ITemplateGenerator generator) {
     this(generator, true);
@@ -198,24 +200,19 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    String propertyName = AttributeOperations.getPropertyName(propertyMacro);
-
-    SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    if (propertyName == null || function == null) {
-      getLog().error(propertyMacro.getReference(), "cannot evaluate property macro", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException("cannot evaluate property macro");
-    }
-
-    String templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
-    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     try {
-      Object macroValue = QueryMethodGenerated.invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new PropertyMacroContext(context, templateValue, propertyMacro.getReference(), myGenerator),
-          propertyMacro.getModel());
+      final SNodeReference qr = propertyMacro.getReference();
+      PropertyValueQuery pvq = myPropertyQueries.get(qr);
+      if (pvq == null) {
+        pvq = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getPropertyValueQuery(propertyMacro);
+        myPropertyQueries.put(qr, pvq);
+      }
+      final Object templateValue = pvq.getTemplateValue();
+      Object macroValue = pvq.evaluate(new PropertyMacroContext(context, templateValue == null ? null : String.valueOf(templateValue), qr, myGenerator));
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      SNodeAccessUtil.setProperty(outputNode, propertyName, propertyValue);
+      SNodeAccessUtil.setProperty(outputNode, pvq.getPropertyName(), propertyValue);
+    } catch (GenerationFailureException ex) {
+      throw ex;
     } catch (Throwable t) {
       getLog().handleException(t);
       getLog().error(propertyMacro.getReference(), "cannot evaluate property macro, exception was thrown", GeneratorUtil.describeInput(context));
