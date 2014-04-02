@@ -37,7 +37,7 @@ public class RuleConsequenceProcessor {
   private TemplateContext myConsequenceContext;
 
   public RuleConsequenceProcessor(TemplateExecutionEnvironment env) {
-    this(new TemplateProcessor(env));
+    this((TemplateProcessor) env.getTemplateProcessor()); // FIXME this case isn't nice (even though we know there's no other TP out there)
   }
 
   public RuleConsequenceProcessor(TemplateProcessor templateProcessor) {

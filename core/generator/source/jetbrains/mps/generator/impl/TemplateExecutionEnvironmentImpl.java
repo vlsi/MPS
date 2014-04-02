@@ -37,6 +37,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -57,15 +58,20 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   private final TemplateGenerator generator;
   private final ReductionContext reductionContext;
   private final QueryExecutionContext myExecutionContext;
+  private final ITemplateProcessor myTemplateProcessor;
 
   public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext) {
-    this(generator, executionContext, new ReductionContext());
+    this.generator = generator;
+    this.reductionContext = new ReductionContext();
+    this.myExecutionContext = executionContext;
+    this.myTemplateProcessor = new TemplateProcessor(this);
   }
 
-  private TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext, @NotNull ReductionContext reductionContext) {
-    this.generator = generator;
+  private TemplateExecutionEnvironmentImpl(@NotNull TemplateExecutionEnvironmentImpl origin, @NotNull ReductionContext reductionContext) {
+    this.generator = origin.generator;
     this.reductionContext = reductionContext;
-    myExecutionContext = executionContext;
+    myExecutionContext = origin.myExecutionContext;
+    myTemplateProcessor = origin.myTemplateProcessor;
   }
 
   @Override
@@ -128,9 +134,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return myExecutionContext;
   }
 
+  @NotNull
+  @Override
+  public ITemplateProcessor getTemplateProcessor() {
+    return myTemplateProcessor;
+  }
+
   @Override
   public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return new TemplateExecutionEnvironmentImpl(generator, myExecutionContext, new ReductionContext(reductionContext, inputNode, rule));
+    return new TemplateExecutionEnvironmentImpl(this, new ReductionContext(reductionContext, inputNode, rule));
   }
 
   @Override

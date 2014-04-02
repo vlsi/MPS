@@ -74,7 +74,7 @@ public class TemplateContainer {
     for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2;
-      List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, ctx.subContext(innerMappingName), null);
+      List<SNode> _outputNodes = myTemplateProcessor.apply(templateNode, ctx.subContext(innerMappingName));
       SNode input = ctx.getInput();
       tracer.trace(input == null ? null : input.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), templateNode.getReference());
       outputNodes.addAll(_outputNodes);

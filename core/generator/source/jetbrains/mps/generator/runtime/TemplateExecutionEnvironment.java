@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
@@ -70,6 +71,9 @@ public interface TemplateExecutionEnvironment {
   @Deprecated
   @NotNull
   ReductionContext getReductionContext();
+
+  @NotNull
+  ITemplateProcessor getTemplateProcessor();
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
