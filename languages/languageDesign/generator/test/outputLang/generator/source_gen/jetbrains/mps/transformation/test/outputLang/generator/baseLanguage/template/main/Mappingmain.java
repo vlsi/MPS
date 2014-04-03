@@ -849,7 +849,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         environment.getTracer().pushMacro(switchMacroRef_417xrn_a0a0a2a2db);
         try {
           environment.getTracer().pushSwitch(templateSwitchNodeNoInput_417xrn_a0a0a1a2a2db);
-          tlist1 = environment.trySwitch(templateSwitchNodeNoInput_417xrn_a0a0a1a2a2db, null, context);
+          tlist1 = environment.trySwitch(templateSwitchNodeNoInput_417xrn_a0a0a1a2a2db, context);
           if (tlist1 == null) {
             final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
             try {

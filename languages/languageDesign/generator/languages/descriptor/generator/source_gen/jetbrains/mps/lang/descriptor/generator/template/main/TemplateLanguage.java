@@ -303,7 +303,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                 environment.getTracer().pushMacro(switchMacroRef_gw04jt_a0a0a3a2a2a1a8a1a2);
                 try {
                   environment.getTracer().pushSwitch(templateSwitchNodeNoInput_gw04jt_a0a0a1a3a2a2a1a8a1a2);
-                  tlist19 = environment.trySwitch(templateSwitchNodeNoInput_gw04jt_a0a0a1a3a2a2a1a8a1a2, null, context18);
+                  tlist19 = environment.trySwitch(templateSwitchNodeNoInput_gw04jt_a0a0a1a3a2a2a1a8a1a2, context18);
                   if (tlist19 == null) {
                     final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
                     try {
@@ -1391,7 +1391,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                         environment.getTracer().pushMacro(switchMacroRef_gw04jt_a0a0a3a2a2a1a3a1a9a1a51a1a2);
                         try {
                           environment.getTracer().pushSwitch(templateSwitchNodeNoInput_gw04jt_a0a0a1a3a2a2a1a3a1a9a1a51a1a2);
-                          tlist94 = environment.trySwitch(templateSwitchNodeNoInput_gw04jt_a0a0a1a3a2a2a1a3a1a9a1a51a1a2, null, context93);
+                          tlist94 = environment.trySwitch(templateSwitchNodeNoInput_gw04jt_a0a0a1a3a2a2a1a3a1a9a1a51a1a2, context93);
                           if (tlist94 == null) {
                             final SNode tnode95 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IfStatement");
                             try {

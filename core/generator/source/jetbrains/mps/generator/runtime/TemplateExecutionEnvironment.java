@@ -26,6 +26,7 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -93,7 +94,15 @@ public interface TemplateExecutionEnvironment {
 
   SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
+  /**
+   * @deprecated use {@link #trySwitch(org.jetbrains.mps.openapi.model.SNodeReference, TemplateContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   Collection<SNode> trySwitch(SNodeReference _switch, String mappingName, TemplateContext context) throws GenerationException;
+
+  @Nullable
+  Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException;
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 

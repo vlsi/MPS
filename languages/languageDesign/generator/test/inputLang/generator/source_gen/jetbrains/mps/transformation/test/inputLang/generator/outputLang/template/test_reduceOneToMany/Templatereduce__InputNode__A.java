@@ -105,7 +105,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
       environment.getTracer().pushMacro(switchMacroRef_b8tv7e_a0a0a1a5);
       try {
         environment.getTracer().pushSwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a5);
-        tlist5 = environment.trySwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a5, null, context);
+        tlist5 = environment.trySwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a5, context);
         if (tlist5 == null) {
           final SNode tnode6 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {

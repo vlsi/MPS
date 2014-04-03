@@ -522,14 +522,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, TemplateContext context, String mappingName, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
     FastRuleFinder rf = myRuleManager.getRuleFinder(templateSwitch);
     Collection<SNode> outputNodes = tryToReduce(rf, context, env);
     if (outputNodes != null) {
-      if (outputNodes.size() == 1) {
+      if (outputNodes.size() == 1 && context.getInputName() != null) {
         SNode reducedNode = outputNodes.iterator().next();
         // register copied node
-        registerMappingLabel(context.getInput(), mappingName, reducedNode);
+        registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
       }
       return outputNodes;
     }

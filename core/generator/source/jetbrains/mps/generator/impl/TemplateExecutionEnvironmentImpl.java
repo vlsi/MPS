@@ -42,6 +42,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -164,15 +165,21 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
-    Collection<SNode> collection = generator.tryToReduce(switch_, context, mappingName, this);
+    return trySwitch(switch_, context.subContext(mappingName));
+  }
+
+  @Nullable
+  @Override
+  public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
+    Collection<SNode> collection = generator.tryToReduce(_switch, context, this);
     if (collection != null) {
       return collection;
     }
 
     // try the default case
-    TemplateSwitchMapping current = generator.getSwitch(switch_);
+    TemplateSwitchMapping current = generator.getSwitch(_switch);
     if (current != null) {
-      collection = current.applyDefault(this, switch_, mappingName, context);
+      collection = current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
       if (collection != null) {
         return collection;
       }

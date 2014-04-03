@@ -586,7 +586,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
         Collection<SNode> collection = null;
         try {
-          collection = myTemplateProcessor.getEnvironment().trySwitch(switchPtr, switchContext.getInputName(), switchContext);
+          collection = myTemplateProcessor.getEnvironment().trySwitch(switchPtr, switchContext);
         } catch (GenerationCanceledException e) {
           throw e;
         } catch (GenerationFailureException e) {
