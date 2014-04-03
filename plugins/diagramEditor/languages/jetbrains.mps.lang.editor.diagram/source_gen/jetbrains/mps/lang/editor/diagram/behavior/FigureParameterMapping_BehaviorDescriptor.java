@@ -8,8 +8,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class AbstractFigureParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public AbstractFigureParameter_BehaviorDescriptor() {
+public class FigureParameterMapping_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+  public FigureParameterMapping_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -18,6 +18,6 @@ public class AbstractFigureParameter_BehaviorDescriptor extends BaseConcept_Beha
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter";
+    return "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping";
   }
 }

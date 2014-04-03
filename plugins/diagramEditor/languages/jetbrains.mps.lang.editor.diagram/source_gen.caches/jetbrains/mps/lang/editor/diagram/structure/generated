@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="290mp1cosey7ak75sfscxa44x76x66o">
+<dependencies version="2" modelHash="1na9ync4xy1ldvh0dhdc2eyht48o7gu">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
-  <common hash="x591tjohvjeiuzo16gl9cdc8uk17d6" dependsOnNodes="true">
+  <common hash="-7vsjgkr5gcfc7udmvb423v497z87sn6" dependsOnNodes="true">
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
@@ -44,10 +44,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-dy6f90g38zuz1c207nlbh5u3xbsey1a" />
+  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-4de8vo41c510cf9tskgjmxwtl9mk7de" />
   <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx" />
   <source id="1094405431463663051" name="ExternalFigureReference" hash="-15jge7fjsaayroipsv092h0j981u5oq" />
-  <source id="1094405431463761863" name="AbstractFigureParameter" hash="4iqwotvekf36uqxm3mjwefekklmayuh" />
+  <source id="1094405431463761863" name="FigureParameterMapping" hash="awu81u38gw5cq40pifmdcwbt6cg49c4" />
   <source id="6306886970791033847" name="CellModel_Diagram" hash="63xbd5hacnftmz6ds4jvfrmsfo6up35" />
   <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="pz8g6iw9zkkuc4rni9roxt0cd232vd" />
   <source id="5422656561926747342" name="AttributedFigureReference" hash="-ev7w954cu4avvpgslqxq86e5124tx67" />
@@ -57,10 +57,10 @@
   <source id="5355858557208538577" name="DiagramElement" hash="clp5yg30hata9t6eayeou6nesolojbi" />
   <source id="5355858557208817201" name="DiagramElementBLQuery" hash="-7g65aswx17pheh8pmsrsdzvfzu38s5w" />
   <source id="285670992205972098" name="CellModel_DiagramPort" hash="-4a5vktqoasjp3u69xbvieddsmqzcx03" />
-  <source id="285670992213637294" name="AbstractParameter" hash="-8xvib1a8nihnayhk82jqrt8r2a6fxrp" />
-  <source id="285670992213637367" name="ParameterBLQuery" hash="-7spcs5y7l41ch5qtcxjb5cke8cpnaf5" />
-  <source id="285670992213637559" name="ParameterLink" hash="-wo02zm24fxhmvtwkflcb1i3jurspnq" />
-  <source id="285670992217672837" name="ParameterProperty" hash="d4e2ick6rv0ai9m5fi1fsrk16dtn0f5" />
+  <source id="285670992213637294" name="AbstractArgument" hash="-benjtwwfx2ofd72mkroxwyrc14eitl1" />
+  <source id="285670992213637367" name="BLQueryArgument" hash="9iauvhpriz36q8cdwui0wjkdsslet5w" />
+  <source id="285670992213637559" name="LinkArgument" hash="by1e3mpps0rk4qdp84temw84w429kzt" />
+  <source id="285670992217672837" name="PropertyArgument" hash="-n3xgrwwp4448azsfz80pr48qu3t5fz" />
   <source id="8570854907290423690" name="DiagramElementsCreation" hash="-osxdd8g8d7at2a2ec09at6l7d4592w" />
   <source id="8570854907290527479" name="DiagramElementCreationHandler" hash="1wsotu7yemfn3mo0jrouk14a8h7xkrq" />
   <source id="8570854907290717911" name="YFunctionParameter" hash="bvrkr4khl3zb0jma0utlq42i738av65" />

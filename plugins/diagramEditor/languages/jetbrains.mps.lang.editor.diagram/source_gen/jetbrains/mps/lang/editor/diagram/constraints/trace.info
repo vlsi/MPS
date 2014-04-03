@@ -9,7 +9,7 @@
     <nodeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1220375669567141668" fileName="ThisEditorNodeExpression_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1220375669567141668" fileName="ThisEditorNodeExpression_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThisEditorNodeExpression_Constraints#()V" />
     <nodeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -19,7 +19,7 @@
     <scopeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="14" startPosition="49" endLine="15" endPosition="82" />
     <scopeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" />
     <scopeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" />
-    <scopeInfo nodeId="1220375669567134128" fileName="ThisEditorNodeExpression_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="230" />
+    <scopeInfo nodeId="1220375669567134128" fileName="ThisEditorNodeExpression_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="229" />
     <scopeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1220375669567134075" varName="childConcept" />
@@ -43,37 +43,37 @@
     <unitInfo nodeId="1220375669567134075" fileName="ThisEditorNodeExpression_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.ThisEditorNodeExpression_Constraints" />
   </root>
   <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/1491555030355943098">
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="14" startPosition="48" endLine="15" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030355951253" fileName="AbstractFigureParameter_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractFigureParameter_Constraints#()V" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="14" startPosition="48" endLine="15" endPosition="81" />
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" />
-    <scopeInfo nodeId="1491555030355943122" fileName="AbstractFigureParameter_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="121" />
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="14" startPosition="47" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030355951253" fileName="FigureParameterMapping_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FigureParameterMapping_Constraints#()V" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="14" startPosition="47" endLine="15" endPosition="80" />
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" />
+    <scopeInfo nodeId="1491555030355943122" fileName="FigureParameterMapping_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="121" />
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1491555030355943098" varName="childConcept" />
       <varInfo nodeId="1491555030355943098" varName="link" />
       <varInfo nodeId="1491555030355943098" varName="node" />
       <varInfo nodeId="1491555030355943098" varName="operationContext" />
       <varInfo nodeId="1491555030355943098" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="24" startPosition="200" endLine="31" endPosition="18">
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="24" startPosition="200" endLine="31" endPosition="18">
       <varInfo nodeId="1491555030355943098" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1491555030355943098" varName="checkingNodeContext" />
       <varInfo nodeId="1491555030355943098" varName="childConcept" />
       <varInfo nodeId="1491555030355943098" varName="link" />
@@ -81,91 +81,91 @@
       <varInfo nodeId="1491555030355943098" varName="operationContext" />
       <varInfo nodeId="1491555030355943098" varName="parentNode" />
     </scopeInfo>
-    <unitInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.AbstractFigureParameter_Constraints" />
+    <unitInfo nodeId="1491555030355943098" fileName="FigureParameterMapping_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.FigureParameterMapping_Constraints" />
   </root>
   <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/3748979635598869842">
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="23" startPosition="42" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="48" startPosition="234" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_tvv1t6_a0a0a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterProperty_Constraints#()V" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="23" startPosition="42" endLine="24" endPosition="75" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="23" startPosition="41" endLine="24" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="48" startPosition="234" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_mf0hp0_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyArgument_Constraints#()V" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="23" startPosition="41" endLine="24" endPosition="74" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
       <varInfo nodeId="3748979635598869842" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="3748979635598869842" varName="_context" />
       <varInfo nodeId="3748979635598869842" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
       <varInfo nodeId="3748979635598869842" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.constraints.ParameterProperty_Constraints$2" />
-    <unitInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="30" startPosition="35" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.ParameterProperty_Constraints$1" />
-    <unitInfo nodeId="3748979635598869842" fileName="ParameterProperty_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.ParameterProperty_Constraints" />
+    <scopeInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
+    <unitInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints$2" />
+    <unitInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="30" startPosition="35" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints$1" />
+    <unitInfo nodeId="3748979635598869842" fileName="PropertyArgument_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints" />
   </root>
   <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/3748979635598885879">
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="23" startPosition="38" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="48" startPosition="230" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_n9tpx9_a0a0a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterLink_Constraints#()V" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="23" startPosition="38" endLine="24" endPosition="71" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="48" startPosition="230" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_5lt087_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkArgument_Constraints#()V" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="70" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
       <varInfo nodeId="3748979635598885879" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="3748979635598885879" varName="_context" />
       <varInfo nodeId="3748979635598885879" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
       <varInfo nodeId="3748979635598885879" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.constraints.ParameterLink_Constraints$2" />
-    <unitInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="30" startPosition="31" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.ParameterLink_Constraints$1" />
-    <unitInfo nodeId="3748979635598885879" fileName="ParameterLink_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.ParameterLink_Constraints" />
+    <scopeInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
+    <unitInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints$2" />
+    <unitInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="30" startPosition="31" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints$1" />
+    <unitInfo nodeId="3748979635598885879" fileName="LinkArgument_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints" />
   </root>
   <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/5717188120684762327">
     <nodeInfo nodeId="5717188120684762327" fileName="CellModel_Diagram_Constraints.java" startLine="8" startPosition="42" endLine="9" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

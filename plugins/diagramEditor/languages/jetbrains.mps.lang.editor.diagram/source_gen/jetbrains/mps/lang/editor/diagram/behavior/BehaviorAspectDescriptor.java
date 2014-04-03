@@ -16,13 +16,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CellModel_DiagramNode_BehaviorDescriptor();
       case 13:
         return new ExternalFigureReference_BehaviorDescriptor();
-      case 0:
-        return new AbstractFigureParameter_BehaviorDescriptor();
+      case 14:
+        return new FigureParameterMapping_BehaviorDescriptor();
       case 2:
         return new CellModel_Diagram_BehaviorDescriptor();
       case 3:
         return new CellModel_DiagramConnector_BehaviorDescriptor();
-      case 1:
+      case 0:
         return new AttributedFigureReference_BehaviorDescriptor();
       case 20:
         return new ThisEditorNodeExpression_BehaviorDescriptor();
@@ -32,19 +32,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DiagramElementBLQuery_BehaviorDescriptor();
       case 5:
         return new CellModel_DiagramPort_BehaviorDescriptor();
+      case 1:
+        return new BLQueryArgument_BehaviorDescriptor();
       case 17:
-        return new ParameterBLQuery_BehaviorDescriptor();
-      case 18:
-        return new ParameterLink_BehaviorDescriptor();
+        return new LinkArgument_BehaviorDescriptor();
       case 19:
-        return new ParameterProperty_BehaviorDescriptor();
+        return new PropertyArgument_BehaviorDescriptor();
       case 12:
         return new DiagramElementsCreation_BehaviorDescriptor();
       case 11:
         return new DiagramElementCreationHandler_BehaviorDescriptor();
       case 24:
         return new YFunctionParameter_BehaviorDescriptor();
-      case 16:
+      case 18:
         return new NodeFunctionParameter_BehaviorDescriptor();
       case 23:
         return new XFunctionParameter_BehaviorDescriptor();
@@ -54,11 +54,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DiagramConnectorCreationHandler_BehaviorDescriptor();
       case 7:
         return new DiagramConnectorCanCreateHandler_BehaviorDescriptor();
-      case 15:
+      case 16:
         return new FromNodeFunctionParameter_BehaviorDescriptor();
       case 22:
         return new ToNodeFunctionParameter_BehaviorDescriptor();
-      case 14:
+      case 15:
         return new FromIdFunctionParameter_BehaviorDescriptor();
       case 21:
         return new ToIdFunctionParameter_BehaviorDescriptor();
@@ -67,5 +67,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
 }

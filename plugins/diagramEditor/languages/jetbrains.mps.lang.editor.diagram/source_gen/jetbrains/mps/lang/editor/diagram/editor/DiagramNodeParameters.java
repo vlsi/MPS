@@ -39,7 +39,7 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     List<String> definedParameters = ListSequence.fromListWithValues(new LinkedList<String>(), BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), parameterObject, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{}));
     Set<String> specifiedParameters = SetSequence.fromSet(new HashSet<String>());
 
-    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true))) {
       if (ListSequence.fromList(definedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, "name"))) {
         SetSequence.fromSet(specifiedParameters).addElement(SPropertyOperations.getString(nextSpecifiedParameter, "name"));
         ListSequence.fromList(definedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, "name"));
@@ -47,7 +47,7 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     }
 
     boolean isEmpty = true;
-    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true))) {
       if (SetSequence.fromSet(specifiedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, "name"))) {
         SetSequence.fromSet(specifiedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, "name"));
         this.appendParameter(SPropertyOperations.getString(nextSpecifiedParameter, "name"), styledText, isEmpty, nextSpecifiedParameter == selectedNode);

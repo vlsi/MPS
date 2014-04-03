@@ -20,27 +20,27 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
-public class ParameterProperty_Editor extends DefaultNodeEditor {
+public class LinkArgument_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_pir07_a(editorContext, node);
+    return this.createCollection_5vvsh6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_pir07_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5vvsh6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_pir07_a");
+    editorCell.setCellId("Collection_5vvsh6_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefCell_pir07_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_5vvsh6_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_pir07_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5vvsh6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("property");
-    provider.setNoTargetText("<no property>");
+    provider.setRole("link");
+    provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterProperty_Editor._Inline_pir07_a0a());
+    provider.setAuxiliaryCellProvider(new LinkArgument_Editor._Inline_5vvsh6_a0a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ParameterProperty_Editor.ReplaceWith_AbstractParameter_cellMenu_pir07_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkArgument_Editor.ReplaceWith_AbstractArgument_cellMenu_5vvsh6_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -51,8 +51,8 @@ public class ParameterProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_pir07_a0a extends InlineCellProvider {
-    public _Inline_pir07_a0a() {
+  public static class _Inline_5vvsh6_a0a extends InlineCellProvider {
+    public _Inline_5vvsh6_a0a() {
       super();
     }
 
@@ -61,20 +61,20 @@ public class ParameterProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_pir07_a0a0(editorContext, node);
+      return this.createProperty_5vvsh6_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_pir07_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5vvsh6_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
+      provider.setRole("role");
+      provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_role");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
-        editorCell.setRole("property");
+        editorCell.setRole("link");
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, false);
@@ -91,12 +91,12 @@ public class ParameterProperty_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ReplaceWith_AbstractParameter_cellMenu_pir07_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractParameter_cellMenu_pir07_a0a0() {
+  public static class ReplaceWith_AbstractArgument_cellMenu_5vvsh6_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractArgument_cellMenu_5vvsh6_a0a0() {
     }
 
     public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter";
+      return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
     }
   }
 }

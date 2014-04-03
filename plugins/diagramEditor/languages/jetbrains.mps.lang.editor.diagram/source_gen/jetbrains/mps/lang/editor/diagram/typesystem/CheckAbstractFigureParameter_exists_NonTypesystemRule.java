@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior;
+import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -19,17 +19,17 @@ public class CheckAbstractFigureParameter_exists_NonTypesystemRule extends Abstr
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (AbstractFigureParameter_Behavior.call_getParameterDeclaration_4115105161238952352(node) == null) {
+    if (FigureParameterMapping_Behavior.call_getParameterDeclaration_4115105161238952352(node) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("name");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "figure parameter was not found in specified figure", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "1491555030356827125", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "figure parameter with this name was not found in specified figure", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "1491555030356827125", null, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter";
+    return "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

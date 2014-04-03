@@ -32,12 +32,12 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1094405431463762976" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.1094405431463761863" resolveInfo="FigureParameterMapping" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1094405431463763018" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1094405431463763019" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1094405431463763021" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="5717188120683436211" resolveInfo="AbstractFigureParameterName_Actions" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="5717188120683436211" resolveInfo="FigureParameterMappingName_Actions" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1491555030356413301" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_Generic_Group" typeId="tpc2.1165420413719" id="1491555030356413376" nodeInfo="ng">
             <node role="parametersFunction" roleId="tpc2.1165420413720" type="tpc2.CellMenuPart_AbstractGroup_Query" typeId="tpc2.1163613035599" id="1491555030356413377" nodeInfo="nn">
@@ -792,8 +792,8 @@
     </node>
   </root>
   <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="5717188120683436211" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="AbstractFigureParameterName_Actions" />
-    <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
+    <property name="name" nameId="tpck.1169194664001" value="FigureParameterMappingName_Actions" />
+    <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="gbdf.1094405431463761863" resolveInfo="FigureParameterMapping" />
     <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="5717188120683437802" nodeInfo="ng">
       <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="5717188120683437803" nodeInfo="nn">
@@ -869,8 +869,8 @@
     </node>
   </root>
   <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="3229274890672509255" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="FigureParameterBLQuerySharpActions" />
-    <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="gbdf.285670992213637367" resolveInfo="ParameterBLQuery" />
+    <property name="name" nameId="tpck.1169194664001" value="BLQueryArgumentSharpActions" />
+    <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="gbdf.285670992213637367" resolveInfo="BLQueryArgument" />
     <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="3229274890672510833" nodeInfo="ng">
       <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="3229274890672510834" nodeInfo="nn">
@@ -879,12 +879,12 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3229274890672654525" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="abstractParameter" />
               <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3229274890672654523" nodeInfo="in">
-                <link role="concept" roleId="tp25.1138405853777" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractParameter" />
+                <link role="concept" roleId="tp25.1138405853777" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractArgument" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3229274890672654526" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="3229274890672654527" nodeInfo="nn" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="3229274890672654528" nodeInfo="nn">
-                  <link role="concept" roleId="tp25.1139867957129" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractParameter" />
+                  <link role="concept" roleId="tp25.1139867957129" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractArgument" />
                 </node>
               </node>
             </node>
@@ -1003,11 +1003,11 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="285670992213637370" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.285670992213637367" resolveInfo="ParameterBLQuery" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.285670992213637367" resolveInfo="BLQueryArgument" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="285670992217689860" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="285670992217689861" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="#" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="3229274890672509255" resolveInfo="FigureParameterBLQuerySharpActions" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="3229274890672509255" resolveInfo="BLQueryArgumentSharpActions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="285670992217689862" nodeInfo="nn" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="285670992217689863" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -1017,7 +1017,7 @@
         </node>
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="285670992217689865" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="285670992217689866" nodeInfo="ng">
-            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractParameter" />
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractArgument" />
           </node>
         </node>
       </node>
@@ -1028,19 +1028,19 @@
       </node>
       <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="285670992217689870" nodeInfo="ng">
         <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="285670992217689871" nodeInfo="ng">
-          <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractParameter" />
+          <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractArgument" />
         </node>
       </node>
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="285670992213637567" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.285670992213637559" resolveInfo="ParameterLink" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.285670992213637559" resolveInfo="LinkArgument" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="285670992217679460" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="285670992217679461" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.285670992217679783" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="285670992217679462" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="285670992217679463" nodeInfo="ng">
-            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractParameter" />
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractArgument" />
           </node>
         </node>
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="285670992217679464" nodeInfo="ng">
@@ -1055,13 +1055,13 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="285670992217689760" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.285670992217672837" resolveInfo="ParameterProperty" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.285670992217672837" resolveInfo="PropertyArgument" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="285670992217689795" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="285670992217689796" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.285670992217689748" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="285670992217689797" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="285670992217689798" nodeInfo="ng">
-            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractParameter" />
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.285670992213637294" resolveInfo="AbstractArgument" />
           </node>
         </node>
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="285670992217689799" nodeInfo="ng">

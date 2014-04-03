@@ -22,16 +22,16 @@ public class check_CellModel_DiagramConnector_NonTypesystemRule extends Abstract
   }
 
   public void applyRule(final SNode cellModel_DiagramNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(cellModel_DiagramNode, "inputPort", true), "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery")) {
-      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(cellModel_DiagramNode, "inputPort", true), "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery"), "query", true)), _quotation_createNode_xvo3mm_b0a0a0a0b()))) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(cellModel_DiagramNode, "inputPort", true), "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument")) {
+      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(cellModel_DiagramNode, "inputPort", true), "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), "query", true)), _quotation_createNode_xvo3mm_b0a0a0a0b()))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(cellModel_DiagramNode, "inputPort", true), "query must return sequence", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "2720370445057932343", null, errorTarget);
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(cellModel_DiagramNode, "outputPort", true), "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery")) {
-      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(cellModel_DiagramNode, "outputPort", true), "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery"), "query", true)), _quotation_createNode_xvo3mm_b0a0a0b0b()))) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(cellModel_DiagramNode, "outputPort", true), "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument")) {
+      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(cellModel_DiagramNode, "outputPort", true), "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), "query", true)), _quotation_createNode_xvo3mm_b0a0a0b0b()))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(cellModel_DiagramNode, "outputPort", true), "query must return sequence", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "2720370445057954510", null, errorTarget);

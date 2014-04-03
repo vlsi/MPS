@@ -7,17 +7,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class FigureParameterBLQuerySharpActions {
+public class FigureParameterMappingName_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new FigureParameterBLQuerySharpActions.FigureParameterBLQuerySharpActions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new FigureParameterMappingName_Actions.FigureParameterMappingName_Actions_DELETE(node));
   }
 
-  public static class FigureParameterBLQuerySharpActions_DELETE extends AbstractCellAction {
+  public static class FigureParameterMappingName_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public FigureParameterBLQuerySharpActions_DELETE(SNode node) {
+    public FigureParameterMappingName_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -26,7 +27,11 @@ public class FigureParameterBLQuerySharpActions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter");
+      if (SPropertyOperations.getString(node, "name") != null) {
+        SPropertyOperations.set(node, "name", null);
+      } else {
+        SNodeOperations.deleteNode(node);
+      }
     }
   }
 }

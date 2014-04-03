@@ -21,54 +21,54 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class ParameterBLQuery_Editor extends DefaultNodeEditor {
+public class BLQueryArgument_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ck03rf_a(editorContext, node);
+    return this.createCollection_c3akx4_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ck03rf_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_c3akx4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ck03rf_a");
+    editorCell.setCellId("Collection_c3akx4_a");
     editorCell.setBig(true);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParameterBLQuery_Editor.ReplaceWith_AbstractParameter_cellMenu_ck03rf_a0a()}));
-    editorCell.addEditorCell(this.createConstant_ck03rf_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_ck03rf_b0(editorContext, node));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BLQueryArgument_Editor.ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a()}));
+    editorCell.addEditorCell(this.createConstant_c3akx4_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_c3akx4_b0(editorContext, node));
     return editorCell;
   }
 
-  public static class ReplaceWith_AbstractParameter_cellMenu_ck03rf_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractParameter_cellMenu_ck03rf_a0a() {
+  public static class ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a() {
     }
 
     public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter";
+      return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
     }
   }
 
-  private EditorCell createConstant_ck03rf_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_c3akx4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_ck03rf_a0");
+    editorCell.setCellId("Constant_c3akx4_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
-    FigureParameterBLQuerySharpActions.setCellActions(editorCell, node, editorContext);
+    BLQueryArgumentSharpActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParameterBLQuery_Editor.ReplaceWith_AbstractParameter_cellMenu_ck03rf_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BLQueryArgument_Editor.ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a0()}));
     return editorCell;
   }
 
-  public static class ReplaceWith_AbstractParameter_cellMenu_ck03rf_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractParameter_cellMenu_ck03rf_a0a0() {
+  public static class ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a0() {
     }
 
     public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter";
+      return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
     }
   }
 
-  private EditorCell createRefNode_ck03rf_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_c3akx4_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");

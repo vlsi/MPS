@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8dmqiei9d4nf14tq2ggtz8n29xonyjq">
+<dependencies version="2" modelHash="dx7979imk2q790tzghfr8u6spgsa5t3">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(MPS.Editor/jetbrains.mps.openapi.editor.selection@java_stub)" />
@@ -21,10 +21,10 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="902273atmrd8nhnqts5ootv5bmwc50j" />
   <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="79uvy704jiw03xwy3i429wrpdwk2u3u" />
-  <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="2smj18tjd6jw4b6ux432xi2v1bm4icn" />
+  <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="1na9ync4xy1ldvh0dhdc2eyht48o7gu" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="7osgxoz6zbhjrv1yubp6sam9m48nvh" dependsOnNodes="true">
+  <common hash="2n3so2npgltiqh4tyc7a0ulh9npfa45" dependsOnNodes="true">
     <dep root="1497735617372820860" />
     <dep root="285670992217709791" />
     <dep root="4088443785018002410" />
@@ -55,8 +55,8 @@
     <file name="QueriesGenerated.java" />
   </common>
   <source id="4088443785018002410" name="DiagramspecificEditorCells" hash="6hgc6lh3guvlv9sc1eboekz9v39yr44" />
-  <source id="1497735617372820860" name="AllFactories" hash="-1na0xabd73r65i1lbx70995low19c71" />
-  <source id="285670992217709791" name="AbstractParameter" hash="2r3kntlofzyineitdg9jepnnk78vuhi">
+  <source id="1497735617372820860" name="AllFactories" hash="a984q8fw1dy9i6z81004hy47lt4utlw" />
+  <source id="285670992217709791" name="AbstractArgument" hash="32erj8ozm3ecshwqqz2x4f6gosd74lz">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

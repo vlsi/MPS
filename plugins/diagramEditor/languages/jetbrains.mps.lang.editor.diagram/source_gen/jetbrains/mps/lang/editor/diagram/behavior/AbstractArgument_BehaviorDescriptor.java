@@ -5,12 +5,12 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
-public abstract class AbstractParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public AbstractParameter_BehaviorDescriptor() {
+public abstract class AbstractArgument_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
+  public AbstractArgument_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter";
+    return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
   }
 }

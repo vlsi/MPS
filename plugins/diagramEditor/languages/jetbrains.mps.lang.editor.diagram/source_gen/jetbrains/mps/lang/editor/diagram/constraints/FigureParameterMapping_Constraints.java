@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class AbstractFigureParameter_Constraints extends BaseConstraintsDescriptor {
-  public AbstractFigureParameter_Constraints() {
-    super("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter");
+public class FigureParameterMapping_Constraints extends BaseConstraintsDescriptor {
+  public FigureParameterMapping_Constraints() {
+    super("jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping");
   }
 
   @Override

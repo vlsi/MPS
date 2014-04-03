@@ -91,9 +91,9 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_5xszyv_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CellModel_DiagramNode_Editor.parameterListHandler_5xszyv_d0(node, "parameter", editorContext);
+    AbstractCellListHandler handler = new CellModel_DiagramNode_Editor.parametersListHandler_5xszyv_d0(node, "parameters", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_parameter");
+    editorCell.setCellId("refNodeList_parameters");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new DiagramNodeParameters());
     editorCell.getStyle().putAll(style);
@@ -101,8 +101,8 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class parameterListHandler_5xszyv_d0 extends RefNodeListHandler {
-    public parameterListHandler_5xszyv_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parametersListHandler_5xszyv_d0 extends RefNodeListHandler {
+    public parametersListHandler_5xszyv_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

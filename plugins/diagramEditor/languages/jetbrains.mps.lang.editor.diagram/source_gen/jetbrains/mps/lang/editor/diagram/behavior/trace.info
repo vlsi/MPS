@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AbstractFigureParameter_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractArgument_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractArgument_BehaviorDescriptor" />
   <unitInfo fileName="AbstractFigureReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractParameter_BehaviorDescriptor" />
   <unitInfo fileName="AttributedFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_BehaviorDescriptor" />
+  <unitInfo fileName="BLQueryArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BLQueryArgument_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CellModel_DiagramConnector_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_DiagramNode_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
@@ -19,12 +19,12 @@
   <unitInfo fileName="DiagramElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElement_BehaviorDescriptor" />
   <unitInfo fileName="DiagramElementsCreation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementsCreation_BehaviorDescriptor" />
   <unitInfo fileName="ExternalFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
+  <unitInfo fileName="FigureParameterMapping_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor" />
   <unitInfo fileName="FromIdFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FromIdFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="FromNodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FromNodeFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="LinkArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.LinkArgument_BehaviorDescriptor" />
   <unitInfo fileName="NodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.NodeFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="ParameterBLQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ParameterBLQuery_BehaviorDescriptor" />
-  <unitInfo fileName="ParameterLink_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ParameterLink_BehaviorDescriptor" />
-  <unitInfo fileName="ParameterProperty_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ParameterProperty_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.PropertyArgument_BehaviorDescriptor" />
   <unitInfo fileName="ThisEditorNodeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" />
   <unitInfo fileName="ToIdFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ToIdFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="ToNodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ToNodeFunctionParameter_BehaviorDescriptor" />
@@ -63,45 +63,45 @@
     <unitInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599843644">
-    <nodeInfo nodeId="3748979635600310581" fileName="AbstractFigureParameter_Behavior.java" startLine="15" startPosition="79" endLine="16" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635600329525" fileName="AbstractFigureParameter_Behavior.java" startLine="19" startPosition="79" endLine="20" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635600266753" fileName="AbstractFigureParameter_Behavior.java" startLine="23" startPosition="75" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748979635600239742" fileName="AbstractFigureParameter_Behavior.java" startLine="24" startPosition="25" endLine="25" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030355961670" fileName="AbstractFigureParameter_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030357028624" fileName="AbstractFigureParameter_Behavior.java" startLine="32" startPosition="88" endLine="33" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGetterName_3748979635600013007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSetterName_3748979635600013130#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDiagramNodeCell_1491555030355957123#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getParameterDeclaration_4115105161238952352#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuffix_3748979635600238774#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="3748979635599843646" fileName="AbstractFigureParameter_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="3748979635600013010" fileName="AbstractFigureParameter_Behavior.java" startLine="15" startPosition="79" endLine="16" endPosition="97" />
-    <scopeInfo nodeId="3748979635600013133" fileName="AbstractFigureParameter_Behavior.java" startLine="19" startPosition="79" endLine="20" endPosition="97" />
-    <scopeInfo nodeId="1491555030355957280" fileName="AbstractFigureParameter_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="138" />
-    <scopeInfo nodeId="4115105161238952355" fileName="AbstractFigureParameter_Behavior.java" startLine="32" startPosition="88" endLine="33" endPosition="327" />
-    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="3748979635600310581" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="79" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635600329525" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="79" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635600266753" fileName="FigureParameterMapping_Behavior.java" startLine="23" startPosition="75" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748979635600239742" fileName="FigureParameterMapping_Behavior.java" startLine="24" startPosition="25" endLine="25" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030355961670" fileName="FigureParameterMapping_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030357028624" fileName="FigureParameterMapping_Behavior.java" startLine="32" startPosition="88" endLine="33" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGetterName_3748979635600013007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSetterName_3748979635600013130#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDiagramNodeCell_1491555030355957123#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getParameterDeclaration_4115105161238952352#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuffix_3748979635600238774#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="3748979635599843646" fileName="FigureParameterMapping_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="3748979635600013010" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="79" endLine="16" endPosition="96" />
+    <scopeInfo nodeId="3748979635600013133" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="79" endLine="20" endPosition="96" />
+    <scopeInfo nodeId="1491555030355957280" fileName="FigureParameterMapping_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="138" />
+    <scopeInfo nodeId="4115105161238952355" fileName="FigureParameterMapping_Behavior.java" startLine="32" startPosition="88" endLine="33" endPosition="326" />
+    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635600238777" fileName="AbstractFigureParameter_Behavior.java" startLine="23" startPosition="75" endLine="25" endPosition="207">
+    <scopeInfo nodeId="3748979635600238777" fileName="FigureParameterMapping_Behavior.java" startLine="23" startPosition="75" endLine="25" endPosition="207">
       <varInfo nodeId="3748979635600266756" varName="prefix" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="3748979635599843644" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior" />
+    <unitInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/4052492221165688944">
     <nodeInfo nodeId="4052492221165688954" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

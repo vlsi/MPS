@@ -13,14 +13,14 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 4:
-        return new ParameterProperty_Constraints();
+        return new PropertyArgument_Constraints();
       case 3:
-        return new ParameterLink_Constraints();
-      case 0:
-        return new AbstractFigureParameter_Constraints();
-      case 1:
-        return new CellModel_Diagram_Constraints();
+        return new LinkArgument_Constraints();
       case 2:
+        return new FigureParameterMapping_Constraints();
+      case 0:
+        return new CellModel_Diagram_Constraints();
+      case 1:
         return new CellModel_DiagramConnector_Constraints();
       case 5:
         return new ThisEditorNodeExpression_Constraints();
@@ -30,5 +30,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
 }

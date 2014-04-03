@@ -32,7 +32,7 @@ public class check_CellModel_DiagramNode_NonTypesystemRule extends AbstractNonTy
     }
 
     Set<String> parameterNames = SetSequence.fromSet(new HashSet<String>());
-    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true))) {
       if (SetSequence.fromSet(parameterNames).contains(SPropertyOperations.getString(parameter, "name"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

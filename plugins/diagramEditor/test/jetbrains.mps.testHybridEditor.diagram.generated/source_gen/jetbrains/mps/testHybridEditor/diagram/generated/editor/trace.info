@@ -476,15 +476,15 @@
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="109" startPosition="65" endLine="110" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="112" startPosition="8" endLine="113" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="113" startPosition="47" endLine="114" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="116" startPosition="55" endLine="117" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="120" startPosition="65" endLine="121" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="116" startPosition="55" endLine="117" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="120" startPosition="65" endLine="121" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="123" startPosition="8" endLine="124" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="124" startPosition="47" endLine="125" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="127" startPosition="55" endLine="128" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="131" startPosition="65" endLine="132" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="124" startPosition="47" endLine="125" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="127" startPosition="55" endLine="128" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="131" startPosition="65" endLine="132" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="134" startPosition="8" endLine="135" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="135" startPosition="47" endLine="136" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="136" startPosition="169" endLine="137" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="135" startPosition="47" endLine="136" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="136" startPosition="170" endLine="137" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="140" startPosition="31" endLine="141" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="141" startPosition="39" endLine="142" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="142" startPosition="46" endLine="143" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -527,8 +527,8 @@
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="238" startPosition="101" endLine="239" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="239" startPosition="110" endLine="240" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="240" startPosition="130" endLine="241" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="241" startPosition="130" endLine="242" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="242" startPosition="108" endLine="243" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="241" startPosition="130" endLine="242" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="242" startPosition="107" endLine="243" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="249" startPosition="45" endLine="250" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="251" startPosition="40" endLine="252" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="253" startPosition="15" endLine="254" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -623,7 +623,7 @@
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="92" startPosition="46" endLine="101" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="103" startPosition="165" endLine="112" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="114" startPosition="165" endLine="123" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="125" startPosition="170" endLine="134" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="125" startPosition="169" endLine="134" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="291" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="140" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronize#()V" />
     <nodeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="249" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
@@ -665,10 +665,10 @@
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="98" startPosition="65" endLine="99" endPosition="59" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="105" startPosition="55" endLine="106" endPosition="59" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="109" startPosition="65" endLine="110" endPosition="59" />
-    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="116" startPosition="55" endLine="117" endPosition="64" />
-    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="120" startPosition="65" endLine="121" endPosition="64" />
-    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="127" startPosition="55" endLine="128" endPosition="63" />
-    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="131" startPosition="65" endLine="132" endPosition="63" />
+    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="116" startPosition="55" endLine="117" endPosition="63" />
+    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="120" startPosition="65" endLine="121" endPosition="63" />
+    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="127" startPosition="55" endLine="128" endPosition="64" />
+    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="131" startPosition="65" endLine="132" endPosition="64" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="167" startPosition="56" endLine="168" endPosition="88" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="197" startPosition="56" endLine="198" endPosition="88" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="223" startPosition="39" endLine="224" endPosition="77" />
@@ -796,7 +796,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="302" startPosition="102" endLine="324" endPosition="16" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="328" startPosition="102" endLine="350" endPosition="16" />
-    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="220" startPosition="103" endLine="243" endPosition="107" />
+    <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="220" startPosition="103" endLine="243" endPosition="108" />
     <scopeInfo nodeId="2353136177975278085" fileName="BlockInstance_diagramGenerated_Editor.java" startLine="302" startPosition="0" endLine="326" endPosition="0">
       <varInfo nodeId="2353136177975278085" varName="id" />
     </scopeInfo>

@@ -24,7 +24,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior;
+import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -142,7 +142,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1755573558914477519(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_285670992205420415(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -190,27 +190,27 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2732397419129685834(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_2732397419129735979(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_2732397419130622150(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_2732397419130622913(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_7876207971861902468(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_7876207971862004960(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1853186767787145017(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -234,11 +234,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7755191110397988166(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_7755191110398550631(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockParameter2FieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "blockArgument2FieldDeclaration");
   }
 
   public static boolean ifMacro_Condition_4364473862414146389(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -507,13 +507,13 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7755191110397988179(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode figureParameter = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter");
-    return AbstractFigureParameter_Behavior.call_getParameterDeclaration_4115105161238952352(figureParameter);
+    SNode figureParameter = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping");
+    return FigureParameterMapping_Behavior.call_getParameterDeclaration_4115105161238952352(figureParameter);
   }
 
   public static SNode sourceNodeQuery_7755191110398550642(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode figureParameter = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter");
-    return AbstractFigureParameter_Behavior.call_getParameterDeclaration_4115105161238952352(figureParameter);
+    SNode figureParameter = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping");
+    return FigureParameterMapping_Behavior.call_getParameterDeclaration_4115105161238952352(figureParameter);
   }
 
   public static SNode sourceNodeQuery_9028489334870521578(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -565,53 +565,53 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2732397419124314911(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "parameter", true) != null);
+        return (SLinkOperations.getTarget(it, "argument", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "parameter", true);
+        return SLinkOperations.getTarget(it, "argument", true);
       }
     });
   }
 
   public static Iterable sourceNodesQuery_2732397419128185561(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "parameter", true) != null);
+        return (SLinkOperations.getTarget(it, "argument", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "parameter", true);
+        return SLinkOperations.getTarget(it, "argument", true);
       }
     });
   }
 
   public static Iterable sourceNodesQuery_1755573558911477936(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "parameter", true) != null);
+        return (SLinkOperations.getTarget(it, "argument", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "parameter", true);
+        return SLinkOperations.getTarget(it, "argument", true);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument");
       }
     });
   }
 
   public static Iterable sourceNodesQuery_7755191110397492680(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "parameter", true) != null);
+        return (SLinkOperations.getTarget(it, "argument", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "parameter", true);
+        return SLinkOperations.getTarget(it, "argument", true);
       }
     });
   }

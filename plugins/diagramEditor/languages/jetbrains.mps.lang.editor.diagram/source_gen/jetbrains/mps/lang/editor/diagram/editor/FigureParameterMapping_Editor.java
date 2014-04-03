@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior;
+import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -26,22 +26,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
-public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
+public class FigureParameterMapping_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ook5es_a(editorContext, node);
+    return this.createCollection_3uf681_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ook5es_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3uf681_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ook5es_a");
+    editorCell.setCellId("Collection_3uf681_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createProperty_ook5es_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ook5es_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_ook5es_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3uf681_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3uf681_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3uf681_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_ook5es_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3uf681_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -49,11 +49,11 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NAVIGATABLE_NODE, AbstractFigureParameter_Editor._StyleParameter_QueryFunction_ook5es_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, FigureParameterMapping_Editor._StyleParameter_QueryFunction_3uf681_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     editorCell.getStyle().putAll(style);
-    AbstractFigureParameterName_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AbstractFigureParameter_Editor.AbstractFigureParameter_generic_cellMenu_ook5es_a0a0()}));
+    FigureParameterMappingName_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FigureParameterMapping_Editor.FigureParameterMapping_generic_cellMenu_3uf681_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -64,16 +64,16 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static SNode _StyleParameter_QueryFunction_ook5es_a0a0(EditorContext editorContext, SNode node) {
-    return AbstractFigureParameter_Behavior.call_getParameterDeclaration_4115105161238952352(node);
+  private static SNode _StyleParameter_QueryFunction_3uf681_a0a0(EditorContext editorContext, SNode node) {
+    return FigureParameterMapping_Behavior.call_getParameterDeclaration_4115105161238952352(node);
   }
 
-  public static class AbstractFigureParameter_generic_cellMenu_ook5es_a0a0 extends AbstractCellMenuPart_Generic_Group {
-    public AbstractFigureParameter_generic_cellMenu_ook5es_a0a0() {
+  public static class FigureParameterMapping_generic_cellMenu_3uf681_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public FigureParameterMapping_generic_cellMenu_3uf681_a0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(node), "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(FigureParameterMapping_Behavior.call_getDiagramNodeCell_1491555030355957123(node), "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
@@ -89,9 +89,9 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_ook5es_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3uf681_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_ook5es_b0");
+    editorCell.setCellId("Constant_3uf681_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
@@ -101,14 +101,14 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_ook5es_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3uf681_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("parameter");
-    provider.setNoTargetText("<no parameter>");
+    provider.setRole("argument");
+    provider.setNoTargetText("<no argument>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("parameter");
+      editorCell.setRole("argument");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
