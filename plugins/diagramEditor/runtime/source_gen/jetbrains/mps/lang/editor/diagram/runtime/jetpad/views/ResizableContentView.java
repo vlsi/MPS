@@ -5,11 +5,7 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.views;
 import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.view.ViewPropertyKind;
-import jetbrains.jetpad.model.property.Property;
 
-public interface ResizableContentView {
+public interface ResizableContentView extends MovableContentView {
   public static final ViewPropertySpec<Vector> PREFERRED_SIZE = new ViewPropertySpec("preferredSize", ViewPropertyKind.RELAYOUT);
-
-  public Property<Integer> contentWidth();
-  public Property<Integer> contentHeight();
 }

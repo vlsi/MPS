@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import jetbrains.jetpad.projectional.view.View;
@@ -88,7 +87,7 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
 
     private RectView createPortView() {
       RectView portView = new RectView();
-      AbstractJetpadCell.configureView(portView, PortCellImpl_16y7ix_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+      configureView(portView, new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return true;
         }

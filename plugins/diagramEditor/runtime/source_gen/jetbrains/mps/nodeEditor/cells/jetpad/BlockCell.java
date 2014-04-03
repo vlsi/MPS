@@ -4,8 +4,6 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.model.event.EventHandler;
-import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
@@ -15,25 +13,22 @@ import java.util.ListIterator;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.KeyEvent;
+import jetbrains.jetpad.event.Key;
+import jetbrains.jetpad.event.ModifierKey;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-  }
-
-
-
-  protected void registerPositionProperties(final ReadableModelProperty<Integer> xProperty, final ReadableModelProperty<Integer> yProperty) {
-    addModelProperty(xProperty);
-    addModelProperty(yProperty);
-
-    EventHandler<PropertyChangeEvent<Integer>> handler = new EventHandler<PropertyChangeEvent<Integer>>() {
-      public void onEvent(PropertyChangeEvent<Integer> p0) {
-        moveView(xProperty, yProperty);
-      }
-    };
-    xProperty.addHandler(handler);
-    yProperty.addHandler(handler);
   }
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
@@ -41,6 +36,7 @@ public abstract class BlockCell extends AbstractJetpadCell {
   public abstract Mapper<SNode, NodeDecoratorView> createDecorationMapper();
 
   private void moveView(ReadableModelProperty<Integer> xProperty, ReadableModelProperty<Integer> yProperty) {
+    // TODO: not used? remove?  
     DiagramCell cell = getDiagramCell();
     if (cell == null) {
       return;
@@ -80,8 +76,8 @@ public abstract class BlockCell extends AbstractJetpadCell {
     purgeTailNodes(portsIterator);
   }
 
-  protected void syncPortObjects(Iterable ports, ListIterator portsIterator, Set existingPorts) {
-    for (Object port : ports) {
+  protected void syncPortObjects(Iterable<?> ports, ListIterator portsIterator, Set existingPorts) {
+    for (Object port : Sequence.fromIterable(ports)) {
       if (existingPorts.contains(port)) {
         syncToNextObject(portsIterator, existingPorts, port);
       } else {
@@ -105,5 +101,51 @@ public abstract class BlockCell extends AbstractJetpadCell {
       elementsSet.remove(nextFromList);
     }
     assert false : "Next element was not found in passed listIterator";
+  }
+
+  protected DiagramNodeView createDiagramNodeView() {
+    final BlockView blockView = new BlockView();
+    blockView.minimalSize().set(new Vector(10, 10));
+    blockView.rect.background().set(Color.TRANSPARENT);
+    blockView.padding().set(0);
+
+    blockView.contentView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+      public void move(Vector delta) {
+        blockView.move(delta);
+        blockView.invalidate();
+        requestRelayout();
+      }
+    });
+    configureView(blockView, new _FunctionTypes._return_P0_E0<Boolean>() {
+      public Boolean invoke() {
+        return true;
+      }
+    });
+
+    blockView.prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+    blockView.rect.prop(JetpadUtils.SOURCE).set(getSNode());
+    blockView.addTrait(new ViewTraitBuilder().on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
+      @Override
+      public void handle(View view, KeyEvent e) {
+        if (!(blockView.focused().get())) {
+          return;
+        }
+        if (e.is(Key.T)) {
+          blockView.setPortsDirection(blockView.getPortsDirection().turnClockwise());
+        } else if (e.is(Key.T, ModifierKey.SHIFT)) {
+          blockView.setPortsDirection(blockView.getPortsDirection().turnCounterclockwise());
+        }
+      }
+    }).build());
+    return blockView;
+  }
+
+  protected void updatePositionsFromModel(View contentView, DiagramNodeView nodeView) {
+    Integer xPosition = contentView.prop(MovableContentView.POSITION_X).get();
+    Integer yPosition = contentView.prop(MovableContentView.POSITION_Y).get();
+    int x = (xPosition != null ? xPosition : 0);
+    int y = (yPosition != null ? yPosition : 0);
+    Vector delta = nodeView.bounds().get().origin.sub(nodeView.rect.bounds().get().origin);
+    nodeView.moveTo(new Vector(x, y).add(delta));
   }
 }

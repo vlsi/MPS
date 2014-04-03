@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bos6slooq8j7y9jfh6ootr4jj0rvquh">
+<dependencies version="2" modelHash="-d3ui7fixgw14ub2ew4o1he4ae95ilsd">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8m69ykqla8brdy60tjaaawgft692m48" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <common hash="-zr89n3xw4t70hmji53xxjw6o26e1gr" dependsOnNodes="true">
     <dep root="2084788800270473556" />
@@ -11,6 +11,7 @@
     <dep root="2178507174411801606" />
     <dep root="5422656561926747556" />
     <dep root="5422656561929884641" />
+    <dep root="7319867929567295724" />
     <dep root="785823818609017605" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -23,7 +24,8 @@
   <source id="2178507174411801606" name="ExternalViewFigureParameter" hash="-6652mlfhv3hkbd6a5ui05tl0norf9c0" />
   <source id="5422656561926747556" name="FigureAttribute" hash="ar224lbpbvumxsvbq64l5fwwyssc2sq" />
   <source id="5422656561929884641" name="FigureParameterAttribute" hash="3hg2z5olzi0vvfeubigci3wrbuqisu1" />
-  <source id="2084788800270473556" name="FigureParameterAttributeMethod" hash="320dczpuu3mx5im42z29a4ra9myz9lz" />
-  <source id="2084788800270473590" name="FigureParameterAttributeField" hash="-79nfe3ffamki3pa0n6otzq1ift5eb1m" />
+  <source id="2084788800270473556" name="FigureParameterAttributeMethod" hash="3712n5ef9om3abh1ggmaewugrsfajcb" />
+  <source id="2084788800270473590" name="FigureParameterAttributeField" hash="eij91r9c4bxca8c1i9nyqiokro5w2z5" />
+  <source id="7319867929567295724" name="FigureParameterAttributeViewProperty" hash="-49rz2k3cjpqfmcl7qy6venx0vaoizo8" />
 </dependencies>
 

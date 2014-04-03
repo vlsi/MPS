@@ -75,7 +75,6 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2084788800270473556" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FigureParameterAttributeMethod" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@FigureParameterMethod" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5422656561929884641" resolveInfo="FigureParameterAttribute" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2084788800270509543" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="figureParameterMethod" />
@@ -86,12 +85,21 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2084788800270473590" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FigureParameterAttributeField" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@FigureParameterField" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5422656561929884641" resolveInfo="FigureParameterAttribute" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2084788800270473591" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="figureParameterField" />
       <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2084788800270473593" nodeInfo="ng">
         <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7319867929567295724" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FigureParameterAttributeViewProperty" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5422656561929884641" resolveInfo="FigureParameterAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7319867929567394587" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="figureParameterPropertySpecification" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="7319867929567417477" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
       </node>
     </node>
   </root>

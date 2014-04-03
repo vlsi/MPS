@@ -935,12 +935,13 @@
     <unitInfo nodeId="4287318874989282741" fileName="DiagramDecoratorView.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" />
   </root>
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/7493754406620213986">
-    <nodeInfo nodeId="978373763413720704" fileName="ResizableContentView.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREFERRED_SIZE" />
-    <nodeInfo nodeId="4115105161234301320" fileName="ResizableContentView.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentWidth#()Ljetbrains/jetpad/model/property/Property;" />
-    <nodeInfo nodeId="4115105161234335042" fileName="ResizableContentView.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentHeight#()Ljetbrains/jetpad/model/property/Property;" />
-    <scopeInfo nodeId="4115105161234301320" fileName="ResizableContentView.java" startLine="13" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="4115105161234335042" fileName="ResizableContentView.java" startLine="14" startPosition="0" endLine="15" endPosition="0" />
-    <unitInfo nodeId="7493754406620213986" fileName="ResizableContentView.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
+    <nodeInfo nodeId="978373763413720704" fileName="ResizableContentView.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREFERRED_SIZE" />
+    <unitInfo nodeId="7493754406620213986" fileName="ResizableContentView.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
+  </root>
+  <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/8082246476498952649">
+    <nodeInfo nodeId="7319867929567089306" fileName="MovableContentView.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="POSITION_X" />
+    <nodeInfo nodeId="7319867929567089460" fileName="MovableContentView.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="POSITION_Y" />
+    <unitInfo nodeId="8082246476498952649" fileName="MovableContentView.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
   </root>
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/8574284199674286561">
     <nodeInfo nodeId="3804439703459768776" fileName="NonFocusablePolyLineView.java" startLine="10" startPosition="45" endLine="11" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

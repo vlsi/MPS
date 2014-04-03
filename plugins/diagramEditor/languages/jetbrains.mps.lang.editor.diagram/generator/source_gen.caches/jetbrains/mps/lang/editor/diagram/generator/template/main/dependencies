@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />

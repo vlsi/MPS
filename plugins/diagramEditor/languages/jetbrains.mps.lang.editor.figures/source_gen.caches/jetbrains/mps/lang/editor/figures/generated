@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7u682oqk4vwvijlet54h8gudiv9beab">
-  <dep model="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)" hash="-9tfqezhjep3dcyh6w6xhlsuoxont177" />
+<dependencies version="2" modelHash="5kikz4rqu688qleyeujaniyl7nrbczu">
+  <dep model="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)" hash="-bjlp585q05j3dk6c1cwn23s6c1vcrsl" />
   <dep model="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)" hash="-394z3x8xwklzcjv956b1g8s220rumrs" />
   <common dependsOnNodes="true">
     <dep model="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)" />

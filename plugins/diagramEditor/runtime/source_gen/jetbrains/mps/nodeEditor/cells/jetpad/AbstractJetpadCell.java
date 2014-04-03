@@ -136,15 +136,16 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }
   }
 
-  protected static void configureView(final View view, final AbstractJetpadCell editorCell, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
+  protected void configureView(final View view, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
     view.focusable().set(true);
     view.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
       public boolean canDelete() {
+        // TODO: do we need it? it always return true.. 
         return canDelete.invoke();
       }
 
       public void delete() {
-        editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
+        getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
       }
     });
     view.addTrait(new ViewTraitBuilder().on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
@@ -155,7 +156,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
         }
         MPSToolTipManager.getInstance().hideToolTip();
         if (e.is(Key.F1, ModifierKey.CONTROL)) {
-          editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.SHOW_MESSAGE);
+          getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.SHOW_MESSAGE);
         }
       }
     }).build());

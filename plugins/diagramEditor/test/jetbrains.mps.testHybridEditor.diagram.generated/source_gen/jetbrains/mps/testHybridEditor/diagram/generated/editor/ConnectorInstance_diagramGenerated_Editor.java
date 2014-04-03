@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -172,7 +171,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
 
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();
-      AbstractJetpadCell.configureView(connection.view(), ConnectorCellImpl_5733l5_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+      configureView(connection.view(), new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return true;
         }
