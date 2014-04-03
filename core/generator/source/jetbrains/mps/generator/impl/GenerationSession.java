@@ -221,14 +221,11 @@ class GenerationSession {
 
         for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
           final List<TemplateMappingConfiguration> mappingConfigurations = myGenerationPlan.getMappingConfigurations(myMajorStep);
-          String title = "step " + (myMajorStep);
           if (mappingConfigurations.size() >= 1) {
             final TemplateMappingConfiguration first = mappingConfigurations.get(0);
-            if (first != null) {
-              title += " (" + first.getModel().getLongName() + "#" + first.getName() + (mappingConfigurations.size() == 1 ? ")" : ",..)");
-            }
+            String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
+            monitor.step(String.format("step %d (%s#%s%s)", myMajorStep, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
           }
-          monitor.step(title);
 
           if (myLogger.needsInfo()) {
             myLogger.info("executing step " + (myMajorStep + 1));

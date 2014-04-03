@@ -22,10 +22,6 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
-import jetbrains.mps.generator.impl.reference.MacroResolver;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -33,18 +29,13 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Applies template to input node.
+ * Applies template to input node. Not thread-safe, expects single thread execution
  */
 public final class TemplateProcessor {
   private final TemplateGenerator myGenerator;
@@ -62,6 +53,7 @@ public final class TemplateProcessor {
   private final SModel myOutputModel;
   private final IGenerationTracer myTracer;
   private final Map<String, MacroImpl> macroImplMap = new HashMap<String, MacroImpl>();
+  private final Map<SNode, TemplateNode> myTemplateRuntimeMap = new HashMap<SNode, TemplateNode>();
 
   public TemplateProcessor(@NotNull TemplateExecutionEnvironment env) {
     myGenerator = env.getGenerator();
@@ -84,19 +76,6 @@ public final class TemplateProcessor {
     }
     try {
       return applyTemplate(templateNode, context, null);
-    } catch (StackOverflowError e) {
-      // this is critical
-      IGeneratorLogger logger = getEnvironment().getLogger();
-      logger.error("generation thread ran out of stack space :(");
-      if (myTracer.isTracing()) {
-        logger.error("failed branch was:");
-        GeneratorUtil.logCurrentGenerationBranch(logger, myTracer, true);
-      } else {
-        logger.error("try to increase JVM stack size (-Xss option)");
-        logger.error("to get more diagnostic generate model with the 'save transient models' option");
-      }
-      logger.error(templateNode.getReference(), "couldn't process template", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException(e);
     } finally {
       if (myGenerator.isIncremental()) {
         // restore tracing
@@ -143,9 +122,9 @@ public final class TemplateProcessor {
       }
     }
 
-    // templateNode has no unprocessed node-macros - create output instance for the template node
-    final SNodePointer templateNodeReference = new SNodePointer(templateNode);
-    myTracer.pushTemplateNode(templateNodeReference);
+    final TemplateNode rtTemplateNode = getTemplateNodeRuntime(templateNode);
+
+    myTracer.pushTemplateNode(rtTemplateNode.getTemplateNodeReference());
     // XXX same code is in TEE.createNode. If, however, primary use for TEE is
     // generated code (as opposed to 'apply templates to root' context), it's unreasonable(?)
     // to expect SConcept to get passed to TEE.createNode() (generated templates are likely to know
@@ -153,84 +132,15 @@ public final class TemplateProcessor {
     SNode outputNode = myOutputModel.createNode(templateNode.getConcept());
 
     // use same env method as reduce_TemplateNode does
-    myEnv.nodeCopied(context, outputNode, GeneratorUtil.getTemplateNodeId(templateNode));
+    myEnv.nodeCopied(context, outputNode, rtTemplateNode.getTemplateNodeId());
     myGenerator.registerMappingLabel(context.getInput(), context.getInputName(), outputNode); // XXX reduce_TemplateNode doesn't do that
 
-    jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
-
-    final ArrayList<String> linksHandledWithMacro = new ArrayList<String>();
-    // process property and reference macros
-    List<SNode> templateChildNodes = new ArrayList<SNode>();
-    for (SNode templateChildNode : templateNode.getChildren()) {
-      String templateChildNodeConcept = templateChildNode.getConcept().getQualifiedName();
-      if (GeneratorUtilEx.isTemplateLanguageElement(templateChildNodeConcept)) {
-        if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
-          myEnv.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
-        } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
-          final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
-          linksHandledWithMacro.add(refMacroRole);
-          MacroResolver mr = new MacroResolver(myEnv.getQueryExecutor(), templateChildNode, templateNode.getReferenceTarget(refMacroRole));
-          ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, outputNode, refMacroRole, context);
-          PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
-          postponedReference.setReferenceInOutputSourceNode();
-        }
-      } else {
-        templateChildNodes.add(templateChildNode);
-      }
-    }
-
-    SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferences()) {
-      if (linksHandledWithMacro.contains(reference.getRole())) {
-        // reference has been handled with the ReferenceMacro already
-        continue;
-      }
-
-      if (reference instanceof StaticReference) {
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference != null && !(templateModel.getReference().equals(targetModelReference))) {
-          // optimization for external static references (do not resolve them)
-          SReference newReference = new StaticReference(
-              reference.getRole(),
-              outputNode,
-              targetModelReference,
-              reference.getTargetNodeId(),
-              ((StaticReference) reference).getResolveInfo());
-          outputNode.setReference(reference.getRole(), newReference);
-          continue;
-        }
-      }
-
-      SNode templateReferentNode = reference.getTargetNode();
-      if (templateReferentNode == null) {
-        myGenerator.getLogger().error(templateNode.getReference(),
-            "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-                templateNode));
-        continue;
-      }
-      if (templateReferentNode.getModel() == templateModel) { // internal reference
-        // XXX same code is in TEEI.resolveInTemplateLater, needs refactoring
-        String resolveInfo = SNodeOperations.getResolveInfo(templateReferentNode);
-        // The right way to get string representation of the reference (aka resolveInfo) is to ask scope about it
-        // However, it doesn't work now (e.g. regenerate BL fails with NodeCastException in VisibleClassConstructorScope:59,
-        // String resolveInfo = ModelConstraints.getScope(reference).getReferenceText(reference.getSourceNode(), templateReferentNode);
-        ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
-            outputNode, reference.getRole(),
-            templateNodeReference,
-            GeneratorUtil.getTemplateNodeId(templateReferentNode),
-            resolveInfo,
-            context);
-        PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
-        postponedReference.setReferenceInOutputSourceNode();
-      } else {
-        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
-      }
-    }
+    rtTemplateNode.apply(context, outputNode);
 
     // process children
-    context = context.subContext();
+    context = context.subContext(); // drop label
     try {
-      for (SNode templateChildNode : templateChildNodes) {
+      for (SNode templateChildNode : rtTemplateNode.getChildTemplates()) {
         List<SNode> outputChildNodes = applyTemplate(templateChildNode, context, null);
         SConcept originalConcept = templateChildNode.getConcept();
         String role = templateChildNode.getRoleInParent();
@@ -254,10 +164,23 @@ public final class TemplateProcessor {
       }
     } finally {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
-      myTracer.closeTemplateNode(templateNodeReference);
+      myTracer.closeTemplateNode(rtTemplateNode.getTemplateNodeReference());
     }
     return Collections.singletonList(outputNode);
   }
+
+  private TemplateNode getTemplateNodeRuntime(SNode templateNode) {
+    // template nodes may belong to different models, hence can't use anything simpler than and identity that includes model
+    // and since template models don't change during generation, Object identity is enough as a key.
+    @SuppressWarnings("redundant")
+    final SNode key = templateNode;
+    TemplateNode rv = myTemplateRuntimeMap.get(key);
+    if (rv == null) {
+      rv = new TemplateNode(templateNode, myEnv.getQueryExecutor(), myGenerator);
+      myTemplateRuntimeMap.put(key, rv);
+    }
+    return rv;
+   }
 
   private void initMacroMap() {
     macroImplMap.put(RuleUtil.concept_LoopMacro, new LoopMacro(this));

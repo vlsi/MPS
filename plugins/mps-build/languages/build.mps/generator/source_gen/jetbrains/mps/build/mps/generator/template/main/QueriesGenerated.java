@@ -1285,6 +1285,10 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable<SNode> sourceNodesQuery_1359186315027134099(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "xml", true);
+  }
+
   public static Iterable<SNode> sourceNodesQuery_185021013914641148(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.<SNode>singleton(_context.getNode());
   }
@@ -1292,7 +1296,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_978600701690054686(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0kh(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0lh(it);
       }
     });
   }
@@ -1334,7 +1338,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3239569521490197891(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0ph(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0qh(it);
       }
     });
   }
@@ -1685,7 +1689,7 @@ public class QueriesGenerated {
     List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
     return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
       public SNode select(Tuples._2<SNode, String> it) {
-        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a712(it._1(), it._0());
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a812(it._1(), it._0());
       }
     }).toListSequence();
   }
@@ -1728,21 +1732,21 @@ public class QueriesGenerated {
     return partitioner;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0kh(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0lh(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0ph(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0qh(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
-  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a712(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a812(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
     n1.setProperty("path", String.valueOf(p0));
