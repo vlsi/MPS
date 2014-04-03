@@ -51,6 +51,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/10/10
@@ -153,7 +154,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     // earlier approach to mappingName here used to hide mappingName from the context (null down to generator.copySrc => no mapping label
     // however, interpreted templates keep context mappingName (common approach for all node macros - ctx.subContext(newNameOrNullIfNone))
     // hence here's the same code to ensure mappingName propagation is the same either for interpreted or generated.
-    return generator.copyNodes(inputNodes, templateContext.subContext(mappingName), templateNode, templateId, this);
+    return copyNodes(inputNodes, templateNode, templateId, templateContext.subContext(mappingName));
+  }
+
+  @Override
+  @NotNull
+  public List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId,
+      @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
+    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx.getInputName(), templateId, this);
+    if (!outputNodes.isEmpty()) {
+      new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
+    }
+    return outputNodes;
   }
 
   @Override

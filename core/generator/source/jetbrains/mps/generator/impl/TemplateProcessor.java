@@ -337,7 +337,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       Collection<SNode> newInputNodes = myIsSoleInput ? InputQueryUtil.wrapAsList(getNewInputNode(templateContext)) : getNewInputNodes(templateContext);
       SNodeReference templateNodeRef = templateNode.getTemplateNodeReference();
       String tempNodeId = templateNode.getTemplateNodeId();
-      return myTemplateProcessor.getGenerator().copyNodes(newInputNodes, templateContext, templateNodeRef, tempNodeId, myTemplateProcessor.getEnvironment());
+      return myTemplateProcessor.getEnvironment().copyNodes(newInputNodes, templateNodeRef, tempNodeId, templateContext);
     }
   }
 

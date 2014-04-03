@@ -357,7 +357,7 @@ public class QueriesGenerated {
     return GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(SNodeOperations.getParent(_context.getNode())));
   }
 
-  public static Object propertyMacro_GetPropertyValue_4155486055398088787(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2197859704660436416(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
   }
 
@@ -389,7 +389,7 @@ public class QueriesGenerated {
     return GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(SNodeOperations.getParent(_context.getNode())));
   }
 
-  public static Object propertyMacro_GetPropertyValue_4155486055398089089(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2197859704660389765(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
   }
 
@@ -1838,7 +1838,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
   }
 
-  public static boolean ifMacro_Condition_4155486055398088768(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2197859704660436425(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
   }
 
@@ -1930,7 +1930,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "preMappingScript", true)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_4155486055398089098(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2197859704660389774(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
   }
 

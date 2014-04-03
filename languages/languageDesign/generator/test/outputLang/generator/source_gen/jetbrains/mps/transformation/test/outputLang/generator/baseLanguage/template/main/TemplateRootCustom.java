@@ -332,7 +332,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
             try {
               environment.getTracer().pushMacro(copySrcMacro_kyghau_a0a0a1a6a1a7a1a2);
               final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_4146564171992412788(new SourceSubstituteMacroNodeContext(context, copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, environment.getGenerator()));
-              tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", null, context);
+              tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_kyghau_a0a0a1a6a1a7a1a2);
             }

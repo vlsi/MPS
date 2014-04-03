@@ -139,7 +139,7 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
                   try {
                     environment.getTracer().pushMacro(copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a2a2p);
                     final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context, copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a2a2p, environment.getGenerator()));
-                    tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a2a2p, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286808", null, context);
+                    tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a2a2p, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286808", context);
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a2a2p);
                   }

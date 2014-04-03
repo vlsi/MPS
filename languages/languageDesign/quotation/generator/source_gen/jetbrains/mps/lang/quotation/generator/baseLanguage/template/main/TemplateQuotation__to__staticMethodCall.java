@@ -66,7 +66,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                   try {
                     environment.getTracer().pushMacro(copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2);
                     final SNode copySrcInput4 = context3.getInput();
-                    tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396691722", null, context3);
+                    tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396691722", context3);
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2);
                   }

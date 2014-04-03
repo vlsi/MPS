@@ -52,7 +52,7 @@
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="171" startPosition="163" endLine="172" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="173" startPosition="19" endLine="174" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="174" startPosition="89" endLine="175" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="175" startPosition="211" endLine="176" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="175" startPosition="211" endLine="176" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="177" startPosition="25" endLine="178" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="179" startPosition="15" endLine="180" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="181" startPosition="20" endLine="182" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -79,7 +79,7 @@
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="219" startPosition="9" endLine="220" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="221" startPosition="15" endLine="222" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="222" startPosition="81" endLine="223" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="223" startPosition="203" endLine="224" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="223" startPosition="203" endLine="224" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="225" startPosition="21" endLine="226" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="228" startPosition="63" endLine="229" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="230" startPosition="11" endLine="231" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -88,7 +88,7 @@
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="237" startPosition="163" endLine="238" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="239" startPosition="19" endLine="240" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="240" startPosition="89" endLine="241" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="241" startPosition="212" endLine="242" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="241" startPosition="212" endLine="242" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="243" startPosition="25" endLine="244" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="245" startPosition="15" endLine="246" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="247" startPosition="20" endLine="248" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -395,19 +395,19 @@
       <varInfo nodeId="1197044812173" varName="tlist1" />
     </scopeInfo>
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="153" startPosition="0" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="173" startPosition="19" endLine="176" endPosition="210">
+    <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="173" startPosition="19" endLine="176" endPosition="204">
       <varInfo nodeId="1197044812173" varName="copySrcInput3" />
     </scopeInfo>
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="213" startPosition="11" endLine="216" endPosition="11">
       <varInfo nodeId="1197044812173" varName="child6" />
     </scopeInfo>
-    <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="221" startPosition="15" endLine="224" endPosition="202">
+    <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="221" startPosition="15" endLine="224" endPosition="196">
       <varInfo nodeId="1197044812173" varName="copySrcInput7" />
     </scopeInfo>
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="227" startPosition="11" endLine="230" endPosition="11">
       <varInfo nodeId="1197044812173" varName="child8" />
     </scopeInfo>
-    <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="239" startPosition="19" endLine="242" endPosition="212">
+    <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="239" startPosition="19" endLine="242" endPosition="206">
       <varInfo nodeId="1197044812173" varName="copySrcInput10" />
     </scopeInfo>
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="265" startPosition="11" endLine="268" endPosition="11">
@@ -758,7 +758,7 @@
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="333" startPosition="15" endLine="334" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="335" startPosition="21" endLine="336" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="336" startPosition="94" endLine="337" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="337" startPosition="211" endLine="338" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="337" startPosition="211" endLine="338" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="339" startPosition="27" endLine="340" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="342" startPosition="71" endLine="343" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="344" startPosition="17" endLine="345" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -935,7 +935,7 @@
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="653" startPosition="15" endLine="654" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="655" startPosition="21" endLine="656" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="656" startPosition="95" endLine="657" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="657" startPosition="217" endLine="658" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="657" startPosition="217" endLine="658" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="659" startPosition="27" endLine="660" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="662" startPosition="71" endLine="663" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="664" startPosition="17" endLine="665" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1206,7 +1206,7 @@
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1151" startPosition="15" endLine="1152" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1153" startPosition="21" endLine="1154" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1154" startPosition="95" endLine="1155" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1155" startPosition="212" endLine="1156" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1155" startPosition="212" endLine="1156" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1157" startPosition="27" endLine="1158" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1160" startPosition="71" endLine="1161" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1162" startPosition="17" endLine="1163" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1427,7 +1427,7 @@
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1552" startPosition="19" endLine="1553" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1554" startPosition="25" endLine="1555" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1555" startPosition="104" endLine="1556" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1556" startPosition="222" endLine="1557" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1556" startPosition="222" endLine="1557" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1558" startPosition="31" endLine="1559" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1561" startPosition="77" endLine="1562" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1563" startPosition="21" endLine="1564" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1530,7 +1530,7 @@
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1744" startPosition="15" endLine="1745" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1746" startPosition="21" endLine="1747" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1747" startPosition="96" endLine="1748" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1748" startPosition="214" endLine="1749" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1748" startPosition="214" endLine="1749" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1750" startPosition="27" endLine="1751" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1753" startPosition="73" endLine="1754" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1755" startPosition="17" endLine="1756" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1576,7 +1576,7 @@
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1830" startPosition="15" endLine="1831" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1832" startPosition="21" endLine="1833" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1833" startPosition="95" endLine="1834" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1834" startPosition="213" endLine="1835" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1834" startPosition="213" endLine="1835" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1836" startPosition="27" endLine="1837" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1839" startPosition="73" endLine="1840" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1841" startPosition="17" endLine="1842" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -2371,7 +2371,7 @@
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="249" startPosition="25" endLine="252" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="305" startPosition="21" endLine="308" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="320" startPosition="21" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="335" startPosition="21" endLine="338" endPosition="211">
+    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="335" startPosition="21" endLine="338" endPosition="205">
       <varInfo nodeId="1197207280624" varName="copySrcInput19" />
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="341" startPosition="17" endLine="344" endPosition="17">
@@ -2387,7 +2387,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="625" startPosition="21" endLine="628" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="640" startPosition="21" endLine="643" endPosition="0" />
-    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="655" startPosition="21" endLine="658" endPosition="217">
+    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="655" startPosition="21" endLine="658" endPosition="211">
       <varInfo nodeId="1197207280624" varName="copySrcInput43" />
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="661" startPosition="17" endLine="664" endPosition="17">
@@ -2409,7 +2409,7 @@
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1092" startPosition="21" endLine="1095" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1107" startPosition="21" endLine="1110" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1129" startPosition="25" endLine="1132" endPosition="0" />
-    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1153" startPosition="21" endLine="1156" endPosition="212">
+    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1153" startPosition="21" endLine="1156" endPosition="206">
       <varInfo nodeId="1197207280624" varName="copySrcInput79" />
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1159" startPosition="17" endLine="1162" endPosition="17">
@@ -2425,7 +2425,7 @@
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1463" startPosition="17" endLine="1466" endPosition="17">
       <varInfo nodeId="1197207280624" varName="child102" />
     </scopeInfo>
-    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1554" startPosition="25" endLine="1557" endPosition="223">
+    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1554" startPosition="25" endLine="1557" endPosition="217">
       <varInfo nodeId="1197207280624" varName="copySrcInput109" />
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1560" startPosition="21" endLine="1563" endPosition="21">
@@ -2435,7 +2435,7 @@
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1644" startPosition="25" endLine="1647" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1707" startPosition="25" endLine="1710" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1731" startPosition="21" endLine="1734" endPosition="0" />
-    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1746" startPosition="21" endLine="1749" endPosition="215">
+    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1746" startPosition="21" endLine="1749" endPosition="209">
       <varInfo nodeId="1197207280624" varName="copySrcInput122" />
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1752" startPosition="17" endLine="1755" endPosition="17">
@@ -2446,7 +2446,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1802" startPosition="21" endLine="1805" endPosition="0" />
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1817" startPosition="21" endLine="1820" endPosition="0" />
-    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1832" startPosition="21" endLine="1835" endPosition="214">
+    <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1832" startPosition="21" endLine="1835" endPosition="208">
       <varInfo nodeId="1197207280624" varName="copySrcInput130" />
     </scopeInfo>
     <scopeInfo nodeId="1197207280624" fileName="TemplateFinderClass.java" startLine="1838" startPosition="17" endLine="1841" endPosition="17">
@@ -2949,7 +2949,7 @@
     <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="62" startPosition="15" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="64" startPosition="21" endLine="65" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="65" startPosition="94" endLine="66" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="66" startPosition="210" endLine="67" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="66" startPosition="210" endLine="67" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="68" startPosition="27" endLine="69" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="71" startPosition="69" endLine="72" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="73" startPosition="17" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -3008,7 +3008,7 @@
     <scopeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="85" startPosition="19" endLine="87" endPosition="86" />
     <scopeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="94" startPosition="15" endLine="96" endPosition="78" />
     <scopeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="64" startPosition="21" endLine="67" endPosition="209">
+    <scopeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="64" startPosition="21" endLine="67" endPosition="203">
       <varInfo nodeId="1200266997193" varName="copySrcInput5" />
     </scopeInfo>
     <scopeInfo nodeId="1200266997193" fileName="Templatereduce__NodeStatement.java" startLine="70" startPosition="17" endLine="73" endPosition="17">
@@ -3079,7 +3079,7 @@
     <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="62" startPosition="15" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="64" startPosition="21" endLine="65" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="65" startPosition="94" endLine="66" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="66" startPosition="210" endLine="67" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="66" startPosition="210" endLine="67" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="68" startPosition="27" endLine="69" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="71" startPosition="69" endLine="72" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="73" startPosition="17" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -3138,7 +3138,7 @@
     <scopeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="85" startPosition="19" endLine="87" endPosition="86" />
     <scopeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="94" startPosition="15" endLine="96" endPosition="78" />
     <scopeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="64" startPosition="21" endLine="67" endPosition="209">
+    <scopeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="64" startPosition="21" endLine="67" endPosition="203">
       <varInfo nodeId="1200268304765" varName="copySrcInput5" />
     </scopeInfo>
     <scopeInfo nodeId="1200268304765" fileName="Templatereduce__ResultStatement.java" startLine="70" startPosition="17" endLine="73" endPosition="17">
@@ -3210,7 +3210,7 @@
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="57" startPosition="7" endLine="58" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="59" startPosition="13" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="60" startPosition="78" endLine="61" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="61" startPosition="200" endLine="62" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="61" startPosition="200" endLine="62" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="63" startPosition="19" endLine="64" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="66" startPosition="61" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="68" startPosition="9" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -3228,7 +3228,7 @@
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="88" startPosition="87" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="90" startPosition="17" endLine="91" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="91" startPosition="87" endLine="92" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="92" startPosition="209" endLine="93" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="92" startPosition="209" endLine="93" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="94" startPosition="23" endLine="95" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="96" startPosition="13" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="98" startPosition="11" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -3277,7 +3277,7 @@
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="176" startPosition="95" endLine="177" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="178" startPosition="21" endLine="179" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="179" startPosition="95" endLine="180" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="180" startPosition="218" endLine="181" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="180" startPosition="218" endLine="181" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="182" startPosition="27" endLine="183" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="184" startPosition="17" endLine="185" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="186" startPosition="15" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -3411,19 +3411,19 @@
     <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="215" startPosition="23" endLine="217" endPosition="95" />
     <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="230" startPosition="15" endLine="232" endPosition="78" />
     <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="59" startPosition="13" endLine="62" endPosition="199">
+    <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="59" startPosition="13" endLine="62" endPosition="193">
       <varInfo nodeId="1206446326133" varName="copySrcInput3" />
     </scopeInfo>
     <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="65" startPosition="9" endLine="68" endPosition="9">
       <varInfo nodeId="1206446326133" varName="child4" />
     </scopeInfo>
-    <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="90" startPosition="17" endLine="93" endPosition="208">
+    <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="90" startPosition="17" endLine="93" endPosition="202">
       <varInfo nodeId="1206446326133" varName="copySrcInput7" />
     </scopeInfo>
     <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="102" startPosition="9" endLine="105" endPosition="9">
       <varInfo nodeId="1206446326133" varName="child8" />
     </scopeInfo>
-    <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="178" startPosition="21" endLine="181" endPosition="218">
+    <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="178" startPosition="21" endLine="181" endPosition="212">
       <varInfo nodeId="1206446326133" varName="copySrcInput15" />
     </scopeInfo>
     <scopeInfo nodeId="1206446326133" fileName="Templatereduce__ExecuteFinderExpression.java" startLine="224" startPosition="9" endLine="227" endPosition="9">
