@@ -415,12 +415,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -443,12 +438,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -552,12 +542,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -616,12 +601,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -644,12 +624,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -758,12 +733,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -786,12 +756,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
@@ -873,12 +838,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
-      environment.getTracer().pushRule(getRuleNode());
-      try {
-        return doApply(context.subContext(pattern), environment.getEnvironment(context.getInput(), this));
-      } finally {
-        environment.getTracer().closeRule(getRuleNode());
-      }
+      return super.tryToApply(environment, context.subContext(pattern));
     }
 
     @Override
