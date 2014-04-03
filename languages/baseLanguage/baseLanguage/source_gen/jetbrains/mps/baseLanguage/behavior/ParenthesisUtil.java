@@ -73,7 +73,8 @@ public class ParenthesisUtil {
           }
         });
         assert firstCommon != null;
-        if (eq_a65dpo_a0a4a3a11a6_0(firstCommon, otherExpression) || eq_a65dpo_a0a4a3a11a6(firstCommon, myExpression)) {
+
+        if (eq_a65dpo_a0a5a3a11a6_0(firstCommon, otherExpression) || eq_a65dpo_a0a5a3a11a6(firstCommon, myExpression)) {
           // one of the parenthesised nodes is the common ancestor 
           ParenthesisUtil.clearIncompleteParens(otherExpression, completingByRightParen);
           SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommon, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
@@ -84,14 +85,14 @@ public class ParenthesisUtil {
         SNode otherPredecesor = ListSequence.fromList(otherParentPath.value).getElement(ListSequence.fromList(otherParentPath.value).indexOf(firstCommon) - 1);
         SNode myPredecesor = ListSequence.fromList(myParentPath).getElement(ListSequence.fromList(myParentPath).indexOf(firstCommon) - 1);
         // Does left parented node come from the left and right parented node from the right? 
-        if ((completingByRightParen && eq_a65dpo_a0a0a0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), otherPredecesor) && eq_a65dpo_a0a0a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a9a3a11a6_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), myPredecesor) && eq_a65dpo_a0a0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), otherPredecesor)) {
+        if ((completingByRightParen && eq_a65dpo_a0a0a0k0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), otherPredecesor) && eq_a65dpo_a0a0a01a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a01a3a11a6_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), myPredecesor) && eq_a65dpo_a0a0k0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), otherPredecesor)) {
           break;
         }
       }
       index--;
     }
 
-    if (index == -1 || (otherParentPath.value != null && neq_a65dpo_a0a0a31a6(ListSequence.fromList(otherParentPath.value).last(), topExp))) {
+    if (index == -1) {
       // no common ancestor or swapped left-right -> can't parenthesise 
       if (completingByRightParen) {
         AttributeOperations.setAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteRightParen", null));
@@ -317,36 +318,32 @@ public class ParenthesisUtil {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a4a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a5a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a4a3a11a6_0(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a5a3a11a6_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a9a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a01a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a0j0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a0k0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0j0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0k0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a9a3a11a6_0(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a01a3a11a6_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_a65dpo_a0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean neq_a65dpo_a0a0a31a6(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_a65dpo_a0a0w0g(Object a, Object b) {
