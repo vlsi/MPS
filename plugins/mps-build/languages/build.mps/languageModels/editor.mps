@@ -20,7 +20,7 @@
   <import index="ot6o" modelUID="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" version="-1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -30,7 +30,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6057319140845478665" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232399967" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232399968" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2886182022232399969" nodeInfo="ng">
@@ -97,7 +97,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309732028567" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="load from" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3189788309732028568" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="3189788309732028569" nodeInfo="ng">
@@ -124,14 +124,14 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2754769020641674031" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2754769020641674026" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="content:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="1500819558096400253" nodeInfo="nn">
             <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1500819558096400245" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="(do not compile)" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1500819558096400335" resolveInfo="delete_doNotCompile" />
           <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1500819558096400246" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1500819558096400247" nodeInfo="sn">
@@ -191,7 +191,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2754769020641674035" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2754769020641674036" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -260,7 +260,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867921321" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="uuid:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5780287594867921323" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.322010710375892619" resolveInfo="uuid" />
@@ -271,14 +271,14 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5780287594867921326" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1500819558096385394" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="content:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="1500819558096400254" nodeInfo="nn">
             <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1500819558096400213" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="(do not compile)" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1500819558096400335" resolveInfo="delete_doNotCompile" />
           <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1500819558096400214" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1500819558096400215" nodeInfo="sn">
@@ -338,7 +338,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867921338" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5780287594867921339" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -385,7 +385,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5253498789149547717" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(reexport)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="3189788309731965689" resolveInfo="delete_moduleDepReexport" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="5253498789149547718" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5253498789149547719" nodeInfo="sn">
@@ -766,7 +766,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5970181360963003998" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(generated)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="5970181360963004000" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5970181360963004001" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5970181360963004002" nodeInfo="nn">
@@ -785,7 +785,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5970181360963004032" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5970181360963004033" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="generated:" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5970181360963004035" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.5970181360963003994" resolveInfo="isGenerated" />
@@ -807,7 +807,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867944979" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="uuid:" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5780287594867944980" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.322010710375892619" resolveInfo="uuid" />
@@ -818,7 +818,7 @@
           <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5780287594867944982" nodeInfo="nn" />
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867944983" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="content:" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5780287594867944984" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
@@ -850,7 +850,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867944994" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5780287594867944995" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
@@ -874,7 +874,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5780287594867945003" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="runtime:" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5780287594867945004" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
@@ -916,7 +916,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="9200313594498335445" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="generator:" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="9200313594498335446" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -941,7 +941,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3189788309731917351" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400035" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232400036" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2886182022232400037" nodeInfo="ng">
@@ -999,7 +999,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3189788309732000030" nodeInfo="nn">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309732000031" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="load from" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="3189788309732000033" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.322010710375956261" />
@@ -1035,7 +1035,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3189788309731917361" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731917362" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="content:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="3189788309731917363" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1067,7 +1067,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731917373" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="3189788309731917374" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1091,7 +1091,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731917389" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="runtime:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="3189788309731917390" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1146,7 +1146,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3189788309731922648" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731922651" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="use" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="3189788309731922653" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.3189788309731922643" />
@@ -1179,7 +1179,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731970077" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(reexport)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="3189788309731970103" resolveInfo="delete_javaDepReexport" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="3189788309731970078" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3189788309731970079" nodeInfo="sn">
@@ -1252,7 +1252,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3189788309731981032" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3189788309731981040" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="solution" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="3189788309731981035" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.3189788309731981028" />
@@ -1272,7 +1272,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4278635856200794931" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4278635856200794932" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="extends" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="4278635856200794933" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4278635856200794928" />
@@ -1292,7 +1292,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4278635856200804503" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4278635856200804506" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="jar" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4278635856200804508" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4278635856200804500" />
@@ -1303,7 +1303,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2798275735916376315" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="use from" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2798275735916376316" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.2798275735916344702" />
@@ -1335,7 +1335,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4278635856200817751" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4278635856200817753" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="model root" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4278635856200817755" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4278635856200817746" />
@@ -1348,7 +1348,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4278635856200826427" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4278635856200826430" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="jar" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4278635856200826432" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4278635856200826394" />
@@ -1359,7 +1359,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2798275735916344709" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="use from" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2798275735916344711" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.2798275735916344703" />
@@ -1390,7 +1390,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="322010710375805166" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400714" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232400715" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2886182022232400716" nodeInfo="ng">
@@ -1457,7 +1457,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375805191" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="load from" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="322010710375805192" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="322010710375805193" nodeInfo="ng">
@@ -1484,7 +1484,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="322010710375805203" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375805204" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="extends:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="322010710375805205" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1516,7 +1516,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375805215" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="exports:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="322010710375805216" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1585,7 +1585,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375832980" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="uuid:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="322010710375832981" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.322010710375892619" resolveInfo="uuid" />
@@ -1595,7 +1595,7 @@
         <property name="usesFolding" nameId="tpc2.1160590353935" value="true" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375833010" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="extends:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="322010710375833011" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1621,7 +1621,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375833019" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="exports:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="322010710375833020" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -1794,7 +1794,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="322010710375854308" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="322010710375854311" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="language" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="322010710375854309" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="322010710375832950" nodeInfo="ng">
@@ -1960,7 +1960,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1500819558096028156" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1500819558095918787" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="mps group" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1500819558096028159" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
@@ -2051,7 +2051,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2105528055260559254" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400614" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598953979" resolveInfo="outputLayout" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598953979" resolveInfo="outputLayout" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232400615" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2886182022232400616" nodeInfo="ng">
@@ -2073,7 +2073,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4643216374596270217" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(models only)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4643216374596270300" resolveInfo="delete_ModuleSources_modelsOnly" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="4643216374596270218" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4643216374596270219" nodeInfo="sn">
@@ -2099,7 +2099,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7918752904808691833" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7918752904808692321" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="strip implementation:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7918752904808692326" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7918752904808503599" resolveInfo="stripImplementation" />
@@ -2109,7 +2109,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4643216374596270246" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4643216374596270247" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="models only:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4643216374596270249" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4643216374596270214" resolveInfo="modelsOnly" />
@@ -2138,7 +2138,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7259033139236296157" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7259033139236296159" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(extracted)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7259033139236296161" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7259033139236285167" />
@@ -2151,7 +2151,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1265949165890547405" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400618" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598953979" resolveInfo="outputLayout" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598953979" resolveInfo="outputLayout" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232400619" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2886182022232400620" nodeInfo="ng">
@@ -2176,7 +2176,7 @@
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4356762679305730678" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4356762679305730679" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="jar locations:" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="4356762679305730680" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -2201,7 +2201,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7918752904810477561" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="strip implementation:" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7918752904810477583" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7918752904810477378" resolveInfo="stripImplementation" />
@@ -2213,7 +2213,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6647099934206700652" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6647099934206700655" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="mps" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.7389400916848136214" resolveInfo="plugin" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.7389400916848136214" resolveInfo="plugin" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6647099934206700654" nodeInfo="nn" />
     </node>
@@ -2225,7 +2225,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7655580649838775650" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7655580649838775651" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="module descriptor of" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="7655580649838775653" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7655580649838764661" />
@@ -2240,7 +2240,7 @@
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4356762679305686650" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4356762679305686661" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="jar locations:" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="4356762679305686662" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -2312,7 +2312,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7753544965996494597" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400602" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494612" nodeInfo="ng">
@@ -2327,7 +2327,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494615" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="codename" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494617" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.3497141547781549827" />
@@ -2337,7 +2337,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494620" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="version" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7753544965996494622" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.3497141547781541444" resolveInfo="major" />
@@ -2362,7 +2362,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494630" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="eap" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7753544965996494634" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.3497141547781541446" resolveInfo="eap" />
@@ -2372,7 +2372,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494638" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="full name" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494640" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537372848" />
@@ -2382,7 +2382,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494644" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="build number" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494646" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537229337" />
@@ -2395,7 +2395,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1462305029084473465" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="date" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1462305029084473467" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.1462305029084462472" />
@@ -2405,7 +2405,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494653" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="icons" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="7753544965996494660" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -2423,7 +2423,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494665" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="16x16" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494667" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537229339" />
@@ -2433,7 +2433,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494671" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="32x32" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494669" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537229338" />
@@ -2443,7 +2443,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494674" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="32x32 opaque" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494672" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537229340" />
@@ -2454,14 +2454,14 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494676" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="splash screen" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494678" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537182996" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494690" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="textcolor" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494692" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.8795525031433238889" />
@@ -2471,7 +2471,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494687" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="about screen" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494689" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537182997" />
@@ -2481,7 +2481,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8108467228800456717" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dialog image" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8108467228800456715" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.8108467228800445684" />
@@ -2491,7 +2491,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494696" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="welcome screen" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="7753544965996494702" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -2502,7 +2502,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494706" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="caption" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494708" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7753544965996489990" />
@@ -2512,7 +2512,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494711" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="slogan" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494713" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537335222" />
@@ -2522,7 +2522,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="772379520210780018" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="logo" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="772379520210764199" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.772379520210716142" />
@@ -2549,7 +2549,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8877724874822185924" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="feedback url" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8877724874822185925" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.8877724874822185910" />
@@ -2578,7 +2578,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7753544965996494753" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494754" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="help" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="7753544965996494760" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -2593,7 +2593,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494763" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="file" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494765" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.437343344536486296" />
@@ -2603,7 +2603,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494767" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="root" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494770" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.437343344536486295" />
@@ -2613,7 +2613,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494772" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="url" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494774" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.437343344536486294" />
@@ -2627,7 +2627,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7753544965996494722" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400580" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2886182022232400581" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
@@ -2639,7 +2639,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494733" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="check url" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494735" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537335224" />
@@ -2649,7 +2649,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494738" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="update url" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494740" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6108265972537335225" />
@@ -2659,7 +2659,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7753544965996494747" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="channel" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7753544965996494743" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.8795525031433091059" />
@@ -2678,7 +2678,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6592112598314498935" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400469" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6592112598314499016" nodeInfo="ng">
@@ -2694,7 +2694,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1238980147629899303" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1238980147629899304" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="from" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1238980147629899307" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.1238980147629899306" />
@@ -2721,7 +2721,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314498941" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="name" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6592112598314499022" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6592112598314499021" />
@@ -2731,7 +2731,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314885534" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="short (folder) name" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6592112598314885536" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6592112598314855574" />
@@ -2741,7 +2741,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2172791612906742332" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="description" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2172791612906741873" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.2172791612906637490" />
@@ -2752,7 +2752,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314498944" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="version" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6592112598314499010" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6592112598314498931" />
@@ -2769,7 +2769,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314499058" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="content:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6592112598314499059" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -2789,7 +2789,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314499025" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6592112598314499033" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -2814,9 +2814,31 @@
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutOnNewLineStyleClassItem" typeId="tpc2.1237385578942" id="1238980147630076363" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314499007" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1359186315027824252" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.1359186315025500371" />
+          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1359186315027824253" nodeInfo="nn" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineChildrenStyleClassItem" typeId="tpc2.1237375020029" id="1359186315027824255" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+          <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1359186315034446326" nodeInfo="nn">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1359186315034446327" nodeInfo="sn">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1359186315034446986" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1359186315034456572" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1359186315034447333" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1359186315034446985" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1359186315034454813" nodeInfo="nn">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="kdzh.1238980147629899306" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="1359186315034457873" nodeInfo="nn" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314499007" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value="" />
+        </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6592112598314499008" nodeInfo="nn" />
     </node>
@@ -2833,7 +2855,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4034578608468849415" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(custom packaging)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="4034578608468903486" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4034578608468903487" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4034578608468903488" nodeInfo="nn">
@@ -2853,7 +2875,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4034578608468849417" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4034578608468849418" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="custom packaging" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4034578608468849420" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4034578608468849375" resolveInfo="customPackaging" />
@@ -2900,14 +2922,14 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4034578608468929338" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="(" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationRightStyleClassItem" typeId="tpc2.1233759184865" id="4034578608469015647" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4034578608468989077" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="custom packaging for" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="4034578608468929404" nodeInfo="ng">
           <property name="separatorText" nameId="tpc2.1140524450557" value="," />
@@ -2916,7 +2938,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4034578608468989075" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value=")" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="4034578608469015648" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -2946,7 +2968,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6592112598314795906" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232399950" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="6592112598314795912" nodeInfo="ng">
@@ -2967,7 +2989,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916848050064" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400230" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598953979" resolveInfo="outputLayout" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598953979" resolveInfo="outputLayout" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232400231" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2886182022232400232" nodeInfo="ng">
@@ -3017,7 +3039,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7832771629084799706" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7832771629084799707" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="vendor" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7832771629084799708" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7832771629084799702" resolveInfo="name" />
@@ -3027,7 +3049,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7832771629084799713" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="url" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="7832771629084830960" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -3040,7 +3062,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7832771629084799719" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="icon16" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="7832771629084830962" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -3056,7 +3078,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4701820937132292233" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2488570609613585023" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="mps settings" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2488570609613585129" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -3074,7 +3096,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6503355885715353798" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="bootstrap" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6503355885715353800" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.6503355885715353788" resolveInfo="bootstrap" />
@@ -3093,7 +3115,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1787667533297977389" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="test generation" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1787667533297977390" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.1787667533297081791" resolveInfo="testGeneration" />
@@ -3104,7 +3126,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5002485985648166408" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="excludes:" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5002485985633859245" nodeInfo="ng">
             <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
@@ -3139,7 +3161,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7981469545489625834" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="generation max heap size in mb" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7981469545489625835" nodeInfo="ng">
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
@@ -3160,7 +3182,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="353547257300519935" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="generation max perm size in mb" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="353547257300519936" nodeInfo="ng">
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
@@ -3247,12 +3269,12 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1330375798066770386" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232399945" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7918752904805085029" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(strip implementation)" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="7918752904805087256" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7918752904805087257" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7918752904805103335" nodeInfo="nn">
@@ -3272,7 +3294,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7918752904805171255" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7918752904805172208" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="strip implementation:" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7918752904805172213" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7918752904805006474" resolveInfo="stripImplementation" />
@@ -3285,7 +3307,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2389279258785357776" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2389279258785386118" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="tests" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2389279258785360166" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.2389279258782632528" />
@@ -3300,10 +3322,10 @@
       <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="269707337716273057" resolveInfo="delete_sourcesKind" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7354447573576732012" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(with" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7354447573576732013" nodeInfo="ng">
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.269707337715731330" resolveInfo="sourcesKind" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="5328150611114128376" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5328150611114129535" nodeInfo="sn">
@@ -3326,7 +3348,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5328150611114264269" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="sources" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="5328150611114294702" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5328150611114294703" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5328150611114294711" nodeInfo="nn">
@@ -3403,7 +3425,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7354447573576732014" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="7354447573578574757" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -3505,7 +3527,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5507251971038876475" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="5507251971038876476" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="5507251971038876477" nodeInfo="ng">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="5507251971038876478" nodeInfo="ng">
@@ -3608,14 +3630,14 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5507251971038876514" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038876515" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="content:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="5507251971038876516" nodeInfo="nn">
             <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038876517" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="(do not compile)" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1500819558096400335" resolveInfo="delete_doNotCompile" />
           <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="5507251971038876518" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5507251971038876519" nodeInfo="sn">
@@ -3666,7 +3688,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038876536" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5507251971038876537" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -3735,7 +3757,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038912981" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="uuid:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5507251971038912982" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.322010710375892619" resolveInfo="uuid" />
@@ -3746,14 +3768,14 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5507251971038912984" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038912985" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="content:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="5507251971038912986" nodeInfo="nn">
             <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038912987" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="(do not compile)" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1500819558096400335" resolveInfo="delete_doNotCompile" />
           <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="5507251971038912988" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5507251971038912989" nodeInfo="sn">
@@ -3804,7 +3826,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5507251971038913006" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="ot6o.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5507251971038913007" nodeInfo="nn">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -3838,7 +3860,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4297162197621039361" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4297162197621041814" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="generator options" />
-        <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1277685309310622667" resolveInfo="projectPartKeyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4297162197621041820" nodeInfo="ng">
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
@@ -3858,7 +3880,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4297162197621047016" nodeInfo="nn" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4297162197621048266" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="strict mode" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4297162197621049512" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4297162197620978188" resolveInfo="strict" />
@@ -3868,7 +3890,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4297162197621050968" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="multiple threads" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4297162197621050984" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4297162197620978190" resolveInfo="parallel" />
@@ -3882,7 +3904,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4297162197621129109" nodeInfo="nn">
             <property name="text" nameId="tpc2.1073389577007" value="number of threads" />
-            <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4297162197621130696" nodeInfo="ng">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4297162197620978193" resolveInfo="parallelThreads" />
@@ -3906,7 +3928,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4297162197621053575" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="inplace transform" />
-          <link role="parentStyleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4297162197621053641" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.4297162197621031140" resolveInfo="inplace" />

@@ -277,7 +277,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195168984336">
     <nodeInfo nodeId="1195598336245" fileName="QueriesGenerated.java" startLine="50" startPosition="106" endLine="51" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195170588727" fileName="QueriesGenerated.java" startLine="54" startPosition="107" endLine="55" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195170588727" fileName="QueriesGenerated.java" startLine="54" startPosition="114" endLine="55" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="26" startPosition="43" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="30" startPosition="158" endLine="31" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="32" startPosition="9" endLine="33" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -307,7 +307,7 @@
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="31" startPosition="123" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="30" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="1195598330259" fileName="QueriesGenerated.java" startLine="50" startPosition="106" endLine="51" endPosition="117" />
-    <scopeInfo nodeId="1195170582048" fileName="QueriesGenerated.java" startLine="54" startPosition="107" endLine="55" endPosition="78" />
+    <scopeInfo nodeId="1195170582048" fileName="QueriesGenerated.java" startLine="54" startPosition="114" endLine="55" endPosition="78" />
     <scopeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="23" startPosition="48" endLine="23" endPosition="48" />
     <scopeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="26" startPosition="43" endLine="27" endPosition="32" />
     <scopeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="44" startPosition="19" endLine="45" endPosition="83" />

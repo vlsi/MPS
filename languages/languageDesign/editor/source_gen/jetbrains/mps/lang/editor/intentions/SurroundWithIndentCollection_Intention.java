@@ -18,10 +18,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurrondWithHorizontalCollection_Intention implements IntentionFactory {
+public class SurroundWithIndentCollection_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public SurrondWithHorizontalCollection_Intention() {
+  public SurroundWithIndentCollection_Intention() {
   }
 
   public String getConcept() {
@@ -29,11 +29,11 @@ public class SurrondWithHorizontalCollection_Intention implements IntentionFacto
   }
 
   public String getPresentation() {
-    return "SurrondWithHorizontalCollection";
+    return "SurroundWithIndentCollection";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.editor.intentions.SurrondWithHorizontalCollection_Intention";
+    return "jetbrains.mps.lang.editor.intentions.SurroundWithIndentCollection_Intention";
   }
 
   public String getLanguageFqName() {
@@ -60,7 +60,7 @@ public class SurrondWithHorizontalCollection_Intention implements IntentionFacto
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1216916774011");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "8868282734708519353");
   }
 
   public boolean isSurroundWith() {
@@ -69,7 +69,7 @@ public class SurrondWithHorizontalCollection_Intention implements IntentionFacto
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurrondWithHorizontalCollection_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithIndentCollection_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -79,12 +79,12 @@ public class SurrondWithHorizontalCollection_Intention implements IntentionFacto
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Surround with Horizontal Collection";
+      return "Surround with Indent Collection";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-      SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+      SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
       List<SNode> nodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
       for (SNode sn : nodes) {
@@ -93,7 +93,7 @@ public class SurrondWithHorizontalCollection_Intention implements IntentionFacto
     }
 
     public IntentionDescriptor getDescriptor() {
-      return SurrondWithHorizontalCollection_Intention.this;
+      return SurroundWithIndentCollection_Intention.this;
     }
   }
 }

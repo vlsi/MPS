@@ -98,11 +98,10 @@ public class Context {
     if (model.getModule() instanceof TransientModelsModule && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
     }
-    SModel modelDescriptor = model;
-    if (model.getModule() instanceof TransientModelsModule || modelDescriptor == null) {
+    SModule module = model.getModule();
+    if (module instanceof TransientModelsModule) {
       return null;
     }
-    SModule module = modelDescriptor.getModule();
     if (module == null || ((AbstractModule) module).getDescriptorFile() == null || module.isPackaged()) {
       return null;
     }

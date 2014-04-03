@@ -131,7 +131,7 @@ class GenerationSettingsPreferencesPage {
     c.gridy++;
     c.weighty = 1;
     myMainPanel.add(new JPanel(), c);
-    c.gridy = 5;
+    c.gridy++;
     c.weighty = 0;
     myStatusLabel = new JLabel();
     myMainPanel.add(myStatusLabel, c);

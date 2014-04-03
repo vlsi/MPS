@@ -22,10 +22,6 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
-import jetbrains.mps.generator.impl.reference.MacroResolver;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -33,18 +29,13 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Applies template to input node.
+ * Applies template to input node. Not thread-safe, expects single thread execution
  */
 public final class TemplateProcessor {
   private final TemplateGenerator myGenerator;
@@ -62,6 +53,7 @@ public final class TemplateProcessor {
   private final SModel myOutputModel;
   private final IGenerationTracer myTracer;
   private final Map<String, MacroImpl> macroImplMap = new HashMap<String, MacroImpl>();
+  private final Map<SNode, TemplateNode> myTemplateRuntimeMap = new HashMap<SNode, TemplateNode>();
 
   public TemplateProcessor(@NotNull TemplateExecutionEnvironment env) {
     myGenerator = env.getGenerator();
@@ -84,19 +76,6 @@ public final class TemplateProcessor {
     }
     try {
       return applyTemplate(templateNode, context, null);
-    } catch (StackOverflowError e) {
-      // this is critical
-      IGeneratorLogger logger = getEnvironment().getLogger();
-      logger.error("generation thread ran out of stack space :(");
-      if (myTracer.isTracing()) {
-        logger.error("failed branch was:");
-        GeneratorUtil.logCurrentGenerationBranch(logger, myTracer, true);
-      } else {
-        logger.error("try to increase JVM stack size (-Xss option)");
-        logger.error("to get more diagnostic generate model with the 'save transient models' option");
-      }
-      logger.error(templateNode.getReference(), "couldn't process template", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException(e);
     } finally {
       if (myGenerator.isIncremental()) {
         // restore tracing
@@ -143,9 +122,9 @@ public final class TemplateProcessor {
       }
     }
 
-    // templateNode has no unprocessed node-macros - create output instance for the template node
-    final SNodePointer templateNodeReference = new SNodePointer(templateNode);
-    myTracer.pushTemplateNode(templateNodeReference);
+    final TemplateNode rtTemplateNode = getTemplateNodeRuntime(templateNode);
+
+    myTracer.pushTemplateNode(rtTemplateNode.getTemplateNodeReference());
     // XXX same code is in TEE.createNode. If, however, primary use for TEE is
     // generated code (as opposed to 'apply templates to root' context), it's unreasonable(?)
     // to expect SConcept to get passed to TEE.createNode() (generated templates are likely to know
@@ -153,84 +132,15 @@ public final class TemplateProcessor {
     SNode outputNode = myOutputModel.createNode(templateNode.getConcept());
 
     // use same env method as reduce_TemplateNode does
-    myEnv.nodeCopied(context, outputNode, GeneratorUtil.getTemplateNodeId(templateNode));
+    myEnv.nodeCopied(context, outputNode, rtTemplateNode.getTemplateNodeId());
     myGenerator.registerMappingLabel(context.getInput(), context.getInputName(), outputNode); // XXX reduce_TemplateNode doesn't do that
 
-    jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
-
-    final ArrayList<String> linksHandledWithMacro = new ArrayList<String>();
-    // process property and reference macros
-    List<SNode> templateChildNodes = new ArrayList<SNode>();
-    for (SNode templateChildNode : templateNode.getChildren()) {
-      String templateChildNodeConcept = templateChildNode.getConcept().getQualifiedName();
-      if (GeneratorUtilEx.isTemplateLanguageElement(templateChildNodeConcept)) {
-        if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
-          myEnv.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
-        } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
-          final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
-          linksHandledWithMacro.add(refMacroRole);
-          MacroResolver mr = new MacroResolver(myEnv.getQueryExecutor(), templateChildNode, templateNode.getReferenceTarget(refMacroRole));
-          ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, outputNode, refMacroRole, context);
-          PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
-          postponedReference.setReferenceInOutputSourceNode();
-        }
-      } else {
-        templateChildNodes.add(templateChildNode);
-      }
-    }
-
-    SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferences()) {
-      if (linksHandledWithMacro.contains(reference.getRole())) {
-        // reference has been handled with the ReferenceMacro already
-        continue;
-      }
-
-      if (reference instanceof StaticReference) {
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference != null && !(templateModel.getReference().equals(targetModelReference))) {
-          // optimization for external static references (do not resolve them)
-          SReference newReference = new StaticReference(
-              reference.getRole(),
-              outputNode,
-              targetModelReference,
-              reference.getTargetNodeId(),
-              ((StaticReference) reference).getResolveInfo());
-          outputNode.setReference(reference.getRole(), newReference);
-          continue;
-        }
-      }
-
-      SNode templateReferentNode = reference.getTargetNode();
-      if (templateReferentNode == null) {
-        myGenerator.getLogger().error(templateNode.getReference(),
-            "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-                templateNode));
-        continue;
-      }
-      if (templateReferentNode.getModel() == templateModel) { // internal reference
-        // XXX same code is in TEEI.resolveInTemplateLater, needs refactoring
-        String resolveInfo = SNodeOperations.getResolveInfo(templateReferentNode);
-        // The right way to get string representation of the reference (aka resolveInfo) is to ask scope about it
-        // However, it doesn't work now (e.g. regenerate BL fails with NodeCastException in VisibleClassConstructorScope:59,
-        // String resolveInfo = ModelConstraints.getScope(reference).getReferenceText(reference.getSourceNode(), templateReferentNode);
-        ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
-            outputNode, reference.getRole(),
-            templateNodeReference,
-            GeneratorUtil.getTemplateNodeId(templateReferentNode),
-            resolveInfo,
-            context);
-        PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
-        postponedReference.setReferenceInOutputSourceNode();
-      } else {
-        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
-      }
-    }
+    rtTemplateNode.apply(context, outputNode);
 
     // process children
-    context = context.subContext();
+    context = context.subContext(); // drop label
     try {
-      for (SNode templateChildNode : templateChildNodes) {
+      for (SNode templateChildNode : rtTemplateNode.getChildTemplates()) {
         List<SNode> outputChildNodes = applyTemplate(templateChildNode, context, null);
         SConcept originalConcept = templateChildNode.getConcept();
         String role = templateChildNode.getRoleInParent();
@@ -254,24 +164,35 @@ public final class TemplateProcessor {
       }
     } finally {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
-      myTracer.closeTemplateNode(templateNodeReference);
+      myTracer.closeTemplateNode(rtTemplateNode.getTemplateNodeReference());
     }
     return Collections.singletonList(outputNode);
   }
 
+  private TemplateNode getTemplateNodeRuntime(SNode templateNode) {
+    // template nodes may belong to different models, hence can't use anything simpler than and identity that includes model
+    // and since template models don't change during generation, Object identity is enough as a key.
+    @SuppressWarnings("redundant")
+    final SNode key = templateNode;
+    TemplateNode rv = myTemplateRuntimeMap.get(key);
+    if (rv == null) {
+      rv = new TemplateNode(templateNode, myEnv.getQueryExecutor(), myGenerator);
+      myTemplateRuntimeMap.put(key, rv);
+    }
+    return rv;
+   }
+
   private void initMacroMap() {
     macroImplMap.put(RuleUtil.concept_LoopMacro, new LoopMacro(this));
-    CopySrcMacros m1 = new CopySrcMacros(this);
-    macroImplMap.put(RuleUtil.concept_CopySrcNodeMacro, m1);
-    macroImplMap.put(RuleUtil.concept_CopySrcListMacro, m1);
+    macroImplMap.put(RuleUtil.concept_CopySrcNodeMacro, new CopySrcMacros(this, true));
+    macroImplMap.put(RuleUtil.concept_CopySrcListMacro, new CopySrcMacros(this, false));
     macroImplMap.put(RuleUtil.concept_InsertMacro, new InsertMacro(this));
     macroImplMap.put(RuleUtil.concept_WeaveMacro,new WeaveMacro(this));
     macroImplMap.put(RuleUtil.concept_LabelMacro, new LabelMacro(this));
     macroImplMap.put(RuleUtil.concept_VarMacro, new VarMacro(this));
     macroImplMap.put(RuleUtil.concept_IfMacro, new IfMacro(this));
-    MapSrcMacros m2 = new MapSrcMacros(this);
-    macroImplMap.put(RuleUtil.concept_MapSrcNodeMacro, m2);
-    macroImplMap.put(RuleUtil.concept_MapSrcListMacro, m2);
+    macroImplMap.put(RuleUtil.concept_MapSrcNodeMacro, new MapSrcMacros(this, true));
+    macroImplMap.put(RuleUtil.concept_MapSrcListMacro, new MapSrcMacros(this, false));
     macroImplMap.put(RuleUtil.concept_SwitchMacro, new SwitchMacro(this));
     macroImplMap.put(RuleUtil.concept_TemplateSwitchMacro, new SwitchWithArgMacro(this));
     macroImplMap.put(RuleUtil.concept_IncludeMacro, new IncludeMacro(this));
@@ -290,11 +211,27 @@ public final class TemplateProcessor {
     }
 
     protected final SNode getNewInputNode(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-      return InputQueryUtil.getNewInputNode(nodeMacro, context, myTemplateProcessor.myEnv);
+      SNode query = RuleUtil.getSourceNodeQuery(nodeMacro);
+      if (query != null) {
+        return getQueryExecutor().getSourceNode(nodeMacro, query, context);
+      }
+      // <default> : propagate  current input node
+      return context.getInput();
     }
 
-    protected final List<SNode> getNewInputNodes(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-      return InputQueryUtil.getNewInputNodes(nodeMacro, context, myTemplateProcessor.myEnv);
+    protected final Collection<SNode> getNewInputNodes(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
+      SNode nodesQuery = RuleUtil.getSourceNodesQuery(nodeMacro);
+      if (nodesQuery != null) {
+        return getQueryExecutor().getSourceNodes(nodeMacro, nodesQuery, context);
+      }
+
+      if (InputQueryUtil.doesMacroRequireInput(nodeMacro)) {
+        getLogger().error(nodeMacro.getReference(), "couldn't get input nodes", GeneratorUtil.describeInput(context));
+        throw new GenerationFailureException("couldn't get input nodes");
+      }
+
+      // <default> : propagate  current input node
+      return InputQueryUtil.wrapAsList(context.getInput());
     }
     protected final QueryExecutionContext getQueryExecutor() {
       return myTemplateProcessor.myEnv.getQueryExecutor();
@@ -313,6 +250,7 @@ public final class TemplateProcessor {
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException;
   }
 
+  // $LOOP$
   private static class LoopMacro extends MacroImpl {
     LoopMacro(TemplateProcessor templateProcessor) {
       super(templateProcessor);
@@ -322,8 +260,7 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $LOOP$
-      List<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
+      Collection<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
@@ -345,44 +282,60 @@ public final class TemplateProcessor {
       return outputNodes;
     }
   }
+
+  // $COPY-SRC$ / $COPY-SRCL$
   private static class CopySrcMacros extends MacroImpl {
-    protected CopySrcMacros(TemplateProcessor templateProcessor) {
+    private final boolean myIsSoleInput;
+
+    protected CopySrcMacros(TemplateProcessor templateProcessor, boolean soleInput) {
       super(templateProcessor);
+      myIsSoleInput = soleInput;
     }
 
     @NotNull
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $COPY-SRC$ / $COPY-SRCL$
-      List<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
+      Collection<SNode> newInputNodes = myIsSoleInput ? InputQueryUtil.wrapAsList(getNewInputNode(macro, templateContext)) : getNewInputNodes(macro, templateContext);
       SNodeReference templateNodeRef = templateNode.getReference();
       String tempNodeId = GeneratorUtil.getTemplateNodeId(templateNode);
       return getGenerator().copyNodes(newInputNodes, templateContext, templateNodeRef, tempNodeId, myTemplateProcessor.myEnv);
     }
   }
+
+  // $INSERT$
   private static class InsertMacro extends MacroImpl {
     protected InsertMacro(TemplateProcessor templateProcessor) {
       super(templateProcessor);
+    }
+
+    private SNode getNodeToInsert(SNode insertMacro, TemplateContext context) throws GenerationFailureException {
+      SNode query = RuleUtil.getInsertMacro_Query(insertMacro);
+      if(query != null) {
+        return getQueryExecutor().evaluateInsertQuery(context.getInput(), insertMacro, query, context);
+      }
+
+      getLogger().error(insertMacro.getReference(), "couldn't get nodes to insert", GeneratorUtil.describeInput(context));
+      throw new GenerationFailureException("couldn't get nodes to insert");
     }
 
     @NotNull
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $INSERT$
-      SNode child = InputQueryUtil.getNodeToInsert(macro, templateContext, myTemplateProcessor.myEnv);
+      SNode child = getNodeToInsert(macro, templateContext);
       if (child != null) {
         child = myTemplateProcessor.myEnv.insertNode(child, macro.getReference(), templateContext);
-        // XXX TEEI.insertNode doesn't register ML, perhaps shall to behave the same as this code? Or it's done in generated code?
+        // XXX TEEI.insertNode doesn't register ML, perhaps shall behave the same as this code? Or it's done in generated code?
         // label
         getGenerator().registerMappingLabel(templateContext.getInput(), templateContext.getInputName(), child);
         return Collections.singletonList(child);
       }
       return Collections.emptyList();
-
     }
   }
+
+  // $WEAVE$
   private static class WeaveMacro extends MacroImpl {
 
     protected WeaveMacro(TemplateProcessor templateProcessor) {
@@ -393,7 +346,6 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $WEAVE$
       List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, templateContext, macro);
       if (_outputNodes.isEmpty()) {
         return Collections.emptyList();
@@ -421,8 +373,7 @@ public final class TemplateProcessor {
       wtc.initialize(getLogger());
 
       SNode contextNode = _outputNodes.get(0);
-      List<SNode> nodesToWeave = getNewInputNodes(macro, templateContext);
-      for (SNode node : nodesToWeave) {
+      for (SNode node : getNewInputNodes(macro, templateContext)) {
         try {
           myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(node));
           myTracer.pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(macro));
@@ -435,6 +386,8 @@ public final class TemplateProcessor {
       return _outputNodes;
     }
   }
+
+  // $LABEL$
   private static class LabelMacro extends MacroImpl {
 
     protected LabelMacro(TemplateProcessor templateProcessor) {
@@ -445,10 +398,11 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $LABEL$
       return myTemplateProcessor.applyTemplate(templateNode, templateContext, macro);
     }
   }
+
+  // $VAR$
   private static class VarMacro extends MacroImpl {
 
     protected VarMacro(TemplateProcessor templateProcessor) {
@@ -459,7 +413,6 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $VAR$
       String varName = RuleUtil.getVarMacro_Name(macro);
       Object varValue = getQueryExecutor().evaluateVariableQuery(templateContext.getInput(), RuleUtil.getVarMacro_Query(macro),
           templateContext);
@@ -472,6 +425,7 @@ public final class TemplateProcessor {
     }
   }
 
+  // $IF$
   private static class IfMacro extends MacroImpl {
 
     protected IfMacro(TemplateProcessor templateProcessor) {
@@ -482,7 +436,6 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $IF$
       if (getQueryExecutor().checkConditionForIfMacro(templateContext.getInput(), macro, templateContext)) {
         return myTemplateProcessor.applyTemplate(templateNode, templateContext, macro);
       } else {
@@ -503,19 +456,22 @@ public final class TemplateProcessor {
     }
   }
 
+  // $MAP-SRC$ or $MAP-SRCL$
   private static class MapSrcMacros extends MacroImpl {
 
-    protected MapSrcMacros(TemplateProcessor templateProcessor) {
+    private final boolean myIsSoleInput;
+
+    protected MapSrcMacros(TemplateProcessor templateProcessor, boolean soleInput) {
       super(templateProcessor);
+      myIsSoleInput = soleInput;
     }
 
     @NotNull
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $MAP-SRC$ or $MAP-SRCL$
       SNode macro_mapperFunction = RuleUtil.getMapSrc_MapperFunction(macro);
-      List<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
+      Collection<SNode> newInputNodes = myIsSoleInput ? InputQueryUtil.wrapAsList(getNewInputNode(macro, templateContext)) : getNewInputNodes(macro, templateContext);
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
@@ -551,6 +507,7 @@ public final class TemplateProcessor {
     }
   }
 
+  // Old $SWITCH$ without arguments and new $SWITCH$ that allows arguments
   private static class SwitchMacro extends MacroImpl {
 
     protected SwitchMacro(TemplateProcessor templateProcessor) {
@@ -567,7 +524,6 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $SWITCH-OLD$ without arguments and $SWITCH$ that allows arguments
       SNode templateSwitch = getTemplateSwitch(macro);
       if (templateSwitch == null) {
         throw new TemplateProcessingFailureException(macro, "error processing $SWITCH$ - bad TemplateSwitch reference",
@@ -618,6 +574,8 @@ public final class TemplateProcessor {
       }
     }
   }
+
+  // new $SWITCH$, with args
   private static class SwitchWithArgMacro extends SwitchMacro {
     protected SwitchWithArgMacro(TemplateProcessor templateProcessor) {
       super(templateProcessor);
@@ -625,7 +583,6 @@ public final class TemplateProcessor {
 
     @Override
     protected SNode getTemplateSwitch(SNode macro) {
-      // new $SWITCH$, with args
       return RuleUtil.getTemplateSwitchMacro_TemplateSwitch(macro);
     }
 
@@ -737,6 +694,7 @@ public final class TemplateProcessor {
     }
   }
 
+  // $TRACE$
   private static class TraceMacro extends MacroImpl {
 
     protected TraceMacro(TemplateProcessor templateProcessor) {
@@ -747,7 +705,6 @@ public final class TemplateProcessor {
     @Override
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      // $TRACE$
       List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, templateContext, macro);
       if (!_outputNodes.isEmpty()) {
         SNode inputNode = getNewInputNode(macro, templateContext);
@@ -761,6 +718,7 @@ public final class TemplateProcessor {
     }
   }
 
+  // $$
   private static class NoMacro extends MacroImpl {
 
     protected NoMacro(TemplateProcessor templateProcessor) {
@@ -772,8 +730,7 @@ public final class TemplateProcessor {
     public List<SNode> apply(@NotNull SNode macro, @NotNull SNode templateNode, @NotNull TemplateContext templateContext) throws
         DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
 
-      // $$
-      List<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
+      Collection<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }

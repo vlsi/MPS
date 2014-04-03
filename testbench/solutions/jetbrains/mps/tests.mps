@@ -1467,9 +1467,6 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096828" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1240561497307" resolveInfo="LeftTransformOfDotOperation" />
     </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096829" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1241100648020" resolveInfo="SurrondByParensesis" />
-    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096830" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1241356058569" resolveInfo="ReplacingSelection" />
     </node>
@@ -1986,7 +1983,7 @@
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4201170947328891620" nodeInfo="ng">
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="6420745394460165035" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ivbl.6420745394459121798" resolveInfo="DefultEditorComponent" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ivbl.6420745394459121798" resolveInfo="DefaultEditorComponent" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="6420745394460165094" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ivbl.6420745394459130152" resolveInfo="EditorComponentSpecifiedBy_context_hint" />

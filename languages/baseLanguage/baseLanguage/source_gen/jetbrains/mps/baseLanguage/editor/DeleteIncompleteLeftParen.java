@@ -7,18 +7,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
-public class DeleteParenthesis_Actions {
+public class DeleteIncompleteLeftParen {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new DeleteParenthesis_Actions.DeleteParenthesis_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new DeleteIncompleteLeftParen.DeleteIncompleteLeftParen_DELETE(node));
   }
 
-  public static class DeleteParenthesis_Actions_DELETE extends AbstractCellAction {
+  public static class DeleteIncompleteLeftParen_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public DeleteParenthesis_Actions_DELETE(SNode node) {
+    public DeleteIncompleteLeftParen_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -27,7 +28,7 @@ public class DeleteParenthesis_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
+      AttributeOperations.setAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Expression"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), null);
     }
   }
 }

@@ -295,7 +295,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "target", true);
   }
 
-  public static Iterable sourceNodesQuery_478744034994714500(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_478744034994714500(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       if (RefactoringArgument_Behavior.call_isTransient_478744034994716004(argument)) {
@@ -305,7 +305,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Iterable sourceNodesQuery_7573235936722710654(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7573235936722710654(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "field", true)) {
       if (RefactoringArgument_Behavior.call_isTransient_478744034994716004(argument)) {
@@ -315,15 +315,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Iterable sourceNodesQuery_2298239814950984767(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2298239814950984767(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameters", true);
   }
 
-  public static Iterable sourceNodesQuery_6154323256625882613(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6154323256625882613(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "refactoring", false), "parameter", true);
   }
 
-  public static Iterable sourceNodesQuery_6154323256625882632(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6154323256625882632(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameters", true);
   }
 

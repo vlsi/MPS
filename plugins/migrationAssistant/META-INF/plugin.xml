@@ -22,7 +22,7 @@
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="129.1" until-build="134.1"/>
 
-  <depends>jetbrains.mps.ide.migration_30</depends>
+  <depends>jetbrains.mps.ide.mpsmigration</depends>
   <project-components>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.assistant.MigrationAssistant</implementation-class>

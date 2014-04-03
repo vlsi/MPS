@@ -119,15 +119,15 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static Iterable sourceNodesQuery_3308300503039580700(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3308300503039580700(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "commands", true);
   }
 
-  public static Iterable sourceNodesQuery_3308300503039720845(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3308300503039720845(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "definitions", true);
   }
 
-  public static Iterable sourceNodesQuery_4394627182934963473(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4394627182934963473(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "commands", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.samples.Kaja.structure.Require");
@@ -135,11 +135,11 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_4394627182934963575(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4394627182934963575(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.Kaja.structure.Require"), "library", false), "definitions", true);
   }
 
-  public static Iterable sourceNodesQuery_3308300503039928825(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3308300503039928825(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "commands", true);
   }
 

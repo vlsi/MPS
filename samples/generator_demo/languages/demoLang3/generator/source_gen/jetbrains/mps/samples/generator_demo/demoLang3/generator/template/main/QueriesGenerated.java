@@ -96,11 +96,11 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_5273477653284544939(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5273477653284544939(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
 
-  public static Iterable sourceNodesQuery_5273477653284544347(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5273477653284544347(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
 }

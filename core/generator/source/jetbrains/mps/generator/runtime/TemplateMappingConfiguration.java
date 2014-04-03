@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -29,7 +30,7 @@ public interface TemplateMappingConfiguration {
 
   SNodeReference getMappingNode();
 
-  boolean isApplicable(ITemplateGenerator generator) throws GenerationException;
+  boolean isApplicable(ITemplateGenerator generator) throws GenerationFailureException;
 
   String getName();
 

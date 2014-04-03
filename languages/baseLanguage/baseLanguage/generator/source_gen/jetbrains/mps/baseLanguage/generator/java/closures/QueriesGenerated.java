@@ -147,31 +147,31 @@ public class QueriesGenerated {
     return QueriesUtil.create_enclosingClassObject(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_1170347169279(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1170347169279(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
 
-  public static Iterable sourceNodesQuery_5351366134229435466(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5351366134229435466(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
 
-  public static Iterable sourceNodesQuery_5351366134229435491(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5351366134229435491(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
 
-  public static Iterable sourceNodesQuery_1170295259476(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1170295259476(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
 
-  public static Iterable sourceNodesQuery_1170294170225(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1170294170225(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_1170874089896(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1170874089896(final SourceSubstituteMacroNodesContext _context) {
     return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_context.getNode());
   }
 

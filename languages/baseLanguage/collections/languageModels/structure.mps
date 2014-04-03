@@ -1526,7 +1526,7 @@
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ALL" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580320020" resolveInfo="IntegerConstant" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1179362310214" resolveInfo="IntegerLiteral" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237907129112" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />

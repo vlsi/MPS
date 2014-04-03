@@ -39,7 +39,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation").super_("jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation").parents("jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation").children(new String[]{"argument"}, new boolean[]{false}).alias("add", "add an element").staticScope(StaticScope.NONE).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.collections.structure.AllConstant").super_("jetbrains.mps.baseLanguage.structure.IntegerConstant").parents("jetbrains.mps.baseLanguage.structure.IntegerConstant").alias("ALL", "all elements").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.collections.structure.AllConstant").super_("jetbrains.mps.baseLanguage.structure.IntegerLiteral").parents("jetbrains.mps.baseLanguage.structure.IntegerLiteral").alias("ALL", "all elements").staticScope(StaticScope.NONE).create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.collections.structure.AllOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").children(new String[]{"filter"}, new boolean[]{false}).alias("all", "check if all elements match the condition").staticScope(StaticScope.NONE).create();
       case 14:

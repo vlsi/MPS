@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -31,13 +31,13 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   private final SNode scriptNode;
-  private final String myCodeBlockMethod;
   private ScriptCodeBlock myCodeBlock;
+  private final boolean myMissingCodeBlock;
 
   public TemplateMappingScriptInterpreted(SNode scriptNode) {
     this.scriptNode = scriptNode;
-    SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(scriptNode);
-    myCodeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
+    myMissingCodeBlock = null == RuleUtil.getMappingScript_CodeBlock(scriptNode); // FIXME shall pass log (and QueryProvider factory) here from outside
+    // and log missing code block only once.
   }
 
   @Override
@@ -59,13 +59,13 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
   }
 
   @Override
-  public void apply(SModel model, ITemplateGenerator generator) {
-    if (myCodeBlockMethod == null) {
+  public void apply(SModel model, ITemplateGenerator generator) throws GenerationFailureException {
+    if (myMissingCodeBlock) {
       generator.getLogger().warning(getScriptNode(), String.format("cannot run script '%s' : no code-block", scriptNode.getName()));
       return;
     }
     if (myCodeBlock == null) {
-      myCodeBlock = generator.getGeneratorSessionContext().getQueryProvider(getScriptNode()).getScriptCodeBlock(myCodeBlockMethod);
+      myCodeBlock = generator.getGeneratorSessionContext().getQueryProvider(getScriptNode()).getScriptCodeBlock(scriptNode);
     }
     myCodeBlock.invoke(new MappingScriptContext(model, getScriptNode(), generator));
   }

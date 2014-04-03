@@ -236,7 +236,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public void executeScript(TemplateMappingScript script) throws GenerationFailureException {
     try {
-      getDefaultExecutionContext(null).executeScript(script, myInputModel);
+    getDefaultExecutionContext(null).executeScript(script, myInputModel);
     } catch (Exception t) {
       getLogger().handleException(t);
       getLogger().error(script.getScriptNode(), String.format("error executing script %s (see exception)", script.getLongName()));

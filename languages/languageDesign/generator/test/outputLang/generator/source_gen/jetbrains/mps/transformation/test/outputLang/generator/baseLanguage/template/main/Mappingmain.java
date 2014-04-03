@@ -410,7 +410,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_4146564171992608883(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_4146564171992608883(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -438,7 +438,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2681305894288275225(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2681305894288275225(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -547,7 +547,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2681305894288382558(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2681305894288382558(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -611,7 +611,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2681305894288486365(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2681305894288486365(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -639,7 +639,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2163819695913701566(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_2163819695913701566(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -753,7 +753,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_5857536350883030949(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_5857536350883030949(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -781,7 +781,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_933643154465852759(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_933643154465852759(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -868,7 +868,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_8371596541809088644(new PatternRuleContext(context.getInput(), getRuleNode(), environment.getGenerator()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_8371596541809088644(new PatternRuleContext(context, getRuleNode(), environment.getGenerator()));
       if (pattern == null) {
         return null;
       }
@@ -969,13 +969,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_3571912445009918066(new WeavingMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a1fb, environment.getGenerator()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_3571912445009918066(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6fb);
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(new SourceSubstituteMacroNodesContext(context.getInput(), weavingConseq_417xrn_a0a1a6fb, null, context, environment.getGenerator()));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6fb, environment.getGenerator()));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;

@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -392,10 +393,21 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myGenerationTracer;
   }
 
+  /**
+   * @deprecated Although I don't see a reason to use extra property to keep transient models
+   * (to me, IGenerationSettings#isSaveTransientModels is enough), the logic is kept,
+   * moved to similar method in GenerationSession
+   */
+  @Deprecated
   private boolean keepTransientForMessageNavigation() {
     return !myInvocationContext.isTestMode();
   }
 
+  /**
+   * @deprecated there shall be no reason to use this method, transients are generator internals
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public boolean keepTransientModel(@Nullable SModelReference model, boolean force) {
     if (model == null) {
       return false;
@@ -406,6 +418,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return false;
   }
 
+  /**
+   * @deprecated there shall be no reason to use this method, transients are generator internals
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public void clearTransientModels() {
     getModule().clearUnused();
   }

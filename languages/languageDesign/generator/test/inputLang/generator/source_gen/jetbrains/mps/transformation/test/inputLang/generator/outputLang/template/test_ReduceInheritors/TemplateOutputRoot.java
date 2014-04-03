@@ -16,6 +16,7 @@ import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -76,7 +77,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
             }
 
           } else if (tlist2.size() > 1) {
-            environment.getGenerator().getLogger().error(context.getInput(), "cannot apply $WEAVE$ to a list of nodes");
+            environment.getLogger().error(weaveMacroRef_q702qm_a0a0a1a5a1a2, "cannot apply $WEAVE$ to a list of nodes", GeneratorUtil.describeInput(context));
           }
         } finally {
           environment.getTracer().closeMacro(weaveMacroRef_q702qm_a0a0a1a5a1a2);

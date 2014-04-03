@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
-    <classNode dependClassName="gnu.trove.TObjectIntHashMap" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -30,24 +30,14 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.Constants" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.DropRuleCondition" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.MapRootRuleCondition" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.PatternRuleQuery" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveRuleCondition" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveRuleQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.DropRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.MapRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.PatternRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
@@ -61,7 +51,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -73,10 +62,21 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.Base" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodesQuery" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.WeaveRuleCondition" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.WeaveRuleQuery" />
   </dependency>
 </dependenciesRoot>
 

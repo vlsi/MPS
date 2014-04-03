@@ -100,23 +100,14 @@ public class TransientModelsProvider {
   }
 
   public boolean canKeepOneMore() {
-    if (myModelsToKeepMax <= 0) {
-      return true;
-    }
-    synchronized (this) {
-      return myKeptModels++ < myModelsToKeepMax;
-    }
+    return myModelsToKeepMax <= 0 || myKeptModels < myModelsToKeepMax;
   }
 
   public void decreaseKeptModels() {
     if (myModelsToKeepMax <= 0) {
       return;
     }
-    synchronized (this) {
-      if (myKeptModels > 0) {
-        myKeptModels--;
-      }
-    }
+    myKeptModels++; // I know it's stupid and misguiding, but these two methods (canKeepOneMore and decreaseKeptModels) shall become history anyway
   }
 
   public TransientSwapOwner getTransientSwapOwner() {

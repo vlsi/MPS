@@ -139,15 +139,15 @@ public class QueriesGenerated {
     return SNodeOperations.getNextSibling(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_7417816926334692038(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7417816926334692038(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "attributes", true);
   }
 
-  public static Iterable sourceNodesQuery_6512904248380125046(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6512904248380125046(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "content", true);
   }
 
-  public static Iterable sourceNodesQuery_258516944916661196(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_258516944916661196(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "content", true);
   }
 
