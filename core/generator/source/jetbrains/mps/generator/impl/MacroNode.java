@@ -30,8 +30,8 @@ import java.util.List;
  */
 interface MacroNode {
   @NotNull
-  public abstract List<SNode> apply(@NotNull TemplateContext templateContext) throws
-      DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException;
+  public abstract List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+      GenerationCanceledException;
   @Nullable
   public MacroNode getNextMacro();
 

@@ -78,7 +78,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
   @Override
   @NotNull
   public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
-      throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
+      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     if (myGenerator.isIncremental()) {
       // turn off tracing
       NodeReadEventsCaster.setNodesReadListener(null);
@@ -95,7 +95,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   @NotNull
   List<SNode> applyTemplate(@NotNull TemplateNode rtTemplateNode, @NotNull TemplateContext context, MacroNode prevMacro)
-      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     // templateNode has unprocessed node-macros?
     MacroNode nextMacro = prevMacro == null ? rtTemplateNode.getFirstMacro() : prevMacro.getNextMacro();
@@ -296,8 +296,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       Collection<SNode> newInputNodes = getNewInputNodes(templateContext);
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
@@ -332,12 +332,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       Collection<SNode> newInputNodes = myIsSoleInput ? InputQueryUtil.wrapAsList(getNewInputNode(templateContext)) : getNewInputNodes(templateContext);
       SNodeReference templateNodeRef = templateNode.getTemplateNodeReference();
       String tempNodeId = templateNode.getTemplateNodeId();
-      return myTemplateProcessor.getGenerator().copyNodes(newInputNodes, templateContext, templateNodeRef, tempNodeId, myTemplateProcessor.myEnv);
+      return myTemplateProcessor.getGenerator().copyNodes(newInputNodes, templateContext, templateNodeRef, tempNodeId, myTemplateProcessor.getEnvironment());
     }
   }
 
@@ -359,11 +359,11 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       SNode child = getNodeToInsert(macro, templateContext);
       if (child != null) {
-        child = myTemplateProcessor.myEnv.insertNode(child, macro.getReference(), templateContext);
+        child = myTemplateProcessor.getEnvironment().insertNode(child, macro.getReference(), templateContext);
         // XXX TEEI.insertNode doesn't register ML, perhaps shall behave the same as this code? Or it's done in generated code?
         // label
         myTemplateProcessor.getGenerator().registerMappingLabel(templateContext.getInput(), templateContext.getInputName(), child);
@@ -382,8 +382,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, templateContext, this);
       if (_outputNodes.isEmpty()) {
         return Collections.emptyList();
@@ -433,8 +433,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       return myTemplateProcessor.applyTemplate(templateNode, templateContext, this);
     }
   }
@@ -448,8 +448,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       String varName = RuleUtil.getVarMacro_Name(macro);
       Object varValue = myTemplateProcessor.getQueryExecutor().evaluateVariableQuery(templateContext.getInput(), RuleUtil.getVarMacro_Query(macro),
           templateContext);
@@ -471,8 +471,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       if (myTemplateProcessor.getQueryExecutor().checkConditionForIfMacro(templateContext.getInput(), macro, templateContext)) {
         return myTemplateProcessor.applyTemplate(templateNode, templateContext, this);
       } else {
@@ -482,7 +482,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
           return Collections.emptyList();
         }
         try {
-          RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(myTemplateProcessor);
+          RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(myTemplateProcessor.getEnvironment());
           rcp.prepare(altConsequence, templateContext);
           return rcp.processRuleConsequence();
         } catch (AbandonRuleInputException ex) {
@@ -505,8 +505,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       SNode macro_mapperFunction = RuleUtil.getMapSrc_MapperFunction(macro);
       Collection<SNode> newInputNodes = myIsSoleInput ? InputQueryUtil.wrapAsList(getNewInputNode(templateContext)) : getNewInputNodes(templateContext);
       if (newInputNodes.isEmpty()) {
@@ -551,27 +551,27 @@ public final class TemplateProcessor implements ITemplateProcessor {
       super(macro, templateNode, next, templateProcessor);
     }
 
-    protected SNode getTemplateSwitch(SNode macro) {
+    protected SNode getTemplateSwitch() {
       return RuleUtil.getSwitchMacro_TemplateSwitch(macro);
     }
-    protected TemplateContext prepareContext(SNode macro, TemplateContext templateContext, SNode newInputNode) {
+    protected TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode) {
       return templateContext.subContext(newInputNode);
     }
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-      SNode templateSwitch = getTemplateSwitch(macro);
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
+      SNode templateSwitch = getTemplateSwitch();
       if (templateSwitch == null) {
         throw new TemplateProcessingFailureException(macro, "error processing $SWITCH$ - bad TemplateSwitch reference",
-            GeneratorUtil.describe(templateContext.getInput(), "input node"));
+            GeneratorUtil.describeInput(templateContext));
       }
       final SNodeReference switchPtr = new jetbrains.mps.smodel.SNodePointer(templateSwitch);
       SNode newInputNode = getNewInputNode(templateContext);
       if (newInputNode == null) {
         TemplateSwitchMapping tswitch = myTemplateProcessor.getGenerator().getSwitch(switchPtr);
         if (tswitch != null) {
-          tswitch.processNull(myTemplateProcessor.myEnv, switchPtr, templateContext);
+          tswitch.processNull(myTemplateProcessor.getEnvironment(), switchPtr, templateContext);
         }
         return Collections.emptyList(); // skip template
       }
@@ -582,19 +582,17 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       myTracer.pushSwitch(new jetbrains.mps.smodel.SNodePointer(templateSwitch));
       try {
-        final TemplateContext switchContext = prepareContext(macro, templateContext, newInputNode);
+        final TemplateContext switchContext = prepareContext(templateContext, newInputNode);
 
         Collection<SNode> collection = null;
         try {
-          collection = myTemplateProcessor.myEnv.trySwitch(switchPtr, switchContext.getInputName(), switchContext);
+          collection = myTemplateProcessor.getEnvironment().trySwitch(switchPtr, switchContext.getInputName(), switchContext);
         } catch (GenerationCanceledException e) {
           throw e;
         } catch (GenerationFailureException e) {
           throw e;
         } catch (DismissTopMappingRuleException e) {
           throw e;
-        } catch (TemplateProcessingFailureException ex) {
-          throw ex;
         } catch (GenerationException e) {
           getLogger().error(switchPtr, "internal error in switch.applyDefault: " + e.toString(), GeneratorUtil.describe(macro, "macro"));
         }
@@ -619,13 +617,13 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected SNode getTemplateSwitch(SNode macro) {
+    protected SNode getTemplateSwitch() {
       return RuleUtil.getTemplateSwitchMacro_TemplateSwitch(macro);
     }
 
     @Override
-    protected TemplateContext prepareContext(SNode macro, TemplateContext templateContext, SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
+    protected TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode) {
+      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.getEnvironment(), macro, newInputNode);
     }
   }
 
@@ -643,8 +641,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public final List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public final List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
 
       SNode newInputNode = getNewInputNode(templateContext);
       if (newInputNode == null) {
@@ -662,7 +660,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
             GeneratorUtil.describe(invokedTemplate, "invoked template"));
       }
 
-      TemplateContainer tc = new TemplateContainer(myTemplateProcessor, invokedTemplate);
+      TemplateContainer tc = new TemplateContainer(myTemplateProcessor.getEnvironment(), invokedTemplate);
       tc.initialize();
 
       boolean inputChanged = (newInputNode != templateContext.getInput());
@@ -727,7 +725,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @Override
     protected TemplateContext prepareContext(@NotNull SNode invokedTemplate, @NotNull TemplateContext templateContext, @NotNull SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
+      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.getEnvironment(), macro, newInputNode);
     }
   }
 
@@ -740,8 +738,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
       List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, templateContext, this);
       if (!_outputNodes.isEmpty()) {
         SNode inputNode = getNewInputNode(templateContext);
@@ -764,8 +762,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws
-        DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+        GenerationCanceledException {
 
       Collection<SNode> newInputNodes = getNewInputNodes(templateContext);
       if (newInputNodes.isEmpty()) {

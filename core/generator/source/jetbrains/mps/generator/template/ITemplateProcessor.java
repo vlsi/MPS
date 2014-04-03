@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,5 +29,6 @@ import java.util.List;
  */
 public interface ITemplateProcessor {
   @NotNull
-  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context) throws GenerationException;
+  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
+      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException;
 }

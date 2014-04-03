@@ -71,7 +71,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     this.generator = origin.generator;
     this.reductionContext = reductionContext;
     myExecutionContext = origin.myExecutionContext;
-    myTemplateProcessor = origin.myTemplateProcessor;
+    myTemplateProcessor = new TemplateProcessor(this); // At the moment, TemplateProcessor needs correct ReductionContext, and we can't effectively reuse
+    // cached TemplateNodes and MacroNodes
   }
 
   @Override
