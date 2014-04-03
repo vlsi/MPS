@@ -35,18 +35,6 @@
       <property name="role" nameId="tpce.1071599776563" value="outputPort" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="285670992213637294" resolveInfo="AbstractParameter" />
     </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="285670992220009949" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="x" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="285670992213637294" resolveInfo="AbstractParameter" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="285670992220009955" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="y" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="285670992213637294" resolveInfo="AbstractParameter" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7200199917722064560" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
     </node>

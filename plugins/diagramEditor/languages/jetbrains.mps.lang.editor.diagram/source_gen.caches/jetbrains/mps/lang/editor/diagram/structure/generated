@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3jkkzizy26zbv76hxqnkxh4bsoo0xuv">
+<dependencies version="2" modelHash="290mp1cosey7ak75sfscxa44x76x66o">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
@@ -44,7 +44,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-b4t6rbtszyvjtlun9y8p5mvud9lyb59" />
+  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-dy6f90g38zuz1c207nlbh5u3xbsey1a" />
   <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx" />
   <source id="1094405431463663051" name="ExternalFigureReference" hash="-15jge7fjsaayroipsv092h0j981u5oq" />
   <source id="1094405431463761863" name="AbstractFigureParameter" hash="4iqwotvekf36uqxm3mjwefekklmayuh" />

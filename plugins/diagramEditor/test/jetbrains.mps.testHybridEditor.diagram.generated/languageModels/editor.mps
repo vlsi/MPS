@@ -643,12 +643,6 @@
       <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="5667822611624148437" nodeInfo="ng">
         <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.5667822611623716384" />
       </node>
-      <node role="y" roleId="gbdf.285670992220009955" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="7171441290056530820" nodeInfo="ng">
-        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.2353136177974084746" resolveInfo="y" />
-      </node>
-      <node role="x" roleId="gbdf.285670992220009949" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="675321057244248247" nodeInfo="ng">
-        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.2353136177974084745" resolveInfo="x" />
-      </node>
       <node role="inputPort" roleId="gbdf.2084788800269090635" type="gbdf.ParameterBLQuery" typeId="gbdf.285670992213637367" id="675321057244186743" nodeInfo="ng">
         <node role="query" roleId="gbdf.285670992213637368" type="tpee.DotExpression" typeId="tpee.1197027756228" id="675321057244191202" nodeInfo="nn">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="675321057244187091" nodeInfo="nn">
