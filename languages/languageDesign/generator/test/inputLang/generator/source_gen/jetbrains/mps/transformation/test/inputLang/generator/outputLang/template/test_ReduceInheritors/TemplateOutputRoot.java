@@ -92,7 +92,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         try {
           environment.getTracer().pushMacro(copySrcListMacro_q702qm_a0a0a1a6a1a2);
           final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_1206460249786(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_a0a0a1a6a1a2, environment.getGenerator()));
-          tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_q702qm_a0a0a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", null, context);
+          tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_q702qm_a0a0a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", context);
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_q702qm_a0a0a1a6a1a2);
         }

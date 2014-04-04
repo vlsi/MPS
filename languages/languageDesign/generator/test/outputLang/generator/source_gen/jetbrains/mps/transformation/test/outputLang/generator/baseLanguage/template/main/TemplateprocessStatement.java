@@ -143,7 +143,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                     try {
                       environment.getTracer().pushMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a8);
                       final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(new SourceSubstituteMacroNodeContext(context, copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a8, environment.getGenerator()));
-                      tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a8, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695053", null, context);
+                      tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a8, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695053", context);
                     } finally {
                       environment.getTracer().closeMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a8);
                     }

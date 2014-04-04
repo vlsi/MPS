@@ -263,7 +263,7 @@
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="90" startPosition="7" endLine="91" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="92" startPosition="13" endLine="93" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="93" startPosition="82" endLine="94" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="94" startPosition="211" endLine="95" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="94" startPosition="211" endLine="95" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="96" startPosition="19" endLine="97" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="99" startPosition="61" endLine="100" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="101" startPosition="9" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -339,7 +339,7 @@
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="84" startPosition="9" endLine="87" endPosition="9">
       <varInfo nodeId="1206460153890" varName="child4" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="92" startPosition="13" endLine="95" endPosition="170">
+    <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="92" startPosition="13" endLine="95" endPosition="164">
       <varInfo nodeId="1206460153890" varName="copyListInput5" />
     </scopeInfo>
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="98" startPosition="9" endLine="101" endPosition="9">

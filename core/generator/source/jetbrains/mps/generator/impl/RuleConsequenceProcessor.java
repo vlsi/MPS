@@ -32,24 +32,20 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class RuleConsequenceProcessor {
-  private final TemplateProcessor myTemplateProcessor;
+  private final TemplateExecutionEnvironment myEnvironment;
   private TemplateContainer myTemplateContainer;
   private TemplateContext myConsequenceContext;
 
   public RuleConsequenceProcessor(TemplateExecutionEnvironment env) {
-    this(new TemplateProcessor(env));
-  }
-
-  public RuleConsequenceProcessor(TemplateProcessor templateProcessor) {
-    myTemplateProcessor = templateProcessor;
+    myEnvironment = env;
   }
 
   // XXX GenerationFailureException is thrown from QueryExecutionContext.checkCondition to check query in inline switch cases - perhaps,
   // can extract switch and perform case selection in {@link #processRuleConsequence()} later?
   public void prepare(@NotNull SNode ruleConsequence, @NotNull TemplateContext templateContext)
-      throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, TemplateProcessingFailureException {
+      throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
     // the reason why the method is left here is described in TemplateContainer#initialize()
-    ConsequenceHandler h = new ConsequenceHandler(templateContext);
+    ConsequenceHandler h = new ConsequenceHandler(myEnvironment, templateContext);
     h.dispatch(ruleConsequence);
     h.checkExceptions();
     myConsequenceContext = h.getUltimateContext();
@@ -63,11 +59,12 @@ public class RuleConsequenceProcessor {
   // level or lower, template level). Remove from throws here if can't happen from within TP (the only suspicious location is switch.tryDefault (macro).
   @NotNull
   public List<SNode> processRuleConsequence() throws DismissTopMappingRuleException,
-      GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+      GenerationFailureException, GenerationCanceledException {
     return myTemplateContainer.apply(myConsequenceContext);
   }
 
-  private class ConsequenceHandler implements ConsequenceDispatch {
+  private static class ConsequenceHandler implements ConsequenceDispatch {
+    private final TemplateExecutionEnvironment myEnv;
     private TemplateContainer myTemplateContainer;
     private AbandonRuleInputException myAbandonRuleException;
     private DismissTopMappingRuleException myDismissRuleException;
@@ -75,7 +72,8 @@ public class RuleConsequenceProcessor {
     private TemplateContext myTemplateContext;
     private SNode myRuleConsequenceInUse;
 
-    public ConsequenceHandler(@NotNull TemplateContext ctx) {
+    public ConsequenceHandler(@NotNull TemplateExecutionEnvironment env, @NotNull TemplateContext ctx) {
+      myEnv = env;
       myTemplateContext = ctx;
     }
 
@@ -101,7 +99,7 @@ public class RuleConsequenceProcessor {
       try {
         for (SNode switchCase : RuleUtil.getInlineSwitch_case(ruleConsequence)) {
           SNode condition = RuleUtil.getInlineSwitch_caseCondition(switchCase);
-          if (getEnvironment().getQueryExecutor().checkCondition(condition, true, myTemplateContext, switchCase)) {
+          if (myEnv.getQueryExecutor().checkCondition(condition, true, myTemplateContext, switchCase)) {
             SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
             dispatch(caseConsequence);
             return;
@@ -127,7 +125,7 @@ public class RuleConsequenceProcessor {
     public void inlineTemplate(SNode ruleConsequence) {
       SNode templateNode = RuleUtil.getInlineTemplate_templateNode(ruleConsequence);
       if (templateNode != null) {
-        myTemplateContainer = new TemplateContainer(myTemplateProcessor, new Pair<SNode, String>(templateNode, null));
+        myTemplateContainer = new TemplateContainer(myEnv, new Pair<SNode, String>(templateNode, null));
       } else {
         showErrorMessage(ruleConsequence, "no template node");
       }
@@ -136,7 +134,7 @@ public class RuleConsequenceProcessor {
     @Override
     public void templateDeclarationReference(SNode ruleConsequence) {
       // XXX for unknown reason we don't use TemplateDeclarationInterpreted here.
-      myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, getEnvironment(), ruleConsequence);
+      myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, myEnv, ruleConsequence);
       processTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
     }
 
@@ -145,7 +143,7 @@ public class RuleConsequenceProcessor {
         showErrorMessage(ruleConsequence, "error processing template consequence: no 'template'");
         return;
       }
-      myTemplateContainer = new TemplateContainer(myTemplateProcessor, templateContainer);
+      myTemplateContainer = new TemplateContainer(myEnv, templateContainer);
     }
 
     @Override
@@ -192,11 +190,7 @@ public class RuleConsequenceProcessor {
     }
 
     private IGeneratorLogger getLog() {
-      return getEnvironment().getLogger();
-    }
-
-    private TemplateExecutionEnvironment getEnvironment() {
-      return myTemplateProcessor.getEnvironment();
+      return myEnv.getLogger();
     }
   }
 }

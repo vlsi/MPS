@@ -325,7 +325,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushMacro(copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3);
                                 final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_429601079676786028(new SourceSubstituteMacroNodeContext(context18, copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3, environment.getGenerator()));
-                                tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676785706", null, context18);
+                                tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676785706", context18);
                               } finally {
                                 environment.getTracer().closeMacro(copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3);
                               }
@@ -644,7 +644,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3);
                                     final SNode copySrcInput47 = QueriesGenerated.sourceNodeQuery_429601079676786354(new SourceSubstituteMacroNodeContext(context38, copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3, environment.getGenerator()));
-                                    tlist47 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput47), copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786342", null, context38);
+                                    tlist47 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput47), copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786342", context38);
                                   } finally {
                                     environment.getTracer().closeMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3);
                                   }
@@ -808,7 +808,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3);
                                     final SNode copySrcInput59 = QueriesGenerated.sourceNodeQuery_429601079676786508(new SourceSubstituteMacroNodeContext(context50, copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3, environment.getGenerator()));
-                                    tlist59 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput59), copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786498", null, context50);
+                                    tlist59 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput59), copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786498", context50);
                                   } finally {
                                     environment.getTracer().closeMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3);
                                   }
@@ -2011,7 +2011,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             try {
               environment.getTracer().pushMacro(copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3);
               final Iterable<SNode> copyListInput133 = QueriesGenerated.sourceNodesQuery_429601079676845658(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3, environment.getGenerator()));
-              tlist133 = environment.copyNodes(copyListInput133, copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676845575", null, context);
+              tlist133 = environment.copyNodes(copyListInput133, copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676845575", context);
             } finally {
               environment.getTracer().closeMacro(copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3);
             }

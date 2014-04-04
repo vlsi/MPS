@@ -335,7 +335,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a8a1a3);
                   final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_1216396990767(new SourceSubstituteMacroNodeContext(context, copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a8a1a3, environment.getGenerator()));
-                  tlist19 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput19), copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a8a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396930103", null, context);
+                  tlist19 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput19), copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a8a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396930103", context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a8a1a3);
                 }
@@ -655,7 +655,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_i5yf3w_a0a0a1a9a1a1a1a01a1a3);
                   final SNode copySrcInput43 = QueriesGenerated.sourceNodeQuery_100784871586267457(new SourceSubstituteMacroNodeContext(context, copySrcMacro_i5yf3w_a0a0a1a9a1a1a1a01a1a3, environment.getGenerator()));
-                  tlist43 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput43), copySrcMacro_i5yf3w_a0a0a1a9a1a1a1a01a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/100784871543498843", null, context);
+                  tlist43 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput43), copySrcMacro_i5yf3w_a0a0a1a9a1a1a1a01a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/100784871543498843", context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_i5yf3w_a0a0a1a9a1a1a1a01a1a3);
                 }
@@ -1153,7 +1153,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a41a1a3);
                   final SNode copySrcInput79 = QueriesGenerated.sourceNodeQuery_1197207280679(new SourceSubstituteMacroNodeContext(context, copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a41a1a3, environment.getGenerator()));
-                  tlist79 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput79), copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a41a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280677", null, context);
+                  tlist79 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput79), copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a41a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280677", context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_i5yf3w_a0a0a1a8a1a1a1a41a1a3);
                 }
@@ -1554,7 +1554,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushMacro(copySrcMacro_i5yf3w_a0a0a1a4a1a4a1a11a1a51a1a3);
                       final SNode copySrcInput109 = QueriesGenerated.sourceNodeQuery_1206533715312(new SourceSubstituteMacroNodeContext(context, copySrcMacro_i5yf3w_a0a0a1a4a1a4a1a11a1a51a1a3, environment.getGenerator()));
-                      tlist109 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput109), copySrcMacro_i5yf3w_a0a0a1a4a1a4a1a11a1a51a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533715310", null, context);
+                      tlist109 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput109), copySrcMacro_i5yf3w_a0a0a1a4a1a4a1a11a1a51a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533715310", context);
                     } finally {
                       environment.getTracer().closeMacro(copySrcMacro_i5yf3w_a0a0a1a4a1a4a1a11a1a51a1a3);
                     }
@@ -1746,7 +1746,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_i5yf3w_a0a0a1a01a1a1a1a61a1a3);
                   final SNode copySrcInput122 = QueriesGenerated.sourceNodeQuery_1206533783913(new SourceSubstituteMacroNodeContext(context, copySrcMacro_i5yf3w_a0a0a1a01a1a1a1a61a1a3, environment.getGenerator()));
-                  tlist122 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput122), copySrcMacro_i5yf3w_a0a0a1a01a1a1a1a61a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533783895", null, context);
+                  tlist122 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput122), copySrcMacro_i5yf3w_a0a0a1a01a1a1a1a61a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533783895", context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_i5yf3w_a0a0a1a01a1a1a1a61a1a3);
                 }
@@ -1832,7 +1832,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_i5yf3w_a0a0a1a7a1a1a1a71a1a3);
                   final SNode copySrcInput130 = QueriesGenerated.sourceNodeQuery_1206462965299(new SourceSubstituteMacroNodeContext(context, copySrcMacro_i5yf3w_a0a0a1a7a1a1a1a71a1a3, environment.getGenerator()));
-                  tlist130 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput130), copySrcMacro_i5yf3w_a0a0a1a7a1a1a1a71a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462852595", null, context);
+                  tlist130 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput130), copySrcMacro_i5yf3w_a0a0a1a7a1a1a1a71a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462852595", context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_i5yf3w_a0a0a1a7a1a1a1a71a1a3);
                 }

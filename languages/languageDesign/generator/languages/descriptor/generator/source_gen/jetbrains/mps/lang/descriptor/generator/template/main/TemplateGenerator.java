@@ -657,7 +657,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                       try {
                                         environment.getTracer().pushMacro(copySrcMacro_g5r92k_a0a0a3a2a2a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2);
                                         final SNode copySrcInput49 = context48.getInput();
-                                        tlist49 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput49), copySrcMacro_g5r92k_a0a0a3a2a2a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839743", null, context48);
+                                        tlist49 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput49), copySrcMacro_g5r92k_a0a0a3a2a2a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839743", context48);
                                       } finally {
                                         environment.getTracer().closeMacro(copySrcMacro_g5r92k_a0a0a3a2a2a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2);
                                       }

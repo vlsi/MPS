@@ -72,7 +72,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
     }
 
     if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
-      TemplateContainer tc = new TemplateContainer(new TemplateProcessor(environment), myTemplateNode);
+      TemplateContainer tc = new TemplateContainer(environment, myTemplateNode);
       tc.initialize();
 
       final SNodePointer templateNodeRef = new SNodePointer(myTemplateNode);

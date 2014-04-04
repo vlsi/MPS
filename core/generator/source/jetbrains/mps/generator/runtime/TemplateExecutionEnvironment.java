@@ -23,8 +23,10 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -32,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 10/22/10
@@ -71,25 +74,42 @@ public interface TemplateExecutionEnvironment {
   @NotNull
   ReductionContext getReductionContext();
 
+  @NotNull
+  ITemplateProcessor getTemplateProcessor();
+
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
   // FIXME remove mappingName parameter where TemlateContext is available
 
   /**
+   * @deprecated use {@link #copyNodes(Iterable, org.jetbrains.mps.openapi.model.SNodeReference, String, TemplateContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
+  Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+
+  /**
    * Copies nodes from input model, trying to apply reduction rules
    *
    * @param inputNodes nodes to copy
-   * @param templateNode element of output template model (e.g. one with attached COPY-SRC macro), or null if none
+   * @param templateNode element of template model (e.g. one with attached COPY-SRC macro)
    * @param templateNodeId same as previous, as a string representation of a reference
-   * @param mappingName
-   * @param templateContext
+   * @param templateContext context where COPY-SRC was invoked. If context bears any label, output nodes get associated with it, too.
    * @return copied nodes, or empty list if none copied
    */
-  Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+  List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateNodeId, @NotNull TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
+  /**
+   * @deprecated use {@link #trySwitch(org.jetbrains.mps.openapi.model.SNodeReference, TemplateContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   Collection<SNode> trySwitch(SNodeReference _switch, String mappingName, TemplateContext context) throws GenerationException;
+
+  @Nullable
+  Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException;
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 

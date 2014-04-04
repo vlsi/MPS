@@ -522,14 +522,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, TemplateContext context, String mappingName, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
     FastRuleFinder rf = myRuleManager.getRuleFinder(templateSwitch);
     Collection<SNode> outputNodes = tryToReduce(rf, context, env);
     if (outputNodes != null) {
-      if (outputNodes.size() == 1) {
+      if (outputNodes.size() == 1 && context.getInputName() != null) {
         SNode reducedNode = outputNodes.iterator().next();
         // register copied node
-        registerMappingLabel(context.getInput(), mappingName, reducedNode);
+        registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
       }
       return outputNodes;
     }
@@ -607,8 +607,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   // generator -> TEEI -> TemplateProcessor. This would take another round of refactoring, though
   // (first of all, shall update TEEI API)
   @NotNull
-  List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull TemplateContext ctx,
-      SNodeReference templateNode, @NotNull String templateId, @NotNull TemplateExecutionEnvironment env) throws GenerationCanceledException, GenerationFailureException {
+  List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, final String mappingName,
+      @NotNull String templateId, @NotNull TemplateExecutionEnvironment env) throws GenerationCanceledException, GenerationFailureException {
     assert this == env.getGenerator();
 
     final Iterator<SNode> it = inputNodes.iterator();
@@ -616,7 +616,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return Collections.emptyList();
     }
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    final String mappingName = ctx.getInputName();
     while(it.hasNext()) {
       SNode newInputNode = adoptIfForeign(it.next());
 
@@ -648,7 +647,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
     }
-    new ChildAdopter(this).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
     return outputNodes;
 
   }

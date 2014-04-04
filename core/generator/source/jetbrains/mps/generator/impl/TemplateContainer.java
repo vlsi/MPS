@@ -19,6 +19,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -35,17 +37,17 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class TemplateContainer {
-  private final TemplateProcessor myTemplateProcessor;
+  private final TemplateExecutionEnvironment myEnvironment;
   private final SNode myTemplateNode;
   private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
 
-  public TemplateContainer(@NotNull TemplateProcessor templateProcessor, @NotNull SNode templateContainer) {
-    myTemplateProcessor = templateProcessor;
+  public TemplateContainer(@NotNull TemplateExecutionEnvironment environment, @NotNull SNode templateContainer) {
+    myEnvironment = environment;
     myTemplateNode = templateContainer;
   }
 
-  public TemplateContainer(@NotNull TemplateProcessor templateProcessor, @NotNull Pair<SNode, String> fragment) {
-    myTemplateProcessor = templateProcessor;
+  public TemplateContainer(@NotNull TemplateExecutionEnvironment environment, @NotNull Pair<SNode, String> fragment) {
+    myEnvironment = environment;
     myTemplateNode = null;
     myNodeAndMappingNamePairs = Collections.singletonList(fragment);
   }
@@ -67,14 +69,14 @@ public class TemplateContainer {
   }
 
   @NotNull
-  public List<SNode> apply(@NotNull TemplateContext ctx)
-      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+  public List<SNode> apply(@NotNull TemplateContext ctx) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    final GenerationTrace tracer = myTemplateProcessor.getEnvironment().getTrace();
+    final GenerationTrace tracer = myEnvironment.getTrace();
+    ITemplateProcessor templateProcessor = myEnvironment.getTemplateProcessor();
     for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2;
-      List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, ctx.subContext(innerMappingName), null);
+      List<SNode> _outputNodes = templateProcessor.apply(templateNode, ctx.subContext(innerMappingName));
       SNode input = ctx.getInput();
       tracer.trace(input == null ? null : input.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), templateNode.getReference());
       outputNodes.addAll(_outputNodes);
