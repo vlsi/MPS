@@ -24,6 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 
 @Generated
@@ -97,8 +98,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    protected Collection<SNode> doApply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2q);
+    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a1a2q);
       Collection<SNode> tlist1 = new Templatereduce__InputNode__A().apply(environment, context);
       return tlist1;
     }
@@ -137,7 +139,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  private static SNodePointer conseq_417xrn_a0a0a2q = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169");
+  private static SNodePointer conseq_417xrn_a0a1a2q = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169");
   private static SNodePointer rootMappingRule_417xrn_a0a1r = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
   private static SNodePointer rootMappingRule_417xrn_b0a0a0a5r = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
 }

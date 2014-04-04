@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7opcfyghc2pcrxtqxzi5q7gi6tarpje">
+<dependencies version="2" modelHash="54e70u7qtgyu0jkiemal4uve6hhjxxi">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -185,7 +185,7 @@
   <source id="6304885153124990546" name="reduce_TemplateFragment" hash="3oayiklpi7v5otk3kb7wojityf2i7oj" />
   <source id="6304885153124996632" name="reduce_TemplateDeclaration" hash="e88p07u9o9q83515scnyxf7li7g769h" />
   <source id="5301578252490218394" name="reduce_LoopMacro" hash="-9k1yafucmjilsw4p0y1jx63qni0kpvt" />
-  <source id="8285036680620207023" name="reduce_TemplateNode" hash="bg6gbmlr66wp3t9vr68srb2u8a9cb0f" />
+  <source id="8285036680620207023" name="reduce_TemplateNode" hash="365l6g79mp4yjlopb7f7b6sspkcju8x" />
   <source id="8285036680620300245" name="reduce_IncludeMacro" hash="-7w9b3f81bwdnzdi090tywceny7z2axs" />
   <source id="747214206848642841" name="reduce_CopySrc" hash="-742niff79dehvaxfb2kc0abds4egvaf" />
   <source id="747214206848656631" name="map_Template" hash="-1w19wm4h6ac56jszdl4j9ft9c376m88">
@@ -210,7 +210,7 @@
   <source id="2226924809855859163" name="reduce_InlineTemplateRuleConsequence" hash="80kbqohnabhiwpk4dob03plvn94m9qx" />
   <source id="2226924809855869474" name="reduce_TemplateDeclarationReferenceConsequence" hash="-9x8bpyhuoto5jamj3upecnd0fgq2mj7" />
   <source id="2226924809855869476" name="reduce_WeaveEachRuleConsequence" hash="-h6mu9fcmhax5w40k4yqxgr78vin9a4" />
-  <source id="1147906725605225569" name="reduce_ReductionRule" hash="-brj41ggcuil0vs7qmvr9c5jyayg2jn1" />
+  <source id="1147906725605225569" name="reduce_ReductionRule" hash="cqpozevoj2xq1frfiuc6gyci0d4s2nu" />
   <source id="5412006700504152615" name="reduce_TemplateArgumentQueryExpression" hash="ggwbamy8n83s8lptmt5g4vngi8rwty" />
   <source id="5412006700504199285" name="reduce_RootMappingRule" hash="5m36klcwb1jh26sadohwday2os9jt3p" />
   <source id="1940510396026561969" name="map_TemplateSwitch" hash="-e182jmhxoe9vnfyoriarblmy8qy221p">
@@ -223,7 +223,7 @@
   <source id="330395710727988205" name="reduce_CreateRootRule" hash="82sbg6198slrsdx69dp3ntez3rgwmu7" />
   <source id="330395710727988537" name="reduce_DropRootRule" hash="a4adqi0ticekcep75tfs7ufp3y8uqie" />
   <source id="330395710727988576" name="reduce_WeavingRule" hash="-62swz9jai1b2mqcyrk7kg7f9da2ue9f" />
-  <source id="330395710727988683" name="reduce_PatternRule" hash="3h75jdfu1fxd3ai26hd9w867ndlppwx" />
+  <source id="330395710727988683" name="reduce_PatternRule" hash="dg4gk540kkv7yq2o0bswvl9270kkbzb" />
   <source id="3076445114127780885" name="TemplateModelImpl" hash="4x5n4hdi33dxdk3zfkw079y73blzxpb">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>

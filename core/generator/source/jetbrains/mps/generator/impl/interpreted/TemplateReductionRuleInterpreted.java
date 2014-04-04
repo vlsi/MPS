@@ -74,7 +74,7 @@ public class TemplateReductionRuleInterpreted extends ReductionRuleBase implemen
 
   @Override
   @NotNull
-  protected Collection<SNode> doApply(@NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationException {
+  protected Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException {
     if (myRuleConsequence == null) {
       throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(context));
     }
