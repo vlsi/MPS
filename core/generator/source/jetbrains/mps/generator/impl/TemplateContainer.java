@@ -50,8 +50,7 @@ public class TemplateContainer {
   }
 
   /*
-   * Although the method is easy to merge into apply now, I left it looking forward
-   * to container initialization done once for a template, while applied multiple times.
+   * Initialize container once for a template, then apply multiple times.
    */
   public void initialize() throws TemplateProcessingFailureException {
     if (myNodeAndMappingNamePairs != null) {

@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
@@ -42,17 +43,22 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
   private final SNode myTemplateNode;
   private final Object[] myArguments;
   private final String[] myParameterNames;
+  private final SNodePointer myNodeRef;
+  private final boolean myIsTemplateDeclNode;
+  private volatile TemplateContainer myTemplates;
 
   private TemplateDeclarationInterpreted(@NotNull SNode templateNode, @NotNull String[] parameterNames, @NotNull Object[] arguments) {
     assert arguments.length == parameterNames.length;
     myTemplateNode = templateNode;
     myArguments = arguments;
     myParameterNames = parameterNames;
+    myNodeRef = new SNodePointer(templateNode);
+    myIsTemplateDeclNode = templateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration));
   }
 
   @Override
   public SNodeReference getTemplateNode() {
-    return new jetbrains.mps.smodel.SNodePointer(myTemplateNode);
+    return myNodeRef;
   }
 
   private Map<String, Object> getArgumentsAsMap() {
@@ -63,6 +69,20 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
     return result;
   }
 
+  private TemplateContainer getTemplates() throws TemplateProcessingFailureException {
+    TemplateContainer rv = myTemplates;
+    if (rv == null) {
+      synchronized (this) {
+        if ((rv = myTemplates) == null) {
+          rv = new TemplateContainer(myTemplateNode);
+          rv.initialize();
+          myTemplates = rv;
+        }
+      }
+    }
+    return rv;
+  }
+
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext applyContext = new DefaultTemplateContext(context.getEnvironment(), context.getInput(), null);
@@ -70,16 +90,14 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
       applyContext = applyContext.subContext(getArgumentsAsMap());
     }
 
-    if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
-      TemplateContainer tc = new TemplateContainer(myTemplateNode);
-      tc.initialize();
+    if (myIsTemplateDeclNode) {
+      final TemplateContainer tc = getTemplates();
 
-      final SNodePointer templateNodeRef = new SNodePointer(myTemplateNode);
-      environment.getTracer().pushTemplateNode(templateNodeRef);
+      environment.getTracer().pushTemplateNode(getTemplateNode());
       try {
         return tc.apply(context);
       } finally {
-        environment.getTracer().closeTemplateNode(templateNodeRef);
+        environment.getTracer().closeTemplateNode(getTemplateNode());
       }
     } else {
       return environment.getTemplateProcessor().apply(myTemplateNode, applyContext);

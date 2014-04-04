@@ -464,9 +464,11 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   // $IF$
   private static class IfMacro extends MacroImpl {
+    private final SNode myAlternativeConsequence;
 
     protected IfMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
+      myAlternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
     }
 
     @NotNull
@@ -477,13 +479,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return myTemplateProcessor.applyTemplate(templateNode, templateContext, this);
       } else {
         // alternative consequence
-        SNode altConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
-        if (altConsequence == null) {
+        if (myAlternativeConsequence == null) {
           return Collections.emptyList();
         }
         try {
           RuleConsequenceProcessor rcp = new RuleConsequenceProcessor();
-          rcp.prepare(altConsequence, templateContext);
+          rcp.prepare(myAlternativeConsequence, templateContext);
           return rcp.processRuleConsequence();
         } catch (AbandonRuleInputException ex) {
           // it's ok. just ignore
@@ -637,12 +638,27 @@ public final class TemplateProcessor implements ITemplateProcessor {
   private static abstract class InvokeTemplateMacro extends MacroImpl {
     private final String myName;
     protected SNode myInvokedTemplate;
+    private volatile TemplateContainer myTemplates;
 
     protected InvokeTemplateMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor, String macroName) {
       super(macro, templateNode, next, templateProcessor);
       myName = macroName;
     }
     protected abstract TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode);
+
+    private TemplateContainer getTemplates() throws TemplateProcessingFailureException {
+      TemplateContainer rv = myTemplates;
+      if (rv == null) {
+        synchronized (this) {
+          if ((rv = myTemplates) == null) {
+            rv = new TemplateContainer(myInvokedTemplate);
+            rv.initialize();
+            myTemplates = rv;
+          }
+        }
+      }
+      return rv;
+    }
 
     @NotNull
     @Override
@@ -665,8 +681,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
             GeneratorUtil.describe(invokedTemplate, "invoked template"));
       }
 
-      TemplateContainer tc = new TemplateContainer(invokedTemplate);
-      tc.initialize();
+      final TemplateContainer tc = getTemplates();
 
       boolean inputChanged = (newInputNode != templateContext.getInput());
       if (inputChanged) {
