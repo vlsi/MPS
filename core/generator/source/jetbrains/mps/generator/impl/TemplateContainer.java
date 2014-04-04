@@ -37,17 +37,14 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class TemplateContainer {
-  private final TemplateExecutionEnvironment myEnvironment;
   private final SNode myTemplateNode;
   private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
 
-  public TemplateContainer(@NotNull TemplateExecutionEnvironment environment, @NotNull SNode templateContainer) {
-    myEnvironment = environment;
+  public TemplateContainer(@NotNull SNode templateContainer) {
     myTemplateNode = templateContainer;
   }
 
-  public TemplateContainer(@NotNull TemplateExecutionEnvironment environment, @NotNull Pair<SNode, String> fragment) {
-    myEnvironment = environment;
+  public TemplateContainer(@NotNull Pair<SNode, String> fragment) {
     myTemplateNode = null;
     myNodeAndMappingNamePairs = Collections.singletonList(fragment);
   }
@@ -71,12 +68,13 @@ public class TemplateContainer {
   @NotNull
   public List<SNode> apply(@NotNull TemplateContext ctx) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    final GenerationTrace tracer = myEnvironment.getTrace();
-    ITemplateProcessor templateProcessor = myEnvironment.getTemplateProcessor();
+    final TemplateExecutionEnvironment environment = ctx.getEnvironment();
+    final GenerationTrace tracer = environment.getTrace();
+    ITemplateProcessor templateProcessor = environment.getTemplateProcessor();
     for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2;
-      List<SNode> _outputNodes = templateProcessor.apply(templateNode, ctx.subContext(innerMappingName), myEnvironment);
+      List<SNode> _outputNodes = templateProcessor.apply(templateNode, ctx.subContext(innerMappingName));
       SNode input = ctx.getInput();
       tracer.trace(input == null ? null : input.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), templateNode.getReference());
       outputNodes.addAll(_outputNodes);

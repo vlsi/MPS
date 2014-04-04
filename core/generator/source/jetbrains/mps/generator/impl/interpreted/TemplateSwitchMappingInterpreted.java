@@ -90,7 +90,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     }
 
     try {
-      RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
+      RuleConsequenceProcessor rcp = new RuleConsequenceProcessor();
       context = context.subContext(mappingName);
       rcp.prepare(defaultConsequence, context);
       return rcp.processRuleConsequence();

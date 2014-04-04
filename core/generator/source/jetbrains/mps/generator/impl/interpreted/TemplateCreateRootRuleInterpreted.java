@@ -57,7 +57,7 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
   public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = RuleUtil.getCreateRootRuleTemplateNode(myRuleNode);
     if (templateNode != null) {
-      return environment.getTemplateProcessor().apply(templateNode, new DefaultTemplateContext(myMappingName, null), environment);
+      return environment.getTemplateProcessor().apply(templateNode, new DefaultTemplateContext(environment, null, myMappingName));
     } else {
       environment.getLogger().error(getRuleNode(), "'create root' rule has no template");
       return null;

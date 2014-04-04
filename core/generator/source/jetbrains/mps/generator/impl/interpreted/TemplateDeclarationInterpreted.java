@@ -65,13 +65,13 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
 
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    TemplateContext applyContext = new DefaultTemplateContext(context.getInput());
+    TemplateContext applyContext = new DefaultTemplateContext(context.getEnvironment(), context.getInput(), null);
     if (myArguments.length > 0) {
       applyContext = applyContext.subContext(getArgumentsAsMap());
     }
 
     if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
-      TemplateContainer tc = new TemplateContainer(environment, myTemplateNode);
+      TemplateContainer tc = new TemplateContainer(myTemplateNode);
       tc.initialize();
 
       final SNodePointer templateNodeRef = new SNodePointer(myTemplateNode);
@@ -82,7 +82,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
         environment.getTracer().closeTemplateNode(templateNodeRef);
       }
     } else {
-      return environment.getTemplateProcessor().apply(myTemplateNode, applyContext, environment);
+      return environment.getTemplateProcessor().apply(myTemplateNode, applyContext);
     }
   }
 

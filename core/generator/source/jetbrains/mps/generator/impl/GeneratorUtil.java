@@ -20,7 +20,6 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -61,18 +60,17 @@ public class GeneratorUtil {
   }
 
   @NotNull
-  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env,
-      @NotNull SNode consequence) {
+  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull SNode consequence) {
     if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
-      return createTemplateCallContext(outerContext, env, consequence, outerContext.getInput());
+      return createTemplateCallContext(outerContext, consequence, outerContext.getInput());
     }
     return outerContext;
   }
 
   @NotNull
-  static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
+  static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, SNode templateCall, SNode newInputNode) {
     final SNode[] arguments = getArguments(templateCall);
-    final IGeneratorLogger log = env.getLogger();
+    final IGeneratorLogger log = outerContext.getEnvironment().getLogger();
     final String[] parameters = getParameters(templateCall, log);
 
     if (arguments == null && parameters == null) {
@@ -109,7 +107,7 @@ public class GeneratorUtil {
       } else {
         if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
           SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
-          value = env.getQueryExecutor().evaluateArgumentQuery(outerContext.getInput(), query, outerContext);
+          value = outerContext.getEnvironment().getQueryExecutor().evaluateArgumentQuery(outerContext.getInput(), query, outerContext);
         } else {
           try {
             value = RuleUtil.evaluateBaseLanguageExpression(exprNode);

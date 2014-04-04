@@ -332,7 +332,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (executionContext != null) {
         TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext);
         try {
-          if (executionContext.isApplicable(rule, environment, new DefaultTemplateContext(inputNode))) {
+          final DefaultTemplateContext templateContext = new DefaultTemplateContext(environment, inputNode, null);
+          if (executionContext.isApplicable(rule, environment, templateContext)) {
             myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
             myGenerationTracer.pushRule(rule.getRuleNode());
             try {
@@ -341,7 +342,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 rootsConsumed.add(inputNode);
                 copyRootOnFailure = true;
               }
-              createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
+              createRootNodeByRule(rule, templateContext, copyRootOnFailure);
             } finally {
               myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
             }
@@ -378,10 +379,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, boolean copyRootOnFailure, TemplateExecutionEnvironment environment)
+  protected void createRootNodeByRule(TemplateRootMappingRule rule, TemplateContext templateContext, boolean copyRootOnFailure)
     throws GenerationCanceledException, GenerationFailureException {
+    final SNode inputNode = templateContext.getInput();
+    final TemplateExecutionEnvironment environment = templateContext.getEnvironment();
     try {
-      Collection<SNode> outputNodes = environment.getQueryExecutor().applyRule(rule, environment, new DefaultTemplateContext(inputNode));
+      Collection<SNode> outputNodes = environment.getQueryExecutor().applyRule(rule, environment, templateContext);
       if (outputNodes == null) {
         return;
       }
@@ -504,7 +507,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   @Nullable
   Collection<SNode> tryToReduce(SNode inputNode, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
     FastRuleFinder rf = myRuleManager.getRuleFinder();
-    Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(inputNode), env);
+    Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(env, inputNode, null));
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
         // [artem] I have no idea why same mappings are not done for switch, but it's the way it goes from rev d552b27
@@ -524,9 +527,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
     FastRuleFinder rf = myRuleManager.getRuleFinder(templateSwitch);
-    Collection<SNode> outputNodes = tryToReduce(rf, context, env);
+    Collection<SNode> outputNodes = tryToReduce(rf, context);
     if (outputNodes != null) {
       if (outputNodes.size() == 1 && context.getInputName() != null) {
         SNode reducedNode = outputNodes.iterator().next();
@@ -542,7 +545,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * returns null if no reductions found
    */
   @Nullable
-  private Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
+  private Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
+    TemplateExecutionEnvironment env = context.getEnvironment();
     assert this == env.getGenerator();
     SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
@@ -829,7 +833,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       try {
         if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
-          return myEnvironment.getQueryExecutor().isApplicable(rule, myEnvironment, new DefaultTemplateContext(inputRootNode));
+          return myEnvironment.getQueryExecutor().isApplicable(rule, myEnvironment, new DefaultTemplateContext(myEnvironment, inputRootNode, null));
         }
       } catch (GenerationFailureException ex) {
         throw ex;

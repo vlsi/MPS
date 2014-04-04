@@ -182,7 +182,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Nullable
   @Override
   public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
-    Collection<SNode> collection = generator.tryToReduce(_switch, context, this);
+    Collection<SNode> collection = generator.tryToReduce(_switch, context);
     if (collection != null) {
       return collection;
     }

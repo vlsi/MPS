@@ -56,6 +56,6 @@ public class PatternRuleContext extends BaseMappingRuleContext {
   }
 
   public void createPatternContext(GeneratedMatchingPattern pattern) {
-    myContext = new DefaultTemplateContext(pattern, null, getInputNode());
+    myContext = myContext.subContext(pattern);
   }
 }

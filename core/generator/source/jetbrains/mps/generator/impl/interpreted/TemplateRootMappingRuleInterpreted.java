@@ -89,7 +89,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
       // It's possible to do it another way: context = myMappingName == null ? context.subContext() : context.subContext(myMappingName);
       // but it seems better to start rule with a fresh context anyway (unless we'd need to pass parameters - which would be odd as users
       // have no control on which rules get applied and hence can't expect parameters present)
-      return environment.getTemplateProcessor().apply(myTemplateNode, new DefaultTemplateContext(myMappingName, context.getInput()), environment);
+      return environment.getTemplateProcessor().apply(myTemplateNode, new DefaultTemplateContext(environment, context.getInput(), myMappingName));
     } else {
       environment.getLogger().error(getRuleNode(), "no template is defined for the rule", GeneratorUtil.describeIfExists(context.getInput(), "input node"));
     }

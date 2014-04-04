@@ -82,9 +82,14 @@ class TemplateNode {
   /**
    * configure new output node according to template
    */
-  public void apply(TemplateExecutionEnvironment env, TemplateContext context, SNode outputNode) throws GenerationFailureException {
+  public void apply(TemplateContext context, SNode outputNode) throws GenerationFailureException {
+    final TemplateExecutionEnvironment env = context.getEnvironment();
     if (myMold == null) {
-      myMold = new Mold(myNode, env.getQueryExecutor(), env.getLogger());
+      synchronized (this) {
+        if (myMold == null) {
+          myMold = new Mold(myNode, env.getQueryExecutor(), env.getLogger());
+        }
+      }
     }
     final TemplateGenerator generator = env.getGenerator();
     // jetbrains.mps.util.SNodeOperations.copyProperties(myTemplateNode, outputNode);

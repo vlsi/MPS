@@ -65,7 +65,7 @@ public class WeavingProcessor {
         }
         TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext);
         try {
-          DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);
+          DefaultTemplateContext context = new DefaultTemplateContext(environment, applicableNode, null);
           if (executionContext.isApplicable(rule, environment, context)) {
             // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
             // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
@@ -112,7 +112,7 @@ public class WeavingProcessor {
     public boolean apply() throws GenerationFailureException, GenerationCanceledException {
       final IGenerationTracer tracer = myEnv.getTracer();
       try {
-        DefaultTemplateContext context = new DefaultTemplateContext(myApplicableNode);
+        DefaultTemplateContext context = new DefaultTemplateContext(myEnv, myApplicableNode, null);
         SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
         if (!checkContext(outputContextNode)) {
           return false;

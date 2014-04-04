@@ -118,9 +118,10 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     return myConsequence.apply(environment, context, outputContextNode);
   }
 
-  void weaveTemplateDeclaration(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
+  void weaveTemplateDeclaration(SNode outputContextNode, @NotNull TemplateContext context)
       throws GenerationFailureException, GenerationCanceledException {
 
+    TemplateExecutionEnvironment environment = context.getEnvironment();
     if (myTemplate == null) {
       environment.getLogger().error(getRuleNode(), "couldn't evaluate weaving rule: no myTemplate");
       return;
@@ -128,7 +129,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
     try {
       WeaveTemplateContainer wtc = getWeavingTemplateContainer(environment.getLogger());
-      wtc.apply(outputContextNode, context.subContext(myMappingName), environment);
+      wtc.apply(outputContextNode, context.subContext(myMappingName));
     } finally {
       environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
     }
@@ -199,8 +200,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
-      weaveTemplateDeclaration(outputContextNode,
-          GeneratorUtil.createConsequenceContext(context, environment, myConsequenceNode), environment);
+      weaveTemplateDeclaration(outputContextNode, GeneratorUtil.createConsequenceContext(context, myConsequenceNode));
       return true;
     }
   }
@@ -225,8 +225,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       }
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       for (SNode queryNode : queryNodes) {
-        weaveTemplateDeclaration(outputContextNode,
-            GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(queryNode), environment, myConsequenceNode), environment);
+        weaveTemplateDeclaration(outputContextNode, GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(environment, queryNode, null), myConsequenceNode));
       }
 
       return true;

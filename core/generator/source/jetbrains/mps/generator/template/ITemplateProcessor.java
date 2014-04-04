@@ -30,6 +30,6 @@ import java.util.List;
  */
 public interface ITemplateProcessor {
   @NotNull
-  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env)
+  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException;
 }

@@ -45,9 +45,10 @@ public class WeaveTemplateContainer {
     myFragments = extractTemplateFragmentsForWeaving(log);
   }
 
-  public void apply(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env)
+  public void apply(SNode outputContextNode, @NotNull TemplateContext context)
       throws GenerationFailureException, GenerationCanceledException {
     // for each template fragment create output nodes
+    TemplateExecutionEnvironment env = context.getEnvironment();
     ITemplateProcessor templateProcessor = env.getTemplateProcessor();
     for (SNode templateFragment : myFragments) {
       SNode templateFragmentNode = templateFragment.getParent();
@@ -60,7 +61,7 @@ public class WeaveTemplateContainer {
       if (contextParentNode != null) {
         try {
           String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
-          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel), env);
+          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel));
           String childRole = templateFragmentNode.getRoleInParent();
 
           for (SNode outputNodeToWeave : outputNodesToWeave) {
