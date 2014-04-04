@@ -77,6 +77,15 @@ public class DefaultTemplateContext implements TemplateContext {
     myVars = vars;
   }
 
+  private DefaultTemplateContext(DefaultTemplateContext parent, TemplateExecutionEnvironment env) {
+    myParent = parent;
+    myEnv = env;
+    myInputName = parent.myInputName;
+    myInputNode = parent.myInputNode;
+    myPattern = parent.myPattern;
+    myVars = parent.myVars;
+  }
+
   @NotNull
   @Override
   public TemplateExecutionEnvironment getEnvironment() {
@@ -232,5 +241,13 @@ public class DefaultTemplateContext implements TemplateContext {
       return this;
     }
     return new DefaultTemplateContext(this, getInputName(), newInputNode);
+  }
+
+  @Override
+  public TemplateContext subContext(@NotNull TemplateExecutionEnvironment env) {
+    if (env == this.myEnv) {
+      return this;
+    }
+    return new DefaultTemplateContext(this, env);
   }
 }

@@ -58,7 +58,8 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
     environment.getTracer().pushRule(getRuleNode()); // XXX it's better to have this code outside of the rule, but now it's too much of a change
     // (if there are generated generators that do not use ReductionRuleBase or override this method - there'd be duplicated trace entries)
     try {
-      return doApply(context, environment.getEnvironment(context.getInput(), this));
+      final TemplateExecutionEnvironment env = environment.getEnvironment(context.getInput(), this);
+      return doApply(context.subContext(env), env);
     } finally {
       environment.getTracer().closeRule(getRuleNode());
     }

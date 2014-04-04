@@ -88,4 +88,9 @@ public interface TemplateContext {
    * @return context with desired input and present input name
    */
   TemplateContext subContext(SNode newInputNode);
+
+  /**
+   * Temp solution to pass updated TEE, so that correct ReductionContext is propagated
+   */
+  TemplateContext subContext(@NotNull TemplateExecutionEnvironment env);
 }
