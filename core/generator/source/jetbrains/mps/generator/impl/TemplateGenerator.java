@@ -289,7 +289,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       QueryExecutionContext context = getExecutionContext(rootToCopy);
       if (context != null) {
         TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, context);
-        copyRootInputNode(rootToCopy, rootenv);
+        copyRootInputNode(rootToCopy, rootenv.getReductionTrack());
         checkMonitorCanceled();
       }
     }
@@ -321,7 +321,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext);
+        TemplateExecutionEnvironmentImpl environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext);
         final DefaultTemplateContext templateContext = new DefaultTemplateContext(environment, inputNode, null);
         if (executionContext.isApplicable(rule, templateContext)) {
           myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
@@ -332,7 +332,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               rootsConsumed.add(inputNode);
               copyRootOnFailure = true;
             }
-            createRootNodeByRule(rule, templateContext, copyRootOnFailure);
+            createRootNodeByRule(rule, templateContext, copyRootOnFailure, environment.getReductionTrack());
           } finally {
             myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
           }
@@ -364,7 +364,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void createRootNodeByRule(TemplateRootMappingRule rule, TemplateContext templateContext, boolean copyRootOnFailure)
+  // XXX too many arguments, shall refactor
+  protected void createRootNodeByRule(TemplateRootMappingRule rule, TemplateContext templateContext, boolean copyRootOnFailure, ReductionTrack rtrack)
     throws GenerationCanceledException, GenerationFailureException {
     final SNode inputNode = templateContext.getInput();
     final TemplateExecutionEnvironment environment = templateContext.getEnvironment();
@@ -390,7 +391,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
       if (copyRootOnFailure && inputNode.getModel() != null && inputNode.getParent() == null) {
-        final FullCopyFacility copyFacility = new FullCopyFacility(this, environment);
+        final FullCopyFacility copyFacility = new FullCopyFacility(this, rtrack);
         copyFacility.copyRootInputNode(inputNode);
         if (copyFacility.hasChanges()) {
           setChanged();
@@ -405,12 +406,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void copyRootInputNode(@NotNull SNode inputRootNode, @NotNull TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootInputNode(@NotNull SNode inputRootNode, @NotNull ReductionTrack reductionTrack) throws GenerationFailureException, GenerationCanceledException {
     NodeCopyFacility copyProcessor;
     if (myDeltaBuilder == null) {
-      copyProcessor = new FullCopyFacility(this, environment);
+      copyProcessor = new FullCopyFacility(this, reductionTrack);
     } else {
-      copyProcessor = new PartialCopyFacility(this, environment, myDeltaBuilder);
+      copyProcessor = new PartialCopyFacility(this, reductionTrack, myDeltaBuilder);
     }
     // check if can drop
     if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules())) {
@@ -490,9 +491,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  Collection<SNode> tryToReduce(SNode inputNode, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(SNode inputNode, ReductionTrack rtrack) throws GenerationFailureException, GenerationCanceledException {
     FastRuleFinder rf = myRuleManager.getRuleFinder();
-    Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(env, inputNode, null));
+    Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(rtrack.getEnvironment(), inputNode, null), rtrack);
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
         // [artem] I have no idea why same mappings are not done for switch, but it's the way it goes from rev d552b27
@@ -511,26 +512,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return null;
   }
 
-  @Nullable
-  Collection<SNode> tryToReduce(@NotNull SNodeReference templateSwitch, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
-    FastRuleFinder rf = myRuleManager.getRuleFinder(templateSwitch);
-    Collection<SNode> outputNodes = tryToReduce(rf, context);
-    if (outputNodes != null) {
-      if (outputNodes.size() == 1 && context.getInputName() != null) {
-        SNode reducedNode = outputNodes.iterator().next();
-        // register copied node
-        registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
-      }
-      return outputNodes;
-    }
-    return null;
-  }
-
   /*
    * returns null if no reductions found
    */
   @Nullable
-  private Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, @NotNull TemplateContext context, @NotNull ReductionTrack rtrack) throws GenerationFailureException, GenerationCanceledException {
     TemplateExecutionEnvironment env = context.getEnvironment();
     assert this == env.getGenerator();
     SNode inputNode = context.getInput();
@@ -544,18 +530,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     try {
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
-        if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, env.getReductionContext())) {
+        if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, rtrack.actual())) {
           if (rule instanceof TemplateRuleWithCondition) {
             if (!env.getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, context)) {
               continue;
             }
             // fall-through
           }
-          Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
-          if (outputNodes != null) {
-            SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
-            env.getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
-            return outputNodes;
+          try {
+            rtrack.enter(inputNode, rule);
+            Collection<SNode> outputNodes = env.getQueryExecutor().tryToApply(rule, env, context);
+            if (outputNodes != null) {
+              SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
+              env.getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
+              return outputNodes;
+            }
+          } finally {
+            rtrack.leave();
           }
         }
       }
@@ -594,13 +585,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return null;
   }
 
-  // in fact, it's reasonable to keep this method in TEEI, to reflect narrowing scope of
+  // in fact, it's reasonable to keep this method in TEEI (in ReductionTrack, actually), to reflect narrowing scope of
   // generator -> TEEI -> TemplateProcessor. This would take another round of refactoring, though
   // (first of all, shall update TEEI API)
   @NotNull
   List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, final String mappingName,
-      @NotNull String templateId, @NotNull TemplateExecutionEnvironment env) throws GenerationCanceledException, GenerationFailureException {
-    assert this == env.getGenerator();
+      @NotNull String templateId, ReductionTrack rtrack) throws GenerationCanceledException, GenerationFailureException {
 
     final Iterator<SNode> it = inputNodes.iterator();
     if (!it.hasNext()) {
@@ -616,14 +606,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       final SNodeReference newNodePtr = GenerationTracerUtil.getSNodePointer(newInputNode);
       myGenerationTracer.pushInputNode(newNodePtr);
       try {
-        Collection<SNode> _outputNodes = tryToReduce(newInputNode, env);
+        Collection<SNode> _outputNodes = tryToReduce(newInputNode, rtrack);
         if (_outputNodes != null) {
           if (mappingName != null && _outputNodes.size() == 1) {
             registerMappingLabel(newInputNode, mappingName, _outputNodes.iterator().next());
           }
           outputNodes.addAll(_outputNodes);
         } else {
-          FullCopyFacility copyFacility = new FullCopyFacility(this, env, new HashSet<SNode>(myAdditionalInputNodes.keySet()));
+          FullCopyFacility copyFacility = new FullCopyFacility(this, rtrack, new HashSet<SNode>(myAdditionalInputNodes.keySet()));
           SNode copiedNode = copyFacility.copyInputNode(newInputNode);
           addOutputNodeByInputAndTemplateNode(newInputNode, templateId, copiedNode);
           if (mappingName != null) {
@@ -663,12 +653,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
     return inputNode;
-  }
-  /**
-   * prevents applying of reduction rules which have already been applied to the input node.
-   */
-  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, @NotNull ReductionContext reductionContext) {
-    getBlockedReductionsData().blockReductionsForCopiedNode(inputNode, outputNode, reductionContext);
   }
 
   BlockedReductionsData getBlockedReductionsData() {
@@ -779,14 +763,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private abstract static class NodeCopyFacility {
+    protected final ReductionTrack myReductionTrack;
     protected boolean myIsChanged = false;
-    protected final TemplateExecutionEnvironment myEnvironment;
 
-    protected NodeCopyFacility(TemplateExecutionEnvironment environment) {
-      myEnvironment = environment;
+    protected NodeCopyFacility(ReductionTrack rtrack) {
+      myReductionTrack = rtrack;
     }
     public final IGeneratorLogger getLogger() {
-      return myEnvironment.getLogger();
+      return myReductionTrack.getEnvironment().getLogger();
     }
     public final boolean hasChanges() {
       return myIsChanged;
@@ -812,12 +796,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
       String applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) {
-        myEnvironment.getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
+        getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
         return false;
       }
 
       if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
-        return myEnvironment.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnvironment, inputRootNode, null));
+        TemplateExecutionEnvironment env = myReductionTrack.getEnvironment();
+        return env.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(env, inputRootNode, null));
       }
       return false;
     }
@@ -864,9 +849,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private final DeltaBuilder myDeltaBuilder;
     private final IGenerationTracer myTracer; // FIXME provisional, shall refactor GenerationTracer first
 
-    public PartialCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment, @NotNull DeltaBuilder deltaBuilder) {
-      super(environment);
-      myTracer = environment.getTracer();
+    public PartialCopyFacility(@NotNull TemplateGenerator generator, @NotNull ReductionTrack rtrack, @NotNull DeltaBuilder deltaBuilder) {
+      super(rtrack);
+      myTracer = generator.getGenerationTracer();
       myGenerator = generator;
       myDeltaBuilder = deltaBuilder;
     }
@@ -899,13 +884,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-      myGenerator.blockReductionsForCopiedNode(inputNode, inputNode, myEnvironment.getReductionContext()); // prevent infinite applying of the same reduction to the 'same' node.
+      myReductionTrack.blockReductionsForCopiedNode(inputNode, inputNode); // prevent infinite applying of the same reduction to the 'same' node.
       for (SNode inputChildNode : inputNode.getChildren()) {
         String childRole = inputChildNode.getRoleInParent();
         assert childRole != null;
         myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
         try {
-          Collection<SNode> outputChildNodes = myGenerator.tryToReduce(inputChildNode, myEnvironment);
+          Collection<SNode> outputChildNodes = myGenerator.tryToReduce(inputChildNode, myReductionTrack);
           if (outputChildNodes != null) {
             myDeltaBuilder.registerSubTree(inputChildNode, childRole, outputChildNodes);
             myIsChanged = true;
@@ -927,14 +912,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private final SModelReference myOutputModelRef;
     private final Factory myNodeFactory;
 
-    public FullCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment) {
-      this(generator, environment, Collections.<SNode>emptySet());
+    public FullCopyFacility(TemplateGenerator generator, ReductionTrack rtrack) {
+      this(generator, rtrack, Collections.<SNode>emptySet());
     }
-    public FullCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment, Set<SNode> additionalInputs) {
-      super(environment);
+    public FullCopyFacility(TemplateGenerator generator, ReductionTrack rtrack, Set<SNode> additionalInputs) {
+      super(rtrack);
       myGenerator = generator;
       myAdditionalInputNodes = additionalInputs;
-      myGenerationTracer = environment.getTracer();
+      myGenerationTracer = generator.getGenerationTracer();
       myInputModel = generator.getInputModel();
       myOutputModelRef = generator.getOutputModel().getReference();
       myNodeFactory = new RegularSModelFactory();
@@ -976,7 +961,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } else {
         outputNode = myGenerator.getOutputModel().createNode(inputNode.getConcept());
       }
-      myGenerator.blockReductionsForCopiedNode(inputNode, outputNode, myEnvironment.getReductionContext()); // prevent infinite applying of the same reduction to the 'same' node.
+      myReductionTrack.blockReductionsForCopiedNode(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
       // output node should be accessible via 'findCopiedNode'
       myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
@@ -1051,7 +1036,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         assert childRole != null;
         myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
         try {
-          Collection<SNode> outputChildNodes = myGenerator.tryToReduce(inputChildNode, myEnvironment);
+          Collection<SNode> outputChildNodes = myGenerator.tryToReduce(inputChildNode, myReductionTrack);
           if (outputChildNodes != null) {
             myIsChanged = true;
             RoleValidator rv = myGenerator.getChildRoleValidator(outputNode, childRole);
