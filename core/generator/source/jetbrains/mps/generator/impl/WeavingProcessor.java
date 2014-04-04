@@ -64,20 +64,12 @@ public class WeavingProcessor {
           continue;
         }
         TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext);
-        try {
-          DefaultTemplateContext context = new DefaultTemplateContext(environment, applicableNode, null);
-          if (executionContext.isApplicable(rule, environment, context)) {
-            // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
-            // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
-            myReadyRules.add(new ArmedWeavingRule(rule, environment, applicableNode));
-            ruleBlocks.blockWeaving(applicableNode, rule);
-          }
-        } catch (GenerationCanceledException ex) {
-          throw ex;
-        } catch (GenerationFailureException ex) {
-          throw ex;
-        } catch (GenerationException ex) {
-          myGenerator.getLogger().error(rule.getRuleNode(), "internal error: " + ex.toString());
+        DefaultTemplateContext context = new DefaultTemplateContext(environment, applicableNode, null);
+        if (executionContext.isApplicable(rule, context)) {
+          // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
+          // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
+          myReadyRules.add(new ArmedWeavingRule(rule, environment, applicableNode));
+          ruleBlocks.blockWeaving(applicableNode, rule);
         }
       }
     }

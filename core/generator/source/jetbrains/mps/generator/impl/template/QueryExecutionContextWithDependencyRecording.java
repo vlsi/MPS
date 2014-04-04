@@ -233,9 +233,14 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return isApplicable(rule, context);
+  }
+
+  @Override
+  public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.isApplicable(rule, environment, context);
+      return wrapped.isApplicable(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

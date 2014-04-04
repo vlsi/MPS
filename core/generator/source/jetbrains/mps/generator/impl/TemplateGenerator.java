@@ -296,22 +296,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
-    try {
-      if (environment.getQueryExecutor().isApplicable(rule, environment, null)) {
-        myGenerationTracer.pushRule(rule.getRuleNode());
-        try {
-          createRootNodeByRule(rule, environment);
-        } finally {
-          myGenerationTracer.closeRule(rule.getRuleNode());
-        }
+    if (environment.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(environment, null, null))) {
+      myGenerationTracer.pushRule(rule.getRuleNode());
+      try {
+        createRootNodeByRule(rule, environment);
+      } finally {
+        myGenerationTracer.closeRule(rule.getRuleNode());
       }
-    } catch (GenerationFailureException ex) {
-      throw ex;
-    } catch (GenerationCanceledException ex) {
-      throw ex;
-    } catch (GenerationException e) {
-      getLogger().error(rule.getRuleNode(), String.format("internal error: unexpected exception: %s", e.toString()));
-      throw new GenerationFailureException(e);
     }
   }
 
@@ -331,26 +322,20 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null) {
         TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext);
-        try {
-          final DefaultTemplateContext templateContext = new DefaultTemplateContext(environment, inputNode, null);
-          if (executionContext.isApplicable(rule, environment, templateContext)) {
-            myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
-            myGenerationTracer.pushRule(rule.getRuleNode());
-            try {
-              boolean copyRootOnFailure = false;
-              if (inputNode.getModel() != null && inputNode.getParent() == null && !rule.keepSourceRoot()) {
-                rootsConsumed.add(inputNode);
-                copyRootOnFailure = true;
-              }
-              createRootNodeByRule(rule, templateContext, copyRootOnFailure);
-            } finally {
-              myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
+        final DefaultTemplateContext templateContext = new DefaultTemplateContext(environment, inputNode, null);
+        if (executionContext.isApplicable(rule, templateContext)) {
+          myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
+          myGenerationTracer.pushRule(rule.getRuleNode());
+          try {
+            boolean copyRootOnFailure = false;
+            if (inputNode.getModel() != null && inputNode.getParent() == null && !rule.keepSourceRoot()) {
+              rootsConsumed.add(inputNode);
+              copyRootOnFailure = true;
             }
+            createRootNodeByRule(rule, templateContext, copyRootOnFailure);
+          } finally {
+            myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
           }
-        } catch (GenerationException e) {
-          if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
-          if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-          getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
         }
       }
     }
@@ -561,7 +546,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, env.getReductionContext())) {
           if (rule instanceof TemplateRuleWithCondition) {
-            if (!env.getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, env, context)) {
+            if (!env.getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, context)) {
               continue;
             }
             // fall-through
@@ -831,14 +816,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return false;
       }
 
-      try {
-        if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
-          return myEnvironment.getQueryExecutor().isApplicable(rule, myEnvironment, new DefaultTemplateContext(myEnvironment, inputRootNode, null));
-        }
-      } catch (GenerationFailureException ex) {
-        throw ex;
-      } catch (GenerationException e) {
-        myEnvironment.getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
+      if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
+        return myEnvironment.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnvironment, inputRootNode, null));
       }
       return false;
     }

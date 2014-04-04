@@ -393,9 +393,15 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return isApplicable(rule, context);
+  }
+
+  @Override
+  public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
+    final TemplateExecutionEnvironment environment = context.getEnvironment();
     try {
       return rule.isApplicable(environment, context);
-    } catch (GenerationException ex) {
+    } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
       environment.getLogger().handleException(t);

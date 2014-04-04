@@ -241,9 +241,14 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return isApplicable(rule, context);
+  }
+
+  @Override
+  public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check condition", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
-      return wrapped.isApplicable(rule, environment, context);
+      return wrapped.isApplicable(rule, context);
     } finally {
       tracer.pop();
     }
