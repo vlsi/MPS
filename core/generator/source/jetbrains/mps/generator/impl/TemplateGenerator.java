@@ -109,6 +109,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DeltaBuilder myDeltaBuilder;
   private boolean myInplaceModelChange = false; // indicates transformation was in-place (even after deltaBuilder was disposed). cries for better approach
   private WeavingProcessor myWeavingProcessor;
+  private TemplateProcessor myTemplateProcessor;
   private final PostponedReferenceUpdate myPostponedRefs;
   private final GenerationTrace myNewTrace;
 
@@ -154,6 +155,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myWeavingProcessor.prepareWeavingRules(getInputModel(), myRuleManager.getWeaving_MappingRules());
     ttrace.pop();
 
+    myTemplateProcessor = new TemplateProcessor(this);
 
     ttrace.push("reductions", false);
     applyReductions(isPrimary);
@@ -260,7 +262,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, executionContext);
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext);
         for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
           checkMonitorCanceled();
           applyCreateRoot(rule, environment);
@@ -286,7 +288,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       QueryExecutionContext context = getExecutionContext(rootToCopy);
       if (context != null) {
-        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context);
+        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, context);
         copyRootInputNode(rootToCopy, rootenv);
         checkMonitorCanceled();
       }
@@ -328,7 +330,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, executionContext);
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext);
         try {
           if (executionContext.isApplicable(rule, environment, new DefaultTemplateContext(inputNode))) {
             myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));

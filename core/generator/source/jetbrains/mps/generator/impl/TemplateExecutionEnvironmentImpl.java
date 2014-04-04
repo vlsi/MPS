@@ -62,19 +62,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   private final QueryExecutionContext myExecutionContext;
   private final ITemplateProcessor myTemplateProcessor;
 
-  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext) {
-    this.generator = generator;
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateProcessor templateProcessor, @NotNull QueryExecutionContext executionContext) {
+    this.generator = templateProcessor.getGenerator();
     this.reductionContext = new ReductionContext();
     this.myExecutionContext = executionContext;
-    this.myTemplateProcessor = new TemplateProcessor(this);
+    this.myTemplateProcessor = templateProcessor;
   }
 
   private TemplateExecutionEnvironmentImpl(@NotNull TemplateExecutionEnvironmentImpl origin, @NotNull ReductionContext reductionContext) {
     this.generator = origin.generator;
     this.reductionContext = reductionContext;
     myExecutionContext = origin.myExecutionContext;
-    myTemplateProcessor = new TemplateProcessor(this); // At the moment, TemplateProcessor needs correct ReductionContext, and we can't effectively reuse
-    // cached TemplateNodes and MacroNodes
+    myTemplateProcessor = origin.myTemplateProcessor;
   }
 
   @Override

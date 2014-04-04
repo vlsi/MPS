@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
-import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
@@ -83,7 +82,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
         environment.getTracer().closeTemplateNode(templateNodeRef);
       }
     } else {
-      return new TemplateProcessor(environment).apply(myTemplateNode, applyContext);
+      return environment.getTemplateProcessor().apply(myTemplateNode, applyContext, environment);
     }
   }
 

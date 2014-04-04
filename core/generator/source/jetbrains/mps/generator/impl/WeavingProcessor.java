@@ -63,7 +63,7 @@ public class WeavingProcessor {
         if (executionContext == null) {
           continue;
         }
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, executionContext);
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext);
         try {
           DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);
           if (executionContext.isApplicable(rule, environment, context)) {

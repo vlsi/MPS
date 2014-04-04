@@ -60,7 +60,7 @@ public class WeaveTemplateContainer {
       if (contextParentNode != null) {
         try {
           String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
-          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel));
+          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel), env);
           String childRole = templateFragmentNode.getRoleInParent();
 
           for (SNode outputNodeToWeave : outputNodesToWeave) {
