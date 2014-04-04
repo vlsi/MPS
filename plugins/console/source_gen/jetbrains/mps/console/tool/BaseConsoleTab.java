@@ -56,7 +56,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Scanner;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.MouseShortcut;
@@ -77,6 +76,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -336,9 +336,9 @@ public abstract class BaseConsoleTab extends JPanel {
         ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
-        SModelReference usedModel = ref.getTargetSModelReference();
+        SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
         if (usedModel != null && !(((SModelInternal) myModel).importedModels().contains(usedModel))) {
-          ((SModelInternal) myModel).addModelImport(usedModel, false);
+          ((SModelInternal) myModel).addModelImport(usedModel.getReference(), false);
           ((AbstractModule) myModel.getModule()).addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
         }
       }
