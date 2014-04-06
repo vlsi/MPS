@@ -32,6 +32,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -112,7 +113,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
-    return new PropertyQuery();
+    return new PropertyQuery(propertyMacro.getReference());
   }
 
   @NotNull
@@ -193,6 +194,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   }
 
   private static class PropertyQuery implements PropertyValueQuery {
+    private final SNodeReference myMacro;
+
+    PropertyQuery(@NotNull SNodeReference macro) {
+      myMacro = macro;
+    }
+
     @NotNull
     @Override
     public String getPropertyName() {
@@ -202,6 +209,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Override
     public Object getTemplateValue() {
       return null;
+    }
+
+    @NotNull
+    @Override
+    public SNodeReference getMacro() {
+      return myMacro;
     }
 
     @Nullable

@@ -70,8 +70,8 @@ public interface QueryExecutionContext extends QueryExecutor {
   void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
   /**
-   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#getPropertyMacro(org.jetbrains.mps.openapi.model.SNode)} or
-   * {@link jetbrains.mps.generator.impl.interpreted.PropertyMacroInterpreted} instead
+   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.PropertyValueQuery, jetbrains.mps.generator.runtime.TemplateContext)}
+   * instead
    */
   @Deprecated
   @ToRemove(version = 3.1)

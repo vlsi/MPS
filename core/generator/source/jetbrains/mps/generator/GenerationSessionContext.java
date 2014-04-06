@@ -49,7 +49,7 @@ import java.util.concurrent.ConcurrentMap;
  * Igor Alshannikov
  * Sep 19, 2005
  */
-public class GenerationSessionContext extends StandaloneMPSContext {
+public class GenerationSessionContext extends StandaloneMPSContext implements GeneratorQueryProvider.Source {
 
   private static final Object COPIED_ROOTS = new Object();
 
@@ -184,6 +184,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext.getProject();
   }
 
+  @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
     return myQueryProviders.getQueryProvider(ruleNode);
   }

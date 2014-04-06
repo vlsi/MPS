@@ -20,14 +20,13 @@ import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.impl.interpreted.PropertyMacroInterpreted;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
-import jetbrains.mps.generator.runtime.PropertyMacro;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -40,8 +39,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -60,7 +61,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final boolean myIsMultithread;
   private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
-  private final Map<SNodeReference,PropertyMacroInterpreted> myPropertyQueries = new ConcurrentHashMap<SNodeReference, PropertyMacroInterpreted>();
   private final Map<SNodeReference,IfMacroCondition> myIfMacroConditions = new ConcurrentHashMap<SNodeReference, IfMacroCondition>();
 
   public DefaultQueryExecutionContext(ITemplateGenerator generator) {
@@ -161,7 +161,14 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      getPropertyMacro(propertyMacro).expand(context.subContext(inputNode), outputNode);
+      final SNodeReference qr = propertyMacro.getReference();
+      PropertyValueQuery q = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getPropertyValueQuery(propertyMacro);
+      final Object tv = q.getTemplateValue();
+      // I don't see a reason to delegate to this.evaluate - subclasses do treat these two implementations separately,
+      // and this deprecated method shall not be used anyway
+      Object macroValue = q.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), qr, myGenerator));
+      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
+      SNodeAccessUtil.setProperty(outputNode, q.getPropertyName(), propertyValue);
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
@@ -171,16 +178,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @NotNull
+  @Nullable
   @Override
-  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
-    final SNodeReference qr = propertyMacro.getReference();
-    PropertyMacroInterpreted pm = myPropertyQueries.get(qr);
-    if (pm == null) {
-      pm = new PropertyMacroInterpreted(propertyMacro, myGenerator);
-      myPropertyQueries.put(qr, pm);
-    }
-    return pm;
+  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException {
+    final Object tv = query.getTemplateValue();
+    return query.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), query.getMacro(), myGenerator));
   }
 
   @Override

@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -339,16 +341,17 @@ public class QueriesGenerated extends QueryProviderBase {
 
   {
     int i = 0;
-    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++, "label", "label"));
+    final String modelId = "r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)";
+    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696304714"), "name", null));
+    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696304731"), "label", "label"));
+    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696304791"), "name", null));
+    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696304801"), "label", "label"));
+    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696304868"), "name", null));
+    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696304885"), "label", "label"));
+    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "2021770776238986615"), "name", null));
+    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "2021770776238986639"), "label", "label"));
+    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696305002"), "name", null));
+    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1269198486696305019"), "label", "label"));
   }
 
   @NotNull
@@ -364,8 +367,8 @@ public class QueriesGenerated extends QueryProviderBase {
   private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
 
-    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
-      super(propertyName, templateValue);
+    /*package*/ PVQ(int methodKey, SNodeReference macroRef, String propertyName, String templateValue) {
+      super(macroRef, propertyName, templateValue);
       this.methodKey = methodKey;
     }
 

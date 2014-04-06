@@ -358,13 +358,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   }
 
   private static final class PropMacro extends PropertyValueQuery.Base {
-    private final SNodeReference myMacro;
     private final String myMethodName;
     private QueryMethod<Object> myMethod;
 
     public PropMacro(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
-      super(propertyName, templateValue);
-      myMacro = macro;
+      super(macro, propertyName, templateValue);
       myMethodName = methodName;
     }
 
@@ -379,7 +377,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException{
       try {
-        return QueryMethodGenerated.getQueryMethod(myMacro.getModelReference(), myMethodName);
+        return QueryMethodGenerated.getQueryMethod(getMacro().getModelReference(), myMethodName);
       } catch (NoSuchMethodException e) {
         final String m = String.format("cannot find method '%s' for property macro", myMethodName);
         context.showErrorMessage(null, m);

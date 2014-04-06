@@ -16,14 +16,26 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -105,25 +117,23 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+    try {
+      tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
+      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+    } finally {
+      tracer.pop();
+    }
   }
 
-  @NotNull
+  @Nullable
   @Override
-  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
-    final SNode templateNode = propertyMacro.getParent();
-    final PropertyMacro delegate = wrapped.getPropertyMacro(propertyMacro);
-    return new PropertyMacro() {
-      @Override
-      public void expand(@NotNull TemplateContext context, @NotNull SNode outputNode) throws GenerationFailureException {
-        try {
-          tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
-          delegate.expand(context, outputNode);
-        } finally {
-          tracer.pop();
-        }
-      }
-    };
+  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName(String.format("property macro(name: %s)", query.getPropertyName()), null), true);
+      return wrapped.evaluate(query, context);
+    } finally {
+      tracer.pop();
+    }
   }
 
   @Override
