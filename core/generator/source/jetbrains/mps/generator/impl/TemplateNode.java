@@ -24,7 +24,6 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -89,7 +88,7 @@ class TemplateNode {
     if (myMold == null) {
       synchronized (this) {
         if (myMold == null) {
-          myMold = new Mold(myNode, env.getQueryExecutor(), env.getGenerator().getGeneratorSessionContext(), env.getLogger());
+          myMold = new Mold(myNode, env.getGenerator().getGeneratorSessionContext(), env.getLogger());
         }
       }
     }
@@ -175,8 +174,7 @@ class TemplateNode {
     public final RefInfo[] myInnerRefs;
     public final RefInfo[] myOtherRefs;
 
-    // FIXME CAN'T USE queryExecutor here - cached values would delegate to incorrect QEC (first cached)
-    private Mold(SNode templateNode, QueryExecutionContext queryExecutor, GeneratorQueryProvider.Source gqps, IGeneratorLogger log) {
+    private Mold(SNode templateNode, GeneratorQueryProvider.Source gqps, IGeneratorLogger log) {
       final ArrayList<String> propsHandledWithMacro = new ArrayList<String>();
       final ArrayList<SNode> templateChildNodes = new ArrayList<SNode>();
       final ArrayList<PropertyValueQuery> propertyMacros = new ArrayList<PropertyValueQuery>();
@@ -192,7 +190,7 @@ class TemplateNode {
             propertyMacros.add(gqps.getQueryProvider(templateChildNode.getReference()).getPropertyValueQuery(templateChildNode));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
             final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
-            MacroResolver mr = new MacroResolver(queryExecutor, templateChildNode, templateNode.getReferenceTarget(refMacroRole));
+            MacroResolver mr = new MacroResolver(templateChildNode, templateNode.getReferenceTarget(refMacroRole));
             refMacros.put(refMacroRole, mr);
           }
         } else {

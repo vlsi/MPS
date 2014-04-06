@@ -70,6 +70,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   public DefaultQueryExecutionContext(ITemplateGenerator generator, boolean isMultithread) {
     this.myGenerator = generator;
     myIsMultithread = isMultithread;
+    // XXX can utilize isMultithread to initialize queries map with HashMap, not ConcurrentHashMap if false
   }
 
   @Override
