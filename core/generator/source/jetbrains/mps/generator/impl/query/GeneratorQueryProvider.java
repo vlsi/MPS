@@ -48,4 +48,6 @@ public interface GeneratorQueryProvider {
   SourceNodesQuery getSourceNodesQuery(@NotNull SNode query);
   @NotNull
   PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro);
+  @NotNull
+  IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro);
 }

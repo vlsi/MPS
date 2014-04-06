@@ -69,6 +69,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />

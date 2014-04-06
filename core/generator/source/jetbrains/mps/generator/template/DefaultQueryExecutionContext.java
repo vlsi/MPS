@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.interpreted.PropertyMacroInterpreted;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -60,6 +61,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
   private final Map<SNodeReference,PropertyMacroInterpreted> myPropertyQueries = new ConcurrentHashMap<SNodeReference, PropertyMacroInterpreted>();
+  private final Map<SNodeReference,IfMacroCondition> myIfMacroConditions = new ConcurrentHashMap<SNodeReference, IfMacroCondition>();
 
   public DefaultQueryExecutionContext(ITemplateGenerator generator) {
     this(generator, true);
@@ -107,31 +109,13 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
-    if (function == null) {
-      getLog().error(ifMacro.getReference(), "cannot evaluate if-macro condition", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException("cannot evaluate if-macro condition");
+    final SNodeReference qr = ifMacro.getReference();
+    IfMacroCondition cond = myIfMacroConditions.get(qr);
+    if (cond == null) {
+      cond = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getIfMacroCondition(ifMacro);
+      myIfMacroConditions.put(qr, cond);
     }
-
-    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
-    try {
-      return QueryMethodGenerated.<Boolean>invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new IfMacroContext(context.subContext(inputNode), ifMacro.getReference(), myGenerator),
-          ifMacro.getModel(),
-          true);
-    } catch (ClassNotFoundException e) {
-      getLog().warning(ifMacro.getReference(), String.format("cannot find condition method '%s' : evaluate to FALSE", methodName));
-    } catch (NoSuchMethodException e) {
-      getLog().warning(ifMacro.getReference(), String.format("cannot find condition method '%s' : evaluate to FALSE", methodName));
-    } catch (Throwable t) {
-      getLog().handleException(t);
-      getLog().error(ifMacro.getReference(), String.format("error executing condition '%s', exception was thrown", methodName));
-      throw new GenerationFailureException(t);
-    }
-
-    return false;
+    return cond.check(new IfMacroContext(context.subContext(inputNode), qr, myGenerator));
   }
 
   @Override

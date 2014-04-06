@@ -42,6 +42,7 @@ import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
@@ -3752,6 +3753,44 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033879438915(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
+
+  {
+    int i = 0;
+    imcMethods.put("7392128331043440266", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7880518146485543904", new QueriesGenerated.IfMC(i++));
+  }
+
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
+    final String id = ifMacro.getNodeId().toString();
+    if (!(imcMethods.containsKey(id))) {
+      return super.getIfMacroCondition(ifMacro);
+    }
+    return imcMethods.get(id);
+  }
+
+  private static class IfMC implements IfMacroCondition {
+    private final int methodKey;
+
+    public IfMC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.ifMacro_Condition_7392128331043440267(ctx);
+        case 1:
+          return QueriesGenerated.ifMacro_Condition_7880518146485543905(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
     }
   }

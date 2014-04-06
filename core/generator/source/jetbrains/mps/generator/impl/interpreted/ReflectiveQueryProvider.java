@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
@@ -32,6 +33,7 @@ import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -186,7 +188,18 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     SNode templateNode = propertyMacro.getParent();
     final Object templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
-    return new Macros(propertyMacro.getReference(), methodName, propertyName, templateValue);
+    return new PropMacro(propertyMacro.getReference(), methodName, propertyName, templateValue);
+  }
+
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
+    SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
+    if (function == null) {
+      return super.getIfMacroCondition(ifMacro);
+    }
+    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
+    return new Impl(ifMacro.getReference(), methodName, false);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -195,7 +208,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   }
 
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition {
 
     private final String myMethodName;
     private final boolean myDefValue;
@@ -298,6 +311,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public boolean check(@NotNull TemplateQueryContext ctx) {
       return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+    }
   }
 
 
@@ -339,12 +357,12 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     }
   }
 
-  private static final class Macros extends PropertyValueQuery.Base {
+  private static final class PropMacro extends PropertyValueQuery.Base {
     private final SNodeReference myMacro;
     private final String myMethodName;
     private QueryMethod<Object> myMethod;
 
-    public Macros(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
+    public PropMacro(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
       super(propertyName, templateValue);
       myMacro = macro;
       myMethodName = methodName;
