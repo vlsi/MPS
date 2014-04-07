@@ -96,7 +96,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return QueryMethodGenerated.<Boolean>invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new ReductionRuleQueryContext(templateContext, ruleNode, myGenerator),
+          new ReductionRuleQueryContext(templateContext, ruleNode.getReference()),
           ruleNode.getModel(),
           true);
     } catch (ClassNotFoundException e) {
@@ -119,7 +119,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       cond = myQuerySource.getQueryProvider(qr).getIfMacroCondition(ifMacro);
       myIfMacroConditions.put(qr, cond);
     }
-    return cond.check(new IfMacroContext(context.subContext(inputNode), qr, myGenerator));
+    return cond.check(new IfMacroContext(context.subContext(inputNode), qr));
   }
 
   @Override
@@ -131,7 +131,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return (SNode) QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new MapSrcMacroContext(context, parentOutputNode, mapSrcNodeOrListMacro.getReference(), myGenerator),
+          new MapSrcMacroContext(context, parentOutputNode, mapSrcNodeOrListMacro.getReference()),
           mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       getLog().handleException(t);
@@ -152,7 +152,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new MapSrcMacroPostProcContext(context, outputNode, mapSrcNodeOrListMacro.getReference(), myGenerator),
+          new MapSrcMacroPostProcContext(context, outputNode, mapSrcNodeOrListMacro.getReference()),
           mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       getLog().handleException(t);
@@ -170,7 +170,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       final Object tv = q.getTemplateValue();
       // I don't see a reason to delegate to this.evaluate - subclasses do treat these two implementations separately,
       // and this deprecated method shall not be used anyway
-      Object macroValue = q.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), qr, myGenerator));
+      Object macroValue = q.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), qr));
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       SNodeAccessUtil.setProperty(outputNode, q.getPropertyName(), propertyValue);
     } catch (GenerationFailureException ex) {
@@ -186,7 +186,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException {
     final Object tv = query.getTemplateValue();
-    return query.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), query.getMacro(), myGenerator));
+    return query.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), query.getMacro()));
   }
 
   @Override
@@ -203,7 +203,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         q = myQuerySource.getQueryProvider(qr).getSourceNodeQuery(query);
         myNodeQueries.put(qr, q);
       }
-      return q.evaluate(new SourceSubstituteMacroNodeContext(context, templateNode.getReference(), myGenerator));
+      return q.evaluate(new SourceSubstituteMacroNodeContext(context, templateNode.getReference()));
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable th) {
@@ -220,7 +220,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new TemplateQueryContext(query.getParent(), context, myGenerator),
+          new TemplateArgumentContext(context, query.getReference()),
           query.getModel());
     } catch (NoSuchMethodException e) {
       getLog().warning(query.getReference(), String.format("cannot find argument query '%s' : evaluate to null", methodName));
@@ -239,7 +239,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new TemplateQueryContext(query.getParent(), context, myGenerator),
+          new TemplateVarContext(context, query.getReference()),
           query.getModel());
     } catch (NoSuchMethodException e) {
       getLog().warning(query.getReference(), String.format("cannot find variable value query '%s' : evaluate to null", methodName));
@@ -273,7 +273,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         q = myQuerySource.getQueryProvider(qr).getSourceNodesQuery(query);
         myNodesQueries.put(qr, q);
       }
-      final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, templateNode.getReference(), myGenerator));
+      final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, templateNode.getReference()));
 
       CollectionUtil.checkForNulls(result, "null values in source nodes");
       return result;
@@ -290,13 +290,13 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.insertMacro_Query(query);
     try {
-      Object result = QueryMethodGenerated.invoke(
+      return QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new TemplateQueryContextWithMacro(context, macroNode.getReference(), myGenerator),
-          query.getModel());
+          new TemplateQueryContextWithMacro(context, macroNode.getReference()),
+          query.getModel(),
+          true);
 
-      return (SNode) result;
     } catch (NoSuchMethodException e) {
       getLog().warning(macroNode.getReference(), String.format("cannot find query '%s' : evaluate to null", methodName));
       return null;
@@ -318,7 +318,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         return (SNode) QueryMethodGenerated.invoke(
             methodName,
             myGenerator.getGeneratorSessionContext(),
-            new TemplateFragmentContext(mainContextNode, templateFragmentNode, context, myGenerator),
+            new TemplateFragmentContext(context, mainContextNode, templateFragmentNode.getReference()),
             query.getModel());
       } catch (NoSuchMethodException e) {
         getLog().warning(templateFragmentNode.getReference(), "cannot find context node method for template fragment '" + methodName + "' : evaluate to null");
@@ -348,7 +348,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new ReferenceMacroContext(context, outputNode, refMacro.getReference(), AttributeOperations.getLinkRole(refMacro), myGenerator),
+          new ReferenceMacroContext(context, outputNode, refMacro.getReference(), AttributeOperations.getLinkRole(refMacro)),
           refMacro.getModel());
 
     } catch (Throwable t) {

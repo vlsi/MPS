@@ -79,7 +79,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
     if (myCondition == null) {
       myCondition = environment.getQueryProvider(getRuleNode()).getMapRootRuleCondition(myRuleNode);
     }
-    return myCondition.check(new MapRootRuleContext(context, getRuleNode(), environment.getGenerator()));
+    return myCondition.check(new MapRootRuleContext(context, getRuleNode()));
   }
 
   @Override

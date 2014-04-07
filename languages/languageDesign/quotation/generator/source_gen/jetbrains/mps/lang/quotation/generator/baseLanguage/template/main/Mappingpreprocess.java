@@ -97,7 +97,7 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_8274572146452630995(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_8274572146452630995(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -116,7 +116,7 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
             environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468140239188");
             environment.resolve(new ReferenceResolver() {
               public Object resolve(SNode outputNode, TemplateContext context) {
-                return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(new ReferenceMacroContext(context, tnode2, referenceMacro_pbbzd9_c0a0a0a0a0a0c0b0d0d0c51, "concept", environment.getGenerator()));
+                return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(new ReferenceMacroContext(context, tnode2, referenceMacro_pbbzd9_c0a0a0a0a0a0c0b0d0d0c51, "concept"));
               }
 
               public String getDefaultResolveInfo() {
@@ -140,7 +140,7 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
                   Collection<SNode> tlist4 = null;
                   try {
                     environment.getTracer().pushMacro(copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a3a2p);
-                    final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context, copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a3a2p, environment.getGenerator()));
+                    final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context, copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a3a2p));
                     tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a3a2p, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286808", context);
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_pbbzd9_a0a0a1a5a1a4a1a3a3a2p);

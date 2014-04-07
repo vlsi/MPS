@@ -66,7 +66,7 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
     if (myQuery == null) {
       myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(myRuleNode);
     }
-    return myQuery.pattern(new PatternRuleContext(context, getRuleNode(), env.getGenerator()));
+    return myQuery.pattern(new PatternRuleContext(context, getRuleNode()));
   }
 
   @Override

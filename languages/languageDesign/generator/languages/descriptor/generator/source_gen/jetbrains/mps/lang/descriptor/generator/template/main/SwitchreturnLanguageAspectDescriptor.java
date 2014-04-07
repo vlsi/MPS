@@ -62,7 +62,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_1570228009929814973(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_1570228009929814973(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -161,7 +161,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314435416");
                         environment.resolve(new ReferenceResolver() {
                           public Object resolve(SNode outputNode, TemplateContext context) {
-                            return QueriesGenerated.referenceMacro_GetReferent_4565427742316037865(new ReferenceMacroContext(context, tnode9, referenceMacro_2tkj9d_c0a0a0a0a0a0c0b0e0b0d0b0d0b0e0d0c7, "variableDeclaration", environment.getGenerator()));
+                            return QueriesGenerated.referenceMacro_GetReferent_4565427742316037865(new ReferenceMacroContext(context, tnode9, referenceMacro_2tkj9d_c0a0a0a0a0a0c0b0e0b0d0b0d0b0e0d0c7, "variableDeclaration"));
                           }
 
                           public String getDefaultResolveInfo() {
@@ -214,7 +214,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_2tkj9d_a0a0a1a3a1a3a1a3a1a4a1a3a1a4a3a2h);
                                 environment.nodeCopied(context, tnode13, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315531960");
-                                SNodeAccessUtil.setProperty(tnode13, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0c0b0d0b0d0b0d0b0e0b0d0b0e0d0c7, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode13, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0c0b0d0b0d0b0d0b0e0b0d0b0e0d0c7))));
 
                                 {
                                   final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
@@ -248,7 +248,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                                 environment.nodeCopied(context, tnode15, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315521540");
                                 environment.resolve(new ReferenceResolver() {
                                   public Object resolve(SNode outputNode, TemplateContext context) {
-                                    return QueriesGenerated.referenceMacro_GetReferent_4565427742316079240(new ReferenceMacroContext(context, tnode15, referenceMacro_2tkj9d_c0a0a0a0a0a0c0b0e0b0d0b0d0b0e0b0d0b0e0d0c7, "variableDeclaration", environment.getGenerator()));
+                                    return QueriesGenerated.referenceMacro_GetReferent_4565427742316079240(new ReferenceMacroContext(context, tnode15, referenceMacro_2tkj9d_c0a0a0a0a0a0c0b0e0b0d0b0d0b0e0b0d0b0e0d0c7, "variableDeclaration"));
                                   }
 
                                   public String getDefaultResolveInfo() {
@@ -340,7 +340,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                         environment.nodeCopied(context, tnode19, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315473184");
                         environment.resolve(new ReferenceResolver() {
                           public Object resolve(SNode outputNode, TemplateContext context) {
-                            return QueriesGenerated.referenceMacro_GetReferent_4565427742316090271(new ReferenceMacroContext(context, tnode19, referenceMacro_2tkj9d_c0a0a0a0a0a0c0b0e0b0d0b0e0b0e0d0c7, "variableDeclaration", environment.getGenerator()));
+                            return QueriesGenerated.referenceMacro_GetReferent_4565427742316090271(new ReferenceMacroContext(context, tnode19, referenceMacro_2tkj9d_c0a0a0a0a0a0c0b0e0b0d0b0e0b0e0d0c7, "variableDeclaration"));
                           }
 
                           public String getDefaultResolveInfo() {

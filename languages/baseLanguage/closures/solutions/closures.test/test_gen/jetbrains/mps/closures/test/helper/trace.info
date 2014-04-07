@@ -69,38 +69,38 @@
     <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="21" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507395260">
-    <nodeInfo nodeId="7178287329507546914" fileName="MockTemplateQueryContext.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sessionObjects" />
-    <nodeInfo nodeId="7178287329507396063" fileName="MockTemplateQueryContext.java" startLine="14" startPosition="37" endLine="15" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7178287329507551690" fileName="MockTemplateQueryContext.java" startLine="27" startPosition="60" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507551715" fileName="MockTemplateQueryContext.java" startLine="28" startPosition="35" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507551717" fileName="MockTemplateQueryContext.java" startLine="33" startPosition="46" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MockTemplateQueryContext#()V" />
-    <nodeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showWarningMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showErrorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSessionObject#(Ljava/lang/Object;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
-    <scopeInfo nodeId="7178287329507395274" fileName="MockTemplateQueryContext.java" startLine="19" startPosition="61" endLine="19" endPosition="61" />
-    <scopeInfo nodeId="7178287329507395287" fileName="MockTemplateQueryContext.java" startLine="23" startPosition="59" endLine="23" endPosition="59" />
-    <scopeInfo nodeId="7178287329507395265" fileName="MockTemplateQueryContext.java" startLine="14" startPosition="37" endLine="15" endPosition="51" />
-    <scopeInfo nodeId="7178287329507400244" fileName="MockTemplateQueryContext.java" startLine="33" startPosition="46" endLine="34" endPosition="35" />
-    <scopeInfo nodeId="7178287329507400231" fileName="MockTemplateQueryContext.java" startLine="27" startPosition="60" endLine="29" endPosition="17" />
-    <scopeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+    <nodeInfo nodeId="7178287329507546914" fileName="MockTemplateQueryContext.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sessionObjects" />
+    <nodeInfo nodeId="7178287329507396063" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7178287329507551690" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507551715" fileName="MockTemplateQueryContext.java" startLine="27" startPosition="35" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507551717" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="46" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MockTemplateQueryContext#()V" />
+    <nodeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showWarningMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showErrorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSessionObject#(Ljava/lang/Object;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
+    <scopeInfo nodeId="7178287329507395274" fileName="MockTemplateQueryContext.java" startLine="18" startPosition="61" endLine="18" endPosition="61" />
+    <scopeInfo nodeId="7178287329507395287" fileName="MockTemplateQueryContext.java" startLine="22" startPosition="59" endLine="22" endPosition="59" />
+    <scopeInfo nodeId="7178287329507395265" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" />
+    <scopeInfo nodeId="7178287329507400244" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="46" endLine="33" endPosition="35" />
+    <scopeInfo nodeId="7178287329507400231" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="28" endPosition="17" />
+    <scopeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="7178287329507395270" varName="node" />
       <varInfo nodeId="7178287329507395272" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="7178287329507395283" varName="node" />
       <varInfo nodeId="7178287329507395285" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7178287329507400242" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7178287329507400227" varName="key" />
       <varInfo nodeId="7178287329507400229" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="7178287329507395260" fileName="MockTemplateQueryContext.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.closures.test.helper.MockTemplateQueryContext" />
+    <unitInfo nodeId="7178287329507395260" fileName="MockTemplateQueryContext.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.closures.test.helper.MockTemplateQueryContext" />
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507546162">
     <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="23" startPosition="43" endLine="24" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

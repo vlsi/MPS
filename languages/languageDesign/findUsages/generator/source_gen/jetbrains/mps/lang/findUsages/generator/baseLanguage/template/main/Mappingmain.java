@@ -174,11 +174,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist2 = null;
           try {
             environment.getTracer().pushMacro(ifMacroRef_417xrn_a0a0a1a5a3a1v);
-            if (QueriesGenerated.ifMacro_Condition_4192433084863763888(new IfMacroContext(context, ifMacroRef_417xrn_a0a0a1a5a3a1v, environment.getGenerator()))) {
+            if (QueriesGenerated.ifMacro_Condition_4192433084863763888(new IfMacroContext(context, ifMacroRef_417xrn_a0a0a1a5a3a1v))) {
               Collection<SNode> tlist3 = null;
               try {
                 environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a1a1a5a3a1v);
-                final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4192433084863763900(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a1a1a5a3a1v, environment.getGenerator()));
+                final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4192433084863763900(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a1a1a5a3a1v));
                 tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_417xrn_a0a0a1a1a1a5a3a1v, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763886", context);
               } finally {
                 environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a1a1a5a3a1v);
@@ -226,7 +226,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist7 = null;
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a6a3a1v);
-            final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_4192433084863763908(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a6a3a1v, environment.getGenerator()));
+            final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_4192433084863763908(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a6a3a1v));
             tlist7 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput7), copySrcMacro_417xrn_a0a0a1a6a3a1v, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763906", context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a6a3a1v);
@@ -240,11 +240,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist9 = null;
           try {
             environment.getTracer().pushMacro(ifMacroRef_417xrn_a0a0a1a7a3a1v);
-            if (QueriesGenerated.ifMacro_Condition_4192433084863763916(new IfMacroContext(context, ifMacroRef_417xrn_a0a0a1a7a3a1v, environment.getGenerator()))) {
+            if (QueriesGenerated.ifMacro_Condition_4192433084863763916(new IfMacroContext(context, ifMacroRef_417xrn_a0a0a1a7a3a1v))) {
               Collection<SNode> tlist10 = null;
               try {
                 environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a1a1a7a3a1v);
-                final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_4192433084863763927(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a1a1a7a3a1v, environment.getGenerator()));
+                final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_4192433084863763927(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a1a1a7a3a1v));
                 tlist10 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput10), copySrcMacro_417xrn_a0a0a1a1a1a7a3a1v, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763914", context);
               } finally {
                 environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a1a1a7a3a1v);
@@ -278,7 +278,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final List<SNode> tlist13 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a8a3a1v);
-            final Iterable<SNode> loopList13 = QueriesGenerated.sourceNodesQuery_4192433084863763935(new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a8a3a1v, environment.getGenerator()));
+            final Iterable<SNode> loopList13 = QueriesGenerated.sourceNodesQuery_4192433084863763935(new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a8a3a1v));
             for (SNode itnode13 : loopList13) {
               if (itnode13 == null) {
                 continue;
@@ -293,7 +293,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a3a2a2a1a8a3a1v);
                   environment.nodeCopied(context13, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763933");
-                  SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4192433084863763942(new PropertyMacroContext(context13, "", propertyMacro_417xrn_c0a0c0c0d0c0c0b0i0d0b12, environment.getGenerator()))));
+                  SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4192433084863763942(new PropertyMacroContext(context13, "", propertyMacro_417xrn_c0a0c0c0d0c0c0b0i0d0b12))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode14));
@@ -344,7 +344,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a5a3a1w);
-            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_6366407517031517860(new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a5a3a1w, environment.getGenerator()));
+            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_6366407517031517860(new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a5a3a1w));
             for (SNode itnode2 : loopList2) {
               if (itnode2 == null) {
                 continue;
@@ -367,7 +367,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a3a2a2a1a5a3a1w);
                       environment.nodeCopied(context2, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/6366407517031517849");
-                      SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6366407517031517851(new PropertyMacroContext(context2, "", propertyMacro_417xrn_c0a0c0c0b0f0d0c0c0b0f0d0b22, environment.getGenerator()))));
+                      SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6366407517031517851(new PropertyMacroContext(context2, "", propertyMacro_417xrn_c0a0c0c0b0f0d0c0c0b0f0d0b22))));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
@@ -446,7 +446,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.createRootRule_Condition_7991477654791680147(new CreateRootRuleContext(createRootRule_417xrn_a0a1y, environment.getGenerator())))) {
+      if (!(QueriesGenerated.createRootRule_Condition_7991477654791680147(new CreateRootRuleContext(context, createRootRule_417xrn_a0a1y)))) {
         return false;
       }
       return true;

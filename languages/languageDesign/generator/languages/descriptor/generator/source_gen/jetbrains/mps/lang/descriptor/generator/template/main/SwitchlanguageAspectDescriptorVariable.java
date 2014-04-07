@@ -60,7 +60,7 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4565427742314546853(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_4565427742314546853(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -97,7 +97,7 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
             try {
               environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a5a3a3a2h);
               environment.nodeCopied(context1, tnode4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314907605");
-              SNodeAccessUtil.setProperty(tnode4, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742314939782(new PropertyMacroContext(context1, "EditorAspectDescriptor", propertyMacro_mjol5z_c0a0c0c0b0f0d0d0c7, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode4, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742314939782(new PropertyMacroContext(context1, "EditorAspectDescriptor", propertyMacro_mjol5z_c0a0c0c0b0f0d0d0c7))));
               tnode4.setReference("classifier", SReference.create("classifier", tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
 
             } finally {

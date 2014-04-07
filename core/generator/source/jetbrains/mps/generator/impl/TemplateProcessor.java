@@ -488,7 +488,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     protected IfMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
       SNode alternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
-      myAlternativeConsequence = RuleConsequenceProcessor.prepare(alternativeConsequence);
+      myAlternativeConsequence = alternativeConsequence == null ? null : RuleConsequenceProcessor.prepare(alternativeConsequence);
     }
 
     @NotNull

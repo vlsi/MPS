@@ -44,7 +44,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
           SNode tnode3 = null;
           try {
             environment.getTracer().pushMacro(insertMacro_q702qm_a0a0a2a1a5a1a2);
-            final SNode insertInput3 = QueriesGenerated.insertMacro_Query_7612440128092282150(new TemplateQueryContextWithMacro(context, insertMacro_q702qm_a0a0a2a1a5a1a2, environment.getGenerator()));
+            final SNode insertInput3 = QueriesGenerated.insertMacro_Query_7612440128092282150(new TemplateQueryContextWithMacro(context, insertMacro_q702qm_a0a0a2a1a5a1a2));
             tnode3 = environment.insertNode(insertInput3, insertMacro_q702qm_a0a0a2a1a5a1a2, context);
             if (tnode3 != null) {
               environment.registerLabel(context.getInput(), tnode3, "testLabel1");
@@ -55,7 +55,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
           tlist2 = TemplateUtil.singletonList(tnode3);
           if (tlist2.size() == 1) {
             SNode outputContextVar3 = tlist2.iterator().next();
-            final Iterable<SNode> weaveList3 = QueriesGenerated.sourceNodesQuery_8417539822878722925(new SourceSubstituteMacroNodesContext(context, weaveMacroRef_q702qm_a0a0a1a5a1a2, environment.getGenerator()));
+            final Iterable<SNode> weaveList3 = QueriesGenerated.sourceNodesQuery_8417539822878722925(new SourceSubstituteMacroNodesContext(context, weaveMacroRef_q702qm_a0a0a1a5a1a2));
             for (SNode itnode3 : weaveList3) {
               if (itnode3 == null) {
                 continue;
@@ -91,7 +91,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         Collection<SNode> tlist5 = null;
         try {
           environment.getTracer().pushMacro(copySrcListMacro_q702qm_a0a0a1a6a1a2);
-          final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_1206460249786(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_a0a0a1a6a1a2, environment.getGenerator()));
+          final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_1206460249786(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_a0a0a1a6a1a2));
           tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_q702qm_a0a0a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", context);
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_q702qm_a0a0a1a6a1a2);
@@ -106,7 +106,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a7a1a2);
           environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f9/8014813979421777297");
-          SNodeAccessUtil.setProperty(tnode7, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context, "foobar", propertyMacro_q702qm_c0a0c0c0b0h0b0c, environment.getGenerator()))));
+          SNodeAccessUtil.setProperty(tnode7, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context, "foobar", propertyMacro_q702qm_c0a0c0c0b0h0b0c))));
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));

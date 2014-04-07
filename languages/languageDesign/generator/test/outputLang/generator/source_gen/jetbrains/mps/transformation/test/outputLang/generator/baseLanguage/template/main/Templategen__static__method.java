@@ -392,7 +392,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                   environment.nodeCopied(context, tnode27, "tpl/r:00000000-0000-4000-0000-011c89590606/4923130412071452762");
                   environment.resolve(new ReferenceResolver() {
                     public Object resolve(SNode outputNode, TemplateContext context) {
-                      return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(new ReferenceMacroContext(context, tnode27, referenceMacro_tq9j2a_c0a0a0a0a0a0c0b0d0b0d0b0g0b0d, "baseMethodDeclaration", environment.getGenerator()));
+                      return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(new ReferenceMacroContext(context, tnode27, referenceMacro_tq9j2a_c0a0a0a0a0a0c0b0d0b0d0b0g0b0d, "baseMethodDeclaration"));
                     }
 
                     public String getDefaultResolveInfo() {

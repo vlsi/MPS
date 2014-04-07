@@ -51,9 +51,10 @@ public class PatternRuleContext extends BaseMappingRuleContext {
   /**
    * @since 3.1
    */
-  public PatternRuleContext(@NotNull TemplateContext context, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(context, ruleNode, generator);
+  public PatternRuleContext(@NotNull TemplateContext context, @NotNull SNodeReference ruleNode) {
+    super(context, ruleNode);
   }
+
 
   public void createPatternContext(GeneratedMatchingPattern pattern) {
     myContext = myContext.subContext(pattern);

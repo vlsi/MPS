@@ -41,7 +41,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
     Collection<SNode> tlist1 = null;
     try {
       environment.getTracer().pushMacro(varMacroRef_g27wod_a0a0a1a2);
-      final Object varValue1 = QueriesGenerated.insertMacro_varValue_429601079676845415(new TemplateVarContext(context, varMacroRef_g27wod_a0a0a1a2, environment.getGenerator()));
+      final Object varValue1 = QueriesGenerated.insertMacro_varValue_429601079676845415(new TemplateVarContext(context, varMacroRef_g27wod_a0a0a1a2));
       TemplateContext context1 = context.subContext(Collections.<String,Object>singletonMap("var:root", varValue1));
       final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
       try {
@@ -57,7 +57,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             try {
               environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a3a1a3a4a1a2);
               environment.nodeCopied(context3, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784");
-              SNodeAccessUtil.setProperty(tnode4, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676781980(new PropertyMacroContext(context3, "_node_", propertyMacro_g27wod_c0a0c0c0d0b0d0e0b0c, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode4, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676781980(new PropertyMacroContext(context3, "_node_", propertyMacro_g27wod_c0a0c0c0d0b0d0e0b0c))));
 
               {
                 final SNode tnode5 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
@@ -87,7 +87,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a5a1a5a3a1a3a4a1a2);
                       environment.nodeCopied(context3, tnode7, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676781344");
-                      SNodeAccessUtil.setProperty(tnode7, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676781346(new PropertyMacroContext(context3, "conceptFqName", propertyMacro_g27wod_c0a0c0c0b0f0b0f0d0b0d0e0b0c, environment.getGenerator()))));
+                      SNodeAccessUtil.setProperty(tnode7, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676781346(new PropertyMacroContext(context3, "conceptFqName", propertyMacro_g27wod_c0a0c0c0b0f0b0f0d0b0d0e0b0c))));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
@@ -102,7 +102,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                     Collection<SNode> tlist8 = null;
                     try {
                       environment.getTracer().pushMacro(ifMacroRef_g27wod_a0a0a1a6a1a5a3a1a3a4a1a2);
-                      if (QueriesGenerated.ifMacro_Condition_429601079676782080(new IfMacroContext(context3, ifMacroRef_g27wod_a0a0a1a6a1a5a3a1a3a4a1a2, environment.getGenerator()))) {
+                      if (QueriesGenerated.ifMacro_Condition_429601079676782080(new IfMacroContext(context3, ifMacroRef_g27wod_a0a0a1a6a1a5a3a1a3a4a1a2))) {
                         final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.CastExpression");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a1a1a6a1a5a3a1a3a4a1a2);
@@ -131,7 +131,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               environment.nodeCopied(context3, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151605602");
                               environment.resolve(new ReferenceResolver() {
                                 public Object resolve(SNode outputNode, TemplateContext context) {
-                                  return QueriesGenerated.referenceMacro_GetReferent_429601079676782068(new ReferenceMacroContext(context, tnode11, referenceMacro_g27wod_c0a0a0a0a0a0c0b0e0b0b0b0g0b0f0d0b0d0e0b0c, "variableDeclaration", environment.getGenerator()));
+                                  return QueriesGenerated.referenceMacro_GetReferent_429601079676782068(new ReferenceMacroContext(context, tnode11, referenceMacro_g27wod_c0a0a0a0a0a0c0b0e0b0b0b0g0b0f0d0b0d0e0b0c, "variableDeclaration"));
                                 }
 
                                 public String getDefaultResolveInfo() {
@@ -244,7 +244,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist18 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a3a1a3a1a3);
-              final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_429601079676785722(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a3a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_429601079676785722(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a3a1a3a1a3));
               for (SNode itnode18 : loopList18) {
                 if (itnode18 == null) {
                   continue;
@@ -309,7 +309,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a3a1a3a1a3);
                                 environment.nodeCopied(context18, tnode24, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676785697");
-                                SNodeAccessUtil.setProperty(tnode24, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676785699(new PropertyMacroContext(context18, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0d0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode24, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676785699(new PropertyMacroContext(context18, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0d0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode24));
@@ -324,7 +324,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               Collection<SNode> tlist25 = null;
                               try {
                                 environment.getTracer().pushMacro(copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3);
-                                final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_429601079676786028(new SourceSubstituteMacroNodeContext(context18, copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3, environment.getGenerator()));
+                                final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_429601079676786028(new SourceSubstituteMacroNodeContext(context18, copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3));
                                 tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676785706", context18);
                               } finally {
                                 environment.getTracer().closeMacro(copySrcMacro_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a3a1a3a1a3);
@@ -377,7 +377,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist28 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a4a1a3a1a3);
-              final Iterable<SNode> loopList28 = QueriesGenerated.sourceNodesQuery_429601079676786596(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a4a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList28 = QueriesGenerated.sourceNodesQuery_429601079676786596(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a4a1a3a1a3));
               for (SNode itnode28 : loopList28) {
                 if (itnode28 == null) {
                   continue;
@@ -442,7 +442,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a4a1a3a1a3);
                                 environment.nodeCopied(context28, tnode34, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786577");
-                                SNodeAccessUtil.setProperty(tnode34, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786579(new PropertyMacroContext(context28, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0e0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode34, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786579(new PropertyMacroContext(context28, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0e0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode34));
@@ -468,7 +468,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                     environment.nodeCopied(context28, tnode36, "tpl/r:00000000-0000-4000-0000-011c8959034c/3143347504358680258");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
-                                        return QueriesGenerated.referenceMacro_GetReferent_3143347504358680260(new ReferenceMacroContext(context, tnode36, referenceMacro_g27wod_c0a0a0a0a0a0c0b0f0b0f0b0e0b0d0d0c0c0b0e0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                        return QueriesGenerated.referenceMacro_GetReferent_3143347504358680260(new ReferenceMacroContext(context, tnode36, referenceMacro_g27wod_c0a0a0a0a0a0c0b0f0b0f0b0e0b0d0d0c0c0b0e0b0d0b0d, "variableDeclaration"));
                                       }
 
                                       public String getDefaultResolveInfo() {
@@ -541,7 +541,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist38 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a5a1a3a1a3);
-              final Iterable<SNode> loopList38 = QueriesGenerated.sourceNodesQuery_429601079676786279(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a5a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList38 = QueriesGenerated.sourceNodesQuery_429601079676786279(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a5a1a3a1a3));
               for (SNode itnode38 : loopList38) {
                 if (itnode38 == null) {
                   continue;
@@ -606,7 +606,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a5a1a3a1a3);
                                 environment.nodeCopied(context38, tnode44, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786260");
-                                SNodeAccessUtil.setProperty(tnode44, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786262(new PropertyMacroContext(context38, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0f0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode44, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786262(new PropertyMacroContext(context38, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0f0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode44));
@@ -643,7 +643,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   Collection<SNode> tlist47 = null;
                                   try {
                                     environment.getTracer().pushMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3);
-                                    final SNode copySrcInput47 = QueriesGenerated.sourceNodeQuery_429601079676786354(new SourceSubstituteMacroNodeContext(context38, copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3, environment.getGenerator()));
+                                    final SNode copySrcInput47 = QueriesGenerated.sourceNodeQuery_429601079676786354(new SourceSubstituteMacroNodeContext(context38, copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3));
                                     tlist47 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput47), copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786342", context38);
                                   } finally {
                                     environment.getTracer().closeMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a5a1a3a1a3);
@@ -705,7 +705,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist50 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a6a1a3a1a3);
-              final Iterable<SNode> loopList50 = QueriesGenerated.sourceNodesQuery_429601079676786433(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a6a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList50 = QueriesGenerated.sourceNodesQuery_429601079676786433(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a6a1a3a1a3));
               for (SNode itnode50 : loopList50) {
                 if (itnode50 == null) {
                   continue;
@@ -770,7 +770,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a6a1a3a1a3);
                                 environment.nodeCopied(context50, tnode56, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786414");
-                                SNodeAccessUtil.setProperty(tnode56, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786416(new PropertyMacroContext(context50, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0g0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode56, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786416(new PropertyMacroContext(context50, "propertyName", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0g0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode56));
@@ -807,7 +807,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   Collection<SNode> tlist59 = null;
                                   try {
                                     environment.getTracer().pushMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3);
-                                    final SNode copySrcInput59 = QueriesGenerated.sourceNodeQuery_429601079676786508(new SourceSubstituteMacroNodeContext(context50, copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3, environment.getGenerator()));
+                                    final SNode copySrcInput59 = QueriesGenerated.sourceNodeQuery_429601079676786508(new SourceSubstituteMacroNodeContext(context50, copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3));
                                     tlist59 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput59), copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786498", context50);
                                   } finally {
                                     environment.getTracer().closeMacro(copySrcMacro_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a6a1a3a1a3);
@@ -869,7 +869,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist62 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a7a1a3a1a3);
-              final Iterable<SNode> loopList62 = QueriesGenerated.sourceNodesQuery_429601079676782514(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a7a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList62 = QueriesGenerated.sourceNodesQuery_429601079676782514(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a7a1a3a1a3));
               for (SNode itnode62 : loopList62) {
                 if (itnode62 == null) {
                   continue;
@@ -934,7 +934,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                 environment.nodeCopied(context62, tnode68, "tpl/r:00000000-0000-4000-0000-011c8959034c/6508799415740249752");
-                                SNodeAccessUtil.setProperty(tnode68, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6508799415740249754(new PropertyMacroContext(context62, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0h0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode68, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6508799415740249754(new PropertyMacroContext(context62, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0h0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode68));
@@ -958,7 +958,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a5a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                     environment.nodeCopied(context62, tnode70, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782483");
-                                    SNodeAccessUtil.setProperty(tnode70, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676782485(new PropertyMacroContext(context62, "role", propertyMacro_g27wod_c0a0c0c0b0f0b0f0b0e0b0d0d0c0c0b0h0b0d0b0d, environment.getGenerator()))));
+                                    SNodeAccessUtil.setProperty(tnode70, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676782485(new PropertyMacroContext(context62, "role", propertyMacro_g27wod_c0a0c0c0b0f0b0f0b0e0b0d0d0c0c0b0h0b0d0b0d))));
 
                                   } finally {
                                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode70));
@@ -1003,7 +1003,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a1a7a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                             environment.nodeCopied(context62, tnode74, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782494");
-                                            SNodeAccessUtil.setProperty(tnode74, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676782496(new PropertyMacroContext(context62, "targetModel", propertyMacro_g27wod_c0a0c0c0b0e0b0d0b0h0b0f0b0e0b0d0d0c0c0b0h0b0d0b0d, environment.getGenerator()))));
+                                            SNodeAccessUtil.setProperty(tnode74, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676782496(new PropertyMacroContext(context62, "targetModel", propertyMacro_g27wod_c0a0c0c0b0e0b0d0b0h0b0f0b0e0b0d0d0c0c0b0h0b0d0b0d))));
 
                                           } finally {
                                             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode74));
@@ -1066,7 +1066,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a1a8a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                             environment.nodeCopied(context62, tnode78, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782504");
-                                            SNodeAccessUtil.setProperty(tnode78, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676782506(new PropertyMacroContext(context62, "targetNodeId", propertyMacro_g27wod_c0a0c0c0b0e0b0d0b0i0b0f0b0e0b0d0d0c0c0b0h0b0d0b0d, environment.getGenerator()))));
+                                            SNodeAccessUtil.setProperty(tnode78, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676782506(new PropertyMacroContext(context62, "targetNodeId", propertyMacro_g27wod_c0a0c0c0b0e0b0d0b0i0b0f0b0e0b0d0d0c0c0b0h0b0d0b0d))));
 
                                           } finally {
                                             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode78));
@@ -1163,7 +1163,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist81 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a8a1a3a1a3);
-              final Iterable<SNode> loopList81 = QueriesGenerated.sourceNodesQuery_429601079676786923(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a8a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList81 = QueriesGenerated.sourceNodesQuery_429601079676786923(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a8a1a3a1a3));
               for (SNode itnode81 : loopList81) {
                 if (itnode81 == null) {
                   continue;
@@ -1228,7 +1228,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a8a1a3a1a3);
                                 environment.nodeCopied(context81, tnode87, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786875");
-                                SNodeAccessUtil.setProperty(tnode87, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786877(new PropertyMacroContext(context81, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0i0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode87, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676786877(new PropertyMacroContext(context81, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0i0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode87));
@@ -1252,7 +1252,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                     environment.nodeCopied(context81, tnode89, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151356958");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
-                                        return QueriesGenerated.referenceMacro_GetReferent_429601079676787208(new ReferenceMacroContext(context, tnode89, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0i0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                        return QueriesGenerated.referenceMacro_GetReferent_429601079676787208(new ReferenceMacroContext(context, tnode89, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0i0b0d0b0d, "variableDeclaration"));
                                       }
 
                                       public String getDefaultResolveInfo() {
@@ -1340,7 +1340,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist92 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a9a1a3a1a3);
-              final Iterable<SNode> loopList92 = QueriesGenerated.sourceNodesQuery_429601079676787549(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a9a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList92 = QueriesGenerated.sourceNodesQuery_429601079676787549(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a9a1a3a1a3));
               for (SNode itnode92 : loopList92) {
                 if (itnode92 == null) {
                   continue;
@@ -1405,7 +1405,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a9a1a3a1a3);
                                 environment.nodeCopied(context92, tnode98, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787525");
-                                SNodeAccessUtil.setProperty(tnode98, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676787527(new PropertyMacroContext(context92, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0j0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode98, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676787527(new PropertyMacroContext(context92, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0j0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode98));
@@ -1429,7 +1429,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                     environment.nodeCopied(context92, tnode100, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905150310987");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
-                                        return QueriesGenerated.referenceMacro_GetReferent_429601079676787538(new ReferenceMacroContext(context, tnode100, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0j0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                        return QueriesGenerated.referenceMacro_GetReferent_429601079676787538(new ReferenceMacroContext(context, tnode100, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0j0b0d0b0d, "variableDeclaration"));
                                       }
 
                                       public String getDefaultResolveInfo() {
@@ -1517,7 +1517,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist103 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a01a1a3a1a3);
-              final Iterable<SNode> loopList103 = QueriesGenerated.sourceNodesQuery_429601079676787985(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a01a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList103 = QueriesGenerated.sourceNodesQuery_429601079676787985(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a01a1a3a1a3));
               for (SNode itnode103 : loopList103) {
                 if (itnode103 == null) {
                   continue;
@@ -1594,7 +1594,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a1a3a1a3a3a2a2a1a01a1a3a1a3);
                                         environment.nodeCopied(context103, tnode111, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676788780");
-                                        SNodeAccessUtil.setProperty(tnode111, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676788782(new PropertyMacroContext(context103, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0b0d0b0d0d0c0c0b0k0b0d0b0d, environment.getGenerator()))));
+                                        SNodeAccessUtil.setProperty(tnode111, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676788782(new PropertyMacroContext(context103, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0b0d0b0d0d0c0c0b0k0b0d0b0d))));
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode111));
@@ -1701,7 +1701,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                             environment.nodeCopied(context103, tnode116, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151608284");
                             environment.resolve(new ReferenceResolver() {
                               public Object resolve(SNode outputNode, TemplateContext context) {
-                                return QueriesGenerated.referenceMacro_GetReferent_429601079676787973(new ReferenceMacroContext(context, tnode116, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0f0d0c0c0b0k0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                return QueriesGenerated.referenceMacro_GetReferent_429601079676787973(new ReferenceMacroContext(context, tnode116, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0f0d0c0c0b0k0b0d0b0d, "variableDeclaration"));
                               }
 
                               public String getDefaultResolveInfo() {
@@ -1786,7 +1786,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist120 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a11a1a3a1a3);
-              final Iterable<SNode> loopList120 = QueriesGenerated.sourceNodesQuery_429601079676789822(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a11a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList120 = QueriesGenerated.sourceNodesQuery_429601079676789822(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a11a1a3a1a3));
               for (SNode itnode120 : loopList120) {
                 if (itnode120 == null) {
                   continue;
@@ -1800,12 +1800,12 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                   Collection<SNode> tlist121 = null;
                   try {
                     environment.getTracer().pushMacro(varMacroRef_g27wod_a0a0a3a2a2a1a11a1a3a1a3);
-                    final Object varValue121 = QueriesGenerated.insertMacro_varValue_429601079676789872(new TemplateVarContext(context120, varMacroRef_g27wod_a0a0a3a2a2a1a11a1a3a1a3, environment.getGenerator()));
+                    final Object varValue121 = QueriesGenerated.insertMacro_varValue_429601079676789872(new TemplateVarContext(context120, varMacroRef_g27wod_a0a0a3a2a2a1a11a1a3a1a3));
                     TemplateContext context121 = context120.subContext(Collections.<String,Object>singletonMap("var:outer", varValue121));
                     final List<SNode> tlist122 = new ArrayList<SNode>();
                     try {
                       environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a4a3a2a2a1a11a1a3a1a3);
-                      final Iterable<SNode> loopList122 = QueriesGenerated.sourceNodesQuery_429601079676789878(new SourceSubstituteMacroNodesContext(context121, loopMacroRef_g27wod_a0a0a4a3a2a2a1a11a1a3a1a3, environment.getGenerator()));
+                      final Iterable<SNode> loopList122 = QueriesGenerated.sourceNodesQuery_429601079676789878(new SourceSubstituteMacroNodesContext(context121, loopMacroRef_g27wod_a0a0a4a3a2a2a1a11a1a3a1a3));
                       for (SNode itnode122 : loopList122) {
                         if (itnode122 == null) {
                           continue;
@@ -1840,7 +1840,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                         environment.nodeCopied(context122, tnode126, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363111130");
                                         environment.resolve(new ReferenceResolver() {
                                           public Object resolve(SNode outputNode, TemplateContext context) {
-                                            return QueriesGenerated.referenceMacro_GetReferent_429601079677083064(new ReferenceMacroContext(context, tnode126, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0d0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                            return QueriesGenerated.referenceMacro_GetReferent_429601079677083064(new ReferenceMacroContext(context, tnode126, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0d0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d, "variableDeclaration"));
                                           }
 
                                           public String getDefaultResolveInfo() {
@@ -1882,7 +1882,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3);
                                         environment.nodeCopied(context122, tnode128, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789801");
-                                        SNodeAccessUtil.setProperty(tnode128, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676789803(new PropertyMacroContext(context122, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d, environment.getGenerator()))));
+                                        SNodeAccessUtil.setProperty(tnode128, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676789803(new PropertyMacroContext(context122, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d))));
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode128));
@@ -1921,7 +1921,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                             environment.nodeCopied(context122, tnode131, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151612451");
                                             environment.resolve(new ReferenceResolver() {
                                               public Object resolve(SNode outputNode, TemplateContext context) {
-                                                return QueriesGenerated.referenceMacro_GetReferent_429601079676789933(new ReferenceMacroContext(context, tnode131, referenceMacro_g27wod_c0a0a0a0a0a0c0b0e0b0f0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                                return QueriesGenerated.referenceMacro_GetReferent_429601079676789933(new ReferenceMacroContext(context, tnode131, referenceMacro_g27wod_c0a0a0a0a0a0c0b0e0b0f0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d, "variableDeclaration"));
                                               }
 
                                               public String getDefaultResolveInfo() {
@@ -2010,7 +2010,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             Collection<SNode> tlist133 = null;
             try {
               environment.getTracer().pushMacro(copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3);
-              final Iterable<SNode> copyListInput133 = QueriesGenerated.sourceNodesQuery_429601079676845658(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> copyListInput133 = QueriesGenerated.sourceNodesQuery_429601079676845658(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3));
               tlist133 = environment.copyNodes(copyListInput133, copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676845575", context);
             } finally {
               environment.getTracer().closeMacro(copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3);
@@ -2024,7 +2024,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist135 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a31a1a3a1a3);
-              final Iterable<SNode> loopList135 = QueriesGenerated.sourceNodesQuery_429601079676789067(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a31a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList135 = QueriesGenerated.sourceNodesQuery_429601079676789067(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a31a1a3a1a3));
               for (SNode itnode135 : loopList135) {
                 if (itnode135 == null) {
                   continue;
@@ -2089,7 +2089,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a31a1a3a1a3);
                                 environment.nodeCopied(context135, tnode141, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789043");
-                                SNodeAccessUtil.setProperty(tnode141, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676789045(new PropertyMacroContext(context135, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0n0b0d0b0d, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode141, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676789045(new PropertyMacroContext(context135, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0b0n0b0d0b0d))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode141));
@@ -2107,7 +2107,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                 environment.nodeCopied(context135, tnode142, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363090073");
                                 environment.resolve(new ReferenceResolver() {
                                   public Object resolve(SNode outputNode, TemplateContext context) {
-                                    return QueriesGenerated.referenceMacro_GetReferent_429601079676846587(new ReferenceMacroContext(context, tnode142, referenceMacro_g27wod_c0a0a0a0a0a0c0b0f0b0e0b0d0d0c0c0b0n0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                    return QueriesGenerated.referenceMacro_GetReferent_429601079676846587(new ReferenceMacroContext(context, tnode142, referenceMacro_g27wod_c0a0a0a0a0a0c0b0f0b0e0b0d0d0c0c0b0n0b0d0b0d, "variableDeclaration"));
                                   }
 
                                   public String getDefaultResolveInfo() {
@@ -2171,7 +2171,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
             final List<SNode> tlist144 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a1a41a1a3a1a3);
-              final Iterable<SNode> loopList144 = QueriesGenerated.sourceNodesQuery_429601079676789416(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a41a1a3a1a3, environment.getGenerator()));
+              final Iterable<SNode> loopList144 = QueriesGenerated.sourceNodesQuery_429601079676789416(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g27wod_a0a0a1a41a1a3a1a3));
               for (SNode itnode144 : loopList144) {
                 if (itnode144 == null) {
                   continue;
@@ -2185,12 +2185,12 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                   Collection<SNode> tlist145 = null;
                   try {
                     environment.getTracer().pushMacro(varMacroRef_g27wod_a0a0a3a2a2a1a41a1a3a1a3);
-                    final Object varValue145 = QueriesGenerated.insertMacro_varValue_429601079676789499(new TemplateVarContext(context144, varMacroRef_g27wod_a0a0a3a2a2a1a41a1a3a1a3, environment.getGenerator()));
+                    final Object varValue145 = QueriesGenerated.insertMacro_varValue_429601079676789499(new TemplateVarContext(context144, varMacroRef_g27wod_a0a0a3a2a2a1a41a1a3a1a3));
                     TemplateContext context145 = context144.subContext(Collections.<String,Object>singletonMap("var:outer", varValue145));
                     final List<SNode> tlist146 = new ArrayList<SNode>();
                     try {
                       environment.getTracer().pushMacro(loopMacroRef_g27wod_a0a0a4a3a2a2a1a41a1a3a1a3);
-                      final Iterable<SNode> loopList146 = QueriesGenerated.sourceNodesQuery_429601079676789520(new SourceSubstituteMacroNodesContext(context145, loopMacroRef_g27wod_a0a0a4a3a2a2a1a41a1a3a1a3, environment.getGenerator()));
+                      final Iterable<SNode> loopList146 = QueriesGenerated.sourceNodesQuery_429601079676789520(new SourceSubstituteMacroNodesContext(context145, loopMacroRef_g27wod_a0a0a4a3a2a2a1a41a1a3a1a3));
                       for (SNode itnode146 : loopList146) {
                         if (itnode146 == null) {
                           continue;
@@ -2225,7 +2225,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                         environment.nodeCopied(context146, tnode150, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363113553");
                                         environment.resolve(new ReferenceResolver() {
                                           public Object resolve(SNode outputNode, TemplateContext context) {
-                                            return QueriesGenerated.referenceMacro_GetReferent_429601079677082939(new ReferenceMacroContext(context, tnode150, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0d0b0d0d0c0c0e0d0c0c0b0o0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                            return QueriesGenerated.referenceMacro_GetReferent_429601079677082939(new ReferenceMacroContext(context, tnode150, referenceMacro_g27wod_c0a0a0a0a0a0c0b0d0b0d0b0d0d0c0c0e0d0c0c0b0o0b0d0b0d, "variableDeclaration"));
                                           }
 
                                           public String getDefaultResolveInfo() {
@@ -2267,7 +2267,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a4a3a2a2a1a41a1a3a1a3);
                                         environment.nodeCopied(context146, tnode152, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789395");
-                                        SNodeAccessUtil.setProperty(tnode152, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676789397(new PropertyMacroContext(context146, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0e0d0c0c0b0o0b0d0b0d, environment.getGenerator()))));
+                                        SNodeAccessUtil.setProperty(tnode152, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_429601079676789397(new PropertyMacroContext(context146, "role", propertyMacro_g27wod_c0a0c0c0b0e0b0e0b0d0d0c0c0e0d0c0c0b0o0b0d0b0d))));
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode152));
@@ -2285,7 +2285,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                         environment.nodeCopied(context146, tnode153, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363113475");
                                         environment.resolve(new ReferenceResolver() {
                                           public Object resolve(SNode outputNode, TemplateContext context) {
-                                            return QueriesGenerated.referenceMacro_GetReferent_429601079676846089(new ReferenceMacroContext(context, tnode153, referenceMacro_g27wod_c0a0a0a0a0a0c0b0f0b0e0b0d0d0c0c0e0d0c0c0b0o0b0d0b0d, "variableDeclaration", environment.getGenerator()));
+                                            return QueriesGenerated.referenceMacro_GetReferent_429601079676846089(new ReferenceMacroContext(context, tnode153, referenceMacro_g27wod_c0a0a0a0a0a0c0b0f0b0e0b0d0d0c0c0e0d0c0c0b0o0b0d0b0d, "variableDeclaration"));
                                           }
 
                                           public String getDefaultResolveInfo() {

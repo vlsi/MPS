@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,34 +37,33 @@ import java.util.List;
  */
 public class TemplateQueryContext {
 
-  @Nullable
-  private final SNode myInputNode;
-  @Nullable
   private final SNodeReference myTemplateNode;
-  @NotNull
-  private final ITemplateGenerator myGenerator;
-  @Nullable
   protected TemplateContext myContext;
+  private final ITemplateGenerator myGenerator;
 
-  // cons with less restrictions (null/notnull) implied. shall not become public
-  protected TemplateQueryContext(SNode inputNode, SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
-    myInputNode = inputNode;
+  /**
+   * @deprecated Use  alternative with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
+  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+    this(templateNode == null ? null : templateNode.getReference(), context == null ? new DefaultTemplateContext(inputNode) : context.subContext(inputNode), generator);
+  }
+
+  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context) {
+    myContext = context;
+    myTemplateNode = templateNode;
+    myGenerator = context.getEnvironment().getGenerator();
+  }
+
+  /**
+   * Cons for code migration purposes - cases when TemplateContext is 'fake' and doesn't know its environment, and, hence, its generator
+   */
+  @ToRemove(version = 3.1)
+  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
     myContext = context;
     myTemplateNode = templateNode;
     myGenerator = generator;
-  }
-
-  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
-    this(inputNode, templateNode == null ? null : templateNode.getReference(), context, generator);
-  }
-
-  // protected for the time being, unless decided to expose it (seems to be nice idea, after all)
-  protected TemplateQueryContext(@Nullable SNode templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    this(context.getInput(), templateNode == null ? null : templateNode.getReference(), context, generator);
-  }
-
-  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    this(context.getInput(), templateNode, context, generator);
   }
 
   /**
@@ -74,7 +75,7 @@ public class TemplateQueryContext {
 
 
   public SNode getInputNode() {
-    return myInputNode;
+    return myContext.getInput();
   }
 
   public SNode getOutputNode() {
@@ -172,7 +173,7 @@ public class TemplateQueryContext {
   }
 
   public String createUniqueName(String baseName, SNode contextNode) {
-    return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode, myInputNode);
+    return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode, getInputNode());
   }
 
   public IOperationContext getInvocationContext() {

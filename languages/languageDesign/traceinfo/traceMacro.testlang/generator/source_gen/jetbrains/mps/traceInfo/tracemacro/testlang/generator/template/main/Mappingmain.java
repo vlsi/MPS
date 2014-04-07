@@ -110,7 +110,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist2 = null;
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a3a3a1p);
-            final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_7980748436587788180(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a3a3a1p, environment.getGenerator()));
+            final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_7980748436587788180(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a3a3a1p));
             tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a3a3a1p, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587788173", context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a3a3a1p);
@@ -124,7 +124,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist4 = null;
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a3a1p);
-            final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7980748436587788201(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a4a3a1p, environment.getGenerator()));
+            final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7980748436587788201(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a4a3a1p));
             tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_417xrn_a0a0a1a4a3a1p, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587788174", context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a3a1p);
@@ -139,13 +139,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
           try {
             environment.getTracer().pushMacro(traceMacro_417xrn_a0a0a1a5a3a1p);
             // calculate input 
-            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_7980748436587793693(new SourceSubstituteMacroNodeContext(context, traceMacro_417xrn_a0a0a1a5a3a1p, environment.getGenerator()));
+            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_7980748436587793693(new SourceSubstituteMacroNodeContext(context, traceMacro_417xrn_a0a0a1a5a3a1p));
             // calculate output 
             final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable");
             try {
               environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a5a1a5a3a1p);
               environment.nodeCopied(context, tnode7, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587793601");
-              SNodeAccessUtil.setProperty(tnode7, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(new PropertyMacroContext(context, "var", propertyMacro_417xrn_c0a0c0c0f0b0f0d0b51, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode7, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(new PropertyMacroContext(context, "var", propertyMacro_417xrn_c0a0c0c0f0b0f0d0b51))));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
@@ -180,7 +180,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_7980748436587793846(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_7980748436587793846(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -193,7 +193,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         environment.nodeCopied(context, tnode1, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587793724");
         environment.resolve(new ReferenceResolver() {
           public Object resolve(SNode outputNode, TemplateContext context) {
-            return QueriesGenerated.referenceMacro_GetReferent_7980748436587793726(new ReferenceMacroContext(context, tnode1, referenceMacro_417xrn_c0a0a0a0a0a0c0d0c61, "variable", environment.getGenerator()));
+            return QueriesGenerated.referenceMacro_GetReferent_7980748436587793726(new ReferenceMacroContext(context, tnode1, referenceMacro_417xrn_c0a0a0a0a0a0c0d0c61, "variable"));
           }
 
           public String getDefaultResolveInfo() {

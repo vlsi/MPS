@@ -37,7 +37,7 @@ public class TemplateGenerator implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1698302279987270980");
-      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1698302279987411159(new PropertyMacroContext(context, "Generator", propertyMacro_g5r92k_c0a0c0c0b0c, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1698302279987411159(new PropertyMacroContext(context, "Generator", propertyMacro_g5r92k_c0a0c0c0b0c))));
 
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -112,7 +112,7 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a6a1a2);
               environment.nodeCopied(context, tnode7, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/7633657384060768608");
-              SNodeAccessUtil.setProperty(tnode7, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7633657384060768610(new PropertyMacroContext(context, "module.reference", propertyMacro_g5r92k_c0a0c0c0b0g0b0g0b0c, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode7, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7633657384060768610(new PropertyMacroContext(context, "module.reference", propertyMacro_g5r92k_c0a0c0c0b0g0b0g0b0c))));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
@@ -183,7 +183,7 @@ public class TemplateGenerator implements TemplateDeclaration {
         Collection<SNode> tlist11 = null;
         try {
           environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a8a1a2);
-          if (QueriesGenerated.ifMacro_Condition_1820665478710807083(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a8a1a2, environment.getGenerator()))) {
+          if (QueriesGenerated.ifMacro_Condition_1820665478710807083(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a8a1a2))) {
             final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a8a1a2);
@@ -257,7 +257,7 @@ public class TemplateGenerator implements TemplateDeclaration {
         Collection<SNode> tlist17 = null;
         try {
           environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a9a1a2);
-          if (QueriesGenerated.ifMacro_Condition_6655394244919403419(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a9a1a2, environment.getGenerator()))) {
+          if (QueriesGenerated.ifMacro_Condition_6655394244919403419(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a9a1a2))) {
             final SNode tnode18 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a9a1a2);
@@ -331,7 +331,7 @@ public class TemplateGenerator implements TemplateDeclaration {
         Collection<SNode> tlist23 = null;
         try {
           environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a01a1a2);
-          if (QueriesGenerated.ifMacro_Condition_1250389701475281189(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a01a1a2, environment.getGenerator()))) {
+          if (QueriesGenerated.ifMacro_Condition_1250389701475281189(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a01a1a2))) {
             final SNode tnode24 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a01a1a2);
@@ -602,7 +602,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                 Collection<SNode> tlist43 = null;
                 try {
                   environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a4a1a5a1a21a1a2);
-                  if (QueriesGenerated.ifMacro_Condition_1820665478710839778(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a4a1a5a1a21a1a2, environment.getGenerator()))) {
+                  if (QueriesGenerated.ifMacro_Condition_1820665478710839778(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a4a1a5a1a21a1a2))) {
                     final SNode tnode44 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a4a1a5a1a21a1a2);
@@ -642,7 +642,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 final List<SNode> tlist48 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2);
-                                  final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1820665478710839750(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2, environment.getGenerator()));
+                                  final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1820665478710839750(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2));
                                   for (SNode itnode48 : loopList48) {
                                     if (itnode48 == null) {
                                       continue;
@@ -715,7 +715,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                 Collection<SNode> tlist52 = null;
                 try {
                   environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a5a1a5a1a21a1a2);
-                  if (QueriesGenerated.ifMacro_Condition_3829836699770777506(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a5a1a5a1a21a1a2, environment.getGenerator()))) {
+                  if (QueriesGenerated.ifMacro_Condition_3829836699770777506(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a5a1a5a1a21a1a2))) {
                     final SNode tnode53 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a5a1a5a1a21a1a2);
@@ -771,7 +771,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 final List<SNode> tlist58 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
-                                  final Iterable<SNode> loopList58 = QueriesGenerated.sourceNodesQuery_3829836699771395556(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2, environment.getGenerator()));
+                                  final Iterable<SNode> loopList58 = QueriesGenerated.sourceNodesQuery_3829836699771395556(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2));
                                   for (SNode itnode58 : loopList58) {
                                     if (itnode58 == null) {
                                       continue;
@@ -793,7 +793,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a3a2a2a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
                                             environment.nodeCopied(context58, tnode60, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/3829836699770960050");
-                                            SNodeAccessUtil.setProperty(tnode60, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3829836699771176869(new PropertyMacroContext(context58, "model.TemplateModelImpl", propertyMacro_g5r92k_c0a0c0c0b0e0d0c0c0b0g0b0e0b0d0b0b0b0f0b0f0b0m0b0c, environment.getGenerator()))));
+                                            SNodeAccessUtil.setProperty(tnode60, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3829836699771176869(new PropertyMacroContext(context58, "model.TemplateModelImpl", propertyMacro_g5r92k_c0a0c0c0b0e0d0c0c0b0g0b0e0b0d0b0b0b0f0b0f0b0m0b0c))));
 
                                           } finally {
                                             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode60));
@@ -862,7 +862,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                 Collection<SNode> tlist63 = null;
                 try {
                   environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a6a1a5a1a21a1a2);
-                  if (QueriesGenerated.ifMacro_Condition_1250389701475344465(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a6a1a5a1a21a1a2, environment.getGenerator()))) {
+                  if (QueriesGenerated.ifMacro_Condition_1250389701475344465(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a6a1a5a1a21a1a2))) {
                     final SNode tnode64 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a6a1a5a1a21a1a2);
@@ -902,7 +902,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 final List<SNode> tlist68 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2);
-                                  final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1250389701475344450(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2, environment.getGenerator()));
+                                  final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1250389701475344450(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2));
                                   for (SNode itnode68 : loopList68) {
                                     if (itnode68 == null) {
                                       continue;
@@ -917,7 +917,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a3a2a2a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2);
                                         environment.nodeCopied(context68, tnode69, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475344443");
-                                        SNodeAccessUtil.setProperty(tnode69, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1250389701475344482(new PropertyMacroContext(context68, "language.namespace/generator.uuid", propertyMacro_g5r92k_c0a0c0c0d0c0c0b0f0b0e0b0d0b0b0b0g0b0f0b0m0b0c, environment.getGenerator()))));
+                                        SNodeAccessUtil.setProperty(tnode69, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1250389701475344482(new PropertyMacroContext(context68, "language.namespace/generator.uuid", propertyMacro_g5r92k_c0a0c0c0d0c0c0b0f0b0e0b0d0b0b0b0g0b0f0b0m0b0c))));
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode69));
@@ -1029,7 +1029,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                             final List<SNode> tlist77 = new ArrayList<SNode>();
                             try {
                               environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2);
-                              final Iterable<SNode> loopList77 = QueriesGenerated.sourceNodesQuery_1250389701475431822(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2, environment.getGenerator()));
+                              final Iterable<SNode> loopList77 = QueriesGenerated.sourceNodesQuery_1250389701475431822(new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2));
                               for (SNode itnode77 : loopList77) {
                                 if (itnode77 == null) {
                                   continue;
@@ -1044,7 +1044,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a3a2a2a1a5a1a4a1a3a1a7a1a5a1a21a1a2);
                                     environment.nodeCopied(context77, tnode78, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475431809");
-                                    SNodeAccessUtil.setProperty(tnode78, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1250389701475432571(new PropertyMacroContext(context77, "", propertyMacro_g5r92k_c0a0c0c0d0c0c0b0f0b0e0b0d0b0h0b0f0b0m0b0c, environment.getGenerator()))));
+                                    SNodeAccessUtil.setProperty(tnode78, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1250389701475432571(new PropertyMacroContext(context77, "", propertyMacro_g5r92k_c0a0c0c0d0c0c0b0f0b0e0b0d0b0h0b0f0b0m0b0c))));
 
                                   } finally {
                                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode78));
@@ -1217,7 +1217,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a3a1a3a1a9a1a31a1a2);
                       environment.nodeCopied(context, tnode88, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646533");
-                      SNodeAccessUtil.setProperty(tnode88, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5102832340571646536(new PropertyMacroContext(context, "", propertyMacro_g5r92k_c0a0c0c0b0d0b0d0b0j0b0n0b0c, environment.getGenerator()))));
+                      SNodeAccessUtil.setProperty(tnode88, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5102832340571646536(new PropertyMacroContext(context, "", propertyMacro_g5r92k_c0a0c0c0b0d0b0d0b0j0b0n0b0c))));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode88));
@@ -1344,7 +1344,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                     Collection<SNode> tlist96 = null;
                     try {
                       environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a41a1a2);
-                      if (QueriesGenerated.ifMacro_Condition_6655394244919461209(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a41a1a2, environment.getGenerator()))) {
+                      if (QueriesGenerated.ifMacro_Condition_6655394244919461209(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a41a1a2))) {
                         final SNode tnode97 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a3a1a3a1a9a1a41a1a2);
@@ -1494,7 +1494,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                     Collection<SNode> tlist107 = null;
                     try {
                       environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a51a1a2);
-                      if (QueriesGenerated.ifMacro_Condition_1820665478710839798(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a51a1a2, environment.getGenerator()))) {
+                      if (QueriesGenerated.ifMacro_Condition_1820665478710839798(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a51a1a2))) {
                         final SNode tnode108 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a3a1a3a1a9a1a51a1a2);
@@ -2044,7 +2044,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                     Collection<SNode> tlist143 = null;
                     try {
                       environment.getTracer().pushMacro(ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a91a1a2);
-                      if (QueriesGenerated.ifMacro_Condition_1250389701475344489(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a91a1a2, environment.getGenerator()))) {
+                      if (QueriesGenerated.ifMacro_Condition_1250389701475344489(new IfMacroContext(context, ifMacroRef_g5r92k_a0a0a1a3a1a3a1a9a1a91a1a2))) {
                         final SNode tnode144 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a3a1a3a1a9a1a91a1a2);

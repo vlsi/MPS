@@ -115,7 +115,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a1a1r);
-      Collection<SNode> tlist1 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599916822(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0c0b71, environment.getGenerator())))).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599916822(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0c0b71)))).apply(environment, context);
       return tlist1;
     }
   }
@@ -127,7 +127,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4929591503636513204(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_4929591503636513204(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -135,9 +135,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a1a2s);
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_7496726876599935510(new BaseMappingRuleContext(context, rule_417xrn_b0a0d0c81, environment.getGenerator()))) {
+      if (QueriesGenerated.baseMappingRule_Condition_7496726876599935510(new BaseMappingRuleContext(context, rule_417xrn_b0a0d0c81))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a3a2s);
-        Collection<SNode> tlist2 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0d0c81, environment.getGenerator())))).apply(environment, context);
+        Collection<SNode> tlist2 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0d0c81)))).apply(environment, context);
         tlist1 = tlist2;
       } else {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0d0c81);
@@ -154,7 +154,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4929591503636589503(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_4929591503636589503(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -164,7 +164,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       Collection<SNode> tlist1 = null;
       try {
         environment.getTracer().pushMacro(ifMacroRef_417xrn_a0a0a3a2t);
-        if (QueriesGenerated.ifMacro_Condition_4929591503636643306(new IfMacroContext(context, ifMacroRef_417xrn_a0a0a3a2t, environment.getGenerator()))) {
+        if (QueriesGenerated.ifMacro_Condition_4929591503636643306(new IfMacroContext(context, ifMacroRef_417xrn_a0a0a3a2t))) {
           final SNode tnode2 = environment.createOutputNode("jetbrains.mps.lang.core.structure.BaseConcept");
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a1a3a2t);
@@ -177,7 +177,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           tlist1 = TemplateUtil.singletonList(tnode2);
         } else {
           environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0b0d0c91);
-          Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636646079(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0a1a3a2t, environment.getGenerator())))).apply(environment, context);
+          Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636646079(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0a1a3a2t)))).apply(environment, context);
           tlist1 = tlist3;
         }
 
@@ -195,7 +195,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4929591503636614138(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+      return QueriesGenerated.baseMappingRule_Condition_4929591503636614138(new ReductionRuleQueryContext(context, getRuleNode()));
     }
 
     @Override
@@ -203,7 +203,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a1a2u);
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(new BaseMappingRuleContext(context, rule_417xrn_b0a0d0c02, environment.getGenerator()))) {
+      if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(new BaseMappingRuleContext(context, rule_417xrn_b0a0d0c02))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a3a2u);
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.lang.core.structure.BaseConcept");
         try {
@@ -217,7 +217,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0d0c02);
-        Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636680081(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0a3a2u, environment.getGenerator())))).apply(environment, context);
+        Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636680081(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0a3a2u)))).apply(environment, context);
         tlist1 = tlist3;
       }
       return tlist1;

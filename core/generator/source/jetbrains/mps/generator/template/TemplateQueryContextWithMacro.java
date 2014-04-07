@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -25,18 +26,32 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public class TemplateQueryContextWithMacro extends TemplateQueryContext {
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public TemplateQueryContextWithMacro(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(inputNode, macroNode, context, generator);
   }
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public TemplateQueryContextWithMacro(SNode inputNode, SNodeReference macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, macroNode, context, generator);
+    super(macroNode, context.subContext(inputNode));
   }
 
-  // public, not protected - although work in progress and, perhaps, ITemplateGenerator shall be gone, as well, there are usages
-  // e.g. in InsertMacro, that instantiate this context directly and may benefit from this cons.
-  public TemplateQueryContextWithMacro(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(macroNode, context, generator);
+
+  /**
+   * @since 3.1
+   */
+  public TemplateQueryContextWithMacro(@NotNull TemplateContext context, @NotNull SNodeReference macroNode) {
+    // public, not protected - although work in progress and, perhaps, ITemplateGenerator shall be gone, as well, there are usages
+    // e.g. in InsertMacro, that instantiate this context directly and may benefit from this cons.
+    super(macroNode, context);
   }
 
   @Override

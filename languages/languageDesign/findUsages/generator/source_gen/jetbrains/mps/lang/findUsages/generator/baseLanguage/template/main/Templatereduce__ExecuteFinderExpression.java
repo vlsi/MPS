@@ -43,7 +43,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
         try {
           environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789321857");
-          SNodeAccessUtil.setProperty(tnode2, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5097877160789321859(new PropertyMacroContext(context, "", propertyMacro_qubm7t_c0a0c0c0b0f0b0c, environment.getGenerator()))));
+          SNodeAccessUtil.setProperty(tnode2, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5097877160789321859(new PropertyMacroContext(context, "", propertyMacro_qubm7t_c0a0c0c0b0f0b0c))));
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
@@ -58,7 +58,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
         Collection<SNode> tlist3 = null;
         try {
           environment.getTracer().pushMacro(copySrcMacro_qubm7t_a0a0a1a6a1a2);
-          final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_5097877160789322137(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_a0a0a1a6a1a2, environment.getGenerator()));
+          final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_5097877160789322137(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_a0a0a1a6a1a2));
           tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_qubm7t_a0a0a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322135", context);
         } finally {
           environment.getTracer().closeMacro(copySrcMacro_qubm7t_a0a0a1a6a1a2);
@@ -72,7 +72,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
         Collection<SNode> tlist5 = null;
         try {
           environment.getTracer().pushMacro(ifMacroRef_qubm7t_a0a0a1a7a1a2);
-          if (QueriesGenerated.ifMacro_Condition_5097877160789322145(new IfMacroContext(context, ifMacroRef_qubm7t_a0a0a1a7a1a2, environment.getGenerator()))) {
+          if (QueriesGenerated.ifMacro_Condition_5097877160789322145(new IfMacroContext(context, ifMacroRef_qubm7t_a0a0a1a7a1a2))) {
             final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
             try {
               environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a1a1a7a1a2);
@@ -89,7 +89,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
             Collection<SNode> tlist7 = null;
             try {
               environment.getTracer().pushMacro(copySrcMacro_qubm7t_a0a0a2a0b0b0h0b0c);
-              final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_5097877160789322156(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_a0a0a2a0b0b0h0b0c, environment.getGenerator()));
+              final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_5097877160789322156(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_a0a0a2a0b0b0h0b0c));
               tlist7 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput7), copySrcMacro_qubm7t_a0a0a2a0b0b0h0b0c, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322154", context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_qubm7t_a0a0a2a0b0b0h0b0c);
@@ -109,11 +109,11 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
         Collection<SNode> tlist9 = null;
         try {
           environment.getTracer().pushMacro(ifMacroRef_qubm7t_a0a0a1a8a1a2);
-          if (QueriesGenerated.ifMacro_Condition_5097877160789322167(new IfMacroContext(context, ifMacroRef_qubm7t_a0a0a1a8a1a2, environment.getGenerator()))) {
+          if (QueriesGenerated.ifMacro_Condition_5097877160789322167(new IfMacroContext(context, ifMacroRef_qubm7t_a0a0a1a8a1a2))) {
             Collection<SNode> tlist10 = null;
             try {
               environment.getTracer().pushMacro(ifMacroRef_qubm7t_a0a0a1a1a1a8a1a2);
-              if (QueriesGenerated.ifMacro_Condition_5097877160789322202(new IfMacroContext(context, ifMacroRef_qubm7t_a0a0a1a1a1a8a1a2, environment.getGenerator()))) {
+              if (QueriesGenerated.ifMacro_Condition_5097877160789322202(new IfMacroContext(context, ifMacroRef_qubm7t_a0a0a1a1a1a8a1a2))) {
                 final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.DotExpression");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a1a1a1a1a8a1a2);
@@ -177,7 +177,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                 Collection<SNode> tlist15 = null;
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_qubm7t_a0a0a2a0b0b0b0b0i0b0c);
-                  final SNode copySrcInput15 = QueriesGenerated.sourceNodeQuery_5097877160789322213(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_a0a0a2a0b0b0b0b0i0b0c, environment.getGenerator()));
+                  final SNode copySrcInput15 = QueriesGenerated.sourceNodeQuery_5097877160789322213(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_a0a0a2a0b0b0b0b0i0b0c));
                   tlist15 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput15), copySrcMacro_qubm7t_a0a0a2a0b0b0b0b0i0b0c, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322211", context);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_qubm7t_a0a0a2a0b0b0b0b0i0b0c);

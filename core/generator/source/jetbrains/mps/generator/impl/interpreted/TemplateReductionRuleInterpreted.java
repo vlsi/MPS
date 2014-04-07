@@ -70,7 +70,7 @@ public class TemplateReductionRuleInterpreted extends ReductionRuleBase implemen
     if (myCondition == null) {
       myCondition = env.getQueryProvider(getRuleNode()).getReductionRuleCondition(myRuleNode);
     }
-    return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+    return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode()));
   }
 
   @Override

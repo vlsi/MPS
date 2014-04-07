@@ -96,7 +96,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     if (myContentNodeQuery == null) {
       myContentNodeQuery = environment.getQueryProvider(getRuleNode()).getWeaveRuleQuery(myRuleNode);
     }
-    return myContentNodeQuery.contextNode(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
+    return myContentNodeQuery.contextNode(new WeavingMappingRuleContext(context, getRuleNode()));
   }
 
   @Override
@@ -104,7 +104,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     if (myCondition == null) {
       myCondition = environment.getQueryProvider(getRuleNode()).getWeaveRuleCondition(myRuleNode);
     }
-    return myCondition.check(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
+    return myCondition.check(new WeavingMappingRuleContext(context, getRuleNode()));
   }
 
   @Override
