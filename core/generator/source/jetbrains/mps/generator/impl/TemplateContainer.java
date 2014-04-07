@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateProcessor;
@@ -36,7 +36,7 @@ import java.util.List;
  * <p>For weave rule/macro there's {@link jetbrains.mps.generator.impl.WeaveTemplateContainer} counterpart.
  * @author Artem Tikhomirov
  */
-public class TemplateContainer {
+public class TemplateContainer implements RuleConsequenceProcessor.Consequence {
   private final SNode myTemplateNode;
   private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
 
@@ -52,6 +52,7 @@ public class TemplateContainer {
   /*
    * Initialize container once for a template, then apply multiple times.
    */
+  @Override
   public void initialize() throws TemplateProcessingFailureException {
     if (myNodeAndMappingNamePairs != null) {
       return;
@@ -65,7 +66,8 @@ public class TemplateContainer {
   }
 
   @NotNull
-  public List<SNode> apply(@NotNull TemplateContext ctx) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  @Override
+  public List<SNode> apply(@NotNull TemplateContext ctx) throws GenerationException {
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
     final TemplateExecutionEnvironment environment = ctx.getEnvironment();
     final GenerationTrace tracer = environment.getTrace();

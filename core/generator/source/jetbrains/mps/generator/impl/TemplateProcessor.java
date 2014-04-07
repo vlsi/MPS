@@ -482,11 +482,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   // $IF$
   private static class IfMacro extends MacroImpl {
-    private final SNode myAlternativeConsequence;
+    private final RuleConsequenceProcessor myAlternativeConsequence;
 
     protected IfMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
-      myAlternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
+      SNode alternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
+      myAlternativeConsequence = new RuleConsequenceProcessor(alternativeConsequence);
     }
 
     @NotNull
@@ -501,12 +502,20 @@ public final class TemplateProcessor implements ITemplateProcessor {
           return Collections.emptyList();
         }
         try {
-          RuleConsequenceProcessor rcp = new RuleConsequenceProcessor();
-          rcp.prepare(myAlternativeConsequence, templateContext);
-          return rcp.processRuleConsequence();
+          myAlternativeConsequence.prepare(); // FIXME can't move to cons as there's exception
+          return myAlternativeConsequence.processRuleConsequence(templateContext);
         } catch (AbandonRuleInputException ex) {
           // it's ok. just ignore
           return Collections.emptyList();
+        } catch (DismissTopMappingRuleException ex) {
+          throw ex;
+        } catch (GenerationFailureException ex) {
+          throw ex;
+        } catch (GenerationCanceledException ex) {
+          throw ex;
+        } catch (GenerationException ex) {
+          // can't happen
+          throw new GenerationFailureException(ex);
         }
       }
     }
@@ -710,6 +719,15 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
       try {
         return tc.apply(newcontext);
+      } catch (DismissTopMappingRuleException ex) {
+        throw ex;
+      } catch (GenerationFailureException ex) {
+        throw ex;
+      } catch (GenerationCanceledException ex) {
+        throw ex;
+      } catch (GenerationException ex) {
+        // can't get here
+        throw new GenerationFailureException(ex);
       } finally {
         myTracer.closeTemplateNode(invokedTemplateRef);
         if (inputChanged) {

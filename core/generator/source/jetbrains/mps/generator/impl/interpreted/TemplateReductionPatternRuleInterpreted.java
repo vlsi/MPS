@@ -75,9 +75,8 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
       throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(templateContext));
     }
 
-    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor();
-    templateContext = templateContext.subContext(myRuleMappingName);
-    rcp.prepare(myRuleConsequence, templateContext);
-    return rcp.processRuleConsequence();
+    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(myRuleConsequence);
+    rcp.prepare();
+    return rcp.processRuleConsequence(templateContext.subContext(myRuleMappingName));
   }
 }

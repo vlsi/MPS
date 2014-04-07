@@ -90,10 +90,9 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     }
 
     try {
-      RuleConsequenceProcessor rcp = new RuleConsequenceProcessor();
-      context = context.subContext(mappingName);
-      rcp.prepare(defaultConsequence, context);
-      return rcp.processRuleConsequence();
+      RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(defaultConsequence);
+      rcp.prepare();
+      return rcp.processRuleConsequence(context.subContext(mappingName));
     } catch (AbandonRuleInputException ex) {
       // it's ok. just ignore
       return Collections.emptyList();

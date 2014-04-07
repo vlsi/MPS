@@ -65,10 +65,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
   private final Map<SNodeReference,IfMacroCondition> myIfMacroConditions = new ConcurrentHashMap<SNodeReference, IfMacroCondition>();
 
-//  public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, ) {
-//    this(generator, qps, true);
-//  }
-
   public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, @NotNull GeneratorQueryProvider.Source qps) {
     this(generator, qps, true);
   }
