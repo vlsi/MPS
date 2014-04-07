@@ -70,8 +70,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   @Override
   @NotNull
-  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
-      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context) throws DismissTopMappingRuleException, GenerationFailureException,
+      GenerationCanceledException {
     if (myGenerator.isIncremental()) {
       // turn off tracing
       NodeReadEventsCaster.setNodesReadListener(null);
@@ -262,7 +262,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
       return myMappingLabel;
     }
 
-    protected final List<SNode> nextMacro(TemplateContext context) throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException {
+    protected final List<SNode> nextMacro(TemplateContext context)
+        throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
       if (getNextMacro() != null) {
         return myTemplateProcessor.applyMacro(getNextMacro(), context);
       } else {
@@ -487,7 +488,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     protected IfMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
       SNode alternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
-      myAlternativeConsequence = new RuleConsequenceProcessor(alternativeConsequence);
+      myAlternativeConsequence = RuleConsequenceProcessor.prepare(alternativeConsequence);
     }
 
     @NotNull
@@ -502,20 +503,10 @@ public final class TemplateProcessor implements ITemplateProcessor {
           return Collections.emptyList();
         }
         try {
-          myAlternativeConsequence.prepare(); // FIXME can't move to cons as there's exception
           return myAlternativeConsequence.processRuleConsequence(templateContext);
         } catch (AbandonRuleInputException ex) {
           // it's ok. just ignore
           return Collections.emptyList();
-        } catch (DismissTopMappingRuleException ex) {
-          throw ex;
-        } catch (GenerationFailureException ex) {
-          throw ex;
-        } catch (GenerationCanceledException ex) {
-          throw ex;
-        } catch (GenerationException ex) {
-          // can't happen
-          throw new GenerationFailureException(ex);
         }
       }
     }
@@ -673,13 +664,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
     protected abstract TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode);
 
-    private TemplateContainer getTemplates() throws TemplateProcessingFailureException {
+    private TemplateContainer getTemplates() {
       TemplateContainer rv = myTemplates;
       if (rv == null) {
         synchronized (this) {
           if ((rv = myTemplates) == null) {
             rv = new TemplateContainer(myInvokedTemplate);
-            rv.initialize();
             myTemplates = rv;
           }
         }
@@ -718,16 +708,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       myTracer.pushTemplateNode(invokedTemplateRef);
 
       try {
-        return tc.apply(newcontext);
-      } catch (DismissTopMappingRuleException ex) {
-        throw ex;
-      } catch (GenerationFailureException ex) {
-        throw ex;
-      } catch (GenerationCanceledException ex) {
-        throw ex;
-      } catch (GenerationException ex) {
-        // can't get here
-        throw new GenerationFailureException(ex);
+        return tc.processRuleConsequence(newcontext);
       } finally {
         myTracer.closeTemplateNode(invokedTemplateRef);
         if (inputChanged) {

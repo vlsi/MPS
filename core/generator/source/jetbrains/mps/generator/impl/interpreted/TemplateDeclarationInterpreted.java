@@ -69,13 +69,12 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
     return result;
   }
 
-  private TemplateContainer getTemplates() throws TemplateProcessingFailureException {
+  private TemplateContainer getTemplates() {
     TemplateContainer rv = myTemplates;
     if (rv == null) {
       synchronized (this) {
         if ((rv = myTemplates) == null) {
           rv = new TemplateContainer(myTemplateNode);
-          rv.initialize();
           myTemplates = rv;
         }
       }
@@ -95,7 +94,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
 
       environment.getTracer().pushTemplateNode(getTemplateNode());
       try {
-        return tc.apply(context);
+        return tc.processRuleConsequence(context);
       } finally {
         environment.getTracer().closeTemplateNode(getTemplateNode());
       }

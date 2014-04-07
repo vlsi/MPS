@@ -41,14 +41,15 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
 
   private final SNode myRuleNode;
   private final String myRuleMappingName;
-  private final SNode myRuleConsequence;
+  private final RuleConsequenceProcessor myRuleConsequence;
   private PatternRuleQuery myQuery;
 
   public TemplateReductionPatternRuleInterpreted(SNode ruleNode) {
     super(new SNodePointer(ruleNode), RuleUtil.getPatternReductionRulePatternNode(ruleNode).getConcept().getQualifiedName(), false);
     myRuleNode = ruleNode;
     myRuleMappingName = RuleUtil.getPatternReductionRuleLabel(ruleNode);
-    myRuleConsequence = RuleUtil.getPatternReductionRuleConsequence(ruleNode);
+    final SNode rc = RuleUtil.getPatternReductionRuleConsequence(ruleNode);
+    myRuleConsequence = rc == null ? null : RuleConsequenceProcessor.prepare(rc);
   }
 
   @Override
@@ -75,8 +76,6 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
       throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(templateContext));
     }
 
-    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(myRuleConsequence);
-    rcp.prepare();
-    return rcp.processRuleConsequence(templateContext.subContext(myRuleMappingName));
+    return myRuleConsequence.processRuleConsequence(templateContext.subContext(myRuleMappingName));
   }
 }
