@@ -31,6 +31,7 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.PostponedReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
@@ -136,7 +137,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
-    DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
+    DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this, operationContext);
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
       : ctx;
@@ -677,6 +678,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   RuleManager getRuleManager() {
     return myRuleManager;
+  }
+
+  GeneratorQueryProvider.Source getQuerySource() {
+    return getGeneratorSessionContext(); // TODO don't expose GeneratorQueryProvider.Source from GenerationSessionContext, pass GQPS as TG cons arg
   }
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {

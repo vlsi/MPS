@@ -121,7 +121,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
           context = myRootContext.get(inputNode);
         }
         if (context == null) {
-          context = new DefaultQueryExecutionContext(this, false);
+          context = new DefaultQueryExecutionContext(this, getGeneratorSessionContext(), false);
           myRootContext.put(inputNode, context);
         }
         return context;
