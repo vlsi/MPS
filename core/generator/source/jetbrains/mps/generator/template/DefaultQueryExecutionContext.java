@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -58,19 +59,25 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   private final ITemplateGenerator myGenerator;
+  private final GeneratorQueryProvider.Source myQuerySource;
   private final boolean myIsMultithread;
   private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
   private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
   private final Map<SNodeReference,IfMacroCondition> myIfMacroConditions = new ConcurrentHashMap<SNodeReference, IfMacroCondition>();
 
-  public DefaultQueryExecutionContext(ITemplateGenerator generator) {
-    this(generator, true);
+//  public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, ) {
+//    this(generator, qps, true);
+//  }
+
+  public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, @NotNull GeneratorQueryProvider.Source qps) {
+    this(generator, qps, true);
   }
 
-  public DefaultQueryExecutionContext(ITemplateGenerator generator, boolean isMultithread) {
+  public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, @NotNull GeneratorQueryProvider.Source qps, boolean isMultithread) {
     this.myGenerator = generator;
     myIsMultithread = isMultithread;
     // XXX can utilize isMultithread to initialize queries map with HashMap, not ConcurrentHashMap if false
+    myQuerySource = qps;
   }
 
   @Override
@@ -113,7 +120,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     final SNodeReference qr = ifMacro.getReference();
     IfMacroCondition cond = myIfMacroConditions.get(qr);
     if (cond == null) {
-      cond = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getIfMacroCondition(ifMacro);
+      cond = myQuerySource.getQueryProvider(qr).getIfMacroCondition(ifMacro);
       myIfMacroConditions.put(qr, cond);
     }
     return cond.check(new IfMacroContext(context.subContext(inputNode), qr, myGenerator));
@@ -163,7 +170,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       final SNodeReference qr = propertyMacro.getReference();
-      PropertyValueQuery q = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getPropertyValueQuery(propertyMacro);
+      PropertyValueQuery q = myQuerySource.getQueryProvider(qr).getPropertyValueQuery(propertyMacro);
       final Object tv = q.getTemplateValue();
       // I don't see a reason to delegate to this.evaluate - subclasses do treat these two implementations separately,
       // and this deprecated method shall not be used anyway
@@ -197,7 +204,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       final SNodeReference qr = query.getReference();
       SourceNodeQuery q = myNodeQueries.get(qr);
       if (q == null) {
-        q = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getSourceNodeQuery(query);
+        q = myQuerySource.getQueryProvider(qr).getSourceNodeQuery(query);
         myNodeQueries.put(qr, q);
       }
       return q.evaluate(new SourceSubstituteMacroNodeContext(context, templateNode.getReference(), myGenerator));
@@ -267,7 +274,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       final SNodeReference qr = query.getReference();
       SourceNodesQuery q = myNodesQueries.get(qr);
       if (q == null) {
-        q = myGenerator.getGeneratorSessionContext().getQueryProvider(qr).getSourceNodesQuery(query);
+        q = myQuerySource.getQueryProvider(qr).getSourceNodesQuery(query);
         myNodesQueries.put(qr, q);
       }
       final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, templateNode.getReference(), myGenerator));

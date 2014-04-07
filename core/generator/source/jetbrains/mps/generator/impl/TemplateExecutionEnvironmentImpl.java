@@ -120,7 +120,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
-    return generator.getGeneratorSessionContext().getQueryProvider(ruleNode);
+    return generator.getQuerySource().getQueryProvider(ruleNode);
   }
 
   @NotNull

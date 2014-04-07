@@ -67,6 +67,7 @@ class TemplateNode {
     myTemplateNodeConcept = templateNode.getConcept();
     myRoleInParent = templateNode.getRoleInParent();
     //
+    // need to build linked list of macro nodes; use stack to start from the tail
     final ArrayDeque<SNode> attachedMacros = new ArrayDeque<SNode>(5);
     for (SNode attrNode : templateNode.getChildren(GeneratorUtilEx.link_BaseConcept_attrs)) {
       if (RuleUtil.isNodeMacro(attrNode)) {
@@ -85,14 +86,14 @@ class TemplateNode {
    */
   public void apply(TemplateContext context, SNode outputNode) throws GenerationFailureException {
     final TemplateExecutionEnvironment env = context.getEnvironment();
+    final TemplateGenerator generator = env.getGenerator();
     if (myMold == null) {
       synchronized (this) {
         if (myMold == null) {
-          myMold = new Mold(myNode, env.getGenerator().getGeneratorSessionContext(), env.getLogger());
+          myMold = new Mold(myNode, generator.getQuerySource(), generator.getLogger());
         }
       }
     }
-    final TemplateGenerator generator = env.getGenerator();
     // jetbrains.mps.util.SNodeOperations.copyProperties(myTemplateNode, outputNode);
     for (int i = 0; i < myMold.myTemplateProperties.length;) {
       outputNode.setProperty(myMold.myTemplateProperties[i++], myMold.myTemplateProperties[i++]);
